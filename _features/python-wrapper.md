@@ -1,6 +1,6 @@
 ---
 title: Python-Wrapper
-order: 3
+order: 1
 snippet: >
   ```python
     import torch
