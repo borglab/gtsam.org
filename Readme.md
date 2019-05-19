@@ -1,2 +1,0 @@
-# gtsam.org
-Under development.
