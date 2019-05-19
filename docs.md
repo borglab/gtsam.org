@@ -8,8 +8,13 @@ permalink: /docs/
 
 Currently, the only documentation available is the [C++ Doxygen generated site](/doxygen/), which has its challenges but will be updated soon.
 
-Additional Information
-----------------------
+### Notes on GTSAM
+
+{% for note in site.notes %}
+#### [{{ note.title }}]({{ note.url | prepend: site.baseurl }})
+{% endfor %}
+
+### Additional Information
 
 There is a [`GTSAM users Google group`](https://groups.google.com/forum/#!forum/gtsam-users) for general discussion.
 
