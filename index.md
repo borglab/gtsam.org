@@ -1,16 +1,12 @@
 ---
-layout: default
+layout: home
 ---
 
 {% include in-progress.html %}
 
-GTSAM 4
--------
+## What is GTSAM?
 
-GTSAM is a BSD-licensed C++ library that implements sensor fusion for robotics and computer vision applications, including SLAM (Simultaneous Localization and Mapping), VO (Visual Odometry), and SFM (Structure from Motion). It uses factor graphs and Bayes networks as the underlying computing paradigm rather than sparse matrices.
+GTSAM 4 is a BSD-licensed C++ library that implements sensor fusion for robotics and computer vision applications, including SLAM (Simultaneous Localization and Mapping), VO (Visual Odometry), and SFM (Structure from Motion). It uses factor graphs and Bayes networks as the underlying computing paradigm rather than sparse matrices.
 
-{% include quick_start_module.md %}
-
-Recent Tweets
--------------
+## Recent Tweets
 {% include tweets.html %}
