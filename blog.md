@@ -2,7 +2,6 @@
 layout: page
 title: Blog
 permalink: /blog/
-body-class: blog
 ---
 
 {% for post in site.posts %}
