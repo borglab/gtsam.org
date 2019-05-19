@@ -1,5 +1,6 @@
 ---
 layout: page
+date:   2019-05-18 14:09:48 -0400
 categories: factor-graphs
 ---
 
