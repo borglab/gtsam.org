@@ -4,30 +4,21 @@ background-class: home-page-background
 body-class: homepage
 ---
 
-<ul class="post-list">
-  {% for post in site.posts %}
-    <li>
-      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+<p>
+  GTSAM is a BSD-licensed C++ library that implements sensor fusion for robotics and computer vision applications,
+  including SLAM (Simultaneous Localization and Mapping), VO (Visual Odometry), and SFM (Structure from Motion).
+  It uses factor graphs and Bayes networks as the underlying computing paradigm rather than sparse matrices.
+</p>
 
-      <h2>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </h2>
-    </li>
-  {% endfor %}
-</ul>
-
+{% capture my_include %}{% include quick_start_module.md %}{% endcapture %}
+{{ my_include | markdownify }}
 
 <!-- Start Load Tweets -->
 
 <div id="twitter-widget">
-  <a class="twitter-timeline"
-    href="https://twitter.com/gtsam4"
-    data-height="0"
-    data-chrome="noheader nofooter noborders transparent noscrollbar"
-    data-link-color="#e44c2c"
-    data-tweet-limit="3"
-    data-border-color="#a80000"
-    data-dnt="true">
+  <a class="twitter-timeline" href="https://twitter.com/gtsam4" data-height="0"
+    data-chrome="noheader nofooter noborders transparent noscrollbar" data-link-color="#e44c2c" data-tweet-limit="3"
+    data-border-color="#a80000" data-dnt="true">
   </a>
 </div>
 
