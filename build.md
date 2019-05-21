@@ -4,6 +4,8 @@ title: Build
 permalink: /build/
 ---
 
+{% include jumbotron-other.html %}
+
 To build GTSAM from source, clone or download the latest release from the [GTSAM Github repo](https://github.com/borglab/gtsam). Then follow the build & install instructions below.
 
 {% include quick_start_module.md %}

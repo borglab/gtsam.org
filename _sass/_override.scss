@@ -10,13 +10,15 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 300px;
   background-size: 100% 100%;
   background-repeat: no-repeat;
 
+  height: 300px;
   @include desktop {
     height: 300px;
   }
+
+  background-image: url("/assets/images/other-background.jpg");
 
   &.home-page-background {
     background-image: url("/assets/images/home-background.jpg");
@@ -26,7 +28,6 @@
 
 .header-holder {
   height: $mobile_header_height;
-
   @include full-nav-menu-desktop {
     height: $desktop_header_height;
   }
@@ -59,22 +60,6 @@
   .main-content-wrapper {
     @include desktop {
       margin-top: 539px;
-    }
-  }
-
-  .jumbotron {
-    .container {
-      .lead {
-        width: 100%;
-      }
-      margin-left: 80px;
-    }
-    height: 195px;
-    @include desktop {
-      height: 300px;
-    }
-    .btn {
-      margin-top: rem(6px);
     }
   }
 }
