@@ -4,8 +4,6 @@ title: Get Started
 permalink: /get_started/
 ---
 
-{% include in-progress.html %}
-
 {% include quick_start_module.md %}
 
 Prerequisites:
