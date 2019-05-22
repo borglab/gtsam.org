@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-GTSAM is a sensor fusion library based on factor graphs, developed by [Frank Dellaert](https://www.dellaert.com) and his students in Georgia Tech's BORG Lab, as well as numerous open source contributors.
+GTSAM is a sensor fusion library based on factor graphs, developed by [Frank Dellaert](http://www.dellaert.com) and his students in Georgia Tech's BORG Lab, as well as numerous open source contributors.
 
 Current Georgia Tech contributors include:
 * Varun Agrawal
