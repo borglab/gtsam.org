@@ -1,0 +1,64 @@
+.site-header {
+  border-top: 0px;
+}
+
+.main-background {
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
+  height: 200px;
+  @include desktop {
+    height: 200px;
+  }
+
+  background-image: url("/assets/images/other-background.jpg");
+
+  &.home-page-background {
+    background-image: url("/assets/images/home-background.jpg");
+    height: 300px;
+    @include desktop {
+      height: 300px;
+    }
+  }
+}
+
+.header-holder {
+  height: $mobile_header_height;
+  @include full-nav-menu-desktop {
+    height: $desktop_header_height;
+  }
+
+  z-index: 9999;
+
+  &.blog-header,
+  &.blog-detail-header,
+  &.resources-header,
+  &.get-started-header,
+  &.features-header,
+  &.ecosystem-header {
+    background-color: $white;
+    border-bottom: 1px solid #e2e2e2;
+  }
+}
+
+.header-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  @include clearfix;
+
+  @include full-nav-menu-desktop {
+    display: block;
+  }
+}
+
+.homepage {
+  .main-content-wrapper {
+    @include desktop {
+      margin-top: 539px;
+    }
+  }
+}
