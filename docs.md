@@ -4,7 +4,13 @@ title: Docs
 permalink: /docs/
 ---
 
-Currently, the only documentation available is the [C++ Doxygen generated site](/doxygen/), which has its challenges but will be updated soon.
+A quick introduction is [Factor Graphs and GTSAM: A Hands-on Introduction](http://borg.cc.gatech.edu/sites/edu.borg/files/downloads/gtsam.pdf), a tech report by [Frank Dellaert](http://frank.dellaert.com) from 2012. A more thorough introduction to the use of factor graphs in robotics is the 2017 article [Factor graphs for robot perception](https://www.cc.gatech.edu/~dellaert/pubs/Dellaert17fnt.pdf) by Frank Dellaert and Michael Kaess.
+
+### API and Wrapper Documentation
+
+Currently, the API documentation available only for C++ via the [C++ Doxygen generated site](/doxygen/).
+
+GTSAM comes with a python wrapper (see cython directory) and a matlab wrapper (see matlab directory), and for prototyping with GTSAM we highly recommend using one of the above. The auto-generated API documentation for python/MATLAB is limited to the number and type of input arguments, and again the [doxygen docs](/doxygen/) provide the details.
 
 ### Notes on GTSAM
 
