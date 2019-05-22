@@ -4,8 +4,6 @@ title: Get Started
 permalink: /get_started/
 ---
 
-{% include jumbotron-other.html %}
-
 {% include quick_start_module.md %}
 
 Prerequisites:

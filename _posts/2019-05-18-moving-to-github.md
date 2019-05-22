@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: gtsam-post
 title:  "Moving to Github!"
 categories: gtsam.org
 ---

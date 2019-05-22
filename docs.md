@@ -4,8 +4,6 @@ title: Docs
 permalink: /docs/
 ---
 
-{% include jumbotron-other.html %}
-
 Currently, the only documentation available is the [C++ Doxygen generated site](/doxygen/), which has its challenges but will be updated soon.
 
 ### Notes on GTSAM

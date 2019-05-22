@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: gtsam-note
 title:  "Migrating from GTSAM 3"
 date:   2019-05-18 14:09:48 -0400
 categories: roadmap

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: gtsam-note
 title:  "Contributing to GTSAM"
 date:   2019-05-20 21:25:00 -0400
 categories: roadmap
