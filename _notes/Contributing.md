@@ -10,6 +10,10 @@ If you have improvements to GTSAM, send us your pull requests!
 
 Our standard workflow is to fork GTSAM’s [official GitHub repository](https://github.com/borglab/gtsam) into your own GitHub account and then push your changes into a branch on your fork. Once you believe your code is ready to be merged into GTSAM’s primary repository, open a pull request via the GitHub website. Your code will then undergo an interactive review process and Continuous Integration (CI) tests before it is merged into GTSAM’s primary repository.
 
+We use [Giflow](https://nvie.com/posts/a-successful-git-branching-model/) as our branching model, as illustrated below, so most likely your branch will be either a *fix* or a *feature* branch.
+
+![Gitflow branching Model](https://nvie.com/img/git-model@2x.png)
+
 GTSAM’s CI service runs on all pull requests each time they are submitted and updated. Pull requests cannot be merged into master unless all unit tests pass on all supported platform configurations.
 
 <!-- We would like to hear about your success stories if you’ve used GTSAM in your own projects. Please consider contributing to our GTSAM Gallery by editing doc/gallery.rst and submitting a pull request with the update! -->
