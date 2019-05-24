@@ -19,7 +19,6 @@ Below are the many Georgia Tech BORG lab alumni with their current afffiliation,
 * Sungtae An
 * Doru Balcan, Bank of America
 * Chris Beall, Nuro
-* Matthew Broadway
 * Luca Carlone, MIT
 * Krunal Chande, Fyusion
 * Alex Cunningham, TRI
@@ -51,6 +50,7 @@ In addition, we have had contrubutions from many others at different institution
 
 * Abe Bachrach, Skydio
 * Jose Luis Blanco-Claraco, University of Almería
+* Matthew Broadway
 * Adam Bry, Skydio
 * Mike Bosse, ETHZ
 * Gareth Cross, Skydio
