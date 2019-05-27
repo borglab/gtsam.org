@@ -1,31 +1,52 @@
 @mixin desktop {
-    @media screen and (min-width: 768px) {
-      @content;
-    }
+  @media screen and (min-width: 768px) {
+    @content;
   }
-  
-  @function rem($px) {
-    @return ($px / 16px) * 1rem;
+}
+
+@function rem($px) {
+  @return ($px / 16px) * 1rem;
+}
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
   }
-  
-  @mixin clearfix {
-    &:before,
+  &:after {
+    clear: both;
+  }
+  & {
+    *zoom: 1;
+  }
+}
+
+@mixin full-nav-menu-desktop {
+  @media screen and (min-width: 1100px) {
+    @content;
+  }
+}
+
+@mixin animated_border_hover_state {
+  @include desktop {
     &:after {
       content: "";
-      display: table;
+      display: block;
+      width: 0;
+      height: 1px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: $orange;
+      transition: width .250s ease-in-out;
     }
-    &:after {
-      clear: both;
+
+    &:hover:after {
+      width: 100%;
     }
-    & {
-      *zoom: 1;
+    &:hover {
+      color: $not_quite_black;
     }
   }
-  
-  @mixin full-nav-menu-desktop {
-    @media screen and (min-width: 1100px) {
-      @content;
-    }
-  }
-  
-  
+}
