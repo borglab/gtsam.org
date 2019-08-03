@@ -4,6 +4,8 @@ title: Build
 permalink: /build/
 ---
 
+# Install GTSAM from source
+
 To build GTSAM from source, clone or download the latest release from the [GTSAM Github repo](https://github.com/borglab/gtsam). Then follow the build & install instructions below.
 
 {% include quick_start_module.md %}
@@ -46,7 +48,7 @@ additional debugging tips.
   $ cmake ..
   $ make check (optional, runs unit tests)
   $ make install
-  ``` 
+  ```
 
 ## CMake Configuration Options and Details
 
@@ -64,8 +66,8 @@ We support several build configurations for GTSAM (case insensitive)
 
 `` `cmake -DCMAKE_BUILD_TYPE=[Option] ..` ``
 - `Debug`: All error checking options on, no optimization. Use for development of new features and fixing issues.
-- `Release`: Optimizations turned on, no debug symbols. 
-- `Timing`: Adds ENABLE_TIMING flag to provide statistics on operation 
+- `Release`: Optimizations turned on, no debug symbols.
+- `Timing`: Adds ENABLE_TIMING flag to provide statistics on operation
 - `Profiling`: Standard configuration for use during profiling
 - `RelWithDebInfo`: Same as Release, but with the - g flag
 for debug symbols
@@ -91,7 +93,7 @@ Set with the command line as follows:
 ```
 cmake -DGTSAM_BUILD_CONVENIENCE_LIBRARIES:OPTION=ON ..
 ```
-  - `ON` (Default): This builds convenience libraries and links tests against them.This option is suggested for gtsam developers, as it is possible to build and run tests without first building the rest of the library, and speeds up compilation for a single test.The downside of this option is that it will build the entire library again to build the full libgtsam library, so build / install will be slower. 
+  - `ON` (Default): This builds convenience libraries and links tests against them.This option is suggested for gtsam developers, as it is possible to build and run tests without first building the rest of the library, and speeds up compilation for a single test.The downside of this option is that it will build the entire library again to build the full libgtsam library, so build / install will be slower.
   - `OFF`: This will build all of libgtsam before any of the tests, and then link all of the tests at once.This option is best
   for users of GTSAM, as it avoids rebuilding the entirety of gtsam an extra time.
 
@@ -112,8 +114,8 @@ Path to the mex compiler. Defaults to assume the path is included in your shell 
 
 ## Running the unit tests
 
- `make check` will build and run all of the tests.Note that the tests will only be built when using the "check" targets, to prevent `make install` from building the tests unnecessarily. 
- 
+ `make check` will build and run all of the tests.Note that the tests will only be built when using the "check" targets, to prevent `make install` from building the tests unnecessarily.
+
 You can also run `make timing` to build all of the timing scripts.
 To run check on a particular module only, run `make check.[subfolder]` , so to run just the geometry tests, run `make check.geometry` .
 
@@ -124,7 +126,7 @@ for example, to run testMatrix, run `make testMatrix.run` .
 
 Here are some tips to get the best possible performance out of GTSAM.
 
-1. Build in `Release` mode. GTSAM will run up to 10 x faster compared to `Debug` 
+1. Build in `Release` mode. GTSAM will run up to 10 x faster compared to `Debug`
 mode.
 
 2. Enable TBB.On modern processors with multiple cores, this can easily speed up optimization by 30 - 50 %. Please note that this may not be true
@@ -149,7 +151,7 @@ Intel has a guide
 for installing MKL on Linux through APT repositories [here](https://software.intel.com/en-us/articles/installing-intel-free-libs-and-python-apt-repo).
 
 After following the instructions, add the following to your `~/.bashrc` (and afterwards, open a new terminal before compiling GTSAM):
- `LD_PRELOAD` 
+ `LD_PRELOAD`
 need only be set if you are building the cython wrapper to use GTSAM from python.
 
 ```sh
@@ -166,8 +168,53 @@ The `LD_PRELOAD` fix seems to be related to a well known problem with MKL which 
 - <https://groups.google.com/a/continuum.io/forum/#!topic/anaconda/J3YGoef64z8>
 
 Failing to specify `LD_PRELOAD` may lead to errors such as:
- `ImportError: /opt/intel/mkl/lib/intel64/libmkl_vml_avx2.so: undefined symbol: mkl_serv_getenv` 
+ `ImportError: /opt/intel/mkl/lib/intel64/libmkl_vml_avx2.so: undefined symbol: mkl_serv_getenv`
 or
- `Intel MKL FATAL ERROR: Cannot load libmkl_avx2.so or libmkl_def.so.` 
+ `Intel MKL FATAL ERROR: Cannot load libmkl_avx2.so or libmkl_def.so.`
 when importing GTSAM using the cython wrapper in python.
 
+# Install GTSAM from Ubuntu PPA
+
+GTSAM can be installed on Ubuntu via a PPA as well.
+Note: The PPA is for the unstable (develop `git` branch) version of GTSAM.
+
+## Add PPA for GTSAM (unstable)
+
+```sh
+sudo add-apt-repository ppa:joseluisblancoc/gtsam-develop
+sudo apt update  # not necessary since Bionic
+```
+
+## Install GTSAM (unstable)
+
+```sh
+sudo apt install libgtsam-dev
+```
+
+# Install GTSAM from Arch Linux AUR
+
+Note: Installing GTSAM on Arch Linux is not tested by the GTSAM developers.
+
+GTSAM is available in the Arch User Repository
+([AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository)) as
+[`gtsam`](https://aur.archlinux.org/packages/gtsam/).
+
+Note you can manually install the package by following the instructions on the
+[Arch Wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages)
+or use an [AUR helper](https://wiki.archlinux.org/index.php/AUR_helpers) like
+[`yay`](https://aur.archlinux.org/packages/yay/)
+(recommended for ease of install).
+
+## Install Optional Dependencies
+
+```sh
+yay -S intel-tbb intel-mkl
+```
+
+## Install GTSAM
+```sh
+yay -S gtsam
+```
+
+To discuss any issues related to this package refer to the comments section on
+the AUR page of `gtsam` [here](https://aur.archlinux.org/packages/gtsam/).
