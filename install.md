@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Build
-permalink: /build/
+title: Install
+permalink: /install/
 ---
 
 # Install GTSAM from source
