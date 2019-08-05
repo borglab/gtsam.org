@@ -1,10 +1,8 @@
 ---
 layout: page
-title: Install
-permalink: /install/
+title: Build
+permalink: /build/
 ---
-
-# Install GTSAM from source
 
 To build GTSAM from source, clone or download the latest release from the [GTSAM Github repo](https://github.com/borglab/gtsam). Then follow the build & install instructions below.
 
@@ -172,49 +170,3 @@ Failing to specify `LD_PRELOAD` may lead to errors such as:
 or
  `Intel MKL FATAL ERROR: Cannot load libmkl_avx2.so or libmkl_def.so.`
 when importing GTSAM using the cython wrapper in python.
-
-# Install GTSAM from Ubuntu PPA
-
-GTSAM can be installed on Ubuntu via a PPA as well.
-Note: The PPA is for the unstable (develop `git` branch) version of GTSAM.
-
-## Add PPA for GTSAM (unstable)
-
-```sh
-sudo add-apt-repository ppa:joseluisblancoc/gtsam-develop
-sudo apt update  # not necessary since Bionic
-```
-
-## Install GTSAM (unstable)
-
-```sh
-sudo apt install libgtsam-dev
-```
-
-# Install GTSAM from Arch Linux AUR
-
-Note: Installing GTSAM on Arch Linux is not tested by the GTSAM developers.
-
-GTSAM is available in the Arch User Repository
-([AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository)) as
-[`gtsam`](https://aur.archlinux.org/packages/gtsam/).
-
-Note you can manually install the package by following the instructions on the
-[Arch Wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages)
-or use an [AUR helper](https://wiki.archlinux.org/index.php/AUR_helpers) like
-[`yay`](https://aur.archlinux.org/packages/yay/)
-(recommended for ease of install).
-
-## Install Optional Dependencies
-
-```sh
-yay -S intel-tbb intel-mkl
-```
-
-## Install GTSAM
-```sh
-yay -S gtsam
-```
-
-To discuss any issues related to this package refer to the comments section on
-the AUR page of `gtsam` [here](https://aur.archlinux.org/packages/gtsam/).

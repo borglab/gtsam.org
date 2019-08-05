@@ -4,7 +4,7 @@ title: Get Started
 permalink: /get_started/
 ---
 
-# Install GTSAM from Source
+## Install GTSAM from Source
 
 {% include quick_start_module.md %}
 
@@ -18,28 +18,28 @@ Optional prerequisites - used automatically if findable by CMake:
 
 - [Intel Threaded Building Blocks (TBB)](http://www.threadingbuildingblocks.org/) (Ubuntu: `sudo apt-get install libtbb-dev`)
 - [Intel Math Kernel Library (MKL)](http://software.intel.com/en-us/intel-mkl) (Ubuntu: [installing using APT](https://software.intel.com/en-us/articles/installing-intel-free-libs-and-python-apt-repo))
-    - See [Install](install.md) for more installation information
+    - See [Build](build.md) for more installation information
     - Note that MKL may not provide a speedup in all cases. Make sure to benchmark your problem with and without MKL.
 
-# Install GTSAM from Ubuntu PPA
+## Install GTSAM from Ubuntu PPA
 
 GTSAM can be installed on Ubuntu via a PPA as well.
 Note: The PPA is for the unstable (develop `git` branch) version of GTSAM.
 
-## Add PPA for GTSAM (unstable)
+#### Add PPA for GTSAM (unstable)
 
 ```sh
 sudo add-apt-repository ppa:joseluisblancoc/gtsam-develop
 sudo apt update  # not necessary since Bionic
 ```
 
-## Install GTSAM (unstable)
+#### Install GTSAM (unstable)
 
 ```sh
 sudo apt install libgtsam-dev
 ```
 
-# Install GTSAM from Arch Linux AUR
+## Install GTSAM from Arch Linux AUR
 
 Note: Installing GTSAM on Arch Linux is not tested by the GTSAM developers.
 
@@ -53,13 +53,13 @@ or use an [AUR helper](https://wiki.archlinux.org/index.php/AUR_helpers) like
 [`yay`](https://aur.archlinux.org/packages/yay/)
 (recommended for ease of install).
 
-## Install Optional Dependencies
+#### Install Optional Dependencies
 
 ```sh
 yay -S intel-tbb intel-mkl
 ```
 
-## Install GTSAM
+#### Install GTSAM
 ```sh
 yay -S gtsam
 ```
