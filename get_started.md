@@ -4,6 +4,8 @@ title: Get Started
 permalink: /get_started/
 ---
 
+## Install GTSAM from Source
+
 {% include quick_start_module.md %}
 
 Prerequisites:
@@ -16,5 +18,51 @@ Optional prerequisites - used automatically if findable by CMake:
 
 - [Intel Threaded Building Blocks (TBB)](http://www.threadingbuildingblocks.org/) (Ubuntu: `sudo apt-get install libtbb-dev`)
 - [Intel Math Kernel Library (MKL)](http://software.intel.com/en-us/intel-mkl) (Ubuntu: [installing using APT](https://software.intel.com/en-us/articles/installing-intel-free-libs-and-python-apt-repo))
-    - See [Install](install.md) for more installation information
+    - See [Build](build.md) for more installation information
     - Note that MKL may not provide a speedup in all cases. Make sure to benchmark your problem with and without MKL.
+
+## Install GTSAM from Ubuntu PPA
+
+GTSAM can be installed on Ubuntu via a PPA as well.
+Note: The PPA is for the unstable (develop `git` branch) version of GTSAM.
+
+#### Add PPA for GTSAM (unstable)
+
+```sh
+sudo add-apt-repository ppa:joseluisblancoc/gtsam-develop
+sudo apt update  # not necessary since Bionic
+```
+
+#### Install GTSAM (unstable)
+
+```sh
+sudo apt install libgtsam-dev
+```
+
+## Install GTSAM from Arch Linux AUR
+
+Note: Installing GTSAM on Arch Linux is not tested by the GTSAM developers.
+
+GTSAM is available in the Arch User Repository
+([AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository)) as
+[`gtsam`](https://aur.archlinux.org/packages/gtsam/).
+
+Note you can manually install the package by following the instructions on the
+[Arch Wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages)
+or use an [AUR helper](https://wiki.archlinux.org/index.php/AUR_helpers) like
+[`yay`](https://aur.archlinux.org/packages/yay/)
+(recommended for ease of install).
+
+#### Install Optional Dependencies
+
+```sh
+yay -S intel-tbb intel-mkl
+```
+
+#### Install GTSAM
+```sh
+yay -S gtsam
+```
+
+To discuss any issues related to this package refer to the comments section on
+the AUR page of `gtsam` [here](https://aur.archlinux.org/packages/gtsam/).
