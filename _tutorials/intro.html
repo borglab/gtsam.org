@@ -5,11 +5,11 @@ title: "Factor Graphs and GTSAM"
 categories: factor-graphs
 ---
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" "http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd">
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" "http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd"> -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta name="GENERATOR" content="LyX 2.3.2" />
-<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+<meta name="GENERATOR" content="LyX 2.3.2"></meta>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8"></meta>
 <title>Factor Graphs and GTSAM:A Hands-on Introduction</title>
 <style type='text/css'>
 /* LyX Provided Styles */
@@ -159,11 +159,11 @@ div.foot:hover div.foot_inner {
 </head>
 <body dir="auto">
 <!-- <h1 class="title" id='magicparlabel-65361'>Factor Graphs and GTSAM:
-<br />
+<br>
 
 A Hands-on Introduction</h1>
 <div class="author" id='magicparlabel-65362'>Frank Dellaert
-<br />
+<br>
 
 Technical Report number GT-RIM-CP&amp;R-2014-XXX</div>
 <div class="date" id='magicparlabel-65363'>September 2014</div> -->
@@ -291,14 +291,14 @@ Technical Report number GT-RIM-CP&amp;R-2014-XXX</div>
 </div>
 
 
-<div class="standard" id='magicparlabel-65376'><br />
+<div class="standard" id='magicparlabel-65376'><br>
 </div>
 <h2 class="section" id='magicparlabel-65377'><span class="section_label">1</span> Factor Graphs</h2>
 <div class="standard" id='magicparlabel-65378'>Let us start with a one-page primer on factor graphs, which in no way replaces the excellent and detailed reviews by <a href='#LyXCite-Kschischang01it'><span class="bib-abbrvciteauthor">Kschischang et al.</span></a> (<span class="bib-year">2001</span>) and <a href='#LyXCite-Loeliger04spm'><span class="bib-abbrvciteauthor">Loeliger</span></a> (<span class="bib-year">2004</span>). </div>
 
 
-<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65383'><img style='width:60%;' src='intro-images/2_Users_dellaert_git_github_doc_images_hmm.png' alt='image: 2_Users_dellaert_git_github_doc_images_hmm.png' />
-<span class='float-caption-Standard float-caption float-caption-standard'>Figure 1:  <a id="fig_unrolledHMM" />
+<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65383'><img style='width:60%;' src='intro-images/2_Users_dellaert_git_github_doc_images_hmm.png' alt='image: 2_Users_dellaert_git_github_doc_images_hmm.png' ></img>
+<span class='float-caption-Standard float-caption float-caption-standard'>Figure 1:  <a id="fig_unrolledHMM" ></a>
 An HMM, unrolled over three time-steps, represented by a Bayes net. </span></div>
 </div>
 
@@ -705,8 +705,8 @@ An HMM, unrolled over three time-steps, represented by a Bayes net. </span></div
  </mrow></math></div>
 
 
-<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65401'><img style='width:60%;' src='intro-images/3_Users_dellaert_git_github_doc_images_hmm-FG.png' alt='image: 3_Users_dellaert_git_github_doc_images_hmm-FG.png' />
-<span class='float-caption-Standard float-caption float-caption-standard'>Figure 2:  <a id="fig_HMM_FG" />
+<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65401'><img style='width:60%;' src='intro-images/3_Users_dellaert_git_github_doc_images_hmm-FG.png' alt='image: 3_Users_dellaert_git_github_doc_images_hmm-FG.png' ></img>
+<span class='float-caption-Standard float-caption float-caption-standard'>Figure 2:  <a id="fig_HMM_FG" ></a>
 An HMM with observed measurements, unrolled over time, represented as a factor graph.</span></div>
 </div>
 
@@ -798,14 +798,14 @@ An HMM with observed measurements, unrolled over time, represented as a factor g
    </mrow>
   </msub>
  </mrow></math> it depends on. In the examples below, we use factor graphs to model more complex MAP inference problems in robotics.</div>
-<h2 class="section" id='magicparlabel-65411'><span class="section_label">2</span> <a id="sec_Robot_Localization" />
+<h2 class="section" id='magicparlabel-65411'><span class="section_label">2</span> <a id="sec_Robot_Localization" ></a>
 Modeling Robot Motion</h2>
 <h3 class="subsection" id='magicparlabel-65412'><span class="subsection_label">2.1</span> Modeling with Factor Graphs</h3>
 <div class="standard" id='magicparlabel-65413'>Before diving into a SLAM example, let us consider the simpler problem of modeling robot motion. This can be done with a <em>continuous</em> Markov chain, and provides a gentle introduction to GTSAM.</div>
 
 
-<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65418'><img style='width:80%;' src='intro-images/4_Users_dellaert_git_github_doc_images_FactorGraph.png' alt='image: 4_Users_dellaert_git_github_doc_images_FactorGraph.png' />
-<span class='float-caption-Standard float-caption float-caption-standard'>Figure 3:  <a id="fig_OdometryFG" />
+<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65418'><img style='width:80%;' src='intro-images/4_Users_dellaert_git_github_doc_images_FactorGraph.png' alt='image: 4_Users_dellaert_git_github_doc_images_FactorGraph.png' ></img>
+<span class='float-caption-Standard float-caption float-caption-standard'>Figure 3:  <a id="fig_OdometryFG" ></a>
 Factor graph for robot localization.</span></div>
 </div>
 
@@ -1278,7 +1278,7 @@ Value 3: (4, -1.8e-18, -3.1e-18)
 
   </mrow>
  </mrow></math> is recovered.</div>
-<h3 class="subsection" id='magicparlabel-65457'><span class="subsection_label">2.5</span> <a id="subsec_Full_Posterior_Inference" />
+<h3 class="subsection" id='magicparlabel-65457'><span class="subsection_label">2.5</span> <a id="subsec_Full_Posterior_Inference" ></a>
 Full Posterior Inference</h3>
 <div class="standard" id='magicparlabel-65458'>GTSAM can also be used to calculate the covariance matrix for each pose after incorporating the information from all measurements <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>Z</mi>
@@ -1373,8 +1373,8 @@ x3 covariance:
 <div class="standard" id='magicparlabel-65469'>In this section we add measurements to the factor graph that will help us actually <em>localize</em> the robot over time. The example also serves as a tutorial on creating new factor types.</div>
 
 
-<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65474'><img style='width:80%;' src='intro-images/5_Users_dellaert_git_github_doc_images_FactorGraph2.png' alt='image: 5_Users_dellaert_git_github_doc_images_FactorGraph2.png' />
-<span class='float-caption-Standard float-caption float-caption-standard'>Figure 4:  <a id="fig_LocalizationFG" />
+<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65474'><img style='width:80%;' src='intro-images/5_Users_dellaert_git_github_doc_images_FactorGraph2.png' alt='image: 5_Users_dellaert_git_github_doc_images_FactorGraph2.png' ></img>
+<span class='float-caption-Standard float-caption float-caption-standard'>Figure 4:  <a id="fig_LocalizationFG" ></a>
 Robot localization factor graph with unary measurement factors at each time step.</span></div>
 </div>
 
@@ -1743,7 +1743,7 @@ x3 covariance:
 
 
 
-<div class='float-figure'><div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65525'><img style='width:80%;' src='intro-images/6_Users_dellaert_git_github_doc_images_Odometry.png' alt='image: 6_Users_dellaert_git_github_doc_images_Odometry.png' />
+<div class='float-figure'><div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65525'><img style='width:80%;' src='intro-images/6_Users_dellaert_git_github_doc_images_Odometry.png' alt='image: 6_Users_dellaert_git_github_doc_images_Odometry.png' ></img>
 </div>
 
 <div class="plain_layout" id='magicparlabel-65526'><span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure a:  Odometry marginals</span></div>
@@ -1752,9 +1752,9 @@ x3 covariance:
 
 <div class="plain_layout" style='text-align: center;' id='magicparlabel-65531'>&nbsp;</div>
 
-<div class="plain_layout" style='text-align: center;' id='magicparlabel-65532'><span class='float-caption-Standard float-caption float-caption-standard'>Figure 5:  <a id="fig_CompareMarginals" />
+<div class="plain_layout" style='text-align: center;' id='magicparlabel-65532'><span class='float-caption-Standard float-caption float-caption-standard'>Figure 5:  <a id="fig_CompareMarginals" ></a>
 Comparing the marginals resulting from the &ldquo;odometry&rdquo; factor graph in Figure <a href="#fig_OdometryFG">3</a> and the &ldquo;localization&rdquo; factor graph in Figure <a href="#fig_LocalizationFG">4</a>.</span></div>
-<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65536'><img style='width:80%;' src='intro-images/7_Users_dellaert_git_github_doc_images_Localization.png' alt='image: 7_Users_dellaert_git_github_doc_images_Localization.png' />
+<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65536'><img style='width:80%;' src='intro-images/7_Users_dellaert_git_github_doc_images_Localization.png' alt='image: 7_Users_dellaert_git_github_doc_images_Localization.png' ></img>
 </div>
 
 <div class="plain_layout" id='magicparlabel-65537'><span class='float-caption-Standard float-caption float-caption-standard'>Sub-Figure b:  Localization Marginals</span></div>
@@ -1767,17 +1767,17 @@ Comparing the marginals resulting from the &ldquo;odometry&rdquo; factor graph i
 
 <div class="standard" id='magicparlabel-65547'>You might now be wondering how we produced these figures. The answer is via the MATLAB interface of GTSAM, which we will demonstrate in the next section.</div>
 
-<div class="standard" id='magicparlabel-65548'><br />
+<div class="standard" id='magicparlabel-65548'><br>
 </div>
-<h2 class="section" id='magicparlabel-65549'><span class="section_label">4</span> <a id="sec_Pose2SLAM" />
-<a id="sec_WithMarginals" />
+<h2 class="section" id='magicparlabel-65549'><span class="section_label">4</span> <a id="sec_Pose2SLAM" ></a>
+<a id="sec_WithMarginals" ></a>
 PoseSLAM</h2>
 <h3 class="subsection" id='magicparlabel-65550'><span class="subsection_label">4.1</span> Loop Closure Constraints</h3>
 <div class="standard" id='magicparlabel-65551'>The simplest instantiation of a SLAM problem is <b>PoseSLAM</b>, which avoids building an explicit map of the environment. The goal of SLAM is to simultaneously localize a robot and map the environment given incoming sensor measurements (<a href='#LyXCite-DurrantWhyte06ram'><span class="bib-abbrvciteauthor">Durrant-Whyte and Bailey</span>, <span class="bib-year">2006</span></a>). Besides wheel odometry, one of the most popular sensors for robots moving on a plane is a 2D laser-range finder, which provides both odometry constraints between successive poses, and loop-closure constraints when the robot re-visits a previously explored part of the environment.</div>
 
 
-<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65556'><img style='width:80%;' src='intro-images/8_Users_dellaert_git_github_doc_images_FactorGraph3.png' alt='image: 8_Users_dellaert_git_github_doc_images_FactorGraph3.png' />
-<span class='float-caption-Standard float-caption float-caption-standard'>Figure 6:  <a id="fig_Pose2SLAM" />
+<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65556'><img style='width:80%;' src='intro-images/8_Users_dellaert_git_github_doc_images_FactorGraph3.png' alt='image: 8_Users_dellaert_git_github_doc_images_FactorGraph3.png' ></img>
+<span class='float-caption-Standard float-caption float-caption-standard'>Figure 6:  <a id="fig_Pose2SLAM" ></a>
 Factor graph for PoseSLAM.</span></div>
 </div>
 
@@ -1896,8 +1896,8 @@ graph.add(BetweenFactor&lt;Pose2&gt;(5, 2, Pose2(2, 0, M_PI_2), model));
  </mrow></math>.</div>
 
 
-<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65576'><img style='width:80%;' src='intro-images/9_Users_dellaert_git_github_doc_images_example1.png' alt='image: 9_Users_dellaert_git_github_doc_images_example1.png' />
-<span class='float-caption-Standard float-caption float-caption-standard'>Figure 7:  <a id="fig_example" />
+<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65576'><img style='width:80%;' src='intro-images/9_Users_dellaert_git_github_doc_images_example1.png' alt='image: 9_Users_dellaert_git_github_doc_images_example1.png' ></img>
+<span class='float-caption-Standard float-caption float-caption-standard'>Figure 7:  <a id="fig_example" ></a>
 The result of running optimize on the factor graph in Figure <a href="#fig_Pose2SLAM">6</a>.</span></div>
 </div>
 
@@ -2008,8 +2008,8 @@ ans =
  before and after optimization.</div>
 <h3 class="subsection" id='magicparlabel-65612'><span class="subsection_label">4.3</span> Reading and Optimizing Pose Graphs </h3>
 
-<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65617'><img style='width:80%;' src='intro-images/10_Users_dellaert_git_github_doc_images_w100-result.png' alt='image: 10_Users_dellaert_git_github_doc_images_w100-result.png' />
-<span class='float-caption-Standard float-caption float-caption-standard'>Figure 8:  <a id="fig_w100" />
+<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65617'><img style='width:80%;' src='intro-images/10_Users_dellaert_git_github_doc_images_w100-result.png' alt='image: 10_Users_dellaert_git_github_doc_images_w100-result.png' ></img>
+<span class='float-caption-Standard float-caption float-caption-standard'>Figure 8:  <a id="fig_w100" ></a>
 MATLAB plot of small Manhattan world example with 100 poses (due to Ed Olson). The initial estimate is shown in green. The optimized trajectory, with covariance ellipses, in blue.</span></div>
 </div>
 
@@ -2038,8 +2038,8 @@ marginals = Marginals(graph, result);
  </mrow></math> <b>rotation matrices </b>to represent 3D rotations. The selection is made via the compile flag GTSAM_USE_QUATERNIONS.</div>
 
 
-<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65629'><img style='width:70%;' src='intro-images/11_Users_dellaert_git_github_doc_images_sphere2500-result.png' alt='image: 11_Users_dellaert_git_github_doc_images_sphere2500-result.png' />
-<span class='float-caption-Standard float-caption float-caption-standard'>Figure 9:  <a id="fig_w100_1" />
+<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65629'><img style='width:70%;' src='intro-images/11_Users_dellaert_git_github_doc_images_sphere2500-result.png' alt='image: 11_Users_dellaert_git_github_doc_images_sphere2500-result.png' ></img>
+<span class='float-caption-Standard float-caption float-caption-standard'>Figure 9:  <a id="fig_w100_1" ></a>
 3D plot of sphere example (due to Michael Kaess). The very wrong initial estimate, derived from odometry, is shown in green. The optimized trajectory is shown red. Code below:</span></div>
 </div>
 
@@ -2057,12 +2057,12 @@ optimizer = LevenbergMarquardtOptimizer(graph, initial);
 result = optimizer.optimizeSafely();
 plot3DTrajectory(result, 'r-', false); axis equal;
 </pre></div>
-<h2 class="section" id='magicparlabel-65635'><span class="section_label">5</span> <a id="sec_Landmark_based_SLAM" />
+<h2 class="section" id='magicparlabel-65635'><span class="section_label">5</span> <a id="sec_Landmark_based_SLAM" ></a>
 Landmark-based SLAM</h2>
 <h3 class="subsection" id='magicparlabel-65636'><span class="subsection_label">5.1</span> Basics</h3>
 
-<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65641'><img style='width:80%;' src='intro-images/12_Users_dellaert_git_github_doc_images_FactorGraph4.png' alt='image: 12_Users_dellaert_git_github_doc_images_FactorGraph4.png' />
-<span class='float-caption-Standard float-caption float-caption-standard'>Figure 10:  <a id="fig_SLAM" />
+<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65641'><img style='width:80%;' src='intro-images/12_Users_dellaert_git_github_doc_images_FactorGraph4.png' alt='image: 12_Users_dellaert_git_github_doc_images_FactorGraph4.png' ></img>
+<span class='float-caption-Standard float-caption float-caption-standard'>Figure 10:  <a id="fig_SLAM" ></a>
 Factor graph for landmark-based SLAM</span></div>
 </div>
 
@@ -2078,15 +2078,15 @@ Factor graph for landmark-based SLAM</span></div>
  </mrow></math> has the usual prior on it.</div>
 
 
-<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65655'><img style='width:47%;' src='intro-images/13_Users_dellaert_git_github_doc_images_example2.png' alt='image: 13_Users_dellaert_git_github_doc_images_example2.png' />
-<span class='float-caption-Standard float-caption float-caption-standard'>Figure 11:  <a id="fig_PlanarSLAMExample" />
+<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65655'><img style='width:47%;' src='intro-images/13_Users_dellaert_git_github_doc_images_example2.png' alt='image: 13_Users_dellaert_git_github_doc_images_example2.png' ></img>
+<span class='float-caption-Standard float-caption float-caption-standard'>Figure 11:  <a id="fig_PlanarSLAMExample" ></a>
 The optimized result along with covariance ellipses for both poses (in green) and landmarks (in blue). Also shown are the trajectory (red) and landmark sightings (cyan).</span></div>
 </div>
 
 
 <div class="standard" id='magicparlabel-65660'>The factor graph from Figure <a href="#fig_SLAM">10</a> can be created using the MATLAB code in Listing <a href="#listing_PlanarSLAMExample">5.1</a>. As before, on line 2 we create the factor graph, and Lines 8-18 create the prior/odometry chain we are now familiar with. However, the code on lines 20-25 is new: it creates three <b>measurement factors</b>, in this case &ldquo;bearing/range&rdquo; measurements from the pose to the landmark.</div>
 
-<div class="standard" id='magicparlabel-65661'><br />
+<div class="standard" id='magicparlabel-65661'><br>
 </div>
 
 <div class="standard" id='magicparlabel-65662'><pre>% Create graph container and add factors to it
@@ -2141,8 +2141,8 @@ Values with 5 values:
 <div class="standard" id='magicparlabel-65679'> Indeed, the keys generated by symbol are automatically detected by the <em><b>print</b></em> method in the <em><b>Values</b></em> class, and rendered in human-readable form &ldquo;x1&rdquo;, &ldquo;l2&rdquo;, etc, rather than as large, unwieldy integers. This magic extends to most factors and other classes where the <b>Key</b> type is used.</div>
 <h3 class="subsection" id='magicparlabel-65684'><span class="subsection_label">5.3</span> A Larger Example</h3>
 
-<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65689'><img style='width:90%;' src='intro-images/14_Users_dellaert_git_github_doc_images_littleRobot.png' alt='image: 14_Users_dellaert_git_github_doc_images_littleRobot.png' />
-<span class='float-caption-Standard float-caption float-caption-standard'>Figure 12:  <a id="fig_littleRobot" />
+<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65689'><img style='width:90%;' src='intro-images/14_Users_dellaert_git_github_doc_images_littleRobot.png' alt='image: 14_Users_dellaert_git_github_doc_images_littleRobot.png' ></img>
+<span class='float-caption-Standard float-caption float-caption-standard'>Figure 12:  <a id="fig_littleRobot" ></a>
 A larger example with about 100 poses and 30 or so landmarks, as produced by gtsam_examples/PlanarSLAMExample_graph.m</span></div>
 </div>
 
@@ -2150,20 +2150,20 @@ A larger example with about 100 poses and 30 or so landmarks, as produced by gts
 <div class="standard" id='magicparlabel-65694'>GTSAM comes with a slightly larger example that is read from a .graph file by PlanarSLAMExample_graph.m, shown in Figure <a href="#fig_littleRobot">12</a>. To not clutter the figure only the marginals are shown, not the lines of sight. This example, with 119 (multivariate) variables and 517 factors optimizes in less than 10 ms.</div>
 <h3 class="subsection" id='magicparlabel-65695'><span class="subsection_label">5.4</span> A Real-World Example</h3>
 
-<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65700'><img style='width:90%;' src='intro-images/15_Users_dellaert_git_github_doc_images_Victoria.png' alt='image: 15_Users_dellaert_git_github_doc_images_Victoria.png' />
-<span class='float-caption-Standard float-caption float-caption-standard'>Figure 13:  <a id="fig_Victoria_1" />
+<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65700'><img style='width:90%;' src='intro-images/15_Users_dellaert_git_github_doc_images_Victoria.png' alt='image: 15_Users_dellaert_git_github_doc_images_Victoria.png' ></img>
+<span class='float-caption-Standard float-caption float-caption-standard'>Figure 13:  <a id="fig_Victoria_1" ></a>
 Small section of optimized trajectory and landmarks (trees detected in a laser range finder scan) from data recorded in Sydney's Victoria Park (dataset due to Jose Guivant, U. Sydney).</span></div>
 </div>
 
 
 <div class="standard" id='magicparlabel-65705'>A real-world example is shown in Figure <a href="#fig_Victoria_1">13</a>, using data from a well known dataset collected in Sydney's Victoria Park, using a truck equipped with a laser range-finder. The covariance matrices in this figure were computed very efficiently, as explained in detail in (<a href='#LyXCite-Kaess09ras'><span class="bib-abbrvciteauthor">Kaess and Dellaert</span>, <span class="bib-year">2009</span></a>). The exact covariances (blue, smaller ellipses) obtained by our fast algorithm coincide with the exact covariances based on full inversion (orange, mostly hidden by blue). The much larger conservative covariance estimates (green, large ellipses) were based on our earlier work in (<a href='#LyXCite-Kaess08tro'><span class="bib-abbrvciteauthor">Kaess et al.</span>, <span class="bib-year">2008</span></a>).</div>
 
-<div class="standard" id='magicparlabel-65706'><br />
+<div class="standard" id='magicparlabel-65706'><br>
 </div>
 <h2 class="section" id='magicparlabel-65707'><span class="section_label">6</span> Structure from Motion</h2>
 
-<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65712'><img style='width:80%;' src='intro-images/16_Users_dellaert_git_github_doc_images_cube.png' alt='image: 16_Users_dellaert_git_github_doc_images_cube.png' />
-<span class='float-caption-Standard float-caption float-caption-standard'>Figure 14:  <a id="fig_SFMExample" />
+<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65712'><img style='width:80%;' src='intro-images/16_Users_dellaert_git_github_doc_images_cube.png' alt='image: 16_Users_dellaert_git_github_doc_images_cube.png' ></img>
+<span class='float-caption-Standard float-caption float-caption-standard'>Figure 14:  <a id="fig_SFMExample" ></a>
 An optimized &ldquo;Structure from Motion&rdquo; with 10 cameras arranged in a circle, observing the 8 vertices of a <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mn>20</mn><mo> &times; </mo><mn>20</mn><mo> &times; </mo><mn>20</mn>
@@ -2266,7 +2266,7 @@ end
 
 <div class="standard" id='magicparlabel-65731'>The example involves eight 3D points that are seen from eight successive camera poses. Hence in the first step -which is omitted here- all eight landmarks and the first pose are properly initialized. In the code this is done by perturbing the known ground truth, but in a real application great care is needed to properly initialize poses and landmarks, especially in a monocular sequence.</div>
 
-<div class="standard" id='magicparlabel-65732'><br />
+<div class="standard" id='magicparlabel-65732'><br>
 <pre>int relinearizeInterval = 3;
 NonlinearISAM isam(relinearizeInterval);
 
@@ -2299,7 +2299,7 @@ for (size_t i = 1; i &lt; poses.size(); ++i) {
 <li class="enumerate_item">Create an initial estimate for all newly introduced variables. In this small example, all landmarks have been observed in frame 1 and hence the only new variable that needs to be initialized at each time step is the new pose. This is done in lines 20-22. Note we assume a good initial estimate is available as <em>initial_x[i]</em>.</li>
 <li class="enumerate_item">Finally, we call <em>isam.update()</em>, which takes the factors and initial estimates, and incrementally updates the solution, which is available through the method <em>isam.estimate()</em>, if desired.</li>
 </ol>
-<div class="standard" id='magicparlabel-65737'><br />
+<div class="standard" id='magicparlabel-65737'><br>
 </div>
 <h2 class="section" id='magicparlabel-65738'><span class="section_label">8</span> More Applications</h2>
 <div class="standard" id='magicparlabel-65739'>While a detailed discussion of all the things you can do with GTSAM will take us too far, below is a small survey of what you can expect to do, and which we did using GTSAM.</div>
@@ -2307,8 +2307,8 @@ for (size_t i = 1; i &lt; poses.size(); ++i) {
 
 <h3 class="subsection" id='magicparlabel-65754'><span class="subsection_label">8.1</span> Conjugate Gradient Optimization</h3>
 
-<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65759'><img style='width:70%;' src='intro-images/17_Users_dellaert_git_github_doc_images_Beijing.png' alt='image: 17_Users_dellaert_git_github_doc_images_Beijing.png' />
-<span class='float-caption-Standard float-caption float-caption-standard'>Figure 15:  <a id="fig_Beijing" />
+<div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65759'><img style='width:70%;' src='intro-images/17_Users_dellaert_git_github_doc_images_Beijing.png' alt='image: 17_Users_dellaert_git_github_doc_images_Beijing.png' ></img>
+<span class='float-caption-Standard float-caption float-caption-standard'>Figure 15:  <a id="fig_Beijing" ></a>
  A map of Beijing, with a spanning tree shown in black, and the remaining <em>loop-closing</em> constraints shown in red. A spanning tree can be used as a <em>preconditioner</em> by GTSAM.</span></div>
 </div>
 
@@ -2325,7 +2325,7 @@ for (size_t i = 1; i &lt; poses.size(); ++i) {
 <h2 class="section_" id='magicparlabel-65773'>Acknowledgements</h2>
 <div class="standard" id='magicparlabel-65774'>GTSAM was made possible by the efforts of many collaborators at Georgia Tech and elsewhere, including but not limited to Doru Balcan, Chris Beall, Alex Cunningham, Alireza Fathi, Eohan George, Viorela Ila, Yong-Dian Jian, Michael Kaess, Kai Ni, Carlos Nieto, Duy-Nguyen Ta, Manohar Paluri, Christian Potthast, Richard Roberts, Grant Schindler, and Stephen Williams. In addition, Paritosh Mohan helped me with the manual. Many thanks all for your hard work!</div>
 
-<div class="standard" id='magicparlabel-65775'><br />
+<div class="standard" id='magicparlabel-65775'><br>
 <h2 class='bibtex'>References</h2><div class='bibtex'><div class='bibtexentry' id='LyXCite-Davison03iccv'><span class='bibtexlabel'>Davison 2003</span><span class='bibtexinfo'><span class="bib-fullnames:author">Davison, A.J.</span>, "<span class="bib-title">Real-Time Simultaneous Localisation and Mapping with a Single Camera</span>", in <i><span class="bib-booktitle">Intl. Conf. on Computer Vision (ICCV)</span></i> (<span class="bib-year">2003</span>), pp. <span class="bib-pages">1403-1410</span>.</span></div>
 <div class='bibtexentry' id='LyXCite-Dellaert06ijrr'><span class='bibtexlabel'>Dellaert and Kaess 2006</span><span class='bibtexinfo'><span class="bib-fullnames:author">Dellaert, F. and Kaess, M.</span>, "<span class="bib-title">Square Root SAM: Simultaneous Localization and Mapping via Square Root Information Smoothing</span>", <i><span class="bib-journal">Intl. J. of Robotics Research</span></i>  <span class="bib-volume">25</span>, <span class="bib-number">12</span> (<span class="bib-year">2006</span>), pp. <span class="bib-pages">1181--1203</span>.</span></div>
 <div class='bibtexentry' id='LyXCite-Dellaert99b'><span class='bibtexlabel'>Dellaert et al. 1999</span><span class='bibtexinfo'><span class="bib-fullnames:author">Dellaert, F., Fox, D., Burgard, W., and Thrun, S.</span>, "<span class="bib-title">Using the Condensation Algorithm for Robust, Vision-based Mobile Robot Localization</span>", in <i><span class="bib-booktitle">IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)</span></i> (<span class="bib-year">1999</span>).</span></div>
