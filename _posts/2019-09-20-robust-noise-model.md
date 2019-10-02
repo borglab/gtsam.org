@@ -39,59 +39,37 @@ We begin by reviewing techniques for paramter estimation as outlined by the [tut
 
 ## Parameter Estimation - A Short Tutorial
 
-Given some measurements $z$, a common problem we encounter is estimating some parameters $\theta$, such that we can model the system 
+Given some measurements $z$ from a landmark $x$, a common problem we encounter is estimating some parameters $\theta$, such that we can model the system process
 
-\\[ f(z, \theta) = 0 \\]
+\\[ \vert\vert f(x, \theta) - z \vert\vert^2 = 0 \\]
 
 This is a ubiquitous problem seen in multiple domains of perception and robotics and is referred to as `parameter estimation`.
 
 More formally, let $p$ be the state/parameter vector of dimension _m_, containing the parameters we wish to estimate. Our measurement vector is $z$, and in general our measurements our corrupted by some zero-mean, gaussian distributed noise $\epsilon$, such that 
 
-\\[y = z + \epsilon \\]
+\\[z = y + \epsilon \\]
 
-However, we also usually make many more observations than we have parameters, and in that case, our original formulation $f(z, \theta) = 0$ no longer holds. Thus, our problem boils down to optimizing a function $F(z, y)$, which we refer to as __the cost function__ or __the objective function__.
+where $y$ is the true measurement.
 
-A standard framework to estimate the parameters is via Conic Fitting in the Least-Squares formulation. A conic can be described as
+However, we also usually make many more observations than we have parameters, and in that case, our original formulation $\vert\vert f(x, \theta) - z \vert\vert^2 = 0$ no longer holds since it is overdetermined. Thus, our problem boils down to optimizing the function $F(\theta; x, z) = \vert\vert f(x, \theta) - z \vert\vert^2$, which we refer to as __the cost function__ or __the objective function__. The term $f(x_i, \theta) - z_i$ is also known as the residual and we will denote it by $r_i$, thus the problem becomes one of optimizing for squared residuals. A standard framework to estimate the parameters is via the Least-Squares formulation.
 
-\\[Q(x, y) = Ax^2 + 2Bxy + Cy^2 + 2Dx + 2Ey + F = 0 \\]
+For pedagogical purposes, we shall use our running examples of `SE(2)` estimation: given some features in the first image $\textbf{x} = (x_1, ..., x_n)$, features in the second image $\textbf{x'} = (x_1', ..., x_n')$, and the matches between corresponding features in the images, our goal is to estimate the `SE(2)` transformation that gives us the second image from the first image.
 
-conditioned on **A** and **C** not being simultaneously zero.
-We can then describe our conic via the 5-vector:
+Thus, our least squares objective can easily be modeled as
 
-\\[ p = [A, B, C, D, E]^T \\].
+\\[ E = \sum_i \vert\vert f(x; \theta) - x' \vert\vert^2 \\]
 
-Now since $\vert\vert p \vert\vert^2$ can not be zero for a conic (a.k.a. a degenerate solution), we can set $\vert\vert p \vert\vert = 1$ to remove the arbitrary scale factor in the conic equation. The system equation then becomes
+where $\theta$ is a parameter encompassing all our individual parameters (3 degrees of freedom for `SE(2)`).
 
-\\[ a_i^Tp = 0 \\]
-with $\vert\vert p \vert\vert = 1$, where $a_i = [a_1, a_2, ..., a_n]^T$.
+However, our measurement functions are generally non-linear, and this is also true for `SE(2)` transformations. Hence, we need to linearize the measurement function around an estimate of $\theta$. This can be done via the __Taylor expansion__
 
-The final system of equations can then be modeled as:
+\\[ f(x; \theta + \Delta\theta) = f(x; \theta) + J(x; \theta)\Delta\theta \\]
 
-\\[ Ap = 0 \\]
+which gives us
 
-and the function to minimize becomes
+\\[ E_{NLS} = \sum_i \vert\vert f(x_i; \theta) + J(x_i; \theta)\Delta\theta - x_i' \vert\vert^2 \\]
 
-\\[ F(p) = (Ap)^T(Ap) = p^TBp \\]
-
-where $B = A^TA$ is a symmetric matrix. The solution of this function is the singular vector of A (or the eigenvector of B) corresponding to the smallest singular value of A (or smallest eigen value of B).
-
-In this case, we are using the algebraic distance but this has some poor properties which gives us suboptimal results, for example different points contribute differently based on their position on the conic. To alleviate this issue, we should use the orthogonal distance as our error metric, which are invariant to transformations in Euclidean space. This is illustrated in the figure below, courtesy of [1]. Thus, our new optimization objective becomes
-
-\\[ F(p) = \sum_{i=1}^{n} d^2_{i} \\]
-
-where _d_ is defined as 
-
-\\[ d = \sqrt{(x - x_0 - \Delta_x)^2 + (y - y_0 - \Delta_y)^2}  \\]
-
-with 
-
-\\[ \Delta_x = x_t - x_0, \Delta_y = y_t - y_0 \\]
-
-where $(x_t, y_t)$ is the point on the conic, $(x, y)$ is our measurement, and $(x_0, y_0)$ is our coordinate frame origin (a.k.a the center of the ellipse). We refer the reader to [1] for an in-depth derivation of the above optimization objective.
-
-![orthogonal distance in conics](/assets/images/robust_estimators/orthogonal_distance.png)
-
-Since $d_i$ is complicated, we need to use iterative optimization procedures such as Gauss-Newton, Levenberg-Marquardt, etc, which come ready-to-use with GTSAM. This gives us the familiar __Ordinary Least Squares__ optimization process.
+Since this formulation is linear, we can solve it via either the SVD method, or via iterative optimization procedures such as Gauss-Newton, Levenberg-Marquardt, etc, which come ready-to-use with GTSAM. This gives us the familiar __Ordinary Least Squares__ optimization process.
 
 ## Robust Error Models
 
