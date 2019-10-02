@@ -58,7 +58,7 @@ Our measurement functions are generally non-linear, and hence we need to lineari
 
 This gives us the following linearized least squares objective function:
 
-\\[ E_{LS, \theta_0} = \sum_i \vert\vert f(x_i; \theta) + J(x_i; \theta)\Delta\theta - x_i' \vert\vert^2 \\]
+\\[ E_{LS, \theta_0} = \sum_i \vert\vert f(\theta; x_i) + J(\theta; x_i)\Delta\theta - x_i' \vert\vert^2 \\]
 
 Since the above is now linear in $\Delta\theta$, GTSAM can solve it using either sparse Cholesky or QR factorization.
 
@@ -74,17 +74,13 @@ One answer to this question is a family of models known as __Robust Error Models
 
 To allow for optimization, we define $rho$ to be a symmetric, positive-definite function, thus it has a unique minimum at zero, and is less increasing than square. The benefit of this formulation is that we can now solve the above minimization objective as an __Iteratively Reweighted Least Squares__ problem.
 
-The M-estimator of the parameter vector __p__ based on $\rho$ is the value of __p__ which solves
+The M-estimator of the parameter vector $p$ based on $\rho$ is the value of $p$ which solves
 
 \\[ \sum_i \psi(r_i)\frac{\delta r_i}{\delta p_j} = 0 \\]
 
 for $j = 1, ..., m$ (recall that the maximum/minimum of a function is at the point its derivative is equal to zero).
 
-Here, $\psi(x) = \frac{\delta \rho(x)}{\delta x}$ is called the __influence function__, which we can use to define a __weight function__ 
-
-\\[ w(x) = \frac{\psi{x}}{x} \\]
-
-giving the original derivative as
+Here, $\psi(x) = \frac{\delta \rho(x)}{\delta x}$ is called the __influence function__, which we can use to define a __weight function__ $w(x) = \frac{\psi{x}}{x}$ giving the original derivative as
 
 \\[ \sum_i w(r_i) r_i \frac{\delta r_i}{\delta p_j} = 0 \\]
 
@@ -124,9 +120,9 @@ Below we list some of the common estimators from the literature and which are av
 
 ## Example with Huber Noise Model
 
-Now it's time for the real deal. So far we've spoken about robust estimators from a theoretical perspective, with an application to cone fitting that doesn't really give intuition about the power of this technique. From a pedagogical perspective, it would be imperative to add a concrete example to demonstrate the power of a robust error model, which in this specific case is the **Huber M-estimator**, though any other provided M-estimator can be used depending on the application or preference.
+Now it's time for the real deal. So far we've spoken about how great robust estimators are, and how they can be easily modeled in a least squares objective, but having a concrete example and application can really help illuminate these concepts and demonstrate the power of a robust error model. In this specific case we use the **Huber M-estimator**, though any other provided M-estimator can be used depending on the application or preference.
 
-For our example application, we model the case of estimating an $SE(2)$ transformation between two images, a scenario commonly seen in PoseSLAM applications. For our images, we use an example image of crayon boxes retrieved from the internet, since this image lends itself to good feature detection.
+For our example application, the estimation of an $SE(2)$ transformation between two image (a scenario commonly seen in PoseSLAM applications), our source image is one of crayon boxes retrieved from the internet, since this image lends itself to good feature detection.
 
 ![original image](/assets/images/robust_estimators/original_image.png)
 
@@ -173,7 +169,7 @@ result.print("Final Result:\n");
 ```  
 
 It is important to note that our initial estimate for the transform values is pretty arbitrary.
-Running the above code give us the transform values `(6.26294, -14.6573, 0.153888)`. As you can see, these values are not very good estimates, and this error can quickly accumulate to really throw off our estimates.
+Running the above code give us the transform values `(6.26294, -14.6573, 0.153888)`. As you can see, these values are not good estimates, and this error can quickly throw off our system.
 
 Now how about we try using M-estimators via the built-in robust error models? This is a single line change as illustrated below:
 
@@ -207,7 +203,7 @@ for (vector<tuple<int, Point2, int, Point2>>::iterator it = matches.begin();
 
     // Add the Point2 expression variable, an initial estimate, and the measurement noise.
     // The graph takes in factors with the robust error model.
-    // This is the only change we have in our code example.
+    // NOTE: This is the only change we have in our code example.
     graph.addExpressionFactor(predicted, measurement, huber);
 }
 
@@ -218,9 +214,9 @@ result.print("Final Result:\n");
 
 This version of the code gives us the $SE(2)$ values `(4.75419, 3.60199, 0.139674)` which is pretty accurate, despite the initial estimate for the transform being arbitrary. This makes it apparent that the use of robust estimators and subsequently robust error models is the way to go for use cases where outliers are a concern. Of course, providing better initial estimates will only improve the final estimate.
 
-But you may ask how does this compare to our dear old friend RANSAC? Surely RANSAC can perform as well as using the robust error model, so why do we even need all this extra overhead? Using the OpenCV implementation of RANSAC, a similar pipeline gives use the following $SE(2)$ values: `(4.77360, 3.69461, 0.13960)`.
+You may ask how does this compare to our dear old friend RANSAC? Using the OpenCV implementation of RANSAC, a similar pipeline gives use the following $SE(2)$ values: `(4.77360, 3.69461, 0.13960)`.
 
-That's pretty close too, so why go through the headache of using robust error models? For one, unlike RANSAC, robust error models are deterministic and possess defined behavior. Moreover, one does not need to run multiple runs of optimization to obtain a consistent result, compared to RANSAC which may require hundreds of runs to converge to a good result.
+<!-- That's pretty close too, so why go through the headache of using robust error models? For one, unlike RANSAC, robust error models are deterministic and possess defined behavior. Moreover, one does not need to run multiple runs of optimization to obtain a consistent result, compared to RANSAC which may require hundreds of runs to converge to a good result. -->
 
 
 <!-- ## Robust Error Models + RANSAC -->
@@ -229,6 +225,6 @@ That's pretty close too, so why go through the headache of using robust error mo
 
 In this post, we have seen the basics of parameter estimation, a ubiquitous mathematical framework for many perception and robotics problems, and we have seen how this framework is susceptible to perturbations from outliers which can throw off the final estimate. More importantly, we have seen how a simple tool called the Robust M-estimator can easily help us deal with these outliers and their effects. An example case for $SE(2)$ transform estimation demonstrates not only their ease of use with GTSAM, but also the efficacy of the solution generated, especially when compared to widely used alternatives such as RANSAC. 
 
-Furthermore, robust estimators are deterministic, ameliorating the need for performing a large number of random restarts as is the case for RANSAC, which means our solution is also more computationally efficient. With the benefits of speed, accuracy, and ease of use, robust error models make a strong case for their adoption for many related problems and we hope you will give them a shot the next time you use GTSAM.
+Furthermore, robust estimators are deterministic, ameliorating the need for the complexity that comes inherent with RANSAC. While RANSAC is a great tool, robust error models provide us with a solid alternative to be considered. With the benefits of speed, accuracy, and ease of use, robust error models make a strong case for their adoption for many related problems and we hope you will give them a shot the next time you use GTSAM.
 
 [1]: https://www.microsoft.com/en-us/research/wp-content/uploads/2016/11/RR-2676.pdf
