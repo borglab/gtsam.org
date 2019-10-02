@@ -9,11 +9,11 @@ email: <varunagrawal@gatech.edu>
 
 ## Introduction
 
-Robust Error Models are powerful tools for supplementing parameter estimation algorithms with the added capabilities of modeling outliers. Parameter estimation is a fundamental tool used in many fields, especially in perception and robotics, and thus performing robust parameter estimation across a wide range of applications and scenarios is crucial to strong performance for many applications. This necessitates the need to manage outliers in our measurements, and Robust Error Models provide us the means to do so.
+Robust error models are powerful tools for supplementing parameter estimation algorithms with the added capabilities of modeling outliers. Parameter estimation is a fundamental tool used in many fields, especially in perception and robotics, and thus performing robust parameter estimation across a wide range of applications and scenarios is crucial to strong performance for many applications. This necessitates the need to manage outliers in our measurements, and robust error models provide us the means to do so. Robust error models are amenable to easy plug-and-play use in pre-existing optimization frameworks, requiring minimal changes to existing pipelines.
 
-The properties of Robust Error Models can even help obviate the need for more complex, non-deterministic algorithms such as Random Sample Consensus (a.k.a. RANSAC), a fundamental tool for parameter estimation in many a roboticist's toolbox for years. While RANSAC has proven to work well in practice, it is not robust to outliers, necessitating the need for a substantially high number runs of RANSAC to converge to a good solution. By leveraging Robust Error Models, we advocate for more robust approaches to parameter estimation which are less sensitive to outliers, but are conceptually easy and intuitive like RANSAC. Moreover, these approaches are amenable to easy plug-and-play use in pre-existing optimization frameworks, requiring minimal changes to existing pipelines.
+Using robust error models can even obviate the need for more complex, non-deterministic algorithms such as Random Sample Consensus (a.k.a. RANSAC), a fundamental tool for parameter estimation in many a roboticist's toolbox for years. While RANSAC has proven to work well in practice, it might need a high number of runs to converge to a good solution. Robust error models are conceptually easy and intuitive and can be used by themselves or in conjunction with RANSAC.
 
-In this blog post, we demonstrate the capabilities of Robust Error Models, models that downweight outliers to provide better estimates of the final outliers which are less influenced by these outliers. To better motivate the benefits of Robust Error Models, take a look at the below images. We show, in order, an image, its warped form, and the recovered image from the `SE(2)` transformation estimation. The first image is from the ground truth transform, the second one is using RANSAC, the next one is using a vanilla parameter estimation approach, and the last one uses Robust Error Models. As you can see, while the vanilla optimization result is poor compared to the ground truth, the RANSAC and the Robust Error Model recover the transformation nicely, with the Robust Error Model's result being comparable to the RANSAC one.
+In this blog post, we demonstrate the capabilities of robust error models which downweigh outliers to provide better estimates of the parameters of interest. To better motivate the benefits of robust error models, take a look at the below images. We show, in order, an image, its warped form, and the recovered image from the $SE(2)$ transformation estimation. The first image is from the ground truth transform, the second one is using RANSAC, the next one is using a vanilla parameter estimation approach, and the last one uses robust error models. As you can see, while the vanilla least-squares optimization result is poor compared to the ground truth, the RANSAC and the robust error model recover the transformation correctly, with the robust error model's result being comparable to the RANSAC one.
 
 <figure>
   <img src="/assets/images/robust_estimators/ground_truth_images.png" alt="my alt text"/>
@@ -32,50 +32,41 @@ In this blog post, we demonstrate the capabilities of Robust Error Models, model
 
 <figure>
   <img src="/assets/images/robust_estimators/robust_model_images.png" alt="my alt text"/>
-  <figcaption>Image warping and recovery using robust error models with parameter estimation. These results are comparable to the ones from RANSAC, demonstrating the promise of Robust Error Models.</figcaption>
+  <figcaption>Image warping and recovery using robust error models with parameter estimation. These results are comparable to the ones from RANSAC, demonstrating the promise of robust error models.</figcaption>
 </figure>
 
-We begin by reviewing techniques for paramter estimation as outlined by the [tutorial by Zhengyou Zhang][1]. We then explain robust error models, showcasing their ease of use with factor graph based optimization on a simple `SE(2)` estimation problem, instead of on generic cone fitting problems. Finally, we show that given robust error models, we can easily combine them with RANSAC to give us very good results which supercede either approach.
+<!-- We begin by reviewing techniques for parameter estimation as outlined by the [tutorial by Zhengyou Zhang][1]. We then explain robust error models, showcasing their ease of use with factor graph based optimization on a simple $SE(2)$ estimation problem, instead of on generic cone fitting problems. Finally, we show that given robust error models, we can easily combine them with RANSAC to give us very good results which supercede either approach. -->
 
 ## Parameter Estimation - A Short Tutorial
 
-Given some measurements $z$ from a landmark $x$, a common problem we encounter is estimating some parameters $\theta$, such that we can model the system process
+We begin by reviewing techniques for parameter estimation as outlined by the [tutorial by Zhengyou Zhang][1], as applied to our $SE(2)$. Given some matches $\{(x,x')\}$ between the two images, we want to estimate the the $SE(2)$ parameters $\theta$ that transform a feature $x$ in the first image to a feature $x'$ in the  second image:
 
-\\[ \vert\vert f(x, \theta) - z \vert\vert^2 = 0 \\]
+\\[ x' = f(\theta ; x) \\]
 
-This is a ubiquitous problem seen in multiple domains of perception and robotics and is referred to as `parameter estimation`.
+Of course, this generalizes to other transformations, including 3D-2D problems. This is a ubiquitous problem seen in multiple domains of perception and robotics and is referred to as __parameter estimation__.
 
-More formally, let $p$ be the state/parameter vector of dimension _m_, containing the parameters we wish to estimate. Our measurement vector is $z$, and in general our measurements our corrupted by some zero-mean, gaussian distributed noise $\epsilon$, such that 
+A standard framework to estimate the parameters is via the Least-Squares formulation. We usually have many more observations than we have parameters, i.e., the problem is now overdetermined. To handle this, we minimize the sum of square __residuals__ $f(\theta ; x_i) - x'_i$, for $i\in1\ldots N$:
 
-\\[z = y + \epsilon \\]
+\\[ E_{LS}(\theta) =  \sum_i \vert\vert f(\theta ; x_i) - x'_i \vert\vert^2 \\]
 
-where $y$ is the true measurement.
+which we refer to as __the cost function__ or __the objective function__.
+In the case of $SE(2)$ the parameters $\theta$ should be some parameterization of a transformation matrix, having three degrees of freedom (DOF). A simple way to accomplish this is to have $\theta=(x,y,\alpha)$.
 
-However, we also usually make many more observations than we have parameters, and in that case, our original formulation $\vert\vert f(x, \theta) - z \vert\vert^2 = 0$ no longer holds since it is overdetermined. Thus, our problem boils down to optimizing the function $F(\theta; x, z) = \vert\vert f(x, \theta) - z \vert\vert^2$, which we refer to as __the cost function__ or __the objective function__. The term $f(x_i, \theta) - z_i$ is also known as the residual and we will denote it by $r_i$, thus the problem becomes one of optimizing for squared residuals. A standard framework to estimate the parameters is via the Least-Squares formulation.
+Our measurement functions are generally non-linear, and hence we need to linearize the measurement function around an estimate of $\theta$. GTSAM will iteratively do so via optimization procedures such as Gauss-Newton, Levenberg-Marquardt, or Dogleg. Linearization is done via the __Taylor expansion__ around a linearization point $\theta_0$:
 
-For pedagogical purposes, we shall use our running examples of `SE(2)` estimation: given some features in the first image $\textbf{x} = (x_1, ..., x_n)$, features in the second image $\textbf{x'} = (x_1', ..., x_n')$, and the matches between corresponding features in the images, our goal is to estimate the `SE(2)` transformation that gives us the second image from the first image.
+\\[ f(\theta + \Delta\theta; x) = f(\theta; x) + J(\theta; x)\Delta\theta \\]
 
-Thus, our least squares objective can easily be modeled as
+This gives us the following linearized least squares objective function:
 
-\\[ E = \sum_i \vert\vert f(x; \theta) - x' \vert\vert^2 \\]
+\\[ E_{LS, \theta_0} = \sum_i \vert\vert f(x_i; \theta) + J(x_i; \theta)\Delta\theta - x_i' \vert\vert^2 \\]
 
-where $\theta$ is a parameter encompassing all our individual parameters (3 degrees of freedom for `SE(2)`).
-
-However, our measurement functions are generally non-linear, and this is also true for `SE(2)` transformations. Hence, we need to linearize the measurement function around an estimate of $\theta$. This can be done via the __Taylor expansion__
-
-\\[ f(x; \theta + \Delta\theta) = f(x; \theta) + J(x; \theta)\Delta\theta \\]
-
-which gives us
-
-\\[ E_{NLS} = \sum_i \vert\vert f(x_i; \theta) + J(x_i; \theta)\Delta\theta - x_i' \vert\vert^2 \\]
-
-Since this formulation is linear, we can solve it via either the SVD method, or via iterative optimization procedures such as Gauss-Newton, Levenberg-Marquardt, etc, which come ready-to-use with GTSAM. This gives us the familiar __Ordinary Least Squares__ optimization process.
+Since the above is now linear in $\Delta\theta$, GTSAM can solve it using either sparse Cholesky or QR factorization.
 
 ## Robust Error Models
 
 We have derived the basic parameter optimization approach in the previous section and seen how the choice of the optimization function affects the optimality of our solution. However, another aspect we need to take into account is the effect of outliers on our optimization and final parameter values.
 
-By default, the optimization objectives outlined above try to model all measurements equally. This means that in the presence of outliers, the optimization process might give us parameter estimates that try to fit these outliers, sacrificing accuracy on the inliers. More formally, given the *residual* $r_i$ of the $i^{th}$ datum, i.e. the difference between the $i^{th}$ observation and the fitted value, the standard least squares approach attempts to optimize the sum of all the squared residuals. This can lead to the estimated parameters being distorted due to the equal weighting of all data points. Surely, there must be a way for the objective to model inliers and outliers in a clever way based on the residual errors?
+By default, the optimization objectives outlined above try to model all measurements equally. This means that in the presence of outliers, the optimization process might give us parameter estimates that try to fit these outliers, sacrificing accuracy on the inliers. More formally, given the *residual* $r_i$ of the $i^{th}$ match, i.e. the difference between the $i^{th}$ observation and the fitted value, the standard least squares approach attempts to optimize the sum of all the squared residuals. This can lead to the estimated parameters being distorted due to the equal weighting of all data points. Surely, there must be a way for the objective to model inliers and outliers in a clever way based on the residual errors?
 
 One answer to this question is a family of models known as __Robust Error Models__ or __M-estimators__. The M-estimators try to reduce the effect of outliers by replacing the squared residuals with a function of the residuals $\rho$ that weighs each residual term by some value:
 
@@ -99,7 +90,7 @@ giving the original derivative as
 
 which is exactly the system of equations we obtain from iterated reweighted least squares.
 
-In layman's terms, the influence function $\psi(x)$ measures the influence of a data point on the value of the parameter estimate. This way, the estimated parameters are intelligent to outliers and only sensitive to inliers, since the are no longer susceptible to being significantly modified by a single datum, thus making them __robust__.
+In layman's terms, the influence function $\psi(x)$ measures the influence of a data point on the value of the parameter estimate. This way, the estimated parameters are intelligent to outliers and only sensitive to inliers, since the are no longer susceptible to being significantly modified by a single match, thus making them __robust__.
 
 ### M-estimator Constraints
 
@@ -135,11 +126,11 @@ Below we list some of the common estimators from the literature and which are av
 
 Now it's time for the real deal. So far we've spoken about robust estimators from a theoretical perspective, with an application to cone fitting that doesn't really give intuition about the power of this technique. From a pedagogical perspective, it would be imperative to add a concrete example to demonstrate the power of a robust error model, which in this specific case is the **Huber M-estimator**, though any other provided M-estimator can be used depending on the application or preference.
 
-For our example application, we model the case of estimating an `SE(2)` transformation between two images, a scenario commonly seen in PoseSLAM applications. For our images, we use an example image of crayon boxes retrieved from the internet, since this image lends itself to good feature detection.
+For our example application, we model the case of estimating an $SE(2)$ transformation between two images, a scenario commonly seen in PoseSLAM applications. For our images, we use an example image of crayon boxes retrieved from the internet, since this image lends itself to good feature detection.
 
 ![original image](/assets/images/robust_estimators/original_image.png)
 
-To model an `SE(2)` transformation, we apply a perspective transform to the image. The transformation applied is `(x, y, theta) = (4.711, 3.702, 0.13963)`. This gives us a ground truth value to compare our methods against. The transformed image can be seen below.
+To model an $SE(2)$ transformation, we apply a perspective transform to the image. The transformation applied is `(x, y, theta) = (4.711, 3.702, 0.13963)`. This gives us a ground truth value to compare our methods against. The transformed image can be seen below.
 
 ![Warped image](/assets/images/robust_estimators/transformed_image.png)
 
@@ -225,9 +216,9 @@ Values result = LevenbergMarquardtOptimizer(graph, initial).optimize();
 result.print("Final Result:\n");
 ```
 
-This version of the code gives us the `SE(2)` values `(4.75419, 3.60199, 0.139674)` which is pretty accurate, despite the initial estimate for the transform being arbitrary. This makes it apparent that the use of robust estimators and subsequently robust error models is the way to go for use cases where outliers are a concern. Of course, providing better initial estimates will only improve the final estimate.
+This version of the code gives us the $SE(2)$ values `(4.75419, 3.60199, 0.139674)` which is pretty accurate, despite the initial estimate for the transform being arbitrary. This makes it apparent that the use of robust estimators and subsequently robust error models is the way to go for use cases where outliers are a concern. Of course, providing better initial estimates will only improve the final estimate.
 
-But you may ask how does this compare to our dear old friend RANSAC? Surely RANSAC can perform as well as using the robust error model, so why do we even need all this extra overhead? Using the OpenCV implementation of RANSAC, a similar pipeline gives use the following `SE(2)` values: `(4.77360, 3.69461, 0.13960)`.
+But you may ask how does this compare to our dear old friend RANSAC? Surely RANSAC can perform as well as using the robust error model, so why do we even need all this extra overhead? Using the OpenCV implementation of RANSAC, a similar pipeline gives use the following $SE(2)$ values: `(4.77360, 3.69461, 0.13960)`.
 
 That's pretty close too, so why go through the headache of using robust error models? For one, unlike RANSAC, robust error models are deterministic and possess defined behavior. Moreover, one does not need to run multiple runs of optimization to obtain a consistent result, compared to RANSAC which may require hundreds of runs to converge to a good result.
 
@@ -236,7 +227,7 @@ That's pretty close too, so why go through the headache of using robust error mo
 
 ## Conclusion
 
-In this post, we have seen the basics of parameter estimation, a ubiquitous mathematical framework for many perception and robotics problems, and we have seen how this framework is susceptible to perturbations from outliers which can throw off the final estimate. More importantly, we have seen how a simple tool called the Robust M-estimator can easily help us deal with these outliers and their effects. An example case for `SE(2)` transform estimation demonstrates not only their ease of use with GTSAM, but also the efficacy of the solution generated, especially when compared to widely used alternatives such as RANSAC. 
+In this post, we have seen the basics of parameter estimation, a ubiquitous mathematical framework for many perception and robotics problems, and we have seen how this framework is susceptible to perturbations from outliers which can throw off the final estimate. More importantly, we have seen how a simple tool called the Robust M-estimator can easily help us deal with these outliers and their effects. An example case for $SE(2)$ transform estimation demonstrates not only their ease of use with GTSAM, but also the efficacy of the solution generated, especially when compared to widely used alternatives such as RANSAC. 
 
 Furthermore, robust estimators are deterministic, ameliorating the need for performing a large number of random restarts as is the case for RANSAC, which means our solution is also more computationally efficient. With the benefits of speed, accuracy, and ease of use, robust error models make a strong case for their adoption for many related problems and we hope you will give them a shot the next time you use GTSAM.
 
