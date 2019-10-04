@@ -13,27 +13,19 @@ Robust error models are powerful tools for supplementing parameter estimation al
 
 Using robust error models can even obviate the need for more complex, non-deterministic algorithms such as Random Sample Consensus (a.k.a. RANSAC), a fundamental tool for parameter estimation in many a roboticist's toolbox for years. While RANSAC has proven to work well in practice, it might need a high number of runs to converge to a good solution. Robust error models are conceptually easy and intuitive and can be used by themselves or in conjunction with RANSAC.
 
-In this blog post, we demonstrate the capabilities of robust error models which downweigh outliers to provide better estimates of the parameters of interest. To better motivate the benefits of robust error models, take a look at the below images. We show, in order, an image, its warped form, and the recovered image from the $SE(2)$ transformation estimation. The first image is from the ground truth transform, the second one is using RANSAC, the next one is using a vanilla parameter estimation approach, and the last one uses robust error models. As you can see, while the vanilla least-squares optimization result is poor compared to the ground truth, the RANSAC and the robust error model recover the transformation correctly, with the robust error model's result being comparable to the RANSAC one.
+In this blog post, we demonstrate the capabilities of robust error models which downweigh outliers to provide better estimates of the parameters of interest. To better motivate the benefits of robust error models, take a look at the images below. We show two books next to each other, transformed by an $SE(2)$ transform, and the same image with some manually labeled point matches between the two books. We have added some outliers to more realistically model the problem.
 
 <figure>
-  <img src="/assets/images/robust_estimators/ground_truth_images.png" alt="my alt text"/>
-  <figcaption>Image warping and recovery using ground truth SE(2) transform.</figcaption>
+  <img src="/assets/images/robust_estimators/se2_books.png" alt="SE(2) books"/>
+  <figcaption>Two books on a plane separated by an SE(2) transform.</figcaption>
 </figure>
 
 <figure>
-  <img src="/assets/images/robust_estimators/ransac_images.png" alt="my alt text"/>
-  <figcaption>Image warping and recovery using RANSAC.</figcaption>
+  <img src="/assets/images/robust_estimators/se2_matches.png" alt="Matches between books"/>
+  <figcaption>Matches between the 2 books.</figcaption>
 </figure>
 
-<figure>
-  <img src="/assets/images/robust_estimators/vanilla_model_images.png" alt="my alt text"/>
-  <figcaption>Image warping and recovery using plain old parameter estimation. You can see tha the 3rd image does not line up correctly.</figcaption>
-</figure>
-
-<figure>
-  <img src="/assets/images/robust_estimators/robust_model_images.png" alt="my alt text"/>
-  <figcaption>Image warping and recovery using robust error models with parameter estimation. These results are comparable to the ones from RANSAC, demonstrating the promise of robust error models.</figcaption>
-</figure>
+As we will see later in the post, the estimates from the two methods are quite similar, even though the ratio of inliers to outliers is $2:1$.
 
 <!-- We begin by reviewing techniques for parameter estimation as outlined by the [tutorial by Zhengyou Zhang][1]. We then explain robust error models, showcasing their ease of use with factor graph based optimization on a simple $SE(2)$ estimation problem, instead of on generic cone fitting problems. Finally, we show that given robust error models, we can easily combine them with RANSAC to give us very good results which supercede either approach. -->
 
@@ -122,15 +114,12 @@ Below we list some of the common estimators from the literature and which are av
 
 Now it's time for the real deal. So far we've spoken about how great robust estimators are, and how they can be easily modeled in a least squares objective, but having a concrete example and application can really help illuminate these concepts and demonstrate the power of a robust error model. In this specific case we use the **Huber M-estimator**, though any other provided M-estimator can be used depending on the application or preference.
 
-For our example application, the estimation of an $SE(2)$ transformation between two image (a scenario commonly seen in PoseSLAM applications), our source image is one of crayon boxes retrieved from the internet, since this image lends itself to good feature detection.
+For our example application, the estimation of an $SE(2)$ transformation between two objects (a scenario commonly seen in PoseSLAM applications), we go back to our image of the two books from the introduction, which we have manually labeled with matches and outliers. A RANSAC estimate using the matches gives us the $SE(2)$ paramters `(347.15593, 420.31040, 0.39645)`.
 
-![original image](/assets/images/robust_estimators/original_image.png)
-
-To model an $SE(2)$ transformation, we apply a perspective transform to the image. The transformation applied is `(x, y, theta) = (4.711, 3.702, 0.13963)`. This gives us a ground truth value to compare our methods against. The transformed image can be seen below.
-
-![Warped image](/assets/images/robust_estimators/transformed_image.png)
-
-We run the standard pipeline of SIFT feature extraction and FLANN+KDTree based matching to obtain a set of matches. At this point we are ready to evaluate the different methods of estimating the transformation.
+<figure>
+  <img src="/assets/images/robust_estimators/se2_matches.png" alt="Matches between books"/>
+  <figcaption>Matches between the 2 books.</figcaption>
+</figure>
 
 To begin, we apply a straightforward optimization process based on Factor Graphs. Using GTSAM, this can be achieved in a few lines of code. We show the core part of the example below, omitting the housekeeping and data loading for brevity.
 
@@ -169,7 +158,7 @@ result.print("Final Result:\n");
 ```  
 
 It is important to note that our initial estimate for the transform values is pretty arbitrary.
-Running the above code give us the transform values `(6.26294, -14.6573, 0.153888)`. As you can see, these values are not good estimates, and this error can quickly throw off our system.
+Running the above code give us the transform values `(305.751, 520.127, 0.284743)`, which when compared to the RANSAC estimate doesn't look so good.
 
 Now how about we try using M-estimators via the built-in robust error models? This is a single line change as illustrated below:
 
@@ -212,9 +201,43 @@ Values result = LevenbergMarquardtOptimizer(graph, initial).optimize();
 result.print("Final Result:\n");
 ```
 
-This version of the code gives us the $SE(2)$ values `(4.75419, 3.60199, 0.139674)` which is pretty accurate, despite the initial estimate for the transform being arbitrary. This makes it apparent that the use of robust estimators and subsequently robust error models is the way to go for use cases where outliers are a concern. Of course, providing better initial estimates will only improve the final estimate.
+This version of the parameter estimation gives us the $SE(2)$ transform `(363.76, 458.966, 0.392419)`. Quite close for only 15 total matches, especially considering 5 of the 10 were outliers! The estimates are expected to improve with more matches to further constrain the problem.
+
+As an alternate example, we look at an induced $SE(2)$ transform and try to estimate it from scratch (no manual match labeling. Our source image is one of crayon boxes retrieved from the internet, since this image lends itself to good feature detection.
+
+![original image](/assets/images/robust_estimators/original_image.png)
+
+To model an $SE(2)$ transformation, we apply a perspective transform to the image. The transformation applied is `(x, y, theta) = (4.711, 3.702, 0.13963)`. This gives us a ground truth value to compare our methods against. The transformed image can be seen below.
+
+![Warped image](/assets/images/robust_estimators/transformed_image.png)
+
+We run the standard pipeline of SIFT feature extraction and FLANN+KDTree based matching to obtain a set of matches. At this point we are ready to evaluate the different methods of estimating the transformation.
+
+The vanilla version of the parameter estimation gives us `(6.26294, -14.6573, 0.153888)` which is pretty bad. However, the version with robust error models gives us `(4.75419, 3.60199, 0.139674)`, which is a far better estimate when compared to the ground truth, despite the initial estimate for the transform being arbitrary. This makes it apparent that the use of robust estimators and subsequently robust error models is the way to go for use cases where outliers are a concern. Of course, providing better initial estimates will only improve the final estimate.
 
 You may ask how does this compare to our dear old friend RANSAC? Using the OpenCV implementation of RANSAC, a similar pipeline gives use the following $SE(2)$ values: `(4.77360, 3.69461, 0.13960)`.
+
+We show, in order, the original image, its warped form, and the recovered image from the $SE(2)$ transformation estimation. The first image is from the ground truth transform, the second one is using RANSAC, the next one is using a vanilla parameter estimation approach, and the last one uses robust error models. As you can see, while the vanilla least-squares optimization result is poor compared to the ground truth, the RANSAC and the robust error model recover the transformation correctly, with the robust error model's result being comparable to the RANSAC one.
+
+<figure>
+  <img src="/assets/images/robust_estimators/ground_truth_images.png" alt="ground truth"/>
+  <figcaption>Image warping and recovery using ground truth SE(2) transform.</figcaption>
+</figure>
+
+<figure>
+  <img src="/assets/images/robust_estimators/ransac_images.png" alt="ransac"/>
+  <figcaption>Image warping and recovery using RANSAC.</figcaption>
+</figure>
+
+<figure>
+  <img src="/assets/images/robust_estimators/vanilla_model_images.png" alt="vanilla"/>
+  <figcaption>Image warping and recovery using plain old parameter estimation. You can see that the 3rd image does not line up correctly.</figcaption>
+</figure>
+
+<figure>
+  <img src="/assets/images/robust_estimators/robust_model_images.png" alt="robust error model"/>
+  <figcaption>Image warping and recovery using robust error models with parameter estimation. These results are comparable to the ones from RANSAC, demonstrating the promise of robust error models.</figcaption>
+</figure>
 
 <!-- That's pretty close too, so why go through the headache of using robust error models? For one, unlike RANSAC, robust error models are deterministic and possess defined behavior. Moreover, one does not need to run multiple runs of optimization to obtain a consistent result, compared to RANSAC which may require hundreds of runs to converge to a good result. -->
 
