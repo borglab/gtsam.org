@@ -16,12 +16,14 @@ Using robust error models can even obviate the need for more complex, non-determ
 In this blog post, we demonstrate the capabilities of robust error models which downweigh outliers to provide better estimates of the parameters of interest. To better motivate the benefits of robust error models, take a look at the images below. We show two books next to each other, transformed by an $SE(2)$ transform, and the same image with some manually labeled point matches between the two books. We have added some outliers to more realistically model the problem.
 
 <figure>
-  <img src="/assets/images/robust_estimators/se2_books.png" alt="SE(2) books"/>
+  <img src="/assets/images/robust_estimators/se2_books.png"
+    height="800" width="600" alt="SE(2) books"/>
   <figcaption>Two books on a plane separated by an SE(2) transform.</figcaption>
 </figure>
 
 <figure>
-  <img src="/assets/images/robust_estimators/se2_matches.png" alt="Matches between books"/>
+  <img src="/assets/images/robust_estimators/se2_matches.png"
+    height="800" width="600" alt="Matches between books"/>
   <figcaption>Matches between the 2 books.</figcaption>
 </figure>
 
@@ -64,7 +66,7 @@ One answer to this question is a family of models known as __Robust Error Models
 
 \\[ p = min \sum_i^n \rho(r_i) \\]
 
-To allow for optimization, we define $rho$ to be a symmetric, positive-definite function, thus it has a unique minimum at zero, and is less increasing than square. The benefit of this formulation is that we can now solve the above minimization objective as an __Iteratively Reweighted Least Squares__ problem.
+To allow for optimization, we define $\rho$ to be a symmetric, positive-definite function, thus it has a unique minimum at zero, and is less increasing than square. The benefit of this formulation is that we can now solve the above minimization objective as an __Iteratively Reweighted Least Squares__ problem.
 
 The M-estimator of the parameter vector $p$ based on $\rho$ is the value of $p$ which solves
 
@@ -160,7 +162,7 @@ result.print("Final Result:\n");
 It is important to note that our initial estimate for the transform values is pretty arbitrary.
 Running the above code give us the transform values `(305.751, 520.127, 0.284743)`, which when compared to the RANSAC estimate doesn't look so good.
 
-Now how about we try using M-estimators via the built-in robust error models? This is a single line change as illustrated below:
+Now how about we try using M-estimators via the built-in robust error models? This is a two line change as illustrated below:
 
 ```cpp
 // This is the value we wish to estimate
@@ -176,6 +178,7 @@ initial.insert(0, Pose2(1, 1, 0.01));
 // We assume the same noise model for all points (since it is the same camera)
 auto measurementNoise = noiseModel::Isotropic::Sigma(2, 1.0);
 
+/********* First change *********/
 // We define our robust error model here, providing the default parameter value for the estimator.
 auto huber = noiseModel::Robust::Create(noiseModel::mEstimator::Huber::Create(1.345), measurementNoise);
 
@@ -192,7 +195,7 @@ for (vector<tuple<int, Point2, int, Point2>>::iterator it = matches.begin();
 
     // Add the Point2 expression variable, an initial estimate, and the measurement noise.
     // The graph takes in factors with the robust error model.
-    // NOTE: This is the only change we have in our code example.
+    /********* Second change *********/
     graph.addExpressionFactor(predicted, measurement, huber);
 }
 
