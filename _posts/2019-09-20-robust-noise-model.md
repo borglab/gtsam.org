@@ -9,27 +9,18 @@ email: <varunagrawal@gatech.edu>
 
 ## Introduction
 
+<figure>
+  <img src="/assets/images/robust_estimators/se2_matches.png"
+    height="800" width="600" alt="Matches between books"/>
+  <figcaption><b>Figure 1</b> Two books on a plane separated by an SE(2) transform, and some manually selected feature matches between them. There are some clearly incorrect matches, which are __outliers__.</figcaption>
+</figure>
+
 Robust error models are powerful tools for supplementing parameter estimation algorithms with the added capabilities of modeling outliers. Parameter estimation is a fundamental tool used in many fields, especially in perception and robotics, and thus performing robust parameter estimation across a wide range of applications and scenarios is crucial to strong performance for many applications. This necessitates the need to manage outliers in our measurements, and robust error models provide us the means to do so. Robust error models are amenable to easy plug-and-play use in pre-existing optimization frameworks, requiring minimal changes to existing pipelines.
 
 Using robust error models can even obviate the need for more complex, non-deterministic algorithms such as Random Sample Consensus (a.k.a. RANSAC), a fundamental tool for parameter estimation in many a roboticist's toolbox for years. While RANSAC has proven to work well in practice, it might need a high number of runs to converge to a good solution. Robust error models are conceptually easy and intuitive and can be used by themselves or in conjunction with RANSAC.
 
-In this blog post, we demonstrate the capabilities of robust error models which downweigh outliers to provide better estimates of the parameters of interest. To better motivate the benefits of robust error models, take a look at the images below. We show two books next to each other, transformed by an $SE(2)$ transform, and the same image with some manually labeled point matches between the two books. We have added some outliers to more realistically model the problem.
-
-<figure>
-  <img src="/assets/images/robust_estimators/se2_books.png"
-    height="800" width="600" alt="SE(2) books"/>
-  <figcaption>Two books on a plane separated by an SE(2) transform.</figcaption>
-</figure>
-
-<figure>
-  <img src="/assets/images/robust_estimators/se2_matches.png"
-    height="800" width="600" alt="Matches between books"/>
-  <figcaption>Matches between the 2 books.</figcaption>
-</figure>
-
-As we will see later in the post, the estimates from the two methods are quite similar, even though the ratio of inliers to outliers is $2:1$.
-
-<!-- We begin by reviewing techniques for parameter estimation as outlined by the [tutorial by Zhengyou Zhang][1]. We then explain robust error models, showcasing their ease of use with factor graph based optimization on a simple $SE(2)$ estimation problem, instead of on generic cone fitting problems. Finally, we show that given robust error models, we can easily combine them with RANSAC to give us very good results which supercede either approach. -->
+In this blog post, we demonstrate the capabilities of robust error models which downweigh outliers to provide better estimates of the parameters of interest. To illustrate the benefits of robust error models, take a look at __Figure 1__. We show two books next to each other, transformed by an $SE(2)$ transform, with some manually labeled point matches between the two books. We have added some outliers to more realistically model the problem.
+As we will see later in the post, the estimates from RANSAC and a robust estimation procedure are quite similar, even though the ratio of inliers to outliers is $2:1$.
 
 ## Parameter Estimation - A Short Tutorial
 
