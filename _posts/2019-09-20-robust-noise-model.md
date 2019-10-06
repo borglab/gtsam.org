@@ -5,14 +5,14 @@ categories:
 ---
 
 Author: Varun Agrawal  
-email: <varunagrawal@gatech.edu>
+Website: [varunagrawal.github.io](varunagrawal.github.io)
 
 ## Introduction
 
-<figure>
+<figure class="center">
   <img src="/assets/images/robust_estimators/se2_matches.png"
-    height="800" width="600" alt="Matches between books"/>
-  <figcaption><b>Figure 1</b> Two books on a plane separated by an SE(2) transform, and some manually selected feature matches between them. There are some clearly incorrect matches, which are __outliers__.</figcaption>
+    alt="Matches between books"/>
+  <figcaption><b>Figure 1</b> Two books on a plane separated by an SE(2) transform, and some manually selected feature matches between them. There are some clearly incorrect matches, which are <b>outliers</b>.</figcaption>
 </figure>
 
 Robust error models are powerful tools for supplementing parameter estimation algorithms with the added capabilities of modeling outliers. Parameter estimation is a fundamental tool used in many fields, especially in perception and robotics, and thus performing robust parameter estimation across a wide range of applications and scenarios is crucial to strong performance for many applications. This necessitates the need to manage outliers in our measurements, and robust error models provide us the means to do so. Robust error models are amenable to easy plug-and-play use in pre-existing optimization frameworks, requiring minimal changes to existing pipelines.
@@ -109,9 +109,9 @@ Now it's time for the real deal. So far we've spoken about how great robust esti
 
 For our example application, the estimation of an $SE(2)$ transformation between two objects (a scenario commonly seen in PoseSLAM applications), we go back to our image of the two books from the introduction, which we have manually labeled with matches and outliers. A RANSAC estimate using the matches gives us the $SE(2)$ paramters `(347.15593, 420.31040, 0.39645)`.
 
-<figure>
+<figure class="center">
   <img src="/assets/images/robust_estimators/se2_matches.png" alt="Matches between books"/>
-  <figcaption>Matches between the 2 books.</figcaption>
+  <figcaption><b>Figure 2</b>: Matches between the 2 books.</figcaption>
 </figure>
 
 To begin, we apply a straightforward optimization process based on Factor Graphs. Using GTSAM, this can be achieved in a few lines of code. We show the core part of the example below, omitting the housekeeping and data loading for brevity.
@@ -213,22 +213,22 @@ You may ask how does this compare to our dear old friend RANSAC? Using the OpenC
 
 We show, in order, the original image, its warped form, and the recovered image from the $SE(2)$ transformation estimation. The first image is from the ground truth transform, the second one is using RANSAC, the next one is using a vanilla parameter estimation approach, and the last one uses robust error models. As you can see, while the vanilla least-squares optimization result is poor compared to the ground truth, the RANSAC and the robust error model recover the transformation correctly, with the robust error model's result being comparable to the RANSAC one.
 
-<figure>
+<figure class="center">
   <img src="/assets/images/robust_estimators/ground_truth_images.png" alt="ground truth"/>
   <figcaption>Image warping and recovery using ground truth SE(2) transform.</figcaption>
 </figure>
 
-<figure>
+<figure class="center">
   <img src="/assets/images/robust_estimators/ransac_images.png" alt="ransac"/>
   <figcaption>Image warping and recovery using RANSAC.</figcaption>
 </figure>
 
-<figure>
+<figure class="center">
   <img src="/assets/images/robust_estimators/vanilla_model_images.png" alt="vanilla"/>
   <figcaption>Image warping and recovery using plain old parameter estimation. You can see that the 3rd image does not line up correctly.</figcaption>
 </figure>
 
-<figure>
+<figure class="center">
   <img src="/assets/images/robust_estimators/robust_model_images.png" alt="robust error model"/>
   <figcaption>Image warping and recovery using robust error models with parameter estimation. These results are comparable to the ones from RANSAC, demonstrating the promise of robust error models.</figcaption>
 </figure>
