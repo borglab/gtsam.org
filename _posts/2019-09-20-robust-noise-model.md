@@ -5,7 +5,7 @@ categories:
 ---
 
 Author: Varun Agrawal  
-Website: [varunagrawal.github.io](varunagrawal.github.io)
+Website: [varunagrawal.github.io](https://varunagrawal.github.io)
 
 (*__Psst__, be sure to clone/download GTSAM 4.0.2 which resolves a bug in the Huber model discussed below, for correct weight behavior*)
 
