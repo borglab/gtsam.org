@@ -55,19 +55,17 @@ We have derived the basic parameter optimization approach in the previous sectio
 
 By default, the optimization objectives outlined above try to model all measurements equally. This means that in the presence of outliers, the optimization process might give us parameter estimates that try to fit these outliers, sacrificing accuracy on the inliers. More formally, given the *residual* $r_i$ of the $i^{th}$ match, i.e. the difference between the $i^{th}$ observation and the fitted value, the standard least squares approach attempts to optimize the sum of all the squared residuals. This can lead to the estimated parameters being distorted due to the equal weighting of all data points. Surely, there must be a way for the objective to model inliers and outliers in a clever way based on the residual errors?
 
-One answer to this question is a family of models known as __Robust Error Models__ or __M-estimators__. The M-estimators try to reduce the effect of outliers by replacing the squared residuals with a function of the residuals $\rho$ that weighs each residual term by some value:
+One way to tackle the presence of outliers is a family of models known as __Robust Error Models__ or __M-estimators__. The M-estimators try to reduce the effect of outliers by replacing the squared residuals with a function of the residuals $\rho$ that weighs each residual term by some value:
 
 \\[ p = min \sum_i^n \rho(r_i) \\]
 
-To allow for optimization, we define $\rho$ to be a symmetric, positive-definite function, thus it has a unique minimum at zero, and is less increasing than square. The benefit of this formulation is that we can now solve the above minimization objective as an __Iteratively Reweighted Least Squares__ problem.
+To allow for optimization, we define $\rho$ to be a symmetric, positive-definite function, thus it has a unique minimum at zero, and is less increasing than square.
 
-The M-estimator of the parameter vector $p$ based on $\rho$ is the value of $p$ which solves
+The benefit of this formulation is that we can now solve the above minimization objective as an __Iteratively Reweighted Least Squares__ problem. The M-estimator of the parameter vector $p$ based on $\rho$ is the value of the parameters which solves
 
 \\[ \sum_i \psi(r_i)\frac{\delta r_i}{\delta p_j} = 0 \\]
 
-for $j = 1, ..., m$ (recall that the maximum/minimum of a function is at the point its derivative is equal to zero).
-
-Here, $\psi(x) = \frac{\delta \rho(x)}{\delta x}$ is called the __influence function__, which we can use to define a __weight function__ $w(x) = \frac{\psi{x}}{x}$ giving the original derivative as
+for $j = 1, ..., m$ (recall that the maximum/minimum of a function is at the point its derivative is equal to zero). Above, $\psi(x) = \frac{\delta \rho(x)}{\delta x}$ is called the __influence function__, which we can use to define a __weight function__ $w(x) = \frac{\psi{x}}{x}$ giving the original derivative as
 
 \\[ \sum_i w(r_i) r_i \frac{\delta r_i}{\delta p_j} = 0 \\]
 
