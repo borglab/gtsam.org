@@ -26,26 +26,26 @@ As we will see later in the post, the estimates from RANSAC and a robust estimat
 
 ## Parameter Estimation - A Short Tutorial
 
-We begin by reviewing techniques for parameter estimation as outlined by the [tutorial by Zhengyou Zhang][1], as applied to our $SE(2)$. Given some matches $\{(x,x')\}$ between the two images, we want to estimate the the $SE(2)$ parameters $\theta$ that transform a feature $x$ in the first image to a feature $x'$ in the  second image:
+We begin by reviewing techniques for parameter estimation as outlined by the [tutorial by Zhengyou Zhang][1], as applied to our $SE(2)$. Given some matches $\{(s,s')\}$ between the two images, we want to estimate the the $SE(2)$ parameters $\theta$ that transform a feature $s$ in the first image to a feature $s'$ in the  second image:
 
-\\[ x' = f(\theta ; x) \\]
+\\[ s' = f(\theta ; s) \\]
 
 Of course, this generalizes to other transformations, including 3D-2D problems. This is a ubiquitous problem seen in multiple domains of perception and robotics and is referred to as __parameter estimation__.
 
-A standard framework to estimate the parameters is via the Least-Squares formulation. We usually have many more observations than we have parameters, i.e., the problem is now overdetermined. To handle this, we minimize the sum of square __residuals__ $f(\theta ; x_i) - x'_i$, for $i\in1\ldots N$:
+A standard framework to estimate the parameters is via the Least-Squares formulation. We usually have many more observations than we have parameters, i.e., the problem is now overdetermined. To handle this, we minimize the sum of square __residuals__ $f(\theta ; s_i) - s'_i$, for $i\in1\ldots N$:
 
-\\[ E_{LS}(\theta) =  \sum_i \vert\vert f(\theta ; x_i) - x'_i \vert\vert^2 \\]
+\\[ E_{LS}(\theta) =  \sum_i \vert\vert f(\theta ; s_i) - s'_i \vert\vert^2 \\]
 
 which we refer to as __the cost function__ or __the objective function__.
 In the case of $SE(2)$ the parameters $\theta$ should be some parameterization of a transformation matrix, having three degrees of freedom (DOF). A simple way to accomplish this is to have $\theta=(x,y,\alpha)$.
 
 Our measurement functions are generally non-linear, and hence we need to linearize the measurement function around an estimate of $\theta$. GTSAM will iteratively do so via optimization procedures such as Gauss-Newton, Levenberg-Marquardt, or Dogleg. Linearization is done via the __Taylor expansion__ around a linearization point $\theta_0$:
 
-\\[ f(\theta + \Delta\theta; x) = f(\theta; x) + J(\theta; x)\Delta\theta \\]
+\\[ f(\theta + \Delta\theta; s) = f(\theta; s) + J(\theta; s)\Delta\theta \\]
 
 This gives us the following linearized least squares objective function:
 
-\\[ E_{LS, \theta_0} = \sum_i \vert\vert f(\theta; x_i) + J(\theta; x_i)\Delta\theta - x_i' \vert\vert^2 \\]
+\\[ E_{LS, \theta_0} = \sum_i \vert\vert f(\theta; s_i) + J(\theta; s_i)\Delta\theta - s_i' \vert\vert^2 \\]
 
 Since the above is now linear in $\Delta\theta$, GTSAM can solve it using either sparse Cholesky or QR factorization.
 
@@ -85,7 +85,7 @@ While M-estimators provide us with significant benefits with respect to outlier 
 
 ### Common M-estimators
 
-Below we list some of the common estimators from the literature and which are available out of the box in GTSAM. We also provide accompanying graphs of the corresponding $\rho$ function, the influence function, and the weight function in order, allowing one to visualize the differences and effects of each estimators influence function.
+Below we list some of the common estimators from the literature and which are available out of the box in GTSAM. We also provide accompanying graphs of the corresponding __$\rho$ function__, the __influence function__, and the __weight function__ in order, allowing one to visualize the differences and effects of each estimators influence function.
 
 1. Fair
 ![fair m-estimator](/assets/images/robust_estimators/fair.png)
@@ -217,7 +217,7 @@ We show, in order, the original image, its warped form, and the recovered image 
 
 <figure class="center">
   <img src="/assets/images/robust_estimators/ground_truth_images.png" alt="ground truth"/>
-  <figcaption>Image warping and recovery using ground truth SE(2) transform.</figcaption>
+  <figcaption>Image warping and recovery using ground truth SE(2) transform. The first image is the original image, the 2nd image is the transformed image, and the last one is the image we get on applying the reverse $SE(2)$ transform.</figcaption>
 </figure>
 
 <figure class="center">
@@ -227,7 +227,7 @@ We show, in order, the original image, its warped form, and the recovered image 
 
 <figure class="center">
   <img src="/assets/images/robust_estimators/vanilla_model_images.png" alt="vanilla"/>
-  <figcaption>Image warping and recovery using plain old parameter estimation. You can see that the 3rd image does not line up correctly.</figcaption>
+  <figcaption>Image warping and recovery using plain old parameter estimation. You can see that the 3rd (recovered) image does not line up correctly.</figcaption>
 </figure>
 
 <figure class="center">
