@@ -1,8 +1,9 @@
 ---
 layout: gtsam-post
 title:  "LQR Control Using Factor Graphs"
-categories: 
 ---
+
+<link rel="stylesheet" href="/assets/css/slideshow.css">
 
 Authors: [Gerry Chen](https://gerry-chen.com) and [Yetong Zhang](mailto:yetong@gatech.edu)  
 
@@ -49,7 +50,121 @@ factors represent the state and control costs.
 </figure>
 
 ## Variable Elimination
-To minimize the least square objectives above, we can simply eliminate the factor graph from right to left. 
+To minimize the least square objectives above, we can simply eliminate the factor graph from right
+to left.
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
+  <div class="mySlides" style="text-align: center;">
+    <!-- <div class="numbertext">2 / 3</div> -->
+    <a name="fig_eliminate_x"></a>
+    <figure class="center">
+    <img src="/assets/images/lqr_control/elimination_steps/fg1.png"
+        alt="Elimination of state $x_2$" />
+        <figcaption><b>Figure 3a</b> Elimination of state $x_2$</figcaption>
+    </figure>
+  </div>
+  <div class="mySlides" style="text-align: center;">
+    <!-- <div class="numbertext">2 / 3</div> -->
+    <a name="fig_eliminate_x"></a>
+    <figure class="center">
+    <img src="/assets/images/lqr_control/elimination_steps/fg2.png"
+        alt="Elimination of state $x_2$" />
+        <figcaption><b>Figure 3b</b> Elimination of state $x_2$</figcaption>
+    </figure>
+  </div>
+  <div class="mySlides" style="text-align: center;">
+    <!-- <div class="numbertext">3 / 3</div> -->
+    <a name="fig_eliminate_u"></a>
+    <figure class="center">
+    <img src="/assets/images/lqr_control/elimination_steps/fg3.png"
+        alt="Elimination of state $u_1$" />
+        <figcaption><b>Figure 4a</b> Elimination of state $u_1$</figcaption>
+    </figure>
+  </div>
+  <div class="mySlides" style="text-align: center;">
+    <!-- <div class="numbertext">3 / 3</div> -->
+    <a name="fig_eliminate_u"></a>
+    <figure class="center">
+    <img src="/assets/images/lqr_control/elimination_steps/fg4.png"
+        alt="Elimination of state $u_1$" />
+        <figcaption><b>Figure 4b</b> Elimination of state $u_1$</figcaption>
+    </figure>
+  </div>
+  <div class="mySlides" style="text-align: center;">
+    <!-- <div class="numbertext">3 / 3</div> -->
+    <a name="fig_bayes_net"></a>
+    <figure class="center">
+    <img src="/assets/images/lqr_control/elimination_steps/fg5.png"
+        alt="Bayes net" />
+        <figcaption><b>Figure 5a</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
+    </figure>
+  </div>
+  <div class="mySlides" style="text-align: center;">
+    <!-- <div class="numbertext">3 / 3</div> -->
+    <a name="fig_bayes_net"></a>
+    <figure class="center">
+    <img src="/assets/images/lqr_control/elimination_steps/fg6.png"
+        alt="Bayes net" />
+        <figcaption><b>Figure 5b</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
+    </figure>
+  </div>
+  <div class="mySlides" style="text-align: center;">
+    <!-- <div class="numbertext">3 / 3</div> -->
+    <a name="fig_bayes_net"></a>
+    <figure class="center">
+    <img src="/assets/images/lqr_control/elimination_steps/fg7.png"
+        alt="Bayes net" />
+        <figcaption><b>Figure 5c</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
+    </figure>
+  </div>
+  <div class="mySlides" style="text-align: center;">
+    <!-- <div class="numbertext">3 / 3</div> -->
+    <a name="fig_bayes_net"></a>
+    <figure class="center">
+    <img src="/assets/images/lqr_control/elimination_steps/fg8.png"
+        alt="Bayes net" />
+        <figcaption><b>Figure 5d</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
+    </figure>
+  </div>
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div> <!-- slideshow-container -->
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+  <span class="dot" onclick="currentSlide(7)"></span>
+  <span class="dot" onclick="currentSlide(8)"></span>
+</div>
+
+<style>
+.scrollablecontent::-webkit-scrollbar {
+    width: 5px;
+    height: 12px;
+}
+.scrollablecontent::-webkit-scrollbar-track {
+    background: transparent;
+}
+.scrollablecontent::-webkit-scrollbar-thumb {
+    background: #ddd;
+    visibility:hidden;
+}
+.scrollablecontent:hover::-webkit-scrollbar-thumb {
+    visibility:visible;
+}
+</style>
+
+<div class="scrollablecontent" markdown="1" id="sec:elim_scrollable"
+    style="overflow-y: scroll; height:400px; overflow-x: hidden; background-color:rgba(0,0,0,0.05); padding:0 8px;">
+<a id="sec:elim_state"></a>
 ### Eliminate a State
 Let us start at the last state, $x_2$. Gathering the three factors (marked in
 red [Figure 3](#fig_eliminate_x)), we have the following objective function
@@ -72,13 +187,8 @@ The above process is illustrated in [Figure 3](#fig_eliminate_x). Using the
 constrain, we eliminate variable $x_2$ as well as the two factors marked in red,
 and replace them with a new binary factor on $x_1$ and $u_1$, marked in blue.
 
-<a name="fig_eliminate_x"></a>
-<figure class="center">
-  <img src="/assets/images/lqr_control/VE/eliminate_x.png"
-    alt="Elimination of state $x_2$" />
-    <figcaption><b>Figure 3</b> Elimination of state $x_2$</figcaption>
-</figure>
-
+<!-- ************************ CONTROL ************************ -->
+<a id="sec:elim_ctrl"></a>
 ### Eliminate a Control
 Note that [(6)](#eq:potential_simplified) defines an (unnormalized) joint
 Gaussian density on variables $x_1$ and $u_1$. We solve for the mean of $u_1$ by
@@ -106,30 +216,20 @@ BKx_1) \\\\
 \end{aligned} \\]
 with $V_1$ properly defined.
 
-<a name="fig_eliminate_u"></a>
-<figure class="center">
-  <img src="/assets/images/lqr_control/VE/eliminate_u.png"
-    alt="Elimination of state $u_1$" />
-    <figcaption><b>Figure 4</b> Elimination of state $u_1$</figcaption>
-</figure>
+As illustrated in [Figure 4](#fig_eliminate_u), through the above steps, we can eliminate variable
+$x_2$, $u_2$ as well as three factors marked in red, and replace them with a new factor on $x_1$
+marked in blue, with potential $x_1^TV_1x_1$ , which represents the marginalized cost on state
+$x_1$.
 
-As illustrated in [Figure 4](#fig_eliminate_u), through the above steps, we can eliminate variable $x_2$, $u_2$ as well as three factors marked in red, and replace them with a new factor on $x_1$ marked in blue, with potential $x_1^TV_1x_1$ , which represents the marginalized cost on state $x_1$.
-
-
-## Turning into a Bayes Network
+<a id="sec:elim_bayes"></a>
+### Turning into a Bayes Network
 By eliminating all the variables from right to left, we can get a Bayes network
 as shown in [Figure 5](#fig_bayes_net). Everytime we eliminate an older state
 and control, we simply repeat the steps in Section [Variable Elimination](#variable-elimination): we express the
 older state $x_{k+1}$ with the dynamics model, and express the control $u_k$ as
 a function of state $x_k$, then generate a new factor on $x_k$ representing the
 cost function $x_k^TV_kx_k$.
-
-<a name="fig_bayes_net"></a>
-<figure class="center">
-  <img src="/assets/images/lqr_control/VE/bayesnet_lqr.png"
-    alt="Bayes net" />
-    <figcaption><b>Figure 5</b> Bayes net</figcaption>
-</figure>
+</div>
 
 ## Connection with Linear Quadratic Regulator
 In \cite{}, the control rule and cost function for LQR is given by
@@ -158,6 +258,9 @@ projects to:
 
 A brief example of the open-loop finite horizon LQR problem using
 factor graphs is shown below:
+
+<div markdown="1" class="scrollablecontent" style="overflow: auto; height:600px;">
+
 ```python
 def solve_lqr(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500):
     '''Solves a discrete, finite horizon LQR problem given system dynamics in
@@ -219,6 +322,7 @@ def solve_lqr(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500):
     
     return x_sol, u_sol
 ```
+</div>
 
 <br />
 <hr />
@@ -375,4 +479,89 @@ and
 \\[ \begin{aligned} 
     u_t &= K_t x_t
 \end{aligned} \\]
-which match the algorithm for solving the finite-horizon discrete-time LQR problem.  As the number of time steps grows, the solution for $V_0$ approaches the stationary solution to the algebraic Ricatti equation and the solution for $K_0$ approaches the solution to the infinite-horizon discrete-time LQR problem.
+which match the algorithm for solving the finite-horizon discrete-time LQR problem.  As the number
+of time steps grows, the solution for $V_0$ approaches the stationary solution to the algebraic
+Ricatti equation and the solution for $K_0$ approaches the solution to the infinite-horizon
+discrete-time LQR problem.
+
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+    showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+    showSlides(slideIndex = n);
+    }
+
+    function setNodesHidden(nodes, hidden) {
+    for (node of nodes) {
+        node.hidden = hidden
+    }
+    }
+
+    function showSlides(n, triggeredByScroll) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+
+    var scrollable = document.getElementById("sec:elim_scrollable");
+    var scrollLoc_state = document.getElementById("sec:elim_state").offsetTop - scrollable.offsetTop;
+    var scrollLoc_ctrl = document.getElementById("sec:elim_ctrl").offsetTop - scrollable.offsetTop;
+    var scrollLoc_bayes = document.getElementById("sec:elim_bayes").offsetTop - scrollable.offsetTop;
+    var scrollLoc;
+    switch(slideIndex) {
+        case 1:
+        case 2:
+            scrollLoc = scrollLoc_state;
+            break;
+        case 3:
+        case 4:
+            scrollLoc = scrollLoc_ctrl;
+            break;
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+            scrollLoc = scrollLoc_bayes;
+            break;
+    }
+    if (typeof triggeredByScroll === 'undefined') {
+        scrollable.scrollTo(0, scrollLoc);
+    }
+    }
+
+    document.getElementById("sec:elim_scrollable").addEventListener("scroll", function (event) {
+        var scrollable = document.getElementById("sec:elim_scrollable");
+        var scrollLoc_state = document.getElementById("sec:elim_state").offsetTop - scrollable.offsetTop;
+        var scrollLoc_ctrl = document.getElementById("sec:elim_ctrl").offsetTop - scrollable.offsetTop;
+        var scrollLoc_bayes = document.getElementById("sec:elim_bayes").offsetTop - scrollable.offsetTop;
+        
+        var scroll = this.scrollTop;
+        if (scroll < scrollLoc_ctrl) {
+            if (slideIndex > 2) {showSlides(slideIndex=1, true)}
+        }
+        else if (scroll < (scrollable.scrollHeight - scrollable.offsetHeight)) {
+            if ((slideIndex < 3) || (slideIndex > 4)) {showSlides(slideIndex=3, true)}
+        }
+        else {
+            if ((slideIndex < 5)) {showSlides(slideIndex=5, true)}
+        }
+        console.log(scroll)
+    });
+</script>
