@@ -5,13 +5,13 @@ title:  "LQR Control Using Factor Graphs"
 
 <link rel="stylesheet" href="/assets/css/slideshow.css">
 
-Authors: [Gerry Chen](https://gerry-chen.com) and [Yetong Zhang](mailto:yetong@gatech.edu)  
+Authors: [Gerry Chen](https://gerry-chen.com) and [Yetong Zhang](https://www.linkedin.com/in/yetong-zhang-9b810a105/)  
 
 ## Introduction
 <a name="LQR_example"></a>
 <figure class="center" style="width:90%;margin-bottom:">
-  <img src="/assets/images/lqr_control/LQR_FGvsRicatti.png"
-    alt="Comparison between LQR control as solved by factor graphs and by the Ricatti Equation. (they are the same)" style="margin-bottom:10px;"/>
+  <a href="/assets/images/lqr_control/LQR_FGvsRicatti.png"><img src="/assets/images/lqr_control/LQR_FGvsRicatti.png"
+    alt="Comparison between LQR control as solved by factor graphs and by the Ricatti Equation. (they are the same)" style="margin-bottom:10px;"/></a>
   <figcaption><b>Figure 1</b> Example LQR control solutions as solved by factor graphs (middle) and the traditional Discrete Algebraic Ricatti Equations (right).  The optimal control gains and cost-to-go factors are compared (left).  All plots show exact agreement between factor graph and Ricatti equation solutions.</figcaption>
 </figure>
 <br />
@@ -20,11 +20,12 @@ In this post we explain how optimal control problems can be formulated as factor
 In this post, we will mainly be concerned with the Linear Quadratic Regulator
 (LQR) as this problem conveys the essential ideas, though they can be
 extended to LQG, iLQR, DDP, and reinforcement learning (stay tuned for future
-posts).  We consider the discrete LQR problem, where the task is
-finding the optimal controls $u_k$ at consecutive time instances $t_k$ so that
+posts).  We consider the finite-horizon, discrete LQR problem (though the control law converges to
+the infinite-horizon case quite quickly as illustrated in [Figure 1a](#LQR_example)).  The task is
+to find the optimal controls $u_k$ at time instances $t_k$ so that
 a total cost is minimized, given [(1)](#eq:dyn_model) a dynamics model,
 [(2)](#eq:state_cost) a cost function on states, and [(3)](#eq:action_cost) a cost
-function on actions. In the linear quadratic case we assume these are of the
+function on actions. In the linear-quadratic case we assume these are of the
 form \cite{}:
 
 <a name="eq:dyn_model"></a> \\[ x_{k+1} = Ax_k + Bu_k \tag{1} \\]
@@ -37,7 +38,7 @@ The optimal controls over time can be obtained by minimizing the total cost:
 \\[ s.t. ~~ x_{t+1}=Ax_t+Bu_t ~~\text{for } t=1 \text{ to } T-1 \\]
 
 We can visualize the objective function and constraints in the form of a factor
-graph as shown in [Figure 1](#LQR_example). This is a simple Markov chain, with the oldest
+graph as shown in [Figure 2](#LQR_example). This is a simple Markov chain, with the oldest
 states and actions on the left, and the newest states and actions on the right. The
 ternary factors represent the dynamics model constraints and the unary
 factors represent the state and control costs.
@@ -50,10 +51,10 @@ factors represent the state and control costs.
 </figure>
 
 ## Variable Elimination
-To minimize the least square objectives above, we can simply eliminate the factor graph from right
+To optimize the factor graph, which represents minimizing the least square objectives above, we can simply eliminate the factors from right
 to left.
 
-<!-- Slideshow container -->
+<!-- Slideshow container, based on https://www.w3schools.com/howto/howto_js_slideshow.asp -->
 <div class="slideshow-container">
   <div class="mySlides" style="text-align: center;">
     <!-- <div class="numbertext">2 / 3</div> -->
@@ -145,6 +146,8 @@ to left.
   <span class="dot" onclick="currentSlide(8)"></span>
 </div>
 
+<!-- this css is to make the scroll bar disappear when the mouse isn't over the scrollable div...
+Taken from my website: https://github.com/gchenfc/gerrysworld2/blob/master/css/activity.css -->
 <style>
 .scrollablecontent::-webkit-scrollbar {
     width: 5px;
@@ -162,31 +165,32 @@ to left.
 }
 </style>
 
+<!-- ************************ BEGIN SCROLLABLE ELIMINATION DESCRIPTION ************************ -->
 <div class="scrollablecontent" markdown="1" id="sec:elim_scrollable"
-    style="overflow-y: scroll; height:400px; overflow-x: hidden; background-color:rgba(0,0,0,0.05); padding:0 8px;">
+    style="overflow-y: scroll; height:400px; overflow-x: hidden; background-color:rgba(0,0,0,0.05); padding:0 8px; margin-bottom: 10px;">
+<!-- ************************ STATE ************************ -->
 <a id="sec:elim_state"></a>
 ### Eliminate a State
 Let us start at the last state, $x_2$. Gathering the three factors (marked in
-red [Figure 3](#fig_eliminate_x)), we have the following objective function
-[(4)](#eq:potential) and constrain [(5)](#eq:constrain) on $x_1$, $u_1$ and $x_1$:
+red [Figure 3a](#fig_eliminate_x)), we have the following objective function, $\phi_1$, and constraint equation, [(4)](#eq:constrain), on $x_2$, $u_1$ and $x_1$:
 
 <a name="eq:potential"></a>
-\\[ \phi(x_1, u_1, x_2) = x_1^T Q x_1 + u_1^T R u_1 + x_2^T Q x_2
+\\[ \phi_1(x_1, u_1, x_2) = x_1^T Q x_1 + u_1^T R u_1 + x_2^T Q x_2
 \tag{4} \\]
 <a name="eq:constrain"></a>
 \\[ x_2 = Ax_1 + Bu_1 \tag{5} \\]
 
-By substituting $x_2$ with the constrain [(5)](#eq:constrain), we can rewrite
-[(4)](#eq:potential) into
+By substituting $x_2$ into [(4)](#eq:potential) using the [(5)](#eq:constrain), we can rewrite
+$\phi_1$ as a function of $x_1$ and $u_1$:
 
 <a name="eq:potential_simplified"></a>
-\\[ \phi(x_1, u_1) = x_1^T Q x_1 + u_1^T R u_1 + (Ax_1 + Bu_1)^T Q (Ax_1 + Bu_1)
+\\[ \phi_1(x_1, u_1) = x_1^T Q x_1 + u_1^T R u_1 + (Ax_1 + Bu_1)^T Q (Ax_1 + Bu_1)
 \tag{6} \\]
 
-The above process is illustrated in [Figure 3](#fig_eliminate_x). Using the
-constrain, we eliminate variable $x_2$ as well as the two factors marked in red,
-and replace them with a new binary factor on $x_1$ and $u_1$, marked in blue.
-
+The resulting factor graph is illustrated in [Figures 3a](#fig_eliminate_x) and
+[3b](#fig_eliminate_x). To summarize, we used the dynamics constraint to eliminate variable
+$x_2$ as well as the two factors marked in red, and replace them with a new binary factor on $x_1$
+and $u_1$, marked in blue.
 <!-- ************************ CONTROL ************************ -->
 <a id="sec:elim_ctrl"></a>
 ### Eliminate a Control
@@ -203,44 +207,65 @@ u_1 &= -(R+B^TQB)^{-1}B^TQAx_1 \tag{7} \\\\
 \end{aligned} \\]
 <!-- \\[ u_1 = -(R+B^TQB)^{-1}B^TQAx_1 ~~~~(~= K_1x_1~) \tag{7} \\] -->
 
-with $K$ properly defined. We can further substitute the expression of $u_1$
+where $K_1\coloneqq -(R+B^TQB)^{-1}B^TQA$. We can further substitute the expression of $u_1$
 into our potential [(6)](#eq:potential_simplified) so that we have (detailed
 calculation in the [Appendix](#marginalization-cost-on-x_1))
 
 <a name="eq:cost_update"></a>
 \\[ \begin{aligned} 
-\phi(x_1) &= x_1^T Q x_1 + (K_1x_1)^T RK_1x_1 + (Ax_1 + BKx_1)^T Q (Ax_1 + 
+\phi_1(x_1) &= x_1^T Q x_1 + (K_1x_1)^T RK_1x_1 + (Ax_1 + BKx_1)^T Q (Ax_1 + 
 BKx_1) \\\\ 
 &= x_1^T(Q+A^TQA - K_1^TB^TQA)x_1 \\\\ 
 &= x_1^T V_1 x_2 \tag{8} 
 \end{aligned} \\]
-with $V_1$ properly defined.
+where $V_1\coloneqq Q+A^TQA - K_1^TB^TQA$.
 
 As illustrated in [Figure 4](#fig_eliminate_u), through the above steps, we can eliminate variable
 $x_2$, $u_2$ as well as three factors marked in red, and replace them with a new factor on $x_1$
 marked in blue, with potential $x_1^TV_1x_1$ , which represents the marginalized cost on state
 $x_1$.
-
+<!-- ************************ BAYES NET ************************ -->
 <a id="sec:elim_bayes"></a>
 ### Turning into a Bayes Network
 By eliminating all the variables from right to left, we can get a Bayes network
 as shown in [Figure 5](#fig_bayes_net). Everytime we eliminate an older state
-and control, we simply repeat the steps in Section [Variable Elimination](#variable-elimination): we express the
+and control, we simply repeat the steps in [Eliminate a state](#eliminate-a-state) and [Eliminate a control](#eliminate-a-control): we express the
 older state $x_{k+1}$ with the dynamics model, and express the control $u_k$ as
 a function of state $x_k$, then generate a new factor on $x_k$ representing the
-cost function $x_k^TV_kx_k$.
-</div>
+"cost-to-go" function $x_k^TV_kx_k$.
+
+Eliminating a general state, $x_{k+1}$, and control $u_k$, we obtain the recurrence relations:
+<a name="eq:control_update_k"></a>
+\\[ K_k = -(R+B^TV_{k+1}B)^{-1}B^TV_{k+1}A \tag{9} \\]
+<a name="eq:cost_update_k"></a>
+\\[ V_k = Q+A^TV_{k+1}A - K_k^TB^TV_{k+1}A \tag{10} \\]
+with $V_{T}=Q$ is the cost at the last time step.
+</div> <!-- scrollablecontent -->
+<!-- ************************ END SCROLLABLE ELIMINATION DESCRIPTION ************************ -->
 
 ## Connection with Linear Quadratic Regulator
-In \cite{}, the control rule and cost function for LQR is given by
+In \cite{}, the control law and cost function for LQR are given by
 
-\\[ u_k = K_kx_k \tag{9} \\]
-\\[ V_k+1 = Q+A^TV_{k+1}A - K_k^TB^TV_{k+1}A \tag{10} \\]
+\\[ u_k = K_kx_k \\]
+<a name="eq:control_update_k_ricatti"></a>
+\\[ K_k = -(R+B^TP_{k+1}B)^{-1}B^TP_{k+1}A \tag{11} \\]
+<a name="eq:cost_update_k_ricatti"></a>
+\\[ P_k = Q+A^TP_{k+1}A - K_k^TB^TP_{k+1}A \tag{12} \\]
 
-with the control gain defined as
+with $P_k$ commonly referred to as the solution to the dynamic Ricatti equation.
 
-\\[ K_k = -(R+B^TV_{k+1}B)^{-1}B^TV_{k+1}A \tag{11} \\]
-Note that they correspond to the same result as we derived in [(7)](#eq:control_law) and [(8)](#eq:cost_update)
+Note that [(11)](#eq:control_update_k_ricatti) and [(12)](#eq:cost_update_k_ricatti) correspond to
+the same results as we derived in [(9)](#eq:control_update_k) and [(10)](#eq:cost_update_k).
+
+## Intuition
+In our factor graph representation, it is becomes obvious that the dynamic Ricatti equation
+solutions, $P_k$, correspond to the total cost at the state $x_k$ that will be accrued for the remainder
+of the trajectory and control assuming optimal control after $x_k$.  Specifically, "cost-to-go"
+$\phi_k$ is given by 
+\\[ \phi_k = x_k^TP_kx_k \\]
+This "cost-to-go" is depicted as a heatmap in [Figure 1](#LQR_example).  The optimal control, $K_k$,
+represents a balance between achieving a small "cost-to-go" next time step ($B^TP_{k+1}B$) and exerting a small
+amount of control this time step ($R$).
 
 ## GTSAM Implementation
 We provide some 
@@ -404,8 +429,6 @@ In GTSAM, the variable eliminations can be done using QR or Cholesky factorizati
 
 Observe also
 
-### Intuition
-In this factor graph representation, it is becomes obvious that the dynamic Ricatti equation solutions, $P_t$, represent the total cost at the state $x_t$ for the remainder of the trajectory and control assuming optimal control after $x_t$.
 
 <!-- \begin{comment}
     Since the factor graph contains both both strict and non-strict constraints, we introduce Lagrangian multipliers $z_0$, $z_1$, $z_2$ to solve the problem. They each correspond to the constraints $x_0=X_0$, $x_1=Ax_0+Bu_0$, $x_2=Ax_1+Bu_1$.\\
@@ -524,20 +547,24 @@ discrete-time LQR problem.
     var scrollLoc_state = document.getElementById("sec:elim_state").offsetTop - scrollable.offsetTop;
     var scrollLoc_ctrl = document.getElementById("sec:elim_ctrl").offsetTop - scrollable.offsetTop;
     var scrollLoc_bayes = document.getElementById("sec:elim_bayes").offsetTop - scrollable.offsetTop;
+    var scroll_cur = scrollable.scrollTop;
     var scrollLoc;
     switch(slideIndex) {
         case 1:
         case 2:
-            scrollLoc = scrollLoc_state;
-            break;
+            return; // never force scroll up, only force scroll down
+            // scrollLoc = scrollLoc_state;
+            // break;
         case 3:
         case 4:
+            if (scroll_cur >= scrollLoc_ctrl) {return;}
             scrollLoc = scrollLoc_ctrl;
             break;
         case 5:
         case 6:
         case 7:
         case 8:
+            if (scroll_cur >= scrollLoc_bayes) {return;}
             scrollLoc = scrollLoc_bayes;
             break;
     }
@@ -562,6 +589,5 @@ discrete-time LQR problem.
         else {
             if ((slideIndex < 5)) {showSlides(slideIndex=5, true)}
         }
-        console.log(scroll)
     });
 </script>
