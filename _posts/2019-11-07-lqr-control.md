@@ -27,8 +27,8 @@ learning (stay tuned for future posts).  We consider the **finite-horizon, discr
 [Figure 1a](#LQR_example)).  The task is to find the optimal controls $u_k$ at time instances $t_k$
 so that a total cost is minimized, given [(1)](#eq:dyn_model) a dynamics model,
 [(2)](#eq:state_cost) a cost function on states, and [(3)](#eq:action_cost) a cost
-function on actions. In the linear-quadratic case we assume these are of the
-form \cite{}:
+function on actions. In the linear-quadratic problem , these are of the
+form ([Wikipedia](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator#Finite-horizon,_discrete-time_LQR)):
 
 <a name="eq:dyn_model"></a> \\[ x_{k+1} = Ax_k + Bu_k \tag{1} \\]
 <a name="eq:state_cost"></a> \\[ L(x_k) = x_k^T Q x_k \tag{2} \\]
@@ -40,10 +40,10 @@ The optimal controls over time can be expressed as the constrained optimization 
 \\[ s.t. ~~ x_{t+1}=Ax_t+Bu_t ~~\text{for } t=1 \text{ to } T-1 \\]
 
 We can visualize the objective function and constraints in the form of a factor
-graph as shown in [Figure 2](#LQR_example). This is a simple Markov chain, with the oldest
+graph as shown in [Figure 2](#fg_scratch). This is a simple Markov chain, with the oldest
 states and actions on the left, and the newest states and actions on the right. **The
 ternary factors represent the dynamics model constraints and the unary
-factors represent the state and control costs.**
+factors represent the state and control costs we seek to minimize via least-squares.**
 
 <a name="fg_scratch"></a>
 <figure class="center">
@@ -53,9 +53,11 @@ factors represent the state and control costs.**
 </figure>
 
 ## Variable Elimination
-To optimize the factor graph, which represents minimizing the least square objectives above, we can simply eliminate the factors from right
-to left.
+To optimize the factor graph, which represents minimizing the least squares objectives above, we can simply eliminate the factors from right
+to left.  In this section we demonstrate the variable elimination algebraically, but discussion on the implementation in GTSAM is also
+provided in the [Appendix](#least-squares-implementation-in-gtsam).
 
+<!-- ********************** BEGIN VARIABLE ELIMINATION SLIDESHOW ********************** -->
 <!-- Slideshow container, based on https://www.w3schools.com/howto/howto_js_slideshow.asp -->
 <div class="slideshow-container">
   <div class="mySlides 0" style="text-align: center;">
@@ -166,11 +168,12 @@ Taken from my website: https://github.com/gchenfc/gerrysworld2/blob/master/css/a
     visibility:visible;
 }
 </style>
+<!-- ********************** END VARIABLE ELIMINATION SLIDESHOW ********************** -->
 
 <!-- ************************ BEGIN SCROLLABLE ELIMINATION DESCRIPTION ************************ -->
 <div class="scrollablecontent" markdown="1" id="sec:elim_scrollable"
     style="overflow-y: scroll; height:400px; overflow-x: hidden; background-color:rgba(0,0,0,0.05); padding:0 8px; margin-bottom: 10px;">
-<!-- ************************ STATE ************************ -->
+<!-- ************** STATE ************** -->
 <a id="sec:elim_state"></a>
 ### Eliminate a State
 Let us start at the last state, $x_2$. Gathering the three factors (marked in
@@ -193,7 +196,7 @@ The resulting factor graph is illustrated in [Figures 3a](#fig_eliminate_x) and
 [3b](#fig_eliminate_x). To summarize, we used the dynamics constraint to eliminate variable
 $x_2$ as well as the two factors marked in red, and replace them with a new binary factor on $x_1$
 and $u_1$, marked in blue.
-<!-- ************************ CONTROL ************************ -->
+<!-- ************** CONTROL ************** -->
 <a id="sec:elim_ctrl"></a>
 ### Eliminate a Control
 Note that [(6)](#eq:potential_simplified) defines an (unnormalized) joint
@@ -207,7 +210,6 @@ yielding the expression of $u_1$ given $x_1$ as (detailed calculation in the
 u_1 &= -(R+B^TQB)^{-1}B^TQAx_1 \tag{7} \\\\ 
 &= K_1x_1 
 \end{aligned} \\]
-<!-- \\[ u_1 = -(R+B^TQB)^{-1}B^TQAx_1 ~~~~(~= K_1x_1~) \tag{7} \\] -->
 
 where $K_1\coloneqq -(R+B^TQB)^{-1}B^TQA$. We can further substitute the expression of $u_1$
 into our potential [(6)](#eq:potential_simplified) so that we have (detailed
@@ -226,7 +228,7 @@ As illustrated in [Figure 4](#fig_eliminate_u), through the above steps, we can 
 $x_2$, $u_2$ as well as three factors marked in red, and replace them with a new factor on $x_1$
 marked in blue, with potential $x_1^TV_1x_1$ , which represents the marginalized cost on state
 $x_1$.
-<!-- ************************ BAYES NET ************************ -->
+<!-- ************** BAYES NET ************** -->
 <a id="sec:elim_bayes"></a>
 ### Turning into a Bayes Network
 By eliminating all the variables from right to left, we can get a Bayes network
@@ -246,7 +248,7 @@ with $V_{T}=Q$ is the cost at the last time step.
 <!-- ************************ END SCROLLABLE ELIMINATION DESCRIPTION ************************ -->
 
 ## Equivalence to the Ricatti Equation
-In \cite{}, the control law and cost function for LQR are given by
+In [Wikipedia](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator#Finite-horizon,_discrete-time_LQR), the control law and cost function for LQR are given by
 
 \\[ u_k = K_kx_k \\]
 <a name="eq:control_update_k_ricatti"></a>
@@ -272,7 +274,7 @@ This "cost-to-go" is depicted as a heatmap in [Figure 1](#LQR_example).  From
 represents a balance between achieving a small "cost-to-go" next time step ($B^TV_{k+1}B$) and exerting a small
 amount of control this time step ($R$).
 
-## GTSAM Implementation
+## Implementation using GTSAM
 We provide some 
 modules and examples available to
 <a href="/assets/code_samples/lqr_control.zip" download>download</a>
@@ -357,11 +359,13 @@ def solve_lqr(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500):
 <br />
 <hr />
 <br />
+
+<!-- ********************************** APPENDIX ********************************** -->
 ## Appendix
 ### Eliminate $u_1$
 Setting the derivative w.r.t. $u_1$ of the objective function, $\phi_1(x_1, u_1)$, in [(6)](#eq:potential_simplified) to zero:
 \\[ Ru_1 + B^TQ(Ax_1+Bu_1) = 0 \\]
-we have the result shown in Figure [(7)](#eq:control_law):
+we solve to obtain the result shown in [(7)](#eq:control_law):
 \\[ \begin{aligned} 
     & (R+B^TQB)u_1 + B^TQAx_1 = 0 \\\\ 
     & u_1 = -(R+B^TQB)^{-1}B^TQAx_1 
@@ -381,12 +385,26 @@ potential function as a function of only $x_1$:
 </div>
 
 ### Least Squares Implementation in GTSAM
-GTSAM uses one of two methods for solving the least squares problems that appear
-in eliminating factor graphs: Cholesky Factorization and QR Factorization.  We
-will see that, for the LQR formulation, both arrive at the same solution
-matching the dynamic Ricatti equation solution.
+GTSAM can be specified to use either of two methods for solving the least squares problems that
+appear in eliminating factor graphs: Cholesky Factorization or QR Factorization.  We
+will find that both arrive at the same solution matching the dynamic Ricatti equation solution.
 #### Cholesky Factorization
-To solve the linear least squares problem $\argmin\limits_x\|\|Ax-b\|\|_2^2$, the solution is $A^TAx=A^Tb$. Cholesky factorization computes a factorization on $A^TA$ such that $A^TA=R^TR$. In GTSAM, Cholesky factorization is performed on each clique. In each clique, GTSAM first performs variable elimination with the strict constrain, then perform Cholesky factorization on rest of the variables. In the clique marked in red in Figure\ref{}, 
+We have established that the cost optimization in the LQR problem can be expressed as a least
+squares problem $\argmin\limits_x\|\|Ax-b\|\|_2^2$ where ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical
+concatenation of all state and control vectors, $A$ is a matrix representing quadratic costs, and
+$b=0$ for the case of optimizing both control and state cost towards 0.
+
+To solve the linear least squares problem $\argmin\limits_x\|\|Ax-b\|\|_2^2$, we can reformulate the
+problem as the equivalent linear equation $A^TAx=A^Tb$. Cholesky factorization computes a factorization on $A^TA$ such that
+$A^TA=R^TR$ thereby allowing solving by back-substitution.
+Instead of considering the full $A^TA$ matrix, for demonstrative purposes we can consider just a
+single *clique*, as it is implemented in GTSAM for computational reasons.  A clique is a set of
+variables which are fully connected. In each clique, GTSAM first performs variable elimination with
+the strict constraints to convert the constrained optimization problem into an unconstrained one.
+Then, GTSAM performs Cholesky factorization on rest of the variables. For the clique circled in red
+in [Figure 6](#fig:clique), we first eliminate $x_2$ using the dynamics constraint to obtain our least
+squares clique formulation: ${x=[u_1;x_1]}$, $b=0$, and $A$ and $A^TA$ are given by
+
 \\[ \begin{aligned} 
     A= 
     \begin{bmatrix} 
@@ -410,10 +428,52 @@ Applying block Cholesky decomposition on the matrix, we have
       0 & V_1^{\frac{1}{2}} 
     \end{bmatrix} 
 \end{aligned} \\]
-where $D_1 = $, $K_1=$, and $V_1=$
+
+<!-- plain table for formatting purposes -->
+<style>
+table, caption, tbody, tfoot, thead, table tr, table th, table tr:nth-child(even), td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    font-weight: normal;
+    vertical-align: baseline;
+    background: transparent;
+    background-color: transparent;
+}
+table th {
+    padding: 3px;
+}
+</style>
+<!-- "where D = ..., K = ..., V = ..." -->
+<div style="overflow: auto">
+<table style="width:3.8in;">
+    <tr>
+        <th>where</th><th>$D_1$</th><th>$=$</th><th>$R + B^TQB$</th>
+    </tr><tr>
+        <th></th><th>$K_1$</th><th>$=$</th><th>$-(R + B^TQB)^{-1}B^TQA$</th>
+    </tr><tr>
+        <th></th><th>$V_1$</th><th>$=$</th><th>$Q + A^TQA - K_1^TD_1^{T/2}D_1^{1/2}K_1$</th>
+    </tr><tr>
+        <th></th><th></th><th>$=$</th><th>$Q + A^TQA - K_1^TB^TQA$</th>
+    </tr>
+</table>
+</div>
+
+which can be verified by multiplying out $R^TR$.  It is now evident that the top block row of $R$
+gives the control law (i.e. $D_1^{1/2}u_1 - D_1^{1/2}K_1x_1 = 0$) and the bottom block row gives the
+new "cost-to-go" for the next clique.
+
+<a name="fig:clique"></a>
+<figure class="center">
+  <img src="/assets/images/lqr_control/VE/cliq1a.png"
+    alt="Single clique in LQR factor graph." />
+    <figcaption><b>Figure 6</b> A single clique in the LQR factor graph formulation is circled in red.</figcaption>
+</figure>
 
 #### QR Factorization
-The process is illustrated in [Figure 6](#fig:qr_elim) where the noise matrices and elimination
+The process is illustrated in [Figure 7](#fig:qr_elim) where the noise matrices and elimination
 matrices are shown with the corresponding states of the graph.  The noise matrix (NM) is $0$ for a
 hard constraint and $I$ for a minimization objective.  The elimination matrix is formatted as an
 augmented matrix $[A|b]$ for the linear least squares problem $\argmin\limits_x\|\|Ax-b\|\|_2^2$
@@ -423,9 +483,8 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
 <!-- Slideshow container, based on https://www.w3schools.com/howto/howto_js_slideshow.asp -->
 <a name="fig:qr_elim"></a>
 <div class="slideshow-container" style="min-height:3in;">
-
   <div class="mySlides 1" style="text-align: center;">
-      <figure class="center" style="width:70%">
+      <figure class="center" style="width:75%">
 <div markdown="1" align="left" style="width:100%; height:2.2in; overflow:auto">
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
@@ -450,11 +509,11 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{array} \\)
 </div>
         <img src="/assets/images/lqr_control/elimination_steps/fg0.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 6a</b> Initial factor graph and elimination matrix</figcaption>
+        <figcaption><b>Figure 7a</b> Initial factor graph and elimination matrix</figcaption>
       </figure>
   </div>
   <div class="mySlides 1" style="text-align: center;">
-      <figure class="center" style="width:70%">
+      <figure class="center" style="width:75%">
 <div markdown="1" align="left" style="width:100%; height:2.2in; overflow:auto">
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
@@ -479,12 +538,12 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{array} \\)
 </div>
         <img src="/assets/images/lqr_control/elimination_steps/fg1.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 6b</b> Eliminate $x_2$: the two factors to eliminate are highlighted in red</figcaption>
+        <figcaption><b>Figure 7b</b> Eliminate $x_2$: the two factors to eliminate are highlighted in red</figcaption>
       </figure>
   </div>
 
   <div class="mySlides 1" style="text-align: center;">
-      <figure class="center" style="width:70%">
+      <figure class="center" style="width:75%">
 <div markdown="1" align="left" style="width:100%; height:2.2in; overflow:auto">
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
@@ -510,12 +569,12 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{array} \\)
 </div>
         <img src="/assets/images/lqr_control/elimination_steps/fg2.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 6c</b> Eliminated $x_2$: the resulting binary cost factor is highlighted in blue</figcaption>
+        <figcaption><b>Figure 7c</b> Eliminated $x_2$: the resulting binary cost factor is highlighted in blue</figcaption>
       </figure>
   </div>
 
   <div class="mySlides 1" style="text-align: center;">
-      <figure class="center" style="width:70%">
+      <figure class="center" style="width:75%">
 <div markdown="1" align="left" style="width:100%; height:2.2in; overflow:auto">
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
@@ -541,12 +600,12 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{array} \\)
 </div>
         <img src="/assets/images/lqr_control/elimination_steps/fg3.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 6d</b> Eliminate $u_1$: the three factors to eliminate are highlighted in red</figcaption>
+        <figcaption><b>Figure 7d</b> Eliminate $u_1$: the three factors to eliminate are highlighted in red</figcaption>
       </figure>
   </div>
 
   <div class="mySlides 1" style="text-align: center;">
-      <figure class="center" style="width:70%">
+      <figure class="center" style="width:75%">
 <div markdown="1" align="left" style="width:100%; height:2.2in; overflow:auto">
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
@@ -560,7 +619,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{bmatrix} & 
     \left[ \begin{array}{cc:ccc|c} 
         I & -B      & -A    &       &       & 0\\\\ 
-          & V_{1,0} & V_{1,1} &      &       & 0\\\\ 
+          & D_1^{1/2} & -D_1^{1/2}K_1 &      &       & 0\\\\ 
           \hdashline 
           &         & \color{blue} P_1^{1/2} &      &       & 0\\\\ 
           &         & I     & -B    & -A    & 0\\\\ 
@@ -570,12 +629,12 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{array} \\)
 </div>
         <img src="/assets/images/lqr_control/elimination_steps/fg4.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 6e</b> Eliminated $u_1$: the resulting unary cost factor on $x_1$ is shown in blue</figcaption>
+        <figcaption><b>Figure 7e</b> Eliminated $u_1$: the resulting unary cost factor on $x_1$ is shown in blue</figcaption>
       </figure>
   </div>
 
   <div class="mySlides 1" style="text-align: center;">
-      <figure class="center" style="width:70%">
+      <figure class="center" style="width:75%">
 <div markdown="1" align="left" style="width:100%; height:2.2in; overflow:auto">
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
@@ -589,7 +648,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{bmatrix} & 
     \left[ \begin{array}{cc:ccc|c} 
         I & -B      & -A    &       &       & 0\\\\ 
-          & V_{1,0} & V_{1,1} &      &       & 0\\\\ 
+          & D_1^{1/2} & -D_1^{1/2}K_1 &      &       & 0\\\\ 
           \hdashline 
           &         & \color{red} P_1^{1/2} &      &       & 0\\\\ 
           &         & \color{red} I     & \color{red} -B    & \color{red} -A    & 0\\\\ 
@@ -599,12 +658,12 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{array} \\)
 </div>
         <img src="/assets/images/lqr_control/elimination_steps/fg5.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 6f</b> Eliminate $x_1$: the two factors to eliminate are highlighted in red</figcaption>
+        <figcaption><b>Figure 7f</b> Eliminate $x_1$: the two factors to eliminate are highlighted in red</figcaption>
       </figure>
   </div>
 
   <div class="mySlides 1" style="text-align: center;">
-      <figure class="center" style="width:70%">
+      <figure class="center" style="width:75%">
 <div markdown="1" align="left" style="width:100%; height:2.2in; overflow:auto">
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
@@ -618,7 +677,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{bmatrix} & 
     \left[ \begin{array}{ccc:cc|c} 
         I & -B      & -A    &       &       & 0\\\\ 
-          & V_{1,0} & V_{1,1}&      &       & 0\\\\ 
+          & D_1^{1/2} & -D_1^{1/2}K_1&      &       & 0\\\\ 
           &         & I     & -B    & -A    & 0\\\\ 
           \hdashline 
           &         &       &\color{blue} P_1^{1/2}B &\color{blue} P_1^{1/2}A& 0\\\\ 
@@ -628,12 +687,12 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{array} \\)
 </div>
         <img src="/assets/images/lqr_control/elimination_steps/fg6.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 6g</b> Eliminated $x_1$: the resulting binary cost factor is shown in blue</figcaption>
+        <figcaption><b>Figure 7g</b> Eliminated $x_1$: the resulting binary cost factor is shown in blue</figcaption>
       </figure>
   </div>
 
   <div class="mySlides 1" style="text-align: center;">
-      <figure class="center" style="width:70%">
+      <figure class="center" style="width:75%">
 <div markdown="1" align="left" style="width:100%; height:2.2in; overflow:auto">
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
@@ -647,7 +706,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{bmatrix} & 
     \left[ \begin{array}{ccc:cc|c} 
         I & -B      & -A    &       &       & 0\\\\ 
-          & V_{1,0} & V_{1,1}&      &       & 0\\\\ 
+          & D_1^{1/2} & -D_1^{1/2}K_1&      &       & 0\\\\ 
           &         & I     & -B    & -A    & 0\\\\ 
           \hdashline 
           &         &       &\color{red} P_1^{1/2}B &\color{red} P_1^{1/2}A& 0\\\\ 
@@ -657,12 +716,12 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{array} \\)
 </div>
         <img src="/assets/images/lqr_control/elimination_steps/fg7.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 6h</b> Eliminate $u_0$: the three cost factors to combine are shown in red</figcaption>
+        <figcaption><b>Figure 7h</b> Eliminate $u_0$: the three cost factors to combine are shown in red</figcaption>
       </figure>
   </div>
 
   <div class="mySlides 1" style="text-align: center;">
-      <figure class="center" style="width:70%">
+      <figure class="center" style="width:75%">
 <div markdown="1" align="left" style="width:100%; height:2.2in; overflow:auto">
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
@@ -675,16 +734,16 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{bmatrix} & 
     \left[ \begin{array}{cccc:c|c} 
         I & -B      & -A    &       &       & 0\\\\ 
-          & V_{1,0} & V_{1,1} &      &       & 0\\\\ 
+          & D_1^{1/2} & -D_1^{1/2}K_1 &      &       & 0\\\\ 
           &         & I     & -B    & -A    & 0\\\\ 
-          &         &       & V\_{0,0}  & V\_{0,1}& 0\\\\ 
+          &         &       & D_0^{1/2}  & -D_0^{1/2}K_0 & 0\\\\ 
           \hdashline 
           &         &       &       & \color{blue} P_0^{1/2}   & 0
     \end{array} \right]
     \end{array} \\)
 </div>
         <img src="/assets/images/lqr_control/elimination_steps/fg8.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 6i</b> Final result: after eliminating $u_0$, the elimination matrix is upper-triangular and we can read off the control laws.</figcaption>
+        <figcaption><b>Figure 7i</b> Final result: after eliminating $u_0$, the elimination matrix is upper-triangular and we can read off the control laws.</figcaption>
       </figure>
   </div>
   
@@ -707,30 +766,16 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
   <span class="dot 1" onclick="currentSlide(9,1)"></span>
 </div>
 <br />
-<style>
-table, caption, tbody, tfoot, thead, table tr, table th, table tr:nth-child(even), td {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    font-weight: normal;
-    vertical-align: baseline;
-    background: transparent;
-    background-color: transparent;
-}
-table th {
-    padding: 3px;
-}
-</style>
 <div style="overflow: auto">
 <table style="width:6.1in; margin: 0 auto;">
     <tr>
-        <th>where</th><th>$P_2=Q$</th><th>and</th><th>$P_{t-1}= Q - K_t^TB^TP_tA + A^TP_tA$</th>
+        <th>where</th><th>$P_{t}$</th><th>$=$</th><th>$Q + A^TP_{t+1}A - K_t^TB^TP_{t+1}A$</th><th>($P_2=Q$)</th>
     </tr><tr>
-        <th>where</th><th>$V_{t-1,0}=(B^TP_tB+R)^{1/2}$ </th><th>and</th><th> $V_{t-1,1} = (B^TP_tB+R)^{-1/2}B^TP_tA$</th>
+        <th></th><th>$D_{t}$</th><th>$=$</th><th>$R + B^TP_{t+1}B$</th>
     </tr><tr>
-        <th>where</th><th>$K_t=V_{t,0}^{-1}V_{t,1}$ </th><th>$=$</th><th> $(B^TP_{t+1}B+R)^{-1}B^TP_{t+1}A$</th>
+        <th></th><th>$K_t$</th><th>$=$</th><th>$-D_{t}^{-1/2}(R + B^TP_{t+1}B)^{-T/2}B^TP_{t+1}A$</th>
+    </tr><tr>
+        <th></th><th></th><th>$=$</th><th>$-(R + B^TP_{t+1}B)^{-1}B^TP_{t+1}A$</th>
     </tr>
 </table>
 </div>
@@ -753,62 +798,11 @@ the elimination of $u_0$ ,
         & \scriptstyle=~ u_0^T(B^TP_1B+R)u_0 ~+~ 2u_0^TB^TP_1Ax_0 ~+~ x_0^TA^TP_1Ax_0 \qquad+ x^TQx \\\\ 
         & \scriptstyle=~ u_0^T(B^TP_1B+R)u_0 ~+~ 2u_0^T(B^TP_1B+R)^{1/2}(B^TP_1B+R)^{-1/2}B^TP_1Ax_0 ~+~ x_0^TA^TP_1Ax_0 \qquad+ x_0^TQx_0 \\\\ 
         & \scriptstyle=~ \|\|(B^TP_1B+R)^{1/2}u_0 ~+~ (B^TP_1B+R)^{-1/2}B^TP_1Ax_0\|\|^2_2 ~-~ x_0^T(A^TP_1^TB(B^TP_1B+R)^{-T}B^TP_1A)x_0 ~+~ x_0^TA^TP_1Ax_0 ~+~ x^TQx  \\\\ 
-        & \scriptstyle=~ \|\|(B^TP_1B+R)^{1/2}u_0 ~+~ (B^TP_1B+R)^{-1/2}B^TP_1Ax_0\|\|_2^2 ~+~ \|\|(Q - A^TP_1^TB(B^TP_1B+R)^{-T}B^TP_1A ~+~ A^TP_1A)^{1/2}x_0\|\|_2^2  \\\\ 
-        & \scriptstyle=~ \|\|(B^TP_1B+R)^{1/2}u_0 ~+~ (B^TP_1B+R)^{-1/2}B^TP_1Ax_0\|\|_2^2 ~+~ \|\|(Q - K_0^TB^TP_1A ~+~ A^TP_1A)^{1/2}x_0\|\|_2^2 \\\\ 
+        & \scriptstyle=~ \|\|(B^TP_1B+R)^{1/2}u_0 ~+~ (B^TP_1B+R)^{-1/2}B^TP_1Ax_0\|\|_2^2 ~+~ \|\|(Q ~+~ A^TP_1A)^{1/2}x_0 ~-~ A^TP_1^TB(B^TP_1B+R)^{-T}B^TP_1A\|\|_2^2  \\\\ 
+        & \scriptstyle=~ \|\|(B^TP_1B+R)^{1/2}u_0 ~+~ (B^TP_1B+R)^{-1/2}B^TP_1Ax_0\|\|_2^2 ~+~ \|\|(Q ~+~ A^TP_1A ~-~ K_0^TB^TP_1A)^{1/2}x_0\|\|_2^2 \\\\ 
         & \scriptstyle=~ \|\|V\_{0,0}u_0 ~+~ V\_{0,1}x_0\|\|_2^2 ~+~ \|\|P_0^{1/2}x_0\|\|_2^2 
 \end{aligned} \\]
 </div>
-
-<!-- \begin{comment}
-    Since the factor graph contains both both strict and non-strict constraints, we introduce Lagrangian multipliers $z_0$, $z_1$, $z_2$ to solve the problem. They each correspond to the constraints $x_0=X_0$, $x_1=Ax_0+Bu_0$, $x_2=Ax_1+Bu_1$.\\
-    
-    We will analyze the problem of 3 time steps ([Figure 2](#fg_scratch)) as an example. The elimination order is $u_2, x_2, z_2, u_1, x_1, z_1, u_0, x_0, z_0$. The corresponding matrix is
-    \begin{equation*}
-    \begin{bmatrix}
-    2R & & & & & & & & \\
-    & 2Q & -I & & & & & & \\
-    & -I & & B & A & & & & \\
-    & & B^T & 2R & & & & & \\
-    & & A^T & & 2Q & -I & & & \\
-    & & & & -I & & B & A & \\
-    & & & & & B^T & 2R & & \\
-    & & & & & A^T & & 2Q & -I \\
-    & & & & & & & -I & \\
-    \end{bmatrix}
-    \begin{bmatrix}
-    u_2\\x_2\\z_2\\u_1\\x_1\\z_1\\u_0\\x_0\\z_0\\
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
-    0\\\vdots\\\vdots\\\vdots\\\vdots\\0\\-X_0\\
-    \end{bmatrix}
-    \end{equation*}
-    
-    % TODO: talk with Frank about what is the standard way to solve constraint optimization problem.
-    % TODO: it seems solving it with Cholesky factorization will result in complex entries
-    
-    Applying Gauss-Jordan elimination on the matrix, we have
-    \begin{equation*}
-    \begin{bmatrix}
-    I & & & & & & & & \\
-    & I & -(2Q)^{-1} & & & & & & \\
-    & & I & -2QB & -2QA & & & & \\
-    & & & I & -K_1 & & & & \\
-    & & & & I & -\frac{1}{2}V_1^{-1} & & & \\
-    & & & & & I & -2V_1B & -2V_1A &  \\
-    & & & & & & I & -K_0 &  \\
-    & & & & & & & I & -\frac{1}{2}V_0^{-1}\\
-    & & & & & & & & I \\
-    \end{bmatrix}
-    \begin{bmatrix}
-    u_2\\x_2\\z_2\\u_1\\x_1\\z_1\\u_0\\x_0\\z_0\\
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
-    0\\\vdots\\\vdots\\\vdots\\\vdots\\0\\-2V_0X_0\\
-    \end{bmatrix}
-    \end{equation*}
-\end{comment} -->
 
 ### Final Symbolic Expressions of Factor Graph Evaluation
 In the above solution, we have
@@ -818,8 +812,6 @@ P_1 &= Q+A^TQA + A^TQBK_1\\\\
 K_0 &= -(R+B^TV_1B)^{-1}B^TV_1A\\\\ 
 P_0 &= Q + A^T V_1 A + A^T V_1 B K_0
 \end{aligned} \\]
-
-% Note that, by switching the elimination order of $x_0$ and $z_0$, solving for $V_0$ is unnecessary.
 
 In general, the above factor graph and solution method can be expanded for an arbitrary number of time steps, $T$, arising in the iterative equations
 \\[ \begin{aligned} 
@@ -831,78 +823,79 @@ and
 \\[ \begin{aligned} 
     u_t &= K_t x_t
 \end{aligned} \\]
-which match the algorithm for solving the finite-horizon discrete-time LQR problem.  As the number
+which match the traditional algorithm using the Ricatti Equation for solving the finite-horizon discrete-time LQR problem.  As the number
 of time steps grows, the solution for $V_0$ approaches the stationary solution to the algebraic
 Ricatti equation and the solution for $K_0$ approaches the solution to the infinite-horizon
 discrete-time LQR problem.
 
-
+<!-- **************** JAVASCRIPT FOR SLIDESHOWS **************** -->
 <script>
-    var slideIndex = 1;
-    showSlides(slideIndex, 0);
-    showSlides(slideIndex, 1);
+    var slideIndex = [1,1];
+    showSlides(slideIndex[0], 0);
+    showSlides(slideIndex[1], 1);
 
     // Next/previous controls
     function plusSlides(n, which) {
-    showSlides(slideIndex += n, which);
+        showSlides(slideIndex[which] += n, which);
     }
 
     // Thumbnail image controls
     function currentSlide(n, which) {
-    showSlides(slideIndex = n, which);
+        showSlides(slideIndex[which] = n, which);
     }
 
-    function setNodesHidden(nodes, hidden) {
-    for (node of nodes) {
-        node.hidden = hidden
-    }
-    }
-
+    // change image/slide
     function showSlides(n, which, triggeredByScroll) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides "+which);
-    var dots = document.getElementsByClassName("dot "+which);
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
+        var i;
+        var slides = document.getElementsByClassName("mySlides "+which);
+        var dots = document.getElementsByClassName("dot "+which);
+        if (n > slides.length) {slideIndex[which] = 1}
+        if (n < 1) {slideIndex[which] = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex[which]-1].style.display = "block";
+        dots[slideIndex[which]-1].className += " active";
 
-    var scrollable = document.getElementById("sec:elim_scrollable");
-    var scrollLoc_state = document.getElementById("sec:elim_state").offsetTop - scrollable.offsetTop;
-    var scrollLoc_ctrl = document.getElementById("sec:elim_ctrl").offsetTop - scrollable.offsetTop;
-    var scrollLoc_bayes = document.getElementById("sec:elim_bayes").offsetTop - scrollable.offsetTop;
-    var scroll_cur = scrollable.scrollTop;
-    var scrollLoc;
-    switch(slideIndex) {
-        case 1:
-        case 2:
-            return; // never force scroll up, only force scroll down
-            // scrollLoc = scrollLoc_state;
-            // break;
-        case 3:
-        case 4:
-            if (scroll_cur >= scrollLoc_ctrl) {return;}
-            scrollLoc = scrollLoc_ctrl;
-            break;
-        case 5:
-        case 6:
-        case 7:
-        case 8:
-            if (scroll_cur >= scrollLoc_bayes) {return;}
-            scrollLoc = scrollLoc_bayes;
-            break;
-    }
-    if (typeof triggeredByScroll === 'undefined') {
-        scrollable.scrollTo(0, scrollLoc);
-    }
+        if (which==1){
+            return
+        }
+
+        // when image changes, also scroll to the correct subsection in "Variable Elimination"
+        var scrollable = document.getElementById("sec:elim_scrollable");
+        var scrollLoc_state = document.getElementById("sec:elim_state").offsetTop - scrollable.offsetTop;
+        var scrollLoc_ctrl = document.getElementById("sec:elim_ctrl").offsetTop - scrollable.offsetTop;
+        var scrollLoc_bayes = document.getElementById("sec:elim_bayes").offsetTop - scrollable.offsetTop;
+        var scroll_cur = scrollable.scrollTop;
+        var scrollLoc;
+        switch(slideIndex[which]) {
+            case 1:
+            case 2:
+                return; // never force scroll up, only force scroll down
+                // scrollLoc = scrollLoc_state;
+                // break;
+            case 3:
+            case 4:
+                if (scroll_cur >= scrollLoc_ctrl) {return;}
+                scrollLoc = scrollLoc_ctrl;
+                break;
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+                if (scroll_cur >= scrollLoc_bayes) {return;}
+                scrollLoc = scrollLoc_bayes;
+                break;
+        }
+        if (typeof triggeredByScroll === 'undefined') {
+            scrollable.scrollTo(0, scrollLoc);
+        }
     }
 
+    // when scrolling through subsections in "Variable Elimination", also change the image to correspond
     document.getElementById("sec:elim_scrollable").addEventListener("scroll", function (event) {
         var scrollable = document.getElementById("sec:elim_scrollable");
         var scrollLoc_state = document.getElementById("sec:elim_state").offsetTop - scrollable.offsetTop;
@@ -911,13 +904,13 @@ discrete-time LQR problem.
         
         var scroll = this.scrollTop;
         if (scroll < scrollLoc_ctrl) {
-            if (slideIndex > 2) {showSlides(slideIndex=1, 0, true)}
+            if (slideIndex[0] > 2) {showSlides(slideIndex[0]=1, 0, true)}
         }
-        else if (scroll < (scrollable.scrollHeight - scrollable.offsetHeight)) {
-            if ((slideIndex < 3) || (slideIndex > 4)) {showSlides(slideIndex=3, 0, true)}
+        else if ((scroll < scrollLoc_bayes) && (scroll < (scrollable.scrollHeight - scrollable.offsetHeight))) {
+            if ((slideIndex[0] < 3) || (slideIndex[0] > 4)) {showSlides(slideIndex[0]=3, 0, true)}
         }
         else {
-            if ((slideIndex < 5)) {showSlides(slideIndex=5, 0, true)}
+            if ((slideIndex[0] < 5)) {showSlides(slideIndex[0]=5, 0, true)}
         }
     });
 </script>
