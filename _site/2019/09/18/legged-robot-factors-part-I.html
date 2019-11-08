@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Legged Robot Factors Part I | GTSAM</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Legged Robot Factors Part I" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Author: Ross Hartley email: m.ross.hartley@gmail.com" />
+<meta property="og:description" content="Author: Ross Hartley email: m.ross.hartley@gmail.com" />
+<link rel="canonical" href="http://localhost:4000/2019/09/18/legged-robot-factors-part-I.html" />
+<meta property="og:url" content="http://localhost:4000/2019/09/18/legged-robot-factors-part-I.html" />
+<meta property="og:site_name" content="GTSAM" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-09-18T00:00:00-04:00" />
+<script type="application/ld+json">
+{"headline":"Legged Robot Factors Part I","description":"Author: Ross Hartley email: m.ross.hartley@gmail.com","dateModified":"2019-09-18T00:00:00-04:00","url":"http://localhost:4000/2019/09/18/legged-robot-factors-part-I.html","datePublished":"2019-09-18T00:00:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/09/18/legged-robot-factors-part-I.html"},"@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/favicon.png"}},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="GTSAM" /></head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+  <body class=""><header class="header-holder site-header">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/">GTSAM</a><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewBox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+              </svg>
+            </span>
+          </label>
+  
+          <div class="trigger"><a class="page-link" href="/get_started/">Get Started</a><a class="page-link" href="/build/">Build</a><a class="page-link" href="/tutorials/">Tutorials</a><a class="page-link" href="/docs/">Docs</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/about/">About</a></div>
+        </nav></div>
+  </header><div class="main-background "></div>
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Legged Robot Factors Part I</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-09-18T00:00:00-04:00" itemprop="datePublished">Sep 18, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Author: Ross Hartley<br />
+email: <a href="mailto:m.ross.hartley@gmail.com">m.ross.hartley@gmail.com</a></p>
+
+<p>This is the first blog post in a series about using factor graphs for legged robot state estimation. It is meant to provide a high-level overview of what I call <em>kinematic and contact factors</em> and how they can be used in GTSAM. More details can be found in our conference papers:</p>
+<ul>
+  <li><a href="https://arxiv.org/abs/1803.07531">Hybrid Contact Preintegration for Visual-Inertial-Contact State Estimation Using Factor Graphs</a></li>
+  <li><a href="https://arxiv.org/abs/1712.05873">Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors</a></li>
+</ul>
+
+<p>It is assumed that the reader is already familiar with the terminology and theory behind factor graph based smoothing.</p>
+
+<h2 id="so-what-makes-legged-robots-different"><strong>So, what makes legged robots different?</strong></h2>
+<p>Factor graph methods have been widely successful for mobile robot state estimation and SLAM. A common application is the fusion of inertial data (from an IMU) with visual data (from camera and/or LiDAR sensors) to estimate the robot’s pose over time.</p>
+
+<p>Although this approach is often demonstrated on wheeled and flying robots, identical techniques can be applied to their walking brethren. What makes legged robots different, however, is the presence of additional encoder and contact sensors. As I’ll show, these extra sensor measurements can be leveraged to improve state estimation results.</p>
+
+<blockquote>
+  <p><strong>Sensors typically found on legged robots:</strong></p>
+  <ul>
+    <li>Inertial Measurement Units (IMUs)</li>
+    <li>Vision Sensors (cameras, LiDARs)</li>
+    <li>Joint Encoders</li>
+    <li>Contact Sensors</li>
+  </ul>
+</blockquote>
+
+<p>All of these sensors exist on the University of Michigan’s version of the Cassie robot (developed by <a href="http://www.agilityrobotics.com/">Agility Robotics</a>), which I’ll use as a concrete example.
+<img src="/assets/images/Cassie.jpg" alt="Cassie" /></p>
+
+<h2 id="factor-graph-formulation"><strong>Factor Graph Formulation</strong></h2>
+<p>Let’s see how we can create a factor graph using these 4 sensor types to estimate the trajectory of a legged robot. Each node in the graph represents the robot’s state at a particular timestep. This state includes the 3D orientation, position, and velocity of the robot’s base frame along with the IMU biases. We also include the pose of the contact frame (where the foot hits the ground) to this list of states. For simplicity, the base frame is assumed to be collocated with the inertial/vision sensor frames.</p>
+
+<blockquote>
+  <p><strong>Estimated States:</strong></p>
+  <ul>
+    <li>Base pose, <code class="highlighter-rouge">X</code></li>
+    <li>Base velocity, <code class="highlighter-rouge">V</code></li>
+    <li>Contact pose, <code class="highlighter-rouge">C</code></li>
+    <li>IMU biases, <code class="highlighter-rouge">b</code></li>
+  </ul>
+</blockquote>
+
+<p>Each independent sensor measurement will place a <em>measurement factor</em> on the graph’s nodes. Solving the factor graph consists of searching for the maximum a posteriori state estimate that minimizes the error between the predicted and actual measurements.</p>
+
+<p>The robot’s inertial measurements can be incorporated into the graph using the <em>preintegrated IMU factor</em> built into GTSAM 4.0. This factor relates the base pose, velocity, and IMU biases across consecutive timesteps.</p>
+
+<p>Vision data can be incorporated into the graph using a number of different factors depending on the sensor type and application. Here we will simply assume that vision provides a relative pose factor between two nodes in the graph. This can be from either visual odometry or loop closures.</p>
+
+<p>At each timestep, the joint encoder data can be used to compute the relative pose transformation between the robot’s base and contact frames (through forward kinematics). This measurement be captured in a unary <strong><em>forward kinematic factor</em></strong>.</p>
+
+<p>Of course, adding the <em>forward kinematic factor</em> will not affect the optimal state estimate unless additional constraints are placed on the contact frame poses. This is achieved using a binary <strong><em>contact factor</em></strong> which uses contact measurements to infer the movement of the contact frame over time. The simplest case being contact implies zero movement of this frame. In other words, this <em>contact factor</em> tries to keep the contact pose fixed across timesteps where contact was measured. When contact is absent, this factor can simply be omitted in the graph.</p>
+
+<p>If we know how the contact frame moves over time and we can measure the relative pose between the robot’s contact and base frames, then we have an implicit measurement of how the robot’s base moves over time.</p>
+
+<blockquote>
+  <p>The combined <em>forward kinematic and contact factors</em> can be viewed as <strong><em>kinematic odometry</em></strong> measurements of the robot’s base frame.</p>
+</blockquote>
+
+<p>All together, a typical legged robot factor graph may be represented by the picture below. It will contain inertial, vision, forward kinematic, and contact factors.
+<img src="/assets/images/Factor_Graph.PNG" alt="Cassie Forward Kinematics" /></p>
+
+<h2 id="forward-kinematic-factor"><strong>Forward Kinematic Factor</strong></h2>
+<p>The <em>forward kinematics factor</em> relates the base pose to the current contact pose using noisy encoder measurements. This is a simple relative pose factor which means we can use GTSAM’s built in <code class="highlighter-rouge">BetweenFactor&lt;Pose3&gt;</code> factor to implement it. We just need to determine what the factor’s covariance will be.</p>
+
+<p>Assuming the encoder noise is gaussian, we can map the encoder covariance to the contact pose covariance using the body <strong>manipulator Jacobian</strong> of the forward kinematics function. In general, the manipulator Jacobian maps joint angle rates to end effector twist, so it makes sense that it can be used to approximate the mapping of encoder uncertainty through the non-linearities of the robot’s kinematics.</p>
+
+<p>For example, if <code class="highlighter-rouge">H_BC</code> is pose of the contact frame relative to the base frame and <code class="highlighter-rouge">J_BC</code> is the corresponding body manipulator Jacobian, the <em>forward kinematic factor</em> can be implemented using the following GTSAM code:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Matrix6 FK_Cov = J_BC * encoder_covariance_matrix * J_BC.transpose();
+BetweenFactor&lt;Pose3&gt; forward_kinematics_factor(X(node), C(node), H_BC, noiseModel::Gaussian::Covariance(FK_cov));
+</code></pre></div></div>
+
+<p><img src="/assets/images/Cassie_FK.PNG" alt="Cassie Forward Kinematics" /></p>
+
+<h2 id="rigid-contact-factor"><strong>Rigid Contact Factor</strong></h2>
+<p><em>Contact factors</em> come in a number of different flavors depending on the assumptions we want to make about the contact sensor measurements. However, they will all provide a measurement of contact frame odometry (i.e. how to foot will move over time).</p>
+
+<p>For example, in the simplest case, perhaps measuring contact implies that the entire pose of the foot remains fixed. We can call this <strong>rigid contact</strong>, and it may be a good assumption for many humanoid robots that have large, flat feet. In contrast, we could alternatively assume a <strong>point contact</strong>, where the position of the contact frame remains fixed, but the foot is free to rotate.</p>
+
+<p>For now, lets look at how we can implement a <strong><em>rigid contact factor</em></strong>.  Again, when contact is measured, we assume there is no relative change in the contact frame pose. In other words, the contact frame velocity is zero. This can be implemented in GTSAM using a <code class="highlighter-rouge">BetweenFactor&lt;Pose3&gt;</code> factor, where the measurement is simply the identity element.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>BetweenFactor&lt;Pose3&gt; contact_factor(C(node-1), C(node), Pose3::identity(), noiseModel::Gaussian::Covariance(Sigma_ij);
+</code></pre></div></div>
+
+<p>Some potential foot slip can be accommodated through the factor’s covariance, <code class="highlighter-rouge">Sigma_ij</code>. If we are highly confident that the foot remained fixed on the ground, this covariance should be small. A large covariance implies less confidence in this assumption.</p>
+
+<p>One idea is simply assuming Gaussian noise on the contact frame velocity. In this case, the factor’s covariance will grow with the length of time between the graph nodes. Another idea is to use contact force information to model the factor’s covariance.</p>
+
+<h3 id="what-happens-when-contact-is-madebroken"><strong>What happens when contact is made/broken?</strong></h3>
+<p>Using the formulation above, every time contact is made or broken, a new node has to be added to the factor graph. This stems from our contact measurement assumption. When the robot loses contact, we have no way to determine the foot movement using contact sensors alone. Our only choice is to add a new node in the graph and omit the contact factor until contact is regained.</p>
+
+<p>This may not be an issue for some slow walking robots where contact states change infrequently, <strong>but what about a running hexapod?</strong> In that case, the numerous contact changes will lead to an explosion in the number of nodes (and optimization variables) needed in the graph. This ultimately affects the performance of the state estimator by increasing the time it takes to solve the underlying optimization problem.</p>
+
+<p>Thankfully, there is a way around this problem.</p>
+
+<h2 id="hybrid-rigid-contact-factor"><strong>Hybrid Rigid Contact Factor</strong></h2>
+<p>During many types of walking gaits, when one contact is broken, another is made. For example, with bipedal walking, left stance is followed by right stance, then left, then right, and so on. The order on a hexapod might be more complicated, but one fact remains: <strong>there is often (at least) one foot on the ground at all times</strong>. We can use this knowledge to improve performance in our factor graph by limiting the insertion rate of new graph nodes.</p>
+
+<p>If we choose two arbitrary times (potentially far apart), any single contact is likely to have been broken at some point between them. However, there may be a <strong>chain of contact frames</strong> that we can swap through to maintain the notion of contact with the environment. Each consecutive pair of contact frames in this chain are related to each other through forward kinematics.</p>
+
+<p>For example, lets say our biped robot switched from left stance (L1), to right stance (R1), back to left stance (L2) again. During the L1 phase, we can assume the contact frame pose remained fixed (zero velocity). When the robot switches from L1 to R1, we can map this contact frame from the left to the right foot using the encoder measurements and forward kinematics (since both feet are on the ground at this time). During the R1 phase, we again assume that the contact pose remains fixed. When the second swap happens, R1 to L2, we map the contact frame back to left foot using the encoder measurements and a (different) forward kinematics function. So in effect, we have tracked the movement of the contact frame across two contact switches. This relative pose measurement provides odometry for the contact frame and can be used to create a <strong><em>hybrid rigid contact factor</em></strong>. Using this method, nodes can now be added to the graph at arbitrary times, and do not have to be added when contact is made/broken (unless all feet come off the ground).</p>
+
+<p><img src="/assets/images/Cassie_FK_Switch.PNG" alt="Cassie Forward Kinematics" /></p>
+
+<p>Like the original <em>rigid contact factor</em>, the hybrid version can be created using GTSAM’s <code class="highlighter-rouge">BetweenFactor&lt;Pose3&gt;</code> factor, where <code class="highlighter-rouge">delta_Hij</code> is the cumulative change in contact pose across all contact switches. The factor’s covariance is typically larger as it needs to account for the uncertainty in each swap’s forward kinematics.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>BetweenFactor&lt;Pose3&gt; hybrid_contact_factor(C(node-1), C(node), delta_Hij, noiseModel::Gaussian::Covariance(Sigma_ij);
+</code></pre></div></div>
+
+<h2 id="coming-soon"><strong>Coming soon…</strong></h2>
+<p>I briefly discussed two types of factors that can be used to improve legged robot state estimation: the <strong><em>forward kinematic factor</em></strong> and the <strong><em>(hybrid) rigid contact factor</em></strong>. Combining these two factors allows for kinematic odometry to be added alongside other measurements (inertial, vision, etc.) when building up a factor graph.</p>
+
+<p>In particular, when developing the <em>rigid contact factor</em>, we made the strong assumption that a contact measurement implies zero angular and linear velocity of the contact frame. The factor tries to keep the entire pose of the foot fixed across two timesteps. This assumption may not be valid for all types of walking robots. In fact, it doesn’t even hold for the Cassie robot! The roll angle about Cassie’s foot is unactuated and free to move during walking. In the next post, I will discuss the <strong>(hybrid) point contact factor</strong> which makes no assumptions about the angular velocity of the contact frame.</p>
+
+  </div><a class="u-url" href="/2019/09/18/legged-robot-factors-part-I.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">GTSAM</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">GTSAM</li><li><a class="u-email" href="mailto:frank.dellaert@gtsam.org">frank.dellaert@gtsam.org</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/borglab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">borglab</span></a></li><li><a href="https://www.twitter.com/gtsam4"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">gtsam4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>GTSAM is a BSD-licensed C++ library that implements sensor fusion for robotics and computer vision using factor graphs.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+              delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "\\(", right: "\\)", display: false},
+              ]
+          });
+      });
+    </script>
+
+  </body>
+
+</html>

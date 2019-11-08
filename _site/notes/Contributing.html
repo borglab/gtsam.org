@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Contributing to GTSAM | GTSAM</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Contributing to GTSAM" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Introduction If you have improvements to GTSAM, send us your pull requests!" />
+<meta property="og:description" content="Introduction If you have improvements to GTSAM, send us your pull requests!" />
+<link rel="canonical" href="http://localhost:4000/notes/Contributing.html" />
+<meta property="og:url" content="http://localhost:4000/notes/Contributing.html" />
+<meta property="og:site_name" content="GTSAM" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-05-20T21:25:00-04:00" />
+<script type="application/ld+json">
+{"headline":"Contributing to GTSAM","description":"Introduction If you have improvements to GTSAM, send us your pull requests!","dateModified":"2019-05-20T21:25:00-04:00","url":"http://localhost:4000/notes/Contributing.html","datePublished":"2019-05-20T21:25:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/notes/Contributing.html"},"@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/favicon.png"}},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="GTSAM" /></head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+  <body class=""><header class="header-holder site-header">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/">GTSAM</a><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewBox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+              </svg>
+            </span>
+          </label>
+  
+          <div class="trigger"><a class="page-link" href="/get_started/">Get Started</a><a class="page-link" href="/build/">Build</a><a class="page-link" href="/tutorials/">Tutorials</a><a class="page-link" href="/docs/">Docs</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/about/">About</a></div>
+        </nav></div>
+  </header><div class="main-background "></div>
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Contributing to GTSAM</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-05-20T21:25:00-04:00" itemprop="datePublished">May 20, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <article class="post">
+
+  <div class="jumbotron jumbotron-fluid on-dark-background">
+    <div class="container">
+        <h1>GTSAM Notes</h1>
+    </div>
+</div>
+
+  <div class="post-content">
+    <h1 id="introduction">Introduction</h1>
+<p>If you have improvements to GTSAM, send us your pull requests!</p>
+
+<p>Our standard workflow is to fork GTSAM’s <a href="https://github.com/borglab/gtsam">official GitHub repository</a> into your own GitHub account and then push your changes into a branch on your fork. Once you believe your code is ready to be merged into GTSAM’s primary repository, open a pull request via the GitHub website. Your code will then undergo an interactive review process and Continuous Integration (CI) tests before it is merged into GTSAM’s primary repository.</p>
+
+<p>We use <a href="https://nvie.com/posts/a-successful-git-branching-model/">Giflow</a> as our branching model, as illustrated below, so most likely your branch will be either a <em>fix</em> or a <em>feature</em> branch.</p>
+
+<p><img src="https://nvie.com/img/git-model@2x.png" alt="Gitflow branching Model" /></p>
+
+<p>GTSAM’s CI service runs on all pull requests each time they are submitted and updated. Pull requests cannot be merged into master unless all unit tests pass on all supported platform configurations.</p>
+
+<!-- We would like to hear about your success stories if you’ve used GTSAM in your own projects. Please consider contributing to our GTSAM Gallery by editing doc/gallery.rst and submitting a pull request with the update! -->
+
+<h1 id="licensing">Licensing</h1>
+
+<p>Important note: GTSAM is an open source project licensed under extremely flexible terms intended to encourage use by anyone, for any purpose. When you make a contribution to the GTSAM project, you are agreeing to do so under those same terms.</p>
+
+<h1 id="testing">Testing</h1>
+
+<p>We are strong adherents of test-driven design and debugging. When you contribute a new feature, start with a unit test that exercises the API you want to provide, and only then write the code. If you believe there is an issue with GTSAM, please try to write a minimal unit test to reproduce the behavior, then fix it. Always write the test first.</p>
+
+<h1 id="issue-tracking">Issue Tracking</h1>
+
+<p>For complex changes, especially those that will span multiple PRs, please open a GitHub issue and solicit design feedback before you invest a lot of time in code.</p>
+
+<p>Be prepared to engage in active code review on your pull requests. If a reviewer asks you for more information, that is a sign you should add more documentation to your PR.</p>
+
+<p>A PR generally should not include more than 750 added or changed lines (the green +### number as reported by github), and must not include more than 1500 lines of <em>code</em>.</p>
+
+<h1 id="coding-conventions">Coding Conventions:</h1>
+
+<p>Fpr C++ we follow the <a href="https://google.github.io/styleguide/cppguide.html">Google C++ style guide</a>.</p>
+
+<p>For python we use pep8 formatting and ask that you resolve all pylint issues.</p>
+
+<h3 id="using-gtsam_export">Using GTSAM_EXPORT:</h3>
+
+<p>On Windows it is necessary to explicitly export all functions from the library which should be externally accessible. To do this, include the macro GTSAM_EXPORT in your class or function definition.</p>
+
+<p>For example:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class GTSAM_EXPORT MyClass { ... };
+
+GTSAM_EXPORT myFunction();
+</code></pre></div></div>
+
+  </div>
+
+</article>
+
+  </div><a class="u-url" href="/notes/Contributing.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">GTSAM</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">GTSAM</li><li><a class="u-email" href="mailto:frank.dellaert@gtsam.org">frank.dellaert@gtsam.org</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/borglab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">borglab</span></a></li><li><a href="https://www.twitter.com/gtsam4"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">gtsam4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>GTSAM is a BSD-licensed C++ library that implements sensor fusion for robotics and computer vision using factor graphs.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+              delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "\\(", right: "\\)", display: false},
+              ]
+          });
+      });
+    </script>
+
+  </body>
+
+</html>

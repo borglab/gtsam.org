@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Build | GTSAM</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Build" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="GTSAM is a BSD-licensed C++ library that implements sensor fusion for robotics and computer vision using factor graphs." />
+<meta property="og:description" content="GTSAM is a BSD-licensed C++ library that implements sensor fusion for robotics and computer vision using factor graphs." />
+<link rel="canonical" href="http://localhost:4000/build/" />
+<meta property="og:url" content="http://localhost:4000/build/" />
+<meta property="og:site_name" content="GTSAM" />
+<script type="application/ld+json">
+{"headline":"Build","description":"GTSAM is a BSD-licensed C++ library that implements sensor fusion for robotics and computer vision using factor graphs.","url":"http://localhost:4000/build/","@type":"WebPage","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/favicon.png"}},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="GTSAM" /></head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+  <body class=""><header class="header-holder site-header">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/">GTSAM</a><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewBox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+              </svg>
+            </span>
+          </label>
+  
+          <div class="trigger"><a class="page-link" href="/get_started/">Get Started</a><a class="page-link" href="/build/">Build</a><a class="page-link" href="/tutorials/">Tutorials</a><a class="page-link" href="/docs/">Docs</a><a class="page-link" href="/blog/">Blog</a><a class="page-link" href="/about/">About</a></div>
+        </nav></div>
+  </header><div class="main-background "></div>
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <div class="jumbotron jumbotron-fluid on-dark-background">
+    <div class="container">
+        <h1>Build</h1>
+    </div>
+</div>
+
+  <div class="post-content">
+    <p>To build GTSAM from source, clone or download the latest release from the <a href="https://github.com/borglab/gtsam">GTSAM Github repo</a>. Then follow the build &amp; install instructions below.</p>
+
+<h2 id="quickstart">Quickstart</h2>
+
+<p>In the root library folder execute:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!bash</span>
+<span class="nv">$ </span>mkdir build
+<span class="nv">$ </span><span class="nb">cd </span>build
+<span class="nv">$ </span>cmake ..
+<span class="nv">$ </span>make check <span class="o">(</span>optional, runs unit tests<span class="o">)</span>
+<span class="nv">$ </span>make install
+</code></pre></div></div>
+
+<h2 id="important-installation-notes">Important Installation Notes</h2>
+
+<ol>
+  <li>GTSAM requires the following libraries to be installed on your system:
+    <ul>
+      <li>BOOST version 1.43 or greater (install through Linux repositories or MacPorts)</li>
+      <li>Cmake version 3.0 or higher</li>
+      <li>
+        <p>Support for XCode 4.3 command line tools on Mac requires CMake 2.8.8 or higher</p>
+      </li>
+      <li>Optional dependent libraries:
+        <ul>
+          <li>If TBB is installed and detectable by CMake GTSAM will use it automatically. Ensure that CMake prints “Use Intel TBB : Yes”. To disable the use of TBB,
+disable the CMake flag GTSAM_WITH_TBB (enabled by default). On Ubuntu, TBB may be installed from the Ubuntu repositories, and for other platforms it
+may be downloaded from <a href="https://www.threadingbuildingblocks.org/">here</a>.</li>
+          <li>GTSAM may be configured to use MKL by toggling <code class="highlighter-rouge">GTSAM_WITH_EIGEN_MKL</code> and <code class="highlighter-rouge">GTSAM_WITH_EIGEN_MKL_OPENMP</code> to <code class="highlighter-rouge">ON</code>.
+However, best performance is usually achieved with MKL disabled. We therefore advise you to benchmark your problem before using MKL.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Configurations
+    <ul>
+      <li>Tested compilers:
+        <ul>
+          <li>GCC 4.2-7.3</li>
+          <li>OS X Clang 2.9-10.0</li>
+          <li>OS X GCC 4.2</li>
+          <li>MSVC 2017</li>
+        </ul>
+      </li>
+      <li>Tested systems:
+        <ul>
+          <li>Ubuntu 16.04 - 18.04</li>
+          <li>MacOS 10.6 - 10.14</li>
+          <li>Windows 7, 8, 8.1, 10</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>GTSAM makes extensive use of debug assertions, and we highly recommend you work in Debug mode while developing (not enabled by default). Likewise, it is imperative that you switch to release mode when running finished code and for timing. GTSAM will run up to 10x faster in Release mode! See the end of this document for
+additional debugging tips.</p>
+  </li>
+  <li>
+    <p>GTSAM has <a href="http://www.doxygen.nl/">Doxygen</a> documentation. To generate, run <code class="highlighter-rouge">make doc</code> from your build directory, or refer to the <a href="/doxygen">statically generated version on this website</a>.</p>
+  </li>
+  <li>The instructions below install the library to the default system install path and build all components. From a terminal, starting in the root library folder, execute the commands below for an out-of-source build. This will build the library and unit tests, run all of the unit tests, and then install the library itself.</li>
+</ol>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>mkdir build
+  <span class="nv">$ </span><span class="nb">cd </span>build
+  <span class="nv">$ </span>cmake ..
+  <span class="nv">$ </span>make check <span class="o">(</span>optional, runs unit tests<span class="o">)</span>
+  <span class="nv">$ </span>make install
+</code></pre></div></div>
+
+<h2 id="cmake-configuration-options-and-details">CMake Configuration Options and Details</h2>
+
+<p>GTSAM has a number of options that can be configured, which is best done with
+one of the following:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">ccmake</code>:      the curses GUI for cmake</li>
+  <li><code class="highlighter-rouge">cmake-gui</code>:   a real GUI for cmake</li>
+</ul>
+
+<h2 id="important-options">Important Options:</h2>
+
+<h4 id="cmake_build_type">CMAKE_BUILD_TYPE</h4>
+
+<p>We support several build configurations for GTSAM (case insensitive)</p>
+
+<p><code class="highlighter-rouge">`cmake -DCMAKE_BUILD_TYPE=[Option] ..`</code></p>
+<ul>
+  <li><code class="highlighter-rouge">Debug</code>: All error checking options on, no optimization. Use for development of new features and fixing issues.</li>
+  <li><code class="highlighter-rouge">Release</code>: Optimizations turned on, no debug symbols.</li>
+  <li><code class="highlighter-rouge">Timing</code>: Adds ENABLE_TIMING flag to provide statistics on operation</li>
+  <li><code class="highlighter-rouge">Profiling</code>: Standard configuration for use during profiling</li>
+  <li><code class="highlighter-rouge">RelWithDebInfo</code>: Same as Release, but with the - g flag
+for debug symbols</li>
+</ul>
+
+<h4 id="cmake_install_prefix">CMAKE_INSTALL_PREFIX</h4>
+
+<p>The install folder.The
+default is typically <code class="highlighter-rouge">/usr/local/</code> .
+To configure to install to your home directory, you could execute:
+<code class="highlighter-rouge">`cmake -DCMAKE_INSTALL_PREFIX:PATH=$HOME ..`</code></p>
+
+<h4 id="gtsam_toolbox_install_path">GTSAM_TOOLBOX_INSTALL_PATH</h4>
+
+<p>The Matlab toolbox will be installed in a subdirectory of this folder, called ‘gtsam’.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake -DGTSAM_TOOLBOX_INSTALL_PATH:PATH=$HOME/toolbox ..
+</code></pre></div></div>
+
+<h4 id="gtsam_build_convenience_libraries">GTSAM_BUILD_CONVENIENCE_LIBRARIES</h4>
+
+<p>This is a build option to allow for tests in subfolders to be linked against convenience libraries rather than the full libgtsam.
+Set with the command line as follows:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake -DGTSAM_BUILD_CONVENIENCE_LIBRARIES:OPTION=ON ..
+</code></pre></div></div>
+<ul>
+  <li><code class="highlighter-rouge">ON</code> (Default): This builds convenience libraries and links tests against them.This option is suggested for gtsam developers, as it is possible to build and run tests without first building the rest of the library, and speeds up compilation for a single test.The downside of this option is that it will build the entire library again to build the full libgtsam library, so build / install will be slower.</li>
+  <li><code class="highlighter-rouge">OFF</code>: This will build all of libgtsam before any of the tests, and then link all of the tests at once.This option is best
+  for users of GTSAM, as it avoids rebuilding the entirety of gtsam an extra time.</li>
+</ul>
+
+<h4 id="gtsam_build_unstable">GTSAM_BUILD_UNSTABLE</h4>
+
+<p>Enable build and install for libgtsam_unstable library.
+  Set with the command line as follows:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake -DGTSAM_BUILD_UNSTABLE:OPTION=ON ..
+</code></pre></div></div>
+<ul>
+  <li><code class="highlighter-rouge">ON</code> (Default): When enabled, libgtsam_unstable will be built and installed with the same options as libgtsam.In addition, if tests are enabled, the unit tests will be built as well.The Matlab toolbox will also be generated
+if the matlab toolbox is enabled, installing into a folder called <code class="highlighter-rouge">gtsam_unstable</code>.</li>
+  <li>OFF: If disabled, no <code class="highlighter-rouge">gtsam_unstable</code> code will be included in build or install.</li>
+</ul>
+
+<h4 id="mex_command">MEX_COMMAND</h4>
+<p>Path to the mex compiler. Defaults to assume the path is included in your shell ‘s PATH environment variable. mex is installed with matlab at <code class="highlighter-rouge">$MATLABROOT/bin/mex</code>. The correct value for  <code class="highlighter-rouge">MATLABROOT</code> can be found by executing the command <code class="highlighter-rouge">matlabroot</code> in MATLAB</p>
+
+<h2 id="running-the-unit-tests">Running the unit tests</h2>
+
+<p><code class="highlighter-rouge">make check</code> will build and run all of the tests.Note that the tests will only be built when using the “check” targets, to prevent <code class="highlighter-rouge">make install</code> from building the tests unnecessarily.</p>
+
+<p>You can also run <code class="highlighter-rouge">make timing</code> to build all of the timing scripts.
+To run check on a particular module only, run <code class="highlighter-rouge">make check.[subfolder]</code> , so to run just the geometry tests, run <code class="highlighter-rouge">make check.geometry</code> .</p>
+
+<p>Individual tests can be run by appending <code class="highlighter-rouge">.run</code> to the name of the test,
+for example, to run testMatrix, run <code class="highlighter-rouge">make testMatrix.run</code> .</p>
+
+<h2 id="performance">Performance</h2>
+
+<p>Here are some tips to get the best possible performance out of GTSAM.</p>
+
+<ol>
+  <li>
+    <p>Build in <code class="highlighter-rouge">Release</code> mode. GTSAM will run up to 10 x faster compared to <code class="highlighter-rouge">Debug</code>
+mode.</p>
+  </li>
+  <li>
+    <p>Enable TBB.On modern processors with multiple cores, this can easily speed up optimization by 30 - 50 %. Please note that this may not be true
+for very small problems where the overhead of dispatching work to multiple threads outweighs the benefit.We recommend that you benchmark your problem with / without TBB.</p>
+  </li>
+  <li>
+    <p>Add <code class="highlighter-rouge">-march=native</code> to <code class="highlighter-rouge">GTSAM_CMAKE_CXX_FLAGS</code>. A performance gain of
+ 25 - 30 % can be expected on modern processors.Note that this affects the portability of your executable. It may not run when copied to another system with older / different processor architecture. Also note that all dependent projects * must * be compiled with the same flag, or segfaults and other undefined behavior may result.</p>
+  </li>
+  <li>
+    <p>Possibly enable MKL. Please note that our benchmarks have shown that this helps only in very limited cases, and actually hurts performance in the usual case. We therefore recommend that you do *not * enable MKL, unless you have benchmarked it on your problem and have verified that it improves performance.</p>
+  </li>
+</ol>
+
+<h2 id="debugging-tips">Debugging tips</h2>
+
+<p>Another useful debugging symbol is _GLIBCXX_DEBUG, which enables debug checks and safe containers in the standard C++library and makes problems much easier to find.</p>
+
+<p>NOTE: The native Snow Leopard g++compiler / library contains a bug that makes it impossible to use _GLIBCXX_DEBUG.MacPorts g++compilers do work with it though.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NOTE: If _GLIBCXX_DEBUG is used to compile gtsam, anything that links against gtsam will need to be compiled with _GLIBCXX_DEBUG as well, due to the use of header - only Eigen.
+</code></pre></div></div>
+
+<h2 id="installing-mkl-on-linux">Installing MKL on Linux</h2>
+
+<p>Intel has a guide
+for installing MKL on Linux through APT repositories <a href="https://software.intel.com/en-us/articles/installing-intel-free-libs-and-python-apt-repo">here</a>.</p>
+
+<p>After following the instructions, add the following to your <code class="highlighter-rouge">~/.bashrc</code> (and afterwards, open a new terminal before compiling GTSAM):
+ <code class="highlighter-rouge">LD_PRELOAD</code>
+need only be set if you are building the cython wrapper to use GTSAM from python.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source</span> /opt/intel/mkl/bin/mklvars.sh intel64
+<span class="nb">export </span><span class="nv">LD_PRELOAD</span><span class="o">=</span><span class="s2">"</span><span class="nv">$LD_PRELOAD</span><span class="s2">:/opt/intel/mkl/lib/intel64/libmkl_core.so:/opt/intel/mkl/lib/intel64/libmkl_sequential.so"</span>
+</code></pre></div></div>
+
+<p>To use MKL in GTSAM pass the flag <code class="highlighter-rouge">-DGTSAM_WITH_EIGEN_MKL=ON</code> to cmake.</p>
+
+<p>The <code class="highlighter-rouge">LD_PRELOAD</code> fix seems to be related to a well known problem with MKL which leads to lots of undefined symbol errors, for example:</p>
+
+<ul>
+  <li><a href="https://software.intel.com/en-us/forums/intel-math-kernel-library/topic/300857">https://software.intel.com/en-us/forums/intel-math-kernel-library/topic/300857</a></li>
+  <li><a href="https://software.intel.com/en-us/forums/intel-distribution-for-python/topic/628976">https://software.intel.com/en-us/forums/intel-distribution-for-python/topic/628976</a></li>
+  <li><a href="https://groups.google.com/a/continuum.io/forum/#!topic/anaconda/J3YGoef64z8">https://groups.google.com/a/continuum.io/forum/#!topic/anaconda/J3YGoef64z8</a></li>
+</ul>
+
+<p>Failing to specify <code class="highlighter-rouge">LD_PRELOAD</code> may lead to errors such as:
+ <code class="highlighter-rouge">ImportError: /opt/intel/mkl/lib/intel64/libmkl_vml_avx2.so: undefined symbol: mkl_serv_getenv</code>
+or
+ <code class="highlighter-rouge">Intel MKL FATAL ERROR: Cannot load libmkl_avx2.so or libmkl_def.so.</code>
+when importing GTSAM using the cython wrapper in python.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">GTSAM</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">GTSAM</li><li><a class="u-email" href="mailto:frank.dellaert@gtsam.org">frank.dellaert@gtsam.org</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/borglab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">borglab</span></a></li><li><a href="https://www.twitter.com/gtsam4"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">gtsam4</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>GTSAM is a BSD-licensed C++ library that implements sensor fusion for robotics and computer vision using factor graphs.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+              delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "\\(", right: "\\)", display: false},
+              ]
+          });
+      });
+    </script>
+
+  </body>
+
+</html>
