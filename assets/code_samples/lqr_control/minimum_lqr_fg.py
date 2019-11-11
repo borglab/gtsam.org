@@ -17,11 +17,11 @@ def solve_lqr(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500):
     p = np.size(B, 1)
 
     # noise models
-    PRIOR_NOISE = gtsam.noiseModel_Constrained.All(n)
-    DYNAMICS_NOISE = gtsam.noiseModel_Constrained.All(n)
-    Q_NOISE = gtsam.dynamic_cast_noiseModel_Diagonal_noiseModel_Gaussian(
+    prior_noise = gtsam.noiseModel_Constrained.All(n)
+    dynamics_noise = gtsam.noiseModel_Constrained.All(n)
+    q_noise = gtsam.dynamic_cast_noiseModel_Diagonal_noiseModel_Gaussian(
         gtsam.noiseModel_Gaussian.Information(Q))
-    R_NOISE = gtsam.dynamic_cast_noiseModel_Diagonal_noiseModel_Gaussian(
+    r_noise = gtsam.dynamic_cast_noiseModel_Diagonal_noiseModel_Gaussian(
         gtsam.noiseModel_Gaussian.Information(R))
     # note: GTSAM 4.0.2 python wrapper doesn't have 'Information'
     # wrapper, use this instead if you are not on develop branch:
@@ -38,19 +38,19 @@ def solve_lqr(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500):
         U.append(gtsam.symbol(ord('u'), i))
 
     # set initial state as prior
-    graph.add(X[0], np.eye(n), X0, PRIOR_NOISE)
+    graph.add(X[0], np.eye(n), X0, prior_noise)
 
     # Add dynamics constraint as ternary factor
     #   A.x1 + B.u1 - I.x2 = 0
     for i in range(num_time_steps-1):
         graph.add(X[i], A, U[i], B, X[i+1], -np.eye(n),
-                  np.zeros((n)), DYNAMICS_NOISE)
+                  np.zeros((n)), dynamics_noise)
 
     # Add cost functions as unary factors
     for x in X:
-        graph.add(x, np.eye(n), np.zeros(n), Q_NOISE)
+        graph.add(x, np.eye(n), np.zeros(n), q_noise)
     for u in U:
-        graph.add(u, np.eye(p), np.zeros(p), R_NOISE)
+        graph.add(u, np.eye(p), np.zeros(p), r_noise)
 
     # Solve
     result = graph.optimize()

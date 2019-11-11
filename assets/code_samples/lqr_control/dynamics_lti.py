@@ -24,9 +24,9 @@ def create_lti_fg(A, B, X0=np.array([]), u=np.array([]), num_time_steps=500):
             control inputs respectively
     '''
     # Create noise models
-    PRIOR_NOISE = gtsam.noiseModel_Constrained.All(np.size(A, 0))
-    DYNAMICS_NOISE = gtsam.noiseModel_Constrained.All(np.size(A, 0))
-    CONTROL_NOISE = gtsam.noiseModel_Constrained.All(1)
+    prior_noise = gtsam.noiseModel_Constrained.All(np.size(A, 0))
+    dynamics_noise = gtsam.noiseModel_Constrained.All(np.size(A, 0))
+    control_noise = gtsam.noiseModel_Constrained.All(1)
 
     # Create an empty Gaussian factor graph
     graph = gtsam.GaussianFactorGraph()
@@ -42,19 +42,19 @@ def create_lti_fg(A, B, X0=np.array([]), u=np.array([]), num_time_steps=500):
     if X0.size > 0:
         if X0.size != np.size(A, 0):
             raise ValueError("X0 dim does not match state dim")
-        graph.add(X[0], np.eye(X0.size), X0, PRIOR_NOISE)
+        graph.add(X[0], np.eye(X0.size), X0, prior_noise)
 
     # Add dynamics constraint as ternary factor
     #   A.x1 + B.u1 - I.x2 = 0
     for i in range(num_time_steps-1):
         graph.add(X[i], A, U[i], B, X[i+1], -np.eye(np.size(A, 0)),
-                  np.zeros((np.size(A, 0))), DYNAMICS_NOISE)
+                  np.zeros((np.size(A, 0))), dynamics_noise)
 
     # Add control inputs
     for i in range(len(u)):
         if np.shape(u) != (num_time_steps, np.size(B, 1)):
             raise ValueError("control input is wrong size")
-        graph.add(U[i], np.eye(np.size(B, 1)), u[i, :], CONTROL_NOISE)
+        graph.add(U[i], np.eye(np.size(B, 1)), u[i, :], control_noise)
 
     return graph, X, U
 
