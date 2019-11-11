@@ -5,7 +5,37 @@ title:  "LQR Control Using Factor Graphs"
 
 <link rel="stylesheet" href="/assets/css/slideshow.css">
 
-Authors: [Gerry Chen](https://gerry-chen.com) and [Yetong Zhang](https://www.linkedin.com/in/yetong-zhang-9b810a105/)  
+Authors: [Gerry Chen](https://gerry-chen.com) and [Yetong
+Zhang](https://www.linkedin.com/in/yetong-zhang-9b810a105/)  
+
+<div style="display:none"> <!-- custom latex commands here -->
+  $
+    \DeclareMathOperator*{\argmin}{argmin}
+    \newcommand{\coloneqq}{\mathrel{:=}}
+  $
+</div>
+<style>
+.MJXc-display {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+.MJXc-display::-webkit-scrollbar {
+    width: 5px;
+    height: 2px;
+}
+.MJXc-display::-webkit-scrollbar-track {
+    background: transparent;
+}
+.MJXc-display::-webkit-scrollbar-thumb {
+    background: #ddd;
+    visibility:hidden;
+}
+.MJXc-display:hover::-webkit-scrollbar-thumb {
+    visibility:visible;
+}
+</style> <!-- horizontal scrolling -->
 
 ## Introduction
 <a name="LQR_example"></a>
@@ -25,14 +55,14 @@ graphs for optimal control, though they can be readily extended to LQG, iLQR, DD
 learning (stay tuned for future posts).  We consider the **finite-horizon, discrete LQR problem**
 (though the control law converges to the infinite-horizon case quite quickly as illustrated in
 [Figure 1a](#LQR_example)).  The task is to find the optimal controls $u_k$ at time instances $t_k$
-so that a total cost is minimized, given [(1)](#eq:dyn_model) a dynamics model,
-[(2)](#eq:state_cost) a cost function on states, and [(3)](#eq:action_cost) a cost
-function on actions. In the linear-quadratic problem , these are of the
+so that a total cost is minimized, given \eqref{eq:dyn_model} a dynamics model,
+\eqref{eq:state_cost} a cost function on states, and \eqref{eq:action_cost} a cost
+function on actions. In the linear-quadratic problem, these are of the
 form ([Wikipedia](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator#Finite-horizon,_discrete-time_LQR)):
 
-<a name="eq:dyn_model"></a> \\[ x_{k+1} = Ax_k + Bu_k \tag{1} \\]
-<a name="eq:state_cost"></a> \\[ L(x_k) = x_k^T Q x_k \tag{2} \\]
-<a name="eq:action_cost"></a> \\[ L(u_k) = u_k^T R u_k \tag{3} \\]
+\\[ \begin{equation} x_{k+1} = Ax_k + Bu_k \label{eq:dyn_model} \end{equation} \\]
+\\[ \begin{equation} L_x(x_k) = x_k^T Q x_k \label{eq:state_cost} \end{equation} \\]
+\\[ \begin{equation} L_u(u_k) = u_k^T R u_k \label{eq:action_cost} \end{equation} \\]
 
 The optimal controls over time can be expressed as the constrained optimization problem:
 
@@ -176,53 +206,74 @@ Taken from my website: https://github.com/gchenfc/gerrysworld2/blob/master/css/a
 <!-- ************** STATE ************** -->
 <a id="sec:elim_state"></a>
 ### Eliminate a State
-Let us start at the last state, $x_2$. Gathering the three factors (marked in
-red [Figure 3a](#fig_eliminate_x)), we have the following objective function, $\phi_1$, and constraint equation, [(4)](#eq:constrain), on $x_2$, $u_1$ and $x_1$:
+Let us start at the last state, $x_2$. Gathering the two factors (marked in
+red [Figure 3a](#fig_eliminate_x)), we have \eqref{eq:potential} the objective function, $\phi_1$, and \eqref{eq:constrain} the constraint equation on $x_2$, $u_1$ and $x_1$:
 
-<a name="eq:potential"></a>
-\\[ \phi_1(x_1, u_1, x_2) = x_1^T Q x_1 + u_1^T R u_1 + x_2^T Q x_2
-\tag{4} \\]
-<a name="eq:constrain"></a>
-\\[ x_2 = Ax_1 + Bu_1 \tag{5} \\]
+\begin{equation} \phi_1(x_2) = x_2^T Q x_2 \label{eq:potential} \end{equation}
 
-By substituting $x_2$ into [(4)](#eq:potential) using the [(5)](#eq:constrain), we can rewrite
-$\phi_1$ as a function of $x_1$ and $u_1$:
+\begin{equation} x_2 = Ax_1 + Bu_1 \label{eq:constrain} \end{equation}
 
-<a name="eq:potential_simplified"></a>
-\\[ \phi_1(x_1, u_1) = x_1^T Q x_1 + u_1^T R u_1 + (Ax_1 + Bu_1)^T Q (Ax_1 + Bu_1)
-\tag{6} \\]
+By substituting $x_2$ from the dynamics constraint \eqref{eq:constrain} into the objective function
+\eqref{eq:potential}, we create a new factor representing
+the cost of state $x_2$ as a function of $x_1$ and $u_1$:
+
+\begin{equation} \phi_2(x_1, u_1) = (Ax_1 + Bu_1)^T Q (Ax_1 + Bu_1)
+\label{eq:potential_simplified} \end{equation}
 
 The resulting factor graph is illustrated in [Figures 3a](#fig_eliminate_x) and
 [3b](#fig_eliminate_x). To summarize, we used the dynamics constraint to eliminate variable
-$x_2$ as well as the two factors marked in red, and replace them with a new binary factor on $x_1$
+$x_2$ as well as the two factors marked in red, and replaced them with a new binary cost factor on $x_1$
 and $u_1$, marked in blue.
 <!-- ************** CONTROL ************** -->
 <a id="sec:elim_ctrl"></a>
 ### Eliminate a Control
-Note that [(6)](#eq:potential_simplified) defines an (unnormalized) joint
-Gaussian density on variables $x_1$ and $u_1$. We solve for the mean of $u_1$ by
-setting the derivative of [(6)](#eq:potential_simplified) wrt $u_1$ to zero,
-yielding the expression of $u_1$ given $x_1$ as (detailed calculation in the
-[Appendix](#eliminate-u_1))
+<!-- Now \eqref{eq:potential_simplified} defines an (unnormalized) joint
+Gaussian density on variables $x_1$ and $u_1$.  -->
+To eliminate $u_1$, we seek to replace the two factors marked red in [Figure 4a](#fig_eliminate_u)
+with a new cost factor on $x_1$ and an equation for the optimal control $$u_1^*(x_1)$$.
 
-<a name="eq:control_law"></a>
-\\[ \begin{aligned} 
-u_1 &= -(R+B^TQB)^{-1}B^TQAx_1 \tag{7} \\\\ 
-&= K_1x_1 
-\end{aligned} \\]
+Adding the control cost \eqref{eq:action_cost} to \eqref{eq:potential_simplified}, the combined cost of the
+two red factors in [Figure 4a](#fig_eliminate_u) is given by:
 
-where $K_1\coloneqq -(R+B^TQB)^{-1}B^TQA$. We can further substitute the expression of $u_1$
-into our potential [(6)](#eq:potential_simplified) so that we have (detailed
-calculation in the [Appendix](#marginalization-cost-on-x_1))
+\begin{equation} \phi_3(x_1, u_1) = u_1^TRu_1 + (Ax_1 + Bu_1)^T Q (Ax_1 + Bu_1)
+\label{eq:potential_u1} \end{equation}
 
-<a name="eq:cost_update"></a>
-\\[ \begin{aligned} 
-\phi_1(x_1) &= x_1^T Q x_1 + (K_1x_1)^T RK_1x_1 + (Ax_1 + BKx_1)^T Q (Ax_1 + 
-BKx_1) \\\\ 
-&= x_1^T(Q+A^TQA - K_1^TB^TQA)x_1 \\\\ 
-&= x_1^T V_1 x_2 \tag{8} 
-\end{aligned} \\]
+We minimize $\phi_3$ by
+setting the derivative of \eqref{eq:potential_u1} wrt $u_1$ to zero
+<!-- (detailed calculation in the [Appendix](#eliminate-u_1)),  -->
+yielding the expression for the optimal control input $u_1^*$ as 
+
+\\[ \begin{align} 
+u_1^*(x_1) &= -(R+B^TQB)^{-1}B^TQAx_1 \label{eq:control_law} \\\\ 
+&= K_1x_1 \nonumber
+\end{align} \\]
+
+where $K_1\coloneqq -(R+B^TQB)^{-1}B^TQA$.
+
+Finally, we substitute the expression of our optimal control, $$u_1^*$$,
+into our potential \eqref{eq:potential_u1}
+<!-- (detailed calculation in the [Appendix](#marginalization-cost-on-x_1)) -->
+to obtain a new unary cost factor on $x_1$:
+
+\begin{align}
+    \phi_4(x_1) &= \phi_3(x_1, u_1^*(x_1)) \nonumber \\\\ 
+        &= (K_1x_1)^T RK_1x_1 + (Ax_1 + BKx_1)^T Q (Ax_1 + BKx_1) \label{eq:potential_x1}
+\end{align}
+
+### Combine Unary Cost Factors
+We add the existing unary state cost factor on $x_1$ to the acculumated cost
+\eqref{eq:potential_x1} to obtain the cost-to-go, 
+
+\\[ \begin{align} 
+V_1(x_1) &= x_1^T Q x_1 + (K_1x_1)^T RK_1x_1 + (Ax_1 + BKx_1)^T Q (Ax_1 + 
+BKx_1) \nonumber \\\\ 
+&= x_1^T(Q+A^TQA - K_1^TB^TQA)x_1 \label{eq:cost_update} \\\\ 
+&= x_1^T V_1 x_2 \nonumber
+\end{align} \\]
 where $V_1\coloneqq Q+A^TQA - K_1^TB^TQA$.
+
+Note that we simplified $K_1^TRK_1 + K_1^TB^TQBK_1 = K_1^TB^TQA$ by substituting in the non-transposed $K_1$ using
+\eqref{eq:control_law}.
 
 As illustrated in [Figure 4](#fig_eliminate_u), through the above steps, we can eliminate variable
 $x_2$, $u_2$ as well as three factors marked in red, and replace them with a new factor on $x_1$
@@ -239,10 +290,11 @@ a function of state $x_k$, then generate a new factor on $x_k$ representing the
 "cost-to-go" function $x_k^TV_kx_k$.
 
 Eliminating a general state, $x_{k+1}$, and control $u_k$, we obtain the recurrence relations:
-<a name="eq:control_update_k"></a>
-\\[ \boxed{K_k = -(R+B^TV_{k+1}B)^{-1}B^TV_{k+1}A} \tag{9} \\]
-<a name="eq:cost_update_k"></a>
-\\[ \boxed{V_k = Q+A^TV_{k+1}A - K_k^TB^TV_{k+1}A} \tag{10} \\]
+
+\begin{equation} \boxed{K_k = -(R+B^TV_{k+1}B)^{-1}B^TV_{k+1}A} \label{eq:control_update_k} \end{equation}
+
+\begin{equation} \boxed{V_k = Q+A^TV_{k+1}A - K_k^TB^TV_{k+1}A} \label{eq:cost_update_k} \end{equation}
+
 with $V_{T}=Q$ is the cost at the last time step.
 </div> <!-- scrollablecontent -->
 <!-- ************************ END SCROLLABLE ELIMINATION DESCRIPTION ************************ -->
@@ -251,16 +303,16 @@ with $V_{T}=Q$ is the cost at the last time step.
 In [Wikipedia](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator#Finite-horizon,_discrete-time_LQR), the control law and cost function for LQR are given by
 
 \\[ u_k = K_kx_k \\]
-<a name="eq:control_update_k_ricatti"></a>
-\\[ K_k = -(R+B^TP_{k+1}B)^{-1}B^TP_{k+1}A \tag{11} \\]
-<a name="eq:cost_update_k_ricatti"></a>
-\\[ P_k = Q+A^TP_{k+1}A - K_k^TB^TP_{k+1}A \tag{12} \\]
+
+\begin{equation} K_k = -(R+B^TP_{k+1}B)^{-1}B^TP_{k+1}A \label{eq:control_update_k_ricatti} \end{equation}
+
+\begin{equation} P_k = Q+A^TP_{k+1}A - K_k^TB^TP_{k+1}A \label{eq:cost_update_k_ricatti} \end{equation}
 
 with $P_k$ commonly referred to as the solution to the dynamic Ricatti equation and $P_T=Q$ is the
 value of the Ricatti function at the final time step.
 
-Note that [(11)](#eq:control_update_k_ricatti) and [(12)](#eq:cost_update_k_ricatti) correspond to
-the same results as we derived in [(9)](#eq:control_update_k) and [(10)](#eq:cost_update_k)
+Note that \eqref{eq:control_update_k_ricatti} and \eqref{eq:cost_update_k_ricatti} correspond to
+the same results as we derived in \eqref{eq:control_update_k} and \eqref{eq:cost_update_k}
 respectively, where the Ricatti solutions, $P_k$, correspond to $V_k$ in our factor graph elimination.
 
 ## Intuition
@@ -270,7 +322,7 @@ of the trajectory and control assuming optimal control after $x_k$.  Referred to
 "return cost", and "value function" by different literatures, we denote this cost as $\phi_k$, given by 
 \\[ \phi_k = x_k^TP_kx_k \\]
 This "cost-to-go" is depicted as a heatmap in [Figure 1](#LQR_example).  From
-[(9)](#eq:control_update_k), the optimal control, $K_k$,
+\eqref{eq:control_update_k}, the optimal control, $K_k$,
 represents a balance between achieving a small "cost-to-go" next time step ($B^TV_{k+1}B$) and exerting a small
 amount of control this time step ($R$).
 
@@ -309,11 +361,11 @@ def solve_lqr(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500):
     p = np.size(B, 1)
 
     # noise models
-    PRIOR_NOISE = gtsam.noiseModel_Constrained.All(n)
-    DYNAMICS_NOISE = gtsam.noiseModel_Constrained.All(n)
-    Q_NOISE = gtsam.dynamic_cast_noiseModel_Diagonal_noiseModel_Gaussian(
+    prior_noise = gtsam.noiseModel_Constrained.All(n)
+    dynamics_noise = gtsam.noiseModel_Constrained.All(n)
+    q_noise = gtsam.dynamic_cast_noiseModel_Diagonal_noiseModel_Gaussian(
         gtsam.noiseModel_Gaussian.Information(Q))
-    R_NOISE = gtsam.dynamic_cast_noiseModel_Diagonal_noiseModel_Gaussian(
+    r_noise = gtsam.dynamic_cast_noiseModel_Diagonal_noiseModel_Gaussian(
         gtsam.noiseModel_Gaussian.Information(R))
     # note: GTSAM 4.0.2 python wrapper doesn't have 'Information'
     # wrapper, use this instead if you are not on develop branch:
@@ -330,19 +382,19 @@ def solve_lqr(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500):
         U.append(gtsam.symbol(ord('u'), i))
 
     # set initial state as prior
-    graph.add(X[0], np.eye(n), X0, PRIOR_NOISE)
+    graph.add(X[0], np.eye(n), X0, prior_noise)
 
     # Add dynamics constraint as ternary factor
     #   A.x1 + B.u1 - I.x2 = 0
     for i in range(num_time_steps-1):
         graph.add(X[i], A, U[i], B, X[i+1], -np.eye(n),
-                  np.zeros((n)), DYNAMICS_NOISE)
+                  np.zeros((n)), dynamics_noise)
 
     # Add cost functions as unary factors
     for x in X:
-        graph.add(x, np.eye(n), np.zeros(n), Q_NOISE)
+        graph.add(x, np.eye(n), np.zeros(n), q_noise)
     for u in U:
-        graph.add(u, np.eye(p), np.zeros(p), R_NOISE)
+        graph.add(u, np.eye(p), np.zeros(p), r_noise)
 
     # Solve
     result = graph.optimize()
@@ -363,18 +415,17 @@ def solve_lqr(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500):
 <!-- ********************************** APPENDIX ********************************** -->
 ## Appendix
 ### Eliminate $u_1$
-Setting the derivative w.r.t. $u_1$ of the objective function, $\phi_1(x_1, u_1)$, in [(6)](#eq:potential_simplified) to zero:
+Setting the derivative w.r.t. $u_1$ of the objective function, $\phi_1(x_1, u_1)$, in \eqref{eq:potential_simplified} to zero:
 \\[ Ru_1 + B^TQ(Ax_1+Bu_1) = 0 \\]
-we solve to obtain the result shown in [(7)](#eq:control_law):
+we solve to obtain the result shown in \eqref{eq:control_law}:
 \\[ \begin{aligned} 
     & (R+B^TQB)u_1 + B^TQAx_1 = 0 \\\\ 
     & u_1 = -(R+B^TQB)^{-1}B^TQAx_1 
 \end{aligned} \\]
 
 ### Marginalization Cost on $x_1$
-By substituting [(7)](#eq:control_law) into [(6)](#eq:potential_simplified), we have the updated
+By substituting \eqref{eq:control_law} into \eqref{eq:potential_simplified}, we have the updated
 potential function as a function of only $x_1$:
-<div style="overflow:auto" markdown="1">
 \\[ \begin{aligned} 
     \phi_1(x_1) &= x_1^T Q x_1 + (K_1x_1)^T RK_1x_1 + (Ax_1 + BKx_1)^T Q (Ax_1 + BKx_1) \\\\ 
     &= x_1^T(Q+ K_1^TRK_1 + A^TQA + K_1^TB^TQB - K_1^TB^TQA - A^TQBK_1)x_1  \\\\ 
@@ -382,7 +433,6 @@ potential function as a function of only $x_1$:
     &= x_1^T(Q + A^TQA + A^TQBK_1 - K_1^TB^TQA - A^TQBK_1)x_1 \\\\ 
     &= x_1^T(Q + A^TQA - K_1^TB^TQA)x_1 
 \end{aligned} \\]
-</div>
 
 ### Least Squares Implementation in GTSAM
 GTSAM can be specified to use either of two methods for solving the least squares problems that
@@ -485,7 +535,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
 <div class="slideshow-container" style="min-height:3in;">
   <div class="mySlides 1" style="text-align: center;">
       <figure class="center" style="width:75%">
-<div markdown="1" align="left" style="width:100%; height:2.2in; overflow:auto">
+<div markdown="1" align="left" style="width:100%; height:2.6in; overflow:auto">
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
     \begin{bmatrix} 
@@ -514,7 +564,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
   </div>
   <div class="mySlides 1" style="text-align: center;">
       <figure class="center" style="width:75%">
-<div markdown="1" align="left" style="width:100%; height:2.2in; overflow:auto">
+<div markdown="1" align="left" style="width:100%; height:2.6in; overflow:auto">
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
     \begin{bmatrix} 
@@ -527,8 +577,8 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
         I
     \end{bmatrix} & 
     \left[ \begin{array}{ccccc|c} 
-        \color{red} Q^{1/2} &   &       &       &       & 0\\\\ 
-        \color{red} I & \color{red} -B      & \color{red} -A    &       &       & 0\\\\ 
+        \color{red} {Q^{1/2}} &   &       &       &       & 0\\\\ 
+        \color{red} I & \color{red} {-B}      & \color{red} {-A}    &       &       & 0\\\\ 
           & R^{1/2} &       &       &       & 0\\\\ 
           &         & Q^{1/2}&      &       & 0\\\\ 
           &         & I     & -B    & -A    & 0\\\\ 
@@ -544,7 +594,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
 
   <div class="mySlides 1" style="text-align: center;">
       <figure class="center" style="width:75%">
-<div markdown="1" align="left" style="width:100%; height:2.2in; overflow:auto">
+<div markdown="1" align="left" style="width:100%; height:2.6in; overflow:auto">
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
     \begin{bmatrix} 
@@ -559,7 +609,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \left[ \begin{array}{c:cccc|c} 
         I & -B      & -A    &       &       & 0\\\\ 
         \hdashline 
-          & \color{blue} Q^{1/2}B & \color{blue} Q^{1/2}A&      &       & 0\\\\ 
+          & \color{blue} {Q^{1/2}B} & \color{blue} {Q^{1/2}A} &      &       & 0\\\\ 
           & R^{1/2} &       &       &       & 0\\\\ 
           &                     & Q^{1/2}&      &       & 0\\\\ 
           &                     & I     & -B    & -A    & 0\\\\ 
@@ -575,7 +625,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
 
   <div class="mySlides 1" style="text-align: center;">
       <figure class="center" style="width:75%">
-<div markdown="1" align="left" style="width:100%; height:2.2in; overflow:auto">
+<div markdown="1" align="left" style="width:100%; height:2.6in; overflow:auto">
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
     \begin{bmatrix} 
@@ -590,9 +640,9 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \left[ \begin{array}{c:cccc|c} 
         I & -B      & -A    &       &       & 0\\\\ 
         \hdashline 
-          & \color{red} Q^{1/2}B & \color{red} Q^{1/2}A&      &       & 0\\\\ 
-          & \color{red} R^{1/2} &       &       &       & 0\\\\ 
-          &                     & \color{red} Q^{1/2}&      &       & 0\\\\ 
+          & \color{red} {Q^{1/2}B} & \color{red} {Q^{1/2}A} &      &       & 0\\\\ 
+          & \color{red} {R^{1/2}} &       &       &       & 0\\\\ 
+          &                     & \color{red} {Q^{1/2}} &      &       & 0\\\\ 
           &                     & I     & -B    & -A    & 0\\\\ 
           &                     &       & R^{1/2}&      & 0\\\\ 
           &                     &       &       & Q^{1/2}& 0 
@@ -606,7 +656,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
 
   <div class="mySlides 1" style="text-align: center;">
       <figure class="center" style="width:75%">
-<div markdown="1" align="left" style="width:100%; height:2.2in; overflow:auto">
+<div markdown="1" align="left" style="width:100%; height:2.6in; overflow:auto">
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
     \begin{bmatrix} 
@@ -621,7 +671,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
         I & -B      & -A    &       &       & 0\\\\ 
           & D_1^{1/2} & -D_1^{1/2}K_1 &      &       & 0\\\\ 
           \hdashline 
-          &         & \color{blue} P_1^{1/2} &      &       & 0\\\\ 
+          &         & \color{blue} {P_1^{1/2}} &      &       & 0\\\\ 
           &         & I     & -B    & -A    & 0\\\\ 
           &         &       & R^{1/2}&      & 0\\\\ 
           &         &       &       & Q^{1/2}& 0 
@@ -635,7 +685,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
 
   <div class="mySlides 1" style="text-align: center;">
       <figure class="center" style="width:75%">
-<div markdown="1" align="left" style="width:100%; height:2.2in; overflow:auto">
+<div markdown="1" align="left" style="width:100%; height:2.6in; overflow:auto">
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
     \begin{bmatrix} 
@@ -650,8 +700,8 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
         I & -B      & -A    &       &       & 0\\\\ 
           & D_1^{1/2} & -D_1^{1/2}K_1 &      &       & 0\\\\ 
           \hdashline 
-          &         & \color{red} P_1^{1/2} &      &       & 0\\\\ 
-          &         & \color{red} I     & \color{red} -B    & \color{red} -A    & 0\\\\ 
+          &         & \color{red} {P_1^{1/2}} &      &       & 0\\\\ 
+          &         & \color{red} I     & \color{red} {-B}    & \color{red} {-A}    & 0\\\\ 
           &         &       & R^{1/2}&      & 0\\\\ 
           &         &       &       & Q^{1/2}& 0 
     \end{array} \right]
@@ -664,7 +714,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
 
   <div class="mySlides 1" style="text-align: center;">
       <figure class="center" style="width:75%">
-<div markdown="1" align="left" style="width:100%; height:2.2in; overflow:auto">
+<div markdown="1" align="left" style="width:100%; height:2.6in; overflow:auto">
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
     \begin{bmatrix} 
@@ -680,7 +730,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
           & D_1^{1/2} & -D_1^{1/2}K_1&      &       & 0\\\\ 
           &         & I     & -B    & -A    & 0\\\\ 
           \hdashline 
-          &         &       &\color{blue} P_1^{1/2}B &\color{blue} P_1^{1/2}A& 0\\\\ 
+          &         &       &\color{blue} {P_1^{1/2}B} & \color{blue} {P_1^{1/2}A} & 0\\\\ 
           &         &       & R^{1/2}&      & 0\\\\ 
           &         &       &       & Q^{1/2}& 0 
     \end{array} \right]
@@ -693,7 +743,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
 
   <div class="mySlides 1" style="text-align: center;">
       <figure class="center" style="width:75%">
-<div markdown="1" align="left" style="width:100%; height:2.2in; overflow:auto">
+<div markdown="1" align="left" style="width:100%; height:2.6in; overflow:auto">
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
     \begin{bmatrix} 
@@ -709,9 +759,9 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
           & D_1^{1/2} & -D_1^{1/2}K_1&      &       & 0\\\\ 
           &         & I     & -B    & -A    & 0\\\\ 
           \hdashline 
-          &         &       &\color{red} P_1^{1/2}B &\color{red} P_1^{1/2}A& 0\\\\ 
-          &         &       &\color{red} R^{1/2}&      & 0\\\\ 
-          &         &       &       &\color{red} Q^{1/2}& 0 
+          &         &       &\color{red} {P_1^{1/2}B} &\color{red} {P_1^{1/2}A} & 0\\\\ 
+          &         &       &\color{red} {R^{1/2}} &      & 0\\\\ 
+          &         &       &       &\color{red} {Q^{1/2}} & 0 
     \end{array} \right]
     \end{array} \\)
 </div>
@@ -722,7 +772,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
 
   <div class="mySlides 1" style="text-align: center;">
       <figure class="center" style="width:75%">
-<div markdown="1" align="left" style="width:100%; height:2.2in; overflow:auto">
+<div markdown="1" align="left" style="width:100%; height:2.6in; overflow:auto">
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
     \begin{bmatrix} 
@@ -738,7 +788,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
           &         & I     & -B    & -A    & 0\\\\ 
           &         &       & D_0^{1/2}  & -D_0^{1/2}K_0 & 0\\\\ 
           \hdashline 
-          &         &       &       & \color{blue} P_0^{1/2}   & 0
+          &         &       &       & \color{blue} {P_0^{1/2}}   & 0
     \end{array} \right]
     \end{array} \\)
 </div>
@@ -792,7 +842,6 @@ However, block QR factorization is non-trivial to follow so, for demonstrative p
 find their forms algebraically using the "completing the square" technique.  Taking, for example,
 the elimination of $u_0$ ,
 
-<div style="overflow:auto" markdown="1">
 \\[ \begin{aligned} \scriptstyle 
     J(u_0, x_0) & \scriptstyle=~ \|\| P_1^{1/2}Bu_0 ~+~ P_1^{1/2}Ax_0\|\|^2_2 ~+~ \|\|R^{1/2}u_0\|\|^2_2 \qquad+ \|\|Q^{1/2}x_0\|\|^2_2 \\\\ 
         & \scriptstyle=~ u_0^T(B^TP_1B+R)u_0 ~+~ 2u_0^TB^TP_1Ax_0 ~+~ x_0^TA^TP_1Ax_0 \qquad+ x^TQx \\\\ 
@@ -802,7 +851,6 @@ the elimination of $u_0$ ,
         & \scriptstyle=~ \|\|(B^TP_1B+R)^{1/2}u_0 ~+~ (B^TP_1B+R)^{-1/2}B^TP_1Ax_0\|\|_2^2 ~+~ \|\|(Q ~+~ A^TP_1A ~-~ K_0^TB^TP_1A)^{1/2}x_0\|\|_2^2 \\\\ 
         & \scriptstyle=~ \|\|V\_{0,0}u_0 ~+~ V\_{0,1}x_0\|\|_2^2 ~+~ \|\|P_0^{1/2}x_0\|\|_2^2 
 \end{aligned} \\]
-</div>
 
 ### Final Symbolic Expressions of Factor Graph Evaluation
 In the above solution, we have
