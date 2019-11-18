@@ -606,7 +606,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{array} \right]
     \end{array} \\)
 </div>
-        <img src="/assets/images/lqr_control/elimination_steps/fg1.png" alt="factor graph partially eliminated" />
+        <img src="/assets/images/lqr_control/elimination_steps/gtsam_fg1.png" alt="factor graph partially eliminated" />
         <figcaption><b>Figure 7b</b> Eliminate $x_2$: the two factors to eliminate are highlighted in red</figcaption>
       </figure>
   </div>
@@ -637,7 +637,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{array} \right]
     \end{array} \\)
 </div>
-        <img src="/assets/images/lqr_control/elimination_steps/fg2.png" alt="factor graph partially eliminated" />
+        <img src="/assets/images/lqr_control/elimination_steps/gtsam_fg2.png" alt="factor graph partially eliminated" />
         <figcaption><b>Figure 7c</b> Eliminated $x_2$: the resulting binary cost factor is highlighted in blue</figcaption>
       </figure>
   </div>
@@ -668,7 +668,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{array} \right]
     \end{array} \\)
 </div>
-        <img src="/assets/images/lqr_control/elimination_steps/fg3.png" alt="factor graph partially eliminated" />
+        <img src="/assets/images/lqr_control/elimination_steps/gtsam_fg3.png" alt="factor graph partially eliminated" />
         <figcaption><b>Figure 7d</b> Eliminate $u_1$: the three factors to eliminate are highlighted in red</figcaption>
       </figure>
   </div>
@@ -697,7 +697,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{array} \right]
     \end{array} \\)
 </div>
-        <img src="/assets/images/lqr_control/elimination_steps/fg4.png" alt="factor graph partially eliminated" />
+        <img src="/assets/images/lqr_control/elimination_steps/gtsam_fg4.png" alt="factor graph partially eliminated" />
         <figcaption><b>Figure 7e</b> Eliminated $u_1$: the resulting unary cost factor on $x_1$ is shown in blue</figcaption>
       </figure>
   </div>
@@ -726,7 +726,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{array} \right]
     \end{array} \\)
 </div>
-        <img src="/assets/images/lqr_control/elimination_steps/fg5.png" alt="factor graph partially eliminated" />
+        <img src="/assets/images/lqr_control/elimination_steps/gtsam_fg5.png" alt="factor graph partially eliminated" />
         <figcaption><b>Figure 7f</b> Eliminate $x_1$: the two factors to eliminate are highlighted in red</figcaption>
       </figure>
   </div>
@@ -755,7 +755,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{array} \right]
     \end{array} \\)
 </div>
-        <img src="/assets/images/lqr_control/elimination_steps/fg6.png" alt="factor graph partially eliminated" />
+        <img src="/assets/images/lqr_control/elimination_steps/gtsam_fg6.png" alt="factor graph partially eliminated" />
         <figcaption><b>Figure 7g</b> Eliminated $x_1$: the resulting binary cost factor is shown in blue</figcaption>
       </figure>
   </div>
@@ -784,7 +784,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{array} \right]
     \end{array} \\)
 </div>
-        <img src="/assets/images/lqr_control/elimination_steps/fg7.png" alt="factor graph partially eliminated" />
+        <img src="/assets/images/lqr_control/elimination_steps/gtsam_fg7.png" alt="factor graph partially eliminated" />
         <figcaption><b>Figure 7h</b> Eliminate $u_0$: the three cost factors to combine are shown in red</figcaption>
       </figure>
   </div>
@@ -811,7 +811,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{array} \right]
     \end{array} \\)
 </div>
-        <img src="/assets/images/lqr_control/elimination_steps/fg8.png" alt="factor graph partially eliminated" />
+        <img src="/assets/images/lqr_control/elimination_steps/gtsam_fg8.png" alt="factor graph partially eliminated" />
         <figcaption><b>Figure 7i</b> Final result: after eliminating $u_0$, the elimination matrix is upper-triangular and we can read off the control laws.</figcaption>
       </figure>
   </div>
