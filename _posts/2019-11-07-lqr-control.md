@@ -92,7 +92,7 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
 <div class="slideshow-container">
   <div class="mySlides 0" style="text-align: center;">
     <!-- <div class="numbertext">2 / 3</div> -->
-    <a name="fig_eliminate_x"></a>
+    <a name="fig_eliminate_x_a"></a>
     <figure class="center">
     <img src="/assets/images/lqr_control/elimination_steps/fg1.png"
         alt="Elimination of state $x_2$" />
@@ -101,7 +101,7 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
   </div>
   <div class="mySlides 0" style="text-align: center;">
     <!-- <div class="numbertext">2 / 3</div> -->
-    <a name="fig_eliminate_x"></a>
+    <a name="fig_eliminate_x_b"></a>
     <figure class="center">
     <img src="/assets/images/lqr_control/elimination_steps/fg2.png"
         alt="Elimination of state $x_2$" />
@@ -110,7 +110,7 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
   </div>
   <div class="mySlides 0" style="text-align: center;">
     <!-- <div class="numbertext">3 / 3</div> -->
-    <a name="fig_eliminate_u"></a>
+    <a name="fig_eliminate_u_a"></a>
     <figure class="center">
     <img src="/assets/images/lqr_control/elimination_steps/fg3.png"
         alt="Elimination of state $u_1$" />
@@ -119,7 +119,7 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
   </div>
   <div class="mySlides 0" style="text-align: center;">
     <!-- <div class="numbertext">3 / 3</div> -->
-    <a name="fig_eliminate_u"></a>
+    <a name="fig_eliminate_u_b"></a>
     <figure class="center">
     <img src="/assets/images/lqr_control/elimination_steps/fg4.png"
         alt="Elimination of state $u_1$" />
@@ -128,11 +128,11 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
   </div>
   <div class="mySlides 0" style="text-align: center;">
     <!-- <div class="numbertext">3 / 3</div> -->
-    <a name="fig_bayes_net"></a>
+    <a name="fig_merge_factor"></a>
     <figure class="center">
     <img src="/assets/images/lqr_control/elimination_steps/fg5.png"
-        alt="Bayes net" />
-        <figcaption><b>Figure 5a</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
+        alt="Elimination of state $u_1$" />
+        <figcaption><b>Figure 4c</b> Merge factors on $x_1$</figcaption>
     </figure>
   </div>
   <div class="mySlides 0" style="text-align: center;">
@@ -141,7 +141,7 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
     <figure class="center">
     <img src="/assets/images/lqr_control/elimination_steps/fg6.png"
         alt="Bayes net" />
-        <figcaption><b>Figure 5b</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
+        <figcaption><b>Figure 5a</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
     </figure>
   </div>
   <div class="mySlides 0" style="text-align: center;">
@@ -150,7 +150,7 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
     <figure class="center">
     <img src="/assets/images/lqr_control/elimination_steps/fg7.png"
         alt="Bayes net" />
-        <figcaption><b>Figure 5c</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
+        <figcaption><b>Figure 5b</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
     </figure>
   </div>
   <div class="mySlides 0" style="text-align: center;">
@@ -159,7 +159,25 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
     <figure class="center">
     <img src="/assets/images/lqr_control/elimination_steps/fg8.png"
         alt="Bayes net" />
+        <figcaption><b>Figure 5c</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
+    </figure>
+  </div>
+  <div class="mySlides 0" style="text-align: center;">
+    <!-- <div class="numbertext">3 / 3</div> -->
+    <a name="fig_bayes_net"></a>
+    <figure class="center">
+    <img src="/assets/images/lqr_control/elimination_steps/fg9.png"
+        alt="Bayes net" />
         <figcaption><b>Figure 5d</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
+    </figure>
+  </div>
+  <div class="mySlides 0" style="text-align: center;">
+    <!-- <div class="numbertext">3 / 3</div> -->
+    <a name="fig_bayes_net"></a>
+    <figure class="center">
+    <img src="/assets/images/lqr_control/elimination_steps/fg10.png"
+        alt="Bayes net" />
+        <figcaption><b>Figure 5e</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
     </figure>
   </div>
   <!-- Next and previous buttons -->
@@ -178,6 +196,8 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
   <span class="dot 0" onclick="currentSlide(6,0)"></span>
   <span class="dot 0" onclick="currentSlide(7,0)"></span>
   <span class="dot 0" onclick="currentSlide(8,0)"></span>
+  <span class="dot 0" onclick="currentSlide(9,0)"></span>
+  <span class="dot 0" onclick="currentSlide(10,0)"></span>
 </div>
 
 <!-- this css is to make the scroll bar disappear when the mouse isn't over the scrollable div...
@@ -207,7 +227,7 @@ Taken from my website: https://github.com/gchenfc/gerrysworld2/blob/master/css/a
 <a id="sec:elim_state"></a>
 ### Eliminate a State
 Let us start at the last state, $x_2$. Gathering the two factors (marked in
-red [Figure 3a](#fig_eliminate_x)), we have \eqref{eq:potential} the objective function, $\phi_1$, and \eqref{eq:constrain} the constraint equation on $x_2$, $u_1$ and $x_1$:
+red [Figure 3a](#fig_eliminate_x_a)), we have \eqref{eq:potential} the objective function, $\phi_1$, and \eqref{eq:constrain} the constraint equation on $x_2$, $u_1$ and $x_1$:
 
 \begin{equation} \phi_1(x_2) = x_2^T Q x_2 \label{eq:potential} \end{equation}
 
@@ -220,8 +240,7 @@ the cost of state $x_2$ as a function of $x_1$ and $u_1$:
 \begin{equation} \phi_2(x_1, u_1) = (Ax_1 + Bu_1)^T Q (Ax_1 + Bu_1)
 \label{eq:potential_simplified} \end{equation}
 
-The resulting factor graph is illustrated in [Figures 3a](#fig_eliminate_x) and
-[3b](#fig_eliminate_x). To summarize, we used the dynamics constraint to eliminate variable
+The resulting factor graph is illustrated in [Figures 3b](#fig_eliminate_x_b)). To summarize, we used the dynamics constraint to eliminate variable
 $x_2$ as well as the two factors marked in red, and replaced them with a new binary cost factor on $x_1$
 and $u_1$, marked in blue.
 <!-- ************** CONTROL ************** -->
@@ -229,11 +248,11 @@ and $u_1$, marked in blue.
 ### Eliminate a Control
 <!-- Now \eqref{eq:potential_simplified} defines an (unnormalized) joint
 Gaussian density on variables $x_1$ and $u_1$.  -->
-To eliminate $u_1$, we seek to replace the two factors marked red in [Figure 4a](#fig_eliminate_u)
+To eliminate $u_1$, we seek to replace the two factors marked red in [Figure 4a](#fig_eliminate_u_a)
 with a new cost factor on $x_1$ and an equation for the optimal control $$u_1^*(x_1)$$.
 
 Adding the control cost \eqref{eq:action_cost} to \eqref{eq:potential_simplified}, the combined cost of the
-two red factors in [Figure 4a](#fig_eliminate_u) is given by:
+two red factors in [Figure 4a](#fig_eliminate_u_a) is given by:
 
 \begin{equation} \phi_3(x_1, u_1) = u_1^TRu_1 + (Ax_1 + Bu_1)^T Q (Ax_1 + Bu_1)
 \label{eq:potential_u1} \end{equation}
@@ -259,9 +278,10 @@ to obtain a new unary cost factor on $x_1$:
     \phi_4(x_1) &= \phi_3(x_1, u_1^*(x_1)) \nonumber \\\\ 
         &= (K_1x_1)^T RK_1x_1 + (Ax_1 + BKx_1)^T Q (Ax_1 + BKx_1) \label{eq:potential_x1}
 \end{align}
+The resulting factor graph is illustrated in [Figures 4b](#fig_eliminate_u_b))
 
 ### Combine Unary Cost Factors
-We add the existing unary state cost factor on $x_1$ to the acculumated cost
+We further add the existing unary state cost factor on $x_1$ to the acculumated cost
 \eqref{eq:potential_x1} to obtain the cost-to-go, 
 
 \\[ \begin{align} 
@@ -275,15 +295,14 @@ where $V_1\coloneqq Q+A^TQA - K_1^TB^TQA$.
 Note that we simplified $K_1^TRK_1 + K_1^TB^TQBK_1 = K_1^TB^TQA$ by substituting in the non-transposed $K_1$ using
 \eqref{eq:control_law}.
 
-As illustrated in [Figure 4](#fig_eliminate_u), through the above steps, we can eliminate variable
-$x_2$, $u_2$ as well as three factors marked in red, and replace them with a new factor on $x_1$
-marked in blue, with potential $x_1^TV_1x_1$ , which represents the marginalized cost on state
-$x_1$.
+As illustrated in [Figure 4c](#fig_merge_factor), through the above steps, we can eliminate variable
+$u_1$ as well as two factors marked in red, and replace them with a new factor on $x_1$
+marked in blue. By further merging with the unary factor on $x_1$, yields the marginalized cost on state $x_1$ as $x_1^TV_1x_1$.
 <!-- ************** BAYES NET ************** -->
 <a id="sec:elim_bayes"></a>
 ### Turning into a Bayes Network
 By eliminating all the variables from right to left, we can get a Bayes network
-as shown in [Figure 5d](#fig_bayes_net). Everytime we eliminate an older state
+as shown in [Figure 5e](#fig_bayes_net). Everytime we eliminate an older state
 and control, we simply repeat the steps in [Eliminate a state](#eliminate-a-state) and [Eliminate a control](#eliminate-a-control): we express the
 older state $x_{k+1}$ with the dynamics model, and express the control $u_k$ as
 a function of state $x_k$, then generate a new factor on $x_k$ representing the
