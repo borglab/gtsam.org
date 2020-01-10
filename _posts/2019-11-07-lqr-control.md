@@ -5,8 +5,8 @@ title:  "LQR Control Using Factor Graphs"
 
 <link rel="stylesheet" href="/assets/css/slideshow.css">
 
-Authors: [Gerry Chen](https://gerry-chen.com) and [Yetong
-Zhang](https://www.linkedin.com/in/yetong-zhang-9b810a105/)  
+Authors: [Gerry Chen](https://gerry-chen.com), [Yetong
+Zhang](https://www.linkedin.com/in/yetong-zhang-9b810a105/), and Frank Dellaert
 
 <div style="display:none"> <!-- custom latex commands here -->
   $
@@ -38,11 +38,11 @@ Zhang](https://www.linkedin.com/in/yetong-zhang-9b810a105/)
 </style> <!-- horizontal scrolling -->
 
 ## Introduction
-<a name="LQR_example"></a>
-<figure class="center" style="width:90%;margin-bottom:">
-  <a href="/assets/images/lqr_control/LQR_FGvsRicatti.png"><img src="/assets/images/lqr_control/LQR_FGvsRicatti.png"
-    alt="Comparison between LQR control as solved by factor graphs and by the Ricatti Equation. (they are the same)" style="margin-bottom:10px;"/></a>
-  <figcaption><b>Figure 1</b> Example LQR control solutions as solved by factor graphs (middle) and the traditional Discrete Algebraic Ricatti Equations (right).  The optimal control gains and cost-to-go factors are compared (left).  All plots show exact agreement between factor graph and Ricatti equation solutions.</figcaption>
+<a name="fg_scratch"></a>
+<figure class="center">
+  <img src="/assets/images/lqr_control/VE/fg_lqr.png"
+    alt="Factor graph structure. The objective factors are marked with dashed lines, and the constrain factors are marked with solid lines." />
+    <figcaption><b>Figure 1</b> Factor graph structure for an LQR problem with 3 time steps. The cost factors are marked with dashed lines and the dynamics constraint factors are marked with solid lines.</figcaption>
 </figure>
 <br />
 
@@ -50,41 +50,29 @@ In this post we explain how optimal control problems can be formulated as factor
 by performing variable elimination on the factor graph.
 
 Specifically, we will show the factor graph formulation and solution for the
-**Linear Quadratic Regulator (LQR)** as this problem conveys the essential ideas of using factor
-graphs for optimal control, though they can be readily extended to LQG, iLQR, DDP, and reinforcement
-learning (stay tuned for future posts).  We consider the **finite-horizon, discrete LQR problem**
-(though the control law converges to the infinite-horizon case quite quickly as illustrated in
-[Figure 1a](#LQR_example)).  The task is to find the optimal controls $u_k$ at time instances $t_k$
-so that a total cost is minimized, given \eqref{eq:dyn_model} a dynamics model,
-\eqref{eq:state_cost} a cost function on states, and \eqref{eq:action_cost} a cost
-function on actions. In the linear-quadratic problem, these are of the
-form ([Wikipedia](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator#Finite-horizon,_discrete-time_LQR)):
+**Linear Quadratic Regulator (LQR)**.  LQR is *a state feedback controller which derives the optimal gains
+for a linear system with quadratic costs on control effort and state error*.
 
-\\[ \begin{equation} x_{k+1} = Ax_k + Bu_k \label{eq:dyn_model} \end{equation} \\]
-\\[ \begin{equation} L_x(x_k) = x_k^T Q x_k \label{eq:state_cost} \end{equation} \\]
-\\[ \begin{equation} L_u(u_k) = u_k^T R u_k \label{eq:action_cost} \end{equation} \\]
+We consider the [**finite-horizon, discrete LQR
+problem**](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator#Finite-horizon,_discrete-time_LQR).
+The task is to *find the optimal controls $u_k$ at time instances $t_k$
+so that a total cost is minimized*.  Note that we will later see the optimal controls can be represented in the form $u^*_k = K_kx_k$ for some optimal gain matrices $K_k$.  The LQR problem can be represented as a constrained optimization
+problem where the costs of control and state error are represented by the
+minimization objective \eqref{eq:cost}, and the system dynamics are represented by the
+constraints \eqref{eq:dyn_model}.
 
-The optimal controls over time can be expressed as the constrained optimization problem:
-
-\\[ \argmin\limits_{u_{1\sim k}}\sum\limits_{i=1}^n x_i^T Q x_i + u_i^T R u_i \\]
-\\[ s.t. ~~ x_{t+1}=Ax_t+Bu_t ~~\text{for } t=1 \text{ to } T-1 \\]
+\\[ \begin{equation} \argmin\limits_{u_{1\sim k}}\sum\limits_{i=1}^n x_i^T Q x_i + u_i^T R u_i \label{eq:cost} \end{equation}\\]
+\\[ \begin{equation} s.t. ~~ x_{t+1}=Ax_t+Bu_t ~~\text{for } t=1 \text{ to } T-1 \label{eq:dyn_model} \end{equation} \\]
 
 We can visualize the objective function and constraints in the form of a factor
-graph as shown in [Figure 2](#fg_scratch). This is a simple Markov chain, with the oldest
-states and actions on the left, and the newest states and actions on the right. **The
+graph as shown in [Figure 1](#fg_scratch). This is a simple Markov chain, with the oldest
+states and controls on the left, and the newest states and controls on the right. **The
 ternary factors represent the dynamics model constraints and the unary
 factors represent the state and control costs we seek to minimize via least-squares.**
 
-<a name="fg_scratch"></a>
-<figure class="center">
-  <img src="/assets/images/lqr_control/VE/fg_lqr.png"
-    alt="Factor graph structure. The objective factors are marked with dashed lines, and the constrain factors are marked with solid lines." />
-    <figcaption><b>Figure 2</b> Factor graph structure for an LQR problem with 3 time steps. The cost factors are marked with dashed lines and the dynamics constraint factors are marked with solid lines.</figcaption>
-</figure>
-
 ## Variable Elimination
 To optimize the factor graph, which represents minimizing the least squares objectives above, we can simply eliminate the factors from right
-to left.  In this section we demonstrate the variable elimination algebraically, but discussion on the implementation in GTSAM is also
+to left.  In this section we demonstrate the variable elimination graphically and algebraically, but discussion on the underlying matrix representation in GTSAM is also
 provided in the [Appendix](#least-squares-implementation-in-gtsam).
 
 <!-- ********************** BEGIN VARIABLE ELIMINATION SLIDESHOW ********************** -->
@@ -94,7 +82,7 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
     <!-- <div class="numbertext">2 / 3</div> -->
     <a name="fig_eliminate_x_a"></a>
     <figure class="center">
-    <img src="/assets/images/lqr_control/elimination_steps/fg1.png"
+    <img src="/assets/images/lqr_control/Elimination/cropped_Slide1.png"
         alt="Elimination of state $x_2$" />
         <figcaption><b>Figure 3a</b> Elimination of state $x_2$</figcaption>
     </figure>
@@ -103,79 +91,71 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
     <!-- <div class="numbertext">2 / 3</div> -->
     <a name="fig_eliminate_x_b"></a>
     <figure class="center">
-    <img src="/assets/images/lqr_control/elimination_steps/fg2.png"
+    <img src="/assets/images/lqr_control/Elimination/cropped_Slide2.png"
         alt="Elimination of state $x_2$" />
         <figcaption><b>Figure 3b</b> Elimination of state $x_2$</figcaption>
     </figure>
   </div>
   <div class="mySlides 0" style="text-align: center;">
-    <!-- <div class="numbertext">3 / 3</div> -->
     <a name="fig_eliminate_u_a"></a>
     <figure class="center">
-    <img src="/assets/images/lqr_control/elimination_steps/fg3.png"
+    <img src="/assets/images/lqr_control/Elimination/cropped_Slide3.png"
         alt="Elimination of state $u_1$" />
         <figcaption><b>Figure 4a</b> Elimination of state $u_1$</figcaption>
     </figure>
   </div>
   <div class="mySlides 0" style="text-align: center;">
-    <!-- <div class="numbertext">3 / 3</div> -->
     <a name="fig_eliminate_u_b"></a>
     <figure class="center">
-    <img src="/assets/images/lqr_control/elimination_steps/fg4.png"
+    <img src="/assets/images/lqr_control/Elimination/cropped_Slide4.png"
         alt="Elimination of state $u_1$" />
         <figcaption><b>Figure 4b</b> Elimination of state $u_1$</figcaption>
     </figure>
   </div>
   <div class="mySlides 0" style="text-align: center;">
-    <!-- <div class="numbertext">3 / 3</div> -->
     <a name="fig_merge_factor"></a>
     <figure class="center">
-    <img src="/assets/images/lqr_control/elimination_steps/fg5.png"
+    <img src="/assets/images/lqr_control/Elimination/cropped_Slide5.png"
         alt="Elimination of state $u_1$" />
-        <figcaption><b>Figure 4c</b> Merge factors on $x_1$</figcaption>
+        <figcaption><b>Figure 4c</b> Cost-to-go at $x_1$ is the sum of the two unary factors on $x_1$ (green)</figcaption>
     </figure>
   </div>
   <div class="mySlides 0" style="text-align: center;">
-    <!-- <div class="numbertext">3 / 3</div> -->
     <a name="fig_bayes_net"></a>
     <figure class="center">
-    <img src="/assets/images/lqr_control/elimination_steps/fg6.png"
+    <img src="/assets/images/lqr_control/Elimination/cropped_Slide6.png"
         alt="Bayes net" />
         <figcaption><b>Figure 5a</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
     </figure>
   </div>
   <div class="mySlides 0" style="text-align: center;">
-    <!-- <div class="numbertext">3 / 3</div> -->
     <a name="fig_bayes_net"></a>
     <figure class="center">
-    <img src="/assets/images/lqr_control/elimination_steps/fg7.png"
+    <img src="/assets/images/lqr_control/Elimination/cropped_Slide7.png"
         alt="Bayes net" />
         <figcaption><b>Figure 5b</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
     </figure>
   </div>
   <div class="mySlides 0" style="text-align: center;">
-    <!-- <div class="numbertext">3 / 3</div> -->
     <a name="fig_bayes_net"></a>
     <figure class="center">
-    <img src="/assets/images/lqr_control/elimination_steps/fg8.png"
+    <img src="/assets/images/lqr_control/Elimination/cropped_Slide8.png"
         alt="Bayes net" />
         <figcaption><b>Figure 5c</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
     </figure>
   </div>
   <div class="mySlides 0" style="text-align: center;">
-    <!-- <div class="numbertext">3 / 3</div> -->
     <a name="fig_bayes_net"></a>
     <figure class="center">
-    <img src="/assets/images/lqr_control/elimination_steps/fg9.png"
+    <img src="/assets/images/lqr_control/Elimination/cropped_Slide9.png"
         alt="Bayes net" />
         <figcaption><b>Figure 5d</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
     </figure>
   </div>
   <div class="mySlides 0" style="text-align: center;">
-    <!-- <div class="numbertext">3 / 3</div> -->
     <a name="fig_bayes_net"></a>
     <figure class="center">
-    <img src="/assets/images/lqr_control/elimination_steps/fg10.png"
+    <img src="/assets/images/lqr_control/Elimination/cropped_Slide10.png"
         alt="Bayes net" />
         <figcaption><b>Figure 5e</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
     </figure>
@@ -227,7 +207,7 @@ Taken from my website: https://github.com/gchenfc/gerrysworld2/blob/master/css/a
 <a id="sec:elim_state"></a>
 ### Eliminate a State
 Let us start at the last state, $x_2$. Gathering the two factors (marked in
-red [Figure 3a](#fig_eliminate_x_a)), we have \eqref{eq:potential} the objective function, $\phi_1$, and \eqref{eq:constrain} the constraint equation on $x_2$, $u_1$ and $x_1$:
+red [Figure 3a](#fig_eliminate_x_a)), we have \eqref{eq:potential} the objective function $\phi_1$, and \eqref{eq:constrain} the constraint equation on $x_2$, $u_1$ and $x_1$:
 
 \begin{equation} \phi_1(x_2) = x_2^T Q x_2 \label{eq:potential} \end{equation}
 
@@ -240,8 +220,11 @@ the cost of state $x_2$ as a function of $x_1$ and $u_1$:
 \begin{equation} \phi_2(x_1, u_1) = (Ax_1 + Bu_1)^T Q (Ax_1 + Bu_1)
 \label{eq:potential_simplified} \end{equation}
 
-The resulting factor graph is illustrated in [Figures 3b](#fig_eliminate_x_b)). To summarize, we used the dynamics constraint to eliminate variable
-$x_2$ as well as the two factors marked in red, and replaced them with a new binary cost factor on $x_1$
+The resulting factor graph is illustrated in [Figure 3b](#fig_eliminate_x_b).  Note that the 
+dynamics constraint is now represented by the bayes net factors shown as gray arrows.
+
+To summarize, we used the dynamics constraint to eliminate variable
+$x_2$ and the two factors marked in red, and we replaced them with a new binary cost factor on $x_1$
 and $u_1$, marked in blue.
 <!-- ************** CONTROL ************** -->
 <a id="sec:elim_ctrl"></a>
@@ -251,74 +234,95 @@ Gaussian density on variables $x_1$ and $u_1$.  -->
 To eliminate $u_1$, we seek to replace the two factors marked red in [Figure 4a](#fig_eliminate_u_a)
 with a new cost factor on $x_1$ and an equation for the optimal control $$u_1^*(x_1)$$.
 
-Adding the control cost \eqref{eq:action_cost} to \eqref{eq:potential_simplified}, the combined cost of the
+Adding the control cost to \eqref{eq:potential_simplified}, the combined cost of the
 two red factors in [Figure 4a](#fig_eliminate_u_a) is given by:
 
 \begin{equation} \phi_3(x_1, u_1) = u_1^TRu_1 + (Ax_1 + Bu_1)^T Q (Ax_1 + Bu_1)
 \label{eq:potential_u1} \end{equation}
 
-We minimize $\phi_3$ by
+$\phi_3$ is sometimes referred to as the *optimal action value function* and we seek to minimize it over $u_1$.
+We do so by
 setting the derivative of \eqref{eq:potential_u1} wrt $u_1$ to zero
 <!-- (detailed calculation in the [Appendix](#eliminate-u_1)),  -->
 yielding the expression for the optimal control input $u_1^*$ as 
 
 \\[ \begin{align} 
-u_1^*(x_1) &= -(R+B^TQB)^{-1}B^TQAx_1 \label{eq:control_law} \\\\ 
+u_1^*(x_1) &= \argmin\limits_{u_1}\phi_3(x_1, u_1) \nonumber \\\\ 
+&= -(R+B^TQB)^{-1}B^TQAx_1 \label{eq:control_law} \\\\ 
 &= K_1x_1 \nonumber
 \end{align} \\]
 
 where $K_1\coloneqq -(R+B^TQB)^{-1}B^TQA$.
 
-Finally, we substitute the expression of our optimal control, $$u_1^*$$,
+Finally, we substitute the expression of our optimal control, $$u_1^* = K_1x_1$$,
 into our potential \eqref{eq:potential_u1}
 <!-- (detailed calculation in the [Appendix](#marginalization-cost-on-x_1)) -->
 to obtain a new unary cost factor on $x_1$:
 
 \begin{align}
     \phi_4(x_1) &= \phi_3(x_1, u_1^*(x_1)) \nonumber \\\\ 
-        &= (K_1x_1)^T RK_1x_1 + (Ax_1 + BKx_1)^T Q (Ax_1 + BKx_1) \label{eq:potential_x1}
+        &= (K_1x_1)^T RK_1x_1 + (Ax_1 + BKx_1)^T Q (Ax_1 + BKx_1) \nonumber \\\\ 
+        &= x_1^T(A^TQA-K_1^TB^TQA)x_1 \label{eq:potential_x1}
 \end{align}
-The resulting factor graph is illustrated in [Figures 4b](#fig_eliminate_u_b))
-
-### Combine Unary Cost Factors
-We further add the existing unary state cost factor on $x_1$ to the acculumated cost
-\eqref{eq:potential_x1} to obtain the cost-to-go, 
-
-\\[ \begin{align} 
-V_1(x_1) &= x_1^T Q x_1 + (K_1x_1)^T RK_1x_1 + (Ax_1 + BKx_1)^T Q (Ax_1 + 
-BKx_1) \nonumber \\\\ 
-&= x_1^T(Q+A^TQA - K_1^TB^TQA)x_1 \label{eq:cost_update} \\\\ 
-&= x_1^T V_1 x_2 \nonumber
-\end{align} \\]
-where $V_1\coloneqq Q+A^TQA - K_1^TB^TQA$.
-
-Note that we simplified $K_1^TRK_1 + K_1^TB^TQBK_1 = K_1^TB^TQA$ by substituting in the non-transposed $K_1$ using
+Note that we simplified $K_1^TRK_1 + K_1^TB^TQBK_1 = K_1^TB^TQA$ by substituting in for $K_1$ using
 \eqref{eq:control_law}.
 
-As illustrated in [Figure 4c](#fig_merge_factor), through the above steps, we can eliminate variable
-$u_1$ as well as two factors marked in red, and replace them with a new factor on $x_1$
-marked in blue. By further merging with the unary factor on $x_1$, yields the marginalized cost on state $x_1$ as $x_1^TV_1x_1$.
+The resulting factor graph is illustrated in [Figure 4b](#fig_eliminate_u_b).
+
+For convenience, we will also define $P_k$ where $x_k^TP_kx_k$ represents the aggregate of the two unary costs on $x_k$.  In the case of $P_1$,
+\begin{align}
+    x_1^TP_1x_1 &= x_1^TQx_1 + \phi_4(x_1) \nonumber
+\end{align}
+is the aggregation of the two unary factors labeled in green in [Figure 4c](#fig_merge_factor).
+
 <!-- ************** BAYES NET ************** -->
 <a id="sec:elim_bayes"></a>
 ### Turning into a Bayes Network
 By eliminating all the variables from right to left, we can get a Bayes network
-as shown in [Figure 5e](#fig_bayes_net). Everytime we eliminate an older state
-and control, we simply repeat the steps in [Eliminate a state](#eliminate-a-state) and [Eliminate a control](#eliminate-a-control): we express the
-older state $x_{k+1}$ with the dynamics model, and express the control $u_k$ as
-a function of state $x_k$, then generate a new factor on $x_k$ representing the
-"cost-to-go" function $x_k^TV_kx_k$.
+as shown in [Figure 5e](#fig_bayes_net). Each time we eliminate a state
+and control, we simply repeat the steps in [Eliminate a state](#eliminate-a-state) and [Eliminate a control](#eliminate-a-control): we express the state $x_{k+1}$ with the dynamics model, then find the optimal control $u_k$ as
+a function of state $x_k$.
 
 Eliminating a general state, $x_{k+1}$, and control $u_k$, we obtain the recurrence relations:
 
-\begin{equation} \boxed{K_k = -(R+B^TV_{k+1}B)^{-1}B^TV_{k+1}A} \label{eq:control_update_k} \end{equation}
+\begin{equation} \boxed{K_k = -(R+B^TP_{k+1}B)^{-1}B^TP_{k+1}A} \label{eq:control_update_k} \end{equation}
 
-\begin{equation} \boxed{V_k = Q+A^TV_{k+1}A - K_k^TB^TV_{k+1}A} \label{eq:cost_update_k} \end{equation}
+\begin{equation} \boxed{P_k = Q+A^TP_{k+1}A - K_k^TB^TP_{k+1}A} \label{eq:cost_update_k} \end{equation}
 
-with $V_{T}=Q$ is the cost at the last time step.
+with $P_{T}=Q$ is the cost at the last time step.
 </div> <!-- scrollablecontent -->
 <!-- ************************ END SCROLLABLE ELIMINATION DESCRIPTION ************************ -->
 
+## Intuition
+<!-- ************** Value Function ************** -->
+<a name="LQR_example"></a>
+<figure class="center" style="width:90%;padding:10px">
+  <a href="/assets/images/lqr_control/LQR_FGvsRicatti.png"><img src="/assets/images/lqr_control/LQR_FGvsRicatti.png"
+    alt="Comparison between LQR control as solved by factor graphs and by the Ricatti Equation. (they are the same)" style="margin-bottom:10px;"/></a>
+  <figcaption><b>Figure 6</b> Example LQR control solutions as solved by factor graphs (middle) and the traditional Discrete Algebraic Ricatti Equations (right).  The optimal control gains and cost-to-go factors are compared (left).  All plots show exact agreement between factor graph and Ricatti equation solutions.</figcaption>
+</figure>
+
+We introduce the **cost-to-go** (also known as *return cost*, *optimal state value function*, or simply *value function*) as $V_k(x) \coloneqq x^TP_kx$ which intuitively represents *the total cost that will be accrued from here on out, assuming optimal control*.
+
+In our factor graph representation, it is becomes obvious that $V_k(x)$ corresponds to the total cost at and after the state $x_k$ assuming optimal control because we eliminate variables backwards in time with the objective of minimizing cost.
+Eliminating a state just re-expresses the future cost in terms of prior states/controls.  Each time we eliminate a control, $u$, the future cost is recalculated assuming optimal control (i.e. $\phi_4(x) = \phi_3(x, u^*)$).
+
+This "cost-to-go" is depicted as a heatmap in [Figure 6](#LQR_example).
+The heat maps depict the $V_k$ showing that the cost is high when $x$ is far from 0, but also showing that after iterating sufficient far backwards in time, $V_k(x)$ begins to converge.  That is to say, the $V_0(x)$ is very similar for $T=30$ and $T=100$.
+Similarly, the leftmost plot of [Figure 6](#LQR_example) depicts $K_k$ and $P_k$ and shows that they (predictably) converge as well.
+
+This convergence allows us to see that we can extend to the [infinite horizon LQR problem](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator#Infinite-horizon,_discrete-time_LQR) (continued in the next section).
+
+<!-- The factor graph representation also gives us insight to the equation for the optimal gain matrix $K_k$ from
+\eqref{eq:control_update_k}.
+The optimal control, $K_k$, should attempt to balance (a) the unary factor $u_k^TRu_k$ representing the cost of executing a control action and (b) the binary factor $(Ax_k+Bu_k)^TP_{k+1}(Ax_k+Bu_k)$ representing the future cost of the control action.
+
+The binary factor consists of two terms
+represents a balance between achieving a small "cost-to-go" next time step ($B^TP_{k+1}B$) and exerting a small
+amount of control this time step ($R$). -->
+
 ## Equivalence to the Ricatti Equation
+
 In [Wikipedia](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator#Finite-horizon,_discrete-time_LQR), the control law and cost function for LQR are given by
 
 \\[ u_k = K_kx_k \\]
@@ -327,23 +331,20 @@ In [Wikipedia](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator#
 
 \begin{equation} P_k = Q+A^TP_{k+1}A - K_k^TB^TP_{k+1}A \label{eq:cost_update_k_ricatti} \end{equation}
 
-with $P_k$ commonly referred to as the solution to the dynamic Ricatti equation and $P_T=Q$ is the
+with $P_k$ commonly referred to as the solution to the **dynamic Ricatti equation** and $P_T=Q$ is the
 value of the Ricatti function at the final time step.
-
-Note that \eqref{eq:control_update_k_ricatti} and \eqref{eq:cost_update_k_ricatti} correspond to
+\eqref{eq:control_update_k_ricatti} and \eqref{eq:cost_update_k_ricatti} correspond to
 the same results as we derived in \eqref{eq:control_update_k} and \eqref{eq:cost_update_k}
-respectively, where the Ricatti solutions, $P_k$, correspond to $V_k$ in our factor graph elimination.
+respectively.
 
-## Intuition
-In our factor graph representation, it is becomes obvious that the dynamic Ricatti equation
-solutions, $P_k$, correspond to the total cost at the state $x_k$ that will be accrued for the remainder
-of the trajectory and control assuming optimal control after $x_k$.  Referred to as "cost-to-go",
-"return cost", and "value function" by different literatures, we denote this cost as $\phi_k$, given by 
-\\[ \phi_k = x_k^TP_kx_k \\]
-This "cost-to-go" is depicted as a heatmap in [Figure 1](#LQR_example).  From
-\eqref{eq:control_update_k}, the optimal control, $K_k$,
-represents a balance between achieving a small "cost-to-go" next time step ($B^TV_{k+1}B$) and exerting a small
-amount of control this time step ($R$).
+Recall that $P_0$ and $K_0$ appear to converge as the number of time steps grows.  They will approach a stationary solution to the equations
+
+\begin{align}
+K &= -(R+B^TPB)^{-1}B^TPA \nonumber \\\\ 
+P &= Q+A^TPA - K^TB^TPA \nonumber
+\end{align}
+
+as $T\to\infty$.  This is the [Discrete Algebraic Ricatti Equations (DARE)](https://en.wikipedia.org/wiki/Algebraic_Riccati_equation) and $\lim_{T\to\infty}V_0(x)$ and $\lim_{T\to\infty}K_0$ are the cost-to-go and optimal control gain respectively for the [infinite horizon LQR problem](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator#Infinite-horizon,_discrete-time_LQR).  Indeed, one way to calculate the solution to the DARE is to iterate on the dynamic Ricatti equation.
 
 ## Implementation using GTSAM
 We provide some 
@@ -427,22 +428,18 @@ def solve_lqr(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500):
 ```
 </div>
 
+## Future Work
+The factor graph [(Figure 1)](#fg_scratch) for our finite horizon discrete LQR problem can be readily extended to LQG, iLQR, DDP, and reinforcement
+learning using non-deterministic dynamics factors, nonlinear factors, discrete factor graphs, and other features of GTSAM (stay tuned for future posts).
+
 <br />
 <hr />
 <br />
 
 <!-- ********************************** APPENDIX ********************************** -->
 ## Appendix
-### Eliminate $u_1$
-Setting the derivative w.r.t. $u_1$ of the objective function, $\phi_1(x_1, u_1)$, in \eqref{eq:potential_simplified} to zero:
-\\[ Ru_1 + B^TQ(Ax_1+Bu_1) = 0 \\]
-we solve to obtain the result shown in \eqref{eq:control_law}:
-\\[ \begin{aligned} 
-    & (R+B^TQB)u_1 + B^TQAx_1 = 0 \\\\ 
-    & u_1 = -(R+B^TQB)^{-1}B^TQAx_1 
-\end{aligned} \\]
 
-### Marginalization Cost on $x_1$
+<!-- ### Marginalization Cost on $x_1$
 By substituting \eqref{eq:control_law} into \eqref{eq:potential_simplified}, we have the updated
 potential function as a function of only $x_1$:
 \\[ \begin{aligned} 
@@ -451,7 +448,7 @@ potential function as a function of only $x_1$:
     &= x_1^T[Q + A^TQA + K_1^T(R+B^TQB)K_1 - K_1^TB^TQA - A^TQBK_1]x_1 \\\\ 
     &= x_1^T(Q + A^TQA + A^TQBK_1 - K_1^TB^TQA - A^TQBK_1)x_1 \\\\ 
     &= x_1^T(Q + A^TQA - K_1^TB^TQA)x_1 
-\end{aligned} \\]
+\end{aligned} \\] -->
 
 ### Least Squares Implementation in GTSAM
 GTSAM can be specified to use either of two methods for solving the least squares problems that
@@ -871,7 +868,7 @@ the elimination of $u_0$ ,
         & \scriptstyle=~ \|\|V\_{0,0}u_0 ~+~ V\_{0,1}x_0\|\|_2^2 ~+~ \|\|P_0^{1/2}x_0\|\|_2^2 
 \end{aligned} \\]
 
-### Final Symbolic Expressions of Factor Graph Evaluation
+<!-- ### Final Symbolic Expressions of Factor Graph Evaluation
 In the above solution, we have
 \\[ \begin{aligned} 
 K_1 &= -(R+B^TQB)^{-1}B^TQA\\\\ 
@@ -893,7 +890,7 @@ and
 which match the traditional algorithm using the Ricatti Equation for solving the finite-horizon discrete-time LQR problem.  As the number
 of time steps grows, the solution for $V_0$ approaches the stationary solution to the algebraic
 Ricatti equation and the solution for $K_0$ approaches the solution to the infinite-horizon
-discrete-time LQR problem.
+discrete-time LQR problem. -->
 
 <!-- **************** JAVASCRIPT FOR SLIDESHOWS **************** -->
 <script>
@@ -934,7 +931,7 @@ discrete-time LQR problem.
         // when image changes, also scroll to the correct subsection in "Variable Elimination"
         var scrollable = document.getElementById("sec:elim_scrollable");
         var scrollLoc_state = document.getElementById("sec:elim_state").offsetTop - scrollable.offsetTop;
-        var scrollLoc_ctrl = document.getElementById("sec:elim_ctrl").offsetTop - scrollable.offsetTop;
+        var scrollLoc_ctrl = document.getElementById("sec:elim_ctrl" ).offsetTop - scrollable.offsetTop;
         var scrollLoc_bayes = document.getElementById("sec:elim_bayes").offsetTop - scrollable.offsetTop;
         var scroll_cur = scrollable.scrollTop;
         var scrollLoc;
@@ -946,13 +943,19 @@ discrete-time LQR problem.
                 // break;
             case 3:
             case 4:
+            case 5:
                 if (scroll_cur >= scrollLoc_ctrl) {return;}
                 scrollLoc = scrollLoc_ctrl;
                 break;
-            case 5:
+            // case 5:
+            //     if (scroll_cur >= scrollLoc_value) {return;}
+            //     scrollLoc = scrollLoc_value;
+            //     break;
             case 6:
             case 7:
             case 8:
+            case 9:
+            case 10:
                 if (scroll_cur >= scrollLoc_bayes) {return;}
                 scrollLoc = scrollLoc_bayes;
                 break;
@@ -966,18 +969,22 @@ discrete-time LQR problem.
     document.getElementById("sec:elim_scrollable").addEventListener("scroll", function (event) {
         var scrollable = document.getElementById("sec:elim_scrollable");
         var scrollLoc_state = document.getElementById("sec:elim_state").offsetTop - scrollable.offsetTop;
-        var scrollLoc_ctrl = document.getElementById("sec:elim_ctrl").offsetTop - scrollable.offsetTop;
+        var scrollLoc_ctrl = document.getElementById("sec:elim_ctrl" ).offsetTop - scrollable.offsetTop;
+        // var scrollLoc_value = document.getElementById("sec:elim_value").offsetTop - scrollable.offsetTop;
         var scrollLoc_bayes = document.getElementById("sec:elim_bayes").offsetTop - scrollable.offsetTop;
         
         var scroll = this.scrollTop;
         if (scroll < scrollLoc_ctrl) {
             if (slideIndex[0] > 2) {showSlides(slideIndex[0]=1, 0, true)}
         }
+        // else if (scroll < scrollLoc_value) {
+        //     if ((slideIndex[0] < 3) || (slideIndex[0] > 4)) {showSlides(slideIndex[0]=3, 0, true)}
+        // }
         else if ((scroll < scrollLoc_bayes) && (scroll < (scrollable.scrollHeight - scrollable.offsetHeight))) {
-            if ((slideIndex[0] < 3) || (slideIndex[0] > 4)) {showSlides(slideIndex[0]=3, 0, true)}
+            if ((slideIndex[0] < 3) || (slideIndex[0] > 3)) {showSlides(slideIndex[0]=3, 0, true)}
         }
         else {
-            if ((slideIndex[0] < 5)) {showSlides(slideIndex[0]=5, 0, true)}
+            if ((slideIndex[0] < 6)) {showSlides(slideIndex[0]=6, 0, true)}
         }
     });
 </script>
