@@ -348,9 +348,8 @@ P &= Q+A^TPA - K^TB^TPA \nonumber
 as $T\to\infty$.  This is the [Discrete Algebraic Ricatti Equations (DARE)](https://en.wikipedia.org/wiki/Algebraic_Riccati_equation) and $\lim_{T\to\infty}V_0(x)$ and $\lim_{T\to\infty}K_0$ are the cost-to-go and optimal control gain respectively for the [infinite horizon LQR problem](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator#Infinite-horizon,_discrete-time_LQR).  Indeed, one way to calculate the solution to the DARE is to iterate on the dynamic Ricatti equation.
 
 ## Implementation using GTSAM
-We provide some 
-modules and examples available to
-<a href="/assets/code_samples/lqr_control.zip" download>download</a>
+You can view an example Jupyter notebook on [google colab](https://colab.research.google.com/drive/1pIUC6fQVMEaQ7QfJk8BvD0F60gShj3F4) or
+<a href="/assets/code_samples/lqr_control.zip" download>download</a> the modules/examples
 that you can use in your
 projects to:
 * Calculate the closed loop gain matrix, K, using GTSAM
