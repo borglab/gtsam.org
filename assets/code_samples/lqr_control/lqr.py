@@ -108,10 +108,11 @@ def solve_lqr(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500,
     return solve_lqr_fg(graph, X, U)
 
 def get_return_cost(graph, key):
-    '''Returns the value function value at variable `key` given a graph which
+    '''Returns the value function matrix at variable `key` given a graph which
         goes up and including `key`, but no further (i.e. all time steps after
-        `key` have already been eliminated).  "Return Cost" aka "Cost-to-go" aka
-        "Value Function".
+        `key` have already been eliminated).  Does so by aggregating all unary
+        factors on `key`.  If value function is x^TPx, then this returns P.
+        "Return Cost" aka "Cost-to-go" aka "Value Function".
     Arguments:
         graph: factor graph in LTI form
         key: key in the factor graph for which we want to obtain the return cost
@@ -121,7 +122,7 @@ def get_return_cost(graph, key):
     new_fg = gtsam.GaussianFactorGraph()
     for i in range(graph.size()): # loop through all factors
         f = graph.at(i)
-        if (f.keys().size() == 1) and (f.keys().at(0) == key): # unary factor on `key`
+        if (f.keys().size() == 1) and (f.keys().at(0) == key): # collect unary factors on `key`
             new_fg.push_back(f)
     sol_end = new_fg.eliminateSequential()
     return sol_end.back().information()
@@ -153,7 +154,7 @@ def get_k_and_v(graph, X, U):
 
         bayes_net, marginalized_fg = marginalized_fg.eliminatePartialSequential(ordering)
         V[i] = get_return_cost(marginalized_fg, X[i])
-        K[i] = bayes_net.back().S()
+        K[i] = bayes_net.back().S() # note: R is 1
 
     return K, V
 

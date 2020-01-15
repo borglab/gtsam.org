@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 from lqr import create_lqr_fg, get_k_and_v
-from gerry03_ricattiConvergence import get_k_and_v_ricatti, visualize_cost
+from example0_ricatti import get_k_and_v_ricatti, visualize_cost
 
 def main():
     """Solves optimal control problem for a slightly unstable 1D system using factor graphs.
