@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 Create factor graphs for LQR control
-Author: Frank Dellaert, Gerry Chen, and Yetong Zhang
+Author: Gerry Chen, Yetong Zhang, and Frank Dellaert
 """
 
 import gtsam
@@ -127,7 +127,7 @@ def get_return_cost(graph, key):
     sol_end = new_fg.eliminateSequential()
     return sol_end.back().information()
 
-def get_k_and_v(graph, X, U):
+def get_k_and_p(graph, X, U):
     '''Finds optimal control law given by $u=Kx$ and value function $Vx^2$ aka
         cost-to-go which corresponds to solutions to the algebraic, finite
         horizon Ricatti Equation.  K is Extracted from the bayes net and V is
@@ -145,18 +145,18 @@ def get_k_and_v(graph, X, U):
     # Find K and V by using bayes net solution
     marginalized_fg = graph
     K = np.zeros((T-1, 1))
-    V = np.zeros((T, 1))
-    V[-1] = get_return_cost(marginalized_fg, X[-1])
+    P = np.zeros((T, 1))
+    P[-1] = get_return_cost(marginalized_fg, X[-1])
     for i in range(len(U)-2, -1, -1): # traverse backwards in time
         ordering = gtsam.Ordering()
         ordering.push_back(X[i+1])
         ordering.push_back(U[i])
 
         bayes_net, marginalized_fg = marginalized_fg.eliminatePartialSequential(ordering)
-        V[i] = get_return_cost(marginalized_fg, X[i])
+        P[i] = get_return_cost(marginalized_fg, X[i])
         K[i] = bayes_net.back().S() # note: R is 1
 
-    return K, V
+    return K, P
 
 def main():
     '''Solves open loop LQR problem using factor graph for a spring-mass system

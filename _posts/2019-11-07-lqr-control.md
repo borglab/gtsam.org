@@ -298,7 +298,8 @@ with $P_{T}=Q$ is the cost at the last time step.
 <a name="LQR_example"></a>
 <figure class="center" style="width:90%;padding:10px">
   <a href="/assets/images/lqr_control/LQR_FGvsRicatti.png"><img src="/assets/images/lqr_control/LQR_FGvsRicatti.png"
-    alt="Comparison between LQR control as solved by factor graphs and by the Ricatti Equation. (they are the same)" style="margin-bottom:10px;"/></a>
+    alt="Comparison between LQR control as solved by factor graphs and by the Ricatti Equation. (they are the same)"
+    style="margin-bottom:10px; max-width: 110%; margin-left: -5%;"/></a>
   <figcaption><b>Figure 6</b> Example LQR control solutions as solved by factor graphs (middle) and the traditional Discrete Algebraic Ricatti Equations (right).  The optimal control gains and cost-to-go factors are compared (left).  All plots show exact agreement between factor graph and Ricatti equation solutions.</figcaption>
 </figure>
 
@@ -539,7 +540,7 @@ new "cost-to-go" for the next clique.
 </figure>
 
 #### QR Factorization
-The process is illustrated in [Figure 7](#fig:qr_elim) where the noise matrices and elimination
+We can achieve the same matrix reduction instead using QR factorization.  The process is illustrated in [Figure 7](#fig:qr_elim) for a 3-time step factor graph instead of just a single clique, where the noise matrices and elimination
 matrices are shown with the corresponding states of the graph.  The noise matrix (NM) is $0$ for a
 hard constraint and $I$ for a minimization objective.  The elimination matrix is formatted as an
 augmented matrix $[A|b]$ for the linear least squares problem $\argmin\limits_x\|\|Ax-b\|\|_2^2$

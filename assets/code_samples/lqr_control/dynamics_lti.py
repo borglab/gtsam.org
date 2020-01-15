@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 Create factor graphs for LTI system dynamics of the form x_{t+1} = Ax_t + Bu_t
-Author: Frank Dellaert, Gerry Chen, and Yetong Zhang
+Author: Gerry Chen, Yetong Zhang, and Frank Dellaert
 """
 
 import gtsam

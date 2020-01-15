@@ -2,7 +2,7 @@
 """
 Solves and visualizes LQR solution using traditional Ricatti Equation as a "ground truth"
     comparison.
-Author: Frank Dellaert, Gerry Chen, and Yetong Zhang
+Author: Gerry Chen, Yetong Zhang, and Frank Dellaert
 """
 import numpy as np
 import matplotlib.pyplot as plt
@@ -38,7 +38,7 @@ def ricatti_update(P, A, B, Q, R, N=None):
             Q)
     return Pnew, K
 
-def get_k_and_v_ricatti(T, A, B, Q, R, N=None):
+def get_k_and_p_ricatti(T, A, B, Q, R, N=None):
     '''Calculates the control gain, K, and cost-to-go, V, for each time step of a finite horizon LQR
     problem.
     Arguments:
@@ -88,7 +88,7 @@ def visualize_cost(A, B, K, P, fig=None, plottype='heatmap', title='Return Cost'
                    aspect='auto')
         plt.xlabel('x')
         plt.ylabel('time step')
-        plt.colorbar().set_label('Return cost')
+        plt.colorbar().set_label('Cost-to-go')
 
         # plot quivers
         quiver_inds = slice(0, len(K), 5)
@@ -97,7 +97,7 @@ def visualize_cost(A, B, K, P, fig=None, plottype='heatmap', title='Return Cost'
         u_vals_quiver = -K[quiver_inds]*x_vals_quiver
         q = plt.quiver(x_vals_quiver, t_vals_quiver,
                        B*u_vals_quiver, np.ones(np.shape(u_vals_quiver)), angles='xy')
-        plt.quiverkey(q, X=0.6, Y=1.03, U=2,
+        plt.quiverkey(q, X=0.07, Y=1.03, U=2,
                       label='Optimal Control Direction', labelpos='E')
 
         # plot example trajectories
@@ -138,7 +138,7 @@ def main():
     N = np.array([0.])
 
     T = 50
-    K, P = get_k_and_v_ricatti(T, A, B, Q, R, N)
+    K, P = get_k_and_p_ricatti(T, A, B, Q, R, N)
 
     plt.figure(figsize=(12, 5))
     visualize_cost(A, B, K, P, fig=plt.subplot(1, 2, 1), title=None, plottype='heatmap')
