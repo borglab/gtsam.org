@@ -3,6 +3,26 @@ layout: gtsam-post
 title:  "LQR Control Using Factor Graphs"
 ---
 
+<!--
+AMAZING !!!!!!!
+
+Comments:
+
+* The figure animation is a bit out of sync with the text? Could I read the text just by advancing the figure and not scrolling?
+
+* Formula (8) does not seem to match the factor on x1 in Figure 4b.
+
+* Difference between 5b and 5c? Maybe 5b can go?
+
+In Wikipedia ? Get the primary source…
+
+* Make Colab/jupyter links open in new tab… Colab immediately in playground???
+
+Appendix: I love the QR factorization animation. I agree the other stuff is less important and potentially off-putting.
+
+Frank
+ -->
+
 <link rel="stylesheet" href="/assets/css/slideshow.css">
 
 Authors: [Gerry Chen](https://gerry-chen.com), [Yetong
@@ -128,10 +148,18 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
         <figcaption><b>Figure 5a</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
     </figure>
   </div>
-  <div class="mySlides 0" style="text-align: center;">
+  <!-- <div class="mySlides 0" style="text-align: center;">
     <a name="fig_bayes_net"></a>
     <figure class="center">
     <img src="/assets/images/lqr_control/Elimination/cropped_Slide7.png"
+        alt="Bayes net" />
+        <figcaption><b>Figure 5b</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
+    </figure>
+  </div> -->
+  <div class="mySlides 0" style="text-align: center;">
+    <a name="fig_bayes_net"></a>
+    <figure class="center">
+    <img src="/assets/images/lqr_control/Elimination/cropped_Slide8.png"
         alt="Bayes net" />
         <figcaption><b>Figure 5b</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
     </figure>
@@ -139,7 +167,7 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
   <div class="mySlides 0" style="text-align: center;">
     <a name="fig_bayes_net"></a>
     <figure class="center">
-    <img src="/assets/images/lqr_control/Elimination/cropped_Slide8.png"
+    <img src="/assets/images/lqr_control/Elimination/cropped_Slide9.png"
         alt="Bayes net" />
         <figcaption><b>Figure 5c</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
     </figure>
@@ -147,17 +175,9 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
   <div class="mySlides 0" style="text-align: center;">
     <a name="fig_bayes_net"></a>
     <figure class="center">
-    <img src="/assets/images/lqr_control/Elimination/cropped_Slide9.png"
-        alt="Bayes net" />
-        <figcaption><b>Figure 5d</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
-    </figure>
-  </div>
-  <div class="mySlides 0" style="text-align: center;">
-    <a name="fig_bayes_net"></a>
-    <figure class="center">
     <img src="/assets/images/lqr_control/Elimination/cropped_Slide10.png"
         alt="Bayes net" />
-        <figcaption><b>Figure 5e</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
+        <figcaption><b>Figure 5d</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
     </figure>
   </div>
   <!-- Next and previous buttons -->
@@ -177,7 +197,7 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
   <span class="dot 0" onclick="currentSlide(7,0)"></span>
   <span class="dot 0" onclick="currentSlide(8,0)"></span>
   <span class="dot 0" onclick="currentSlide(9,0)"></span>
-  <span class="dot 0" onclick="currentSlide(10,0)"></span>
+  <!-- <span class="dot 0" onclick="currentSlide(10,0)"></span> -->
 </div>
 
 <!-- this css is to make the scroll bar disappear when the mouse isn't over the scrollable div...
@@ -197,13 +217,25 @@ Taken from my website: https://github.com/gchenfc/gerrysworld2/blob/master/css/a
 .scrollablecontent:hover::-webkit-scrollbar-thumb {
     visibility:visible;
 }
+/* .slideout {
+  width: 400px;
+  height: auto;
+  overflow: hidden;
+  background: orange;
+  margin: 0 auto;
+  transition: height 0.4s linear;
+}
+.hide {
+    height: 0;
+} */
 </style>
 <!-- ********************** END VARIABLE ELIMINATION SLIDESHOW ********************** -->
 
 <!-- ************************ BEGIN SCROLLABLE ELIMINATION DESCRIPTION ************************ -->
 <div class="scrollablecontent" markdown="1" id="sec:elim_scrollable"
-    style="overflow-y: scroll; height:400px; overflow-x: hidden; background-color:rgba(0,0,0,0.05); padding:0 8px; margin-bottom: 10px;">
+    style="overflow-x: hidden; background-color:rgba(0,0,0,0.05); padding:0 8px; margin-bottom: 10px;">
 <!-- ************** STATE ************** -->
+<div markdown="1" id="sec:elim_state_div" class="slideout">
 <a id="sec:elim_state"></a>
 ### Eliminate a State
 Let us start at the last state, $x_2$. Gathering the two factors (marked in
@@ -226,7 +258,9 @@ dynamics constraint is now represented by the bayes net factors shown as gray ar
 To summarize, we used the dynamics constraint to eliminate variable
 $x_2$ and the two factors marked in red, and we replaced them with a new binary cost factor on $x_1$
 and $u_1$, marked in blue.
+</div>
 <!-- ************** CONTROL ************** -->
+<div markdown="1" id="sec:elim_ctrl_div" class="slideout">
 <a id="sec:elim_ctrl"></a>
 ### Eliminate a Control
 <!-- Now \eqref{eq:potential_simplified} defines an (unnormalized) joint
@@ -264,7 +298,7 @@ to obtain a new unary cost factor on $x_1$:
         &= (K_1x_1)^T RK_1x_1 + (Ax_1 + BKx_1)^T Q (Ax_1 + BKx_1) \nonumber \\\\ 
         &= x_1^T(A^TQA-K_1^TB^TQA)x_1 \label{eq:potential_x1}
 \end{align}
-Note that we simplified $K_1^TRK_1 + K_1^TB^TQBK_1 = K_1^TB^TQA$ by substituting in for $K_1$ using
+Note that we simplified $K_1^TRK_1 + K_1^TB^TQBK_1 = -K_1^TB^TQA$ by substituting in for $K_1$ using
 \eqref{eq:control_law}.
 
 The resulting factor graph is illustrated in [Figure 4b](#fig_eliminate_u_b).
@@ -274,12 +308,13 @@ For convenience, we will also define $P_k$ where $x_k^TP_kx_k$ represents the ag
     x_1^TP_1x_1 &= x_1^TQx_1 + \phi_4(x_1) \nonumber
 \end{align}
 is the aggregation of the two unary factors labeled in green in [Figure 4c](#fig_merge_factor).
-
+</div>
 <!-- ************** BAYES NET ************** -->
+<div markdown="1" id="sec:elim_bayes_div" class="slideout">
 <a id="sec:elim_bayes"></a>
 ### Turning into a Bayes Network
 By eliminating all the variables from right to left, we can get a Bayes network
-as shown in [Figure 5e](#fig_bayes_net). Each time we eliminate a state
+as shown in [Figure 5d](#fig_bayes_net). Each time we eliminate a state
 and control, we simply repeat the steps in [Eliminate a state](#eliminate-a-state) and [Eliminate a control](#eliminate-a-control): we express the state $x_{k+1}$ with the dynamics model, then find the optimal control $u_k$ as
 a function of state $x_k$.
 
@@ -290,6 +325,7 @@ Eliminating a general state, $x_{k+1}$, and control $u_k$, we obtain the recurre
 \begin{equation} \boxed{P_k = Q+A^TP_{k+1}A - K_k^TB^TP_{k+1}A} \label{eq:cost_update_k} \end{equation}
 
 with $P_{T}=Q$ is the cost at the last time step.
+</div>
 </div> <!-- scrollablecontent -->
 <!-- ************************ END SCROLLABLE ELIMINATION DESCRIPTION ************************ -->
 
@@ -348,7 +384,7 @@ P &= Q+A^TPA - K^TB^TPA \nonumber
 as $T\to\infty$.  This is the [Discrete Algebraic Ricatti Equations (DARE)](https://en.wikipedia.org/wiki/Algebraic_Riccati_equation) and $\lim_{T\to\infty}V_0(x)$ and $\lim_{T\to\infty}K_0$ are the cost-to-go and optimal control gain respectively for the [infinite horizon LQR problem](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator#Infinite-horizon,_discrete-time_LQR).  Indeed, one way to calculate the solution to the DARE is to iterate on the dynamic Ricatti equation.
 
 ## Implementation using GTSAM
-You can view an example Jupyter notebook on [google colab](https://colab.research.google.com/drive/1pIUC6fQVMEaQ7QfJk8BvD0F60gShj3F4) or
+You can view an example Jupyter notebook on [google colab](https://colab.research.google.com/drive/1pIUC6fQVMEaQ7QfJk8BvD0F60gShj3F4#sandboxMode=true){:target="_blank"} or
 <a href="/assets/code_samples/lqr_control.zip" download>download</a> the modules/examples
 that you can use in your
 projects to:
@@ -935,56 +971,113 @@ discrete-time LQR problem. -->
         var scrollLoc_bayes = document.getElementById("sec:elim_bayes").offsetTop - scrollable.offsetTop;
         var scroll_cur = scrollable.scrollTop;
         var scrollLoc;
+        var div_state = document.getElementById("sec:elim_state_div");
+        var div_ctrl = document.getElementById("sec:elim_ctrl_div");
+        var div_bayes = document.getElementById("sec:elim_bayes_div");
         switch(slideIndex[which]) {
             case 1:
             case 2:
-                return; // never force scroll up, only force scroll down
-                // scrollLoc = scrollLoc_state;
-                // break;
+                div_state.style.display = "block";
+                div_ctrl.style.display = "none";
+                div_bayes.style.display = "none";
+                // fadeIn(div_state);
+                // fadeOut(div_ctrl, div_state);
+                // fadeOut(div_bayes, div_state);
+                return;
             case 3:
             case 4:
             case 5:
-                if (scroll_cur >= scrollLoc_ctrl) {return;}
-                scrollLoc = scrollLoc_ctrl;
-                break;
-            // case 5:
-            //     if (scroll_cur >= scrollLoc_value) {return;}
-            //     scrollLoc = scrollLoc_value;
-            //     break;
+                div_state.style.display = "none";
+                div_ctrl.style.display = "block";
+                div_bayes.style.display = "none";
+                // fadeOut(div_state, div_ctrl);
+                // div_state.classList.toggle('hide');
+                // fadeIn(div_ctrl);
+                // fadeOut(div_bayes, div_ctrl);
+                return;
             case 6:
             case 7:
             case 8:
             case 9:
-            case 10:
-                if (scroll_cur >= scrollLoc_bayes) {return;}
-                scrollLoc = scrollLoc_bayes;
-                break;
-        }
-        if (typeof triggeredByScroll === 'undefined') {
-            scrollable.scrollTo(0, scrollLoc);
+                div_state.style.display = "none";
+                div_ctrl.style.display = "none";
+                div_bayes.style.display = "block";
+                // fadeOut(div_state, div_bayes);
+                // fadeOut(div_ctrl, div_bayes);
+                // fadeIn(div_bayes);
+                return;
         }
     }
 
-    // when scrolling through subsections in "Variable Elimination", also change the image to correspond
-    document.getElementById("sec:elim_scrollable").addEventListener("scroll", function (event) {
-        var scrollable = document.getElementById("sec:elim_scrollable");
-        var scrollLoc_state = document.getElementById("sec:elim_state").offsetTop - scrollable.offsetTop;
-        var scrollLoc_ctrl = document.getElementById("sec:elim_ctrl" ).offsetTop - scrollable.offsetTop;
-        // var scrollLoc_value = document.getElementById("sec:elim_value").offsetTop - scrollable.offsetTop;
-        var scrollLoc_bayes = document.getElementById("sec:elim_bayes").offsetTop - scrollable.offsetTop;
+    // // when scrolling through subsections in "Variable Elimination", also change the image to correspond
+    // document.getElementById("sec:elim_scrollable").addEventListener("scroll", function (event) {
+    //     var scrollable = document.getElementById("sec:elim_scrollable");
+    //     var scrollLoc_state = document.getElementById("sec:elim_state").offsetTop - scrollable.offsetTop;
+    //     var scrollLoc_ctrl = document.getElementById("sec:elim_ctrl" ).offsetTop - scrollable.offsetTop;
+    //     // var scrollLoc_value = document.getElementById("sec:elim_value").offsetTop - scrollable.offsetTop;
+    //     var scrollLoc_bayes = document.getElementById("sec:elim_bayes").offsetTop - scrollable.offsetTop;
         
-        var scroll = this.scrollTop;
-        if (scroll < scrollLoc_ctrl) {
-            if (slideIndex[0] > 2) {showSlides(slideIndex[0]=1, 0, true)}
+    //     var scroll = this.scrollTop;
+    //     if (scroll < scrollLoc_ctrl) {
+    //         if (slideIndex[0] > 2) {showSlides(slideIndex[0]=1, 0, true)}
+    //     }
+    //     // else if (scroll < scrollLoc_value) {
+    //     //     if ((slideIndex[0] < 3) || (slideIndex[0] > 4)) {showSlides(slideIndex[0]=3, 0, true)}
+    //     // }
+    //     else if ((scroll < scrollLoc_bayes) && (scroll < (scrollable.scrollHeight - scrollable.offsetHeight))) {
+    //         if ((slideIndex[0] < 3) || (slideIndex[0] > 3)) {showSlides(slideIndex[0]=3, 0, true)}
+    //     }
+    //     else {
+    //         if ((slideIndex[0] < 6)) {showSlides(slideIndex[0]=6, 0, true)}
+    //     }
+    // });
+
+    function fadeOut(element, nextElement) {
+        if (element.style.display == "none") {
+            return;
         }
-        // else if (scroll < scrollLoc_value) {
-        //     if ((slideIndex[0] < 3) || (slideIndex[0] > 4)) {showSlides(slideIndex[0]=3, 0, true)}
-        // }
-        else if ((scroll < scrollLoc_bayes) && (scroll < (scrollable.scrollHeight - scrollable.offsetHeight))) {
-            if ((slideIndex[0] < 3) || (slideIndex[0] > 3)) {showSlides(slideIndex[0]=3, 0, true)}
+        element.addEventListener('webkitTransitionEnd', function () {
+            element.style.display = "none";
+            nextElement.style.display = "block";
+        }, {once: true});
+        element.addEventListener('mozTransitionEnd', function () {
+            element.style.display = "none";
+            nextElement.style.display = "block";
+        }, {once: true});
+        element.addEventListener('oTransitionEnd', function () {
+            element.style.display = "none";
+            nextElement.style.display = "block";
+        }, {once: true});
+        element.addEventListener('transitionend', function () {
+            element.style.display = "none";
+            nextElement.style.display = "block";
+        }, {once: true});
+        element.style.webkitTransitionDuration = "0.1s";
+        element.style.mozTransitionDuration = "0.1s";
+        element.style.oTransitionDuration = "0.1s";
+        element.style.transitionDuration = "0.1s";
+        element.style.opacity = "0";
+    }
+    function fadeIn(element) {
+        if (element.style.display == "block") {
+            return;
         }
-        else {
-            if ((slideIndex[0] < 6)) {showSlides(slideIndex[0]=6, 0, true)}
-        }
-    });
+        element.addEventListener('webkitTransitionEnd', function () {
+        }, {once: true});
+        element.addEventListener('mozTransitionEnd', function () {
+        }, {once: true});
+        element.addEventListener('oTransitionEnd', function () {
+        }, {once: true});
+        element.addEventListener('transitionend', function () {
+        }, {once: true});
+        element.style.webkitTransitionDuration = "0.1s";
+        element.style.mozTransitionDuration = "0.1s";
+        element.style.oTransitionDuration = "0.1s";
+        element.style.transitionDuration = "0.1s";
+        element.style.webkitTransitionDelay = "0.1s";
+        element.style.mozTransitionDelay = "0.1s";
+        element.style.oTransitionDelay = "0.1s";
+        element.style.transitionDelay = "0.1s";
+        element.style.opacity = "1";
+    }
 </script>
