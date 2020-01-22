@@ -18,7 +18,7 @@ In Wikipedia ? Get the primary source…
 
 * Make Colab/jupyter links open in new tab… Colab immediately in playground???
 
-Appendix: I love the QR factorization animation. I agree the other stuff is less important and potentially off-putting.
+* Appendix: I love the QR factorization animation. I agree the other stuff is less important and potentially off-putting.
 
 Frank
  -->
@@ -92,7 +92,7 @@ factors represent the state and control costs we seek to minimize via least-squa
 
 ## Variable Elimination
 To optimize the factor graph, which represents minimizing the least squares objectives above, we can simply eliminate the factors from right
-to left.  In this section we demonstrate the variable elimination graphically and algebraically, but discussion on the underlying matrix representation in GTSAM is also
+to left.  In this section we demonstrate the variable elimination graphically and algebraically, but the matrix elimination is also
 provided in the [Appendix](#least-squares-implementation-in-gtsam).
 
 <!-- ********************** BEGIN VARIABLE ELIMINATION SLIDESHOW ********************** -->
@@ -167,17 +167,9 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
   <div class="mySlides 0" style="text-align: center;">
     <a name="fig_bayes_net"></a>
     <figure class="center">
-    <img src="/assets/images/lqr_control/Elimination/cropped_Slide9.png"
-        alt="Bayes net" />
-        <figcaption><b>Figure 5c</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
-    </figure>
-  </div>
-  <div class="mySlides 0" style="text-align: center;">
-    <a name="fig_bayes_net"></a>
-    <figure class="center">
     <img src="/assets/images/lqr_control/Elimination/cropped_Slide10.png"
         alt="Bayes net" />
-        <figcaption><b>Figure 5d</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
+        <figcaption><b>Figure 5c</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
     </figure>
   </div>
   <!-- Next and previous buttons -->
@@ -196,7 +188,6 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
   <span class="dot 0" onclick="currentSlide(6,0)"></span>
   <span class="dot 0" onclick="currentSlide(7,0)"></span>
   <span class="dot 0" onclick="currentSlide(8,0)"></span>
-  <span class="dot 0" onclick="currentSlide(9,0)"></span>
   <!-- <span class="dot 0" onclick="currentSlide(10,0)"></span> -->
 </div>
 
@@ -488,48 +479,7 @@ potential function as a function of only $x_1$:
 
 ### Least Squares Implementation in GTSAM
 GTSAM can be specified to use either of two methods for solving the least squares problems that
-appear in eliminating factor graphs: Cholesky Factorization or QR Factorization.  We
-will find that both arrive at the same solution matching the dynamic Ricatti equation solution.
-#### Cholesky Factorization
-We have established that the cost optimization in the LQR problem can be expressed as a least
-squares problem $\argmin\limits_x\|\|Ax-b\|\|_2^2$ where ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical
-concatenation of all state and control vectors, $A$ is a matrix representing quadratic costs, and
-$b=0$ for the case of optimizing both control and state cost towards 0.
-
-To solve the linear least squares problem $\argmin\limits_x\|\|Ax-b\|\|_2^2$, we can reformulate the
-problem as the equivalent linear equation $A^TAx=A^Tb$. Cholesky factorization computes a factorization on $A^TA$ such that
-$A^TA=R^TR$ thereby allowing solving by back-substitution.
-Instead of considering the full $A^TA$ matrix, for demonstrative purposes we can consider just a
-single *clique*, as it is implemented in GTSAM for computational reasons.  A clique is a set of
-variables which are fully connected. In each clique, GTSAM first performs variable elimination with
-the strict constraints to convert the constrained optimization problem into an unconstrained one.
-Then, GTSAM performs Cholesky factorization on rest of the variables. For the clique circled in red
-in [Figure 6](#fig:clique), we first eliminate $x_2$ using the dynamics constraint to obtain our least
-squares clique formulation: ${x=[u_1;x_1]}$, $b=0$, and $A$ and $A^TA$ are given by
-
-\\[ \begin{aligned} 
-    A= 
-    \begin{bmatrix} 
-      Q^{\frac{1}{2}}B & Q^{\frac{1}{2}}A \\\\ 
-      R^{\frac{1}{2}} & \\\\ 
-      & Q^{\frac{1}{2}} 
-    \end{bmatrix} 
-\end{aligned} \\]
-\\[ \begin{aligned} 
-    A^TA= 
-    \begin{bmatrix} 
-      R + B^TQB & B^TQA \\\\ 
-      A^TQB & Q+A^TQA 
-    \end{bmatrix} 
-\end{aligned} \\]
-Applying block Cholesky decomposition on the matrix, we have
-\\[ \begin{aligned} 
-    R = 
-    \begin{bmatrix} 
-      D_1^{\frac{1}{2}} & -D_1^{\frac{1}{2}}K_1 \\\\ 
-      0 & V_1^{\frac{1}{2}} 
-    \end{bmatrix} 
-\end{aligned} \\]
+appear in eliminating factor graphs: Cholesky Factorization or QR Factorization.  Both arrive at the same result, but we will take a look at QR since it more immediately illustrates the elimination algorithm at work.
 
 <!-- plain table for formatting purposes -->
 <style>
@@ -548,38 +498,8 @@ table th {
     padding: 3px;
 }
 </style>
-<!-- "where D = ..., K = ..., V = ..." -->
-<div style="overflow: auto">
-<table style="width:3.8in;">
-    <tr>
-        <th>where</th><th>$D_1$</th><th>$=$</th><th>$R + B^TQB$</th>
-    </tr><tr>
-        <th></th><th>$K_1$</th><th>$=$</th><th>$-(R + B^TQB)^{-1}B^TQA$</th>
-    </tr><tr>
-        <th></th><th>$V_1$</th><th>$=$</th><th>$Q + A^TQA - K_1^TD_1^{T/2}D_1^{1/2}K_1$</th>
-    </tr><tr>
-        <th></th><th></th><th>$=$</th><th>$Q + A^TQA - K_1^TB^TQA$</th>
-    </tr>
-</table>
-</div>
-
-which can be verified by multiplying out $R^TR$.  It is now evident that the top block row of $R$
-gives the control law (i.e. $D_1^{1/2}u_1 - D_1^{1/2}K_1x_1 = 0$) and the bottom block row gives the
-new "cost-to-go" for the next clique.
-
-<a name="fig:clique"></a>
-<figure class="center">
-  <img src="/assets/images/lqr_control/VE/cliq1a.png"
-    alt="Single clique in LQR factor graph." />
-    <figcaption><b>Figure 6</b> A single clique in the LQR factor graph formulation is circled in red.</figcaption>
-</figure>
 
 #### QR Factorization
-We can achieve the same matrix reduction instead using QR factorization.  The process is illustrated in [Figure 7](#fig:qr_elim) for a 3-time step factor graph instead of just a single clique, where the noise matrices and elimination
-matrices are shown with the corresponding states of the graph.  The noise matrix (NM) is $0$ for a
-hard constraint and $I$ for a minimization objective.  The elimination matrix is formatted as an
-augmented matrix $[A|b]$ for the linear least squares problem $\argmin\limits_x\|\|Ax-b\|\|_2^2$
-with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and control vectors.
 
 <!-- ************************ QR block elimination ************************ -->
 <!-- Slideshow container, based on https://www.w3schools.com/howto/howto_js_slideshow.asp -->
@@ -590,15 +510,16 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
 <div markdown="1" align="left" style="width:100%; height:2.6in; overflow:auto">
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
-    \begin{bmatrix} 
-        I\\\\ 
-        0\\\\ 
-        I\\\\ 
-        I\\\\ 
-        0\\\\ 
-        I\\\\ 
-        I
-    \end{bmatrix} & 
+    \left[ \begin{array}{c} 
+        \vphantom{Q^{1/2} | } I\\\\ 
+        \vphantom{I       | } 0\\\\ 
+        \vphantom{R^{1/2} | } I\\\\ 
+        \vphantom{Q^{1/2} | } I\\\\ 
+        \vphantom{-A      | } 0\\\\ 
+        \vphantom{R^{1/2} | } I\\\\ 
+        \vphantom{Q^{1/2} | } I 
+    \end{array} \right]
+    &
     \left[ \begin{array}{ccccc|c} 
         Q^{1/2} &   &       &       &       & 0\\\\ 
         I & -B      & -A    &       &       & 0\\\\ 
@@ -610,7 +531,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{array} \right]
     \end{array} \\)
 </div>
-        <img src="/assets/images/lqr_control/elimination_steps/fg0.png" alt="factor graph partially eliminated" />
+        <img src="/assets/images/lqr_control/Elimination/cropped_Slide0.png" alt="factor graph partially eliminated" />
         <figcaption><b>Figure 7a</b> Initial factor graph and elimination matrix</figcaption>
       </figure>
   </div>
@@ -620,13 +541,13 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
     \begin{bmatrix} 
-        I\\\\ 
-        0\\\\ 
-        I\\\\ 
-        I\\\\ 
-        0\\\\ 
-        I\\\\ 
-        I
+        \vphantom{Q^{1/2} | } I\\\\ 
+        \vphantom{I       | } 0\\\\ 
+        \vphantom{R^{1/2} | } I\\\\ 
+        \vphantom{Q^{1/2} | } I\\\\ 
+        \vphantom{I       | } 0\\\\ 
+        \vphantom{R^{1/2} | } I\\\\ 
+        \vphantom{Q^{1/2} | } I
     \end{bmatrix} & 
     \left[ \begin{array}{ccccc|c} 
         \color{red} {Q^{1/2}} &   &       &       &       & 0\\\\ 
@@ -639,8 +560,8 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{array} \right]
     \end{array} \\)
 </div>
-        <img src="/assets/images/lqr_control/elimination_steps/gtsam_fg1.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 7b</b> Eliminate $x_2$: the two factors to eliminate are highlighted in red</figcaption>
+        <img src="/assets/images/lqr_control/Elimination/cropped_Slide1.png" alt="factor graph partially eliminated" />
+        <figcaption><b>Figure 7b</b> Eliminate $x_2$: the two factors to replace are highlighted in red</figcaption>
       </figure>
   </div>
 
@@ -650,13 +571,13 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
     \begin{bmatrix} 
-        0\\\\ 
-        I\\\\ 
-        I\\\\ 
-        I\\\\ 
-        0\\\\ 
-        I\\\\ 
-        I\\\\ 
+        \vphantom{I       | } 0\\\\ 
+        \vphantom{Q^{1/2} | } I\\\\ 
+        \vphantom{R^{1/2} | } I\\\\ 
+        \vphantom{Q^{1/2} | } I\\\\ 
+        \vphantom{I       | } 0\\\\ 
+        \vphantom{R^{1/2} | } I\\\\ 
+        \vphantom{Q^{1/2} | } I\\\\ 
     \end{bmatrix} & 
     \left[ \begin{array}{c:cccc|c} 
         I & -B      & -A    &       &       & 0\\\\ 
@@ -670,7 +591,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{array} \right]
     \end{array} \\)
 </div>
-        <img src="/assets/images/lqr_control/elimination_steps/gtsam_fg2.png" alt="factor graph partially eliminated" />
+        <img src="/assets/images/lqr_control/Elimination/cropped_Slide2.png" alt="factor graph partially eliminated" />
         <figcaption><b>Figure 7c</b> Eliminated $x_2$: the resulting binary cost factor is highlighted in blue</figcaption>
       </figure>
   </div>
@@ -681,28 +602,28 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
     \begin{bmatrix} 
-        0\\\\ 
-        I\\\\ 
-        I\\\\ 
-        I\\\\ 
-        0\\\\ 
-        I\\\\ 
-        I\\\\ 
+        \vphantom{I       | } 0\\\\ 
+        \vphantom{Q^{1/2} | } I\\\\ 
+        \vphantom{R^{1/2} | } I\\\\ 
+        \vphantom{Q^{1/2} | } I\\\\ 
+        \vphantom{I       | } 0\\\\ 
+        \vphantom{R^{1/2} | } I\\\\ 
+        \vphantom{Q^{1/2} | } I\\\\ 
     \end{bmatrix} & 
     \left[ \begin{array}{c:cccc|c} 
         I & -B      & -A    &       &       & 0\\\\ 
         \hdashline 
           & \color{red} {Q^{1/2}B} & \color{red} {Q^{1/2}A} &      &       & 0\\\\ 
           & \color{red} {R^{1/2}} &       &       &       & 0\\\\ 
-          &                     & \color{red} {Q^{1/2}} &      &       & 0\\\\ 
+          &                     & {Q^{1/2}} &      &       & 0\\\\ 
           &                     & I     & -B    & -A    & 0\\\\ 
           &                     &       & R^{1/2}&      & 0\\\\ 
           &                     &       &       & Q^{1/2}& 0 
     \end{array} \right]
     \end{array} \\)
 </div>
-        <img src="/assets/images/lqr_control/elimination_steps/gtsam_fg3.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 7d</b> Eliminate $u_1$: the three factors to eliminate are highlighted in red</figcaption>
+        <img src="/assets/images/lqr_control/Elimination/cropped_Slide3.png" alt="factor graph partially eliminated" />
+        <figcaption><b>Figure 7d</b> Eliminate $u_1$: the two factors to replace are highlighted in red</figcaption>
       </figure>
   </div>
 
@@ -712,25 +633,27 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
     \begin{bmatrix} 
-        0\\\\ 
-        I\\\\ 
-        I\\\\ 
-        0\\\\ 
-        I\\\\ 
-        I\\\\ 
+        \vphantom{I       | } 0\\\\ 
+        \vphantom{D_1^{1/2} | } I\\\\ 
+        \vphantom{(P_1-Q)^{1/2} | } I\\\\ 
+        \vphantom{Q^{1/2} | } I\\\\ 
+        \vphantom{I       | } 0\\\\ 
+        \vphantom{R^{1/2} | } I\\\\ 
+        \vphantom{Q^{1/2} | } I\\\\ 
     \end{bmatrix} & 
     \left[ \begin{array}{cc:ccc|c} 
         I & -B      & -A    &       &       & 0\\\\ 
           & D_1^{1/2} & -D_1^{1/2}K_1 &      &       & 0\\\\ 
           \hdashline 
-          &         & \color{blue} {P_1^{1/2}} &      &       & 0\\\\ 
+          &         & \color{blue} {(P_1-Q)^{1/2}} &      &       & 0\\\\ 
+          &         & Q^{1/2} &      &       & 0\\\\ 
           &         & I     & -B    & -A    & 0\\\\ 
           &         &       & R^{1/2}&      & 0\\\\ 
           &         &       &       & Q^{1/2}& 0 
     \end{array} \right]
     \end{array} \\)
 </div>
-        <img src="/assets/images/lqr_control/elimination_steps/gtsam_fg4.png" alt="factor graph partially eliminated" />
+        <img src="/assets/images/lqr_control/Elimination/cropped_Slide4.png" alt="factor graph partially eliminated" />
         <figcaption><b>Figure 7e</b> Eliminated $u_1$: the resulting unary cost factor on $x_1$ is shown in blue</figcaption>
       </figure>
   </div>
@@ -741,26 +664,28 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
     \begin{bmatrix} 
-        0\\\\ 
-        I\\\\ 
-        I\\\\ 
-        0\\\\ 
-        I\\\\ 
-        I\\\\ 
+        \vphantom{I       | } 0\\\\ 
+        \vphantom{D_1^{1/2} | } I\\\\ 
+        \vphantom{(P_1-Q)^{1/2} | } I\\\\ 
+        \vphantom{Q^{1/2} | } I\\\\ 
+        \vphantom{I       | } 0\\\\ 
+        \vphantom{R^{1/2} | } I\\\\ 
+        \vphantom{Q^{1/2} | } I\\\\ 
     \end{bmatrix} & 
     \left[ \begin{array}{cc:ccc|c} 
         I & -B      & -A    &       &       & 0\\\\ 
           & D_1^{1/2} & -D_1^{1/2}K_1 &      &       & 0\\\\ 
           \hdashline 
-          &         & \color{red} {P_1^{1/2}} &      &       & 0\\\\ 
+          &         & \color{red} {(P_1-Q)^{1/2}} &      &       & 0\\\\ 
+          &         & \color{red} {Q^{1/2}} &      &       & 0\\\\ 
           &         & \color{red} I     & \color{red} {-B}    & \color{red} {-A}    & 0\\\\ 
           &         &       & R^{1/2}&      & 0\\\\ 
           &         &       &       & Q^{1/2}& 0 
     \end{array} \right]
     \end{array} \\)
 </div>
-        <img src="/assets/images/lqr_control/elimination_steps/gtsam_fg5.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 7f</b> Eliminate $x_1$: the two factors to eliminate are highlighted in red</figcaption>
+        <img src="/assets/images/lqr_control/Elimination/cropped_Slide6.png" alt="factor graph partially eliminated" />
+        <figcaption><b>Figure 7f</b> Eliminate $x_1$: the three factors to replace are highlighted in red</figcaption>
       </figure>
   </div>
 
@@ -770,12 +695,12 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
     \begin{bmatrix} 
-        0\\\\ 
-        I\\\\ 
-        0\\\\ 
-        I\\\\ 
-        I\\\\ 
-        I\\\\ 
+        \vphantom{I       | } 0\\\\ 
+        \vphantom{D_1^{1/2}K_1 | } I\\\\ 
+        \vphantom{I       | } 0\\\\ 
+        \vphantom{D_0^{1/2} | } I\\\\ 
+        \vphantom{P^{1/2} | } I\\\\ 
+        \vphantom{Q^{1/2} | } I\\\\ 
     \end{bmatrix} & 
     \left[ \begin{array}{ccc:cc|c} 
         I & -B      & -A    &       &       & 0\\\\ 
@@ -788,7 +713,7 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
     \end{array} \right]
     \end{array} \\)
 </div>
-        <img src="/assets/images/lqr_control/elimination_steps/gtsam_fg6.png" alt="factor graph partially eliminated" />
+        <img src="/assets/images/lqr_control/Elimination/cropped_Slide7.png" alt="factor graph partially eliminated" />
         <figcaption><b>Figure 7g</b> Eliminated $x_1$: the resulting binary cost factor is shown in blue</figcaption>
       </figure>
   </div>
@@ -799,12 +724,12 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
     \begin{bmatrix} 
-        0\\\\ 
-        I\\\\ 
-        0\\\\ 
-        I\\\\ 
-        I\\\\ 
-        I\\\\ 
+        \vphantom{I       | } 0\\\\ 
+        \vphantom{D_1^{1/2}K_1 | } I\\\\ 
+        \vphantom{I       | } 0\\\\ 
+        \vphantom{D_0^{1/2} | } I\\\\ 
+        \vphantom{P^{1/2} | } I\\\\ 
+        \vphantom{Q^{1/2} | } I\\\\ 
     \end{bmatrix} & 
     \left[ \begin{array}{ccc:cc|c} 
         I & -B      & -A    &       &       & 0\\\\ 
@@ -813,12 +738,12 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
           \hdashline 
           &         &       &\color{red} {P_1^{1/2}B} &\color{red} {P_1^{1/2}A} & 0\\\\ 
           &         &       &\color{red} {R^{1/2}} &      & 0\\\\ 
-          &         &       &       &\color{red} {Q^{1/2}} & 0 
+          &         &       &       & Q^{1/2} & 0 
     \end{array} \right]
     \end{array} \\)
 </div>
-        <img src="/assets/images/lqr_control/elimination_steps/gtsam_fg7.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 7h</b> Eliminate $u_0$: the three cost factors to combine are shown in red</figcaption>
+        <img src="/assets/images/lqr_control/Elimination/cropped_Slide8.png" alt="factor graph partially eliminated" />
+        <figcaption><b>Figure 7h</b> Eliminate $u_0$: the two cost factors to replace are shown in red</figcaption>
       </figure>
   </div>
 
@@ -828,11 +753,12 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
 \\( \begin{array}{cc} 
     \text{NM} & \text{Elimination Matrix} \\\\ 
     \begin{bmatrix} 
-        0\\\\ 
-        I\\\\ 
-        0\\\\ 
-        I\\\\ 
-        I\\\\ 
+        \vphantom{I       | } 0\\\\ 
+        \vphantom{D_1^{1/2}K_1 | } I\\\\ 
+        \vphantom{I       | } 0\\\\ 
+        \vphantom{D_0^{1/2} | } I\\\\ 
+        \vphantom{(P_0-Q)^{1/2} | } I\\\\ 
+        \vphantom{P^{1/2} | } I\\\\ 
     \end{bmatrix} & 
     \left[ \begin{array}{cccc:c|c} 
         I & -B      & -A    &       &       & 0\\\\ 
@@ -840,11 +766,12 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
           &         & I     & -B    & -A    & 0\\\\ 
           &         &       & D_0^{1/2}  & -D_0^{1/2}K_0 & 0\\\\ 
           \hdashline 
-          &         &       &       & \color{blue} {P_0^{1/2}}   & 0
+          &         &   &      & \color{blue} {(P_0-Q)^{1/2}} & 0\\\\ 
+          &         &   &      & Q^{1/2}                    & 0\\\\ 
     \end{array} \right]
     \end{array} \\)
 </div>
-        <img src="/assets/images/lqr_control/elimination_steps/gtsam_fg8.png" alt="factor graph partially eliminated" />
+        <img src="/assets/images/lqr_control/Elimination/cropped_Slide9.png" alt="factor graph partially eliminated" />
         <figcaption><b>Figure 7i</b> Final result: after eliminating $u_0$, the elimination matrix is upper-triangular and we can read off the control laws.</figcaption>
       </figure>
   </div>
@@ -885,24 +812,16 @@ with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and 
   
 <br />
 
+The factorization process is illustrated in [Figure 7](#fig:qr_elim) for a 3-time step factor graph, where the noise matrices and elimination
+matrices are shown with the corresponding states of the graph.  The noise matrix (NM) is $0$ for a
+hard constraint and $I$ for a minimization objective.  The elimination matrix is formatted as an
+augmented matrix $[A|b]$ for the linear least squares problem $\argmin\limits_x\|\|Ax-b\|\|_2^2$
+with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and control vectors.
+The recursive expressions for $P$, $D$, and $K$ when eliminating control variables (i.e. $u_1$ in [Figure 7e](#fig:qr_elim)) are derived from block QR Factorization.
+
 Note that all $b_i=0$ in the augmented matrix for the LQR problem of finding minimal control to
-reach state $0$, but simply changing values of $b_i$ can intuitively extend GTSAM to solve
-LQR problems whose objectives are to reach different states or even trajectories.
-
-The recursive expressions for $P$ and $V$ are derived from block QR Factorization.
-However, block QR factorization is non-trivial to follow so, for demonstrative purposes, we can also
-find their forms algebraically using the "completing the square" technique.  Taking, for example,
-the elimination of $u_0$ ,
-
-\\[ \begin{aligned} \scriptstyle 
-    J(u_0, x_0) & \scriptstyle=~ \|\| P_1^{1/2}Bu_0 ~+~ P_1^{1/2}Ax_0\|\|^2_2 ~+~ \|\|R^{1/2}u_0\|\|^2_2 \qquad+ \|\|Q^{1/2}x_0\|\|^2_2 \\\\ 
-        & \scriptstyle=~ u_0^T(B^TP_1B+R)u_0 ~+~ 2u_0^TB^TP_1Ax_0 ~+~ x_0^TA^TP_1Ax_0 \qquad+ x^TQx \\\\ 
-        & \scriptstyle=~ u_0^T(B^TP_1B+R)u_0 ~+~ 2u_0^T(B^TP_1B+R)^{1/2}(B^TP_1B+R)^{-1/2}B^TP_1Ax_0 ~+~ x_0^TA^TP_1Ax_0 \qquad+ x_0^TQx_0 \\\\ 
-        & \scriptstyle=~ \|\|(B^TP_1B+R)^{1/2}u_0 ~+~ (B^TP_1B+R)^{-1/2}B^TP_1Ax_0\|\|^2_2 ~-~ x_0^T(A^TP_1^TB(B^TP_1B+R)^{-T}B^TP_1A)x_0 ~+~ x_0^TA^TP_1Ax_0 ~+~ x^TQx  \\\\ 
-        & \scriptstyle=~ \|\|(B^TP_1B+R)^{1/2}u_0 ~+~ (B^TP_1B+R)^{-1/2}B^TP_1Ax_0\|\|_2^2 ~+~ \|\|(Q ~+~ A^TP_1A)^{1/2}x_0 ~-~ A^TP_1^TB(B^TP_1B+R)^{-T}B^TP_1A\|\|_2^2  \\\\ 
-        & \scriptstyle=~ \|\|(B^TP_1B+R)^{1/2}u_0 ~+~ (B^TP_1B+R)^{-1/2}B^TP_1Ax_0\|\|_2^2 ~+~ \|\|(Q ~+~ A^TP_1A ~-~ K_0^TB^TP_1A)^{1/2}x_0\|\|_2^2 \\\\ 
-        & \scriptstyle=~ \|\|V\_{0,0}u_0 ~+~ V\_{0,1}x_0\|\|_2^2 ~+~ \|\|P_0^{1/2}x_0\|\|_2^2 
-\end{aligned} \\]
+reach state $0$, but simply changing values of $b_i$ intuitively extends GTSAM to solve
+LQR problems whose objectives are to reach different states or even follow trajectories.
 
 <!-- ### Final Symbolic Expressions of Factor Graph Evaluation
 In the above solution, we have
@@ -998,7 +917,6 @@ discrete-time LQR problem. -->
             case 6:
             case 7:
             case 8:
-            case 9:
                 div_state.style.display = "none";
                 div_ctrl.style.display = "none";
                 div_bayes.style.display = "block";
