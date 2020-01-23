@@ -3,26 +3,6 @@ layout: gtsam-post
 title:  "LQR Control Using Factor Graphs"
 ---
 
-<!--
-AMAZING !!!!!!!
-
-Comments:
-
-* The figure animation is a bit out of sync with the text? Could I read the text just by advancing the figure and not scrolling?
-
-* Formula (8) does not seem to match the factor on x1 in Figure 4b.
-
-* Difference between 5b and 5c? Maybe 5b can go?
-
-In Wikipedia ? Get the primary source…
-
-* Make Colab/jupyter links open in new tab… Colab immediately in playground???
-
-* Appendix: I love the QR factorization animation. I agree the other stuff is less important and potentially off-putting.
-
-Frank
- -->
-
 <link rel="stylesheet" href="/assets/css/slideshow.css">
 
 Authors: [Gerry Chen](https://gerry-chen.com), [Yetong
@@ -56,6 +36,9 @@ Zhang](https://www.linkedin.com/in/yetong-zhang-9b810a105/), and Frank Dellaert
     visibility:visible;
 }
 </style> <!-- horizontal scrolling -->
+
+<!-- - TOC
+{:toc} -->
 
 ## Introduction
 <a name="fg_scratch"></a>
@@ -230,7 +213,7 @@ Taken from my website: https://github.com/gchenfc/gerrysworld2/blob/master/css/a
 <a id="sec:elim_state"></a>
 ### Eliminate a State
 Let us start at the last state, $x_2$. Gathering the two factors (marked in
-red [Figure 3a](#fig_eliminate_x_a)), we have \eqref{eq:potential} the objective function $\phi_1$, and \eqref{eq:constrain} the constraint equation on $x_2$, $u_1$ and $x_1$:
+red [Figure 3a](#fig_eliminate_x_a){:onclick="currentSlide(1,0)"}), we have \eqref{eq:potential} the objective function $\phi_1$, and \eqref{eq:constrain} the constraint equation on $x_2$, $u_1$ and $x_1$:
 
 \begin{equation} \phi_1(x_2) = x_2^T Q x_2 \label{eq:potential} \end{equation}
 
@@ -243,7 +226,7 @@ the cost of state $x_2$ as a function of $x_1$ and $u_1$:
 \begin{equation} \phi_2(x_1, u_1) = (Ax_1 + Bu_1)^T Q (Ax_1 + Bu_1)
 \label{eq:potential_simplified} \end{equation}
 
-The resulting factor graph is illustrated in [Figure 3b](#fig_eliminate_x_b).  Note that the 
+The resulting factor graph is illustrated in [Figure 3b](#fig_eliminate_x_b){:onclick="currentSlide(2,0)"}.  Note that the 
 dynamics constraint is now represented by the bayes net factors shown as gray arrows.
 
 To summarize, we used the dynamics constraint to eliminate variable
@@ -256,11 +239,11 @@ and $u_1$, marked in blue.
 ### Eliminate a Control
 <!-- Now \eqref{eq:potential_simplified} defines an (unnormalized) joint
 Gaussian density on variables $x_1$ and $u_1$.  -->
-To eliminate $u_1$, we seek to replace the two factors marked red in [Figure 4a](#fig_eliminate_u_a)
+To eliminate $u_1$, we seek to replace the two factors marked red in [Figure 4a](#fig_eliminate_u_a){:onclick="currentSlide(3,0)"}
 with a new cost factor on $x_1$ and an equation for the optimal control $$u_1^*(x_1)$$.
 
 Adding the control cost to \eqref{eq:potential_simplified}, the combined cost of the
-two red factors in [Figure 4a](#fig_eliminate_u_a) is given by:
+two red factors in [Figure 4a](#fig_eliminate_u_a){:onclick="currentSlide(3,0)"} is given by:
 
 \begin{equation} \phi_3(x_1, u_1) = u_1^TRu_1 + (Ax_1 + Bu_1)^T Q (Ax_1 + Bu_1)
 \label{eq:potential_u1} \end{equation}
@@ -292,20 +275,20 @@ to obtain a new unary cost factor on $x_1$:
 Note that we simplified $K_1^TRK_1 + K_1^TB^TQBK_1 = -K_1^TB^TQA$ by substituting in for $K_1$ using
 \eqref{eq:control_law}.
 
-The resulting factor graph is illustrated in [Figure 4b](#fig_eliminate_u_b).
+The resulting factor graph is illustrated in [Figure 4b](#fig_eliminate_u_b){:onclick="currentSlide(4,0)"}.
 
 For convenience, we will also define $P_k$ where $x_k^TP_kx_k$ represents the aggregate of the two unary costs on $x_k$.  In the case of $P_1$,
 \begin{align}
     x_1^TP_1x_1 &= x_1^TQx_1 + \phi_4(x_1) \nonumber
 \end{align}
-is the aggregation of the two unary factors labeled in green in [Figure 4c](#fig_merge_factor).
+is the aggregation of the two unary factors labeled in green in [Figure 4c](#fig_merge_factor){:onclick="currentSlide(5,0)"}.
 </div>
 <!-- ************** BAYES NET ************** -->
 <div markdown="1" id="sec:elim_bayes_div" class="slideout">
 <a id="sec:elim_bayes"></a>
 ### Turning into a Bayes Network
 By eliminating all the variables from right to left, we can get a Bayes network
-as shown in [Figure 5d](#fig_bayes_net). Each time we eliminate a state
+as shown in [Figure 5c](#fig_bayes_net){:onclick="currentSlide(8,0)"}. Each time we eliminate a state
 and control, we simply repeat the steps in [Eliminate a state](#eliminate-a-state) and [Eliminate a control](#eliminate-a-control): we express the state $x_{k+1}$ with the dynamics model, then find the optimal control $u_k$ as
 a function of state $x_k$.
 
@@ -817,7 +800,7 @@ matrices are shown with the corresponding states of the graph.  The noise matrix
 hard constraint and $I$ for a minimization objective.  The elimination matrix is formatted as an
 augmented matrix $[A|b]$ for the linear least squares problem $\argmin\limits_x\|\|Ax-b\|\|_2^2$
 with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and control vectors.
-The recursive expressions for $P$, $D$, and $K$ when eliminating control variables (i.e. $u_1$ in [Figure 7e](#fig:qr_elim)) are derived from block QR Factorization.
+The recursive expressions for $P$, $D$, and $K$ when eliminating control variables (i.e. $u_1$ in [Figure 7e](#fig:qr_elim){:onclick="currentSlide(5,1)"}) are derived from block QR Factorization.
 
 Note that all $b_i=0$ in the augmented matrix for the LQR problem of finding minimal control to
 reach state $0$, but simply changing values of $b_i$ intuitively extends GTSAM to solve
