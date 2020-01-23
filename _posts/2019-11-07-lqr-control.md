@@ -231,7 +231,12 @@ dynamics constraint is now represented by the bayes net factors shown as gray ar
 
 To summarize, we used the dynamics constraint to eliminate variable
 $x_2$ and the two factors marked in red, and we replaced them with a new binary cost factor on $x_1$
-and $u_1$, marked in blue.
+and $u_1$, marked in blue. 
+<p align="right" style="background-color: rgba(0,0,0,0.1);
+    margin: 0px -8px 0 -8px;
+    padding: 0 8px;"><a onclick="currentSlide(3,0)">next >></a>
+</p>
+
 </div>
 <!-- ************** CONTROL ************** -->
 <div markdown="1" id="sec:elim_ctrl_div" class="slideout">
@@ -281,7 +286,12 @@ For convenience, we will also define $P_k$ where $x_k^TP_kx_k$ represents the ag
 \begin{align}
     x_1^TP_1x_1 &= x_1^TQx_1 + \phi_4(x_1) \nonumber
 \end{align}
-is the aggregation of the two unary factors labeled in green in [Figure 4c](#fig_merge_factor){:onclick="currentSlide(5,0)"}.
+is the aggregation of the two unary factors labeled in green in [Figure 4c](#fig_merge_factor){:onclick="currentSlide(5,0)"}. 
+<p style="background-color: rgba(0,0,0,0.1);
+    margin: 0px -8px 0 -8px;
+    padding: 0 8px;">
+<span align="left"><a onclick="currentSlide(2,0)"><< prev</a><span style="float:right"><a onclick="currentSlide(6,0)">next >></a></span></span>
+</p>
 </div>
 <!-- ************** BAYES NET ************** -->
 <div markdown="1" id="sec:elim_bayes_div" class="slideout">
@@ -298,7 +308,12 @@ Eliminating a general state, $x_{k+1}$, and control $u_k$, we obtain the recurre
 
 \begin{equation} \boxed{P_k = Q+A^TP_{k+1}A - K_k^TB^TP_{k+1}A} \label{eq:cost_update_k} \end{equation}
 
-with $P_{T}=Q$ is the cost at the last time step.
+with $P_{T}=Q$ is the cost at the last time step. 
+<p style="background-color: rgba(0,0,0,0.1);
+    margin: 0px -8px 0 -8px;
+    padding: 0 8px;">
+<span align="left"><a onclick="currentSlide(5,0)"><< prev</a></span>
+</p>
 </div>
 </div> <!-- scrollablecontent -->
 <!-- ************************ END SCROLLABLE ELIMINATION DESCRIPTION ************************ -->
