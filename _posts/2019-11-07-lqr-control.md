@@ -317,7 +317,10 @@ Eliminating a general state, $x_{k+1}$, and control $u_k$, we obtain the recurre
 
 \begin{equation} \boxed{P_k = Q+A^TP_{k+1}A - K_k^TB^TP_{k+1}A} \label{eq:cost_update_k} \end{equation}
 
-with $P_{T}=Q$ is the cost at the last time step. 
+with $P_{T}=Q$ is the cost at the last time step.
+
+The final Bayes net in [Figure 4d](#fig_bayes_net){:onclick="currentSlide(9,0)"} shows graphically the optimal control law:
+\begin{equation} \boxed{u^*_k = K_k x_k} \end{equation}
 <p style="background-color: rgba(0,0,0,0.1);
     margin: 0px -8px 0 -8px;
     padding: 0 8px;">
