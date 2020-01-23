@@ -6,7 +6,7 @@ title:  "LQR Control Using Factor Graphs"
 <link rel="stylesheet" href="/assets/css/slideshow.css">
 
 Authors: [Gerry Chen](https://gerry-chen.com), [Yetong
-Zhang](https://www.linkedin.com/in/yetong-zhang-9b810a105/), and Frank Dellaert
+Zhang](https://www.linkedin.com/in/yetong-zhang-9b810a105/), and [Frank Dellaert](https://www.cc.gatech.edu/~dellaert/FrankDellaert/Frank_Dellaert/Frank_Dellaert.html)
 
 <div style="display:none"> <!-- custom latex commands here -->
   $
@@ -87,7 +87,7 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
     <figure class="center">
     <img src="/assets/images/lqr_control/Elimination/cropped_Slide1.png"
         alt="Elimination of state $x_2$" />
-        <figcaption><b>Figure 3a</b> Elimination of state $x_2$</figcaption>
+        <figcaption><b>Figure 2a</b> Elimination of state $x_2$</figcaption>
     </figure>
   </div>
   <div class="mySlides 0" style="text-align: center;">
@@ -96,7 +96,7 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
     <figure class="center">
     <img src="/assets/images/lqr_control/Elimination/cropped_Slide2.png"
         alt="Elimination of state $x_2$" />
-        <figcaption><b>Figure 3b</b> Elimination of state $x_2$</figcaption>
+        <figcaption><b>Figure 2b</b> Elimination of state $x_2$</figcaption>
     </figure>
   </div>
   <div class="mySlides 0" style="text-align: center;">
@@ -104,7 +104,7 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
     <figure class="center">
     <img src="/assets/images/lqr_control/Elimination/cropped_Slide3.png"
         alt="Elimination of state $u_1$" />
-        <figcaption><b>Figure 4a</b> Elimination of state $u_1$</figcaption>
+        <figcaption><b>Figure 3a</b> Elimination of state $u_1$</figcaption>
     </figure>
   </div>
   <div class="mySlides 0" style="text-align: center;">
@@ -112,7 +112,7 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
     <figure class="center">
     <img src="/assets/images/lqr_control/Elimination/cropped_Slide4.png"
         alt="Elimination of state $u_1$" />
-        <figcaption><b>Figure 4b</b> Elimination of state $u_1$</figcaption>
+        <figcaption><b>Figure 3b</b> Elimination of state $u_1$</figcaption>
     </figure>
   </div>
   <div class="mySlides 0" style="text-align: center;">
@@ -120,7 +120,7 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
     <figure class="center">
     <img src="/assets/images/lqr_control/Elimination/cropped_Slide5.png"
         alt="Elimination of state $u_1$" />
-        <figcaption><b>Figure 4c</b> Cost-to-go at $x_1$ is the sum of the two unary factors on $x_1$ (green)</figcaption>
+        <figcaption><b>Figure 3c</b> Cost-to-go at $x_1$ is the sum of the two unary factors on $x_1$ (green)</figcaption>
     </figure>
   </div>
   <div class="mySlides 0" style="text-align: center;">
@@ -128,7 +128,7 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
     <figure class="center">
     <img src="/assets/images/lqr_control/Elimination/cropped_Slide6.png"
         alt="Bayes net" />
-        <figcaption><b>Figure 5a</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
+        <figcaption><b>Figure 4a</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
     </figure>
   </div>
   <!-- <div class="mySlides 0" style="text-align: center;">
@@ -136,7 +136,7 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
     <figure class="center">
     <img src="/assets/images/lqr_control/Elimination/cropped_Slide7.png"
         alt="Bayes net" />
-        <figcaption><b>Figure 5b</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
+        <figcaption><b>Figure 4b</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
     </figure>
   </div> -->
   <div class="mySlides 0" style="text-align: center;">
@@ -144,7 +144,7 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
     <figure class="center">
     <img src="/assets/images/lqr_control/Elimination/cropped_Slide8.png"
         alt="Bayes net" />
-        <figcaption><b>Figure 5b</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
+        <figcaption><b>Figure 4b</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
     </figure>
   </div>
   <div class="mySlides 0" style="text-align: center;">
@@ -152,7 +152,15 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
     <figure class="center">
     <img src="/assets/images/lqr_control/Elimination/cropped_Slide10.png"
         alt="Bayes net" />
-        <figcaption><b>Figure 5c</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
+        <figcaption><b>Figure 4c</b> Repeat elimination until the graph is reduced to a Bayes net</figcaption>
+    </figure>
+  </div>
+  <div class="mySlides 0" style="text-align: center;">
+    <a name="fig_bayes_net"></a>
+    <figure class="center">
+    <img src="/assets/images/lqr_control/Elimination/cropped_Slide11.png"
+        alt="Bayes net" />
+        <figcaption><b>Figure 4d</b> Completed Bayes net</figcaption>
     </figure>
   </div>
   <!-- Next and previous buttons -->
@@ -171,6 +179,7 @@ provided in the [Appendix](#least-squares-implementation-in-gtsam).
   <span class="dot 0" onclick="currentSlide(6,0)"></span>
   <span class="dot 0" onclick="currentSlide(7,0)"></span>
   <span class="dot 0" onclick="currentSlide(8,0)"></span>
+  <span class="dot 0" onclick="currentSlide(9,0)"></span>
   <!-- <span class="dot 0" onclick="currentSlide(10,0)"></span> -->
 </div>
 
@@ -213,7 +222,7 @@ Taken from my website: https://github.com/gchenfc/gerrysworld2/blob/master/css/a
 <a id="sec:elim_state"></a>
 ### Eliminate a State
 Let us start at the last state, $x_2$. Gathering the two factors (marked in
-red [Figure 3a](#fig_eliminate_x_a){:onclick="currentSlide(1,0)"}), we have \eqref{eq:potential} the objective function $\phi_1$, and \eqref{eq:constrain} the constraint equation on $x_2$, $u_1$ and $x_1$:
+red [Figure 2a](#fig_eliminate_x_a){:onclick="currentSlide(1,0)"}), we have \eqref{eq:potential} the objective function $\phi_1$, and \eqref{eq:constrain} the constraint equation on $x_2$, $u_1$ and $x_1$:
 
 \begin{equation} \phi_1(x_2) = x_2^T Q x_2 \label{eq:potential} \end{equation}
 
@@ -226,7 +235,7 @@ the cost of state $x_2$ as a function of $x_1$ and $u_1$:
 \begin{equation} \phi_2(x_1, u_1) = (Ax_1 + Bu_1)^T Q (Ax_1 + Bu_1)
 \label{eq:potential_simplified} \end{equation}
 
-The resulting factor graph is illustrated in [Figure 3b](#fig_eliminate_x_b){:onclick="currentSlide(2,0)"}.  Note that the 
+The resulting factor graph is illustrated in [Figure 2b](#fig_eliminate_x_b){:onclick="currentSlide(2,0)"}.  Note that the 
 dynamics constraint is now represented by the bayes net factors shown as gray arrows.
 
 To summarize, we used the dynamics constraint to eliminate variable
@@ -244,11 +253,11 @@ and $u_1$, marked in blue.
 ### Eliminate a Control
 <!-- Now \eqref{eq:potential_simplified} defines an (unnormalized) joint
 Gaussian density on variables $x_1$ and $u_1$.  -->
-To eliminate $u_1$, we seek to replace the two factors marked red in [Figure 4a](#fig_eliminate_u_a){:onclick="currentSlide(3,0)"}
+To eliminate $u_1$, we seek to replace the two factors marked red in [Figure 3a](#fig_eliminate_u_a){:onclick="currentSlide(3,0)"}
 with a new cost factor on $x_1$ and an equation for the optimal control $$u_1^*(x_1)$$.
 
 Adding the control cost to \eqref{eq:potential_simplified}, the combined cost of the
-two red factors in [Figure 4a](#fig_eliminate_u_a){:onclick="currentSlide(3,0)"} is given by:
+two red factors in [Figure 3a](#fig_eliminate_u_a){:onclick="currentSlide(3,0)"} is given by:
 
 \begin{equation} \phi_3(x_1, u_1) = u_1^TRu_1 + (Ax_1 + Bu_1)^T Q (Ax_1 + Bu_1)
 \label{eq:potential_u1} \end{equation}
@@ -280,13 +289,13 @@ to obtain a new unary cost factor on $x_1$:
 Note that we simplified $K_1^TRK_1 + K_1^TB^TQBK_1 = -K_1^TB^TQA$ by substituting in for $K_1$ using
 \eqref{eq:control_law}.
 
-The resulting factor graph is illustrated in [Figure 4b](#fig_eliminate_u_b){:onclick="currentSlide(4,0)"}.
+The resulting factor graph is illustrated in [Figure 3b](#fig_eliminate_u_b){:onclick="currentSlide(4,0)"}.
 
 For convenience, we will also define $P_k$ where $x_k^TP_kx_k$ represents the aggregate of the two unary costs on $x_k$.  In the case of $P_1$,
 \begin{align}
     x_1^TP_1x_1 &= x_1^TQx_1 + \phi_4(x_1) \nonumber
 \end{align}
-is the aggregation of the two unary factors labeled in green in [Figure 4c](#fig_merge_factor){:onclick="currentSlide(5,0)"}. 
+is the aggregation of the two unary factors labeled in green in [Figure 3c](#fig_merge_factor){:onclick="currentSlide(5,0)"}. 
 <p style="background-color: rgba(0,0,0,0.1);
     margin: 0px -8px 0 -8px;
     padding: 0 8px;">
@@ -298,7 +307,7 @@ is the aggregation of the two unary factors labeled in green in [Figure 4c](#fig
 <a id="sec:elim_bayes"></a>
 ### Turning into a Bayes Network
 By eliminating all the variables from right to left, we can get a Bayes network
-as shown in [Figure 5c](#fig_bayes_net){:onclick="currentSlide(8,0)"}. Each time we eliminate a state
+as shown in [Figure 4d](#fig_bayes_net){:onclick="currentSlide(9,0)"}. Each time we eliminate a state
 and control, we simply repeat the steps in [Eliminate a state](#eliminate-a-state) and [Eliminate a control](#eliminate-a-control): we express the state $x_{k+1}$ with the dynamics model, then find the optimal control $u_k$ as
 a function of state $x_k$.
 
@@ -325,7 +334,7 @@ with $P_{T}=Q$ is the cost at the last time step.
   <a href="/assets/images/lqr_control/LQR_FGvsRicatti.png"><img src="/assets/images/lqr_control/LQR_FGvsRicatti.png"
     alt="Comparison between LQR control as solved by factor graphs and by the Ricatti Equation. (they are the same)"
     style="margin-bottom:10px; max-width: 110%; margin-left: -5%;"/></a>
-  <figcaption><b>Figure 6</b> Example LQR control solutions as solved by factor graphs (middle) and the traditional Discrete Algebraic Ricatti Equations (right).  The optimal control gains and cost-to-go factors are compared (left).  All plots show exact agreement between factor graph and Ricatti equation solutions.</figcaption>
+  <figcaption><b>Figure 5</b> Example LQR control solutions as solved by factor graphs (middle) and the traditional Discrete Algebraic Ricatti Equations (right).  The optimal control gains and cost-to-go factors are compared (left).  All plots show exact agreement between factor graph and Ricatti equation solutions.</figcaption>
 </figure>
 
 We introduce the **cost-to-go** (also known as *return cost*, *optimal state value function*, or simply *value function*) as $V_k(x) \coloneqq x^TP_kx$ which intuitively represents *the total cost that will be accrued from here on out, assuming optimal control*.
@@ -333,9 +342,9 @@ We introduce the **cost-to-go** (also known as *return cost*, *optimal state val
 In our factor graph representation, it is becomes obvious that $V_k(x)$ corresponds to the total cost at and after the state $x_k$ assuming optimal control because we eliminate variables backwards in time with the objective of minimizing cost.
 Eliminating a state just re-expresses the future cost in terms of prior states/controls.  Each time we eliminate a control, $u$, the future cost is recalculated assuming optimal control (i.e. $\phi_4(x) = \phi_3(x, u^*)$).
 
-This "cost-to-go" is depicted as a heatmap in [Figure 6](#LQR_example).
+This "cost-to-go" is depicted as a heatmap in [Figure 5](#LQR_example).
 The heat maps depict the $V_k$ showing that the cost is high when $x$ is far from 0, but also showing that after iterating sufficient far backwards in time, $V_k(x)$ begins to converge.  That is to say, the $V_0(x)$ is very similar for $T=30$ and $T=100$.
-Similarly, the leftmost plot of [Figure 6](#LQR_example) depicts $K_k$ and $P_k$ and shows that they (predictably) converge as well.
+Similarly, the leftmost plot of [Figure 5](#LQR_example) depicts $K_k$ and $P_k$ and shows that they (predictably) converge as well.
 
 This convergence allows us to see that we can extend to the [infinite horizon LQR problem](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator#Infinite-horizon,_discrete-time_LQR) (continued in the next section).
 
@@ -530,7 +539,7 @@ table th {
     \end{array} \\)
 </div>
         <img src="/assets/images/lqr_control/Elimination/cropped_Slide0.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 7a</b> Initial factor graph and elimination matrix</figcaption>
+        <figcaption><b>Figure 6a</b> Initial factor graph and elimination matrix</figcaption>
       </figure>
   </div>
   <div class="mySlides 1" style="text-align: center;">
@@ -559,7 +568,7 @@ table th {
     \end{array} \\)
 </div>
         <img src="/assets/images/lqr_control/Elimination/cropped_Slide1.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 7b</b> Eliminate $x_2$: the two factors to replace are highlighted in red</figcaption>
+        <figcaption><b>Figure 6b</b> Eliminate $x_2$: the two factors to replace are highlighted in red</figcaption>
       </figure>
   </div>
 
@@ -590,7 +599,7 @@ table th {
     \end{array} \\)
 </div>
         <img src="/assets/images/lqr_control/Elimination/cropped_Slide2.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 7c</b> Eliminated $x_2$: the resulting binary cost factor is highlighted in blue</figcaption>
+        <figcaption><b>Figure 6c</b> Eliminated $x_2$: the resulting binary cost factor is highlighted in blue</figcaption>
       </figure>
   </div>
 
@@ -621,7 +630,7 @@ table th {
     \end{array} \\)
 </div>
         <img src="/assets/images/lqr_control/Elimination/cropped_Slide3.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 7d</b> Eliminate $u_1$: the two factors to replace are highlighted in red</figcaption>
+        <figcaption><b>Figure 6d</b> Eliminate $u_1$: the two factors to replace are highlighted in red</figcaption>
       </figure>
   </div>
 
@@ -652,7 +661,7 @@ table th {
     \end{array} \\)
 </div>
         <img src="/assets/images/lqr_control/Elimination/cropped_Slide4.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 7e</b> Eliminated $u_1$: the resulting unary cost factor on $x_1$ is shown in blue</figcaption>
+        <figcaption><b>Figure 6e</b> Eliminated $u_1$: the resulting unary cost factor on $x_1$ is shown in blue</figcaption>
       </figure>
   </div>
 
@@ -683,7 +692,7 @@ table th {
     \end{array} \\)
 </div>
         <img src="/assets/images/lqr_control/Elimination/cropped_Slide6.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 7f</b> Eliminate $x_1$: the three factors to replace are highlighted in red</figcaption>
+        <figcaption><b>Figure 6f</b> Eliminate $x_1$: the three factors to replace are highlighted in red</figcaption>
       </figure>
   </div>
 
@@ -712,7 +721,7 @@ table th {
     \end{array} \\)
 </div>
         <img src="/assets/images/lqr_control/Elimination/cropped_Slide7.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 7g</b> Eliminated $x_1$: the resulting binary cost factor is shown in blue</figcaption>
+        <figcaption><b>Figure 6g</b> Eliminated $x_1$: the resulting binary cost factor is shown in blue</figcaption>
       </figure>
   </div>
 
@@ -741,7 +750,7 @@ table th {
     \end{array} \\)
 </div>
         <img src="/assets/images/lqr_control/Elimination/cropped_Slide8.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 7h</b> Eliminate $u_0$: the two cost factors to replace are shown in red</figcaption>
+        <figcaption><b>Figure 6h</b> Eliminate $u_0$: the two cost factors to replace are shown in red</figcaption>
       </figure>
   </div>
 
@@ -770,7 +779,63 @@ table th {
     \end{array} \\)
 </div>
         <img src="/assets/images/lqr_control/Elimination/cropped_Slide9.png" alt="factor graph partially eliminated" />
-        <figcaption><b>Figure 7i</b> Final result: after eliminating $u_0$, the elimination matrix is upper-triangular and we can read off the control laws.</figcaption>
+        <figcaption><b>Figure 6i</b> Eliminated $u_0$: the resulting unary cost factor on $x_0$ is shown in blue.</figcaption>
+      </figure>
+  </div>
+
+  <div class="mySlides 1" style="text-align: center;">
+      <figure class="center" style="width:75%">
+<div markdown="1" align="left" style="width:100%; height:2.6in; overflow:auto">
+\\( \begin{array}{cc} 
+    \text{NM} & \text{Elimination Matrix} \\\\ 
+    \begin{bmatrix} 
+        \vphantom{I       | } 0\\\\ 
+        \vphantom{D_1^{1/2}K_1 | } I\\\\ 
+        \vphantom{I       | } 0\\\\ 
+        \vphantom{D_0^{1/2} | } I\\\\ 
+        \vphantom{(P_0-Q)^{1/2} | } I\\\\ 
+        \vphantom{P^{1/2} | } I\\\\ 
+    \end{bmatrix} & 
+    \left[ \begin{array}{cccc:c|c} 
+        I & -B      & -A    &       &       & 0\\\\ 
+          & D_1^{1/2} & -D_1^{1/2}K_1 &      &       & 0\\\\ 
+          &         & I     & -B    & -A    & 0\\\\ 
+          &         &       & D_0^{1/2}  & -D_0^{1/2}K_0 & 0\\\\ 
+          \hdashline 
+          &         &   &      & \color{red} {(P_0-Q)^{1/2}} & 0\\\\ 
+          &         &   &      & \color{red} {Q^{1/2}}                    & 0\\\\ 
+    \end{array} \right]
+    \end{array} \\)
+</div>
+        <img src="/assets/images/lqr_control/Elimination/cropped_Slide10.png" alt="factor graph partially eliminated" />
+        <figcaption><b>Figure 6j</b> Eliminate $x_0$: the final two factors to eliminate are shown in red.</figcaption>
+      </figure>
+  </div>
+
+  <div class="mySlides 1" style="text-align: center;">
+      <figure class="center" style="width:75%">
+<div markdown="1" align="left" style="width:100%; height:2.6in; overflow:auto">
+\\( \begin{array}{cc} 
+    \text{NM} & \text{Elimination Matrix} \\\\ 
+    \begin{bmatrix} 
+        \vphantom{I       | } 0\\\\ 
+        \vphantom{D_1^{1/2}K_1 | } I\\\\ 
+        \vphantom{I       | } 0\\\\ 
+        \vphantom{D_0^{1/2} | } I\\\\ 
+        \vphantom{P_0^{1/2} | } I\\\\ 
+    \end{bmatrix} & 
+    \left[ \begin{array}{cccc:c|c} 
+        I & -B      & -A    &       &       & 0\\\\ 
+          & D_1^{1/2} & -D_1^{1/2}K_1 &      &       & 0\\\\ 
+          &         & I     & -B    & -A    & 0\\\\ 
+          &         &       & D_0^{1/2}  & -D_0^{1/2}K_0 & 0\\\\ 
+          \hdashline 
+          &         &   &      & \color{blue} {P_0^{1/2}} & 0\\\\ 
+    \end{array} \right]
+    \end{array} \\)
+</div>
+        <img src="/assets/images/lqr_control/Elimination/cropped_Slide11.png" alt="factor graph partially eliminated" />
+        <figcaption><b>Figure 6k</b> Final result: after eliminating $x_0$, the elimination matrix is upper-triangular and we can read off the control laws.</figcaption>
       </figure>
   </div>
   
@@ -791,6 +856,8 @@ table th {
   <span class="dot 1" onclick="currentSlide(7,1)"></span>
   <span class="dot 1" onclick="currentSlide(8,1)"></span>
   <span class="dot 1" onclick="currentSlide(9,1)"></span>
+  <span class="dot 1" onclick="currentSlide(10,1)"></span>
+  <span class="dot 1" onclick="currentSlide(11,1)"></span>
 </div>
 <br />
 <div style="overflow: auto">
@@ -810,12 +877,12 @@ table th {
   
 <br />
 
-The factorization process is illustrated in [Figure 7](#fig:qr_elim) for a 3-time step factor graph, where the noise matrices and elimination
+The factorization process is illustrated in [Figure 6](#fig:qr_elim) for a 3-time step factor graph, where the noise matrices and elimination
 matrices are shown with the corresponding states of the graph.  The noise matrix (NM) is $0$ for a
 hard constraint and $I$ for a minimization objective.  The elimination matrix is formatted as an
 augmented matrix $[A|b]$ for the linear least squares problem $\argmin\limits_x\|\|Ax-b\|\|_2^2$
 with ${x=[x_2;u_1;x_1;u_0;x_0]}$ is the vertical concatenation of all state and control vectors.
-The recursive expressions for $P$, $D$, and $K$ when eliminating control variables (i.e. $u_1$ in [Figure 7e](#fig:qr_elim){:onclick="currentSlide(5,1)"}) are derived from block QR Factorization.
+The recursive expressions for $P$, $D$, and $K$ when eliminating control variables (i.e. $u_1$ in [Figure 6e](#fig:qr_elim){:onclick="currentSlide(5,1)"}) are derived from block QR Factorization.
 
 Note that all $b_i=0$ in the augmented matrix for the LQR problem of finding minimal control to
 reach state $0$, but simply changing values of $b_i$ intuitively extends GTSAM to solve
@@ -915,6 +982,7 @@ discrete-time LQR problem. -->
             case 6:
             case 7:
             case 8:
+            case 9:
                 div_state.style.display = "none";
                 div_ctrl.style.display = "none";
                 div_bayes.style.display = "block";
