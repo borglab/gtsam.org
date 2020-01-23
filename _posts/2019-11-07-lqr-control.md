@@ -74,7 +74,7 @@ Specifically, we will show the factor graph formulation and solution for the
 for a linear system with quadratic costs on control effort and state error*.
 
 We consider the [**finite-horizon, discrete LQR
-problem**](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator#Finite-horizon,_discrete-time_LQR).
+problem**](https://stanford.edu/class/ee363/lectures/dlqr.pdf).
 The task is to *find the optimal controls $u_k$ at time instances $t_k$
 so that a total cost is minimized*.  Note that we will later see the optimal controls can be represented in the form $u^*_k = K_kx_k$ for some optimal gain matrices $K_k$.  The LQR problem can be represented as a constrained optimization
 problem where the costs of control and state error are represented by the
@@ -351,7 +351,7 @@ amount of control this time step ($R$). -->
 
 ## Equivalence to the Ricatti Equation
 
-In [Wikipedia](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator#Finite-horizon,_discrete-time_LQR), the control law and cost function for LQR are given by
+In traditional descriptions of discrete, finite-horizon LQR (i.e. [Chow](https://www.amazon.com/Analysis-Control-Dynamic-Economic-Systems/dp/0898749697), [Kirk](https://pdfs.semanticscholar.org/9777/06d1dc022280f47a2c67c646e85f38d88fe2.pdf#page=86), [Stanford](https://stanford.edu/class/ee363/lectures/dlqr.pdf)), the control law and cost function are given by
 
 \\[ u_k = K_kx_k \\]
 
