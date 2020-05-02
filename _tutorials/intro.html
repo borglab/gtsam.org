@@ -1086,8 +1086,36 @@ Factor 2: BetweenFactor(2,3)
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
   </mrow>
- </mrow></math> over the <em>entire</em> trajectory <span class='math'>X\define\{x_{1},x_{2},x_{3}\}</span>
- of the robot, rather than just the last pose. This <em>smoothing</em> view of the world gives GTSAM its name: &ldquo;smoothing and mapping&rdquo;. Later in this document we will talk about how we can also use GTSAM to do filtering (which you often do <em>not</em> want to do) or incremental inference (which we do all the time).</li>
+ </mrow></math> over the <em>entire</em> trajectory <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+    <mrow><mi>X</mi>
+    </mrow>
+   <mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
+
+   <mrow>
+    <msub>
+     <mrow><mi>x</mi>
+     </mrow>
+     <mrow><mn>1</mn>
+     </mrow>
+    </msub><mo>,</mo>
+    <msub>
+     <mrow><mi>x</mi>
+     </mrow>
+     <mrow><mn>2</mn>
+     </mrow>
+    </msub><mo>,</mo>
+    <msub>
+     <mrow><mi>x</mi>
+     </mrow>
+     <mrow><mn>3</mn>
+     </mrow>
+    </msub>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
+
+  </mrow>
+ </mrow></math> of the robot, rather than just the last pose. This <em>smoothing</em> view of the world gives GTSAM its name: &ldquo;smoothing and mapping&rdquo;. Later in this document we will talk about how we can also use GTSAM to do filtering (which you often do <em>not</em> want to do) or incremental inference (which we do all the time).</li>
 <li class="enumerate_item">A factor graph in GTSAM is just the specification of the probability density <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>P</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
