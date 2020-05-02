@@ -36,9 +36,9 @@ A PR generally should not include more than 750 added or changed lines (the gree
 
 # Coding Conventions:
 
-Fpr C++ we follow the [Google C++ style guide](https://google.github.io/styleguide/cppguide.html). 
+For C++ we follow the [Google C++ style guide](https://google.github.io/styleguide/cppguide.html). 
 
-For python we use pep8 formatting and ask that you resolve all pylint issues.
+For Python we use pep8 formatting and ask that you resolve all pylint issues.
 
 ### Using GTSAM_EXPORT:
 
