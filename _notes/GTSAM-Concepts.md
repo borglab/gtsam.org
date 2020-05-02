@@ -50,7 +50,7 @@ A [group]("http://en.wikipedia.org/wiki/Group_(mathematics)"") should be well kn
 
 * valid expressions:
     * `r = traits<T>::Compose(p,q)`, where *p*, *q*, and *r* are elements of the manifold. 
-    * `q = traits<T>::Inverse(p)`, where *p* and*q* are elements of the manifold. 
+    * `q = traits<T>::Inverse(p)`, where *p* and *q* are elements of the manifold. 
     * `r = traits<T>::Between(p,q)`, where *p*, *q*, and *r* are elements of the manifold. 
 * static members:
     * `traits<T>::Identity`, a static const member that represents the group's identity element.
@@ -58,11 +58,12 @@ A [group]("http://en.wikipedia.org/wiki/Group_(mathematics)"") should be well kn
     * `Compose(p,Inverse(p)) == Identity`
     * `Compose(p,Between(p,q)) == q`
     * `Between(p,q) == Compose(Inverse(p),q)`
+    
 The `gtsam::group::traits` namespace defines the following:
 * values:
     * `traits<T>::Identity` -- The identity element for this group stored as a static const.
     * `traits<T>::group_flavor` -- the flavor of this group's `compose()` operator, either:
-         *  `gtsam::traits::group_multiplicative_tag` for multiplicative operator syntax ,or 
+         * `gtsam::traits::group_multiplicative_tag` for multiplicative operator syntax, or 
          * `gtsam::traits::group_additive_tag` for additive operator syntax.
 
 We do *not* at this time support more than one composition operator per type. Although mathematically possible, it is hardly ever needed, and the machinery to support it would be burdensome and counter-intuitive. 
@@ -122,7 +123,7 @@ Finally, to create the traits automatically you can use `internal::LieGroupTrait
 Vector Space
 ------------
 
-While vector spaces are in principle also manifolds, it is overkill to think about charts etc. Really, we should simply think about vector addition and subtraction. I.e.where
+While vector spaces are in principle also manifolds, it is overkill to think about charts etc. Really, we should simply think about vector addition and subtraction. I.e. where
 
   * `Identity == 0`
   * `Inverse(p) == -p`
@@ -160,7 +161,7 @@ to apply equally well to types that are outside GTSAM control, e.g., `Eigen::Vec
 
 We use Eigen-style or STL-style traits, that define *many* properties at once. 
 
-Note that not everything that makes a concept is defined by traits. Valid expressions such as traits<T>::Compose are
+Note that not everything that makes a concept is defined by traits. Valid expressions such as `traits<T>::Compose` are
 defined simply as static functions within the traits class.
 Finally, for GTSAM types, it is perfectly acceptable (and even desired) to define associated types as internal types, 
 rather than having to use traits internally.
@@ -192,11 +193,11 @@ Hence, we formalize by the following extension of the concept:
 
 * valid expressions:
     * `q = traits<T>::Act(g,p)`, for some instance, *p*,  of a space *S*, that can be acted upon by the group element *g* to produce *q* in *S*.
-    * `q = traits<T>::Act(g,p,Hp)`, if the space acted upon is a continuous differentiable manifold. *
+    * `q = traits<T>::Act(g,p,Hp)`, if the space acted upon is a continuous differentiable manifold.
   
 In the latter case, if *S* is an n-dimensional manifold, *Hp* is an output argument that should be 
 filled with the *nxn* Jacobian matrix of the action with respect to a change in *p*. It typically depends
-on the group element *g*, but in most common example will *not* depend on the value of *p*. For example, in 
+on the group element *g*, but in most common examples will *not* depend on the value of *p*. For example, in 
 the cyclic group example above, we simply have
 
     Hp = R(i)
@@ -216,7 +217,7 @@ An example is a *similarity transform* in 3D, which can act on 3D space, like
 
     q = s*R*p + t
     
-Note that again the derivative in *p*,  *Hp* is simply *s R*, which depends on *g* but not on *p*. 
-The derivative  in *g*,  *Hg*, is in general more complex.
+Note that again the derivative in *p*, *Hp* is simply *s R*, which depends on *g* but not on *p*. 
+The derivative in *g*, *Hg*, is in general more complex.
 
 For now, we won't care about Lie groups acting on non-manifolds.
