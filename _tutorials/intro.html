@@ -1248,7 +1248,8 @@ Values result = LevenbergMarquardtOptimizer(graph, initial).optimize();
   </mrow>
  </mrow></math> are non-linear, as they involve the orientation of the robot. This also explains why the factor graph we created in Listing <a href="#listing_OdometryExample">2.2</a> is of type <em><b>NonlinearFactorGraph</b></em>. The optimization class linearizes this graph, possibly multiple times, to minimize the non-linear squared error specified by the factors.</div>
 
-<div class="standard" id='magicparlabel-65451'>The relevant output from running the example is as follows:<span style='font-family:monospace;'><span style='font-size:small;'>Initial Estimate:
+<div class="standard" id='magicparlabel-65451'>The relevant output from running the example is as follows:</div>
+<div class="standard"><pre>Initial Estimate:
 Values with 3 values:
 Value 1: (0.5, 0, 0.2)
 Value 2: (2.3, 0.1, -0.2)
@@ -1259,7 +1260,7 @@ Values with 3 values:
 Value 1: (-1.8e-16, 8.7e-18, -9.1e-19)
 Value 2: (2, 7.4e-18, -2.5e-18)
 Value 3: (4, -1.8e-18, -3.1e-18)
-</span></span></div>
+</pre></div>
 
 <div class="standard" id='magicparlabel-65452'> It can be seen that, subject to very small tolerance, the ground truth solution <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
