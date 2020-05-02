@@ -1061,18 +1061,19 @@ graph.add(BetweenFactor&lt;Pose2&gt;(2, 3, odometry, odometryNoise));
   </mrow>
  </mrow></math> on lines 14-15, as instances of yet another templated class, <em><b>BetweenFactor&lt;T&gt;</b></em>, again with <em><b>T=Pose2</b></em>.</div>
 
-<div class="standard" id='magicparlabel-65437'>When running the example (<em>make OdometryExample.run</em> on the command prompt), it will print out the factor graph as follows:<span style='font-family:monospace;'><span style='font-size:small;'>Factor Graph:
+<div class="standard" id='magicparlabel-65437'>When running the example (<em>make OdometryExample.run</em> on the command prompt), it will print out the factor graph as follows:</div>
+<div class="standard"><pre>Factor Graph:
 size: 3
-factor 0: PriorFactor on 1
+Factor 0: PriorFactor on 1
   prior mean: (0, 0, 0)
   noise model: diagonal sigmas [0.3; 0.3; 0.1];
-factor 1: BetweenFactor(1,2)
+Factor 1: BetweenFactor(1,2)
   measured: (2, 0, 0)
   noise model: diagonal sigmas [0.2; 0.2; 0.1];
-factor 2: BetweenFactor(2,3)
+Factor 2: BetweenFactor(2,3)
   measured: (2, 0, 0)
   noise model: diagonal sigmas [0.2; 0.2; 0.1];
-</span></span></div>
+</pre></div>
 <h3 class="subsection" id='magicparlabel-65438'><span class="subsection_label">2.3</span> Factor Graphs versus Values</h3>
 <div class="standard" id='magicparlabel-65439'>At this point it is instructive to emphasize two important design ideas underlying GTSAM:</div>
 
