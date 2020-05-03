@@ -1169,7 +1169,7 @@ Factor 2: BetweenFactor(2,3)
  <mrow><mi>X</mi>
  </mrow></math>:</div>
 
-<div class="standard" id='magicparlabel-65445'><pre>// create (deliberatly inaccurate) initial estimate
+<div class="standard" id='magicparlabel-65445'><pre>// create (deliberately inaccurate) initial estimate
 Values initial;
 initial.insert(1, Pose2(0.5, 0.0, 0.2));
 initial.insert(2, Pose2(2.3, 0.1, -0.2));
@@ -2017,8 +2017,8 @@ graph.add(BetweenFactorPose2(5, 2, Pose2(2, 0, pi/2), model));
   graph                1x1               112  gtsam.NonlinearFactorGraph
   priorNoise           1x1               112  gtsam.noiseModel.Diagonal
   model                1x1               112  gtsam.noiseModel.Diagonal
-  initialEstimate      1x1               112  gtsam.Values                                   
-  optimizer            1x1               112  gtsam.LevenbergMarquardtOptimizer              
+  initialEstimate      1x1               112  gtsam.Values
+  optimizer            1x1               112  gtsam.LevenbergMarquardtOptimizer
 </pre></div> In addition, any GTSAM object can be examined in detail, yielding identical output to C++:</div>
 <div class="standard"><pre>&gt;&gt; priorNoise
 diagonal sigmas [0.3; 0.3; 0.1];
