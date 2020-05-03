@@ -1987,7 +1987,7 @@ The result of running optimize on the factor graph in Figure <a href="#fig_Pose2
 
 <div class="standard" id='magicparlabel-65582'>The figure above was created using an interface that allows you to use GTSAM from within MATLAB, which provides for visualization and rapid development. We discuss this next.</div>
 <h3 class="subsection" id='magicparlabel-65583'><span class="subsection_label">4.2</span> Using the MATLAB Interface</h3>
-<div class="standard" id='magicparlabel-65584'>A large subset of the GTSAM functionality can be accessed through wrapped classes from within MATLAB <div class="foot"><span class="foot_label">1</span><div class="foot_inner"><div class="plain_layout" id='magicparlabel-65588'>GTSAM also allows you to wrap your own custom-made classes, although this is outside the scope of this manual</div>
+<div class="standard" id='magicparlabel-65584'>A large subset of the GTSAM functionality can be accessed through wrapped classes from within MATLAB <div class="foot"><span class="foot_label">1</span><div class="foot_inner"><div class="plain_layout" id='magicparlabel-65588'>GTSAM also allows you to wrap your own custom-made classes, although this is outside the scope of this manual.</div>
 </div></div>. The following code excerpt is the MATLAB equivalent of the C++ code in Listing <a href="#listing_Pose2SLAMExample">4.1</a>:<pre>graph = NonlinearFactorGraph;
 priorNoise = noiseModel.Diagonal.Sigmas([0.3; 0.3; 0.1]);
 graph.add(PriorFactorPose2(1, Pose2(0, 0, 0), priorNoise));
@@ -2011,14 +2011,16 @@ graph.add(BetweenFactorPose2(5, 2, Pose2(2, 0, pi/2), model));
 <li class="itemize_item"><em><b>Vector</b></em> and <em><b>Matrix</b></em> classes in C++ are just vectors/matrices in MATLAB.</li>
 <li class="itemize_item">As templated classes do not exist in MATLAB, these have been hardcoded in the GTSAM interface, e.g., <em><b>PriorFactorPose2</b></em> corresponds to the C++ class <em><b>PriorFactor&lt;Pose2&gt;</b></em>, etc.</li>
 </ul>
-<div class="standard" id='magicparlabel-65598'>After executing the code, you can call <em>whos </em>on the MATLAB command prompt to see the objects created. Note that the indicated <em>Class</em> corresponds to the wrapped C++ classes:<span style='font-size:small;'>&gt;&gt; whos
+<div class="standard" id='magicparlabel-65598'>After executing the code, you can call <em>whos </em>on the MATLAB command prompt to see the objects created. Note that the indicated <em>Class</em> corresponds to the wrapped C++ classes:</div>
+<div class="standard"><pre>&gt;&gt; whos
   Name                 Size            Bytes  Class
   graph                1x1               112  gtsam.NonlinearFactorGraph
   priorNoise           1x1               112  gtsam.noiseModel.Diagonal
   model                1x1               112  gtsam.noiseModel.Diagonal
   initialEstimate      1x1               112  gtsam.Values                                   
   optimizer            1x1               112  gtsam.LevenbergMarquardtOptimizer              
-</span> In addition, any GTSAM object can be examined in detail, yielding identical output to C++:<span style='font-size:small;'> &gt;&gt; priorNoise
+</pre></div> In addition, any GTSAM object can be examined in detail, yielding identical output to C++:</div>
+<div class="standard"><pre>&gt;&gt; priorNoise
 diagonal sigmas [0.3; 0.3; 0.1];
 
 &gt;&gt; graph
@@ -2041,16 +2043,16 @@ factor 4: BetweenFactor(4,5)
 factor 5: BetweenFactor(5,2)
   measured: (2, 0, 1.6)
   noise model: diagonal sigmas [0.2; 0.2; 0.1];
-</span> And it does not stop there: we can also call some of the functions defined for factor graphs. E.g.,</div>
+</pre></div> And it does not stop there: we can also call some of the functions defined for factor graphs. E.g.,</div>
 
-<div class="standard" id='magicparlabel-65607'><span style='font-size:small;'>&gt;&gt; graph.error(initialEstimate)
+<div class="standard" id='magicparlabel-65607'><pre>&gt;&gt; graph.error(initialEstimate)
 ans =
    20.1086
 
 &gt;&gt; graph.error(result)
 ans =
    8.2631e-18
-</span> computes the sum-squared error <span class='math'>\frac{1}{2}\sum_{i}\SqrMah{h_{i}(X_{i})}{z_{i}}{\Sigma}</span>
+</pre></div> computes the sum-squared error <span class='math'>\frac{1}{2}\sum_{i}\SqrMah{h_{i}(X_{i})}{z_{i}}{\Sigma}</span>
  before and after optimization.</div>
 <h3 class="subsection" id='magicparlabel-65612'><span class="subsection_label">4.3</span> Reading and Optimizing Pose Graphs </h3>
 
