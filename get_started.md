@@ -53,15 +53,24 @@ or use an [AUR helper](https://wiki.archlinux.org/index.php/AUR_helpers) like
 [`yay`](https://aur.archlinux.org/packages/yay/)
 (recommended for ease of install).
 
-#### Install Optional Dependencies
-
-```sh
-yay -S intel-tbb intel-mkl
-```
+It is also recommended to use the
+[arch4edu](https://wiki.archlinux.org/index.php/Unofficial_user_repositories#arch4edu)
+repository. They are hosting many packages related to education and research,
+including robotics such as ROS. Adding a repository allows for you to install
+binaries of packages, instead of compiling them from source.
+This will greatly speed up your installation time. Visit [here](https://github.com/arch4edu/arch4edu/wiki/Add-arch4edu-to-your-Archlinux) to add and use arch4edu. 
 
 #### Install GTSAM
 ```sh
 yay -S gtsam
+```
+
+or
+
+#### Install GTSAM with Intel Accelerations
+
+```sh
+yay -S gtsam-mkl
 ```
 
 To discuss any issues related to this package refer to the comments section on
