@@ -1528,8 +1528,12 @@ Robot localization factor graph with unary measurement factors at each time step
   </msub>
  </mrow></math> that depend <em>only</em> on the current robot pose, e.g., GPS readings, correlation of a laser range-finder in a pre-existing map, or indeed the presence of absence of ceiling lights (see <a href='#LyXCite-Dellaert99b'><span class="bib-abbrvciteauthor">Dellaert et al.</span></a> (<span class="bib-year">1999</span>) for that amusing example).</div>
 <h3 class="subsection" id='magicparlabel-65484'><span class="subsection_label">3.2</span> Defining Custom Factors</h3>
-<div class="standard" id='magicparlabel-65485'>In GTSAM, you can create custom unary factors by deriving a new class from the built-in class <em><b>NoiseModelFactor1&lt;T&gt;</b></em>, which implements a unary factor corresponding to a measurement likelihood with a Gaussian noise model,<div class='math'>L(q;m)=exp\left\{ -\frac{1}{2}\SqrMah{h(q)}{m}{\Sigma}\right\} \define f(q)</div>
-where <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="standard" id='magicparlabel-65485'>In GTSAM, you can create custom unary factors by deriving a new class from the built-in class <em><b>NoiseModelFactor1&lt;T&gt;</b></em>, which implements a unary factor corresponding to a measurement likelihood with a Gaussian noise model, </div><math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+    <mstyle mathvariant='italic'>L(q; m)</mi><mo>= </mo><mstyle mathvariant='normal'>exp</mi> <mstyle mathvariant='italic'>{ -</mi><mfrac> <mn>1</mn> <mn>2</mn> </mfrac> <msubsup> <mi>||h(q) - m||</mi> <mi>&Sigma;</mi> <mn>2</mn> </msubsup> <mstyle mathvariant='italic'>} = f(q)</mi>
+    </mrow>
+
+</mrow></math> where <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>m</mi>
  </mrow></math> is the measurement, <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>q</mi>
