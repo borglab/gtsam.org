@@ -1061,18 +1061,19 @@ graph.add(BetweenFactor&lt;Pose2&gt;(2, 3, odometry, odometryNoise));
   </mrow>
  </mrow></math> on lines 14-15, as instances of yet another templated class, <em><b>BetweenFactor&lt;T&gt;</b></em>, again with <em><b>T=Pose2</b></em>.</div>
 
-<div class="standard" id='magicparlabel-65437'>When running the example (<em>make OdometryExample.run</em> on the command prompt), it will print out the factor graph as follows:<span style='font-family:monospace;'><span style='font-size:small;'>Factor Graph:
+<div class="standard" id='magicparlabel-65437'>When running the example (<em>make OdometryExample.run</em> on the command prompt), it will print out the factor graph as follows:</div>
+<div class="standard"><pre>Factor Graph:
 size: 3
-factor 0: PriorFactor on 1
+Factor 0: PriorFactor on 1
   prior mean: (0, 0, 0)
   noise model: diagonal sigmas [0.3; 0.3; 0.1];
-factor 1: BetweenFactor(1,2)
+Factor 1: BetweenFactor(1,2)
   measured: (2, 0, 0)
   noise model: diagonal sigmas [0.2; 0.2; 0.1];
-factor 2: BetweenFactor(2,3)
+Factor 2: BetweenFactor(2,3)
   measured: (2, 0, 0)
   noise model: diagonal sigmas [0.2; 0.2; 0.1];
-</span></span></div>
+</pre></div>
 <h3 class="subsection" id='magicparlabel-65438'><span class="subsection_label">2.3</span> Factor Graphs versus Values</h3>
 <div class="standard" id='magicparlabel-65439'>At this point it is instructive to emphasize two important design ideas underlying GTSAM:</div>
 
@@ -1085,8 +1086,36 @@ factor 2: BetweenFactor(2,3)
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
 
   </mrow>
- </mrow></math> over the <em>entire</em> trajectory <span class='math'>X\define\{x_{1},x_{2},x_{3}\}</span>
- of the robot, rather than just the last pose. This <em>smoothing</em> view of the world gives GTSAM its name: &ldquo;smoothing and mapping&rdquo;. Later in this document we will talk about how we can also use GTSAM to do filtering (which you often do <em>not</em> want to do) or incremental inference (which we do all the time).</li>
+ </mrow></math> over the <em>entire</em> trajectory <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+    <mrow><mi>X</mi>
+    </mrow>
+   <mo>=</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>{</mo>
+
+   <mrow>
+    <msub>
+     <mrow><mi>x</mi>
+     </mrow>
+     <mrow><mn>1</mn>
+     </mrow>
+    </msub><mo>,</mo>
+    <msub>
+     <mrow><mi>x</mi>
+     </mrow>
+     <mrow><mn>2</mn>
+     </mrow>
+    </msub><mo>,</mo>
+    <msub>
+     <mrow><mi>x</mi>
+     </mrow>
+     <mrow><mn>3</mn>
+     </mrow>
+    </msub>
+   </mrow>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>}</mo>
+
+  </mrow>
+ </mrow></math> of the robot, rather than just the last pose. This <em>smoothing</em> view of the world gives GTSAM its name: &ldquo;smoothing and mapping&rdquo;. Later in this document we will talk about how we can also use GTSAM to do filtering (which you often do <em>not</em> want to do) or incremental inference (which we do all the time).</li>
 <li class="enumerate_item">A factor graph in GTSAM is just the specification of the probability density <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <mrow><mi>P</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
@@ -1140,7 +1169,7 @@ factor 2: BetweenFactor(2,3)
  <mrow><mi>X</mi>
  </mrow></math>:</div>
 
-<div class="standard" id='magicparlabel-65445'><pre>// create (deliberatly inaccurate) initial estimate
+<div class="standard" id='magicparlabel-65445'><pre>// create (deliberately inaccurate) initial estimate
 Values initial;
 initial.insert(1, Pose2(0.5, 0.0, 0.2));
 initial.insert(2, Pose2(2.3, 0.1, -0.2));
@@ -1219,7 +1248,8 @@ Values result = LevenbergMarquardtOptimizer(graph, initial).optimize();
   </mrow>
  </mrow></math> are non-linear, as they involve the orientation of the robot. This also explains why the factor graph we created in Listing <a href="#listing_OdometryExample">2.2</a> is of type <em><b>NonlinearFactorGraph</b></em>. The optimization class linearizes this graph, possibly multiple times, to minimize the non-linear squared error specified by the factors.</div>
 
-<div class="standard" id='magicparlabel-65451'>The relevant output from running the example is as follows:<span style='font-family:monospace;'><span style='font-size:small;'>Initial Estimate:
+<div class="standard" id='magicparlabel-65451'>The relevant output from running the example is as follows:</div>
+<div class="standard"><pre>Initial Estimate:
 Values with 3 values:
 Value 1: (0.5, 0, 0.2)
 Value 2: (2.3, 0.1, -0.2)
@@ -1230,7 +1260,7 @@ Values with 3 values:
 Value 1: (-1.8e-16, 8.7e-18, -9.1e-19)
 Value 2: (2, 7.4e-18, -2.5e-18)
 Value 3: (4, -1.8e-18, -3.1e-18)
-</span></span></div>
+</pre></div>
 
 <div class="standard" id='magicparlabel-65452'> It can be seen that, subject to very small tolerance, the ground truth solution <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -1316,7 +1346,8 @@ Marginals marginals(graph, result);
 cout &lt;&lt; "x1 covariance:\n" &lt;&lt; marginals.marginalCovariance(1) &lt;&lt; endl;
 cout &lt;&lt; "x2 covariance:\n" &lt;&lt; marginals.marginalCovariance(2) &lt;&lt; endl;
 cout &lt;&lt; "x3 covariance:\n" &lt;&lt; marginals.marginalCovariance(3) &lt;&lt; endl;
-</pre>The relevant output from running the example is as follows:<span style='font-size:x-small;'>x1 covariance:
+</pre>The relevant output from running the example is as follows:</div>
+<div class="standard"><pre>x1 covariance:
        0.09     1.1e-47     5.7e-33
     1.1e-47        0.09     1.9e-17
     5.7e-33     1.9e-17        0.01
@@ -1328,7 +1359,7 @@ x3 covariance:
        0.17     2.7e-17     8.4e-18
     2.7e-17        0.37        0.06
     8.4e-18        0.06        0.03
-</span></div>
+</pre></div>
 
 <div class="standard" id='magicparlabel-65461'> What we see is that the marginal covariance <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
@@ -1497,8 +1528,12 @@ Robot localization factor graph with unary measurement factors at each time step
   </msub>
  </mrow></math> that depend <em>only</em> on the current robot pose, e.g., GPS readings, correlation of a laser range-finder in a pre-existing map, or indeed the presence of absence of ceiling lights (see <a href='#LyXCite-Dellaert99b'><span class="bib-abbrvciteauthor">Dellaert et al.</span></a> (<span class="bib-year">1999</span>) for that amusing example).</div>
 <h3 class="subsection" id='magicparlabel-65484'><span class="subsection_label">3.2</span> Defining Custom Factors</h3>
-<div class="standard" id='magicparlabel-65485'>In GTSAM, you can create custom unary factors by deriving a new class from the built-in class <em><b>NoiseModelFactor1&lt;T&gt;</b></em>, which implements a unary factor corresponding to a measurement likelihood with a Gaussian noise model,<div class='math'>L(q;m)=exp\left\{ -\frac{1}{2}\SqrMah{h(q)}{m}{\Sigma}\right\} \define f(q)</div>
-where <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="standard" id='magicparlabel-65485'>In GTSAM, you can create custom unary factors by deriving a new class from the built-in class <em><b>NoiseModelFactor1&lt;T&gt;</b></em>, which implements a unary factor corresponding to a measurement likelihood with a Gaussian noise model, </div><math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+    <mstyle mathvariant='italic'>L(q; m)</mi><mo>= </mo><mstyle mathvariant='normal'>exp</mi> <mstyle mathvariant='italic'>{ -</mi><mfrac> <mn>1</mn> <mn>2</mn> </mfrac> <msubsup> <mi>||h(q) - m||</mi> <mi>&Sigma;</mi> <mn>2</mn> </msubsup> <mstyle mathvariant='italic'>} = f(q)</mi>
+    </mrow>
+
+</mrow></math> where <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>m</mi>
  </mrow></math> is the measurement, <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>q</mi>
@@ -1588,7 +1623,21 @@ public:
  <mrow><mi>q</mi>
  </mrow></math>, whereas the measurement is stored as the instance variables <em><b>mx_</b></em> and <em><b>my_</b></em>, defined on line 2. The constructor on lines 5-6 simply passes on the variable key <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>j</mi>
- </mrow></math> and the noise model to the superclass, and stores the measurement values provided. The most important function to has be implemented by every factor class is <em><b>evaluateError</b></em>, which should return <div class='math'>E(q)\define h(q)-m</div>
+ </mrow></math> and the noise model to the superclass, and stores the measurement values provided. The most important function to has be implemented by every factor class is <em><b>evaluateError</b></em>, which should return <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>E</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>q</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+  <mrow><mo>=</mo>
+  </mrow>
+  <mrow><mi>h</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+<mi>q</mi>
+<mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+ <mrow><mo>-</mo>
+ </mrow>
+ <mrow><mo>m</mo>
+ </mrow>
+ </mrow></math>
 which is done on line 12. Importantly, because we want to use this factor for nonlinear optimization (see e.g., <a href='#LyXCite-Dellaert06ijrr'><span class="bib-abbrvciteauthor">Dellaert and Kaess</span> <span class="bib-year">2006</span></a> for details), whenever the optional argument <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>H</mi>
  </mrow></math> is provided, a <em><b>Matrix</b></em> reference, the function should assign the <b>Jacobian</b> of <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -1719,7 +1768,8 @@ graph.add(boost::make_shared&lt;UnaryFactor&gt;(3, 4.0, 0.0, unaryNoise));
  -->
 </div>
 <h3 class="subsection" id='magicparlabel-65514'><span class="subsection_label">3.4</span> Full Posterior Inference</h3>
-<div class="standard" id='magicparlabel-65515'>The three GPS factors are enough to fully constrain all unknown poses and tie them to a &ldquo;global&rdquo; reference frame, including the three unknown orientations. If not, GTSAM would have exited with a singular matrix exception. The marginals can be recovered exactly as in Section <a href="#subsec_Full_Posterior_Inference">2.5</a>, and the solution and marginal covariances are now given by the following:<span style='font-size:x-small;'>Final Result:
+<div class="standard" id='magicparlabel-65515'>The three GPS factors are enough to fully constrain all unknown poses and tie them to a &ldquo;global&rdquo; reference frame, including the three unknown orientations. If not, GTSAM would have exited with a singular matrix exception. The marginals can be recovered exactly as in Section <a href="#subsec_Full_Posterior_Inference">2.5</a>, and the solution and marginal covariances are now given by the following:</div>
+<div class="standard"><pre>Final Result:
 Values with 3 values:
 Value 1: (-1.5e-14, 1.3e-15, -1.4e-16)
 Value 2: (2, 3.1e-16, -8.5e-17)
@@ -1737,7 +1787,7 @@ x3 covariance:
      0.0083     4.4e-19     1.2e-18
     4.4e-19      0.0094      0.0031
     1.2e-18      0.0031       0.018
-</span></div>
+</pre></div>
 
 <div class="standard" id='magicparlabel-65516'>Comparing this with the covariance matrices in Section <a href="#subsec_Full_Posterior_Inference">2.5</a>, we can see that the uncertainty no longer grows without bounds as measurement uncertainty accumulates. Instead, the &ldquo;GPS&rdquo; measurements more or less constrain the poses evenly, as expected.</div>
 
@@ -1941,7 +1991,7 @@ The result of running optimize on the factor graph in Figure <a href="#fig_Pose2
 
 <div class="standard" id='magicparlabel-65582'>The figure above was created using an interface that allows you to use GTSAM from within MATLAB, which provides for visualization and rapid development. We discuss this next.</div>
 <h3 class="subsection" id='magicparlabel-65583'><span class="subsection_label">4.2</span> Using the MATLAB Interface</h3>
-<div class="standard" id='magicparlabel-65584'>A large subset of the GTSAM functionality can be accessed through wrapped classes from within MATLAB <div class="foot"><span class="foot_label">1</span><div class="foot_inner"><div class="plain_layout" id='magicparlabel-65588'>GTSAM also allows you to wrap your own custom-made classes, although this is outside the scope of this manual</div>
+<div class="standard" id='magicparlabel-65584'>A large subset of the GTSAM functionality can be accessed through wrapped classes from within MATLAB <div class="foot"><span class="foot_label">1</span><div class="foot_inner"><div class="plain_layout" id='magicparlabel-65588'>GTSAM also allows you to wrap your own custom-made classes, although this is outside the scope of this manual.</div>
 </div></div>. The following code excerpt is the MATLAB equivalent of the C++ code in Listing <a href="#listing_Pose2SLAMExample">4.1</a>:<pre>graph = NonlinearFactorGraph;
 priorNoise = noiseModel.Diagonal.Sigmas([0.3; 0.3; 0.1]);
 graph.add(PriorFactorPose2(1, Pose2(0, 0, 0), priorNoise));
@@ -1965,14 +2015,16 @@ graph.add(BetweenFactorPose2(5, 2, Pose2(2, 0, pi/2), model));
 <li class="itemize_item"><em><b>Vector</b></em> and <em><b>Matrix</b></em> classes in C++ are just vectors/matrices in MATLAB.</li>
 <li class="itemize_item">As templated classes do not exist in MATLAB, these have been hardcoded in the GTSAM interface, e.g., <em><b>PriorFactorPose2</b></em> corresponds to the C++ class <em><b>PriorFactor&lt;Pose2&gt;</b></em>, etc.</li>
 </ul>
-<div class="standard" id='magicparlabel-65598'>After executing the code, you can call <em>whos </em>on the MATLAB command prompt to see the objects created. Note that the indicated <em>Class</em> corresponds to the wrapped C++ classes:<span style='font-size:small;'>&gt;&gt; whos
+<div class="standard" id='magicparlabel-65598'>After executing the code, you can call <em>whos </em>on the MATLAB command prompt to see the objects created. Note that the indicated <em>Class</em> corresponds to the wrapped C++ classes:</div>
+<div class="standard"><pre>&gt;&gt; whos
   Name                 Size            Bytes  Class
   graph                1x1               112  gtsam.NonlinearFactorGraph
   priorNoise           1x1               112  gtsam.noiseModel.Diagonal
   model                1x1               112  gtsam.noiseModel.Diagonal
-  initialEstimate      1x1               112  gtsam.Values                                   
-  optimizer            1x1               112  gtsam.LevenbergMarquardtOptimizer              
-</span> In addition, any GTSAM object can be examined in detail, yielding identical output to C++:<span style='font-size:small;'> &gt;&gt; priorNoise
+  initialEstimate      1x1               112  gtsam.Values
+  optimizer            1x1               112  gtsam.LevenbergMarquardtOptimizer
+</pre></div> In addition, any GTSAM object can be examined in detail, yielding identical output to C++:</div>
+<div class="standard"><pre>&gt;&gt; priorNoise
 diagonal sigmas [0.3; 0.3; 0.1];
 
 &gt;&gt; graph
@@ -1995,16 +2047,16 @@ factor 4: BetweenFactor(4,5)
 factor 5: BetweenFactor(5,2)
   measured: (2, 0, 1.6)
   noise model: diagonal sigmas [0.2; 0.2; 0.1];
-</span> And it does not stop there: we can also call some of the functions defined for factor graphs. E.g.,</div>
+</pre></div> And it does not stop there: we can also call some of the functions defined for factor graphs. E.g.,</div>
 
-<div class="standard" id='magicparlabel-65607'><span style='font-size:small;'>&gt;&gt; graph.error(initialEstimate)
+<div class="standard" id='magicparlabel-65607'><pre>&gt;&gt; graph.error(initialEstimate)
 ans =
    20.1086
 
 &gt;&gt; graph.error(result)
 ans =
    8.2631e-18
-</span> computes the sum-squared error <span class='math'>\frac{1}{2}\sum_{i}\SqrMah{h_{i}(X_{i})}{z_{i}}{\Sigma}</span>
+</pre></div> computes the sum-squared error <span class='math'>\frac{1}{2}\sum_{i}\SqrMah{h_{i}(X_{i})}{z_{i}}{\Sigma}</span>
  before and after optimization.</div>
 <h3 class="subsection" id='magicparlabel-65612'><span class="subsection_label">4.3</span> Reading and Optimizing Pose Graphs </h3>
 
@@ -2252,11 +2304,7 @@ end
   </msub>
  </mrow></math> in image <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>i</mi>
- </mrow></math>, and <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>J</mi>{<mi>i</mi>}
-  </mrow>
- </mrow></math> specifies the corresponding point index. The specific factor type we use is a <em><b>GenericProjectionFactorCal3_S2</b></em>, which is the MATLAB equivalent of the C++ class <em><b>GenericProjectionFactor&lt;Cal3_S2&gt;</b></em>, where <em><b>Cal3_S2</b></em> is the camera calibration type we choose to use (the standard, no-radial distortion, 5 parameter calibration matrix). As before landmark-based SLAM (Section <a href="#sec_Landmark_based_SLAM">5</a>), here we use symbol keys except we now use the character 'p' to denote points, rather than 'l' for landmark.</div>
+ </mrow></math>, and J{i} specifies the corresponding point index. The specific factor type we use is a <em><b>GenericProjectionFactorCal3_S2</b></em>, which is the MATLAB equivalent of the C++ class <em><b>GenericProjectionFactor&lt;Cal3_S2&gt;</b></em>, where <em><b>Cal3_S2</b></em> is the camera calibration type we choose to use (the standard, no-radial distortion, 5 parameter calibration matrix). As before landmark-based SLAM (Section <a href="#sec_Landmark_based_SLAM">5</a>), here we use symbol keys except we now use the character 'p' to denote points, rather than 'l' for landmark.</div>
 
 <div class="standard" id='magicparlabel-65727'>Important note: a very tricky and difficult part of making SFM work is (a) data association, and (b) initialization. GTSAM does neither of these things for you: it simply provides the &ldquo;bundle adjustment&rdquo; optimization. In the example, we simply assume the data association is known (it is encoded in the J sets), and we initialize with the ground truth, as the intent of the example is simply to show you how to set up the optimization problem.</div>
 <h2 class="section" id='magicparlabel-65728'><span class="section_label">7</span> iSAM: Incremental Smoothing and Mapping</h2>
