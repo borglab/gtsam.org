@@ -1177,7 +1177,6 @@ initial.insert(3, Pose2(4.1, 0.1, 0.1));
 
 // optimize using Levenberg-Marquardt optimization
 Values result = LevenbergMarquardtOptimizer(graph, initial).optimize();
-
 </pre></div>
 
 <div class="standard" id='magicparlabel-65446'> Lines 2-5 in Listing <a href="#listing_OdometryOptimize">2.4</a> create the initial estimate, and on line 8 we create a non-linear Levenberg-Marquardt style optimizer, and call <em><b>optimize</b></em> using default parameter settings. The reason why GTSAM needs to perform non-linear optimization is because the odometry factors <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -1745,8 +1744,7 @@ noiseModel::Diagonal::shared_ptr unaryNoise =
 graph.add(boost::make_shared&lt;UnaryFactor&gt;(1, 0.0, 0.0, unaryNoise));
 graph.add(boost::make_shared&lt;UnaryFactor&gt;(2, 2.0, 0.0, unaryNoise));
 graph.add(boost::make_shared&lt;UnaryFactor&gt;(3, 4.0, 0.0, unaryNoise));
-
-</pre> In Listing <a href="#listing_LocalizationExample2">3.3</a>, we create the noise model on line 2-3, which now specifies two standard deviations on the measurements <math xmlns="http://www.w3.org/1998/Math/MathML">
+</pre></div> In Listing <a href="#listing_LocalizationExample2">3.3</a>, we create the noise model on line 2-3, which now specifies two standard deviations on the measurements <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msub>
    <mrow><mi>m</mi>
@@ -1849,7 +1847,6 @@ graph.add(BetweenFactor&lt;Pose2&gt;(4, 5, Pose2(2, 0, M_PI_2), model));
 
 // Add the loop closure constraint
 graph.add(BetweenFactor&lt;Pose2&gt;(5, 2, Pose2(2, 0, M_PI_2), model));
-
 </pre></div>
 
 <div class="standard" id='magicparlabel-65567'> As before, lines 1-4 create a nonlinear factor graph and add the unary factor <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2005,7 +2002,6 @@ graph.add(BetweenFactorPose2(4, 5, Pose2(2, 0, pi/2), model));
 
 %% Add pose constraint
 graph.add(BetweenFactorPose2(5, 2, Pose2(2, 0, pi/2), model));
-
 </pre></div>
 
 <div class="standard" id='magicparlabel-65589'> Note that the code is almost identical, although there are a few syntax and naming differences:</div>
@@ -2023,7 +2019,7 @@ graph.add(BetweenFactorPose2(5, 2, Pose2(2, 0, pi/2), model));
   model                1x1               112  gtsam.noiseModel.Diagonal
   initialEstimate      1x1               112  gtsam.Values
   optimizer            1x1               112  gtsam.LevenbergMarquardtOptimizer
-</pre></div> In addition, any GTSAM object can be examined in detail, yielding identical output to C++:</div>
+</pre></div> In addition, any GTSAM object can be examined in detail, yielding identical output to C++:
 <div class="standard"><pre>&gt;&gt; priorNoise
 diagonal sigmas [0.3; 0.3; 0.1];
 
@@ -2080,7 +2076,6 @@ graph.add(PriorFactorPose2(0, priorMean, priorNoise));
 optimizer = LevenbergMarquardtOptimizer(graph, initial);
 result = optimizer.optimizeSafely;
 marginals = Marginals(graph, result);
-
 </pre></div>
 <h3 class="subsection" id='magicparlabel-65623'><span class="subsection_label">4.4</span> PoseSLAM in 3D</h3>
 <div class="standard" id='magicparlabel-65624'>PoseSLAM can easily be extended to 3D poses, but some care is needed to update 3D rotations. GTSAM supports both <b>quaternions</b> and <math xmlns="http://www.w3.org/1998/Math/MathML">
