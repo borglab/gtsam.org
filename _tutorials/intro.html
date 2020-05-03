@@ -1764,7 +1764,8 @@ graph.add(boost::make_shared&lt;UnaryFactor&gt;(3, 4.0, 0.0, unaryNoise));
  -->
 </div>
 <h3 class="subsection" id='magicparlabel-65514'><span class="subsection_label">3.4</span> Full Posterior Inference</h3>
-<div class="standard" id='magicparlabel-65515'>The three GPS factors are enough to fully constrain all unknown poses and tie them to a &ldquo;global&rdquo; reference frame, including the three unknown orientations. If not, GTSAM would have exited with a singular matrix exception. The marginals can be recovered exactly as in Section <a href="#subsec_Full_Posterior_Inference">2.5</a>, and the solution and marginal covariances are now given by the following:<span style='font-size:x-small;'>Final Result:
+<div class="standard" id='magicparlabel-65515'>The three GPS factors are enough to fully constrain all unknown poses and tie them to a &ldquo;global&rdquo; reference frame, including the three unknown orientations. If not, GTSAM would have exited with a singular matrix exception. The marginals can be recovered exactly as in Section <a href="#subsec_Full_Posterior_Inference">2.5</a>, and the solution and marginal covariances are now given by the following:</div>
+<div class="standard"><pre>Final Result:
 Values with 3 values:
 Value 1: (-1.5e-14, 1.3e-15, -1.4e-16)
 Value 2: (2, 3.1e-16, -8.5e-17)
@@ -1782,7 +1783,7 @@ x3 covariance:
      0.0083     4.4e-19     1.2e-18
     4.4e-19      0.0094      0.0031
     1.2e-18      0.0031       0.018
-</span></div>
+</pre></div>
 
 <div class="standard" id='magicparlabel-65516'>Comparing this with the covariance matrices in Section <a href="#subsec_Full_Posterior_Inference">2.5</a>, we can see that the uncertainty no longer grows without bounds as measurement uncertainty accumulates. Instead, the &ldquo;GPS&rdquo; measurements more or less constrain the poses evenly, as expected.</div>
 
