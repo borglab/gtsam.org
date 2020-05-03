@@ -2298,11 +2298,7 @@ end
   </msub>
  </mrow></math> in image <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>i</mi>
- </mrow></math>, and <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mrow>
-  <mrow><mi>J</mi>{<mi>i</mi>}
-  </mrow>
- </mrow></math> specifies the corresponding point index. The specific factor type we use is a <em><b>GenericProjectionFactorCal3_S2</b></em>, which is the MATLAB equivalent of the C++ class <em><b>GenericProjectionFactor&lt;Cal3_S2&gt;</b></em>, where <em><b>Cal3_S2</b></em> is the camera calibration type we choose to use (the standard, no-radial distortion, 5 parameter calibration matrix). As before landmark-based SLAM (Section <a href="#sec_Landmark_based_SLAM">5</a>), here we use symbol keys except we now use the character 'p' to denote points, rather than 'l' for landmark.</div>
+ </mrow></math>, and J{i} specifies the corresponding point index. The specific factor type we use is a <em><b>GenericProjectionFactorCal3_S2</b></em>, which is the MATLAB equivalent of the C++ class <em><b>GenericProjectionFactor&lt;Cal3_S2&gt;</b></em>, where <em><b>Cal3_S2</b></em> is the camera calibration type we choose to use (the standard, no-radial distortion, 5 parameter calibration matrix). As before landmark-based SLAM (Section <a href="#sec_Landmark_based_SLAM">5</a>), here we use symbol keys except we now use the character 'p' to denote points, rather than 'l' for landmark.</div>
 
 <div class="standard" id='magicparlabel-65727'>Important note: a very tricky and difficult part of making SFM work is (a) data association, and (b) initialization. GTSAM does neither of these things for you: it simply provides the &ldquo;bundle adjustment&rdquo; optimization. In the example, we simply assume the data association is known (it is encoded in the J sets), and we initialize with the ground truth, as the intent of the example is simply to show you how to set up the optimization problem.</div>
 <h2 class="section" id='magicparlabel-65728'><span class="section_label">7</span> iSAM: Incremental Smoothing and Mapping</h2>
