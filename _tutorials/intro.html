@@ -1527,10 +1527,104 @@ Robot localization factor graph with unary measurement factors at each time step
   </msub>
  </mrow></math> that depend <em>only</em> on the current robot pose, e.g., GPS readings, correlation of a laser range-finder in a pre-existing map, or indeed the presence of absence of ceiling lights (see <a href='#LyXCite-Dellaert99b'><span class="bib-abbrvciteauthor">Dellaert et al.</span></a> (<span class="bib-year">1999</span>) for that amusing example).</div>
 <h3 class="subsection" id='magicparlabel-65484'><span class="subsection_label">3.2</span> Defining Custom Factors</h3>
-<div class="standard" id='magicparlabel-65485'>In GTSAM, you can create custom unary factors by deriving a new class from the built-in class <em><b>NoiseModelFactor1&lt;T&gt;</b></em>, which implements a unary factor corresponding to a measurement likelihood with a Gaussian noise model, </div><math xmlns="http://www.w3.org/1998/Math/MathML">
-    <mrow>
-    <mstyle mathvariant='italic'>L(q; m)</mi><mo>= </mo><mstyle mathvariant='normal'>exp</mi> <mstyle mathvariant='italic'>{ -</mi><mfrac> <mn>1</mn> <mn>2</mn> </mfrac> <msubsup> <mi>||h(q) - m||</mi> <mi>&Sigma;</mi> <mn>2</mn> </msubsup> <mstyle mathvariant='italic'>} = f(q)</mi>
-    </mrow>
+<div class="standard" id='magicparlabel-65485'>In GTSAM, you can create custom unary factors by deriving a new class from the built-in class <em><b>NoiseModelFactor1&lt;T&gt;</b></em>, which implements a unary factor corresponding to a measurement likelihood with a Gaussian noise model, <math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+ <mrow>
+  <mi>
+   L
+  </mi>
+  <mo form='prefix' fence='true' stretchy='true' symmetric='true'>
+   (
+  </mo>
+  <mi>
+   q
+  </mi>
+  <mo>
+   ;
+  </mo>
+  <mi>
+   m
+  </mi>
+  <mo form='postfix' fence='true' stretchy='true' symmetric='true'>
+   )
+  </mo>
+  <mo>
+   = exp
+  </mo>
+  <mo form='postfix' fence='true' stretchy='true' symmetric='true'>
+   {
+  </mo>
+  <mo>
+   -
+  </mo>
+  <mfrac>
+   <mn>
+    1
+   </mn>
+   <mn>
+    2
+   </mn>
+  </mfrac>
+  <msubsup>
+   <mrow>
+    <mi>
+     |
+    </mi>
+    <mi>
+     |
+    </mi>
+    <mi>
+     h
+    </mi>
+    <mo form='postfix' fence='true' stretchy='true' symmetric='true'>
+     (
+    </mo>
+    <mi>
+     q
+    </mi>
+    <mo form='postfix' fence='true' stretchy='true' symmetric='true'>
+     )
+    </mo>
+    </mi>
+    <mo>
+     -
+    </mo>
+    <mi>
+     m
+    </mi>
+    <mi>
+     |
+    </mi>
+    <mi>
+     |
+    </mi>
+   </mrow>
+   <mo>
+    &Sigma;
+   </mo>
+   <mn>
+    2
+   </mn>
+  </msubsup>
+  <mo form='postfix' fence='true' stretchy='true' symmetric='true'>
+   }
+  </mo>
+  <mo>
+   =
+  </mo>
+  <mi>
+   f
+  </mi>
+  <mo form='postfix' fence='true' stretchy='true' symmetric='true'>
+   (
+  </mo>
+  <mi>
+   q
+  </mi>
+  <mo form='postfix' fence='true' stretchy='true' symmetric='true'>
+   )
+  </mo>
+ </mrow>
 
 </mrow></math> where <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow><mi>m</mi>
@@ -1634,7 +1728,7 @@ public:
 <mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
  <mrow><mo>-</mo>
  </mrow>
- <mrow><mo>m</mo>
+ <mrow><mi>m</mi>
  </mrow>
  </mrow></math>
 which is done on line 12. Importantly, because we want to use this factor for nonlinear optimization (see e.g., <a href='#LyXCite-Dellaert06ijrr'><span class="bib-abbrvciteauthor">Dellaert and Kaess</span> <span class="bib-year">2006</span></a> for details), whenever the optional argument <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -2043,7 +2137,7 @@ factor 4: BetweenFactor(4,5)
 factor 5: BetweenFactor(5,2)
   measured: (2, 0, 1.6)
   noise model: diagonal sigmas [0.2; 0.2; 0.1];
-</pre></div> And it does not stop there: we can also call some of the functions defined for factor graphs. E.g.,</div>
+</pre></div> And it does not stop there: we can also call some of the functions defined for factor graphs. E.g.,
 
 <div class="standard" id='magicparlabel-65607'><pre>&gt;&gt; graph.error(initialEstimate)
 ans =
@@ -2052,8 +2146,89 @@ ans =
 &gt;&gt; graph.error(result)
 ans =
    8.2631e-18
-</pre></div> computes the sum-squared error <span class='math'>\frac{1}{2}\sum_{i}\SqrMah{h_{i}(X_{i})}{z_{i}}{\Sigma}</span>
- before and after optimization.</div>
+</pre></div> computes the sum-squared error
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+ <mfrac>
+  <mn>
+   1
+  </mn>
+  <mn>
+   2
+  </mn>
+ </mfrac>
+ <munder>
+ <mo>
+  &sum;
+ </mo>
+ <mi>
+  i
+ </mi>
+ </munder>
+ <msubsup>
+  <mrow>
+   <mi>
+    |
+   </mi>
+   <mi>
+    |
+   </mi>
+   <mrow>
+    <msub>
+     <mi>
+      h
+     </mi>
+     <mi>
+      i
+     </mi>
+    </msub>
+   </mrow>
+   <mo form='postfix' fence='true' stretchy='true' symmetric='true'>
+    (
+   </mo>
+   <mrow>
+    <msub>
+     <mi>
+      X
+     </mi>
+     <mi>
+      i
+     </mi>
+    </msub>
+   </mrow>
+   <mo form='postfix' fence='true' stretchy='true' symmetric='true'>
+    )
+   </mo>
+   </mi>
+   <mo>
+    -
+   </mo>
+   <mrow>
+    <msub>
+     <mi>
+      z
+     </mi>
+     <mi>
+      i
+     </mi>
+    </msub>
+   </mrow>
+   <mi>
+    |
+   </mi>
+   <mi>
+    |
+   </mi>
+  </mrow>
+  <mo>
+   &Sigma;
+  </mo>
+  <mn>
+   2
+  </mn>
+ </msubsup>
+<mrow></math>
+ before and after optimization.
 <h3 class="subsection" id='magicparlabel-65612'><span class="subsection_label">4.3</span> Reading and Optimizing Pose Graphs </h3>
 
 <div class='float-figure'><div class="plain_layout" style='text-align: center;' id='magicparlabel-65617'><img style='width:80%;' src='intro-images/10_Users_dellaert_git_github_doc_images_w100-result.png' alt='image: 10_Users_dellaert_git_github_doc_images_w100-result.png' ></img>
