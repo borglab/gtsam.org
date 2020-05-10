@@ -60,5 +60,6 @@ In addition, we have had contrubutions from many others at different institution
 * Ellon Paiva, LAAS-CNRS
 * Thomas Schneider, ETHZ
 * Hannes Sommer, ETHZ
+* Akash Patel, Georgia Tech
 
 If you contributed but do not see your name listed above, or you are listed with an incorrect affiliation,  please consider making a PR for this file at [the gtsam.org github repo](https://github.com/borglab/gtsam.org).
