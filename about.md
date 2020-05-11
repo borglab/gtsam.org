@@ -6,7 +6,7 @@ permalink: /about/
 
 GTSAM is a sensor fusion library based on factor graphs, developed by [Frank Dellaert](http://www.dellaert.com) and his students in Georgia Tech's BORG Lab, as well as numerous open source contributors.
 
-Current Georgia Tech contributors include:
+Current Georgia Tech BORG Lab contributors include:
 * Varun Agrawal
 * Abhinav Jain
 * Matthew Sklar
@@ -46,7 +46,7 @@ Below are the many Georgia Tech BORG lab alumni with their current afffiliation,
 * Alex Trevor, Fyusion
 * Stephen Williams, BossaNova
 
-In addition, we have had contrubutions from many others at different institutions, again listed below with their current affiliations if known:
+In addition, we have had contrubutions from many others at different institutions and labs, again listed below with their current affiliations if known:
 
 * Abe Bachrach, Skydio
 * Jose Luis Blanco-Claraco, University of Almería
@@ -60,5 +60,6 @@ In addition, we have had contrubutions from many others at different institution
 * Ellon Paiva, LAAS-CNRS
 * Thomas Schneider, ETHZ
 * Hannes Sommer, ETHZ
+* Akash Patel, Georgia Tech
 
 If you contributed but do not see your name listed above, or you are listed with an incorrect affiliation,  please consider making a PR for this file at [the gtsam.org github repo](https://github.com/borglab/gtsam.org).
