@@ -24,14 +24,14 @@ Because many optimization problems in robotics have the locality property, facto
 
 In *Boolean Satisfiability*, we are looking for an assignment to Boolean variables that make a set of Boolean formulas true. In the example below, the rather boring looking Boolean equations is represented by the Boolean factor graph below:
 
-![alt_text](/assets/fg-images/image6.png "image_tooltip")
+![Factor graph with Boolean variables and hard constraints](/assets/fg-images/image6.png "Factor graph with Boolean variables and hard constraints")
 
 
 ## Constraint Satisfaction:
 
 When we generalize from Boolean to *discrete* variables, we obtain the class of *Constraint Satisfaction Problems* or CSPs. For example, the image below shows a graph coloring problem where the goal is to assign a color (chosen from a finite set of colors) to the Swiss cantons such that no neighboring canton has the same color. In the graph below, these pairiwse *constraints* are indicated by the square factors.
 
-![alt_text](/assets/fg-images/image3.png "image_tooltip")
+![Factor graph with Discrete variables and hard constraints](/assets/fg-images/image3.png "Factor graph with Discrete variables and hard constraints")
 
 ## Bayes Networks:
 
@@ -39,34 +39,34 @@ When we generalize from Boolean to *discrete* variables, we obtain the class of 
 If we relax the hard constraints to real-valued *preferences*, we switch to a *Constraint Optimization Problem*. This can be used to express that a particular color is preferred over another one. It can be shown that *COPs* are also the main optimization problem to solve in the venerable AI technique of *Bayes networks*. Below an example where a Bayes network with given evidence (the square nodes) is converted to a COP factor graph, which can then give the maximum probable explanation for the remaining (non-evidence) variables.
 
 
-![alt_text](/assets/fg-images/image5.png "image_tooltip")
+![Bayes net with evidence and corresponding COP factor graph](/assets/fg-images/image5.png "Bayes net with evidence and corresponding COP factor graph")
 
 
 ## Polynomial Equations:
 
 The constraints can also be other functions of the variables. For example, we can represent a system of polynomial equations by a factor graph. The example below, adapted from Gim Hee Lee's Ph.D. thesis, encodes a minimal geometry problem from computer vision, useful for autonomous driving:
 
-![alt_text](/assets/fg-images/image2.png "image_tooltip")
+![Factor graph with continuous variables and polynomial equality constraints](/assets/fg-images/image2.png "Factor graph with continuous variables and polynomial equality constraints")
 
 
 ## Simultaneous Localization and Mapping:
 
 Speaking of autonomous driving, perhaps the most famous application of factor graphs is in SLAM, or *Simultaneous Localization and Mapping*. This is illustrated in the example below, where the location of a vehicle over time (the cyan variables) as well as the location of a set of landmarks (the dark blue nodes) are solved for. In this case we have a plethora of factors associated with vehicle odometry, landmark sightings, and GPS priors. The example in question is a small excerpt from a real robot experiment in Sydney's Victoria Park.
 
-![alt_text](/assets/fg-images/image1.png "image_tooltip")
+![Factor graph with pose and landmark variables, and measurement-derived factors](/assets/fg-images/image1.png "Factor graph with pose and landmark variables, and measurement-derived factors")
 
 
 ## Structure from Motion:
 
 Finally, we can also represent *3D mapping* or *3D reconstruction* problems with factor graphs. Below we show just the edges in the factor graph connecting one camera (yellow) with all points visible from that camera (black) in a large-scale 3D reconstruction of downtown Chicago.
 
-![alt_text](/assets/fg-images/image4.png "image_tooltip")
+![Factor graph with cameras and 3D point variables, and re-projection factors for one camera](/assets/fg-images/image4.png "Factor graph with cameras and 3D point variables, and re-projection factors for one camera")
 
 ## Conclusion
 
 For more information about how factor graphs are typically used to solve perception problems in robotics, see the following booklet: [Factor graphs for robot perception](http://www.cc.gatech.edu/~dellaert/pubs/Dellaert17fnt.pdf), by [Frank Dellaert](http://www.cc.gatech.edu/~dellaert) and [Michael Kaess](https://frc.ri.cmu.edu/~kaess/), which appeared in 2017 in Foundations and Trends in Robotics.
 
-However, this is just the tip of the iceberg. Factor graphs can be used to model a much wider variety of problems across robotics domains, such as Tracking, Inertial Navigation, Mapping with LIDARS, Classical Planning, Reinforcement Learning and Optimal Control, Motion Planning etc...
+However, this is just the tip of the iceberg. Factor graphs can be used to model a much wider variety of problems across robotics domains, such as Tracking, Inertial Navigation, Mapping with LIDARs, Classical Planning, Reinforcement Learning and Optimal Control, Motion Planning etc...
 
 
 
