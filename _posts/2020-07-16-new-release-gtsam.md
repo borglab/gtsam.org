@@ -19,7 +19,7 @@ Note that GTSAM *already* provides the excellent Pose3 initialization module by 
 
 ### Switching Away from Cayley
 
-> TL;DR: GTSAM will now default to using the full $\mathrm{SE(3)}$ exponential map, instead of using Cayley approximation, which should give better convergence for most problems without performance impact.
+> TL;DR: GTSAM will now default to using the full $\mathrm{SE(3)}$ exponential map, instead of using the Cayley map, which should give better convergence for most problems without performance impact.
 
 In nonlinear optimization, one important factor affecting the convergence is the mathematical structure of the object we are optimizing on. In many practical 3D robotics problems this is the $\mathrm{SE(3)}$ manifold describing the structure of 3D Poses.
 
