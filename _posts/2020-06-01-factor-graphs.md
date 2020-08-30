@@ -3,7 +3,7 @@ layout: gtsam-post
 title:  "What are Factor Graphs?"
 ---
 
-### By [Frank Dellaert](http://www.cc.gatech.edu/~dellaert), [@fdellaert on Twitter](http://twitter.com/fdellaert)
+### By [Frank Dellaert](https://dellaert.github.io), [@fdellaert on Twitter](http://twitter.com/fdellaert)
 
 [Cross-posting from our new sister-site, [OpenSAM.org](https://opensam.org/opensam.org/2020/05/26/factor-graphs.html)]
 
@@ -64,7 +64,7 @@ Finally, we can also represent *3D mapping* or *3D reconstruction* problems with
 
 ## Conclusion
 
-For more information about how factor graphs are typically used to solve perception problems in robotics, see the following booklet: [Factor graphs for robot perception](http://www.cc.gatech.edu/~dellaert/pubs/Dellaert17fnt.pdf), by [Frank Dellaert](http://www.cc.gatech.edu/~dellaert) and [Michael Kaess](https://frc.ri.cmu.edu/~kaess/), which appeared in 2017 in Foundations and Trends in Robotics.
+For more information about how factor graphs are typically used to solve perception problems in robotics, see the following booklet: [Factor graphs for robot perception](http://www.cc.gatech.edu/~dellaert/pubs/Dellaert17fnt.pdf), by [Frank Dellaert](https://dellaert.github.io) and [Michael Kaess](https://frc.ri.cmu.edu/~kaess/), which appeared in 2017 in Foundations and Trends in Robotics.
 
 However, this is just the tip of the iceberg. Factor graphs can be used to model a much wider variety of problems across robotics domains, such as Tracking, Inertial Navigation, Mapping with LIDARs, Classical Planning, Reinforcement Learning and Optimal Control, Motion Planning etc...
 

@@ -34,4 +34,4 @@ GTSAM is open source under the BSD license, see the [`LICENSE`](LICENSE) and [`L
 
 Please see the [`examples/`](examples) directory and the [`USAGE`](USAGE.md) file for examples on how to use GTSAM.
 
-GTSAM was developed in the lab of [Frank Dellaert](http://www.cc.gatech.edu/~dellaert) at the [Georgia Institute of Technology](http://www.gatech.edu), with the help of many contributors over the years, see [THANKS](THANKS). -->
+GTSAM was developed in the lab of [Frank Dellaert](https://dellaert.github.io) at the [Georgia Institute of Technology](http://www.gatech.edu), with the help of many contributors over the years, see [THANKS](THANKS). -->
