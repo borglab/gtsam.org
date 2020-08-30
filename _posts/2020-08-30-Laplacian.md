@@ -154,7 +154,7 @@ M, N = H.shape
 d = H @ z + np.random.normal(size=(M,),scale=1)
 ```
 
-If we calculate at the Hessian $Q=H^T H$ for this simpler problem, we see that it is a $5\times 5$ matrix:
+If we calculate at the Hessian $Q=H^T H$ for this simpler problem, we see that it is a $6\times 6$ matrix:
 
 
 ```
@@ -272,7 +272,7 @@ print("Eigenvalues=\n  {}".format(np.round(eigenvalues2)),
       [ 0.41  0.41  0.41  0.41  0.41  0.41 -0.    0.    0.    0.    0.    0.  ]
 
 
-This is also not surprising: even though this simulates scaling the two mountain tops and recording our elevation changes, we have no measurements connecting the two mountains, and hence we can *indepedently* vary the height of iether mountain, without violating any measurement constraint. That corresponds to the two eigenvectors associated with the two zero eigenvalues.
+This is also not surprising: even though this simulates scaling the two mountain tops and recording our elevation changes, we have no measurements connecting the two mountains, and hence we can *independently* vary the height of either mountain, without violating any measurement constraint. That corresponds to the two eigenvectors associated with the two zero eigenvalues.
 
 This is also the basis for [spectral partitioning/clustering mtehods](https://en.wikipedia.org/wiki/Spectral_clustering): the eigenvectors neatly separate the graph into two components, and this can be generalized to more sophisticated clustering methods.
 
@@ -290,7 +290,7 @@ fig=plt.plot(eigenvectors2[:,-2:],'--*')
 
 **3. The second-smallest eigenvalue, called the [Algebraic Connectivity or Fiedler value](https://en.wikipedia.org/wiki/Algebraic_connectivity) is greater than zero if the graph is connected, and measures the global connectivity in the graph.**
 
-In our original 5-node mountain top problem, the Fiedler value is approximatey 1.19:
+In our original 6-node mountain top problem, the Fiedler value is approximatey 1.19:
 
 
 ```
@@ -304,7 +304,7 @@ print("with networkx: {}".format(round(nx.algebraic_connectivity(G),2)))
 
 **4. The eigenvector associated with the Fiedler value, also called the "Fiedler vector", is the direction in space that incurs the least error in the scalar synchronization problem.**
 
-Per the spectral clustering idea, it can also be used to partition the graph into two parts, even if the graph is not disconnected. This can be appreciated by plotting the Fiedler vector for the orginal mountain top:
+Per the spectral clustering idea, it can also be used to partition the graph into two parts, even if the graph is not disconnected. This can be appreciated by plotting the Fiedler vector for the original mountain top:
 
 
 ```
@@ -410,7 +410,7 @@ plt.plot(fiedler_vector);
 ![png](/assets/images/Laplacian//Laplacian_51_1.png)
 
 
-It does not look very good in 1D, so let's plot it in 3D, using a colormap to encode the Fiedler vector's values:
+It does not look very good in 1D, so let's plot it in 3D, using a color map to encode the Fiedler vector's values:
 
 
 ```
@@ -443,7 +443,7 @@ ax.scatter(truth[:,0], truth[:,1], marker='.', c=fiedler_vector,cmap='RdYlGn');
 
 ## Other Synchronization Problems
 
-The "mountain shape" problems we discussed above are instances of a class of estimation problemns called **synchronization problems**, in which we are given a set of *pairwise relative measurements*, and our goal is to estimate a set of absolute quantitities. 
+The "mountain shape" problems we discussed above are instances of a class of estimation problems called **synchronization problems**, in which we are given a set of *pairwise relative measurements*, and our goal is to estimate a set of absolute quantities. 
 
 Arguably the most studied synchronization problem in computer vision is *rotation averaging*, where we are given a set of relative rotations $R_{ij}$ between cameras and the goal is to estimate the absolute orientation $R_i$ for every camera. This is a crucial step in 3D reconstruction algorithms.
 
