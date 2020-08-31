@@ -72,7 +72,7 @@ To create relative measurements, we'll use a graph derived from the K-nearest ne
 
 The associated estimation problem is quite simple, and we can see it as a factor graph with just pairwise linear factors $\|z_i -z_i - \delta_{ij}\|^2$. In this linear case, the factor graph is completely equivalent to a sparse rectangular matrix $H$, with entries 1 and -1. 
 
-From the graph $G$ we can easily generate this sparse measurement matrix $H$ using the `incidence_matrix` function in `networkx`. The relative measurements $d$ are then obtained as $d=H z$ where $z$ are the ground truth height values.
+From the graph $G$ we can easily generate this sparse measurement matrix $H$ using the (oriented) `incidence_matrix` function in `networkx`. The relative measurements $d$ are then obtained as $d=H z$ where $z$ are the ground truth height values.
 
 
 ```
@@ -303,6 +303,8 @@ print("with networkx: {}".format(round(nx.algebraic_connectivity(G),2)))
 
 
 **4. The eigenvector associated with the Fiedler value, also called the "Fiedler vector", is the direction in space that incurs the least error in the scalar synchronization problem.**
+
+Indeed: the direction that incurs the least error is also the one we have the least *information* about: highly informative measurements will incur a high error if they are violated.
 
 Per the spectral clustering idea, it can also be used to partition the graph into two parts, even if the graph is not disconnected. This can be appreciated by plotting the Fiedler vector for the original mountain top:
 
