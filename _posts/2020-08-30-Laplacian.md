@@ -7,8 +7,9 @@ title:  "Mount Rainier's Eigenvectors"
 
 In this post I'll talk a bit about estimating absolute quantities from relative measurements, using the reconstruction of [Mount Rainier](https://en.wikipedia.org/wiki/Mount_Rainier) as a motivating example. I'll show how the Hessian of that problem is exactly the "Graph Laplacian" from graph theory, and relate the eigen-decomposition of that graph with the properties of the reconstruction.
 
+There is an accompaning [Youtube video](https://www.youtube.com/watch?v=-U00XjFLQag). 
 <div>
-This post was created as a Colab notebook, and you can run it yourself here: <a href="https://colab.research.google.com/github/borglab/gtsam.org/blob/master/notebooks/Laplacian.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+Also, this post was created as a Colab notebook, and you can run it yourself here: <a href="https://colab.research.google.com/github/borglab/gtsam.org/blob/master/notebooks/Laplacian.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 <p/>
 </div>
 
