@@ -8,7 +8,7 @@ title:  "Mount Rainier's Eigenvectors"
 In this post I'll talk a bit about estimating absolute quantities from relative measurements, using the reconstruction of [Mount Rainier](https://en.wikipedia.org/wiki/Mount_Rainier) as a motivating example. I'll show how the Hessian of that problem is exactly the "Graph Laplacian" from graph theory, and relate the eigen-decomposition of that graph with the properties of the reconstruction.
 
 <div>
-This post was created as a Colab notebook, and you can run it yourself here: <a href="https://colab.research.google.com/github/borglab/gtsam.org/blob/laplacian/notebooks/Laplacian.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+This post was created as a Colab notebook, and you can run it yourself here: <a href="https://colab.research.google.com/github/borglab/gtsam.org/blob/master/notebooks/Laplacian.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 <p/>
 </div>
 
@@ -304,7 +304,7 @@ print("with networkx: {}".format(round(nx.algebraic_connectivity(G),2)))
 
 **4. The eigenvector associated with the Fiedler value, also called the "Fiedler vector", is the direction in space that incurs the least error in the scalar synchronization problem.**
 
-Indeed: the direction that incurs the least error is also the one we have the least *information* about: highly informative measurements will incur a high error if they are violated.
+Indeed: the direction that incurs the least error is also the one we have the least *information* about: highly informative measurements will incur a high error if they are violated. Note that by "error" we mean the quadratic objective function, not the difference between our solution and the ground truth, which we in general do not have access to.
 
 Per the spectral clustering idea, it can also be used to partition the graph into two parts, even if the graph is not disconnected. This can be appreciated by plotting the Fiedler vector for the original mountain top:
 
@@ -412,7 +412,7 @@ plt.plot(fiedler_vector);
 ![png](/assets/images/Laplacian//Laplacian_51_1.png)
 
 
-It does not look very good in 1D, so let's plot it in 3D, using a color map to encode the Fiedler vector's values:
+This does not look very good in 1D, so let's plot it in 3D, using a color map to encode the Fiedler vector's values:
 
 
 ```
