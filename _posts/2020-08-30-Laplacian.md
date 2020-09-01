@@ -71,7 +71,7 @@ z = truth[:,2]
 
 To create relative measurements, we'll use a graph derived from the K-nearest neighbors. 
 
-The associated estimation problem is quite simple, and we can see it as a factor graph with just pairwise linear factors $\|z_i -z_i - \delta_{ij}\|^2$. In this linear case, the factor graph is completely equivalent to a sparse rectangular matrix $H$, with entries 1 and -1. 
+The associated estimation problem is quite simple, and we can see it as a factor graph with just pairwise linear factors $\|z_i -z_j - \delta_{ij}\|^2$. In this linear case, the factor graph is completely equivalent to a sparse rectangular matrix $H$, with entries 1 and -1. For every edge $(i,j)$ in the nearest neighbor graph, there is one row/factor.
 
 From the graph $G$ we can easily generate this sparse measurement matrix $H$ using the (oriented) `incidence_matrix` function in `networkx`. The relative measurements $d$ are then obtained as $d=H z$ where $z$ are the ground truth height values.
 
