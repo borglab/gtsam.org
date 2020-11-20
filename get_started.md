@@ -23,20 +23,27 @@ Optional prerequisites - used automatically if findable by CMake:
 
 ## Install GTSAM from Ubuntu PPA
 
-GTSAM can be installed on Ubuntu via a PPA as well.
-Note: The PPA is for the unstable (develop `git` branch) version of GTSAM.
+GTSAM can be installed on Ubuntu via [these PPA repositories](https://launchpad.net/~borglab) as well.
+At present (Nov 2020), packages for Xenial (u16.04), Bionic (u18.04), and Focal (u20.04) are published.
 
-#### Add PPA for GTSAM (unstable)
+#### Add PPA for GTSAM nightly builds (develop branch)
 
 ```sh
-sudo add-apt-repository ppa:joseluisblancoc/gtsam-develop
+# Add PPA
+sudo add-apt-repository ppa:borglab/gtsam-develop
 sudo apt update  # not necessary since Bionic
+# Install:
+sudo apt install libgtsam-dev libgtsam-unstable-dev
 ```
 
-#### Install GTSAM (unstable)
+#### Add PPA for the latest GTSAM 4.x stable release
 
 ```sh
-sudo apt install libgtsam-dev
+# Add PPA
+sudo add-apt-repository ppa:borglab/gtsam-release-4.0
+sudo apt update  # not necessary since Bionic
+# Install:
+sudo apt install libgtsam-dev libgtsam-unstable-dev
 ```
 
 ## Install GTSAM from Arch Linux AUR
