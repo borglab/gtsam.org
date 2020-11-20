@@ -58,6 +58,7 @@ In addition, we have had contrubutions from many others at different institution
 * Paul Furgale, Oculus Zurich
 * Hayk Martiros, Skydio
 * Ellon Paiva, LAAS-CNRS
+* David M. Rosen, MIT
 * Thomas Schneider, ETHZ
 * Hannes Sommer, ETHZ
 * Akash Patel, Georgia Tech
