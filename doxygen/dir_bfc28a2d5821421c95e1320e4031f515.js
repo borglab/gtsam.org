@@ -8,9 +8,10 @@ var dir_bfc28a2d5821421c95e1320e4031f515 =
     [ "navigation", "dir_57fcdbb68a7ed4352200f5cc9c5d1fe3.html", "dir_57fcdbb68a7ed4352200f5cc9c5d1fe3" ],
     [ "nonlinear", "dir_88adea47575c2d5c40d4070390572b66.html", "dir_88adea47575c2d5c40d4070390572b66" ],
     [ "sam", "dir_1ce53dc14c347e490e16ecaf87fe4631.html", "dir_1ce53dc14c347e490e16ecaf87fe4631" ],
+    [ "sfm", "dir_76df0d5ddca8353881dcb68d9cbdfd25.html", "dir_76df0d5ddca8353881dcb68d9cbdfd25" ],
     [ "slam", "dir_323e70a1eef083399c870cf8a6035771.html", "dir_323e70a1eef083399c870cf8a6035771" ],
     [ "symbolic", "dir_0e8eb460b7f775f5eda250a12ea9d76a.html", "dir_0e8eb460b7f775f5eda250a12ea9d76a" ],
-    [ "global_includes.h", "a01076.html", null ],
-    [ "precompiled_header.cpp", "a01085.html", null ],
-    [ "precompiled_header.h", "a01088.html", null ]
+    [ "global_includes.h", "a01175.html", null ],
+    [ "precompiled_header.cpp", "a01184.html", null ],
+    [ "precompiled_header.h", "a01187.html", null ]
 ];

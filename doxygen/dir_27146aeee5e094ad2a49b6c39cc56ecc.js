@@ -5,6 +5,5 @@ var dir_27146aeee5e094ad2a49b6c39cc56ecc =
     [ "dynamics", "dir_4a9bd6cef242c34265d98dd5e2ce3e6d.html", "dir_4a9bd6cef242c34265d98dd5e2ce3e6d" ],
     [ "linear", "dir_08a7f5dbd307d4a281698fad717766ee.html", "dir_08a7f5dbd307d4a281698fad717766ee" ],
     [ "nonlinear", "dir_5756ecbb61bf1616b83a2c84d1e49752.html", "dir_5756ecbb61bf1616b83a2c84d1e49752" ],
-    [ "slam", "dir_cfb0833a2d0a882859966d02dbcbbb30.html", "dir_cfb0833a2d0a882859966d02dbcbbb30" ],
-    [ "gtsam_unstable.h", "a01391_source.html", null ]
+    [ "slam", "dir_cfb0833a2d0a882859966d02dbcbbb30.html", "dir_cfb0833a2d0a882859966d02dbcbbb30" ]
 ];

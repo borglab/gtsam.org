@@ -1,12 +1,9 @@
 var a00317 =
 [
-    [ "Pose3", "a02711.html", "a02711" ],
-    [ "ChartAtOrigin", "a02715.html", null ],
-    [ "traits< Pose3 >", "a02719.html", null ],
-    [ "traits< const Pose3 >", "a02723.html", null ],
-    [ "Bearing< Pose3, Point3 >", "a02727.html", null ],
-    [ "Bearing< Pose3, Pose3 >", "a02731.html", null ],
-    [ "Range< Pose3, T >", "a02735.html", null ],
-    [ "Pose3Vector", "a00317.html#a129e0259e63b71905155066a55daedcd", null ],
-    [ "wedge< Pose3 >", "a00317.html#aefb606eb24889c0f418acf1515a2c723", null ]
+    [ "circleCircleIntersection", "a00317.html#a5973516e4af8db350dbaadb98de53a2a", null ],
+    [ "circleCircleIntersection", "a00317.html#a93d4e38a582b6f32fc4f301df10721d5", null ],
+    [ "circleCircleIntersection", "a00317.html#ac57436d7f37f7d6f92e425ea8446e195", null ],
+    [ "distance2", "a00317.html#afd1282dfb080cb393ae60188b4582cb2", null ],
+    [ "norm2", "a00317.html#afee4e6aa4aba9b6a6b421ddd75b52dfc", null ],
+    [ "operator<<", "a00317.html#aec9655d963c3776bbf707f74c59989dc", null ]
 ];

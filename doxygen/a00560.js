@@ -1,7 +1,5 @@
 var a00560 =
 [
-    [ "EliminationTraits< GaussianFactorGraph >", "a03131.html", "a03131" ],
-    [ "GaussianFactorGraph", "a03135.html", "a03135" ],
-    [ "traits< GaussianFactorGraph >", "a03139.html", null ],
-    [ "hasConstraints", "a00560.html#a35c269c3243cab16a7475239a9c91021", null ]
+    [ "logDeterminant", "a00560.html#a979f3c9de3b9d4c955730745bea61d48", null ],
+    [ "optimizeInPlace", "a00560.html#ae5b8cc61c1f0f37f9b89d667d7a75a6d", null ]
 ];

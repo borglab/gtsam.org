@@ -1,110 +1,112 @@
 var dir_8b9ec42722111795f76d34c6471319a6 =
 [
-    [ "BinaryJacobianFactor.h", "a00503.html", [
-      [ "BinaryJacobianFactor", "a03063.html", "a03063" ],
-      [ "traits< BinaryJacobianFactor< M, N1, N2 > >", "a03067.html", null ]
+    [ "BinaryJacobianFactor.h", "a00539.html", [
+      [ "BinaryJacobianFactor", "a03464.html", "a03464" ],
+      [ "traits< BinaryJacobianFactor< M, N1, N2 > >", "a03468.html", null ]
     ] ],
-    [ "ConjugateGradientSolver.h", "a00509.html", "a00509" ],
-    [ "Errors.cpp", "a00512.html", "a00512" ],
-    [ "Errors.h", "a00515.html", "a00515" ],
-    [ "GaussianBayesNet.cpp", "a00518.html", null ],
-    [ "GaussianBayesNet.h", "a00521.html", [
-      [ "GaussianBayesNet", "a03087.html", "a03087" ],
-      [ "traits< GaussianBayesNet >", "a03091.html", null ]
+    [ "ConjugateGradientSolver.h", "a00545.html", "a00545" ],
+    [ "Errors.cpp", "a00548.html", "a00548" ],
+    [ "Errors.h", "a00551.html", "a00551" ],
+    [ "GaussianBayesNet.cpp", "a00554.html", null ],
+    [ "GaussianBayesNet.h", "a00557.html", [
+      [ "GaussianBayesNet", "a03488.html", "a03488" ],
+      [ "traits< GaussianBayesNet >", "a03492.html", null ]
     ] ],
-    [ "GaussianBayesTree-inl.h", "a00524.html", "a00524" ],
-    [ "GaussianBayesTree.cpp", "a00527.html", "a00527" ],
-    [ "GaussianBayesTree.h", "a00530.html", [
-      [ "GaussianBayesTreeClique", "a03095.html", "a03095" ],
-      [ "GaussianBayesTree", "a03099.html", "a03099" ],
-      [ "traits< GaussianBayesTree >", "a03103.html", null ]
+    [ "GaussianBayesTree-inl.h", "a00560.html", "a00560" ],
+    [ "GaussianBayesTree.cpp", "a00563.html", "a00563" ],
+    [ "GaussianBayesTree.h", "a00566.html", [
+      [ "GaussianBayesTreeClique", "a03496.html", "a03496" ],
+      [ "GaussianBayesTree", "a03500.html", "a03500" ],
+      [ "traits< GaussianBayesTree >", "a03504.html", null ]
     ] ],
-    [ "GaussianConditional-inl.h", "a00533.html", null ],
-    [ "GaussianConditional.cpp", "a00536.html", null ],
-    [ "GaussianConditional.h", "a00539.html", [
-      [ "GaussianConditional", "a03107.html", "a03107" ],
-      [ "traits< GaussianConditional >", "a03111.html", null ]
+    [ "GaussianConditional-inl.h", "a00569.html", null ],
+    [ "GaussianConditional.cpp", "a00572.html", null ],
+    [ "GaussianConditional.h", "a00575.html", [
+      [ "GaussianConditional", "a03508.html", "a03508" ],
+      [ "traits< GaussianConditional >", "a03512.html", null ]
     ] ],
-    [ "GaussianDensity.cpp", "a00542.html", null ],
-    [ "GaussianDensity.h", "a00545.html", [
-      [ "GaussianDensity", "a03115.html", "a03115" ]
+    [ "GaussianDensity.cpp", "a00578.html", null ],
+    [ "GaussianDensity.h", "a00581.html", [
+      [ "GaussianDensity", "a03516.html", "a03516" ]
     ] ],
-    [ "GaussianEliminationTree.cpp", "a00548.html", null ],
-    [ "GaussianEliminationTree.h", "a00551.html", [
-      [ "GaussianEliminationTree", "a03119.html", "a03119" ]
+    [ "GaussianEliminationTree.cpp", "a00584.html", null ],
+    [ "GaussianEliminationTree.h", "a00587.html", [
+      [ "GaussianEliminationTree", "a03520.html", "a03520" ]
     ] ],
-    [ "GaussianFactor.h", "a00554.html", [
-      [ "GaussianFactor", "a03123.html", "a03123" ],
-      [ "traits< GaussianFactor >", "a03127.html", null ]
+    [ "GaussianFactor.cpp", "a00590.html", null ],
+    [ "GaussianFactor.h", "a00593.html", [
+      [ "GaussianFactor", "a03524.html", "a03524" ],
+      [ "traits< GaussianFactor >", "a03528.html", null ]
     ] ],
-    [ "GaussianFactorGraph.cpp", "a00557.html", "a00557" ],
-    [ "GaussianFactorGraph.h", "a00560.html", "a00560" ],
-    [ "GaussianISAM.h", "a00566_source.html", null ],
-    [ "GaussianJunctionTree.cpp", "a00569.html", null ],
-    [ "GaussianJunctionTree.h", "a00572.html", [
-      [ "GaussianJunctionTree", "a03147.html", "a03147" ]
+    [ "GaussianFactorGraph.cpp", "a00596.html", "a00596" ],
+    [ "GaussianFactorGraph.h", "a00599.html", "a00599" ],
+    [ "GaussianISAM.h", "a00605_source.html", null ],
+    [ "GaussianJunctionTree.cpp", "a00608.html", null ],
+    [ "GaussianJunctionTree.h", "a00611.html", [
+      [ "GaussianJunctionTree", "a03552.html", "a03552" ]
     ] ],
-    [ "HessianFactor-inl.h", "a00575.html", null ],
-    [ "HessianFactor.cpp", "a00578.html", "a00578" ],
-    [ "HessianFactor.h", "a00581.html", "a00581" ],
-    [ "iterative-inl.h", "a00584.html", "a00584" ],
-    [ "iterative.cpp", "a00587.html", "a00587" ],
-    [ "iterative.h", "a00590.html", "a00590" ],
-    [ "IterativeSolver.cpp", "a00593.html", "a00593" ],
-    [ "IterativeSolver.h", "a00596.html", [
-      [ "IterativeOptimizationParameters", "a03167.html", "a03167" ],
-      [ "IterativeSolver", "a03171.html", "a03171" ],
-      [ "KeyInfoEntry", "a03175.html", "a03175" ],
-      [ "KeyInfo", "a03179.html", "a03179" ]
+    [ "HessianFactor-inl.h", "a00614.html", null ],
+    [ "HessianFactor.cpp", "a00617.html", "a00617" ],
+    [ "HessianFactor.h", "a00620.html", "a00620" ],
+    [ "iterative-inl.h", "a00623.html", "a00623" ],
+    [ "iterative.cpp", "a00626.html", "a00626" ],
+    [ "iterative.h", "a00629.html", "a00629" ],
+    [ "IterativeSolver.cpp", "a00632.html", "a00632" ],
+    [ "IterativeSolver.h", "a00635.html", [
+      [ "IterativeOptimizationParameters", "a03572.html", "a03572" ],
+      [ "IterativeSolver", "a03576.html", "a03576" ],
+      [ "KeyInfoEntry", "a03580.html", "a03580" ],
+      [ "KeyInfo", "a03584.html", "a03584" ]
     ] ],
-    [ "JacobianFactor-inl.h", "a00599_source.html", null ],
-    [ "JacobianFactor.cpp", "a00602.html", "a00602" ],
-    [ "JacobianFactor.h", "a00605.html", "a00605" ],
-    [ "KalmanFilter.cpp", "a00608.html", null ],
-    [ "KalmanFilter.h", "a00611.html", "a00611" ],
-    [ "linearAlgorithms-inst.h", "a00614.html", "a00614" ],
-    [ "linearExceptions.cpp", "a00617.html", null ],
-    [ "linearExceptions.h", "a00620.html", [
-      [ "IndeterminantLinearSystemException", "a03203.html", "a03203" ],
-      [ "InvalidNoiseModel", "a03207.html", "a03207" ],
-      [ "InvalidMatrixBlock", "a03211.html", "a03211" ],
-      [ "InvalidDenseElimination", "a03215.html", "a03215" ]
+    [ "JacobianFactor-inl.h", "a00638_source.html", null ],
+    [ "JacobianFactor.cpp", "a00641.html", "a00641" ],
+    [ "JacobianFactor.h", "a00644.html", "a00644" ],
+    [ "KalmanFilter.cpp", "a00647.html", null ],
+    [ "KalmanFilter.h", "a00650.html", "a00650" ],
+    [ "linearAlgorithms-inst.h", "a00653.html", "a00653" ],
+    [ "linearExceptions.cpp", "a00656.html", null ],
+    [ "linearExceptions.h", "a00659.html", [
+      [ "IndeterminantLinearSystemException", "a03608.html", "a03608" ],
+      [ "InvalidNoiseModel", "a03612.html", "a03612" ],
+      [ "InvalidMatrixBlock", "a03616.html", "a03616" ],
+      [ "InvalidDenseElimination", "a03620.html", "a03620" ]
     ] ],
-    [ "NoiseModel.cpp", "a00623.html", "a00623" ],
-    [ "NoiseModel.h", "a00626.html", "a00626" ],
-    [ "PCGSolver.h", "a00632_source.html", null ],
-    [ "Preconditioner.h", "a00638_source.html", null ],
-    [ "RegularHessianFactor.h", "a00641.html", [
-      [ "RegularHessianFactor", "a03343.html", "a03343" ],
-      [ "traits< RegularHessianFactor< D > >", "a03347.html", null ]
+    [ "LossFunctions.h", "a00665_source.html", null ],
+    [ "NoiseModel.cpp", "a00668.html", "a00668" ],
+    [ "NoiseModel.h", "a00671.html", "a00671" ],
+    [ "PCGSolver.h", "a00677_source.html", null ],
+    [ "Preconditioner.h", "a00683_source.html", null ],
+    [ "RegularHessianFactor.h", "a00686.html", [
+      [ "RegularHessianFactor", "a03748.html", "a03748" ],
+      [ "traits< RegularHessianFactor< D > >", "a03752.html", null ]
     ] ],
-    [ "RegularJacobianFactor.h", "a00644.html", [
-      [ "RegularJacobianFactor", "a03351.html", "a03351" ]
+    [ "RegularJacobianFactor.h", "a00689.html", [
+      [ "RegularJacobianFactor", "a03756.html", "a03756" ]
     ] ],
-    [ "Sampler.cpp", "a00647.html", null ],
-    [ "Sampler.h", "a00650.html", [
-      [ "Sampler", "a03355.html", "a03355" ]
+    [ "Sampler.cpp", "a00692.html", null ],
+    [ "Sampler.h", "a00695.html", [
+      [ "Sampler", "a03760.html", "a03760" ]
     ] ],
-    [ "Scatter.cpp", "a00653.html", null ],
-    [ "Scatter.h", "a00656.html", [
-      [ "SlotEntry", "a03359.html", "a03359" ],
-      [ "Scatter", "a03363.html", "a03363" ]
+    [ "Scatter.cpp", "a00698.html", null ],
+    [ "Scatter.h", "a00701.html", [
+      [ "SlotEntry", "a03764.html", "a03764" ],
+      [ "Scatter", "a03768.html", "a03768" ]
     ] ],
-    [ "SubgraphBuilder.cpp", "a00659.html", "a00659" ],
-    [ "SubgraphBuilder.h", "a00662.html", "a00662" ],
-    [ "SubgraphPreconditioner.cpp", "a00665.html", null ],
-    [ "SubgraphPreconditioner.h", "a00668.html", [
-      [ "SubgraphPreconditionerParameters", "a03383.html", "a03383" ],
-      [ "SubgraphPreconditioner", "a03387.html", "a03387" ]
+    [ "SubgraphBuilder.cpp", "a00704.html", "a00704" ],
+    [ "SubgraphBuilder.h", "a00707.html", "a00707" ],
+    [ "SubgraphPreconditioner.cpp", "a00710.html", null ],
+    [ "SubgraphPreconditioner.h", "a00713.html", [
+      [ "SubgraphPreconditionerParameters", "a03788.html", "a03788" ],
+      [ "SubgraphPreconditioner", "a03792.html", "a03792" ]
     ] ],
-    [ "SubgraphSolver.cpp", "a00671.html", null ],
-    [ "SubgraphSolver.h", "a00674.html", [
-      [ "SubgraphSolverParameters", "a03391.html", "a03391" ],
-      [ "SubgraphSolver", "a03395.html", "a03395" ]
+    [ "SubgraphSolver.cpp", "a00716.html", null ],
+    [ "SubgraphSolver.h", "a00719.html", [
+      [ "SubgraphSolverParameters", "a03796.html", "a03796" ],
+      [ "SubgraphSolver", "a03800.html", "a03800" ]
     ] ],
-    [ "VectorValues.cpp", "a00677.html", "a00677" ],
-    [ "VectorValues.h", "a00680.html", [
-      [ "VectorValues", "a03399.html", "a03399" ],
-      [ "traits< VectorValues >", "a03403.html", null ]
+    [ "VectorValues.cpp", "a00722.html", "a00722" ],
+    [ "VectorValues.h", "a00725.html", [
+      [ "VectorValues", "a03804.html", "a03804" ],
+      [ "traits< VectorValues >", "a03808.html", null ]
     ] ]
 ];

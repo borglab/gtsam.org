@@ -1,6 +1,8 @@
 var a01343 =
 [
-    [ "SmartStereoProjectionFactor", "a04551.html", "a04551" ],
-    [ "traits< SmartStereoProjectionFactor >", "a04555.html", null ],
-    [ "SmartStereoProjectionParams", "a01343.html#a16a76f325ee1e8eb4fd8a0f6b769d0c6", null ]
+    [ "FixedLagSmoother", "a04932.html", "a04932" ],
+    [ "Result", "a04936.html", "a04936" ],
+    [ "FixedLagSmootherKeyTimestampMap", "a01343.html#aa2a302ee683dae9b50409588c07669d7", null ],
+    [ "FixedLagSmootherKeyTimestampMapValue", "a01343.html#ae11ead0b05c240ae6de08f3d6543282b", null ],
+    [ "FixedLagSmootherResult", "a01343.html#aae6c89568ae310c6ccd4b5f5b43bfecc", null ]
 ];

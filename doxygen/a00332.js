@@ -1,10 +1,11 @@
 var a00332 =
 [
-    [ "Rot3", "a02759.html", "a02759" ],
-    [ "CayleyChart", "a02763.html", null ],
-    [ "ChartAtOrigin", "a02767.html", null ],
-    [ "traits< Rot3 >", "a02771.html", null ],
-    [ "traits< const Rot3 >", "a02775.html", null ],
-    [ "ROT3_DEFAULT_COORDINATES_MODE", "a00332.html#ac6b3f5317aa58b98067f9e435996e93e", null ],
-    [ "RQ", "a00332.html#a59e7b1c395b14af00409d9ca3ee4a687", null ]
+    [ "Pose2", "a03060.html", "a03060" ],
+    [ "ChartAtOrigin", "a03064.html", null ],
+    [ "traits< Pose2 >", "a03068.html", null ],
+    [ "traits< const Pose2 >", "a03072.html", null ],
+    [ "Bearing< Pose2, T >", "a03076.html", null ],
+    [ "Range< Pose2, T >", "a03080.html", null ],
+    [ "align", "a00332.html#a2d5f3d592b1eb52ab4bf4d34003178f0", null ],
+    [ "wedge< Pose2 >", "a00332.html#a4b78f4db0e05f3ca838ee4da6187710e", null ]
 ];

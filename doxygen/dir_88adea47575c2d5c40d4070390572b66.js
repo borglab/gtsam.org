@@ -1,109 +1,118 @@
 var dir_88adea47575c2d5c40d4070390572b66 =
 [
-    [ "AdaptAutoDiff.h", "a00767.html", [
-      [ "AdaptAutoDiff", "a03555.html", "a03555" ]
+    [ "AdaptAutoDiff.h", "a00815.html", [
+      [ "AdaptAutoDiff", "a03972.html", "a03972" ]
     ] ],
-    [ "DoglegOptimizer.cpp", "a00770.html", "a00770" ],
-    [ "DoglegOptimizer.h", "a00773.html", [
-      [ "DoglegParams", "a03563.html", "a03563" ],
-      [ "DoglegOptimizer", "a03567.html", "a03567" ]
+    [ "DoglegOptimizer.cpp", "a00818.html", "a00818" ],
+    [ "DoglegOptimizer.h", "a00821.html", [
+      [ "DoglegParams", "a03980.html", "a03980" ],
+      [ "DoglegOptimizer", "a03984.html", "a03984" ]
     ] ],
-    [ "DoglegOptimizerImpl.h", "a00779.html", [
-      [ "DoglegOptimizerImpl", "a03571.html", "a03571" ],
-      [ "IterationResult", "a03575.html", "a03575" ]
+    [ "DoglegOptimizerImpl.h", "a00827.html", [
+      [ "DoglegOptimizerImpl", "a03988.html", "a03988" ],
+      [ "IterationResult", "a03992.html", "a03992" ]
     ] ],
-    [ "Expression-inl.h", "a00782.html", "a00782" ],
-    [ "Expression.h", "a00785.html", "a00785" ],
-    [ "ExpressionFactor.h", "a00788_source.html", null ],
-    [ "ExpressionFactorGraph.h", "a00791.html", [
-      [ "ExpressionFactorGraph", "a03627.html", "a03627" ]
+    [ "Expression-inl.h", "a00830.html", "a00830" ],
+    [ "Expression.h", "a00833.html", "a00833" ],
+    [ "ExpressionFactor.h", "a00836_source.html", null ],
+    [ "ExpressionFactorGraph.h", "a00839.html", [
+      [ "ExpressionFactorGraph", "a04048.html", "a04048" ]
     ] ],
-    [ "expressions.h", "a06528_source.html", null ],
-    [ "expressionTesting.h", "a00797.html", "a00797" ],
-    [ "ExtendedKalmanFilter-inl.h", "a00800.html", null ],
-    [ "ExtendedKalmanFilter.h", "a00803.html", [
-      [ "ExtendedKalmanFilter", "a03631.html", "a03631" ]
+    [ "expressions.h", "a07198.html", "a07198" ],
+    [ "expressionTesting.h", "a00842.html", "a00842" ],
+    [ "ExtendedKalmanFilter-inl.h", "a00845.html", null ],
+    [ "ExtendedKalmanFilter.h", "a00848.html", [
+      [ "ExtendedKalmanFilter", "a04052.html", "a04052" ]
     ] ],
-    [ "factorTesting.h", "a00806.html", "a00806" ],
-    [ "GaussNewtonOptimizer.cpp", "a00809.html", null ],
-    [ "GaussNewtonOptimizer.h", "a00812.html", [
-      [ "GaussNewtonParams", "a03635.html", null ],
-      [ "GaussNewtonOptimizer", "a03639.html", "a03639" ]
+    [ "factorTesting.h", "a00851.html", "a00851" ],
+    [ "FunctorizedFactor.h", "a00854.html", "a00854" ],
+    [ "GaussNewtonOptimizer.cpp", "a00857.html", null ],
+    [ "GaussNewtonOptimizer.h", "a00860.html", [
+      [ "GaussNewtonParams", "a04064.html", null ],
+      [ "GaussNewtonOptimizer", "a04068.html", "a04068" ]
     ] ],
-    [ "ISAM2-impl.cpp", "a00815.html", "a00815" ],
-    [ "ISAM2-impl.h", "a00818.html", [
-      [ "ISAM2", "a03643.html", "a03643" ],
-      [ "PartialSolveResult", "a03647.html", "a03647" ],
-      [ "ReorderingMode", "a03651.html", "a03651" ]
+    [ "ISAM2-impl.cpp", "a00863.html", "a00863" ],
+    [ "ISAM2-impl.h", "a00866.html", [
+      [ "ISAM2BayesTree", "a04072.html", "a04072" ],
+      [ "ISAM2JunctionTree", "a04076.html", "a04076" ],
+      [ "DeltaImpl", "a04080.html", "a04080" ],
+      [ "PartialSolveResult", "a04084.html", "a04084" ],
+      [ "ReorderingMode", "a04088.html", "a04088" ],
+      [ "UpdateImpl", "a04092.html", "a04092" ]
     ] ],
-    [ "ISAM2.cpp", "a00821.html", null ],
-    [ "ISAM2.h", "a00824.html", [
-      [ "ISAM2", "a03643.html", "a03643" ],
-      [ "traits< ISAM2 >", "a03663.html", null ]
+    [ "ISAM2.cpp", "a00869.html", null ],
+    [ "ISAM2.h", "a00872.html", [
+      [ "ISAM2", "a04096.html", "a04096" ],
+      [ "traits< ISAM2 >", "a04100.html", null ]
     ] ],
-    [ "ISAM2Clique.cpp", "a00827.html", "a00827" ],
-    [ "ISAM2Clique.h", "a00830.html", "a00830" ],
-    [ "ISAM2Params.cpp", "a00833.html", null ],
-    [ "ISAM2Params.h", "a00836.html", "a00836" ],
-    [ "ISAM2Result.h", "a00839.html", [
-      [ "ISAM2Result", "a03683.html", "a03683" ],
-      [ "DetailedResults", "a03687.html", "a03687" ],
-      [ "VariableStatus", "a03691.html", "a03691" ]
+    [ "ISAM2Clique.cpp", "a00875.html", "a00875" ],
+    [ "ISAM2Clique.h", "a00878.html", "a00878" ],
+    [ "ISAM2Params.cpp", "a00881.html", null ],
+    [ "ISAM2Params.h", "a00884.html", "a00884" ],
+    [ "ISAM2Result.h", "a00887.html", [
+      [ "ISAM2Result", "a04120.html", "a04120" ],
+      [ "DetailedResults", "a04124.html", "a04124" ],
+      [ "VariableStatus", "a04128.html", "a04128" ]
     ] ],
-    [ "LevenbergMarquardtOptimizer.cpp", "a00842.html", null ],
-    [ "LevenbergMarquardtOptimizer.h", "a00845.html", [
-      [ "LevenbergMarquardtOptimizer", "a03695.html", "a03695" ]
+    [ "ISAM2UpdateParams.h", "a00890.html", [
+      [ "ISAM2UpdateParams", "a04132.html", "a04132" ]
     ] ],
-    [ "LevenbergMarquardtParams.cpp", "a00848.html", null ],
-    [ "LevenbergMarquardtParams.h", "a00851.html", [
-      [ "LevenbergMarquardtParams", "a03699.html", "a03699" ]
+    [ "LevenbergMarquardtOptimizer.cpp", "a00893.html", null ],
+    [ "LevenbergMarquardtOptimizer.h", "a00896.html", [
+      [ "LevenbergMarquardtOptimizer", "a04136.html", "a04136" ]
     ] ],
-    [ "LinearContainerFactor.cpp", "a00854.html", null ],
-    [ "LinearContainerFactor.h", "a00857.html", [
-      [ "LinearContainerFactor", "a03703.html", "a03703" ],
-      [ "traits< LinearContainerFactor >", "a03707.html", null ]
+    [ "LevenbergMarquardtParams.cpp", "a00899.html", null ],
+    [ "LevenbergMarquardtParams.h", "a00902.html", [
+      [ "LevenbergMarquardtParams", "a04140.html", "a04140" ]
     ] ],
-    [ "Marginals.cpp", "a00860.html", null ],
-    [ "Marginals.h", "a00863.html", [
-      [ "Marginals", "a03711.html", "a03711" ],
-      [ "JointMarginal", "a03715.html", "a03715" ]
+    [ "LinearContainerFactor.cpp", "a00905.html", null ],
+    [ "LinearContainerFactor.h", "a00908.html", [
+      [ "LinearContainerFactor", "a04144.html", "a04144" ],
+      [ "traits< LinearContainerFactor >", "a04148.html", null ]
     ] ],
-    [ "NonlinearConjugateGradientOptimizer.cpp", "a00866.html", null ],
-    [ "NonlinearConjugateGradientOptimizer.h", "a00869.html", "a00869" ],
-    [ "NonlinearEquality.h", "a00872_source.html", null ],
-    [ "nonlinearExceptions.h", "a00875.html", [
-      [ "MarginalizeNonleafException", "a03751.html", "a03751" ]
+    [ "Marginals.cpp", "a00911.html", null ],
+    [ "Marginals.h", "a00914.html", [
+      [ "Marginals", "a04152.html", "a04152" ],
+      [ "JointMarginal", "a04156.html", "a04156" ]
     ] ],
-    [ "NonlinearFactor.cpp", "a00878.html", null ],
-    [ "NonlinearFactor.h", "a00881.html", [
-      [ "NonlinearFactor", "a03755.html", "a03755" ],
-      [ "traits< NonlinearFactor >", "a03759.html", null ],
-      [ "NoiseModelFactor", "a03763.html", "a03763" ],
-      [ "NoiseModelFactor1", "a03767.html", "a03767" ],
-      [ "NoiseModelFactor2", "a03771.html", "a03771" ],
-      [ "NoiseModelFactor3", "a03775.html", "a03775" ],
-      [ "NoiseModelFactor4", "a03779.html", "a03779" ],
-      [ "NoiseModelFactor5", "a03783.html", "a03783" ],
-      [ "NoiseModelFactor6", "a03787.html", "a03787" ]
+    [ "NonlinearConjugateGradientOptimizer.cpp", "a00917.html", null ],
+    [ "NonlinearConjugateGradientOptimizer.h", "a00920.html", "a00920" ],
+    [ "NonlinearEquality.h", "a00923_source.html", null ],
+    [ "nonlinearExceptions.h", "a00926.html", [
+      [ "MarginalizeNonleafException", "a04192.html", "a04192" ]
     ] ],
-    [ "NonlinearFactorGraph.cpp", "a00884.html", null ],
-    [ "NonlinearFactorGraph.h", "a00887.html", [
-      [ "Expression", "a03595.html", "a03595" ],
-      [ "ExpressionFactor", "a03583.html", "a03583" ],
-      [ "GraphvizFormatting", "a03791.html", "a03791" ],
-      [ "NonlinearFactorGraph", "a03795.html", "a03795" ],
-      [ "traits< NonlinearFactorGraph >", "a03799.html", null ]
+    [ "NonlinearFactor.cpp", "a00929.html", null ],
+    [ "NonlinearFactor.h", "a00932.html", [
+      [ "NonlinearFactor", "a04196.html", "a04196" ],
+      [ "traits< NonlinearFactor >", "a04200.html", null ],
+      [ "NoiseModelFactor", "a04204.html", "a04204" ],
+      [ "NoiseModelFactor1", "a04208.html", "a04208" ],
+      [ "NoiseModelFactor2", "a04212.html", "a04212" ],
+      [ "NoiseModelFactor3", "a04216.html", "a04216" ],
+      [ "NoiseModelFactor4", "a04220.html", "a04220" ],
+      [ "NoiseModelFactor5", "a04224.html", "a04224" ],
+      [ "NoiseModelFactor6", "a04228.html", "a04228" ]
     ] ],
-    [ "NonlinearISAM.h", "a00893.html", [
-      [ "NonlinearISAM", "a03803.html", "a03803" ]
+    [ "NonlinearFactorGraph.cpp", "a00935.html", null ],
+    [ "NonlinearFactorGraph.h", "a00938.html", [
+      [ "GraphvizFormatting", "a04232.html", "a04232" ],
+      [ "NonlinearFactorGraph", "a04236.html", "a04236" ],
+      [ "traits< NonlinearFactorGraph >", "a04240.html", null ]
     ] ],
-    [ "NonlinearOptimizer.cpp", "a00896.html", "a00896" ],
-    [ "NonlinearOptimizer.h", "a00899.html", "a00899" ],
-    [ "NonlinearOptimizerParams.cpp", "a00902.html", null ],
-    [ "NonlinearOptimizerParams.h", "a00905.html", "a00905" ],
-    [ "Symbol.h", "a06516_source.html", null ],
-    [ "utilities.h", "a00908_source.html", null ],
-    [ "Values-inl.h", "a00911_source.html", null ],
-    [ "Values.h", "a00917.html", "a00917" ],
-    [ "WhiteNoiseFactor.h", "a00920.html", "a00920" ]
+    [ "NonlinearISAM.h", "a00944.html", [
+      [ "NonlinearISAM", "a04244.html", "a04244" ]
+    ] ],
+    [ "NonlinearOptimizer.cpp", "a00947.html", "a00947" ],
+    [ "NonlinearOptimizer.h", "a00950.html", "a00950" ],
+    [ "NonlinearOptimizerParams.cpp", "a00953.html", null ],
+    [ "NonlinearOptimizerParams.h", "a00956.html", "a00956" ],
+    [ "PriorFactor.h", "a07204.html", [
+      [ "PriorFactor", "a04256.html", "a04256" ],
+      [ "traits< PriorFactor< VALUE > >", "a04260.html", null ]
+    ] ],
+    [ "Symbol.h", "a07189.html", null ],
+    [ "utilities.h", "a00962_source.html", null ],
+    [ "Values-inl.h", "a00965_source.html", null ],
+    [ "Values.h", "a00971.html", "a00971" ],
+    [ "WhiteNoiseFactor.h", "a00974.html", "a00974" ]
 ];

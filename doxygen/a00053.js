@@ -1,10 +1,11 @@
 var a00053 =
 [
-    [ "LieGroup", "a02079.html", "a02079" ],
-    [ "lie_group_tag", "a02083.html", null ],
-    [ "LieGroupTraits", "a02087.html", "a02087" ],
-    [ "LieGroup", "a02091.html", null ],
-    [ "IsLieGroup", "a02095.html", "a02095" ],
+    [ "LieGroup", "a02432.html", "a02432" ],
+    [ "lie_group_tag", "a02436.html", null ],
+    [ "LieGroupTraits", "a02440.html", "a02440" ],
+    [ "LieGroup", "a02444.html", null ],
+    [ "IsLieGroup", "a02448.html", "a02448" ],
+    [ "TransformCovariance", "a02452.html", "a02452" ],
     [ "GTSAM_CONCEPT_LIE_INST", "a00053.html#aeef5af7d583d275fbc0e6e5af8bf2afc", null ],
     [ "GTSAM_CONCEPT_LIE_TYPE", "a00053.html#a394ba91042c792227b3fde18e3792a44", null ],
     [ "BCH", "a00053.html#adbd55c711e6ceee791b595558eb3ec8a", null ],

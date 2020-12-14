@@ -1,72 +1,71 @@
 var dir_323e70a1eef083399c870cf8a6035771 =
 [
-    [ "AntiFactor.h", "a00932.html", [
-      [ "AntiFactor", "a03943.html", "a03943" ]
+    [ "AntiFactor.h", "a01019.html", [
+      [ "AntiFactor", "a04440.html", "a04440" ]
     ] ],
-    [ "BearingFactor.h", "a06537_source.html", null ],
-    [ "BearingRangeFactor.h", "a06543_source.html", null ],
-    [ "BetweenFactor.h", "a00935.html", [
-      [ "BetweenFactor", "a03947.html", "a03947" ],
-      [ "traits< BetweenFactor< VALUE > >", "a03951.html", null ],
-      [ "BetweenConstraint", "a03955.html", "a03955" ],
-      [ "traits< BetweenConstraint< VALUE > >", "a03959.html", null ]
+    [ "BearingFactor.h", "a07213_source.html", null ],
+    [ "BearingRangeFactor.h", "a07219_source.html", null ],
+    [ "BetweenFactor.h", "a01022.html", "a01022" ],
+    [ "BoundingConstraint.h", "a01025.html", [
+      [ "BoundingConstraint1", "a04460.html", "a04460" ],
+      [ "BoundingConstraint2", "a04464.html", "a04464" ]
     ] ],
-    [ "BoundingConstraint.h", "a00938.html", [
-      [ "BoundingConstraint1", "a03963.html", "a03963" ],
-      [ "BoundingConstraint2", "a03967.html", "a03967" ]
+    [ "dataset.cpp", "a01028.html", "a01028" ],
+    [ "dataset.h", "a01031.html", "a01031" ],
+    [ "EssentialMatrixConstraint.cpp", "a01034.html", null ],
+    [ "EssentialMatrixConstraint.h", "a01037.html", [
+      [ "EssentialMatrixConstraint", "a04496.html", "a04496" ]
     ] ],
-    [ "dataset.cpp", "a00941.html", "a00941" ],
-    [ "dataset.h", "a00944.html", "a00944" ],
-    [ "EssentialMatrixConstraint.cpp", "a00947.html", null ],
-    [ "EssentialMatrixConstraint.h", "a00950.html", [
-      [ "EssentialMatrixConstraint", "a03979.html", "a03979" ]
+    [ "EssentialMatrixFactor.h", "a01040_source.html", null ],
+    [ "expressions.h", "a07201.html", "a07201" ],
+    [ "FrobeniusFactor.cpp", "a01043.html", "a01043" ],
+    [ "FrobeniusFactor.h", "a01046.html", "a01046" ],
+    [ "GeneralSFMFactor.h", "a01049.html", [
+      [ "GeneralSFMFactor", "a04524.html", "a04524" ],
+      [ "traits< GeneralSFMFactor< CAMERA, LANDMARK > >", "a04528.html", null ],
+      [ "GeneralSFMFactor2", "a04532.html", "a04532" ],
+      [ "traits< GeneralSFMFactor2< CALIBRATION > >", "a04536.html", null ]
     ] ],
-    [ "EssentialMatrixFactor.h", "a00953_source.html", null ],
-    [ "expressions.h", "a06531_source.html", null ],
-    [ "GeneralSFMFactor.h", "a00956.html", [
-      [ "GeneralSFMFactor", "a03995.html", "a03995" ],
-      [ "traits< GeneralSFMFactor< CAMERA, LANDMARK > >", "a03999.html", null ],
-      [ "GeneralSFMFactor2", "a04003.html", "a04003" ],
-      [ "traits< GeneralSFMFactor2< CALIBRATION > >", "a04007.html", null ]
+    [ "InitializePose.h", "a01052.html", null ],
+    [ "InitializePose3.cpp", "a01055.html", null ],
+    [ "InitializePose3.h", "a01058.html", "a01058" ],
+    [ "JacobianFactorQ.h", "a01061_source.html", null ],
+    [ "JacobianFactorQR.h", "a01064_source.html", null ],
+    [ "JacobianFactorSVD.h", "a01067_source.html", null ],
+    [ "KarcherMeanFactor-inl.h", "a01070_source.html", null ],
+    [ "KarcherMeanFactor.h", "a01073_source.html", null ],
+    [ "lago.h", "a01079.html", "a01079" ],
+    [ "OrientedPlane3Factor.h", "a01085_source.html", null ],
+    [ "PoseRotationPrior.h", "a01088.html", [
+      [ "PoseRotationPrior", "a04572.html", "a04572" ]
     ] ],
-    [ "InitializePose3.h", "a00962.html", "a00962" ],
-    [ "JacobianFactorQ.h", "a00965_source.html", null ],
-    [ "JacobianFactorQR.h", "a00968_source.html", null ],
-    [ "JacobianFactorSVD.h", "a00971_source.html", null ],
-    [ "lago.h", "a00977.html", "a00977" ],
-    [ "OrientedPlane3Factor.h", "a00983_source.html", null ],
-    [ "PoseRotationPrior.h", "a00986.html", [
-      [ "PoseRotationPrior", "a04039.html", "a04039" ]
+    [ "PoseTranslationPrior.h", "a01091.html", [
+      [ "PoseTranslationPrior", "a04576.html", "a04576" ]
     ] ],
-    [ "PoseTranslationPrior.h", "a00989.html", [
-      [ "PoseTranslationPrior", "a04043.html", "a04043" ]
+    [ "PriorFactor.h", "a07207.html", null ],
+    [ "ProjectionFactor.h", "a01094.html", [
+      [ "GenericProjectionFactor", "a04580.html", "a04580" ],
+      [ "traits< GenericProjectionFactor< POSE, LANDMARK, CALIBRATION > >", "a04584.html", null ]
     ] ],
-    [ "PriorFactor.h", "a00992.html", [
-      [ "PriorFactor", "a04047.html", "a04047" ]
+    [ "RangeFactor.h", "a07225_source.html", null ],
+    [ "ReferenceFrameFactor.h", "a01097_source.html", null ],
+    [ "RegularImplicitSchurFactor.h", "a01100.html", [
+      [ "RegularImplicitSchurFactor", "a04596.html", "a04596" ],
+      [ "traits< RegularImplicitSchurFactor< CAMERA > >", "a04600.html", null ]
     ] ],
-    [ "ProjectionFactor.h", "a00995.html", [
-      [ "GenericProjectionFactor", "a04051.html", "a04051" ],
-      [ "traits< GenericProjectionFactor< POSE, LANDMARK, CALIBRATION > >", "a04055.html", null ]
+    [ "RotateFactor.h", "a01103_source.html", null ],
+    [ "SmartFactorBase.h", "a01106.html", [
+      [ "SmartFactorBase", "a04612.html", "a04612" ]
     ] ],
-    [ "RangeFactor.h", "a06549_source.html", null ],
-    [ "ReferenceFrameFactor.h", "a00998_source.html", null ],
-    [ "RegularImplicitSchurFactor.h", "a01001.html", [
-      [ "RegularImplicitSchurFactor", "a04067.html", "a04067" ],
-      [ "traits< RegularImplicitSchurFactor< CAMERA > >", "a04071.html", null ]
+    [ "SmartFactorParams.h", "a01109_source.html", null ],
+    [ "SmartProjectionFactor.h", "a01112.html", [
+      [ "SmartProjectionFactor", "a04620.html", "a04620" ],
+      [ "traits< SmartProjectionFactor< CAMERA > >", "a04624.html", null ]
     ] ],
-    [ "RotateFactor.h", "a01004_source.html", null ],
-    [ "SmartFactorBase.h", "a01007.html", [
-      [ "SmartFactorBase", "a04083.html", "a04083" ]
+    [ "SmartProjectionPoseFactor.h", "a01115.html", [
+      [ "SmartProjectionPoseFactor", "a04628.html", "a04628" ],
+      [ "traits< SmartProjectionPoseFactor< CALIBRATION > >", "a04632.html", null ]
     ] ],
-    [ "SmartFactorParams.h", "a01010_source.html", null ],
-    [ "SmartProjectionFactor.h", "a01013.html", [
-      [ "SmartProjectionFactor", "a04091.html", "a04091" ],
-      [ "traits< SmartProjectionFactor< CAMERA > >", "a04095.html", null ]
-    ] ],
-    [ "SmartProjectionPoseFactor.h", "a01016.html", [
-      [ "SmartProjectionPoseFactor", "a04099.html", "a04099" ],
-      [ "traits< SmartProjectionPoseFactor< CALIBRATION > >", "a04103.html", null ]
-    ] ],
-    [ "StereoFactor.h", "a01019_source.html", null ],
-    [ "TriangulationFactor.h", "a01022_source.html", null ]
+    [ "StereoFactor.h", "a01118_source.html", null ],
+    [ "TriangulationFactor.h", "a01121_source.html", null ]
 ];
