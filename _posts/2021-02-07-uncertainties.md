@@ -108,7 +108,7 @@ $\eta_i = \mathbf{x}_{i+1} - f(\mathbf{x}_i, \mathbf{b}_i)$
 
 Now are factors are defined by $\mathbf{x}_{i+1} - f(\mathbf{x}_i, \mathbf{b}_i)$, which poses the following _nonlinear least squares_ (NLS) problem:
 
-\begin{equation} \mathcal{X} = \argmin \displaystyle\sum_i || \mathbf{x}_{i+1} - f(\mathbf{x}_i, \mathbf{b}_i) ||^2_{\Sigma_i} \end{equation}
+$\mathcal{X} = \argmin \displaystyle\sum_i || \mathbf{x}_{i+1} - f(\mathbf{x}_i, \mathbf{b}_i) ||^2_{\Sigma_i}$
 
 Since the system is not linear anymore, we cannot solve it in close form. We need to use nonlinear optimization algorithms such as Gauss-Newton or Levenberg-Marquardt. They will try to get us close to our linear dream by linearizing with respect to some _linearization_ or _operation_ point around a guess $\mathcal{\bar{X}}^{k}$ valid at iteration $k$:
 
@@ -161,7 +161,7 @@ Here we are saying that the next state $\mathbf{T}_{i+1}$ is gonna be the previo
 
 Now, **there are two things here that we must discuss** before moving on, which are fundamental to make everything consistent. We will review them carefully now.
 
-### #1 The importance of coordinate frames
+### The importance of coordinate frames
 While I personally prefer to write the process as we did before, applying the increment on the **right-hand** side:
 
 $\mathbf{T}_{i+1} = \mathbf{T}_i \ \Delta\mathbf{T}_i$
@@ -188,19 +188,62 @@ $\mathbf{T}_{WB}^{-1} = \mathbf{T}_{BW}$
 
 So the inverse _swaps_ the subindices, effectively changing our _point-of-view_ to describe the world.
 
-Using one convention or the other does not matter. In fact, in 3D computer vision it is generally used left-hand convention because it is straightforward to apply the projection models:
+Using one convention or the other does not matter. The important thing is to **stay consistent**. 
+In fact, by making the frames explicit in our convention we can always check if we are making mistakes. Let us say we are using the right-hand notation as above, and our odometer is providing increments _relative to the previous body state_. Our increments $\Delta\mathbf{T}_i$ will be effectively $\Delta\mathbf{T}_{B_{i} B_{i+1} }$, i.e, it's a transformation that describes the pose of the body at time $i+1$ relative to the previous one $i$.
+
+Hence, the actual pose of the body at time $i+1$ expressed in the world frame $W$ is:
+
+$\mathbf{T}_{WB_{i+1}} = \mathbf{T}_{WB_i} \ \Delta\mathbf{T}_{B_{i} B_{i+1} }$
+
+We now this is right because the inner indices cancel each other, effectively representing the pose at $i+1$ in the frame we want:
+
+$\mathbf{T}_{WB_{i+1}} = \mathbf{T}_{W \cancel{B_i}} \ \Delta\mathbf{T}_{\cancel{B_{i}} B_{i+1} }$
+
+If we were actually using the left-hand convention though, we would need to invert the measurement:
+
+$\Delta\mathbf{T}_{B_{i+1} B_{i}} = \Delta\mathbf{T}_{B_{i} B_{i+1}}^{-1}$
+
+so we can apply the transformation on the left-hand side:
+
+$\mathbf{T}_{B_{i+1}W} = \Delta\mathbf{T}_{B_{i+1} B_{i}} \mathbf{T}_{B_i W}$
+
+
+**In GTSAM we use the right-hand convention**. It is important to have this in mind because all the operations that are implemented follow it. As a matter of fact, 3D computer vision has generally used left-hand convention because it is straightforward to apply the projection models:
 
 $_I\mathbf{p} = {_{I}}\mathbf{K}_{IC}\ \mathbf{T}_{CW}\ {_{W}}\mathbf{P}$
 
+Here we made explicit all the frames involved in the transformations we usually can find in textbooks: An homogeneous point ${_{W}}\mathbf{P}$ expressed in the world frame, is transformed by the _extrinsic calibration matrix_ given by the rigid body transformation $\mathbf{T}_{CW}$ which represents the world $W$ in the camera frame $C$, producing a vector ${_{C}}\mathbf{P}$ in the camera frame. This is projected onto the image frame $I$ by means of the intrinsic calibration matrix ${_{I}}\mathbf{K}_{IC}$, producing the vector $_I\mathbf{p}$, expressed in the image frame.
+
+Since in GTSAM our extrinsic calibration is defined the other way, i.e $\mathbf{T}_{WC}$, the implementation of the `CalibratedCamera` handles it by [properly inverting the matrix before doing the projection](https://github.com/borglab/gtsam/blob/develop/gtsam/geometry/CalibratedCamera.cpp#L120) as we would expect.
+
+### They are not just matrices, they are _manifolds_
+
+The second important aspect we need to discuss, is that while rigid-body transformations are nice, the new expression we have to represent the process presents some challenges:
+
+$\mathbf{T}_{WB_{i+1}} = \mathbf{T}_{WB_i} \ \Delta\mathbf{T}_{B_{i} B_{i+1} }$
+
+In first place, we need to figure out a way to include the _noise_ term $\eta_i$ we used before to handle the uncertainties about our measurement $\Delta\mathbf{T}_{B_{i} B_{i+1} }$, which was also the trick we used to generate the Gaussian factors we use in our factor graph. For now, we will say that the noise will be given by a matrix $\mathbf{N}_i$, which holds the following:
+
+$\mathbf{T}_{WB_{i+1}} = \mathbf{T}_{WB_i} \ \Delta\mathbf{T}_{B_{i} B_{i+1}} \mathbf{N}_i$
 
 
-The important thing is to **stay consistent**. 
+Secondly, assuming the noise $\mathbf{N}_i$ was defined somehow, we can isolate it as we did before. However, we need to use matrix operations now:
+
+$\mathbf{N}_i = (\mathbf{T}_{WB_i} \ \Delta\mathbf{T}_{B_{i} B_{i+1}})^{-1} \mathbf{T}_{WB_{i+1}}$
+
+and we can manipulate it a bit for clarity:
+
+$\mathbf{N}_i = (\Delta\mathbf{T}_{B_{i} B_{i+1}})^{-1} (\mathbf{T}_{WB_i})^{-1} \mathbf{T}_{WB_{i+1}}$
+
+If we do the subindex cancelation trick we did before, we can confirm that the error is defined _in frame $B_{i+1}$ and expressed in frame $B_{i+1}$_. This may seen counterintuitive, but in fact matches what we should expect:
+
+INSERT FIGURE
+
+However, the error is still a matrix, which is impossible to include as a factor in the framework we have built so far. We cannot compute a _vector error_ as we did before, nor we are completely sure that the matrix $\mathbf{N}_i$ follows some sort of Gaussian distribution.
+
+Here is where the concept of **manifold** comes to solve our problems. Rigid-body transformations, rotation matrices, quaternions and even vector spaces are _differentiable manifolds_, so despite they do not behave as Euclidean spaces, they can be _locally approximated_ as such using a local vector space called **tangent space**. The main advantage of analyzing all these objects from the manifold perspective is that we can build general algorithms based on common principles that apply to all of them.
 
 
-
-
-
-### #2 They are not just matrices, they are _manifolds_
 
 
 
