@@ -1,6 +1,6 @@
 ---
 layout: gtsam-post
-title:  "Getting the uncertainty out of the Uncertainties"
+title:  "Reducing the uncertainty about the uncertainties"
 ---
 
 <link rel="stylesheet" href="/assets/css/slideshow.css">
@@ -49,12 +49,12 @@ Authors: [Matias Mattamala](https://mmattamala.github.io)
 </figure>
 <br />
 
-In this post we will review some general aspects of optimization-based state estimation methods, and how to input and output consistent quantities and uncertainties from them. We will start with some 
+In this post I will review some general aspects of optimization-based state estimation methods, and how to input and output consistent quantities and uncertainties, i.e, covariance matrices, from them. We will take a (hopefully) comprehensive tour that will cover _why we do the things the way we do_, aiming to clarify some _uncertain_ things about working with covariances. We will see how most of the explanations naturally arise by making explicit the definitions and conventions that sometimes we implicitly assume when using these tools.
 
-This post summarizes and extends some of the interesting discussions we had in the [gtsam-users](https://groups.google.com/g/gtsam-users/c/c-BhH8mfqbo/m/7Wsj_nogBAAJ) group, and I hope it will help to clarify some _uncertain_ things about working with covariances.
+This post summarizes and extends some of the interesting discussions we had in the [gtsam-users](https://groups.google.com/g/gtsam-users/c/c-BhH8mfqbo/m/7Wsj_nogBAAJ) group. We hope that such space will continue to bring to the table relevant questions shared by all of us.
 
 ## A simple example: a pose graph
-As a motivation, we will consider a similar pose graph to ones used in other GTSAM examples:
+As a motivation, we will use a similar pose graph to ones used in other GTSAM examples:
 
 Insert image>_
 
@@ -64,29 +64,30 @@ $\mathbf{x}_{i+1} = \mathbf{A} \mathbf{x}_i + \mathbf{b}_i$
 
 However, we now that in reality things do not work that way, and we will usually have errors produced by noise in our sensors. The most common strategy we use to solve this problem is adding some _zero-mean Gaussian noise_ $\eta_i\sim Gaussian(\mathbf{0}_{2\times1}, \Sigma_i)$ to our measurement to model this uncertainty:
 
-begin{equation} \mathbf{x}_{i+1} = \mathbf{A}\mathbf{x}_i + \delta\mathbf{x}_i + \eta_i \end{equation}
+$\mathbf{x}_{i+1} = \mathbf{A}\mathbf{x}_i + \delta\mathbf{x}_i + \eta_i$
 
 We can recognize here the typical _motion_ or _process model_ we use in Kalman filter for instance, that describe how our state evolves. We say that the noise we introduced on the right hand side states that our next state $\mathbf{x}_{i+1}$ is gonna be _around_ $\mathbf{A}\mathbf{x}_i + \mathbf{b}_i$, and the covariance matrix $\Sigma_i$ describes a region where we expect $\mathbf{x}_{i+1}$ to lie.
 
 We can also notice that with a bit of manipulation, it is possible to establish the following relationship:
-begin{equation}  \eta_i  = \mathbf{x}_{i+1} - \mathbf{A}\mathbf{x}_i - \mathbf{b}_i \end{equation}
 
-This is an important expression because we know that the left-hand expression distributes as a Gaussian distribution, so must do the right-hand term. It is important to note here that what distributes as a Gaussian is neither $\mathbf{x}_i$ nor $\mathbf{x}_{i+1}$, but the difference $(\mathbf{x}_{i+1} - \mathbf{A}\mathbf{x}_i + \mathbf{b}_i)$. This allows us to use the difference as the _factor_ that relates $\mathbf{x}_i$ and $\mathbf{x}_{i+1}$ probabillistically in our factor graph.
+$\eta_i  = \mathbf{x}_{i+1} - \mathbf{A}\mathbf{x}_i - \mathbf{b}_i$
+
+This is an important expression because we know that the left-hand expression distributes as a Gaussian distribution. But since we have an equivalence, the right-hand term must do as well. It is important to note here that what distributes as a Gaussian is neither $\mathbf{x}_i$ nor $\mathbf{x}_{i+1}$, but the difference $(\mathbf{x}_{i+1} - \mathbf{A}\mathbf{x}_i + \mathbf{b}_i)$. This allows us to use the difference as the _factor_ that relates $\mathbf{x}_i$ and $\mathbf{x}_{i+1}$ probabillistically in our factor graph.
 
 ### Analyzing the solution
-Solving the factor graph previously described is equivalent to solving the following least squares problem under the assumption that all our factors are Gaussian:
+Solving the factor graph previously described is equivalent to solving the following least squares problem under the assumption that all our factors are Gaussian (which is fortunately our case):
 
-\begin{equation} \mathcal{X} = \argmin \displaystyle\sum_i || \mathbf{x}_{i+1} - \mathbf{A}\mathbf{x}_i + \mathbf{b}_i ||^2_{\Sigma_i} \end{equation}
+$\mathcal{X}^{*} = \argmin \displaystyle\sum_i || \mathbf{x}_{i+1} - \mathbf{A}\mathbf{x}_i + \mathbf{b}_i ||^2_{\Sigma_i}$
 
 This problem is linear, hence solvable in closed form. By differentiating the squared cost and setting it to zero, we end up with the so-called _normal equations_, which are particularly relevant for our posterior analysis:
 
-$\mathbf{A}^{T} \Sigma^{-1} \mathbf{A}\ \mathcal{X} = \mathbf{A}^{T} \Sigma^{-1} \mathbf{b}$
+$\mathbf{A}^{T} \Sigma^{-1} \mathbf{A}\ \mathcal{X}^{*} = \mathbf{A}^{T} \Sigma^{-1} \mathbf{b}$
 
-Finding the solution $\mathcal{X}$ requires to invert the matrix $\mathbf{A}^{T} \Sigma^{-1} \mathbf{A}$, which is in general is hard since it can be huge and can be dense in some blocks. However we know that there are clever ways to solve it, such as factorization and reordering, or the Bayes tree, for which there are excellent blogs post already and will not covered here.
+First point we can notice here is that finding the solution $\mathcal{X}^{*}$ requires to invert the matrix $\mathbf{A}^{T} \Sigma^{-1} \mathbf{A}$, which in general is hard since it can be huge and dense in some parts. However we know that there are clever ways to solve it, such as iSAM and iSAM2 that GTSAM already implements, which are covered in this comprehensive [article](https://www.cc.gatech.edu/~dellaert/pubs/Dellaert17fnt.pdf) by Frank Dellart and Michael Kaess.
 
-Our interest in this matrix, know as _Fisher information matrix_ or _Hessian_ (since it resembles the Hessian of the original quadratic cost), is that its inverse $(\mathbf{A}^{T} \Sigma^{-1} \mathbf{A})^{-1}$ also represents an approximation of the covariance of our solution - known as _Laplace approximation_ in machine learning. This is a quite important result because by solving the factor graph we are not only recovering an estimate of the mean of the solution, but also a measure of its uncertainty.
+Our interest in this matrix, though, known as _Fisher information matrix_ or _Hessian_ (since it resembles the Hessian of the original quadratic cost), is that its inverse $\Sigma^{*} = (\mathbf{A}^{T} \Sigma^{-1} \mathbf{A})^{-1}$ also represents an approximation of the covariance of our solution - known as _Laplace approximation_ in machine learning. This is a quite important result because by solving the factor graph we are not only recovering an estimate of the mean of the solution, but also a measure of its uncertainty.
 
-Hence, we can say that the probability distribution of the solution will be $Gaussian(\mathcal{X}, \Sigma)$.
+Hence, we can say that after solving the factor graph we can define a probability distribution of the solution, which will be given by the $Gaussian(\mathcal{X}^{*}, \Sigma^{*})$.
 
 The resulting covariance of the solution corresponds to 
 **Discuss how the covariances get transformed**
@@ -115,15 +116,94 @@ $f(\mathbf{x}_i, \mathbf{b}_i) \approx f(\mathbf{\bar{x}}^{k}, \mathbf{b}_i) + \
 
 Hence the problem becomes:
 
-$\delta\mathcal{X}^{k}= \argmin \displaystyle\sum_i || \mathbf{x}_{i+1} - \mathbf{H}^k\mathbf{x}_i - \mathbf{b}_i ||^2_{\Sigma_i}$
+$\delta\mathcal{X}^{k}= \argmin \displaystyle\sum_i || \mathbf{x}_{i+1} - \mathbf{H}^k\mathbf{x}_i - \mathbf{b}_i ||^2_{\Sigma_i^k}$
 
-It is important to observe here that we are not obtaining the global solution $\mathcal{X}$, but just a small increment $\delta\mathcal{X}$ that will allows us to reach it. This linear problem **can** be solved in closed form as we did before. The normal equations now become:
+It is important to observe here that we are not obtaining the global solution $\mathcal{X}$, but just a small increment $\delta\mathcal{X}$ that will allows to move closer to some minima. This linear problem **can** be solved in closed form as we did before; in fact, the normal equations now become:
 
-$(\mathbf{H}^k)^{T} \Sigma^{-1}\ \mathbf{H}^k\ \delta\mathcal{X} = (\mathbf{H}^k)^{T} \Sigma^{-1} \mathbf{b}$
+$(\mathbf{H}^k)^{T} (\Sigma^{k})^{-1}\ \mathbf{H}^k\ \delta\mathcal{X} = (\mathbf{H}^k)^{T} (\Sigma^{k})^{-1} \mathbf{b}$
 
-Similarly, the expression on the left-hand side corresponds to the same Fisher information or Hessian as before, **but with respect to our linearization point**. It means it is only valid as the covariance of the solution we obtain after applying the optimization update $\mathcal{X}^{k+1} = \mathcal{X}^k + \delta\mathcal{X}^{k}$.
+The solution $\delta\mathcal{X}$ will be used to update our current solution at iteration $k$ using the update rule $\mathcal{X}^{k+1} = \mathcal{X}^k + \delta\mathcal{X}^{k}$. Here, $\mathcal{X}^{k+1}$ corresponds to the best estimate so far, and can be used as a new _linearization point_ for a next iteration.
+
+Similarly, the expression on the left-hand side $\Sigma^{k+1} = (\mathbf{A}^{T} (\Sigma^{k})^{-1} \mathbf{A})^{-1}$ also corresponds to the Fisher information or Hessian as before, **but with respect to the linearization point**. This is quite important because both the best solution so far $\mathcal{X}^{k+1}$ and its associated covariance $\Sigma^{k+1}$ will change with every iteration of the nonlinear optimization. But understanding this, we still can say that at iteration $k+1$ our best solution will follow a distribution $Gaussian(\mathcal{X}^{k+1}, \Sigma^{k+1})$
+
 
 ## Getting non-Euclidean
+So far so good, but we need to admit we were not too honest before when we said that considering nonlinear functions of the variables was everything we needed to model real problems. The previous formulation assumed that the variables we aim to estimate are **vectors**, which is not the case for robotics and computer vision at least.
+
+In robotics, we do not estimate the state of a robot only by their position but also its orientation. We then say that is its _pose_, i.e, position and orientation together, what matters to define its state.
+
+Representing pose is a tricky thing. We could say _"ok, but let's just append the orientation to the position vector and do everything as before"_ but that does not work in practice. Problem arises when we want to compose two poses $\mathbf{T}_1 = (x_1, y_1, \theta_1)$ and $\mathbf{T}_2 = (x_2, y_2, \theta_2)$. Under the vector assumption, we can write the following expression as the composition of two poses:
+
+$\mathbf{T}_1 + \mathbf{T}_2 = \left[ \begin{matrix} x_1\\ y_1 \\ \theta_1\end{matrix} \right] + \left[ \begin{matrix} x_2\\ y_2 \\ \theta_2\end{matrix} \right] = \left[ \begin{matrix} x_1 + x_2\\ y_1+y_2 \\ \theta_1 + \theta_2\end{matrix} \right]$
+
+This is basically saying that _it does not matter if we start in pose $\mathbf{T}_1$ or $\mathbf{T}_2$, we will end up at the same final pose_ by composing both, because in vector spaces we can commute the elements. **But this does not work in reality, because rotations and translations do not commute**.
+
+So we need a different representation for poses that allow us to describe accurately what we observe in reality. Long story short, we rather prefer to represent poses as $3\times3$ matrices known as _rigid-body transformations_:
+
+$\mathbf{T}_1 = \left[\begin{matrix} \cos{\theta_1} && -\sin{\theta_1} && x_1 \\ \sin{\theta_1} && \cos{\theta_1} && y_1 \\ 0 && 0 && 1\end{matrix} \right] = \left[\begin{matrix} \mathbf{R}_1 && \mathbf{t}_1 \\ 0 && 1\end{matrix}\right]$
+
+Here $\mathbf{R}_1 = \left[ \begin{matrix} \cos{\theta_1} && -\sin{\theta_1}\\ \sin{\theta_1} && \cos{\theta_1}\end{matrix} \right]$ is a 2D rotation matrix, while $\mathbf{t}_1 = \left[ \begin{matrix}x_1 \\ y_1 \end{matrix}\right]$ is a translation vector.
+While we are using a $3\times3$ matrix now to represent the pose, its _degrees of freedom_ are still $3$, since it is a function of $(x_1, y_1, \theta_1)$.
+
+Working with transformation matrices is great, because we can now describe the behavior we explained in words before, using math. If we start in pose $\mathbf{T}_1$ and we apply the transformation $\mathbf{T}_2$:
+
+$\mathbf{T}_1 \mathbf{T}_2 = \left[\begin{matrix} \mathbf{R}_1 && \mathbf{t}_1 \\ 0 && 1\end{matrix}\right] \left[\begin{matrix} \mathbf{R}_2 && \mathbf{t}_2 \\ 0 && 1\end{matrix}\right] = \left[\begin{matrix} \mathbf{R}_1 \mathbf{R}_2 && \mathbf{R}_1 \mathbf{t}_2 +  \mathbf{t}_1 \\ 0 && 1\end{matrix}\right]$
+
+Which is different to starting from $\mathbf{T}_2$ and applying $\mathbf{T}_1$:
+
+$\mathbf{T}_2 \mathbf{T}_1 = \left[\begin{matrix} \mathbf{R}_2 && \mathbf{t}_2 \\ 0 && 1\end{matrix}\right] \left[\begin{matrix} \mathbf{R}_1 && \mathbf{t}_1 \\ 0 && 1\end{matrix}\right] = \left[\begin{matrix} \mathbf{R}_2 \mathbf{R}_1 && \mathbf{R}_2 \mathbf{t}_1 +  \mathbf{t}_2 \\ 0 && 1\end{matrix}\right]$
+
+In fact, we now rewrite the same problem as before, but now using our transformation matrices:
+
+$\mathbf{T}_{i+1} = \mathbf{T}_i \ \Delta\mathbf{T}_i$
+
+Here we are saying that the next state $\mathbf{T}_{i+1}$ is gonna be the previous state $\mathbf{T}_{i}$ _plus_ some increment $\Delta\mathbf{T}_i$ given by a sensor -odometry in this case. Please note that since we are now working with transformation matrices, $\Delta\mathbf{T}_i$ is almost everything we need to model the problem more accurately, since it will represent a change in both position and orientation.
+
+Now, **there are two things here that we must discuss** before moving on, which are fundamental to make everything consistent. We will review them carefully now.
+
+### #1 The importance of coordinate frames
+While I personally prefer to write the process as we did before, applying the increment on the **right-hand** side:
+
+$\mathbf{T}_{i+1} = \mathbf{T}_i \ \Delta\mathbf{T}_i$
+
+Some people prefer to do it a different way, on the **left-hand** side:
+
+$\mathbf{T}_{i+1} = \Delta\mathbf{T}_i \ \mathbf{T}_i$
+
+These expressions are not equivalent as we already discussed because rigid-body transformations do not commute. However, _both make sense_, under specific conventions. We will be more explicit now by introducing the concept of **reference frames** in our notation.
+
+Let us say that the robot trajectory in space is expressed in a fixed frame -we will called it the _world frame_ $W$. The robot itself defines a coordinate frame in its body, the _body frame_ $W$.
+
+We say we are defining the **pose of the robot body $B$ expressed in the world frame $W$ using the right-hand convention** by using the following notation:
+
+$\mathbf{T}_{WB}$
+
+Analogously, using the **left-hand convention**:
+
+$\mathbf{T}_{BW}$
+
+We can also say that the righ-hand convention describes the process _from a fixed, world frame_ while the left-hand one does it _from the robot's perspective_. The interesting thing is that we can always go from one to the other by inverting the matrices:
+
+$\mathbf{T}_{WB}^{-1} = \mathbf{T}_{BW}$
+
+So the inverse _swaps_ the subindices, effectively changing our _point-of-view_ to describe the world.
+
+Using one convention or the other does not matter. In fact, in 3D computer vision it is generally used left-hand convention because it is straightforward to apply the projection models:
+
+$_I\mathbf{p} = {_{I}}\mathbf{K}_{IC}\ \mathbf{T}_{CW}\ {_{W}}\mathbf{P}$
+
+
+
+The important thing is to **stay consistent**. 
+
+
+
+
+
+### #2 They are not just matrices, they are _manifolds_
+
+
+
 In the previous examples we reviewed the basic concepts that allow us to understand how covariances are plugged in the estimation framework via factors, and extracted from the solution via the Fisher information matrix.
 
 
