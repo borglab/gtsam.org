@@ -37,7 +37,7 @@ Authors: [Matias Mattamala](https://mmattamala.github.io)
 }
 </style> <!-- horizontal scrolling -->
 
-<!-- - TOC
+<!-- - TOC  
 {:toc} -->
 
 ## Introduction
@@ -262,7 +262,7 @@ Regarding the last 2 properties, **local** and **retract** operations are the ke
 
 This is what makes working with manifolds so convenient: All the constraints that are part of the definition of the object are naturally handled, and we can work in local vector spaces using their _inherent_ dimension. The same happens for rigid-body transformations (6 dimensions represented by a 16 elements matrix) or quaternions (3 orientations represented by a 4D vector).
 
-The mapping **from the manifold to the tangent space** is given by the **local** operator. Conversely, we can go **from the tangent space to the manifold** by using the **retract**.
+The mapping **from the manifold to the tangent space** is given by the **local** operator. Conversely, we can go **from the tangent space to the manifold** by using the **retract** (or retraction) one.
 
 People familiar with Lie groups will ask what are the differences with them: Lie groups are also defined as groups that are also differentiable manifolds. Indeed, when working with rigid-body transformations for instance, we use the same operations defined for the _Special Euclidean group_ $\text{SE(3)}$ as used in our previous examples:
 
@@ -273,9 +273,11 @@ People familiar with Lie groups will ask what are the differences with them: Lie
 5. **_Local_**: We use the _logarithm map_ of $\text{SE(3)}$: $_W\mathbf{\xi}_{W} = \text{Log}(\mathbf{T}_{WB_i} )$ 
 6. **_Retract_**: We use the _exponential map_ of $\text{SE(3)}$: $\mathbf{T}_{WB_i} = \text{Exp}(_W\mathbf{\xi}_{W})$
 
-The main difference is that by using the general concept of [_retraction_](https://press.princeton.edu/absil) we can use **alternative definitions to go from the tangent space to the manifold**, that can be more efficient than the exponential map when solving optimization problems.
+(Please note here that we used _capitalized_ $\text{Log}(\cdot) := \text{log}( \cdot)^{\vee}$ and $\text{Exp}(\cdot):=\text{exp}( (\cdot)^{\wedge})$ operators for simplicity as used by   [Forster et al (2017),](https://arxiv.org/abs/1512.02363) and [Solà et al. (2020)](https://arxiv.org/abs/1812.01537).)
 
-It is also important to notice that **the reference frames are preserved when applying the local and retract operations**. For instance, when using the _local_ operation we defined using the logarithm map of  $\text{SE(3)}$, we obtain a vector $_W\mathbf{\xi}_{W} \in \mathbb{R}^{6}$ (sometimes also called _tangent vector_ or _twist_), which is defined on the tangent space _centered at the world frame_ in this case:
+The main difference with Lie groups is that by using the general concept of [_retraction_](https://press.princeton.edu/absil) we can use **alternative definitions to go from the tangent space to the manifold**, that can be more efficient than the exponential map when solving optimization problems.
+
+It is also important to notice that **the reference frames are preserved when applying the local and retract operations**. For instance, when using the _local_ operation we defined using the logarithm map of  $\text{SE(3)}$, we obtain a vector $_W\mathbf{\xi}_{W} \in \mathbb{R}^{6}$ (sometimes also called _tangent vector_ or _twist_), which is defined in the tangent space _centered at the world frame_ in this case:
 
 $_W\mathbf{\xi}_{W} = \text{Log}(\mathbf{T}_{WB_i} )$ 
 
@@ -306,7 +308,7 @@ This incremental change $_{W}\mathbf{\xi}_{W}$ must be given by:
 
 $\text{Exp}( _{W}\mathbf{\xi}_{W}) = \mathbf{T}_{WB_i} \text{Exp}( _{B_i}\mathbf{\xi}_{B_i}) \mathbf{T}_{WB_i}^{-1}$
 
-The expression on the right-hand side is known as the _adjoint action_ of $\text{SE(3)}$. This relates increments applied on the left to ones applied on the right. For our purposes, it is useful to use the alternative expression ([Solà et al](https://arxiv.org/abs/1812.01537) give a more complete derivation):
+The expression on the right-hand side is known as the _adjoint action_ of $\text{SE(3)}$. This relates increments applied on the left to ones applied on the right. For our purposes, it is useful to use the alternative expression ([Solà et al.](https://arxiv.org/abs/1812.01537) give a more complete derivation):
 
 $\text{Exp}( _{W}\mathbf{\xi}_{W}) \mathbf{T}_{WB_i} = \mathbf{T}_{WB_i} \text{Exp}( \text{Ad}_{T_{WB_i}^{-1}}  {_{W}}\mathbf{\xi}_{W})$
 
@@ -321,7 +323,7 @@ $\mathbf{T}_{WB_{i+1}} = \mathbf{T}_{WB_i} \ \Delta\mathbf{T}_{B_{i} B_{i+1}} \m
 
 We reported two problems before:
 1. We needed to define the noise $\mathbf{N}_i$ as a Gaussian noise, but it was a $6\times6$ matrix
-2. When isolating the noise, we ended up with a matrix expression, not vector one as we needed to use the estimation framework we presented before.
+2. When isolating the noise to create the residual, we ended up with a matrix expression, not vector one as we needed in the estimation framework we discussed before.
 
 The first problem can be solved using the tools we just defined by defining _a zero-mean Gaussian in the tangent space of $\text{SE(3)}$ and retracting it onto the manifold_:
 
@@ -331,9 +333,9 @@ where we have defined $\eta_{B_i} \sim Gaussian(\mathbf{0}_{6\times1}, \Sigma_i)
 
 $\mathbf{\tilde{T}}_{WB} = \mathbf{T}_{WB} \text{Exp}( _{B}\mathbf{\eta}_{B})$
 
-This definition has been widely used in the past in estimation problems and matches the one used by GTSAM. In the literature, however, definitions differ in how the Gaussian is retracted (left-hand or right-hand), similarly to the issue with the composition operation. [Barfoot and Furgale (2014, left-hand convention)](http://ncfrn.cim.mcgill.ca/members/pubs/barfoot_tro14.pdf), [Forster et al (2017), right-hand convention](https://arxiv.org/abs/1512.02363), and [Mangelson et al. (2020), left-hand convention](https://arxiv.org/abs/1906.07795) are some examples. Other definitions to define probability distributions on manifolds include [Calinon (2020)](https://arxiv.org/abs/1909.05946) and [Lee et al. (2008)](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.175.5054&rep=rep1&type=pdf), please refer their work for further details.
+This definition has been widely used in the past in estimation problems and matches the one used by GTSAM. In the literature, however, definitions differ in how the Gaussian is retracted (left-hand or right-hand), similarly to the issue with the composition operation. [Barfoot and Furgale (2014, left-hand convention)](http://ncfrn.cim.mcgill.ca/members/pubs/barfoot_tro14.pdf), [Forster et al (2017, right-hand convention)](https://arxiv.org/abs/1512.02363), and [Mangelson et al. (2020, left-hand convention)](https://arxiv.org/abs/1906.07795) are some examples. Other definitions to define probability distributions on manifolds include [Calinon (2020)](https://arxiv.org/abs/1909.05946) and [Lee et al. (2008)](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.175.5054&rep=rep1&type=pdf), please refer their work for further details.
 
-Having solved the first problem, we can now focus on the next. We can isolate the noise as we did before, which holds:
+Having solved the first problem, we can now focus on the residual definition. We can isolate the noise as we did before, which holds:
 
 $\text{Exp}( _{i+1}\mathbf{\eta}_{B_{i+1}}) = \Delta\mathbf{T}_{B_{i} B_{i+1}}^{-1}\ \mathbf{T}_{WB_i}^{-1} \  \mathbf{T}_{WB_{i+1}}$
 
@@ -382,7 +384,7 @@ $(\mathbf{\tilde{T}}_{WB})^{-1} = (\text{Exp}( _{B}\mathbf{\eta}_{B}) )^{-1}\ \m
 
 $(\mathbf{\tilde{T}}_{WB})^{-1} = \text{Exp}(- _{B}\mathbf{\eta}_{B}) \ \mathbf{T}_{WB}^{-1}$
 
-However, the _noise_ is defined on the left, which is inconvenient to be consistent with left-hand convention. We can move it to the right using the adjoint:
+However, the _noise_ is defined on the left, which is inconvenient to be consistent with right-hand convention. We can move it to the right using the adjoint:
 
 $(\mathbf{\tilde{T}}_{WB})^{-1} = \ \mathbf{T}_{WB}^{-1}\ \text{Exp}(- \text{Ad}_{\mathbf{T}_{WB}} {_{B}}\mathbf{\eta}_{B})$
 
@@ -411,7 +413,7 @@ Additionally, if we consider that the poses are correlated, i.e, their joint dis
 
 $\left[\begin{matrix} \Sigma_{B_{i}} & \Sigma_{B_{i}, B_{i+1}} \\ \Sigma_{B_{i}, B_{i+1}}^{T} & \Sigma_{B_{i+1}} \end{matrix}\right]$
 
-Then, the distribution of the composition is:
+Then, the covariance of the composition is:
 
 $\Sigma_{B_{i+1}} = \text{Ad}_{\mathbf{T}_{B_i B_{i+1}}^{-1}} \Sigma_{B_{i}} \text{Ad}_{\mathbf{T}_{B_i B_{i+1}}^{-1}}^{T} + \Sigma_{B_{i+1}} +  \text{Ad}_{\mathbf{T}_{B_i B_{i+1}}^{-1}} \Sigma_{B_{i}, B_{i+1}} +  \Sigma_{B_{i}, B_{i+1}}^{T} \text{Ad}_{\mathbf{T}_{B_i B_{i+1}}^{-1}}^{T}$
 
@@ -421,9 +423,26 @@ Computing the distribution of relative poses follows the same procedure:
 
 $\mathbf{\tilde{T}}_{B_i B_{i+1}} = \mathbf{\tilde{T}}_{W B_{i}}^{-1} \mathbf{\tilde{T}}_{WB_{i+1}}$
 
-$\mathbf{\tilde{T}}_{B_i B_{i+1}} = \mathbf{\tilde{T}}_{W B_{i}}^{-1} \mathbf{\tilde{T}}_{WB_{i+1}}$
+$\mathbf{\tilde{T}}_{B_i B_{i+1}} = \left( \mathbf{T}_{WB_i} \text{Exp}( _{B_i}\mathbf{\eta}_{B_i}) \right)^{-1} \ \mathbf{T}_{WB_{i+1}} \text{Exp}( _{B_{i+1}}\mathbf{\eta}_{B_{i+1}})$
+
+$\mathbf{\tilde{T}}_{B_i B_{i+1}} = \text{Exp}(- _{B_i}\mathbf{\eta}_{B_i}) \ \mathbf{T}_{WB_i}^{-1} \ \mathbf{T}_{WB_{i+1}} \text{Exp}( _{B_{i+1}}\mathbf{\eta}_{B_{i+1}})$
+
+Similarly, we use the adjoint to move the exponential twice:
+
+$\mathbf{\tilde{T}}_{B_i B_{i+1}} =  \mathbf{T}_{WB_i}^{-1}  \text{Exp}(- \text{Ad}_{\mathbf{T}_{WB_i}} {_{B_i}}\mathbf{\eta}_{B_i}) \ \mathbf{T}_{WB_{i+1}} \text{Exp}( _{B_{i+1}}\mathbf{\eta}_{B_{i+1}})$
+
+$\mathbf{\tilde{T}}_{B_i B_{i+1}} =  \mathbf{T}_{WB_i}^{-1} \ \mathbf{T}_{WB_{i+1}} \ \text{Exp}(- \text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \ \text{Ad}_{\mathbf{T}_{WB_i}} {_{B_i}}\mathbf{\eta}_{B_i}) \ \text{Exp}( _{B_{i+1}}\mathbf{\eta}_{B_{i+1}})$
+
+Hence, the following covariance holds for the relative pose assuming independent poses:
+
+$\Sigma_{B_{i+1}} = \text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}} \Sigma_{B_{i}} \text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}}^{T} + \Sigma_{B_{i+1}}$
+
+A problem that exist with this expression, however, is that by assuming independence, the covariance of the relative poses _will be larger than the covariance of each pose separately_. This is consistent to a 1-dimensional case in which we compute the distribution of the difference of Gaussians, in which the mean is the difference while the covariance gets increased. Mangelson et al. showed that if some correlations exists and it is explicitly considered in the computation, the estimates get more accurate. The corresponding expression is then:
+
+$\Sigma_{B_{i+1}} = \text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}} \Sigma_{B_{i}} \text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}}^{T} + \Sigma_{B_{i+1}} - \text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}} \Sigma_{B_{i} B_{i+1}} - \Sigma_{B_{i} B_{i+1}}^{T} (\text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}})^{T}$
 
 
+## Conclusions 
 
 <!-- ********************** BEGIN VARIABLE ELIMINATION SLIDESHOW ********************** -->
 <!-- Slideshow container, based on https://www.w3schools.com/howto/howto_js_slideshow.asp -->
