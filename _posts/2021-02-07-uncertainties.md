@@ -9,6 +9,8 @@ Author: [Matias Mattamala](https://mmattamala.github.io)
 
 <div style="display:none"> <!-- custom latex commands here -->
   $
+    \usepackage{amsmath}
+    \usepackage[makeroom]{cancel}
     \DeclareMathOperator*{\argmin}{argmin}
     \newcommand{\coloneqq}{\mathrel{:=}}
   $
@@ -48,17 +50,16 @@ This post summarizes and extends some of the interesting discussions we had in t
 ## A simple example: a pose graph
 As a motivation, we will use a similar pose graph to those used in other GTSAM examples:
 
-<a name="fg_scratch"></a>
+<a name="fg_example"></a>
 <figure class="center">
-  <img src="/assets/images/lqr_control/VE/fg_lqr.png"
-    alt="Factor graph structure. The objective factors are marked with dashed lines, and the constrain factors are marked with solid lines." />
-    <figcaption><b>Figure 1</b> Factor graph structure for an LQR problem with 3 time steps. The cost factors are marked with dashed lines and the dynamics constraint factors are marked with solid lines.</figcaption>
+  <img src="/assets/images/uncertainties/motivation.png"
+    alt="Simple pose graph example" />
+    <figcaption><b>Figure 1</b> We consider a robot moving on the 2D plane (top), which has an odometer that provides relative measurements of the robot's displacement. The graph at the bottom represent the factor graph model. Modeling the odometry factor in a consistent way is the main topic we will cover in this post.</figcaption>
 </figure>
 <br />
 
 To start, we will consider that the variables in the graph $$\mathbf{x}_i$$
-correspond to positions 
-$${\mathbf{x}_{i}} = (x,y) \in \mathbb{R}^2$$. The variables are related by a transition matrix $$\mathbf{A}$$, as well as relative *measurements* $$\mathbf{b}_{i} = (b_x, b_y)$$ obtained from some sensor such as a wheel odometer. We can then establish the following relationships between variables $$i$$ and $$i+1$$:
+correspond to positions $${\mathbf{x}_{i}} = (x,y) \in \mathbb{R}^2$$. The variables are related by a transition matrix $$\mathbf{A}$$, as well as relative *measurements* $$\mathbf{b}_{i} = (b_x, b_y)$$ obtained from some sensor such as a wheel odometer. We can then establish the following relationships between variables $$i$$ and $$i+1$$:
 
 $$
 \begin{equation}
@@ -84,7 +85,7 @@ $$
 \end{equation}
 $$
 
-This is an important expression because we know that the left-hand expression distributes as a Gaussian distribution. But since we have an equivalence, the right-hand term must do as well. It is important to note here that what distributes as a Gaussian is neither $$\mathbf{x}_{i}$$ nor $$\mathbf{x}_{i+1}$$, but the difference $$(\mathbf{x}_{i+1} - \mathbf{A}\mathbf{x}_i + \mathbf{b}_i)$$. This allows us to use the difference as the *factor* that relates $$\mathbf{x}_i$$ and $$\mathbf{x}_{i+1}$$ probabillistically in our factor graph.
+This is an important expression because we know that the left-hand expression distributes as a Gaussian distribution. But since we have an equivalence, the right-hand term must do as well. It is important to note here that what distributes as a Gaussian is neither $$\mathbf{x}_{i}$$ nor $$\mathbf{x}_{i+1}$$, but the difference $$(\mathbf{x}_{i+1} - \mathbf{A}\mathbf{x}_i + \mathbf{b}_i)$$. This allows us to use the difference as an  **odometry factor** that relates $$\mathbf{x}_i$$ and $$\mathbf{x}_{i+1}$$ probabillistically in our factor graph.
 
 ### Analyzing the solution
 Solving the factor graph using the previous expression for the odometry factors is equivalent to solving the following least squares problem under the assumption that all our factors are Gaussian (which is fortunately our case):
@@ -104,6 +105,14 @@ $$
 $$
 
 First point we can notice here is that finding the solution $\mathcal{X}^{*}$ requires to invert the matrix $\mathbf{A}^{T} \Sigma^{-1} \mathbf{A}$, which in general is hard since it can be huge and dense in some parts. However we know that there are clever ways to solve it, such as iSAM and iSAM2 that GTSAM already implements, and are covered in [this comprehensive article](https://www.cc.gatech.edu/~dellaert/pubs/Dellaert17fnt.pdf) by Frank Dellart and Michael Kaess.
+
+<a name="hessian"></a>
+<figure class="center">
+  <img src="/assets/images/uncertainties/hessian.png"
+    alt="Hessian matrix" />
+    <figcaption><b>Figure 2</b> When solving the normal equations, the left-hand side is known as the Fisher information matrix or Hessian. Its inverse approximates the covariance of the least squares solution.</figcaption>
+</figure>
+<br />
 
 Our interest in this matrix, though, known as **Fisher information matrix** or **Hessian** (since it approximates the Hessian of the original quadratic cost), is that its inverse $$\Sigma^{*} = (\mathbf{A}^{T} \Sigma^{-1} \mathbf{A})^{-1}$$ also approximates the covariance of our solution - known as *Laplace approximation* in machine learning ([Bishop (2006), Chap. 4.4](https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf)). This is a quite important result because by solving the factor graph we are not only recovering an estimate of the mean of the solution, but also a measure of its uncertainty. In GTSAM, the `Marginals` class implements this procedure, and a example can be further explored in the [tutorial](https://gtsam.org/tutorials/intro.html#subsec_Full_Posterior_Inference).
 
@@ -287,11 +296,19 @@ We know this is correct because the inner indices cancel each other, effectively
 
 $$
 \begin{equation}
-\mathbf{T}_{WB_{i+1}} = \mathbf{T}_{W \cancel{B_i}} \ \Delta\mathbf{T}_{\cancel{B_{i}} B_{i+1} }
+\mathbf{T}_{WB_{i+1}} = \mathbf{T}_{W {\cancel{B_i}} } \ \Delta\mathbf{T}_{ {\cancel{B_{i}}} B_{i+1} }
 \end{equation}
 $$
 
 Since we applied the increment from the right-hand side, we will refer to this as the **right-hand convention**.
+
+<a name="right-convention"></a>
+<figure class="center">
+  <img src="/assets/images/uncertainties/right-convention.png"
+    alt="Hessian matrix" />
+    <figcaption>When using right-hand convention, the increments to describe the pose of the robot at instant $i$ are applied on the right-hand side. All our estimates are expressed with respect to a fixed world frame $W$ (in black).</figcaption>
+</figure>
+<br />
 
 If we want to apply the increment to $\mathbf{T}_{BW}$, we would need to invert the measurement:
 
@@ -309,7 +326,15 @@ $$
 \end{equation}
 $$
 
-which we will refer onwards as **left-hand convention**.
+which we will refer onward as **left-hand convention**.
+
+<a name="left-convention"></a>
+<figure class="center">
+  <img src="/assets/images/uncertainties/left-convention.png"
+    alt="Hessian matrix" />
+    <figcaption>With left-hand convention the increments are applied from the left, changing our reference frame (in black) to the new robot pose $B_{i+1}$.</figcaption>
+</figure>
+<br />
 
 
 **In GTSAM we use the right-hand convention: we assume that the variables are expressed with respect to a fixed frame $W$, hence the increments are applied on the right-hand side**. 
@@ -367,6 +392,15 @@ However, the error is still a matrix, which is impossible to include as a factor
 #### Manifolds
 Here is where the concept of **manifold** comes to solve our problems. Rigid-body transformations (`Pose3` and `Pose2` in GTSAM), rotation matrices (`Rot2` and `Rot3`), quaternions and even vector spaces (`Point2` and `Point3`) are **differentiable manifolds**. This means that in spite of they do not behave as Euclidean spaces at a global scale, they can be *locally approximated* as such by using local vector spaces called **tangent spaces**. The main advantage of analyzing all these objects from the manifold perspective is that we can build general algorithms based on common principles that apply to all of them.
 
+
+<a name="manifold"></a>
+<figure class="center">
+  <img src="/assets/images/uncertainties/manifold.png"
+    alt="Manifold and tangents spaces" />
+    <figcaption> While a manifold have a non-Euclidean structure, it can be locally approximated by tangent spaces. </figcaption>
+</figure>
+<br />
+
 In order to work with all the previous objects we mentioned -rotation matrices, rigid-body transformations, quaternions-, we need to define some basic operations that resemble the vector case that allows us to generalize the framework. These concepts [have been discussed in previous posts](https://gtsam.org/notes/GTSAM-Concepts.html) at the implementation level:
 
 1. **Composition**: How to compose 2 objects from the same manifold, with associativity properties. It is similar to the *addition* operation for vectors.
@@ -384,6 +418,23 @@ Some authors define special operators to refer to composition/between operations
 
 #### Local and retract
 Regarding the last 2 properties, **local** and **retract** operations are the key to work with manifolds. As we briefly mentioned before, objects such as rotation matrices and rigid-body transformations are difficult to manipulate in the estimation framework because they are matrices. A 3D rotation matrix $\mathbf{R}$ represents 3 orientations with respect to a reference frame but, in raw terms, they are using 9 values to do so, which seems to *overparametrize* the object. However, the constraints that define a rotation matrix -and consequently the manifold- such as orthonormality $$\mathbf{R}^{T}\mathbf{R} = \mathbf{I}$$ and $$\text{det}(\mathbf{R}) = 1$$ make the inherent dimensionality of the rotation still 3. Interestingly, this is exactly the dimensionality of the tangent spaces that can be defined over the manifold.
+
+
+<a name="manifold_local"></a>
+<figure class="center">
+  <img src="/assets/images/uncertainties/manifold-local.png"
+    alt="Local operation on a manifold" />
+    <figcaption>The local operation allows us to map elements from the manifold to the tangent space.</figcaption>
+</figure>
+<br />
+
+<a name="manifold_retract"></a>
+<figure class="center">
+  <img src="/assets/images/uncertainties/manifold-retract.png"
+    alt="Retract operation on a manifold" />
+    <figcaption>The retract operation does the opposite mapping vectors from the tangent space back on the manifold.</figcaption>
+</figure>
+<br />
 
 **That is what makes working with manifolds so convenient**: All the constraints that are part of the definition of the object are naturally handled, and we can work in local (tangent) vector spaces using their *inherent* dimension. The same happens for rigid-body transformations (6 dimensions represented by a 16 elements matrix) or quaternions (3 orientations represented by a 4D vector).
 
@@ -515,6 +566,14 @@ $$
 
 This definition has been widely used in the past in estimation problems and matches the one used by GTSAM. In the literature, however, definitions differ in how the Gaussian is retracted (left-hand or right-hand), similarly to the differences observed with the composition operation. [Barfoot and Furgale (2014, left-hand convention)](http://ncfrn.cim.mcgill.ca/members/pubs/barfoot_tro14.pdf), [Forster et al (2017, right-hand convention)](https://arxiv.org/abs/1512.02363), and [Mangelson et al. (2020, left-hand convention)](https://arxiv.org/abs/1906.07795) are some examples. Other definitions to define probability distributions on manifolds include [Calinon (2020)](https://arxiv.org/abs/1909.05946) and [Lee et al. (2008)](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.175.5054&rep=rep1&type=pdf), please refer to their work for further details.
 
+<a name="manifold_gaussian"></a>
+<figure class="center">
+  <img src="/assets/images/uncertainties/manifold-gaussian.png"
+    alt="Gaussian on a manifold" />
+    <figcaption>Using the retraction, we can define Gaussians on the tangent space and map them back on the manifold to construct Gaussians on the manifold.</figcaption>
+</figure>
+<br />
+
 Having solved the first problem, we can now focus on the residual definition. We can isolate the noise as we did before, which holds:
 
 $$
@@ -574,8 +633,6 @@ $$
 where $${_{B_i}}\eta_{B_i}^{k+1} \sim Gaussian(\mathbf{0}_{6\times1}, \Sigma^{k+1})$$. As a consequence of the convention on the retraction, **the resulting covariance is expressed in the base frame as well, and uses orientation-then-translation for the ordering of the covariance matrix**.
 
 ## Playing with covariances
-We took a long trip to explain how the covariances are introduced and extracted from the estimation framework. We discussed that the choice of the convention when working with the manifold objects (left or right), as well as a clear definition of the frames are the key to make sense of the estimates we obtain as well as their covariances.
-
 In this last section, we would like to discuss some consequences of the definitions, and how they can be used to obtain other useful expressions for covariance transformations. We will focus on $\text{SE(3)}$, but similar definitions should apply for other manifolds since they mainly rely on a definition of the adjoint.
 
 Most of this expressions have been already shown in the literature by [Barfoot and Furgale (2014)](http://ncfrn.cim.mcgill.ca/members/pubs/barfoot_tro14.pdf) and [Mangelson et al. (2020)](https://arxiv.org/abs/1906.07795) but since they follow the left-hand convention they are not straightforward to use with GTSAM. We provide the resulting expressions for the covariance transformations following Mangelson et al. but we recommend to refer to their work to understand the details of the process.
@@ -694,16 +751,16 @@ $$
 
 ## Conclusions 
 
-In this post we reviewed how a clear understanding of the conventions (explicit or not) embeded in our factor graph problems is fundamental to make sense of the quantities involved. We introduced the concept of _right-hand_ and _left-hand_ conventions which, while not standard, allowed us to identify different formulations that can be found in the literature. By explicitly stating that GTSAM uses a right-hand convention we could specify the frames used to define the variables, as well the covariance we obtain from the solution via  `Marginals`.
+In this post we took a long trip to explain how the covariances are introduced and extracted from the estimation framework. We reviewed how a clear understanding of the conventions (explicit or not) embeded in our factor graph problems is fundamental to make sense of the quantities involved. We introduced the concept of _right-hand_ and _left-hand_ conventions which, while not standard, allowed us to identify different formulations that can be found in the literature. By explicitly stating that GTSAM uses a right-hand convention we could specify the frames used to define the variables, as well the covariance we obtain from the solution via  `Marginals`.
 
-We also showed how the right-hand convention also defines how the composition is defined when working with manifolds, such as rigid-body transformations and rotation matrices. The  **local** and **retract** operations are also defined from the right-hand side, indicating that the increments and the covariances we compute are defined with respect to the base frame.
+We also showed how the right-hand convention is related to how the composition is defined when working with manifolds, such as rigid-body transformations and rotation matrices. The  **local** and **retract** operations are also defined from the right-hand side, indicating that the increments and the covariances we compute are defined with respect to the base frame.
 
-Additionally, the definition of the local and retract operations also have direct impact on the ordering of the covariance matrices, which also varies depending on the object. We reviewed that `Pose2` use a _translation-then-orientation_ convention, while `Pose3` does _orientation-then-translation_. This is particularly important when we want to use GTSAM quantities with different software, such as ROS, which use a _translation-then-orientation_ convention for their 3D pose structures for instance ([`PoseWithCovariance`](http://docs.ros.org/en/melodic/api/geometry_msgs/html/msg/PoseWithCovariance.html)).
+Additionally, the definition of the local and retract operations also have direct impact on the ordering of the covariance matrices, which also varies depending on the object. We discussed that `Pose2` use a _translation-then-orientation_ convention, while `Pose3` does _orientation-then-translation_. This is particularly important when we want to use GTSAM quantities with different software, such as ROS, which use a _translation-then-orientation_ convention for their 3D pose structures for instance ([`PoseWithCovariance`](http://docs.ros.org/en/melodic/api/geometry_msgs/html/msg/PoseWithCovariance.html)).
 
 Finally, we showed how the convention is also important to define probability distributions of rigid-body matrices, and how this determine the way the covariances get transformed when manipulating such variables. While this has been shown in related literature, we briefly presented some expressions for inversion, composition and relative poses that are compliant with GTSAM's convention.
 
 ## Acknowledgments
-I would like to thank again the interesting discussions in the [gtsam-users](https://groups.google.com/g/gtsam-users/c/c-BhH8mfqbo/m/7Wsj_nogBAAJ) group. Stefan Gächter motivated a rich conversation doing some important questions, and Frank Dellaert motivated the idea of writing a post about it.
+I would like to thank again the interesting discussions originated in the [gtsam-users](https://groups.google.com/g/gtsam-users/c/c-BhH8mfqbo/m/7Wsj_nogBAAJ) group. Stefan Gächter guided a rich conversation doing some important questions, and Frank Dellaert motivated the idea of writing a post about it.
 
-Coincidently, similar discussions at the Dynamic Robot Systems group at the University of Oxford were aligned with the topics discussed here and facilitated the writing process. Special thanks to Yiduo Wang and Milad Ramezani to derive and test together the formulas of the covariance of relative poses presented here, Marco Camurri for feedback on the notation, and Maurice Fallon for encouragement to write this post.
+Coincidently, similar discussions at the [Dynamic Robot Systems](https://ori.ox.ac.uk/labs/drs/) group at the University of Oxford were aligned with the topics discussed here and facilitated the writing process. Special thanks to Yiduo Wang and Milad Ramezani for our conversations, derivation and testing of the formulas for the covariance of relative poses presented here, Marco Camurri for feedback on the notation, and Maurice Fallon for encouraging to write this post.
 
