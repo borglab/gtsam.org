@@ -447,7 +447,7 @@ People familiar with Lie groups will ask what are the differences with them: Lie
 3. **Identity**: Identity matrix $$\mathbf{I}_W$$.
 4. **Inverse**: Matrix inverse $$(\mathbf{T}_{WB_i})^{-1} = \mathbf{T}_{B_i W}$$
 5. **Local**: We use the _logarithm map_ of $$\text{SE(3)}$$: $$_W\mathbf{\xi}_{W} = \text{Log}(\mathbf{T}_{WB_i} )$$.
-6. **Retract**: Analogously, we use the _exponential map_ of $$\text{SE(3)}$: $\mathbf{T}_{WB_i} = \text{Exp}(_W\mathbf{\xi}_{W})$$.
+6. **Retract**: Analogously, we use the _exponential map_ of $$\text{SE(3)}$$: $$\mathbf{T}_{WB_i} = \text{Exp}(_W\mathbf{\xi}_{W})$$.
 
 (Please note here that we used *capitalized* $$\text{Log}(\cdot) := \text{log}( \cdot)^{\vee}$$ and $$\text{Exp}(\cdot):=\text{exp}( (\cdot)^{\wedge})$$ operators for simplicity as used by   [Forster et al (2017),](https://arxiv.org/abs/1512.02363) and [Solà et al. (2020)](https://arxiv.org/abs/1812.01537).)
 
@@ -681,7 +681,7 @@ $$
 \end{align}
 $$
 
-Analogously, we need to _move_ the noise $_{B_i}\mathbf{\eta}_{B_i}$ to the right, so as to have _the transformations to the left, and the noises to the right_. We can use the adjoint again:
+Analogously, we need to _move_ the noise $$_{B_i}\mathbf{\eta}_{B_i}$$ to the right, so as to have _the transformations to the left, and the noises to the right_. We can use the adjoint again:
 
 $$
 \begin{equation}
