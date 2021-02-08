@@ -67,7 +67,7 @@ $$
 \end{equation}
 $$
 
-However, we now that in reality things do not work that way, and we will usually have errors produced by noise in our sensors. The most common way to address this problem is adding some *zero-mean Gaussian noise* $$\eta_i\sim Gaussian(\mathbf{0}_{2\times1}, \Sigma_i)$$ to our measurement to model this uncertainty:
+However, we know that in reality things do not work that way, and we will usually have errors produced by noise in our sensors. The most common way to address this problem is adding some *zero-mean Gaussian noise* $$\eta_i\sim Gaussian(\mathbf{0}_{2\times1}, \Sigma_i)$$ to our measurement to model this uncertainty:
 
 $$
 \begin{equation}
