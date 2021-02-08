@@ -71,7 +71,7 @@ However, we now that in reality things do not work that way, and we will usually
 
 $$
 \begin{equation}
-\mathbf{x}_{i+1} = \mathbf{A}\mathbf{x}_i + \delta\mathbf{x}_i + \eta_i
+\mathbf{x}_{i+1} = \mathbf{A}\mathbf{x}_i + \mathbf{b}_i + \eta_i
 \end{equation}
 $$
 
@@ -85,14 +85,14 @@ $$
 \end{equation}
 $$
 
-This is an important expression because we know that the left-hand expression distributes as a Gaussian distribution. But since we have an equivalence, the right-hand term must do as well. It is important to note here that what distributes as a Gaussian is neither $$\mathbf{x}_{i}$$ nor $$\mathbf{x}_{i+1}$$, but the difference $$(\mathbf{x}_{i+1} - \mathbf{A}\mathbf{x}_i + \mathbf{b}_i)$$. This allows us to use the difference as an  **odometry factor** that relates $$\mathbf{x}_i$$ and $$\mathbf{x}_{i+1}$$ probabillistically in our factor graph.
+This is an important expression because we know that the left-hand expression distributes as a Gaussian distribution. But since we have an equivalence, the right-hand term must do as well. It is important to note here that what distributes as a Gaussian is neither $$\mathbf{x}_{i}$$ nor $$\mathbf{x}_{i+1}$$, but the difference $$(\mathbf{x}_{i+1} - \mathbf{A}\mathbf{x}_i - \mathbf{b}_i)$$. This allows us to use the difference as an  **odometry factor** that relates $$\mathbf{x}_i$$ and $$\mathbf{x}_{i+1}$$ probabillistically in our factor graph.
 
 ### Analyzing the solution
 Solving the factor graph using the previous expression for the odometry factors is equivalent to solve the following least squares problem under the assumption that all our factors are Gaussian (which is fortunately our case):
 
 $$
 \begin{equation}
-\mathcal{X}^{*} = \argmin\displaystyle\sum_{i} || {\mathbf{x}_{i+1}} - \mathbf{A}\mathbf{x}_{i} + \mathbf{b}_{i} ||^{2}_{\Sigma_i}
+\mathcal{X}^{*} = \argmin\displaystyle\sum_{i} || {\mathbf{x}_{i+1}} - \mathbf{A}\mathbf{x}_{i} - \mathbf{b}_{i} ||^{2}_{\Sigma_i}
 \end{equation}
 $$
 
@@ -762,5 +762,5 @@ Finally, we showed how the convention is also important to define probability di
 ## Acknowledgments
 I would like to thank again the interesting discussions originated in the [gtsam-users](https://groups.google.com/g/gtsam-users/c/c-BhH8mfqbo/m/7Wsj_nogBAAJ) group. Stefan Gächter guided a rich conversation doing some important questions, and Frank Dellaert motivated the idea of writing a post about it.
 
-Coincidently, similar discussions at the [Dynamic Robot Systems](https://ori.ox.ac.uk/labs/drs/) group at the University of Oxford were aligned with the topics discussed here and facilitated the writing process. Special thanks to Yiduo Wang and Milad Ramezani for our conversations, derivation and testing of the formulas for the covariance of relative poses presented here, Marco Camurri for feedback on the notation, and Maurice Fallon for encouraging to write this post.
+Coincidently, similar discussions at the [Dynamic Robot Systems](https://ori.ox.ac.uk/labs/drs/) group at the University of Oxford were aligned with the topics discussed here and facilitated the writing process. Special thanks to Yiduo Wang and Milad Ramezani for our conversations, derivation and testing of the formulas for the covariance of relative poses presented here, Marco Camurri for feedback on the notation and proofreading, and Maurice Fallon for encouraging to write this post.
 
