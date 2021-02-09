@@ -1,6 +1,6 @@
 ---
 layout: gtsam-post
-title:  "Reducing the uncertainty about the uncertainties"
+title:  "Reducing the uncertainty about the uncertainties, part 2: frames and manifolds"
 ---
 
 <link rel="stylesheet" href="/assets/css/slideshow.css">
@@ -43,157 +43,15 @@ Author: [Matias Mattamala](https://mmattamala.github.io)
 {:toc}
 
 ## Introduction
-In this post I will review some general aspects of optimization-based state estimation methods, and how to input and output consistent quantities and uncertainties, i.e, covariance matrices, from them. We will take a (hopefully) comprehensive tour that will cover *why we do the things the way we do*, aiming to clarify some *uncertain* things about working with covariances. We will see how most of the explanations naturally arise by making explicit the definitions and conventions that sometimes we implicitly assume when using these tools.
+In our [previous post](https://gtsam.org/2021/02/07/uncertainties-part1.html) we discussed some basic concepts to solve linear and nonlinear factor graphs, and extract uncertainty estimates from them. We reviewed that the Fisher information matrix corresponds to an approximation of the inverse covariance of the solution, and that in the nonlinear case both the solution and its covariance estimate are **valid for the current linearization point only**.
 
-This post summarizes and extends some of the interesting discussions we had in the [gtsam-users](https://groups.google.com/g/gtsam-users/c/c-BhH8mfqbo/m/7Wsj_nogBAAJ) group. We hope that such space will continue to bring to the table relevant questions shared by all of us.
+While the nonlinear case effectively allows us to model a bunch of problems, we need to admit we were not too honest when we said that it was *everything* we needed to model real problems. Our formulation so far assumed that the variables in our factor graph are **vectors**, which is not the case for robotics and computer vision at least.
 
-## A simple example: a pose graph
-As a motivation, we will use a similar pose graph to those used in other GTSAM examples:
-
-<a name="fg_example"></a>
-<figure class="center">
-  <img src="/assets/images/uncertainties/motivation.png"
-    alt="Simple pose graph example" />
-    <figcaption><b>Figure 1</b> We consider a robot moving on the 2D plane (top), which has an odometer that provides relative measurements of the robot's displacement. The graph at the bottom represent the factor graph model. Modeling the odometry factor in a consistent way is the main topic we will cover in this post.</figcaption>
-</figure>
-<br />
-
-To start, we will consider that the variables in the graph $$\mathbf{x}_i$$
-correspond to positions $${\mathbf{x}_{i}} = (x,y) \in \mathbb{R}^2$$. The variables are related by a transition matrix $$\mathbf{A}$$, as well as relative *measurements* $$\mathbf{b}_{i} = (b_x, b_y)$$ obtained from some sensor such as a wheel odometer. We can then establish the following relationships between variables $$i$$ and $$i+1$$:
-
-$$
-\begin{equation}
-\mathbf{x}_{i+1} = \mathbf{A} \mathbf{x}_i + \mathbf{b}_i
-\end{equation}
-$$
-
-However, we know that in reality things do not work that way, and we will usually have errors produced by noise in our sensors. The most common way to address this problem is adding some *zero-mean Gaussian noise* $$\eta_i\sim Gaussian(\mathbf{0}_{2\times1}, \Sigma_i)$$ to our measurement to model this uncertainty:
-
-$$
-\begin{equation}
-\mathbf{x}_{i+1} = \mathbf{A}\mathbf{x}_i + \mathbf{b}_i + \eta_i
-\end{equation}
-$$
-
-We can recognize here the typical *motion* or *process model* we use in Kalman filter for instance, that describe how our state evolves. We say that the noise we introduced on the right side states that our next state $$\mathbf{x}_{i+1}$$ will be *around* $$\mathbf{A}\mathbf{x}_i + \mathbf{b}_i$$, and the covariance matrix $$\Sigma_i$$ describes the region where we expect $$\mathbf{x}_{i+1}$$ to lie.
-
-We can also notice that with a bit of manipulation, it is possible to establish the following relationship:
-
-$$
-\begin{equation}
-\eta_i  = \mathbf{x}_{i+1} - \mathbf{A}\mathbf{x}_i - \mathbf{b}_i
-\end{equation}
-$$
-
-This is an important expression because we know that the left-hand expression distributes as a Gaussian distribution. But since we have an equivalence, the right-hand term must do as well. It is important to note here that what distributes as a Gaussian is neither $$\mathbf{x}_{i}$$ nor $$\mathbf{x}_{i+1}$$, but the difference $$(\mathbf{x}_{i+1} - \mathbf{A}\mathbf{x}_i - \mathbf{b}_i)$$. This allows us to use the difference as an  **odometry factor** that relates $$\mathbf{x}_i$$ and $$\mathbf{x}_{i+1}$$ probabillistically in our factor graph.
-
-### Analyzing the solution
-Solving the factor graph using the previous expression for the odometry factors is equivalent to solve the following least squares problem under the assumption that all our factors are Gaussian (which is fortunately our case):
-
-$$
-\begin{equation}
-\mathcal{X}^{*} = \argmin\displaystyle\sum_{i} || {\mathbf{x}_{i+1}} - \mathbf{A}\mathbf{x}_{i} - \mathbf{b}_{i} ||^{2}_{\Sigma_i}
-\end{equation}
-$$
-
-This problem is linear, hence solvable in closed form. By differentiating the squared cost and setting it to zero, we end up with the so-called *normal equations*, which are particularly relevant for our posterior analysis:
-
-$$
-\begin{equation}
-\mathbf{A}^{T} \Sigma^{-1} \mathbf{A}\ \mathcal{X}^{*} = \mathbf{A}^{T} \Sigma^{-1} \mathbf{b}
-\end{equation}
-$$
-
-First point we can notice here is that finding the solution $\mathcal{X}^{*}$ requires to invert the matrix $\mathbf{A}^{T} \Sigma^{-1} \mathbf{A}$, which in general is hard since it can be huge and dense in some parts. However we know that there are clever ways to solve it, such as iSAM and iSAM2 that GTSAM already implements, and are covered in [this comprehensive article](https://www.cc.gatech.edu/~dellaert/pubs/Dellaert17fnt.pdf) by Frank Dellart and Michael Kaess.
-
-<a name="hessian"></a>
-<figure class="center">
-  <img src="/assets/images/uncertainties/hessian.png"
-    alt="Hessian matrix" />
-    <figcaption><b>Figure 2</b> When solving the normal equations, the left-hand side is known as the Fisher information matrix or Hessian. Its inverse approximates the covariance of the least squares solution.</figcaption>
-</figure>
-<br />
-
-Our interest in this matrix, though, known as **Fisher information matrix** or **Hessian** (since it approximates the Hessian of the original quadratic cost), is that its inverse $$\Sigma^{*} = (\mathbf{A}^{T} \Sigma^{-1} \mathbf{A})^{-1}$$ also approximates the covariance of our solution - known as *Laplace approximation* in machine learning ([Bishop (2006), Chap. 4.4](https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf)). This is a quite important result because by solving the factor graph we are not only recovering an estimate of the mean of the solution, but also a measure of its uncertainty. In GTSAM, the `Marginals` class implements this procedure, and a example can be further explored in the [tutorial](https://gtsam.org/tutorials/intro.html#subsec_Full_Posterior_Inference).
-
-As a result, we can say that after solving the factor graph the *probability distribution of the solution* is given by $$Gaussian(\mathcal{X}^{*}, \Sigma^{*})$$.
-
-
-## Getting nonlinear
-The previous pose graph was quite simple and probably not applicable for most of our problems. Having linear factors as the previous one is an *impossible dream* for most of the applications. It is more realistic to think that our state $$i+1$$ will evolve as a nonlinear function of the state $i$ and the measurements $$b_i$$:
-
-$$
-\begin{equation}
-\mathbf{x}_{i+1} = f(\mathbf{x}_i, \mathbf{b}_i)
-\end{equation}
-$$
-
-Despite nonlinear, we can still say that our mapping has some errors involved, which are embeded into a zero-mean Gaussian noise that we can simply add as before:
-
-$$
-\begin{equation}
-\mathbf{x}_{i+1} = f(\mathbf{x}_i, \mathbf{b}_i) + \eta_i
-\end{equation}
-$$
-
-So a similar expression follows by isolating the noise:
-
-$$
-\begin{equation}
-\eta_i = \mathbf{x}_{i+1} - f(\mathbf{x}_i, \mathbf{b}_i)
-\end{equation}
-$$
-
-Now the factors are defined by the residual $$\mathbf{x}_{i+1} - f(\mathbf{x}_i, \mathbf{b}_i)$$, which poses the following *nonlinear least squares* (NLS) problem:
-
-$$
-\begin{equation}
-\mathcal{X} = \argmin \displaystyle\sum_i || \mathbf{x}_{i+1} - f(\mathbf{x}_i, \mathbf{b}_i) ||^2_{\Sigma_i}
-\end{equation}
-$$
-
-Since the system is not linear anymore we cannot solve it in close form. We need to use nonlinear optimization algorithms such as Gauss-Newton or Levenberg-Marquardt. They will try to approximate our *linear dream* by linearizing the residual with respect to some **linearization or operation point** given by a guess $$\mathcal{\bar{X}}^{k}$$ valid at iteration $k$:
-
-$$
-\begin{equation}
-f(\mathbf{x}_i, \mathbf{b}_i) \approx f(\mathbf{\bar{x}}^{k}, \mathbf{b}_i) + \mathbf{H}(\bar{x}^{k})\mathbf{x}_i = \mathbf{b}_k + \mathbf{H}^k \mathbf{x}_i
-\end{equation}
-$$
-
-Hence the problem becomes:
-
-$$
-\begin{equation}
-\delta\mathcal{X}^{k}= \argmin \displaystyle\sum_i || \mathbf{x}_{i+1} - \mathbf{H}^k\mathbf{x}_i - \mathbf{b}_i ||^2_{\Sigma_i^k}
-\end{equation}
-$$
-
-It is important to observe here that we are not obtaining the global solution $\mathcal{X}$, but just a small increment $\delta\mathcal{X}$ that will allows to move closer to some minima that depends on the initial values. This linear problem **can** be solved in closed form as we did before. In fact, the normal equations now become:
-
-$$
-\begin{equation}
-\label{nonlinear-normal-equations}
-(\mathbf{H}^k)^{T} (\Sigma^{k})^{-1}\ \mathbf{H}^k\ \delta\mathcal{X} = (\mathbf{H}^k)^{T} (\Sigma^{k})^{-1} \mathbf{b}
-\end{equation}
-$$
-
-The solution $\delta\mathcal{X}$ will be used to update our current solution at iteration $k$ using the update rule:
-
-$$
-\begin{equation}
-\mathcal{X}^{k+1} = \mathcal{X}^k + \delta\mathcal{X}^{k}
-\end{equation}
-$$
-
-where $$\mathcal{X}^{k+1}$$ corresponds to the best estimate so far, and can be used as a new linearization point for a next iteration.
-
-Similarly, the expression on the left-hand side $\Sigma^{k+1} = (\mathbf{A}^{T} (\Sigma^{k})^{-1} \mathbf{A})^{-1}$ also corresponds to the Fisher information or Hessian as before, **but with respect to the linearization point**. This is quite important because both the best solution so far $\mathcal{X}^{k+1}$ and its associated covariance $\Sigma^{k+1}$ will be valid only at this linearization point and will change with every iteration of the nonlinear optimization. But understanding this, we still can say that **at iteration $k+1$ our best solution will follow a distribution** $Gaussian(\mathcal{X}^{k+1}, \Sigma^{k+1})$.
+This second part will review the concept of _manifold_ and how the reference frames affect the formulation of our factor graph. The tools we cover here will be also useful to manipulate quantities and their covariances when operating them in algebraic settings.
 
 
 ## Getting non-Euclidean
-So far so good, but we need to admit we were not too honest before when we said that considering nonlinear functions of the variables was everything we needed to model real problems. The previous formulation assumed that the variables we aim to estimate are **vectors**, which is not the case for robotics and computer vision at least.
-
-In robotics, we do not estimate the state of a robot only by their position but also its orientation. Then we say that is its **pose**, i.e position and orientation together, what matters to define its state.
+In robotics we do not estimate the state of a robot only by their position *but also its orientation*. Then we say that is its **pose**, i.e position and orientation together, what matters to define its state.
 
 Representing pose is a tricky thing. We could say *"ok, but let's just append the orientation to the position vector and do everything as before"* but that does not work in practice. Problem arises when we want to compose two poses $\mathbf{T}_1 = (x_1, y_1, \theta_1)$ and $\mathbf{T}_2 = (x_2, y_2, \theta_2)$. Under the vector assumption, we can write the following expression as the composition of two poses:
 
@@ -203,7 +61,7 @@ $$
 \end{equation}
 $$
 
-This is basically saying that _it does not matter if we start in pose $\mathbf{T}_1$ or $\mathbf{T}_2$, we will end up at the same final pose_ by composing both, because in vector spaces we can commute the elements. **But this does not work in reality, because rotations and translations do not commute**. A simple example is that if we start at a certain position, walk 1 step forward and then turn right, we will end up in a different place that if we turn right first and then walk the step forward.
+This is basically saying that _it does not matter if we start in pose $\mathbf{T}_1$ or $\mathbf{T}_2$, we will end up at the same final pose_ by composing both, because in vector spaces we can commute the elements. **But this does not work in reality, because rotations and translations do not commute**. A simple example is that if you are currently sitting at your desk,  and you *stand up, rotate 180 degrees and walk a step forward*, is completely different to *stand up, walk a step forward and then rotate 180 degrees* (apart from the fact that you will hit your desk if you do the latter).
 
 So we need a different representation for poses that allow us to describe accurately what we observe in reality. Long story short, we rather prefer to represent poses as $3\times3$ matrices known as *rigid-body transformations*:
 
@@ -216,7 +74,7 @@ $$
 Here $\mathbf{R}_1 = \left[ \begin{matrix} \cos{\theta_1} && -\sin{\theta_1}\\ \sin{\theta_1} && \cos{\theta_1}\end{matrix} \right]$ is a 2D rotation matrix, while $\mathbf{t}_1 = \left[ \begin{matrix}x_1 \\ y_1 \end{matrix}\right]$ is a translation vector.
 While we are using a $3\times3$ matrix now to represent the pose, *its degrees of freedom* are still $3$, since it is a function of $(x_1, y_1, \theta_1)$.
 
-Working with transformation matrices is great, because we can now describe the behavior we previously explained with words now using matrix operations. If we start in pose $\mathbf{T}_1$ and we apply the transformation $\mathbf{T}_2$:
+Working with transformation matrices is great, because we can now describe the behavior we previously explained with words using matrix operations. If we start in pose $\mathbf{T}_1$ and we apply the transformation $\mathbf{T}_2$:
 
 $$
 \begin{equation}
@@ -234,7 +92,7 @@ Here we are saying that the next state $$\mathbf{T}_{i+1}$$ is gonna be the prev
 
 Now, **there are two things here that we must discuss** before moving on, which are fundamental to make everything consistent. We will review them carefully now.
 
-### The importance of coordinate frames
+### The importance of reference frames
 While some people (myself included) prefer to write the process as we did before, applying the increment on the **right-hand** side:
 
 $$
@@ -332,7 +190,7 @@ which we will refer onward as **left-hand convention**.
 <figure class="center">
   <img src="/assets/images/uncertainties/left-convention.png"
     alt="Hessian matrix" />
-    <figcaption>With left-hand convention the increments are applied from the left, changing our reference frame (in black) to the new robot pose $B_{i+1}$.</figcaption>
+    <figcaption>With left-hand convention the increments are applied from the left, changing our reference frame to the new robot pose $B_{i+1}$ (in black) .</figcaption>
 </figure>
 <br />
 
@@ -347,13 +205,19 @@ $$
 \end{equation}
 $$
 
-Here we made explicit all the frames involved in the transformations we usually can find in textbooks: An homogeneous point $${_{W}}\mathbf{P}$$ expressed in the world frame $W$, is transformed by the *extrinsic calibration matrix* $$\mathbf{T}_{CW}$$ (a rigid body transformation ) which represents the world $W$ in the camera frame $C$, producing a vector $${_{C}}\mathbf{P}$$ in the camera frame. This is projected onto the image by means of the intrinsic calibration matrix $${_{I}}\mathbf{K}_{IC}$$, producing the vector $$_I\mathbf{p}$$, expressed in the image frame $I$.
+Here we made explicit all the frames involved in the transformations we usually can find in textbooks: An homogeneous point $${_{W}}\mathbf{P}$$ expressed in the world frame $W$, is transformed by the *extrinsic calibration matrix* $$\mathbf{T}_{CW}$$ (a rigid body transformation ) which represents the world $W$ in the camera frame $C$, producing a vector $${_{C}}\mathbf{P}$$ in the camera frame (not shown). This is projected onto the image by means of the intrinsic calibration matrix $${_{I}}\mathbf{K}_{IC}$$, producing the vector $$_I\mathbf{p}$$, expressed in the image frame $I$.
 
-Since in GTSAM the extrinsic calibration is defined the other way, i.e $\mathbf{T}_{WC}$, the implementation of the `CalibratedCamera` handles it by [properly inverting the matrix before doing the projection](https://github.com/borglab/gtsam/blob/develop/gtsam/geometry/CalibratedCamera.cpp#L120) as we would expect.
+Since in GTSAM the extrinsic calibration is defined the other way to be conistent with the right-hand convention, i.e $\mathbf{T}_{WC}$, the implementation of the `CalibratedCamera` handles it by [properly inverting the matrix before doing the projection](https://github.com/borglab/gtsam/blob/develop/gtsam/geometry/CalibratedCamera.cpp#L120) as we would expect:
+
+$$
+\begin{equation}
+{_I}\mathbf{p} = {_{I}}\mathbf{K}_{IC}\ (\mathbf{T}_{WC})^{-1}\ {_{W}}\mathbf{P}
+\end{equation}
+$$
 
 ### They are not just matrices, they are _manifolds_
 
-The second important point we need to discuss, is that while rigid-body transformations are nice, the new expression we have to represent the process presents some challenges:
+The second important point we need to discuss, is that while rigid-body transformations are nice, the new expression we have to represent the process presents some challenges when trying to use it in our factor graph using our previous method:
 
 $$
 \begin{equation}
@@ -390,7 +254,7 @@ If we do the subindex cancelation trick we did before, properly swapping the ind
 However, the error is still a matrix, which is impossible to include as a factor in the framework we have built so far. We cannot compute a *vector residual* as we did before, nor we are completely sure that the matrix $$\mathbf{N}_i$$ follows some sort of Gaussian distribution.
 
 #### Manifolds
-Here is where the concept of **manifold** comes to solve our problems. Rigid-body transformations (`Pose3` and `Pose2` in GTSAM), rotation matrices (`Rot2` and `Rot3`), quaternions and even vector spaces (`Point2` and `Point3`) are **differentiable manifolds**. This means that in spite of they do not behave as Euclidean spaces at a global scale, they can be *locally approximated* as such by using local vector spaces called **tangent spaces**. The main advantage of analyzing all these objects from the manifold perspective is that we can build general algorithms based on common principles that apply to all of them.
+Here is where the concept of **manifold** comes to solve our problems. Rigid-body transformations (`Pose3` and `Pose2` in GTSAM), rotation matrices (`Rot2` and `Rot3`), quaternions and even vector spaces (`Point2` and `Point3`) are **differentiable manifolds**. This means that even though they do not behave as Euclidean spaces at a global scale, they can be *locally approximated* as such by using local vector spaces called **tangent spaces**. The main advantage of analyzing all these objects from the manifold perspective is that we can build general algorithms based on common principles that apply to all of them.
 
 
 <a name="manifold"></a>
@@ -412,7 +276,7 @@ In order to work with all the previous objects we mentioned -rotation matrices, 
 
 The first 4 are basic properties we need to define a [**group**](https://en.wikipedia.org/wiki/Group_(mathematics)). In fact, the *between* operation is simply a by-product of having the composition, inverse and identity well-defined. We can also notice that they are operations we already used before in this post when working with rigid-body matrices. The only difference is that now we defined them in a more general way.
 
-Some authors define special operators to refer to composition/between operations, such as *box-plus* $\boxplus$ for *composition* and *box-minus* $\boxminus$ for *between* as done by [Hertzberg et al.](https://arxiv.org/abs/1107.1119) for general manifolds, and [Bloesch et al.](https://arxiv.org/abs/1606.05285) and the [Kindr library](https://github.com/ANYbotics/kindr) for rotations. However, composition can be still defined from the *left* or the *right* side because **composition has associativity but is not distributive**. This is **exactly the problem we described before when talking about reference frames and how to add small increments with the _left_ and _right_ hand conventions, since both are valid depending on our decisions or other authors.** While we can be clear about our own decisions, it is important to be aware of the definitions of each author because sometimes are not clearly stated. [Solà et al](https://arxiv.org/abs/1812.01537) for example make the difference explicit by defining *left-*$\oplus$ and *right-*$\oplus$ for composition using *left-hand convention* or *right-hand convention* respectively, but we need to be careful to recognize each other's choices.
+Some authors define special operators to refer to composition/between operations, such as *box-plus* $\boxplus$ for *composition* and *box-minus* $\boxminus$ for *between* as done by [Hertzberg et al.](https://arxiv.org/abs/1107.1119) and [Blanco-Claraco](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.468.5407&rep=rep1&type=pdf) for general manifolds, and [Bloesch et al.](https://arxiv.org/abs/1606.05285) and the [Kindr library](https://github.com/ANYbotics/kindr) for rotations. However, composition can be still defined from the *left* or the *right* side because **composition is associative but is not distributive**. This is the same problem we described before when talking about reference frames and how to add small increments with the _left_ and _right_ hand conventions, since both are valid depending on our decisions or other authors. While we can be clear about our own decisions, it is important to be aware of the definitions of each author because sometimes are not clearly stated. [Solà et al](https://arxiv.org/abs/1812.01537) for example make the difference explicit by defining *left-*$\oplus$ and *right-*$\oplus$ for composition using *left-hand convention* or *right-hand convention* respectively, but we need to be careful to recognize each other's choices.
 
 **We recall again that in GTSAM and the rest of this post we use the _right_ convention** (*pun intended*), because we represent our quantities with respect to a fixed world frame $W$ and the increments are defined with respect to the base frame $B$.
 
@@ -469,7 +333,7 @@ $$
 \end{equation}
 $$
 
-In this case we added an increment from the base frame at time $i$, that represents the new pose at time $i+1$. Please note that the increments are defined with respect to a reference frame, but they do not require to specify the resulting frame. Their meaning (representing a new pose at time $i+1$) is something that we -as users- define but is not explicit in the formulation. (*While we could do it, it can lead to confusions because in this specific case we are representing the pose at the next instant but we can also use retractions to describe corrections to the base frame as we will see later.*)
+In this case we added an increment from the base frame at time $i$, that represents the new pose at time $i+1$. Please note that **the increments are defined with respect to a reference frame, but they do not require to specify the resulting frame**. Their meaning (representing a new pose at time $i+1$) is something that we -as users- define but is not explicit in the formulation. (*While we could do it, it can lead to confusions because in this specific case we are representing the pose at the next instant but we can also use retractions to describe corrections to the base frame as we will see later.*)
 
  The incremental formulation via retractions is particularly convenient when we have local (base frame) velocity measurements $$({_B}\omega_B, {_B}{v_B})$$, with $${_B}\omega_B \in \mathbb{R}^{3}, {_B}v_B \in \mathbb{R}^{3}$$  and we want to do [*dead reckoning*](https://en.wikipedia.org/wiki/Dead_reckoning):
 
@@ -592,7 +456,7 @@ $$
 
 Since the noise is defined in the tangent space, both sides denote vector expressions in $\mathbb{R}^{6}$. Both also correspond to zero-mean Gaussians, hence the right-hand side can be used as a proper factor in our estimation framework. In fact, the expression on the right side is _exactly_ the same used in GTSAM to define the [`BetweenFactor`](https://github.com/devbharat/gtsam/blob/master/gtsam/slam/BetweenFactor.h#L90).
 
-We must also keep in mind here that by using the **local** operation, **the residual vector will follow the same ordering**. As we mentioned before, for `Pose3` objects, it will encode orientation error in the first 3 components, while translation error in the last ones. In this way, if we write the expanded expression for the Gaussian factor, we can notice that all the components are weighted accordingly (orientation first, and then translation):
+We must also keep in mind here that by using the **local** operation, **the residual vector will follow the same ordering**. As we mentioned before for `Pose3` objects, it will encode orientation error in the first 3 components, while translation error in the last ones. In this way, if we write the expanded expression for the Gaussian factor, we can notice that all the components are weighted accordingly (orientation first, and then translation):
 
 $$
 \begin{align}
@@ -604,7 +468,7 @@ $$
 
 The factor is now a nonlinear vector expression that can be solved using the nonlinear optimization techniques we presented before. In fact, GTSAM already implements Jacobians for the **local** operator of all the objects implemented, which simplifies the process. However, there are subtle differences that we must clarify.
 
-First, since the factor defines a residual in the tangent space at the current linearization point, the optimization itself is executed **in the tangent space defined in the current linearization point_**. This means that when we linearize the factors and build the normal equations, the increment ${_{B_i}}\delta\mathbf{T}^{k}$ we compute lies in the tangent space.
+First, since the factor defines a residual in the tangent space at the current linearization point, the optimization itself is executed **in the tangent space defined in the current linearization point**. This means that when we linearize the factors and build the normal equations, the increment ${_{B_i}}\delta\mathbf{T}^{k}$ we compute lies in the tangent space.
 
 For this reason, we need to update the variables _on the manifold_ using the retraction:
 
@@ -636,6 +500,7 @@ where $${_{B_i}}\eta_{B_i}^{k+1} \sim Gaussian(\mathbf{0}_{6\times1}, \Sigma^{k+
 In this last section, we would like to discuss some consequences of the definitions, and how they can be used to obtain other useful expressions for covariance transformations. We will focus on $\text{SE(3)}$, but similar definitions should apply for other manifolds since they mainly rely on a definition of the adjoint.
 
 Most of this expressions have been already shown in the literature by [Barfoot and Furgale (2014)](http://ncfrn.cim.mcgill.ca/members/pubs/barfoot_tro14.pdf) and [Mangelson et al. (2020)](https://arxiv.org/abs/1906.07795) but since they follow the left-hand convention they are not straightforward to use with GTSAM. We provide the resulting expressions for the covariance transformations following Mangelson et al. but we recommend to refer to their work to understand the details of the process.
+
 ### Distribution of the inverse
 Understanding how the covariances get transformed when we invert a rigid-body matrix is useful to express the covariances in a different frame. In particular, if we want to analyze how they evolve using a fixed frame for instance. Let us consider we have the distribution:
 
@@ -751,7 +616,7 @@ $$
 
 ## Conclusions 
 
-In this post we took a long trip to explain how the covariances are introduced and extracted from the estimation framework. We reviewed how a clear understanding of the conventions (explicit or not) embeded in our factor graph problems is fundamental to make sense of the quantities involved. We introduced the concept of _right-hand_ and _left-hand_ conventions which, while not standard, allowed us to identify different formulations that can be found in the literature. By explicitly stating that GTSAM uses a right-hand convention we could specify the frames used to define the variables, as well the covariance we obtain from the solution via  `Marginals`.
+In these posts we took a long trip to explain how the covariances are introduced and extracted from the estimation framework. We reviewed how a clear understanding of the conventions (explicit or not) embeded in our factor graph problems is fundamental to make sense of the quantities involved. We introduced the concept of _right-hand_ and _left-hand_ conventions which, while not standard, allowed us to identify different formulations that can be found in the literature. By explicitly stating that GTSAM uses a right-hand convention we could specify the frames used to define the variables, as well the covariance we obtain from the solution via  `Marginals`.
 
 We also showed how the right-hand convention is related to how the composition is defined when working with manifolds, such as rigid-body transformations and rotation matrices. The  **local** and **retract** operations are also defined from the right-hand side, indicating that the increments and the covariances we compute are defined with respect to the base frame.
 
