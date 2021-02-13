@@ -92,7 +92,7 @@ Here we are saying that the next state $$\mathbf{T}_{i+1}$$ is gonna be the prev
 
 Now, **there are two things here that we must discuss** before moving on, which are fundamental to make everything consistent. We will review them carefully now.
 
-### The importance of reference frames
+## The importance of reference frames
 While some people (myself included) prefer to write the process as we did before, applying the increment on the **right-hand** side:
 
 $$
@@ -201,21 +201,21 @@ It is important to have this in mind because all the operations that are impleme
 
 $$
 \begin{equation}
-{_I}\mathbf{p} = {_{I}}\mathbf{K}_{IC}\ \mathbf{T}_{CW}\ {_{W}}\mathbf{P}
+{_I}\mathbf{p} = \mathbf{K}_{IC}\ \mathbf{T}_{CW}\ {_{W}}\mathbf{P}
 \end{equation}
 $$
 
-Here we made explicit all the frames involved in the transformations we usually can find in textbooks: An homogeneous point $${_{W}}\mathbf{P}$$ expressed in the world frame $W$, is transformed by the *extrinsic calibration matrix* $$\mathbf{T}_{CW}$$ (a rigid body transformation ) which represents the world $W$ in the camera frame $C$, producing a vector $${_{C}}\mathbf{P}$$ in the camera frame (not shown). This is projected onto the image by means of the intrinsic calibration matrix $${_{I}}\mathbf{K}_{IC}$$, producing the vector $$_I\mathbf{p}$$, expressed in the image frame $I$.
+Here we made explicit all the frames involved in the transformations we usually can find in textbooks: An homogeneous point $${_{W}}\mathbf{P}$$ expressed in the world frame $W$, is transformed by the *extrinsic calibration matrix* $$\mathbf{T}_{CW}$$ (a rigid body transformation ) which represents the world $W$ in the camera frame $C$, producing a vector $${_{C}}\mathbf{P}$$ in the camera frame (not shown). This is projected onto the image by means of the intrinsic calibration matrix $$\mathbf{K}_{IC}$$, producing the vector $$_I\mathbf{p}$$, expressed in the image frame $I$.
 
 Since in GTSAM the extrinsic calibration is defined the other way to be conistent with the right-hand convention, i.e $\mathbf{T}_{WC}$, the implementation of the `CalibratedCamera` handles it by [properly inverting the matrix before doing the projection](https://github.com/borglab/gtsam/blob/develop/gtsam/geometry/CalibratedCamera.cpp#L120) as we would expect:
 
 $$
 \begin{equation}
-{_I}\mathbf{p} = {_{I}}\mathbf{K}_{IC}\ (\mathbf{T}_{WC})^{-1}\ {_{W}}\mathbf{P}
+{_I}\mathbf{p} = \mathbf{K}_{IC}\ (\mathbf{T}_{WC})^{-1}\ {_{W}}\mathbf{P}
 \end{equation}
 $$
 
-### They are not just matrices, they are _manifolds_
+## They are not *simply matrices*
 
 The second important point we need to discuss, is that while rigid-body transformations are nice, the new expression we have to represent the process presents some challenges when trying to use it in our factor graph using our previous method:
 
@@ -253,9 +253,25 @@ If we do the subindex cancelation trick we did before, properly swapping the ind
 
 However, the error is still a matrix, which is impossible to include as a factor in the framework we have built so far. We cannot compute a *vector residual* as we did before, nor we are completely sure that the matrix $$\mathbf{N}_i$$ follows some sort of Gaussian distribution.
 
-#### Manifolds
-Here is where the concept of **manifold** comes to solve our problems. Rigid-body transformations (`Pose3` and `Pose2` in GTSAM), rotation matrices (`Rot2` and `Rot3`), quaternions and even vector spaces (`Point2` and `Point3`) are **differentiable manifolds**. This means that even though they do not behave as Euclidean spaces at a global scale, they can be *locally approximated* as such by using local vector spaces called **tangent spaces**. The main advantage of analyzing all these objects from the manifold perspective is that we can build general algorithms based on common principles that apply to all of them.
+We need to define some important concepts used in GTSAM to get a better understanding on how the objects are manipulated. 
 
+### Some objects are _groups_
+First of all, some objects used in GTSAM are [**groups**](https://en.wikipedia.org/wiki/Group_(mathematics)). Rigid-body transformations `Pose3` and `Pose2` in GTSAM), rotation matrices (`Rot2` and `Rot3`) and quaternions, and of course vector spaces (`Point2` and `Point3`) have some basic operations that allow us to manipulate them. These concepts [have been discussed in previous posts](https://gtsam.org/notes/GTSAM-Concepts.html) at the implementation level:
+
+1. **Composition**: How to compose 2 objects from the same manifold, with associativity properties. It is similar to the *addition* operation for vectors.
+2. **Identity**: An identity operator under the composition/between.
+3. **Inverse**: An element that when composed with its inverse becomes the identity.
+
+The previous 3 operations allows us to define the operation **between**, which computes the difference between 2 objects from the same group, similarly to a *subtraction* operation.
+
+Since the operations can be defined in different ways for each kind of object (it is different to compose rotation matrices than quaternions or vectors for instance), some authors define special operators to refer to composition/between operations. Some examples are the *box-plus* $\boxplus$ for *composition* and *box-minus* $\boxminus$ for *between* as done by [Hertzberg et al.](https://arxiv.org/abs/1107.1119), [Blanco-Claraco](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.468.5407&rep=rep1&type=pdf), [Bloesch et al.](https://arxiv.org/abs/1606.05285), and the [Kindr library](https://github.com/ANYbotics/kindr). 
+
+However, composition can be defined from the *left* or the *right* side because **composition is associative but is not distributive**. This is the same problem we described before when talking about reference frames and how to add small increments with the _left_ and _right_ hand conventions, since both are valid depending on our decisions or other authors'. While we can be clear about our own decisions, it is important to be aware of the definitions of each author because sometimes are not clearly stated. [Solà et al](https://arxiv.org/abs/1812.01537) for example make the difference explicit by defining *left-*$\oplus$ and *right-*$\oplus$ for composition using *left-hand convention* or *right-hand convention* respectively, but we need to be careful to recognize each other's choices.
+
+**We recall again that in GTSAM and the rest of this post we use the _right_ convention** (*pun intended*), because we represent our quantities with respect to a fixed world frame $W$ and the increments are defined with respect to the base frame $B$.
+
+### Some are _manifolds_
+Additionally, rigid-body transformations, rotation matrices, quaternions and even vectors are **differentiable manifolds**. This means that even though they do not behave as Euclidean spaces at a global scale, they can be *locally approximated* as such by using local vector spaces called **tangent spaces**. The main advantage of analyzing all these objects from the manifold perspective is that we can build general algorithms based on common principles that apply to all of them.
 
 <a name="manifold"></a>
 <figure class="center">
@@ -265,23 +281,14 @@ Here is where the concept of **manifold** comes to solve our problems. Rigid-bod
 </figure>
 <br />
 
-In order to work with all the previous objects we mentioned -rotation matrices, rigid-body transformations, quaternions-, we need to define some basic operations that resemble the vector case that allows us to generalize the framework. These concepts [have been discussed in previous posts](https://gtsam.org/notes/GTSAM-Concepts.html) at the implementation level:
+As we briefly mentioned before, objects such as rotation matrices and rigid-body transformations are difficult to manipulate in the estimation framework because they are matrices. A 3D rotation matrix $\mathbf{R}$ represents 3 orientations with respect to a reference frame but, in raw terms, they are using 9 values to do so, which seems to *overparametrize* the object. However, the constraints that define a rotation matrix -and consequently the manifold- such as orthonormality $$\mathbf{R}^{T}\mathbf{R} = \mathbf{I}$$ and $$\text{det}(\mathbf{R}) = 1$$ make the inherent dimensionality of the rotation still 3. Interestingly, this is exactly the dimensionality of the tangent spaces that can be defined over the manifold. 
 
-1. **Composition**: How to compose 2 objects from the same manifold, with associativity properties. It is similar to the *addition* operation for vectors.
-2. **Between**: Computes the difference between 2 objects from the same manifold. Similar to a *subtraction* operation.
-3. **Identity**: An identity operator under the composition/between.
-4. **Inverse**: An element that when composed with its inverse becomes the identity.
-5. **Local**: An operation that maps elements from the manifold to the tangent space.
-6. **Retract or retraction**: The opposite operation: mapping from the tangent space back to the manifold.
+**That is what makes working with manifolds so convenient**: All the constraints that are part of the definition of the object are naturally handled, and we can work in local (tangent) vector spaces using their *inherent* dimension. The same happens for rigid-body transformations (6 dimensions represented by a 16 elements matrix), quaternions (3 orientations represented by a 4D vector), **and even objects that are not groups, such as calibration matrices** (`Cal3`, 5 elements embeded in a $3\times3$ matrix).
 
-The first 4 are basic properties we need to define a [**group**](https://en.wikipedia.org/wiki/Group_(mathematics)). In fact, the *between* operation is simply a by-product of having the composition, inverse and identity well-defined. We can also notice that they are operations we already used before in this post when working with rigid-body matrices. The only difference is that now we defined them in a more general way.
+In order to work with manifolds, we need to define 2 operations, which are the key to transform objects between them and the tangent spaces:
 
-Some authors define special operators to refer to composition/between operations, such as *box-plus* $\boxplus$ for *composition* and *box-minus* $\boxminus$ for *between* as done by [Hertzberg et al.](https://arxiv.org/abs/1107.1119) and [Blanco-Claraco](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.468.5407&rep=rep1&type=pdf) for general manifolds, and [Bloesch et al.](https://arxiv.org/abs/1606.05285) and the [Kindr library](https://github.com/ANYbotics/kindr) for rotations. However, composition can be still defined from the *left* or the *right* side because **composition is associative but is not distributive**. This is the same problem we described before when talking about reference frames and how to add small increments with the _left_ and _right_ hand conventions, since both are valid depending on our decisions or other authors. While we can be clear about our own decisions, it is important to be aware of the definitions of each author because sometimes are not clearly stated. [Solà et al](https://arxiv.org/abs/1812.01537) for example make the difference explicit by defining *left-*$\oplus$ and *right-*$\oplus$ for composition using *left-hand convention* or *right-hand convention* respectively, but we need to be careful to recognize each other's choices.
-
-**We recall again that in GTSAM and the rest of this post we use the _right_ convention** (*pun intended*), because we represent our quantities with respect to a fixed world frame $W$ and the increments are defined with respect to the base frame $B$.
-
-#### Local and retract
-Regarding the last 2 properties, **local** and **retract** operations are the key to work with manifolds. As we briefly mentioned before, objects such as rotation matrices and rigid-body transformations are difficult to manipulate in the estimation framework because they are matrices. A 3D rotation matrix $\mathbf{R}$ represents 3 orientations with respect to a reference frame but, in raw terms, they are using 9 values to do so, which seems to *overparametrize* the object. However, the constraints that define a rotation matrix -and consequently the manifold- such as orthonormality $$\mathbf{R}^{T}\mathbf{R} = \mathbf{I}$$ and $$\text{det}(\mathbf{R}) = 1$$ make the inherent dimensionality of the rotation still 3. Interestingly, this is exactly the dimensionality of the tangent spaces that can be defined over the manifold.
+1. **Local**: An operation that maps elements from the manifold to the tangent space.
+2. **Retract or retraction**: The opposite operation: mapping from the tangent space back to the manifold.
 
 
 <a name="manifold_local"></a>
@@ -300,11 +307,31 @@ Regarding the last 2 properties, **local** and **retract** operations are the ke
 </figure>
 <br />
 
-**That is what makes working with manifolds so convenient**: All the constraints that are part of the definition of the object are naturally handled, and we can work in local (tangent) vector spaces using their *inherent* dimension. The same happens for rigid-body transformations (6 dimensions represented by a 16 elements matrix) or quaternions (3 orientations represented by a 4D vector).
+Retractions are the base to [solve optimization problems](https://press.princeton.edu/absil) and to define uncertainties on manifolds. While the former will be covered later in this post with an example, it is useful to explain the latter now. The general idea is that we can define distributions on the tangent space, and map them back on the manifold using the retraction. For instance, we can define a zero-mean Gaussian variable $$\eta \sim Gaussian(\mathbf{0}_{n\times1}, \Sigma)$$ in the tangent space centered at $\mathbf{T}$ and use the retraction:
 
-The mapping **from the manifold to the tangent space** is given by the **local** operator. Conversely, we can go **from the tangent space to the manifold** by using the **retract** (or retraction) one.
+$$
+\begin{equation}
+\mathbf{T}\ \text{retract}( \mathbf{\eta})
+\end{equation}
+$$
 
-People familiar with Lie groups will ask what are the differences with them: Lie groups are defined as groups that are also differentiable manifolds. Indeed, rigid-body transformations are objects of the *Special Euclidean group* $\text{SE(3)}$ and we use those definitions to define the operations:
+which graphically corresponds to:
+
+<a name="manifold_gaussian"></a>
+<figure class="center">
+  <img src="/assets/images/uncertainties/manifold-gaussian.png"
+    alt="Gaussian on a manifold" />
+    <figcaption>Using the retraction, we can define Gaussians on the tangent space and map them back on the manifold to construct Gaussians on the manifold.</figcaption>
+</figure>
+<br />
+
+Please note that we have defined the retraction **from the right**, since this matches the one used by GTSAM, which coincidently also matches the composition operator for groups. However, in the literature we can find different definitions: [Barfoot and Furgale (2014, left-hand convention)](http://ncfrn.cim.mcgill.ca/members/pubs/barfoot_tro14.pdf), [Forster et al (2017, right-hand convention)](https://arxiv.org/abs/1512.02363), and [Mangelson et al. (2020, left-hand convention)](https://arxiv.org/abs/1906.07795) are some examples. Other definitions to define probability distributions on manifolds include [Calinon (2020)](https://arxiv.org/abs/1909.05946) and [Lee et al. (2008)](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.175.5054&rep=rep1&type=pdf), please refer to their work for further details.
+
+
+### And others are both: Lie groups
+In GTSAM we have manifolds that are not groups, which are objects that we want to optimize but do not necessarily operate in the ways we described for groups (calibration matrices, bearing ranges). However, *all the objects that are groups are also defined as manifolds*. In such cases, we say that they are [**Lie groups**](https://en.wikipedia.org/wiki/Lie_group).
+
+Objects such as rigid-body matrices and quaternions are Lie groups. In fact, rigid-body transformations can be seen as elements of the *Special Euclidean group* $\text{SE(3)}$ and we can use those definitions to define the operations we described before for groups and manifolds:
 
 1. **Composition**: Matrix multiplication $$\mathbf{T}_{WB_{i+1}} = \mathbf{T}_{WB_i} \ \Delta\mathbf{T}_{B_{i} B_{i+1} }$$.
 2. **Between**: $$\Delta\mathbf{T}_{B_{i} B_{i+1}} = (\mathbf{T}_{WB_i})^{-1} \  \mathbf{T}_{WB_{i+1}}$$.
@@ -313,11 +340,12 @@ People familiar with Lie groups will ask what are the differences with them: Lie
 5. **Local**: We use the _logarithm map_ of $$\text{SE(3)}$$: $$_W\mathbf{\xi}_{W} = \text{Log}(\mathbf{T}_{WB_i} )$$.
 6. **Retract**: Analogously, we use the _exponential map_ of $$\text{SE(3)}$$: $$\mathbf{T}_{WB_i} = \text{Exp}(_W\mathbf{\xi}_{W})$$.
 
-(Please note here that we used *capitalized* $$\text{Log}(\cdot) := \text{log}( \cdot)^{\vee}$$ and $$\text{Exp}(\cdot):=\text{exp}( (\cdot)^{\wedge})$$ operators for simplicity as used by   [Forster et al (2017),](https://arxiv.org/abs/1512.02363) and [Solà et al. (2020)](https://arxiv.org/abs/1812.01537).)
+Please note here that we used *capitalized* $$\text{Log}(\cdot) := \text{log}( \cdot)^{\vee}$$ and $$\text{Exp}(\cdot):=\text{exp}( (\cdot)^{\wedge})$$ operators for simplicity as used by [Forster et al (2017),](https://arxiv.org/abs/1512.02363) and [Solà et al. (2020)](https://arxiv.org/abs/1812.01537).
 
-The main difference with Lie groups is that by using the general concept of [_retraction_](https://press.princeton.edu/absil) we can use **alternative definitions to go from the tangent space to the manifold, that can be more efficient than the exponential map when solving optimization problems.**
+In GTSAM, 3D poses are defined as `Pose3` objects and in general we can think of them as $\text{SE(3)}$ elements. However, we could use other Lie groups to represent a 3D pose, such as $\mathbb{R}^{3} \times \text{SO(3)}$. They can have different definitions for the *retraction* and *local* operations, which can be more efficient to compute in optimization problems, and this is what GTSAM does internally in the `Pose3` definition (more information [here](https://gtsam.org/notes/GTSAM-Concepts.html)). For simplicity, however, we will stay using the logarithm map and exponential map to talk about $\text{SE(3)}$.
 
-It is also important to notice that **the reference frames are preserved when applying the local and retract operations**. For instance, when using the *local* operation we defined using the logarithm map of  $$\text{SE(3)}$$, we obtain a vector $$_W\mathbf{\xi}_{W} \in \mathbb{R}^{6}$$ (sometimes also called *tangent vector* or *twist*), which is defined in the tangent space *centered at the world frame* in this case:
+#### Reference frames on manifolds
+Lie groups combine all the ideas we have presented so far. In particular, reference frames are also relevant here and provide meaningul insights to understand the objects we are manipulating, and **they are preserved when applying the local and retract operations**. For instance, when using the *local* operation we defined using the logarithm map of $$\text{SE(3)}$$, we obtain a vector $$_W\mathbf{\xi}_{W} \in \mathbb{R}^{6}$$ (sometimes also called *tangent vector* or *twist*), which is defined in the tangent space *centered at the world frame* in this case:
 
 $$
 \begin{equation}
@@ -351,8 +379,9 @@ represents the tangent vector resulting from time-integrating the velocity, whic
 
 **We need to be careful about the convention of the retraction/local operation** (yes, more conventions again). Having clarity about the definition that every software defines for these operations (even implicitly) is fundamental to make sense of the quantities we put into our estimation problems and the estimates we extract. For instance, the definition of the $\text{SE(3)}$ retraction we presented, which matches `Pose3` in GTSAM, uses an _orientation-then-translation_ convention, i.e, the 6D tangent vector has orientation in the first 3 coordinates, and translation in the last 3. On the other hand, `Pose2` uses _translation-then-orientation_ $(x, y, \theta)$ for [historical reasons](https://github.com/borglab/gtsam/issues/160#issuecomment-562161665).
 
+
 #### Adjoints
-Lastly, we need to discuss an operator that will be useful to operate covariances correctly (spoiler) when we return to our original estimation problem. To introduce it, let us consider the example before in which we added an incremental change in the base frame:
+Lastly, we need to discuss an operator that exists for Lie groups that will be useful to operate covariances correctly (spoiler) when we return to our original estimation problem. To introduce it, let us consider the example before in which we added an incremental change in the base frame:
 
 $$
 \begin{equation}
@@ -386,7 +415,7 @@ $$
 
 where $$\text{Ad}_{T_{WB_i}^{-1}}$$ is known as the _adjoint matrix_ or **_adjoint_ of $$T_{WB_i}^{-1}$$**. The adjoint acts over elements of the tangent space directly, changing their reference frame. Please note that the same subindex cancelation applies here, so we can confirm that the transformations are correctly defined.
 
-We can also interpret this as a way to _move_ increments applied on the left-hand side to the right-hand side, which is particularly useful to keep the right-hand convention used in GTSAM consistent.
+We can also interpret this as a way to _move_ increments applied on the left-hand side to the right-hand side, which is particularly useful to keep the right-hand convention for the retractions consistent.
 
 ## Bringing everything together
 Now we can return to our original estimation problem using rigid-body transformations. Let us recall that we defined the following process model given by odometry measurements:
@@ -401,7 +430,10 @@ We reported two problems before:
 1. We needed to define the noise $\mathbf{N}_i$ as a Gaussian noise, but it was a $6\times6$ matrix.
 2. When isolating the noise to create the residual, we ended up with a matrix expression, not vector one as we needed in our estimation framework.
 
-The first problem can be solved by using the tools we just defined by defining _a zero-mean Gaussian in the tangent space of $\text{SE(3)}$ and retracting it onto the manifold_:
+We can identify now that our poses are objects of $\text{SE(3)}$, hence we can use the tools we just defined.
+
+### Defining the noise
+The first problem of defining the noise appropriately is solved by using probability distributions on manifolds as we described before. We define  _a zero-mean Gaussian in the tangent space of $\text{SE(3)}$ and retract it onto the manifold_:
 
 $$
 \begin{equation}
@@ -420,24 +452,7 @@ $$
 where we have used $\phi$ to denote orientation components while $\rho$ for the translational ones. 
 
 
-As a side note, we can use the same procedure to define **Gaussian distributions for any transformation** $$\mathbf{T}_{WB}$$:
-
-$$
-\begin{equation}
-\mathbf{\tilde{T}}_{WB} = \mathbf{T}_{WB} \text{Exp}( _{B}\mathbf{\eta}_{B})
-\end{equation}
-$$
-
-This definition has been widely used in the past in estimation problems and matches the one used by GTSAM. In the literature, however, definitions differ in how the Gaussian is retracted (left-hand or right-hand), similarly to the differences observed with the composition operation. [Barfoot and Furgale (2014, left-hand convention)](http://ncfrn.cim.mcgill.ca/members/pubs/barfoot_tro14.pdf), [Forster et al (2017, right-hand convention)](https://arxiv.org/abs/1512.02363), and [Mangelson et al. (2020, left-hand convention)](https://arxiv.org/abs/1906.07795) are some examples. Other definitions to define probability distributions on manifolds include [Calinon (2020)](https://arxiv.org/abs/1909.05946) and [Lee et al. (2008)](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.175.5054&rep=rep1&type=pdf), please refer to their work for further details.
-
-<a name="manifold_gaussian"></a>
-<figure class="center">
-  <img src="/assets/images/uncertainties/manifold-gaussian.png"
-    alt="Gaussian on a manifold" />
-    <figcaption>Using the retraction, we can define Gaussians on the tangent space and map them back on the manifold to construct Gaussians on the manifold.</figcaption>
-</figure>
-<br />
-
+### Defining the residual
 Having solved the first problem, we can now focus on the residual definition. We can isolate the noise as we did before, which holds:
 
 $$
@@ -446,7 +461,7 @@ $$
 \end{equation}
 $$
 
-However, we can now apply the **local** operator of the manifold on both sides, which corresponds to the _logarithm map_ for $\text{SE(3)}$ elements:
+However, we can now apply the **local** operator of the manifold on both sides to **map the residual to the tangent space** (recall we are using the _logarithm map_ for $\text{SE(3)}$ elements for simplicity):
 
 $$
 \begin{equation}
@@ -496,136 +511,7 @@ $$
 
 where $${_{B_i}}\eta_{B_i}^{k+1} \sim Gaussian(\mathbf{0}_{6\times1}, \Sigma^{k+1})$$. As a consequence of the convention on the retraction, **the resulting covariance is expressed in the base frame as well, and uses orientation-then-translation for the ordering of the covariance matrix**.
 
-## Playing with covariances
-In this last section, we would like to discuss some consequences of the definitions, and how they can be used to obtain other useful expressions for covariance transformations. We will focus on $\text{SE(3)}$, but similar definitions should apply for other manifolds since they mainly rely on a definition of the adjoint.
-
-Most of this expressions have been already shown in the literature by [Barfoot and Furgale (2014)](http://ncfrn.cim.mcgill.ca/members/pubs/barfoot_tro14.pdf) and [Mangelson et al. (2020)](https://arxiv.org/abs/1906.07795) but since they follow the left-hand convention they are not straightforward to use with GTSAM. We provide the resulting expressions for the covariance transformations following Mangelson et al. but we recommend to refer to their work to understand the details of the process.
-
-### Distribution of the inverse
-Understanding how the covariances get transformed when we invert a rigid-body matrix is useful to express the covariances in a different frame. In particular, if we want to analyze how they evolve using a fixed frame for instance. Let us consider we have the distribution:
-
-$$
-\begin{equation}
-\mathbf{\tilde{T}}_{WB} = \mathbf{T}_{WB} \text{Exp}( _{B}\mathbf{\eta}_{B})
-\end{equation}
-$$
-
-with $$_{B}\mathbf{\eta}_{B}$$ zero-mean Gaussian noise with covariance $\Sigma_{B}$ as before. The distribution of the inverse can be computed by inverting the expression:
-
-$$
-\begin{align}
-(\mathbf{\tilde{T}}_{WB})^{-1} & = (\mathbf{T}_{WB} \text{Exp}( _{B}\mathbf{\eta}_{B}) )^{-1}\\
-& = (\text{Exp}( _{B}\mathbf{\eta}_{B}) )^{-1}\ \mathbf{T}_{WB}^{-1}\\
-& = \text{Exp}(- _{B}\mathbf{\eta}_{B}) \ \mathbf{T}_{WB}^{-1}
-\end{align}
-$$
-
-However, the _noise_ is defined on the left, which is inconvenient to be consistent with right-hand convention. We can move it to the right using the adjoint:
-
-$$
-\begin{equation}
-(\mathbf{\tilde{T}}_{WB})^{-1} = \ \mathbf{T}_{WB}^{-1}\ \text{Exp}(- \text{Ad}_{\mathbf{T}_{WB}} {_{B}}\mathbf{\eta}_{B})
-\end{equation}
-$$
-
-This is a proper distribution following the right-hand convention. The covariance of the inverse is given by:
-
-$$
-\begin{equation}
-\Sigma_{W} = \text{Ad}_{\mathbf{T}_{WB}} \Sigma_B \text{Ad}_{\mathbf{T}_{WB}}^{T}
-\end{equation}
-$$
-
-### Distribution of the composition
-A similar procedure can be followed to compute the covariance of the composition of poses. This is useful when doing dead reckoning for instance:
-
-$$
-\begin{align}
-\mathbf{\tilde{T}}_{WB_i} &= \mathbf{\tilde{T}}_{WB_i} \mathbf{\tilde{T}}_{B_i B_{i+1}}\\
-&= \mathbf{T}_{WB_i} \text{Exp}( _{B_i}\mathbf{\eta}_{B_i})\ \mathbf{T}_{B_i B_{i+1}} \text{Exp}( _{B_{i+1}}\mathbf{\eta}_{B_{i+1}})
-\end{align}
-$$
-
-Analogously, we need to _move_ the noise $$_{B_i}\mathbf{\eta}_{B_i}$$ to the right, so as to have _the transformations to the left, and the noises to the right_. We can use the adjoint again:
-
-$$
-\begin{equation}
-\mathbf{\tilde{T}}_{WB_i} = \mathbf{T}_{WB_i} \ \mathbf{T}_{B_i B_{i+1}} \text{Exp}(\text{Ad}_{\mathbf{T}_{B_i B_{i+1}}^{-1}} {_{B_i}}\mathbf{\eta}_{B_i})\  \text{Exp}( _{B_{i+1}}\mathbf{\eta}_{B_{i+1}})
-\end{equation}
-$$
-
-However, we cannot combine the exponentials because that would assume commutativity that does not hold for $\text{SE(3)}$ as we discussed previously. However, it is possible to use some approximations (also discussed in Mangelson's) to end up with the following expressions for the covariance of the composition:
-
-$$
-\begin{equation}
-\Sigma_{B_{i+1}} = \text{Ad}_{\mathbf{T}_{B_i B_{i+1}}^{-1}} \Sigma_{B_{i}} \text{Ad}_{\mathbf{T}_{B_i B_{i+1}}^{-1}}^{T} + \Sigma_{B_{i+1}}
-\end{equation}
-$$
-
-Additionally, if we consider that the poses are correlated and then the covariance of the joint distribution is given by:
-
-$$
-\begin{equation}
-\begin{bmatrix} \Sigma_{B_{i}} & \Sigma_{B_{i}, B_{i+1}} \\ \Sigma_{B_{i}, B_{i+1}}^{T} & \Sigma_{B_{i+1}} \end{bmatrix}
-\end{equation}
-$$
-
-Then, the covariance of the composition is:
-
-$$
-\begin{equation}
-\Sigma_{B_{i+1}} = \text{Ad}_{\mathbf{T}_{B_i B_{i+1}}^{-1}} \Sigma_{B_{i}} \text{Ad}_{\mathbf{T}_{B_i B_{i+1}}^{-1}}^{T} + \Sigma_{B_{i+1}} +  \text{Ad}_{\mathbf{T}_{B_i B_{i+1}}^{-1}} \Sigma_{B_{i}, B_{i+1}} +  \Sigma_{B_{i}, B_{i+1}}^{T} \text{Ad}_{\mathbf{T}_{B_i B_{i+1}}^{-1}}^{T}
-\end{equation}
-$$
-
-### Distribution of the relative transformation
-Computing the distribution of relative poses is relevant when we have an odometry system that provides estimates with covariance, and we want to use relative measurements for a pose graph SLAM system for instance. It follows the same procedure:
-
-$$
-\begin{align}
-\mathbf{\tilde{T}}_{B_i B_{i+1}} &= \mathbf{\tilde{T}}_{W B_{i}}^{-1} \mathbf{\tilde{T}}_{WB_{i+1}}\\
- &= \left( \mathbf{T}_{WB_i} \text{Exp}( _{B_i}\mathbf{\eta}_{B_i}) \right)^{-1} \ \mathbf{T}_{WB_{i+1}} \text{Exp}( _{B_{i+1}}\mathbf{\eta}_{B_{i+1}})\\
- &= \text{Exp}(- _{B_i}\mathbf{\eta}_{B_i}) \ \mathbf{T}_{WB_i}^{-1} \ \mathbf{T}_{WB_{i+1}} \text{Exp}( _{B_{i+1}}\mathbf{\eta}_{B_{i+1}})
-\end{align}
-$$
-
-Similarly, we use the adjoint to move the exponential twice:
-
-$$
-\begin{align}
-\mathbf{\tilde{T}}_{B_i B_{i+1}} &=  \mathbf{T}_{WB_i}^{-1}  \text{Exp}(- \text{Ad}_{\mathbf{T}_{WB_i}} {_{B_i}}\mathbf{\eta}_{B_i}) \ \mathbf{T}_{WB_{i+1}} \text{Exp}( _{B_{i+1}}\mathbf{\eta}_{B_{i+1}})\\
- &=  \mathbf{T}_{WB_i}^{-1} \ \mathbf{T}_{WB_{i+1}} \ \text{Exp}(- \text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \ \text{Ad}_{\mathbf{T}_{WB_i}} {_{B_i}}\mathbf{\eta}_{B_i}) \ \text{Exp}( _{B_{i+1}}\mathbf{\eta}_{B_{i+1}})
-\end{align}
-$$
-
-Hence, the following covariance holds for the relative pose assuming independent poses:
-
-$$
-\begin{equation}
-\Sigma_{B_{i+1}} = \text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}} \Sigma_{B_{i}} \text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}}^{T} + \Sigma_{B_{i+1}}
-\end{equation}
-$$
-
-A problem that exist with this expression, however, is that by assuming independence the covariance of the relative poses _will be larger than the covariance of each pose separately_. This is consistent to a 1-dimensional case in which we compute the distribution of the difference of independent Gaussians, in which the mean is the difference while the covariance gets increased. Mangelson et al. showed that if some correlations exists and it is explicitly considered in the computation, the estimates get more accurate and the covariance is not over or underestimated. The corresponding expression is then:
-
-$$
-\begin{equation}
-\Sigma_{B_{i+1}} = \left(\text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}} \right) \Sigma_{B_{i}} \left(\text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}}^{T} \right) + \Sigma_{B_{i+1}} - \text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}} \Sigma_{B_{i} B_{i+1}} - \Sigma_{B_{i} B_{i+1}}^{T} (\text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}})^{T}
-\end{equation}
-$$
-
 ## Conclusions 
 
-In these posts we took a long trip to explain how the covariances are introduced and extracted from the estimation framework. We reviewed how a clear understanding of the conventions (explicit or not) embeded in our factor graph problems is fundamental to make sense of the quantities involved. We introduced the concept of _right-hand_ and _left-hand_ conventions which, while not standard, allowed us to identify different formulations that can be found in the literature. By explicitly stating that GTSAM uses a right-hand convention we could specify the frames used to define the variables, as well the covariance we obtain from the solution via  `Marginals`.
 
-We also showed how the right-hand convention is related to how the composition is defined when working with manifolds, such as rigid-body transformations and rotation matrices. The  **local** and **retract** operations are also defined from the right-hand side, indicating that the increments and the covariances we compute are defined with respect to the base frame.
-
-Additionally, the definition of the local and retract operations also have direct impact on the ordering of the covariance matrices, which also varies depending on the object. We discussed that `Pose2` use a _translation-then-orientation_ convention, while `Pose3` does _orientation-then-translation_. This is particularly important when we want to use GTSAM quantities with different software, such as ROS, which use a _translation-then-orientation_ convention for their 3D pose structures for instance ([`PoseWithCovariance`](http://docs.ros.org/en/melodic/api/geometry_msgs/html/msg/PoseWithCovariance.html)).
-
-Finally, we showed how the convention is also important to define probability distributions of rigid-body matrices, and how this determine the way the covariances get transformed when manipulating such variables. While this has been shown in related literature, we briefly presented some expressions for inversion, composition and relative poses that are compliant with GTSAM's convention.
-
-## Acknowledgments
-I would like to thank again the interesting discussions originated in the [gtsam-users](https://groups.google.com/g/gtsam-users/c/c-BhH8mfqbo/m/7Wsj_nogBAAJ) group. Stefan Gächter guided a rich conversation doing some important questions, and Frank Dellaert motivated the idea of writing a post about it.
-
-Coincidently, similar discussions at the [Dynamic Robot Systems](https://ori.ox.ac.uk/labs/drs/) group at the University of Oxford were aligned with the topics discussed here and facilitated the writing process. Special thanks to Yiduo Wang and Milad Ramezani for our conversations, derivation and testing of the formulas for the covariance of relative poses presented here, Marco Camurri for feedback on the notation and proofreading, and Maurice Fallon for encouraging to write this post.
 
