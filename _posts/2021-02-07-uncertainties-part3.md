@@ -50,7 +50,7 @@ In this last post we would like to introduce the concept of **adjoint** of a Lie
 Most of this expressions have been already shown in the literature by [Barfoot and Furgale (2014)](http://ncfrn.cim.mcgill.ca/members/pubs/barfoot_tro14.pdf) and [Mangelson et al. (2020)](https://arxiv.org/abs/1906.07795) but since they follow a left-hand convention they are not straightforward to use with GTSAM. We provide the resulting expressions for the covariance transformations following Mangelson et al. but we recommend to refer to their work to understand the details of the process.
 
 ## Adjoints
-Let us consider a case similar as before in which we were adding a small increment $$\mathbf{\xi}_{B_i}$$ to a pose $$\mathbf{T}_{WB_i}$$.
+Let us consider a case similar as previous examples in which we were adding a small increment $$\mathbf{\xi}_{B_i}$$ to a pose $$\mathbf{T}_{WB_i}$$.
 
 $$
 \begin{equation}
@@ -86,7 +86,7 @@ Please note that this case is different to the example in the previous post in w
 </figure>
 <br/>
 
-We are intereste din finding out if exists a correction on the base that can lead to the same result that a correction applied on the right. For that specific correction both formulations would be effectively representing the same pose but using **different reference frames**. This is shown as follows
+We are interested in finding out a correction on the base that can lead to the same result that a correction applied on the right. For that specific correction both formulations would be effectively representing the same pose but using **different reference frames**. This is shown as follows:
 
 <a name="adjoint"></a>
 <figure class="center">

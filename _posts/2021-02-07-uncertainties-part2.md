@@ -158,7 +158,7 @@ $$
 \end{equation}
 $$
 
-Since we applied the increment from the right-hand side, we will refer to this as the **right-hand convention**.
+Since we **applied the increment from the right-hand side**, we will refer to this as the **right-hand convention**.
 
 <a name="right-convention"></a>
 <figure class="center">
@@ -176,7 +176,7 @@ $$
 \end{equation}
 $$
 
-so we can apply the transformation on the left-hand side:
+so we can apply the transformation **on the left-hand side**:
 
 $$
 \begin{equation}
@@ -281,9 +281,9 @@ Additionally, rigid-body transformations, rotation matrices, quaternions and eve
 </figure>
 <br />
 
-As we briefly mentioned before, objects such as rotation matrices and rigid-body transformations are difficult to manipulate in the estimation framework because they are matrices. A 3D rotation matrix $\mathbf{R}$ represents 3 orientations with respect to a reference frame but, in raw terms, they are using 9 values to do so, which seems to *overparametrize* the object. However, the constraints that define a rotation matrix -and consequently the manifold- such as orthonormality $$\mathbf{R}^{T}\mathbf{R} = \mathbf{I}$$ and $$\text{det}(\mathbf{R}) = 1$$ make the inherent dimensionality of the rotation still 3. Interestingly, this is exactly the dimensionality of the tangent spaces that can be defined over the manifold. 
+As we briefly mentioned before, objects such as rotation matrices are difficult to manipulate in the estimation framework because they are matrices. A 3D rotation matrix $\mathbf{R}$ represents 3 orientations with respect to a reference frame but, in raw terms, they are using 9 values to do so, which seems to *overparametrize* the object. However, the constraints that define a rotation matrix -and consequently the manifold- such as orthonormality $$\mathbf{R}^{T}\mathbf{R} = \mathbf{I}$$ and $$\text{det}(\mathbf{R}) = 1$$ make the inherent dimensionality of the rotation still 3. Interestingly, this is *exactly the dimensionality of the tangent spaces that can be defined over the manifold*. 
 
-**That is what makes working with manifolds so convenient**: All the constraints that are part of the definition of the object are naturally handled, and we can work in local (tangent) vector spaces using their *inherent* dimension. The same happens for rigid-body transformations (6 dimensions represented by a 16 elements matrix), quaternions (3 orientations represented by a 4D vector), **and even objects that are not groups, such as calibration matrices** (`Cal3`, 5 elements embeded in a $3\times3$ matrix).
+**That is what makes working with manifolds so convenient**: All the constraints that are part of the definition of the object are naturally handled, and we can work in tangent vector spaces using their *inherent* dimension. The same happens for rigid-body transformations (6 dimensions represented by a 16 elements matrix), quaternions (3 orientations represented by a 4D vector), **and even objects that are not groups, such as calibration matrices** (`Cal3`, 5 elements embeded in a $3\times3$ matrix).
 
 In order to work with manifolds, we need to define 2 operations, which are the key to transform objects between them and the tangent spaces:
 
@@ -328,16 +328,15 @@ Please note that we have defined the retraction **from the right**, since this m
 
 
 ### And others are both: Lie groups
-In GTSAM we have manifolds that are not groups, which are objects that we want to optimize but do not necessarily operate in the ways we described for groups (calibration matrices, bearing ranges). It can also happen the oposite, we could have objects that are only groups because we do not want to optimzie them. However, there are objects that are **both groups and differentiable manifolds**, which we know as [**Lie groups**](https://en.wikipedia.org/wiki/Lie_group).
+In GTSAM we have manifolds that are not groups, which are objects that we want to optimize but do not necessarily operate in the ways we described for groups (calibration matrices, bearing ranges). It can also happen the oposite with objects we do not want to optimize. However, some of them are **both groups and differentiable manifolds**, which we know as [**Lie groups**](https://en.wikipedia.org/wiki/Lie_group).
 
 Objects such as rigid-body matrices and quaternions are Lie groups. In fact, rigid-body transformations can be seen as elements of the *Special Euclidean group* $\text{SE(3)}$ and we can use those definitions to define the operations we described before for groups and manifolds:
 
 1. **Composition**: Matrix multiplication $$\mathbf{T}_{WB_{i+1}} = \mathbf{T}_{WB_i} \ \Delta\mathbf{T}_{B_{i} B_{i+1} }$$.
-2. **Between**: $$\Delta\mathbf{T}_{B_{i} B_{i+1}} = (\mathbf{T}_{WB_i})^{-1} \  \mathbf{T}_{WB_{i+1}}$$.
-3. **Identity**: Identity matrix $$\mathbf{I}_W$$.
-4. **Inverse**: Matrix inverse $$(\mathbf{T}_{WB_i})^{-1} = \mathbf{T}_{B_i W}$$
-5. **Local**: We use the _logarithm map_ of $$\text{SE(3)}$$: $$_W\mathbf{\xi}_{W} = \text{Log}(\mathbf{T}_{WB_i} )$$.
-6. **Retract**: Analogously, we use the _exponential map_ of $$\text{SE(3)}$$: $$\mathbf{T}_{WB_i} = \text{Exp}(_W\mathbf{\xi}_{W})$$.
+2. **Identity**: Identity matrix $$\mathbf{I}_W$$.
+3. **Inverse**: Matrix inverse $$(\mathbf{T}_{WB_i})^{-1} = \mathbf{T}_{B_i W}$$
+4. **Local**: We use the _logarithm map_ of $$\text{SE(3)}$$: $$_W\mathbf{\xi}_{W} = \text{Log}(\mathbf{T}_{WB_i} )$$.
+5. **Retract**: Analogously, we use the _exponential map_ of $$\text{SE(3)}$$: $$\mathbf{T}_{WB_i} = \text{Exp}(_W\mathbf{\xi}_{W})$$.
 
 Please note here that we used *capitalized* $$\text{Log}(\cdot) := \text{log}( \cdot)^{\vee}$$ and $$\text{Exp}(\cdot):=\text{exp}( (\cdot)^{\wedge})$$ operators for simplicity as used by [Forster et al (2017),](https://arxiv.org/abs/1512.02363) and [Solà et al. (2020)](https://arxiv.org/abs/1812.01537).
 
@@ -384,7 +383,7 @@ The product
 $$\begin{bmatrix} _B\omega_B \ \delta t \\ _B v_B \ \delta t\end{bmatrix}$$
 represents the tangent vector resulting from time-integrating the velocity, which is map onto the manifold by means of the $\text{SE(3)}$ retraction. 
 
-**We need to be careful about the convention of the retraction/local operation** (yes, more conventions again). Having clarity about the definition that every software defines for these operations (even implicitly) is fundamental to make sense of the quantities we put into our estimation problems and the estimates we extract. For instance, the definition of the $\text{SE(3)}$ retraction we presented, which matches `Pose3` in GTSAM, uses an _orientation-then-translation_ convention, i.e, the 6D tangent vector has orientation in the first 3 coordinates, and translation in the last 3. On the other hand, `Pose2` uses _translation-then-orientation_ $(x, y, \theta)$ for [historical reasons](https://github.com/borglab/gtsam/issues/160#issuecomment-562161665).
+**We need to be careful about the convention of the retraction/local operation** (yes, more conventions again). Having clarity about the definition that every software defines for these operations (even implicitly) is fundamental to make sense of the quantities we put into our estimation problems and the estimates we extract. For instance, the definition of the $\text{SE(3)}$ retraction we presented, which matches `Pose3` in GTSAM, uses an _orientation-then-translation_ convention, i.e, the 6D tangent vector has orientation in the first 3 coordinates, and translation in the last 3. On the other hand, `Pose2` uses _translation-then-orientation_ $(x, y, \theta)$ for [historical reasons](https://github.com/borglab/gtsam/issues/160#issuecomment-562161665). **To ensure that everything is fine, we recommend to always check the retraction/exponential map definition**.
 
 
 ## Bringing everything together
@@ -439,7 +438,7 @@ $$
 \end{equation}
 $$
 
-However, we can now apply the **local** operator of the manifold on both sides to **map the residual to the tangent space** (recall we are using the _logarithm map_ for $\text{SE(3)}$ elements for simplicity):
+We can now apply the **local** operator of the manifold on both sides to **map the residual to the tangent space** (recall we are using the _logarithm map_ for $\text{SE(3)}$ elements for simplicity):
 
 $$
 \begin{equation}
@@ -494,7 +493,7 @@ In this second part we extended the estimation framework presented previously by
 
 We also reviewed the concept of groups of manifolds. We discussed that while groups allow us to non-vector objects using similar rules, manifolds are the essential concept to generalize the optimization framework and probability distributions.
 
-We presented the idea of _right-hand_ and _left-hand_ conventions which, while not standard, allowed us to identify different formulations that can be found in the literature to operate groups and manifolds. By explicitly stating that GTSAM uses a right-hand convention for the composition of groups as well as retractions on manifolds we could identify the frames used to define the variables, as well the covariance we obtain from the solution via  `Marginals`.
+We presented the idea of _right-hand_ and _left-hand_ conventions which, while not standard, allowed us to identify different formulations that can be found in the literature to operate groups and manifolds. By explicitly stating that GTSAM uses a right-hand convention for the composition of groups as well as retractions on manifolds we could identify the frames used to define the variables, as well as the covariance we obtain from the solution via  `Marginals`.
 
 Additionally, the definition of the local and retract operations also have direct impact on the ordering of the covariance matrices, which also varies depending on the object. For instance, we discussed that `Pose2` use a _translation-then-orientation_ convention, while `Pose3` does _orientation-then-translation_. This is particularly important when we want to use GTSAM quantities with different software, such as ROS, which use a _translation-then-orientation_ convention for their 3D pose structures for instance ([`PoseWithCovariance`](http://docs.ros.org/en/melodic/api/geometry_msgs/html/msg/PoseWithCovariance.html)).
 
