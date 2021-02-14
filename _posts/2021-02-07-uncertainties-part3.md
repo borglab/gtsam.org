@@ -54,7 +54,7 @@ Let us consider a case similar as before in which we were adding a small increme
 
 $$
 \begin{equation}
-\mathbf{T}_{W_i B_{i+1}} \text{Exp}( _{B_i}\mathbf{\xi}_{B_i})
+\mathbf{T}_{W_i B_{i}} \text{Exp}( _{B_i}\mathbf{\xi}_{B_i})
 \end{equation}
 $$
 
@@ -62,9 +62,9 @@ where we have used the retraction of $\text{SE(3)}$ to add a small increment usi
 
 <a name="right-correction"></a>
 <figure class="center">
-  <img src="/assets/images/uncertainties/right-convention.png"
+  <img src="/assets/images/uncertainties/adjoint-right.png"
     alt="Correction from the right" />
-    <figcaption>Similarly to the cases discussed previously, applying a correction from the right can be interpreted as creating a new base frame at time $i+1$.</figcaption>
+    <figcaption>Similarly to the cases discussed previously, applying a correction from the right can be interpreted as creating a new base frame at time $i+1$ from a previous frame $B_i$.</figcaption>
 </figure>
 <br/>
 
@@ -76,33 +76,53 @@ $$
 \end{equation}
 $$
 
-Please note that this case is different to the example in the previous post in which we had the frames inverted. Here we are effectively applying a correction on the world frame.
+Please note that this case is different to the example in the previous post in which we had the frames inverted. **Here we are effectively applying a correction on the world frame**.
 
 <a name="left-correction"></a>
 <figure class="center">
-  <img src="/assets/images/uncertainties/left-convention.png"
+  <img src="/assets/images/uncertainties/adjoint-left.png"
     alt="Correction from the left" />
-    <figcaption>If we define a correction from the left, it is like we are creating a new reference frame at time $i+1$.</figcaption>
+    <figcaption>If we define a correction from the left, it is like we are creating a new reference frame at time $i+1$ from a frame $W_i$.</figcaption>
 </figure>
 <br/>
 
-While it could not be straightforward, both formulations are effectively representing the same pose. The only difference is that we are using **different reference frames** to represent it. Hence, we can write:
+We are intereste din finding out if exists a correction on the base that can lead to the same result that a correction applied on the right. For that specific correction both formulations would be effectively representing the same pose but using **different reference frames**. This is shown as follows
+
+<a name="adjoint"></a>
+<figure class="center">
+  <img src="/assets/images/uncertainties/adjoint-all-transformations.png"
+    alt="All transformations together" />
+    <figcaption>There exists a correction applied to the base frame (right convention) that can lead to equivalent transformations than corrections applied on the world frame (left convention)</figcaption>
+</figure>
+<br/>
+
+In order to find it, we can write an equivalence between corrections applied on the base frame and the world frame as follows:
 
 $$
 \begin{equation}
-\text{Exp}( _{W}\mathbf{\xi}_{W}) \mathbf{T}_{WB_i} = \mathbf{T}_{WB_i} \text{Exp}( _{B_i}\mathbf{\xi}_{B_i})
+\text{Exp}( _{W}\mathbf{\xi}_{W}) \mathbf{T}_{WB} = \mathbf{T}_{WB} \text{Exp}( _{B}\mathbf{\xi}_{B})
 \end{equation}
 $$
 
-In order to satisfy this condition, the incremental change we applied on the left-hand side, i.e in the world frame, $$_{W}\mathbf{\xi}_{W}$$ must be given by:
+We dropped the indices for simplicity, since this is a geometric relationship. In order to satisfy this condition, the incremental change we applied on the left-hand side, i.e in the world frame, $$_{W}\mathbf{\xi}_{W}$$ must be given by:
 
 $$
 \begin{equation}
-\text{Exp}( _{W}\mathbf{\xi}_{W}) = \mathbf{T}_{WB_i} \text{Exp}( _{B_i}\mathbf{\xi}_{B_i}) \mathbf{T}_{WB_i}^{-1}
+\text{Exp}( _{W}\mathbf{\xi}_{W}) = \mathbf{T}_{WB_i} \text{Exp}( _{B}\mathbf{\xi}_{B}) \mathbf{T}_{WB}^{-1}
 \end{equation}
 $$
 
-which we obtained by isolating the term. The expression on the right-hand side is known as the *adjoint action* of $\text{SE(3)}$. This relates increments applied on the left to ones applied on the right. For our purposes, it is useful to use an equivalent alternative expression that applies directly to elements from the tangent space ([Solà et al.](https://arxiv.org/abs/1812.01537) gives a more complete derivation as a result of some properties we omitted here):
+which we obtained by isolating the term. The expression on the right-hand side is known as the *adjoint action* of $\text{SE(3)}$. This relates increments applied on the left to ones applied on the right.
+
+<a name="adjoint"></a>
+<figure class="center">
+  <img src="/assets/images/uncertainties/adjoint-equal.png"
+    alt="Correction from the left" />
+    <figcaption>Our previous procedure allowed us to identify that such relationships is described by the Adjoint.</figcaption>
+</figure>
+<br/>
+
+For our purposes, it is useful to use an equivalent alternative expression that applies directly to elements from the tangent space ([Solà et al.](https://arxiv.org/abs/1812.01537) gives a more complete derivation as a result of some properties we omitted here):
 
 $$
 \begin{equation}
@@ -120,9 +140,9 @@ As a first example on how the adjoint helps to manipulate covariances, let us co
 
 <a name="inverse-pose"></a>
 <figure class="center">
-  <img src="/assets/images/uncertainties/left-convention.png"
+  <img src="/assets/images/uncertainties/covariance-inverse.png"
     alt="Distribution of the inverse" />
-    <figcaption>We are interested in getting a formula to express the covariance defined in the base frame $B$ in the world frame $W$</figcaption>
+    <figcaption>Given the covariance of the robot in the base frame $B_i$ (left), and we are interested in obtaining a formula to express the covariance in the world frame $W$ following GTSAM's right-hand convention (right).</figcaption>
 </figure>
 <br/>
 
@@ -165,9 +185,9 @@ A different case is if we have the distribution of a pose $$\mathbf{\tilde{T}}_{
 
 <a name="composition-pose"></a>
 <figure class="center">
-  <img src="/assets/images/uncertainties/left-convention.png"
+  <img src="/assets/images/uncertainties/covariance-composition.png"
     alt="Distribution of the composition" />
-    <figcaption>In our second example, we want to algebraically determine the covariance of $\mathbf{\tilde{T}}_{WB_{i+1}}$, given the distributions of the initial pose $\mathbf{\tilde{T}}_{WB_i}$ and the relative increment $\mathbf{\tilde{T}}_{B_i B_{i+1}}$</figcaption>
+    <figcaption>In our second example, we want to algebraically determine the covariance of $\mathbf{\tilde{T}}_{WB_{i+1}}$ (right), given the distributions of the initial pose $\mathbf{\tilde{T}}_{WB_i}$ and the relative increment $\mathbf{\tilde{T}}_{B_i B_{i+1}}$ (left).</figcaption>
 </figure>
 <br/>
 
@@ -213,13 +233,13 @@ $$
 $$
 
 ## Distribution of the relative transformation
-Lastly, it may be the case that we have the distributions of two poses expressed in the same reference frame, and we want to compute the distribution of the relative transformation between them. It could be the case of an odometry system that provides estimates with covariance, and we want to use relative measurements as factors for a pose graph SLAM system for instance, hence we need the mean and covariance of the relative transformation.
+Lastly, it may be the case that we have the distributions of two poses expressed in the same reference frame, and we want to compute the distribution of the relative transformation between them. For example, if we have an odometry system that provides estimates with covariance and we want to use relative measurements as factors for a pose graph SLAM system, we will need the mean and covariance of the relative transformation.
 
 <a name="relative-pose"></a>
 <figure class="center">
-  <img src="/assets/images/uncertainties/left-convention.png"
+  <img src="/assets/images/uncertainties/covariance-relative.png"
     alt="Distribution of the relative transformation" />
-    <figcaption>In the last example we want to determine the covariance of the relative transformation between $\mathbf{\tilde{T}}_{W B_{i}}$ and $\mathbf{\tilde{T}}_{B_i B_{i+1}}$</figcaption>
+    <figcaption>In this last example we want to determine the covariance of the relative transformation $\mathbf{\tilde{T}}_{B_{i} B_{i+1}}$ (right) given the distributions of the poses $\mathbf{\tilde{T}}_{W B_{i}}$ and $\mathbf{\tilde{T}}_{B_i B_{i+1}}$ (left).</figcaption>
 </figure>
 <br/>
 
@@ -250,7 +270,9 @@ $$
 \end{equation}
 $$
 
-A problem that exist with this expression, however, is that by assuming independence the covariance of the relative poses _will be larger than the covariance of each pose separately_. This is consistent with the [1-dimensional case in which we compute the distribution of the difference of *independent Gaussians*](https://mathworld.wolfram.com/NormalDifferenceDistribution.html), in which the mean is the difference while the covariance gets increased. Mangelson et al. showed that if some correlations exists and it is explicitly considered in the computation, the estimates get more accurate and the covariance is not over or underestimated. The corresponding expression is then:
+A problem that exist with this expression, however, is that by assuming independence the covariance of the relative poses _will be larger than the covariance of each pose separately_. This is consistent with the [1-dimensional case in which we compute the distribution of the difference of *independent Gaussians*](https://mathworld.wolfram.com/NormalDifferenceDistribution.html), in which the mean is the difference while the covariance gets increased. However, is not the result that we would want, since our odometry factors will degrade over time. 
+
+Mangelson et al. showed that if some correlations exists (as we showed for the composition example) and it is explicitly considered in the computation, the estimates get more accurate and the covariance is not over or underestimated. The corresponding expression that complies with GTSAM is then:
 
 $$
 \begin{equation}
@@ -261,7 +283,7 @@ $$
 ## Conclusions 
 In this final post we reviewed the concept of the adjoint of a Lie group to explain the relationship between increments applied on the left with increments applied on the right. This was the final piece we needed to ensure that our estimates are consistent with the conventions used in GTSAM.
 
-We also presented a few expressions to operate distributions of poses. While they were presented previously in the literature, we showed how to deri
+We also presented a few expressions to operate distributions of poses. While they were presented previously in the literature, we showed general guidelines on how to manipulate the uncertainties to be consistent with the frames and convention we use.
 
 
 ## Acknowledgments

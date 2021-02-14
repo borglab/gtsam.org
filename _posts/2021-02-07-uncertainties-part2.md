@@ -294,7 +294,7 @@ In order to work with manifolds, we need to define 2 operations, which are the k
 <figure class="center">
   <img src="/assets/images/uncertainties/manifold-local.png"
     alt="Local operation on a manifold" />
-    <figcaption>The local operation allows us to map elements from the manifold to the tangent space.</figcaption>
+    <figcaption>The local operation allows us to map elements from the manifold to the tangent space. In this case, we have a tangent space defined *at the identity* $\mathbf{I}$ and an element $\mathbf{T}$ defined defined with respect to it.</figcaption>
 </figure>
 <br />
 
@@ -320,7 +320,7 @@ which graphically corresponds to:
 <figure class="center">
   <img src="/assets/images/uncertainties/manifold-gaussian.png"
     alt="Gaussian on a manifold" />
-    <figcaption>Using the retraction, we can define Gaussians on the tangent space and map them back on the manifold to construct Gaussians on the manifold.</figcaption>
+    <figcaption>Using the retraction, we can define Gaussians on the tangent space centered at some element $\mathbf{T}$ and map them back on the manifold to construct Gaussians on the manifold with mean $\mathbf{T}$ and covariance $\text{Cov}(\eta) = \Sigma$.</figcaption>
 </figure>
 <br />
 
@@ -328,7 +328,7 @@ Please note that we have defined the retraction **from the right**, since this m
 
 
 ### And others are both: Lie groups
-In GTSAM we have manifolds that are not groups, which are objects that we want to optimize but do not necessarily operate in the ways we described for groups (calibration matrices, bearing ranges). However, *all the objects that are groups are also defined as manifolds*. In such cases, we say that they are [**Lie groups**](https://en.wikipedia.org/wiki/Lie_group).
+In GTSAM we have manifolds that are not groups, which are objects that we want to optimize but do not necessarily operate in the ways we described for groups (calibration matrices, bearing ranges). It can also happen the oposite, we could have objects that are only groups because we do not want to optimzie them. However, there are objects that are **both groups and differentiable manifolds**, which we know as [**Lie groups**](https://en.wikipedia.org/wiki/Lie_group).
 
 Objects such as rigid-body matrices and quaternions are Lie groups. In fact, rigid-body transformations can be seen as elements of the *Special Euclidean group* $\text{SE(3)}$ and we can use those definitions to define the operations we described before for groups and manifolds:
 
@@ -359,6 +359,14 @@ $$
 \mathbf{T}_{WB_{i+1}} = \mathbf{T}_{WB_i} \text{Exp}( {_{B_i}}\mathbf{\xi}_{B_i})
 \end{equation}
 $$
+
+<a name="manifold_retract_frame"></a>
+<figure class="center">
+  <img src="/assets/images/uncertainties/manifold-retract-frame.png"
+    alt="Retraction with frames" />
+    <figcaption>Retractions using right-hand convention define increments with respect to the frame $B_i$ in this example, since the tangent space is defined at $\mathbf{T}_{WB_i}$.</figcaption>
+</figure>
+<br />
 
 In this case we added an increment from the base frame at time $i$, that represents the new pose at time $i+1$. Please note that **the increments are defined with respect to a reference frame, but they do not require to specify the resulting frame**. Their meaning (representing a new pose at time $i+1$) is something that we -as users- define but is not explicit in the formulation. (*While we could do it, it can lead to confusions because in this specific case we are representing the pose at the next instant but we can also use retractions to describe corrections to the base frame as we will see later.*)
 
@@ -399,11 +407,19 @@ The first problem of defining the noise appropriately is solved by using probabi
 
 $$
 \begin{equation}
-\mathbf{T}_{WB_{i+1}} = \mathbf{T}_{WB_i} \ \Delta\mathbf{T}_{B_{i} B_{i+1}} \text{Exp}(\mathbf{\eta}_{B_{i+1}})
+\mathbf{T}_{WB_{i+1}} = \mathbf{T}_{WB_i} \ \Delta\mathbf{T}_{B_{i} B_{i+1}} \text{Exp}(_{B_{i+1}}\mathbf{\eta}_{B_{i+1}})
 \end{equation}
 $$
 
-where we have defined $$\eta_{B_{i+1}} \sim Gaussian(\mathbf{0}_{6\times1},\ _{B_{i+1}}\Sigma_{i+1})$$. Please note that in order to match our right-hand convention, **the covariance we use must be defined in the base frame at time $i+1$** $$B_{i+1}$$. Additionally, **the covariance matrix must follow the same ordering defined by the retraction**. For `Pose3` objects, for instance, the upper-left block must encode orientation covariances, while the bottom-right position covariances:
+<a name="manifold_gaussian_frame"></a>
+<figure class="center">
+  <img src="/assets/images/uncertainties/manifold-gaussian-frame.png"
+    alt="Defining noise for the relative increment." />
+    <figcaption>Graphical interpretation of the definition of the noise, which is defined in frame $B_{i+1}$.</figcaption>
+</figure>
+<br />
+
+where we have defined $${_{B_{i+1}}}\eta_{B_{i+1}} \sim Gaussian(\mathbf{0}_{6\times1},\ _{B_{i+1}}\Sigma_{i+1})$$. Please note that in order to match our right-hand convention, **the covariance we use must be defined in the base frame at time $i+1$** $$B_{i+1}$$. Additionally, **the covariance matrix must follow the same ordering defined by the retraction**. For `Pose3` objects, for instance, the upper-left block must encode orientation covariances, while the bottom-right position covariances:
 
 $$
 \begin{equation}
@@ -437,7 +453,7 @@ We must also keep in mind here that by using the **local** operation, **the resi
 
 $$
 \begin{align}
-\mathbf{r}_{odom}(\mathbf{T}_{WB_i}, \mathbf{T}_{WB_{i+1}}) &= \left|\left| \text{Log}\left( \Delta\mathbf{T}_{B_{i} B_{i+1}}^{-1}\ \mathbf{T}_{WB_i}^{-1} \  \mathbf{T}_{WB_{i+1}} \right)\right|\right|^{2}_{\Sigma_i} \\
+\mathbf{r}_{\text{between}}(\mathbf{T}_{WB_i}, \mathbf{T}_{WB_{i+1}}) &= \left|\left| \text{Log}\left( \Delta\mathbf{T}_{B_{i} B_{i+1}}^{-1}\ \mathbf{T}_{WB_i}^{-1} \  \mathbf{T}_{WB_{i+1}} \right)\right|\right|^{2}_{\Sigma_i} \\
 & =
 \text{Log}\left( \Delta\mathbf{T}_{B_{i} B_{i+1}}^{-1}\ \mathbf{T}_{WB_i}^{-1} \  \mathbf{T}_{WB_{i+1}} \right)^{T} \ \Sigma_i^{-1} \ \text{Log}\left( \Delta\mathbf{T}_{B_{i} B_{i+1}}^{-1}\ \mathbf{T}_{WB_i}^{-1} \  \mathbf{T}_{WB_{i+1}} \right)
 \end{align}
@@ -447,7 +463,7 @@ The factor is now a nonlinear vector expression that can be solved using the non
 
 First, since the factor defines a residual in the tangent space at the current linearization point, the optimization itself is executed **in the tangent space defined in the current linearization point**. This means that when we linearize the factors and build the normal equations, the increment ${_{B_i}}\delta\mathbf{T}^{k}$ we compute lies in the tangent space.
 
-For this reason, we need to update the variables _on the manifold_ using the retraction:
+For this reason, we need to update the variables *on the manifold* using the retraction:
 
 $$
 \begin{equation}
