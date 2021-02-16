@@ -9,8 +9,6 @@ Author: [Matias Mattamala](https://mmattamala.github.io)
 
 <div style="display:none"> <!-- custom latex commands here -->
   $
-    \usepackage{amsmath}
-    \usepackage[makeroom]{cancel}
     \DeclareMathOperator*{\argmin}{argmin}
     \newcommand{\coloneqq}{\mathrel{:=}}
   $
@@ -154,7 +152,7 @@ We know this is correct because the inner indices cancel each other, effectively
 
 $$
 \begin{equation}
-\mathbf{T}_{WB_{i+1}} = \mathbf{T}_{W {\cancel{B_i}} } \ \Delta\mathbf{T}_{ {\cancel{B_{i}}} B_{i+1} }
+\mathbf{T}_{WB_{i+1}} = \mathbf{T}_{W {\bcancel{B_i}} } \ \Delta\mathbf{T}_{ {\bcancel{B_{i}}} B_{i+1} }
 \end{equation}
 $$
 
