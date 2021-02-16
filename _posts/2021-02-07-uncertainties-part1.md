@@ -108,7 +108,7 @@ $$
 
 where the vector $\mathcal{X}^{*}$ stacks all the variables in the problem, $\mathbf{A}$ is a matrix that stacks the linear terms in the factors, and $\mathbf{b}$ does the same for the constant vector terms.
 
-First point to note here is that finding the solution $\mathcal{X}^{*}$ requires to invert the matrix $\mathbf{A}^{T} \Sigma^{-1} \mathbf{A}$, which in general is hard since it can be huge and dense in some parts. However we know that there are clever ways to solve it, such as iSAM and iSAM2 that GTSAM already implements, which are covered in [this comprehensive article](https://www.cc.gatech.edu/~dellaert/pubs/Dellaert17fnt.pdf) by Frank Dellart and Michael Kaess.
+First point to note here is that finding the solution $\mathcal{X}^{*}$ requires to invert the matrix $\mathbf{A}^{T} \Sigma^{-1} \mathbf{A}$, which in general is hard since it can be huge and dense in some parts. However we know that there are clever ways to solve it, such as iSAM and iSAM2 that GTSAM already implements, which are covered in [this comprehensive article](https://www.cc.gatech.edu/~dellaert/pubs/Dellaert17fnt.pdf) by Frank Dellaert and Michael Kaess.
 
 <a name="hessian"></a>
 <figure class="center">
