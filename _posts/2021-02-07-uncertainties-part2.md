@@ -207,7 +207,7 @@ $$
 
 Here we made explicit all the frames involved in the transformations we usually can find in textbooks: An homogeneous point $${_{W}}\mathbf{P}$$ expressed in the world frame $W$, is transformed by the *extrinsic calibration matrix* $$\mathbf{T}_{CW}$$ (a rigid body transformation ) which represents the world $W$ in the camera frame $C$, producing a vector $${_{C}}\mathbf{P}$$ in the camera frame (not shown). This is projected onto the image by means of the intrinsic calibration matrix $$\mathbf{K}_{IC}$$, producing the vector $$_I\mathbf{p}$$, expressed in the image frame $I$.
 
-Since in GTSAM the extrinsic calibration is defined the other way to be consitent with the right-hand convention, i.e $\mathbf{T}_{WC}$, the implementation of the `CalibratedCamera` handles it by [properly inverting the matrix before doing the projection](https://github.com/borglab/gtsam/blob/develop/gtsam/geometry/CalibratedCamera.cpp#L120) as we would expect:
+Since in GTSAM the extrinsic calibration is defined the other way to be consistent with the right-hand convention, i.e $\mathbf{T}_{WC}$, the implementation of the `CalibratedCamera` handles it by [properly inverting the matrix before doing the projection](https://github.com/borglab/gtsam/blob/develop/gtsam/geometry/CalibratedCamera.cpp#L120) as we would expect:
 
 $$
 \begin{equation}
