@@ -269,46 +269,54 @@ However, composition can be defined from the *left* or the *right* side because 
 **We recall again that in GTSAM and the rest of this post we use the _right_ convention** (*pun intended*), because we represent our poses with respect to a fixed world frame $W$ and the increments are defined with respect to the base frame $B$.
 
 ### Some are _manifolds_
-Additionally, rigid-body transformations, rotation matrices, quaternions and even vectors are **differentiable manifolds**. This means that even though they do not behave as Euclidean spaces at a global scale, they can be *locally approximated* as such by using local vector spaces called **tangent spaces**. The main advantage of analyzing all these objects from the manifold perspective is that we can build general algorithms based on common principles that apply to all of them.
+Additionally, rigid-body transformations, rotation matrices, quaternions and even vectors are **differentiable manifolds**. This means that even though they do not behave as Euclidean spaces at a global scale, they can be *locally approximated* as such by using local vector spaces called **tangent spaces**. The main advantage of analyzing all these objects from the manifold perspective is that we can build general algorithms based on common principles that apply to all of them. 
 
 <a name="manifold"></a>
 <figure class="center">
   <img src="/assets/images/uncertainties/manifold.png"
     alt="Manifold and tangents spaces" />
-    <figcaption> While a manifold have a non-Euclidean structure, it can be locally approximated by tangent spaces. </figcaption>
+    <figcaption> While a manifold have a non-Euclidean structure, it can be locally approximated by tangent spaces. In the figure, we illustrate different tangent spaces defined at the objects $\mathbf{p}_1$ and $\mathbf{p}_2$ on the manifold.</figcaption>
 </figure>
 <br />
 
 As we briefly mentioned before, objects such as rotation matrices are difficult to manipulate in the estimation framework because they are matrices. A 3D rotation matrix $\mathbf{R}$ represents 3 orientations with respect to a reference frame but, in raw terms, they are using 9 values to do so, which seems to *overparametrize* the object. However, the constraints that define a rotation matrix -and consequently the manifold- such as orthonormality $$\mathbf{R}^{T}\mathbf{R} = \mathbf{I}$$ and $$\text{det}(\mathbf{R}) = 1$$ make the inherent dimensionality of the rotation still 3. Interestingly, this is *exactly the dimensionality of the tangent spaces that can be defined over the manifold*. 
 
-**That is what makes working with manifolds so convenient**: All the constraints that are part of the definition of the object are naturally handled, and we can work in tangent vector spaces using their *inherent* dimension. The same happens for rigid-body transformations (6 dimensions represented by a 16 elements matrix), quaternions (3 orientations represented by a 4D vector), **and even objects that are not groups, such as calibration matrices** (`Cal3`, 5 elements embeded in a $3\times3$ matrix).
+**That is what makes working with manifolds so convenient**: All the constraints that are part of the definition of the object are naturally handled, and we can work in tangent vector spaces using their *inherent* dimension. The same happens for rigid-body transformations (6 dimensions represented by a 16 elements matrix), quaternions (3 orientations represented by a 4D vector), **and even objects that are not groups, such as unit vectors**.
 
-In order to work with manifolds, we need to define 2 operations, which are the key to transform objects between them and the tangent spaces:
+In order to work with manifolds, we need to define 2 operations, which are the key to transform objects between them and the tangent spaces. **They are defined at tangent space of each element on the manifold**:
 
-1. **Local**: An operation that maps elements from the manifold to the tangent space $\mathbf{\xi} = \text{local}(\mathbf{T})$
-2. **Retract or retraction**: The opposite operation: mapping from the tangent space back to the manifold $\mathbf{T} = \text{retract}(\mathbf{\xi})$.
+1. **Retract or retraction**: An operation that maps elements $$\mathbf{\xi}$$ from the tangent space at $$\mathbf{p}_1$$ to the manifold: $$\mathbf{p} = \text{retract}_{\mathbf{p}_1}(\mathbf{\xi})$$.
+2. **Local**: the opposite operation: mapping elements $$\mathbf{p}$$ from the manifold to the tangent space $\mathbf{\xi} = \text{local}_{\mathbf{p}_1}(\mathbf{p})$
 
-<a name="manifold_local"></a>
+<a name="manifold_retract"></a>
 <figure class="center">
-  <img src="/assets/images/uncertainties/manifold-local.png"
-    alt="Local operation on a manifold" />
-    <figcaption>The local operation allows us to map elements from the manifold to the tangent space. In this case, we have a tangent space defined *at the identity* $\mathbf{I}$ and an element $\mathbf{T}$ defined defined with respect to it.</figcaption>
+  <img src="/assets/images/uncertainties/manifold-retract-zoom.png"
+    alt="Retract operation on a manifold" />
+    <figcaption>The retract operation maps an element $\mathbf{\xi}$ defined at the tangent space at $\mathbf{p}_1$ back to the manifold.</figcaption>
 </figure>
 <br />
 
 <a name="manifold_retract"></a>
 <figure class="center">
   <img src="/assets/images/uncertainties/manifold-retract.png"
-    alt="Retract operation on a manifold" />
-    <figcaption>The retract operation does the opposite mapping vectors from the tangent space back on the manifold.</figcaption>
+    alt="Retract operation on a manifold simplified" />
+    <figcaption>An alternative figure to represent the retraction that will be used in the rest of the post, since it shows the interactions between the manifold and the tangent space more explicitly. We can clearly observe that the element $\mathbf{p}$ generated by the retraction is also defined with respect to $\mathbf{p}_1$ on the manifold.</figcaption>
 </figure>
 <br />
 
-Retractions are the fundamental concept to [solve optimization problems](https://press.princeton.edu/absil) and to define uncertainties on manifolds. While the former will be covered later in this post with an example, it is useful to explain the latter now. The general idea is that we can define distributions on the tangent space, and map them back on the manifold using the retraction. For instance, we can define a zero-mean Gaussian variable $$\eta \sim Gaussian(\mathbf{0}_{n\times1}, \Sigma)$$ in the tangent space centered at $\mathbf{T}$ and use the retraction:
+<a name="manifold_local"></a>
+<figure class="center">
+  <img src="/assets/images/uncertainties/manifold-local.png"
+    alt="Local operation on a manifold" />
+    <figcaption>The local operation does the opposite, and maps an element $\mathbf{p}$ defined with respect to $\mathbf{p}_1$ as an increment $\mathbf{\xi}$ in the tangent space.</figcaption>
+</figure>
+<br />
+
+Retractions are the fundamental concept to [solve optimization problems](https://press.princeton.edu/absil) and to define uncertainties on manifolds. While the former will be covered later in this post with an example, it is useful to explain the latter now. The general idea is that we can define distributions on the tangent space, and map them back on the manifold using the retraction. For instance, we can define a zero-mean Gaussian variable $$\eta \sim Gaussian(\mathbf{0}_{n\times1}, \Sigma)$$ in the tangent space centered at $\mathbf{p}$ and use the retraction:
 
 $$
 \begin{equation}
-Gaussian(\mathbf{T}, \mathbf{\eta}) := \mathbf{T}\ \text{retract}(\mathbf{\eta})
+Gaussian(\mathbf{p}_1, \mathbf{\eta}) := \text{retract}_{\mathbf{p}_1}(\mathbf{\eta})
 \end{equation}
 $$
 
@@ -318,7 +326,7 @@ which graphically corresponds to:
 <figure class="center">
   <img src="/assets/images/uncertainties/manifold-gaussian.png"
     alt="Gaussian on a manifold" />
-    <figcaption>Using the retraction, we can define Gaussians on the tangent space centered at some element $\mathbf{T}$ and map them back on the manifold to construct Gaussians on the manifold with mean $\mathbf{T}$ and covariance $\text{Cov}(\eta) = \Sigma$.</figcaption>
+    <figcaption>Using the retraction, we can define Gaussians on the tangent space centered at some element $\mathbf{p}_1$ and map them back on the manifold to construct Gaussians on the manifold with mean $\mathbf{p}_1$ and covariance $\text{Cov}(\eta) = \Sigma$.</figcaption>
 </figure>
 <br />
 
@@ -326,22 +334,32 @@ Please note that we have defined the retraction **from the right**, since this m
 
 
 ### And others are both: Lie groups
-In GTSAM we have manifolds that are not groups, which are objects that we want to optimize but do not necessarily operate in the ways we described for groups (calibration matrices, bearing ranges). It can also happen the oposite with objects we do not want to optimize. However, some of them are **both groups and differentiable manifolds**, which we know as [**Lie groups**](https://en.wikipedia.org/wiki/Lie_group).
+In GTSAM **we only need the objects to be differentiable manifolds in order to optimize them** in the estimation framework but **being groups is not a requirement at all**. However, it is important to be aware that _some_ of the objects we deal with are **both groups and differentiable manifolds**, which we know as [**Lie groups**](https://en.wikipedia.org/wiki/Lie_group), which is the formulation generally found in state estimation literature.
+
+<a name="lie_group_tangent"></a>
+<figure class="center">
+  <img src="/assets/images/uncertainties/lie-group.png"
+    alt="" />
+    <figcaption>Lie groups are both groups and differentiable manifolds. They define a tangent space at the identity that allows to represent any object on the manifold through a retraction defined at the identity, known as exponential map, as well as a local operation also at the identity - the logarithm map.</figcaption>
+</figure>
+<br />
 
 Objects such as rigid-body matrices and quaternions are Lie groups. In fact, rigid-body transformations can be seen as elements of the *Special Euclidean group* $\text{SE(3)}$ and we can use those definitions to define the operations we described before for groups and manifolds:
 
-1. **Composition**: Matrix multiplication $$\mathbf{T}_{WB_{i+1}} = \mathbf{T}_{WB_i} \ \Delta\mathbf{T}_{B_{i} B_{i+1} }$$.
-2. **Identity**: Identity matrix $$\mathbf{I}_W$$.
-3. **Inverse**: Matrix inverse $$(\mathbf{T}_{WB_i})^{-1} = \mathbf{T}_{B_i W}$$
-4. **Local**: We use the _logarithm map_ of $$\text{SE(3)}$$: $$_W\mathbf{\xi}_{W} = \text{Log}(\mathbf{T}_{WB_i} )$$.
-5. **Retract**: Analogously, we use the _exponential map_ of $$\text{SE(3)}$$: $$\mathbf{T}_{WB_i} = \text{Exp}(_W\mathbf{\xi}_{W})$$.
+1. **Composition**: Matrix multiplication $$\mathbf{T}_{1} \ \mathbf{T}_{2}$$.
+2. **Identity**: Identity matrix $$\mathbf{I}$$.
+3. **Inverse**: Matrix inverse $$(\mathbf{T}_{1})^{-1}$$
+4. **Retract**: The retraction is defined at the tangent space at the identity, which is known as the *exponential map* of $$\text{SE(3)}$$: $$\mathbf{T}_{1} = \text{Exp}(\mathbf{\xi})$$.
+5. **Local**: It is also defined at the identity and known as the *logarithm map* of $$\text{SE(3)}$$: $$\mathbf{\xi} = \text{Log}(\mathbf{T}_{1} )$$.
 
-Please note here that we used *capitalized* $$\text{Log}(\cdot) := \text{log}( \cdot)^{\vee}$$ and $$\text{Exp}(\cdot):=\text{exp}( (\cdot)^{\wedge})$$ operators for simplicity as used by [Forster et al (2017),](https://arxiv.org/abs/1512.02363) and [Solà et al. (2020)](https://arxiv.org/abs/1812.01537).
+Please note here that we used *capitalized* $$\text{Log}(\cdot) := \text{log}( \cdot)^{\vee}$$ and $$\text{Exp}(\cdot):=\text{exp}( (\cdot)^{\wedge})$$ operators for simplicity as used by [Forster et al (2017),](https://arxiv.org/abs/1512.02363) and [Solà et al. (2020)](https://arxiv.org/abs/1812.01537), since they are easy to understand under the retractions perspective. Refer to Solà et al. for a more detailed description, including the concept of *Lie algebras*.
 
 In GTSAM, 3D poses are defined as `Pose3` objects and in general we can think of them as $\text{SE(3)}$ elements. However, we could use other Lie groups to represent a 3D pose, such as $\mathbb{R}^{3} \times \text{SO(3)}$. They can have different definitions for the *retraction* and *local* operations, which can be more efficient to compute in optimization problems, and this is what GTSAM does internally in the `Pose3` definition (more information [here](https://gtsam.org/notes/GTSAM-Concepts.html)). For simplicity, however, we will stay using the logarithm map and exponential map to talk about $\text{SE(3)}$.
 
-#### Reference frames on manifolds
-Lie groups combine all the ideas we have presented so far. In particular, reference frames are also relevant here and **they are preserved when applying the local and retract operations**. For instance, when using the *local* operation we defined using the logarithm map of $$\text{SE(3)}$$, we obtain a vector $$_W\mathbf{\xi}_{W} \in \mathbb{R}^{6}$$ (sometimes also called *tangent vector* or *twist*), which is defined in the tangent space *centered at the world frame* in this case:
+### Reference frames on Lie groups
+Lie groups combine all the ideas we have presented so far. In particular, reference frames are also relevant here and **they are preserved when applying the local and retract operations**. We will cover a few important ideas using $$\text{SE(3)}$$, since it is related to our original problem of pose estimation.
+
+First of all, when we talked about *the tangent space defined at the identity*, in physical terms it refers to having a fixed, global frame, which we use to express our poses. Then, when using the *local* operation defined as the logarithm map of $$\text{SE(3)}$$, we obtain a vector $$_W\mathbf{\xi}_{W} \in \mathbb{R}^{6}$$ (sometimes also called *tangent vector* or *twist*), which is defined in the tangent space *at the world frame*:
 
 $$
 \begin{equation}
@@ -349,7 +367,15 @@ $$
 \end{equation}
 $$
 
-The same property holds to *add incremental changes to a transformation*:
+<a name="lie_group_frames"></a>
+<figure class="center">
+  <img src="/assets/images/uncertainties/lie-group-frames.png"
+    alt="" />
+    <figcaption>In this example, the tangent space at the identity represents the world frame, on which any transformation $\mathbf{T}_{WB_i}$ expressed in the world frame can be defined.</figcaption>
+</figure>
+<br />
+
+Additionaly, *we can add incremental changes to a transformation using the retraction*, which for $$\text{SE(3)}$$ is done with the exponential map as follows:
 
 $$
 \begin{equation}
@@ -357,29 +383,40 @@ $$
 \end{equation}
 $$
 
-<a name="manifold_retract_frame"></a>
+In this case we added an increment from the base frame at time $i$, that represents the new pose at time $i+1$. Please note that **the increments are defined with respect to a reference frame, but they do not require to specify the resulting frame**. Their meaning (representing a new pose at time $i+1$) is something that we -as users- define but is not explicit in the formulation. (*While we could do it, it can lead to confusions because in this specific case we are representing the pose at the next instant but we can also use retractions to describe corrections to the base frame as we will see later.*)
+
+The graphical interpretation with the manifold is consistent with our general definition of retractions and frames. Using the exponential map on the right is defining a tangent space at $$\mathbf{T}_{WB_i}$$, which can be interpreted as a new *reference frame* at $$B_i$$, which we used to define the increment:
+
+<a name="lie_group_frames_increment"></a>
 <figure class="center">
-  <img src="/assets/images/uncertainties/manifold-retract-frame.png"
+  <img src="/assets/images/uncertainties/lie-group-frames-increment.png"
     alt="Retraction with frames" />
-    <figcaption>Retractions using right-hand convention define increments with respect to the frame $B_i$ in this example, since the tangent space is defined at $\mathbf{T}_{WB_i}$.</figcaption>
+    <figcaption>Graphical interpretation of adding a small increment ${_{B_i}}\mathbf{\xi}_{B_i}$ to the pose $\mathbf{T}_{WB_i}$.</figcaption>
 </figure>
 <br />
 
-In this case we added an increment from the base frame at time $i$, that represents the new pose at time $i+1$. Please note that **the increments are defined with respect to a reference frame, but they do not require to specify the resulting frame**. Their meaning (representing a new pose at time $i+1$) is something that we -as users- define but is not explicit in the formulation. (*While we could do it, it can lead to confusions because in this specific case we are representing the pose at the next instant but we can also use retractions to describe corrections to the base frame as we will see later.*)
-
- The incremental formulation via retractions is particularly convenient when we have local (base frame) velocity measurements $$({_B}\omega_B, {_B}{v_B})$$, with $${_B}\omega_B \in \mathbb{R}^{3}, {_B}v_B \in \mathbb{R}^{3}$$  and we want to do [*dead reckoning*](https://en.wikipedia.org/wiki/Dead_reckoning):
+The incremental formulation via retractions is also convenient when we have local (base frame) velocity measurements $$({_B}\omega_B, {_B}{v_B})$$, with $${_B}\omega_B \in \mathbb{R}^{3}, {_B}v_B \in \mathbb{R}^{3}$$  and we want to do [*dead reckoning*](https://en.wikipedia.org/wiki/Dead_reckoning):
 
 $$
 \begin{equation}
 \mathbf{T}_{WB_{i+1}} = {\mathbf{T}_{WB_i}} \text{Exp}\left(
-  \begin{bmatrix} _B\omega_B \\ _B v_B \end{bmatrix}\ 
+  \begin{bmatrix} _{B_i}\omega_{B_i} \\ _{B_i} v_{B_i} \end{bmatrix}\ 
 \delta t \right)
 \end{equation}
 $$
 
 The product
-$$\begin{bmatrix} _B\omega_B \ \delta t \\ _B v_B \ \delta t\end{bmatrix}$$
-represents the tangent vector resulting from time-integrating the velocity, which is map onto the manifold by means of the $\text{SE(3)}$ retraction. 
+$$\begin{bmatrix} _{B_i}\omega_{B_i} \ \delta t \\ _{B_i} v_{B_i} \ \delta t\end{bmatrix}$$
+represents the tangent vector resulting from time-integrating the velocity, which is map onto the manifold by means of the $\text{SE(3)}$ retraction:
+
+<a name="lie_group_frames_velocities"></a>
+<figure class="center">
+  <img src="/assets/images/uncertainties/lie-group-frames-velocities.png"
+    alt="Retraction with velocities" />
+    <figcaption>The same formulation can be used to map velocities into increments via retractions/exponential map.</figcaption>
+</figure>
+<br />
+
 
 **We need to be careful about the convention of the retraction/local operation** (yes, more conventions again). Having clarity about the definition that every software defines for these operations (even implicitly) is fundamental to make sense of the quantities we put into our estimation problems and the estimates we extract. For instance, the definition of the $\text{SE(3)}$ retraction we presented, which matches `Pose3` in GTSAM, uses an _orientation-then-translation_ convention, i.e, the 6D tangent vector has orientation in the first 3 coordinates, and translation in the last 3. On the other hand, `Pose2` uses _translation-then-orientation_ $(x, y, \theta)$ for [historical reasons](https://github.com/borglab/gtsam/issues/160#issuecomment-562161665). **To ensure that everything is fine, we recommend to always check the retraction/exponential map definition**.
 
@@ -400,7 +437,7 @@ We reported two problems before:
 We can identify now that our poses are objects of $\text{SE(3)}$, hence we can use the tools we just defined.
 
 ### Defining the noise
-The first problem of defining the noise appropriately is solved by using probability distributions on manifolds as we described before. We define  _a zero-mean Gaussian in the tangent space of $\text{SE(3)}$ and retract it onto the manifold_:
+The first problem of defining the noise appropriately is solved by using probability distributions on manifolds as we described before. We define  _a zero-mean Gaussian in the tangent space at $$\Delta\mathbf{T}_{B_{i} B_{i+1}}$$ and retract it onto the manifold_:
 
 $$
 \begin{equation}
@@ -410,13 +447,13 @@ $$
 
 <a name="manifold_gaussian_frame"></a>
 <figure class="center">
-  <img src="/assets/images/uncertainties/manifold-gaussian-frame.png"
+  <img src="/assets/images/uncertainties/lie-group-frames-gaussian.png"
     alt="Defining noise for the relative increment." />
-    <figcaption>Graphical interpretation of the definition of the noise, which is defined in frame $B_{i+1}$.</figcaption>
+    <figcaption>Graphical interpretation of the definition of the noise, which is defined in frame $B_{i+1}$ and mapped using the retraction.</figcaption>
 </figure>
 <br />
 
-where we have defined $${_{B_{i+1}}}\eta_{B_{i+1}} \sim Gaussian(\mathbf{0}_{6\times1},\ _{B_{i+1}}\Sigma_{i+1})$$. Please note that in order to match our right-hand convention, **the covariance we use must be defined in the base frame at time $i+1$** $$B_{i+1}$$. Additionally, **the covariance matrix must follow the same ordering defined by the retraction**. For `Pose3` objects, for instance, the upper-left block must encode orientation covariances, while the bottom-right position covariances:
+where we have defined $${_{B_{i+1}}}\eta_{B_{i+1}} \sim Gaussian(\mathbf{0}_{6\times1},\ _{B_{i+1}}\Sigma_{i+1})$$. Please note that in order to match our right-hand convention, **the covariance we use must be defined in the base frame at time $i+1$**, i.e $$B_{i+1}$$. Additionally, **the covariance matrix must follow the same ordering defined by the retraction**. For `Pose3` objects, for instance, the upper-left block must encode orientation covariances, while the bottom-right position covariances:
 
 $$
 \begin{equation}
@@ -446,6 +483,14 @@ $$
 
 Since the noise is defined in the tangent space, both sides denote vector expressions in $\mathbb{R}^{6}$. Both also correspond to zero-mean Gaussians, hence the right-hand side can be used as a proper factor in our estimation framework. In fact, the expression on the right side is _exactly_ the same used in GTSAM to define the [`BetweenFactor`](https://github.com/borglab/gtsam/blob/master/gtsam/slam/BetweenFactor.h#L90).
 
+<a name="lie_groups_frames_residual"></a>
+<figure class="center">
+  <img src="/assets/images/uncertainties/lie-group-frames-residual.png"
+    alt="Defining noise for the relative increment." />
+    <figcaption>The Between residual, illustrated. On the left hand side, we have the corresponding transformations involved in the computation expressed on the manifold. Since the error (in red) is also defined on the manifold, it is not described by a straight line. However, by applying the local operation, given by the logarithm map for $\text{SE(3)}$, we can map it to to the tangent space at $\Delta\mathbf{T}_{B_{i} B_{i+1}}$, which is a vector space. The error itself should lie within the Gaussian we created using the noise $_{B_{i+1}}\mathbf{\eta}_{B_{i+1}}$</figcaption>
+</figure>
+<br />
+
 We must also keep in mind here that by using the **local** operation, **the residual vector will follow the same ordering**. As we mentioned before for `Pose3` objects, it will encode orientation error in the first 3 components, while translation error in the last ones. In this way, if we write the expanded expression for the Gaussian factor, we can notice that all the components are weighted accordingly (orientation first, and then translation):
 
 $$
@@ -460,7 +505,7 @@ The factor is now a nonlinear vector expression that can be solved using the non
 
 First, since the factor defines a residual in the tangent space at the current linearization point, the optimization itself is executed **in the tangent space defined in the current linearization point**. This means that when we linearize the factors and build the normal equations, the increment ${_{B_i}}\delta\mathbf{T}^{k}$ we compute lies in the tangent space.
 
-For this reason, we need to update the variables *on the manifold* using the retraction:
+For this reason, we need to update the variables *on the manifold* using the retraction. For example, for $\text{SE(3)}$:
 
 $$
 \begin{equation}
@@ -489,7 +534,7 @@ where $${_{B_i}}\eta_{B_i}^{k+1} \sim Gaussian(\mathbf{0}_{6\times1}, \Sigma^{k+
 ## Conclusions 
 In this second part we extended the estimation framework presented previously by introducing the reference frames in an explicit manner into our notation, which helped to understand the meaning of the quantities.
 
-We also reviewed the concept of groups of manifolds. We discussed that while groups allow us to non-vector objects using similar rules, manifolds are the essential concept to generalize the optimization framework and probability distributions.
+We also reviewed the concept of groups of manifolds. We discussed that manifolds are the essential concept to generalize the optimization framework and probability distributions as defined in GTSAM.
 
 We presented the idea of _right-hand_ and _left-hand_ conventions which, while not standard, allowed us to identify different formulations that can be found in the literature to operate groups and manifolds. By explicitly stating that GTSAM uses a right-hand convention for the composition of groups as well as retractions on manifolds we could identify the frames used to define the variables, as well as the covariance we obtain from the solution via  `Marginals`.
 

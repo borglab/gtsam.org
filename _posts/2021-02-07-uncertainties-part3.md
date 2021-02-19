@@ -291,5 +291,4 @@ I would like to thank again the interesting discussions originated in the [gtsam
 
 Coincidently, similar discussions we had at the [Dynamic Robot Systems](https://ori.ox.ac.uk/labs/drs/) group at the University of Oxford were aligned with the topics discussed here and facilitated the writing process. Special thanks to Yiduo Wang and Milad Ramezani for our conversations, derivation and testing of the formulas for the covariance of relative poses presented here, Marco Camurri for feedback on the notation and proofreading, and Maurice Fallon for encouraging to write this post.
 
-Finally, thanks to Frank Dellaert, José Luis Blanco-Claraco, Michael Bosse, and John Lambert for proofreading the posts and providing insightful comments to ensure the consistency of the topics presented here.
-
+Finally, thanks to Frank Dellaert, José Luis Blanco-Claraco, and John Lambert for proofreading the posts and their feedback, as well as Michael Bosse for providing insightful comments to ensure the consistency of the topics presented here.
