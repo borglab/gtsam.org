@@ -334,7 +334,7 @@ Please note that we have defined the retraction **from the right**, since this m
 
 
 ### And others are both: Lie groups
-In GTSAM **we only need the objects to be differentiable manifolds in order to optimize them** in the estimation framework but **being groups is not a requirement at all**. However, it is important to be aware that _some_ of the objects we deal with are **both groups and differentiable manifolds**, which we know as [**Lie groups**](https://en.wikipedia.org/wiki/Lie_group), which is the formulation generally found in state estimation literature.
+In GTSAM **we only need the objects to be differentiable manifolds in order to optimize them** in the estimation framework but **being groups is not a requirement at all**. However, it is important to be aware that _some_ of the objects we deal with are **both groups and differentiable manifolds**, known as [**Lie groups**](https://en.wikipedia.org/wiki/Lie_group), which is the formulation generally found in state estimation literature.
 
 <a name="lie_group_tangent"></a>
 <figure class="center">
