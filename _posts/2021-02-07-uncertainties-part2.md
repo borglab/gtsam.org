@@ -283,7 +283,7 @@ As we briefly mentioned before, objects such as rotation matrices are difficult 
 
 **That is what makes working with manifolds so convenient**: All the constraints that are part of the definition of the object are naturally handled, and we can work in tangent vector spaces using their *inherent* dimension. The same happens for rigid-body transformations (6 dimensions represented by a 16 elements matrix), quaternions (3 orientations represented by a 4D vector), **and even objects that are not groups, such as unit vectors**.
 
-In order to work with manifolds, we need to define 2 operations, which are the key to transform objects between them and the tangent spaces. **They are defined for the tangent space at each element on the manifold**:
+In order to work with manifolds, we need to define 2 operations, which are the key to transform objects between them and the tangent spaces:
 
 1. **Retract or retraction**: An operation that maps elements $$\mathbf{\xi}$$ from the tangent space at $$\mathbf{p}_1$$ to the manifold: $$\mathbf{p} = \text{retract}_{\mathbf{p}_1}(\mathbf{\xi})$$.
 2. **Local**: the opposite operation: mapping elements $$\mathbf{p}$$ from the manifold to the tangent space $\mathbf{\xi} = \text{local}_{\mathbf{p}_1}(\mathbf{p})$
@@ -292,7 +292,7 @@ In order to work with manifolds, we need to define 2 operations, which are the k
 <figure class="center">
   <img src="/assets/images/uncertainties/manifold-retract-zoom.png"
     alt="Retract operation on a manifold" />
-    <figcaption>The retract operation maps an element $\mathbf{\xi}$ defined at the tangent space at $\mathbf{p}_1$ back to the manifold.</figcaption>
+    <figcaption>The retract operation maps an element $\mathbf{\xi}$ defined in the tangent space at $\mathbf{p}_1$ back to the manifold.</figcaption>
 </figure>
 <br />
 
@@ -308,7 +308,7 @@ In order to work with manifolds, we need to define 2 operations, which are the k
 <figure class="center">
   <img src="/assets/images/uncertainties/manifold-local.png"
     alt="Local operation on a manifold" />
-    <figcaption>The local operation does the opposite, and maps an element $\mathbf{p}$ defined with respect to $\mathbf{p}_1$ as an increment $\mathbf{\xi}$ in the tangent space.</figcaption>
+    <figcaption>The local operation does the opposite, and maps an element $\mathbf{p}$ defined with respect to $\mathbf{p}_1$ as an vector $\mathbf{\xi}$ in the tangent space.</figcaption>
 </figure>
 <br />
 
@@ -334,7 +334,7 @@ Please note that we have defined the retraction **from the right**, since this m
 
 
 ### And others are both: Lie groups
-In GTSAM **we only need the objects to be differentiable manifolds in order to optimize them** in the estimation framework but **being groups is not a requirement at all**. However, it is important to be aware that _some_ of the objects we deal with are **both groups and differentiable manifolds**, known as [**Lie groups**](https://en.wikipedia.org/wiki/Lie_group), which is the formulation generally found in state estimation literature.
+In GTSAM **we only need the objects to be differentiable manifolds in order to optimize them** in the estimation framework, **being groups is not a requirement at all**. However, it is important to be aware that _some_ of the objects we deal with are **both groups and differentiable manifolds**, known as [**Lie groups**](https://en.wikipedia.org/wiki/Lie_group), which is the formulation generally found in state estimation literature.
 
 <a name="lie_group_tangent"></a>
 <figure class="center">
@@ -344,15 +344,15 @@ In GTSAM **we only need the objects to be differentiable manifolds in order to o
 </figure>
 <br />
 
-Objects such as rigid-body matrices and quaternions are Lie groups. In fact, rigid-body transformations can be seen as elements of the *Special Euclidean group* $\text{SE(3)}$ and we can use those definitions to define the operations we described before for groups and manifolds:
+Objects such as rigid-body matrices and quaternions are Lie groups. As a matter of fact, rigid-body transformations can be seen as elements of the *Special Euclidean group* $\text{SE(3)}$ and we can use those definitions to define the operations we described before for groups and manifolds:
 
 1. **Composition**: Matrix multiplication $$\mathbf{T}_{1} \ \mathbf{T}_{2}$$.
 2. **Identity**: Identity matrix $$\mathbf{I}$$.
 3. **Inverse**: Matrix inverse $$(\mathbf{T}_{1})^{-1}$$
-4. **Retract**: The retraction is defined at the tangent space at the identity, which is known as the *exponential map* of $$\text{SE(3)}$$: $$\mathbf{T}_{1} = \text{Exp}(\mathbf{\xi})$$.
-5. **Local**: It is also defined at the identity and known as the *logarithm map* of $$\text{SE(3)}$$: $$\mathbf{\xi} = \text{Log}(\mathbf{T}_{1} )$$.
+4. **Retract**: The retraction is defined at the tangent space at the identity, which is known as the *exponential map* of $$\text{SE(3)}$$: $$\text{retract}_{\mathbf{I}}(\mathbf{\xi}) := \text{Exp}(\mathbf{\xi})$$.
+5. **Local**: It is also defined at the identity and known as the *logarithm map* of $$\text{SE(3)}$$: $$\text{local}_{\mathbf{I}} := \text{Log}(\mathbf{T}_{1} )$$.
 
-Please note here that we used *capitalized* $$\text{Log}(\cdot) := \text{log}( \cdot)^{\vee}$$ and $$\text{Exp}(\cdot):=\text{exp}( (\cdot)^{\wedge})$$ operators for simplicity as used by [Forster et al (2017),](https://arxiv.org/abs/1512.02363) and [Solà et al. (2020)](https://arxiv.org/abs/1812.01537), since they are easy to understand under the retractions perspective. Refer to Solà et al. for a more detailed description, including the concept of *Lie algebras*.
+Please note here that we used *capitalized* $$\text{Log}(\cdot) := \text{log}( \cdot)^{\vee}$$ and $$\text{Exp}(\cdot):=\text{exp}( (\cdot)^{\wedge})$$ operators for simplicity as used by [Forster et al (2017),](https://arxiv.org/abs/1512.02363) and [Solà et al. (2020)](https://arxiv.org/abs/1812.01537), since they are easy to understand under the retractions perspective. Refer to Solà et al. for a more detailed description, including the relationship between tangents spaces and the *Lie algebra*.
 
 In GTSAM, 3D poses are defined as `Pose3` objects and in general we can think of them as $\text{SE(3)}$ elements. However, we could use other Lie groups to represent a 3D pose, such as $\mathbb{R}^{3} \times \text{SO(3)}$. They can have different definitions for the *retraction* and *local* operations, which can be more efficient to compute in optimization problems, and this is what GTSAM does internally in the `Pose3` definition (more information [here](https://gtsam.org/notes/GTSAM-Concepts.html)). For simplicity, however, we will stay using the logarithm map and exponential map to talk about $\text{SE(3)}$.
 
