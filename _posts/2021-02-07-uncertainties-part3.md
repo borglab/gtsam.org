@@ -118,7 +118,7 @@ which we obtained by isolating the term. The expression on the right-hand side i
 <figure class="center">
   <img src="/assets/images/uncertainties/adjoint-equal.png"
     alt="Correction from the left" />
-    <figcaption>Our previous procedure allowed us to identify that such relationships is described by the Adjoint.</figcaption>
+    <figcaption>Our previous procedure allowed us to identify that such relationship is described by the Adjoint, shown at the right-hand side of the equation.</figcaption>
 </figure>
 <br/>
 
@@ -270,7 +270,7 @@ $$
 \end{equation}
 $$
 
-A problem that exist with this expression, however, is that by assuming independence the covariance of the relative poses _will be larger than the covariance of each pose separately_. This is consistent with the [1-dimensional case in which we compute the distribution of the difference of *independent Gaussians*](https://mathworld.wolfram.com/NormalDifferenceDistribution.html), in which the mean is the difference while the covariance gets increased. However, is not the result that we would want, since our odometry factors will degrade over time. 
+A problem that exist with this expression, however, is that by assuming independence the covariance of the relative poses _will be larger than the covariance of each pose separately_. This is consistent with the [1-dimensional case in which we compute the distribution of the difference of *independent Gaussians*](https://mathworld.wolfram.com/NormalDifferenceDistribution.html), in which the mean is the difference while the covariance gets increased. However, this is not the result that we would want, since our odometry factors will degrade over time. 
 
 Mangelson et al. showed that if some correlations exists (as we showed for the composition example) and it is explicitly considered in the computation, the estimates get more accurate and the covariance is not over or underestimated. The corresponding expression that complies with GTSAM is then:
 
