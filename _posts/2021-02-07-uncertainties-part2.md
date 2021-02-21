@@ -356,8 +356,8 @@ Please note here that we used *capitalized* $$\text{Log}(\cdot) := \text{log}( \
 
 In GTSAM, 3D poses are defined as `Pose3` objects and in general we can think of them as $\text{SE(3)}$ elements. However, we could use other Lie groups to represent a 3D pose, such as $\mathbb{R}^{3} \times \text{SO(3)}$. They can have different definitions for the *retraction* and *local* operations, which can be more efficient to compute in optimization problems, and this is what GTSAM does internally in the `Pose3` definition (more information [here](https://gtsam.org/notes/GTSAM-Concepts.html)). For simplicity, however, we will stay using the logarithm map and exponential map to talk about $\text{SE(3)}$.
 
-### Reference frames on Lie groups
-Lie groups combine all the ideas we have presented so far. In particular, reference frames are also relevant here and **they are preserved when applying the local and retract operations**. We will cover a few important ideas using $$\text{SE(3)}$$, since it is related to our original problem of pose estimation.
+### Reference frames on manifolds
+Reference frames **are preserved when applying the local and retract operations**. We will cover a few important ideas using $$\text{SE(3)}$$, since it is related to our original problem of pose estimation.
 
 First of all, when we talked about *the tangent space defined at the identity*, in physical terms it refers to having a fixed, global frame, which we use to express our poses. Then, when using the *local* operation defined as the logarithm map of $$\text{SE(3)}$$, we obtain a vector $$_W\mathbf{\xi}_{W} \in \mathbb{R}^{6}$$ (sometimes also called *tangent vector* or *twist*), which is defined in the tangent space *at the world frame*:
 
@@ -391,7 +391,7 @@ The graphical interpretation with the manifold is consistent with our general de
 <figure class="center">
   <img src="/assets/images/uncertainties/lie-group-frames-increment.png"
     alt="Retraction with frames" />
-    <figcaption>When we add a small increment ${_{B_i}}\mathbf{\xi}_{B_i}$ to the pose $\mathbf{T}_{WB_i}$, the expression $\mathbf{T}_{WB_i} \text{Exp}( {_{B_i}}\mathbf{\xi}_{B_i})$ has the same interpretation as the retraction defined for the tangent space at $\mathbf{T}_{WB_i}$.</figcaption>
+    <figcaption>When we add a small increment ${_{B_i}}\mathbf{\xi}_{B_i}$ to the pose $\mathbf{T}_{WB_i}$, the expression $\mathbf{T}_{WB_i} \text{Exp}( {_{B_i}}\mathbf{\xi}_{B_i})$ corresponds to the retraction defined for the tangent space at $\mathbf{T}_{WB_i}$.</figcaption>
 </figure>
 <br />
 
