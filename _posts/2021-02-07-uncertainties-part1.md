@@ -45,7 +45,7 @@ Author: [Matias Mattamala](https://mmattamala.github.io)
 ## Introduction
 In these posts I will review some general aspects of optimization-based state estimation methods, and how to input and output consistent quantities and uncertainties, i.e, covariance matrices, from them. We will take a (hopefully) comprehensive tour that will cover *why we do the things the way we do*, aiming to clarify some *uncertain* things about working with covariances. We will see how most of the explanations naturally arise by making explicit the definitions and conventions that sometimes we implicitly assume when using these tools.
 
-This post summarizes and extends some of the interesting discussions we had in the [gtsam-users](https://groups.google.com/g/gtsam-users/c/c-BhH8mfqbo/m/7Wsj_nogBAAJ) group. We hope that such space will continue to bring to the table relevant questions shared by all of us.
+They summarize and extend some of the interesting discussions we had in the [gtsam-users](https://groups.google.com/g/gtsam-users/c/c-BhH8mfqbo/m/7Wsj_nogBAAJ) group. We hope that such space will continue to bring to the table relevant questions shared by all of us.
 
 ## A simple example: a pose graph
 As a motivation, we will use a similar pose graph to those used in other GTSAM examples:
@@ -54,7 +54,7 @@ As a motivation, we will use a similar pose graph to those used in other GTSAM e
 <figure class="center">
   <img src="/assets/images/uncertainties/motivation.png"
     alt="Simple pose graph example" />
-    <figcaption> We consider a robot moving on the 2D plane (top), which has an odometer that provides relative measurements of the robot's displacement. The graph at the bottom represent the factor graph model. Modeling the odometry factor in a consistent way is the main topic we will cover in this post.</figcaption>
+    <figcaption> We consider a robot moving on the 2D plane (top), which has an odometer that provides relative measurements of the robot's displacement. The graph at the bottom represent the factor graph model. Modeling the odometry factor in a consistent way is the main topic we will cover in these posts.</figcaption>
 </figure>
 <br />
 
@@ -81,13 +81,17 @@ We can also notice that with a bit of manipulation, it is possible to establish 
 
 $$
 \begin{equation}
--\eta_i  = \mathbf{A}_{i}\mathbf{x}_i + \mathbf{b}_i - \mathbf{x}_{i+1}
+\eta_i  = \mathbf{x}_{i+1} - \mathbf{A}_{i}\mathbf{x}_i - \mathbf{b}_i
 \end{equation}
 $$
 
-(*while it may seem counterintuitive to have a negative term on the left-hand side, it has some advantages that will be clear in the next paragraphs.*)
+This is an important expression because we know that the left-hand expression distributes as a Gaussian distribution. But since we have an equivalence, the right-hand term must do as well. We must note here that what distributes as a Gaussian is neither $$\mathbf{x}_{i}$$ nor $$\mathbf{x}_{i+1}$$, but the difference $$(\mathbf{x}_{i+1} - \mathbf{A}_{i}\mathbf{x}_i - \mathbf{b}_i)$$. This allows us to use the difference as an  **odometry factor** that relates $$\mathbf{x}_i$$ and $$\mathbf{x}_{i+1}$$ probabillistically in our factor graph:
 
-This is an important expression because we know that the left-hand expression distributes as a Gaussian distribution. But since we have an equivalence, the right-hand term must do as well. We must note here that what distributes as a Gaussian is neither $$\mathbf{x}_{i}$$ nor $$\mathbf{x}_{i+1}$$, but the difference $$(\mathbf{A}_{i}\mathbf{x}_i + \mathbf{b}_i - \mathbf{x}_{i+1})$$. This allows us to use the difference as an  **odometry factor** that relates $$\mathbf{x}_i$$ and $$\mathbf{x}_{i+1}$$ probabillistically in our factor graph.
+$$
+\begin{equation}
+(\mathbf{x}_{i+1} - \mathbf{A}_{i}\mathbf{x}_i - \mathbf{b}_i) \sim Gaussian(\mathbf{0}_{2\times1}, \Sigma_i)
+\end{equation}
+$$
 
 ### Analyzing the solution
 Solving the factor graph using the previous expression for the odometry factors is equivalent to solve the following least squares problem under the assumption that all our factors are Gaussian and we use *maximum-a-posteriori* (MAP) estimation, which is fortunately our case:
@@ -98,7 +102,9 @@ $$
 \end{equation}
 $$
 
-This problem is linear, hence solvable in closed form. By differentiating the squared cost, setting it to zero and doing some manipulation, we end up with the so-called *normal equations*, which are particularly relevant for our posterior analysis:
+Please note here that while we swapped the terms in the factor to be consistent with GTSAM documentation, it does not affect the formulation since the term is squared.
+
+The previous optimization problem is linear with respect to the variables, hence solvable in closed form. By differentiating the squared cost, setting it to zero and doing some manipulation, we end up with the so-called *normal equations*, which are particularly relevant for our posterior analysis:
 
 $$
 \begin{equation}
@@ -140,15 +146,7 @@ $$
 \end{equation}
 $$
 
-So a similar expression follows by isolating the noise:
-
-$$
-\begin{equation}
--\eta_i = f(\mathbf{x}_i, \mathbf{b}_i) - \mathbf{x}_{i+1} 
-\end{equation}
-$$
-
-Now the factors are defined by the residual $$f(\mathbf{x}_i, \mathbf{b}_i) - \mathbf{x}_{i+1}$$, which poses the following *nonlinear least squares* (NLS) problem:
+Following a similar procedure as before isolating the noise, we can reformulate the problem as the following *nonlinear least squares* (NLS) problem:
 
 $$
 \begin{equation}
@@ -156,7 +154,7 @@ $$
 \end{equation}
 $$
 
-Since the system is not linear anymore we cannot solve it in close form. We need to use nonlinear optimization algorithms such as Gauss-Newton or Levenberg-Marquardt. They will try to approximate our *linear dream* by linearizing the residual with respect to some **linearization or operation point** given by a guess $$\mathcal{\bar{X}}^{k}$$ valid at iteration $k$:
+Since the system is not linear with respect to the variables anymore we cannot solve it in close form. We need to use nonlinear optimization algorithms such as [Gauss-Newton](https://en.wikipedia.org/wiki/Gauss%E2%80%93Newton_algorithm), [Levenberg-Marquardt](https://en.wikipedia.org/wiki/Levenberg%E2%80%93Marquardt_algorithm) or [Dogleg](https://en.wikipedia.org/wiki/Powell%27s_dog_leg_method). They will try to approximate our *linear dream* by linearizing the residual with respect to some **linearization or operation point** given by a guess $$\mathcal{\bar{X}}^{k}$$ valid at iteration $k$:
 
 $$
 \begin{equation}

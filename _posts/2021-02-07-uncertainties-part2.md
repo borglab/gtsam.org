@@ -283,7 +283,7 @@ As we briefly mentioned before, objects such as rotation matrices are difficult 
 
 **That is what makes working with manifolds so convenient**: All the constraints that are part of the definition of the object are naturally handled, and we can work in tangent vector spaces using their *inherent* dimension. The same happens for rigid-body transformations (6 dimensions represented by a 16 elements matrix), quaternions (3 orientations represented by a 4D vector), **and even objects that are not groups, such as unit vectors**.
 
-In order to work with manifolds, we need to define 2 operations, which are the key to transform objects between them and the tangent spaces. **They are defined at tangent space of each element on the manifold**:
+In order to work with manifolds, we need to define 2 operations, which are the key to transform objects between them and the tangent spaces. **They are defined for the tangent space at each element on the manifold**:
 
 1. **Retract or retraction**: An operation that maps elements $$\mathbf{\xi}$$ from the tangent space at $$\mathbf{p}_1$$ to the manifold: $$\mathbf{p} = \text{retract}_{\mathbf{p}_1}(\mathbf{\xi})$$.
 2. **Local**: the opposite operation: mapping elements $$\mathbf{p}$$ from the manifold to the tangent space $\mathbf{\xi} = \text{local}_{\mathbf{p}_1}(\mathbf{p})$
@@ -391,7 +391,7 @@ The graphical interpretation with the manifold is consistent with our general de
 <figure class="center">
   <img src="/assets/images/uncertainties/lie-group-frames-increment.png"
     alt="Retraction with frames" />
-    <figcaption>Graphical interpretation of adding a small increment ${_{B_i}}\mathbf{\xi}_{B_i}$ to the pose $\mathbf{T}_{WB_i}$.</figcaption>
+    <figcaption>When we add a small increment ${_{B_i}}\mathbf{\xi}_{B_i}$ to the pose $\mathbf{T}_{WB_i}$, the expression $\mathbf{T}_{WB_i} \text{Exp}( {_{B_i}}\mathbf{\xi}_{B_i})$ has the same interpretation as the retraction defined for the tangent space at $\mathbf{T}_{WB_i}$.</figcaption>
 </figure>
 <br />
 
@@ -413,12 +413,12 @@ represents the tangent vector resulting from time-integrating the velocity, whic
 <figure class="center">
   <img src="/assets/images/uncertainties/lie-group-frames-velocities.png"
     alt="Retraction with velocities" />
-    <figcaption>The same formulation can be used to map velocities into increments via retractions/exponential map.</figcaption>
+    <figcaption>The same formulation can be used to map velocities into increments via retractions/exponential map. In this case, the time increment $\delta t$ controls the length of the curve that is projected on the manifold.</figcaption>
 </figure>
 <br />
 
 
-**We need to be careful about the convention of the retraction/local operation** (yes, more conventions again). Having clarity about the definition that every software defines for these operations (even implicitly) is fundamental to make sense of the quantities we put into our estimation problems and the estimates we extract. For instance, the definition of the $\text{SE(3)}$ retraction we presented, which matches `Pose3` in GTSAM, uses an _orientation-then-translation_ convention, i.e, the 6D tangent vector has orientation in the first 3 coordinates, and translation in the last 3. On the other hand, `Pose2` uses _translation-then-orientation_ $(x, y, \theta)$ for [historical reasons](https://github.com/borglab/gtsam/issues/160#issuecomment-562161665). **To ensure that everything is fine, we recommend to always check the retraction/exponential map definition**.
+**We need to be careful about the convention of the retraction/local operation** (yes, more conventions again). Having clarity about the definition that every software defines for these operations, even implicitly, is fundamental to make sense of the quantities we put into our estimation problems and the estimates we extract. For instance, the definition of the $\text{SE(3)}$ retraction we presented, which matches `Pose3` in GTSAM, uses an _orientation-then-translation_ convention, i.e, the 6D tangent vector has orientation in the first 3 coordinates, and translation in the last 3. On the other hand, `Pose2` uses _translation-then-orientation_ $(x, y, \theta)$ for [historical reasons](https://github.com/borglab/gtsam/issues/160#issuecomment-562161665). **To ensure that everything is fine, we recommend to always check the retraction/exponential map definition**.
 
 
 ## Bringing everything together
@@ -487,7 +487,7 @@ Since the noise is defined in the tangent space, both sides denote vector expres
 <figure class="center">
   <img src="/assets/images/uncertainties/lie-group-frames-residual.png"
     alt="Defining noise for the relative increment." />
-    <figcaption>The Between residual, illustrated. On the left hand side, we have the corresponding transformations involved in the computation expressed on the manifold. Since the error (in red) is also defined on the manifold, it is not described by a straight line. However, by applying the local operation, given by the logarithm map for $\text{SE(3)}$, we can map it to to the tangent space at $\Delta\mathbf{T}_{B_{i} B_{i+1}}$, which is a vector space. The error itself should lie within the Gaussian we created using the noise $_{B_{i+1}}\mathbf{\eta}_{B_{i+1}}$</figcaption>
+    <figcaption>The Between residual, illustrated. On the left hand side, we have the corresponding transformations involved in the computation expressed on the manifold. Since the error (in red) is also defined on the manifold, it is not described by a straight line. However, by applying the local operation, given by the logarithm map for $\text{SE(3)}$, we can map it to to the tangent space at $\Delta\mathbf{T}_{B_{i} B_{i+1}}$, which is a vector space (right). The error itself should lie within the Gaussian we created using the noise $_{B_{i+1}}\mathbf{\eta}_{B_{i+1}}$, which denotes the noise of the odometry model.</figcaption>
 </figure>
 <br />
 
@@ -540,4 +540,4 @@ We presented the idea of _right-hand_ and _left-hand_ conventions which, while n
 
 Additionally, the definition of the local and retract operations also have direct impact on the ordering of the covariance matrices, which also varies depending on the object. For instance, we discussed that `Pose2` use a _translation-then-orientation_ convention, while `Pose3` does _orientation-then-translation_. This is particularly important when we want to use GTSAM quantities with different software, such as ROS, which use a _translation-then-orientation_ convention for their 3D pose structures for instance ([`PoseWithCovariance`](http://docs.ros.org/en/melodic/api/geometry_msgs/html/msg/PoseWithCovariance.html)).
 
-The [final post](https://gtsam.org/2021/02/07/uncertainties-part3.html) will cover some final remarks regarding the conventions we defined and applications of the _adjoint_ of a Lie group. This will be very useful to properly transform covariance matrices defined for poses consistently with GTSAM's conventions.
+The [final post](https://gtsam.org/2021/02/07/uncertainties-part3.html) will cover some final remarks regarding the conventions we defined and applications of the _adjoint_ of a Lie group, which is quite useful to properly transform covariance matrices defined for poses.

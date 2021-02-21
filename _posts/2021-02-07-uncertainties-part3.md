@@ -43,9 +43,9 @@ Author: [Matias Mattamala](https://mmattamala.github.io)
 {:toc}
 
 ## Introduction
-In our [previous post](https://gtsam.org/2021/02/07/uncertainties-part2.html) we presented the concepts of reference frames, and how they are related to groups and manifolds to give physical meaning to the variables of our estimation framework. We also defined Lie groups as a special case of groups that were also differentiable manifolds, hence being objects that allowed composition and inversion but also to optimize them and define probability distributions.
+In our [previous post](https://gtsam.org/2021/02/07/uncertainties-part2.html) we presented the concepts of reference frames, and how they are related to groups and manifolds to give physical meaning to the variables of our estimation framework. We remarked that the only property required for our GTSAM objects to be optimized and define probability distributions was to be *manifolds*. However, groups were useful to understand the composition of some objects, and to present the idea of *Lie groups*, which were both groups and differentiable manifolds.
 
-In this last post we would like to introduce the concept of **adjoint** of a Lie group, and how it relates to the previous ideas to obtain other useful expressions for covariance transformations. We will focus on $\text{SE(3)}$ because of its wide applicability but similar definitions should apply for other Lie groups since they mainly rely on a definition of the adjoint.
+This last section is mainly concerned about Lie groups, which is the case for most of the objects we use to represent robot pose. In particular, we will review the concept of **adjoint** of a Lie group, which will helps us to relate increments or correction applied on the right-hand side, with those applied on the left-side. Such property will allow us to manipulate uncertainties defined for Lie groups algebraically, and to obtain expressions for different covariance transformations. We will focus on 3D poses, i.e $\text{SE(3)}$, because of its wide applicability but similar definitions should apply for other Lie groups since they mainly rely on a definition of the adjoint.
 
 Most of this expressions have been already shown in the literature by [Barfoot and Furgale (2014)](http://ncfrn.cim.mcgill.ca/members/pubs/barfoot_tro14.pdf) and [Mangelson et al. (2020)](https://arxiv.org/abs/1906.07795) but since they follow a left-hand convention they are not straightforward to use with GTSAM. We provide the resulting expressions for the covariance transformations following Mangelson et al. but we recommend to refer to their work to understand the details of the process.
 
@@ -86,7 +86,7 @@ Please note that this case is different to the example in the previous post in w
 </figure>
 <br/>
 
-We are interested in finding out a correction on the base that can lead to the same result that a correction applied on the right. For that specific correction both formulations would be effectively representing the same pose but using **different reference frames**. This is shown as follows:
+We are interested in finding out a correction on the base that can lead to the same result that a correction applied on the right. For that specific correction both formulations would be effectively representing the same pose but using **different reference frames**. This is shown in the next figure:
 
 <a name="adjoint"></a>
 <figure class="center">
@@ -104,7 +104,7 @@ $$
 \end{equation}
 $$
 
-We dropped the indices for simplicity, since this is a geometric relationship. In order to satisfy this condition, the incremental change we applied on the left-hand side, i.e in the world frame, $$_{W}\mathbf{\xi}_{W}$$ must be given by:
+We dropped the time-related indices for simplicity, since this is a geometric relationship. In order to satisfy this condition, the incremental change we applied on the left-hand side, i.e in the world frame, $$_{W}\mathbf{\xi}_{W}$$ must be given by:
 
 $$
 \begin{equation}
@@ -130,13 +130,13 @@ $$
 \end{equation}
 $$
 
-where $$\text{Ad}_{T_{WB_i}^{-1}}$$ is known as the *adjoint matrix* or **_Adjoint_ of** $$T_{WB_i}^{-1}$$. The adjoint acts over elements of the tangent space directly, changing their reference frame. Please note that the same subindex cancelation applies here, so we can confirm that the transformations are correctly defined.
+where $$\text{Ad}_{T_{WB_i}^{-1}}$$ is known as the *adjoint matrix* or **_adjoint_ of** $$T_{WB_i}^{-1}$$. The adjoint acts over elements of the tangent space directly, changing their reference frame. Please note that the same subindex cancelation applies here, so we can confirm that the transformations are correctly defined.
 
-We can also interpret this as a way to _move_ increments applied on the left-hand side (in world frame) to the right-hand side (base frame), which is particularly useful to keep the right-hand convention for the retractions and probability distributions consistent. This is the main property we will use in the next sections to define some covariance transformations, and it is already implemented in `Pose3` as [`AdjointMap`](https://github.com/borglab/gtsam/blob/develop/gtsam/geometry/Pose3.cpp#L58).
+We can also interpret this as a way to consistently _move_ increments applied on the left-hand side (in world frame) to the right-hand side (base frame), which is particularly useful to keep the right-hand convention for the retractions and probability distributions consistent. This is the main property we will use in the next sections to define some covariance transformations, and it is already implemented in `Pose3` as [`AdjointMap`](https://github.com/borglab/gtsam/blob/develop/gtsam/geometry/Pose3.cpp#L58).
 
 
 ## Distribution of the inverse
-As a first example on how the adjoint helps to manipulate covariances, let us consider the case in which we have the solution of a factor graph, with covariances defined in the base frame as we have discussed previously:
+As a first example on how the adjoint helps to manipulate covariances, let us consider the case in which we have the solution of a factor graph, with covariances defined in the base frame as we have discussed previously. We are interested in obtaining an expression to express the covariance in the world frame:
 
 <a name="inverse-pose"></a>
 <figure class="center">
