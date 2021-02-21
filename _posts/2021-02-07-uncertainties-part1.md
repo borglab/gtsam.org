@@ -195,7 +195,7 @@ Similarly, the expression on the left-hand side $\Sigma^{k+1} = (\mathbf{A}^{T} 
 
 ## Conclusions 
 
-In this first post we reviewed the basics ideas to solve factor graphs and extract estimates from them. We showed how the linear problem described by the *normal equations* not only allows us to find the solution, but also encodes information about its covariance - given by inverse of the Fisher information matrix. Additionally, in the context of nonlinear problems, we showed how **such covariance is only valid around the linearization point** hence we must be careful when using it in nonlinear problems.
+In this first post we reviewed the basics ideas to solve factor graphs and extract estimates from them. We showed how the linear problem described by the *normal equations* not only allows us to find the solution, but also encodes information about its covariance - given by the inverse of the Fisher information matrix. Additionally, in the context of nonlinear problems, we showed how **such covariance is only valid around the linearization point**.
 
 In our [next post](https://gtsam.org/2021/02/07/uncertainties-part2.html) we will review how these ideas generalize when we are not estimating *vector* variables anymore but other objects such as rotation matrices and rigid-body transformations - generally known as **manifolds**. While this will introduce a bit of complexity not only in the maths but also the notation, by being explicit about our conventions we will be able to consistently solve a wider set of problems usually found in robotics and computer vision.
 
