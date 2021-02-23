@@ -45,7 +45,7 @@ In our [previous post](https://gtsam.org/2021/02/07/uncertainties-part1.html) we
 
 While the nonlinear case effectively allows us to model a bunch of problems, we need to admit we were not too honest when we said that it was *everything* we needed to model real problems. Our formulation so far assumed that the variables in our factor graph are **vectors**, which is not the case for robotics and computer vision at least.
 
-This second part will review the concept of _manifold_ and how the reference frames affect the formulation of our factor graph. The tools we cover here will be also useful to manipulate quantities and their covariances when operating them in algebraic settings.
+This second part will review the concept of _manifold_ and how the reference frames affect the formulation of our factor graph. The tools we cover here will be also useful to define probability distributions in a more general way, as well as to extend our estimation framework to more general problems.
 
 
 ## Getting non-Euclidean
@@ -69,7 +69,7 @@ $$
 \end{equation}
 $$
 
-Here $\mathbf{R}_1 = \left[ \begin{matrix} \cos{\theta_1} && -\sin{\theta_1}\\ \sin{\theta_1} && \cos{\theta_1}\end{matrix} \right]$ is a 2D rotation matrix, while $\mathbf{t}_1 = \left[ \begin{matrix}x_1 \\ y_1 \end{matrix}\right]$ is a translation vector.
+Here $$\mathbf{R}_1 = \left[ \begin{matrix} \cos{\theta_1} && -\sin{\theta_1}\\ \sin{\theta_1} && \cos{\theta_1}\end{matrix} \right]$$ is a 2D rotation matrix, while $\mathbf{t}_1 = \left[ \begin{matrix}x_1 \\ y_1 \end{matrix}\right]$ is a translation vector.
 While we are using a $3\times3$ matrix now to represent the pose, *its degrees of freedom* are still $3$, since it is a function of $(x_1, y_1, \theta_1)$.
 
 Working with transformation matrices is great, because we can now describe the behavior we previously explained with words using matrix operations. If we start in pose $\mathbf{T}_1$ and we apply the transformation $\mathbf{T}_2$:
@@ -517,7 +517,7 @@ The second important point, is that the covariance that we can recover from the 
 
 $$
 \begin{equation}
-\Sigma^{k+1} = (\mathbf{A}^{T} (\Sigma^{k})^{-1} \mathbf{A})^{-1}
+\Sigma^{k+1} = ((\mathbf{H}^k)^{T} (\Sigma^{k})^{-1} \mathbf{H}^k)^{-1}
 \end{equation}
 $$
 

@@ -102,7 +102,7 @@ $$
 \end{equation}
 $$
 
-Please note here that while we swapped the terms in the factor to be consistent with GTSAM documentation, it does not affect the formulation since the term is squared.
+Please note here that while we swapped the terms in the factor to be consistent with GTSAM's documentation, it does not affect the formulation since the term is squared.
 
 The previous optimization problem is linear with respect to the variables, hence solvable in closed form. By differentiating the squared cost, setting it to zero and doing some manipulation, we end up with the so-called *normal equations*, which are particularly relevant for our posterior analysis:
 
@@ -134,7 +134,7 @@ The previous pose graph was quite simple and probably not applicable for most of
 
 $$
 \begin{equation}
-\mathbf{x}_{i+1} = f(\mathbf{x}_i, \mathbf{b}_i)
+\mathbf{x}_{i+1} = f(\mathbf{x}_i)
 \end{equation}
 $$
 
@@ -142,7 +142,7 @@ Despite nonlinear, we can still say that our mapping has some errors involved, w
 
 $$
 \begin{equation}
-\mathbf{x}_{i+1} = f(\mathbf{x}_i, \mathbf{b}_i) + \eta_i
+\mathbf{x}_{i+1} = f(\mathbf{x}_i) + \eta_i
 \end{equation}
 $$
 
@@ -150,7 +150,7 @@ Following a similar procedure as before isolating the noise, we can reformulate 
 
 $$
 \begin{equation}
-\mathcal{X} = \argmin \displaystyle\sum_i || f(\mathbf{x}_i, \mathbf{b}_i) - \mathbf{x}_{i+1} ||^2_{\Sigma_i}
+\mathcal{X} = \argmin \displaystyle\sum_i || f(\mathbf{x}_i) - \mathbf{x}_{i+1} ||^2_{\Sigma_i}
 \end{equation}
 $$
 
@@ -158,11 +158,11 @@ Since the system is not linear with respect to the variables anymore we cannot s
 
 $$
 \begin{equation}
-f(\mathbf{x}_i, \mathbf{b}_i) \approx f(\mathbf{\bar{x}}^{k}, \mathbf{b}_i) + \mathbf{H}(\bar{x}^{k})\mathbf{x}_i = \mathbf{b}_k + \mathbf{H}^k \mathbf{x}_i
+f(\mathbf{x}_i) \approx f(\mathbf{\bar{x}}^{k}) + \mathbf{H}(\mathbf{\bar{x}}^{k})\mathbf{x}_i = \mathbf{b}_k + \mathbf{H}^k \mathbf{x}_i
 \end{equation}
 $$
 
-Hence the problem becomes:
+where $$\mathbf{H}(\mathbf{\bar{x}}^{k})$$ denotes the *Jacobian* of $$f(\cdot)$$ evaluated at the linearization point $$\mathbf{\bar{x}}^{k}$$. Hence the problem becomes:
 
 $$
 \begin{equation}
@@ -170,7 +170,7 @@ $$
 \end{equation}
 $$
 
-It is important to observe here that we are not obtaining the global solution $\mathcal{X}$, but just a small increment $\delta\mathcal{X}$ that will allow us to move closer to some minima that depends on the initial values. This linear problem *can* be solved in closed form as we did before. In fact, the normal equations now become something similar to the linear case:
+It is important to observe here that we are not obtaining the global solution $\mathcal{X}$, but just a small increment $\delta\mathcal{X}^{k}$ that will allow us to move closer to some minima that depends on the initial values. This linear problem *can* be solved in closed form as we did before. In fact, the normal equations now become something similar to the linear case:
 
 $$
 \begin{equation}
@@ -179,7 +179,7 @@ $$
 \end{equation}
 $$
 
-The solution $\delta\mathcal{X}$ will be used to update our current solution at iteration $k$ using the update rule:
+where $$\mathbf{H}^k$$ is built by stacking the Jacobians at iteration $k$. The solution $\delta\mathcal{X}^{k}$ will be used to update our current solution at iteration $k$ using the update rule:
 
 $$
 \begin{equation}
@@ -189,7 +189,7 @@ $$
 
 where $$\mathcal{X}^{k+1}$$ corresponds to the best estimate so far, and can be used as a new linearization point for a next iteration.
 
-Similarly, the expression on the left-hand side $\Sigma^{k+1} = (\mathbf{A}^{T} (\Sigma^{k})^{-1} \mathbf{A})^{-1}$ also corresponds to the Fisher information or Hessian as before, **but with respect to the linearization point**. This is quite important because both the best solution so far $\mathcal{X}^{k+1}$ and its associated covariance $\Sigma^{k+1}$ will be valid only at this linearization point and will change with every iteration of the nonlinear optimization. But understanding this, we still can say that **at iteration $k+1$ our best solution will follow a distribution** $Gaussian(\mathcal{X}^{k+1}, \Sigma^{k+1})$.
+Similarly, the expression on the left-hand side $$\Sigma^{k+1} = ((\mathbf{H}^k)^{T} (\Sigma^{k})^{-1} \mathbf{H}^k)^{-1}$$ also corresponds to the Fisher information or Hessian as before, **but with respect to the linearization point**. This is quite important because both the best solution so far $\mathcal{X}^{k+1}$ and its associated covariance $\Sigma^{k+1}$ will be valid only at this linearization point and will change with every iteration of the nonlinear optimization. But understanding this, we still can say that **at iteration $k+1$ our best solution will follow a distribution** $Gaussian(\mathcal{X}^{k+1}, \Sigma^{k+1})$.
 
 
 
