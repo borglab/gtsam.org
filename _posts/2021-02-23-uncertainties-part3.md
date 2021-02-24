@@ -50,11 +50,11 @@ This last section is mainly concerned about Lie groups, which is the case for mo
 Most of this expressions have been already shown in the literature by [Barfoot and Furgale (2014)](http://ncfrn.cim.mcgill.ca/members/pubs/barfoot_tro14.pdf) and [Mangelson et al. (2020)](https://arxiv.org/abs/1906.07795) but since they follow a left-hand convention they are not straightforward to use with GTSAM. We provide the resulting expressions for the covariance transformations following Mangelson et al. but we recommend to refer to their work to understand the details of the process.
 
 ## Adjoints
-Let us consider a case similar as previous examples in which we were adding a small increment $$\mathbf{\xi}_{B_i}$$ to a pose $$\mathbf{T}_{WB_i}$$.
+Let us consider a case similar as previous examples in which we were adding a small increment $$_{B_i}\mathbf{\xi}$$ to a pose $$\mathbf{T}_{WB_i}$$.
 
 $$
 \begin{equation}
-\mathbf{T}_{W_i B_{i}} \text{Exp}( _{B_i}\mathbf{\xi}_{B_i})
+\mathbf{T}_{W_i B_{i}} \text{Exp}( _{B_i}\mathbf{\xi})
 \end{equation}
 $$
 
@@ -72,7 +72,7 @@ However, for some applications we can be interested in applying a correction *fr
 
 $$
 \begin{equation}
-\mathbf{T}_{W_{i+1} B} = \text{Exp}( _{W_i}\mathbf{\xi}_{W_i}) \mathbf{T}_{W_i B_i}
+\mathbf{T}_{W_{i+1} B} = \text{Exp}( _{W_i}\mathbf{\xi}) \mathbf{T}_{W_i B_i}
 \end{equation}
 $$
 
@@ -100,15 +100,15 @@ In order to find it, we can write an equivalence between corrections applied on 
 
 $$
 \begin{equation}
-\text{Exp}( _{W}\mathbf{\xi}_{W}) \mathbf{T}_{WB} = \mathbf{T}_{WB} \text{Exp}( _{B}\mathbf{\xi}_{B})
+\text{Exp}( _{W}\mathbf{\xi}) \mathbf{T}_{WB} = \mathbf{T}_{WB} \text{Exp}( _{B}\mathbf{\xi})
 \end{equation}
 $$
 
-We dropped the time-related indices for simplicity, since this is a geometric relationship. In order to satisfy this condition, the incremental change we applied on the left-hand side, i.e in the world frame, $$_{W}\mathbf{\xi}_{W}$$ must be given by:
+We dropped the time-related indices for simplicity, since this is a geometric relationship. In order to satisfy this condition, the incremental change we applied on the left-hand side, i.e in the world frame, $$_{W}\mathbf{\xi}$$ must be given by:
 
 $$
 \begin{equation}
-\text{Exp}( _{W}\mathbf{\xi}_{W}) = \mathbf{T}_{WB_i} \text{Exp}( _{B}\mathbf{\xi}_{B}) \mathbf{T}_{WB}^{-1}
+\text{Exp}( _{W}\mathbf{\xi}) = \mathbf{T}_{WB_i} \text{Exp}( _{B}\mathbf{\xi}) \mathbf{T}_{WB}^{-1}
 \end{equation}
 $$
 
@@ -126,7 +126,7 @@ For our purposes, it is useful to use an equivalent alternative expression that 
 
 $$
 \begin{equation}
-\text{Exp}( _{W}\mathbf{\xi}_{W}) \mathbf{T}_{WB_i} = \mathbf{T}_{WB_i} \text{Exp}( \text{Ad}_{T_{WB_i}^{-1}}  {_{W}}\mathbf{\xi}_{W})
+\text{Exp}( _{W}\mathbf{\xi}) \mathbf{T}_{WB_i} = \mathbf{T}_{WB_i} \text{Exp}( \text{Ad}_{T_{WB_i}^{-1}}  {_{W}}\mathbf{\xi})
 \end{equation}
 $$
 
@@ -150,17 +150,17 @@ The distribution of the pose assuming Gaussian distribution will be expressed by
 
 $$
 \begin{equation}
-\mathbf{\tilde{T}}_{WB} = \mathbf{T}_{WB} \text{Exp}( _{B}\mathbf{\eta}_{B})
+\mathbf{\tilde{T}}_{WB} = \mathbf{T}_{WB} \text{Exp}( _{B}\mathbf{\eta})
 \end{equation}
 $$
 
-with $$_{B}\mathbf{\eta}_{B}$$ zero-mean Gaussian noise with covariance $\Sigma_{B}$ as before. The distribution of the inverse can be computed by inverting the expression:
+with $$_{B}\mathbf{\eta}$$ zero-mean Gaussian noise with covariance $\Sigma_{B}$ as before. The distribution of the inverse can be computed by inverting the expression:
 
 $$
 \begin{align}
-(\mathbf{\tilde{T}}_{WB})^{-1} & = (\mathbf{T}_{WB} \text{Exp}( _{B}\mathbf{\eta}_{B}) )^{-1}\\
-& = (\text{Exp}( _{B}\mathbf{\eta}_{B}) )^{-1}\ \mathbf{T}_{WB}^{-1}\\
-& = \text{Exp}(- _{B}\mathbf{\eta}_{B}) \ \mathbf{T}_{WB}^{-1}
+(\mathbf{\tilde{T}}_{WB})^{-1} & = (\mathbf{T}_{WB} \text{Exp}( _{B}\mathbf{\eta}) )^{-1}\\
+& = (\text{Exp}( _{B}\mathbf{\eta}) )^{-1}\ \mathbf{T}_{WB}^{-1}\\
+& = \text{Exp}(- _{B}\mathbf{\eta}) \ \mathbf{T}_{WB}^{-1}
 \end{align}
 $$
 
@@ -168,7 +168,7 @@ However, the _noise_ is defined on the left, which is inconvenient because is st
 
 $$
 \begin{equation}
-(\mathbf{\tilde{T}}_{WB})^{-1} = \ \mathbf{T}_{WB}^{-1}\ \text{Exp}(- \text{Ad}_{\mathbf{T}_{WB}} {_{B}}\mathbf{\eta}_{B})
+(\mathbf{\tilde{T}}_{WB})^{-1} = \ \mathbf{T}_{WB}^{-1}\ \text{Exp}(- \text{Ad}_{\mathbf{T}_{WB}} {_{B}}\mathbf{\eta})
 \end{equation}
 $$
 
@@ -196,15 +196,15 @@ We can determine the distribution of the composition (and its covariance) if we 
 $$
 \begin{align}
 \mathbf{\tilde{T}}_{WB_{i+1}} &= \mathbf{\tilde{T}}_{WB_i} \mathbf{\tilde{T}}_{B_i B_{i+1}}\\
-&= \mathbf{T}_{WB_i} \text{Exp}( _{B_i}\mathbf{\eta}_{B_i})\ \mathbf{T}_{B_i B_{i+1}} \text{Exp}( _{B_{i+1}}\mathbf{\eta}_{B_{i+1}})
+&= \mathbf{T}_{WB_i} \text{Exp}( _{B_i}\mathbf{\eta})\ \mathbf{T}_{B_i B_{i+1}} \text{Exp}( _{B_{i+1}}\mathbf{\eta})
 \end{align}
 $$
 
-Analogously, we need to _move_ the noise $$_{B_i}\mathbf{\eta}_{B_i}$$ to the right, so as to have *the transformations to the left* (which represent the mean of the distribution), *and the noises to the right* (that encode the covariance). We can use the adjoint again:
+Analogously, we need to _move_ the noise $$_{B_i}\mathbf{\eta}$$ to the right, so as to have *the transformations to the left* (which represent the mean of the distribution), *and the noises to the right* (that encode the covariance). We can use the adjoint again:
 
 $$
 \begin{equation}
-\mathbf{\tilde{T}}_{WB_i} = \mathbf{T}_{WB_i} \ \mathbf{T}_{B_i B_{i+1}} \text{Exp}(\text{Ad}_{\mathbf{T}_{B_i B_{i+1}}^{-1}} {_{B_i}}\mathbf{\eta}_{B_i})\  \text{Exp}( _{B_{i+1}}\mathbf{\eta}_{B_{i+1}})
+\mathbf{\tilde{T}}_{WB_i} = \mathbf{T}_{WB_i} \ \mathbf{T}_{B_i B_{i+1}} \text{Exp}(\text{Ad}_{\mathbf{T}_{B_i B_{i+1}}^{-1}} {_{B_i}}\mathbf{\eta})\  \text{Exp}( _{B_{i+1}}\mathbf{\eta})
 \end{equation}
 $$
 
@@ -248,8 +248,8 @@ To determine it we follow the same algebraic procedure:
 $$
 \begin{align}
 \mathbf{\tilde{T}}_{B_i B_{i+1}} &= \mathbf{\tilde{T}}_{W B_{i}}^{-1} \mathbf{\tilde{T}}_{WB_{i+1}}\\
- &= \left( \mathbf{T}_{WB_i} \text{Exp}( _{B_i}\mathbf{\eta}_{B_i}) \right)^{-1} \ \mathbf{T}_{WB_{i+1}} \text{Exp}( _{B_{i+1}}\mathbf{\eta}_{B_{i+1}})\\
- &= \text{Exp}(- _{B_i}\mathbf{\eta}_{B_i}) \ \mathbf{T}_{WB_i}^{-1} \ \mathbf{T}_{WB_{i+1}} \text{Exp}( _{B_{i+1}}\mathbf{\eta}_{B_{i+1}})
+ &= \left( \mathbf{T}_{WB_i} \text{Exp}( _{B_i}\mathbf{\eta}) \right)^{-1} \ \mathbf{T}_{WB_{i+1}} \text{Exp}( _{B_{i+1}}\mathbf{\eta})\\
+ &= \text{Exp}(- _{B_i}\mathbf{\eta}) \ \mathbf{T}_{WB_i}^{-1} \ \mathbf{T}_{WB_{i+1}} \text{Exp}( _{B_{i+1}}\mathbf{\eta})
 \end{align}
 $$
 
@@ -257,8 +257,8 @@ Similarly, we use the adjoint to move the exponential twice:
 
 $$
 \begin{align}
-\mathbf{\tilde{T}}_{B_i B_{i+1}} &=  \mathbf{T}_{WB_i}^{-1}  \text{Exp}(- \text{Ad}_{\mathbf{T}_{WB_i}} {_{B_i}}\mathbf{\eta}_{B_i}) \ \mathbf{T}_{WB_{i+1}} \text{Exp}( _{B_{i+1}}\mathbf{\eta}_{B_{i+1}})\\
- &=  \mathbf{T}_{WB_i}^{-1} \ \mathbf{T}_{WB_{i+1}} \ \text{Exp}(- \text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \ \text{Ad}_{\mathbf{T}_{WB_i}} {_{B_i}}\mathbf{\eta}_{B_i}) \ \text{Exp}( _{B_{i+1}}\mathbf{\eta}_{B_{i+1}})
+\mathbf{\tilde{T}}_{B_i B_{i+1}} &=  \mathbf{T}_{WB_i}^{-1}  \text{Exp}(- \text{Ad}_{\mathbf{T}_{WB_i}} {_{B_i}}\mathbf{\eta}) \ \mathbf{T}_{WB_{i+1}} \text{Exp}( _{B_{i+1}}\mathbf{\eta})\\
+ &=  \mathbf{T}_{WB_i}^{-1} \ \mathbf{T}_{WB_{i+1}} \ \text{Exp}(- \text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \ \text{Ad}_{\mathbf{T}_{WB_i}} {_{B_i}}\mathbf{\eta}) \ \text{Exp}( _{B_{i+1}}\mathbf{\eta})
 \end{align}
 $$
 
@@ -266,7 +266,7 @@ Hence, the following covariance holds for the relative pose assuming independent
 
 $$
 \begin{equation}
-\Sigma_{B_{i+1}} = \text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}} \Sigma_{B_{i}} \text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}}^{T} + \Sigma_{B_{i+1}}
+\Sigma_{B_{i+1}} = \left(\text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}} \right) \Sigma_{B_{i}} \left(\text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}}\right)^{T} + \Sigma_{B_{i+1}}
 \end{equation}
 $$
 
@@ -276,7 +276,7 @@ Mangelson et al. showed that if some correlations exists (as we showed for the c
 
 $$
 \begin{equation}
-\Sigma_{B_{i+1}} = \left(\text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}} \right) \Sigma_{B_{i}} \left(\text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}}^{T} \right) + \Sigma_{B_{i+1}} - \text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}} \Sigma_{B_{i} B_{i+1}} - \Sigma_{B_{i} B_{i+1}}^{T} (\text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}})^{T}
+\Sigma_{B_{i+1}} = \left(\text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}} \right) \Sigma_{B_{i}} \left(\text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}}\right)^{T}  + \Sigma_{B_{i+1}} - \text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}} \Sigma_{B_{i} B_{i+1}} - \Sigma_{B_{i} B_{i+1}}^{T} (\text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \text{Ad}_{\mathbf{T}_{WB_i}})^{T}
 \end{equation}
 $$
 

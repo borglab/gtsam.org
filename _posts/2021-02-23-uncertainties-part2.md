@@ -363,7 +363,7 @@ First of all, when we talked about *the tangent space defined at the identity*, 
 
 $$
 \begin{equation}
-{_W}\mathbf{\xi}_{W} = \text{Log}(\mathbf{T}_{WB_i} )
+{_W}\mathbf{\xi} = \text{Log}(\mathbf{T}_{WB_i} )
 \end{equation}
 $$
 
@@ -379,7 +379,7 @@ Additionaly, *we can add incremental changes to a transformation using the retra
 
 $$
 \begin{equation}
-\mathbf{T}_{WB_{i+1}} = \mathbf{T}_{WB_i} \text{Exp}( {_{B_i}}\mathbf{\xi}_{B_i})
+\mathbf{T}_{WB_{i+1}} = \mathbf{T}_{WB_i} \text{Exp}( {_{B_i}}\mathbf{\xi})
 \end{equation}
 $$
 
@@ -391,22 +391,22 @@ The graphical interpretation with the manifold is consistent with our general de
 <figure class="center">
   <img src="/assets/images/uncertainties/lie-group-frames-increment.png"
     alt="Retraction with frames" />
-    <figcaption>When we add a small increment ${_{B_i}}\mathbf{\xi}_{B_i}$ to the pose $\mathbf{T}_{WB_i}$, the expression $\mathbf{T}_{WB_i} \text{Exp}( {_{B_i}}\mathbf{\xi}_{B_i})$ corresponds to the retraction defined for the tangent space at $\mathbf{T}_{WB_i}$.</figcaption>
+    <figcaption>When we add a small increment ${_{B_i}}\mathbf{\xi}$ to the pose $\mathbf{T}_{WB_i}$, the expression $\mathbf{T}_{WB_i} \text{Exp}( {_{B_i}}\mathbf{\xi})$ corresponds to the retraction defined for the tangent space at $\mathbf{T}_{WB_i}$.</figcaption>
 </figure>
 <br />
 
-The incremental formulation via retractions is also convenient when we have local (base frame) velocity measurements $$({_B}\omega_B, {_B}{v_B})$$, with $${_B}\omega_B \in \mathbb{R}^{3}, {_B}v_B \in \mathbb{R}^{3}$$  and we want to do [*dead reckoning*](https://en.wikipedia.org/wiki/Dead_reckoning):
+The incremental formulation via retractions is also convenient when we have local (base frame) velocity measurements $$({_{B_i}}\omega, {_{B_i}}{v})$$, with $${_{B_i}}\omega \in \mathbb{R}^{3}, {_{B_i}}v \in \mathbb{R}^{3}$$  and we want to do [*dead reckoning*](https://en.wikipedia.org/wiki/Dead_reckoning):
 
 $$
 \begin{equation}
 \mathbf{T}_{WB_{i+1}} = {\mathbf{T}_{WB_i}} \text{Exp}\left(
-  \begin{bmatrix} _{B_i}\omega_{B_i} \\ _{B_i} v_{B_i} \end{bmatrix}\ 
+  \begin{bmatrix} _{B_i}\omega \\ _{B_i} v \end{bmatrix}\ 
 \delta t \right)
 \end{equation}
 $$
 
 The product
-$$\begin{bmatrix} _{B_i}\omega_{B_i} \ \delta t \\ _{B_i} v_{B_i} \ \delta t\end{bmatrix}$$
+$$\begin{bmatrix} _{B_i}\omega \ \delta t \\ _{B_i} v \ \delta t\end{bmatrix}$$
 represents the tangent vector resulting from time-integrating the velocity, which is map onto the manifold by means of the $\text{SE(3)}$ retraction:
 
 <a name="lie_group_frames_velocities"></a>
@@ -441,7 +441,7 @@ The first problem of defining the noise appropriately is solved by using probabi
 
 $$
 \begin{equation}
-\mathbf{T}_{WB_{i+1}} = \mathbf{T}_{WB_i} \ \Delta\mathbf{T}_{B_{i} B_{i+1}} \text{Exp}(_{B_{i+1}}\mathbf{\eta}_{B_{i+1}})
+\mathbf{T}_{WB_{i+1}} = \mathbf{T}_{WB_i} \ \Delta\mathbf{T}_{B_{i} B_{i+1}} \text{Exp}(_{B_{i+1}}\mathbf{\eta})
 \end{equation}
 $$
 
@@ -453,7 +453,7 @@ $$
 </figure>
 <br />
 
-where we have defined $${_{B_{i+1}}}\eta_{B_{i+1}} \sim Gaussian(\mathbf{0}_{6\times1},\ _{B_{i+1}}\Sigma_{i+1})$$. Please note that in order to match our right-hand convention, **the covariance we use must be defined in the base frame at time $i+1$**, i.e $$B_{i+1}$$. Additionally, **the covariance matrix must follow the same ordering defined by the retraction**. For `Pose3` objects, for instance, the upper-left block must encode orientation covariances, while the bottom-right position covariances:
+where we have defined $${_{B_{i+1}}}\eta \sim Gaussian(\mathbf{0}_{6\times1},\ _{B_{i+1}}\Sigma)$$. Please note that in order to match our right-hand convention, **the covariance we use must be defined in the base frame at time $i+1$**, i.e $$B_{i+1}$$. Additionally, **the covariance matrix must follow the same ordering defined by the retraction**. For `Pose3` objects, for instance, the upper-left block must encode orientation covariances, while the bottom-right position covariances:
 
 $$
 \begin{equation}
@@ -469,7 +469,7 @@ Having solved the first problem, we can now focus on the residual definition. We
 
 $$
 \begin{equation}
-\text{Exp}( {_{B_{i+1}}}\mathbf{\eta}_{B_{i+1}}) = \Delta\mathbf{T}_{B_{i} B_{i+1}}^{-1}\ \mathbf{T}_{WB_i}^{-1} \ \mathbf{T}_{WB_{i+1}}
+\text{Exp}( {_{B_{i+1}}}\mathbf{\eta}) = \Delta\mathbf{T}_{B_{i} B_{i+1}}^{-1}\ \mathbf{T}_{WB_i}^{-1} \ \mathbf{T}_{WB_{i+1}}
 \end{equation}
 $$
 
@@ -477,7 +477,7 @@ We can now apply the **local** operator of the manifold on both sides to **map t
 
 $$
 \begin{equation}
-_{B_{i+1}}\mathbf{\eta}_{B_{i+1}} = \text{Log}\left( \Delta\mathbf{T}_{B_{i} B_{i+1}}^{-1}\ \mathbf{T}_{WB_i}^{-1} \  \mathbf{T}_{WB_{i+1}} \right)
+_{B_{i+1}}\mathbf{\eta} = \text{Log}\left( \Delta\mathbf{T}_{B_{i} B_{i+1}}^{-1}\ \mathbf{T}_{WB_i}^{-1} \  \mathbf{T}_{WB_{i+1}} \right)
 \end{equation}
 $$
 
@@ -525,11 +525,11 @@ Then, the corresponding distribution of the solution around the current lineariz
 
 $$
 \begin{equation}
-Gaussian(\mathbf{T}_{WB_i}^{k+1}, \Sigma^{k+1}) := \mathbf{T}_{WB_i}^{k+1} \text{Exp}( {_{B_i}}\eta_{B_i}^{k+1} )
+Gaussian(\mathbf{T}_{WB_i}^{k+1}, \Sigma^{k+1}) := \mathbf{T}_{WB_i}^{k+1} \text{Exp}( {_{B_i}}\eta^{k+1} )
 \end{equation}
 $$
 
-where $${_{B_i}}\eta_{B_i}^{k+1} \sim Gaussian(\mathbf{0}_{6\times1}, \Sigma^{k+1})$$. As a consequence of the convention on the retraction, **the resulting covariance is expressed in the base frame as well, and uses orientation-then-translation for the ordering of the covariance matrix**.
+where $${_{B_i}}\eta^{k+1} \sim Gaussian(\mathbf{0}_{6\times1}, \Sigma^{k+1})$$. As a consequence of the convention on the retraction, **the resulting covariance is expressed in the base frame as well, and uses orientation-then-translation for the ordering of the covariance matrix**.
 
 ## Conclusions 
 In this second part we extended the estimation framework presented previously by introducing the reference frames in an explicit manner into our notation, which helped to understand the meaning of the quantities.
