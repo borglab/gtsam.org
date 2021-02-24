@@ -354,7 +354,7 @@ Objects such as rigid-body matrices and quaternions are Lie groups. As a matter 
 
 Please note here that we used *capitalized* $$\text{Log}(\cdot) := \text{log}( \cdot)^{\vee}$$ and $$\text{Exp}(\cdot):=\text{exp}( (\cdot)^{\wedge})$$ operators for simplicity as used by [Forster et al (2017),](https://arxiv.org/abs/1512.02363) and [Solà et al. (2020)](https://arxiv.org/abs/1812.01537), since they are easy to understand under the retractions perspective. Refer to Solà et al. for a more detailed description, including the relationship between tangents spaces and the *Lie algebra*.
 
-In GTSAM, 3D poses are implemented as `Pose3` objects and we can think of them as $\text{SE(3)}$ elements. Therefore, to keep things simple, we will stay using the logarithm map and exponential map to talk about their retraction and local operators. However, GTSAM also allow us to use alternative retractions for some cases, which is covered with more detail [here](https://gtsam.org/notes/GTSAM-Concepts.html)). 
+In GTSAM, 3D poses are implemented as `Pose3` objects and we can think of them as $\text{SE(3)}$ elements. Therefore, to keep things simple, we will stay using the logarithm map and exponential map to talk about their retraction and local operators. However, GTSAM also allows us to use alternative retractions for some cases, which is explained [here](https://gtsam.org/notes/GTSAM-Concepts.html). 
 
 ### Reference frames on manifolds
 Reference frames **are preserved when applying the local and retract operations**. We will cover a few important ideas using $$\text{SE(3)}$$, since it is related to our original problem of pose estimation.
@@ -375,7 +375,7 @@ $$
 </figure>
 <br />
 
-Additionaly, *we can add incremental changes to a transformation using the retraction*, which for $$\text{SE(3)}$$ is done with the exponential map as follows:
+Additionally, *we can add incremental changes to a transformation using the retraction*, which for $$\text{SE(3)}$$ is done with the exponential map as follows:
 
 $$
 \begin{equation}
@@ -487,7 +487,7 @@ Since the noise is defined in the tangent space, both sides denote vector expres
 <figure class="center">
   <img src="/assets/images/uncertainties/lie-group-frames-residual.png"
     alt="Defining noise for the relative increment." />
-    <figcaption>The Between residual, illustrated. On the left hand side, we have the corresponding transformations involved in the computation expressed on the manifold. Since the error (in red) is also defined on the manifold, it is not described by a straight line. However, by applying the local operation, given by the logarithm map for $\text{SE(3)}$, we can map it to to the tangent space at $\Delta\mathbf{T}_{B_{i} B_{i+1}}$, which is a vector space (right). The error itself should lie within the Gaussian we created using the noise $_{B_{i+1}}\mathbf{\eta}_{B_{i+1}}$, which denotes the noise of the odometry model.</figcaption>
+    <figcaption>The Between residual, illustrated. On the left hand side, we have the corresponding transformations involved in the computation expressed on the manifold. Since the error (in red) is also defined on the manifold, it is not described by a straight line. However, by applying the local operation, given by the logarithm map for $\text{SE(3)}$, we can map it to to the tangent space at $\Delta\mathbf{T}_{B_{i} B_{i+1}}$, which is a vector space (right). The error itself should lie within the Gaussian we created using the noise $_{B_{i+1}}\mathbf{\eta}$, which denotes the noise of the odometry model.</figcaption>
 </figure>
 <br />
 
