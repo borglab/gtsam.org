@@ -354,7 +354,7 @@ Objects such as rigid-body matrices and quaternions are Lie groups. As a matter 
 
 Please note here that we used *capitalized* $$\text{Log}(\cdot) := \text{log}( \cdot)^{\vee}$$ and $$\text{Exp}(\cdot):=\text{exp}( (\cdot)^{\wedge})$$ operators for simplicity as used by [Forster et al (2017),](https://arxiv.org/abs/1512.02363) and [Solà et al. (2020)](https://arxiv.org/abs/1812.01537), since they are easy to understand under the retractions perspective. Refer to Solà et al. for a more detailed description, including the relationship between tangents spaces and the *Lie algebra*.
 
-In GTSAM, 3D poses are defined as `Pose3` objects and in general we can think of them as $\text{SE(3)}$ elements. However, we could use other Lie groups to represent a 3D pose, such as $\mathbb{R}^{3} \times \text{SO(3)}$. They can have different definitions for the *retraction* and *local* operations, which can be more efficient to compute in optimization problems, and this is what GTSAM does internally in the `Pose3` definition (more information [here](https://gtsam.org/notes/GTSAM-Concepts.html)). For simplicity, however, we will stay using the logarithm map and exponential map to talk about $\text{SE(3)}$.
+In GTSAM, 3D poses are implemented as `Pose3` objects and we can think of them as $\text{SE(3)}$ elements. Therefore, to keep things simple, we will stay using the logarithm map and exponential map to talk about their retraction and local operators. However, GTSAM also allow us to use alternative retractions for some cases, which is covered with more detail [here](https://gtsam.org/notes/GTSAM-Concepts.html)). 
 
 ### Reference frames on manifolds
 Reference frames **are preserved when applying the local and retract operations**. We will cover a few important ideas using $$\text{SE(3)}$$, since it is related to our original problem of pose estimation.
@@ -395,7 +395,7 @@ The graphical interpretation with the manifold is consistent with our general de
 </figure>
 <br />
 
-The incremental formulation via retractions is also convenient when we have local (base frame) velocity measurements $$({_{B_i}}\omega, {_{B_i}}{v})$$, with $${_{B_i}}\omega \in \mathbb{R}^{3}, {_{B_i}}v \in \mathbb{R}^{3}$$  and we want to do [*dead reckoning*](https://en.wikipedia.org/wiki/Dead_reckoning):
+The incremental formulation via retractions is also convenient when we have local (base frame) velocity measurements -also known as *twists*- $$({_{B_i}}\omega, {_{B_i}}{v})$$, with $${_{B_i}}\omega \in \mathbb{R}^{3}, {_{B_i}}v \in \mathbb{R}^{3}$$  and we want to do [*dead reckoning*](https://en.wikipedia.org/wiki/Dead_reckoning):
 
 $$
 \begin{equation}
