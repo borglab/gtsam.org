@@ -383,7 +383,7 @@ $$
 \end{equation}
 $$
 
-In this case we added an increment from the base frame at time $i$, that represents the new pose at time $i+1$. Please note that **the increments are defined with respect to a reference frame, but they do not require to specify the resulting frame**. Their meaning (representing a new pose at time $i+1$) is something that we -as users- define but is not explicit in the formulation. (*While we could do it, it can lead to confusions because in this specific case we are representing the pose at the next instant but we can also use retractions to describe corrections to the base frame as we will see later.*)
+In this case we added an increment from the base frame at time $i$, that represents the new pose at time $i+1$. Please note that **the increments are defined with respect to a reference frame, but they do not require to specify the resulting frame**. Their meaning (representing a new pose at time $i+1$) is something that we -as users- define but is not explicit in the formulation. (*While we could do it, it can lead to confusions because in this specific case we are representing the pose at the next instant but we can also use retractions to describe corrections to the world frame as we will see in the final post.*)
 
 The graphical interpretation with the manifold is consistent with our general definition of retractions and frames. Using the exponential map on the right is defining a tangent space at $$\mathbf{T}_{WB_i}$$, which can be interpreted as a new *reference frame* at $$B_i$$, which we used to define the increment:
 
@@ -494,11 +494,14 @@ Since the noise is defined in the tangent space, both sides denote vector expres
 We must also keep in mind here that by using the **local** operation, **the residual vector will follow the same ordering**. As we mentioned before for `Pose3` objects, it will encode orientation error in the first 3 components, while translation error in the last ones. In this way, if we write the expanded expression for the Gaussian factor, we can notice that all the components are weighted accordingly (orientation first, and then translation):
 
 $$
-\begin{align}
+\begin{equation}
+\begin{split}
 \mathbf{r}_{\text{between}}(\mathbf{T}_{WB_i}, \mathbf{T}_{WB_{i+1}}) &= \left|\left| \text{Log}\left( \Delta\mathbf{T}_{B_{i} B_{i+1}}^{-1}\ \mathbf{T}_{WB_i}^{-1} \  \mathbf{T}_{WB_{i+1}} \right)\right|\right|^{2}_{\Sigma_i} \\
 & =
-\text{Log}\left( \Delta\mathbf{T}_{B_{i} B_{i+1}}^{-1}\ \mathbf{T}_{WB_i}^{-1} \  \mathbf{T}_{WB_{i+1}} \right)^{T} \ \Sigma_i^{-1} \ \text{Log}\left( \Delta\mathbf{T}_{B_{i} B_{i+1}}^{-1}\ \mathbf{T}_{WB_i}^{-1} \  \mathbf{T}_{WB_{i+1}} \right)
-\end{align}
+\text{Log}\left( \Delta\mathbf{T}_{B_{i} B_{i+1}}^{-1}\ \mathbf{T}_{WB_i}^{-1} \  \mathbf{T}_{WB_{i+1}} \right)^{T} \ \Sigma_i^{-1} \\
+& \qquad \qquad \qquad \text{Log}\left( \Delta\mathbf{T}_{B_{i} B_{i+1}}^{-1}\ \mathbf{T}_{WB_i}^{-1} \  \mathbf{T}_{WB_{i+1}} \right)
+\end{split}
+\end{equation}
 $$
 
 The factor is now a nonlinear vector expression that can be solved using the nonlinear optimization techniques we presented before. In fact, GTSAM already implements Jacobians for the **local** operator of all the objects implemented, which simplifies the process. However, there are subtle differences that we must clarify.
