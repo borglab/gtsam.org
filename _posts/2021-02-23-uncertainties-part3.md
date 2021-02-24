@@ -260,8 +260,8 @@ Similarly, we use the adjoint to move the exponential twice:
 
 $$
 \begin{align}
-\mathbf{\tilde{T}}_{B_i B_{i+1}} &=  \mathbf{T}_{WB_i}^{-1}  \text{Exp}(- \text{Ad}_{\mathbf{T}_{WB_i}} {_{B_i}}\mathbf{\eta}) \ \mathbf{T}_{WB_{i+1}} \text{Exp}( _{B_{i+1}}\mathbf{\eta})\\
- &=  \mathbf{T}_{WB_i}^{-1} \ \mathbf{T}_{WB_{i+1}} \ \text{Exp}(- \text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \ \text{Ad}_{\mathbf{T}_{WB_i}} {_{B_i}}\mathbf{\eta}) \ \text{Exp}( _{B_{i+1}}\mathbf{\eta})
+\mathbf{\tilde{T}}_{B_i B_{i+1}} &=  \mathbf{T}_{WB_i}^{-1}  \text{Exp}(- \text{Ad}_{\mathbf{T}_{WB_i}} \ {_{B_i}}\mathbf{\eta}) \ \mathbf{T}_{WB_{i+1}} \text{Exp}( _{B_{i+1}}\mathbf{\eta})\\
+ &=  \mathbf{T}_{WB_i}^{-1} \ \mathbf{T}_{WB_{i+1}} \ \text{Exp}(- \text{Ad}_{\mathbf{T}_{WB_{i+1}}^{-1}} \ \text{Ad}_{\mathbf{T}_{WB_i}}\ {_{B_i}}\mathbf{\eta}) \ \text{Exp}( _{B_{i+1}}\mathbf{\eta})
 \end{align}
 $$
 
