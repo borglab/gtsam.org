@@ -50,7 +50,7 @@ This last section is mainly concerned about Lie groups, which is the case for mo
 Most of this expressions have been already shown in the literature by [Barfoot and Furgale (2014)](http://ncfrn.cim.mcgill.ca/members/pubs/barfoot_tro14.pdf) and [Mangelson et al. (2020)](https://arxiv.org/abs/1906.07795) but since they follow a left-hand convention they are not straightforward to use with GTSAM. We provide the resulting expressions for the covariance transformations following Mangelson et al. but we recommend to refer to their work to understand the details of the process.
 
 ## Adjoints
-Let us consider a case similar as previous examples in which we were adding a small increment $$_{B_i}\mathbf{\xi}$$ to a pose $$\mathbf{T}_{WB_i}$$.
+Let us consider a case similar to previous examples in which we were adding a small increment $$_{B_i}\mathbf{\xi}$$ to a pose $$\mathbf{T}_{WB_i}$$.
 
 $$
 \begin{equation}
@@ -64,7 +64,7 @@ where we have used the retraction of $\text{SE(3)}$ to add a small increment usi
 <figure class="center">
   <img src="/assets/images/uncertainties/adjoint-right.png"
     alt="Correction from the right" />
-    <figcaption>Similarly to the cases discussed previously, applying a correction from the right can be interpreted as creating a new base frame at time $i+1$ from a previous frame $B_i$.</figcaption>
+    <figcaption>Similarly to the cases discussed previously, applying a correction from the right can be interpreted as creating a new body frame at time $i+1$ from a previous frame $B_i$.</figcaption>
 </figure>
 <br/>
 
@@ -86,17 +86,17 @@ Please note that this case is different to the example in the previous post in w
 </figure>
 <br/>
 
-We are interested in finding out a correction on the base that can lead to the same result that a correction applied on the right. For that specific correction both formulations would be effectively representing the same pose but using **different reference frames**. This is shown in the next figure:
+We are interested in finding out a correction on the body that can lead to the same result that a correction applied on the right. For that specific correction both formulations would be effectively representing the same pose but using **different reference frames**. This is shown in the next figure:
 
 <a name="adjoint"></a>
 <figure class="center">
   <img src="/assets/images/uncertainties/adjoint-all-transformations.png"
     alt="All transformations together" />
-    <figcaption>There exists a correction applied to the base frame (right convention) that can lead to equivalent transformations than corrections applied on the world frame (left convention)</figcaption>
+    <figcaption>There exists a correction applied to the body frame (right convention) that can lead to equivalent transformations than corrections applied on the world frame (left convention)</figcaption>
 </figure>
 <br/>
 
-In order to find it, we can write an equivalence between corrections applied on the base frame and the world frame as follows:
+In order to find it, we can write an equivalence between corrections applied on the body frame and the world frame as follows:
 
 $$
 \begin{equation}
@@ -108,7 +108,7 @@ We dropped the time-related indices for simplicity, since this is a geometric re
 
 $$
 \begin{equation}
-\text{Exp}( _{W}\mathbf{\xi}) = \mathbf{T}_{WB_i} \text{Exp}( _{B}\mathbf{\xi}) \mathbf{T}_{WB}^{-1}
+\text{Exp}( _{W}\mathbf{\xi}) = \mathbf{T}_{WB} \text{Exp}( _{B}\mathbf{\xi}) \mathbf{T}_{WB}^{-1}
 \end{equation}
 $$
 
@@ -132,17 +132,17 @@ $$
 
 where $$\text{Ad}_{T_{WB_i}^{-1}}$$ is known as the *adjoint matrix* or **_adjoint_ of** $$T_{WB_i}^{-1}$$. The adjoint acts over elements of the tangent space directly, changing their reference frame. Please note that the same subindex cancelation applies here, so we can confirm that the transformations are correctly defined.
 
-We can also interpret this as a way to consistently _move_ increments applied on the left-hand side (in world frame) to the right-hand side (base frame), which is particularly useful to keep the right-hand convention for the retractions and probability distributions consistent. This is the main property we will use in the next sections to define some covariance transformations, and it is already implemented in `Pose3` as [`AdjointMap`](https://github.com/borglab/gtsam/blob/develop/gtsam/geometry/Pose3.cpp#L58).
+We can also interpret this as a way to consistently _move_ increments applied on the left-hand side (in world frame) to the right-hand side (body frame), which is particularly useful to keep the right-hand convention for the retractions and probability distributions consistent. This is the main property we will use in the next sections to define some covariance transformations, and it is already implemented in `Pose3` as [`AdjointMap`](https://github.com/borglab/gtsam/blob/develop/gtsam/geometry/Pose3.cpp#L58).
 
 
 ## Distribution of the inverse
-As a first example on how the adjoint helps to manipulate covariances, let us consider the case in which we have the solution of a factor graph, with covariances defined in the base frame as we have discussed previously. We are interested in obtaining an expression to express the covariance in the world frame:
+As a first example on how the adjoint helps to manipulate covariances, let us consider the case in which we have the solution of a factor graph, with covariances defined in the body frame as we have discussed previously. We are interested in obtaining an expression to express the covariance in the world frame:
 
 <a name="inverse-pose"></a>
 <figure class="center">
   <img src="/assets/images/uncertainties/covariance-inverse.png"
     alt="Distribution of the inverse" />
-    <figcaption>Given the covariance of the robot in the base frame $B_i$ (left), and we are interested in obtaining a formula to express the covariance in the world frame $W$ following GTSAM's right-hand convention (right).</figcaption>
+    <figcaption>Given the covariance of the robot in the body frame $B_i$ (left), and we are interested in obtaining a formula to express the covariance in the world frame $W$ following GTSAM's right-hand convention (right).</figcaption>
 </figure>
 <br/>
 
@@ -164,7 +164,7 @@ $$
 \end{align}
 $$
 
-However, the _noise_ is defined on the left, which is inconvenient because is still a covariance in the base frame, but it is also inconsistent with right-hand convention. We can move it to the right using the adjoint:
+However, the _noise_ is defined on the left, which is inconvenient because is still a covariance in the body frame, but it is also inconsistent with right-hand convention. We can move it to the right using the adjoint:
 
 $$
 \begin{equation}

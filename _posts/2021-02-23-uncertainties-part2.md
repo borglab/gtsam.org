@@ -41,7 +41,7 @@ Author: [Matias Mattamala](https://mmattamala.github.io)
 {:toc}
 
 ## Introduction
-In our [previous post](https://gtsam.org/2021/02/07/uncertainties-part1.html) we discussed some basic concepts to solve linear and nonlinear factor graphs, and extract uncertainty estimates from them. We reviewed that the Fisher information matrix corresponds to an approximation of the inverse covariance of the solution, and that in the nonlinear case both the solution and its covariance estimate are **valid for the current linearization point only**.
+In our [previous post](https://gtsam.org/2021/02/07/uncertainties-part1.html) we discussed some basic concepts to solve linear and nonlinear factor graphs and to extract uncertainty estimates from them. We reviewed that the Fisher information matrix corresponds to an approximation of the inverse covariance of the solution, and that in the nonlinear case, both the solution and its covariance estimate are **valid for the current linearization point only**.
 
 While the nonlinear case effectively allows us to model a bunch of problems, we need to admit we were not too honest when we said that it was *everything* we needed to model real problems. Our formulation so far assumed that the variables in our factor graph are **vectors**, which is not the case for robotics and computer vision at least.
 
@@ -61,7 +61,7 @@ $$
 
 This is basically saying that _it does not matter if we start in pose $\mathbf{T}_1$ or $\mathbf{T}_2$, we will end up at the same final pose_ by composing both, because in vector spaces we can commute the elements. **But this does not work in reality, because rotations and translations do not commute**. A simple example is that if you are currently sitting at your desk,  and you *stand up, rotate 180 degrees and walk a step forward*, is completely different to *stand up, walk a step forward and then rotate 180 degrees* (apart from the fact that you will hit your desk if you do the latter).
 
-So we need a different representation for poses that allow us to describe accurately what we observe in reality. Long story short, we rather prefer to represent poses as $3\times3$ matrices known as *rigid-body transformations*:
+So we need a different representation for poses that allow us to describe accurately what we observe in reality. Long story short, we rather have to represent planar poses as $3\times3$ matrices known as *rigid-body transformations*:
 
 $$
 \begin{equation}
@@ -119,7 +119,7 @@ $$
 \end{equation}
 $$
 
-Analogously, using we can express **the pose of the world $W$ expressed in the robot frame $B$**:
+Analogously, using we can express **the pose of the origin/world $W$ expressed in the robot frame $B$**:
 
 $$
 \begin{equation}
@@ -266,7 +266,7 @@ Since the operations can be defined in different ways for each kind of object (i
 
 However, composition can be defined from the *left* or the *right* side because **composition is associative but is not distributive**. This is the same problem we described before when talking about reference frames and how to add small increments with the _left_ and _right_ hand conventions, since both are valid depending on our decisions or other authors'. While we can be clear about our own decisions, it is important to be aware of the definitions of each author because sometimes are not clearly stated. [Solà et al](https://arxiv.org/abs/1812.01537) for example make the difference explicit by defining *left-*$\oplus$ and *right-*$\oplus$ for composition using *left-hand convention* or *right-hand convention* respectively, but we need to be careful to recognize each other's choices.
 
-**We recall again that in GTSAM and the rest of this post we use the _right_ convention** (*pun intended*), because we represent our poses with respect to a fixed world frame $W$ and the increments are defined with respect to the base frame $B$.
+**We recall again that in GTSAM and the rest of this post we use the _right_ convention** (*pun intended*), because we represent our poses with respect to a fixed world frame $W$ and the increments are defined with respect to the body frame $B$.
 
 ### Some are _manifolds_
 Additionally, rigid-body transformations, rotation matrices, quaternions and even vectors are **differentiable manifolds**. This means that even though they do not behave as Euclidean spaces at a global scale, they can be *locally approximated* as such by using local vector spaces called **tangent spaces**. The main advantage of analyzing all these objects from the manifold perspective is that we can build general algorithms based on common principles that apply to all of them. 
@@ -292,7 +292,7 @@ In order to work with manifolds, we need to define 2 operations, which are the k
 <figure class="center">
   <img src="/assets/images/uncertainties/manifold-retract-zoom.png"
     alt="Retract operation on a manifold" />
-    <figcaption>The retract operation maps an element $\mathbf{\xi}$ defined in the tangent space at $\mathbf{p}_1$ back to the manifold.</figcaption>
+    <figcaption>The <i>retract</i> operation maps an element $\mathbf{\xi}$ defined in the tangent space at $\mathbf{p}_1$ back to the manifold.</figcaption>
 </figure>
 <br />
 
@@ -308,7 +308,7 @@ In order to work with manifolds, we need to define 2 operations, which are the k
 <figure class="center">
   <img src="/assets/images/uncertainties/manifold-local.png"
     alt="Local operation on a manifold" />
-    <figcaption>The local operation does the opposite, and maps an element $\mathbf{p}$ defined with respect to $\mathbf{p}_1$ as an vector $\mathbf{\xi}$ in the tangent space.</figcaption>
+    <figcaption>The <i>local</i> operation does the opposite, and maps an element $\mathbf{p}$ defined with respect to $\mathbf{p}_1$ as an vector $\mathbf{\xi}$ in the tangent space.</figcaption>
 </figure>
 <br />
 
@@ -330,7 +330,7 @@ which graphically corresponds to:
 </figure>
 <br />
 
-Please note that we have defined the retraction **from the right**, since this matches the one used by GTSAM, which coincidently also matches the composition operator for groups. However, in the literature we can find different definitions: [Barfoot and Furgale (2014, left-hand convention)](http://ncfrn.cim.mcgill.ca/members/pubs/barfoot_tro14.pdf), [Forster et al (2017, right-hand convention)](https://arxiv.org/abs/1512.02363), and [Mangelson et al. (2020, left-hand convention)](https://arxiv.org/abs/1906.07795) are some examples. Other definitions to define probability distributions on manifolds include [Calinon (2020)](https://arxiv.org/abs/1909.05946) and [Lee et al. (2008)](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.175.5054&rep=rep1&type=pdf), please refer to their work for further details.
+Please note that we have defined the retraction **from the right**, since this matches the convention used by GTSAM, which coincidently also matches the composition operator for groups. However, in the literature we can find different definitions: [Barfoot and Furgale (2014, left-hand convention)](http://ncfrn.cim.mcgill.ca/members/pubs/barfoot_tro14.pdf), [Forster et al (2017, right-hand convention)](https://arxiv.org/abs/1512.02363), and [Mangelson et al. (2020, left-hand convention)](https://arxiv.org/abs/1906.07795) are some examples. Other definitions to define probability distributions on manifolds include [Calinon (2020)](https://arxiv.org/abs/1909.05946) and [Lee et al. (2008)](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.175.5054&rep=rep1&type=pdf), please refer to their work for further details.
 
 
 ### And others are both: Lie groups
@@ -344,7 +344,7 @@ In GTSAM **we only need the objects to be differentiable manifolds in order to o
 </figure>
 <br />
 
-Objects such as rigid-body matrices and quaternions are Lie groups. As a matter of fact, rigid-body transformations can be seen as elements of the *Special Euclidean group* $\text{SE(3)}$ and we can use those definitions to define the operations we described before for groups and manifolds:
+Objects such as rigid-body matrices and quaternions are Lie groups. 2D rigid-body transformations are elements of the *Special Euclidean group* $\text{SE(2)}$, while 2D and 3D rotations are from the *Special Orthogonal groups* $\text{SO(2)}$ and $\text{SO(3)}$ respectively. 3D rigid-body transformations are objects of $\text{SE(3)}$ and we can use those definitions to define the operations we described before for groups and manifolds:
 
 1. **Composition**: Matrix multiplication $$\mathbf{T}_{1} \ \mathbf{T}_{2}$$.
 2. **Identity**: Identity matrix $$\mathbf{I}$$.
@@ -354,7 +354,7 @@ Objects such as rigid-body matrices and quaternions are Lie groups. As a matter 
 
 Please note here that we used *capitalized* $$\text{Log}(\cdot) := \text{log}( \cdot)^{\vee}$$ and $$\text{Exp}(\cdot):=\text{exp}( (\cdot)^{\wedge})$$ operators for simplicity as used by [Forster et al (2017),](https://arxiv.org/abs/1512.02363) and [Solà et al. (2020)](https://arxiv.org/abs/1812.01537), since they are easy to understand under the retractions perspective. Refer to Solà et al. for a more detailed description, including the relationship between tangents spaces and the *Lie algebra*.
 
-In GTSAM, 3D poses are implemented as `Pose3` objects and we can think of them as $\text{SE(3)}$ elements. Therefore, to keep things simple, we will stay using the logarithm map and exponential map to talk about their retraction and local operators. However, GTSAM also allows us to use alternative retractions for some cases, which is explained [here](https://gtsam.org/notes/GTSAM-Concepts.html). 
+In GTSAM, 3D poses are implemented as `Pose3` objects and we can think of them as $\text{SE(3)}$ elements. Therefore, to keep things simple, we will stay using the logarithm map and exponential map to talk about their retraction and local operators. However, GTSAM also allows us to use alternative retractions for some cases, which would be like *using other Lie groups* to represent poses, such as the $\mathbb{R}^{3}\times\text{SO}(3)$ group, which is explained [here](https://gtsam.org/notes/GTSAM-Concepts.html).  
 
 ### Reference frames on manifolds
 Reference frames **are preserved when applying the local and retract operations**. We will cover a few important ideas using $$\text{SE(3)}$$, since it is related to our original problem of pose estimation.
@@ -383,7 +383,7 @@ $$
 \end{equation}
 $$
 
-In this case we added an increment from the base frame at time $i$, that represents the new pose at time $i+1$. Please note that **the increments are defined with respect to a reference frame, but they do not require to specify the resulting frame**. Their meaning (representing a new pose at time $i+1$) is something that we -as users- define but is not explicit in the formulation. (*While we could do it, it can lead to confusions because in this specific case we are representing the pose at the next instant but we can also use retractions to describe corrections to the world frame as we will see in the final post.*)
+In this case we added an increment from the body frame at time $i$, that represents the new pose at time $i+1$. Please note that **the increments are defined with respect to a reference frame, but they do not require to specify the resulting frame**. Their meaning (representing a new pose at time $i+1$) is something that we -as users- define but is not explicit in the formulation. (*While we could do it, it can lead to confusions because in this specific case we are representing the pose at the next instant but we can also use retractions to describe corrections to the world frame as we will see in the final post.*)
 
 The graphical interpretation with the manifold is consistent with our general definition of retractions and frames. Using the exponential map on the right is defining a tangent space at $$\mathbf{T}_{WB_i}$$, which can be interpreted as a new *reference frame* at $$B_i$$, which we used to define the increment:
 
@@ -395,7 +395,7 @@ The graphical interpretation with the manifold is consistent with our general de
 </figure>
 <br />
 
-The incremental formulation via retractions is also convenient when we have local (base frame) velocity measurements -also known as *twists*- $$({_{B_i}}\omega, {_{B_i}}{v})$$, with $${_{B_i}}\omega \in \mathbb{R}^{3}, {_{B_i}}v \in \mathbb{R}^{3}$$  and we want to do [*dead reckoning*](https://en.wikipedia.org/wiki/Dead_reckoning):
+The incremental formulation via retractions is also convenient when we have local (body frame) velocity measurements -also known as *twists*- $$({_{B_i}}\omega, {_{B_i}}{v})$$, with $${_{B_i}}\omega \in \mathbb{R}^{3}, {_{B_i}}v \in \mathbb{R}^{3}$$  and we want to do [*dead reckoning*](https://en.wikipedia.org/wiki/Dead_reckoning):
 
 $$
 \begin{equation}
@@ -413,13 +413,36 @@ represents the tangent vector resulting from time-integrating the velocity, whic
 <figure class="center">
   <img src="/assets/images/uncertainties/lie-group-frames-velocities.png"
     alt="Retraction with velocities" />
-    <figcaption>The same formulation can be used to map velocities into increments via retractions/exponential map. In this case, the time increment $\delta t$ controls the length of the curve that is projected on the manifold.</figcaption>
+    <figcaption>The same formulation can be used to map velocities into increments via retractions/exponential map. In this case, the time increment $\delta t$ controls the length of the curve that is projected on the manifold when we do dead-reckoning.</figcaption>
 </figure>
 <br />
 
+This last example is also useful to understand the physical meaning of the retraction/local operations in the case of 3D poses, which is not always clear. An interesting aspect of illustrating this with $\text{SE}(3)$ is that the meaning also applies if we use rotations only ($$\text{SO}(3)$$, $\text{SO}(2)$) or 2D poses ($\text{SE}(2)$):
 
-**We need to be careful about the convention of the retraction/local operation** (yes, more conventions again). Having clarity about the definition that every software defines for these operations, even implicitly, is fundamental to make sense of the quantities we put into our estimation problems and the estimates we extract. For instance, the definition of the $\text{SE(3)}$ retraction we presented, which matches `Pose3` in GTSAM, uses an _orientation-then-translation_ convention, i.e, the 6D tangent vector has orientation in the first 3 coordinates, and translation in the last 3. On the other hand, `Pose2` uses _translation-then-orientation_ $(x, y, \theta)$ for [historical reasons](https://github.com/borglab/gtsam/issues/160#issuecomment-562161665). **To ensure that everything is fine, we recommend to always check the retraction/exponential map definition**.
+<a name="lie_group_frames_velocities"></a>
+<figure class="center">
+  <img src="/assets/images/uncertainties/lie-group-frames-velocities-physical.png"
+    alt="Retraction with velocities, physical interpretation" />
+    <figcaption>This figure illustrates the physical meaning of the $\text{SE}(3)$ retraction of the dead-reckoning example. In light blue we show the increment applied to pose ${\mathbf{T}_{WB_i}}$, which generates a <i>new</i> frame. At the right hand side we illustrate the decomposed increment: orientation at the top, and position at the bottom. 
+    Each component of the <i>orientation increment</i> represents a change with respect to each rotation axis defined by the body pose at ${\mathbf{T}_{WB_i}}$  (rotations with respect to $X$, $Y$ and $Z$ axes, respectively, are shown). When combined, the vector represents an <i>axis-angle</i> representation of the rotation increment. <i>Position increments</i> (right-side, bottom) are easier to interpret because they only represent a shift in position with respect to ${\mathbf{T}_{WB_i}}$'s origin. 
+    Since the retraction actually <i>combines</i> both orientation and position increments on the manifold, it generates a smooth trajectory as shown on the left-hand side (light blue).</figcaption>
+</figure>
+<br />
 
+### Some remarks on the retract and local operations
+Lastly, we would like to share some important remarks that are not always stated in the math but **can become real issues during the implementation**. First, we need to be careful about **the convention of the order of the components in the retraction/local operation** (yes, more conventions again). Having clarity about the definition that every software or paper uses for these operations, even implicitly, is fundamental to make sense of the quantities we put into our estimation problems and the estimates we extract. 
+
+For instance, the definition of the $\text{SE(3)}$ retraction we presented, which matches `Pose3` in GTSAM, uses an *orientation-then-translation* convention, i.e, the 6D tangent vector has orientation in the first three coordinates, and translation in the last three $\mathbf{\xi} = (\phi, \rho)$, where $\phi \in \mathbb{R}^3$ denotes the orientation components while $\rho \in \mathbb{R}^3$ the translational ones. On the other hand, `Pose2` uses *translation-then-orientation* $(x, y, \theta)$ for [historical reasons](https://github.com/borglab/gtsam/issues/160#issuecomment-562161665).
+
+**This is also ties the definition of the covariances**. For `Pose3` objects, for instance, we must define covariance matrices that match the definition and meaning of the tangent vectors. In fact, the upper-left block must encode orientation covariances, i.e, our degree of uncertainty for each rotation axis, while the bottom-right encodes position covariances:
+
+$$
+\begin{equation}
+\left[\begin{matrix} \Sigma_{\phi\phi} & \Sigma_{\phi\rho} \\ \Sigma_{\phi\rho}^{T} & \Sigma_{\rho\rho} \end{matrix}\right]
+\end{equation}
+$$
+
+This is of paramount importance because, for example, the previous covariance matrix does not match the convention used in ROS to store the covariances in [`PoseWithCovariance`](http://docs.ros.org/en/melodic/api/geometry_msgs/html/msg/PoseWithCovariance.html). Similar issues can arise when using different libraries or software, so we must be aware of their conventions. Our advice is **to always check the retraction/exponential map definition** if not stated in the documentation.
 
 ## Bringing everything together
 Now we can return to our original estimation problem using rigid-body transformations. Let us recall that we defined the following process model given by odometry measurements:
@@ -453,16 +476,7 @@ $$
 </figure>
 <br />
 
-where we have defined $${_{B_{i+1}}}\eta \sim Gaussian(\mathbf{0}_{6\times1},\ _{B_{i+1}}\Sigma)$$. Please note that in order to match our right-hand convention, **the covariance we use must be defined in the base frame at time $i+1$**, i.e $$B_{i+1}$$. Additionally, **the covariance matrix must follow the same ordering defined by the retraction**. For `Pose3` objects, for instance, the upper-left block must encode orientation covariances, while the bottom-right position covariances:
-
-$$
-\begin{equation}
-\left[\begin{matrix} \Sigma_{\phi\phi} & \Sigma_{\phi\rho} \\ \Sigma_{\phi\rho}^{T} & \Sigma_{\rho\rho} \end{matrix}\right]
-\end{equation}
-$$
-
-where we have used $\phi$ to denote orientation components while $\rho$ for the translational ones. 
-
+where we have defined $${_{B_{i+1}}}\eta \sim Gaussian(\mathbf{0}_{6\times1},\ _{B_{i+1}}\Sigma)$$. Please note that in order to match our right-hand convention, **the covariance we use must be defined in the body frame at time $i+1$**, i.e $$B_{i+1}$$. Additionally, **the covariance matrix must follow the same ordering defined by the retraction as we mentioned before**.
 
 ### Defining the residual
 Having solved the first problem, we can now focus on the residual definition. We can isolate the noise as we did before, which holds:
@@ -491,7 +505,7 @@ Since the noise is defined in the tangent space, both sides denote vector expres
 </figure>
 <br />
 
-We must also keep in mind here that by using the **local** operation, **the residual vector will follow the same ordering**. As we mentioned before for `Pose3` objects, it will encode orientation error in the first 3 components, while translation error in the last ones. In this way, if we write the expanded expression for the Gaussian factor, we can notice that all the components are weighted accordingly (orientation first, and then translation):
+We must also keep in mind here that by using the **local** operation, **the residual vector will follow the same ordering**. As we mentioned before for `Pose3` objects, it will encode orientation error in the first 3 components, while translation error in the last ones. In this way, if we write the expanded expression for the Gaussian factor, we can notice that all the components are weighted accordingly by the inverse covariance as we reviewed before (orientation first, and then translation):
 
 $$
 \begin{equation}
@@ -532,7 +546,7 @@ Gaussian(\mathbf{T}_{WB_i}^{k+1}, \Sigma^{k+1}) := \mathbf{T}_{WB_i}^{k+1} \text
 \end{equation}
 $$
 
-where $${_{B_i}}\eta^{k+1} \sim Gaussian(\mathbf{0}_{6\times1}, \Sigma^{k+1})$$. As a consequence of the convention on the retraction, **the resulting covariance is expressed in the base frame as well, and uses orientation-then-translation for the ordering of the covariance matrix**.
+where $${_{B_i}}\eta^{k+1} \sim Gaussian(\mathbf{0}_{6\times1}, {_{B_i}}\Sigma^{k+1})$$. As a consequence of the convention on the retraction, **the resulting covariance is expressed in the body frame as well, and uses orientation-then-translation for the ordering of the covariance matrix**.
 
 ## Conclusions 
 In this second part we extended the estimation framework presented previously by introducing the reference frames in an explicit manner into our notation, which helped to understand the meaning of the quantities.

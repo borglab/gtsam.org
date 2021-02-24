@@ -59,7 +59,7 @@ As a motivation, we will use a similar pose graph to those used in other GTSAM e
 <br />
 
 To start, we will consider that the variables in the graph $$\mathbf{x}_i$$
-correspond to positions $${\mathbf{x}_{i}} = (x,y) \in \mathbb{R}^2$$. The variables are related by a transition matrix $$\mathbf{A}_{i}$$, as well as relative *measurements* $$\mathbf{b}_{i} = (b_x, b_y)$$ obtained from some sensor such as a wheel odometer. We can then establish the following relationships between variables $$i$$ and $$i+1$$:
+correspond to positions $${\mathbf{x}_{i}} = (x,y) \in \mathbb{R}^2$$. The variables are related by a linear model given by a transition matrix $$\mathbf{A}_{i}$$ and a constant term $$\mathbf{b}_{i} = (b_x, b_y)$$, which can be obtained from some sensor such as a wheel odometer. We can then establish the following relationship between variables $$i$$ and $$i+1$$:
 
 $$
 \begin{equation}
@@ -67,7 +67,7 @@ $$
 \end{equation}
 $$
 
-However, we know that in reality things do not work that way, and we will usually have errors produced by noise in our sensors. The most common way to address this problem is adding some *zero-mean Gaussian noise* $$\eta_i\sim Gaussian(\mathbf{0}_{2\times1}, \Sigma_i)$$ to our measurement to model this uncertainty:
+However, we know that in reality things do not work that way, and we will usually have errors produced by noise in our sensors or actuators. The most common way to address this problem is adding some *zero-mean Gaussian noise* $$\eta_i\sim Gaussian(\mathbf{0}_{2\times1}, \Sigma_i)$$ to our model to represent this uncertainty:
 
 $$
 \begin{equation}
@@ -75,7 +75,7 @@ $$
 \end{equation}
 $$
 
-We can recognize here the typical *motion* or *process model* we use in Kalman filter for instance, that describe how our state evolves. We say that the noise we introduced on the right side states that our next state $$\mathbf{x}_{i+1}$$ will be *around* $$\mathbf{A}_{i}\mathbf{x}_i + \mathbf{b}_i$$, and the covariance matrix $$\Sigma_i$$ describes the region where we expect $$\mathbf{x}_{i+1}$$ to lie.
+We can recognize here the typical *motion* or *process model* we use in Kalman filter for instance, that describes how our state evolves. We say that the noise we introduced on the right side states that our next state $$\mathbf{x}_{i+1}$$ will be *around* $$\mathbf{A}_{i}\mathbf{x}_i + \mathbf{b}_i$$, and the covariance matrix $$\Sigma_i$$ describes the region where we expect $$\mathbf{x}_{i+1}$$ to lie.
 
 We can also notice that with a bit of manipulation, it is possible to establish the following relationship:
 
@@ -85,7 +85,7 @@ $$
 \end{equation}
 $$
 
-This is an important expression because we know that the left-hand expression distributes as a Gaussian distribution. But since we have an equivalence, the right-hand term must do as well. We must note here that what distributes as a Gaussian is neither $$\mathbf{x}_{i}$$ nor $$\mathbf{x}_{i+1}$$, but the difference $$(\mathbf{x}_{i+1} - \mathbf{A}_{i}\mathbf{x}_i - \mathbf{b}_i)$$. This allows us to use the difference as an  **odometry factor** that relates $$\mathbf{x}_i$$ and $$\mathbf{x}_{i+1}$$ probabillistically in our factor graph:
+This is an important expression because we know that the left-hand expression follows a Gaussian distribution. But since we have an equivalence, the right-hand term must do as well. We must note here that what distributes as a Gaussian is neither $$\mathbf{x}_{i}$$ nor $$\mathbf{x}_{i+1}$$, but the *difference* $$(\mathbf{x}_{i+1} - \mathbf{A}_{i}\mathbf{x}_i - \mathbf{b}_i)$$. This allows us to use the difference as an  **odometry factor** that relates $$\mathbf{x}_i$$ and $$\mathbf{x}_{i+1}$$ probabillistically in our factor graph:
 
 $$
 \begin{equation}
@@ -130,7 +130,7 @@ As a result, we can say that after solving the factor graph the *probability dis
 
 
 ## Getting nonlinear
-The previous pose graph was quite simple and probably not applicable for most of our problems. Having linear factors as the previous one is an *impossible dream* for most of the applications. It is more realistic to think that our state $$i+1$$ will evolve as a nonlinear function of the state $i$ and the measurements $$b_i$$:
+The previous pose graph was quite simple and probably not applicable for most of our problems. Having linear factors as the previous one is an *impossible dream* for most of the applications. It is more realistic to think that our state $$i+1$$ will evolve as a nonlinear function of the state $i$ and the measurements, which is more general than the formerly assummed linear model $$\mathbf{A}_{i} \mathbf{x}_i + \mathbf{b}_i$$:
 
 $$
 \begin{equation}
