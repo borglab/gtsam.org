@@ -41,7 +41,7 @@ Author: [Matias Mattamala](https://mmattamala.github.io)
 {:toc}
 
 ## Introduction
-In our [previous post](https://gtsam.org/2021/02/07/uncertainties-part1.html) we discussed some basic concepts to solve linear and nonlinear factor graphs and to extract uncertainty estimates from them. We reviewed that the Fisher information matrix corresponds to an approximation of the inverse covariance of the solution, and that in the nonlinear case, both the solution and its covariance estimate are **valid for the current linearization point only**.
+In our [previous post](https://gtsam.org/2021/02/23/uncertainties-part1.html) we discussed some basic concepts to solve linear and nonlinear factor graphs and to extract uncertainty estimates from them. We reviewed that the Fisher information matrix corresponds to an approximation of the inverse covariance of the solution, and that in the nonlinear case, both the solution and its covariance estimate are **valid for the current linearization point only**.
 
 While the nonlinear case effectively allows us to model a bunch of problems, we need to admit we were not too honest when we said that it was *everything* we needed to model real problems. Our formulation so far assumed that the variables in our factor graph are **vectors**, which is not the case for robotics and computer vision at least.
 
@@ -557,4 +557,4 @@ We presented the idea of _right-hand_ and _left-hand_ conventions which, while n
 
 Additionally, the definition of the local and retract operations also have direct impact on the ordering of the covariance matrices, which also varies depending on the object. For instance, we discussed that `Pose2` use a _translation-then-orientation_ convention, while `Pose3` does _orientation-then-translation_. This is particularly important when we want to use GTSAM quantities with different software, such as ROS, which use a _translation-then-orientation_ convention for their 3D pose structures for instance ([`PoseWithCovariance`](http://docs.ros.org/en/melodic/api/geometry_msgs/html/msg/PoseWithCovariance.html)).
 
-The [final post](https://gtsam.org/2021/02/07/uncertainties-part3.html) will cover some final remarks regarding the conventions we defined and applications of the _adjoint_ of a Lie group, which is quite useful to properly transform covariance matrices defined for poses.
+The [final post](https://gtsam.org/2021/02/23/uncertainties-part3.html) will cover some final remarks regarding the conventions we defined and applications of the _adjoint_ of a Lie group, which is quite useful to properly transform covariance matrices defined for poses.
