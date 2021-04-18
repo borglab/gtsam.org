@@ -9,9 +9,9 @@ import numpy as np
 from scipy.linalg import solve_triangular
 
 import matplotlib.pyplot as plt
-from dynamics_lti import create_lti_fg, plot_trajectory, solve_lti_fg
+import dynamics_lti as lti
 
-def add_lqr_costs_fg(graph, X, U, Q, R, x_goal=np.array([])):
+def add_costs_fg(graph, X, U, Q, R, x_goal=np.array([])):
     '''Adds LQR quadratic costs to states and controls in a factor graph
     Arguments:
         graph: a factor graph describing system dynamics
@@ -50,8 +50,8 @@ def add_lqr_costs_fg(graph, X, U, Q, R, x_goal=np.array([])):
 
     return graph, X, U
 
-def create_lqr_fg(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500,
-                  x_goal=np.array([0., 0.])):
+def create_fg(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500,
+              x_goal=np.array([0., 0.])):
     '''Creates a factor graph for solving a discrete, finite horizon LQR problem
     given system dynamics in state space representation.
     Arguments:
@@ -67,11 +67,11 @@ def create_lqr_fg(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500,
         X: keys for the states
         U: keys for the controls
     '''
-    graph, X, U = create_lti_fg(A, B, X0=X0, num_time_steps=num_time_steps)
-    graph, X, U = add_lqr_costs_fg(graph, X, U, Q, R, x_goal=x_goal)
+    graph, X, U = lti.create_fg(A, B, X0=X0, num_time_steps=num_time_steps)
+    graph, X, U = add_costs_fg(graph, X, U, Q, R, x_goal=x_goal)
     return graph, X, U
 
-def solve_lqr_fg(graph, X, U):
+def solve_fg(graph, X, U):
     '''Solves an LQR problem given in factor graph form.
     Arguments:
         graph: a factor graph
@@ -82,10 +82,10 @@ def solve_lqr_fg(graph, X, U):
         x_sol: an array of states
         u_sol: an array of controls
     '''
-    return solve_lti_fg(graph, X, U)
+    return lti.solve_fg(graph, X, U)
 
-def solve_lqr(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500,
-              x_goal=np.array([0., 0.])):
+def solve(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500,
+          x_goal=np.array([0., 0.])):
     '''Solves a discrete, finite horizon LQR problem given system dynamics in
     state space representation.
     Arguments:
@@ -100,8 +100,8 @@ def solve_lqr(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500,
         x_sol: an array of states
         u_sol: an array of controls
     '''
-    graph, X, U = create_lqr_fg(A, B, Q, R, X0, num_time_steps, x_goal)
-    return solve_lqr_fg(graph, X, U)
+    graph, X, U = create_fg(A, B, Q, R, X0, num_time_steps, x_goal)
+    return solve_fg(graph, X, U)
 
 def get_return_cost(graph, key):
     '''Returns the value function matrix at variable `key` given a graph which
@@ -202,10 +202,10 @@ def main():
                   [del_t/m]])
 
     # solve
-    x_sol, u_sol = solve_lqr(A, B, Q, R, X0, num_time_steps=num_time_steps, x_goal=x_goal)
+    x_sol, u_sol = solve(A, B, Q, R, X0, num_time_steps=num_time_steps, x_goal=x_goal)
 
     # plot
-    plot_trajectory(t, x_sol, u_sol, state_labels=['position', 'velocity'])
+    lti.plot_trajectory(t, x_sol, u_sol, state_labels=['position', 'velocity'])
     plt.suptitle('LQR control of a spring-mass system by GTSAM')
     plt.show()
 

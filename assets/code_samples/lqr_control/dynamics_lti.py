@@ -8,7 +8,7 @@ import gtsam
 import matplotlib.pyplot as plt
 import numpy as np
 
-def create_lti_fg(A, B, X0=np.array([]), u=np.array([]), num_time_steps=500):
+def create_fg(A, B, X0=np.array([]), u=np.array([]), num_time_steps=500):
     '''Creates a factor graph with system dynamics constraints in state-space
             representation:
             x_{t+1} = Ax_t + Bu_t
@@ -58,7 +58,7 @@ def create_lti_fg(A, B, X0=np.array([]), u=np.array([]), num_time_steps=500):
 
     return graph, X, U
 
-def solve_lti_fg(graph, X, U):
+def solve_fg(graph, X, U):
     '''Solves a linear factor graph describing system dynamics and/or control.
     Arguments:
         graph: a factor graph
@@ -80,7 +80,7 @@ def solve_lti_fg(graph, X, U):
         u_sol[i] = result.at(U[i])
     return x_sol, u_sol
 
-def solve_lti(A, B, X0=np.array([0., 0.]), u=np.array([]), num_time_steps=500):
+def solve(A, B, X0=np.array([0., 0.]), u=np.array([]), num_time_steps=500):
     '''Simulates an LTI system with system dynamics given by:
             x_{t+1} = Ax_t + Bu_t
     Arguments:
@@ -94,8 +94,8 @@ def solve_lti(A, B, X0=np.array([0., 0.]), u=np.array([]), num_time_steps=500):
         x_sol: an array of states
         u_sol: an array of controls
     '''
-    graph, X, U = create_lti_fg(A, B, X0=X0, u=u, num_time_steps=num_time_steps)
-    return solve_lti_fg(graph, X, U)
+    graph, X, U = create_fg(A, B, X0=X0, u=u, num_time_steps=num_time_steps)
+    return solve_fg(graph, X, U)
 
 def plot_trajectory(t, x, u, state_labels=None, control_labels=None):
     '''Utiliy function plots state and control trajectories
@@ -142,7 +142,7 @@ def main():
                   [del_t/m]])
 
     # solve
-    x_sol, u_sol = solve_lti(A, B, X0, u=u, num_time_steps=num_time_steps)
+    x_sol, u_sol = solve(A, B, X0, u=u, num_time_steps=num_time_steps)
 
     # plot
     plot_trajectory(t, x_sol, u_sol, state_labels=['position', 'velocity'])
