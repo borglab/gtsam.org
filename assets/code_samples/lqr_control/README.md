@@ -12,3 +12,9 @@ Provided in this folder are 5 files:
   Discrete Algebraic Ricatti Equation method.  This code is just provided as a reference to compare
   the "standard" solution to the factor graph solution.
 * `example1_factorgraph.py` - Example code which solves an LQR problem using GTSAM/factor graphs.
+
+Please note: this code was tested on the [4.1.1 version of GTSAM on pypi](https://pypi.org/project/gtsam/4.1.1/):
+```python
+pip install gtsam==4.1.1
+```
+For versions older than 4.1.0, please use this [alternate download](https://gtsam.org/assets/code_samples/lqr_control_2020_02_12.zip).

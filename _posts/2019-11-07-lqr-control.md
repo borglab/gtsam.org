@@ -385,6 +385,8 @@ P &= Q+A^TPA - K^TB^TPA \nonumber
 as $T\to\infty$.  This is the [Discrete Algebraic Ricatti Equations (DARE)](https://en.wikipedia.org/wiki/Algebraic_Riccati_equation) and $\lim_{T\to\infty}V_0(x)$ and $\lim_{T\to\infty}K_0$ are the cost-to-go and optimal control gain respectively for the [infinite horizon LQR problem](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator#Infinite-horizon,_discrete-time_LQR).  Indeed, one way to calculate the solution to the DARE is to iterate on the dynamic Ricatti equation.
 
 ## Implementation using GTSAM
+**Edit (Apr 17, 2021): Code updated to new Python wrapper as of GTSAM 4.1.0.
+
 You can view an example Jupyter notebook on [google colab](https://colab.research.google.com/drive/1pIUC6fQVMEaQ7QfJk8BvD0F60gShj3F4#sandboxMode=true){:target="_blank"} or
 <a href="/assets/code_samples/lqr_control.zip" download>download</a> the modules/examples
 that you can use in your
@@ -418,15 +420,10 @@ def solve_lqr(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500):
     p = np.size(B, 1)
 
     # noise models
-    prior_noise = gtsam.noiseModel_Constrained.All(n)
-    dynamics_noise = gtsam.noiseModel_Constrained.All(n)
-    q_noise = gtsam.dynamic_cast_noiseModel_Diagonal_noiseModel_Gaussian(
-        gtsam.noiseModel_Gaussian.Information(Q))
-    r_noise = gtsam.dynamic_cast_noiseModel_Diagonal_noiseModel_Gaussian(
-        gtsam.noiseModel_Gaussian.Information(R))
-    # note: GTSAM 4.0.2 python wrapper doesn't have 'Information'
-    # wrapper, use this instead if you are not on develop branch:
-    #   `gtsam.noiseModel_Gaussian.SqrtInformation(np.sqrt(Q)))`
+    prior_noise = gtsam.noiseModel.Constrained.All(n)
+    dynamics_noise = gtsam.noiseModel.Constrained.All(n)
+    q_noise = gtsam.noiseModel.Gaussian.Information(Q)
+    r_noise = gtsam.noiseModel.Gaussian.Information(R)
 
     # Create an empty Gaussian factor graph
     graph = gtsam.GaussianFactorGraph()
@@ -435,8 +432,8 @@ def solve_lqr(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500):
     X = []
     U = []
     for i in range(num_time_steps):
-        X.append(gtsam.symbol(ord('x'), i))
-        U.append(gtsam.symbol(ord('u'), i))
+        X.append(gtsam.symbol('x', i))
+        U.append(gtsam.symbol('u', i))
 
     # set initial state as prior
     graph.add(X[0], np.eye(n), X0, prior_noise)

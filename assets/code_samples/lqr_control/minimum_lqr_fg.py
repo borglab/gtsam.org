@@ -17,15 +17,10 @@ def solve_lqr(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500):
     p = np.size(B, 1)
 
     # noise models
-    prior_noise = gtsam.noiseModel_Constrained.All(n)
-    dynamics_noise = gtsam.noiseModel_Constrained.All(n)
-    q_noise = gtsam.dynamic_cast_noiseModel_Diagonal_noiseModel_Gaussian(
-        gtsam.noiseModel_Gaussian.Information(Q))
-    r_noise = gtsam.dynamic_cast_noiseModel_Diagonal_noiseModel_Gaussian(
-        gtsam.noiseModel_Gaussian.Information(R))
-    # note: GTSAM 4.0.2 python wrapper doesn't have 'Information'
-    # wrapper, use this instead if you are not on develop branch:
-    #   `gtsam.noiseModel_Gaussian.SqrtInformation(np.sqrt(Q)))`
+    prior_noise = gtsam.noiseModel.Constrained.All(n)
+    dynamics_noise = gtsam.noiseModel.Constrained.All(n)
+    q_noise = gtsam.noiseModel.Gaussian.Information(Q)
+    r_noise = gtsam.noiseModel.Gaussian.Information(R)
 
     # Create an empty Gaussian factor graph
     graph = gtsam.GaussianFactorGraph()
@@ -34,8 +29,8 @@ def solve_lqr(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500):
     X = []
     U = []
     for i in range(num_time_steps):
-        X.append(gtsam.symbol(ord('x'), i))
-        U.append(gtsam.symbol(ord('u'), i))
+        X.append(gtsam.symbol('x', i))
+        U.append(gtsam.symbol('u', i))
 
     # set initial state as prior
     graph.add(X[0], np.eye(n), X0, prior_noise)

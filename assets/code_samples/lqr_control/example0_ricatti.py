@@ -38,7 +38,7 @@ def ricatti_update(P, A, B, Q, R, N=None):
             Q)
     return Pnew, K
 
-def get_k_and_p_ricatti(T, A, B, Q, R, N=None):
+def get_k_and_p(T, A, B, Q, R, N=None):
     '''Calculates the control gain, K, and cost-to-go, V, for each time step of a finite horizon LQR
     problem.
     Arguments:
@@ -138,7 +138,7 @@ def main():
     N = np.array([0.])
 
     T = 50
-    K, P = get_k_and_p_ricatti(T, A, B, Q, R, N)
+    K, P = get_k_and_p(T, A, B, Q, R, N)
 
     plt.figure(figsize=(12, 5))
     visualize_cost(A, B, K, P, fig=plt.subplot(1, 2, 1), title=None, plottype='heatmap')

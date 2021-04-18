@@ -7,8 +7,8 @@ Author: Gerry Chen, Yetong Zhang, and Frank Dellaert
 import matplotlib.pyplot as plt
 import numpy as np
 
-from lqr import create_lqr_fg, get_k_and_p
-from example0_ricatti import get_k_and_p_ricatti, visualize_cost
+import lqr
+import example0_ricatti as ricatti
 
 def main():
     """Solves optimal control problem for a slightly unstable 1D system using factor graphs.
@@ -24,12 +24,13 @@ def main():
     T = 100
 
     # Factor graph LQR - these two lines are all you need to solve an LQR problem!
-    graph, X, U = create_lqr_fg(A, B, Q, R, X0, num_time_steps=T,
-                                x_goal=np.array([0.]))
-    K, P = get_k_and_p(graph, X, U)
+    graph, X, U = lqr.create_fg(A, B, Q, R, X0, num_time_steps=T, x_goal=np.array([0.]))
+    K, P = lqr.get_k_and_p(graph, X, U)
+    K2 = lqr.get_k(graph, X, U)
+    assert np.all(np.abs(K - K2) < 1e-10)
 
     # ricatti version, for comparison
-    K_ricatti, P_ricatti = get_k_and_p_ricatti(T, A, B, Q, R)
+    K_ricatti, P_ricatti = ricatti.get_k_and_p(T, A, B, Q, R)
 
     # plotting
     plt.figure(figsize=(18, 5))
@@ -45,10 +46,10 @@ def main():
                 'FG control gain $K$', 'Ricatti control gain $K$'])
     plt.title('Cost-to-go and Control Gain\n')
     # value function plots
-    visualize_cost(A, B, K, P, fig=plt.subplot(1, 3, 2),
-                   title='Cost-to-go (Factor Graph)\n')
-    visualize_cost(A, B, K_ricatti, P_ricatti, fig=plt.subplot(1, 3, 3),
-                   title='Cost-to-go (Ricatti Equation)\n')
+    ricatti.visualize_cost(A, B, K, P, fig=plt.subplot(1, 3, 2),
+                           title='Cost-to-go (Factor Graph)\n')
+    ricatti.visualize_cost(A, B, K_ricatti, P_ricatti, fig=plt.subplot(1, 3, 3),
+                           title='Cost-to-go (Ricatti Equation)\n')
 
     plt.suptitle('LQR Control Computed by by Factor Graph (FG) and Ricatti Equation')
 
