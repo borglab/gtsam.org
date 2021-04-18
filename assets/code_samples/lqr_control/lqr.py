@@ -158,6 +158,13 @@ def get_k_and_p(graph, X, U):
 def get_k(graph, X, U):
     """Finds the optimal control law given by $u=Kx$ but not the value function
         $Vx^2$ aka cost-to-go.
+    Arguments:
+        graph: factor graph containing factor graph in LQR form
+        X: list of state Keys
+        U: list of control Keys
+    Returns:
+        K: optimal control matrix, shape (T-1, 1)
+            TODO(gerry): support n-dimensional state space (just change size of K)
     """
     T = len(U)
     K = np.zeros((T-1, 1))
