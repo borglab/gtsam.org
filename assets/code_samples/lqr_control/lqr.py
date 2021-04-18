@@ -38,13 +38,8 @@ def add_lqr_costs_fg(graph, X, U, Q, R, x_goal=np.array([])):
                          ' (num_time_steps, n)')
 
     # noises
-    q_noise = gtsam.dynamic_cast_noiseModel_Diagonal_noiseModel_Gaussian(
-        gtsam.noiseModel_Gaussian.Information(Q))
-    r_noise = gtsam.dynamic_cast_noiseModel_Diagonal_noiseModel_Gaussian(
-        gtsam.noiseModel_Gaussian.Information(R))
-    # note: GTSAM 4.0.2 python wrapper doesn't have 'Information'
-    # wrapper, use this instead if you are not on develop branch:
-    #   `gtsam.noiseModel_Gaussian.SqrtInformation(np.sqrt(Q)))`
+    q_noise = gtsam.gtsam.noiseModel.Gaussian.Information(Q)
+    r_noise = gtsam.gtsam.noiseModel.Gaussian.Information(R)
 
     # set cost functions as unary factors
     for i, x in enumerate(X):
@@ -122,7 +117,7 @@ def get_return_cost(graph, key):
     new_fg = gtsam.GaussianFactorGraph()
     for i in range(graph.size()): # loop through all factors
         f = graph.at(i)
-        if (f.keys().size() == 1) and (f.keys().at(0) == key): # collect unary factors on `key`
+        if (len(f.keys()) == 1) and (f.keys()[0] == key): # collect unary factors on `key`
             new_fg.push_back(f)
     sol_end = new_fg.eliminateSequential()
     return sol_end.back().information()

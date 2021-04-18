@@ -24,9 +24,9 @@ def create_lti_fg(A, B, X0=np.array([]), u=np.array([]), num_time_steps=500):
             control inputs respectively
     '''
     # Create noise models
-    prior_noise = gtsam.noiseModel_Constrained.All(np.size(A, 0))
-    dynamics_noise = gtsam.noiseModel_Constrained.All(np.size(A, 0))
-    control_noise = gtsam.noiseModel_Constrained.All(1)
+    prior_noise = gtsam.noiseModel.Constrained.All(np.size(A, 0))
+    dynamics_noise = gtsam.noiseModel.Constrained.All(np.size(A, 0))
+    control_noise = gtsam.noiseModel.Constrained.All(1)
 
     # Create an empty Gaussian factor graph
     graph = gtsam.GaussianFactorGraph()
@@ -35,8 +35,8 @@ def create_lti_fg(A, B, X0=np.array([]), u=np.array([]), num_time_steps=500):
     X = []
     U = []
     for i in range(num_time_steps):
-        X.append(gtsam.symbol(ord('x'), i))
-        U.append(gtsam.symbol(ord('u'), i))
+        X.append(gtsam.symbol('x', i))
+        U.append(gtsam.symbol('u', i))
 
     # set initial state as prior
     if X0.size > 0:
