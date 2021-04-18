@@ -6,6 +6,7 @@ Author: Gerry Chen, Yetong Zhang, and Frank Dellaert
 
 import gtsam
 import numpy as np
+from scipy.linalg import solve_triangular
 
 import matplotlib.pyplot as plt
 from dynamics_lti import create_lti_fg, plot_trajectory, solve_lti_fg
@@ -126,7 +127,8 @@ def get_k_and_p(graph, X, U):
     '''Finds optimal control law given by $u=Kx$ and value function $Vx^2$ aka
         cost-to-go which corresponds to solutions to the algebraic, finite
         horizon Ricatti Equation.  K is Extracted from the bayes net and V is
-        extracted by incrementally eliminating the factor graph.
+        extracted by incrementally eliminating the factor graph.  If you only
+        need K and not V, then use the `get_k` function below.
     Arguments:
         graph: factor graph containing factor graph in LQR form
         X: list of state Keys
@@ -149,9 +151,25 @@ def get_k_and_p(graph, X, U):
 
         bayes_net, marginalized_fg = marginalized_fg.eliminatePartialSequential(ordering)
         P[i] = get_return_cost(marginalized_fg, X[i])
-        K[i] = bayes_net.back().S() # note: R is 1
+        K[i] = solve_triangular(bayes_net.back().R(), bayes_net.back().S())
 
     return K, P
+
+def get_k(graph, X, U):
+    """Finds the optimal control law given by $u=Kx$ but not the value function
+        $Vx^2$ aka cost-to-go.
+    """
+    T = len(U)
+    K = np.zeros((T-1, 1))
+    ordering = gtsam.Ordering()
+    for i in range(T - 1, -1, -1): # traverse backwards in time
+        ordering.push_back(U[i])
+        ordering.push_back(X[i])
+    net = graph.eliminateSequential(ordering)
+    for i in range(T - 1):
+        cond = net.at(2 * (T - 1 - i))
+        K[i] = solve_triangular(cond.R(), cond.S())
+    return K
 
 def main():
     '''Solves open loop LQR problem using factor graph for a spring-mass system

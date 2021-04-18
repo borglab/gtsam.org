@@ -7,7 +7,7 @@ Author: Gerry Chen, Yetong Zhang, and Frank Dellaert
 import matplotlib.pyplot as plt
 import numpy as np
 
-from lqr import create_lqr_fg, get_k_and_p
+from lqr import create_lqr_fg, get_k_and_p, get_k
 from example0_ricatti import get_k_and_p_ricatti, visualize_cost
 
 def main():
@@ -27,6 +27,8 @@ def main():
     graph, X, U = create_lqr_fg(A, B, Q, R, X0, num_time_steps=T,
                                 x_goal=np.array([0.]))
     K, P = get_k_and_p(graph, X, U)
+    K2 = get_k(graph, X, U)
+    assert np.all(np.abs(K - K2) < 1e-10)
 
     # ricatti version, for comparison
     K_ricatti, P_ricatti = get_k_and_p_ricatti(T, A, B, Q, R)
