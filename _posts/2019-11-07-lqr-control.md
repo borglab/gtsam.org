@@ -64,8 +64,8 @@ problem where the costs of control and state error are represented by the
 minimization objective \eqref{eq:cost}, and the system dynamics are represented by the
 constraints \eqref{eq:dyn_model}.
 
-\\[ \begin{equation} \argmin\limits_{u_{1\sim k}}\sum\limits_{i=1}^n x_i^T Q x_i + u_i^T R u_i \label{eq:cost} \end{equation}\\]
-\\[ \begin{equation} s.t. ~~ x_{t+1}=Ax_t+Bu_t ~~\text{for } t=1 \text{ to } T-1 \label{eq:dyn_model} \end{equation} \\]
+\\[ \begin{equation} \argmin\limits_{u_{1\sim N}} x_N^TQx_N \sum\limits_{k=1}^N-1 x_i^T Q x_k + u_k^T R u_k \label{eq:cost} \end{equation}\\]
+\\[ \begin{equation} s.t. ~~ x_{k+1}=Ax_k+Bu_k ~~\text{for } k=1 \text{ to } N-1 \label{eq:dyn_model} \end{equation} \\]
 
 We can visualize the objective function and constraints in the form of a factor
 graph as shown in [Figure 1](#fg_scratch). This is a simple Markov chain, with the oldest
@@ -317,7 +317,7 @@ Eliminating a general state, $x_{k+1}$, and control $u_k$, we obtain the recurre
 
 \begin{equation} \boxed{P_k = Q+A^TP_{k+1}A - K_k^TB^TP_{k+1}A} \label{eq:cost_update_k} \end{equation}
 
-with $P_{T}=Q$ is the cost at the last time step.
+with $P_{N}=Q$ is the cost at the last time step.
 
 The final Bayes net in [Figure 4d](#fig_bayes_net){:onclick="currentSlide(9,0)"} shows graphically the optimal control law:
 \begin{equation} \boxed{u^*_k = K_k x_k} \end{equation}
@@ -346,7 +346,7 @@ In our factor graph representation, it is becomes obvious that $V_k(x)$ correspo
 Eliminating a state just re-expresses the future cost in terms of prior states/controls.  Each time we eliminate a control, $u$, the future cost is recalculated assuming optimal control (i.e. $\phi_4(x) = \phi_3(x, u^*)$).
 
 This "cost-to-go" is depicted as a heatmap in [Figure 5](#LQR_example).
-The heat maps depict the $V_k$ showing that the cost is high when $x$ is far from 0, but also showing that after iterating sufficient far backwards in time, $V_k(x)$ begins to converge.  That is to say, the $V_0(x)$ is very similar for $T=30$ and $T=100$.
+The heat maps depict the $V_k$ showing that the cost is high when $x$ is far from 0, but also showing that after iterating sufficient far backwards in time, $V_k(x)$ begins to converge.  That is to say, the $V_0(x)$ is very similar for $N=30$ and $N=100$.
 Similarly, the leftmost plot of [Figure 5](#LQR_example) depicts $K_k$ and $P_k$ and shows that they (predictably) converge as well.
 
 This convergence allows us to see that we can extend to the [infinite horizon LQR problem](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator#Infinite-horizon,_discrete-time_LQR) (continued in the next section).
@@ -369,7 +369,7 @@ In traditional descriptions of discrete, finite-horizon LQR (i.e. [Chow](https:/
 
 \begin{equation} P_k = Q+A^TP_{k+1}A - K_k^TB^TP_{k+1}A \label{eq:cost_update_k_ricatti} \end{equation}
 
-with $P_k$ commonly referred to as the solution to the **dynamic Ricatti equation** and $P_T=Q$ is the
+with $P_k$ commonly referred to as the solution to the **dynamic Ricatti equation** and $P_N=Q$ is the
 value of the Ricatti function at the final time step.
 \eqref{eq:control_update_k_ricatti} and \eqref{eq:cost_update_k_ricatti} correspond to
 the same results as we derived in \eqref{eq:control_update_k} and \eqref{eq:cost_update_k}
@@ -382,7 +382,7 @@ K &= -(R+B^TPB)^{-1}B^TPA \nonumber \\\\
 P &= Q+A^TPA - K^TB^TPA \nonumber
 \end{align}
 
-as $T\to\infty$.  This is the [Discrete Algebraic Ricatti Equations (DARE)](https://en.wikipedia.org/wiki/Algebraic_Riccati_equation) and $\lim_{T\to\infty}V_0(x)$ and $\lim_{T\to\infty}K_0$ are the cost-to-go and optimal control gain respectively for the [infinite horizon LQR problem](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator#Infinite-horizon,_discrete-time_LQR).  Indeed, one way to calculate the solution to the DARE is to iterate on the dynamic Ricatti equation.
+as $N\to\infty$.  This is the [Discrete Algebraic Ricatti Equations (DARE)](https://en.wikipedia.org/wiki/Algebraic_Riccati_equation) and $\lim_{N\to\infty}V_0(x)$ and $\lim_{N\to\infty}K_0$ are the cost-to-go and optimal control gain respectively for the [infinite horizon LQR problem](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator#Infinite-horizon,_discrete-time_LQR).  Indeed, one way to calculate the solution to the DARE is to iterate on the dynamic Ricatti equation.
 
 ## Implementation using GTSAM
 **Edit (Apr 17, 2021): Code updated to new Python wrapper as of GTSAM 4.1.0.
@@ -431,17 +431,17 @@ def solve_lqr(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500):
     # Create the keys corresponding to unknown variables in the factor graph
     X = []
     U = []
-    for i in range(num_time_steps):
-        X.append(gtsam.symbol('x', i))
-        U.append(gtsam.symbol('u', i))
+    for k in range(num_time_steps):
+        X.append(gtsam.symbol('x', k))
+        U.append(gtsam.symbol('u', k))
 
     # set initial state as prior
     graph.add(X[0], np.eye(n), X0, prior_noise)
 
     # Add dynamics constraint as ternary factor
     #   A.x1 + B.u1 - I.x2 = 0
-    for i in range(num_time_steps-1):
-        graph.add(X[i], A, U[i], B, X[i+1], -np.eye(n),
+    for k in range(num_time_steps-1):
+        graph.add(X[k], A, U[k], B, X[k+1], -np.eye(n),
                   np.zeros((n)), dynamics_noise)
 
     # Add cost functions as unary factors
@@ -454,9 +454,9 @@ def solve_lqr(A, B, Q, R, X0=np.array([0., 0.]), num_time_steps=500):
     result = graph.optimize()
     x_sol = np.zeros((num_time_steps, n))
     u_sol = np.zeros((num_time_steps, p))
-    for i in range(num_time_steps):
-        x_sol[i, :] = result.at(X[i])
-        u_sol[i] = result.at(U[i])
+    for k in range(num_time_steps):
+        x_sol[k, :] = result.at(X[k])
+        u_sol[k] = result.at(U[k])
     
     return x_sol, u_sol
 ```
@@ -863,13 +863,13 @@ table th {
 <div style="overflow: auto">
 <table style="width:6.1in; margin: 0 auto;">
     <tr>
-        <th>where</th><th>$P_{t}$</th><th>$=$</th><th>$Q + A^TP_{t+1}A - K_t^TB^TP_{t+1}A$</th><th>($P_2=Q$)</th>
+        <th>where</th><th>$P_{k}$</th><th>$=$</th><th>$Q + A^TP_{k+1}A - K_k^TB^TP_{k+1}A$</th><th>($P_2=Q$)</th>
     </tr><tr>
-        <th></th><th>$D_{t}$</th><th>$=$</th><th>$R + B^TP_{t+1}B$</th>
+        <th></th><th>$D_{k}$</th><th>$=$</th><th>$R + B^TP_{k+1}B$</th>
     </tr><tr>
-        <th></th><th>$K_t$</th><th>$=$</th><th>$-D_{t}^{-1/2}(R + B^TP_{t+1}B)^{-T/2}B^TP_{t+1}A$</th>
+        <th></th><th>$K_k$</th><th>$=$</th><th>$-D_{k}^{-1/2}(R + B^TP_{k+1}B)^{-T/2}B^TP_{k+1}A$</th>
     </tr><tr>
-        <th></th><th></th><th>$=$</th><th>$-(R + B^TP_{t+1}B)^{-1}B^TP_{t+1}A$</th>
+        <th></th><th></th><th>$=$</th><th>$-(R + B^TP_{k+1}B)^{-1}B^TP_{k+1}A$</th>
     </tr>
 </table>
 </div>
