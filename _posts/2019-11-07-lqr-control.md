@@ -64,7 +64,7 @@ problem where the costs of control and state error are represented by the
 minimization objective \eqref{eq:cost}, and the system dynamics are represented by the
 constraints \eqref{eq:dyn_model}.
 
-\\[ \begin{equation} \argmin\limits_{u_{1\sim N}} x_N^TQx_N \sum\limits_{k=1}^N-1 x_i^T Q x_k + u_k^T R u_k \label{eq:cost} \end{equation}\\]
+\\[ \begin{equation} \argmin\limits_{u_{1\sim N}} x_N^T Q x_N + \sum\limits_{k=1}^N-1 x_i^T Q x_k + u_k^T R u_k \label{eq:cost} \end{equation}\\]
 \\[ \begin{equation} s.t. ~~ x_{k+1}=Ax_k+Bu_k ~~\text{for } k=1 \text{ to } N-1 \label{eq:dyn_model} \end{equation} \\]
 
 We can visualize the objective function and constraints in the form of a factor
