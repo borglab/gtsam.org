@@ -1,11 +1,13 @@
 var a04736 =
 [
-    [ "Base", "a04736.html#a63eb0ae1fbf09c245c8e72d877469dc8", null ],
-    [ "FixedVector", "a04736.html#a0eefda65880b74607e047f079440c1a1", null ],
-    [ "FixedVector", "a04736.html#a3add84cf214e079640138fdd091a99b9", null ],
-    [ "FixedVector", "a04736.html#a308e4746e22b126d0b56125f13383cd4", null ],
-    [ "FixedVector", "a04736.html#affe70ad8bdd81fdf8244cb717ddcdc87", null ],
-    [ "equals", "a04736.html#ad595fa744cd867fcd766dbab43943e2b", null ],
-    [ "equals", "a04736.html#a4138aeb7d62f98f3ed9cf8fb799a04a0", null ],
-    [ "print", "a04736.html#a340fe1bbc65a32dd2cc2db78dc0d3712", null ]
+    [ "add_camera", "a04736.html#a5f3288570bf9c5a42318cff4e3750848", null ],
+    [ "add_track", "a04736.html#ace978d7c7296290128dd9b4885f01025", null ],
+    [ "camera", "a04736.html#a5d9e4e3f81537ddddeadca4158838035", null ],
+    [ "equals", "a04736.html#acfa3f4865e32f376834698b0b5c0015d", null ],
+    [ "number_tracks", "a04736.html#a9841e93745d8f04f03a693a0e394e93f", null ],
+    [ "print", "a04736.html#a7a750e92aa66d797bc4fd2c81945a26f", null ],
+    [ "track", "a04736.html#ad0ab63b2d4ef111241daf4d6a46e36eb", null ],
+    [ "boost::serialization::access", "a04736.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ],
+    [ "cameras", "a04736.html#aca9835ee681fe7dfbd3d0e2b58d4f50d", null ],
+    [ "tracks", "a04736.html#ad005f3beddfb6a8f735ad3369d2b81e6", null ]
 ];

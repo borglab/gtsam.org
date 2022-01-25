@@ -1,7 +1,8 @@
 var a04608 =
 [
-    [ "RotateDirectionsFactor", "a04608.html#a2b5ada837b7cc3b3c6d0c175535eb330", null ],
-    [ "clone", "a04608.html#ac8ea2e754b87da8f290ff06caaf379bd", null ],
-    [ "evaluateError", "a04608.html#a0fc5bf648ed2f7e84586319553533d91", null ],
-    [ "print", "a04608.html#a2d89ad40d9d152a28288cb96a2281fc4", null ]
+    [ "BearingRangeFactor", "a04608.html#a0a1df8a5b7807a3ecc3e1baa74802ac7", null ],
+    [ "BearingRangeFactor", "a04608.html#a7398d2ecd4e269a6852473e6fb8108d5", null ],
+    [ "BearingRangeFactor", "a04608.html#a2cadb2247daabfc360bbf1d930909edb", null ],
+    [ "clone", "a04608.html#abe80cc873b881989698126b8d70fb03b", null ],
+    [ "print", "a04608.html#ad8d74c3af71d455dec37c0b78d8958db", null ]
 ];

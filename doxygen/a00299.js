@@ -1,7 +1,5 @@
 var a00299 =
 [
-    [ "Line3", "a02988.html", "a02988" ],
-    [ "traits< Line3 >", "a02992.html", null ],
-    [ "traits< const Line3 >", "a02996.html", null ],
-    [ "transformTo", "a00299.html#a3eb48c80bef807e34d7189efdc8875cd", null ]
+    [ "compose", "a00299.html#a72fc8b10f24d82aa8a4c99f99403fe5e", null ],
+    [ "Dcompose", "a00299.html#a7c7e26b6d07ec0f16363c196247b294d", null ]
 ];

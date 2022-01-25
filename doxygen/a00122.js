@@ -1,4 +1,5 @@
 var a00122 =
 [
-    [ "demangle", "a00122.html#a0b97fc96e5f69236e81489c66d5b92ba", null ]
+    [ "choleskyCareful", "a00122.html#a747683f736c50bca16b3aab0e95b1b76", null ],
+    [ "choleskyPartial", "a00122.html#abe82fa6aceccfa2360cf314ab44f39ad", null ]
 ];

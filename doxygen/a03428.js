@@ -1,20 +1,21 @@
 var a03428 =
 [
-    [ "Base", "a03428.html#add63a66a1d8ffc93337f40d3457feffb", null ],
-    [ "shared_ptr", "a03428.html#a5389765361ecd73747234ac0a1fd9c62", null ],
-    [ "This", "a03428.html#ad29de1a2966331f21b1fd88a18234091", null ],
-    [ "OrderingType", "a03428.html#a41194f31ec42052094cf91d81dcd796d", [
-      [ "COLAMD", "a03428.html#a41194f31ec42052094cf91d81dcd796da92234f2f92b24b30fad1ff615b47a6b1", null ],
-      [ "METIS", "a03428.html#a41194f31ec42052094cf91d81dcd796dad1350e8ef856464982baa6401b497413", null ],
-      [ "NATURAL", "a03428.html#a41194f31ec42052094cf91d81dcd796daed4cb47c942ba56c2511961395b54a80", null ],
-      [ "CUSTOM", "a03428.html#a41194f31ec42052094cf91d81dcd796da22b5e944facb4f0b834b1854a09a836a", null ]
-    ] ],
-    [ "Ordering", "a03428.html#aa7f3dd0f38b06fa10b7fe9dc1ee1c378", null ],
-    [ "Ordering", "a03428.html#a0fdb342e68a74e19c25a1d3364233cde", null ],
-    [ "Ordering", "a03428.html#a8e58b2de0eaa0f54f0a8790009abf39e", null ],
-    [ "equals", "a03428.html#a3cf688f730746a83ec75277de6574866", null ],
-    [ "invert", "a03428.html#ac8590c3149674d3b05a8648fd01b97a2", null ],
-    [ "operator+=", "a03428.html#aad3752a69f4a70d2ffce00a57402479c", null ],
-    [ "print", "a03428.html#a19fb1c7d9752d62d568600b2ee8104cb", null ],
-    [ "boost::serialization::access", "a03428.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ]
+    [ "StereoPoint2", "a03428.html#af91933798181ce1bb4759a7f78900ed8", null ],
+    [ "StereoPoint2", "a03428.html#a6e78d04be7be5824277957b807f29a67", null ],
+    [ "StereoPoint2", "a03428.html#a127f5a9bc07d0f81dc30f67d4eb6e3bd", null ],
+    [ "equals", "a03428.html#a74e0c6868b8d058dc7d49f12da34e483", null ],
+    [ "operator+", "a03428.html#ab0f193e3fbc9fc811051dfcd4c394891", null ],
+    [ "operator+", "a03428.html#a6720f98d02fa76cfdd7b70e5f0f0dffd", null ],
+    [ "operator-", "a03428.html#a8be0cca494701e375ca31db902f66fe1", null ],
+    [ "operator-", "a03428.html#a211d5cb9dd5816de465bc6aeb35f8adc", null ],
+    [ "operator==", "a03428.html#af0b47bceeb7d432730ef9627e03b085a", null ],
+    [ "point2", "a03428.html#aebca28e1dc3f495c873fd01de7ff0778", null ],
+    [ "print", "a03428.html#a7a0cac6ecc475313cd1d250dde4cfcc3", null ],
+    [ "right", "a03428.html#a1a7990b315e51976dce3ab9b9fb54ad2", null ],
+    [ "uL", "a03428.html#a680b14f2e0bd0621c551d33c9b60f1c2", null ],
+    [ "uR", "a03428.html#a0394939c8b77b2e3b594873ca007dc42", null ],
+    [ "v", "a03428.html#addb15c987185fd446d94f4495d1ecbae", null ],
+    [ "vector", "a03428.html#a576452db11da6ff1c022e7d6ca2f605b", null ],
+    [ "boost::serialization::access", "a03428.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ],
+    [ "operator<<", "a03428.html#a0489565f0df0d7bb216651425b56d2ef", null ]
 ];

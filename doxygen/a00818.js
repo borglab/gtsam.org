@@ -1,4 +1,9 @@
 var a00818 =
 [
-    [ "State", "a00818.html#ad12a676bb0c4fbe052753ced185f91d3", null ]
+    [ "gtsam::PreintegrationCombinedParams", "a04052.html", "a04052" ],
+    [ "gtsam::PreintegratedCombinedMeasurements", "a04056.html", "a04056" ],
+    [ "gtsam::CombinedImuFactor", "a04060.html", "a04060" ],
+    [ "gtsam::traits< PreintegrationCombinedParams >", "a04064.html", null ],
+    [ "gtsam::traits< PreintegratedCombinedMeasurements >", "a04068.html", null ],
+    [ "gtsam::traits< CombinedImuFactor >", "a04072.html", null ]
 ];

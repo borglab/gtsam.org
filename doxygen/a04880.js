@@ -1,15 +1,15 @@
 var a04880 =
 [
-    [ "Result", "a04880.html#aea81f70ca0399c13a5e89d0a51e5a652", null ],
-    [ "getError", "a04880.html#ac5fd705c5eb593e32a407e335dee554c", null ],
-    [ "getIterations", "a04880.html#ad9308a29688b9b298d539af7ca6a0535", null ],
-    [ "getLambdas", "a04880.html#a32c97fb2dafc4c97c5fc5b1a6e0744bf", null ],
-    [ "getLinearVariables", "a04880.html#ac7db57adac83a0630a916354d9b4f632", null ],
-    [ "getNonlinearVariables", "a04880.html#aa95944da80d3f292eb87f3fffb26e01d", null ],
-    [ "error", "a04880.html#a2d87c3908f0904a3446fc0e0e355f45f", null ],
-    [ "iterations", "a04880.html#adfc3514d5b5adef4592a3f4315951090", null ],
-    [ "lambdas", "a04880.html#a01e85f0e8c326defd589159fa7cd4749", null ],
-    [ "linearVariables", "a04880.html#af8d5cefa24e5800190d787166445cb97", null ],
-    [ "newFactorsIndices", "a04880.html#ad1bc4f8182a82aa740fe5484345fec54", null ],
-    [ "nonlinearVariables", "a04880.html#a3c373018d7f079c4e832ff9a64843f18", null ]
+    [ "shared_ptr", "a04880.html#a28d8d11331b16d38d35f40d63bcb2853", null ],
+    [ "SmartProjectionPoseFactor", "a04880.html#aceb2d76933a58312e2ddd0ef64f12cfd", null ],
+    [ "SmartProjectionPoseFactor", "a04880.html#a165cf8ab1c71f9d685fc209dd6d672b8", null ],
+    [ "SmartProjectionPoseFactor", "a04880.html#abcb92891b3d5fd2030b2c74a8349e268", null ],
+    [ "~SmartProjectionPoseFactor", "a04880.html#a6977aebb8c9cce62f627646134f94cac", null ],
+    [ "calibration", "a04880.html#a740ab3a315baf43cbc297410f9bb3df5", null ],
+    [ "cameras", "a04880.html#a1c323a14087e35016da506e2b181adc9", null ],
+    [ "equals", "a04880.html#a13a2a01f64b4c1c71959d29214aaec07", null ],
+    [ "error", "a04880.html#a1eed01662aeffd29f96eefcdeefa5c1e", null ],
+    [ "print", "a04880.html#a6c638ae6535bf66d13e70852dd851ff3", null ],
+    [ "boost::serialization::access", "a04880.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ],
+    [ "K_", "a04880.html#a38878009ca4060a870b45f46184656dd", null ]
 ];

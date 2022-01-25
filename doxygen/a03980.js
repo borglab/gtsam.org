@@ -1,16 +1,7 @@
 var a03980 =
 [
-    [ "VerbosityDL", "a03980.html#a857a8ae8ed6eea7960231b3359dfa349", [
-      [ "SILENT", "a03980.html#a857a8ae8ed6eea7960231b3359dfa349acab5ce06eecf3de4a7962ada9558c607", null ],
-      [ "VERBOSE", "a03980.html#a857a8ae8ed6eea7960231b3359dfa349aad9f3f864ecafb2b5743f36b3e8a39a7", null ]
-    ] ],
-    [ "DoglegParams", "a03980.html#a1d329c1b603f9e2da6ae33fbaa4c87f7", null ],
-    [ "~DoglegParams", "a03980.html#a967b71344b7d6ad164642b73bbf1f564", null ],
-    [ "getDeltaInitial", "a03980.html#ac15deddbc67292e4434fca597604ee98", null ],
-    [ "getVerbosityDL", "a03980.html#acfccc2dbc3ae17baf147beea1c62b30f", null ],
-    [ "print", "a03980.html#aa2972de8287baabaa1315e20b55d5078", null ],
-    [ "setDeltaInitial", "a03980.html#ad3ec7611a06ec23e5dad8e25e3520e40", null ],
-    [ "setVerbosityDL", "a03980.html#a9cdb0227f0359ee71d565808517bb081", null ],
-    [ "deltaInitial", "a03980.html#afc7c92d489fcbea53a1b645185e43e53", null ],
-    [ "verbosityDL", "a03980.html#ae6a2936aed619333036329c343281356", null ]
+    [ "Scatter", "a03980.html#ad4220161208c55a3e426b0b078567a4b", null ],
+    [ "Scatter", "a03980.html#a2486845fa12d82fbd7b84427d8d5832e", null ],
+    [ "Scatter", "a03980.html#af5136cc8acb2902c1f17c2a7e463ecb4", null ],
+    [ "add", "a03980.html#a513b73f7ed08f72f79c1362d8959eb9a", null ]
 ];

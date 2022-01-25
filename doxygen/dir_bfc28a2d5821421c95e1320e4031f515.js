@@ -1,6 +1,7 @@
 var dir_bfc28a2d5821421c95e1320e4031f515 =
 [
     [ "base", "dir_59d8fae67ebcec1514e0f6d4ea576047.html", "dir_59d8fae67ebcec1514e0f6d4ea576047" ],
+    [ "basis", "dir_7c6fd4d23c35234f8f1271a66248b63b.html", "dir_7c6fd4d23c35234f8f1271a66248b63b" ],
     [ "discrete", "dir_20686f9fbb87ff6485e15cdc5f2b7011.html", "dir_20686f9fbb87ff6485e15cdc5f2b7011" ],
     [ "geometry", "dir_be4965403b556e5d04a57d44231dfb01.html", "dir_be4965403b556e5d04a57d44231dfb01" ],
     [ "inference", "dir_169eaf73225633059c1416b195c6cb0d.html", "dir_169eaf73225633059c1416b195c6cb0d" ],
@@ -11,7 +12,7 @@ var dir_bfc28a2d5821421c95e1320e4031f515 =
     [ "sfm", "dir_76df0d5ddca8353881dcb68d9cbdfd25.html", "dir_76df0d5ddca8353881dcb68d9cbdfd25" ],
     [ "slam", "dir_323e70a1eef083399c870cf8a6035771.html", "dir_323e70a1eef083399c870cf8a6035771" ],
     [ "symbolic", "dir_0e8eb460b7f775f5eda250a12ea9d76a.html", "dir_0e8eb460b7f775f5eda250a12ea9d76a" ],
-    [ "global_includes.h", "a01175.html", null ],
-    [ "precompiled_header.cpp", "a01184.html", null ],
-    [ "precompiled_header.h", "a01187.html", null ]
+    [ "global_includes.h", "a01256.html", null ],
+    [ "precompiled_header.cpp", "a01253.html", null ],
+    [ "precompiled_header.h", "a01250.html", null ]
 ];

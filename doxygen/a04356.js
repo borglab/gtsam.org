@@ -1,10 +1,8 @@
 var a04356 =
 [
-    [ "WhiteNoiseFactor", "a04356.html#a92b88afb4ef2a76302f9ad7694636bce", null ],
-    [ "~WhiteNoiseFactor", "a04356.html#a02c5c42b104e4495ebe7872667025c27", null ],
-    [ "dim", "a04356.html#ad8e7defea60574520a1f43733212242c", null ],
-    [ "error", "a04356.html#ac1eb391a5cd7dc0f0d9b966540380971", null ],
-    [ "linearize", "a04356.html#a5845729e5236577872a1c1e07d630376", null ],
-    [ "print", "a04356.html#a9157e5f97e1aa3f7b116f7e233f29715", null ],
-    [ "unwhitenedError", "a04356.html#a9ac20b0036f3d1823e121979409e7535", null ]
+    [ "ISAM2DoglegParams", "a04356.html#a68b79a86c44c9bec6549ecdfaf0cf536", null ],
+    [ "adaptationMode", "a04356.html#a4011adf62546c0fca59e62c0522136b8", null ],
+    [ "initialDelta", "a04356.html#a929d62bcb7aefda2b8514a813360d272", null ],
+    [ "verbose", "a04356.html#a423adc06cbc8c72f89469d1c3eb24571", null ],
+    [ "wildfireThreshold", "a04356.html#aaf78f71297ce1a510acd290b3e7289f2", null ]
 ];
