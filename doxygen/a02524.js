@@ -1,4 +1,4 @@
 var a02524 =
 [
-    [ "type", "a02524.html#abdd07b9a9df1c2be9541719dcd3303f4", null ]
+    [ "DirectSum", "a02524.html#a920a249b3e2bf675eb9ae96ac25887b5", null ]
 ];

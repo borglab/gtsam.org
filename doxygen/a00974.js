@@ -1,5 +1,5 @@
 var a00974 =
 [
-    [ "WhiteNoiseFactor", "a04356.html", "a04356" ],
-    [ "logSqrt2PI", "a00974.html#ad5602eb85d05df6cba60e47eebbd3636", null ]
+    [ "gtsam::NonlinearOptimizer", "a04492.html", "a04492" ],
+    [ "checkConvergence", "a00974.html#a3382482454c164c6f5817dcbe6f932b3", null ]
 ];

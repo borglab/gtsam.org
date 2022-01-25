@@ -1,10 +1,16 @@
 var a04088 =
 [
-    [ "COLAMD", "a04088.html#a7475f4b8e47670e7955679847da51610a04ad1d99e17837a19e4c2cfd9d17895a", null ],
-    [ "NO_CONSTRAINT", "a04088.html#ac52ee0632e1f584c4c9cb8c3aff9bce6ab1d7a721f1ed3097e1763d1fdd9dce80", null ],
-    [ "CONSTRAIN_LAST", "a04088.html#ac52ee0632e1f584c4c9cb8c3aff9bce6a5b7b2d02791a69ef7aa82ce59c0c824b", null ],
-    [ "algorithm", "a04088.html#a578a3a2f69ee755988840861af4c5069", null ],
-    [ "constrain", "a04088.html#a301f0a066e32b7efaa59c11cb5eeaa4d", null ],
-    [ "constrainedKeys", "a04088.html#a1e2c539caac311a07af095d17fb49513", null ],
-    [ "nFullSystemVars", "a04088.html#af5014c71f367003e54de6ae03dff25a1", null ]
+    [ "accelerometer", "a04088.html#ada5994c047f61ce4052159928b44d624", null ],
+    [ "correctAccelerometer", "a04088.html#a38e03cd494b2c3e3a0d0261a22af9662", null ],
+    [ "correctGyroscope", "a04088.html#a75637e5863c69bf8d8ca2a5347947e73", null ],
+    [ "equals", "a04088.html#a276162fe16d92c17dab6258d5fab6d58", null ],
+    [ "gyroscope", "a04088.html#a176a703de66ddf0cf87abbcca1566478", null ],
+    [ "operator+", "a04088.html#ad28898cc918cef1f1d1fd97fcc7a1036", null ],
+    [ "operator+", "a04088.html#a96e98bcbfb7312a0ba29043a96ff8c7b", null ],
+    [ "operator-", "a04088.html#a5c18fc2155eb85c45809128956a7de20", null ],
+    [ "operator-", "a04088.html#a30c89c5c856d2d7514979203f536e9a2", null ],
+    [ "print", "a04088.html#a499e58fdf6aa720bc725c82a5749fba1", null ],
+    [ "vector", "a04088.html#a93610c76ef81c251cb8d5697ee9334bd", null ],
+    [ "boost::serialization::access", "a04088.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ],
+    [ "operator<<", "a04088.html#ab6dae176e7523b2c30f758aed0e1bf48", null ]
 ];

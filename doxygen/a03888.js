@@ -1,13 +1,13 @@
 var a03888 =
 [
-    [ "ImuFactor2", "a03888.html#a0abb4a12c32bea6d415ff0977b2ef75b", null ],
-    [ "ImuFactor2", "a03888.html#ae90d38f249a8da177d3b9263113899ec", null ],
-    [ "~ImuFactor2", "a03888.html#ae672486ce046a39109ad0c8e52b59697", null ],
-    [ "clone", "a03888.html#a5a7ad374c90f25f8e6113b2dc704c06c", null ],
-    [ "equals", "a03888.html#af6e1942af28387533561f1193d593ebd", null ],
-    [ "evaluateError", "a03888.html#a0a354040b47157a8f42844b02f637012", null ],
-    [ "preintegratedMeasurements", "a03888.html#a2a866efbfbeccedd43a7c4b7c09b167d", null ],
-    [ "print", "a03888.html#abce0b7ed5ad19976410a8c7c71245903", null ],
-    [ "boost::serialization::access", "a03888.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ],
-    [ "operator<<", "a03888.html#ad56f7ca28566dca263c5162f83d949a0", null ]
+    [ "Isotropic", "a03888.html#ae18e287216417166319c4ea7ba046941", null ],
+    [ "sigma", "a03888.html#a0d9e4784fd131f6f47c9c24e9973f0ab", null ],
+    [ "squaredMahalanobisDistance", "a03888.html#af7c4601cba5427791b6cb6777fb40fc8", null ],
+    [ "unwhiten", "a03888.html#aa1ac067e6ff2c70540efa795475a3bfa", null ],
+    [ "Whiten", "a03888.html#ab8e0677ad0e9c6a2c9793a0971af8178", null ],
+    [ "whiten", "a03888.html#a90f77b77984d15a4956e7112d4967c8d", null ],
+    [ "WhitenInPlace", "a03888.html#ad493fa826ba97bfb8f577d3703cd64c9", null ],
+    [ "WhitenInPlace", "a03888.html#a0a3c7a16da1df4075e2ff45bf64e5762", null ],
+    [ "whitenInPlace", "a03888.html#af896ee11596ae0642f47d3b8a8792e5a", null ],
+    [ "boost::serialization::access", "a03888.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ]
 ];

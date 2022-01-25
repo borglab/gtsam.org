@@ -1,7 +1,29 @@
 var a02804 =
 [
-    [ "DiscreteMarginals", "a02804.html#a989e365c2191c5db801307e50778a706", null ],
-    [ "marginalProbabilities", "a02804.html#a467d0ef89ee86bafe691130be9a2b4ac", null ],
-    [ "operator()", "a02804.html#ab7e034af37152b81e3bc9e461d6c8271", null ],
-    [ "bayesTree_", "a02804.html#a1b3b8e61943ca9a9a9a7e74da0eb9661", null ]
+    [ "VerticalBlockMatrix", "a02804.html#a04d12c23c8c6a3179416ca49da794c86", null ],
+    [ "VerticalBlockMatrix", "a02804.html#a20f3454d88ad93367250ea900c84c53d", null ],
+    [ "VerticalBlockMatrix", "a02804.html#ac3d367af21c05dca883a91cf5c24a243", null ],
+    [ "VerticalBlockMatrix", "a02804.html#a78d48e3b5eb2fc89705be918eb25652e", null ],
+    [ "cols", "a02804.html#a643d937b08596158d61440c5d8407ddf", null ],
+    [ "firstBlock", "a02804.html#a627c29bede193c9c3750e4249f336381", null ],
+    [ "firstBlock", "a02804.html#a1498857894c5020069e1443f4a84373c", null ],
+    [ "full", "a02804.html#a09283eb4c95f331eae17164dd632d089", null ],
+    [ "full", "a02804.html#abcb19e8883d335b21113d50eb5f37e95", null ],
+    [ "matrix", "a02804.html#ac03597c8a0e5bac77719d73745d902ee", null ],
+    [ "matrix", "a02804.html#a1637c4ff95b691fce6b0419996d87061", null ],
+    [ "nBlocks", "a02804.html#aae2077898052464a33b9af7244c82f87", null ],
+    [ "operator()", "a02804.html#a57657389622cd5e1b6e377dfecf7cbfa", null ],
+    [ "operator()", "a02804.html#a90f238c763567b8f6f7c24372857de75", null ],
+    [ "range", "a02804.html#a0a7317cdb1c8e0fc2d2dcb3e02dd651b", null ],
+    [ "rowEnd", "a02804.html#ac0a5e55f32e42639601b7755d1fdadb5", null ],
+    [ "rowEnd", "a02804.html#a400c75c332c65956b332dac29efb34f9", null ],
+    [ "rows", "a02804.html#a503a682bd3ec153c92d274b7b60db5c8", null ],
+    [ "rowStart", "a02804.html#ac02ad7cfc0baf80c7a6e0d62524a4cd7", null ],
+    [ "rowStart", "a02804.html#a9de26d1798ea7ea7037b6d504b080769", null ],
+    [ "boost::serialization::access", "a02804.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ],
+    [ "blockStart_", "a02804.html#ac6d96c30337e9378bcc7ac223b9d0d5c", null ],
+    [ "matrix_", "a02804.html#aaac69a1919d004647db02fab5b0cb0eb", null ],
+    [ "rowEnd_", "a02804.html#a30f8297f16323a7471154f7eb9f2828a", null ],
+    [ "rowStart_", "a02804.html#ac17eb9545a5eb49245a4ed598c3cfbd1", null ],
+    [ "variableColOffsets_", "a02804.html#ae7ec144e787509009c3fb0f284b94a22", null ]
 ];

@@ -1,6 +1,6 @@
 var a04124 =
 [
-    [ "VariableStatus", "a04128.html", "a04128" ],
-    [ "StatusMap", "a04124.html#ae9edb6376c6f284bdd477b5554c9585f", null ],
-    [ "variableStatus", "a04124.html#aa95ea9ffc9e1c58ae54bccea5e5e1c5a", null ]
+    [ "MagFactor1", "a04124.html#a5667d9e3964646f534760bab0b309241", null ],
+    [ "clone", "a04124.html#ab33c8f9faac8b893842bd7161deb7dbf", null ],
+    [ "evaluateError", "a04124.html#ad9a3f71f998a680db3f6c3164d4f09f9", null ]
 ];

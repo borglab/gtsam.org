@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['orderingtype_5958',['OrderingType',['../a03428.html#a41194f31ec42052094cf91d81dcd796d',1,'gtsam::Ordering']]]
+  ['noiseformat_0',['NoiseFormat',['../a01596.html#a90552b70a2da9c74595cae4b05c2ce18',1,'gtsam']]]
 ];

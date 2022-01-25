@@ -1,10 +1,9 @@
 var a03728 =
 [
-    [ "Dimensions", "a03728.html#a6d414532a3fa2af0e6081d312a020fa1", null ],
-    [ "shared_ptr", "a03728.html#ae8aa291677d57ac9482287cd69decb69", null ],
-    [ "Preconditioner", "a03728.html#a0779fe3d529b9dd2f427f7c98ea16167", null ],
-    [ "~Preconditioner", "a03728.html#ade4cbb7a6da93831323dff83f3658b92", null ],
-    [ "build", "a03728.html#a2d978320d9036aa10dcb4cf4ae289739", null ],
-    [ "solve", "a03728.html#a1487b9feccdfff75cf25cff86affb81b", null ],
-    [ "transposeSolve", "a03728.html#aae3d89e2b3e004d227e9fd28ff8dba64", null ]
+    [ "Base", "a03728.html#a57a688c5bdfa87413e5982fb1ec61489", null ],
+    [ "shared_ptr", "a03728.html#a888dd1388dc43d47fda35ade35583279", null ],
+    [ "This", "a03728.html#a3d599a4ee436838e5ffba795580c2ab1", null ],
+    [ "GaussianEliminationTree", "a03728.html#acffc7084c938407b8b047843fbd7b138", null ],
+    [ "GaussianEliminationTree", "a03728.html#abc03f84772075ab56747a259513f62a7", null ],
+    [ "equals", "a03728.html#aa5c2c091babfc2fa6b590654d73cd635", null ]
 ];

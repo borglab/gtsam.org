@@ -1,90 +1,105 @@
 var dir_cfb0833a2d0a882859966d02dbcbbb30 =
 [
-    [ "AHRS.h", "a01364_source.html", null ],
-    [ "BetweenFactorEM.h", "a01367.html", [
-      [ "BetweenFactorEM", "a04976.html", "a04976" ]
+    [ "AHRS.h", "a01511_source.html", null ],
+    [ "BetweenFactorEM.h", "a01466.html", [
+      [ "gtsam::BetweenFactorEM< VALUE >", "a05236.html", "a05236" ]
     ] ],
-    [ "BiasedGPSFactor.h", "a01370.html", [
-      [ "BiasedGPSFactor", "a04980.html", "a04980" ]
+    [ "BiasedGPSFactor.h", "a01544.html", [
+      [ "gtsam::BiasedGPSFactor", "a05240.html", "a05240" ]
     ] ],
-    [ "DummyFactor.cpp", "a01373.html", null ],
-    [ "DummyFactor.h", "a01376.html", [
-      [ "DummyFactor", "a04984.html", "a04984" ]
+    [ "DummyFactor.cpp", "a01526.html", null ],
+    [ "DummyFactor.h", "a01493.html", [
+      [ "gtsam::DummyFactor", "a05244.html", "a05244" ]
     ] ],
-    [ "EquivInertialNavFactor_GlobalVel.h", "a01379.html", [
-      [ "EquivInertialNavFactor_GlobalVel", "a04988.html", "a04988" ]
+    [ "EquivInertialNavFactor_GlobalVel.h", "a01472.html", [
+      [ "gtsam::EquivInertialNavFactor_GlobalVel< POSE, VELOCITY, IMUBIAS >", "a05248.html", "a05248" ]
     ] ],
-    [ "EquivInertialNavFactor_GlobalVel_NoBias.h", "a01382.html", [
-      [ "EquivInertialNavFactor_GlobalVel_NoBias", "a04992.html", "a04992" ]
+    [ "EquivInertialNavFactor_GlobalVel_NoBias.h", "a01481.html", [
+      [ "gtsam::EquivInertialNavFactor_GlobalVel_NoBias< POSE, VELOCITY >", "a05252.html", "a05252" ]
     ] ],
-    [ "GaussMarkov1stOrderFactor.h", "a01385.html", [
-      [ "GaussMarkov1stOrderFactor", "a04996.html", "a04996" ],
-      [ "traits< GaussMarkov1stOrderFactor< VALUE > >", "a05000.html", null ]
+    [ "GaussMarkov1stOrderFactor.h", "a01445.html", [
+      [ "gtsam::GaussMarkov1stOrderFactor< VALUE >", "a05256.html", "a05256" ],
+      [ "gtsam::traits< GaussMarkov1stOrderFactor< VALUE > >", "a05260.html", null ]
     ] ],
-    [ "InertialNavFactor_GlobalVelocity.h", "a01388.html", [
-      [ "InertialNavFactor_GlobalVelocity", "a05004.html", "a05004" ],
-      [ "traits< InertialNavFactor_GlobalVelocity< POSE, VELOCITY, IMUBIAS > >", "a05008.html", null ]
+    [ "InertialNavFactor_GlobalVelocity.h", "a01439.html", [
+      [ "gtsam::InertialNavFactor_GlobalVelocity< POSE, VELOCITY, IMUBIAS >", "a05264.html", "a05264" ],
+      [ "gtsam::traits< InertialNavFactor_GlobalVelocity< POSE, VELOCITY, IMUBIAS > >", "a05268.html", null ]
     ] ],
-    [ "InvDepthFactor3.h", "a01391.html", [
-      [ "InvDepthFactor3", "a05012.html", "a05012" ]
+    [ "InvDepthFactor3.h", "a01499.html", [
+      [ "gtsam::InvDepthFactor3< POSE, LANDMARK, INVDEPTH >", "a05272.html", "a05272" ]
     ] ],
-    [ "InvDepthFactorVariant1.h", "a01394.html", [
-      [ "InvDepthFactorVariant1", "a05016.html", "a05016" ]
+    [ "InvDepthFactorVariant1.h", "a01478.html", [
+      [ "gtsam::InvDepthFactorVariant1", "a05276.html", "a05276" ]
     ] ],
-    [ "InvDepthFactorVariant2.h", "a01397.html", [
-      [ "InvDepthFactorVariant2", "a05020.html", "a05020" ]
+    [ "InvDepthFactorVariant2.h", "a01454.html", [
+      [ "gtsam::InvDepthFactorVariant2", "a05280.html", "a05280" ]
     ] ],
-    [ "InvDepthFactorVariant3.h", "a01400.html", [
-      [ "InvDepthFactorVariant3a", "a05024.html", "a05024" ],
-      [ "InvDepthFactorVariant3b", "a05028.html", "a05028" ]
+    [ "InvDepthFactorVariant3.h", "a01541.html", [
+      [ "gtsam::InvDepthFactorVariant3a", "a05284.html", "a05284" ],
+      [ "gtsam::InvDepthFactorVariant3b", "a05288.html", "a05288" ]
     ] ],
-    [ "Mechanization_bRn2.h", "a01406_source.html", null ],
-    [ "MultiProjectionFactor.h", "a01409_source.html", null ],
-    [ "PartialPriorFactor.h", "a01412.html", [
-      [ "PartialPriorFactor", "a05040.html", "a05040" ]
+    [ "LocalOrientedPlane3Factor.h", "a01508_source.html", null ],
+    [ "Mechanization_bRn2.h", "a01538_source.html", null ],
+    [ "MultiProjectionFactor.h", "a01448_source.html", null ],
+    [ "PartialPriorFactor.h", "a01463.html", [
+      [ "gtsam::PartialPriorFactor< VALUE >", "a05304.html", "a05304" ]
     ] ],
-    [ "PoseBetweenFactor.h", "a01415_source.html", null ],
-    [ "PosePriorFactor.h", "a01418.html", [
-      [ "PosePriorFactor", "a05048.html", "a05048" ]
+    [ "PoseBetweenFactor.h", "a01469_source.html", null ],
+    [ "PosePriorFactor.h", "a01547.html", [
+      [ "gtsam::PosePriorFactor< POSE >", "a05312.html", "a05312" ]
     ] ],
-    [ "PoseToPointFactor.h", "a01421_source.html", null ],
-    [ "ProjectionFactorPPP.h", "a01424.html", [
-      [ "ProjectionFactorPPP", "a05056.html", "a05056" ],
-      [ "traits< ProjectionFactorPPP< POSE, LANDMARK, CALIBRATION > >", "a05060.html", null ]
+    [ "PoseToPointFactor.h", "a01490_source.html", null ],
+    [ "ProjectionFactorPPP.h", "a01505.html", [
+      [ "gtsam::ProjectionFactorPPP< POSE, LANDMARK, CALIBRATION >", "a05320.html", "a05320" ],
+      [ "gtsam::traits< ProjectionFactorPPP< POSE, LANDMARK, CALIBRATION > >", "a05324.html", null ]
     ] ],
-    [ "ProjectionFactorPPPC.h", "a01427.html", [
-      [ "ProjectionFactorPPPC", "a05064.html", "a05064" ],
-      [ "traits< ProjectionFactorPPPC< POSE, LANDMARK, CALIBRATION > >", "a05068.html", null ]
+    [ "ProjectionFactorPPPC.h", "a01535.html", [
+      [ "gtsam::ProjectionFactorPPPC< POSE, LANDMARK, CALIBRATION >", "a05328.html", "a05328" ],
+      [ "gtsam::traits< ProjectionFactorPPPC< POSE, LANDMARK, CALIBRATION > >", "a05332.html", null ]
     ] ],
-    [ "RelativeElevationFactor.cpp", "a01430.html", null ],
-    [ "RelativeElevationFactor.h", "a01433.html", [
-      [ "RelativeElevationFactor", "a05072.html", "a05072" ]
+    [ "ProjectionFactorRollingShutter.cpp", "a01433.html", null ],
+    [ "ProjectionFactorRollingShutter.h", "a01460.html", [
+      [ "gtsam::ProjectionFactorRollingShutter", "a05336.html", "a05336" ],
+      [ "gtsam::traits< ProjectionFactorRollingShutter >", "a05340.html", null ]
     ] ],
-    [ "serialization.cpp", "a01436.html", "a01436" ],
-    [ "serialization.h", "a07183.html", "a07183" ],
-    [ "SmartRangeFactor.h", "a01439.html", [
-      [ "SmartRangeFactor", "a05076.html", "a05076" ],
-      [ "Circle2", "a05080.html", "a05080" ]
+    [ "RelativeElevationFactor.cpp", "a01457.html", null ],
+    [ "RelativeElevationFactor.h", "a01517.html", [
+      [ "gtsam::RelativeElevationFactor", "a05344.html", "a05344" ]
+    ] ],
+    [ "serialization.cpp", "a01496.html", null ],
+    [ "serialization.h", "a08946.html", null ],
+    [ "SmartProjectionPoseFactorRollingShutter.h", "a01475.html", [
+      [ "gtsam::SmartProjectionPoseFactorRollingShutter< CAMERA >", "a05348.html", "a05348" ],
+      [ "gtsam::traits< SmartProjectionPoseFactorRollingShutter< CAMERA > >", "a05352.html", null ]
+    ] ],
+    [ "SmartRangeFactor.h", "a01514.html", [
+      [ "gtsam::SmartRangeFactor", "a05356.html", "a05356" ],
+      [ "gtsam::SmartRangeFactor::Circle2", "a05360.html", null ]
     ] ],
     [ "SmartStereoProjectionFactor.h", "a01442.html", "a01442" ],
-    [ "SmartStereoProjectionPoseFactor.h", "a01445.html", [
-      [ "SmartStereoProjectionPoseFactor", "a05092.html", "a05092" ],
-      [ "traits< SmartStereoProjectionPoseFactor >", "a05096.html", null ]
+    [ "SmartStereoProjectionFactorPP.h", "a01523.html", [
+      [ "gtsam::SmartStereoProjectionFactorPP", "a05372.html", "a05372" ],
+      [ "gtsam::traits< SmartStereoProjectionFactorPP >", "a05376.html", null ]
     ] ],
-    [ "TOAFactor.h", "a01448.html", [
-      [ "TOAFactor", "a05100.html", "a05100" ]
+    [ "SmartStereoProjectionPoseFactor.cpp", "a01502.html", null ],
+    [ "SmartStereoProjectionPoseFactor.h", "a01487.html", [
+      [ "gtsam::SmartStereoProjectionPoseFactor", "a05380.html", "a05380" ],
+      [ "gtsam::traits< SmartStereoProjectionPoseFactor >", "a05384.html", null ]
     ] ],
-    [ "TransformBtwRobotsUnaryFactor.h", "a01451.html", [
-      [ "TransformBtwRobotsUnaryFactor", "a05104.html", "a05104" ],
-      [ "traits< TransformBtwRobotsUnaryFactor< VALUE > >", "a05108.html", null ]
+    [ "TOAFactor.h", "a01529.html", [
+      [ "gtsam::TOAFactor", "a05388.html", "a05388" ]
     ] ],
-    [ "TransformBtwRobotsUnaryFactorEM.h", "a01454.html", [
-      [ "TransformBtwRobotsUnaryFactorEM", "a05112.html", "a05112" ],
-      [ "traits< TransformBtwRobotsUnaryFactorEM< VALUE > >", "a05116.html", null ]
+    [ "TransformBtwRobotsUnaryFactor.h", "a01550.html", [
+      [ "gtsam::TransformBtwRobotsUnaryFactor< VALUE >", "a05392.html", "a05392" ],
+      [ "gtsam::traits< TransformBtwRobotsUnaryFactor< VALUE > >", "a05396.html", null ]
     ] ],
-    [ "TSAMFactors.h", "a01457.html", [
-      [ "DeltaFactor", "a05120.html", "a05120" ],
-      [ "DeltaFactorBase", "a05124.html", "a05124" ],
-      [ "OdometryFactorBase", "a05128.html", "a05128" ]
+    [ "TransformBtwRobotsUnaryFactorEM.h", "a01451.html", [
+      [ "gtsam::TransformBtwRobotsUnaryFactorEM< VALUE >", "a05400.html", "a05400" ],
+      [ "gtsam::traits< TransformBtwRobotsUnaryFactorEM< VALUE > >", "a05404.html", null ]
+    ] ],
+    [ "TSAMFactors.h", "a01436.html", [
+      [ "gtsam::DeltaFactor", "a05408.html", "a05408" ],
+      [ "gtsam::DeltaFactorBase", "a05412.html", "a05412" ],
+      [ "gtsam::OdometryFactorBase", "a05416.html", "a05416" ]
     ] ]
 ];

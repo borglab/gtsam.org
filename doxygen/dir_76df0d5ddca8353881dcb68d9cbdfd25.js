@@ -1,21 +1,21 @@
 var dir_76df0d5ddca8353881dcb68d9cbdfd25 =
 [
-    [ "BinaryMeasurement.h", "a00986.html", [
-      [ "BinaryMeasurement", "a04392.html", "a04392" ]
+    [ "BinaryMeasurement.h", "a01061.html", [
+      [ "gtsam::BinaryMeasurement< T >", "a04632.html", "a04632" ]
     ] ],
-    [ "MFAS.cpp", "a00989.html", "a00989" ],
-    [ "MFAS.h", "a00992.html", "a00992" ],
-    [ "ShonanAveraging.cpp", "a00995.html", "a00995" ],
-    [ "ShonanAveraging.h", "a00998.html", "a00998" ],
-    [ "ShonanFactor.h", "a01004.html", "a01004" ],
-    [ "ShonanGaugeFactor.h", "a01007.html", [
-      [ "ShonanGaugeFactor", "a04428.html", "a04428" ]
+    [ "MFAS.cpp", "a01079.html", null ],
+    [ "MFAS.h", "a01064.html", "a01064" ],
+    [ "ShonanAveraging.cpp", "a01058.html", null ],
+    [ "ShonanAveraging.h", "a01055.html", "a01055" ],
+    [ "ShonanFactor.h", "a01067.html", "a01067" ],
+    [ "ShonanGaugeFactor.h", "a01076.html", [
+      [ "gtsam::ShonanGaugeFactor", "a04668.html", "a04668" ]
     ] ],
-    [ "TranslationFactor.h", "a01010.html", [
-      [ "TranslationFactor", "a04432.html", "a04432" ]
+    [ "TranslationFactor.h", "a01082.html", [
+      [ "gtsam::TranslationFactor", "a04672.html", "a04672" ]
     ] ],
-    [ "TranslationRecovery.cpp", "a01013.html", null ],
-    [ "TranslationRecovery.h", "a01016.html", [
-      [ "TranslationRecovery", "a04436.html", "a04436" ]
+    [ "TranslationRecovery.cpp", "a01073.html", null ],
+    [ "TranslationRecovery.h", "a01052.html", [
+      [ "gtsam::TranslationRecovery", "a04676.html", "a04676" ]
     ] ]
 ];

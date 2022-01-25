@@ -1,26 +1,6 @@
 var a04616 =
 [
-    [ "SmartProjectionParams", "a04616.html#a004cec4e1073a19c56d008df3d7783b4", null ],
-    [ "~SmartProjectionParams", "a04616.html#a4c46f044cc7d081d663d54bdf360cb12", null ],
-    [ "getDegeneracyMode", "a04616.html#a93d98d81eae04822112cb09a830b8895", null ],
-    [ "getLinearizationMode", "a04616.html#a5470683ea064fc5f06f6d7a9fc54e8c5", null ],
-    [ "getRetriangulationThreshold", "a04616.html#aa8100248d1af45fea7bc799e1df923cc", null ],
-    [ "getThrowCheirality", "a04616.html#af04dbf9ee66ec5d353a1e1618a22f9b3", null ],
-    [ "getTriangulationParameters", "a04616.html#a1123bcfc54f9374e9c29a844605087ac", null ],
-    [ "getVerboseCheirality", "a04616.html#a6dabc118fdd9f5a64944464217d9fb4b", null ],
-    [ "print", "a04616.html#abb815a7efcbf6f4b1a71f7238217ae80", null ],
-    [ "setDegeneracyMode", "a04616.html#a9978482a60c2cea01354898c358acf23", null ],
-    [ "setDynamicOutlierRejectionThreshold", "a04616.html#a546a830b29f95df1a5813d35dade0fbd", null ],
-    [ "setEnableEPI", "a04616.html#a460a757523d841c3136099595c96d173", null ],
-    [ "setLandmarkDistanceThreshold", "a04616.html#a2aa079fdadb483e7ac685df4482f1a5b", null ],
-    [ "setLinearizationMode", "a04616.html#a920b731f59bc5f89a215275289ecc57e", null ],
-    [ "setRankTolerance", "a04616.html#af7d2280f515b79ef1424e0d24d852920", null ],
-    [ "setRetriangulationThreshold", "a04616.html#ae31decc5a4211a77db663ea39c18d9df", null ],
-    [ "boost::serialization::access", "a04616.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ],
-    [ "degeneracyMode", "a04616.html#a695982b029b814dffdd8a34bae523575", null ],
-    [ "linearizationMode", "a04616.html#a4afa132d1f394b6256605752b3b8aab0", null ],
-    [ "retriangulationThreshold", "a04616.html#a5b1fa239a2827c833e2d6c035392d7d5", null ],
-    [ "throwCheirality", "a04616.html#a11f8b823fcb922edff9bc2847e5fe36c", null ],
-    [ "triangulation", "a04616.html#a7ba7a4f0f099916589cd156be0f43e5a", null ],
-    [ "verboseCheirality", "a04616.html#ab8353996f6c8ea607c213c854b6b0bc1", null ]
+    [ "RangeFactor", "a04616.html#ac14920d2ec8d8ed84a30f42108a212ce", null ],
+    [ "clone", "a04616.html#a30b02823ed76dba9160d21d604c8ea99", null ],
+    [ "print", "a04616.html#aa5ba8b8cdf1b802457ebaa265f737cbc", null ]
 ];

@@ -1,32 +1,27 @@
 var dir_4a9bd6cef242c34265d98dd5e2ce3e6d =
 [
-    [ "DynamicsPriors.h", "a01460.html", [
-      [ "DHeightPrior", "a05132.html", "a05132" ],
-      [ "DRollPrior", "a05136.html", "a05136" ],
-      [ "VelocityPrior", "a05140.html", "a05140" ],
-      [ "DGroundConstraint", "a05144.html", "a05144" ]
+    [ "DynamicsPriors.h", "a01574.html", "a01574" ],
+    [ "FullIMUFactor.h", "a01580.html", [
+      [ "gtsam::FullIMUFactor< POSE >", "a05436.html", "a05436" ]
     ] ],
-    [ "FullIMUFactor.h", "a01463.html", [
-      [ "FullIMUFactor", "a05148.html", "a05148" ]
+    [ "IMUFactor.h", "a08979.html", [
+      [ "gtsam::IMUFactor< POSE >", "a05440.html", "a05440" ]
     ] ],
-    [ "IMUFactor.h", "a01466.html", [
-      [ "IMUFactor", "a05152.html", "a05152" ]
+    [ "Pendulum.h", "a01568.html", [
+      [ "gtsam::PendulumFactor1", "a05444.html", "a05444" ],
+      [ "gtsam::PendulumFactor2", "a05448.html", "a05448" ],
+      [ "gtsam::PendulumFactorPk", "a05452.html", "a05452" ],
+      [ "gtsam::PendulumFactorPk1", "a05456.html", "a05456" ]
     ] ],
-    [ "Pendulum.h", "a01469.html", [
-      [ "PendulumFactor1", "a05156.html", "a05156" ],
-      [ "PendulumFactor2", "a05160.html", "a05160" ],
-      [ "PendulumFactorPk", "a05164.html", "a05164" ],
-      [ "PendulumFactorPk1", "a05168.html", "a05168" ]
+    [ "PoseRTV.cpp", "a01562.html", null ],
+    [ "PoseRTV.h", "a01565.html", [
+      [ "gtsam::PoseRTV", "a05460.html", "a05460" ],
+      [ "gtsam::traits< PoseRTV >", "a05464.html", null ],
+      [ "gtsam::Range< PoseRTV, PoseRTV >", "a05468.html", null ]
     ] ],
-    [ "PoseRTV.cpp", "a01472.html", "a01472" ],
-    [ "PoseRTV.h", "a01475.html", [
-      [ "PoseRTV", "a05172.html", "a05172" ],
-      [ "traits< PoseRTV >", "a05176.html", null ],
-      [ "Range< PoseRTV, PoseRTV >", "a05180.html", null ]
-    ] ],
-    [ "SimpleHelicopter.h", "a01481_source.html", null ],
-    [ "VelocityConstraint.h", "a01484.html", "a01484" ],
-    [ "VelocityConstraint3.h", "a01487.html", [
-      [ "VelocityConstraint3", "a05196.html", "a05196" ]
+    [ "SimpleHelicopter.h", "a01559_source.html", null ],
+    [ "VelocityConstraint.h", "a01577.html", "a01577" ],
+    [ "VelocityConstraint3.h", "a01553.html", [
+      [ "gtsam::VelocityConstraint3", "a05484.html", "a05484" ]
     ] ]
 ];

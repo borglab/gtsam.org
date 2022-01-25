@@ -1,6 +1,10 @@
 var a04420 =
 [
-    [ "ShonanAveraging3", "a04420.html#a352e5f37dd62d944f166a49f898d533a", null ],
-    [ "ShonanAveraging3", "a04420.html#aa0aed3c8aaba52d9a96f31db4215441c", null ],
-    [ "ShonanAveraging3", "a04420.html#ad497345bce93f4340f19f0cdd7d8af32", null ]
+    [ "shared_ptr", "a04420.html#a852d310c682c6e720a50dae759002fd1", null ],
+    [ "NonlinearEquality1", "a04420.html#aa331a1cacd4c4c69f2d8386d3f8cd327", null ],
+    [ "NonlinearEquality1", "a04420.html#a86774b96d825d51f4946a54341dcef18", null ],
+    [ "clone", "a04420.html#a6df933bfe67aaa3c48da0179580fc06b", null ],
+    [ "evaluateError", "a04420.html#a24e249f727d84108c5ca3af95f7f4fd3", null ],
+    [ "print", "a04420.html#aae94462adcb31337aa0b67d94126a45a", null ],
+    [ "boost::serialization::access", "a04420.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ]
 ];

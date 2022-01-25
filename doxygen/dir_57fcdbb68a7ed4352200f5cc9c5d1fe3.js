@@ -1,65 +1,69 @@
 var dir_57fcdbb68a7ed4352200f5cc9c5d1fe3 =
 [
-    [ "AHRSFactor.cpp", "a00728.html", null ],
-    [ "AHRSFactor.h", "a00731.html", [
-      [ "PreintegratedAhrsMeasurements", "a03812.html", "a03812" ],
-      [ "AHRSFactor", "a03816.html", "a03816" ]
+    [ "AHRSFactor.cpp", "a00869.html", null ],
+    [ "AHRSFactor.h", "a00791.html", [
+      [ "gtsam::PreintegratedAhrsMeasurements", "a04024.html", "a04024" ],
+      [ "gtsam::AHRSFactor", "a04028.html", "a04028" ]
     ] ],
-    [ "AttitudeFactor.cpp", "a00734.html", null ],
-    [ "AttitudeFactor.h", "a00737_source.html", null ],
-    [ "CombinedImuFactor.cpp", "a00740.html", "a00740" ],
-    [ "CombinedImuFactor.h", "a00743.html", "a00743" ],
-    [ "expressions.h", "a07195.html", "a07195" ],
-    [ "GPSFactor.cpp", "a00749.html", null ],
-    [ "GPSFactor.h", "a00752.html", [
-      [ "GPSFactor", "a03864.html", "a03864" ],
-      [ "GPSFactor2", "a03868.html", "a03868" ]
+    [ "AttitudeFactor.cpp", "a00827.html", null ],
+    [ "AttitudeFactor.h", "a00836_source.html", null ],
+    [ "CombinedImuFactor.cpp", "a00860.html", null ],
+    [ "CombinedImuFactor.h", "a00818.html", "a00818" ],
+    [ "ConstantVelocityFactor.h", "a00851.html", [
+      [ "gtsam::ConstantVelocityFactor", "a04076.html", "a04076" ]
     ] ],
-    [ "ImuBias.cpp", "a00755.html", "a00755" ],
-    [ "ImuBias.h", "a00758.html", [
-      [ "ConstantBias", "a03872.html", "a03872" ],
-      [ "traits< imuBias::ConstantBias >", "a03876.html", null ]
+    [ "expressions.h", "a08967.html", null ],
+    [ "GPSFactor.cpp", "a00782.html", null ],
+    [ "GPSFactor.h", "a00809.html", [
+      [ "gtsam::GPSFactor", "a04080.html", "a04080" ],
+      [ "gtsam::GPSFactor2", "a04084.html", "a04084" ]
     ] ],
-    [ "ImuFactor.cpp", "a00761.html", "a00761" ],
-    [ "ImuFactor.h", "a00764.html", [
-      [ "PreintegratedImuMeasurements", "a03880.html", "a03880" ],
-      [ "ImuFactor", "a03884.html", "a03884" ],
-      [ "ImuFactor2", "a03888.html", "a03888" ],
-      [ "traits< PreintegratedImuMeasurements >", "a03892.html", null ],
-      [ "traits< ImuFactor >", "a03896.html", null ],
-      [ "traits< ImuFactor2 >", "a03900.html", null ]
+    [ "ImuBias.cpp", "a00866.html", "a00866" ],
+    [ "ImuBias.h", "a00806.html", [
+      [ "gtsam::imuBias::ConstantBias", "a04088.html", "a04088" ],
+      [ "gtsam::traits< imuBias::ConstantBias >", "a04092.html", null ]
     ] ],
-    [ "MagFactor.h", "a00767.html", [
-      [ "MagFactor", "a03904.html", "a03904" ],
-      [ "MagFactor1", "a03908.html", "a03908" ],
-      [ "MagFactor2", "a03912.html", "a03912" ],
-      [ "MagFactor3", "a03916.html", "a03916" ]
+    [ "ImuFactor.cpp", "a00797.html", null ],
+    [ "ImuFactor.h", "a08976.html", [
+      [ "gtsam::PreintegratedImuMeasurements", "a04096.html", "a04096" ],
+      [ "gtsam::ImuFactor", "a04100.html", "a04100" ],
+      [ "gtsam::ImuFactor2", "a04104.html", "a04104" ],
+      [ "gtsam::traits< PreintegratedImuMeasurements >", "a04108.html", null ],
+      [ "gtsam::traits< ImuFactor >", "a04112.html", null ],
+      [ "gtsam::traits< ImuFactor2 >", "a04116.html", null ]
     ] ],
-    [ "ManifoldPreintegration.cpp", "a00770.html", null ],
-    [ "ManifoldPreintegration.h", "a00773.html", [
-      [ "ManifoldPreintegration", "a03920.html", "a03920" ]
+    [ "MagFactor.h", "a00863.html", [
+      [ "gtsam::MagFactor", "a04120.html", "a04120" ],
+      [ "gtsam::MagFactor1", "a04124.html", "a04124" ],
+      [ "gtsam::MagFactor2", "a04128.html", "a04128" ],
+      [ "gtsam::MagFactor3", "a04132.html", "a04132" ]
     ] ],
-    [ "NavState.h", "a00779.html", "a00779" ],
-    [ "PreintegratedRotation.cpp", "a00782.html", null ],
+    [ "MagPoseFactor.h", "a00803_source.html", null ],
+    [ "ManifoldPreintegration.cpp", "a00854.html", null ],
+    [ "ManifoldPreintegration.h", "a00815.html", [
+      [ "gtsam::ManifoldPreintegration", "a04140.html", "a04140" ]
+    ] ],
+    [ "NavState.h", "a00788.html", "a00788" ],
+    [ "PreintegratedRotation.cpp", "a00794.html", null ],
     [ "PreintegratedRotation.h", "a00785.html", [
-      [ "PreintegratedRotationParams", "a03932.html", "a03932" ],
-      [ "PreintegratedRotation", "a03936.html", "a03936" ],
-      [ "traits< PreintegratedRotation >", "a03940.html", null ]
+      [ "gtsam::PreintegratedRotationParams", "a04152.html", "a04152" ],
+      [ "gtsam::PreintegratedRotation", "a04156.html", "a04156" ],
+      [ "gtsam::traits< PreintegratedRotation >", "a04160.html", null ]
     ] ],
-    [ "PreintegrationBase.h", "a00791.html", [
-      [ "PreintegrationBase", "a03944.html", "a03944" ]
+    [ "PreintegrationBase.h", "a00812.html", [
+      [ "gtsam::PreintegrationBase", "a04164.html", "a04164" ]
     ] ],
-    [ "PreintegrationParams.h", "a00797.html", [
-      [ "PreintegrationParams", "a03948.html", "a03948" ]
+    [ "PreintegrationParams.h", "a00821.html", [
+      [ "gtsam::PreintegrationParams", "a04168.html", "a04168" ]
     ] ],
-    [ "Scenario.h", "a00800.html", [
-      [ "Scenario", "a03952.html", "a03952" ],
-      [ "ConstantTwistScenario", "a03956.html", "a03956" ],
-      [ "AcceleratingScenario", "a03960.html", "a03960" ]
+    [ "Scenario.h", "a00779.html", [
+      [ "gtsam::Scenario", "a04172.html", "a04172" ],
+      [ "gtsam::ConstantTwistScenario", "a04176.html", "a04176" ],
+      [ "gtsam::AcceleratingScenario", "a04180.html", "a04180" ]
     ] ],
-    [ "ScenarioRunner.h", "a00806.html", "a00806" ],
-    [ "TangentPreintegration.cpp", "a00809.html", "a00809" ],
-    [ "TangentPreintegration.h", "a00812.html", [
-      [ "TangentPreintegration", "a03968.html", "a03968" ]
+    [ "ScenarioRunner.h", "a00824.html", "a00824" ],
+    [ "TangentPreintegration.cpp", "a00845.html", null ],
+    [ "TangentPreintegration.h", "a00830.html", [
+      [ "gtsam::TangentPreintegration", "a04188.html", "a04188" ]
     ] ]
 ];

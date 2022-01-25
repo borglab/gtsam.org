@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unary_5942',['Unary',['../a02728.html#a75766d048e6618d1975d1a91a67c904e',1,'gtsam::DecisionTree']]]
+  ['unary_0',['Unary',['../a02924.html#affa09919050198ca2a1ad1d6eb9d1238',1,'gtsam::DecisionTree']]]
 ];
