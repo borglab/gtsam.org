@@ -17,3 +17,14 @@ Github pages repo for https://gtsam.org/, the website for the [GTSAM](https://gi
 5. Move images to assets, and change image file paths to refer to assets.
 
 This is unsatisfactory, of course.
+
+### Generating tutorial:
+
+Bad flow:
+
+1. Edit gtsam.lyx in gtsam repo
+2. Export with LyxHTML
+3. Add jekyll header
+4. Fix all issues as axcz did :-(
+
+Better flow would maybe use better convertor, e.g. HTML export. Manual editing of html seems non-maintainable.
