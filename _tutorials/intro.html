@@ -1706,7 +1706,10 @@ public:
   Vector evaluateError(const Pose2&amp; q,
                        boost::optional&lt;Matrix&amp;&gt; H = boost::none) const
   {
-    if (H) (*H) = (Matrix(2,3)&lt;&lt; 1.0,0.0,0.0, 0.0,1.0,0.0).finished();
+    const Rot2&amp; R = q.rotation();
+    if (H) (*H) = (gtsam::Matrix(2, 3) &lt;&lt;
+            R.c(), -R.s(), 0.0,
+            R.s(), R.c(), 0.0).finished();
     return (Vector(2) &lt;&lt; q.x() - mx_, q.y() - my_).finished();
   }
 };
@@ -1905,7 +1908,7 @@ Comparing the marginals resulting from the &ldquo;odometry&rdquo; factor graph i
 </div>
 
 
-<div class="standard" id='magicparlabel-65546'>It helps a lot when we view this graphically, as in Figure <a href="#fig_CompareMarginals">5</a>, where I show the marginals on position as covariance ellipses that contain 68.26% of all probability mass. For the odometry marginals, it is immediately apparent from the figure that (1) the uncertainty on pose keeps growing, and (2) the uncertainty on angular odometry translates into increasing uncertainty on y. The localization marginals, in contrast, are constrained by the unary factors and are all much smaller. In addition, while less apparent, the uncertainty on the middle pose is actually smaller as it is constrained by odometry from two sides.</div>
+<div class="standard" id='magicparlabel-65546'>It helps a lot when we view this graphically, as in Figure <a href="#fig_CompareMarginals">5</a>, where I show the marginals on position as 5-sigma covariance ellipses that contain 99.9996% of all probability mass. For the odometry marginals, it is immediately apparent from the figure that (1) the uncertainty on pose keeps growing, and (2) the uncertainty on angular odometry translates into increasing uncertainty on y. The localization marginals, in contrast, are constrained by the unary factors and are all much smaller. In addition, while less apparent, the uncertainty on the middle pose is actually smaller as it is constrained by odometry from two sides.</div>
 
 <div class="standard" id='magicparlabel-65547'>You might now be wondering how we produced these figures. The answer is via the MATLAB interface of GTSAM, which we will demonstrate in the next section.</div>
 
@@ -2043,7 +2046,7 @@ The result of running optimize on the factor graph in Figure <a href="#fig_Pose2
 </div>
 
 
-<div class="standard" id='magicparlabel-65581'>We can optimize this factor graph as before, by creating an initial estimate of type <em><b>Values</b></em>, and creating and running an optimizer. The result is shown graphically in Figure <a href="#fig_example">7</a>, along with covariance ellipses shown in green. These covariance ellipses in 2D indicate the marginal over position, over all possible orientations, and show the area which contain 68.26% of the probability mass (in 1D this would correspond to one standard deviation). The graph shows in a clear manner that the uncertainty on pose <math xmlns="http://www.w3.org/1998/Math/MathML">
+<div class="standard" id='magicparlabel-65581'>We can optimize this factor graph as before, by creating an initial estimate of type <em><b>Values</b></em>, and creating and running an optimizer. The result is shown graphically in Figure <a href="#fig_example">7</a>, along with covariance ellipses shown in green. These 5-sigma covariance ellipses in 2D indicate the marginal over position, over all possible orientations, and show the area which contain 99.9996% of the probability mass. The graph shows in a clear manner that the uncertainty on pose <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mrow>
   <msub>
    <mrow><mi>x</mi>
