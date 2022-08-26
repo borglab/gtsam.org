@@ -2812,7 +2812,7 @@ public:
               <mtd>
                 <mrow>
                   <mi> &delta; </mi>
-                  <mi>x</mi>
+                  <mi>y</mi>
                 </mrow>
               </mtd>
             </mtr>
@@ -3009,7 +3009,7 @@ public:
                 <mtd>
                   <mrow>
                     <mi> &delta; </mi>
-                    <mi>x</mi>
+                    <mi>y</mi>
                   </mrow>
                 </mtd>
               </mtr>
@@ -4037,7 +4037,7 @@ graph.add(BearingRangeFactor2D(i3, j2, Rot2(90*degrees), 2, brNoise));
     </math> (of type <em><b>Cal3_S2</b></em>). The following listing shows how to create the factor graph:
     <pre>%% Add factors for all measurements
 noise = noiseModel.Isotropic.Sigma(2, measurementNoiseSigma);
-for i = 1:length(Z), 
+for i = 1:length(Z),
     for k = 1:length(Z{i})
         j = J{i}{k};
         G.add(GenericProjectionFactorCal3_S2(
