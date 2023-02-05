@@ -1,6 +1,6 @@
 ---
 layout: gtsam-post
-title:  "Optimal Triangulation"
+title:  "LOST in Triangulation"
 ---
 
 <link rel="stylesheet" href="/assets/css/slideshow.css">
