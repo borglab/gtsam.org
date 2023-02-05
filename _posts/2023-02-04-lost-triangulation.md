@@ -5,7 +5,7 @@ title:  "Optimal Triangulation"
 
 <link rel="stylesheet" href="/assets/css/slideshow.css">
 
-Authors: [Akshay Krishnan](https://akshay-krishnan.github.io), [Sebastien Henry](https://ssdl.gatech.edu/students/s-bastien-henry), [John Christian](https://ssdl.gatech.edu/people/dr-john-christian), [Frank Dellaert](https://dellaert.github.io/)
+Authors: [Akshay Krishnan](https://akshay-krishnan.github.io), [Sebastien Henry](https://seal.ae.gatech.edu/node/14), [John Christian](https://seal.ae.gatech.edu/node/1), [Frank Dellaert](https://dellaert.github.io/)
 
 <div style="display:none"> <!-- custom latex commands here -->
   $
