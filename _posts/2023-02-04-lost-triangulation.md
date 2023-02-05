@@ -56,23 +56,23 @@ A commonly used method for triangulation is the **Direct Linear Transform (DLT)*
 
 $$
 \begin{equation}
- \mathbf{x_i} \times ^{C_i}R_w (\mathbf{^wr} - \mathbf{^wp_i})  = \mathbf{0}
+ \mathbf{x_i} \times \mathbf{R^i_w} (\mathbf{^wr} - \mathbf{^wp_i})  = \mathbf{0}
 \label{eq:dlt-constraint}
 \end{equation}
 $$
 
-$$ \text{i.e } [\mathbf{x_i} \times] ^{C_i}R_w (\mathbf{^wr} - \mathbf{^wp_i})  = \mathbf{0}$$
+$$ \text{i.e } [\mathbf{x_i} \times] \mathbf{R^i_w} (\mathbf{^wr} - \mathbf{^wp_i})  = \mathbf{0}$$
 
 Here: 
 - $\mathbf{^wr}$ is the position of the 3D point in the world frame, which is to be estimated
 - $[\mathbf{x_i} \times]$ is a skew-symmetric matrix with elements $\mathbf{x_i}$, such that $[\mathbf{x_i} \times] \ \mathbf{b} = \mathbf{x_i} \times \mathbf{b}$ 
-- $^{C_i}R_w$ is the SO(3) rotation from world to camera frame
+- $\mathbf{R^i_w} \in SO(3)$ is the rotation from world to camera frame $i$
 
 (1) can be expressed in terms of the pixel measurements $\mathbf{u_i} = \mathbf{K_i} \mathbf{x_i}$ using the intrinsic calibration matrix of the camera $\mathbf{K_i}$:
 
 $$
 \begin{equation}
-    [\mathbf{K_i^{-1}} \mathbf{u_i} \times] ^{C_i}R_w (\mathbf{^wr} - \mathbf{^wp_i})  = \mathbf{0}
+    [\mathbf{K_i^{-1}} \mathbf{u_i} \times] \mathbf{R^i_w} (\mathbf{^wr} - \mathbf{^wp_i})  = \mathbf{0}
 \end{equation}
 $$
 
@@ -81,27 +81,29 @@ With at least 2 camera measurements, this can be expressed as a least-squares pr
 $$
 \begin{equation}
 \left[\begin{array}{c}
-\left[\mathbf{K_1^{-1}} \mathbf{u_1} \times\right] ^{C_1}R_w \cr	\\
-\left[\mathbf{K_2^{-1}} \mathbf{u_2} \times\right] ^{C_2}R_w \cr	\\
+\left[\mathbf{K_1^{-1}} \mathbf{u_1} \times\right] \mathbf{R^1_w} \cr	\\
+\left[\mathbf{K_2^{-1}} \mathbf{u_2} \times\right] \mathbf{R^2_w} \cr	\\
 ... \cr \\
-\left[\mathbf{K_n^{-1}} \mathbf{u_n} \times\right] ^{C_n}R_w \cr
+\left[\mathbf{K_n^{-1}} \mathbf{u_n} \times\right] \mathbf{R^n_w} \cr
 \end{array}\right] \mathbf{^wr} = 
 \left[\begin{array}{c}
-\left[\mathbf{K_1^{-1}} \mathbf{u_1} \times\right] ^{C_1}R_w \mathbf{^wp_1} \cr	\\
-\left[\mathbf{K_2^{-1}} \mathbf{u_2} \times\right] ^{C_2}R_w \mathbf{^wp_2} \cr	\\
+\left[\mathbf{K_1^{-1}} \mathbf{u_1} \times\right] \mathbf{R^1_w} \mathbf{^wp_1} \cr	\\
+\left[\mathbf{K_2^{-1}} \mathbf{u_2} \times\right] \mathbf{R^2_w} \mathbf{^wp_2} \cr	\\
 ... \cr \\
-\left[\mathbf{K_n^{-1}} \mathbf{u_n} \times\right] ^{C_n}R_w \mathbf{^wp_n} \cr
+\left[\mathbf{K_n^{-1}} \mathbf{u_n} \times\right] \mathbf{R^n_w} \mathbf{^wp_n} \cr
 \end{array}\right]
 \end{equation}
 $$
 
 
-DLT solves the above equation using standard least-squares techniques. It also has interesting connections to the trigonometric sine rule, as discussed in the [LOST paper](https://doi.org/10.2514/1.G006989).
+DLT solves the above equation using standard least-squares techniques. It also has interesting connections to the trigonometric sine rule, as discussed in the [LOST paper](https://doi.org/10.2514/1.G006989) ([Arxiv](https://arxiv.org/pdf/2205.12197.pdf)).
 
 The `triangulatePoint3` function in GTSAM provides a convenient way to triangulate points using DLT. Let's look at an example of triangulating a point from noisy measurements. 
 
 ```python
 import gtsam
+import numpy as np
+from gtsam import Pose3, Rot3, Point3
 
 # Define parameters for 2 cameras, with shared intrinsics.
 pose1 = Pose3()
@@ -156,15 +158,15 @@ window.PLOTLYENV=window.PLOTLYENV || {};                                    if (
 
 ## The problem with DLT
 
-DLT provides an exact solution to the triangulation problem in the absence of measurement noise. In practice however, the **2D measurements we use are almost always noisy**, so their back-projected rays may no longer intersect in 3D. The DLT, being an unweighted least squares solution, places equal weight on the residual from each measurement (each row of the linear system in (3)). The trouble is that this does not minimize the proper cost function. The covariance of the estimate with respect to a measurement depends on factors like the range of the estimate from the camera (i.e, measurements from closer cameras should be trusted more). Ideally, we should minimize the covariance-weighted reprojection errors on the image plane instead of the residuals of the arbitrarily scaled rows of (3). 
+DLT provides an exact solution to the triangulation problem in the absence of measurement noise. In practice however, the **2D measurements we use are almost always noisy**, so their back-projected rays may no longer intersect in 3D. The DLT, being an unweighted least squares solution, places equal weight on the residual from each measurement (each row of the linear system in (3)). The trouble is that this does not minimize the proper cost function. The covariance of the estimate with respect to a measurement depends on factors like the *range* of the estimate from the camera (i.e, measurements from closer cameras should be trusted more). Ideally, we should minimize the *covariance-weighted* reprojection errors on the image plane instead of the residuals of the arbitrarily scaled rows of (3). 
 
 ## Optimal triangulation
 
-Optimal triangulation computes the maximum likelihood estimate of the weighted residual norm. Consider the common case of noisy measurements $$\mathbf{\tilde{u}_i} = \mathbf{u_i} + \mathbf{n_i}$$, where $\mathbf{n_i}$ is Gaussian noise in 2D pixel space with covariance $\mathbf{R_{u_i}}$. The noise-free measurement $\mathbf{u_i}$ is a function of the unknown point $\mathbf{^wr}$: 
+Optimal triangulation computes the maximum likelihood estimate of the weighted residual norm. Consider the common case of noisy measurements $$\mathbf{\tilde{u}_i} = \mathbf{u_i} + \mathbf{n_i}$$, where $\mathbf{n_i}$ is Gaussian noise in 2D pixel space with covariance $\mathbf{\Sigma_{u_i}}$. The noise-free measurement $\mathbf{u_i}$ is a function of the unknown point $\mathbf{^wr}$: 
 
 $$
 \begin{equation}
-\mathbf{u_i} = \mathbf{\mathit{h_i}(^wr)} = \mathbf{K_i} ^{C_i}R_w (\mathbf{^wr} - \mathbf{^wp_i})
+\mathbf{u_i} = \mathbf{\mathit{h_i}(^wr)} = \mathbf{K_i} \mathbf{R^i_w} (\mathbf{^wr} - \mathbf{^wp_i})
 \end{equation}
 $$
  
@@ -174,11 +176,11 @@ The optimal estimate in an MLE framework is the solution that minimizes the weig
 
 $$
 \begin{equation}
-    J(\mathbf{^wr}) = \sum_{i=1}^{n} \mathbf{n_i^T} \mathbf{R_{u_i}^{-1}} \mathbf{n_i} =  \sum_{i=1}^{n} \mathbf{(\tilde{u}_i - \mathbf{\mathit{h_i}(^wr)})^T} \mathbf{R_{u_i}^{-1}} \mathbf{(\tilde{u}_i - \mathbf{\mathit{h_i}(^wr)})}
+    J(\mathbf{^wr}) = \sum_{i=1}^{n} \mathbf{n_i^T} \mathbf{\Sigma_{u_i}^{-1}} \mathbf{n_i} =  \sum_{i=1}^{n} \mathbf{(\tilde{u}_i - \mathbf{\mathit{h_i}(^wr)})^T} \mathbf{\Sigma_{u_i}^{-1}} \mathbf{(\tilde{u}_i - \mathbf{\mathit{h_i}(^wr)})}
 \end{equation}
 $$
 
-For the case of triangulating a point from 2 camera measurements, (5) can be solved analytically as shown by [Hartley and Strum](https://doi.org/10.1006/cviu.1997.0547) and the [LOST paper](https://doi.org/10.2514/1.G006989). This usually involves solving a polynomial of degree 6. 
+For the case of triangulating a point from 2 camera measurements, (5) can be solved analytically as shown by [Hartley and Strum](https://doi.org/10.1006/cviu.1997.0547) and the [LOST paper](https://doi.org/10.2514/1.G006989) ([Arxiv](https://arxiv.org/pdf/2205.12197.pdf)). This usually involves solving a polynomial of degree 6. 
 
 We often encounter triangulation problems with more than two measurements where the degree 6 polynomial solution of Hartley & Sturm no longer applies. In such cases, it is common to minimize (5) using an iterative nonlinear solver starting with the DLT estimate as the initialization. In GTSAM, this can be achieved using a factor graph by setting `optimize=True` in the call to `triangulatePoint3`. This scales to the general case with more than 2 camera measurements, but like all iterative methods, significantly increases the estimation latency. 
 
@@ -196,54 +198,54 @@ Optimal estimation error: 0.0549
 
 ## The Linear Optimal Sine Triangulation (LOST) approach
 
-In their paper on ["Absolute Triangulation Algorithms for Space Exploration"](https://doi.org/10.2514/1.G006989), Henry and Christian propose the linear optimal sine triangulation (LOST) method that non-iteratively solves the statistically optimal triangulation problem as a linear system. When only two measurements are available, LOST provides the same answer as Hartley & Sturm's polynomial solution. However, unlike the polynomial solution, LOST scales linearly to an arbitrary number of measurements and remains non-iterative. LOST is a weighted least squares approach that both (1) provides the same solution as and (2) is significantly faster than the iterative nonlinear optimization approach commonly used for optimal triangulation with many (more than two) cameras. 
+In their paper on ["Absolute Triangulation Algorithms for Space Exploration"](https://doi.org/10.2514/1.G006989) ([Arxiv](https://arxiv.org/pdf/2205.12197.pdf)), Henry and Christian propose the linear optimal sine triangulation (LOST) method that non-iteratively solves the statistically optimal triangulation problem as a linear system. When only two measurements are available, LOST provides the same answer as Hartley & Sturm's polynomial solution. However, unlike the polynomial solution, LOST scales linearly to an arbitrary number of measurements and remains non-iterative. LOST is a weighted least squares approach that both (1) provides the same solution as and (2) is significantly faster than the iterative nonlinear optimization approach commonly used for optimal triangulation with many (more than two) cameras. 
 
 Their approach minimizes the weighted residual norm in the image-plane coordinates (it can easily be rewritten in terms of pixel coordinates). For a noisy measurement on the image plane $\mathbf{\tilde{x}_i} = \mathbf{x_i} + \mathbf{w_i}$, (1) will have a residual $\mathbf{\epsilon_i}$ given by:
 
 $$
 \begin{equation}
- {\mathbf{\tilde{x}_i}} \times ^{C_i}R_w (\mathbf{^wr} - \mathbf{^wp_i})  = \mathbf{\epsilon_i}
+ {\mathbf{\tilde{x}_i}} \times \mathbf{R^i_w} (\mathbf{^wr} - \mathbf{^wp_i})  = \mathbf{\epsilon_i}
 \end{equation}
 $$
 
-Since $[^{C_i}R_w (\mathbf{^wr} - \mathbf{^wp_i}) \times]$ is a skew symmetric matrix, and $\mathbf{\tilde{x}_i} = \mathbf{K_i}^{-1} \mathbf{\tilde{u}_i}$
+Since $[\mathbf{R^i_w} (\mathbf{^wr} - \mathbf{^wp_i}) \times]$ is a skew symmetric matrix, and $\mathbf{\tilde{x}_i} = \mathbf{K_i}^{-1} \mathbf{\tilde{u}_i}$
 
 $$
 \begin{equation}
-     \mathbf{\epsilon_i} =  [^{C_i}R_w (\mathbf{^wp_i} - \mathbf{^wr}) \times] \  \mathbf{K_i^{-1}} \mathbf{\tilde{u}_i}
+     \mathbf{\epsilon_i} =  [\mathbf{R^i_w} (\mathbf{^wp_i} - \mathbf{^wr}) \times] \  \mathbf{K_i^{-1}} \mathbf{\tilde{u}_i}
 \end{equation}
 $$
 
 The weighted residual norm to be minimized is:
 $$
 \begin{equation}
-J(\mathbf{^wr}) = \sum_{i=1}^{n} \mathbf{\epsilon_i^T} \mathbf{R_{\epsilon_i}^{-1}} \mathbf{\epsilon_i}     
+J(\mathbf{^wr}) = \sum_{i=1}^{n} \mathbf{\epsilon_i^T} \mathbf{\Sigma_{\epsilon_i}^{-1}} \mathbf{\epsilon_i}     
 \end{equation}
 $$
 
-I skip through the bulk of the math in what follows, please refer to the [LOST paper](https://doi.org/10.2514/1.G006989) by Henry and Christian for a neat derivation. The error covariance $\mathbf{R_{\epsilon_i}}$ can be expressed in terms of the 2D measurement covariance $\mathbf{R_{x_i}}$ as:
+We skip through the bulk of the math in what follows, so please refer to the [LOST paper](https://doi.org/10.2514/1.G006989) ([Arxiv](https://arxiv.org/pdf/2205.12197.pdf)) by Henry and Christian for a neat derivation. The error covariance $\mathbf{\Sigma_{\epsilon_i}}$ can be expressed in terms of the 2D measurement covariance $\mathbf{\Sigma_{x_i}}$ as:
 
 $$
 \begin{equation}
- \mathbf{R_{\epsilon_i}} = -\frac{\rho_i^{2}}{||\mathbf{K_i^{-1}} \mathbf{\tilde{u}_i}||^2} [\mathbf{K_i^{-1}} \mathbf{\tilde{u}_i} \times ] \mathbf{R_{x_i}} [\mathbf{K_i^{-1}} \mathbf{\tilde{u}_i} \times ]
+ \mathbf{\Sigma_{\epsilon_i}} = -\frac{\rho_i^{2}}{||\mathbf{K_i^{-1}} \mathbf{\tilde{u}_i}||^2} [\mathbf{K_i^{-1}} \mathbf{\tilde{u}_i} \times ] \mathbf{\Sigma_{x_i}} [\mathbf{K_i^{-1}} \mathbf{\tilde{u}_i} \times ]
 \end{equation}
 $$
 
-where $\rho_i$ is the range of the range of the 3D point from the center of camera $i$. The difficulty with this expression for $\mathbf{R_{\epsilon_i}}$ is that it is not full rank (not invertible) and the ranges $\rho_i$ are not known a priori (since the 3D point's location is not yet known). The LOST paper shows how both of these difficulties can be avoided and provides a general non-iterative solution. An especially nice result occurs when the image plane measurement errors are isotropic. In this case, minimizing the cost function $J(^wr)$ leads to a simple least squares expression:
+where $\rho_i$ is the range of the range of the 3D point from the center of camera $i$. The difficulty with this expression for $\mathbf{\Sigma_{\epsilon_i}}$ is that it is not full rank (not invertible) and the ranges $\rho_i$ are not known a priori (since the 3D point's location is not yet known). The LOST paper shows how both of these difficulties can be avoided and provides a general non-iterative solution. An especially nice result occurs when the image plane measurement errors are isotropic. In this case, minimizing the cost function $J(\mathbf{^wr})$ leads to a simple least squares expression:
 
 $$
 \begin{equation}
 \left[\begin{array}{c}
-q_1 \left[\mathbf{K_1^{-1}} \mathbf{u_1} \times\right] ^{C_1}R_w \cr	\\
-q_2 \left[\mathbf{K_2^{-1}} \mathbf{u_2} \times\right] ^{C_2}R_w \cr	\\
+q_1 \left[\mathbf{K_1^{-1}} \mathbf{u_1} \times\right] \mathbf{R^1_w} \cr	\\
+q_2 \left[\mathbf{K_2^{-1}} \mathbf{u_2} \times\right] \mathbf{R^2_w} \cr	\\
 ... \cr \\
-q_n \left[\mathbf{K_n^{-1}} \mathbf{u_n} \times\right] ^{C_n}R_w \cr
+q_n \left[\mathbf{K_n^{-1}} \mathbf{u_n} \times\right] \mathbf{R^n_w} \cr
 \end{array}\right] \mathbf{^wr} = 
 \left[\begin{array}{c}
-q_1 \left[\mathbf{K_1^{-1}} \mathbf{u_1} \times\right] ^{C_1}R_w \mathbf{^wp_1} \cr	\\
-q_2 \left[\mathbf{K_2^{-1}} \mathbf{u_2} \times\right] ^{C_2}R_w \mathbf{^wp_2} \cr	\\
+q_1 \left[\mathbf{K_1^{-1}} \mathbf{u_1} \times\right] \mathbf{R^1_w} \mathbf{^wp_1} \cr	\\
+q_2 \left[\mathbf{K_2^{-1}} \mathbf{u_2} \times\right] \mathbf{R^2_w} \mathbf{^wp_2} \cr	\\
 ... \cr \\
-q_n \left[\mathbf{K_n^{-1}} \mathbf{u_n} \times\right] ^{C_n}R_w \mathbf{^wp_n} \cr
+q_n \left[\mathbf{K_n^{-1}} \mathbf{u_n} \times\right] \mathbf{R^n_w} \mathbf{^wp_n} \cr
 \end{array}\right]
 \end{equation}
 $$
@@ -252,13 +254,13 @@ Note that this looks very much like (3), except for the inclusion of the coeffic
 
 $$
 \begin{equation}
-    q_i = \frac{||\mathbf{K_i^{-1}} \mathbf{u_i}||}{\sigma_{x_i} \rho_i} = \frac{|| ^wR_{C_i} \mathbf{K_i^{-1}}^{-1} \mathbf{\tilde{u}_i} \times \ ^wR_{C_j} \mathbf{K_j^{-1}}^{-1} \mathbf{\tilde{u}_j} ||}{\sigma_{x_i} || \mathbf{d_{ij}} \times \ ^wR_{C_j} \mathbf{K_j^{-1}}^{-1} \mathbf{\tilde{u}_j} ||}
+    q_i = \frac{||\mathbf{K_i^{-1}} \mathbf{u_i}||}{\sigma_{x_i} \rho_i} = \frac{|| \mathbf{R^w_i} \mathbf{K_i^{-1}} \mathbf{\tilde{u}_i} \times \ \mathbf{R^w_j} \mathbf{K_j^{-1}} \mathbf{\tilde{u}_j} ||}{\sigma_{x_i} || \mathbf{d_{ij}} \times \ \mathbf{R^w_j} \mathbf{K_j^{-1}} \mathbf{\tilde{u}_j} ||}
 \end{equation}
 $$
 
 where $\mathbf{d_{ij}} = (\mathbf{^wp_j} - \mathbf{^wp_i})$ is the known baseline between cameras $i$ and $j$. Note that everything on the right-hand side of this expression for $q_i$ is known a priori, and so the optimal LOST weights $q_i$ may be found directly and without any iteration.
 
-Starting from release `4.2a8` , gtsam includes an implementation of LOST which can be easily used as follows:
+Starting from release [4.2a8](https://github.com/borglab/gtsam/releases), gtsam includes an implementation of LOST which can be easily used as follows:
 
 ```python
 lost_estimate = gtsam.triangulatePoint3(cameras, measurements, 1e-9, optimize=False, model=noisemodel, useLOST=True)
@@ -297,7 +299,7 @@ When triangulating a point several times starting from different noisy measureme
 
 <center>
 <p> 
-    <img src="/assets/images/triang_std_dev.png" alt>
+    <img src="/assets/images/lost_triangulation/triang_std_dev.png" alt="Fig 1: Error standard deviation for different triangulation methods as a function of number of cameras, with 100 trials for each camera configuration.">
     <br>
     <em>Fig 1: Error standard deviation for different triangulation methods as a function of number of cameras, with 100 trials for each camera configuration.</em> 
 </p>
@@ -307,7 +309,7 @@ The latency of LOST is also comparable to DLT and is much lesser than that of it
 
 <center>
 <p> 
-    <img src="/assets/images/triang_time_linear.png" alt>
+    <img src="/assets/images/lost_triangulation/triang_time_linear.png" alt="Fig 2: Mean runtime of different triangulation methods as a function of number of cameras.">
     <br>
     <em>Fig 2: Mean runtime of different triangulation methods as a function of number of cameras.</em> 
 </p>
@@ -326,5 +328,5 @@ In other cases, the results from DLT and optimal triangulation are unlikely to b
 
 ## References
 
-1. ["Absolute Triangulation Algorithms for Space Exploration"](https://doi.org/10.2514/1.G006989), Sébastien Henry, John Christian, Journal of Guidance, Control, and Dynamics 2023 46:1, Pages 21-46
+1. ["Absolute Triangulation Algorithms for Space Exploration"](https://doi.org/10.2514/1.G006989), Sébastien Henry, John Christian, Journal of Guidance, Control, and Dynamics 2023 46:1, Pages 21-46.  [Arxiv version Aug '22](https://arxiv.org/pdf/2205.12197.pdf)
 2. ["Triangulation"](https://doi.org/10.1006/cviu.1997.0547), Richard Hartley, Peter Sturm, Computer Vision and Image Understanding, November 1997, Volume 68, Issue 2, Pages 146-157
