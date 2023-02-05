@@ -5,7 +5,7 @@ title:  "Optimal Triangulation"
 
 <link rel="stylesheet" href="/assets/css/slideshow.css">
 
-Authors: [Akshay Krishnan](https://akshay-krishnan.github.io), [Sebastien Henry](https://seal.ae.gatech.edu/node/14), [John Christian](https://seal.ae.gatech.edu/node/1), [Frank Dellaert](https://dellaert.github.io/)
+Authors: [Akshay Krishnan](https://akshay-krishnan.github.io), [Sebastien Henry](https://seal.ae.gatech.edu/node/14), [Frank Dellaert](https://dellaert.github.io/), [John Christian](https://seal.ae.gatech.edu/node/1)
 
 <div style="display:none"> <!-- custom latex commands here -->
   $
@@ -115,7 +115,7 @@ cameras = gtsam.CameraSetCal3_S2([camera1, camera2])
 
 # Define a 3D point, generate measurements by projecting it to the 
 # cameras and adding some noise.
-landmark = Point3(0.1, 0.1, 2)
+landmark = Point3(0.1, 0.1, 1.5)
 m1_noisy = cameras[0].project(landmark) + gtsam.Point2(0.00817, 0.00977)
 m2_noisy = cameras[1].project(landmark) + gtsam.Point2(-0.00610, 0.01969)
 measurements = gtsam.Point2Vector([m1_noisy, m2_noisy])
