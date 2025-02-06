@@ -30,7 +30,7 @@ To build GTSAM from source, clone or download the latest release from the [GTSAM
       - MSVC 2017
     - Tested systems:
       - Ubuntu 16.04 - 18.04
-      - MacOS 10.6 - 10.14
+      - MacOS 10.6 - 10.14, 15.2-15.3
       - Windows 7, 8, 8.1, 10
 
 1. GTSAM makes extensive use of debug assertions, and we highly recommend you work in Debug mode while developing (not enabled by default). Likewise, it is imperative that you switch to release mode when running finished code and for timing. GTSAM will run up to 10x faster in Release mode! See the end of this document for
