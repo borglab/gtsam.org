@@ -7,7 +7,10 @@ based off of https://gtsam.org/ and https://chrisholdgraf.com/
 https://github.com/pydata/pydata-sphinx-theme
 
 
-build:
+**build:**
+
 'sphinx-autobuild . ../build/'
+
 myst build
+
 myst start
