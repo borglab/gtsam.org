@@ -1,1 +1,0 @@
-Some notebooks associated with gtsam.org posts.

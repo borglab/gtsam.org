@@ -1,0 +1,1110 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Overview" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="tutorial.html" />
+<meta property="og:site_name" content="GTSAM" />
+<meta property="og:description" content="This is an updated version of the 2012 tech-report Factor Graphs and GTSAM: A Hands-on Introduction by Frank Dellaert. A more thorough introduction to the use of factor graphs in robotics is the 20..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="/_images/social_previews/summary_tutorial_7ff01732.png" />
+<meta property="og:image:alt" content="This is an updated version of the 2012 tech-report Factor Graphs and GTSAM: A Hands-on Introduction by Frank Dellaert. A more thorough introduction to the us..." />
+<meta name="description" content="This is an updated version of the 2012 tech-report Factor Graphs and GTSAM: A Hands-on Introduction by Frank Dellaert. A more thorough introduction to the use of factor graphs in robotics is the 20..." />
+<meta name="twitter:card" content="summary_large_image" />
+
+    <title>Overview &#8212; Chris Holdgraf</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=b93cd24b" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-88310237-1"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-88310237-1');
+            </script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-88310237-1');
+            </script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial';</script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this site..."
+         aria-label="Search this site..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Chris Holdgraf</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Overview</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>This is an updated version of the 2012 tech-report <a class="reference external" href="http://borg.cc.gatech.edu/sites/edu.borg/files/downloads/gtsam.pdf">Factor Graphs and GTSAM: A Hands-on Introduction</a> by <a class="reference external" href="http://frank.dellaert.com/">Frank Dellaert</a>. A more thorough introduction to the use of factor graphs in robotics is the 2017 article <a class="reference external" href="https://dellaert.github.io/files/Dellaert17fnt.pdf">Factor graphs for robot perception</a> by Frank Dellaert and Michael Kaess.</p>
+<section id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h1>
+<p><strong>Factor graphs</strong> are graphical models (<a class="reference external" href="https://gtsam.org/tutorials/intro.html#LyXCite-Koller09book">Koller and Friedman, 2009</a>) that are well suited to modeling complex estimation problems, such as Simultaneous Localization and Mapping (SLAM) or Structure from Motion (SFM). You might be familiar with another often used graphical model, Bayes networks, which are directed acyclic graphs. A <strong>factor graph</strong>, however, is a <em>bipartite</em> graph consisting of factors connected to variables. The <strong>variables</strong> represent the unknown random variables in the estimation problem, whereas the <strong>factors</strong> represent probabilistic constraints on those variables, derived from measurements or prior knowledge. In the following sections I will illustrate this with examples from both robotics and vision.</p>
+<p>The GTSAM toolbox (GTSAM stands for “Georgia Tech Smoothing and Mapping”) toolbox is a BSD-licensed C++ library based on factor graphs, developed at the Georgia Institute of Technology by myself, many of my students, and collaborators. It provides state of the art solutions to the SLAM and SFM problems, but can also be used to model and solve both simpler and more complex estimation problems. It also provides a MATLAB interface which allows for rapid prototype development, visualization, and user interaction.</p>
+<p>GTSAM exploits sparsity to be computationally efficient. Typically measurements only provide information on the relationship between a handful of variables, and hence the resulting factor graph will be sparsely connected. This is exploited by the algorithms implemented in GTSAM to reduce computational complexity. Even when graphs are too dense to be handled efficiently by direct methods, GTSAM provides iterative methods that are quite efficient regardless.</p>
+<p>You can download the latest version of GTSAM from our <a class="reference external" href="https://github.com/borglab/gtsam">Github repo</a>.</p>
+</section>
+<section id="factor-graphs">
+<h1>1. Factor Graphs<a class="headerlink" href="#factor-graphs" title="Link to this heading">#</a></h1>
+<p>Let us start with a one-page primer on factor graphs, which in no way replaces the excellent and detailed reviews by  and  (2004).</p>
+<figure class="align-default" id="id7">
+<img alt="images/tutorial/1_hmm.png" src="images/tutorial/1_hmm.png" />
+<figcaption>
+<p><span class="caption-text">An HMM, unrolled over three time-steps, represented by a Bayes net.</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Figure 1</strong> shows the Bayes network for a hidden Markov model (HMM) over three time steps. In a Bayes net, each node is associated with a conditional density: the top Markov chain encodes the prior <span class="math notranslate nohighlight">\(P(X_1)\)</span> and transition probabilities <span class="math notranslate nohighlight">\(P(X_2|X_1)\)</span> and <span class="math notranslate nohighlight">\(P(X_3|X_2)\)</span>, whereas measurements <span class="math notranslate nohighlight">\(Z_t\)</span> depend only on the state <span class="math notranslate nohighlight">\(X_t\)</span>, modeled by conditional densities <span class="math notranslate nohighlight">\(P(Z_t|X_t)\)</span>.</p>
+<p>Given known measurements <span class="math notranslate nohighlight">\(z_1\)</span>, <span class="math notranslate nohighlight">\(z_2\)</span>, and <span class="math notranslate nohighlight">\(z_3\)</span> we are interested in the hidden state sequence <span class="math notranslate nohighlight">\((X_1, X_2, X_3)\)</span> that maximizes the posterior probability <span class="math notranslate nohighlight">\(P(X_1, X_2, X_3 | Z_1 = z_1, Z_2 = z_2, Z_3 = z_3)\)</span>. Since the measurements <span class="math notranslate nohighlight">\(z_1\)</span>, <span class="math notranslate nohighlight">\(z_2\)</span>, and <span class="math notranslate nohighlight">\(z_3\)</span> are <em>known</em>, the posterior is proportional to the product of six <strong>factors</strong>, three of which derive from the the Markov chain, and three likelihood factors defined as <span class="math notranslate nohighlight">\(L(X_t; z) \propto P(Z_t = z | X_t)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[P(X_1, X_2, X_3 | Z_1 = z_1, Z_2 = z_2, Z_3 = z_3) \propto P(X_1) P(X_2|X_1) P(X_3|X_2) L(X_1; z_1) L(X_2; z_2) L(X_3; z_3)\]</div>
+<figure class="align-default" id="id8">
+<img alt="images/tutorial/2_hmm-FG.png" src="images/tutorial/2_hmm-FG.png" />
+<figcaption>
+<p><span class="caption-text">An HMM with observed measurements, unrolled over time, represented as a factor graph.</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This motivates a different graphical model, a <strong>factor graph</strong>, in which we only represent the unknown variables <span class="math notranslate nohighlight">\(X_1\)</span>, <span class="math notranslate nohighlight">\(X_2\)</span>, and <span class="math notranslate nohighlight">\(X_3\)</span>, connected to factors that encode probabilistic information on them, as in Figure 2. To do maximum a-posteriori (MAP) inference, we then maximize the product</p>
+<div class="math notranslate nohighlight">
+\[f(X_1, X_2, X_3) = \prod f_i(\mathscr{X}_i)\]</div>
+<p>i.e., the value of the factor graph. It should be clear from the figure that the connectivity of a factor graph encodes, for each factor <span class="math notranslate nohighlight">\(f_i\)</span>, which subset of variables  <span class="math notranslate nohighlight">\((\mathscr{X}_i\)</span> it depends on. In the examples below, we use factor graphs to model more complex MAP inference problems in robotics.</p>
+</section>
+<section id="modeling-robot-motion">
+<h1>2. Modeling Robot Motion<a class="headerlink" href="#modeling-robot-motion" title="Link to this heading">#</a></h1>
+<section id="modeling-with-factor-graphs">
+<h2>2.1 Modeling with Factor Graphs<a class="headerlink" href="#modeling-with-factor-graphs" title="Link to this heading">#</a></h2>
+<p>Before diving into a SLAM example, let us consider the simpler problem of modeling robot motion. This can be done with a continuous Markov chain, and provides a gentle introduction to GTSAM.</p>
+<figure class="align-default" id="id9">
+<img alt="images/tutorial/3_FactorGraph.png" src="images/tutorial/3_FactorGraph.png" />
+<figcaption>
+<p><span class="caption-text">Factor graph for robot localization.</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The factor graph for a simple example is shown in Figure 3. There are three variables <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span> which represent the poses of the robot over time, rendered in the figure by the open-circle variable nodes. In this example, we have one <strong>unary factor</strong> <span class="math notranslate nohighlight">\(f_0(x_1)\)</span> on the first pose <span class="math notranslate nohighlight">\(x_1\)</span> that encodes our prior knowledge about <span class="math notranslate nohighlight">\(x_1\)</span>, and two <strong>binary factors</strong> that relate successive poses, respectively <span class="math notranslate nohighlight">\(f_1(x_1, x_2; o_1)\)</span> and <span class="math notranslate nohighlight">\(f_2(x_2, x_3; o_2)\)</span> where <span class="math notranslate nohighlight">\(o_1\)</span> and <span class="math notranslate nohighlight">\(o_2\)</span> represent odometry measurements.</p>
+</section>
+<section id="creating-a-factor-graph">
+<h2>2.2 Creating a Factor Graph<a class="headerlink" href="#creating-a-factor-graph" title="Link to this heading">#</a></h2>
+<p>The following C++ code, included in GTSAM as an example, creates the factor graph in Figure 3:</p>
+<div class="highlight-{code}c notranslate"><div class="highlight"><pre><span></span>:linenos:
+// Create an empty nonlinear factor graph
+NonlinearFactorGraph graph;
+
+// Add a Gaussian prior on pose x_1
+Pose2 priorMean(0.0, 0.0, 0.0);
+noiseModel::Diagonal::shared_ptr priorNoise =
+  noiseModel::Diagonal::Sigmas(Vector3(0.3, 0.3, 0.1));
+graph.add(PriorFactor&lt;Pose2&gt;(1, priorMean, priorNoise));
+
+// Add two odometry factors
+Pose2 odometry(2.0, 0.0, 0.0);
+noiseModel::Diagonal::shared_ptr odometryNoise =
+  noiseModel::Diagonal::Sigmas(Vector3(0.2, 0.2, 0.1));
+graph.add(BetweenFactor&lt;Pose2&gt;(1, 2, odometry, odometryNoise));
+graph.add(BetweenFactor&lt;Pose2&gt;(2, 3, odometry, odometryNoise));
+</pre></div>
+</div>
+<p>Above, line 2 creates an empty factor graph. We then add the factor <span class="math notranslate nohighlight">\(f_0(x_1)\)</span> on lines 5-8 as an instance of <code class="docutils literal notranslate"><span class="pre">PriorFactor&lt;T&gt;</span></code>, a templated class provided in the slam subfolder, with <em><strong>T=Pose2</strong></em>. Its constructor takes a variable <em><strong>Key</strong></em> (in this case 1), a mean of type <code class="docutils literal notranslate"><span class="pre">Pose2</span></code>, created on Line 5, and a noise model for the prior density. We provide a diagonal Gaussian of type <code class="docutils literal notranslate"><span class="pre">noiseModel::Diagonal</span></code> by specifying three standard deviations in line 7, respectively 30 cm. on the robot’s position, and 0.1 radians on the robot’s orientation. Note that the <em><strong>Sigmas</strong></em> constructor returns a shared pointer, anticipating that typically the same noise models are used for many different factors.</p>
+<p>Similarly, odometry measurements are specified as <em><strong>Pose2</strong></em> on line 11, with a slightly different noise model defined on line 12-13. We then add the two factors <span class="math notranslate nohighlight">\(f_1(x_1, x_2; o_1)\)</span> and <span class="math notranslate nohighlight">\(f_2(x_2, x_3; o_2)\)</span> on lines 14-15, as instances of yet another templated class, <em><strong>BetweenFactor&lt;T&gt;</strong></em>, again with <em><strong>T=Pose2</strong></em>.</p>
+<p>When running the example (<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">OdometryExample.run</span></code> on the command prompt), it will print out the factor graph as follows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Factor Graph:
+size: 3
+Factor 0: PriorFactor on 1
+prior mean: (0, 0, 0)
+noise model: diagonal sigmas [0.3; 0.3; 0.1];
+Factor 1: BetweenFactor(1,2)
+measured: (2, 0, 0)
+noise model: diagonal sigmas [0.2; 0.2; 0.1];
+Factor 2: BetweenFactor(2,3)
+measured: (2, 0, 0)
+noise model: diagonal sigmas [0.2; 0.2; 0.1];
+</pre></div>
+</div>
+</section>
+<section id="factor-graphs-vs-values">
+<h2>2.3 Factor Graphs vs. Values<a class="headerlink" href="#factor-graphs-vs-values" title="Link to this heading">#</a></h2>
+<p>At this point it is instructive to emphasize two important design ideas underlying GTSAM:</p>
+<ol class="arabic simple">
+<li><p>The factor graph and its embodiment in code specify the joint probability distribution <span class="math notranslate nohighlight">\(P(X|Z)\)</span> over the <em>entire</em> trajectory <span class="math notranslate nohighlight">\(X = {x_1, x_2, x_3}\)</span> of the robot, rather than just the last pose. This <em>smoothing</em> view of the world gives GTSAM its name: “smoothing and mapping”. Later in this document we will talk about how we can also use GTSAM to do filtering (which you often do <em>not</em> want to do) or incremental inference (which we do all the time).</p></li>
+<li><p>A factor graph in GTSAM is just the specification of the probability density <span class="math notranslate nohighlight">\(P(X|Z)\)</span>, and the corresponding <em><strong>FactorGraph</strong></em> class and its derived classes do not ever contain a “solution”. Rather, there is a separate type <em><strong>Values</strong></em> that is used to specify specific values for (in this case) <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span>, which can then be used to evaluate the probability (or, more commonly, the error) associated with particular values.</p></li>
+</ol>
+<p>The latter point is often a point of confusion with beginning users of GTSAM. It helps to remember that when designing GTSAM we took a functional approach of classes corresponding to mathematical objects, which are usually immutable. You should think of a factor graph as a <em>function</em> to be applied to values—as the notation <span class="math notranslate nohighlight">\(f(X) \propto P(X|Z)\)</span> implies—rather than as an object to be modified.</p>
+</section>
+<section id="non-linear-optimization-in-gtsam">
+<h2>2.4 Non-linear Optimization in GTSAM<a class="headerlink" href="#non-linear-optimization-in-gtsam" title="Link to this heading">#</a></h2>
+<p>The listing below creates a <em><strong>Values</strong></em> instance, and uses it as the initial estimate to find the maximum a-posteriori (MAP) assignment for the trajectory <span class="math notranslate nohighlight">\(X\)</span>:</p>
+<div class="highlight-{code}c notranslate"><div class="highlight"><pre><span></span>:linenos:
+// create (deliberately inaccurate) initial estimate
+Values initial;
+initial.insert(1, Pose2(0.5, 0.0, 0.2));
+initial.insert(2, Pose2(2.3, 0.1, -0.2));
+initial.insert(3, Pose2(4.1, 0.1, 0.1));
+
+// optimize using Levenberg-Marquardt optimization
+Values result = LevenbergMarquardtOptimizer(graph, initial).optimize();
+</pre></div>
+</div>
+<p>Lines 2-5 in Listing 2.4 create the initial estimate, and on line 8 we create a non-linear Levenberg-Marquardt style optimizer, and call <em><strong>optimize</strong></em> using default parameter settings. The reason why GTSAM needs to perform non-linear optimization is because the odometry factors <span class="math notranslate nohighlight">\(f_1(x_1, x_2; o_1)\)</span> and <span class="math notranslate nohighlight">\(f_2(x_2, x_3; o_2)\)</span> are non-linear, as they involve the orientation of the robot. This also explains why the factor graph we created in Listing 2.2 is of type <em><strong>NonlinearFactorGraph</strong></em>. The optimization class linearizes this graph, possibly multiple times, to minimize the non-linear squared error specified by the factors.</p>
+<p>The relevant output from running the example is as follows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Initial Estimate:
+Values with 3 values:
+Value 1: (0.5, 0, 0.2)
+Value 2: (2.3, 0.1, -0.2)
+Value 3: (4.1, 0.1, 0.1)
+
+Final Result:
+Values with 3 values:
+Value 1: (-1.8e-16, 8.7e-18, -9.1e-19)
+Value 2: (2, 7.4e-18, -2.5e-18)
+Value 3: (4, -1.8e-18, -3.1e-18)
+</pre></div>
+</div>
+<p>It can be seen that, subject to very small tolerance, the ground truth solution <span class="math notranslate nohighlight">\(x_1=(0, 0, 0)\)</span>, <span class="math notranslate nohighlight">\(x_2=(2, 0, 0)\)</span>, and <span class="math notranslate nohighlight">\(x_3=(4, 0, 0)\)</span> is recovered.</p>
+</section>
+<section id="full-posterior-inference">
+<h2>2.5 Full Posterior Inference<a class="headerlink" href="#full-posterior-inference" title="Link to this heading">#</a></h2>
+<p>GTSAM can also be used to calculate the covariance matrix for each pose after incorporating the information from all measurements <span class="math notranslate nohighlight">\(Z\)</span>. Recognizing that the factor graph encodes the <strong>posterior density</strong> <span class="math notranslate nohighlight">\(P(X|Z)\)</span>, the mean <span class="math notranslate nohighlight">\(\mu\)</span> together with the covariance <span class="math notranslate nohighlight">\(\Sigma\)</span> for each pose <span class="math notranslate nohighlight">\(x\)</span> approximate the <strong>marginal posterior density</strong> <span class="math notranslate nohighlight">\(P(x|Z)\)</span>. Note that this is just an approximation, as even in this simple case the odometry factors are actually non-linear in their arguments, and GTSAM only computes a Gaussian approximation to the true underlying posterior.</p>
+<p>The following C++ code will recover the posterior marginals:</p>
+<div class="highlight-{code}c notranslate"><div class="highlight"><pre><span></span>:linenos:
+// Query the marginals
+cout.precision(2);
+Marginals marginals(graph, result);
+cout &lt;&lt; &quot;x1 covariance:\n&quot; &lt;&lt; marginals.marginalCovariance(1) &lt;&lt; endl;
+cout &lt;&lt; &quot;x2 covariance:\n&quot; &lt;&lt; marginals.marginalCovariance(2) &lt;&lt; endl;
+cout &lt;&lt; &quot;x3 covariance:\n&quot; &lt;&lt; marginals.marginalCovariance(3) &lt;&lt; endl;
+</pre></div>
+</div>
+<p>The relevant output from running the example is as follows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>x1 covariance:
+    0.09     1.1e-47     5.7e-33
+    1.1e-47        0.09     1.9e-17
+    5.7e-33     1.9e-17        0.01
+x2 covariance:
+    0.13     4.7e-18     2.4e-18
+    4.7e-18        0.17        0.02
+    2.4e-18        0.02        0.02
+x3 covariance:
+    0.17     2.7e-17     8.4e-18
+    2.7e-17        0.37        0.06
+    8.4e-18        0.06        0.03
+</pre></div>
+</div>
+<p>What we see is that the marginal covariance <span class="math notranslate nohighlight">\(P(x_1|Z)\)</span> on <span class="math notranslate nohighlight">\(x_1\)</span> is simply the prior knowledge on <span class="math notranslate nohighlight">\(x_1\)</span>, but as the robot moves the uncertainty in all dimensions grows without bound, and the <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> components of the pose become (positively) correlated.</p>
+<p>An important fact to note when interpreting these numbers is that covariance matrices are given in <em>relative</em> coordinates, not absolute coordinates. This is because internally GTSAM optimizes for a change with respect to a linearization point, as do all nonlinear optimization libraries.</p>
+</section>
+</section>
+<section id="robot-localization">
+<h1>3. Robot Localization<a class="headerlink" href="#robot-localization" title="Link to this heading">#</a></h1>
+<section id="unary-measurement-factors">
+<h2>3.1 Unary Measurement Factors<a class="headerlink" href="#unary-measurement-factors" title="Link to this heading">#</a></h2>
+<p>In this section we add measurements to the factor graph that will help us actually <em>localize</em> the robot over time. The example also serves as a tutorial on creating new factor types.</p>
+<figure class="align-default" id="id10">
+<img alt="images/tutorial/4_FactorGraph2.png" src="images/tutorial/4_FactorGraph2.png" />
+<figcaption>
+<p><span class="caption-text">Robot localization factor graph with unary measurement factors at each time step.</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In particular, we use <strong>unary measurement factors</strong> to handle external measurements. The example from Section 2 is not very useful on a real robot, because it only contains factors corresponding to odometry measurements. These are imperfect and will lead to quickly accumulating uncertainty on the last robot pose, at least in the absence of any external measurements (see Section 2.5). Figure 4 shows a new factor graph where the prior <span class="math notranslate nohighlight">\(f_0(x_1)\)</span> is omitted and instead we added three unary factors <span class="math notranslate nohighlight">\(f_1(x_1; z_1)\)</span>, <span class="math notranslate nohighlight">\(f_2(x_2; z_2)\)</span>, <span class="math notranslate nohighlight">\(f_3(x_3; z_3)\)</span> one for each localization measurement <span class="math notranslate nohighlight">\(z_t\)</span>, respectively. Such unary factors are applicable for measurements <span class="math notranslate nohighlight">\(z_t\)</span>that depend <em>only</em> on the current robot pose, e.g., GPS readings, correlation of a laser range-finder in a pre-existing map, or indeed the presence of absence of ceiling lights (see  for that amusing example).</p>
+</section>
+<section id="defining-custom-factors">
+<h2>3.2 Defining Custom Factors<a class="headerlink" href="#defining-custom-factors" title="Link to this heading">#</a></h2>
+<p>In GTSAM, you can create custom unary factors by deriving a new class from the built-in class <em><strong>NoiseModelFactor1&lt;T&gt;</strong></em>, which implements a unary factor corresponding to a measurement likelihood with a Gaussian noise model, <span class="math notranslate nohighlight">\(L(q; m) = \exp \left\{ -\frac{1}{2} \| h(q) - m \|^2_{\Sigma} \right\} = f(q)\)</span> where <span class="math notranslate nohighlight">\(m\)</span> is the measurement, <span class="math notranslate nohighlight">\(q\)</span> is the unknown variable, <span class="math notranslate nohighlight">\(h(q)\)</span> is a (possibly nonlinear) measurement function, and <span class="math notranslate nohighlight">\(\Sigma\)</span> is the noise covariance. Note that <span class="math notranslate nohighlight">\(m\)</span> is considered <em>known</em> above, and the likelihood <span class="math notranslate nohighlight">\(L(q; m)\)</span> will only ever be evaluated as a function of <span class="math notranslate nohighlight">\(q\)</span>, which explains why it is a unary factor <span class="math notranslate nohighlight">\(f(q)\)</span>. It is always the unknown variable <span class="math notranslate nohighlight">\(q\)</span> that is either likely or unlikely, given the measurement.</p>
+<blockquote>
+<div><p><strong>Note:</strong></p>
+<p>Many people get this backwards, often misled by the conditional density notation <span class="math notranslate nohighlight">\(P(m|q)\)</span>.</p>
+<p>In fact, the likelihood <span class="math notranslate nohighlight">\(L(q; m)\)</span> is <em>defined</em> as any function of <span class="math notranslate nohighlight">\(q\)</span> proportional to <span class="math notranslate nohighlight">\(P(m|q)\)</span>.</p>
+</div></blockquote>
+<p>Listing 3.2 shows an example on how to define the custom factor class <em><strong>UnaryFactor</strong></em> which implements a “GPS-like” measurement likelihood:</p>
+<div class="highlight-{code}c notranslate"><div class="highlight"><pre><span></span>:linenos:
+class UnaryFactor: public NoiseModelFactor1&lt;Pose2&gt; {
+  double mx_, my_; ///&lt; X and Y measurements
+
+public:
+  UnaryFactor(Key j, double x, double y, const SharedNoiseModel&amp; model):
+    NoiseModelFactor1&lt;Pose2&gt;(model, j), mx_(x), my_(y) {}
+
+  Vector evaluateError(const Pose2&amp; q,
+                       boost::optional&lt;Matrix&amp;&gt; H = boost::none) const
+  {
+    const Rot2&amp; R = q.rotation();
+    if (H) (*H) = (gtsam::Matrix(2, 3) &lt;&lt;
+            R.c(), -R.s(), 0.0,
+            R.s(), R.c(), 0.0).finished();
+    return (Vector(2) &lt;&lt; q.x() - mx_, q.y() - my_).finished();
+  }
+};
+</pre></div>
+</div>
+<p>In defining the derived class on line 1, we provide the template argument <em><strong>Pose2</strong></em> to indicate the type of the variable <span class="math notranslate nohighlight">\(q\)</span>, whereas the measurement is stored as the instance variables <code class="docutils literal notranslate"><span class="pre">mx_</span></code> and <code class="docutils literal notranslate"><span class="pre">my_</span></code>, defined on line 2. The constructor on lines 5-6 simply passes on the variable key <span class="math notranslate nohighlight">\(j\)</span> and the noise model to the superclass, and stores the measurement values provided. The most important function to has be implemented by every factor class is <code class="docutils literal notranslate"><span class="pre">evaluateError()</span></code>, which should return <span class="math notranslate nohighlight">\(E(q) = h(q) - m\)</span> which is done on line 12. Importantly, because we want to use this factor for nonlinear optimization (see e.g.,  for details), whenever the optional argument <span class="math notranslate nohighlight">\(H\)</span> is provided, a <em><strong>Matrix</strong></em> reference, the function should assign the <em><strong>Jacobian</strong></em> of <span class="math notranslate nohighlight">\(h(q)\)</span>, evauated at the provided value for <span class="math notranslate nohighlight">\(q\)</span>. This is done for this example on line 11. In this case, the Jacobian of the 2-dimensional function <span class="math notranslate nohighlight">\(h\)</span>, which just returns the position of the robot,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}h(q) = \begin{bmatrix} q_x \\ q_y \end{bmatrix}\end{split}\]</div>
+<p>with respect the 3-dimensional pose <span class="math notranslate nohighlight">\(q = (q_x, q_y, q_\theta)\)</span>, yields the following <span class="math notranslate nohighlight">\(2 \times 3\)</span> matrix:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}H = 
+\begin{bmatrix}
+\cos(q_\theta) &amp; -\sin(q_\theta) &amp; 0 \\
+\sin(q_\theta) &amp; \cos(q_\theta) &amp; 0
+\end{bmatrix}\end{split}\]</div>
+<section id="important-note">
+<h3>Important Note<a class="headerlink" href="#important-note" title="Link to this heading">#</a></h3>
+<p>Many of our users, when attempting to create a custom factor, are initially surprised at the Jacobian matrix not agreeing with their intuition. For example, above you might simply expect a <span class="math notranslate nohighlight">\(2 \times 3\)</span> diagonal matrix. This <em>would</em> be true for variables belonging to a vector space. However, in GTSAM we define the Jacobian more generally to be the matrix <span class="math notranslate nohighlight">\(H\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[h(q e^\xi) \approx h(q) + H \xi\]</div>
+<p>where <span class="math notranslate nohighlight">\(\xi = (\delta x, \delta y, \delta \theta)\)</span> is an incremental update and <span class="math notranslate nohighlight">\(\mathrm{exp}\)</span> <span class="math notranslate nohighlight">\(\hat{\xi}\)</span> is the <strong>exponential map</strong> for the variable we want to update, In this case <span class="math notranslate nohighlight">\(q \in SE(2)\)</span>, where <span class="math notranslate nohighlight">\(SE(2)\)</span> is the group of 2D rigid transforms, implemented by <em><strong>Pose2</strong></em>. The exponential map for <span class="math notranslate nohighlight">\(SE(2)\)</span> can be approximated to first order as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\exp \hat{\xi} \approx 
+\begin{bmatrix}
+1 &amp; -\delta\theta &amp; \delta x \\
+\delta\theta &amp; 1 &amp; \delta y \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}\end{split}\]</div>
+<p>when using the <span class="math notranslate nohighlight">\(3 \times 3\)</span> matric representation for 2D poses, and hence</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}h \left( q e^\xi \right) \approx 
+h \left( 
+\begin{bmatrix}
+\cos(q_\theta) &amp; -\sin(q_\theta) &amp; q_x \\
+\sin(q_\theta) &amp; \cos(q_\theta) &amp; q_y \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+1 &amp; -\delta\theta &amp; \delta x \\
+\delta\theta &amp; 1 &amp; \delta y \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\right)
+=
+\begin{bmatrix}
+q_x + \cos(q_\theta) \delta x - \sin(q_\theta) \delta y \\
+q_y + \sin(q_\theta) \delta x + \cos(q_\theta) \delta y
+\end{bmatrix}\end{split}\]</div>
+<p>which then explains the Jacobian <span class="math notranslate nohighlight">\(H\)</span>.</p>
+</section>
+</section>
+<section id="using-custom-factors">
+<h2>3.3 Using Custom Factors<a class="headerlink" href="#using-custom-factors" title="Link to this heading">#</a></h2>
+<p>The following C++ code fragment illustrates how to create and add custom factors to a factor graph:</p>
+<div class="highlight-{code}c notranslate"><div class="highlight"><pre><span></span>:linenos:
+// add unary measurement factors, like GPS, on all three poses
+noiseModel::Diagonal::shared_ptr unaryNoise =
+ noiseModel::Diagonal::Sigmas(Vector2(0.1, 0.1)); // 10cm std on x,y
+graph.add(boost::make_shared&lt;UnaryFactor&gt;(1, 0.0, 0.0, unaryNoise));
+graph.add(boost::make_shared&lt;UnaryFactor&gt;(2, 2.0, 0.0, unaryNoise));
+graph.add(boost::make_shared&lt;UnaryFactor&gt;(3, 4.0, 0.0, unaryNoise));
+</pre></div>
+</div>
+<p>In Listing 3.3, we create the noise model on line 2-3, which now specifies two standard deviations on the measurements <span class="math notranslate nohighlight">\(m_x\)</span> and <span class="math notranslate nohighlight">\(m_y\)</span>. On lines 4-6 we create <code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code> versions of three newly created <code class="docutils literal notranslate"><span class="pre">UnaryFactor</span></code> instances, and add them to graph. GTSAM uses shared pointers to refer to factors in factor graphs, and <code class="docutils literal notranslate"><span class="pre">boost::make_shared</span></code> is a convenience function to simultaneously construct a class and create a <code class="docutils literal notranslate"><span class="pre">shared_ptr</span></code> to it. We obtain the factor graph from Figure 4.</p>
+</section>
+<section id="id1">
+<h2>3.4 Full Posterior Inference<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>The three GPS factors are enough to fully constrain all unknown poses and tie them to a “global” reference frame, including the three unknown orientations. If not, GTSAM would have exited with a singular matrix exception. The marginals can be recovered exactly as in Section 2.5, and the solution and marginal covariances are now given by the following:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Final Result:
+Values with 3 values:
+Value 1: (-1.5e-14, 1.3e-15, -1.4e-16)
+Value 2: (2, 3.1e-16, -8.5e-17)
+Value 3: (4, -6e-16, -8.2e-17)
+
+x1 covariance:
+    0.0083      4.3e-19     -1.1e-18
+    4.3e-19       0.0094      -0.0031
+    -1.1e-18      -0.0031       0.0082
+x2 covariance:
+    0.0071      2.5e-19     -3.4e-19
+    2.5e-19       0.0078      -0.0011
+    -3.4e-19      -0.0011       0.0082
+x3 covariance:
+    0.0083     4.4e-19     1.2e-18
+    4.4e-19      0.0094      0.0031
+    1.2e-18      0.0031       0.018
+</pre></div>
+</div>
+<p>Comparing this with the covariance matrices in Section 2.5, we can see that the uncertainty no longer grows without bounds as measurement uncertainty accumulates. Instead, the “GPS” measurements more or less constrain the poses evenly, as expected.</p>
+<p>:::{figure}
+:label: my-figure
+:align: center</p>
+<p id="my-figure-fruit"><img alt="Odometry marginals" src="images/tutorial/5_Odometry.png" /></p>
+<p><img alt="Localization Marginals" src="images/tutorial/5_Localization.png" /></p>
+<p>Comparing the marginals resulting from the “odometry” factor graph in Figure 3 and the “localization” factor graph in Figure 4.
+:::</p>
+<p>It helps a lot when we view this graphically, as in Figure 5, where I show the marginals on position as 5-sigma covariance ellipses that contain 99.9996% of all probability mass. For the odometry marginals, it is immediately apparent from the figure that (1) the uncertainty on pose keeps growing, and (2) the uncertainty on angular odometry translates into increasing uncertainty on y. The localization marginals, in contrast, are constrained by the unary factors and are all much smaller. In addition, while less apparent, the uncertainty on the middle pose is actually smaller as it is constrained by odometry from two sides.
+You might now be wondering how we produced these figures. The answer is via the MATLAB interface of GTSAM, which we will demonstrate in the next section.</p>
+</section>
+</section>
+<section id="poseslam">
+<h1>4. PoseSLAM<a class="headerlink" href="#poseslam" title="Link to this heading">#</a></h1>
+<section id="loop-closure-constraints">
+<h2>4.1 Loop Closure Constraints<a class="headerlink" href="#loop-closure-constraints" title="Link to this heading">#</a></h2>
+<p>The simplest instantiation of a SLAM problem is <strong>PoseSLAM</strong>, which avoids building an explicit map of the environment. The goal of SLAM is to simultaneously localize a robot and map the environment given incoming sensor measurements (). Besides wheel odometry, one of the most popular sensors for robots moving on a plane is a 2D laser-range finder, which provides both odometry constraints between successive poses, and loop-closure constraints when the robot re-visits a previously explored part of the environment.</p>
+<figure class="align-default" id="id11">
+<img alt="images/tutorial/6_FactorGraph3.png" src="images/tutorial/6_FactorGraph3.png" />
+<figcaption>
+<p><span class="caption-text">Factor graph for PoseSLAM.</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>A factor graph example for PoseSLAM is shown in Figure 6. The following C++ code, included in GTSAM as an example, creates this factor graph in code:</p>
+<div class="highlight-{code}c notranslate"><div class="highlight"><pre><span></span>:linenos:
+NonlinearFactorGraph graph;
+noiseModel::Diagonal::shared_ptr priorNoise =
+  noiseModel::Diagonal::Sigmas(Vector3(0.3, 0.3, 0.1));
+graph.add(PriorFactor&lt;Pose2&gt;(1, Pose2(0, 0, 0), priorNoise));
+
+// Add odometry factors
+noiseModel::Diagonal::shared_ptr model =
+  noiseModel::Diagonal::Sigmas(Vector3(0.2, 0.2, 0.1));
+graph.add(BetweenFactor&lt;Pose2&gt;(1, 2, Pose2(2, 0, 0     ), model));
+graph.add(BetweenFactor&lt;Pose2&gt;(2, 3, Pose2(2, 0, M_PI_2), model));
+graph.add(BetweenFactor&lt;Pose2&gt;(3, 4, Pose2(2, 0, M_PI_2), model));
+graph.add(BetweenFactor&lt;Pose2&gt;(4, 5, Pose2(2, 0, M_PI_2), model));
+
+// Add the loop closure constraint
+graph.add(BetweenFactor&lt;Pose2&gt;(5, 2, Pose2(2, 0, M_PI_2), model));
+</pre></div>
+</div>
+<p>As before, lines 1-4 create a nonlinear factor graph and add the unary factor <span class="math notranslate nohighlight">\(f_0(x_1)\)</span>. As the robot travels through the world, it creates binary factors
+<span class="math notranslate nohighlight">\(f_t(x_t, x_{t+1})\)</span> corresponding to odometry, added to the graph in lines 6-12 (Note that M_PI_2 refers to pi/2). But line 15 models a different event: a <strong>loop closure</strong>. For example, the robot might recognize the same location using vision or a laser range finder, and calculate the geometric pose constraint to when it first visited this location. This is illustrated for poses <span class="math notranslate nohighlight">\(x_5\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>, and generates the (red) loop closing factor <span class="math notranslate nohighlight">\(f_5(x_5, x_2)\)</span>.</p>
+<figure class="align-default" id="id12">
+<a class="reference internal image-reference" href="images/tutorial/7_example1.png"><img alt="images/tutorial/7_example1.png" src="images/tutorial/7_example1.png" style="width: 75%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">The result of running optimize on the factor graph in Figure 6.</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We can optimize this factor graph as before, by creating an initial estimate of type Values, and creating and running an optimizer. The result is shown graphically in Figure 7, along with covariance ellipses shown in green. These 5-sigma covariance ellipses in 2D indicate the marginal over position, over all possible orientations, and show the area which contain 99.9996% of the probability mass. The graph shows in a clear manner that the uncertainty on pose <span class="math notranslate nohighlight">\(x_5\)</span> is now much less than if there would be only odometry measurements. The pose with the highest uncertainty, <span class="math notranslate nohighlight">\(x_4\)</span>, is the one furthest away from the unary constraint <span class="math notranslate nohighlight">\(f_0(x_1)\)</span>, which is the only factor tying the graph to a global coordinate frame.</p>
+<p>The figure above was created using an interface that allows you to use GTSAM from within MATLAB, which provides for visualization and rapid development. We discuss this next.</p>
+<p>4.2 Using the MATLAB Interface
+A large subset of the GTSAM functionality can be accessed through wrapped classes from within MATLAB<a class="footnote-reference brackets" href="#id3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. The following code excerpt is the MATLAB equivalent of the C++ code in Listing 4.1:</p>
+<div class="highlight-{code}c notranslate"><div class="highlight"><pre><span></span>:linenos:
+graph = NonlinearFactorGraph;
+priorNoise = noiseModel.Diagonal.Sigmas([0.3; 0.3; 0.1]);
+graph.add(PriorFactorPose2(1, Pose2(0, 0, 0), priorNoise));
+
+%% Add odometry factors
+model = noiseModel.Diagonal.Sigmas([0.2; 0.2; 0.1]);
+graph.add(BetweenFactorPose2(1, 2, Pose2(2, 0, 0   ), model));
+graph.add(BetweenFactorPose2(2, 3, Pose2(2, 0, pi/2), model));
+graph.add(BetweenFactorPose2(3, 4, Pose2(2, 0, pi/2), model));
+graph.add(BetweenFactorPose2(4, 5, Pose2(2, 0, pi/2), model));
+
+%% Add pose constraint
+graph.add(BetweenFactorPose2(5, 2, Pose2(2, 0, pi/2), model));
+</pre></div>
+</div>
+<p>Note that the code is almost identical, although there are a few syntax and naming differences:</p>
+<ul class="simple">
+<li><p>Objects are created by calling a constructor instead of allocating them on the heap.</p></li>
+<li><p>Namespaces are done using dot notation, i.e., <code class="docutils literal notranslate"><span class="pre">noiseModel::Diagonal::SigmasClasses</span></code> becomes <code class="docutils literal notranslate"><span class="pre">noiseModel.Diagonal.Sigmas</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Vector</span></code> and <code class="docutils literal notranslate"><span class="pre">Matrix</span></code> classes in C++ are just vectors/matrices in MATLAB.</p></li>
+<li><p>As templated classes do not exist in MATLAB, these have been hardcoded in the GTSAM interface, e.g., <code class="docutils literal notranslate"><span class="pre">PriorFactorPose2</span></code> corresponds to the C++ class <code class="docutils literal notranslate"><span class="pre">PriorFactor&lt;Pose2&gt;</span></code>, etc.</p></li>
+</ul>
+<p>After executing the code, you can call <code class="docutils literal notranslate"><span class="pre">whos</span></code> on the MATLAB command prompt to see the objects created. Note that the indicated Class corresponds to the wrapped C++ classes:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt; whos
+Name                 Size            Bytes  Class
+graph                1x1               112  gtsam.NonlinearFactorGraph
+priorNoise           1x1               112  gtsam.noiseModel.Diagonal
+model                1x1               112  gtsam.noiseModel.Diagonal
+initialEstimate      1x1               112  gtsam.Values
+optimizer            1x1               112  gtsam.LevenbergMarquardtOptimizer
+</pre></div>
+</div>
+<p>In addition, any GTSAM object can be examined in detail, yielding identical output to C++:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt; priorNoise
+diagonal sigmas [0.3; 0.3; 0.1];
+
+&gt;&gt; graph
+size: 6
+factor 0: PriorFactor on 1
+prior mean: (0, 0, 0)
+noise model: diagonal sigmas [0.3; 0.3; 0.1];
+factor 1: BetweenFactor(1,2)
+measured: (2, 0, 0)
+noise model: diagonal sigmas [0.2; 0.2; 0.1];
+factor 2: BetweenFactor(2,3)
+measured: (2, 0, 1.6)
+noise model: diagonal sigmas [0.2; 0.2; 0.1];
+factor 3: BetweenFactor(3,4)
+measured: (2, 0, 1.6)
+noise model: diagonal sigmas [0.2; 0.2; 0.1];
+factor 4: BetweenFactor(4,5)
+measured: (2, 0, 1.6)
+noise model: diagonal sigmas [0.2; 0.2; 0.1];
+factor 5: BetweenFactor(5,2)
+measured: (2, 0, 1.6)
+noise model: diagonal sigmas [0.2; 0.2; 0.1];
+</pre></div>
+</div>
+<p>And it does not stop there: we can also call some of the functions defined for factor graphs. E.g.,</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt; graph.error(initialEstimate)
+ans =
+20.1086
+
+&gt;&gt; graph.error(result)
+ans =
+8.2631e-18
+</pre></div>
+</div>
+<p>computes the sum-squared error <span class="math notranslate nohighlight">\(\frac{1}{2} \sum_i \| h_i(X_i) - z_i \|^2_{\Sigma}\)</span> before and after optimization.</p>
+</section>
+<section id="reading-and-optimizing-pose-graphs">
+<h2>4.3 Reading and Optimizing Pose Graphs<a class="headerlink" href="#reading-and-optimizing-pose-graphs" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id13">
+<a class="reference internal image-reference" href="images/tutorial/8_w100-result.png"><img alt="images/tutorial/8_w100-result.png" src="images/tutorial/8_w100-result.png" style="width: 75%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">MATLAB plot of small Manhattan world example with 100 poses (due to Ed Olson). The initial estimate is shown in green. The optimized trajectory, with covariance ellipses, in blue.</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The ability to work in MATLAB adds a much quicker development cycle, and effortless graphical output. The optimized trajectory in Figure 8 was produced by the code below, in which <code class="docutils literal notranslate"><span class="pre">load2D()</span></code> reads TORO files. To see how plotting is done, refer to the full source code.</p>
+<div class="highlight-{code}matlab notranslate"><div class="highlight"><pre><span></span>:linenos:
+%% Initialize graph, initial estimate, and odometry noise
+datafile = findExampleDataFile(&#39;w100.graph&#39;);
+model = noiseModel.Diagonal.Sigmas([0.05; 0.05; 5*pi/180]);
+[graph,initial] = load2D(datafile, model);
+
+%% Add a Gaussian prior on pose x_0
+priorMean = Pose2(0, 0, 0);
+priorNoise = noiseModel.Diagonal.Sigmas([0.01; 0.01; 0.01]);
+graph.add(PriorFactorPose2(0, priorMean, priorNoise));
+
+%% Optimize using Levenberg-Marquardt optimization and get marginals
+optimizer = LevenbergMarquardtOptimizer(graph, initial);
+result = optimizer.optimizeSafely;
+marginals = Marginals(graph, result);
+</pre></div>
+</div>
+</section>
+<section id="poseslam-in-3d">
+<h2>4.4 PoseSLAM in 3D<a class="headerlink" href="#poseslam-in-3d" title="Link to this heading">#</a></h2>
+<p>PoseSLAM can easily be extended to 3D poses, but some care is needed to update 3D rotations. GTSAM supports both <strong>quaternions</strong> and <span class="math notranslate nohighlight">\(3 \times 3\)</span> <strong>rotation matrices</strong> to represent 3D rotations. The selection is made via the compile flag <code class="docutils literal notranslate"><span class="pre">GTSAM_USE_QUATERNIONS</span></code>.</p>
+<figure class="align-default" id="id14">
+<a class="reference internal image-reference" href="images/tutorial/9_sphere2500-result.png"><img alt="images/tutorial/9_sphere2500-result.png" src="images/tutorial/9_sphere2500-result.png" style="width: 75%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">3D plot of sphere example (due to Michael Kaess). The very wrong initial estimate, derived from odometry, is shown in green. The optimized trajectory is shown red. Code below:</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="highlight-{code}matlab notranslate"><div class="highlight"><pre><span></span>:linenos:
+%% Initialize graph, initial estimate, and odometry noise
+datafile = findExampleDataFile(&#39;sphere2500.txt&#39;);
+model = noiseModel.Diagonal.Sigmas([5*pi/180; 5*pi/180; 5*pi/180; 0.05; 0.05; 0.05]);
+[graph,initial] = load3D(datafile, model, true, 2500);
+plot3DTrajectory(initial, &#39;g-&#39;, false); % Plot Initial Estimate
+
+%% Read again, now with all constraints, and optimize
+graph = load3D(datafile, model, false, 2500);
+graph.add(NonlinearEqualityPose3(0, initial.atPose3(0)));
+optimizer = LevenbergMarquardtOptimizer(graph, initial);
+result = optimizer.optimizeSafely();
+plot3DTrajectory(result, &#39;r-&#39;, false); axis equal;
+</pre></div>
+</div>
+</section>
+</section>
+<section id="landmark-based-slam">
+<h1>5. Landmark-based SLAM<a class="headerlink" href="#landmark-based-slam" title="Link to this heading">#</a></h1>
+<section id="basics">
+<h2>5.1 Basics<a class="headerlink" href="#basics" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id15">
+<a class="reference internal image-reference" href="images/tutorial/10_FactorGraph4.png"><img alt="images/tutorial/10_FactorGraph4.png" src="images/tutorial/10_FactorGraph4.png" style="width: 75%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Factor graph for landmark-based SLAM</span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In <strong>landmark-based SLAM</strong>, we explicitly build a map with the location of observed landmarks, which introduces a second type of variable in the factor graph besides robot poses. An example factor graph for a landmark-based SLAM example is shown in Figure 10, which shows the typical connectivity: poses are connected in an odometry Markov chain, and landmarks are observed from multiple poses, inducing binary factors. In addition, the pose <span class="math notranslate nohighlight">\(x_1\)</span> has the usual prior on it.</p>
+<figure class="align-default" id="id16">
+<a class="reference internal image-reference" href="images/tutorial/11_example2.png"><img alt="images/tutorial/11_example2.png" src="images/tutorial/11_example2.png" style="width: 75%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">The optimized result along with covariance ellipses for both poses (in green) and landmarks (in blue). Also shown are the trajectory (red) and landmark sightings (cyan).</span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The factor graph from Figure 10 can be created using the MATLAB code in Listing 5.1. As before, on line 2 we create the factor graph, and Lines 8-18 create the prior/odometry chain we are now familiar with. However, the code on lines 20-25 is new: it creates three <strong>measurement factors</strong>, in this case “bearing/range” measurements from the pose to the landmark.</p>
+<div class="highlight-{code}matlab notranslate"><div class="highlight"><pre><span></span>:linenos:
+% Create graph container and add factors to it
+graph = NonlinearFactorGraph;
+
+% Create keys for variables
+i1 = symbol(&#39;x&#39;,1); i2 = symbol(&#39;x&#39;,2); i3 = symbol(&#39;x&#39;,3);
+j1 = symbol(&#39;l&#39;,1); j2 = symbol(&#39;l&#39;,2);
+
+% Add prior
+priorMean = Pose2(0.0, 0.0, 0.0); % prior at origin
+priorNoise = noiseModel.Diagonal.Sigmas([0.3; 0.3; 0.1]);
+% add directly to graph
+graph.add(PriorFactorPose2(i1, priorMean, priorNoise));
+
+% Add odometry
+odometry = Pose2(2.0, 0.0, 0.0);
+odometryNoise = noiseModel.Diagonal.Sigmas([0.2; 0.2; 0.1]);
+graph.add(BetweenFactorPose2(i1, i2, odometry, odometryNoise));
+graph.add(BetweenFactorPose2(i2, i3, odometry, odometryNoise));
+
+% Add bearing/range measurement factors
+degrees = pi/180;
+brNoise = noiseModel.Diagonal.Sigmas([0.1; 0.2]);
+graph.add(BearingRangeFactor2D(i1, j1, Rot2(45*degrees), sqrt(8), brNoise));
+graph.add(BearingRangeFactor2D(i2, j1, Rot2(90*degrees), 2, brNoise));
+graph.add(BearingRangeFactor2D(i3, j2, Rot2(90*degrees), 2, brNoise));
+</pre></div>
+</div>
+</section>
+<section id="of-keys-and-symbols">
+<h2>5.2 Of Keys and Symbols<a class="headerlink" href="#of-keys-and-symbols" title="Link to this heading">#</a></h2>
+<p>The only unexplained code is on lines 4-6: here we create integer keys for the poses and landmarks using the <code class="docutils literal notranslate"><span class="pre">symbol()</span></code> function. In GTSAM, we address all variables using the <code class="docutils literal notranslate"><span class="pre">Key</span></code> type, which is just a typedef to <code class="docutils literal notranslate"><span class="pre">size_t</span></code> <a class="footnote-reference brackets" href="#id5" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> . The keys do not have to be numbered continuously, but they do have to be unique within a given factor graph. For factor graphs with different types of variables, we provide the <code class="docutils literal notranslate"><span class="pre">symbol()</span></code> function in MATLAB, and the <code class="docutils literal notranslate"><span class="pre">Symbol</span></code> type in C++, to help you create (large) integer keys that are far apart in the space of possible keys, so you don’t have to think about starting the point numbering at some arbitrary offset. To create a <em>symbol</em> key you simply provide a character and an integer index. You can use base 0 or 1, or use arbitrary indices: it does not matter. In the code above, we we use ‘x’ for poses, and ‘l’ for landmarks.</p>
+<p>The optimized result for the factor graph created by Listing 5.1 is shown in Figure 11, and it is readily apparent that the landmark <span class="math notranslate nohighlight">\(l_1\)</span> with two measurements is better localized. In MATLAB we can also examine the actual numerical values, and doing so reveals some more GTSAM magic:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>result Values with 5 values: l1: (2, 2) l2: (4, 2) x1: (-1.8e-16, 5.1e-17, -1.5e-17) x2: (2, -5.8e-16, -4.6e-16) x3: (4, -3.1e-15, -4.6e-16)
+</pre></div>
+</div>
+<p>Indeed, the keys generated by symbol are automatically detected by the <code class="docutils literal notranslate"><span class="pre">print</span></code> method in the <code class="docutils literal notranslate"><span class="pre">Values</span></code> class, and rendered in human-readable form “x1”, “l2”, etc, rather than as large, unwieldy integers. This magic extends to most factors and other classes where the <code class="docutils literal notranslate"><span class="pre">Key</span></code> type is used.</p>
+</section>
+<section id="a-larger-example">
+<h2>5.3 A Larger Example<a class="headerlink" href="#a-larger-example" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id17">
+<a class="reference internal image-reference" href="images/tutorial/12_littleRobot.png"><img alt="images/tutorial/12_littleRobot.png" src="images/tutorial/12_littleRobot.png" style="width: 75%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">A larger example with about 100 poses and 30 or so landmarks, as produced by <code class="docutils literal notranslate"><span class="pre">gtsam_examples/PlanarSLAMExample_graph.m</span></code></span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>GTSAM comes with a slightly larger example that is read from a <code class="docutils literal notranslate"><span class="pre">.graph</span></code> file by <code class="docutils literal notranslate"><span class="pre">PlanarSLAMExample_graph.m</span></code>, shown in Figure 12. To not clutter the figure only the marginals are shown, not the lines of sight. This example, with 119 (multivariate) variables and 517 factors optimizes in less than 10 ms.</p>
+</section>
+<section id="a-real-world-example">
+<h2>5.4 A Real-World Example<a class="headerlink" href="#a-real-world-example" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id18">
+<a class="reference internal image-reference" href="images/tutorial/13_Victoria.png"><img alt="images/tutorial/13_Victoria.png" src="images/tutorial/13_Victoria.png" style="width: 75%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Small section of optimized trajectory and landmarks (trees detected in a laser range finder scan) from data recorded in Sydney’s Victoria Park (dataset due to Jose Guivant, U. Sydney).</span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>A real-world example is shown in Figure 13, using data from a well known dataset collected in Sydney’s Victoria Park, using a truck equipped with a laser range-finder. The covariance matrices in this figure were computed very efficiently, as explained in detail in . The exact covariances (blue, smaller ellipses) obtained by our fast algorithm coincide with the exact covariances based on full inversion (orange, mostly hidden by blue). The much larger conservative covariance estimates (green, large ellipses) were based on our earlier work in .</p>
+</section>
+</section>
+<section id="structure-from-motion">
+<h1>6. Structure from Motion<a class="headerlink" href="#structure-from-motion" title="Link to this heading">#</a></h1>
+<figure class="align-default" id="id19">
+<a class="reference internal image-reference" href="images/tutorial/14_cube.png"><img alt="images/tutorial/14_cube.png" src="images/tutorial/14_cube.png" style="width: 75%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">An optimized “Structure from Motion” with 10 cameras arranged in a circle, observing the 8 vertices of a <span class="math notranslate nohighlight">\(20 \times 20 \times 20\)</span> cube centered around the origin. The camera is rendered with color-coded axes, (RGB for XYZ) and the viewing direction is is along the positive Z-axis. Also shown are the 3D error covariance ellipses for both cameras and points.</span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Structure from Motion (SFM)</strong> is a technique to recover a 3D reconstruction of the environment from corresponding visual features in a collection of unordered images, see Figure 14. In GTSAM this is done using exactly the same factor graph framework, simply using SFM-specific measurement factors. In particular, there is a <strong>projection factor</strong> that calculates the reprojection error <span class="math notranslate nohighlight">\(f(x_i, p_j, z_{ij}, K)\)</span> for a given camera pose <span class="math notranslate nohighlight">\(x_i\)</span> (a <strong>Pose3</strong>) and a point <span class="math notranslate nohighlight">\(p_j\)</span> ( a <strong>Point3</strong>). The factor is parameterized by the 2D measurement <span class="math notranslate nohighlight">\(z_{ij}\)</span> (a <strong>Point 2</strong>), and known calibration parameters <span class="math notranslate nohighlight">\(K\)</span> (of type <strong>Cal3_S2</strong>). The following listing shows how to create the factor graph:</p>
+<div class="highlight-{code}matlab notranslate"><div class="highlight"><pre><span></span>:linenos:
+%% Add factors for all measurements
+noise = noiseModel.Isotropic.Sigma(2, measurementNoiseSigma);
+for i = 1:length(Z),
+    for k = 1:length(Z{i})
+        j = J{i}{k};
+        G.add(GenericProjectionFactorCal3_S2(
+              Z{i}{k}, noise, symbol(&#39;x&#39;, i), symbol(&#39;p&#39;, j), K));
+    end
+end
+</pre></div>
+</div>
+<p>In Listing 6, assuming that the factor graph was already created, we add measurement factors in the double loop. We loop over images with index <span class="math notranslate nohighlight">\(i\)</span>, and in this example the data is given as two cell arrays: <code class="docutils literal notranslate"><span class="pre">Z{i}</span></code> specifies a set of measurements <span class="math notranslate nohighlight">\(z_k\)</span> in image <span class="math notranslate nohighlight">\(i\)</span>, and <code class="docutils literal notranslate"><span class="pre">J{i}</span></code> specifies the corresponding point index. The specific factor type we use is a <code class="docutils literal notranslate"><span class="pre">GenericProjectionFactorCal3_S2</span></code>, which is the MATLAB equivalent of the C++ class <code class="docutils literal notranslate"><span class="pre">GenericProjectionFactor&lt;Cal3_S2&gt;</span></code>, where <code class="docutils literal notranslate"><span class="pre">Cal3_S2</span></code> is the camera calibration type we choose to use (the standard, no-radial distortion, 5 parameter calibration matrix). As before landmark-based SLAM (Section 5), here we use symbol keys except we now use the character ‘p’ to denote points, rather than ‘l’ for landmark.</p>
+<section id="id6">
+<h2>Important note<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>A very tricky and difficult part of making SFM work is (a) data association, and (b) initialization. GTSAM does neither of these things for you: it simply provides the “bundle adjustment” optimization. In the example, we simply assume the data association is known (it is encoded in the J sets), and we initialize with the ground truth, as the intent of the example is simply to show you how to set up the optimization problem.</p>
+</section>
+</section>
+<section id="isam-incremental-smoothing-and-mapping">
+<h1>7. iSAM: Incremental Smoothing and Mapping<a class="headerlink" href="#isam-incremental-smoothing-and-mapping" title="Link to this heading">#</a></h1>
+<p>GTSAM provides an incremental inference algorithm based on a more advanced graphical model, the Bayes tree, which is kept up to date by the <strong>iSAM</strong> algorithm (incremental Smoothing and Mapping, see ;  for an in-depth treatment). For mobile robots operating in real-time it is important to have access to an updated map as soon as new sensor measurements come in. iSAM keeps the map up-to-date in an efficient manner.</p>
+<p>Listing 7 shows how to use iSAM in a simple visual SLAM example. In line 1-2 we create a NonlinearISAM object which will relinearize and reorder the variables every 3 steps. The corect value for this parameter depends on how non-linear your problem is and how close you want to be to gold-standard solution at every step. In iSAM 2.0, this parameter is not needed, as iSAM2 automatically determines when linearization is needed and for which variables.</p>
+<p>The example involves eight 3D points that are seen from eight successive camera poses. Hence in the first step -which is omitted here- all eight landmarks and the first pose are properly initialized. In the code this is done by perturbing the known ground truth, but in a real application great care is needed to properly initialize poses and landmarks, especially in a monocular sequence.</p>
+<div class="highlight-{code}c notranslate"><div class="highlight"><pre><span></span>:linenos:
+int relinearizeInterval = 3;
+NonlinearISAM isam(relinearizeInterval);
+
+// ... first frame initialization omitted ...
+
+// Loop over the different poses, adding the observations to iSAM
+for (size_t i = 1; i &lt; poses.size(); ++i) {
+
+  // Add factors for each landmark observation
+  NonlinearFactorGraph graph;
+  for (size_t j = 0; j &lt; points.size(); ++j) {
+    graph.add(
+      GenericProjectionFactor&lt;Pose3, Point3, Cal3_S2&gt;
+        (z[i][j], noise,Symbol(&#39;x&#39;, i), Symbol(&#39;l&#39;, j), K)
+    );
+  }
+
+  // Add an initial guess for the current pose
+  Values initialEstimate;
+  initialEstimate.insert(Symbol(&#39;x&#39;, i), initial_x[i]);
+
+  // Update iSAM with the new factors
+  isam.update(graph, initialEstimate);
+ }
+</pre></div>
+</div>
+<p>The remainder of the code illustrates a typical iSAM loop:</p>
+<ol class="arabic simple">
+<li><p>Create factors for new measurements. Here, in lines 9-18, a small <code class="docutils literal notranslate"><span class="pre">NonlinearFactorGraph</span></code> is created to hold the new factors of type <code class="docutils literal notranslate"><span class="pre">GenericProjectionFactor&lt;Pose3,</span> <span class="pre">Point3,</span> <span class="pre">Cal3_S2&gt;</span></code>.</p></li>
+<li><p>Create an initial estimate for all newly introduced variables. In this small example, all landmarks have been observed in frame 1 and hence the only new variable that needs to be initialized at each time step is the new pose. This is done in lines 20-22. Note we assume a good initial estimate is available as <code class="docutils literal notranslate"><span class="pre">initial_x[i]</span></code>.</p></li>
+<li><p>Finally, we call <code class="docutils literal notranslate"><span class="pre">isam.update()</span></code>, which takes the factors and initial estimates, and incrementally updates the solution, which is available through the method <code class="docutils literal notranslate"><span class="pre">isam.estimate()</span></code>, if desired.</p></li>
+</ol>
+</section>
+<section id="more-applications">
+<h1>8. More Applications<a class="headerlink" href="#more-applications" title="Link to this heading">#</a></h1>
+<p>While a detailed discussion of all the things you can do with GTSAM will take us too far, below is a small survey of what you can expect to do, and which we did using GTSAM.</p>
+<section id="conjugate-gradient-optimization">
+<h2>8.1 Conjugate Gradient Optimization<a class="headerlink" href="#conjugate-gradient-optimization" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="id20">
+<a class="reference internal image-reference" href="images/tutorial/15_Beijing.png"><img alt="images/tutorial/15_Beijing.png" src="images/tutorial/15_Beijing.png" style="width: 75%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">A map of Beijing, with a spanning tree shown in black, and the remaining loop-closing constraints shown in red. A spanning tree can be used as a <code class="docutils literal notranslate"><span class="pre">preconditioner</span></code> by GTSAM.</span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>GTSAM also includes efficient preconditioned conjugate gradients (PCG) methods for solving large-scale SLAM problems. While direct methods, popular in the literature, exhibit quadratic convergence and can be quite efficient for sparse problems, they typically require a lot of storage and efficient elimination orderings to be found. In contrast, iterative optimization methods only require access to the gradient and have a small memory footprint, but can suffer from poor convergence. Our method, <em>subgraph preconditioning</em>, explained in detail in ; , combines the advantages of direct and iterative methods, by identifying a sub-problem that can be easily solved using direct methods, and solving for the remaining part using PCG. The easy sub-problems correspond to a spanning tree, a planar subgraph, or any other substructure that can be efficiently solved. An example of such a subgraph is shown in Figure 15.</p>
+</section>
+<section id="visual-odometry">
+<h2>8.2 Visual Odometry<a class="headerlink" href="#visual-odometry" title="Link to this heading">#</a></h2>
+<p>A gentle introduction to vision-based sensing is Visual Odometry (abbreviated VO, see e.g. ), which provides pose constraints between successive robot poses by tracking or associating visual features in successive images taken by a camera mounted rigidly on the robot. GTSAM includes both C++ and MATLAB example code, as well as VO-specific factors to help you on the way.</p>
+</section>
+<section id="visual-slam">
+<h2>8.3 Visual SLAM<a class="headerlink" href="#visual-slam" title="Link to this heading">#</a></h2>
+<p>Visual SLAM (see e.g., ) is a SLAM variant where 3D points are observed by a camera as the camera moves through space, either mounted on a robot or moved around by hand. GTSAM, and particularly iSAM (see below), can easily be adapted to be used as the back-end optimizer in such a scenario.</p>
+</section>
+<section id="fixed-lag-smoothing-and-filtering">
+<h2>8.4 Fixed-lag Smoothing and Filtering<a class="headerlink" href="#fixed-lag-smoothing-and-filtering" title="Link to this heading">#</a></h2>
+<p>GTSAM can easily perform recursive estimation, where only a subset of the poses are kept in the factor graph, while the remaining poses are marginalized out. In all examples above we explicitly optimize for all variables using all available measurements, which is called Smoothing because the trajectory is “smoothed” out, and this is where GTSAM got its name (GT Smoothing and Mapping). When instead only the last few poses are kept in the graph, one speaks of Fixed-lag Smoothing. Finally, when only the single most recent poses is kept, one speaks of Filtering, and indeed the original formulation of SLAM was filter-based ().</p>
+</section>
+<section id="discrete-variables-and-hmms">
+<h2>8.5 Discrete Variables and HMMs<a class="headerlink" href="#discrete-variables-and-hmms" title="Link to this heading">#</a></h2>
+<p>Finally, factor graphs are not limited to continuous variables: GTSAM can also be used to model and solve discrete optimization problems. For example, a Hidden Markov Model (HMM) has the same graphical model structure as the Robot Localization problem from Section 2, except that in an HMM the variables are discrete. GTSAM can optimize and perform inference for discrete models.</p>
+</section>
+</section>
+<section id="acknowledgements">
+<h1>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h1>
+<p>GTSAM was made possible by the efforts of many collaborators at Georgia Tech and elsewhere, including but not limited to Doru Balcan, Chris Beall, Alex Cunningham, Alireza Fathi, Eohan George, Viorela Ila, Yong-Dian Jian, Michael Kaess, Kai Ni, Carlos Nieto, Duy-Nguyen Ta, Manohar Paluri, Christian Potthast, Richard Roberts, Grant Schindler, and Stephen Williams. In addition, Paritosh Mohan helped me with the manual. Many thanks all for your hard work!</p>
+</section>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id3" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>GTSAM also allows you to wrap your own custom-made classes, although this is out of the scope of this manual. The following code excerpt is the MATLAB equivalent of the C++ code in Listing 4.1:</p>
+</aside>
+<aside class="footnote brackets" id="id5" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">2</a><span class="fn-bracket">]</span></span>
+<p>a 32 or 64 bit integer, depending on your platform</p>
+</aside>
+</aside>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Overview</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#factor-graphs">1. Factor Graphs</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-robot-motion">2. Modeling Robot Motion</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-with-factor-graphs">2.1 Modeling with Factor Graphs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-factor-graph">2.2 Creating a Factor Graph</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factor-graphs-vs-values">2.3 Factor Graphs vs. Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-optimization-in-gtsam">2.4 Non-linear Optimization in GTSAM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-posterior-inference">2.5 Full Posterior Inference</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#robot-localization">3. Robot Localization</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unary-measurement-factors">3.1 Unary Measurement Factors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-custom-factors">3.2 Defining Custom Factors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#important-note">Important Note</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-custom-factors">3.3 Using Custom Factors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.4 Full Posterior Inference</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#poseslam">4. PoseSLAM</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-closure-constraints">4.1 Loop Closure Constraints</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-and-optimizing-pose-graphs">4.3 Reading and Optimizing Pose Graphs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poseslam-in-3d">4.4 PoseSLAM in 3D</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#landmark-based-slam">5. Landmark-based SLAM</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics">5.1 Basics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#of-keys-and-symbols">5.2 Of Keys and Symbols</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-larger-example">5.3 A Larger Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-real-world-example">5.4 A Real-World Example</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-from-motion">6. Structure from Motion</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Important note</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#isam-incremental-smoothing-and-mapping">7. iSAM: Incremental Smoothing and Mapping</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#more-applications">8. More Applications</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conjugate-gradient-optimization">8.1 Conjugate Gradient Optimization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-odometry">8.2 Visual Odometry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-slam">8.3 Visual SLAM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-lag-smoothing-and-filtering">8.4 Fixed-lag Smoothing and Filtering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-variables-and-hmms">8.5 Discrete Variables and HMMs</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/tutorial.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, GTSAM.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
