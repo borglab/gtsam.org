@@ -1,16 +1,7 @@
-WIP redesign of gtsam.org
+This is a WIP redesign of [gtsam.org](https://gtsam.org/) to a MyST framework.
 
-moving to full MyST sphinx build due to Ruby Sass's deprecation
+**Run::**
+`myst start`
 
-based off of https://gtsam.org/ and https://chrisholdgraf.com/
-
-https://github.com/pydata/pydata-sphinx-theme
-
-
-**build:**
-
-'sphinx-autobuild . ../build/'
-
-myst build
-
-myst start
+**Build:**
+`myst build`
