@@ -1,3 +1,0 @@
-# Hello Blog
-
-Hello hello

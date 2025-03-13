@@ -1,9 +1,8 @@
 # -- Project information -----------------------------------------------------
 import sys
-from source.blogpost import plugin
 
-def setup(app):
-    app.add_directive("postlist", plugin)
+html_static_path = ["_static"]
+html_css_files = ["custom.css"]
 
 project = "GTSAM"
 copyright = "2025, GTSAM"
@@ -16,6 +15,9 @@ extensions = [
     "sphinx_examples",
     "sphinxext.opengraph",
     "sphinxext.rediraffe",
+
+    "sphinx-subfigure", # https://sphinx-subfigure.readthedocs.io/en/latest/
+    "sphinxcontrib.subfigure",
 ]
 
 templates_path = ["_templates"]
@@ -45,15 +47,6 @@ myst_enable_extensions = [
     "bibliography"
 ]
 
-# -- ABlog ---------------------------------------------------
-
-blog_baseurl = "https://chrisholdgraf.com"
-blog_title = "Chris Holdgraf"
-blog_path = "blog"
-blog_post_pattern = "blogs/*/*"
-blog_feed_fulltext = True
-blog_feed_subtitle = "Open communities, open science, communication, and data."
-fontawesome_included = True
-post_redirect_refresh = 1
-post_auto_image = 1
-post_auto_excerpt = 2
+myst_plugins = [
+    "Scripts.emphasis"  # Replace with the actual path to your plugin
+]
