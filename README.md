@@ -1,6 +1,6 @@
 This is a WIP redesign of [gtsam.org](https://gtsam.org/) to a MyST framework.
 
-**Run::**
+**Run:**
 `myst start`
 
 **Build:**
