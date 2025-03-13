@@ -1,40 +1,42 @@
+# https://github.com/executablebooks/MyST-Parser/blob/master/docs/conf.py
+
 # -- Project information -----------------------------------------------------
 import sys
 
 html_static_path = ["_static"]
-html_css_files = ["custom.css"]
+# html_css_files = ["custom.css"]
 
 project = "GTSAM"
 copyright = "2025, GTSAM"
-author = "GTSAM"
+author = "GTSAM" # TODO: update
+version = 1.0
+
+# -- General configuration ---------------------------------------------------
+
+# Add any Sphinx extension module names here, as strings. They can be
+# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
+# ones.
 
 extensions = [
-    "myst_nb",
-    "sphinx_design",
-    "sphinx_copybutton",
-    "sphinx_examples",
-    "sphinxext.opengraph",
-    "sphinxext.rediraffe",
-
-    "sphinx-subfigure", # https://sphinx-subfigure.readthedocs.io/en/latest/
-    "sphinxcontrib.subfigure",
+    "myst_parser",
 ]
 
+# Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
+
+# List of patterns, relative to source directory, that match files and
+# directories to ignore when looking for source files.
+# This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
     "_build",
-    "Thumbs.db",
+    "Thumbs.db", # a hidden Windows file that stores thumbnail images to speed up their display in File Explorer's thumbnail view
     ".DS_Store",
-    "*import_posts*",
-    "**/pandoc_ipynb/inputs/*",
-    ".nox/*",
     "README.md",
-    "**/.ipynb_checkpoints/*",
 ]
 
-# -- MyST and MyST-NB ---------------------------------------------------
+# -- MyST settings ---------------------------------------------------
 
-# MyST
+# https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
 myst_enable_extensions = [
     "colon_fence",
     "deflist",
@@ -45,8 +47,4 @@ myst_enable_extensions = [
     "emphasize-lines",
     "pandoc",
     "bibliography"
-]
-
-myst_plugins = [
-    "Scripts.emphasis"  # Replace with the actual path to your plugin
 ]
