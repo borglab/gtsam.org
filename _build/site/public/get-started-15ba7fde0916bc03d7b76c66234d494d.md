@@ -263,9 +263,8 @@ Here are some tips to get the best possible performance out of GTSAM.
 4. Possibly enable **MKL**.
    - Please note that our benchmarks have shown that this helps only in very limited cases, and actually hurts performance in the usual case. We therefore recommend that you do *not* enable MKL, unless you have benchmarked it on your problem and have verified that it improves performance.
 
-<br><br>
-
 # View documentation
 
 GTSAM has [Doxygen](http://www.doxygen.nl/) documentation. To generate, run `make doc` from your build directory, or refer to the [statically generated version on this website](https://gtsam.org/doxygen/).
 
+<br><br>

@@ -268,4 +268,3 @@ Here are some tips to get the best possible performance out of GTSAM.
 # View documentation
 
 GTSAM has [Doxygen](http://www.doxygen.nl/) documentation. To generate, run `make doc` from your build directory, or refer to the [statically generated version on this website](https://gtsam.org/doxygen/).
-
