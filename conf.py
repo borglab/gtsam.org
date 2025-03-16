@@ -46,5 +46,8 @@ myst_enable_extensions = [
     "lineno-start",
     "emphasize-lines",
     "pandoc",
-    "bibliography"
+    "bibliography",
+
+    "argmin",
+    "coloneqq",
 ]
