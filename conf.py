@@ -50,4 +50,5 @@ myst_enable_extensions = [
 
     "argmin",
     "coloneqq",
+    "attrs_block" # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#syntax-attributes-block
 ]
