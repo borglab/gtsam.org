@@ -51,4 +51,7 @@ myst_enable_extensions = [
     "argmin",
     "coloneqq",
     "attrs_block" # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#syntax-attributes-block
+    "attrs_inline" #  used to apply syntax highlighting to inline code
 ]
+
+myst_number_code_blocks = ["c", "matlab", "python",] # global default for line numbering, per lexer name
