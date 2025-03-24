@@ -19,7 +19,10 @@ version = 1.0
 
 extensions = [
     "myst_parser",
+    "myst_nb"
 ]
+
+html_js_files = ["https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
