@@ -24,9 +24,14 @@ MKL-linux
 - update content
 
 BLOG
+
 2023-02-04-lost-triangulation
 - #dlt-constraint
   - Q: what is (12)
+
+2021-02-23-uncertainties-part2
+- #some-objects-are-groups
+  - link "Blanco-Claraco, Bloesch et al." broken
 
 
 
