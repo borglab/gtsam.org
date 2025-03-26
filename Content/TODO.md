@@ -23,5 +23,11 @@ get-started.md
 MKL-linux
 - update content
 
+BLOG
+2023-02-04-lost-triangulation
+- #dlt-constraint
+  - Q: what is (12)
+
+
 
 * could be cool to analyze word count change after
