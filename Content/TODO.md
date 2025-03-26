@@ -37,6 +37,9 @@ BLOG
     - Barfoot and Furgale (2014, left-hand convention)
     - Lee et al. (2008)
 
+2021-02-23-uncertainties-part3
+- #introduction
+  - Barfoot and Furgale (2014)
 
 
 * could be cool to analyze word count change after
