@@ -32,6 +32,10 @@ BLOG
 2021-02-23-uncertainties-part2
 - #some-objects-are-groups
   - link "Blanco-Claraco, Bloesch et al." broken
+- #some-are-manifolds
+  - links broken:
+    - Barfoot and Furgale (2014, left-hand convention)
+    - Lee et al. (2008)
 
 
 
