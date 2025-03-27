@@ -82,3 +82,28 @@ yay -S gtsam-mkl
 
 To discuss any issues related to this package refer to the comments section on
 the AUR page of `gtsam` [here](https://aur.archlinux.org/packages/gtsam/).
+
+## Install GTSAM via conda-forge (conda/mamba installation) on Linux/MacOS/Windows
+
+Note: Installing GTSAM via conda-forge is not tested by the GTSAM developers.
+
+GTSAM is available on [conda-forge](https://conda-forge.org) via the 
+[`gtsam` package](https://anaconda.org/conda-forge/gtsam) on Linux, MacOS and Windows platforms.
+
+If you already have a working installation of conda/mamba/micromamba, installation is as easy as
+
+```sh
+conda install gtsam -c conda-forge  # if you use conda
+mamba install gtsam -c conda-forge  # if you use mamba
+micromamba install gtsam -c conda-forge  # if you use micromamba, recommended
+```
+
+If you do not yet have a working installation of conda/mamba/micromamba, 
+we recommend installing micromamba which is as easy as 
+(this works on any platform in your favourite shell):
+
+```sh
+"${SHELL}" <(curl -L micro.mamba.pm/install.sh)
+```
+
+For more information about micromamba, please visit their [website](https://mamba.readthedocs.io/en/latest/micromamba-installation.html).
