@@ -72,7 +72,7 @@ for debug symbols
 
 #### CMAKE_INSTALL_PREFIX
 
-The install folder.The
+The install folder. The
 default is typically `/usr/local/` .
 To configure to install to your home directory, you could execute:
 `` `cmake -DCMAKE_INSTALL_PREFIX:PATH=$HOME ..` ``
@@ -91,7 +91,7 @@ Set with the command line as follows:
 ```
 cmake -DGTSAM_BUILD_CONVENIENCE_LIBRARIES:OPTION=ON ..
 ```
-  - `ON` (Default): This builds convenience libraries and links tests against them.This option is suggested for gtsam developers, as it is possible to build and run tests without first building the rest of the library, and speeds up compilation for a single test.The downside of this option is that it will build the entire library again to build the full libgtsam library, so build / install will be slower.
+  - `ON` (Default): This builds convenience libraries and links tests against them.This option is suggested for gtsam developers, as it is possible to build and run tests without first building the rest of the library, and speeds up compilation for a single test. The downside of this option is that it will build the entire library again to build the full libgtsam library, so build / install will be slower.
   - `OFF`: This will build all of libgtsam before any of the tests, and then link all of the tests at once.This option is best
   for users of GTSAM, as it avoids rebuilding the entirety of gtsam an extra time.
 
@@ -102,7 +102,7 @@ cmake -DGTSAM_BUILD_CONVENIENCE_LIBRARIES:OPTION=ON ..
 ```
 cmake -DGTSAM_BUILD_UNSTABLE:OPTION=ON ..
 ```
-- `ON` (Default): When enabled, libgtsam_unstable will be built and installed with the same options as libgtsam.In addition, if tests are enabled, the unit tests will be built as well.The Matlab toolbox will also be generated
+- `ON` (Default): When enabled, libgtsam_unstable will be built and installed with the same options as libgtsam.In addition, if tests are enabled, the unit tests will be built as well. The Matlab toolbox will also be generated
 if the matlab toolbox is enabled, installing into a folder called `gtsam_unstable`.
 - OFF: If disabled, no `gtsam_unstable` code will be included in build or install.
 
