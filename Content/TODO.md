@@ -41,5 +41,8 @@ BLOG
 - #introduction
   - Barfoot and Furgale (2014)
 
+2020-07-19
+- update plotly
+
 
 * could be cool to analyze word count change after

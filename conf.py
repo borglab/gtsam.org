@@ -19,7 +19,7 @@ version = 1.0
 
 extensions = [
     "myst_parser",
-    "myst_nb"
+    "myst_nb",
 ]
 
 html_js_files = ["https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"]
