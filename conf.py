@@ -20,7 +20,10 @@ version = 1.0
 extensions = [
     "myst_parser",
     "myst_nb",
+    "sphinx_subfigure" # https://sphinx-subfigure.readthedocs.io/en/latest/
 ]
+
+numfig = True  # optional
 
 html_js_files = ["https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"]
 
