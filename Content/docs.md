@@ -13,25 +13,25 @@ GTSAM comes with a python wrapper (see `cython` directory) and a matlab wrapper 
 ## Notes on GTSAM
 
 :::{card} GTSAM Concepts
-:link: /Content/Notes/GTSAM-Concepts
+:link: /GTSAM-Concepts
 ^^^
 Manifolds, groups, lie groups, vector spaces, testables...
 :::
 
 :::{card} The Preintegrated IMU Factor
-:link: /Content/Notes/IMU-Factor
+:link: /IMU-Factor
 ^^^
 IMU handling scheme
 :::
 
 :::{card} Migrating from GTSAM 3
-:link: /Content/Notes/Migrating-from-3
+:link: /Migrating-from-3
 ^^^
 GTSAM 4 adds Expressions, a Python toolbox, and C++ traits for optimizing non-GTSAM types while deprecating some legacy features.
 :::
 
 :::{card} Contributing to GTSAM
-:link: /Content/Notes/Contributing
+:link: /Contributing
 ^^^
 If you have improvements to GTSAM, send us your pull requests!
 :::
