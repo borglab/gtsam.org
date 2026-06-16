@@ -25,7 +25,7 @@ where $\rho_r^s$ is the geometric range, $c$ is the speed of light, $\delta t_r$
 **Single differencing** between a rover receiver and a nearby base station eliminates the satellite clock bias $\delta t^s$ and greatly reduces atmospheric terms that are spatially correlated. **Double differencing** then takes the difference between two satellites (a reference satellite and a target satellite), which additionally eliminates the receiver clock bias $\delta t_r$. Using the operator $\Delta\nabla$ to denote the double difference:
 
 $$
-\Delta\nabla P = (\rho_r^j - \rho_r^i) - (\rho_b^j - \rho_b^i) + \epsilon_{\Delta\nabla P}
+\Delta\nabla P = (\rho_r^i - \rho_b^i) - (\rho_r^j - \rho_b^j) + \epsilon_{\Delta\nabla P}
 $$
 
 where $i$ is the reference satellite, $j$ is the target satellite, $r$ is the rover, $b$ is the base station, and $\epsilon_{\Delta\nabla P}$ is the double-differenced noise. The result is a measurement that depends almost entirely on the rover position and geometry. A reference satellite is chosen *per constellation* (GPS, Galileo, BeiDou, QZSS, ...), typically the one with a high elevation angle and strong signal strength.
