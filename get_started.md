@@ -92,6 +92,35 @@ For Intel-accelerated builds:
 yay -S gtsam-mkl
 ```
 
+## Conda-forge
+
+Community-maintained GTSAM packages are available from
+[conda-forge](https://conda-forge.org) for Linux, macOS, and Windows. These
+packages are not tested by the GTSAM developers.
+
+Install the [`gtsam` package](https://anaconda.org/conda-forge/gtsam) with your
+preferred conda-compatible package manager:
+
+```sh
+conda install -c conda-forge gtsam
+mamba install -c conda-forge gtsam
+micromamba install -c conda-forge gtsam
+```
+
+If you need a package manager, see the
+[micromamba installation guide](https://mamba.readthedocs.io/en/stable/installation/micromamba-installation.html).
+It recommends this installer for Linux, macOS, and Git Bash on Windows:
+
+```sh
+"${SHELL}" <(curl -L micro.mamba.pm/install.sh)
+```
+
+For Windows PowerShell, use:
+
+```powershell
+Invoke-Expression ((Invoke-WebRequest -Uri https://micro.mamba.pm/install.ps1).Content)
+```
+
 ## Wrappers
 
 GTSAM also ships with Python and MATLAB wrappers:
