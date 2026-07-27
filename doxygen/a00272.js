@@ -1,9 +1,7 @@
 var a00272 =
 [
-    [ "gtsam::SO< N >", "a03396.html", "a03396" ],
-    [ "gtsam::SO< N >::ChartAtOrigin", "a03400.html", null ],
-    [ "gtsam::traits< SO< N > >", "a03404.html", null ],
-    [ "gtsam::traits< const SO< N > >", "a03408.html", null ],
-    [ "DimensionSO", "a00272.html#afdaebcf25a03a9a9986d35d2831605dd", null ],
-    [ "serialize", "a00272.html#ac1829b506847127f406c0d6182fc0cdd", null ]
+    [ "gtsam::traits&lt; DiscreteValues &gt;", "a03451.html", null ],
+    [ "gtsam::cartesianProduct", "a01968.html#a55a86a4657d82f6ff048a10d058c529f", null ],
+    [ "gtsam::html", "a01968.html#a147114735037c2260d4810a8820e72f6", null ],
+    [ "gtsam::markdown", "a01968.html#a2b6707b04064df79d26d1016dfa2a013", null ]
 ];

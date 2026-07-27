@@ -1,4 +1,5 @@
 var a00824 =
 [
-    [ "gtsam::ScenarioRunner", "a04184.html", "a04184" ]
+    [ "gtsam::SubgraphPreconditionerParameters", "a04595.html", null ],
+    [ "gtsam::SubgraphPreconditioner", "a04599.html", "a04599" ]
 ];

@@ -1,4 +1,4 @@
 var a01310 =
 [
-    [ "gtsam::QPPolicy", "a05112.html", null ]
+    [ "gtsam::SmartFactorBase&lt; CAMERA &gt;", "a05479.html", "a05479" ]
 ];

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 360" font-family="'Computer Modern', 'Latin Modern Math', 'STIX Two Math', serif">
+  <defs>
+    <style>
+      .var-node { fill: white; stroke: #333; stroke-width: 2; }
+      .dot-pr { fill: #c0392b; }
+      .dot-cp { fill: #2471a3; }
+      .dot-imu { fill: #333; }
+      .edge-cp { stroke: #2471a3; stroke-width: 1.5; fill: none; }
+      .edge-pr { stroke: #c0392b; stroke-width: 1.5; fill: none; }
+      .edge-imu { stroke: #333; stroke-width: 1.5; fill: none; }
+      .vartext { font-size: 20px; font-weight: bold; fill: #333; text-anchor: middle; dominant-baseline: central; }
+      .subtext { font-size: 12px; font-weight: bold; fill: #333; text-anchor: middle; dominant-baseline: central; }
+      .ann { font-size: 11px; fill: #888; text-anchor: middle; dominant-baseline: central; }
+      .legend-label { font-size: 11px; fill: #333; text-anchor: start; dominant-baseline: central; }
+    </style>
+  </defs>
+
+  <!-- pose variables -->
+  <circle cx="120" cy="65" r="24" class="var-node"/>
+  <text x="120" y="61" class="vartext" font-style="italic">x</text>
+  <text x="133" y="76" class="subtext">0</text>
+
+  <circle cx="370" cy="65" r="24" class="var-node"/>
+  <text x="370" y="61" class="vartext" font-style="italic">x</text>
+  <text x="383" y="76" class="subtext">1</text>
+
+  <circle cx="620" cy="65" r="24" class="var-node"/>
+  <text x="620" y="61" class="vartext" font-style="italic">x</text>
+  <text x="633" y="76" class="subtext">2</text>
+
+  <!-- IMU pre-integration factors between poses -->
+  <line x1="144" y1="65" x2="232" y2="65" class="edge-imu"/>
+  <circle cx="238" cy="65" r="5" class="dot-imu"/>
+  <line x1="244" y1="65" x2="346" y2="65" class="edge-imu"/>
+  <text x="238" y="48" class="ann">IMU</text>
+
+  <line x1="394" y1="65" x2="482" y2="65" class="edge-imu"/>
+  <circle cx="488" cy="65" r="5" class="dot-imu"/>
+  <line x1="494" y1="65" x2="596" y2="65" class="edge-imu"/>
+  <text x="488" y="48" class="ann">IMU</text>
+
+  <!-- epoch x0: one DD pseudorange (unary) + one DD carrier-phase (pose, N_ref, N_target) -->
+  <line x1="104" y1="84" x2="84" y2="142" class="edge-pr"/>
+  <circle cx="82" cy="150" r="4.5" class="dot-pr"/>
+  <line x1="120" y1="89" x2="122" y2="142" class="edge-cp"/>
+  <line x1="121" y1="155" x2="302" y2="266" class="edge-cp"/>
+  <line x1="124" y1="155" x2="450" y2="266" class="edge-cp"/>
+  <circle cx="122" cy="150" r="4.5" class="dot-cp"/>
+
+  <!-- epoch x1 -->
+  <line x1="354" y1="84" x2="334" y2="142" class="edge-pr"/>
+  <circle cx="332" cy="150" r="4.5" class="dot-pr"/>
+  <line x1="370" y1="89" x2="372" y2="142" class="edge-cp"/>
+  <line x1="368" y1="155" x2="312" y2="266" class="edge-cp"/>
+  <line x1="374" y1="155" x2="450" y2="266" class="edge-cp"/>
+  <circle cx="372" cy="150" r="4.5" class="dot-cp"/>
+
+  <!-- epoch x2 -->
+  <line x1="604" y1="84" x2="584" y2="142" class="edge-pr"/>
+  <circle cx="582" cy="150" r="4.5" class="dot-pr"/>
+  <line x1="620" y1="89" x2="622" y2="142" class="edge-cp"/>
+  <line x1="618" y1="155" x2="318" y2="266" class="edge-cp"/>
+  <line x1="624" y1="155" x2="456" y2="266" class="edge-cp"/>
+  <circle cx="622" cy="150" r="4.5" class="dot-cp"/>
+
+  <!-- ambiguity variables shared across epochs -->
+  <circle cx="305" cy="288" r="26" class="var-node"/>
+  <text x="298" y="284" class="vartext" font-style="italic">N</text>
+  <text x="318" y="296" class="subtext">ref</text>
+  <text x="305" y="326" class="ann">reference sat</text>
+
+  <circle cx="455" cy="288" r="26" class="var-node"/>
+  <text x="446" y="284" class="vartext" font-style="italic">N</text>
+  <text x="467" y="296" class="subtext">tgt</text>
+  <text x="455" y="326" class="ann">target sat</text>
+
+  <!-- legend -->
+  <circle cx="20" cy="348" r="4.5" class="dot-pr"/>
+  <text x="30" y="348" class="legend-label">DD pseudorange (unary)</text>
+  <circle cx="200" cy="348" r="4.5" class="dot-cp"/>
+  <text x="210" y="348" class="legend-label">DD carrier phase</text>
+  <circle cx="345" cy="348" r="4.5" class="dot-imu"/>
+  <text x="355" y="348" class="legend-label">IMU</text>
+
+</svg>

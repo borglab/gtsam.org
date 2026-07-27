@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isam2_0',['ISAM2',['../a01592.html',1,'']]]
+  ['cholesky_0',['Cholesky',['../a01951.html',1,'Solving by multifrontal variable elimination (QR and Cholesky)'],['../a01952.html',1,'Solving by sequential variable elimination (QR and Cholesky)']]]
 ];

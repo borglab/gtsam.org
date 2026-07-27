@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['base_0',['Base',['../a01587.html',1,'']]]
+  ['and_20cholesky_0',['and Cholesky',['../a01951.html',1,'Solving by multifrontal variable elimination (QR and Cholesky)'],['../a01952.html',1,'Solving by sequential variable elimination (QR and Cholesky)']]]
 ];

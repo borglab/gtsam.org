@@ -4,10 +4,9 @@ Quickstart
 In the root library folder execute:
 
 ```
-#!bash
-$ mkdir build
-$ cd build
-$ cmake ..
-$ make check (optional, runs unit tests)
-$ make install
+cmake -S . -B build
+cmake --build build --target check
+cmake --build build --target install
 ```
+
+The `check` target is optional, but recommended when validating a local build.

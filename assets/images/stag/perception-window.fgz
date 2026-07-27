@@ -1,0 +1,62 @@
+fgz 1
+theme classic
+style node_size=8.4mm factor_size=2.4mm label_sep=0.05pt
+
+title = \text{Perception: fixed-lag smoothing}
+past = \text{past 5 s}
+controls = \text{known controls}
+xm5 = x_{t\!-\!5}
+xm4 = x_{t\!-\!4}
+xm3 = x_{t\!-\!3}
+xm2 = x_{t\!-\!2}
+xm1 = x_{t\!-\!1}
+x0 = x_t
+dyn = f
+um4 = u_{t\!-\!4}
+um3 = u_{t\!-\!3}
+um2 = u_{t\!-\!2}
+um1 = u_{t\!-\!1}
+u0 = u_t
+zm5 = z_{t\!-\!5}
+zm4 = z_{t\!-\!4}
+zm3 = z_{t\!-\!3}
+zm2 = z_{t\!-\!2}
+zm1 = z_{t\!-\!1}
+z0 = z_t
+
+text title (8.5, 5.35) font=small
+text past (8.5, 4.86) font=scriptsize
+text controls (8.5, 4.42) font=scriptsize color=blue!65!black
+
+known um4 (2.5, 3.72) size=6.8mm
+known um3 (5.5, 3.72) size=6.8mm
+known um2 (8.5, 3.72) size=6.8mm
+known um1 (11.5, 3.72) size=6.8mm
+known u0 (14.5, 3.72) size=6.8mm
+
+variable xm5 (1.0, 2.5)
+variable xm4 (4.0, 2.5)
+variable xm3 (7.0, 2.5)
+variable xm2 (10.0, 2.5)
+variable xm1 (13.0, 2.5)
+variable x0 (16.0, 2.5) size=9.2mm
+
+factor {xm5, xm4, um4} color=black size=2.6mm
+factor {xm4, xm3, um3} color=black size=2.6mm
+factor {xm3, xm2, um2} color=black size=2.6mm
+factor {xm2, xm1, um1} color=black size=2.6mm
+factor {xm1, x0, u0} color=black size=2.6mm
+
+factor {xm5} (1.0, 1.0) color=black size=2.6mm
+factor {xm4} (4.0, 1.0) color=black size=2.6mm
+factor {xm3} (7.0, 1.0) color=black size=2.6mm
+factor {xm2} (10.0, 1.0) color=black size=2.6mm
+factor {xm1} (13.0, 1.0) color=black size=2.6mm
+factor {x0} (16.0, 1.0) color=black size=2.6mm
+
+text zm5 (1.42, 0.74) font=tiny
+text zm4 (4.42, 0.74) font=tiny
+text zm3 (7.42, 0.74) font=tiny
+text zm2 (10.42, 0.74) font=tiny
+text zm1 (13.42, 0.74) font=tiny
+text z0 (15.46, 0.74) font=tiny

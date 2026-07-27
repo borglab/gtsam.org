@@ -1,4 +1,4 @@
 var a00866 =
 [
-    [ "operator<<", "a00866.html#ae7a6582902c6daf9f20f2f7e466c60d8", null ]
+    [ "gtsam::EliminateQR", "a01968.html#ab56c4bfa363f8c23c48eb078e9c84a9c", null ]
 ];

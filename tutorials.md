@@ -1,12 +1,13 @@
 ---
 layout: page
-title: Tutorials
+title: Tutorial
 permalink: /tutorials/
 ---
 
-{% for tutorial in site.tutorials %}
-{{ tutorial.date | date: "%b %-d, %Y" }}:
-# [{{ tutorial.title }}]({{ tutorial.url | prepend: site.baseurl }})
-{% endfor %}
-  
-  
+The main GTSAM tutorial is:
+
+- [Factor Graphs and GTSAM: A Hands-on Introduction](/tutorials/intro.html)
+
+For a broader treatment of the same ideas in robotics, see [Factor graphs for robot perception](https://www.cs.cmu.edu/~kaess/pub/Dellaert17fnt.pdf) by Frank Dellaert and Michael Kaess.
+
+This branch keeps the existing tutorial presentation and updates the surrounding docs pages first, rather than switching the site generator at the same time.

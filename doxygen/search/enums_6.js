@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kernelfunctiontype_0',['KernelFunctionType',['../a01596.html#a8be373f34edc0a9d28b1bfab5dd62ba0',1,'gtsam']]]
+  ['integrationmode_0',['IntegrationMode',['../a01487.html#aee7e6f67ebdd7ddfeb5076d39a05077a',1,'gtsam::dynamics']]]
 ];

@@ -1,0 +1,115 @@
+fgz 1
+theme classic
+style node_size=7.9mm factor_size=2.4mm label_sep=0.04pt
+
+title = \text{STAG: Sense-Think-Act with one rolling factor graph}
+sense = \text{Sense}
+think = \text{Think \& Act}
+now = \text{now}
+past = \text{measurements}
+future = \text{objectives}
+known_controls = \text{known controls}
+opt_controls = \text{optimized controls}
+xm5 = x_{t\!-\!5}
+xm4 = x_{t\!-\!4}
+xm3 = x_{t\!-\!3}
+xm2 = x_{t\!-\!2}
+xm1 = x_{t\!-\!1}
+x0 = x_t
+xp1 = x_{t+1}
+xp2 = x_{t+2}
+xp3 = x_{t+3}
+xp4 = x_{t+4}
+xp5 = x_{t+5}
+dyn = f
+um4 = u_{t\!-\!4}
+um3 = u_{t\!-\!3}
+um2 = u_{t\!-\!2}
+um1 = u_{t\!-\!1}
+u0 = u_t
+up1 = u_{t+1}
+up2 = u_{t+2}
+up3 = u_{t+3}
+up4 = u_{t+4}
+up5 = u_{t+5}
+zm5 = z_{t\!-\!5}
+zm4 = z_{t\!-\!4}
+zm3 = z_{t\!-\!3}
+zm2 = z_{t\!-\!2}
+zm1 = z_{t\!-\!1}
+z0 = z_t
+gp1 = g_{t+1}
+gp2 = g_{t+2}
+gp3 = g_{t+3}
+gp4 = g_{t+4}
+gp5 = g_{t+5}
+
+text title (14.0, 6.18) font=small
+text sense (6.4, 5.48) font=small
+text think (21.5, 5.48) font=small
+text known_controls (6.4, 4.90) font=scriptsize color=blue!55!black
+text opt_controls (21.5, 4.90) font=scriptsize color=green!40!black
+text past (6.4, 0.45) font=scriptsize color=blue!65!black
+text future (21.5, 0.45) font=scriptsize color=green!45!black
+box (13.6, 0.7) (13.6, 5.72) style=dashed color=black!45
+text now (13.6, 4.82) font=scriptsize
+
+known um4 (2.25, 3.82) size=6.7mm
+known um3 (4.75, 3.82) size=6.7mm
+known um2 (7.25, 3.82) size=6.7mm
+known um1 (9.75, 3.82) size=6.7mm
+known u0 (12.3, 3.82) size=6.7mm
+variable up1 (14.9, 3.82)
+variable up2 (17.45, 3.82)
+variable up3 (19.95, 3.82)
+variable up4 (22.45, 3.82)
+variable up5 (24.95, 3.82)
+
+variable xm5 (1.0, 2.7)
+variable xm4 (3.5, 2.7)
+variable xm3 (6.0, 2.7)
+variable xm2 (8.5, 2.7)
+variable xm1 (11.0, 2.7)
+variable x0 (13.6, 2.7) size=8.8mm
+variable xp1 (16.2, 2.7)
+variable xp2 (18.7, 2.7)
+variable xp3 (21.2, 2.7)
+variable xp4 (23.7, 2.7)
+variable xp5 (26.2, 2.7)
+
+factor {xm5, xm4, um4} color=black size=2.5mm
+factor {xm4, xm3, um3} color=black size=2.5mm
+factor {xm3, xm2, um2} color=black size=2.5mm
+factor {xm2, xm1, um1} color=black size=2.5mm
+factor {xm1, x0, u0} color=black size=2.5mm
+factor {x0, xp1, up1} color=black size=2.5mm
+factor {xp1, xp2, up2} color=black size=2.5mm
+factor {xp2, xp3, up3} color=black size=2.5mm
+factor {xp3, xp4, up4} color=black size=2.5mm
+factor {xp4, xp5, up5} color=black size=2.5mm
+
+factor {xm5} (1.0, 1.2) color=black size=2.5mm
+factor {xm4} (3.5, 1.2) color=black size=2.5mm
+factor {xm3} (6.0, 1.2) color=black size=2.5mm
+factor {xm2} (8.5, 1.2) color=black size=2.5mm
+factor {xm1} (11.0, 1.2) color=black size=2.5mm
+factor {x0} (13.6, 1.2) color=black size=2.5mm
+
+factor {xp1} (16.2, 1.2) color=black size=2.5mm
+factor {xp2} (18.7, 1.2) color=black size=2.5mm
+factor {xp3} (21.2, 1.2) color=black size=2.5mm
+factor {xp4} (23.7, 1.2) color=black size=2.5mm
+factor {xp5} (26.2, 1.2) color=black size=2.5mm
+
+text zm5 (1.38, 0.88) font=tiny
+text zm4 (3.88, 0.88) font=tiny
+text zm3 (6.38, 0.88) font=tiny
+text zm2 (8.88, 0.88) font=tiny
+text zm1 (11.38, 0.88) font=tiny
+text z0 (13.94, 0.88) font=tiny
+
+text gp1 (16.58, 0.88) font=tiny
+text gp2 (19.08, 0.88) font=tiny
+text gp3 (21.58, 0.88) font=tiny
+text gp4 (24.08, 0.88) font=tiny
+text gp5 (25.38, 0.88) font=tiny

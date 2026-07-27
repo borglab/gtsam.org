@@ -25,9 +25,13 @@
 var NAVTREE =
 [
   [ "gtsam", "index.html", [
-    [ "Creating new factor and variable types", "index.html#new_factor_variable_types", null ],
-    [ "Deprecated List", "a01583.html", null ],
-    [ "Modules", "modules.html", "modules" ],
+    [ "GTSAM", "a11826.html", [
+      [ "Creating new factor and variable types", "a11826.html#new_factor_variable_types", null ]
+    ] ],
+    [ "GTSAM_UNSTABLE", "a11827.html", [
+      [ "Overview", "a11827.html#gtsam_unstable_overview", null ]
+    ] ],
+    [ "Deprecated List", "a01949.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -50,13 +54,15 @@ var NAVTREE =
         [ "Typedefs", "functions_type.html", "functions_type" ],
         [ "Enumerations", "functions_enum.html", null ],
         [ "Enumerator", "functions_eval.html", null ],
-        [ "Related Functions", "functions_rela.html", null ]
+        [ "Related Symbols", "functions_rela.html", "functions_rela" ]
       ] ]
     ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -66,53 +72,42 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "a00002.html",
-"a00134.html#ac3cf8e8e70cd696d9c789c31bc1e89a7",
-"a00479.html",
-"a00899.html",
-"a01241.html",
-"a01596.html#a35c269c3243cab16a7475239a9c91021",
-"a01596.html#afc19854e0bfc1acadb00ff00a043cc17",
-"a02588.html",
-"a02728.html",
-"a02872.html#a16c7420cd2b6dbf6360357bb72cea7e2",
-"a02940.html#ad5f0ef91a7d10bc4892951e8ada9f055",
-"a03048.html#a033c830a304c8e699be7383d13d3b715",
-"a03104.html#a780c1182175d2d47f2054b5b8bab90dd",
-"a03200.html#a3cb324d48dd534ceab417db6a94a9a3a",
-"a03288.html#a2cdb58c69c0afbea2bf74af9798b523a",
-"a03356.html#afdded5fc9f9944ba70d86cf423df57c4",
-"a03480.html#a1bd7154e74538b5934fc616bb5ef7281",
-"a03512.html",
-"a03560.html",
-"a03688.html#a5c0a6e392c37efb53ea264a0894da9bb",
-"a03744.html#a31ae5450f0fbcfc7e8edf0cb9deb21c2",
-"a03792.html#a48cb80c1c64a52be1cefd24b17de65c9",
-"a03872.html#a5bf67e2ab8d87bf749d6258a18f8860b",
-"a03960.html",
-"a04016.html#ae6001983487246c450a50f2e50817c50",
-"a04088.html#ac98d07dd8f7b70e16ccb9a01abf56b9c",
-"a04164.html#a62835e11ff9409ffd26a59c6ec8d7cfd",
-"a04240.html#aecdcceaf150115c58443790b71474131",
-"a04340.html#a9b334c28f63172f3b0ed4e77989e3a93",
-"a04384.html#af2f0633976570cd713705bdb91598bfdaeb1c226b0cf512577736b419cf9c301a",
-"a04456.html",
-"a04496.html#a8eaa669b1681529cdc98d1e7b7b6203ba02bccfba6114d08e8cd0f6e18915038b",
-"a04596.html#a2addf6cc0614cf07451593677475690e",
-"a04684.html#a63ed8a6a94fe1b40b58de2e271c63640",
-"a04796.html#a549fef1272025c45472f2e4294bd319e",
-"a04860.html#a2d89ad40d9d152a28288cb96a2281fc4",
-"a04896.html#a77ec7f1a8e17a46ad0a6e0d092b2549f",
-"a04976.html#a035c1a57ea9d048d62d3d09b13fd86d7",
-"a05032.html#a4d3cbaac6427014110104e466cb02686",
-"a05132.html#a33ff611b1bc4a1f8127eb7dafcf9515a",
-"a05168.html#a5b7a4c5d2f2ae1f2a0d28d08622434f8",
-"a05216.html#a20d9a7d41e7826339c5f27d41eca81c6",
-"a05280.html#a768c00d6eec5a1241b49f8095c8cc673",
-"a05320.html#aa73006508ebe7142eeeafa5cb404071d",
-"a05364.html#ad828bbe70d68da368a1ce60ed4b56439",
-"a05448.html#ad3ca918c4d0e2c6bfedb0b80cd4f7bf1",
-"functions_func_j.html"
+"a00509.html",
+"a01019_source.html",
+"a01553.html",
+"a01968.html#a405f3793afc2cc3173c3fbdecadb162a",
+"a01974.html#a50e24f0a9085721425089cdce18f2475",
+"a03095.html#a0b891b92eae0f946f0dce5892f6b74d3",
+"a03423.html#afbe0371a73fc617697d306f2442b6cd5",
+"a03771.html",
+"a03971.html#a8989c38cd20a34a5e44c1a1fa7b5612d",
+"a04071.html#a47695cc70eddbdfe333190267f322587",
+"a04119.html#ab2b9bbc643244dbabfc6c82bee870499",
+"a04227.html#a41194f31ec42052094cf91d81dcd796d",
+"a04327.html#ad3dc97ac8c92c02c5b600a110598b25a",
+"a04371.html#a3941a6711f3fe29c7880f349bf23f61c",
+"a04443.html#aa969a5e377a37be43a5d0bb685324ec4",
+"a04491.html#ae97958b0cfa1ccf9f43c0943eee21731",
+"a04623.html#a8153c8fd99cd74b6fc12c42cf30e3846",
+"a04763.html#a7015fe8c3bca3f16cbb2cde2c0c0490e",
+"a04851.html",
+"a04967.html#a705057d0849755bb974848f57ca1482f",
+"a05047.html#a7c719ae67f222f66569ccb3b526cb9cb",
+"a05119.html#aa928242396405483048bedd4a00e804c",
+"a05279.html#a788004c0af2e4be08ab6ca2329d3696f",
+"a05411.html#a4dd3fbba46a6dff75bcf902931a3b769",
+"a05479.html#ac7b40cb9839dda9d000349798beeb012",
+"a05575.html#a5c012af40cd8661b5971c83100141c60",
+"a05671.html",
+"a05763.html#a68ff516d3772c84f66a3eea941c3c926",
+"a05859.html#ab29c77142aaf1d7342f52a5f8d3336ae",
+"a05895.html#aede1b5fdf576222b433f3fcaf789d4ae",
+"a05943.html#aa39f1014aa1cbfc9d9a941faa077070c",
+"a06055.html#a2ddc78ff0d17edffac357e11bd26ced1",
+"a11813.html",
+"namespacemembers_d.html"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+var SYNCONMSG = 'click to disable panel synchronization';
+var SYNCOFFMSG = 'click to enable panel synchronization';
+var LISTOFALLMEMBERS = 'List of all members';

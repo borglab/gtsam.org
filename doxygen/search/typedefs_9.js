@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['labelc_0',['LabelC',['../a02924.html#a8fd239c82a4836b3e6d2ce39b9c46e7f',1,'gtsam::DecisionTree']]]
+  ['labelc_0',['LabelC',['../a03343.html#adcdd80ab1af415d212397a2666320e35',1,'gtsam::DecisionTree']]]
 ];

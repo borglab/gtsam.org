@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['blaskernel_0',['BLASKernel',['../a03680.html#a5f3c3b9315279cf2112501b7c0a3b499',1,'gtsam::ConjugateGradientParameters']]]
+  ['axis_0',['Axis',['../a04919.html#a03dcd7ae858413a9b0622dc024345209',1,'gtsam::GraphvizFormatting']]]
 ];

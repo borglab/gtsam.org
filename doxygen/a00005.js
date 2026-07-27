@@ -1,5 +1,5 @@
 var a00005 =
 [
-    [ "gtsam::internal::FastDefaultAllocator< T >", "a02472.html", null ],
-    [ "gtsam::internal::FastDefaultVectorAllocator< T >", "a02476.html", null ]
+    [ "gtsam::internal::FastDefaultAllocator&lt; T &gt;", "a02851.html", null ],
+    [ "gtsam::internal::FastDefaultVectorAllocator&lt; T &gt;", "a02855.html", null ]
 ];

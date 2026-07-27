@@ -1,4 +1,5 @@
 var a00389 =
 [
-    [ "RQ", "a00389.html#a5172b5b6d51bd5348c7e551e1376f60a", null ]
+    [ "gtsam::Cyclic&lt; N &gt;", "a03607.html", "a03607" ],
+    [ "gtsam::traits&lt; Cyclic&lt; N &gt; &gt;", "a03611.html", null ]
 ];

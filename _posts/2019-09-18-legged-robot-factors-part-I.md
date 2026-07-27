@@ -1,7 +1,7 @@
 Author: Ross Hartley  
 email: <m.ross.hartley@gmail.com>
 
-This is the first blog post in a series about using factor graphs for legged robot state estimation. It is meant to provide a high-level overview of what I call *kinematic and contact factors* and how they can be used in GTSAM. More details can be found in our conference papers:
+This blog post is about using factor graphs for legged robot state estimation. It is meant to provide a high-level overview of what I call *kinematic and contact factors* and how they can be used in GTSAM. More details can be found in our conference papers:
  - [Hybrid Contact Preintegration for Visual-Inertial-Contact State Estimation Using Factor Graphs](https://arxiv.org/abs/1803.07531)
  - [Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors](https://arxiv.org/abs/1712.05873)
 
@@ -51,7 +51,7 @@ All together, a typical legged robot factor graph may be represented by the pict
 ## **Forward Kinematic Factor**
 The *forward kinematics factor* relates the base pose to the current contact pose using noisy encoder measurements. This is a simple relative pose factor which means we can use GTSAM's built in ``BetweenFactor<Pose3>`` factor to implement it. We just need to determine what the factor's covariance will be.
 
-Assuming the encoder noise is gaussian, we can map the encoder covariance to the contact pose covariance using the body **manipulator Jacobian** of the forward kinematics function. In general, the manipulator Jacobian maps joint angle rates to end effector twist, so it makes sense that it can be used to approximate the mapping of encoder uncertainty through the non-linearities of the robot's kinematics.
+Assuming the encoder noise is gaussian, we can map the encoder covariance to the contact pose covariance using the body **manipulator Jacobian** of the forward kinematics function. In general, the manipulator Jacobian maps joint angle rates to end effector twist, so it makes sense that it can be used to approximate the mapping of encoder uncertainty through the nonlinearities of the robot's kinematics.
 
 For example, if ``H_BC`` is pose of the contact frame relative to the base frame and ``J_BC`` is the corresponding body manipulator Jacobian, the *forward kinematic factor* can be implemented using the following GTSAM code:
 ```
@@ -97,7 +97,7 @@ Like the original *rigid contact factor*, the hybrid version can be created usin
 BetweenFactor<Pose3> hybrid_contact_factor(C(node-1), C(node), delta_Hij, noiseModel::Gaussian::Covariance(Sigma_ij);
 ```
 
-## **Coming soon...**
+## **Discussion**
 I briefly discussed two types of factors that can be used to improve legged robot state estimation: the ***forward kinematic factor*** and the ***(hybrid) rigid contact factor***. Combining these two factors allows for kinematic odometry to be added alongside other measurements (inertial, vision, etc.) when building up a factor graph.
 
-In particular, when developing the *rigid contact factor*, we made the strong assumption that a contact measurement implies zero angular and linear velocity of the contact frame. The factor tries to keep the entire pose of the foot fixed across two timesteps. This assumption may not be valid for all types of walking robots. In fact, it doesn't even hold for the Cassie robot! The roll angle about Cassie's foot is unactuated and free to move during walking. In the next post, I will discuss the **(hybrid) point contact factor** which makes no assumptions about the angular velocity of the contact frame. 
+In particular, when developing the *rigid contact factor*, we made the strong assumption that a contact measurement implies zero angular and linear velocity of the contact frame. The factor tries to keep the entire pose of the foot fixed across two timesteps. This assumption may not be valid for all types of walking robots. In fact, it doesn't even hold for the Cassie robot! The roll angle about Cassie's foot is unactuated and free to move during walking. In a future post, I may discuss the **(hybrid) point contact factor** which makes no assumptions about the angular velocity of the contact frame. 

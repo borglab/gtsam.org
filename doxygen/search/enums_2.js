@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['degeneracymode_0',['DegeneracyMode',['../a01596.html#ac3d021280c8a8b84903a8ce81f73ea0f',1,'gtsam']]]
+  ['coordinatesmode_0',['CoordinatesMode',['../a03775.html#ae4277d914aedd191dabc95684484ca8d',1,'gtsam::Rot3::CoordinatesMode'],['../a03927.html#a7df7fcee1896717df85a470b130859de',1,'gtsam::Unit3::CoordinatesMode']]]
 ];

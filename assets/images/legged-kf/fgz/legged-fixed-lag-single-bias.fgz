@@ -1,0 +1,27 @@
+fgz 1
+style node_size=7.2mm factor_size=2.6mm label_sep=0.15pt label_font=scriptsize
+
+xm1 = X_{k-1}
+xk = X_k
+xp1 = X_{k+1}
+b = b
+lm = \ell^{-}
+lp = \ell^{+}
+u1 = u_{k-1}
+u2 = u_k
+c1 = c^{-}
+c2 = c^{+}
+
+variable xm1 (1.0, 1.8) color=gray!15
+variable xk (3.8, 1.8) color=gray!15
+variable xp1 (6.6, 1.8) color=gray!15
+variable b (3.8, 3.3) color=yellow!18
+variable lm (2.4, 0.2) color=blue!8
+variable lp (5.2, 0.2) color=blue!8
+
+factor {xm1, xk, b} (2.4, 2.7) shape=square color=green!18 label=u1 size=5.6mm font=scriptsize
+factor {xk, xp1, b} (5.2, 2.7) shape=square color=green!18 label=u2 size=5.6mm font=scriptsize
+factor {xm1, lm} (1.7, 0.9) shape=square color=red!18 label=c1 size=5.6mm font=scriptsize
+factor {xk, lm} (3.1, 0.9) shape=square color=red!18 label=c1 size=5.6mm font=scriptsize
+factor {xk, lp} (4.5, 0.9) shape=square color=red!18 label=c2 size=5.6mm font=scriptsize
+factor {xp1, lp} (5.9, 0.9) shape=square color=red!18 label=c2 size=5.6mm font=scriptsize

@@ -4,106 +4,126 @@ title: Get Started
 permalink: /get_started/
 ---
 
-## Install GTSAM from Source
+The current stable release of GTSAM is 4.2. The active development line is pre-4.3 and recent alpha releases follow that track.
+
+## Fastest Start: Python Package
+
+If you want the easiest way to try GTSAM, install the Python package:
+
+```sh
+pip install gtsam
+```
+
+For the newest development build:
+
+```sh
+pip install gtsam-develop
+```
+
+This works well in local Python environments and in Google Colab.
+
+## Build from Source
+
+Clone the source from the [GTSAM GitHub repository](https://github.com/borglab/gtsam):
+
+```sh
+git clone https://github.com/borglab/gtsam.git
+cd gtsam
+```
 
 {% include quick_start_module.md %}
 
-Prerequisites:
+### Requirements
 
-- [Boost](http://www.boost.org/users/download/) >= 1.43 (Ubuntu: `sudo apt-get install libboost-all-dev`)
-- [CMake](http://www.cmake.org/cmake/resources/software.html) >= 3.0 (Ubuntu: `sudo apt-get install cmake`)
-- A modern compiler, i.e., at least gcc 4.7.3 on Linux.
+- A modern compiler:
+  - Linux: at least clang-11 or gcc-9
+  - macOS: at least Xcode 14.2
+  - Windows: at least MSVC 14.2
+- [CMake](https://cmake.org/download/) >= 3.10
 
-Optional prerequisites - used automatically if findable by CMake:
-
-- [Intel Threaded Building Blocks (TBB)](http://www.threadingbuildingblocks.org/) (Ubuntu: `sudo apt-get install libtbb-dev`)
-- [Intel Math Kernel Library (MKL)](http://software.intel.com/en-us/intel-mkl) (Ubuntu: [installing using APT](https://software.intel.com/en-us/articles/installing-intel-free-libs-and-python-apt-repo))
-    - See [Build](build.md) for more installation information
-    - Note that MKL may not provide a speedup in all cases. Make sure to benchmark your problem with and without MKL.
-
-## Install GTSAM from Ubuntu PPA
-
-GTSAM can be installed on Ubuntu via [these PPA repositories](https://launchpad.net/~borglab) as well.
-At present (Nov 2020), packages for Xenial (u16.04), Bionic (u18.04), and Focal (u20.04) are published.
-
-#### Add PPA for GTSAM nightly builds (develop branch)
+Ubuntu package:
 
 ```sh
-# Add PPA
-sudo add-apt-repository ppa:borglab/gtsam-develop
-sudo apt update  # not necessary since Bionic
-# Install:
-sudo apt install libgtsam-dev libgtsam-unstable-dev
+sudo apt-get install cmake
 ```
 
-#### Add PPA for the latest GTSAM 4.x stable release
+### Optional Boost Dependency
 
-```sh
-# Add PPA
-sudo add-apt-repository ppa:borglab/gtsam-release-4.0
-sudo apt update  # not necessary since Bionic
-# Install:
-sudo apt install libgtsam-dev libgtsam-unstable-dev
-```
+Boost is now optional and only needed when either of these flags is enabled:
 
-## Install GTSAM from Arch Linux AUR
+- `GTSAM_USE_BOOST_FEATURES`
+- `GTSAM_ENABLE_BOOST_SERIALIZATION`
 
-Note: Installing GTSAM on Arch Linux is not tested by the GTSAM developers.
+If you need Boost, install version 1.70 or newer:
 
-GTSAM is available in the Arch User Repository
-([AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository)) as
-[`gtsam`](https://aur.archlinux.org/packages/gtsam/).
+- Ubuntu: `sudo apt-get install libboost-all-dev`
+- macOS: `brew install boost`
+- Windows: prefer [vcpkg](https://github.com/microsoft/vcpkg)
 
-Note you can manually install the package by following the instructions on the
-[Arch Wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages)
-or use an [AUR helper](https://wiki.archlinux.org/index.php/AUR_helpers) like
-[`yay`](https://aur.archlinux.org/packages/yay/)
-(recommended for ease of install).
+### Optional Dependencies
 
-It is also recommended to use the
-[arch4edu](https://wiki.archlinux.org/index.php/Unofficial_user_repositories#arch4edu)
-repository. They are hosting many packages related to education and research,
-including robotics such as ROS. Adding a repository allows for you to install
-binaries of packages, instead of compiling them from source.
-This will greatly speed up your installation time. Visit [here](https://github.com/arch4edu/arch4edu/wiki/Add-arch4edu-to-your-Archlinux) to add and use arch4edu. 
+- [Intel Threaded Building Blocks (TBB)](https://github.com/uxlfoundation/oneTBB)
+  - Ubuntu: `sudo apt-get install libtbb-dev`
+- [Intel Math Kernel Library (MKL)](https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl.html)
+  - Benchmark before enabling it; it does not help all workloads.
 
-#### Install GTSAM
+For more build flags and platform notes, see the [Build](/build/) page.
+
+## Ubuntu Packages and PPAs
+
+Ubuntu users can also use the BorgLab Launchpad archives:
+
+- [BorgLab Launchpad PPAs](https://launchpad.net/~borglab)
+- [Nightly develop PPA](https://launchpad.net/~borglab/+archive/ubuntu/gtsam-develop)
+
+For the most current configuration options, source builds are still the safest path.
+
+## Arch Linux
+
+GTSAM is available in the [AUR](https://aur.archlinux.org/packages/gtsam/).
+
 ```sh
 yay -S gtsam
 ```
 
-or
-
-#### Install GTSAM with Intel Accelerations
+For Intel-accelerated builds:
 
 ```sh
 yay -S gtsam-mkl
 ```
 
-To discuss any issues related to this package refer to the comments section on
-the AUR page of `gtsam` [here](https://aur.archlinux.org/packages/gtsam/).
+## Conda-forge
 
-## Install GTSAM via conda-forge (conda/mamba installation) on Linux/MacOS/Windows
+Community-maintained GTSAM packages are available from
+[conda-forge](https://conda-forge.org) for Linux, macOS, and Windows. These
+packages are not tested by the GTSAM developers.
 
-Note: Installing GTSAM via conda-forge is not tested by the GTSAM developers.
-
-GTSAM is available on [conda-forge](https://conda-forge.org) via the 
-[`gtsam` package](https://anaconda.org/conda-forge/gtsam) on Linux, MacOS and Windows platforms.
-
-If you already have a working installation of conda/mamba/micromamba, installation is as easy as
+Install the [`gtsam` package](https://anaconda.org/conda-forge/gtsam) with your
+preferred conda-compatible package manager:
 
 ```sh
-conda install gtsam -c conda-forge  # if you use conda
-mamba install gtsam -c conda-forge  # if you use mamba
-micromamba install gtsam -c conda-forge  # if you use micromamba, recommended
+conda install -c conda-forge gtsam
+mamba install -c conda-forge gtsam
+micromamba install -c conda-forge gtsam
 ```
 
-If you do not yet have a working installation of conda/mamba/micromamba, 
-we recommend installing micromamba which is as easy as 
-(this works on any platform in your favourite shell):
+If you need a package manager, see the
+[micromamba installation guide](https://mamba.readthedocs.io/en/stable/installation/micromamba-installation.html).
+It recommends this installer for Linux, macOS, and Git Bash on Windows:
 
 ```sh
 "${SHELL}" <(curl -L micro.mamba.pm/install.sh)
 ```
 
-For more information about micromamba, please visit their [website](https://mamba.readthedocs.io/en/latest/micromamba-installation.html).
+For Windows PowerShell, use:
+
+```powershell
+Invoke-Expression ((Invoke-WebRequest -Uri https://micro.mamba.pm/install.ps1).Content)
+```
+
+## Wrappers
+
+GTSAM also ships with Python and MATLAB wrappers:
+
+- [Python wrapper README](https://github.com/borglab/gtsam/blob/develop/python/README.md)
+- [MATLAB wrapper README](https://github.com/borglab/gtsam/blob/develop/matlab/README.md)

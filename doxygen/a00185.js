@@ -1,6 +1,7 @@
 var a00185 =
 [
-    [ "gtsam::DiscreteKeys", "a02996.html", "a02996" ],
-    [ "DiscreteKey", "a00185.html#acd19e5d1e5d06c37246d4c15af38ee67", null ],
-    [ "operator&", "a00185.html#a0be4f243161c2fd937df60aee511eb16", null ]
+    [ "gtsam::DiscreteKeys", "a03423.html", "a03423" ],
+    [ "gtsam::traits&lt; DiscreteKeys &gt;", "a03427.html", null ],
+    [ "gtsam::DiscreteKey", "a01955.html#ga5d440f1429574be613728cd7ad50946d", null ],
+    [ "gtsam::operator&", "a01968.html#a0be4f243161c2fd937df60aee511eb16", null ]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['deprecated_20list_0',['Deprecated List',['../a01583.html',1,'']]]
+  ['and_20variable_20types_0',['Creating new factor and variable types',['../a11826.html#new_factor_variable_types',1,'']]]
 ];

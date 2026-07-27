@@ -8,30 +8,32 @@ GTSAM is a sensor fusion library based on factor graphs, developed by [Frank Del
 
 Current Georgia Tech BORG Lab contributors include:
 * Varun Agrawal
-* Abhinav Jain
-* Matthew Sklar
-* Mandy Xie
+* Fan Jiang
 
 Below are the many Georgia Tech BORG lab alumni with their current afffiliation, if known:
 
 * Jeremy Aguilon, Facebook
+* Abhinav Jain
 * Pablo Alcantarilla, iRobot
 * Sungtae An
 * Doru Balcan, Bank of America
 * Chris Beall, Nuro
 * Luca Carlone, MIT
+* Mandy Xie, stealth startup
 * Krunal Chande, Fyusion
 * Alex Cunningham, TRI
 * Jing Dong, Facebook Reality Labs
 * Paul Drews, TRI
 * Alireza Fathi, Google
 * Eohan George
+* Gerry Chen, Tesla
 * Alex Hagiopol, Microsoft
 * Viorela Ila, U. Sydney
 * Vadim Indelman, the Technion
 * David Jensen, GTRI
 * Yong-Dian Jian, Nvidia
 * Michael Kaess, Carnegie Mellon
+* Matthew Sklar
 * Abhijit Jundu, Google
 * Zhaoyang Lv, Facebook Reality Labs
 * Andrew Melim, Oculus
@@ -45,6 +47,7 @@ Below are the many Georgia Tech BORG lab alumni with their current afffiliation,
 * Natesh Srinivasan, Apple
 * Alex Trevor, Fyusion
 * Stephen Williams, BossaNova
+* Yetong Zhang, Waymo
 
 In addition, we have had contrubutions from many others at different institutions and labs, again listed below with their current affiliations if known:
 

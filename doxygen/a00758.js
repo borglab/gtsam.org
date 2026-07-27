@@ -1,9 +1,12 @@
 var a00758 =
 [
-    [ "gtsam::Subgraph", "a03984.html", "a03984" ],
-    [ "gtsam::Subgraph::Edge", "a03988.html", null ],
-    [ "gtsam::SubgraphBuilderParameters", "a03992.html", "a03992" ],
-    [ "gtsam::SubgraphBuilder", "a03996.html", null ],
-    [ "buildFactorSubgraph", "a00758.html#ac06ac82e22341b1b9fdcd4c67280f619", null ],
-    [ "splitFactorGraph", "a00758.html#ab3749ce0f63e205e55daa615aa1fd74a", null ]
+    [ "gtsam::traits&lt; Errors &gt;", "a04283.html", null ],
+    [ "gtsam::Errors", "a01968.html#a9793011498324af94cfcc3cea206991b", null ],
+    [ "gtsam::axpy", "a01968.html#a5644e12e89afaac433f5d61c3d8e9003", null ],
+    [ "gtsam::createErrors", "a01968.html#aa84fa88db91d429bec261c655fc54bd6", null ],
+    [ "gtsam::dot", "a01968.html#a106ec458ddb425604809da93346af55d", null ],
+    [ "gtsam::operator+", "a01968.html#a552de56fca49d1b4942dd9b8e8357b0a", null ],
+    [ "gtsam::operator-", "a01968.html#aa91c0485819ec2bfd249a922c81e3eb4", null ],
+    [ "gtsam::operator-", "a01968.html#af2dc48a6a2e9abf4d0636578847a6b5a", null ],
+    [ "gtsam::print", "a01968.html#a6abcac97e441f1454790ff53caa1b229", null ]
 ];

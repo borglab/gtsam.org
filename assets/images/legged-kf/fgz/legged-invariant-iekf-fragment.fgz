@@ -1,0 +1,29 @@
+fgz 1
+style node_size=7.6mm factor_size=2.6mm label_sep=0.15pt label_font=scriptsize
+
+xk = X_k
+fk1 = f_1
+fk2 = f_2
+fk3 = f_3
+fk4 = f_4
+pp = \hat{X}_k^{-}
+c1 = c_1
+c2 = c_2
+c3 = c_3
+c4 = c_4
+ttl = \mathrm{contact\ update\ graph\ fragment}
+
+text ttl (4.8, 4.25) font=small
+
+variable xk (1.4, 2.0) color=gray!15
+factor {xk} (0.1, 2.0) shape=square color=green!18 label=pp size=6.0mm font=scriptsize
+
+variable fk1 (5.4, 3.5) color=blue!8
+variable fk2 (5.4, 2.5) color=blue!8
+variable fk3 (5.4, 1.5) color=blue!8
+variable fk4 (5.4, 0.5) color=blue!8
+
+factor {xk, fk1} (3.4, 3.1) shape=square color=red!18 label=c1 size=5.6mm font=scriptsize
+factor {xk, fk2} (3.4, 2.35) shape=square color=red!18 label=c2 size=5.6mm font=scriptsize
+factor {xk, fk3} (3.4, 1.65) shape=square color=red!18 label=c3 size=5.6mm font=scriptsize
+factor {xk, fk4} (3.4, 0.9) shape=square color=red!18 label=c4 size=5.6mm font=scriptsize

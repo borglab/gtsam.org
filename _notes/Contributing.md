@@ -1,52 +1,51 @@
 ---
 layout: gtsam-note
-title:  "Contributing to GTSAM"
-date:   2019-05-20 21:25:00 -0400
+title: "Contributing to GTSAM"
+permalink: /notes/contributing/
+date: 2019-05-20 21:25:00 -0400
 categories: roadmap
 ---
 
 # Introduction
-If you have improvements to GTSAM, send us your pull requests!
 
-Our standard workflow is to fork GTSAM’s [official GitHub repository](https://github.com/borglab/gtsam) into your own GitHub account and then push your changes into a branch on your fork. Once you believe your code is ready to be merged into GTSAM’s primary repository, open a pull request via the GitHub website. Your code will then undergo an interactive review process and Continuous Integration (CI) tests before it is merged into GTSAM’s primary repository.
+If you have improvements to GTSAM, send us your pull requests.
 
-We use [Giflow](https://nvie.com/posts/a-successful-git-branching-model/) as our branching model, as illustrated below, so most likely your branch will be either a *fix* or a *feature* branch.
+Our standard workflow is to fork GTSAM's [official GitHub repository](https://github.com/borglab/gtsam) into your own GitHub account and then push your changes into a branch on your fork. Once you believe your code is ready to be merged into GTSAM's primary repository, open a pull request via GitHub. Your code will then go through review and CI before it is merged.
 
-![Gitflow branching Model](https://nvie.com/img/git-model@2x.png)
+We generally follow a GitFlow-style branching model, so most work will land in a feature branch or a fix branch.
 
-GTSAM’s CI service runs on all pull requests each time they are submitted and updated. Pull requests cannot be merged into master unless all unit tests pass on all supported platform configurations.
+![GitFlow branching model](https://nvie.com/img/git-model@2x.png)
 
-<!-- We would like to hear about your success stories if you’ve used GTSAM in your own projects. Please consider contributing to our GTSAM Gallery by editing doc/gallery.rst and submitting a pull request with the update! -->
+GTSAM's CI runs on pull requests each time they are submitted and updated. Pull requests cannot be merged into `master` unless the required tests pass.
 
 # Licensing
 
-Important note: GTSAM is an open source project licensed under extremely flexible terms intended to encourage use by anyone, for any purpose. When you make a contribution to the GTSAM project, you are agreeing to do so under those same terms.
+GTSAM is open source under a permissive BSD license. By contributing, you agree that your changes are contributed under those same terms.
 
 # Testing
 
-We are strong adherents of test-driven design and debugging. When you contribute a new feature, start with a unit test that exercises the API you want to provide, and only then write the code. If you believe there is an issue with GTSAM, please try to write a minimal unit test to reproduce the behavior, then fix it. Always write the test first.
+We strongly prefer test-driven development. If you contribute a new feature, start with a unit test that exercises the API you want to provide, then write the code. If you suspect a bug, try to write a minimal reproducer first and fix that.
 
 # Issue Tracking
 
-For complex changes, especially those that will span multiple PRs, please open a GitHub issue and solicit design feedback before you invest a lot of time in code.
+For larger or multi-PR changes, open a GitHub issue first and solicit design feedback before investing heavily in implementation.
 
-Be prepared to engage in active code review on your pull requests. If a reviewer asks you for more information, that is a sign you should add more documentation to your PR.
+Be prepared to engage in active code review. If a reviewer asks for more context, that usually means the PR needs better explanation or documentation.
 
-A PR generally should not include more than 750 added or changed lines (the green +### number as reported by github), and must not include more than 1500 lines of *code*.
+As a rough guideline, a PR should not include more than 750 changed lines unless there is a clear reason, and should not include more than 1500 lines of code.
 
-# Coding Conventions:
+# Coding Conventions
 
-For C++ we follow the [Google C++ style guide](https://google.github.io/styleguide/cppguide.html). 
+For C++, we follow the [Google C++ style guide](https://google.github.io/styleguide/cppguide.html).
 
-For Python we use pep8 formatting and ask that you resolve all pylint issues.
+For Python, we expect `pep8`-style formatting and clean linter output.
 
-### Using GTSAM_EXPORT:
+## Using `GTSAM_EXPORT`
 
-On Windows it is necessary to explicitly export all functions from the library which should be externally accessible. To do this, include the macro GTSAM_EXPORT in your class or function definition.
+On Windows it is necessary to explicitly export functions and classes that should be externally accessible. Do this with the `GTSAM_EXPORT` macro.
 
-For example:
-```
+```cpp
 class GTSAM_EXPORT MyClass { ... };
 
-GTSAM_EXPORT myFunction();
+GTSAM_EXPORT void myFunction();
 ```

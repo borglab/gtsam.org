@@ -1,6 +1,6 @@
 var a00155 =
 [
-    [ "gtsam::FitBasis< Basis >", "a02888.html", "a02888" ],
-    [ "Sample", "a00155.html#a9920fe883a2f506440aca7c1a2bd1a00", null ],
-    [ "Sequence", "a00155.html#a24ec5d6ec6b211d0cbaf645c11c198de", null ]
+    [ "gtsam::FitBasis&lt; Basis &gt;", "a03291.html", "a03291" ],
+    [ "gtsam::Sample", "a01968.html#a355c8c681435089f6f0c244435078e16", null ],
+    [ "gtsam::Sequence", "a01968.html#a2a137434674936dc624a2087c79ae721", null ]
 ];
