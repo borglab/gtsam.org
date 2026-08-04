@@ -8,13 +8,13 @@ Author: [Jash Shah](https://github.com/jashshah999)
 <!-- - TOC -->
 {:toc}
 
-Existing 3D Gaussian Splatting SLAM systems optimize camera poses via gradient descent through a differentiable rasterizer. Some (e.g., [LoopSplat](https://arxiv.org/abs/2408.10154)) add loop closure as a separate post-hoc pose graph step, but the core pose estimation against the Gaussian map remains gradient-based with no factor graph structure. [gtsam-splatfactors](https://github.com/jashshah999/gtsam-splatfactors) takes a different approach: it expresses the rendering itself as a GTSAM factor, so that pose optimization, loop closure, and multi-sensor fusion all live natively in the same iSAM2 Bayes tree.
+Most 3D Gaussian Splatting SLAM systems optimize camera poses via gradient descent through a differentiable rasterizer. Some (e.g., [LoopSplat](https://arxiv.org/abs/2408.10154)) add loop closure through a separate pose graph, but the rendering objective itself never enters that graph: pose estimation against the Gaussian map remains gradient-based. [gtsam-splatfactors](https://github.com/jashshah999/gtsam-splatfactors) takes a different approach: it expresses the rendering itself as a GTSAM factor, so that pose optimization, loop closure, and multi-sensor fusion all live natively in the same iSAM2 Bayes tree.
 
-## The problem with gradient-descent SLAM
+## The problem with decoupled pose optimization
 
-Systems like [SplaTAM](https://spla-tam.github.io/) and [MonoGS](https://arxiv.org/abs/2405.18468) achieve excellent rendering quality, but their pose optimization is decoupled from the global SLAM backend. When drift accumulates and a loop closure is detected, the correction must be applied through a separate pose graph that has no knowledge of the rendering objective. The photometric loss and the global consistency live in different optimization frameworks.
+Systems like [SplaTAM](https://spla-tam.github.io/) and [MonoGS](https://arxiv.org/abs/2312.06741) achieve excellent rendering quality, but they have no mechanism for global correction: when drift accumulates, there is no loop closure to fix it. Systems that do add loop closure apply the correction through a separate pose graph that has no knowledge of the rendering objective. The photometric loss and the global consistency live in different optimization frameworks.
 
-Factor graph SLAM unifies these. iSAM2's Bayes tree gives you O(log n) incremental updates when new constraints (odometry, loop closures, IMU) are added. The question is: can we express 3D Gaussian Splatting rendering as a factor in this framework?
+Factor graph SLAM unifies these. iSAM2's Bayes tree gives you efficient incremental updates that re-eliminate only the affected part of the graph when new constraints (odometry, loop closures, IMU) are added. The question is: can we express 3D Gaussian Splatting rendering as a factor in this framework?
 
 ## GaussianSplatFactor
 
@@ -70,18 +70,18 @@ We evaluated on four KITTI sequences with loop closures. The pipeline uses stere
 
 <figure class="center" style="width: 100%; max-width: 1100px; text-align: center;">
   <img src="/assets/images/gaussian-splatting-slam/kitti_00.png"
-    alt="KITTI sequence 00 trajectory comparison: VO drifts to 29m error, iSAM2 with loop closure reduces to 7.8m."
+    alt="KITTI sequence 00 trajectory comparison: VO drifts to 29m error; iSAM2 with loop closure reduces it to 7.8m."
     style="width: 100%; display: block; margin-left: auto; margin-right: auto;" />
   <figcaption>KITTI sequence 00. Left: bird's-eye trajectory. Right: per-frame position error. Loop closure reduces ATE from 29m to 7.8m (73% improvement).</figcaption>
 </figure>
 <br />
 
-| Sequence | Trajectory | VO ATE | iSAM2 + LC | Improvement |
-|----------|-----------|--------|-----------|-------------|
-| 00 | 1483m | 29.14m | 7.76m | 73% |
-| 05 | 937m | 21.66m | 12.24m | 43% |
-| 07 | 373m | 9.67m | 1.49m | 85% |
-| 09 | 823m | 45.24m | 10.56m | 77% |
+| Sequence | Trajectory | VO ATE (RMSE) | iSAM2 + LC | Improvement |
+|----------|-----------|---------------|-----------|-------------|
+| 00 (first 800 frames) | 1483m | 29.14m | 7.76m | 73% |
+| 05 (first 800 frames) | 937m | 21.66m | 12.24m | 43% |
+| 07 (first 550 frames) | 373m | 9.67m | 1.49m | 85% |
+| 09 (first 531 frames) | 823m | 45.24m | 10.56m | 77% |
 
 ### TUM-RGBD
 
@@ -97,15 +97,15 @@ We evaluated on four KITTI sequences with loop closures. The pipeline uses stere
 |----------|---------------|-----------|-------------|
 | fr1/desk | 0.189m | 0.113m | 40% |
 | fr1/xyz | 0.106m | 0.072m | 32% |
-| fr1/room | 0.305m | 0.273m | 11% |
+| fr1/room | 0.305m | 0.273m | 10% |
 
-All numbers are translational RMSE and reproduce with a single command per sequence: `python examples/eval_tum_lc.py --seq fr1/desk` (the script downloads the data on first run).
+All numbers in both tables are translational RMSE. The TUM rows can be reproduced with a single command per sequence: `python examples/eval_tum_lc.py --seq fr1/desk` (the script downloads the data on first run).
 
 ## Why this matters for GTSAM
 
 This demonstrates that GTSAM's factor graph infrastructure composes naturally with modern neural rendering. The `GaussianSplatFactor` slots in alongside standard odometry, loop closure, and IMU factors with no special treatment. Robust kernels, incremental updates, and covariance recovery all work out of the box.
 
-More broadly, this is an existence proof that 3DGS-SLAM does not need to abandon decades of SLAM infrastructure. The rendering quality of Gaussian splatting and the global consistency guarantees of factor graph SLAM are complementary, not competing.
+More broadly, this is an existence proof that 3DGS-SLAM does not need to abandon decades of SLAM infrastructure. The rendering quality of Gaussian splatting and the global consistency machinery of factor graph SLAM are complementary, not competing.
 
 ## Code and further browsing
 
@@ -113,7 +113,7 @@ More broadly, this is an existence proof that 3DGS-SLAM does not need to abandon
 - [gsplat](https://github.com/nerfstudio-project/gsplat) (the differentiable rasterizer)
 - [SplaTAM](https://spla-tam.github.io/) (gradient-descent 3DGS-SLAM)
 - [LoopSplat](https://arxiv.org/abs/2408.10154) (3DGS-SLAM with post-hoc PGO loop closure)
-- [MonoGS](https://arxiv.org/abs/2405.18468) (monocular Gaussian SLAM)
+- [MonoGS](https://arxiv.org/abs/2312.06741) (monocular Gaussian SLAM)
 - [DINOv2](https://github.com/facebookresearch/dinov2) (appearance features for loop detection)
 
 _Disclosure: AI was used to help draft this post._
