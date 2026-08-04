@@ -112,7 +112,7 @@ More broadly, this is an existence proof that 3DGS-SLAM does not need to abandon
 - [gtsam-splatfactors](https://github.com/jashshah999/gtsam-splatfactors) (MIT licensed, pip installable)
 - [gsplat](https://github.com/nerfstudio-project/gsplat) (the differentiable rasterizer)
 - [SplaTAM](https://spla-tam.github.io/) (gradient-descent 3DGS-SLAM)
-- [LoopSplat](https://arxiv.org/abs/2408.10154) (3DGS-SLAM with post-hoc PGO loop closure)
+- [LoopSplat](https://arxiv.org/abs/2408.10154) (3DGS-SLAM with pose graph loop closure)
 - [MonoGS](https://arxiv.org/abs/2312.06741) (monocular Gaussian SLAM)
 - [DINOv2](https://github.com/facebookresearch/dinov2) (appearance features for loop detection)
 
