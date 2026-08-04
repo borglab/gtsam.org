@@ -52,6 +52,14 @@ Camera poses (Pose3)          Gaussian map (PyTorch)
    IMU preintegration factors
 ```
 
+<figure class="center" style="width: 100%; max-width: 1100px; text-align: center;">
+  <img src="/assets/images/gaussian-splatting-slam/tum_desk_gt_vs_render.png"
+    alt="TUM fr1/desk: ground-truth camera frame next to the same view rendered from the trained Gaussian map."
+    style="width: 100%; display: block; margin-left: auto; margin-right: auto;" />
+  <figcaption>The rendering is the measurement model. Left: TUM fr1/desk camera frame. Right: the same view rendered from the Gaussian map that the factors optimize against (trained with <code>examples/showcase_render.py</code>).</figcaption>
+</figure>
+<br />
+
 Loop closures are detected automatically via DINOv2 appearance matching. When a revisit is detected, PnP with depth gives the relative pose, and a `BetweenFactorPose3` with a Cauchy robust kernel is inserted into the graph. iSAM2 propagates the correction globally.
 
 ## Results
@@ -81,15 +89,17 @@ We evaluated on four KITTI sequences with loop closures. The pipeline uses stere
   <img src="/assets/images/gaussian-splatting-slam/loop_closure_xyz.gif"
     alt="Animated loop closure correction on TUM fr1/xyz: VO trajectory builds up, loop closures detected, trajectory corrected."
     style="width: 100%; display: block; margin-left: auto; margin-right: auto;" />
-  <figcaption>TUM fr1/xyz: VO trajectory accumulates drift, DINOv2 detects revisits, iSAM2 corrects the full trajectory (79% ATE improvement).</figcaption>
+  <figcaption>TUM fr1/xyz: VO trajectory accumulates drift, DINOv2 detects revisits, iSAM2 corrects the full trajectory.</figcaption>
 </figure>
 <br />
 
-| Sequence | VO ATE | iSAM2 + LC | Improvement |
-|----------|--------|-----------|-------------|
-| fr1/desk | 0.161m | 0.055m | 66% |
-| fr1/xyz | 0.102m | 0.021m | 79% |
-| fr1/room | 0.308m | 0.251m | 18% |
+| Sequence | VO ATE (RMSE) | iSAM2 + LC | Improvement |
+|----------|---------------|-----------|-------------|
+| fr1/desk | 0.189m | 0.113m | 40% |
+| fr1/xyz | 0.106m | 0.072m | 32% |
+| fr1/room | 0.305m | 0.273m | 11% |
+
+All numbers are translational RMSE and reproduce with a single command per sequence: `python examples/eval_tum_lc.py --seq fr1/desk` (the script downloads the data on first run).
 
 ## Why this matters for GTSAM
 
