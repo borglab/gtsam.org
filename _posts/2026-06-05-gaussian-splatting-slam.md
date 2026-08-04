@@ -79,7 +79,7 @@ We evaluated on four KITTI sequences with loop closures. The pipeline uses stere
 | Sequence | Trajectory | VO ATE | iSAM2 + LC | Improvement |
 |----------|-----------|--------|-----------|-------------|
 | 00 | 1483m | 29.14m | 7.76m | 73% |
-| 05 | 937m | 21.66m | 12.24m | 44% |
+| 05 | 937m | 21.66m | 12.24m | 43% |
 | 07 | 373m | 9.67m | 1.49m | 85% |
 | 09 | 823m | 45.24m | 10.56m | 77% |
 
