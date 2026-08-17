@@ -97,7 +97,7 @@ The evaluation uses the lever-arm DD factors together with `CombinedImuFactor`, 
 </figure>
 <br />
 
-The three runs achieve **49.6--67.8% fix rates** and **55.4--75.4% of epochs within 50 cm** error, with fixed-epoch RMS of 0.35--0.65 m. Since the original version of this post, the pipeline gained clock-free ambiguity seeding (single-differenced phase minus code, so fix-and-hold survives receiver clock drift), between-satellite single-differenced Doppler factors for velocity aiding through outages, and geometry/residual gates on the integer fixing step -- together roughly halving the full-run RMS on all three sequences.
+The three runs achieve **49.6--67.8% fix rates** and **55.4--75.4% of epochs within 50 cm** error. Fixed epochs are mostly accurate to a few centimeters, but occasional incorrect fixes inflate the RMS to 0.35--0.65 m.
 
 With GNSS and IMU alone, the estimate drifts during long GNSS outages (under overpasses or in tunnels). Adding LiDAR or wheel odometry factors on the same poses keeps the estimate stable through these gaps.
 
