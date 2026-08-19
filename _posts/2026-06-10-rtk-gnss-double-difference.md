@@ -97,7 +97,7 @@ The evaluation uses the lever-arm DD factors together with `CombinedImuFactor`, 
 </figure>
 <br />
 
-The three runs achieve **49.5--60.8% fix rates** and **56.7--69.9% of epochs within 50 cm** error. Fixed epochs are mostly accurate to a few centimeters, but occasional incorrect fixes inflate the RMS to 0.21--0.81 m.
+The three runs achieve **49.6--67.8% fix rates** and **55.4--75.4% of epochs within 50 cm** error. Fixed epochs are mostly accurate to a few centimeters, but occasional incorrect fixes inflate the RMS to 0.35--0.65 m.
 
 With GNSS and IMU alone, the estimate drifts during long GNSS outages (under overpasses or in tunnels). Adding LiDAR or wheel odometry factors on the same poses keeps the estimate stable through these gaps.
 
