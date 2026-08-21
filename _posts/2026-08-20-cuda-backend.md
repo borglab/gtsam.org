@@ -5,6 +5,14 @@ title: "GTSAM Goes GPU: A CUDA Backend for Nonlinear Optimization"
 
 Blog post by: [Ruogu Li](https://github.com/leolrg) and [Frank Dellaert](https://dellaert.github.io/)
 
+<figure class="center" style="width: 100%; max-width: 1100px; text-align: center;">
+  <img src="/assets/images/cuda-backend/cuda-optimizers.png"
+    alt="Architecture of GTSAM's two CUDA optimizers: a general Levenberg-Marquardt path and a GPU-resident structure-from-motion Schur-complement path, converging on shared dense, cuDSS, and PCG GPU solvers."
+    style="width: 100%; display: block; margin-left: auto; margin-right: auto;" />
+  <figcaption>Two CUDA optimization paths, one GPU solver layer. The general LM path builds a sparse Jacobian on the host, while the specialized SfM path performs projection linearization and the Schur complement on the GPU. The shared solver layer provides dense Cholesky, cuDSS, and PCG; dense Cholesky is used for the reduced SfM Schur system.</figcaption>
+</figure>
+<br />
+
 * TOC
 {:toc}
 
