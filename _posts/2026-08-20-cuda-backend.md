@@ -36,7 +36,7 @@ One backend choice does not wins everywhere: you can choose the solver that fits
 
 (*) Factor graphs whose factors produce finite, unconstrained `JacobianFactor`s can use the path directly, while unsupported graphs can fall back to the standard CPU optimizer.
 
-## The bottom-line speedups
+## The speedups
 
 The benchmarks in PR #2706 used an NVIDIA A100 and measured complete optimizer wall time, including optimizer construction, device setup, and every LM iteration. Across the larger problems, the speedups are substantial:
 
@@ -69,9 +69,9 @@ The specialized SfM path still lets you choose among the three GPU solver backen
 | 88 cameras | 3.398 s | 0.390 s | **8.72×** |
 | 135 cameras | 4.438 s | 0.558 s | **7.95×** |
 
-So the bottom line for the fully GPU-resident SfM implementation is simple: **about 8–10× faster** than the best GTSAM CPU path on these benchmarks. It used to be 20x faster, but [we have also made SfM on the CPU much faster](https://github.com/borglab/gtsam/pull/2695) :-)
+The result for the fully GPU-resident SfM implementation is simple: **about 8–10× faster** than the best GTSAM CPU path on these benchmarks. It used to be 20x faster, but [we have also made SfM on the CPU much faster](https://github.com/borglab/gtsam/pull/2695) :-)
 
-## The bottom line
+## Putting it all together
 
 FAST-Sync, exact Lie-group Jacobians, and CUDA acceleration improve different parts of pose-graph optimization: FAST-Sync puts PGO In a better starting place; exact Jacobians improve individual Levenberg-Marquardt steps, cutting the number of rejected steps; and, the CUDA backend then makes every linear solve much faster.
 
@@ -81,6 +81,7 @@ Happy optimizing!
 
 ## Further browsing
 
+- [Main GTSAM documentation, built with MyST](https://borglab.github.io/gtsam/)
 - [CUDA nonlinear optimization PR #2706](https://github.com/borglab/gtsam/pull/2706)
 - [Correct Lie-group Jacobians PR #2661](https://github.com/borglab/gtsam/pull/2661)
 - [Speeding up Sfm on the CPU #2661](https://github.com/borglab/gtsam/pull/2695)
