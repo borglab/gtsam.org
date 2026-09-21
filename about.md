@@ -4,67 +4,171 @@ title: About
 permalink: /about/
 ---
 
-GTSAM is a sensor fusion library based on factor graphs, developed by [Frank Dellaert](http://www.dellaert.com) and his students in Georgia Tech's BORG Lab, as well as numerous open source contributors.
+GTSAM is a sensor fusion library based on factor graphs, developed by researchers and engineers across the open-source robotics community.
 
-Current Georgia Tech BORG Lab contributors include:
-* Varun Agrawal
-* Fan Jiang
+## Contributors
 
-Below are the many Georgia Tech BORG lab alumni with their current afffiliation, if known:
+- Varun Agrawal
+- Jeremy Aguilon
+- Pablo F. Alcantarilla
+- Yashas Ambati
+- Sungtae An
+- Amado Antonini
+- Kartik Arcot
+- Siddhant Arora
+- Abe Bachrach
+- Ayush Baid
+- Doru Balcan
+- Rohan Bansal
+- Dan Barladeanu
+- Nick Barrash
+- Chris Beall
+- Suhas Beemineni
+- Jose Luis Blanco-Claraco
+- Michael Bosse
+- Ben Boyack
+- İlkecan Bozdoğan
+- Matthew Broadway
+- Martin Brossard
+- Haldean Brown
+- Adam Bry
+- Russell Buchanan
+- Luca Carlone
+- Krunal Chande
+- Gerry Chen
+- Yao Chen
+- Siddharth Choudhary
+- Ankur Roy Chowdhury
+- Andrei Costinescu
+- Gareth Cross
+- Alex Cunningham
+- Frank Dellaert
+- Kevin Doherty
+- Jing Dong
+- Brett Downing
+- Paul Drews
+- Travis Driver
+- Alejandro Escontrela
+- Aleksei Evlampev
+- Maurice Fallon
+- Jay A. Farrell
+- Alireza Fathi
+- Enrique Fernandez
+- Tobias Fischer
+- Alessandro Fornasier
+- Christian Forster
+- Paul Furgale
+- Eohan George
+- Kathir Gounder
+- Sammy Guo
+- Ashwin Gupta
+- Glen Haggin
+- Alex Hagiopol
+- Maciej Halber
+- Nghia Ho
+- Connor Holmes
+- Matt Van Horn
+- Jianzhu Huai
+- Viorela Ila
+- Vadim Indelman
+- Abhinav Jain
+- Nithya Jayakumar
+- Marek Jelen
+- David Jensen
+- Thomas Kølbæk Jespersen
+- Zheng Robert Jia
+- Yong-Dian Jian
+- Fan Jiang
+- Simon Julier
+- Michael Kaess
+- Klaas Kelchtermans
+- Harneet Singh Khanuja
+- Nikhil Khedekar
+- Matthew Kielo
+- Yoonwoo Kim
+- Zsolt Kira
+- Milo Knowles
+- Akshay Krishnan
+- Abhijit Kundu
+- John Lambert
+- Oliver S. Lee
+- Hyungtae Lim
+- Arihant Lunawat
+- Yiran Luo
+- Zhaoyang Lv
+- Shicong Ma
+- Navid Mahabadi
+- KV Manohar
+- Hayk Martiros
+- Daniel McGann
+- Tim McGrath
+- Andrew Melim
+- Cassie Melim
+- Ellon Paiva Mendes
+- Kartik Mohta
+- Matt Morley
+- Mustafa Mukadam
+- Erik Nelson
+- Kai Ni
+- Carlos Nieto
+- Morten Nissov
+- Kyel Ok
+- Jennifer Oum
+- Manohar Paluri
+- Anup Parikh
+- Akash Patel
+- Summit Patel
+- Dominic Pattison
+- Bernd Pfrommer
+- Grant Polazzo
+- Easton Potokar
+- Christian Potthast
+- Ramadan Ahmed Ramadan
+- Brice Rebsamen
+- Richard Roberts
+- John Rogers
+- David M. Rosen
+- Toni Rosinol
+- Cyril Roussillon
+- Tuwuh S
+- Rahul Sawhney
+- Thomas Sayre-McCord
+- Grant Schindler
+- Lorenz Schmid
+- Thomas Schneider
+- Binit Shah
+- Jash Shah
+- Vikrant Shah
+- Karthik Shaji
+- Akash Sharma
+- Mike Sheffler
+- Jingnan Shi
+- Matthew Sklar
+- Hannes Sommer
+- Rafael Spring
+- Natesh Srinivasan
+- Tzvi Strauss
+- Avinash Subramanian
+- Duy-Nguyen Ta
+- Zhewen Tan
+- Jean-Philippe Tardif
+- Clark Taylor
+- Claudius Tewari
+- Lachlan Toohey
+- Miguel A. Vega Torres
+- Alex J. Trevor
+- Martin Valgur
+- Christian Vaugelade-Kilaas
+- Tyler Veness
+- Ignacio Vizzo
+- Sushmita Warrier
+- Stephen Williams
+- David Wisth
+- Mandy Xie
+- Zhexin Xu
+- Shangjie Xue
+- Porter Zach
+- Yetong Zhang
+- Jiahao Chen Zhou
 
-* Jeremy Aguilon, Facebook
-* Abhinav Jain
-* Pablo Alcantarilla, iRobot
-* Sungtae An
-* Doru Balcan, Bank of America
-* Chris Beall, Nuro
-* Luca Carlone, MIT
-* Mandy Xie, stealth startup
-* Krunal Chande, Fyusion
-* Alex Cunningham, TRI
-* Jing Dong, Facebook Reality Labs
-* Paul Drews, TRI
-* Alireza Fathi, Google
-* Eohan George
-* Gerry Chen, Tesla
-* Alex Hagiopol, Microsoft
-* Viorela Ila, U. Sydney
-* Vadim Indelman, the Technion
-* David Jensen, GTRI
-* Yong-Dian Jian, Nvidia
-* Michael Kaess, Carnegie Mellon
-* Matthew Sklar
-* Abhijit Jundu, Google
-* Zhaoyang Lv, Facebook Reality Labs
-* Andrew Melim, Oculus
-* Kai Ni, Holomatic
-* Carlos Nieto, UCSD
-* Duy-Nguyen Ta, TRI
-* Manohar Paluri, Facebook
-* Christian Potthast, USC
-* Richard Roberts, Google X
-* Grant Schindler, Consultant
-* Natesh Srinivasan, Apple
-* Alex Trevor, Fyusion
-* Stephen Williams, BossaNova
-* Yetong Zhang, Waymo
-
-In addition, we have had contrubutions from many others at different institutions and labs, again listed below with their current affiliations if known:
-
-* Abe Bachrach, Skydio
-* Jose Luis Blanco-Claraco, University of Almería
-* Matthew Broadway
-* Adam Bry, Skydio
-* Mike Bosse, ETHZ
-* Gareth Cross, Skydio
-* Christian Forster, Oculus Zurich
-* Paul Furgale, Oculus Zurich
-* Hayk Martiros, Skydio
-* Ellon Paiva, LAAS-CNRS
-* David M. Rosen, MIT
-* Thomas Schneider, ETHZ
-* Hannes Sommer, ETHZ
-* Akash Patel, Georgia Tech
-* Christian Vaugelade Berg, EasyMile
-
-If you contributed but do not see your name listed above, or you are listed with an incorrect affiliation,  please consider making a PR for this file at [the gtsam.org github repo](https://github.com/borglab/gtsam.org).
+If you contributed but do not see your name, or if your name is incorrect, please [open a pull request](https://github.com/borglab/gtsam.org) to update this page.

@@ -1,14 +1,221 @@
 ---
-layout: home
-background-class: home-page-background
-body-class: homepage
+layout: landing
+title: GTSAM 4.3
+description: GTSAM 4.3 includes 328 runnable notebooks, faster pose-graph optimization, CUDA bundle adjustment, certifiable optimization, nonlinear constraints, new IMU preintegration backends, and faster linear solvers.
+permalink: /
 ---
 
-{% include jumbotron-home.html %}
+<div class="launch-hero" aria-labelledby="gtsam-launch-title">
+  <div class="launch-kicker"><span>GTSAM 4.3</span><span class="launch-pulse" aria-hidden="true"></span>Stable release</div>
+  <div class="hero-ghost" aria-hidden="true">ESTIMATION / OPTIMIZATION / NAVIGATION</div>
+  <h1 id="gtsam-launch-title"><span>GTSAM 4.3:</span><span><em>release highlights.</em></span></h1>
+  <div class="launch-lede">328 runnable notebooks, faster pose-graph initialization and refinement, CUDA bundle adjustment, certifiable optimization, nonlinear constraints, four IMU preintegration backends, and faster linear solvers.</div>
+  <div class="launch-actions">
+    <a class="launch-button launch-button-primary" href="/get_started/">Install GTSAM 4.3 <span aria-hidden="true">&rarr;</span></a>
+    <a class="launch-button" href="https://borglab.github.io/gtsam/examples/">Run the examples</a>
+  </div>
+  <div class="launch-scroll-cue" aria-hidden="true"><span></span>Review the changes</div>
+</div>
 
-GTSAM is a BSD-licensed C++ library for smoothing and mapping in robotics and computer vision, including SLAM (Simultaneous Localization and Mapping), VO (Visual Odometry), and SFM (Structure from Motion). It uses factor graphs and Bayes networks as the underlying computing paradigm rather than sparse matrices to optimize for the most probable configuration or an optimal plan. Coupled with a capable sensor front-end (not provided here), GTSAM powers many impressive autonomous systems in both academia and industry.
+<div class="story-rail" aria-label="Release story progress">
+  <span>4.3</span><span class="story-progress"></span><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span>
+</div>
 
-The current stable release is 4.2. The main development line is now in pre-4.3 mode, and recent alpha releases follow that track.
+<div class="release-intro story-manifesto">
+  <div class="release-eyebrow">What’s new in 4.3</div>
+  <h2><span>GTSAM 4.3</span><span>technical</span><span><em>highlights.</em></span></h2>
+  <div class="manifesto-note">Performance, modeling, solvers, and APIs.</div>
+</div>
 
-## Recent Tweets
-{% include tweets.html %}
+<div class="story-marquee" aria-hidden="true"><span>NOTEBOOKS&nbsp;&nbsp;•&nbsp;&nbsp;FAST-SYNC&nbsp;&nbsp;•&nbsp;&nbsp;CUDA&nbsp;&nbsp;•&nbsp;&nbsp;CERTIFIABLE&nbsp;&nbsp;•&nbsp;&nbsp;CONSTRAINTS&nbsp;&nbsp;•&nbsp;&nbsp;GALILEAN&nbsp;&nbsp;•&nbsp;&nbsp;LINEAR SOLVERS&nbsp;&nbsp;•&nbsp;&nbsp;</span><span>NOTEBOOKS&nbsp;&nbsp;•&nbsp;&nbsp;FAST-SYNC&nbsp;&nbsp;•&nbsp;&nbsp;CUDA&nbsp;&nbsp;•&nbsp;&nbsp;CERTIFIABLE&nbsp;&nbsp;•&nbsp;&nbsp;CONSTRAINTS&nbsp;&nbsp;•&nbsp;&nbsp;GALILEAN&nbsp;&nbsp;•&nbsp;&nbsp;LINEAR SOLVERS&nbsp;&nbsp;•&nbsp;&nbsp;</span></div>
+
+<div class="feature-reveal feature-panel feature-python" data-feature="01" aria-labelledby="feature-python-title">
+  <div class="feature-copy">
+    <span class="feature-number">01 / 07</span>
+    <div class="feature-label">Python and documentation</div>
+    <h2 id="feature-python-title">328 runnable notebooks and expanded Python APIs.</h2>
+    <p>Runnable notebooks cover introductory factor graphs, CUDA optimization, invariant filtering, certifiable SLAM, and other modules. The Python wrappers also include a PEP 561 type marker and copy-aware APIs.</p>
+    <div class="feature-proof"><strong>Read the equations, run the code, and inspect the result</strong><span>locally or in Colab.</span></div>
+    <div class="feature-resources" aria-label="Python notebooks">
+      <a href="https://borglab.github.io/gtsam/examples/"><span>Notebook index</span>All 328 notebooks</a>
+      <a href="https://borglab.github.io/gtsam/customfactorexample/"><span>Python notebook</span>Custom factors</a>
+      <a href="https://borglab.github.io/gtsam/fixedlagsmootherexample/"><span>Python notebook</span>Fixed-lag smoothing</a>
+      <a href="https://borglab.github.io/gtsam/visualisamexample/"><span>Python notebook</span>Visual iSAM2</a>
+    </div>
+  </div>
+  <div class="feature-visual notebook-visual" aria-label="A Python notebook combining factor graph code with an interactive result">
+    <div class="notebook-top"><span></span><span></span><span></span><strong>gtsam_4_3.ipynb</strong></div>
+    <div class="notebook-code"><span><b>import</b> gtsam</span><span>&nbsp;</span><span>graph = gtsam.NonlinearFactorGraph()</span><span>graph.add(<mark>measurement_factor</mark>)</span><span>&nbsp;</span><span>result = gtsam.LevenbergMarquardtOptimizer(</span><span>&nbsp;&nbsp;&nbsp;&nbsp;graph, initial</span><span>).optimize()</span></div>
+    <div class="notebook-output" aria-hidden="true"><div class="output-curve"></div><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+</div>
+
+<div class="feature-reveal feature-panel feature-pgo" data-feature="02" aria-labelledby="feature-pgo-title">
+  <div class="feature-copy">
+    <span class="feature-number">02 / 07</span>
+    <div class="feature-label">Pose-graph optimization</div>
+    <h2 id="feature-pgo-title">FAST-Sync and exact Lie-group Jacobians reduce w10000 refinement from 3.041 s to 1.288 s.</h2>
+    <p>FAST-Sync initializes all 10,000 poses from the graph’s 64,311 relative measurements. During refinement, <code>BetweenFactor</code> and <code>PriorFactor</code> now include the Jacobian of <code>Local</code> whenever the Lie-group traits provide it.</p>
+    <div class="feature-proof"><strong>2.36× faster nonlinear refinement from identical initial values</strong><span>Correct Jacobians required 10 outer LM iterations and 17 inner attempts; the legacy approximation required 23 and 42. Both reached essentially the same final objective.</span></div>
+    <div class="feature-resources" aria-label="Pose-graph notebooks and evidence">
+      <a href="https://borglab.github.io/gtsam/fastsyncexample/"><span>Python notebook</span>FAST-Sync tutorial</a>
+      <a href="https://borglab.github.io/gtsam/fastsync/"><span>Technical notebook</span>FAST-Sync derivation</a>
+      <a href="https://borglab.github.io/gtsam/pose2slamexample/"><span>Python notebook</span>Pose2 SLAM</a>
+      <a href="https://github.com/borglab/gtsam/pull/2661"><span>Benchmark and PR</span>Exact Jacobians #2661</a>
+    </div>
+  </div>
+  <div class="feature-visual posegraph-visual" role="img" aria-label="w10000 pose-graph benchmark showing FAST-Sync initialization followed by refinement with exact Lie-group Jacobians">
+    <div class="visual-caption">w10000 · 10,000 poses · 64,311 factors</div>
+    <div class="pgo-pipeline" aria-hidden="true">
+      <div><span>01</span><strong>FAST-Sync</strong><small>24.7M → 23,454 error<br>0.638 s initialization</small></div>
+      <i></i>
+      <div><span>02</span><strong>Exact Jacobians</strong><small>10 LM iterations<br>17 inner attempts</small></div>
+      <i></i>
+      <div><span>03</span><strong>Refined</strong><small>144.910 final error<br>1.288 s refinement</small></div>
+    </div>
+    <div class="pgo-comparison" aria-hidden="true">
+      <div><span>Exact <code>Local</code> Jacobian</span><strong>1.288 s</strong><i class="pgo-exact"></i></div>
+      <div><span>Legacy approximation</span><strong>3.041 s</strong><i class="pgo-legacy"></i></div>
+    </div>
+    <div class="pgo-ratio" aria-hidden="true"><strong>2.36×</strong><span>refinement speedup</span></div>
+  </div>
+</div>
+
+<div class="feature-reveal feature-panel feature-alt feature-cuda" data-feature="03" aria-labelledby="feature-cuda-title">
+  <div class="feature-copy">
+    <span class="feature-number">03 / 07</span>
+    <div class="feature-label">CUDA bundle adjustment</div>
+    <h2 id="feature-cuda-title">CUDA bundle adjustment: 4.0–4.9× speedup on three BAL datasets.</h2>
+    <p>A purpose-built CUDA Levenberg–Marquardt implementation for structure from motion supports dense Cholesky, cuDSS, and matrix-free PCG linear solvers.</p>
+    <div class="feature-proof"><strong>Measured on BAL-16, BAL-88, and BAL-135</strong><span>August 21, 2026; Intel i7-14700F and RTX 5060 Ti; timed optimize() calls exclude data loading and optimizer construction.</span></div>
+    <div class="feature-resources" aria-label="CUDA notebooks and evidence">
+      <a href="https://borglab.github.io/gtsam/cudasfmlevenbergmarquardtoptimizer/"><span>Technical notebook</span>CUDA SFM optimizer</a>
+      <a href="https://borglab.github.io/gtsam/sparselevenbergmarquardtoptimizer/"><span>Technical notebook</span>Sparse CUDA LM</a>
+      <a href="https://borglab.github.io/gtsam/cudasfmgncoptimizer/"><span>Technical notebook</span>CUDA SFM with GNC</a>
+      <a href="/2026/08/20/cuda-backend.html"><span>Benchmarks</span>CUDA backend results</a>
+    </div>
+  </div>
+  <div class="feature-visual cuda-visual" aria-label="Benchmark bars comparing CPU and CUDA bundle adjustment performance">
+    <div class="gpu-orbit" aria-hidden="true"></div>
+    <div class="visual-caption">Median optimization time · lower is better</div>
+    <div class="benchmark-row bal-16"><span>BAL-16</span><div><span class="cpu-bar">CPU&nbsp; 0.228s</span><span class="gpu-bar">GPU&nbsp; 0.055s</span></div></div>
+    <div class="benchmark-row bal-88"><span>BAL-88</span><div><span class="cpu-bar">CPU&nbsp; 0.869s</span><span class="gpu-bar">GPU&nbsp; 0.218s</span></div></div>
+    <div class="benchmark-row bal-135"><span>BAL-135</span><div><span class="cpu-bar">CPU&nbsp; 1.427s</span><span class="gpu-bar">GPU&nbsp; 0.290s</span></div></div>
+  </div>
+</div>
+
+<div class="feature-reveal feature-panel feature-alt feature-certifiable" data-feature="04" aria-labelledby="feature-certifiable-title">
+  <div class="feature-copy">
+    <span class="feature-number">04 / 07</span>
+    <div class="feature-label">Certifiable optimization</div>
+    <h2 id="feature-certifiable-title">Certifiable solutions for supported SLAM problems.</h2>
+    <p>The new module converts supported factor graphs to QCQPs and solves semidefinite relaxations with a solver-independent Burer–Monteiro Riemannian Staircase.</p>
+    <div class="feature-proof"><strong>Recover manifold values and inspect every rank level</strong><span>with an optimality certificate when the relaxation is tight.</span></div>
+    <div class="feature-resources" aria-label="Certifiable optimization notebooks">
+      <a href="https://borglab.github.io/gtsam/certifiableposegraphoptimizationpose2/"><span>Python notebook</span>Certifiable Pose2 PGO</a>
+      <a href="https://borglab.github.io/gtsam/certifiableposegraphoptimizationpose3/"><span>Python notebook</span>Certifiable Pose3 PGO</a>
+      <a href="https://borglab.github.io/gtsam/certifiablelandmarkslampose3/"><span>Python notebook</span>Certifiable landmark SLAM</a>
+      <a href="https://borglab.github.io/gtsam/certifiablerotationaveragingrot3/"><span>Python notebook</span>Rotation averaging</a>
+    </div>
+  </div>
+  <div class="feature-visual certificate-visual" role="img" aria-label="Increasing relaxation ranks leading to a certified globally optimal solution">
+    <div class="visual-caption">Burer–Monteiro rank ladder</div>
+    <div class="rank-ladder" aria-hidden="true"><span>r = 3</span><span>r = 4</span><span>r = 5</span><span class="certified-step">verified</span></div>
+    <div class="certificate-seal" aria-hidden="true"><span>GLOBAL</span><strong>✓</strong><span>CERTIFIED</span></div>
+    <div class="certificate-metric"><span>duality gap</span><strong>≈ 0</strong></div>
+  </div>
+</div>
+
+<div class="feature-reveal feature-panel feature-constraints" data-feature="05" aria-labelledby="feature-constraints-title">
+  <div class="feature-copy">
+    <span class="feature-number">05 / 07</span>
+    <div class="feature-label">Nonlinear constraints</div>
+    <h2 id="feature-constraints-title">Constraints are represented directly in the factor graph.</h2>
+    <p>Model equalities, inequalities, variable bounds, LPs, QPs, and QCQPs alongside objective factors. Available methods include penalty, active-set, and augmented Lagrangian optimization.</p>
+    <div class="feature-proof"><strong>Track objective cost and constraint violation separately</strong><span>at every optimizer iteration.</span></div>
+    <div class="feature-resources" aria-label="Constrained optimization notebooks">
+      <a href="https://borglab.github.io/gtsam/lpproblemexample/"><span>Python notebook</span>Linear programming</a>
+      <a href="https://borglab.github.io/gtsam/qpproblemexample/"><span>Python notebook</span>Quadratic programming</a>
+      <a href="https://borglab.github.io/gtsam/qcqpproblemexample/"><span>Python notebook</span>QCQP examples</a>
+      <a href="https://borglab.github.io/gtsam/nonlinearequalityexample/"><span>Python notebook</span>Nonlinear equalities</a>
+    </div>
+  </div>
+  <div class="feature-visual constraint-visual" role="img" aria-label="An unconstrained optimization path converging onto a curved constraint manifold">
+    <div class="constraint-field" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="constraint-manifold" aria-hidden="true"></div>
+    <div class="descent-track" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span class="solution-dot"></span></div>
+    <div class="constraint-equation" aria-hidden="true">h(x) = 0</div>
+    <div class="constraint-tags"><span>Equality</span><span>Inequality</span><span>Bounds</span><span>QP / QCQP</span></div>
+  </div>
+</div>
+
+<div class="feature-reveal feature-panel feature-alt feature-navigation" data-feature="06" aria-labelledby="feature-navigation-title">
+  <div class="feature-copy">
+    <span class="feature-number">06 / 07</span>
+    <div class="feature-label">Inertial navigation</div>
+    <h2 id="feature-navigation-title">Four IMU preintegration backends.</h2>
+    <p>Manifold, tangent-space, Lie-group, and Galilean formulations share one interface. GTSAM 4.3 also adds Logmap-consistent errors, exact rotating-Earth dynamics, gravity-aware factors, and additional GNSS support.</p>
+    <div class="feature-proof"><strong>NEES studies compare statistical consistency</strong><span>across the available formulations.</span></div>
+    <div class="feature-resources" aria-label="Inertial navigation notebooks">
+      <a href="https://borglab.github.io/gtsam/gal3imuexample/"><span>Python notebook</span>Gal3 IMU</a>
+      <a href="https://borglab.github.io/gtsam/navstateimuexample/"><span>Python notebook</span>NavState IMU</a>
+      <a href="https://borglab.github.io/gtsam/galileanimufactornees/"><span>NEES notebook</span>Galilean consistency</a>
+      <a href="https://borglab.github.io/gtsam/navstateimupimcovariancecomparison/"><span>Python notebook</span>Covariance comparison</a>
+    </div>
+  </div>
+  <div class="feature-visual nav-visual" role="img" aria-label="An inertial trajectory with pose frames, IMU samples, Earth rotation, and GNSS observations">
+    <div class="nav-globe" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="nav-flight" aria-hidden="true"></div>
+    <div class="nav-poses" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="nav-fixes" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="nav-readout"><span>Gal3</span><span>SE₂(3)</span><span>Earth rate exact</span><span>Gravity in graph</span></div>
+  </div>
+</div>
+
+<div class="feature-reveal feature-panel feature-solver" data-feature="07" aria-labelledby="feature-solver-title">
+  <div class="feature-copy">
+    <span class="feature-number">07 / 07</span>
+    <div class="feature-label">Linear solver performance</div>
+    <h2 id="feature-solver-title">Faster Linear Solvers</h2>
+    <p>The new multifrontal solver retains symbolic structure and packed storage between solves. It supports partial elimination, batch-factor fast paths, parallel task scheduling, and reduced-system export.</p>
+    <div class="feature-proof"><strong>Reuse the same Bayes tree across LM attempts</strong><span>and back-substitute without repeating symbolic analysis.</span></div>
+    <div class="feature-resources" aria-label="Multifrontal solver resources">
+      <a href="https://borglab.github.io/gtsam/multifrontalsolver/"><span>Technical notebook</span>Solver design and API</a>
+      <a href="https://github.com/borglab/gtsam/blob/develop/gtsam/linear/MultifrontalSolver.h"><span>C++ source</span>MultifrontalSolver</a>
+    </div>
+  </div>
+  <div class="feature-visual solver-visual" role="img" aria-label="A Bayes tree being processed in parallel and reused across optimization iterations">
+    <div class="visual-caption">Reusable Bayes tree · parallel leaf work</div>
+    <div class="tree-diagram" aria-hidden="true">
+      <span class="tree-link link-a"></span><span class="tree-link link-b"></span><span class="tree-link link-c"></span><span class="tree-link link-d"></span><span class="tree-link link-e"></span><span class="tree-link link-f"></span>
+      <span class="tree-node tree-root">R</span><span class="tree-node tree-mid mid-a">C₁</span><span class="tree-node tree-mid mid-b">C₂</span>
+      <span class="tree-node tree-leaf leaf-a">L₁</span><span class="tree-node tree-leaf leaf-b">L₂</span><span class="tree-node tree-leaf leaf-c">L₃</span><span class="tree-node tree-leaf leaf-d">L₄</span>
+      <span class="reuse-loop">REUSE · UPDATE · SOLVE ↻</span>
+    </div>
+  </div>
+</div>
+
+<div class="release-stats" aria-label="GTSAM project facts">
+  <div><strong>4.3.0</strong><span>stable release</span></div>
+  <div><strong>328</strong><span>runnable notebooks</span></div>
+  <div><strong>C++17</strong><span>language standard</span></div>
+  <div><strong>BSD</strong><span>open source</span></div>
+</div>
+
+<div class="launch-finale">
+  <div class="release-eyebrow">Evaluate the release</div>
+  <h2>Install 4.3.0 and run the relevant benchmarks.</h2>
+  <p>Start with the CUDA, constrained optimization, navigation, multifrontal, or certifiable examples.</p>
+  <div class="launch-actions launch-actions-center">
+    <a class="launch-button launch-button-primary" href="/get_started/">Install GTSAM 4.3 <span aria-hidden="true">&rarr;</span></a>
+    <a class="launch-button" href="https://borglab.github.io/gtsam/examples/">Browse examples</a>
+    <a class="launch-button" href="https://github.com/borglab/gtsam">Inspect the source</a>
+  </div>
+</div>
+
+<div class="launch-paths" aria-label="GTSAM documentation paths">
+  <a href="/docs/"><span>01</span><strong>User guide</strong><small>Module documentation</small></a>
+  <a href="https://borglab.github.io/gtsam/examples/"><span>02</span><strong>Examples</strong><small>Executable notebooks</small></a>
+  <a href="/doxygen/"><span>03</span><strong>C++ reference</strong><small>C++ API documentation</small></a>
+  <a href="https://github.com/borglab/gtsam/tree/develop/python"><span>04</span><strong>Python</strong><small>Python package and source</small></a>
+</div>

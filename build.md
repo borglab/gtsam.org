@@ -4,7 +4,7 @@ title: Build
 permalink: /build/
 ---
 
-To build GTSAM from source, clone or download the latest release from the [GTSAM GitHub repository](https://github.com/borglab/gtsam). The current stable release is 4.2, while the main development line is in pre-4.3 mode.
+To build GTSAM from source, clone or download the [GTSAM 4.3.0 release](https://github.com/borglab/gtsam/releases/tag/4.3.0). The `develop` branch contains changes intended for the next release and may include API changes.
 
 ## Quick Start
 
@@ -22,16 +22,16 @@ cmake --build build --target install
 
 | Current baseline guidance | Minimum recommendation |
 | --- | --- |
-| Linux | clang-11 or gcc-9 |
-| macOS | Xcode 14.2 or newer |
-| Windows | MSVC 14.2 or newer |
+| Linux | GCC 11, 13, 14, or 15; Clang 11, 14, or 16 |
+| macOS | Xcode 16 |
+| Windows | MSVC toolset 14.40 |
 
 ## Required Dependencies
 
 Install these first:
 
-1. [CMake](https://cmake.org/download/) 3.10 or newer
-2. A current C++ toolchain for your platform
+1. [CMake](https://cmake.org/download/) 3.16 or newer
+2. A C++17 toolchain for your platform
 
 Ubuntu package:
 

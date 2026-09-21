@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  {%- include head.html -%}
+  <link rel="stylesheet" href="{{ '/assets/landing.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+  <body class="landing-page">
+    {%- include header.html -%}
+    <main class="landing-main" aria-label="GTSAM 4.3 release highlights">
+      {{ content }}
+    </main>
+    {%- include footer.html -%}
+  </body>
+</html>

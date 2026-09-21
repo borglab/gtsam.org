@@ -1,11 +1,25 @@
 ---
-layout: post
+layout: default
 ---
-<article class="post">
-
-  {% include jumbotron-note.html %}
-
-  <div class="post-content">
+<article class="content-page content-article">
+  <header class="content-hero content-hero-article">
+    <div class="content-hero-inner">
+      <div class="content-kicker"><span></span>GTSAM technical note</div>
+      <h1>{{ page.title }}</h1>
+    </div>
+    <div class="content-graph" aria-hidden="true">
+      <i class="content-edge edge-a"></i><i class="content-edge edge-b"></i><i class="content-edge edge-c"></i>
+      <b class="content-variable variable-a"></b><b class="content-variable variable-b"></b><b class="content-variable variable-c"></b>
+      <b class="content-factor factor-a"></b><b class="content-factor factor-b"></b>
+    </div>
+  </header>
+  <div class="content-frame">
+    <div class="content-rail" aria-hidden="true"><span>Technical note</span><i></i><strong>GTSAM</strong></div>
+    <div class="post-content content-prose">
+      {{ content }}
+    </div>
+  </div>
+</article>
     {{ content }}
   </div>
 
