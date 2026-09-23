@@ -1,3 +1,8 @@
+---
+layout: gtsam-post
+title: "Legged Robot State Estimation Using Factor Graphs, Part I"
+---
+
 Author: Ross Hartley  
 email: <m.ross.hartley@gmail.com>
 
