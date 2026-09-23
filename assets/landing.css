@@ -1376,6 +1376,46 @@ body:has(.launch-hero) .article > main {
   .feature-panel .pgo-pipeline { grid-template-columns: 1fr; }
 }
 
+/* Release contributors and community highlights ----------------------- */
+.feature-copy > p.feature-credit {
+  padding-top: 1rem;
+  border-top: 1px solid rgb(136 209 224 / 22%);
+  color: #bdd1d7;
+  font-size: .95rem;
+  line-height: 1.6;
+}
+.feature-credit strong { color: #eef7f8; }
+.feature-credit a,
+.release-community a,
+.gp-visual a { color: var(--gtsam-cyan); text-decoration: underline; text-underline-offset: .18em; }
+.feature-credit a:hover,
+.release-community a:hover,
+.gp-visual a:hover { color: #fff; }
+.story-manifesto h2 { margin-top: 1.5rem; font-size: clamp(3rem, 8vw, 8rem); line-height: 1; letter-spacing: -.065em; }
+.story-manifesto h2 > span { display: block; animation: none; }
+.story-manifesto .manifesto-note { max-width: 42rem; margin: 2rem 0 0; color: #abc0c6; font: 400 1.1rem/1.65 ui-sans-serif, system-ui, sans-serif; letter-spacing: normal; text-transform: none; }
+.gp-visual img { display: block; width: 100%; height: auto; border-radius: .4rem; background: white; }
+.gp-visual figcaption { margin-top: 1rem; color: #abc0c6; font-size: .9rem; line-height: 1.6; }
+.capability-notes dl { margin: 0; }
+.capability-notes dt { margin-top: 1.5rem; color: var(--gtsam-orange); font-size: 1.2rem; font-weight: 700; }
+.capability-notes dd { margin: .4rem 0 0; color: #bdd1d7; line-height: 1.6; }
+.release-community { box-sizing: border-box; max-width: 62rem; margin: 4rem auto; padding: 2rem clamp(1.5rem, 6vw, 4rem); }
+.release-community .release-eyebrow { color: var(--gtsam-orange); }
+.release-community h2 { margin: 1rem 0 1.5rem; color: white; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; letter-spacing: -.04em; }
+.release-community p { color: #bdd1d7; font-size: 1.05rem; line-height: 1.7; }
+@media (max-width: 1100px) {
+  .launch-hero { display: flex; flex-direction: column; justify-content: center; min-height: 100svh; padding: 3rem 1.4rem 6rem; }
+  .launch-hero .launch-kicker,
+  .launch-hero h1,
+  .launch-hero .launch-lede,
+  .launch-hero > .launch-actions { position: relative; inset: auto; }
+  .launch-hero h1 { margin: 3rem 0 2.5rem; font-size: clamp(3rem, 14vw, 7rem); line-height: .92; }
+  .launch-hero h1 span { white-space: normal; }
+  .launch-hero h1 span:last-child { margin: .15em 0 0; }
+  .launch-hero .launch-lede { max-width: 39rem; }
+  .launch-hero > .launch-actions { margin-top: 2rem; }
+}
+
 /* gtsam.org Jekyll integration ----------------------------------------- */
 html { background: #02070b; }
 body.landing-page {
