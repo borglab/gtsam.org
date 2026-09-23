@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/slam/SmartProjectionPoseFactor.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/LieGroupEKF.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,7 +89,7 @@ $(function(){initNavTree('a01241_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SmartProjectionPoseFactor.h</div></div>
+  <div class="headertitle"><div class="title">LieGroupEKF.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a01241.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
@@ -103,160 +103,233 @@ $(function(){initNavTree('a01241_source.html','',''); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="a01277.html">gtsam/slam/SmartProjectionFactor.h</a>&gt;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> CALIBRATION&gt;</div>
-<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="a05495.html">   45</a></span><span class="keyword">class </span><a class="code hl_function" href="a05495.html#aceb2d76933a58312e2ddd0ef64f12cfd">SmartProjectionPoseFactor</a></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    : <span class="keyword">public</span> <a class="code hl_function" href="a05487.html#afc54313a5ae848bd36184c969fbda36b">SmartProjectionFactor</a>&lt;PinholePose&lt;CALIBRATION&gt; &gt; {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">typedef</span> <a class="code hl_class" href="a03671.html">PinholePose&lt;CALIBRATION&gt;</a> Camera;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a05487.html#afc54313a5ae848bd36184c969fbda36b">SmartProjectionFactor&lt;Camera&gt;</a> Base;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a05495.html#aceb2d76933a58312e2ddd0ef64f12cfd">SmartProjectionPoseFactor&lt;CALIBRATION&gt;</a> This;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="a05495.html#a38878009ca4060a870b45f46184656dd">   54</a></span>  boost::shared_ptr&lt;CALIBRATION&gt; <a class="code hl_variable" href="a05495.html#a38878009ca4060a870b45f46184656dd">K_</a>; </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="a05495.html#a28d8d11331b16d38d35f40d63bcb2853">   59</a></span>  <span class="keyword">typedef</span> boost::shared_ptr&lt;This&gt; <a class="code hl_typedef" href="a05495.html#a28d8d11331b16d38d35f40d63bcb2853">shared_ptr</a>;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="a05495.html#aceb2d76933a58312e2ddd0ef64f12cfd">   64</a></span>  <a class="code hl_function" href="a05495.html#aceb2d76933a58312e2ddd0ef64f12cfd">SmartProjectionPoseFactor</a>() {}</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
-<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="a05495.html#a165cf8ab1c71f9d685fc209dd6d672b8">   72</a></span>  <a class="code hl_function" href="a05495.html#a165cf8ab1c71f9d685fc209dd6d672b8">SmartProjectionPoseFactor</a>(</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a>&amp; sharedNoiseModel,</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      <span class="keyword">const</span> boost::shared_ptr&lt;CALIBRATION&gt; K,</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      <span class="keyword">const</span> <a class="code hl_struct" href="a05483.html">SmartProjectionParams</a>&amp; params = <a class="code hl_struct" href="a05483.html">SmartProjectionParams</a>())</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      : Base(sharedNoiseModel, params), <a class="code hl_variable" href="a05495.html#a38878009ca4060a870b45f46184656dd">K_</a>(K) {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  }</div>
-</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
-<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="a05495.html#abcb92891b3d5fd2030b2c74a8349e268">   86</a></span>  <a class="code hl_function" href="a05495.html#abcb92891b3d5fd2030b2c74a8349e268">SmartProjectionPoseFactor</a>(</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a>&amp; sharedNoiseModel,</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>      <span class="keyword">const</span> boost::shared_ptr&lt;CALIBRATION&gt; K,</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      <span class="keyword">const</span> boost::optional&lt;Pose3&gt; body_P_sensor,</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      <span class="keyword">const</span> <a class="code hl_struct" href="a05483.html">SmartProjectionParams</a>&amp; params = <a class="code hl_struct" href="a05483.html">SmartProjectionParams</a>())</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      : <a class="code hl_function" href="a05495.html#aceb2d76933a58312e2ddd0ef64f12cfd">SmartProjectionPoseFactor</a>(sharedNoiseModel, K, params) {</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    this-&gt;<a class="code hl_variable" href="a05479.html#ad8b373cb10b9a3e4c13a37925821e64a">body_P_sensor_</a> = body_P_sensor;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  }</div>
-</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
-<div class="foldopen" id="foldopen00096" data-start="{" data-end="}">
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="a05495.html#a6977aebb8c9cce62f627646134f94cac">   96</a></span>  <a class="code hl_function" href="a05495.html#a6977aebb8c9cce62f627646134f94cac">~SmartProjectionPoseFactor</a>()<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  }</div>
-</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
-<div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="a05495.html#a6c638ae6535bf66d13e70852dd851ff3">  104</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a05495.html#a6c638ae6535bf66d13e70852dd851ff3">print</a>(<span class="keyword">const</span> std::string&amp; s = <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a>&amp; keyFormatter =</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>      DefaultKeyFormatter)<span class="keyword"> const override </span>{</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    std::cout &lt;&lt; s &lt;&lt; <span class="stringliteral">&quot;SmartProjectionPoseFactor, z = \n &quot;</span>;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <a class="code hl_function" href="a05487.html#a47bd3f901807f2820c9ce8f01882c053">Base::print</a>(<span class="stringliteral">&quot;&quot;</span>, keyFormatter);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;<a class="code" href="a00170.html">gtsam/base/Lie.h</a>&gt;</span>  <span class="comment">// Include for Lie group traits and operations</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;gtsam/base/VectorSpace.h&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;<a class="code" href="a01148.html">gtsam/navigation/ManifoldEKF.h</a>&gt;</span>  <span class="comment">// Include the base class</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;functional&gt;</span>  <span class="comment">// For std::function</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> G&gt;</div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="};">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="a05863.html">   60</a></span><span class="keyword">class </span><a class="code hl_function" href="a05863.html#af9ab9ae224e303d19cff20435f3d347e">LieGroupEKF</a> : <span class="keyword">public</span> <a class="code hl_function" href="a05899.html#abb1f5b37d4a0787e0d9a7849d1860aa1">ManifoldEKF</a>&lt;G&gt; {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keyword">using </span>This = <a class="code hl_function" href="a05863.html#af9ab9ae224e303d19cff20435f3d347e">LieGroupEKF&lt;G&gt;</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="a05863.html#a28a9d3f0baa393b02c4368fd4a099053">   63</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="a05863.html#a28a9d3f0baa393b02c4368fd4a099053">Base</a> = <a class="code hl_function" href="a05899.html#abb1f5b37d4a0787e0d9a7849d1860aa1">ManifoldEKF&lt;G&gt;</a>;           </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="a05863.html#ae77c0acf182b7117dc71c67ead56f6ec">   64</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="a05863.html#ae77c0acf182b7117dc71c67ead56f6ec">Dim</a> = <a class="code hl_variable" href="a05899.html#a83ea27f4336af4529ffb658241f13622">Base::Dim</a>;  </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470">   66</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470">Jacobian</a> = <span class="keyword">typename</span> <a class="code hl_typedef" href="a05899.html#aba0b080f64441371a909380ffcfdc2a7">Base::Jacobian</a>;            </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="a05863.html#aed0381168cf368e6dbe88ca0da72cabd">   67</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="a05863.html#aed0381168cf368e6dbe88ca0da72cabd">Covariance</a> = <span class="keyword">typename</span> <a class="code hl_typedef" href="a05899.html#a2c444a34779013ffa864f9dd93d3c4bd">Base::Covariance</a>;        </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="a05863.html#a6d7716ee89b415b82395d4b8571b6dc3">   68</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="a05863.html#a6d7716ee89b415b82395d4b8571b6dc3">TangentVector</a> = <span class="keyword">typename</span> <a class="code hl_typedef" href="a05899.html#ad6c04d78b407b75040a7b39ec2d80e97">Base::TangentVector</a>;  </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Dynamics&gt;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keyword">using </span>enable_if_dynamics =</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      std::enable_if_t&lt;!std::is_convertible_v&lt;Dynamics, TangentVector&gt; &amp;&amp;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                       std::is_invocable_r_v&lt;<a class="code hl_typedef" href="a05863.html#a6d7716ee89b415b82395d4b8571b6dc3">TangentVector</a>, Dynamics, <span class="keyword">const</span> G&amp;,</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                                             <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;Dim, Dim&gt;</a>&amp;&gt;&gt;;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Control, <span class="keyword">typename</span> Dynamics&gt;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keyword">using </span>enable_if_full_dynamics = std::enable_if_t&lt;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      std::is_invocable_r_v&lt;<a class="code hl_typedef" href="a05863.html#a6d7716ee89b415b82395d4b8571b6dc3">TangentVector</a>, Dynamics, <span class="keyword">const</span> G&amp;, <span class="keyword">const</span> Control&amp;,</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                            <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;Dim, Dim&gt;</a>&amp;&gt;&gt;;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> = <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keyword">struct </span>has_adjoint_map : std::false_type {};</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keyword">struct </span>has_adjoint_map&lt;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      T, <a class="code hl_namespace" href="a02241.html">std</a>::void_t&lt;decltype(T::adjointMap(</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>             std::declval&lt;typename traits&lt;T&gt;::TangentVector&gt;()))&gt;&gt;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>      : std::true_type {};</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="a05863.html#af9ab9ae224e303d19cff20435f3d347e">  105</a></span>  <a class="code hl_function" href="a05863.html#af9ab9ae224e303d19cff20435f3d347e">LieGroupEKF</a>(<span class="keyword">const</span> G&amp; X0, <span class="keyword">const</span> <a class="code hl_typedef" href="a05863.html#aed0381168cf368e6dbe88ca0da72cabd">Covariance</a>&amp; P0) : <a class="code hl_typedef" href="a05863.html#a28a9d3f0baa393b02c4368fd4a099053">Base</a>(X0, P0) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keyword">static_assert</span>(IsLieGroup&lt;G&gt;::value,</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                  <span class="stringliteral">&quot;Template parameter G must be a GTSAM Lie Group&quot;</span>);</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  }</div>
 </div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
-<div class="foldopen" id="foldopen00111" data-start="{" data-end="}">
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="a05495.html#a13a2a01f64b4c1c71959d29214aaec07">  111</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="a05495.html#a13a2a01f64b4c1c71959d29214aaec07">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="a05047.html">NonlinearFactor</a>&amp; p, <span class="keywordtype">double</span> tol = 1e-9)<span class="keyword"> const override </span>{</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keyword">const</span> This *e = <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span>This*<span class="keyword">&gt;</span>(&amp;p);</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">return</span> e &amp;&amp; <a class="code hl_function" href="a05487.html#ab889b22f2c0eac49e0430ec9ef086567">Base::equals</a>(p, tol);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keyword">using </span><a class="code hl_function" href="a05899.html#af2199dd0989f1c573ff96ffdc63f6b12">Base::predict</a>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> K = 1&gt;</div>
+<div class="foldopen" id="foldopen00126" data-start="{" data-end="}">
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="a05863.html#a882427ffed460a7c465061d6ad4a2bd1">  126</a></span>  <a class="code hl_typedef" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470">Jacobian</a> <a class="code hl_function" href="a05863.html#a882427ffed460a7c465061d6ad4a2bd1">transitionMatrix</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="a05863.html#a6d7716ee89b415b82395d4b8571b6dc3">TangentVector</a>&amp; xi, <span class="keyword">const</span> <a class="code hl_typedef" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470">Jacobian</a>&amp; Df,</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                            <span class="keywordtype">double</span> dt, <span class="keyword">const</span> G&amp; U, <span class="keyword">const</span> <a class="code hl_typedef" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470">Jacobian</a>&amp; Dexp)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;G, Matrix&gt;) {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>      (void)xi;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>      (void)U;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>      (void)Dexp;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="a02242.html#ab15462d8c16813d0a7a5b1f76a2f64b7">expm</a>(Df * dt, K);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (K == 1) {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <span class="comment">// First-order Lie group transition matrix</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="a03203.html">traits&lt;G&gt;::Inverse</a>(U).AdjointMap() + Dexp * Df * dt;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <span class="comment">// Higher-order Lie group transition matrix via matrix exponential.</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="comment">//</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="comment">// GTSAM&#39;s LieGroupEKF uses a left-invariant error, i.e. we write the</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="comment">// true state as</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="comment">//</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="comment">//     X_true ≈ X_hat * Exp(η),</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="comment">//</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="comment">// and η lives in the tangent space at the identity. Even if the</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="comment">// *global* perturbation is constant, composing the nominal motion X_hat</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="comment">// with Exp(ξ dt) on the right will &quot;drag&quot; η along the group because G</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <span class="comment">// is non-commutative. The Baker–Campbell–Hausdorff expansion shows that</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <span class="comment">// the linearized error dynamics contain an extra term -ad_ξ η coming</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="comment">// from this non-commutativity, where ad_ξ(·) = [ξ, ·] is the Lie</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="comment">// bracket. With this convention, and a dynamics linearization Df =</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="comment">// ∂ξ/∂(local X), the continuous-time error satisfies approximately</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="comment">//</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <span class="comment">//     dη/dt ≈ (Df - ad_ξ) η,</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <span class="comment">//</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="comment">// and the corresponding discrete-time transition matrix is</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="comment">//</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="comment">//     Φ ≈ expm((Df - ad_ξ) dt).</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <span class="comment">//</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="comment">// This is exactly what we implement below.</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="keyword">static_assert</span>(</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            has_adjoint_map&lt;G&gt;::value,</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            <span class="stringliteral">&quot;transitionMatrix&lt;K&gt; requires G::adjointMap(xi) when K &gt; 1.&quot;</span>);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <a class="code hl_typedef" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470">Jacobian</a> ad_xi = G::adjointMap(xi);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="keyword">const</span> Matrix A = Df - ad_xi;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="a02242.html#ab15462d8c16813d0a7a5b1f76a2f64b7">expm</a>(A * dt, K);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>      }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    }</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  }</div>
 </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
-<div class="foldopen" id="foldopen00119" data-start="{" data-end="}">
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="a05495.html#a1eed01662aeffd29f96eefcdeefa5c1e">  119</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="a05495.html#a1eed01662aeffd29f96eefcdeefa5c1e">error</a>(<span class="keyword">const</span> <a class="code hl_class" href="a05163.html">Values</a>&amp; values)<span class="keyword"> const override </span>{</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordflow">if</span> (this-&gt;<a class="code hl_function" href="a05047.html#a84901748b435ae9b39908abf57d5620c">active</a>(values)) {</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="a05487.html#aa30166ceca524f30644895be41d56e0e">totalReprojectionError</a>(<a class="code hl_function" href="a05495.html#a1c323a14087e35016da506e2b181adc9">cameras</a>(values));</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    } <span class="keywordflow">else</span> { <span class="comment">// else of active flag</span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>      <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    }</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  }</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  <span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> K = 1, <span class="keyword">typename</span> Dynamics,</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            <span class="keyword">typename</span> = enable_if_dynamics&lt;Dynamics&gt;&gt;</div>
+<div class="foldopen" id="foldopen00188" data-start="{" data-end="}">
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="a05863.html#a235f378302cd6aa3680ab88e90f91ea8">  188</a></span>  G <a class="code hl_function" href="a05863.html#a235f378302cd6aa3680ab88e90f91ea8">predictMean</a>(Dynamics&amp;&amp; f, <span class="keywordtype">double</span> dt,</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;Dim, Dim&gt;</a> Phi = {}) <span class="keyword">const</span> {</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keywordflow">if</span> (Phi) {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>      <a class="code hl_typedef" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470">Jacobian</a> Df;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>      <a class="code hl_typedef" href="a05863.html#a6d7716ee89b415b82395d4b8571b6dc3">TangentVector</a> xi = f(this-&gt;<a class="code hl_variable" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">X_</a>, &amp;Df);</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;G, Matrix&gt;) {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        *Phi = <a class="code hl_function" href="a02242.html#ab15462d8c16813d0a7a5b1f76a2f64b7">expm</a>(Df * dt, K);</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="a03203.html">traits&lt;G&gt;::Retract</a>(this-&gt;<a class="code hl_variable" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">X_</a>, xi * dt);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <a class="code hl_typedef" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470">Jacobian</a> Dexp;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        G U = traits&lt;G&gt;::Expmap(xi * dt, &amp;Dexp);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        *Phi = <a class="code hl_function" href="a05863.html#a882427ffed460a7c465061d6ad4a2bd1">transitionMatrix&lt;K&gt;</a>(xi, Df, dt, U, Dexp);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <span class="keywordflow">return</span> traits&lt;G&gt;::Compose(this-&gt;<a class="code hl_variable" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">X_</a>, U);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>      }</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>      <a class="code hl_typedef" href="a05863.html#a6d7716ee89b415b82395d4b8571b6dc3">TangentVector</a> xi = f(this-&gt;<a class="code hl_variable" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">X_</a>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;G, Matrix&gt;) {</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <span class="keywordflow">return</span> traits&lt;G&gt;::Retract(this-&gt;<a class="code hl_variable" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">X_</a>, xi * dt);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        G U = traits&lt;G&gt;::Expmap(xi * dt);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <span class="keywordflow">return</span> traits&lt;G&gt;::Compose(this-&gt;<a class="code hl_variable" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">X_</a>, U);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>      }</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    }</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  }</div>
 </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span></div>
-<div class="foldopen" id="foldopen00128" data-start="{" data-end="}">
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="a05495.html#a740ab3a315baf43cbc297410f9bb3df5">  128</a></span>  <span class="keyword">inline</span> <span class="keyword">const</span> boost::shared_ptr&lt;CALIBRATION&gt; <a class="code hl_function" href="a05495.html#a740ab3a315baf43cbc297410f9bb3df5">calibration</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="a05495.html#a38878009ca4060a870b45f46184656dd">K_</a>;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  }</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>  <span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> K = 1, <span class="keyword">typename</span> Dynamics,</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            <span class="keyword">typename</span> = enable_if_dynamics&lt;Dynamics&gt;&gt;</div>
+<div class="foldopen" id="foldopen00228" data-start="{" data-end="}">
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="a05863.html#a7d53bd4ab3a280513001a88f63a6fdef">  228</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a05863.html#a7d53bd4ab3a280513001a88f63a6fdef">predict</a>(Dynamics&amp;&amp; f, <span class="keywordtype">double</span> dt, <span class="keyword">const</span> <a class="code hl_typedef" href="a05863.html#aed0381168cf368e6dbe88ca0da72cabd">Covariance</a>&amp; Q) {</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <a class="code hl_typedef" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470">Jacobian</a> Phi;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variable" href="a05863.html#ae77c0acf182b7117dc71c67ead56f6ec">Dim</a> == Eigen::Dynamic) {</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>      Phi.resize(this-&gt;<a class="code hl_variable" href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">n_</a>, this-&gt;<a class="code hl_variable" href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">n_</a>);</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    }</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    G X_next = <a class="code hl_function" href="a05863.html#a235f378302cd6aa3680ab88e90f91ea8">predictMean&lt;K&gt;</a>(std::forward&lt;Dynamics&gt;(f), dt, Phi);</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <a class="code hl_function" href="a05863.html#a7d53bd4ab3a280513001a88f63a6fdef">predict</a>(X_next, Phi,</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>            Q * dt);  <span class="comment">// Q interpreted as continuous-time; discretize with dt</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>  }</div>
 </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span></div>
-<div class="foldopen" id="foldopen00138" data-start="{" data-end="}">
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="a05495.html#a1c323a14087e35016da506e2b181adc9">  138</a></span>  <span class="keyword">typename</span> Base::Cameras <a class="code hl_function" href="a05495.html#a1c323a14087e35016da506e2b181adc9">cameras</a>(<span class="keyword">const</span> <a class="code hl_class" href="a05163.html">Values</a>&amp; values)<span class="keyword"> const override </span>{</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keyword">typename</span> Base::Cameras <a class="code hl_function" href="a05495.html#a1c323a14087e35016da506e2b181adc9">cameras</a>;</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&amp; k : this-&gt;<a class="code hl_variable" href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">keys_</a>) {</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>      <span class="keyword">const</span> <a class="code hl_class" href="a03727.html">Pose3</a> world_P_sensor_k =</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>          <a class="code hl_variable" href="a05479.html#ad8b373cb10b9a3e4c13a37925821e64a">Base::body_P_sensor_</a> ? values.<a class="code hl_function" href="a05163.html#a5e511b1e15b67a4fdaaf5bcf676dd1ff">at</a>&lt;<a class="code hl_class" href="a03727.html">Pose3</a>&gt;(k) * *<a class="code hl_variable" href="a05479.html#ad8b373cb10b9a3e4c13a37925821e64a">Base::body_P_sensor_</a></div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                               : values.<a class="code hl_function" href="a05163.html#a5e511b1e15b67a4fdaaf5bcf676dd1ff">at</a>&lt;<a class="code hl_class" href="a03727.html">Pose3</a>&gt;(k);</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>      <a class="code hl_function" href="a05495.html#a1c323a14087e35016da506e2b181adc9">cameras</a>.emplace_back(world_P_sensor_k, <a class="code hl_variable" href="a05495.html#a38878009ca4060a870b45f46184656dd">K_</a>);</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    }</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="a05495.html#a1c323a14087e35016da506e2b181adc9">cameras</a>;</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  }</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  <span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> K = 1, <span class="keyword">typename</span> Control, <span class="keyword">typename</span> Dynamics,</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            <span class="keyword">typename</span> = enable_if_full_dynamics&lt;Control, Dynamics&gt;&gt;</div>
+<div class="foldopen" id="foldopen00256" data-start="{" data-end="}">
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno"><a class="line" href="a05863.html#a677ff02869ad5796ce117fd67c8267b2">  256</a></span>  G <a class="code hl_function" href="a05863.html#a677ff02869ad5796ce117fd67c8267b2">predictMean</a>(Dynamics&amp;&amp; f, <span class="keyword">const</span> Control&amp; u, <span class="keywordtype">double</span> dt,</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;Dim, Dim&gt;</a> Phi = {}) <span class="keyword">const</span> {</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="a05863.html#a235f378302cd6aa3680ab88e90f91ea8">predictMean&lt;K&gt;</a>(</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        [&amp;](<span class="keyword">const</span> G&amp; X, <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;Dim, Dim&gt;</a> Df) { <span class="keywordflow">return</span> f(X, u, Df); },</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        dt, Phi);</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>  }</div>
 </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span></div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="a05495.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">  152</a></span>  <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> ARCHIVE&gt;</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  <span class="keywordtype">void</span> serialize(ARCHIVE &amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    ar &amp; BOOST_SERIALIZATION_BASE_OBJECT_NVP(Base);</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    ar &amp; BOOST_SERIALIZATION_NVP(<a class="code hl_variable" href="a05495.html#a38878009ca4060a870b45f46184656dd">K_</a>);</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  }</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>};</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  <span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> K = 1, <span class="keyword">typename</span> Control, <span class="keyword">typename</span> Dynamics,</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>            <span class="keyword">typename</span> = enable_if_full_dynamics&lt;Control, Dynamics&gt;&gt;</div>
+<div class="foldopen" id="foldopen00280" data-start="{" data-end="}">
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno"><a class="line" href="a05863.html#a65cb73b11aa7c352c62725f53633fcba">  280</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a05863.html#a65cb73b11aa7c352c62725f53633fcba">predict</a>(Dynamics&amp;&amp; f, <span class="keyword">const</span> Control&amp; u, <span class="keywordtype">double</span> dt, <span class="keyword">const</span> <a class="code hl_typedef" href="a05863.html#aed0381168cf368e6dbe88ca0da72cabd">Covariance</a>&amp; Q) {</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="a05863.html#a7d53bd4ab3a280513001a88f63a6fdef">predict&lt;K&gt;</a>(</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        [&amp;](<span class="keyword">const</span> G&amp; X, <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;Dim, Dim&gt;</a> Df) { <span class="keywordflow">return</span> f(X, u, Df); },</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        dt, Q);</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>  }</div>
 </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="comment">// end of class declaration</span></div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span></div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> CALIBRATION&gt;</div>
-<div class="foldopen" id="foldopen00163" data-start="{" data-end="};">
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="a05499.html">  163</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a02823.html">traits</a>&lt;<a class="code hl_class" href="a05495.html">SmartProjectionPoseFactor</a>&lt;CALIBRATION&gt; &gt; : <span class="keyword">public</span> <a class="code hl_struct" href="a03039.html">Testable</a>&lt;</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    SmartProjectionPoseFactor&lt;CALIBRATION&gt; &gt; {</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>};</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span></div>
+<div class="foldopen" id="foldopen00305" data-start="{" data-end="}">
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno"><a class="line" href="a05863.html#af3a71e0bf1b6405547c2f8c888f0488c">  305</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a05863.html#af3a71e0bf1b6405547c2f8c888f0488c">predictWithCompose</a>(<span class="keyword">const</span> G&amp; U, <span class="keyword">const</span> <a class="code hl_typedef" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470">Jacobian</a>&amp; J_UX,</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>                          <span class="keyword">const</span> <a class="code hl_typedef" href="a05863.html#aed0381168cf368e6dbe88ca0da72cabd">Covariance</a>&amp; Q) {</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    <a class="code hl_typedef" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470">Jacobian</a> A_local;</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;G, Matrix&gt;) {</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>      <span class="keyword">const</span> Matrix&amp; I_n = this-&gt;<a class="code hl_variable" href="a05899.html#a49c735a4d113438242b495343cea91a3">I_</a>;</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>      A_local = I_n + J_UX;</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>      this-&gt;<a class="code hl_variable" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">X_</a> = <a class="code hl_struct" href="a03203.html">traits&lt;Matrix&gt;::Retract</a>(this-&gt;<a class="code hl_variable" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">X_</a>, U);</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>      A_local = <a class="code hl_struct" href="a03203.html">traits&lt;G&gt;::Inverse</a>(U).AdjointMap() + J_UX;</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>      this-&gt;<a class="code hl_variable" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">X_</a> = this-&gt;<a class="code hl_variable" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">X_</a>.compose(U);</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    }</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>    this-&gt;<a class="code hl_variable" href="a05899.html#aca671898b062ed32a1d23bda95ebc8ff">P_</a> = A_local * this-&gt;<a class="code hl_variable" href="a05899.html#aca671898b062ed32a1d23bda95ebc8ff">P_</a> * A_local.transpose() + Q;</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>  }</div>
 </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>} <span class="comment">// \ namespace gtsam</span></div>
-<div class="ttc" id="aa01277_html"><div class="ttname"><a href="a01277.html">SmartProjectionFactor.h</a></div><div class="ttdoc">Smart factor on cameras (pose + calibration).</div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa01968_html_a7d4eaa9f6e32da46e8f287499ee650d2"><div class="ttname"><a href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">gtsam::KeyFormatter</a></div><div class="ttdeci">std::function&lt; std::string(Key)&gt; KeyFormatter</div><div class="ttdoc">Typedef for a function to format a key, i.e. to convert it to a string.</div><div class="ttdef"><b>Definition</b> Key.h:35</div></div>
-<div class="ttc" id="aa01968_html_ab6e5a4884342656e0837ef07008ec03f"><div class="ttname"><a href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">gtsam::SharedNoiseModel</a></div><div class="ttdeci">noiseModel::Base::shared_ptr SharedNoiseModel</div><div class="ttdoc">Aliases.</div><div class="ttdef"><b>Definition</b> NoiseModel.h:724</div></div>
-<div class="ttc" id="aa01968_html_adad029f5f6ffce610428b5fe768b0df2"><div class="ttname"><a href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">gtsam::Key</a></div><div class="ttdeci">std::uint64_t Key</div><div class="ttdoc">Integer nonlinear key type.</div><div class="ttdef"><b>Definition</b> types.h:100</div></div>
-<div class="ttc" id="aa02823_html"><div class="ttname"><a href="a02823.html">gtsam::traits</a></div><div class="ttdoc">A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...</div><div class="ttdef"><b>Definition</b> concepts.h:30</div></div>
-<div class="ttc" id="aa03039_html"><div class="ttname"><a href="a03039.html">gtsam::Testable</a></div><div class="ttdoc">A helper that implements the traits interface for GTSAM types.</div><div class="ttdef"><b>Definition</b> Testable.h:151</div></div>
-<div class="ttc" id="aa03671_html"><div class="ttname"><a href="a03671.html">gtsam::PinholePose</a></div><div class="ttdoc">A pinhole camera class that has a Pose3 and a fixed Calibration.</div><div class="ttdef"><b>Definition</b> PinholePose.h:243</div></div>
-<div class="ttc" id="aa03727_html"><div class="ttname"><a href="a03727.html">gtsam::Pose3</a></div><div class="ttdoc">A 3D pose (R,t) : (Rot3,Point3).</div><div class="ttdef"><b>Definition</b> Pose3.h:37</div></div>
-<div class="ttc" id="aa04139_html_a10e886cc8b8a374e2fe864707e0b6278"><div class="ttname"><a href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">gtsam::Factor::keys_</a></div><div class="ttdeci">KeyVector keys_</div><div class="ttdoc">The keys involved in this factor.</div><div class="ttdef"><b>Definition</b> Factor.h:85</div></div>
-<div class="ttc" id="aa05047_html"><div class="ttname"><a href="a05047.html">gtsam::NonlinearFactor</a></div><div class="ttdoc">Nonlinear factor base class.</div><div class="ttdef"><b>Definition</b> NonlinearFactor.h:42</div></div>
-<div class="ttc" id="aa05047_html_a84901748b435ae9b39908abf57d5620c"><div class="ttname"><a href="a05047.html#a84901748b435ae9b39908abf57d5620c">gtsam::NonlinearFactor::active</a></div><div class="ttdeci">virtual bool active(const Values &amp;) const</div><div class="ttdoc">Checks whether a factor should be used based on a set of values.</div><div class="ttdef"><b>Definition</b> NonlinearFactor.h:118</div></div>
-<div class="ttc" id="aa05163_html"><div class="ttname"><a href="a05163.html">gtsam::Values</a></div><div class="ttdoc">A non-templated config holding any types of Manifold-group elements.</div><div class="ttdef"><b>Definition</b> Values.h:65</div></div>
-<div class="ttc" id="aa05163_html_a5e511b1e15b67a4fdaaf5bcf676dd1ff"><div class="ttname"><a href="a05163.html#a5e511b1e15b67a4fdaaf5bcf676dd1ff">gtsam::Values::at</a></div><div class="ttdeci">const ValueType at(Key j) const</div><div class="ttdoc">Retrieve a variable by key j.</div><div class="ttdef"><b>Definition</b> Values-inl.h:361</div></div>
-<div class="ttc" id="aa05479_html_ad8b373cb10b9a3e4c13a37925821e64a"><div class="ttname"><a href="a05479.html#ad8b373cb10b9a3e4c13a37925821e64a">gtsam::SmartFactorBase::body_P_sensor_</a></div><div class="ttdeci">boost::optional&lt; Pose3 &gt; body_P_sensor_</div><div class="ttdoc">Pose of the camera in the body frame.</div><div class="ttdef"><b>Definition</b> SmartFactorBase.h:82</div></div>
-<div class="ttc" id="aa05483_html"><div class="ttname"><a href="a05483.html">gtsam::SmartProjectionParams</a></div><div class="ttdef"><b>Definition</b> SmartFactorParams.h:42</div></div>
-<div class="ttc" id="aa05487_html_a47bd3f901807f2820c9ce8f01882c053"><div class="ttname"><a href="a05487.html#a47bd3f901807f2820c9ce8f01882c053">gtsam::SmartProjectionFactor&lt; Camera &gt;::print</a></div><div class="ttdeci">void print(const std::string &amp;s=&quot;&quot;, const KeyFormatter &amp;keyFormatter=DefaultKeyFormatter) const override</div><div class="ttdef"><b>Definition</b> SmartProjectionFactor.h:103</div></div>
-<div class="ttc" id="aa05487_html_aa30166ceca524f30644895be41d56e0e"><div class="ttname"><a href="a05487.html#aa30166ceca524f30644895be41d56e0e">gtsam::SmartProjectionFactor&lt; PinholePose&lt; CALIBRATION &gt; &gt;::totalReprojectionError</a></div><div class="ttdeci">double totalReprojectionError(const Cameras &amp;cameras, boost::optional&lt; Point3 &gt; externalPoint=boost::none) const</div><div class="ttdef"><b>Definition</b> SmartProjectionFactor.h:411</div></div>
-<div class="ttc" id="aa05487_html_ab889b22f2c0eac49e0430ec9ef086567"><div class="ttname"><a href="a05487.html#ab889b22f2c0eac49e0430ec9ef086567">gtsam::SmartProjectionFactor&lt; Camera &gt;::equals</a></div><div class="ttdeci">bool equals(const NonlinearFactor &amp;p, double tol=1e-9) const override</div><div class="ttdef"><b>Definition</b> SmartProjectionFactor.h:115</div></div>
-<div class="ttc" id="aa05487_html_afc54313a5ae848bd36184c969fbda36b"><div class="ttname"><a href="a05487.html#afc54313a5ae848bd36184c969fbda36b">gtsam::SmartProjectionFactor&lt; PinholePose&lt; CALIBRATION &gt; &gt;::SmartProjectionFactor</a></div><div class="ttdeci">SmartProjectionFactor()</div><div class="ttdef"><b>Definition</b> SmartProjectionFactor.h:80</div></div>
-<div class="ttc" id="aa05495_html"><div class="ttname"><a href="a05495.html">gtsam::SmartProjectionPoseFactor</a></div><div class="ttdoc">If you are using the factor, please cite: L.</div><div class="ttdef"><b>Definition</b> SmartProjectionPoseFactor.h:46</div></div>
-<div class="ttc" id="aa05495_html_a13a2a01f64b4c1c71959d29214aaec07"><div class="ttname"><a href="a05495.html#a13a2a01f64b4c1c71959d29214aaec07">gtsam::SmartProjectionPoseFactor::equals</a></div><div class="ttdeci">bool equals(const NonlinearFactor &amp;p, double tol=1e-9) const override</div><div class="ttdoc">equals</div><div class="ttdef"><b>Definition</b> SmartProjectionPoseFactor.h:111</div></div>
-<div class="ttc" id="aa05495_html_a165cf8ab1c71f9d685fc209dd6d672b8"><div class="ttname"><a href="a05495.html#a165cf8ab1c71f9d685fc209dd6d672b8">gtsam::SmartProjectionPoseFactor::SmartProjectionPoseFactor</a></div><div class="ttdeci">SmartProjectionPoseFactor(const SharedNoiseModel &amp;sharedNoiseModel, const boost::shared_ptr&lt; CALIBRATION &gt; K, const SmartProjectionParams &amp;params=SmartProjectionParams())</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> SmartProjectionPoseFactor.h:72</div></div>
-<div class="ttc" id="aa05495_html_a1c323a14087e35016da506e2b181adc9"><div class="ttname"><a href="a05495.html#a1c323a14087e35016da506e2b181adc9">gtsam::SmartProjectionPoseFactor::cameras</a></div><div class="ttdeci">Base::Cameras cameras(const Values &amp;values) const override</div><div class="ttdoc">Collect all cameras involved in this factor.</div><div class="ttdef"><b>Definition</b> SmartProjectionPoseFactor.h:138</div></div>
-<div class="ttc" id="aa05495_html_a1eed01662aeffd29f96eefcdeefa5c1e"><div class="ttname"><a href="a05495.html#a1eed01662aeffd29f96eefcdeefa5c1e">gtsam::SmartProjectionPoseFactor::error</a></div><div class="ttdeci">double error(const Values &amp;values) const override</div><div class="ttdoc">error calculates the error of the factor.</div><div class="ttdef"><b>Definition</b> SmartProjectionPoseFactor.h:119</div></div>
-<div class="ttc" id="aa05495_html_a28d8d11331b16d38d35f40d63bcb2853"><div class="ttname"><a href="a05495.html#a28d8d11331b16d38d35f40d63bcb2853">gtsam::SmartProjectionPoseFactor::shared_ptr</a></div><div class="ttdeci">boost::shared_ptr&lt; This &gt; shared_ptr</div><div class="ttdoc">shorthand for a smart pointer to a factor</div><div class="ttdef"><b>Definition</b> SmartProjectionPoseFactor.h:59</div></div>
-<div class="ttc" id="aa05495_html_a38878009ca4060a870b45f46184656dd"><div class="ttname"><a href="a05495.html#a38878009ca4060a870b45f46184656dd">gtsam::SmartProjectionPoseFactor&lt; Cal3_S2 &gt;::K_</a></div><div class="ttdeci">boost::shared_ptr&lt; Cal3_S2 &gt; K_</div><div class="ttdef"><b>Definition</b> SmartProjectionPoseFactor.h:54</div></div>
-<div class="ttc" id="aa05495_html_a6977aebb8c9cce62f627646134f94cac"><div class="ttname"><a href="a05495.html#a6977aebb8c9cce62f627646134f94cac">gtsam::SmartProjectionPoseFactor::~SmartProjectionPoseFactor</a></div><div class="ttdeci">~SmartProjectionPoseFactor() override</div><div class="ttdoc">Virtual destructor.</div><div class="ttdef"><b>Definition</b> SmartProjectionPoseFactor.h:96</div></div>
-<div class="ttc" id="aa05495_html_a6c638ae6535bf66d13e70852dd851ff3"><div class="ttname"><a href="a05495.html#a6c638ae6535bf66d13e70852dd851ff3">gtsam::SmartProjectionPoseFactor::print</a></div><div class="ttdeci">void print(const std::string &amp;s=&quot;&quot;, const KeyFormatter &amp;keyFormatter=DefaultKeyFormatter) const override</div><div class="ttdoc">print</div><div class="ttdef"><b>Definition</b> SmartProjectionPoseFactor.h:104</div></div>
-<div class="ttc" id="aa05495_html_a740ab3a315baf43cbc297410f9bb3df5"><div class="ttname"><a href="a05495.html#a740ab3a315baf43cbc297410f9bb3df5">gtsam::SmartProjectionPoseFactor::calibration</a></div><div class="ttdeci">const boost::shared_ptr&lt; CALIBRATION &gt; calibration() const</div><div class="ttdoc">return calibration shared pointers</div><div class="ttdef"><b>Definition</b> SmartProjectionPoseFactor.h:128</div></div>
-<div class="ttc" id="aa05495_html_abcb92891b3d5fd2030b2c74a8349e268"><div class="ttname"><a href="a05495.html#abcb92891b3d5fd2030b2c74a8349e268">gtsam::SmartProjectionPoseFactor::SmartProjectionPoseFactor</a></div><div class="ttdeci">SmartProjectionPoseFactor(const SharedNoiseModel &amp;sharedNoiseModel, const boost::shared_ptr&lt; CALIBRATION &gt; K, const boost::optional&lt; Pose3 &gt; body_P_sensor, const SmartProjectionParams &amp;params=SmartProjectionParams())</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> SmartProjectionPoseFactor.h:86</div></div>
-<div class="ttc" id="aa05495_html_aceb2d76933a58312e2ddd0ef64f12cfd"><div class="ttname"><a href="a05495.html#aceb2d76933a58312e2ddd0ef64f12cfd">gtsam::SmartProjectionPoseFactor::SmartProjectionPoseFactor</a></div><div class="ttdeci">SmartProjectionPoseFactor()</div><div class="ttdoc">Default constructor, only for serialization.</div><div class="ttdef"><b>Definition</b> SmartProjectionPoseFactor.h:64</div></div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span></div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>  <span class="keyword">using </span><a class="code hl_function" href="a05899.html#a1b6f29e10e588b114074ff54fc78c6c2">Base::update</a>;</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span> </div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>};  <span class="comment">// LieGroupEKF</span></div>
+</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>}  <span class="comment">// namespace gtsam</span></div>
+<div class="ttc" id="aa00170_html"><div class="ttname"><a href="a00170.html">Lie.h</a></div><div class="ttdoc">Base class and basic functions for Lie types.</div></div>
+<div class="ttc" id="aa01148_html"><div class="ttname"><a href="a01148.html">ManifoldEKF.h</a></div><div class="ttdoc">Extended Kalman Filter base class on a generic manifold M.</div></div>
+<div class="ttc" id="aa02241_html"><div class="ttname"><a href="a02241.html">std</a></div><div class="ttdoc">STL namespace.</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa02242_html_ab15462d8c16813d0a7a5b1f76a2f64b7"><div class="ttname"><a href="a02242.html#ab15462d8c16813d0a7a5b1f76a2f64b7">gtsam::expm</a></div><div class="ttdeci">Matrix expm(const Matrix &amp;A, size_t K)</div><div class="ttdoc">Numerical exponential map, naive approach, not industrial strength !</div><div class="ttdef"><b>Definition</b> Matrix.cpp:587</div></div>
+<div class="ttc" id="aa03203_html"><div class="ttname"><a href="a03203.html">gtsam::traits</a></div><div class="ttdoc">A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...</div><div class="ttdef"><b>Definition</b> Group.h:37</div></div>
+<div class="ttc" id="aa03363_html"><div class="ttname"><a href="a03363.html">gtsam::OptionalJacobian</a></div><div class="ttdoc">OptionalJacobian is an Eigen::Ref like class that can take be constructed using either a fixed size o...</div><div class="ttdef"><b>Definition</b> OptionalJacobian.h:40</div></div>
+<div class="ttc" id="aa05863_html_a235f378302cd6aa3680ab88e90f91ea8"><div class="ttname"><a href="a05863.html#a235f378302cd6aa3680ab88e90f91ea8">gtsam::LieGroupEKF::predictMean</a></div><div class="ttdeci">G predictMean(Dynamics &amp;&amp;f, double dt, OptionalJacobian&lt; Dim, Dim &gt; Phi={}) const</div><div class="ttdoc">Predict mean and Jacobian Phi with state-dependent dynamics: xi = f(X_k, Df) (tangent vector dynamics...</div><div class="ttdef"><b>Definition</b> LieGroupEKF.h:188</div></div>
+<div class="ttc" id="aa05863_html_a28a9d3f0baa393b02c4368fd4a099053"><div class="ttname"><a href="a05863.html#a28a9d3f0baa393b02c4368fd4a099053">gtsam::LieGroupEKF::Base</a></div><div class="ttdeci">ManifoldEKF&lt; G &gt; Base</div><div class="ttdoc">Base class type.</div><div class="ttdef"><b>Definition</b> LieGroupEKF.h:63</div></div>
+<div class="ttc" id="aa05863_html_a65cb73b11aa7c352c62725f53633fcba"><div class="ttname"><a href="a05863.html#a65cb73b11aa7c352c62725f53633fcba">gtsam::LieGroupEKF::predict</a></div><div class="ttdeci">void predict(Dynamics &amp;&amp;f, const Control &amp;u, double dt, const Covariance &amp;Q)</div><div class="ttdoc">Predict step with state and control input dynamics: Wraps the dynamics function and calls the state-o...</div><div class="ttdef"><b>Definition</b> LieGroupEKF.h:280</div></div>
+<div class="ttc" id="aa05863_html_a677ff02869ad5796ce117fd67c8267b2"><div class="ttname"><a href="a05863.html#a677ff02869ad5796ce117fd67c8267b2">gtsam::LieGroupEKF::predictMean</a></div><div class="ttdeci">G predictMean(Dynamics &amp;&amp;f, const Control &amp;u, double dt, OptionalJacobian&lt; Dim, Dim &gt; Phi={}) const</div><div class="ttdoc">Predict mean and Jacobian A with state and control input dynamics: Wraps the dynamics function and ca...</div><div class="ttdef"><b>Definition</b> LieGroupEKF.h:256</div></div>
+<div class="ttc" id="aa05863_html_a6d7716ee89b415b82395d4b8571b6dc3"><div class="ttname"><a href="a05863.html#a6d7716ee89b415b82395d4b8571b6dc3">gtsam::LieGroupEKF::TangentVector</a></div><div class="ttdeci">typename Base::TangentVector TangentVector</div><div class="ttdoc">Tangent vector type.</div><div class="ttdef"><b>Definition</b> LieGroupEKF.h:68</div></div>
+<div class="ttc" id="aa05863_html_a7d53bd4ab3a280513001a88f63a6fdef"><div class="ttname"><a href="a05863.html#a7d53bd4ab3a280513001a88f63a6fdef">gtsam::LieGroupEKF::predict</a></div><div class="ttdeci">void predict(Dynamics &amp;&amp;f, double dt, const Covariance &amp;Q)</div><div class="ttdoc">Predict step with state-dependent dynamics: Uses predictMean to compute X_{k+1} and Phi,...</div><div class="ttdef"><b>Definition</b> LieGroupEKF.h:228</div></div>
+<div class="ttc" id="aa05863_html_a882427ffed460a7c465061d6ad4a2bd1"><div class="ttname"><a href="a05863.html#a882427ffed460a7c465061d6ad4a2bd1">gtsam::LieGroupEKF::transitionMatrix</a></div><div class="ttdeci">Jacobian transitionMatrix(const TangentVector &amp;xi, const Jacobian &amp;Df, double dt, const G &amp;U, const Jacobian &amp;Dexp) const</div><div class="ttdoc">Compute the discrete-time transition matrix Φ corresponding to a continuous-time linearization (Df) o...</div><div class="ttdef"><b>Definition</b> LieGroupEKF.h:126</div></div>
+<div class="ttc" id="aa05863_html_ab385a46317c5ccfcbc5f5916f8986470"><div class="ttname"><a href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470">gtsam::LieGroupEKF::Jacobian</a></div><div class="ttdeci">typename Base::Jacobian Jacobian</div><div class="ttdoc">Dim x Dim.</div><div class="ttdef"><b>Definition</b> LieGroupEKF.h:66</div></div>
+<div class="ttc" id="aa05863_html_ae77c0acf182b7117dc71c67ead56f6ec"><div class="ttname"><a href="a05863.html#ae77c0acf182b7117dc71c67ead56f6ec">gtsam::LieGroupEKF::Dim</a></div><div class="ttdeci">static constexpr int Dim</div><div class="ttdoc">Compile-time dimension of G.</div><div class="ttdef"><b>Definition</b> LieGroupEKF.h:64</div></div>
+<div class="ttc" id="aa05863_html_aed0381168cf368e6dbe88ca0da72cabd"><div class="ttname"><a href="a05863.html#aed0381168cf368e6dbe88ca0da72cabd">gtsam::LieGroupEKF::Covariance</a></div><div class="ttdeci">typename Base::Covariance Covariance</div><div class="ttdoc">Dim x Dim.</div><div class="ttdef"><b>Definition</b> LieGroupEKF.h:67</div></div>
+<div class="ttc" id="aa05863_html_af3a71e0bf1b6405547c2f8c888f0488c"><div class="ttname"><a href="a05863.html#af3a71e0bf1b6405547c2f8c888f0488c">gtsam::LieGroupEKF::predictWithCompose</a></div><div class="ttdeci">void predictWithCompose(const G &amp;U, const Jacobian &amp;J_UX, const Covariance &amp;Q)</div><div class="ttdoc">Predict using a precomputed group increment U and its Jacobian J_UX.</div><div class="ttdef"><b>Definition</b> LieGroupEKF.h:305</div></div>
+<div class="ttc" id="aa05863_html_af9ab9ae224e303d19cff20435f3d347e"><div class="ttname"><a href="a05863.html#af9ab9ae224e303d19cff20435f3d347e">gtsam::LieGroupEKF::LieGroupEKF</a></div><div class="ttdeci">LieGroupEKF(const G &amp;X0, const Covariance &amp;P0)</div><div class="ttdoc">Constructor: initialize with state and covariance.</div><div class="ttdef"><b>Definition</b> LieGroupEKF.h:105</div></div>
+<div class="ttc" id="aa05899_html_a1b6f29e10e588b114074ff54fc78c6c2"><div class="ttname"><a href="a05899.html#a1b6f29e10e588b114074ff54fc78c6c2">gtsam::ManifoldEKF&lt; G &gt;::update</a></div><div class="ttdeci">void update(const Measurement &amp;prediction, const Eigen::Matrix&lt; double, traits&lt; Measurement &gt;::dimension, Dim &gt; &amp;H, const Measurement &amp;z, const Eigen::Matrix&lt; double, traits&lt; Measurement &gt;::dimension, traits&lt; Measurement &gt;::dimension &gt; &amp;R, bool performReset=true)</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:156</div></div>
+<div class="ttc" id="aa05899_html_a2c444a34779013ffa864f9dd93d3c4bd"><div class="ttname"><a href="a05899.html#a2c444a34779013ffa864f9dd93d3c4bd">gtsam::ManifoldEKF&lt; G &gt;::Covariance</a></div><div class="ttdeci">Eigen::Matrix&lt; double, Dim, Dim &gt; Covariance</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:58</div></div>
+<div class="ttc" id="aa05899_html_a49c735a4d113438242b495343cea91a3"><div class="ttname"><a href="a05899.html#a49c735a4d113438242b495343cea91a3">gtsam::ManifoldEKF&lt; G &gt;::I_</a></div><div class="ttdeci">Jacobian I_</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:286</div></div>
+<div class="ttc" id="aa05899_html_a83ea27f4336af4529ffb658241f13622"><div class="ttname"><a href="a05899.html#a83ea27f4336af4529ffb658241f13622">gtsam::ManifoldEKF&lt; G &gt;::Dim</a></div><div class="ttdeci">static constexpr int Dim</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:53</div></div>
+<div class="ttc" id="aa05899_html_aa86516b3f8c951690adeb9c64965ebed"><div class="ttname"><a href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">gtsam::ManifoldEKF&lt; G &gt;::X_</a></div><div class="ttdeci">G X_</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:284</div></div>
+<div class="ttc" id="aa05899_html_aba0b080f64441371a909380ffcfdc2a7"><div class="ttname"><a href="a05899.html#aba0b080f64441371a909380ffcfdc2a7">gtsam::ManifoldEKF&lt; G &gt;::Jacobian</a></div><div class="ttdeci">Eigen::Matrix&lt; double, Dim, Dim &gt; Jacobian</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:60</div></div>
+<div class="ttc" id="aa05899_html_abb1f5b37d4a0787e0d9a7849d1860aa1"><div class="ttname"><a href="a05899.html#abb1f5b37d4a0787e0d9a7849d1860aa1">gtsam::ManifoldEKF&lt; G &gt;::ManifoldEKF</a></div><div class="ttdeci">ManifoldEKF(const G &amp;X0, const Covariance &amp;P0)</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:67</div></div>
+<div class="ttc" id="aa05899_html_aca671898b062ed32a1d23bda95ebc8ff"><div class="ttname"><a href="a05899.html#aca671898b062ed32a1d23bda95ebc8ff">gtsam::ManifoldEKF&lt; G &gt;::P_</a></div><div class="ttdeci">Covariance P_</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:285</div></div>
+<div class="ttc" id="aa05899_html_ad6c04d78b407b75040a7b39ec2d80e97"><div class="ttname"><a href="a05899.html#ad6c04d78b407b75040a7b39ec2d80e97">gtsam::ManifoldEKF&lt; G &gt;::TangentVector</a></div><div class="ttdeci">typename traits&lt; G &gt;::TangentVector TangentVector</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:56</div></div>
+<div class="ttc" id="aa05899_html_aed62e118a5f1d94198beb7a62ed2bdd5"><div class="ttname"><a href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">gtsam::ManifoldEKF&lt; G &gt;::n_</a></div><div class="ttdeci">size_t n_</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:287</div></div>
+<div class="ttc" id="aa05899_html_af2199dd0989f1c573ff96ffdc63f6b12"><div class="ttname"><a href="a05899.html#af2199dd0989f1c573ff96ffdc63f6b12">gtsam::ManifoldEKF&lt; G &gt;::predict</a></div><div class="ttdeci">void predict(const G &amp;X_next, const Jacobian &amp;F, const Covariance &amp;Q)</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:114</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>slam</b></li><li class="navelem"><a href="a01241.html">SmartProjectionPoseFactor.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>navigation</b></li><li class="navelem"><a href="a01241.html">LieGroupEKF.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

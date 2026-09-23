@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/dynamics/DynamicsPriors.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/nonlinear/GncOptimizer.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,35 +96,34 @@ $(function(){initNavTree('a01484.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">DynamicsPriors.h File Reference</div></div>
+  <div class="headertitle"><div class="title">GncOptimizer.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Priors to be used with dynamic systems (Specifically PoseRTV).  
+<p>Definitions of functions declared in header file.  
 <a href="#details">More...</a></p>
-
-<p><a href="a01484_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3ADHeightPrior" id="r_gtsam_3A_3ADHeightPrior"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a05647.html">gtsam::DHeightPrior</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forces the value of the height (z) in a <a class="el" href="a05687.html" title="Robot state for use with IMU measurements.">PoseRTV</a> to a specific value.  <a href="a05647.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3ADRollPrior" id="r_gtsam_3A_3ADRollPrior"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a05651.html">gtsam::DRollPrior</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forces the roll to a particular value - useful for flying robots Implied value is zero Dim: 1.  <a href="a05651.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3AVelocityPrior" id="r_gtsam_3A_3AVelocityPrior"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a05655.html">gtsam::VelocityPrior</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constrains the full velocity of a state to a particular value Useful for enforcing a stationary state Dim: 3.  <a href="a05655.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3ADGroundConstraint" id="r_gtsam_3A_3ADGroundConstraint"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a05659.html">gtsam::DGroundConstraint</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ground constraint: forces the robot to be upright (no roll, pitch), a fixed height, and no velocity in z direction Dim: 4.  <a href="a05659.html#details">More...</a><br /></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ad0ca425097c11e937f27bcadb0ca96df" id="r_ad0ca425097c11e937f27bcadb0ca96df"><td class="memItemLeft"><a id="ad0ca425097c11e937f27bcadb0ca96df" name="ad0ca425097c11e937f27bcadb0ca96df"></a>
+double&#160;</td><td class="memItemRight"><b>gtsam::Chi2inv</b> (const double alpha, const size_t dofs)</td></tr>
+<tr class="memitem:a81b2f915b4ff5d8bcebb8dc3ace76fe0" id="r_a81b2f915b4ff5d8bcebb8dc3ace76fe0"><td class="memItemLeft"><a id="a81b2f915b4ff5d8bcebb8dc3ace76fe0" name="a81b2f915b4ff5d8bcebb8dc3ace76fe0"></a>
+bool&#160;</td><td class="memItemRight"><b>gtsam::isNullType</b> (<a class="el" href="a02242.html#adde4aaf7e9948da9c80208eea3ca6ad1">GncFactorType</a> type)</td></tr>
+<tr class="memitem:a972138cdc1adf5fe55b5a636c8fc5bde" id="r_a972138cdc1adf5fe55b5a636c8fc5bde"><td class="memItemLeft"><a id="a972138cdc1adf5fe55b5a636c8fc5bde" name="a972138cdc1adf5fe55b5a636c8fc5bde"></a>
+bool&#160;</td><td class="memItemRight"><b>gtsam::isNonNoiseModelType</b> (<a class="el" href="a02242.html#adde4aaf7e9948da9c80208eea3ca6ad1">GncFactorType</a> type)</td></tr>
+<tr class="memitem:a3763e366b95e2b589d43b09f2833a525" id="r_a3763e366b95e2b589d43b09f2833a525"><td class="memItemLeft"><a id="a3763e366b95e2b589d43b09f2833a525" name="a3763e366b95e2b589d43b09f2833a525"></a>
+bool&#160;</td><td class="memItemRight"><b>gtsam::needsWeightUpdate</b> (<a class="el" href="a02242.html#adde4aaf7e9948da9c80208eea3ca6ad1">GncFactorType</a> type)</td></tr>
+<tr class="memitem:af9cba07a618bb6abe792964d20b03d1e" id="r_af9cba07a618bb6abe792964d20b03d1e"><td class="memItemLeft"><a id="af9cba07a618bb6abe792964d20b03d1e" name="af9cba07a618bb6abe792964d20b03d1e"></a>
+bool&#160;</td><td class="memItemRight"><b>gtsam::hasNoise</b> (<a class="el" href="a02242.html#adde4aaf7e9948da9c80208eea3ca6ad1">GncFactorType</a> type)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Priors to be used with dynamic systems (Specifically PoseRTV). </p>
-<dl class="section date"><dt>Date</dt><dd>Nov 22, 2011 </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Alex Cunningham </dd></dl>
+<div class="textblock"><p>Definitions of functions declared in header file. </p>
+<dl class="section author"><dt>Author</dt><dd>Varun Agrawal </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -138,7 +137,7 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam_unstable</b></li><li class="navelem"><b>dynamics</b></li><li class="navelem"><a href="a01484.html">DynamicsPriors.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>nonlinear</b></li><li class="navelem"><a href="a01484.html">GncOptimizer.cpp</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

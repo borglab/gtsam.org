@@ -1,3 +1,4 @@
+@import url("../assets/theme.css");
 /* The standard CSS for doxygen 1.16.1*/
 
 html {
@@ -2521,7 +2522,7 @@ details[open]>summary::before {
 
 
 html {
---timestamp: 'Mon Mar 9 2026 20:33:06';
+--timestamp: 'Mon Sep 21 2026 16:42:25';
 }
 span.timestamp { content: ' '; }
 span.timestamp:before { content: var(--timestamp); }
@@ -2545,3 +2546,168 @@ span.timestamp:before { content: var(--timestamp); }
         background-color: var(--scrollbar-background-color);
 }
 
+/* --------------------------------------------------------------------------
+ * gtsam.org visual system. Keep generated layout rules above intact.
+ * Shared tokens come from ../assets/theme.css; this adapter preserves the
+ * compact navigation and member tables appropriate to an API reference.
+ * -------------------------------------------------------------------------- */
+html, html:not(.dark-mode) {
+  --page-background-color: var(--site-paper);
+  --page-foreground-color: var(--site-ink);
+  --page-link-color: var(--site-accent);
+  --page-visited-link-color: var(--site-visited);
+  --page-external-link-color: var(--site-accent);
+  --index-odd-item-bg-color: var(--site-wash);
+  --index-even-item-bg-color: var(--site-paper);
+  --index-header-color: var(--site-heading);
+  --index-separator-color: var(--site-line);
+  --header-background-color: var(--site-wash);
+  --header-separator-color: var(--site-line);
+  --group-header-separator-color: var(--site-line);
+  --group-header-color: var(--site-heading);
+  --title-background-color: var(--site-wash);
+  --title-separator-color: var(--site-line);
+  --footer-foreground-color: var(--site-muted);
+  --blockquote-background-color: var(--site-wash);
+  --blockquote-border-color: var(--site-accent);
+  --scrollbar-thumb-color: #a8b7bf;
+  --scrollbar-background-color: var(--site-wash);
+  --memdecl-background-color: var(--site-wash);
+  --memdecl-foreground-color: var(--site-muted);
+  --memdecl-template-color: var(--site-muted);
+  --memdecl-border-color: var(--site-line);
+  --memdef-border-color: var(--site-line);
+  --memdef-title-background-color: var(--site-wash);
+  --memdef-proto-background-color: var(--site-wash);
+  --memdef-proto-text-color: var(--site-heading);
+  --memdef-param-name-color: var(--site-accent);
+  --memdef-template-color: var(--site-muted);
+  --table-cell-border-color: var(--site-line);
+  --table-header-background-color: var(--site-wash);
+  --table-header-foreground-color: var(--site-heading);
+  --nav-background-color: var(--site-paper);
+  --nav-foreground-color: var(--site-ink);
+  --nav-border-color: var(--site-line);
+  --nav-breadcrumb-separator-color: var(--site-line);
+  --nav-breadcrumb-active-bg: var(--site-wash);
+  --nav-breadcrumb-color: var(--site-muted);
+  --nav-splitbar-bg-color: var(--site-line);
+  --nav-text-normal-color: var(--site-ink);
+  --nav-menu-button-color: var(--site-heading);
+  --nav-menu-background-color: var(--site-paper);
+  --nav-menu-foreground-color: var(--site-ink);
+  --nav-menu-active-bg: var(--site-wash);
+  --nav-menu-active-color: var(--site-accent);
+  --nav-arrow-selected-color: var(--site-accent);
+  --toc-background-color: var(--site-wash);
+  --toc-border-color: var(--site-line);
+  --toc-header-color: var(--site-heading);
+  --search-background-color: var(--site-paper);
+  --search-foreground-color: var(--site-muted);
+  --search-active-color: var(--site-heading);
+  --search-filter-highlight-text-color: white;
+  --search-filter-highlight-bg-color: var(--site-accent);
+  --search-results-foreground-color: var(--site-ink);
+  --search-box-border-color: var(--site-line);
+  --fragment-background-color: var(--site-code);
+  --fragment-foreground-color: var(--site-ink);
+  --fragment-border-color: var(--site-line);
+  --fragment-lineno-border-color: var(--site-line);
+  --fragment-lineno-background-color: var(--site-wash);
+  --fragment-lineno-foreground-color: var(--site-muted);
+  --fragment-lineno-link-fg-color: var(--site-accent);
+  --fragment-lineno-link-bg-color: var(--site-wash);
+  --code-keyword-color: #653d7c;
+  --code-type-keyword-color: #165e83;
+  --code-flow-keyword-color: #653d7c;
+  --code-comment-color: #526570;
+  --code-preprocessor-color: #653d7c;
+  --code-string-literal-color: #35643c;
+  --code-char-literal-color: #35643c;
+  --font-family-normal: var(--site-sans);
+  --font-family-title: var(--site-serif);
+  --font-family-nav: var(--site-sans);
+  --font-family-search: var(--site-sans);
+  --font-family-monospace: var(--site-mono);
+}
+body, table, div, p, dl { font-size: 14px; line-height: 1.62; }
+#titlearea { min-height: 65px; padding: 0 22px; border: 0; border-top: 4px solid var(--site-accent); border-image: var(--site-brand-gradient) 1; color: var(--site-heading); background: var(--site-paper); }
+#projectrow { height: 65px; }
+#projectalign { padding-left: 0; }
+#projectname { color: var(--site-heading); font: 400 1.65rem/1.2 var(--site-serif); }
+#projectnumber { margin-left: .6rem; color: var(--site-muted); font: 400 .85rem/1 var(--site-sans); }
+#projectbrief { font-size: 0; color: var(--site-muted); }
+#projectbrief::before { content: "C++ API reference"; font-size: .75rem; }
+#projectname .project-home { color: inherit; text-decoration: none; }
+#projectname .project-home:hover { color: var(--site-accent); }
+#main-nav { min-height: 48px; border-bottom: 1px solid var(--site-line); background: var(--site-paper); }
+#main-menu > li > a { min-height: 47px; padding: 0 16px; display: flex; align-items: center; color: var(--site-ink); font: 500 .85rem/1.2 var(--site-sans); }
+#main-menu > li > a:hover, #main-menu > li > a:focus, #main-menu > li > a.highlighted { color: var(--site-accent); background: var(--site-wash); }
+#MSearchBox { margin-top: 9px; box-shadow: none; }
+#side-nav { border-right: 1px solid var(--site-line); background: var(--site-wash); }
+#nav-tree { background: transparent; }
+#nav-tree .selected { background: var(--site-paper); box-shadow: inset 3px 0 0 var(--site-accent); }
+#nav-tree a { color: var(--site-ink); font-size: .8rem; }
+#nav-tree .selected a { color: var(--site-accent); font-weight: 600; text-shadow: none; }
+#nav-tree a:hover { color: var(--site-accent); }
+#doc-content { background: var(--site-paper); }
+/* The left tree already provides navigation; avoid a duplicate right rail. */
+#container { grid-template-columns: minmax(0, 1fr) !important; }
+#page-nav { display: none !important; }
+.header { padding: 2rem 2.5rem; border-bottom: 1px solid var(--site-line); background: var(--site-header-wash); }
+.headertitle { padding: 0; }
+.title { margin: 0; color: var(--site-heading); font: 400 clamp(1.8rem, 3vw, 2.8rem)/1.2 var(--site-serif); overflow-wrap: anywhere; }
+div.contents { max-width: 1160px; margin: 0; padding: 2rem 2.5rem 4rem; }
+div.contents > :first-child { margin-top: 0; }
+h1, h2, h3, h4, h5, h6, h1.groupheader, h2.groupheader, h3.groupheader { color: var(--site-heading); font-family: var(--site-serif); font-weight: 400; }
+h2.groupheader, div.groupHeader { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--site-line); box-shadow: none; }
+a { text-underline-offset: .16em; }
+a:hover { color: var(--site-heading); }
+a:focus-visible { outline: 2px solid var(--site-accent); outline-offset: 2px; }
+table.memberdecls { width: 100%; }
+.memItemLeft, .memItemRight, .memTemplParams { padding-top: 7px; padding-bottom: 7px; }
+.memitem { margin: 1.2rem 0 1.8rem; box-shadow: none; }
+.memtitle, .memproto, .memdoc, dl.reflist dt, dl.reflist dd { border-radius: 0; box-shadow: none; }
+.memdoc { padding: 1rem; background: var(--site-paper); }
+div.fragment, pre.fragment { border-radius: 3px; box-shadow: none; }
+#nav-path ul { height: 36px; line-height: 36px; background: var(--site-wash); }
+.navpath li.footer, address.footer { color: var(--site-muted); font-size: .7rem; }
+/* Module directory */
+.api-home-lead { max-width: 52rem; margin: 0 0 2rem; color: var(--site-muted); font-size: 1.05rem; }
+.api-home-lead code { padding: .12em .3em; background: var(--site-code); }
+.api-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; align-items: start; }
+.api-track { overflow: hidden; border: 1px solid var(--site-line); border-top: 3px solid var(--site-accent); border-radius: 3px; background: var(--site-paper); }
+.api-track-header { padding: 1.5rem; color: var(--site-ink); background: var(--site-wash); }
+.api-track-label { display: block; color: var(--site-muted); font-size: .8rem; }
+.api-track-header h2 { margin: .75rem 0; font-size: 2rem; }
+.api-track-header p { margin: 0; font-size: .9rem; }
+.api-module-list { display: grid; }
+.api-module, .contents .api-module:visited { display: grid; grid-template-columns: minmax(90px, 28%) minmax(0, 1fr) 16px; gap: 1rem; align-items: center; padding: 1rem; border-top: 1px solid var(--site-line); color: var(--site-ink); text-decoration: none; }
+.api-module:hover { background: var(--site-wash); }
+.api-module-name { color: var(--site-accent); font-family: var(--site-mono); font-size: .85rem; font-weight: 600; }
+.api-module-desc { color: var(--site-muted); font-size: .8rem; }
+.api-module-arrow { color: var(--site-accent); }
+.api-unstable-note { margin: 1rem; padding: .75rem 1rem; border-left: 3px solid var(--site-accent); background: var(--site-wash); }
+.api-unstable-note p { font-size: .85rem; }
+.api-indexes { margin-top: 3rem; padding-top: 2rem; display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; border-top: 1px solid var(--site-line); }
+.api-indexes h2 { font-size: 2rem; }
+.api-index-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.api-index-links a, .contents .api-index-links a:visited { padding: 1rem; display: flex; flex-direction: column; gap: .5rem; border: 1px solid var(--site-line); border-radius: 3px; color: var(--site-accent); text-decoration: none; }
+.api-index-links a:hover { background: var(--site-wash); }
+.api-index-links span { color: var(--site-muted); font-size: .8rem; }
+@media (max-width: 900px) {
+  .api-columns, .api-indexes { grid-template-columns: 1fr; }
+}
+@media (max-width: 767px) {
+  #titlearea { padding: 0 1.25rem; }
+  .header, div.contents { padding: 1.5rem 1.25rem; }
+  .api-module { grid-template-columns: 1fr 16px; gap: .4rem .75rem; }
+  .api-module-name, .api-module-desc { grid-column: 1; }
+  .api-module-arrow { grid-column: 2; grid-row: 1 / span 2; }
+}
+@media (max-width: 600px) {
+  /* Retain the menu and search, but give reference text the full phone width. */
+  #side-nav { display: none; }
+  #doc-content { margin-left: 0 !important; }
+  .api-index-links { grid-template-columns: 1fr; }
+}

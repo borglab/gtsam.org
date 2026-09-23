@@ -1,4 +1,4 @@
 var a01565 =
 [
-    [ "gtsam::LPPolicy", "a05827.html", null ]
+    [ "gtsam::ExpressionFactorGraph", "a06227.html", "a06227" ]
 ];

@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/slam/InitializePose3.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/GnssCommon.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,99 +89,135 @@ $(function(){initNavTree('a01340_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">InitializePose3.h</div></div>
+  <div class="headertitle"><div class="title">GnssCommon.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="a01340.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"></span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * GTSAM Copyright 2010, Georgia Tech Research Corporation,</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Atlanta, Georgia 30332-0415</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * All Rights Reserved</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * Authors: Frank Dellaert, et al. (see THANKS for the full author list)</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"></span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * See LICENSE for the license information</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="a00449.html">gtsam/geometry/Rot3.h</a>&gt;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;<a class="code" href="a00632.html">gtsam/inference/graph.h</a>&gt;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;<a class="code" href="a00800.html">gtsam/linear/GaussianFactorGraph.h</a>&gt;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;<a class="code" href="a00872.html">gtsam/linear/VectorValues.h</a>&gt;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;<a class="code" href="a01097.html">gtsam/nonlinear/NonlinearFactorGraph.h</a>&gt;</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">typedef</span> std::map&lt;Key, std::vector&lt;size_t&gt; &gt; KeyVectorMap;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">typedef</span> std::map&lt;Key, Rot3&gt; KeyRotMap;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="a05407.html">   37</a></span><span class="keyword">struct </span>GTSAM_EXPORT <a class="code hl_struct" href="a05407.html">InitializePose3</a> {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keyword">static</span> <a class="code hl_class" href="a04339.html">GaussianFactorGraph</a> buildLinearOrientationGraph(</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      <span class="keyword">const</span> <a class="code hl_class" href="a05091.html">NonlinearFactorGraph</a>&amp; g);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keyword">static</span> <a class="code hl_class" href="a05163.html">Values</a> normalizeRelaxedRotations(<span class="keyword">const</span> <a class="code hl_class" href="a04611.html">VectorValues</a>&amp; relaxedRot3);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keyword">static</span> <a class="code hl_class" href="a05163.html">Values</a> <a class="code hl_function" href="a05407.html#a5fb65b015ebd0b64ddf59f62f24ee661">computeOrientationsChordal</a>(</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>      <span class="keyword">const</span> <a class="code hl_class" href="a05091.html">NonlinearFactorGraph</a>&amp; pose3Graph);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keyword">static</span> <a class="code hl_class" href="a05163.html">Values</a> <a class="code hl_function" href="a05407.html#a9218509c31ac0030fa685d68144d083b">computeOrientationsGradient</a>(</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      <span class="keyword">const</span> <a class="code hl_class" href="a05091.html">NonlinearFactorGraph</a>&amp; pose3Graph, <span class="keyword">const</span> <a class="code hl_class" href="a05163.html">Values</a>&amp; givenGuess,</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>      <span class="keywordtype">size_t</span> maxIter = 10000, <span class="keyword">const</span> <span class="keywordtype">bool</span> setRefFrame = <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> createSymbolicGraph(<span class="keyword">const</span> <a class="code hl_class" href="a05091.html">NonlinearFactorGraph</a>&amp; pose3Graph,</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                                  KeyVectorMap* adjEdgesMap,</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                                  KeyRotMap* factorId2RotMap);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keyword">static</span> Vector3 gradientTron(<span class="keyword">const</span> <a class="code hl_class" href="a03775.html">Rot3</a>&amp; R1, <span class="keyword">const</span> <a class="code hl_class" href="a03775.html">Rot3</a>&amp; R2, <span class="keyword">const</span> <span class="keywordtype">double</span> a,</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                              <span class="keyword">const</span> <span class="keywordtype">double</span> b);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keyword">static</span> <a class="code hl_class" href="a05091.html">NonlinearFactorGraph</a> <a class="code hl_function" href="a05407.html#a908ec0e39fe22080bdb2fe10cef9f83f">buildPose3graph</a>(</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      <span class="keyword">const</span> <a class="code hl_class" href="a05091.html">NonlinearFactorGraph</a>&amp; graph);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keyword">static</span> <a class="code hl_class" href="a05163.html">Values</a> <a class="code hl_function" href="a05407.html#a0ff566967ec8ea9e5c14d5579c611d60">computePoses</a>(<span class="keyword">const</span> <a class="code hl_class" href="a05163.html">Values</a>&amp; initialRot,</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                             <a class="code hl_class" href="a05091.html">NonlinearFactorGraph</a>* poseGraph,</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                             <span class="keywordtype">bool</span> singleIter = <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keyword">static</span> <a class="code hl_class" href="a05163.html">Values</a> <a class="code hl_function" href="a05407.html#ad8900891ebae624b54cb32bd387f81f2">initializeOrientations</a>(<span class="keyword">const</span> <a class="code hl_class" href="a05091.html">NonlinearFactorGraph</a>&amp; graph);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keyword">static</span> <a class="code hl_class" href="a05163.html">Values</a> <a class="code hl_function" href="a05407.html#a0de66d19607ddc19c27d3e5be2911f6c">initialize</a>(<span class="keyword">const</span> <a class="code hl_class" href="a05091.html">NonlinearFactorGraph</a>&amp; graph,</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                           <span class="keyword">const</span> <a class="code hl_class" href="a05163.html">Values</a>&amp; givenGuess, <span class="keywordtype">bool</span> useGradient = <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keyword">static</span> <a class="code hl_class" href="a05163.html">Values</a> <a class="code hl_function" href="a05407.html#a0de66d19607ddc19c27d3e5be2911f6c">initialize</a>(<span class="keyword">const</span> <a class="code hl_class" href="a05091.html">NonlinearFactorGraph</a>&amp; graph);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>};</div>
+<a href="a01340.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="a00071.html">gtsam/base/Matrix.h</a>&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="a00095.html">gtsam/base/OptionalJacobian.h</a>&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;gtsam/dllexport.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="a00476.html">gtsam/geometry/Point3.h</a>&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="a00521.html">gtsam/geometry/Pose3.h</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="a05683.html">   25</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a05683.html">GnssMeasurementBase</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="a05683.html#a5239245a13a2364c42f0ac2b72f90641">   27</a></span>  <span class="keywordtype">double</span> <a class="code hl_variable" href="a05683.html#a5239245a13a2364c42f0ac2b72f90641">measurement_</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="a05683.html#af3f11fd132f63cb632cdfca8190a92b1">   29</a></span>  <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> <a class="code hl_variable" href="a05683.html#af3f11fd132f63cb632cdfca8190a92b1">satPos_</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="a05683.html#a565c22f9d207e1385ca5d095d609b419">   31</a></span>  <span class="keywordtype">double</span> <a class="code hl_variable" href="a05683.html#a565c22f9d207e1385ca5d095d609b419">satClkBias_</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
 </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}  <span class="comment">// end of namespace gtsam</span></div>
-<div class="ttc" id="aa00449_html"><div class="ttname"><a href="a00449.html">Rot3.h</a></div><div class="ttdoc">3D rotation represented as a rotation matrix or quaternion</div></div>
-<div class="ttc" id="aa00632_html"><div class="ttname"><a href="a00632.html">graph.h</a></div><div class="ttdoc">Graph algorithm using boost library.</div></div>
-<div class="ttc" id="aa00800_html"><div class="ttname"><a href="a00800.html">GaussianFactorGraph.h</a></div><div class="ttdoc">Linear Factor Graph where all factors are Gaussians.</div></div>
-<div class="ttc" id="aa00872_html"><div class="ttname"><a href="a00872.html">VectorValues.h</a></div><div class="ttdoc">Factor Graph Values.</div></div>
-<div class="ttc" id="aa01097_html"><div class="ttname"><a href="a01097.html">NonlinearFactorGraph.h</a></div><div class="ttdoc">Factor Graph consisting of non-linear factors.</div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa03775_html"><div class="ttname"><a href="a03775.html">gtsam::Rot3</a></div><div class="ttdoc">Rot3 is a 3D rotation represented as a rotation matrix if the preprocessor symbol GTSAM_USE_QUATERNIO...</div><div class="ttdef"><b>Definition</b> Rot3.h:58</div></div>
-<div class="ttc" id="aa04339_html"><div class="ttname"><a href="a04339.html">gtsam::GaussianFactorGraph</a></div><div class="ttdoc">A Linear Factor Graph is a factor graph where all factors are Gaussian, i.e.</div><div class="ttdef"><b>Definition</b> GaussianFactorGraph.h:75</div></div>
-<div class="ttc" id="aa04611_html"><div class="ttname"><a href="a04611.html">gtsam::VectorValues</a></div><div class="ttdoc">VectorValues represents a collection of vector-valued variables associated each with a unique integer...</div><div class="ttdef"><b>Definition</b> VectorValues.h:74</div></div>
-<div class="ttc" id="aa05091_html"><div class="ttname"><a href="a05091.html">gtsam::NonlinearFactorGraph</a></div><div class="ttdef"><b>Definition</b> NonlinearFactorGraph.h:55</div></div>
-<div class="ttc" id="aa05163_html"><div class="ttname"><a href="a05163.html">gtsam::Values</a></div><div class="ttdoc">A non-templated config holding any types of Manifold-group elements.</div><div class="ttdef"><b>Definition</b> Values.h:65</div></div>
-<div class="ttc" id="aa05407_html"><div class="ttname"><a href="a05407.html">gtsam::InitializePose3</a></div><div class="ttdef"><b>Definition</b> InitializePose3.h:37</div></div>
-<div class="ttc" id="aa05407_html_a0de66d19607ddc19c27d3e5be2911f6c"><div class="ttname"><a href="a05407.html#a0de66d19607ddc19c27d3e5be2911f6c">gtsam::InitializePose3::initialize</a></div><div class="ttdeci">static Values initialize(const NonlinearFactorGraph &amp;graph, const Values &amp;givenGuess, bool useGradient=false)</div><div class="ttdoc">&quot;extract&quot; the Pose3 subgraph of the original graph, get orientations from relative orientation measur...</div><div class="ttdef"><b>Definition</b> InitializePose3.cpp:298</div></div>
-<div class="ttc" id="aa05407_html_a0ff566967ec8ea9e5c14d5579c611d60"><div class="ttname"><a href="a05407.html#a0ff566967ec8ea9e5c14d5579c611d60">gtsam::InitializePose3::computePoses</a></div><div class="ttdeci">static Values computePoses(const Values &amp;initialRot, NonlinearFactorGraph *poseGraph, bool singleIter=true)</div><div class="ttdoc">Use Gauss-Newton optimizer to optimize for poses given rotation estimates.</div><div class="ttdef"><b>Definition</b> InitializePose3.cpp:290</div></div>
-<div class="ttc" id="aa05407_html_a5fb65b015ebd0b64ddf59f62f24ee661"><div class="ttname"><a href="a05407.html#a5fb65b015ebd0b64ddf59f62f24ee661">gtsam::InitializePose3::computeOrientationsChordal</a></div><div class="ttdeci">static Values computeOrientationsChordal(const NonlinearFactorGraph &amp;pose3Graph)</div><div class="ttdoc">Return the orientations of a graph including only BetweenFactors&lt;Pose3&gt;.</div><div class="ttdef"><b>Definition</b> InitializePose3.cpp:104</div></div>
-<div class="ttc" id="aa05407_html_a908ec0e39fe22080bdb2fe10cef9f83f"><div class="ttname"><a href="a05407.html#a908ec0e39fe22080bdb2fe10cef9f83f">gtsam::InitializePose3::buildPose3graph</a></div><div class="ttdeci">static NonlinearFactorGraph buildPose3graph(const NonlinearFactorGraph &amp;graph)</div><div class="ttdoc">Select the subgraph of betweenFactors and transforms priors into between wrt a fictitious node.</div><div class="ttdef"><b>Definition</b> InitializePose3.cpp:97</div></div>
-<div class="ttc" id="aa05407_html_a9218509c31ac0030fa685d68144d083b"><div class="ttname"><a href="a05407.html#a9218509c31ac0030fa685d68144d083b">gtsam::InitializePose3::computeOrientationsGradient</a></div><div class="ttdeci">static Values computeOrientationsGradient(const NonlinearFactorGraph &amp;pose3Graph, const Values &amp;givenGuess, size_t maxIter=10000, const bool setRefFrame=true)</div><div class="ttdoc">Return the orientations of a graph including only BetweenFactors&lt;Pose3&gt;.</div><div class="ttdef"><b>Definition</b> InitializePose3.cpp:119</div></div>
-<div class="ttc" id="aa05407_html_ad8900891ebae624b54cb32bd387f81f2"><div class="ttname"><a href="a05407.html#ad8900891ebae624b54cb32bd387f81f2">gtsam::InitializePose3::initializeOrientations</a></div><div class="ttdeci">static Values initializeOrientations(const NonlinearFactorGraph &amp;graph)</div><div class="ttdoc">&quot;extract&quot; the Pose3 subgraph of the original graph, get orientations from relative orientation measur...</div><div class="ttdef"><b>Definition</b> InitializePose3.cpp:280</div></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">namespace </span>gnss {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="a01340.html#ab5533f9ee1696972d00934a564cfbbd8">   37</a></span><span class="keyword">constexpr</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="a01340.html#ab5533f9ee1696972d00934a564cfbbd8">C_LIGHT</a> = 299792458.0;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="a01340.html#a333b39f2459f6f69a81f9efc55574e28">   40</a></span><span class="keyword">constexpr</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="a01340.html#a333b39f2459f6f69a81f9efc55574e28">OMGE</a> = 7.2921151467e-5;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>GTSAM_EXPORT <span class="keywordtype">double</span> <a class="code hl_function" href="a01265.html#a58794ff6ac3566b1b8508e214865ddd2">geodist</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; sat, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; rcv, <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; e,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                            <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;1, 3&gt;</a> H_rcv = {});</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="};">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="a05687.html">   74</a></span><span class="keyword">struct </span>GTSAM_EXPORT <a class="code hl_struct" href="a05687.html">DoubleDifferenceData</a> {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="a05687.html#aec4bd5816774907a156b96fc63eeba2c">   75</a></span>  <span class="keywordtype">double</span> <a class="code hl_variable" href="a05687.html#aec4bd5816774907a156b96fc63eeba2c">rovRef</a> = 0;      </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="a05687.html#a98380acefabcd03872b340b940b13552">   76</a></span>  <span class="keywordtype">double</span> <a class="code hl_variable" href="a05687.html#a98380acefabcd03872b340b940b13552">baseRef</a> = 0;     </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="a05687.html#ae5bb49a80957220f853ad929e1544221">   77</a></span>  <span class="keywordtype">double</span> <a class="code hl_variable" href="a05687.html#ae5bb49a80957220f853ad929e1544221">rovTarget</a> = 0;   </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="a05687.html#ae5178445eb61536c7cbef09f338a5b42">   78</a></span>  <span class="keywordtype">double</span> <a class="code hl_variable" href="a05687.html#ae5178445eb61536c7cbef09f338a5b42">baseTarget</a> = 0;  </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="a05687.html#a1b2a3b63b26339fb1abd7cc35fd4fa5b">   79</a></span>  <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> <a class="code hl_variable" href="a05687.html#a1b2a3b63b26339fb1abd7cc35fd4fa5b">satRefRov</a>{0, 0, 0};      </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="a05687.html#ad59da26da3cf03e902f748f72e33063f">   80</a></span>  <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> <a class="code hl_variable" href="a05687.html#ad59da26da3cf03e902f748f72e33063f">satTargetRov</a>{0, 0, 0};   </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="a05687.html#a2fe993a48bf5523ddb9558944e851a03">   81</a></span>  <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> <a class="code hl_variable" href="a05687.html#a2fe993a48bf5523ddb9558944e851a03">satRefBase</a>{0, 0, 0};     </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="a05687.html#a452a919b840af05e288b5998ad98b5ae">   82</a></span>  <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> <a class="code hl_variable" href="a05687.html#a452a919b840af05e288b5998ad98b5ae">satTargetBase</a>{0, 0, 0};  </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="a05687.html#ac75545e259237b5552207621e64ad8c7">   83</a></span>  <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> <a class="code hl_variable" href="a05687.html#ac75545e259237b5552207621e64ad8c7">basePos</a>{0, 0, 0};        </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="a05687.html#a1e67a9cb69222c769a823641ef185195">   86</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="a05687.html#a1e67a9cb69222c769a823641ef185195">observed</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">return</span> (<a class="code hl_variable" href="a05687.html#aec4bd5816774907a156b96fc63eeba2c">rovRef</a> - <a class="code hl_variable" href="a05687.html#a98380acefabcd03872b340b940b13552">baseRef</a>) - (<a class="code hl_variable" href="a05687.html#ae5bb49a80957220f853ad929e1544221">rovTarget</a> - <a class="code hl_variable" href="a05687.html#ae5178445eb61536c7cbef09f338a5b42">baseTarget</a>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  }</div>
+</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keywordtype">double</span> model(<span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; rcv, <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;1, 3&gt;</a> H_rcv = {}) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keywordtype">bool</span> <a class="code hl_struct" href="a03523.html">equals</a>(<span class="keyword">const</span> DoubleDifferenceData&amp; other, <span class="keywordtype">double</span> tol) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>};</div>
+</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
+<div class="foldopen" id="foldopen00119" data-start="{" data-end="};">
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="a05691.html">  119</a></span><span class="keyword">struct </span>GTSAM_EXPORT LeverArm {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="a05691.html#a65b1eb6554de3f32c63ba19a0a538db4">  120</a></span>  <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> <a class="code hl_variable" href="a05691.html#a65b1eb6554de3f32c63ba19a0a538db4">b</a>{0, 0, 0};                  </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="a05691.html#acea731bd4cc2d4e96a8bf79cd594a0c5">  121</a></span>  std::optional&lt;Pose3&gt; <a class="code hl_variable" href="a05691.html#acea731bd4cc2d4e96a8bf79cd594a0c5">ecef_T_nav</a>;    </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  LeverArm() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="keyword">explicit</span> LeverArm(<span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; leverArm) : <a class="code hl_variable" href="a05691.html#a65b1eb6554de3f32c63ba19a0a538db4">b</a>(leverArm) {}</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <a class="code hl_struct" href="a05691.html">LeverArm</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; leverArm, <span class="keyword">const</span> <a class="code hl_class" href="a04403.html">Pose3</a>&amp; nav)</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>      : b(leverArm), ecef_T_nav(nav) {}</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span></div>
+<div class="foldopen" id="foldopen00130" data-start="{" data-end="};">
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="a05695.html">  130</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="a05695.html">PoseFrame</a> {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="a05695.html#a1b18c0ae557c79fd3606bc3ec9bbef39">  131</a></span>    Matrix3 <a class="code hl_variable" href="a05695.html#a1b18c0ae557c79fd3606bc3ec9bbef39">ecef_R_body</a>;  </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="a05695.html#a2aaa959a6945c754978b7efbeeb06130">  132</a></span>    Matrix66 <a class="code hl_variable" href="a05695.html#a2aaa959a6945c754978b7efbeeb06130">H_compose</a>;   </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordtype">bool</span> has_nav = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  };</div>
+</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> <a class="code hl_function" href="a05691.html#ab166d39e9d712f9348993c1fd311ea22">antennaPosition</a>(<span class="keyword">const</span> <a class="code hl_class" href="a04403.html">Pose3</a>&amp; pose,</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                         <a class="code hl_struct" href="a05695.html">PoseFrame</a>* frame = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  Matrix16 <a class="code hl_function" href="a05691.html#a68bf420d02316bc571ade1b2770d1be2">antennaPoseJacobian</a>(<span class="keyword">const</span> Matrix13&amp; H_antenna,</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                               <span class="keyword">const</span> <a class="code hl_struct" href="a05695.html">PoseFrame</a>&amp; frame) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> LeverArm&amp; other, <span class="keywordtype">double</span> tol) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>};</div>
+</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>}  <span class="comment">// namespace gnss</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>}  <span class="comment">// namespace gtsam</span></div>
+<div class="ttc" id="aa00071_html"><div class="ttname"><a href="a00071.html">Matrix.h</a></div><div class="ttdoc">typedef and functions to augment Eigen&#39;s MatrixXd</div></div>
+<div class="ttc" id="aa00095_html"><div class="ttname"><a href="a00095.html">OptionalJacobian.h</a></div><div class="ttdoc">Special class for optional Jacobian arguments.</div></div>
+<div class="ttc" id="aa00476_html"><div class="ttname"><a href="a00476.html">Point3.h</a></div><div class="ttdoc">3D Point</div></div>
+<div class="ttc" id="aa00521_html"><div class="ttname"><a href="a00521.html">Pose3.h</a></div><div class="ttdoc">3D Pose manifold SO(3) x R^3 and group SE(3)</div></div>
+<div class="ttc" id="aa01265_html_a58794ff6ac3566b1b8508e214865ddd2"><div class="ttname"><a href="a01265.html#a58794ff6ac3566b1b8508e214865ddd2">gtsam::gnss::geodist</a></div><div class="ttdeci">double geodist(const Point3 &amp;sat, const Point3 &amp;rcv, Point3 &amp;e, OptionalJacobian&lt; 1, 3 &gt; H_rcv)</div><div class="ttdoc">Geometric distance with Sagnac correction.</div><div class="ttdef"><b>Definition</b> GnssCommon.cpp:16</div></div>
+<div class="ttc" id="aa01340_html_a333b39f2459f6f69a81f9efc55574e28"><div class="ttname"><a href="a01340.html#a333b39f2459f6f69a81f9efc55574e28">gtsam::gnss::OMGE</a></div><div class="ttdeci">constexpr double OMGE</div><div class="ttdoc">WGS-84 Earth rotation rate (rad/s).</div><div class="ttdef"><b>Definition</b> GnssCommon.h:40</div></div>
+<div class="ttc" id="aa01340_html_ab5533f9ee1696972d00934a564cfbbd8"><div class="ttname"><a href="a01340.html#ab5533f9ee1696972d00934a564cfbbd8">gtsam::gnss::C_LIGHT</a></div><div class="ttdeci">constexpr double C_LIGHT</div><div class="ttdoc">Speed of light in a vacuum (m/s).</div><div class="ttdef"><b>Definition</b> GnssCommon.h:37</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa02242_html_a4705ef3536019dc2a384e26ef0fde932"><div class="ttname"><a href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">gtsam::Point3</a></div><div class="ttdeci">Vector3 Point3</div><div class="ttdoc">As of GTSAM 4, in order to make GTSAM more lean, it is now possible to just typedef Point3 to Vector3...</div><div class="ttdef"><b>Definition</b> Point3.h:38</div></div>
+<div class="ttc" id="aa03363_html"><div class="ttname"><a href="a03363.html">gtsam::OptionalJacobian</a></div><div class="ttdoc">OptionalJacobian is an Eigen::Ref like class that can take be constructed using either a fixed size o...</div><div class="ttdef"><b>Definition</b> OptionalJacobian.h:40</div></div>
+<div class="ttc" id="aa03523_html"><div class="ttname"><a href="a03523.html">gtsam::equals</a></div><div class="ttdoc">Template to create a binary predicate.</div><div class="ttdef"><b>Definition</b> Testable.h:112</div></div>
+<div class="ttc" id="aa04403_html"><div class="ttname"><a href="a04403.html">gtsam::Pose3</a></div><div class="ttdoc">A 3D pose (R,t) : (Rot3,Point3).</div><div class="ttdef"><b>Definition</b> Pose3.h:42</div></div>
+<div class="ttc" id="aa05683_html"><div class="ttname"><a href="a05683.html">gtsam::GnssMeasurementBase</a></div><div class="ttdoc">Base class storing common members for GNSS measurement factors.</div><div class="ttdef"><b>Definition</b> GnssCommon.h:25</div></div>
+<div class="ttc" id="aa05683_html_a5239245a13a2364c42f0ac2b72f90641"><div class="ttname"><a href="a05683.html#a5239245a13a2364c42f0ac2b72f90641">gtsam::GnssMeasurementBase::measurement_</a></div><div class="ttdeci">double measurement_</div><div class="ttdoc">Measurement in meters (pseudorange, or carrier phase * wavelength).</div><div class="ttdef"><b>Definition</b> GnssCommon.h:27</div></div>
+<div class="ttc" id="aa05683_html_a565c22f9d207e1385ca5d095d609b419"><div class="ttname"><a href="a05683.html#a565c22f9d207e1385ca5d095d609b419">gtsam::GnssMeasurementBase::satClkBias_</a></div><div class="ttdeci">double satClkBias_</div><div class="ttdoc">Satellite clock bias in seconds.</div><div class="ttdef"><b>Definition</b> GnssCommon.h:31</div></div>
+<div class="ttc" id="aa05683_html_af3f11fd132f63cb632cdfca8190a92b1"><div class="ttname"><a href="a05683.html#af3f11fd132f63cb632cdfca8190a92b1">gtsam::GnssMeasurementBase::satPos_</a></div><div class="ttdeci">Point3 satPos_</div><div class="ttdoc">Satellite position in WGS84 ECEF meters.</div><div class="ttdef"><b>Definition</b> GnssCommon.h:29</div></div>
+<div class="ttc" id="aa05687_html"><div class="ttname"><a href="a05687.html">gtsam::gnss::DoubleDifferenceData</a></div><div class="ttdoc">Shared geometry data for double-difference factors.</div><div class="ttdef"><b>Definition</b> GnssCommon.h:74</div></div>
+<div class="ttc" id="aa05687_html_a1b2a3b63b26339fb1abd7cc35fd4fa5b"><div class="ttname"><a href="a05687.html#a1b2a3b63b26339fb1abd7cc35fd4fa5b">gtsam::gnss::DoubleDifferenceData::satRefRov</a></div><div class="ttdeci">Point3 satRefRov</div><div class="ttdoc">Ref satellite ECEF at rover time [m].</div><div class="ttdef"><b>Definition</b> GnssCommon.h:79</div></div>
+<div class="ttc" id="aa05687_html_a1e67a9cb69222c769a823641ef185195"><div class="ttname"><a href="a05687.html#a1e67a9cb69222c769a823641ef185195">gtsam::gnss::DoubleDifferenceData::observed</a></div><div class="ttdeci">double observed() const</div><div class="ttdoc">Observed DD: (rovRef - baseRef) - (rovTarget - baseTarget) [m].</div><div class="ttdef"><b>Definition</b> GnssCommon.h:86</div></div>
+<div class="ttc" id="aa05687_html_a2fe993a48bf5523ddb9558944e851a03"><div class="ttname"><a href="a05687.html#a2fe993a48bf5523ddb9558944e851a03">gtsam::gnss::DoubleDifferenceData::satRefBase</a></div><div class="ttdeci">Point3 satRefBase</div><div class="ttdoc">Ref satellite ECEF at base time [m].</div><div class="ttdef"><b>Definition</b> GnssCommon.h:81</div></div>
+<div class="ttc" id="aa05687_html_a452a919b840af05e288b5998ad98b5ae"><div class="ttname"><a href="a05687.html#a452a919b840af05e288b5998ad98b5ae">gtsam::gnss::DoubleDifferenceData::satTargetBase</a></div><div class="ttdeci">Point3 satTargetBase</div><div class="ttdoc">Target satellite ECEF at base time [m].</div><div class="ttdef"><b>Definition</b> GnssCommon.h:82</div></div>
+<div class="ttc" id="aa05687_html_a98380acefabcd03872b340b940b13552"><div class="ttname"><a href="a05687.html#a98380acefabcd03872b340b940b13552">gtsam::gnss::DoubleDifferenceData::baseRef</a></div><div class="ttdeci">double baseRef</div><div class="ttdoc">Base observation for ref satellite [m].</div><div class="ttdef"><b>Definition</b> GnssCommon.h:76</div></div>
+<div class="ttc" id="aa05687_html_ac75545e259237b5552207621e64ad8c7"><div class="ttname"><a href="a05687.html#ac75545e259237b5552207621e64ad8c7">gtsam::gnss::DoubleDifferenceData::basePos</a></div><div class="ttdeci">Point3 basePos</div><div class="ttdoc">Base station ECEF position [m].</div><div class="ttdef"><b>Definition</b> GnssCommon.h:83</div></div>
+<div class="ttc" id="aa05687_html_ad59da26da3cf03e902f748f72e33063f"><div class="ttname"><a href="a05687.html#ad59da26da3cf03e902f748f72e33063f">gtsam::gnss::DoubleDifferenceData::satTargetRov</a></div><div class="ttdeci">Point3 satTargetRov</div><div class="ttdoc">Target satellite ECEF at rover time [m].</div><div class="ttdef"><b>Definition</b> GnssCommon.h:80</div></div>
+<div class="ttc" id="aa05687_html_ae5178445eb61536c7cbef09f338a5b42"><div class="ttname"><a href="a05687.html#ae5178445eb61536c7cbef09f338a5b42">gtsam::gnss::DoubleDifferenceData::baseTarget</a></div><div class="ttdeci">double baseTarget</div><div class="ttdoc">Base observation for target satellite [m].</div><div class="ttdef"><b>Definition</b> GnssCommon.h:78</div></div>
+<div class="ttc" id="aa05687_html_ae5bb49a80957220f853ad929e1544221"><div class="ttname"><a href="a05687.html#ae5bb49a80957220f853ad929e1544221">gtsam::gnss::DoubleDifferenceData::rovTarget</a></div><div class="ttdeci">double rovTarget</div><div class="ttdoc">Rover observation for target satellite [m].</div><div class="ttdef"><b>Definition</b> GnssCommon.h:77</div></div>
+<div class="ttc" id="aa05687_html_aec4bd5816774907a156b96fc63eeba2c"><div class="ttname"><a href="a05687.html#aec4bd5816774907a156b96fc63eeba2c">gtsam::gnss::DoubleDifferenceData::rovRef</a></div><div class="ttdeci">double rovRef</div><div class="ttdoc">Rover observation for ref satellite [m].</div><div class="ttdef"><b>Definition</b> GnssCommon.h:75</div></div>
+<div class="ttc" id="aa05691_html"><div class="ttname"><a href="a05691.html">gtsam::gnss::LeverArm</a></div><div class="ttdoc">Lever-arm helper for GNSS factors that key on a body Pose3.</div><div class="ttdef"><b>Definition</b> GnssCommon.h:119</div></div>
+<div class="ttc" id="aa05691_html_a65b1eb6554de3f32c63ba19a0a538db4"><div class="ttname"><a href="a05691.html#a65b1eb6554de3f32c63ba19a0a538db4">gtsam::gnss::LeverArm::b</a></div><div class="ttdeci">Point3 b</div><div class="ttdoc">Lever arm in body frame [m].</div><div class="ttdef"><b>Definition</b> GnssCommon.h:120</div></div>
+<div class="ttc" id="aa05691_html_a68bf420d02316bc571ade1b2770d1be2"><div class="ttname"><a href="a05691.html#a68bf420d02316bc571ade1b2770d1be2">gtsam::gnss::LeverArm::antennaPoseJacobian</a></div><div class="ttdeci">Matrix16 antennaPoseJacobian(const Matrix13 &amp;H_antenna, const PoseFrame &amp;frame) const</div><div class="ttdoc">Convert a 1x3 Jacobian (d/d antenna position) into a 1x6 Jacobian w.r.t.</div><div class="ttdef"><b>Definition</b> GnssCommon.cpp:82</div></div>
+<div class="ttc" id="aa05691_html_ab166d39e9d712f9348993c1fd311ea22"><div class="ttname"><a href="a05691.html#ab166d39e9d712f9348993c1fd311ea22">gtsam::gnss::LeverArm::antennaPosition</a></div><div class="ttdeci">Point3 antennaPosition(const Pose3 &amp;pose, PoseFrame *frame=nullptr) const</div><div class="ttdoc">Compute the antenna ECEF position for pose.</div><div class="ttdef"><b>Definition</b> GnssCommon.cpp:68</div></div>
+<div class="ttc" id="aa05691_html_acea731bd4cc2d4e96a8bf79cd594a0c5"><div class="ttname"><a href="a05691.html#acea731bd4cc2d4e96a8bf79cd594a0c5">gtsam::gnss::LeverArm::ecef_T_nav</a></div><div class="ttdeci">std::optional&lt; Pose3 &gt; ecef_T_nav</div><div class="ttdoc">Optional ECEF-from-nav transform.</div><div class="ttdef"><b>Definition</b> GnssCommon.h:121</div></div>
+<div class="ttc" id="aa05695_html"><div class="ttname"><a href="a05695.html">gtsam::gnss::LeverArm::PoseFrame</a></div><div class="ttdoc">Intermediate quantities cached by antennaPosition() so antennaPoseJacobian can compute the pose Jacob...</div><div class="ttdef"><b>Definition</b> GnssCommon.h:130</div></div>
+<div class="ttc" id="aa05695_html_a1b18c0ae557c79fd3606bc3ec9bbef39"><div class="ttname"><a href="a05695.html#a1b18c0ae557c79fd3606bc3ec9bbef39">gtsam::gnss::LeverArm::PoseFrame::ecef_R_body</a></div><div class="ttdeci">Matrix3 ecef_R_body</div><div class="ttdoc">Rotation of the body in ECEF.</div><div class="ttdef"><b>Definition</b> GnssCommon.h:131</div></div>
+<div class="ttc" id="aa05695_html_a2aaa959a6945c754978b7efbeeb06130"><div class="ttname"><a href="a05695.html#a2aaa959a6945c754978b7efbeeb06130">gtsam::gnss::LeverArm::PoseFrame::H_compose</a></div><div class="ttdeci">Matrix66 H_compose</div><div class="ttdoc">d(ecef_T_body)/d(pose) (only used if has_nav).</div><div class="ttdef"><b>Definition</b> GnssCommon.h:132</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>slam</b></li><li class="navelem"><a href="a01340.html">InitializePose3.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>navigation</b></li><li class="navelem"><a href="a01340.html">GnssCommon.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

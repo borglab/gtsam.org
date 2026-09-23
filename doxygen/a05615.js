@@ -1,11 +1,10 @@
 var a05615 =
 [
-    [ "AllDiff", "a05615.html#abdf1c9f275b8408bc8c808d32a5a614e", null ],
-    [ "equals", "a05615.html#a1e9ca236489eef0461f41f607f1c9ff4", null ],
-    [ "operator()", "a05615.html#a0fa9cf46f9c166252fdb8d421a1d9298", null ],
-    [ "operator*", "a05615.html#a6323dec5c64c7791b1f64270577cf338", null ],
-    [ "partiallyApply", "a05615.html#a2375c0fe743ed07b53b6717d3e7d287a", null ],
-    [ "partiallyApply", "a05615.html#a63dc12641524bb48af4ef8bdb6e4b48b", null ],
-    [ "print", "a05615.html#aa72890371ba33200e560e849c5d124cf", null ],
-    [ "toDecisionTreeFactor", "a05615.html#a894ec427dbbe3122547f7c8b5fcf62a0", null ]
+    [ "clone", "a05615.html#aed45aaa3735bcaa2cff7f4260555d840", null ],
+    [ "equals", "a05615.html#a6b88c292e2f6dc1345cb1b586b3f129a", null ],
+    [ "evaluateError", "a05615.html#a4f8fffd4d09df6ba39999a720d32f9c7", null ],
+    [ "evaluateError", "a05615.html#ab80792dcabd129fba29ed9c0a827fed8", null ],
+    [ "evaluateError", "a05615.html#ab3d7c2524be129598df6478bc80d6500", null ],
+    [ "evaluateError", "a05615.html#a87ea3fe42f71eaa801ce038dd86ffa55", null ],
+    [ "print", "a05615.html#a85c46b35b8e7d8307273d1c64dbe6bc4", null ]
 ];

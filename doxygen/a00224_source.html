@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/discrete/DiscreteMarginals.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/basis/BasisFactors.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,7 +89,7 @@ $(function(){initNavTree('a00224_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">DiscreteMarginals.h</div></div>
+  <div class="headertitle"><div class="title">BasisFactors.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a00224.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
@@ -103,83 +103,244 @@ $(function(){initNavTree('a00224_source.html','',''); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="a00263.html">gtsam/discrete/DiscreteFactorGraph.h</a>&gt;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;<a class="code" href="a00248.html">gtsam/discrete/DiscreteBayesTree.h</a>&gt;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;<a class="code" href="a00131.html">gtsam/base/Vector.h</a>&gt;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
-<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="a03443.html">   33</a></span><span class="keyword">class </span>DiscreteMarginals {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    DiscreteBayesTree::shared_ptr bayesTree_;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  DiscreteMarginals() {}</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
-<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="a03443.html#a989e365c2191c5db801307e50778a706">   46</a></span>  <a class="code hl_function" href="a03443.html#a989e365c2191c5db801307e50778a706">DiscreteMarginals</a>(<span class="keyword">const</span> <a class="code hl_class" href="a03411.html">DiscreteFactorGraph</a>&amp; graph) {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    bayesTree_ = graph.<a class="code hl_function" href="a04127.html#a9496a5f692f60ecd15846d9b0b689c9c">eliminateMultifrontal</a>();</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="a00200.html">gtsam/basis/Basis.h</a>&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="a01568.html">gtsam/nonlinear/FunctorizedFactor.h</a>&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> BASIS&gt;</div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="};">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="a03723.html">   39</a></span><span class="keyword">class </span>EvaluationFactor : <span class="keyword">public</span> <a class="code hl_function" href="a06251.html#a7822d3f4c15697b3a530e97343a96e49">FunctorizedFactor</a>&lt;double, Vector&gt; {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keyword">using </span>Base = <a class="code hl_function" href="a06251.html#a7822d3f4c15697b3a530e97343a96e49">FunctorizedFactor&lt;double, Vector&gt;</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  EvaluationFactor() {}</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="a03723.html#a16ce8be39fca86a020d1eb5029e63e6c">   55</a></span>  <a class="code hl_function" href="a03723.html#a16ce8be39fca86a020d1eb5029e63e6c">EvaluationFactor</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, <span class="keywordtype">double</span> z, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;model,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                   <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, <span class="keywordtype">double</span> x)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      : Base(<a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, z, model, typename BASIS::EvaluationFunctor(<a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, x)) {}</div>
 </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
-<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="a03443.html#ab7e034af37152b81e3bc9e461d6c8271">   51</a></span>  <a class="code hl_typedef" href="a03399.html#a7d274a86bec4b9e5339b465bf82b2c80">DiscreteFactor::shared_ptr</a> <a class="code hl_function" href="a03443.html#ab7e034af37152b81e3bc9e461d6c8271">operator()</a>(<a class="code hl_typedef" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> variable)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="comment">// Compute marginal</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_typedef" href="a03399.html#a7d274a86bec4b9e5339b465bf82b2c80">DiscreteFactor::shared_ptr</a> marginalFactor;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    marginalFactor = bayesTree_-&gt;marginalFactor(variable, &amp;<a class="code hl_function" href="a01955.html#ga6996e9c84467350b071645649231223a">EliminateDiscrete</a>);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">return</span> marginalFactor;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="a03723.html#aba6c04c81a0f7e33cce488ec14b74e44">   70</a></span>  <a class="code hl_function" href="a03723.html#aba6c04c81a0f7e33cce488ec14b74e44">EvaluationFactor</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, <span class="keywordtype">double</span> z, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;model,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                   <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b)</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      : Base(<a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, z, model, typename BASIS::EvaluationFunctor(<a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, x, a, b)) {}</div>
 </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
-<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="a03443.html#a467d0ef89ee86bafe691130be9a2b4ac">   62</a></span>  Vector <a class="code hl_function" href="a03443.html#a467d0ef89ee86bafe691130be9a2b4ac">marginalProbabilities</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="a01955.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a>&amp; key)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">// Compute marginal</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_typedef" href="a03399.html#a7d274a86bec4b9e5339b465bf82b2c80">DiscreteFactor::shared_ptr</a> marginalFactor;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    marginalFactor = bayesTree_-&gt;marginalFactor(key.first, &amp;<a class="code hl_function" href="a01955.html#ga6996e9c84467350b071645649231223a">EliminateDiscrete</a>);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="comment">//Create result</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    Vector vResult(key.second);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> state = 0; state &lt; key.second ; ++ state) {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      <a class="code hl_class" href="a03447.html">DiscreteValues</a> values;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      values[key.first] = state;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      vResult(state) = (*marginalFactor)(values);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">return</span> vResult;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keyword">virtual</span> <a class="code hl_class" href="a03723.html">~EvaluationFactor</a>() {}</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>};</div>
 </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  };</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> BASIS&gt;</div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="};">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="a03727.html">   94</a></span><span class="keyword">class </span>VectorEvaluationFactor : <span class="keyword">public</span> <a class="code hl_function" href="a06251.html#a7822d3f4c15697b3a530e97343a96e49">FunctorizedFactor</a>&lt;Vector, Matrix&gt; {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keyword">using </span>Base = <a class="code hl_function" href="a06251.html#a7822d3f4c15697b3a530e97343a96e49">FunctorizedFactor&lt;Vector, Matrix&gt;</a>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  VectorEvaluationFactor() {}</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
+<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="a03727.html#a96a72c19ea9549a0eae58db4b6d828a2">  112</a></span>  <a class="code hl_function" href="a03727.html#a96a72c19ea9549a0eae58db4b6d828a2">VectorEvaluationFactor</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, <span class="keyword">const</span> Vector &amp;z,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                         <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;model, <span class="keyword">const</span> <span class="keywordtype">size_t</span> M,</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                         <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, <span class="keywordtype">double</span> x)</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>      : Base(<a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, z, model, typename BASIS::VectorEvaluationFunctor(M, <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, x)) {}</div>
 </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>} <span class="comment">/* namespace gtsam */</span></div>
-<div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">Vector.h</a></div><div class="ttdoc">typedef and functions to augment Eigen&#39;s VectorXd</div></div>
-<div class="ttc" id="aa00248_html"><div class="ttname"><a href="a00248.html">DiscreteBayesTree.h</a></div><div class="ttdoc">Discrete Bayes Tree, the result of eliminating a DiscreteJunctionTree.</div></div>
-<div class="ttc" id="aa00263_html"><div class="ttname"><a href="a00263.html">DiscreteFactorGraph.h</a></div></div>
-<div class="ttc" id="aa01955_html_ga5d440f1429574be613728cd7ad50946d"><div class="ttname"><a href="a01955.html#ga5d440f1429574be613728cd7ad50946d">gtsam::DiscreteKey</a></div><div class="ttdeci">std::pair&lt; Key, size_t &gt; DiscreteKey</div><div class="ttdoc">Key type for discrete variables.</div><div class="ttdef"><b>Definition</b> DiscreteKey.h:36</div></div>
-<div class="ttc" id="aa01955_html_ga6996e9c84467350b071645649231223a"><div class="ttname"><a href="a01955.html#ga6996e9c84467350b071645649231223a">gtsam::EliminateDiscrete</a></div><div class="ttdeci">std::pair&lt; DiscreteConditional::shared_ptr, DecisionTreeFactor::shared_ptr &gt; EliminateDiscrete(const DiscreteFactorGraph &amp;factors, const Ordering &amp;frontalKeys)</div><div class="ttdoc">Main elimination function for DiscreteFactorGraph.</div><div class="ttdef"><b>Definition</b> DiscreteFactorGraph.cpp:200</div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa01968_html_adad029f5f6ffce610428b5fe768b0df2"><div class="ttname"><a href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">gtsam::Key</a></div><div class="ttdeci">std::uint64_t Key</div><div class="ttdoc">Integer nonlinear key type.</div><div class="ttdef"><b>Definition</b> types.h:100</div></div>
-<div class="ttc" id="aa03399_html_a7d274a86bec4b9e5339b465bf82b2c80"><div class="ttname"><a href="a03399.html#a7d274a86bec4b9e5339b465bf82b2c80">gtsam::DiscreteFactor::shared_ptr</a></div><div class="ttdeci">boost::shared_ptr&lt; DiscreteFactor &gt; shared_ptr</div><div class="ttdoc">shared_ptr to this class</div><div class="ttdef"><b>Definition</b> DiscreteFactor.h:44</div></div>
-<div class="ttc" id="aa03411_html"><div class="ttname"><a href="a03411.html">gtsam::DiscreteFactorGraph</a></div><div class="ttdoc">A Discrete Factor Graph is a factor graph where all factors are Discrete, i.e.</div><div class="ttdef"><b>Definition</b> DiscreteFactorGraph.h:101</div></div>
-<div class="ttc" id="aa03443_html_a467d0ef89ee86bafe691130be9a2b4ac"><div class="ttname"><a href="a03443.html#a467d0ef89ee86bafe691130be9a2b4ac">gtsam::DiscreteMarginals::marginalProbabilities</a></div><div class="ttdeci">Vector marginalProbabilities(const DiscreteKey &amp;key) const</div><div class="ttdoc">Compute the marginal of a single variable.</div><div class="ttdef"><b>Definition</b> DiscreteMarginals.h:62</div></div>
-<div class="ttc" id="aa03443_html_a989e365c2191c5db801307e50778a706"><div class="ttname"><a href="a03443.html#a989e365c2191c5db801307e50778a706">gtsam::DiscreteMarginals::DiscreteMarginals</a></div><div class="ttdeci">DiscreteMarginals(const DiscreteFactorGraph &amp;graph)</div><div class="ttdoc">Construct a marginals class.</div><div class="ttdef"><b>Definition</b> DiscreteMarginals.h:46</div></div>
-<div class="ttc" id="aa03443_html_ab7e034af37152b81e3bc9e461d6c8271"><div class="ttname"><a href="a03443.html#ab7e034af37152b81e3bc9e461d6c8271">gtsam::DiscreteMarginals::operator()</a></div><div class="ttdeci">DiscreteFactor::shared_ptr operator()(Key variable) const</div><div class="ttdoc">Compute the marginal of a single variable.</div><div class="ttdef"><b>Definition</b> DiscreteMarginals.h:51</div></div>
-<div class="ttc" id="aa03447_html"><div class="ttname"><a href="a03447.html">gtsam::DiscreteValues</a></div><div class="ttdoc">A map from keys to values.</div><div class="ttdef"><b>Definition</b> DiscreteValues.h:34</div></div>
-<div class="ttc" id="aa04127_html_a9496a5f692f60ecd15846d9b0b689c9c"><div class="ttname"><a href="a04127.html#a9496a5f692f60ecd15846d9b0b689c9c">gtsam::EliminateableFactorGraph::eliminateMultifrontal</a></div><div class="ttdeci">boost::shared_ptr&lt; BayesTreeType &gt; eliminateMultifrontal(OptionalOrderingType orderingType=boost::none, const Eliminate &amp;function=EliminationTraitsType::DefaultEliminate, OptionalVariableIndex variableIndex=boost::none) const</div><div class="ttdoc">Do multifrontal elimination of all variables to produce a Bayes tree.</div><div class="ttdef"><b>Definition</b> EliminateableFactorGraph-inst.h:91</div></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span></div>
+<div class="foldopen" id="foldopen00130" data-start="{" data-end="}">
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="a03727.html#a839e6bc536e3b6b5e6383131ce45b08d">  130</a></span>  <a class="code hl_function" href="a03727.html#a839e6bc536e3b6b5e6383131ce45b08d">VectorEvaluationFactor</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, <span class="keyword">const</span> Vector &amp;z,</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                         <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;model, <span class="keyword">const</span> <span class="keywordtype">size_t</span> M,</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                         <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b)</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>      : Base(<a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, z, model,</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>             typename BASIS::VectorEvaluationFunctor(M, <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, x, a, b)) {}</div>
+</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  <span class="keyword">virtual</span> <a class="code hl_class" href="a03727.html">~VectorEvaluationFactor</a>() {}</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>};</div>
+</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> BASIS&gt;</div>
+<div class="foldopen" id="foldopen00158" data-start="{" data-end="};">
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="a03731.html">  158</a></span><span class="keyword">class </span>VectorComponentFactor : <span class="keyword">public</span> <a class="code hl_function" href="a06251.html#a7822d3f4c15697b3a530e97343a96e49">FunctorizedFactor</a>&lt;double, Matrix&gt; {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  <span class="keyword">using </span>Base = <a class="code hl_function" href="a06251.html#a7822d3f4c15697b3a530e97343a96e49">FunctorizedFactor&lt;double, Matrix&gt;</a>;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  VectorComponentFactor() {}</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span></div>
+<div class="foldopen" id="foldopen00179" data-start="{" data-end="}">
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="a03731.html#a820f1befab81cc9ee2d07afaa3d0cb9c">  179</a></span>  <a class="code hl_function" href="a03731.html#a820f1befab81cc9ee2d07afaa3d0cb9c">VectorComponentFactor</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp;z, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;model,</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                        <span class="keyword">const</span> <span class="keywordtype">size_t</span> P, <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, <span class="keywordtype">size_t</span> i, <span class="keywordtype">double</span> x)</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>      : Base(<a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, z, model,</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>             typename BASIS::VectorComponentFunctor(P, <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, i, x)) {}</div>
+</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span></div>
+<div class="foldopen" id="foldopen00200" data-start="{" data-end="}">
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="a03731.html#a58105bda06104a3d3bad303df6cebf8c">  200</a></span>  <a class="code hl_function" href="a03731.html#a58105bda06104a3d3bad303df6cebf8c">VectorComponentFactor</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp;z, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;model,</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                        <span class="keyword">const</span> <span class="keywordtype">size_t</span> P, <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, <span class="keywordtype">size_t</span> i, <span class="keywordtype">double</span> x,</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                        <span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b)</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>      : Base(<a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, z, model,</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>             typename BASIS::VectorComponentFunctor(P, <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, i, x, a, b)) {}</div>
+</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <span class="keyword">virtual</span> <a class="code hl_class" href="a03731.html">~VectorComponentFactor</a>() {}</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>};</div>
+</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> BASIS, <span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00227" data-start="{" data-end="};">
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno"><a class="line" href="a03735.html">  227</a></span><span class="keyword">class </span>ManifoldEvaluationFactor : <span class="keyword">public</span> <a class="code hl_function" href="a06251.html#a7822d3f4c15697b3a530e97343a96e49">FunctorizedFactor</a>&lt;T, Matrix&gt; {</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  <span class="keyword">using </span>Base = <a class="code hl_function" href="a06251.html#a7822d3f4c15697b3a530e97343a96e49">FunctorizedFactor&lt;T, Matrix&gt;</a>;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>  ManifoldEvaluationFactor() {}</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span></div>
+<div class="foldopen" id="foldopen00244" data-start="{" data-end="}">
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="a03735.html#ad3a72c44acc22b08ddd6f0f6d6fdb27a">  244</a></span>  <a class="code hl_function" href="a03735.html#ad3a72c44acc22b08ddd6f0f6d6fdb27a">ManifoldEvaluationFactor</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, <span class="keyword">const</span> T &amp;z, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;model,</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                           <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, <span class="keywordtype">double</span> x)</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>      : Base(<a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, z, model,</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>             typename BASIS::template ManifoldEvaluationFunctor&lt;T&gt;(<a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, x)) {}</div>
+</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span></div>
+<div class="foldopen" id="foldopen00261" data-start="{" data-end="}">
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno"><a class="line" href="a03735.html#a8f01911815a4daec250e6f141dbda835">  261</a></span>  <a class="code hl_function" href="a03735.html#a8f01911815a4daec250e6f141dbda835">ManifoldEvaluationFactor</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, <span class="keyword">const</span> T &amp;z, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;model,</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                           <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b)</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>      : Base(</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>            <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, z, model,</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>            typename BASIS::template ManifoldEvaluationFunctor&lt;T&gt;(<a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, x, a, b)) {</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>  }</div>
+</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>  <span class="keyword">virtual</span> <a class="code hl_class" href="a03735.html">~ManifoldEvaluationFactor</a>() {}</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>};</div>
+</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span></div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> BASIS&gt;</div>
+<div class="foldopen" id="foldopen00278" data-start="{" data-end="};">
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno"><a class="line" href="a03739.html">  278</a></span><span class="keyword">class </span>DerivativeFactor</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    : <span class="keyword">public</span> <a class="code hl_function" href="a06251.html#a7822d3f4c15697b3a530e97343a96e49">FunctorizedFactor</a>&lt;double, typename BASIS::Parameters&gt; {</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  <span class="keyword">using </span>Base = <a class="code hl_function" href="a06251.html#a7822d3f4c15697b3a530e97343a96e49">FunctorizedFactor&lt;double, typename BASIS::Parameters&gt;</a>;</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>  DerivativeFactor() {}</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span></div>
+<div class="foldopen" id="foldopen00296" data-start="{" data-end="}">
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno"><a class="line" href="a03739.html#a22a6450e16d12137e40345cfe48c0838">  296</a></span>  <a class="code hl_function" href="a03739.html#a22a6450e16d12137e40345cfe48c0838">DerivativeFactor</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp;z, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;model,</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>                   <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, <span class="keywordtype">double</span> x)</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>      : Base(<a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, z, model, typename BASIS::DerivativeFunctor(<a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, x)) {}</div>
+</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span></div>
+<div class="foldopen" id="foldopen00312" data-start="{" data-end="}">
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno"><a class="line" href="a03739.html#a04f9e06201f5c76ccaaa7dc23fc603a1">  312</a></span>  <a class="code hl_function" href="a03739.html#a04f9e06201f5c76ccaaa7dc23fc603a1">DerivativeFactor</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp;z, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;model,</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>                   <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b)</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>      : Base(<a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, z, model, typename BASIS::DerivativeFunctor(<a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, x, a, b)) {}</div>
+</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span> </div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>  <span class="keyword">virtual</span> <a class="code hl_class" href="a03739.html">~DerivativeFactor</a>() {}</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>};</div>
+</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span></div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> BASIS&gt;</div>
+<div class="foldopen" id="foldopen00326" data-start="{" data-end="};">
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno"><a class="line" href="a03743.html">  326</a></span><span class="keyword">class </span>VectorDerivativeFactor : <span class="keyword">public</span> <a class="code hl_function" href="a06251.html#a7822d3f4c15697b3a530e97343a96e49">FunctorizedFactor</a>&lt;Vector, Matrix&gt; {</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>  <span class="keyword">using </span>Base = <a class="code hl_function" href="a06251.html#a7822d3f4c15697b3a530e97343a96e49">FunctorizedFactor&lt;Vector, Matrix&gt;</a>;</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>  <span class="keyword">using </span>Func = <span class="keyword">typename</span> BASIS::VectorDerivativeFunctor;</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span> </div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>  VectorDerivativeFactor() {}</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span></div>
+<div class="foldopen" id="foldopen00345" data-start="{" data-end="}">
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno"><a class="line" href="a03743.html#a6fe130d3ae22d75db0ae71998dea0a51">  345</a></span>  <a class="code hl_function" href="a03743.html#a6fe130d3ae22d75db0ae71998dea0a51">VectorDerivativeFactor</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, <span class="keyword">const</span> Vector &amp;z,</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>                         <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;model, <span class="keyword">const</span> <span class="keywordtype">size_t</span> M,</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>                         <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, <span class="keywordtype">double</span> x)</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>      : Base(<a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, z, model, Func(M, <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, x)) {}</div>
+</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span></div>
+<div class="foldopen" id="foldopen00363" data-start="{" data-end="}">
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno"><a class="line" href="a03743.html#a56fb06972fe87fc902add52b7e0cb9d6">  363</a></span>  <a class="code hl_function" href="a03743.html#a56fb06972fe87fc902add52b7e0cb9d6">VectorDerivativeFactor</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, <span class="keyword">const</span> Vector &amp;z,</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>                         <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;model, <span class="keyword">const</span> <span class="keywordtype">size_t</span> M,</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>                         <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b)</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>      : Base(<a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, z, model, Func(M, <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, x, a, b)) {}</div>
+</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span> </div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>  <span class="keyword">virtual</span> <a class="code hl_class" href="a03743.html">~VectorDerivativeFactor</a>() {}</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>};</div>
+</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span></div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> BASIS&gt;</div>
+<div class="foldopen" id="foldopen00379" data-start="{" data-end="};">
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno"><a class="line" href="a03747.html">  379</a></span><span class="keyword">class </span>ComponentDerivativeFactor : <span class="keyword">public</span> <a class="code hl_function" href="a06251.html#a7822d3f4c15697b3a530e97343a96e49">FunctorizedFactor</a>&lt;double, Matrix&gt; {</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>  <span class="keyword">using </span>Base = <a class="code hl_function" href="a06251.html#a7822d3f4c15697b3a530e97343a96e49">FunctorizedFactor&lt;double, Matrix&gt;</a>;</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>  <span class="keyword">using </span>Func = <span class="keyword">typename</span> BASIS::ComponentDerivativeFunctor;</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span> </div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>  ComponentDerivativeFactor() {}</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span></div>
+<div class="foldopen" id="foldopen00401" data-start="{" data-end="}">
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno"><a class="line" href="a03747.html#ac1312a281ed7e5cf9c9e8b03362d28fb">  401</a></span>  <a class="code hl_function" href="a03747.html#ac1312a281ed7e5cf9c9e8b03362d28fb">ComponentDerivativeFactor</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp;z,</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>                            <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;model, <span class="keyword">const</span> <span class="keywordtype">size_t</span> P,</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>                            <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, <span class="keywordtype">size_t</span> i, <span class="keywordtype">double</span> x)</div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>      : Base(<a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, z, model, Func(P, <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, i, x)) {}</div>
+</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span></div>
+<div class="foldopen" id="foldopen00422" data-start="{" data-end="}">
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno"><a class="line" href="a03747.html#a76fbdb9766881c1ac4f5852971d6088b">  422</a></span>  <a class="code hl_function" href="a03747.html#a76fbdb9766881c1ac4f5852971d6088b">ComponentDerivativeFactor</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp;z,</div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>                            <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;model, <span class="keyword">const</span> <span class="keywordtype">size_t</span> P,</div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>                            <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, <span class="keywordtype">size_t</span> i, <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> a,</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>                            <span class="keywordtype">double</span> b)</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>      : Base(<a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, z, model, Func(P, <a class="code hl_variable" href="a06419.html#ab3485244086e53660facaf927be26af1">N</a>, i, x, a, b)) {}</div>
+</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span> </div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>  <span class="keyword">virtual</span> <a class="code hl_class" href="a03747.html">~ComponentDerivativeFactor</a>() {}</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>};</div>
+</div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span> </div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>}  <span class="comment">// namespace gtsam</span></div>
+<div class="ttc" id="aa00200_html"><div class="ttname"><a href="a00200.html">Basis.h</a></div><div class="ttdoc">Compute an interpolating basis.</div></div>
+<div class="ttc" id="aa01568_html"><div class="ttname"><a href="a01568.html">FunctorizedFactor.h</a></div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa02242_html_ab6e5a4884342656e0837ef07008ec03f"><div class="ttname"><a href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">gtsam::SharedNoiseModel</a></div><div class="ttdeci">noiseModel::Base::shared_ptr SharedNoiseModel</div><div class="ttdoc">Aliases.</div><div class="ttdef"><b>Definition</b> NoiseModel.h:846</div></div>
+<div class="ttc" id="aa02242_html_adad029f5f6ffce610428b5fe768b0df2"><div class="ttname"><a href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">gtsam::Key</a></div><div class="ttdeci">std::uint64_t Key</div><div class="ttdoc">Integer nonlinear key type.</div><div class="ttdef"><b>Definition</b> types.h:43</div></div>
+<div class="ttc" id="aa03723_html"><div class="ttname"><a href="a03723.html">gtsam::EvaluationFactor</a></div><div class="ttdoc">Factor for enforcing the scalar value of the polynomial BASIS representation at x is the same as the ...</div><div class="ttdef"><b>Definition</b> BasisFactors.h:39</div></div>
+<div class="ttc" id="aa03723_html_a16ce8be39fca86a020d1eb5029e63e6c"><div class="ttname"><a href="a03723.html#a16ce8be39fca86a020d1eb5029e63e6c">gtsam::EvaluationFactor::EvaluationFactor</a></div><div class="ttdeci">EvaluationFactor(Key key, double z, const SharedNoiseModel &amp;model, const size_t N, double x)</div><div class="ttdoc">Construct a new EvaluationFactor object.</div><div class="ttdef"><b>Definition</b> BasisFactors.h:55</div></div>
+<div class="ttc" id="aa03723_html_aba6c04c81a0f7e33cce488ec14b74e44"><div class="ttname"><a href="a03723.html#aba6c04c81a0f7e33cce488ec14b74e44">gtsam::EvaluationFactor::EvaluationFactor</a></div><div class="ttdeci">EvaluationFactor(Key key, double z, const SharedNoiseModel &amp;model, const size_t N, double x, double a, double b)</div><div class="ttdoc">Construct a new EvaluationFactor object.</div><div class="ttdef"><b>Definition</b> BasisFactors.h:70</div></div>
+<div class="ttc" id="aa03727_html"><div class="ttname"><a href="a03727.html">gtsam::VectorEvaluationFactor</a></div><div class="ttdoc">Unary factor for enforcing BASIS polynomial evaluation on a parameter Matrix of size (M,...</div><div class="ttdef"><b>Definition</b> BasisFactors.h:94</div></div>
+<div class="ttc" id="aa03727_html_a839e6bc536e3b6b5e6383131ce45b08d"><div class="ttname"><a href="a03727.html#a839e6bc536e3b6b5e6383131ce45b08d">gtsam::VectorEvaluationFactor::VectorEvaluationFactor</a></div><div class="ttdeci">VectorEvaluationFactor(Key key, const Vector &amp;z, const SharedNoiseModel &amp;model, const size_t M, const size_t N, double x, double a, double b)</div><div class="ttdoc">Construct a new VectorEvaluationFactor object.</div><div class="ttdef"><b>Definition</b> BasisFactors.h:130</div></div>
+<div class="ttc" id="aa03727_html_a96a72c19ea9549a0eae58db4b6d828a2"><div class="ttname"><a href="a03727.html#a96a72c19ea9549a0eae58db4b6d828a2">gtsam::VectorEvaluationFactor::VectorEvaluationFactor</a></div><div class="ttdeci">VectorEvaluationFactor(Key key, const Vector &amp;z, const SharedNoiseModel &amp;model, const size_t M, const size_t N, double x)</div><div class="ttdoc">Construct a new VectorEvaluationFactor object.</div><div class="ttdef"><b>Definition</b> BasisFactors.h:112</div></div>
+<div class="ttc" id="aa03731_html"><div class="ttname"><a href="a03731.html">gtsam::VectorComponentFactor</a></div><div class="ttdoc">Unary factor for enforcing BASIS polynomial evaluation on a parameter Matrix of size (P,...</div><div class="ttdef"><b>Definition</b> BasisFactors.h:158</div></div>
+<div class="ttc" id="aa03731_html_a58105bda06104a3d3bad303df6cebf8c"><div class="ttname"><a href="a03731.html#a58105bda06104a3d3bad303df6cebf8c">gtsam::VectorComponentFactor::VectorComponentFactor</a></div><div class="ttdeci">VectorComponentFactor(Key key, const double &amp;z, const SharedNoiseModel &amp;model, const size_t P, const size_t N, size_t i, double x, double a, double b)</div><div class="ttdoc">Construct a new VectorComponentFactor object.</div><div class="ttdef"><b>Definition</b> BasisFactors.h:200</div></div>
+<div class="ttc" id="aa03731_html_a820f1befab81cc9ee2d07afaa3d0cb9c"><div class="ttname"><a href="a03731.html#a820f1befab81cc9ee2d07afaa3d0cb9c">gtsam::VectorComponentFactor::VectorComponentFactor</a></div><div class="ttdeci">VectorComponentFactor(Key key, const double &amp;z, const SharedNoiseModel &amp;model, const size_t P, const size_t N, size_t i, double x)</div><div class="ttdoc">Construct a new VectorComponentFactor object.</div><div class="ttdef"><b>Definition</b> BasisFactors.h:179</div></div>
+<div class="ttc" id="aa03735_html"><div class="ttname"><a href="a03735.html">gtsam::ManifoldEvaluationFactor</a></div><div class="ttdoc">For a measurement value of type T i.e.</div><div class="ttdef"><b>Definition</b> BasisFactors.h:227</div></div>
+<div class="ttc" id="aa03735_html_a8f01911815a4daec250e6f141dbda835"><div class="ttname"><a href="a03735.html#a8f01911815a4daec250e6f141dbda835">gtsam::ManifoldEvaluationFactor::ManifoldEvaluationFactor</a></div><div class="ttdeci">ManifoldEvaluationFactor(Key key, const T &amp;z, const SharedNoiseModel &amp;model, const size_t N, double x, double a, double b)</div><div class="ttdoc">Construct a new ManifoldEvaluationFactor object.</div><div class="ttdef"><b>Definition</b> BasisFactors.h:261</div></div>
+<div class="ttc" id="aa03735_html_ad3a72c44acc22b08ddd6f0f6d6fdb27a"><div class="ttname"><a href="a03735.html#ad3a72c44acc22b08ddd6f0f6d6fdb27a">gtsam::ManifoldEvaluationFactor::ManifoldEvaluationFactor</a></div><div class="ttdeci">ManifoldEvaluationFactor(Key key, const T &amp;z, const SharedNoiseModel &amp;model, const size_t N, double x)</div><div class="ttdoc">Construct a new ManifoldEvaluationFactor object.</div><div class="ttdef"><b>Definition</b> BasisFactors.h:244</div></div>
+<div class="ttc" id="aa03739_html"><div class="ttname"><a href="a03739.html">gtsam::DerivativeFactor</a></div><div class="ttdoc">A unary factor which enforces the evaluation of the derivative of a BASIS polynomial at a specified p...</div><div class="ttdef"><b>Definition</b> BasisFactors.h:279</div></div>
+<div class="ttc" id="aa03739_html_a04f9e06201f5c76ccaaa7dc23fc603a1"><div class="ttname"><a href="a03739.html#a04f9e06201f5c76ccaaa7dc23fc603a1">gtsam::DerivativeFactor::DerivativeFactor</a></div><div class="ttdeci">DerivativeFactor(Key key, const double &amp;z, const SharedNoiseModel &amp;model, const size_t N, double x, double a, double b)</div><div class="ttdoc">Construct a new DerivativeFactor object.</div><div class="ttdef"><b>Definition</b> BasisFactors.h:312</div></div>
+<div class="ttc" id="aa03739_html_a22a6450e16d12137e40345cfe48c0838"><div class="ttname"><a href="a03739.html#a22a6450e16d12137e40345cfe48c0838">gtsam::DerivativeFactor::DerivativeFactor</a></div><div class="ttdeci">DerivativeFactor(Key key, const double &amp;z, const SharedNoiseModel &amp;model, const size_t N, double x)</div><div class="ttdoc">Construct a new DerivativeFactor object.</div><div class="ttdef"><b>Definition</b> BasisFactors.h:296</div></div>
+<div class="ttc" id="aa03743_html"><div class="ttname"><a href="a03743.html">gtsam::VectorDerivativeFactor</a></div><div class="ttdoc">A unary factor which enforces the evaluation of the derivative of a BASIS polynomial at a specified p...</div><div class="ttdef"><b>Definition</b> BasisFactors.h:326</div></div>
+<div class="ttc" id="aa03743_html_a56fb06972fe87fc902add52b7e0cb9d6"><div class="ttname"><a href="a03743.html#a56fb06972fe87fc902add52b7e0cb9d6">gtsam::VectorDerivativeFactor::VectorDerivativeFactor</a></div><div class="ttdeci">VectorDerivativeFactor(Key key, const Vector &amp;z, const SharedNoiseModel &amp;model, const size_t M, const size_t N, double x, double a, double b)</div><div class="ttdoc">Construct a new VectorDerivativeFactor object.</div><div class="ttdef"><b>Definition</b> BasisFactors.h:363</div></div>
+<div class="ttc" id="aa03743_html_a6fe130d3ae22d75db0ae71998dea0a51"><div class="ttname"><a href="a03743.html#a6fe130d3ae22d75db0ae71998dea0a51">gtsam::VectorDerivativeFactor::VectorDerivativeFactor</a></div><div class="ttdeci">VectorDerivativeFactor(Key key, const Vector &amp;z, const SharedNoiseModel &amp;model, const size_t M, const size_t N, double x)</div><div class="ttdoc">Construct a new VectorDerivativeFactor object.</div><div class="ttdef"><b>Definition</b> BasisFactors.h:345</div></div>
+<div class="ttc" id="aa03747_html"><div class="ttname"><a href="a03747.html">gtsam::ComponentDerivativeFactor</a></div><div class="ttdoc">A unary factor which enforces the evaluation of the derivative of a BASIS polynomial is equal to the ...</div><div class="ttdef"><b>Definition</b> BasisFactors.h:379</div></div>
+<div class="ttc" id="aa03747_html_a76fbdb9766881c1ac4f5852971d6088b"><div class="ttname"><a href="a03747.html#a76fbdb9766881c1ac4f5852971d6088b">gtsam::ComponentDerivativeFactor::ComponentDerivativeFactor</a></div><div class="ttdeci">ComponentDerivativeFactor(Key key, const double &amp;z, const SharedNoiseModel &amp;model, const size_t P, const size_t N, size_t i, double x, double a, double b)</div><div class="ttdoc">Construct a new ComponentDerivativeFactor object.</div><div class="ttdef"><b>Definition</b> BasisFactors.h:422</div></div>
+<div class="ttc" id="aa03747_html_ac1312a281ed7e5cf9c9e8b03362d28fb"><div class="ttname"><a href="a03747.html#ac1312a281ed7e5cf9c9e8b03362d28fb">gtsam::ComponentDerivativeFactor::ComponentDerivativeFactor</a></div><div class="ttdeci">ComponentDerivativeFactor(Key key, const double &amp;z, const SharedNoiseModel &amp;model, const size_t P, const size_t N, size_t i, double x)</div><div class="ttdoc">Construct a new ComponentDerivativeFactor object.</div><div class="ttdef"><b>Definition</b> BasisFactors.h:401</div></div>
+<div class="ttc" id="aa06251_html_a7822d3f4c15697b3a530e97343a96e49"><div class="ttname"><a href="a06251.html#a7822d3f4c15697b3a530e97343a96e49">gtsam::FunctorizedFactor&lt; double, Vector &gt;::FunctorizedFactor</a></div><div class="ttdeci">FunctorizedFactor()</div><div class="ttdef"><b>Definition</b> FunctorizedFactor.h:75</div></div>
+<div class="ttc" id="aa06419_html_ab3485244086e53660facaf927be26af1"><div class="ttname"><a href="a06419.html#ab3485244086e53660facaf927be26af1">gtsam::NoiseModelFactorT&lt; Vector, ValueTypes... &gt;::N</a></div><div class="ttdeci">static constexpr auto N</div><div class="ttdef"><b>Definition</b> NoiseModelFactorN.h:158</div></div>
+<div class="ttc" id="aa06419_html_ab35df17c328be5a40f999c6f41d22337"><div class="ttname"><a href="a06419.html#ab35df17c328be5a40f999c6f41d22337">gtsam::NoiseModelFactorT&lt; Vector, ValueTypes... &gt;::key</a></div><div class="ttdeci">Key key() const</div><div class="ttdef"><b>Definition</b> NoiseModelFactorN.h:307</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>discrete</b></li><li class="navelem"><a href="a00224.html">DiscreteMarginals.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>basis</b></li><li class="navelem"><a href="a00224.html">BasisFactors.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

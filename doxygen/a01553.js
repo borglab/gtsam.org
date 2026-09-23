@@ -1,4 +1,5 @@
 var a01553 =
 [
-    [ "gtsam::QPInitSolver", "a05835.html", "a05835" ]
+    [ "gtsam::ISAM2Result::DetailedResults", "a06355.html", "a06355" ],
+    [ "gtsam::ISAM2Result::DetailedResults::VariableStatus", "a06359.html", "a06359" ]
 ];

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  {%- include head.html -%}
+  <link rel="stylesheet" href="{{ '/assets/theme.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/get-started.css' | relative_url }}">
+  <body class="gtsam-site get-started-page">
+    {%- include header.html -%}
+    <main id="main-content" class="start-main" aria-label="Install and start using GTSAM 4.3" tabindex="-1">
+      {{ content }}
+    </main>
+    {%- include footer.html -%}
+    <script>
+      document.querySelectorAll('[data-copy]').forEach(function (button) {
+        button.addEventListener('click', function () {
+          var code = document.getElementById(button.getAttribute('data-copy'));
+          if (!code || !navigator.clipboard) return;
+          navigator.clipboard.writeText(code.innerText).then(function () {
+            var original = button.textContent;
+            button.textContent = 'Copied';
+            window.setTimeout(function () { button.textContent = original; }, 1400);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

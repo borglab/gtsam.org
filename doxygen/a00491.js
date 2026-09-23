@@ -1,5 +1,5 @@
 var a00491 =
 [
-    [ "gtsam::HybridValues", "a04051.html", "a04051" ],
-    [ "gtsam::traits&lt; HybridValues &gt;", "a04055.html", null ]
+    [ "gtsam::traits&lt; PinholePose&lt; CALIBRATION &gt; &gt;", "a04347.html", null ],
+    [ "gtsam::traits&lt; const PinholePose&lt; CALIBRATION &gt; &gt;", "a04351.html", null ]
 ];

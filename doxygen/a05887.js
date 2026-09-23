@@ -1,12 +1,10 @@
 var a05887 =
 [
-    [ "ConcurrentFilter", "a05887.html#a6754bd467ed39025506d93693cd3cfd7", null ],
-    [ "~ConcurrentFilter", "a05887.html#a129ac443a8a3f6b5c8ef6669316bfd15", null ],
-    [ "equals", "a05887.html#a5296012ce0b7457387709219b68f08a2", null ],
-    [ "getSmootherFactors", "a05887.html#a0ff193aa48ca1ff52e81c74e44e30e20", null ],
-    [ "getSummarizedFactors", "a05887.html#a43e56abfa07eb271b17d761036cb37e1", null ],
-    [ "postsync", "a05887.html#ac012d1792e823b6b7c677ea64965c870", null ],
-    [ "presync", "a05887.html#ad64cdf8b2bfa6cc3b772a3775977f7e8", null ],
-    [ "print", "a05887.html#a5565637f908944ac6fa373b285703e27", null ],
-    [ "synchronize", "a05887.html#a1c53190513f8eda576895f0c0839fb28", null ]
+    [ "MagFactor2", "a05887.html#a5d8d154a6e667e362d68d1250b2c5f40", null ],
+    [ "clone", "a05887.html#a28f8be461fbacaff200cec07cbb6073b", null ],
+    [ "evaluateError", "a05887.html#ac834000ac26c2e304c2f5eb0c7c2b0f6", null ],
+    [ "evaluateError", "a05887.html#a5ec5a9eeab0ba8a845e83337fda5a56a", null ],
+    [ "evaluateError", "a05887.html#a937088edd0737da396429340e0f7f32e", null ],
+    [ "evaluateError", "a05887.html#a03258341e52b460f8cda8baca9aef21a", null ],
+    [ "evaluateError", "a05887.html#a1bd8f7c8c961fcb4c16ce4027f4c33fe", null ]
 ];

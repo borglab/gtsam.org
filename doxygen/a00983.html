@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/navigation/BarometricFactor.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/GaussianFactorGraph.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,29 +96,37 @@ $(function(){initNavTree('a00983.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">BarometricFactor.h File Reference</div></div>
+  <div class="headertitle"><div class="title">GaussianFactorGraph.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Header file for Barometric factor.  
+<p>Linear <a class="el" href="a04899.html">Factor</a> Graph where all factors are Gaussians.  
 <a href="#details">More...</a></p>
-
-<p><a href="a00983_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3ABarometricFactor" id="r_gtsam_3A_3ABarometricFactor"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04647.html">gtsam::BarometricFactor</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prior on height in a cartesian frame.  <a href="a04647.html#details">More...</a><br /></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a8c415b06da5d3df57ff2b26085c59ece" id="r_a8c415b06da5d3df57ff2b26085c59ece"><td class="memItemLeft"><a id="a8c415b06da5d3df57ff2b26085c59ece" name="a8c415b06da5d3df57ff2b26085c59ece"></a>
+using&#160;</td><td class="memItemRight"><b>gtsam::SparseTriplets</b> = std::vector&lt;std::tuple&lt;int, int, double&gt; &gt;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a35c269c3243cab16a7475239a9c91021" id="r_a35c269c3243cab16a7475239a9c91021"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="a02242.html#a35c269c3243cab16a7475239a9c91021">gtsam::hasConstraints</a> (const <a class="el" href="a05135.html">GaussianFactorGraph</a> &amp;factors)</td></tr>
+<tr class="memdesc:a35c269c3243cab16a7475239a9c91021"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates whether linear factors have any constrained noise models.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Header file for Barometric factor. </p>
-<dl class="section author"><dt>Author</dt><dd>Peter Milani </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>December 16, 2021 </dd></dl>
+<div class="textblock"><p>Linear <a class="el" href="a04899.html">Factor</a> Graph where all factors are Gaussians. </p>
+<dl class="section author"><dt>Author</dt><dd>Kai Ni </dd>
+<dd>
+Christian Potthast </dd>
+<dd>
+Richard Roberts </dd>
+<dd>
+Frank Dellaert </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -132,7 +140,7 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>navigation</b></li><li class="navelem"><a href="a00983.html">BarometricFactor.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>linear</b></li><li class="navelem"><a href="a00983.html">GaussianFactorGraph.cpp</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

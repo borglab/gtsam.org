@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/NonlinearOptimizerParams.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/iterative.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,40 +96,52 @@ $(function(){initNavTree('a01085.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">NonlinearOptimizerParams.h File Reference</div></div>
+  <div class="headertitle"><div class="title">iterative.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Parameters for nonlinear optimization.  
+<p>Iterative methods, implementation.  
 <a href="#details">More...</a></p>
 
 <p><a href="a01085_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3ANonlinearOptimizerParams" id="r_gtsam_3A_3ANonlinearOptimizerParams"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a05107.html">gtsam::NonlinearOptimizerParams</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The common parameters for Nonlinear optimizers.  <a href="a05107.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3ASystem" id="r_gtsam_3A_3ASystem"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a05167.html">gtsam::System</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper class encapsulating the combined system |Ax-b_|^2 Needed to run Conjugate Gradients on matrices.  <a href="a05167.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a4579016a744c3d7adf227ea58623df7f" id="r_a4579016a744c3d7adf227ea58623df7f"><td class="memItemLeft"><a id="a4579016a744c3d7adf227ea58623df7f" name="a4579016a744c3d7adf227ea58623df7f"></a>
-typedef <a class="el" href="a05107.html">NonlinearOptimizerParams</a>&#160;</td><td class="memItemRight"><b>gtsam::SuccessiveLinearizationParams</b></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a6516ea957c3a22ddf429cefef1fe9486" id="r_a6516ea957c3a22ddf429cefef1fe9486"><td class="memTemplParams" colspan="2">template&lt;class S, class V, class E&gt; </td></tr>
+<tr class="memitem:a6516ea957c3a22ddf429cefef1fe9486 template"><td class="memItemLeft">V&#160;</td><td class="memItemRight"><a class="el" href="a02242.html#a6516ea957c3a22ddf429cefef1fe9486">gtsam::conjugateGradients</a> (const S &amp;Ab, V x, const <a class="el" href="a05031.html">ConjugateGradientParameters</a> &amp;parameters, bool steepest=false)</td></tr>
+<tr class="memdesc:a6516ea957c3a22ddf429cefef1fe9486"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method of conjugate gradients (CG) template "System" class S needs gradient(S,v), e=S*v, v=S^e "Vector" class V needs dot(v,v), -v, v+v, s*v "Vector" class E needs dot(v,v).  <br /></td></tr>
+<tr class="memitem:a37ca85391e3bc671c71b68bc324296f0" id="r_a37ca85391e3bc671c71b68bc324296f0"><td class="memItemLeft"><a id="a37ca85391e3bc671c71b68bc324296f0" name="a37ca85391e3bc671c71b68bc324296f0"></a>
+GTSAM_EXPORT Vector&#160;</td><td class="memItemRight"><b>gtsam::steepestDescent</b> (const <a class="el" href="a05167.html">System</a> &amp;Ab, const Vector &amp;x, const <a class="el" href="a05171.html">IterativeOptimizationParameters</a> &amp;parameters)</td></tr>
+<tr class="memdesc:a37ca85391e3bc671c71b68bc324296f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method of steepest gradients, <a class="el" href="a05167.html" title="Helper class encapsulating the combined system |Ax-b_|^2 Needed to run Conjugate Gradients on matrice...">System</a> version. <br /></td></tr>
+<tr class="memitem:ad2b587fde5d35a27d6c88feb4432e785" id="r_ad2b587fde5d35a27d6c88feb4432e785"><td class="memItemLeft"><a id="ad2b587fde5d35a27d6c88feb4432e785" name="ad2b587fde5d35a27d6c88feb4432e785"></a>
+Vector&#160;</td><td class="memItemRight"><b>gtsam::conjugateGradientDescent</b> (const <a class="el" href="a05167.html">System</a> &amp;Ab, const Vector &amp;x, const <a class="el" href="a05031.html">ConjugateGradientParameters</a> &amp;parameters)</td></tr>
+<tr class="memdesc:ad2b587fde5d35a27d6c88feb4432e785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method of conjugate gradients (CG), <a class="el" href="a05167.html" title="Helper class encapsulating the combined system |Ax-b_|^2 Needed to run Conjugate Gradients on matrice...">System</a> version. <br /></td></tr>
+<tr class="memitem:aed4b2ca704ddd6530ea70122f883ac88" id="r_aed4b2ca704ddd6530ea70122f883ac88"><td class="memItemLeft">Vector&#160;</td><td class="memItemRight"><a class="el" href="a02242.html#aed4b2ca704ddd6530ea70122f883ac88">gtsam::steepestDescent</a> (const Matrix &amp;A, const Vector &amp;b, const Vector &amp;x, const <a class="el" href="a05031.html">ConjugateGradientParameters</a> &amp;parameters)</td></tr>
+<tr class="memdesc:aed4b2ca704ddd6530ea70122f883ac88"><td class="mdescLeft">&#160;</td><td class="mdescRight">convenience calls using matrices, will create <a class="el" href="a05167.html" title="Helper class encapsulating the combined system |Ax-b_|^2 Needed to run Conjugate Gradients on matrice...">System</a> class internally:  <br /></td></tr>
+<tr class="memitem:af55440f741d8b2f706101f7a79ba7111" id="r_af55440f741d8b2f706101f7a79ba7111"><td class="memItemLeft"><a id="af55440f741d8b2f706101f7a79ba7111" name="af55440f741d8b2f706101f7a79ba7111"></a>
+Vector&#160;</td><td class="memItemRight"><b>gtsam::conjugateGradientDescent</b> (const Matrix &amp;A, const Vector &amp;b, const Vector &amp;x, const <a class="el" href="a05031.html">ConjugateGradientParameters</a> &amp;parameters)</td></tr>
+<tr class="memdesc:af55440f741d8b2f706101f7a79ba7111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method of conjugate gradients (CG), Matrix version. <br /></td></tr>
+<tr class="memitem:a81b7af7638d28555c3f404318cc67b22" id="r_a81b7af7638d28555c3f404318cc67b22"><td class="memItemLeft"><a id="a81b7af7638d28555c3f404318cc67b22" name="a81b7af7638d28555c3f404318cc67b22"></a>
+<a class="el" href="a07591.html">VectorValues</a>&#160;</td><td class="memItemRight"><b>gtsam::steepestDescent</b> (const <a class="el" href="a05135.html">GaussianFactorGraph</a> &amp;fg, const <a class="el" href="a07591.html">VectorValues</a> &amp;x, const <a class="el" href="a05031.html">ConjugateGradientParameters</a> &amp;parameters)</td></tr>
+<tr class="memdesc:a81b7af7638d28555c3f404318cc67b22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method of steepest gradients, <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> <a class="el" href="a04899.html">Factor</a> Graph version. <br /></td></tr>
+<tr class="memitem:aa84114ad1593684ad739088a2898afdb" id="r_aa84114ad1593684ad739088a2898afdb"><td class="memItemLeft"><a id="aa84114ad1593684ad739088a2898afdb" name="aa84114ad1593684ad739088a2898afdb"></a>
+<a class="el" href="a07591.html">VectorValues</a>&#160;</td><td class="memItemRight"><b>gtsam::conjugateGradientDescent</b> (const <a class="el" href="a05135.html">GaussianFactorGraph</a> &amp;fg, const <a class="el" href="a07591.html">VectorValues</a> &amp;x, const <a class="el" href="a05031.html">ConjugateGradientParameters</a> &amp;parameters)</td></tr>
+<tr class="memdesc:aa84114ad1593684ad739088a2898afdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method of conjugate gradients (CG), <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> <a class="el" href="a04899.html">Factor</a> Graph version. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Parameters for nonlinear optimization. </p>
-<dl class="section author"><dt>Author</dt><dd>Yong-Dian Jian </dd>
-<dd>
-Richard Roberts </dd>
-<dd>
-Frank Dellaert </dd>
-<dd>
-Andrew Melim </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>Apr 1, 2012 </dd></dl>
+<div class="textblock"><p>Iterative methods, implementation. </p>
+<dl class="section author"><dt>Author</dt><dd>Frank Dellaert </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>Dec 28, 2009 </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -143,7 +155,7 @@ Andrew Melim </dd></dl>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>nonlinear</b></li><li class="navelem"><a href="a01085.html">NonlinearOptimizerParams.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>linear</b></li><li class="navelem"><a href="a01085.html">iterative.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

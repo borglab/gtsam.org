@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::DiscreteLookupDAG Class Reference</title>
+<title>gtsam: gtsam::Scheduler&lt; Y, Policy &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,289 +96,849 @@ $(function(){initNavTree('a03435.html','','a03432'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::DiscreteLookupDAG Class Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::Scheduler&lt; Y, Policy &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A DAG made from lookup tables, as defined above. </p>
-</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::DiscreteLookupDAG:</div>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Y, typename Policy&gt;<br />
+class gtsam::Scheduler&lt; Y, Policy &gt;</div><p>Thread pool scheduler parameterized by a queue Policy. </p>
+<p><a class="el" href="a03435.html" title="Thread pool scheduler parameterized by a queue Policy.">Scheduler</a> class Creates one variable for each student, and three variables for each of the student's areas, for a total of 4*nrStudents variables.</p>
+<ul>
+<li>Tasks are executed by worker threads created at construction.</li>
+<li>Per-worker queues reduce contention; workers steal from peers when idle.</li>
+<li>External submissions are round-robin distributed across worker queues.</li>
+<li>A condition variable parks workers when no work is available.</li>
+</ul>
+<p>Policy requirements:</p><ul>
+<li><span class="tt">using Metadata = ...;</span> carried with each task (e.g., <span class="tt">std::monostate</span>, <span class="tt">int</span>)</li>
+<li><span class="tt">template &lt;typename TaskPtr&gt; using Container = ...;</span></li>
+<li><span class="tt">push(container, task)</span>, <span class="tt">popLocal(container, out)</span>, <span class="tt">popSteal(container,
+out)</span></li>
+</ul>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Y</td><td>Result type returned by tasks. Use <span class="tt">void</span> for no return value. </td></tr>
+    <tr><td class="paramname">Policy</td><td>Queue behavior policy.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The "student" variable will determine when the student takes the qual. The "area" variables determine which faculty are on his/her committee. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::Scheduler&lt; Y, Policy &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a03435.png" usemap="#gtsam_3A_3ADiscreteLookupDAG_map" alt=""/>
-  <map id="gtsam_3A_3ADiscreteLookupDAG_map" name="gtsam_3A_3ADiscreteLookupDAG_map">
-<area href="a04063.html" alt="gtsam::BayesNet&lt; DiscreteLookupTable &gt;" shape="rect" coords="0,56,265,80"/>
-<area href="a04071.html" title="A factor graph is a bipartite graph with factor nodes connected to variable nodes." alt="gtsam::FactorGraph&lt; FACTOR &gt;" shape="rect" coords="0,0,265,24"/>
+  <img src="a03435.png" usemap="#gtsam_3A_3AScheduler_3C_20Y_2C_20Policy_20_3E_map" alt=""/>
+  <map id="gtsam_3A_3AScheduler_3C_20Y_2C_20Policy_20_3E_map" name="gtsam_3A_3AScheduler_3C_20Y_2C_20Policy_20_3E_map">
+<area href="a07227.html" title="Constraint Satisfaction Problem class A specialization of a DiscreteFactorGraph." alt="gtsam::CSP" shape="rect" coords="174,112,513,136"/>
+<area href="a03915.html" title="A Discrete Factor Graph is a factor graph where all factors are Discrete, i.e." alt="gtsam::DiscreteFactorGraph" shape="rect" coords="174,56,513,80"/>
+<area href="a04819.html" alt="gtsam::FactorGraph&lt; DiscreteFactor &gt;" shape="rect" coords="0,0,339,24"/>
+<area href="a04887.html" alt="gtsam::EliminateableFactorGraph&lt; DiscreteFactorGraph &gt;" shape="rect" coords="349,0,688,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Standard Constructors</h2></td></tr>
-<tr class="memitem:a631d976900dcd37b1dc1267bde02dcd0" id="r_a631d976900dcd37b1dc1267bde02dcd0"><td class="memItemLeft"><a id="a631d976900dcd37b1dc1267bde02dcd0" name="a631d976900dcd37b1dc1267bde02dcd0"></a>
-&#160;</td><td class="memItemRight"><b>DiscreteLookupDAG</b> ()</td></tr>
-<tr class="memdesc:a631d976900dcd37b1dc1267bde02dcd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct empty DAG. <br /></td></tr>
-<tr class="memitem:a8f504d319b70c7537bb2b7a05ca8320d" id="r_a8f504d319b70c7537bb2b7a05ca8320d"><td class="memItemLeft"><a id="a8f504d319b70c7537bb2b7a05ca8320d" name="a8f504d319b70c7537bb2b7a05ca8320d"></a>
-virtual&#160;</td><td class="memItemRight"><b>~DiscreteLookupDAG</b> ()</td></tr>
-<tr class="memdesc:a8f504d319b70c7537bb2b7a05ca8320d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
-<tr class="memitem:a26c9861077ad2c6261daf88be2385439" id="r_a26c9861077ad2c6261daf88be2385439"><td class="memItemLeft"><a id="a26c9861077ad2c6261daf88be2385439" name="a26c9861077ad2c6261daf88be2385439"></a>
-static <a class="el" href="#a631d976900dcd37b1dc1267bde02dcd0">DiscreteLookupDAG</a>&#160;</td><td class="memItemRight"><b>FromBayesNet</b> (const <a class="el" href="a03363.html">DiscreteBayesNet</a> &amp;bayesNet)</td></tr>
-<tr class="memdesc:a26c9861077ad2c6261daf88be2385439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create from <a class="el" href="a04063.html" title="A BayesNet is a tree of conditionals, stored in elimination order.">BayesNet</a> with LookupTables. <br /></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Testable</div></td></tr>
-<tr class="memitem:a1b9217223c74329b72c6585428100788" id="r_a1b9217223c74329b72c6585428100788"><td class="memItemLeft"><a id="a1b9217223c74329b72c6585428100788" name="a1b9217223c74329b72c6585428100788"></a>
-bool&#160;</td><td class="memItemRight"><b>equals</b> (const This &amp;bn, double tol=1e-9) const</td></tr>
-<tr class="memdesc:a1b9217223c74329b72c6585428100788"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check equality. <br /></td></tr>
-<tr id="pub-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Standard Interface</div></td></tr>
-<tr class="memitem:a6693231d7a76faf0896ab4d660164539" id="r_a6693231d7a76faf0896ab4d660164539"><td class="memTemplParams" colspan="2"><a id="a6693231d7a76faf0896ab4d660164539" name="a6693231d7a76faf0896ab4d660164539"></a>
+<tr class="memitem:a58718b8999933104eb65551f9156c779" id="r_a58718b8999933104eb65551f9156c779"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a58718b8999933104eb65551f9156c779">Scheduler</a> (size_t numThreads=std::thread::hardware_concurrency())</td></tr>
+<tr class="memdesc:a58718b8999933104eb65551f9156c779"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a scheduler with a fixed number of worker threads.  <br /></td></tr>
+<tr class="memitem:ad5e5db98e0bd560a0b91119fcf928444" id="r_ad5e5db98e0bd560a0b91119fcf928444"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ad5e5db98e0bd560a0b91119fcf928444">~Scheduler</a> ()</td></tr>
+<tr class="memdesc:ad5e5db98e0bd560a0b91119fcf928444"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for all tasks to finish, then stop worker threads.  <br /></td></tr>
+<tr class="memitem:a1c2887e21547ef18c8241b21eb3598df" id="r_a1c2887e21547ef18c8241b21eb3598df"><td class="memTemplParams" colspan="2">template&lt;typename P = Policy, typename = std::enable_if_t&lt;std::is_same_v&lt;                                     typename P::Metadata, std::monostate&gt;&gt;&gt; </td></tr>
+<tr class="memitem:a1c2887e21547ef18c8241b21eb3598df template"><td class="memItemLeft">std::future&lt; Y &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a1c2887e21547ef18c8241b21eb3598df">schedule</a> (std::function&lt; Y()&gt; job)</td></tr>
+<tr class="memdesc:a1c2887e21547ef18c8241b21eb3598df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enqueue a task for execution (no metadata).  <br /></td></tr>
+<tr class="memitem:ae02411e31cf557d1c8b0c92b416d2a24" id="r_ae02411e31cf557d1c8b0c92b416d2a24"><td class="memTemplParams" colspan="2">template&lt;typename P = Policy, typename = std::enable_if_t&lt;!std::is_same_v&lt;                                     typename P::Metadata, std::monostate&gt;&gt;&gt; </td></tr>
+<tr class="memitem:ae02411e31cf557d1c8b0c92b416d2a24 template"><td class="memItemLeft">std::future&lt; Y &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ae02411e31cf557d1c8b0c92b416d2a24">schedule</a> (Metadata metadata, std::function&lt; Y()&gt; job)</td></tr>
+<tr class="memdesc:ae02411e31cf557d1c8b0c92b416d2a24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enqueue a task for execution with metadata.  <br /></td></tr>
+<tr class="memitem:a0ee32307b29d5be660c67904eec5d663" id="r_a0ee32307b29d5be660c67904eec5d663"><td class="memTemplParams" colspan="2">template&lt;typename T = Y, typename = std::enable_if_t&lt;                std::is_void_v&lt;T&gt; &amp;&amp; std::is_same_v&lt;Metadata, std::monostate&gt;&gt;&gt; </td></tr>
+<tr class="memitem:a0ee32307b29d5be660c67904eec5d663 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0ee32307b29d5be660c67904eec5d663">scheduleOrRunInline</a> (std::function&lt; void()&gt; job)</td></tr>
+<tr class="memdesc:a0ee32307b29d5be660c67904eec5d663"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schedule or run inline when called from a worker thread.  <br /></td></tr>
+<tr class="memitem:a3b29ff22bb319bfbbcfba67b2c6566da" id="r_a3b29ff22bb319bfbbcfba67b2c6566da"><td class="memTemplParams" colspan="2">template&lt;typename T = Y, typename = std::enable_if_t&lt;                std::is_void_v&lt;T&gt; &amp;&amp; !std::is_same_v&lt;Metadata, std::monostate&gt;&gt;&gt; </td></tr>
+<tr class="memitem:a3b29ff22bb319bfbbcfba67b2c6566da template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3b29ff22bb319bfbbcfba67b2c6566da">scheduleOrRunInline</a> (Metadata metadata, std::function&lt; void()&gt; job)</td></tr>
+<tr class="memdesc:a3b29ff22bb319bfbbcfba67b2c6566da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schedule or run inline when called from a worker thread.  <br /></td></tr>
+<tr class="memitem:a7c224e06b4669170d75ba1c95e67234a" id="r_a7c224e06b4669170d75ba1c95e67234a"><td class="memTemplParams" colspan="2">template&lt;typename T = Y, typename = std::enable_if_t&lt;                std::is_void_v&lt;T&gt; &amp;&amp; std::is_same_v&lt;Metadata, std::monostate&gt;&gt;&gt; </td></tr>
+<tr class="memitem:a7c224e06b4669170d75ba1c95e67234a template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7c224e06b4669170d75ba1c95e67234a">enqueue</a> (std::function&lt; void()&gt; job)</td></tr>
+<tr class="memdesc:a7c224e06b4669170d75ba1c95e67234a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enqueue a fire-and-forget task for execution.  <br /></td></tr>
+<tr class="memitem:aa4670a88ec6253d1cc4f0dbee9e81b6c" id="r_aa4670a88ec6253d1cc4f0dbee9e81b6c"><td class="memTemplParams" colspan="2">template&lt;typename T = Y, typename = std::enable_if_t&lt;                std::is_void_v&lt;T&gt; &amp;&amp; std::is_same_v&lt;Metadata, std::monostate&gt;&gt;&gt; </td></tr>
+<tr class="memitem:aa4670a88ec6253d1cc4f0dbee9e81b6c template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa4670a88ec6253d1cc4f0dbee9e81b6c">enqueueOrRunInline</a> (std::function&lt; void()&gt; job)</td></tr>
+<tr class="memdesc:aa4670a88ec6253d1cc4f0dbee9e81b6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enqueue a fire-and-forget task or run it inline on worker threads.  <br /></td></tr>
+<tr class="memitem:af72e89d49cae86b1f6408d6d0790e659" id="r_af72e89d49cae86b1f6408d6d0790e659"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af72e89d49cae86b1f6408d6d0790e659">waitForAllTasks</a> ()</td></tr>
+<tr class="memdesc:af72e89d49cae86b1f6408d6d0790e659"><td class="mdescLeft">&#160;</td><td class="mdescRight">Block until all queued and active tasks complete.  <br /></td></tr>
+<tr class="memitem:aceaecce7c01843f935ce80584f346dc1" id="r_aceaecce7c01843f935ce80584f346dc1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aceaecce7c01843f935ce80584f346dc1">Scheduler</a> (size_t maxNrStudents)</td></tr>
+<tr class="memdesc:aceaecce7c01843f935ce80584f346dc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor We need to know the number of students in advance for ordering keys.  <br /></td></tr>
+<tr class="memitem:ad5bc13735b768a882b09c68afd9c3d6a" id="r_ad5bc13735b768a882b09c68afd9c3d6a"><td class="memItemLeft"><a id="ad5bc13735b768a882b09c68afd9c3d6a" name="ad5bc13735b768a882b09c68afd9c3d6a"></a>
+virtual&#160;</td><td class="memItemRight"><b>~Scheduler</b> ()</td></tr>
+<tr class="memdesc:ad5bc13735b768a882b09c68afd9c3d6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="memitem:ace37dc4fd99a9b6f8402550526fd620f" id="r_ace37dc4fd99a9b6f8402550526fd620f"><td class="memItemLeft"><a id="ace37dc4fd99a9b6f8402550526fd620f" name="ace37dc4fd99a9b6f8402550526fd620f"></a>
+void&#160;</td><td class="memItemRight"><b>addFaculty</b> (const std::string &amp;facultyName)</td></tr>
+<tr class="memitem:adee418a7b7fda55eab4e60a392c943ef" id="r_adee418a7b7fda55eab4e60a392c943ef"><td class="memItemLeft"><a id="adee418a7b7fda55eab4e60a392c943ef" name="adee418a7b7fda55eab4e60a392c943ef"></a>
+size_t&#160;</td><td class="memItemRight"><b>nrFaculty</b> () const</td></tr>
+<tr class="memitem:ab098dae68a10fa89f74c433bd8031ce0" id="r_ab098dae68a10fa89f74c433bd8031ce0"><td class="memItemLeft"><a id="ab098dae68a10fa89f74c433bd8031ce0" name="ab098dae68a10fa89f74c433bd8031ce0"></a>
+void&#160;</td><td class="memItemRight"><b>setAvailability</b> (const std::string &amp;available)</td></tr>
+<tr class="memdesc:ab098dae68a10fa89f74c433bd8031ce0"><td class="mdescLeft">&#160;</td><td class="mdescRight">boolean std::string of nrTimeSlots * nrFaculty <br /></td></tr>
+<tr class="memitem:a2ef764e99c6edd4a1ca9dc6888f0d7ae" id="r_a2ef764e99c6edd4a1ca9dc6888f0d7ae"><td class="memItemLeft"><a id="a2ef764e99c6edd4a1ca9dc6888f0d7ae" name="a2ef764e99c6edd4a1ca9dc6888f0d7ae"></a>
+void&#160;</td><td class="memItemRight"><b>addSlot</b> (const std::string &amp;slotName)</td></tr>
+<tr class="memitem:a1045a1b62e07e833d79ea210b4e1a8a7" id="r_a1045a1b62e07e833d79ea210b4e1a8a7"><td class="memItemLeft"><a id="a1045a1b62e07e833d79ea210b4e1a8a7" name="a1045a1b62e07e833d79ea210b4e1a8a7"></a>
+size_t&#160;</td><td class="memItemRight"><b>nrTimeSlots</b> () const</td></tr>
+<tr class="memitem:a05aef8fbf342985fcec53bf15e0c8cc6" id="r_a05aef8fbf342985fcec53bf15e0c8cc6"><td class="memItemLeft"><a id="a05aef8fbf342985fcec53bf15e0c8cc6" name="a05aef8fbf342985fcec53bf15e0c8cc6"></a>
+const std::string &amp;&#160;</td><td class="memItemRight"><b>slotName</b> (size_t s) const</td></tr>
+<tr class="memitem:a7aec94ad3c6bcb5ee17345dc3f66772b" id="r_a7aec94ad3c6bcb5ee17345dc3f66772b"><td class="memItemLeft"><a id="a7aec94ad3c6bcb5ee17345dc3f66772b" name="a7aec94ad3c6bcb5ee17345dc3f66772b"></a>
+void&#160;</td><td class="memItemRight"><b>setSlotsAvailable</b> (const std::vector&lt; double &gt; &amp;slotsAvailable)</td></tr>
+<tr class="memdesc:a7aec94ad3c6bcb5ee17345dc3f66772b"><td class="mdescLeft">&#160;</td><td class="mdescRight">slots available, boolean <br /></td></tr>
+<tr class="memitem:ae88a2f91730fa9a7a44eda557ca92d5a" id="r_ae88a2f91730fa9a7a44eda557ca92d5a"><td class="memItemLeft"><a id="ae88a2f91730fa9a7a44eda557ca92d5a" name="ae88a2f91730fa9a7a44eda557ca92d5a"></a>
+void&#160;</td><td class="memItemRight"><b>addArea</b> (const std::string &amp;facultyName, const std::string &amp;areaName)</td></tr>
+<tr class="memitem:a0cb4656f68b22836b33c92c42662d63d" id="r_a0cb4656f68b22836b33c92c42662d63d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0cb4656f68b22836b33c92c42662d63d">Scheduler</a> (size_t maxNrStudents, const std::string &amp;filename)</td></tr>
+<tr class="memdesc:a0cb4656f68b22836b33c92c42662d63d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that reads in faculty, slots, availibility.  <br /></td></tr>
+<tr class="memitem:a2ad64007c8744d746cdfcde7ed537417" id="r_a2ad64007c8744d746cdfcde7ed537417"><td class="memItemLeft"><a id="a2ad64007c8744d746cdfcde7ed537417" name="a2ad64007c8744d746cdfcde7ed537417"></a>
+const <a class="el" href="a02229.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &amp;&#160;</td><td class="memItemRight"><b>key</b> (size_t s, std::optional&lt; size_t &gt; area={}) const</td></tr>
+<tr class="memdesc:a2ad64007c8744d746cdfcde7ed537417"><td class="mdescLeft">&#160;</td><td class="mdescRight">get key for student and area, 0 is time slot itself <br /></td></tr>
+<tr class="memitem:a31bf9a1bbd4aca825685bbc0f0a17a60" id="r_a31bf9a1bbd4aca825685bbc0f0a17a60"><td class="memItemLeft"><a id="a31bf9a1bbd4aca825685bbc0f0a17a60" name="a31bf9a1bbd4aca825685bbc0f0a17a60"></a>
+void&#160;</td><td class="memItemRight"><b>addStudent</b> (const std::string &amp;studentName, const std::string &amp;area1, const std::string &amp;area2, const std::string &amp;area3, const std::string &amp;advisor)</td></tr>
+<tr class="memdesc:a31bf9a1bbd4aca825685bbc0f0a17a60"><td class="mdescLeft">&#160;</td><td class="mdescRight">addStudent has to be called after adding slots and faculty <br /></td></tr>
+<tr class="memitem:a08c0735c5a4f2e9c77fcb72452a5c4b5" id="r_a08c0735c5a4f2e9c77fcb72452a5c4b5"><td class="memItemLeft"><a id="a08c0735c5a4f2e9c77fcb72452a5c4b5" name="a08c0735c5a4f2e9c77fcb72452a5c4b5"></a>
+size_t&#160;</td><td class="memItemRight"><b>nrStudents</b> () const</td></tr>
+<tr class="memdesc:a08c0735c5a4f2e9c77fcb72452a5c4b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">current number of students <br /></td></tr>
+<tr class="memitem:a2672ad7257ff19d6314ee160bec604be" id="r_a2672ad7257ff19d6314ee160bec604be"><td class="memItemLeft"><a id="a2672ad7257ff19d6314ee160bec604be" name="a2672ad7257ff19d6314ee160bec604be"></a>
+const std::string &amp;&#160;</td><td class="memItemRight"><b>studentName</b> (size_t i) const</td></tr>
+<tr class="memitem:a7256693f40418de4f4299f0bf86618e2" id="r_a7256693f40418de4f4299f0bf86618e2"><td class="memItemLeft"><a id="a7256693f40418de4f4299f0bf86618e2" name="a7256693f40418de4f4299f0bf86618e2"></a>
+const <a class="el" href="a02229.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &amp;&#160;</td><td class="memItemRight"><b>studentKey</b> (size_t i) const</td></tr>
+<tr class="memitem:a8503a69dbde11b659a11a41c927be1f7" id="r_a8503a69dbde11b659a11a41c927be1f7"><td class="memItemLeft"><a id="a8503a69dbde11b659a11a41c927be1f7" name="a8503a69dbde11b659a11a41c927be1f7"></a>
+const std::string &amp;&#160;</td><td class="memItemRight"><b>studentArea</b> (size_t i, size_t area) const</td></tr>
+<tr class="memitem:afdd36649635bf7e5dbaae4058da42efb" id="r_afdd36649635bf7e5dbaae4058da42efb"><td class="memItemLeft"><a id="afdd36649635bf7e5dbaae4058da42efb" name="afdd36649635bf7e5dbaae4058da42efb"></a>
+void&#160;</td><td class="memItemRight"><b>addStudentSpecificConstraints</b> (size_t i, std::optional&lt; size_t &gt; slot={})</td></tr>
+<tr class="memdesc:afdd36649635bf7e5dbaae4058da42efb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add student-specific constraints to the graph. <br /></td></tr>
+<tr class="memitem:af79b5ae29925fff2c47f5d8698431e1d" id="r_af79b5ae29925fff2c47f5d8698431e1d"><td class="memItemLeft"><a id="af79b5ae29925fff2c47f5d8698431e1d" name="af79b5ae29925fff2c47f5d8698431e1d"></a>
+void&#160;</td><td class="memItemRight"><b>buildGraph</b> (size_t mutexBound=7)</td></tr>
+<tr class="memdesc:af79b5ae29925fff2c47f5d8698431e1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main routine that builds factor graph. <br /></td></tr>
+<tr class="memitem:a396cecfe9d113f0a859fc6eaf40cf943" id="r_a396cecfe9d113f0a859fc6eaf40cf943"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a396cecfe9d113f0a859fc6eaf40cf943">print</a> (const std::string &amp;s=&quot;Scheduler&quot;, const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;formatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) const override</td></tr>
+<tr class="memdesc:a396cecfe9d113f0a859fc6eaf40cf943"><td class="mdescLeft">&#160;</td><td class="mdescRight">print  <br /></td></tr>
+<tr class="memitem:a5edb645b006e297863907f65c6fe4a1e" id="r_a5edb645b006e297863907f65c6fe4a1e"><td class="memItemLeft"><a id="a5edb645b006e297863907f65c6fe4a1e" name="a5edb645b006e297863907f65c6fe4a1e"></a>
+void&#160;</td><td class="memItemRight"><b>printAssignment</b> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;assignment) const</td></tr>
+<tr class="memdesc:a5edb645b006e297863907f65c6fe4a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print readable form of assignment. <br /></td></tr>
+<tr class="memitem:a78166111be5320d78ee4612f7ea23933" id="r_a78166111be5320d78ee4612f7ea23933"><td class="memItemLeft"><a id="a78166111be5320d78ee4612f7ea23933" name="a78166111be5320d78ee4612f7ea23933"></a>
+void&#160;</td><td class="memItemRight"><b>printSpecial</b> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;assignment) const</td></tr>
+<tr class="memdesc:a78166111be5320d78ee4612f7ea23933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Special print for single-student case. <br /></td></tr>
+<tr class="memitem:a6d95a423ba7187bb33d2e2205745824f" id="r_a6d95a423ba7187bb33d2e2205745824f"><td class="memItemLeft"><a id="a6d95a423ba7187bb33d2e2205745824f" name="a6d95a423ba7187bb33d2e2205745824f"></a>
+void&#160;</td><td class="memItemRight"><b>accumulateStats</b> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;assignment, std::vector&lt; size_t &gt; &amp;stats) const</td></tr>
+<tr class="memdesc:a6d95a423ba7187bb33d2e2205745824f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accumulate faculty stats. <br /></td></tr>
+<tr class="memitem:adfa0eaebbcf45e3618ae6272be508d09" id="r_adfa0eaebbcf45e3618ae6272be508d09"><td class="memItemLeft"><a id="adfa0eaebbcf45e3618ae6272be508d09" name="adfa0eaebbcf45e3618ae6272be508d09"></a>
+DiscreteBayesNet::shared_ptr&#160;</td><td class="memItemRight"><b>eliminate</b> () const</td></tr>
+<tr class="memdesc:adfa0eaebbcf45e3618ae6272be508d09"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a04887.html#a4053522180fd649baf38a49c515e7b53">Eliminate</a>, return a Bayes net. <br /></td></tr>
+<tr class="memitem:a913ff4ebbda882c86494cabb27358140" id="r_a913ff4ebbda882c86494cabb27358140"><td class="memItemLeft"><a id="a913ff4ebbda882c86494cabb27358140" name="a913ff4ebbda882c86494cabb27358140"></a>
+<a class="el" href="a07559.html">DiscreteValues</a>&#160;</td><td class="memItemRight"><b>bestSchedule</b> () const</td></tr>
+<tr class="memdesc:a913ff4ebbda882c86494cabb27358140"><td class="mdescLeft">&#160;</td><td class="mdescRight">find the assignment of students to slots with most possible committees <br /></td></tr>
+<tr class="memitem:a134a23cef000e8386740fc09abecefd6" id="r_a134a23cef000e8386740fc09abecefd6"><td class="memItemLeft"><a id="a134a23cef000e8386740fc09abecefd6" name="a134a23cef000e8386740fc09abecefd6"></a>
+<a class="el" href="a07559.html">DiscreteValues</a>&#160;</td><td class="memItemRight"><b>bestAssignment</b> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;<a class="el" href="#a913ff4ebbda882c86494cabb27358140">bestSchedule</a>) const</td></tr>
+<tr class="memdesc:a134a23cef000e8386740fc09abecefd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">find the corresponding most desirable committee assignment <br /></td></tr>
+<tr class="inherit_header pub_methods_a07227"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a07227')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a07227.html">gtsam::CSP</a></td></tr>
+<tr class="memitem:a31dbd12c4fe55698ad8c5234e5ea1c03 inherit pub_methods_a07227" id="r_a31dbd12c4fe55698ad8c5234e5ea1c03"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>addSingleValue</b> (const <a class="el" href="a02229.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &amp;dkey, size_t value)</td></tr>
+<tr class="memdesc:a31dbd12c4fe55698ad8c5234e5ea1c03 inherit pub_methods_a07227"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a unary constraint, allowing only a single value. <br /></td></tr>
+<tr class="memitem:af4defecc411aa135ec3ca05a923bed04 inherit pub_methods_a07227" id="r_af4defecc411aa135ec3ca05a923bed04"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>addAllDiff</b> (const <a class="el" href="a02229.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &amp;key1, const <a class="el" href="a02229.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &amp;key2)</td></tr>
+<tr class="memdesc:af4defecc411aa135ec3ca05a923bed04 inherit pub_methods_a07227"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a binary <a class="el" href="a03799.html" title="General AllDiff constraint.">AllDiff</a> constraint. <br /></td></tr>
+<tr class="memitem:aa7c9a418cb57874c801408aa17853b39 inherit pub_methods_a07227" id="r_aa7c9a418cb57874c801408aa17853b39"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>addAllDiff</b> (const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;dkeys)</td></tr>
+<tr class="memdesc:aa7c9a418cb57874c801408aa17853b39 inherit pub_methods_a07227"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a general <a class="el" href="a03799.html" title="General AllDiff constraint.">AllDiff</a> constraint. <br /></td></tr>
+<tr class="memitem:ada0451eb430059e08150d4086bbefe63 inherit pub_methods_a07227" id="r_ada0451eb430059e08150d4086bbefe63"><td class="memItemLeft">
+Domains&#160;</td><td class="memItemRight"><b>runArcConsistency</b> (size_t cardinality, size_t maxIterations=10) const</td></tr>
+<tr class="memdesc:ada0451eb430059e08150d4086bbefe63 inherit pub_methods_a07227"><td class="mdescLeft">&#160;</td><td class="mdescRight">return product of all factors as a single factor <br /></td></tr>
+<tr class="memitem:a348ec29ca1285ffa64dc43a78f80d7b1 inherit pub_methods_a07227" id="r_a348ec29ca1285ffa64dc43a78f80d7b1"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>runArcConsistency</b> (const <a class="el" href="a04999.html">VariableIndex</a> &amp;index, Domains *domains) const</td></tr>
+<tr class="memdesc:a348ec29ca1285ffa64dc43a78f80d7b1 inherit pub_methods_a07227"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run arc consistency for all variables, return true if any domain changed. <br /></td></tr>
+<tr class="memitem:a090a4b6def004bdb25197acba642974a inherit pub_methods_a07227" id="r_a090a4b6def004bdb25197acba642974a"><td class="memItemLeft">
+<a class="el" href="a07227.html">CSP</a>&#160;</td><td class="memItemRight"><b>partiallyApply</b> (const Domains &amp;domains) const</td></tr>
+<tr class="inherit_header pub_methods_a03915"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03915')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03915.html">gtsam::DiscreteFactorGraph</a></td></tr>
+<tr class="memitem:a9c6155d411d5e8f4169ac14982175908 inherit pub_methods_a03915" id="r_a9c6155d411d5e8f4169ac14982175908"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03915.html#a9c6155d411d5e8f4169ac14982175908">DiscreteFactorGraph</a> ()</td></tr>
+<tr class="memdesc:a9c6155d411d5e8f4169ac14982175908 inherit pub_methods_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <br /></td></tr>
+<tr class="memitem:ab200e82a32be55ee64c8e0450e289daa inherit pub_methods_a03915" id="r_ab200e82a32be55ee64c8e0450e289daa"><td class="memTemplParams" colspan="2">
+template&lt;typename ITERATOR&gt; </td></tr>
+<tr class="memitem:ab200e82a32be55ee64c8e0450e289daa inherit pub_methods_a03915 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>DiscreteFactorGraph</b> (ITERATOR firstFactor, ITERATOR lastFactor)</td></tr>
+<tr class="memdesc:ab200e82a32be55ee64c8e0450e289daa inherit pub_methods_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from iterator over factors. <br /></td></tr>
+<tr class="memitem:a1cc891cc009075ea80f8d114f5ce7941 inherit pub_methods_a03915" id="r_a1cc891cc009075ea80f8d114f5ce7941"><td class="memTemplParams" colspan="2">
+template&lt;class CONTAINER&gt; </td></tr>
+<tr class="memitem:a1cc891cc009075ea80f8d114f5ce7941 inherit pub_methods_a03915 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>DiscreteFactorGraph</b> (const CONTAINER &amp;factors)</td></tr>
+<tr class="memdesc:a1cc891cc009075ea80f8d114f5ce7941 inherit pub_methods_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from container of factors (<a class="el" href="a03915.html#ae37dfa7677bcf00e064afca6571a7877" title="shared_ptr to This">shared_ptr</a> or plain objects). <br /></td></tr>
+<tr class="memitem:aabb4702427430be57798639d37bfdc81 inherit pub_methods_a03915" id="r_aabb4702427430be57798639d37bfdc81"><td class="memTemplParams" colspan="2">
+template&lt;class DERIVED_FACTOR&gt; </td></tr>
+<tr class="memitem:aabb4702427430be57798639d37bfdc81 inherit pub_methods_a03915 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>DiscreteFactorGraph</b> (const <a class="el" href="a04819.html#a42db0a1062eb6c223b0a186a9d34cb4b">FactorGraph</a>&lt; DERIVED_FACTOR &gt; &amp;graph)</td></tr>
+<tr class="memdesc:aabb4702427430be57798639d37bfdc81 inherit pub_methods_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implicit copy/downcast constructor to override explicit template container constructor. <br /></td></tr>
+<tr class="memitem:abb9a840e604046c811c991340006e976 inherit pub_methods_a03915" id="r_abb9a840e604046c811c991340006e976"><td class="memItemLeft">
+virtual&#160;</td><td class="memItemRight"><b>~DiscreteFactorGraph</b> ()</td></tr>
+<tr class="memdesc:abb9a840e604046c811c991340006e976 inherit pub_methods_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="memitem:ada1b1b3761bde5e31864ad16a61b8b9c inherit pub_methods_a03915" id="r_ada1b1b3761bde5e31864ad16a61b8b9c"><td class="memTemplParams" colspan="2">
 template&lt;typename... Args&gt; </td></tr>
-<tr class="memitem:a6693231d7a76faf0896ab4d660164539 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><b>add</b> (Args &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a6693231d7a76faf0896ab4d660164539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a <a class="el" href="a03431.html" title="DiscreteLookupTable table for max-product.">DiscreteLookupTable</a>. <br /></td></tr>
-<tr class="memitem:a21bdddd0a2850256341b714a56c83071" id="r_a21bdddd0a2850256341b714a56c83071"><td class="memItemLeft"><a class="el" href="a06207.html">DiscreteValues</a>&#160;</td><td class="memItemRight"><a class="el" href="#a21bdddd0a2850256341b714a56c83071">argmax</a> (<a class="el" href="a06207.html">DiscreteValues</a> given=<a class="el" href="a06207.html">DiscreteValues</a>()) const</td></tr>
-<tr class="memdesc:a21bdddd0a2850256341b714a56c83071"><td class="mdescLeft">&#160;</td><td class="mdescRight">argmax by back-substitution, optionally given certain variables.  <br /></td></tr>
-<tr class="inherit_header pub_methods_a04063"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a04063')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a04063.html">gtsam::BayesNet&lt; DiscreteLookupTable &gt;</a></td></tr>
-<tr class="memitem:a5a0adcde7519254c34f75b3563081dcd inherit pub_methods_a04063" id="r_a5a0adcde7519254c34f75b3563081dcd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a04063.html#a5a0adcde7519254c34f75b3563081dcd">print</a> (const std::string &amp;s=&quot;BayesNet&quot;, const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;formatter=DefaultKeyFormatter) const override</td></tr>
-<tr class="memdesc:a5a0adcde7519254c34f75b3563081dcd inherit pub_methods_a04063"><td class="mdescLeft">&#160;</td><td class="mdescRight">print out graph  <br /></td></tr>
-<tr class="memitem:a7b9f765c63538beca9e5e667b5c676f8 inherit pub_methods_a04063" id="r_a7b9f765c63538beca9e5e667b5c676f8"><td class="memItemLeft">
-void&#160;</td><td class="memItemRight"><b>dot</b> (std::ostream &amp;os, const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=DefaultKeyFormatter, const <a class="el" href="a04123.html">DotWriter</a> &amp;writer=<a class="el" href="a04123.html">DotWriter</a>()) const</td></tr>
-<tr class="memdesc:a7b9f765c63538beca9e5e667b5c676f8 inherit pub_methods_a04063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output to graphviz format, stream version. <br /></td></tr>
-<tr class="memitem:ae080be60951c55ae928eb6cc03d23ec2 inherit pub_methods_a04063" id="r_ae080be60951c55ae928eb6cc03d23ec2"><td class="memItemLeft">
-std::string&#160;</td><td class="memItemRight"><b>dot</b> (const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=DefaultKeyFormatter, const <a class="el" href="a04123.html">DotWriter</a> &amp;writer=<a class="el" href="a04123.html">DotWriter</a>()) const</td></tr>
-<tr class="memdesc:ae080be60951c55ae928eb6cc03d23ec2 inherit pub_methods_a04063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output to graphviz format string. <br /></td></tr>
-<tr class="memitem:ae0b05918d78c0dd95363bb4affc22f8a inherit pub_methods_a04063" id="r_ae0b05918d78c0dd95363bb4affc22f8a"><td class="memItemLeft">
-void&#160;</td><td class="memItemRight"><b>saveGraph</b> (const std::string &amp;filename, const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=DefaultKeyFormatter, const <a class="el" href="a04123.html">DotWriter</a> &amp;writer=<a class="el" href="a04123.html">DotWriter</a>()) const</td></tr>
-<tr class="memdesc:ae0b05918d78c0dd95363bb4affc22f8a inherit pub_methods_a04063"><td class="mdescLeft">&#160;</td><td class="mdescRight">output to file with graphviz format. <br /></td></tr>
-<tr class="memitem:a8a8e1ccc35ea2495df3fe5e6400780c3 inherit pub_methods_a04063" id="r_a8a8e1ccc35ea2495df3fe5e6400780c3"><td class="memItemLeft">
-double&#160;</td><td class="memItemRight"><b>logProbability</b> (const <a class="el" href="a06211.html">HybridValues</a> &amp;x) const</td></tr>
-<tr class="memitem:a0e585fb23278c1c1cdc1052e3abcb9d2 inherit pub_methods_a04063" id="r_a0e585fb23278c1c1cdc1052e3abcb9d2"><td class="memItemLeft">
-double&#160;</td><td class="memItemRight"><b>evaluate</b> (const <a class="el" href="a06211.html">HybridValues</a> &amp;c) const</td></tr>
-<tr class="memitem:a761f1022dadf60e2cacca304ab0533b4" id="r_a761f1022dadf60e2cacca304ab0533b4"><td class="memItemLeft"><a id="a761f1022dadf60e2cacca304ab0533b4" name="a761f1022dadf60e2cacca304ab0533b4"></a>
-size_t&#160;</td><td class="memItemRight"><b>nrFactors</b> () const</td></tr>
-<tr class="memdesc:a761f1022dadf60e2cacca304ab0533b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the number of non-null factors <br /></td></tr>
-<tr class="memitem:a0c4667de76265a06cc6f74b1f3b25051" id="r_a0c4667de76265a06cc6f74b1f3b25051"><td class="memItemLeft"><a id="a0c4667de76265a06cc6f74b1f3b25051" name="a0c4667de76265a06cc6f74b1f3b25051"></a>
+<tr class="memitem:ada1b1b3761bde5e31864ad16a61b8b9c inherit pub_methods_a03915 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><b>add</b> (Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:ada1b1b3761bde5e31864ad16a61b8b9c inherit pub_methods_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a decision-tree factor. <br /></td></tr>
+<tr class="memitem:abc343953dd57e2f19a4778f34d63dfc2 inherit pub_methods_a03915" id="r_abc343953dd57e2f19a4778f34d63dfc2"><td class="memItemLeft">
 KeySet&#160;</td><td class="memItemRight"><b>keys</b> () const</td></tr>
-<tr class="memdesc:a0c4667de76265a06cc6f74b1f3b25051"><td class="mdescLeft">&#160;</td><td class="mdescRight">Potentially slow function to return all keys involved, sorted, as a set. <br /></td></tr>
-<tr class="memitem:a3b4d9bbaceeb9043ab7c20d4778b69c5" id="r_a3b4d9bbaceeb9043ab7c20d4778b69c5"><td class="memItemLeft"><a id="a3b4d9bbaceeb9043ab7c20d4778b69c5" name="a3b4d9bbaceeb9043ab7c20d4778b69c5"></a>
-<a class="el" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&#160;</td><td class="memItemRight"><b>keyVector</b> () const</td></tr>
-<tr class="memdesc:a3b4d9bbaceeb9043ab7c20d4778b69c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Potentially slow function to return all keys involved, sorted, as a vector. <br /></td></tr>
-<tr class="memitem:acbf8cdf50816d4a0571f6b9b6254f9ce" id="r_acbf8cdf50816d4a0571f6b9b6254f9ce"><td class="memItemLeft"><a id="acbf8cdf50816d4a0571f6b9b6254f9ce" name="acbf8cdf50816d4a0571f6b9b6254f9ce"></a>
-bool&#160;</td><td class="memItemRight"><b>exists</b> (size_t idx) const</td></tr>
-<tr class="memdesc:acbf8cdf50816d4a0571f6b9b6254f9ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">MATLAB interface utility: Checks whether a factor index idx exists in the graph and is a live pointer. <br /></td></tr>
-<tr class="memitem:afb3841eca3ce0a8b574d72e4107a342a" id="r_afb3841eca3ce0a8b574d72e4107a342a"><td class="memItemLeft"><a id="afb3841eca3ce0a8b574d72e4107a342a" name="afb3841eca3ce0a8b574d72e4107a342a"></a>
+<tr class="memdesc:abc343953dd57e2f19a4778f34d63dfc2 inherit pub_methods_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the set of variables involved in the factors (set union). <br /></td></tr>
+<tr class="memitem:a426d04deb0958b223114a68150973dc8 inherit pub_methods_a03915" id="r_a426d04deb0958b223114a68150973dc8"><td class="memItemLeft">
+<a class="el" href="a03927.html">DiscreteKeys</a>&#160;</td><td class="memItemRight"><b>discreteKeys</b> () const</td></tr>
+<tr class="memdesc:a426d04deb0958b223114a68150973dc8 inherit pub_methods_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the <a class="el" href="a03927.html" title="DiscreteKeys is a set of keys that can be assembled using the &amp; operator.">DiscreteKeys</a> in this factor graph. <br /></td></tr>
+<tr class="memitem:a82bd4eb03ae9fd9ff677134eb3ccdcde inherit pub_methods_a03915" id="r_a82bd4eb03ae9fd9ff677134eb3ccdcde"><td class="memItemLeft">
+<a class="el" href="a03903.html#a45ed456d883c06209028320c8299127e">DiscreteFactor::shared_ptr</a>&#160;</td><td class="memItemRight"><b>product</b> () const</td></tr>
+<tr class="memdesc:a82bd4eb03ae9fd9ff677134eb3ccdcde inherit pub_methods_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight">return product of all factors as a single factor <br /></td></tr>
+<tr class="memitem:aacee9cb1fb4b2fc79e01259b07f735e8 inherit pub_methods_a03915" id="r_aacee9cb1fb4b2fc79e01259b07f735e8"><td class="memItemLeft"><a class="el" href="a03903.html#a45ed456d883c06209028320c8299127e">DiscreteFactor::shared_ptr</a>&#160;</td><td class="memItemRight"><a class="el" href="a03915.html#aacee9cb1fb4b2fc79e01259b07f735e8">scaledProduct</a> () const</td></tr>
+<tr class="memdesc:aacee9cb1fb4b2fc79e01259b07f735e8 inherit pub_methods_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return product of all <span class="tt">factors</span> as a single factor, which is scaled by the max value to prevent underflow.  <br /></td></tr>
+<tr class="memitem:a5b460831cea019b31707eafa3fc2ef49 inherit pub_methods_a03915" id="r_a5b460831cea019b31707eafa3fc2ef49"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>operator()</b> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;values) const</td></tr>
+<tr class="memdesc:a5b460831cea019b31707eafa3fc2ef49 inherit pub_methods_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the factor graph given values, returns the joint probability of the factor graph given specific instantiation of values. <br /></td></tr>
+<tr class="memitem:ad6468aba86fc874fafb6776592e6fe4a inherit pub_methods_a03915" id="r_ad6468aba86fc874fafb6776592e6fe4a"><td class="memItemLeft"><a class="el" href="a03859.html">DiscreteBayesNet</a>&#160;</td><td class="memItemRight"><a class="el" href="a03915.html#ad6468aba86fc874fafb6776592e6fe4a">sumProduct</a> (<a class="el" href="a04887.html#af27e3d79ee48b6ed40b7640a1bb26229">OptionalOrderingType</a> orderingType={}) const</td></tr>
+<tr class="memdesc:ad6468aba86fc874fafb6776592e6fe4a inherit pub_methods_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement the sum-product algorithm.  <br /></td></tr>
+<tr class="memitem:ac810a77c43b241b6973857493d97c9c0 inherit pub_methods_a03915" id="r_ac810a77c43b241b6973857493d97c9c0"><td class="memItemLeft"><a class="el" href="a03859.html">DiscreteBayesNet</a>&#160;</td><td class="memItemRight"><a class="el" href="a03915.html#ac810a77c43b241b6973857493d97c9c0">sumProduct</a> (const <a class="el" href="a04979.html">Ordering</a> &amp;ordering) const</td></tr>
+<tr class="memdesc:ac810a77c43b241b6973857493d97c9c0 inherit pub_methods_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement the sum-product algorithm.  <br /></td></tr>
+<tr class="memitem:a609e1c6c38027f030c8f4fc7f103b509 inherit pub_methods_a03915" id="r_a609e1c6c38027f030c8f4fc7f103b509"><td class="memItemLeft"><a class="el" href="a03939.html">DiscreteLookupDAG</a>&#160;</td><td class="memItemRight"><a class="el" href="a03915.html#a609e1c6c38027f030c8f4fc7f103b509">maxProduct</a> (<a class="el" href="a04887.html#af27e3d79ee48b6ed40b7640a1bb26229">OptionalOrderingType</a> orderingType={}) const</td></tr>
+<tr class="memdesc:a609e1c6c38027f030c8f4fc7f103b509 inherit pub_methods_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement the max-product algorithm.  <br /></td></tr>
+<tr class="memitem:a3248e64afcb02187f06c557ef276fa75 inherit pub_methods_a03915" id="r_a3248e64afcb02187f06c557ef276fa75"><td class="memItemLeft"><a class="el" href="a07559.html">DiscreteValues</a>&#160;</td><td class="memItemRight"><a class="el" href="a03915.html#a3248e64afcb02187f06c557ef276fa75">optimize</a> (<a class="el" href="a04887.html#af27e3d79ee48b6ed40b7640a1bb26229">OptionalOrderingType</a> orderingType={}) const</td></tr>
+<tr class="memdesc:a3248e64afcb02187f06c557ef276fa75 inherit pub_methods_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement the max-product algorithm.  <br /></td></tr>
+<tr class="memitem:a5adfc93f6d062e4102661f38f3664977 inherit pub_methods_a03915" id="r_a5adfc93f6d062e4102661f38f3664977"><td class="memItemLeft"><a class="el" href="a07559.html">DiscreteValues</a>&#160;</td><td class="memItemRight"><a class="el" href="a03915.html#a5adfc93f6d062e4102661f38f3664977">optimize</a> (const <a class="el" href="a04979.html">Ordering</a> &amp;ordering) const</td></tr>
+<tr class="memdesc:a5adfc93f6d062e4102661f38f3664977 inherit pub_methods_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the maximum probable explanation (MPE) by doing max-product.  <br /></td></tr>
+<tr class="memitem:a74335387dd1412cf751b8979a7e2cc1f inherit pub_methods_a03915" id="r_a74335387dd1412cf751b8979a7e2cc1f"><td class="memItemLeft">*name Wrapper support *std::string&#160;</td><td class="memItemRight"><a class="el" href="a03915.html#a74335387dd1412cf751b8979a7e2cc1f">html</a> (const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>, const <a class="el" href="a03903.html#aae698929b94d5072aa4c81d6f6e1d13f">DiscreteFactor::Names</a> &amp;names={}) const</td></tr>
+<tr class="memdesc:a74335387dd1412cf751b8979a7e2cc1f inherit pub_methods_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render as html tables.  <br /></td></tr>
+<tr class="memitem:af1d53398c01c0d0beb5f60be5055080a inherit pub_methods_a03915" id="r_af1d53398c01c0d0beb5f60be5055080a"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="a03915.html#ad1911a8ed2a002fa9eb620d3ae692f8e">This</a> &amp;fg, double tol=1e-9) const</td></tr>
+<tr class="inherit_header pub_methods_a04819"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a04819')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a04819.html">gtsam::FactorGraph&lt; DiscreteFactor &gt;</a></td></tr>
+<tr class="memitem:afb3841eca3ce0a8b574d72e4107a342a inherit pub_methods_a04819" id="r_afb3841eca3ce0a8b574d72e4107a342a"><td class="memItemLeft">
 virtual&#160;</td><td class="memItemRight"><b>~FactorGraph</b> ()=default</td></tr>
-<tr class="memdesc:afb3841eca3ce0a8b574d72e4107a342a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor Public and virtual so boost serialization can call it. <br /></td></tr>
-<tr class="memitem:ad6bb162e6e7fe7ab393af78bc3ffea4f" id="r_ad6bb162e6e7fe7ab393af78bc3ffea4f"><td class="memTemplParams" colspan="2">template&lt;class DERIVEDFACTOR, typename = IsDerived&lt;DERIVEDFACTOR&gt;&gt; </td></tr>
-<tr class="memitem:ad6bb162e6e7fe7ab393af78bc3ffea4f template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04071.html#ad6bb162e6e7fe7ab393af78bc3ffea4f">FactorGraph</a> (std::initializer_list&lt; boost::shared_ptr&lt; DERIVEDFACTOR &gt; &gt; sharedFactors)</td></tr>
-<tr class="memdesc:ad6bb162e6e7fe7ab393af78bc3ffea4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that takes an initializer list of shared pointers.  <br /></td></tr>
-<tr class="memitem:afea8c7bf4fd19ccc1547be3a5d1834f6" id="r_afea8c7bf4fd19ccc1547be3a5d1834f6"><td class="memItemLeft"><a id="afea8c7bf4fd19ccc1547be3a5d1834f6" name="afea8c7bf4fd19ccc1547be3a5d1834f6"></a>
-void&#160;</td><td class="memItemRight"><b>reserve</b> (size_t <a class="el" href="a04071.html#a76fb453800c9ac164bef864782733403">size</a>)</td></tr>
-<tr class="memdesc:afea8c7bf4fd19ccc1547be3a5d1834f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserve space for the specified number of factors if you know in advance how many there will be (works like FastVector::reserve). <br /></td></tr>
-<tr class="memitem:a1bd7154e74538b5934fc616bb5ef7281" id="r_a1bd7154e74538b5934fc616bb5ef7281"><td class="memTemplParams" colspan="2"><a id="a1bd7154e74538b5934fc616bb5ef7281" name="a1bd7154e74538b5934fc616bb5ef7281"></a>
-template&lt;class DERIVEDFACTOR&gt; </td></tr>
-<tr class="memitem:a1bd7154e74538b5934fc616bb5ef7281 template"><td class="memItemLeft">IsDerived&lt; DERIVEDFACTOR &gt;&#160;</td><td class="memItemRight"><b>push_back</b> (boost::shared_ptr&lt; DERIVEDFACTOR &gt; factor)</td></tr>
-<tr class="memdesc:a1bd7154e74538b5934fc616bb5ef7281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a factor directly using a shared_ptr. <br /></td></tr>
-<tr class="memitem:a47695cc70eddbdfe333190267f322587" id="r_a47695cc70eddbdfe333190267f322587"><td class="memTemplParams" colspan="2"><a id="a47695cc70eddbdfe333190267f322587" name="a47695cc70eddbdfe333190267f322587"></a>
-template&lt;class DERIVEDFACTOR, class... Args&gt; </td></tr>
-<tr class="memitem:a47695cc70eddbdfe333190267f322587 template"><td class="memItemLeft">IsDerived&lt; DERIVEDFACTOR &gt;&#160;</td><td class="memItemRight"><b>emplace_shared</b> (Args &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a47695cc70eddbdfe333190267f322587"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emplace a shared pointer to factor of given type. <br /></td></tr>
-<tr class="memitem:ad52d3a49c561af43dfc8964d7b429a3b" id="r_ad52d3a49c561af43dfc8964d7b429a3b"><td class="memTemplParams" colspan="2"><a id="ad52d3a49c561af43dfc8964d7b429a3b" name="ad52d3a49c561af43dfc8964d7b429a3b"></a>
-template&lt;class DERIVEDFACTOR&gt; </td></tr>
-<tr class="memitem:ad52d3a49c561af43dfc8964d7b429a3b template"><td class="memItemLeft">IsDerived&lt; DERIVEDFACTOR &gt;&#160;</td><td class="memItemRight"><b>push_back</b> (const DERIVEDFACTOR &amp;factor)</td></tr>
-<tr class="memdesc:ad52d3a49c561af43dfc8964d7b429a3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a factor by value, will be copy-constructed (use push_back with a shared_ptr to avoid the copy). <br /></td></tr>
-<tr class="memitem:abfdae5dfdd83614797463fe4171b18a5" id="r_abfdae5dfdd83614797463fe4171b18a5"><td class="memTemplParams" colspan="2"><a id="abfdae5dfdd83614797463fe4171b18a5" name="abfdae5dfdd83614797463fe4171b18a5"></a>
-template&lt;class DERIVEDFACTOR&gt; </td></tr>
-<tr class="memitem:abfdae5dfdd83614797463fe4171b18a5 template"><td class="memItemLeft">IsDerived&lt; DERIVEDFACTOR &gt;&#160;</td><td class="memItemRight"><b>add</b> (boost::shared_ptr&lt; DERIVEDFACTOR &gt; factor)</td></tr>
-<tr class="memdesc:abfdae5dfdd83614797463fe4171b18a5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt"><a class="el" href="a04071.html#abfdae5dfdd83614797463fe4171b18a5" title="add is a synonym for push_back.">add</a></span> is a synonym for push_back. <br /></td></tr>
-<tr class="memitem:aafd0f0ba6c282b6dff10ebae9b5608d7" id="r_aafd0f0ba6c282b6dff10ebae9b5608d7"><td class="memTemplParams" colspan="2"><a id="aafd0f0ba6c282b6dff10ebae9b5608d7" name="aafd0f0ba6c282b6dff10ebae9b5608d7"></a>
-template&lt;class DERIVEDFACTOR&gt; </td></tr>
-<tr class="memitem:aafd0f0ba6c282b6dff10ebae9b5608d7 template"><td class="memItemLeft">std::enable_if&lt; std::is_base_of&lt; <a class="el" href="a04071.html#aa54fb0b66fd8fee9f3c1f2844cf3edef">FactorType</a>, DERIVEDFACTOR &gt;::value, boost::assign::list_inserter&lt; <a class="el" href="a04147.html">RefCallPushBack</a>&lt; This &gt; &gt; &gt;::type&#160;</td><td class="memItemRight"><b>operator+=</b> (boost::shared_ptr&lt; DERIVEDFACTOR &gt; factor)</td></tr>
-<tr class="memdesc:aafd0f0ba6c282b6dff10ebae9b5608d7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">+=</span> works well with boost::assign list inserter. <br /></td></tr>
-<tr class="memitem:abf82d480691d503a5cf78eb13c2c45f0" id="r_abf82d480691d503a5cf78eb13c2c45f0"><td class="memTemplParams" colspan="2"><a id="abf82d480691d503a5cf78eb13c2c45f0" name="abf82d480691d503a5cf78eb13c2c45f0"></a>
-template&lt;typename ITERATOR&gt; </td></tr>
-<tr class="memitem:abf82d480691d503a5cf78eb13c2c45f0 template"><td class="memItemLeft">HasDerivedElementType&lt; ITERATOR &gt;&#160;</td><td class="memItemRight"><b>push_back</b> (ITERATOR firstFactor, ITERATOR lastFactor)</td></tr>
-<tr class="memdesc:abf82d480691d503a5cf78eb13c2c45f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push back many factors with an iterator over shared_ptr (factors are not copied). <br /></td></tr>
-<tr class="memitem:a85e70596230585b20b977d65c5bd5402" id="r_a85e70596230585b20b977d65c5bd5402"><td class="memTemplParams" colspan="2"><a id="a85e70596230585b20b977d65c5bd5402" name="a85e70596230585b20b977d65c5bd5402"></a>
-template&lt;typename ITERATOR&gt; </td></tr>
-<tr class="memitem:a85e70596230585b20b977d65c5bd5402 template"><td class="memItemLeft">HasDerivedValueType&lt; ITERATOR &gt;&#160;</td><td class="memItemRight"><b>push_back</b> (ITERATOR firstFactor, ITERATOR lastFactor)</td></tr>
-<tr class="memdesc:a85e70596230585b20b977d65c5bd5402"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push back many factors with an iterator (factors are copied). <br /></td></tr>
-<tr class="memitem:a9e0f98593e999e4ea7b9253880fc73b3" id="r_a9e0f98593e999e4ea7b9253880fc73b3"><td class="memTemplParams" colspan="2"><a id="a9e0f98593e999e4ea7b9253880fc73b3" name="a9e0f98593e999e4ea7b9253880fc73b3"></a>
-template&lt;typename CONTAINER&gt; </td></tr>
-<tr class="memitem:a9e0f98593e999e4ea7b9253880fc73b3 template"><td class="memItemLeft">HasDerivedElementType&lt; CONTAINER &gt;&#160;</td><td class="memItemRight"><b>push_back</b> (const CONTAINER &amp;container)</td></tr>
-<tr class="memdesc:a9e0f98593e999e4ea7b9253880fc73b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push back many factors as shared_ptr's in a container (factors are not copied). <br /></td></tr>
-<tr class="memitem:a3fb5e47c751f8c2a8940546a7cf27957" id="r_a3fb5e47c751f8c2a8940546a7cf27957"><td class="memTemplParams" colspan="2"><a id="a3fb5e47c751f8c2a8940546a7cf27957" name="a3fb5e47c751f8c2a8940546a7cf27957"></a>
-template&lt;typename CONTAINER&gt; </td></tr>
-<tr class="memitem:a3fb5e47c751f8c2a8940546a7cf27957 template"><td class="memItemLeft">HasDerivedValueType&lt; CONTAINER &gt;&#160;</td><td class="memItemRight"><b>push_back</b> (const CONTAINER &amp;container)</td></tr>
-<tr class="memdesc:a3fb5e47c751f8c2a8940546a7cf27957"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push back non-pointer objects in a container (factors are copied). <br /></td></tr>
-<tr class="memitem:a243182115ecfb081a1605fea939f86f4" id="r_a243182115ecfb081a1605fea939f86f4"><td class="memTemplParams" colspan="2"><a id="a243182115ecfb081a1605fea939f86f4" name="a243182115ecfb081a1605fea939f86f4"></a>
-template&lt;class FACTOR_OR_CONTAINER&gt; </td></tr>
-<tr class="memitem:a243182115ecfb081a1605fea939f86f4 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><b>add</b> (const FACTOR_OR_CONTAINER &amp;factorOrContainer)</td></tr>
-<tr class="memdesc:a243182115ecfb081a1605fea939f86f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a factor or container of factors, including STL collections, BayesTrees, etc. <br /></td></tr>
-<tr class="memitem:aaa5dcf7ea01e1c9e2b65cda2e7576726" id="r_aaa5dcf7ea01e1c9e2b65cda2e7576726"><td class="memTemplParams" colspan="2"><a id="aaa5dcf7ea01e1c9e2b65cda2e7576726" name="aaa5dcf7ea01e1c9e2b65cda2e7576726"></a>
-template&lt;class FACTOR_OR_CONTAINER&gt; </td></tr>
-<tr class="memitem:aaa5dcf7ea01e1c9e2b65cda2e7576726 template"><td class="memItemLeft">boost::assign::list_inserter&lt; <a class="el" href="a04143.html">CRefCallPushBack</a>&lt; This &gt; &gt;&#160;</td><td class="memItemRight"><b>operator+=</b> (const FACTOR_OR_CONTAINER &amp;factorOrContainer)</td></tr>
-<tr class="memdesc:aaa5dcf7ea01e1c9e2b65cda2e7576726"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a factor or container of factors, including STL collections, BayesTrees, etc. <br /></td></tr>
-<tr class="memitem:a55f58c8ba0c0765dcc43e16ef03ca19e" id="r_a55f58c8ba0c0765dcc43e16ef03ca19e"><td class="memTemplParams" colspan="2">template&lt;class CLIQUE&gt; </td></tr>
-<tr class="memitem:a55f58c8ba0c0765dcc43e16ef03ca19e template"><td class="memItemLeft">std::enable_if&lt; std::is_base_of&lt; This, typenameCLIQUE::FactorGraphType &gt;::value &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a04071.html#a55f58c8ba0c0765dcc43e16ef03ca19e">push_back</a> (const <a class="el" href="a04087.html">BayesTree</a>&lt; CLIQUE &gt; &amp;bayesTree)</td></tr>
-<tr class="memdesc:a55f58c8ba0c0765dcc43e16ef03ca19e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push back a <a class="el" href="a04087.html" title="Bayes tree.">BayesTree</a> as a collection of factors.  <br /></td></tr>
-<tr class="memitem:a1aa648d53357d7638f78611144cf5b8b" id="r_a1aa648d53357d7638f78611144cf5b8b"><td class="memTemplParams" colspan="2"><a id="a1aa648d53357d7638f78611144cf5b8b" name="a1aa648d53357d7638f78611144cf5b8b"></a>
-template&lt;typename CONTAINER, typename = HasDerivedElementType&lt;CONTAINER&gt;&gt; </td></tr>
-<tr class="memitem:a1aa648d53357d7638f78611144cf5b8b template"><td class="memItemLeft"><a class="el" href="a01968.html#a99e63c90a8ac740d99716e73fe97e054">FactorIndices</a>&#160;</td><td class="memItemRight"><b>add_factors</b> (const CONTAINER &amp;factors, bool useEmptySlots=false)</td></tr>
-<tr class="memdesc:a1aa648d53357d7638f78611144cf5b8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add new factors to a factor graph and returns a list of new factor indices, optionally finding and reusing empty factor slots. <br /></td></tr>
-<tr class="memitem:aacdf24691d25e1e93ca6b924465b7a35" id="r_aacdf24691d25e1e93ca6b924465b7a35"><td class="memItemLeft"><a id="aacdf24691d25e1e93ca6b924465b7a35" name="aacdf24691d25e1e93ca6b924465b7a35"></a>
+<tr class="memdesc:afb3841eca3ce0a8b574d72e4107a342a inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor Public and virtual so boost serialization can call it. <br /></td></tr>
+<tr class="memitem:a2a7732d38c3124263598c20a6b6403f7 inherit pub_methods_a04819" id="r_a2a7732d38c3124263598c20a6b6403f7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04819.html#a2a7732d38c3124263598c20a6b6403f7">FactorGraph</a> (std::initializer_list&lt; std::shared_ptr&lt; DERIVEDFACTOR &gt; &gt; sharedFactors)</td></tr>
+<tr class="memdesc:a2a7732d38c3124263598c20a6b6403f7 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that takes an initializer list of shared pointers.  <br /></td></tr>
+<tr class="memitem:afea8c7bf4fd19ccc1547be3a5d1834f6 inherit pub_methods_a04819" id="r_afea8c7bf4fd19ccc1547be3a5d1834f6"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>reserve</b> (size_t <a class="el" href="a04819.html#a76fb453800c9ac164bef864782733403">size</a>)</td></tr>
+<tr class="memdesc:afea8c7bf4fd19ccc1547be3a5d1834f6 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserve space for the specified number of factors if you know in advance how many there will be (works like FastVector::reserve). <br /></td></tr>
+<tr class="memitem:a37ec6f90c0f0004941eaa6932261b053 inherit pub_methods_a04819" id="r_a37ec6f90c0f0004941eaa6932261b053"><td class="memItemLeft">
+IsDerived&lt; DERIVEDFACTOR &gt;&#160;</td><td class="memItemRight"><b>push_back</b> (std::shared_ptr&lt; DERIVEDFACTOR &gt; factor)</td></tr>
+<tr class="memdesc:a37ec6f90c0f0004941eaa6932261b053 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a factor directly using a shared_ptr. <br /></td></tr>
+<tr class="memitem:a47695cc70eddbdfe333190267f322587 inherit pub_methods_a04819" id="r_a47695cc70eddbdfe333190267f322587"><td class="memItemLeft">
+IsDerived&lt; DERIVEDFACTOR &gt;&#160;</td><td class="memItemRight"><b>emplace_shared</b> (Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a47695cc70eddbdfe333190267f322587 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emplace a shared pointer to factor of given type. <br /></td></tr>
+<tr class="memitem:ad52d3a49c561af43dfc8964d7b429a3b inherit pub_methods_a04819" id="r_ad52d3a49c561af43dfc8964d7b429a3b"><td class="memItemLeft">
+IsDerived&lt; DERIVEDFACTOR &gt;&#160;</td><td class="memItemRight"><b>push_back</b> (const DERIVEDFACTOR &amp;factor)</td></tr>
+<tr class="memdesc:ad52d3a49c561af43dfc8964d7b429a3b inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a factor by value, will be copy-constructed (use push_back with a shared_ptr to avoid the copy). <br /></td></tr>
+<tr class="memitem:af134d8a6dd7dbe5229cc4d9a06c0f7fc inherit pub_methods_a04819" id="r_af134d8a6dd7dbe5229cc4d9a06c0f7fc"><td class="memItemLeft">
+IsDerived&lt; DERIVEDFACTOR &gt;&#160;</td><td class="memItemRight"><b>add</b> (std::shared_ptr&lt; DERIVEDFACTOR &gt; factor)</td></tr>
+<tr class="memdesc:af134d8a6dd7dbe5229cc4d9a06c0f7fc inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt"><a class="el" href="a04819.html#af134d8a6dd7dbe5229cc4d9a06c0f7fc">add</a></span> is a synonym for push_back. <br /></td></tr>
+<tr class="memitem:ac4ba2c49ce4f168b5ff09400bbd20023 inherit pub_methods_a04819" id="r_ac4ba2c49ce4f168b5ff09400bbd20023"><td class="memItemLeft">
+std::enable_if&lt; std::is_base_of&lt; <a class="el" href="a04819.html#aa54fb0b66fd8fee9f3c1f2844cf3edef">FactorType</a>, DERIVEDFACTOR &gt;::value, This &gt;::type &amp;&#160;</td><td class="memItemRight"><b>operator+=</b> (std::shared_ptr&lt; DERIVEDFACTOR &gt; factor)</td></tr>
+<tr class="memdesc:ac4ba2c49ce4f168b5ff09400bbd20023 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append factor to factor graph. <br /></td></tr>
+<tr class="memitem:a8c564e568cb1676861f8f92f094ae78c inherit pub_methods_a04819" id="r_a8c564e568cb1676861f8f92f094ae78c"><td class="memItemLeft">std::enable_if&lt; std::is_base_of&lt; <a class="el" href="a04819.html#aa54fb0b66fd8fee9f3c1f2844cf3edef">FactorType</a>, DERIVEDFACTOR &gt;::value, This &gt;::type &amp;&#160;</td><td class="memItemRight"><a class="el" href="a04819.html#a8c564e568cb1676861f8f92f094ae78c">operator,</a> (std::shared_ptr&lt; DERIVEDFACTOR &gt; factor)</td></tr>
+<tr class="memdesc:a8c564e568cb1676861f8f92f094ae78c inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload comma operator to allow for append chaining.  <br /></td></tr>
+<tr class="memitem:abf82d480691d503a5cf78eb13c2c45f0 inherit pub_methods_a04819" id="r_abf82d480691d503a5cf78eb13c2c45f0"><td class="memItemLeft">
+HasDerivedElementType&lt; ITERATOR &gt;&#160;</td><td class="memItemRight"><b>push_back</b> (ITERATOR firstFactor, ITERATOR lastFactor)</td></tr>
+<tr class="memdesc:abf82d480691d503a5cf78eb13c2c45f0 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push back many factors with an iterator over shared_ptr (factors are not copied). <br /></td></tr>
+<tr class="memitem:a85e70596230585b20b977d65c5bd5402 inherit pub_methods_a04819" id="r_a85e70596230585b20b977d65c5bd5402"><td class="memItemLeft">
+HasDerivedValueType&lt; ITERATOR &gt;&#160;</td><td class="memItemRight"><b>push_back</b> (ITERATOR firstFactor, ITERATOR lastFactor)</td></tr>
+<tr class="memdesc:a85e70596230585b20b977d65c5bd5402 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push back many factors with an iterator (factors are copied). <br /></td></tr>
+<tr class="memitem:a9e0f98593e999e4ea7b9253880fc73b3 inherit pub_methods_a04819" id="r_a9e0f98593e999e4ea7b9253880fc73b3"><td class="memItemLeft">
+HasDerivedElementType&lt; CONTAINER &gt;&#160;</td><td class="memItemRight"><b>push_back</b> (const CONTAINER &amp;container)</td></tr>
+<tr class="memdesc:a9e0f98593e999e4ea7b9253880fc73b3 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push back many factors as shared_ptr's in a container (factors are not copied). <br /></td></tr>
+<tr class="memitem:a3fb5e47c751f8c2a8940546a7cf27957 inherit pub_methods_a04819" id="r_a3fb5e47c751f8c2a8940546a7cf27957"><td class="memItemLeft">
+HasDerivedValueType&lt; CONTAINER &gt;&#160;</td><td class="memItemRight"><b>push_back</b> (const CONTAINER &amp;container)</td></tr>
+<tr class="memdesc:a3fb5e47c751f8c2a8940546a7cf27957 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push back non-pointer objects in a container (factors are copied). <br /></td></tr>
+<tr class="memitem:a243182115ecfb081a1605fea939f86f4 inherit pub_methods_a04819" id="r_a243182115ecfb081a1605fea939f86f4"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>add</b> (const FACTOR_OR_CONTAINER &amp;factorOrContainer)</td></tr>
+<tr class="memdesc:a243182115ecfb081a1605fea939f86f4 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a factor or container of factors, including STL collections, BayesTrees, etc. <br /></td></tr>
+<tr class="memitem:abb66425e5a01fbcfe5d351f035bdbe30 inherit pub_methods_a04819" id="r_abb66425e5a01fbcfe5d351f035bdbe30"><td class="memItemLeft">
+This &amp;&#160;</td><td class="memItemRight"><b>operator+=</b> (const FACTOR_OR_CONTAINER &amp;factorOrContainer)</td></tr>
+<tr class="memdesc:abb66425e5a01fbcfe5d351f035bdbe30 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a factor or container of factors, including STL collections, BayesTrees, etc. <br /></td></tr>
+<tr class="memitem:a55f58c8ba0c0765dcc43e16ef03ca19e inherit pub_methods_a04819" id="r_a55f58c8ba0c0765dcc43e16ef03ca19e"><td class="memItemLeft">std::enable_if&lt; std::is_base_of&lt; This, typenameCLIQUE::FactorGraphType &gt;::value &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a04819.html#a55f58c8ba0c0765dcc43e16ef03ca19e">push_back</a> (const <a class="el" href="a04835.html">BayesTree</a>&lt; CLIQUE &gt; &amp;bayesTree)</td></tr>
+<tr class="memdesc:a55f58c8ba0c0765dcc43e16ef03ca19e inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push back a <a class="el" href="a04835.html" title="Bayes tree.">BayesTree</a> as a collection of factors.  <br /></td></tr>
+<tr class="memitem:a1aa648d53357d7638f78611144cf5b8b inherit pub_methods_a04819" id="r_a1aa648d53357d7638f78611144cf5b8b"><td class="memItemLeft">
+<a class="el" href="a02242.html#a99e63c90a8ac740d99716e73fe97e054">FactorIndices</a>&#160;</td><td class="memItemRight"><b>add_factors</b> (const CONTAINER &amp;factors, bool useEmptySlots=false)</td></tr>
+<tr class="memdesc:a1aa648d53357d7638f78611144cf5b8b inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add new factors to a factor graph and returns a list of new factor indices, optionally finding and reusing empty factor slots. <br /></td></tr>
+<tr class="memitem:aacdf24691d25e1e93ca6b924465b7a35 inherit pub_methods_a04819" id="r_aacdf24691d25e1e93ca6b924465b7a35"><td class="memItemLeft">
 bool&#160;</td><td class="memItemRight"><b>equals</b> (const This &amp;fg, double tol=1e-9) const</td></tr>
-<tr class="memdesc:aacdf24691d25e1e93ca6b924465b7a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check equality up to tolerance. <br /></td></tr>
-<tr class="memitem:a76fb453800c9ac164bef864782733403" id="r_a76fb453800c9ac164bef864782733403"><td class="memItemLeft"><a id="a76fb453800c9ac164bef864782733403" name="a76fb453800c9ac164bef864782733403"></a>
+<tr class="memdesc:aacdf24691d25e1e93ca6b924465b7a35 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check equality up to tolerance. <br /></td></tr>
+<tr class="memitem:a76fb453800c9ac164bef864782733403 inherit pub_methods_a04819" id="r_a76fb453800c9ac164bef864782733403"><td class="memItemLeft">
 size_t&#160;</td><td class="memItemRight"><b>size</b> () const</td></tr>
-<tr class="memdesc:a76fb453800c9ac164bef864782733403"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the number of factors (including any null factors set by <a class="el" href="a04071.html#a38468469269d7b6530cf4d32b4e462d1" title="delete factor without re-arranging indexes by inserting a nullptr pointer">remove()</a> ). <br /></td></tr>
-<tr class="memitem:a0ed8834089b31ef96888643af4731a8a" id="r_a0ed8834089b31ef96888643af4731a8a"><td class="memItemLeft"><a id="a0ed8834089b31ef96888643af4731a8a" name="a0ed8834089b31ef96888643af4731a8a"></a>
+<tr class="memdesc:a76fb453800c9ac164bef864782733403 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the number of factors (including any null factors set by <a class="el" href="a04819.html#a38468469269d7b6530cf4d32b4e462d1">remove()</a> ). <br /></td></tr>
+<tr class="memitem:a0ed8834089b31ef96888643af4731a8a inherit pub_methods_a04819" id="r_a0ed8834089b31ef96888643af4731a8a"><td class="memItemLeft">
 bool&#160;</td><td class="memItemRight"><b>empty</b> () const</td></tr>
-<tr class="memdesc:a0ed8834089b31ef96888643af4731a8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the graph is empty (null factors set by <a class="el" href="a04071.html#a38468469269d7b6530cf4d32b4e462d1" title="delete factor without re-arranging indexes by inserting a nullptr pointer">remove()</a> will cause this to return false). <br /></td></tr>
-<tr class="memitem:aec104a9847783a29065fd4d24f072b7a" id="r_aec104a9847783a29065fd4d24f072b7a"><td class="memItemLeft"><a id="aec104a9847783a29065fd4d24f072b7a" name="aec104a9847783a29065fd4d24f072b7a"></a>
-const <a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a>&#160;</td><td class="memItemRight"><b>at</b> (size_t i) const</td></tr>
-<tr class="memdesc:aec104a9847783a29065fd4d24f072b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a specific factor by index (this checks array bounds and may throw an exception, as opposed to operator[] which does not). <br /></td></tr>
-<tr class="memitem:a52b3ab1ea102ab17c1fa9a74c9f42329" id="r_a52b3ab1ea102ab17c1fa9a74c9f42329"><td class="memItemLeft"><a id="a52b3ab1ea102ab17c1fa9a74c9f42329" name="a52b3ab1ea102ab17c1fa9a74c9f42329"></a>
-<a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a> &amp;&#160;</td><td class="memItemRight"><b>at</b> (size_t i)</td></tr>
-<tr class="memdesc:a52b3ab1ea102ab17c1fa9a74c9f42329"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a specific factor by index (this checks array bounds and may throw an exception, as opposed to operator[] which does not). <br /></td></tr>
-<tr class="memitem:ad00637b3f124aec8b4047faea5b5647b" id="r_ad00637b3f124aec8b4047faea5b5647b"><td class="memItemLeft"><a id="ad00637b3f124aec8b4047faea5b5647b" name="ad00637b3f124aec8b4047faea5b5647b"></a>
-const <a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a>&#160;</td><td class="memItemRight"><b>operator[]</b> (size_t i) const</td></tr>
-<tr class="memdesc:ad00637b3f124aec8b4047faea5b5647b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a specific factor by index (this does not check array bounds, as opposed to <a class="el" href="a04071.html#aec104a9847783a29065fd4d24f072b7a" title="Get a specific factor by index (this checks array bounds and may throw an exception,...">at()</a> which does). <br /></td></tr>
-<tr class="memitem:a4f193587e68cef1335bcfb87b353d0ab" id="r_a4f193587e68cef1335bcfb87b353d0ab"><td class="memItemLeft"><a id="a4f193587e68cef1335bcfb87b353d0ab" name="a4f193587e68cef1335bcfb87b353d0ab"></a>
-<a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a> &amp;&#160;</td><td class="memItemRight"><b>operator[]</b> (size_t i)</td></tr>
-<tr class="memdesc:a4f193587e68cef1335bcfb87b353d0ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a specific factor by index (this does not check array bounds, as opposed to <a class="el" href="a04071.html#aec104a9847783a29065fd4d24f072b7a" title="Get a specific factor by index (this checks array bounds and may throw an exception,...">at()</a> which does). <br /></td></tr>
-<tr class="memitem:abcaeffeae20930806f064f8413689c22" id="r_abcaeffeae20930806f064f8413689c22"><td class="memItemLeft"><a id="abcaeffeae20930806f064f8413689c22" name="abcaeffeae20930806f064f8413689c22"></a>
+<tr class="memdesc:a0ed8834089b31ef96888643af4731a8a inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the graph is empty (null factors set by <a class="el" href="a04819.html#a38468469269d7b6530cf4d32b4e462d1">remove()</a> will cause this to return false). <br /></td></tr>
+<tr class="memitem:aec104a9847783a29065fd4d24f072b7a inherit pub_methods_a04819" id="r_aec104a9847783a29065fd4d24f072b7a"><td class="memItemLeft">
+const <a class="el" href="a04819.html#a67bf60c6fe50e44e105622ec6bdb1ff8">sharedFactor</a>&#160;</td><td class="memItemRight"><b>at</b> (size_t i) const</td></tr>
+<tr class="memdesc:aec104a9847783a29065fd4d24f072b7a inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a specific factor by index (this checks array bounds and may throw an exception, as opposed to operator[] which does not). <br /></td></tr>
+<tr class="memitem:a52b3ab1ea102ab17c1fa9a74c9f42329 inherit pub_methods_a04819" id="r_a52b3ab1ea102ab17c1fa9a74c9f42329"><td class="memItemLeft">
+<a class="el" href="a04819.html#a67bf60c6fe50e44e105622ec6bdb1ff8">sharedFactor</a> &amp;&#160;</td><td class="memItemRight"><b>at</b> (size_t i)</td></tr>
+<tr class="memdesc:a52b3ab1ea102ab17c1fa9a74c9f42329 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a specific factor by index (this checks array bounds and may throw an exception, as opposed to operator[] which does not). <br /></td></tr>
+<tr class="memitem:a64e8a25ced739f342f9856b3b0208e11 inherit pub_methods_a04819" id="r_a64e8a25ced739f342f9856b3b0208e11"><td class="memItemLeft">
+std::shared_ptr&lt; F &gt;&#160;</td><td class="memItemRight"><b>at</b> (size_t i)</td></tr>
+<tr class="memdesc:a64e8a25ced739f342f9856b3b0208e11 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a specific factor by index and typecast to factor type F (this checks array bounds and may throw an exception, as opposed to operator[] which does not). <br /></td></tr>
+<tr class="memitem:aae805f61af4046b909baed0582915f01 inherit pub_methods_a04819" id="r_aae805f61af4046b909baed0582915f01"><td class="memItemLeft">
+const std::shared_ptr&lt; F &gt;&#160;</td><td class="memItemRight"><b>at</b> (size_t i) const</td></tr>
+<tr class="memdesc:aae805f61af4046b909baed0582915f01 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Const version of templated <span class="tt"><a class="el" href="a04819.html#aec104a9847783a29065fd4d24f072b7a">at</a></span> method. <br /></td></tr>
+<tr class="memitem:ad00637b3f124aec8b4047faea5b5647b inherit pub_methods_a04819" id="r_ad00637b3f124aec8b4047faea5b5647b"><td class="memItemLeft">
+const <a class="el" href="a04819.html#a67bf60c6fe50e44e105622ec6bdb1ff8">sharedFactor</a>&#160;</td><td class="memItemRight"><b>operator[]</b> (size_t i) const</td></tr>
+<tr class="memdesc:ad00637b3f124aec8b4047faea5b5647b inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a specific factor by index (this does not check array bounds, as opposed to <a class="el" href="a04819.html#aec104a9847783a29065fd4d24f072b7a">at()</a> which does). <br /></td></tr>
+<tr class="memitem:a4f193587e68cef1335bcfb87b353d0ab inherit pub_methods_a04819" id="r_a4f193587e68cef1335bcfb87b353d0ab"><td class="memItemLeft">
+<a class="el" href="a04819.html#a67bf60c6fe50e44e105622ec6bdb1ff8">sharedFactor</a> &amp;&#160;</td><td class="memItemRight"><b>operator[]</b> (size_t i)</td></tr>
+<tr class="memdesc:a4f193587e68cef1335bcfb87b353d0ab inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a specific factor by index (this does not check array bounds, as opposed to <a class="el" href="a04819.html#aec104a9847783a29065fd4d24f072b7a">at()</a> which does). <br /></td></tr>
+<tr class="memitem:abcaeffeae20930806f064f8413689c22 inherit pub_methods_a04819" id="r_abcaeffeae20930806f064f8413689c22"><td class="memItemLeft">
 const_iterator&#160;</td><td class="memItemRight"><b>begin</b> () const</td></tr>
-<tr class="memdesc:abcaeffeae20930806f064f8413689c22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator to beginning of factors. <br /></td></tr>
-<tr class="memitem:a94a257708f3530799e24d21f3125e181" id="r_a94a257708f3530799e24d21f3125e181"><td class="memItemLeft"><a id="a94a257708f3530799e24d21f3125e181" name="a94a257708f3530799e24d21f3125e181"></a>
+<tr class="memdesc:abcaeffeae20930806f064f8413689c22 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator to beginning of factors. <br /></td></tr>
+<tr class="memitem:a94a257708f3530799e24d21f3125e181 inherit pub_methods_a04819" id="r_a94a257708f3530799e24d21f3125e181"><td class="memItemLeft">
 const_iterator&#160;</td><td class="memItemRight"><b>end</b> () const</td></tr>
-<tr class="memdesc:a94a257708f3530799e24d21f3125e181"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator to end of factors. <br /></td></tr>
-<tr class="memitem:a8aad182ded37c5add184e0113ec9ede9" id="r_a8aad182ded37c5add184e0113ec9ede9"><td class="memItemLeft"><a id="a8aad182ded37c5add184e0113ec9ede9" name="a8aad182ded37c5add184e0113ec9ede9"></a>
-<a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a>&#160;</td><td class="memItemRight"><b>front</b> () const</td></tr>
-<tr class="memdesc:a8aad182ded37c5add184e0113ec9ede9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the first factor. <br /></td></tr>
-<tr class="memitem:a37859ce7d210d593be80f625eceba620" id="r_a37859ce7d210d593be80f625eceba620"><td class="memItemLeft"><a id="a37859ce7d210d593be80f625eceba620" name="a37859ce7d210d593be80f625eceba620"></a>
-<a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a>&#160;</td><td class="memItemRight"><b>back</b> () const</td></tr>
-<tr class="memdesc:a37859ce7d210d593be80f625eceba620"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the last factor. <br /></td></tr>
-<tr class="memitem:a576cb442ff4a11dc73e48c60bdc6695b" id="r_a576cb442ff4a11dc73e48c60bdc6695b"><td class="memItemLeft"><a id="a576cb442ff4a11dc73e48c60bdc6695b" name="a576cb442ff4a11dc73e48c60bdc6695b"></a>
-double&#160;</td><td class="memItemRight"><b>error</b> (const <a class="el" href="a06211.html">HybridValues</a> &amp;values) const</td></tr>
-<tr class="memdesc:a576cb442ff4a11dc73e48c60bdc6695b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add error for all factors. <br /></td></tr>
-<tr class="memitem:abaf0875f55936063d96c507de9e9255a" id="r_abaf0875f55936063d96c507de9e9255a"><td class="memItemLeft"><a id="abaf0875f55936063d96c507de9e9255a" name="abaf0875f55936063d96c507de9e9255a"></a>
+<tr class="memdesc:a94a257708f3530799e24d21f3125e181 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator to end of factors. <br /></td></tr>
+<tr class="memitem:a8aad182ded37c5add184e0113ec9ede9 inherit pub_methods_a04819" id="r_a8aad182ded37c5add184e0113ec9ede9"><td class="memItemLeft">
+<a class="el" href="a04819.html#a67bf60c6fe50e44e105622ec6bdb1ff8">sharedFactor</a>&#160;</td><td class="memItemRight"><b>front</b> () const</td></tr>
+<tr class="memdesc:a8aad182ded37c5add184e0113ec9ede9 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the first factor. <br /></td></tr>
+<tr class="memitem:a37859ce7d210d593be80f625eceba620 inherit pub_methods_a04819" id="r_a37859ce7d210d593be80f625eceba620"><td class="memItemLeft">
+<a class="el" href="a04819.html#a67bf60c6fe50e44e105622ec6bdb1ff8">sharedFactor</a>&#160;</td><td class="memItemRight"><b>back</b> () const</td></tr>
+<tr class="memdesc:a37859ce7d210d593be80f625eceba620 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the last factor. <br /></td></tr>
+<tr class="memitem:a576cb442ff4a11dc73e48c60bdc6695b inherit pub_methods_a04819" id="r_a576cb442ff4a11dc73e48c60bdc6695b"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>error</b> (const <a class="el" href="a07563.html">HybridValues</a> &amp;values) const</td></tr>
+<tr class="memdesc:a576cb442ff4a11dc73e48c60bdc6695b inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add error for all factors. <br /></td></tr>
+<tr class="memitem:abaf0875f55936063d96c507de9e9255a inherit pub_methods_a04819" id="r_abaf0875f55936063d96c507de9e9255a"><td class="memItemLeft">
 iterator&#160;</td><td class="memItemRight"><b>begin</b> ()</td></tr>
-<tr class="memdesc:abaf0875f55936063d96c507de9e9255a"><td class="mdescLeft">&#160;</td><td class="mdescRight">non-const STL-style <a class="el" href="a04071.html#abaf0875f55936063d96c507de9e9255a" title="non-const STL-style begin()">begin()</a> <br /></td></tr>
-<tr class="memitem:ad6e1c6a2b56c2158afb28a58ab560e44" id="r_ad6e1c6a2b56c2158afb28a58ab560e44"><td class="memItemLeft"><a id="ad6e1c6a2b56c2158afb28a58ab560e44" name="ad6e1c6a2b56c2158afb28a58ab560e44"></a>
+<tr class="memdesc:abaf0875f55936063d96c507de9e9255a inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">non-const STL-style <a class="el" href="a04819.html#abaf0875f55936063d96c507de9e9255a">begin()</a> <br /></td></tr>
+<tr class="memitem:ad6e1c6a2b56c2158afb28a58ab560e44 inherit pub_methods_a04819" id="r_ad6e1c6a2b56c2158afb28a58ab560e44"><td class="memItemLeft">
 iterator&#160;</td><td class="memItemRight"><b>end</b> ()</td></tr>
-<tr class="memdesc:ad6e1c6a2b56c2158afb28a58ab560e44"><td class="mdescLeft">&#160;</td><td class="mdescRight">non-const STL-style <a class="el" href="a04071.html#a94a257708f3530799e24d21f3125e181" title="Iterator to end of factors.">end()</a> <br /></td></tr>
-<tr class="memitem:a6add303b9c0ff93d11f1107d5194d965" id="r_a6add303b9c0ff93d11f1107d5194d965"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="a04071.html#a6add303b9c0ff93d11f1107d5194d965">resize</a> (size_t <a class="el" href="a04071.html#a76fb453800c9ac164bef864782733403">size</a>)</td></tr>
-<tr class="memdesc:a6add303b9c0ff93d11f1107d5194d965"><td class="mdescLeft">&#160;</td><td class="mdescRight">Directly resize the number of factors in the graph.  <br /></td></tr>
-<tr class="memitem:a38468469269d7b6530cf4d32b4e462d1" id="r_a38468469269d7b6530cf4d32b4e462d1"><td class="memItemLeft"><a id="a38468469269d7b6530cf4d32b4e462d1" name="a38468469269d7b6530cf4d32b4e462d1"></a>
+<tr class="memdesc:ad6e1c6a2b56c2158afb28a58ab560e44 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">non-const STL-style <a class="el" href="a04819.html#ad6e1c6a2b56c2158afb28a58ab560e44">end()</a> <br /></td></tr>
+<tr class="memitem:a6add303b9c0ff93d11f1107d5194d965 inherit pub_methods_a04819" id="r_a6add303b9c0ff93d11f1107d5194d965"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="a04819.html#a6add303b9c0ff93d11f1107d5194d965">resize</a> (size_t <a class="el" href="a04819.html#a76fb453800c9ac164bef864782733403">size</a>)</td></tr>
+<tr class="memdesc:a6add303b9c0ff93d11f1107d5194d965 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Directly resize the number of factors in the graph.  <br /></td></tr>
+<tr class="memitem:a38468469269d7b6530cf4d32b4e462d1 inherit pub_methods_a04819" id="r_a38468469269d7b6530cf4d32b4e462d1"><td class="memItemLeft">
 void&#160;</td><td class="memItemRight"><b>remove</b> (size_t i)</td></tr>
-<tr class="memdesc:a38468469269d7b6530cf4d32b4e462d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">delete factor without re-arranging indexes by inserting a nullptr pointer <br /></td></tr>
-<tr class="memitem:aa706ee0e285f6c1a38e6a4446fe9ea4e" id="r_aa706ee0e285f6c1a38e6a4446fe9ea4e"><td class="memItemLeft"><a id="aa706ee0e285f6c1a38e6a4446fe9ea4e" name="aa706ee0e285f6c1a38e6a4446fe9ea4e"></a>
-void&#160;</td><td class="memItemRight"><b>replace</b> (size_t index, <a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a> factor)</td></tr>
-<tr class="memdesc:aa706ee0e285f6c1a38e6a4446fe9ea4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">replace a factor by index <br /></td></tr>
-<tr class="memitem:a22f324974f6e3380c54d1d69c71bc7fb" id="r_a22f324974f6e3380c54d1d69c71bc7fb"><td class="memItemLeft"><a id="a22f324974f6e3380c54d1d69c71bc7fb" name="a22f324974f6e3380c54d1d69c71bc7fb"></a>
+<tr class="memdesc:a38468469269d7b6530cf4d32b4e462d1 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">delete factor without re-arranging indexes by inserting a nullptr pointer <br /></td></tr>
+<tr class="memitem:aa706ee0e285f6c1a38e6a4446fe9ea4e inherit pub_methods_a04819" id="r_aa706ee0e285f6c1a38e6a4446fe9ea4e"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>replace</b> (size_t index, <a class="el" href="a04819.html#a67bf60c6fe50e44e105622ec6bdb1ff8">sharedFactor</a> factor)</td></tr>
+<tr class="memdesc:aa706ee0e285f6c1a38e6a4446fe9ea4e inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">replace a factor by index <br /></td></tr>
+<tr class="memitem:a22f324974f6e3380c54d1d69c71bc7fb inherit pub_methods_a04819" id="r_a22f324974f6e3380c54d1d69c71bc7fb"><td class="memItemLeft">
 iterator&#160;</td><td class="memItemRight"><b>erase</b> (iterator item)</td></tr>
-<tr class="memdesc:a22f324974f6e3380c54d1d69c71bc7fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase factor and rearrange other factors to take up the empty space. <br /></td></tr>
-<tr class="memitem:a2825a68630a0547e1bfd5ba0cdf1de61" id="r_a2825a68630a0547e1bfd5ba0cdf1de61"><td class="memItemLeft"><a id="a2825a68630a0547e1bfd5ba0cdf1de61" name="a2825a68630a0547e1bfd5ba0cdf1de61"></a>
+<tr class="memdesc:a22f324974f6e3380c54d1d69c71bc7fb inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase factor and rearrange other factors to take up the empty space. <br /></td></tr>
+<tr class="memitem:a2825a68630a0547e1bfd5ba0cdf1de61 inherit pub_methods_a04819" id="r_a2825a68630a0547e1bfd5ba0cdf1de61"><td class="memItemLeft">
 iterator&#160;</td><td class="memItemRight"><b>erase</b> (iterator first, iterator last)</td></tr>
-<tr class="memdesc:a2825a68630a0547e1bfd5ba0cdf1de61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase factors and rearrange other factors to take up the empty space. <br /></td></tr>
-<tr class="memitem:a1d86f94cb5876d2e42c5c93c318656b4" id="r_a1d86f94cb5876d2e42c5c93c318656b4"><td class="memItemLeft"><a id="a1d86f94cb5876d2e42c5c93c318656b4" name="a1d86f94cb5876d2e42c5c93c318656b4"></a>
-void&#160;</td><td class="memItemRight"><b>dot</b> (std::ostream &amp;os, const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=DefaultKeyFormatter, const <a class="el" href="a04123.html">DotWriter</a> &amp;writer=<a class="el" href="a04123.html">DotWriter</a>()) const</td></tr>
-<tr class="memdesc:a1d86f94cb5876d2e42c5c93c318656b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output to graphviz format, stream version. <br /></td></tr>
-<tr class="memitem:ad4ec1d612f9210c68b8206f18765c142" id="r_ad4ec1d612f9210c68b8206f18765c142"><td class="memItemLeft"><a id="ad4ec1d612f9210c68b8206f18765c142" name="ad4ec1d612f9210c68b8206f18765c142"></a>
-std::string&#160;</td><td class="memItemRight"><b>dot</b> (const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=DefaultKeyFormatter, const <a class="el" href="a04123.html">DotWriter</a> &amp;writer=<a class="el" href="a04123.html">DotWriter</a>()) const</td></tr>
-<tr class="memdesc:ad4ec1d612f9210c68b8206f18765c142"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output to graphviz format string. <br /></td></tr>
-<tr class="memitem:af845e20d32a8ba1d1f7b15e443e1b780" id="r_af845e20d32a8ba1d1f7b15e443e1b780"><td class="memItemLeft"><a id="af845e20d32a8ba1d1f7b15e443e1b780" name="af845e20d32a8ba1d1f7b15e443e1b780"></a>
-void&#160;</td><td class="memItemRight"><b>saveGraph</b> (const std::string &amp;filename, const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=DefaultKeyFormatter, const <a class="el" href="a04123.html">DotWriter</a> &amp;writer=<a class="el" href="a04123.html">DotWriter</a>()) const</td></tr>
-<tr class="memdesc:af845e20d32a8ba1d1f7b15e443e1b780"><td class="mdescLeft">&#160;</td><td class="mdescRight">output to file with graphviz format. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a11483d5343e98b8f752f5f77567e74b8" id="r_a11483d5343e98b8f752f5f77567e74b8"><td class="memItemLeft"><a id="a11483d5343e98b8f752f5f77567e74b8" name="a11483d5343e98b8f752f5f77567e74b8"></a>
-using&#160;</td><td class="memItemRight"><b>Base</b> = <a class="el" href="a04063.html#ae6a59fca7b59061bffe9d3aad97cca69">BayesNet</a>&lt;<a class="el" href="a03431.html">DiscreteLookupTable</a>&gt;</td></tr>
-<tr class="memitem:a33f4c8b8805e5a5e58cccc7ebade3b39" id="r_a33f4c8b8805e5a5e58cccc7ebade3b39"><td class="memItemLeft"><a id="a33f4c8b8805e5a5e58cccc7ebade3b39" name="a33f4c8b8805e5a5e58cccc7ebade3b39"></a>
-using&#160;</td><td class="memItemRight"><b>This</b> = <a class="el" href="#a631d976900dcd37b1dc1267bde02dcd0">DiscreteLookupDAG</a></td></tr>
-<tr class="memitem:a8d2a82a2f3ea8acb7a2d4dae36c5d703" id="r_a8d2a82a2f3ea8acb7a2d4dae36c5d703"><td class="memItemLeft"><a id="a8d2a82a2f3ea8acb7a2d4dae36c5d703" name="a8d2a82a2f3ea8acb7a2d4dae36c5d703"></a>
-using&#160;</td><td class="memItemRight"><b>shared_ptr</b> = boost::shared_ptr&lt;This&gt;</td></tr>
-<tr class="inherit_header pub_types_a04063"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04063')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04063.html">gtsam::BayesNet&lt; DiscreteLookupTable &gt;</a></td></tr>
-<tr class="memitem:a88103713b4df54500caaf6791f874a1c inherit pub_types_a04063" id="r_a88103713b4df54500caaf6791f874a1c"><td class="memItemLeft">
-typedef boost::shared_ptr&lt; <a class="el" href="a03431.html">DiscreteLookupTable</a> &gt;&#160;</td><td class="memItemRight"><b>sharedConditional</b></td></tr>
-<tr class="memdesc:a88103713b4df54500caaf6791f874a1c inherit pub_types_a04063"><td class="mdescLeft">&#160;</td><td class="mdescRight">A shared pointer to a conditional. <br /></td></tr>
-<tr class="inherit_header pub_types_a04071"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04071')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04071.html">gtsam::FactorGraph&lt; FACTOR &gt;</a></td></tr>
-<tr class="memitem:aa54fb0b66fd8fee9f3c1f2844cf3edef inherit pub_types_a04071" id="r_aa54fb0b66fd8fee9f3c1f2844cf3edef"><td class="memItemLeft">
-typedef FACTOR&#160;</td><td class="memItemRight"><b>FactorType</b></td></tr>
-<tr class="memdesc:aa54fb0b66fd8fee9f3c1f2844cf3edef inherit pub_types_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">factor type <br /></td></tr>
-<tr class="memitem:ac9bfc88025d21ff01b7e9dc609ba0b0e inherit pub_types_a04071" id="r_ac9bfc88025d21ff01b7e9dc609ba0b0e"><td class="memItemLeft">
-typedef boost::shared_ptr&lt; FACTOR &gt;&#160;</td><td class="memItemRight"><b>sharedFactor</b></td></tr>
-<tr class="memdesc:ac9bfc88025d21ff01b7e9dc609ba0b0e inherit pub_types_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to a factor. <br /></td></tr>
-<tr class="memitem:a9e8705eefb16a49d12dbba659499bc82 inherit pub_types_a04071" id="r_a9e8705eefb16a49d12dbba659499bc82"><td class="memItemLeft">
-typedef <a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a>&#160;</td><td class="memItemRight"><b>value_type</b></td></tr>
-<tr class="memitem:af71ec41fd2c991605eb54954976a6939 inherit pub_types_a04071" id="r_af71ec41fd2c991605eb54954976a6939"><td class="memItemLeft">
-typedef <a class="el" href="a01953.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; <a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a> &gt;::iterator&#160;</td><td class="memItemRight"><b>iterator</b></td></tr>
-<tr class="memitem:aec93913bd747baea0c7316598ac3e8e9 inherit pub_types_a04071" id="r_aec93913bd747baea0c7316598ac3e8e9"><td class="memItemLeft">
-typedef <a class="el" href="a01953.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; <a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a> &gt;::const_iterator&#160;</td><td class="memItemRight"><b>const_iterator</b></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:ac98d07dd8f7b70e16ccb9a01abf56b9c" id="r_ac98d07dd8f7b70e16ccb9a01abf56b9c"><td class="memItemLeft"><a id="ac98d07dd8f7b70e16ccb9a01abf56b9c" name="ac98d07dd8f7b70e16ccb9a01abf56b9c"></a>
-class&#160;</td><td class="memItemRight"><b>boost::serialization::access</b></td></tr>
-<tr class="memdesc:ac98d07dd8f7b70e16ccb9a01abf56b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialization function. <br /></td></tr>
+<tr class="memdesc:a2825a68630a0547e1bfd5ba0cdf1de61 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase factors and rearrange other factors to take up the empty space. <br /></td></tr>
+<tr class="memitem:a1d86f94cb5876d2e42c5c93c318656b4 inherit pub_methods_a04819" id="r_a1d86f94cb5876d2e42c5c93c318656b4"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>dot</b> (std::ostream &amp;os, const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>, const <a class="el" href="a04875.html">DotWriter</a> &amp;writer=<a class="el" href="a04875.html">DotWriter</a>()) const</td></tr>
+<tr class="memdesc:a1d86f94cb5876d2e42c5c93c318656b4 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output to graphviz format, stream version. <br /></td></tr>
+<tr class="memitem:ad4ec1d612f9210c68b8206f18765c142 inherit pub_methods_a04819" id="r_ad4ec1d612f9210c68b8206f18765c142"><td class="memItemLeft">
+std::string&#160;</td><td class="memItemRight"><b>dot</b> (const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>, const <a class="el" href="a04875.html">DotWriter</a> &amp;writer=<a class="el" href="a04875.html">DotWriter</a>()) const</td></tr>
+<tr class="memdesc:ad4ec1d612f9210c68b8206f18765c142 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output to graphviz format string. <br /></td></tr>
+<tr class="memitem:af845e20d32a8ba1d1f7b15e443e1b780 inherit pub_methods_a04819" id="r_af845e20d32a8ba1d1f7b15e443e1b780"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>saveGraph</b> (const std::string &amp;filename, const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>, const <a class="el" href="a04875.html">DotWriter</a> &amp;writer=<a class="el" href="a04875.html">DotWriter</a>()) const</td></tr>
+<tr class="memdesc:af845e20d32a8ba1d1f7b15e443e1b780 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">output to file with graphviz format. <br /></td></tr>
+<tr class="memitem:a761f1022dadf60e2cacca304ab0533b4 inherit pub_methods_a04819" id="r_a761f1022dadf60e2cacca304ab0533b4"><td class="memItemLeft">
+size_t&#160;</td><td class="memItemRight"><b>nrFactors</b> () const</td></tr>
+<tr class="memdesc:a761f1022dadf60e2cacca304ab0533b4 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the number of non-null factors <br /></td></tr>
+<tr class="memitem:a0c4667de76265a06cc6f74b1f3b25051 inherit pub_methods_a04819" id="r_a0c4667de76265a06cc6f74b1f3b25051"><td class="memItemLeft">
+KeySet&#160;</td><td class="memItemRight"><b>keys</b> () const</td></tr>
+<tr class="memdesc:a0c4667de76265a06cc6f74b1f3b25051 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Potentially slow function to return all keys involved, sorted, as a set. <br /></td></tr>
+<tr class="memitem:a3b4d9bbaceeb9043ab7c20d4778b69c5 inherit pub_methods_a04819" id="r_a3b4d9bbaceeb9043ab7c20d4778b69c5"><td class="memItemLeft">
+<a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&#160;</td><td class="memItemRight"><b>keyVector</b> () const</td></tr>
+<tr class="memdesc:a3b4d9bbaceeb9043ab7c20d4778b69c5 inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Potentially slow function to return all keys involved, sorted, as a vector. <br /></td></tr>
+<tr class="memitem:acbf8cdf50816d4a0571f6b9b6254f9ce inherit pub_methods_a04819" id="r_acbf8cdf50816d4a0571f6b9b6254f9ce"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>exists</b> (size_t idx) const</td></tr>
+<tr class="memdesc:acbf8cdf50816d4a0571f6b9b6254f9ce inherit pub_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">MATLAB interface utility: Checks whether a factor index idx exists in the graph and is a live pointer. <br /></td></tr>
+<tr class="inherit_header pub_methods_a04887"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a04887')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a04887.html">gtsam::EliminateableFactorGraph&lt; DiscreteFactorGraph &gt;</a></td></tr>
+<tr class="memitem:a65f087334b8b6a9961854d044b8e25a1 inherit pub_methods_a04887" id="r_a65f087334b8b6a9961854d044b8e25a1"><td class="memItemLeft"><a class="el" href="a07139.html">IndexedJunctionTree</a>&#160;</td><td class="memItemRight"><a class="el" href="a04887.html#a65f087334b8b6a9961854d044b8e25a1">buildIndexedJunctionTree</a> (const <a class="el" href="a04979.html">Ordering</a> &amp;ordering, const std::unordered_set&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &gt; &amp;fixedKeys={}) const</td></tr>
+<tr class="memdesc:a65f087334b8b6a9961854d044b8e25a1 inherit pub_methods_a04887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an <span class="tt"><a class="el" href="a07139.html" title="A symbolic junction tree whose factors record the original factor indices from a corresponding (non-s...">IndexedJunctionTree</a></span> for this factor graph and a fixed ordering.  <br /></td></tr>
+<tr class="memitem:ad7bea1ff9d2310dccf31a618e1a5dde9 inherit pub_methods_a04887" id="r_ad7bea1ff9d2310dccf31a618e1a5dde9"><td class="memItemLeft">std::shared_ptr&lt; <a class="el" href="a04887.html#a57f45c172e2b94fe94f8a86fac7c97b9">BayesNetType</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04887.html#ad7bea1ff9d2310dccf31a618e1a5dde9">eliminateSequential</a> (<a class="el" href="a04887.html#af27e3d79ee48b6ed40b7640a1bb26229">OptionalOrderingType</a> orderingType={}, const <a class="el" href="a04887.html#a4053522180fd649baf38a49c515e7b53">Eliminate</a> &amp;function=EliminationTraitsType::DefaultEliminate, <a class="el" href="a04887.html#adeca465639c6ef3737b4b53d22256ed1">OptionalVariableIndex</a> variableIndex={}) const</td></tr>
+<tr class="memdesc:ad7bea1ff9d2310dccf31a618e1a5dde9 inherit pub_methods_a04887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do sequential elimination of all variables to produce a Bayes net.  <br /></td></tr>
+<tr class="memitem:ad7f28c31f587842672997ae14557ddf3 inherit pub_methods_a04887" id="r_ad7f28c31f587842672997ae14557ddf3"><td class="memItemLeft">std::shared_ptr&lt; <a class="el" href="a04887.html#a447a0aeabd9c013e825f7a1934b67929">BayesTreeType</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04887.html#ad7f28c31f587842672997ae14557ddf3">eliminateMultifrontal</a> (<a class="el" href="a04887.html#af27e3d79ee48b6ed40b7640a1bb26229">OptionalOrderingType</a> orderingType={}, const <a class="el" href="a04887.html#a4053522180fd649baf38a49c515e7b53">Eliminate</a> &amp;function=EliminationTraitsType::DefaultEliminate, <a class="el" href="a04887.html#adeca465639c6ef3737b4b53d22256ed1">OptionalVariableIndex</a> variableIndex={}) const</td></tr>
+<tr class="memdesc:ad7f28c31f587842672997ae14557ddf3 inherit pub_methods_a04887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do multifrontal elimination of all variables to produce a Bayes tree.  <br /></td></tr>
+<tr class="memitem:a0f8488e8e3dfeb3931930f2ba01d49a6 inherit pub_methods_a04887" id="r_a0f8488e8e3dfeb3931930f2ba01d49a6"><td class="memItemLeft">std::pair&lt; std::shared_ptr&lt; <a class="el" href="a04887.html#a57f45c172e2b94fe94f8a86fac7c97b9">BayesNetType</a> &gt;, std::shared_ptr&lt; FactorGraphType &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04887.html#a0f8488e8e3dfeb3931930f2ba01d49a6">eliminatePartialSequential</a> (const <a class="el" href="a04979.html">Ordering</a> &amp;ordering, const <a class="el" href="a04887.html#a4053522180fd649baf38a49c515e7b53">Eliminate</a> &amp;function=EliminationTraitsType::DefaultEliminate, <a class="el" href="a04887.html#adeca465639c6ef3737b4b53d22256ed1">OptionalVariableIndex</a> variableIndex={}) const</td></tr>
+<tr class="memdesc:a0f8488e8e3dfeb3931930f2ba01d49a6 inherit pub_methods_a04887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do sequential elimination of some variables, in <code>ordering</code> provided, to produce a Bayes net and a remaining factor graph.  <br /></td></tr>
+<tr class="memitem:a10c9b6e8b4d6f28303c549404253706a inherit pub_methods_a04887" id="r_a10c9b6e8b4d6f28303c549404253706a"><td class="memItemLeft">std::pair&lt; std::shared_ptr&lt; <a class="el" href="a04887.html#a447a0aeabd9c013e825f7a1934b67929">BayesTreeType</a> &gt;, std::shared_ptr&lt; FactorGraphType &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04887.html#a10c9b6e8b4d6f28303c549404253706a">eliminatePartialMultifrontal</a> (const <a class="el" href="a04979.html">Ordering</a> &amp;ordering, const <a class="el" href="a04887.html#a4053522180fd649baf38a49c515e7b53">Eliminate</a> &amp;function=EliminationTraitsType::DefaultEliminate, <a class="el" href="a04887.html#adeca465639c6ef3737b4b53d22256ed1">OptionalVariableIndex</a> variableIndex={}) const</td></tr>
+<tr class="memdesc:a10c9b6e8b4d6f28303c549404253706a inherit pub_methods_a04887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do multifrontal elimination of some variables, in <code>ordering</code> provided, to produce a Bayes tree and a remaining factor graph.  <br /></td></tr>
+<tr class="memitem:a645d55a28f45751dd5c96912904fcc7f inherit pub_methods_a04887" id="r_a645d55a28f45751dd5c96912904fcc7f"><td class="memItemLeft">std::shared_ptr&lt; <a class="el" href="a04887.html#a57f45c172e2b94fe94f8a86fac7c97b9">BayesNetType</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04887.html#a645d55a28f45751dd5c96912904fcc7f">marginalMultifrontalBayesNet</a> (const <a class="el" href="a04979.html">Ordering</a> &amp;variables, const <a class="el" href="a04887.html#a4053522180fd649baf38a49c515e7b53">Eliminate</a> &amp;function=EliminationTraitsType::DefaultEliminate, <a class="el" href="a04887.html#adeca465639c6ef3737b4b53d22256ed1">OptionalVariableIndex</a> variableIndex={}) const</td></tr>
+<tr class="memdesc:a645d55a28f45751dd5c96912904fcc7f inherit pub_methods_a04887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the marginal of the requested variables and return the result as a Bayes net.  <br /></td></tr>
+<tr class="memitem:ac9071e8832d4086d9ec16c48c4fce926 inherit pub_methods_a04887" id="r_ac9071e8832d4086d9ec16c48c4fce926"><td class="memItemLeft">std::shared_ptr&lt; <a class="el" href="a04887.html#a447a0aeabd9c013e825f7a1934b67929">BayesTreeType</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04887.html#ac9071e8832d4086d9ec16c48c4fce926">marginalMultifrontalBayesTree</a> (const <a class="el" href="a04979.html">Ordering</a> &amp;variables, const <a class="el" href="a04887.html#a4053522180fd649baf38a49c515e7b53">Eliminate</a> &amp;function=EliminationTraitsType::DefaultEliminate, <a class="el" href="a04887.html#adeca465639c6ef3737b4b53d22256ed1">OptionalVariableIndex</a> variableIndex={}) const</td></tr>
+<tr class="memdesc:ac9071e8832d4086d9ec16c48c4fce926 inherit pub_methods_a04887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the marginal of the requested variables and return the result as a Bayes tree.  <br /></td></tr>
+<tr class="memitem:a5a2550a0fb9f1129e1fd54bb0e7254c5 inherit pub_methods_a04887" id="r_a5a2550a0fb9f1129e1fd54bb0e7254c5"><td class="memItemLeft">
+std::shared_ptr&lt; FactorGraphType &gt;&#160;</td><td class="memItemRight"><b>marginal</b> (const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;variables, const <a class="el" href="a04887.html#a4053522180fd649baf38a49c515e7b53">Eliminate</a> &amp;function=EliminationTraitsType::DefaultEliminate, <a class="el" href="a04887.html#adeca465639c6ef3737b4b53d22256ed1">OptionalVariableIndex</a> variableIndex={}) const</td></tr>
+<tr class="memdesc:a5a2550a0fb9f1129e1fd54bb0e7254c5 inherit pub_methods_a04887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the marginal factor graph of the requested variables. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_a04063"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_a04063')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="a04063.html">gtsam::BayesNet&lt; DiscreteLookupTable &gt;</a></td></tr>
-<tr class="memitem:ae6a59fca7b59061bffe9d3aad97cca69 inherit pro_methods_a04063" id="r_ae6a59fca7b59061bffe9d3aad97cca69"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>BayesNet</b> ()</td></tr>
-<tr class="memdesc:ae6a59fca7b59061bffe9d3aad97cca69 inherit pro_methods_a04063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor as an empty <a class="el" href="a04063.html" title="A BayesNet is a tree of conditionals, stored in elimination order.">BayesNet</a>. <br /></td></tr>
-<tr class="memitem:ad1f05fb1c55edbb9c84ccb29a0b7464c inherit pro_methods_a04063" id="r_ad1f05fb1c55edbb9c84ccb29a0b7464c"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>BayesNet</b> (ITERATOR firstConditional, ITERATOR lastConditional)</td></tr>
-<tr class="memdesc:ad1f05fb1c55edbb9c84ccb29a0b7464c inherit pro_methods_a04063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from iterator over conditionals. <br /></td></tr>
-<tr class="memitem:a59aa8d5cffc44d6921cdd347f48f6d65 inherit pro_methods_a04063" id="r_a59aa8d5cffc44d6921cdd347f48f6d65"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04063.html#a59aa8d5cffc44d6921cdd347f48f6d65">BayesNet</a> (std::initializer_list&lt; <a class="el" href="a04063.html#a88103713b4df54500caaf6791f874a1c">sharedConditional</a> &gt; conditionals)</td></tr>
-<tr class="memdesc:a59aa8d5cffc44d6921cdd347f48f6d65 inherit pro_methods_a04063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that takes an initializer list of shared pointers.  <br /></td></tr>
-<tr class="inherit_header pro_methods_a04071"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_a04071')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="a04071.html">gtsam::FactorGraph&lt; FACTOR &gt;</a></td></tr>
-<tr class="memitem:a0c1926b2ccaabd4250710977b550af10 inherit pro_methods_a04071" id="r_a0c1926b2ccaabd4250710977b550af10"><td class="memItemLeft">
-bool&#160;</td><td class="memItemRight"><b>isEqual</b> (const <a class="el" href="a04071.html#a42db0a1062eb6c223b0a186a9d34cb4b">FactorGraph</a> &amp;other) const</td></tr>
-<tr class="memdesc:a0c1926b2ccaabd4250710977b550af10 inherit pro_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check exact equality of the factor pointers. Useful for derived ==. <br /></td></tr>
-<tr class="memitem:a42db0a1062eb6c223b0a186a9d34cb4b inherit pro_methods_a04071" id="r_a42db0a1062eb6c223b0a186a9d34cb4b"><td class="memItemLeft">
+<tr class="inherit_header pub_types_a07227"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a07227')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a07227.html">gtsam::CSP</a></td></tr>
+<tr class="memitem:aeeae651610dceb7f017124c9ffa295a3 inherit pub_types_a07227" id="r_aeeae651610dceb7f017124c9ffa295a3"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Values</b> = <a class="el" href="a07559.html">DiscreteValues</a></td></tr>
+<tr class="memdesc:aeeae651610dceb7f017124c9ffa295a3 inherit pub_types_a07227"><td class="mdescLeft">&#160;</td><td class="mdescRight">backwards compatibility <br /></td></tr>
+<tr class="inherit_header pub_types_a03915"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03915')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03915.html">gtsam::DiscreteFactorGraph</a></td></tr>
+<tr class="memitem:ad1911a8ed2a002fa9eb620d3ae692f8e inherit pub_types_a03915" id="r_ad1911a8ed2a002fa9eb620d3ae692f8e"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>This</b> = <a class="el" href="a03915.html#a9c6155d411d5e8f4169ac14982175908">DiscreteFactorGraph</a></td></tr>
+<tr class="memdesc:ad1911a8ed2a002fa9eb620d3ae692f8e inherit pub_types_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight">this class <br /></td></tr>
+<tr class="memitem:a5b81c4d007a58b2f7a0a9c6412710533 inherit pub_types_a03915" id="r_a5b81c4d007a58b2f7a0a9c6412710533"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Base</b> = <a class="el" href="a04819.html#a42db0a1062eb6c223b0a186a9d34cb4b">FactorGraph</a>&lt;DiscreteFactor&gt;</td></tr>
+<tr class="memdesc:a5b81c4d007a58b2f7a0a9c6412710533 inherit pub_types_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight">base factor graph type <br /></td></tr>
+<tr class="memitem:ad2f26b801fadcbbef3fb3d0bd45af609 inherit pub_types_a03915" id="r_ad2f26b801fadcbbef3fb3d0bd45af609"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="a03915.html#ad2f26b801fadcbbef3fb3d0bd45af609">BaseEliminateable</a></td></tr>
+<tr class="memdesc:ad2f26b801fadcbbef3fb3d0bd45af609 inherit pub_types_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight">for elimination  <br /></td></tr>
+<tr class="memitem:ae37dfa7677bcf00e064afca6571a7877 inherit pub_types_a03915" id="r_ae37dfa7677bcf00e064afca6571a7877"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>shared_ptr</b> = std::shared_ptr&lt;<a class="el" href="a03915.html#ad1911a8ed2a002fa9eb620d3ae692f8e">This</a>&gt;</td></tr>
+<tr class="memdesc:ae37dfa7677bcf00e064afca6571a7877 inherit pub_types_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a03915.html#ae37dfa7677bcf00e064afca6571a7877" title="shared_ptr to This">shared_ptr</a> to <a class="el" href="a03915.html#ad1911a8ed2a002fa9eb620d3ae692f8e" title="this class">This</a> <br /></td></tr>
+<tr class="memitem:a47afd40461afeca9a2b9c73aa60fcc0c inherit pub_types_a03915" id="r_a47afd40461afeca9a2b9c73aa60fcc0c"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Values</b> = <a class="el" href="a07559.html">DiscreteValues</a></td></tr>
+<tr class="memdesc:a47afd40461afeca9a2b9c73aa60fcc0c inherit pub_types_a03915"><td class="mdescLeft">&#160;</td><td class="mdescRight">backwards compatibility <br /></td></tr>
+<tr class="memitem:a5fd5f8832b595ed707a3a7c7a6f68076 inherit pub_types_a03915" id="r_a5fd5f8832b595ed707a3a7c7a6f68076"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Indices</b> = <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a></td></tr>
+<tr class="inherit_header pub_types_a04819"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04819')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04819.html">gtsam::FactorGraph&lt; DiscreteFactor &gt;</a></td></tr>
+<tr class="memitem:aa54fb0b66fd8fee9f3c1f2844cf3edef inherit pub_types_a04819" id="r_aa54fb0b66fd8fee9f3c1f2844cf3edef"><td class="memItemLeft">
+typedef DiscreteFactor&#160;</td><td class="memItemRight"><b>FactorType</b></td></tr>
+<tr class="memdesc:aa54fb0b66fd8fee9f3c1f2844cf3edef inherit pub_types_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">factor type <br /></td></tr>
+<tr class="memitem:a67bf60c6fe50e44e105622ec6bdb1ff8 inherit pub_types_a04819" id="r_a67bf60c6fe50e44e105622ec6bdb1ff8"><td class="memItemLeft">
+typedef std::shared_ptr&lt; DiscreteFactor &gt;&#160;</td><td class="memItemRight"><b>sharedFactor</b></td></tr>
+<tr class="memdesc:a67bf60c6fe50e44e105622ec6bdb1ff8 inherit pub_types_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to a factor. <br /></td></tr>
+<tr class="memitem:a9e8705eefb16a49d12dbba659499bc82 inherit pub_types_a04819" id="r_a9e8705eefb16a49d12dbba659499bc82"><td class="memItemLeft">
+typedef <a class="el" href="a04819.html#a67bf60c6fe50e44e105622ec6bdb1ff8">sharedFactor</a>&#160;</td><td class="memItemRight"><b>value_type</b></td></tr>
+<tr class="memitem:af71ec41fd2c991605eb54954976a6939 inherit pub_types_a04819" id="r_af71ec41fd2c991605eb54954976a6939"><td class="memItemLeft">
+typedef <a class="el" href="a02227.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; <a class="el" href="a04819.html#a67bf60c6fe50e44e105622ec6bdb1ff8">sharedFactor</a> &gt;::iterator&#160;</td><td class="memItemRight"><b>iterator</b></td></tr>
+<tr class="memitem:aec93913bd747baea0c7316598ac3e8e9 inherit pub_types_a04819" id="r_aec93913bd747baea0c7316598ac3e8e9"><td class="memItemLeft">
+typedef <a class="el" href="a02227.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; <a class="el" href="a04819.html#a67bf60c6fe50e44e105622ec6bdb1ff8">sharedFactor</a> &gt;::const_iterator&#160;</td><td class="memItemRight"><b>const_iterator</b></td></tr>
+<tr class="inherit_header pub_types_a04887"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04887')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04887.html">gtsam::EliminateableFactorGraph&lt; DiscreteFactorGraph &gt;</a></td></tr>
+<tr class="memitem:af0c24ab1ca71a74596ee4a5dc7845dd2 inherit pub_types_a04887" id="r_af0c24ab1ca71a74596ee4a5dc7845dd2"><td class="memItemLeft">
+typedef <a class="el" href="a04843.html">EliminationTraits</a>&lt; FactorGraphType &gt;&#160;</td><td class="memItemRight"><b>EliminationTraitsType</b></td></tr>
+<tr class="memdesc:af0c24ab1ca71a74596ee4a5dc7845dd2 inherit pub_types_a04887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef to the specific <a class="el" href="a04843.html" title="Traits class for eliminateable factor graphs, specifies the types that result from elimination,...">EliminationTraits</a> for this graph. <br /></td></tr>
+<tr class="memitem:abd7caace9039ca5fe1d3dcb7ac99e423 inherit pub_types_a04887" id="r_abd7caace9039ca5fe1d3dcb7ac99e423"><td class="memItemLeft">
+typedef EliminationTraitsType::ConditionalType&#160;</td><td class="memItemRight"><b>ConditionalType</b></td></tr>
+<tr class="memdesc:abd7caace9039ca5fe1d3dcb7ac99e423 inherit pub_types_a04887"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a04867.html">Conditional</a> type stored in the Bayes net produced by elimination. <br /></td></tr>
+<tr class="memitem:a57f45c172e2b94fe94f8a86fac7c97b9 inherit pub_types_a04887" id="r_a57f45c172e2b94fe94f8a86fac7c97b9"><td class="memItemLeft">
+typedef EliminationTraitsType::BayesNetType&#160;</td><td class="memItemRight"><b>BayesNetType</b></td></tr>
+<tr class="memdesc:a57f45c172e2b94fe94f8a86fac7c97b9 inherit pub_types_a04887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bayes net type produced by sequential elimination. <br /></td></tr>
+<tr class="memitem:abe9b40bd96c33b2b8974949b6fc003ef inherit pub_types_a04887" id="r_abe9b40bd96c33b2b8974949b6fc003ef"><td class="memItemLeft">
+typedef EliminationTraitsType::EliminationTreeType&#160;</td><td class="memItemRight"><b>EliminationTreeType</b></td></tr>
+<tr class="memdesc:abe9b40bd96c33b2b8974949b6fc003ef inherit pub_types_a04887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimination tree type that can do sequential elimination of this graph. <br /></td></tr>
+<tr class="memitem:a447a0aeabd9c013e825f7a1934b67929 inherit pub_types_a04887" id="r_a447a0aeabd9c013e825f7a1934b67929"><td class="memItemLeft">
+typedef EliminationTraitsType::BayesTreeType&#160;</td><td class="memItemRight"><b>BayesTreeType</b></td></tr>
+<tr class="memdesc:a447a0aeabd9c013e825f7a1934b67929 inherit pub_types_a04887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bayes tree type produced by multifrontal elimination. <br /></td></tr>
+<tr class="memitem:a1d4fad311e6b108420ee1e37a60a9715 inherit pub_types_a04887" id="r_a1d4fad311e6b108420ee1e37a60a9715"><td class="memItemLeft">
+typedef EliminationTraitsType::JunctionTreeType&#160;</td><td class="memItemRight"><b>JunctionTreeType</b></td></tr>
+<tr class="memdesc:a1d4fad311e6b108420ee1e37a60a9715 inherit pub_types_a04887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Junction tree type that can do multifrontal elimination of this graph. <br /></td></tr>
+<tr class="memitem:a0a15e61bd013dfecb62fcde36f9ab6e4 inherit pub_types_a04887" id="r_a0a15e61bd013dfecb62fcde36f9ab6e4"><td class="memItemLeft">
+typedef std::pair&lt; std::shared_ptr&lt; <a class="el" href="a04887.html#abd7caace9039ca5fe1d3dcb7ac99e423">ConditionalType</a> &gt;, std::shared_ptr&lt; _FactorType &gt; &gt;&#160;</td><td class="memItemRight"><b>EliminationResult</b></td></tr>
+<tr class="memdesc:a0a15e61bd013dfecb62fcde36f9ab6e4 inherit pub_types_a04887"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pair of conditional and remaining factor produced by a single dense elimination step on a subgraph. <br /></td></tr>
+<tr class="memitem:a4053522180fd649baf38a49c515e7b53 inherit pub_types_a04887" id="r_a4053522180fd649baf38a49c515e7b53"><td class="memItemLeft">
+typedef std::function&lt; <a class="el" href="a04887.html#a0a15e61bd013dfecb62fcde36f9ab6e4">EliminationResult</a>(const FactorGraphType &amp;, const <a class="el" href="a04979.html">Ordering</a> &amp;)&gt;&#160;</td><td class="memItemRight"><b>Eliminate</b></td></tr>
+<tr class="memdesc:a4053522180fd649baf38a49c515e7b53 inherit pub_types_a04887"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function type that does a single dense elimination step on a subgraph. <br /></td></tr>
+<tr class="memitem:adeca465639c6ef3737b4b53d22256ed1 inherit pub_types_a04887" id="r_adeca465639c6ef3737b4b53d22256ed1"><td class="memItemLeft">
+typedef std::optional&lt; std::reference_wrapper&lt; const <a class="el" href="a04999.html">VariableIndex</a> &gt; &gt;&#160;</td><td class="memItemRight"><b>OptionalVariableIndex</b></td></tr>
+<tr class="memdesc:adeca465639c6ef3737b4b53d22256ed1 inherit pub_types_a04887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef for an optional variable index as an argument to elimination functions It is an optional to a constant reference. <br /></td></tr>
+<tr class="memitem:af27e3d79ee48b6ed40b7640a1bb26229 inherit pub_types_a04887" id="r_af27e3d79ee48b6ed40b7640a1bb26229"><td class="memItemLeft">
+typedef std::optional&lt; <a class="el" href="a04979.html#a41194f31ec42052094cf91d81dcd796d">Ordering::OrderingType</a> &gt;&#160;</td><td class="memItemRight"><b>OptionalOrderingType</b></td></tr>
+<tr class="memdesc:af27e3d79ee48b6ed40b7640a1bb26229 inherit pub_types_a04887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef for an optional ordering type. <br /></td></tr>
+<tr class="inherit_header pro_methods_a04819"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_a04819')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="a04819.html">gtsam::FactorGraph&lt; DiscreteFactor &gt;</a></td></tr>
+<tr class="memitem:a0c1926b2ccaabd4250710977b550af10 inherit pro_methods_a04819" id="r_a0c1926b2ccaabd4250710977b550af10"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>isEqual</b> (const <a class="el" href="a04819.html#a42db0a1062eb6c223b0a186a9d34cb4b">FactorGraph</a> &amp;other) const</td></tr>
+<tr class="memdesc:a0c1926b2ccaabd4250710977b550af10 inherit pro_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check exact equality of the factor pointers. Useful for derived ==. <br /></td></tr>
+<tr class="memitem:a42db0a1062eb6c223b0a186a9d34cb4b inherit pro_methods_a04819" id="r_a42db0a1062eb6c223b0a186a9d34cb4b"><td class="memItemLeft">
 &#160;</td><td class="memItemRight"><b>FactorGraph</b> ()</td></tr>
-<tr class="memdesc:a42db0a1062eb6c223b0a186a9d34cb4b inherit pro_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
-<tr class="memitem:a63a80ba5a22fee5725d0efa75080cdfb inherit pro_methods_a04071" id="r_a63a80ba5a22fee5725d0efa75080cdfb"><td class="memTemplParams" colspan="2">
-template&lt;typename ITERATOR&gt; </td></tr>
-<tr class="memitem:a63a80ba5a22fee5725d0efa75080cdfb inherit pro_methods_a04071 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>FactorGraph</b> (ITERATOR firstFactor, ITERATOR lastFactor)</td></tr>
-<tr class="memdesc:a63a80ba5a22fee5725d0efa75080cdfb inherit pro_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from iterator over factors (shared_ptr or plain objects). <br /></td></tr>
-<tr class="memitem:a37b5e74d2c3711906f57982b4512351f inherit pro_methods_a04071" id="r_a37b5e74d2c3711906f57982b4512351f"><td class="memTemplParams" colspan="2">
-template&lt;class CONTAINER&gt; </td></tr>
-<tr class="memitem:a37b5e74d2c3711906f57982b4512351f inherit pro_methods_a04071 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>FactorGraph</b> (const CONTAINER &amp;factors)</td></tr>
-<tr class="memdesc:a37b5e74d2c3711906f57982b4512351f inherit pro_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from container of factors (shared_ptr or plain objects). <br /></td></tr>
-<tr class="inherit_header pro_attribs_a04071"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a04071')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a04071.html">gtsam::FactorGraph&lt; FACTOR &gt;</a></td></tr>
-<tr class="memitem:ae0c75f68e3ebc37cc4511285b12c33fc inherit pro_attribs_a04071" id="r_ae0c75f68e3ebc37cc4511285b12c33fc"><td class="memItemLeft"><a class="el" href="a01953.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; <a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04071.html#ae0c75f68e3ebc37cc4511285b12c33fc">factors_</a></td></tr>
-<tr class="memdesc:ae0c75f68e3ebc37cc4511285b12c33fc inherit pro_attribs_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">concept check, makes sure FACTOR defines print and equals  <br /></td></tr>
+<tr class="memdesc:a42db0a1062eb6c223b0a186a9d34cb4b inherit pro_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
+<tr class="memitem:a63a80ba5a22fee5725d0efa75080cdfb inherit pro_methods_a04819" id="r_a63a80ba5a22fee5725d0efa75080cdfb"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>FactorGraph</b> (ITERATOR firstFactor, ITERATOR lastFactor)</td></tr>
+<tr class="memdesc:a63a80ba5a22fee5725d0efa75080cdfb inherit pro_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from iterator over factors (shared_ptr or plain objects). <br /></td></tr>
+<tr class="memitem:a37b5e74d2c3711906f57982b4512351f inherit pro_methods_a04819" id="r_a37b5e74d2c3711906f57982b4512351f"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>FactorGraph</b> (const CONTAINER &amp;factors)</td></tr>
+<tr class="memdesc:a37b5e74d2c3711906f57982b4512351f inherit pro_methods_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from container of factors (shared_ptr or plain objects). <br /></td></tr>
+<tr class="inherit_header pro_attribs_a04819"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a04819')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a04819.html">gtsam::FactorGraph&lt; DiscreteFactor &gt;</a></td></tr>
+<tr class="memitem:ae0c75f68e3ebc37cc4511285b12c33fc inherit pro_attribs_a04819" id="r_ae0c75f68e3ebc37cc4511285b12c33fc"><td class="memItemLeft"><a class="el" href="a02227.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; <a class="el" href="a04819.html#a67bf60c6fe50e44e105622ec6bdb1ff8">sharedFactor</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04819.html#ae0c75f68e3ebc37cc4511285b12c33fc">factors_</a></td></tr>
+<tr class="memdesc:ae0c75f68e3ebc37cc4511285b12c33fc inherit pro_attribs_a04819"><td class="mdescLeft">&#160;</td><td class="mdescRight">concept check, makes sure FACTOR defines print and equals  <br /></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a21bdddd0a2850256341b714a56c83071" name="a21bdddd0a2850256341b714a56c83071"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21bdddd0a2850256341b714a56c83071">&#9670;&#160;</a></span>argmax()</h2>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a58718b8999933104eb65551f9156c779" name="a58718b8999933104eb65551f9156c779"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58718b8999933104eb65551f9156c779">&#9670;&#160;</a></span>Scheduler() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Y, typename Policy&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a06207.html">DiscreteValues</a> gtsam::DiscreteLookupDAG::argmax </td>
+          <td class="memname"><a class="el" href="a03435.html">gtsam::Scheduler</a>&lt; Y, Policy &gt;::Scheduler </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a06207.html">DiscreteValues</a></td>          <td class="paramname"><span class="paramname"><em>given</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="a06207.html">DiscreteValues</a>()</span></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>numThreads</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::thread::hardware_concurrency()</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a scheduler with a fixed number of worker threads. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numThreads</td><td>Number of worker threads to create. If zero, a single thread is created. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad5e5db98e0bd560a0b91119fcf928444" name="ad5e5db98e0bd560a0b91119fcf928444"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5e5db98e0bd560a0b91119fcf928444">&#9670;&#160;</a></span>~Scheduler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Y, typename Policy&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a03435.html">gtsam::Scheduler</a>&lt; Y, Policy &gt;::~<a class="el" href="#a58718b8999933104eb65551f9156c779">Scheduler</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wait for all tasks to finish, then stop worker threads. </p>
+<dl class="section note"><dt>Note</dt><dd>The destructor calls <span class="tt"><a class="el" href="#af72e89d49cae86b1f6408d6d0790e659" title="Block until all queued and active tasks complete.">waitForAllTasks</a></span> before stopping workers. </dd></dl>
+
+</div>
+</div>
+<a id="aceaecce7c01843f935ce80584f346dc1" name="aceaecce7c01843f935ce80584f346dc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceaecce7c01843f935ce80584f346dc1">&#9670;&#160;</a></span>Scheduler() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Y, typename Policy&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a03435.html">gtsam::Scheduler</a>&lt; Y, Policy &gt;::Scheduler </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>maxNrStudents</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor We need to know the number of students in advance for ordering keys. </p>
+<p>then add faculty, slots, areas, availability, students, in that order </p>
+
+</div>
+</div>
+<a id="a0cb4656f68b22836b33c92c42662d63d" name="a0cb4656f68b22836b33c92c42662d63d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cb4656f68b22836b33c92c42662d63d">&#9670;&#160;</a></span>Scheduler() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Y, typename Policy&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a03435.html">gtsam::Scheduler</a>&lt; Y, Policy &gt;::Scheduler </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>maxNrStudents</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>argmax by back-substitution, optionally given certain variables. </p>
-<p>Assumes the DAG is reverse topologically sorted, i.e. last conditional will be optimized first <em>and</em> that the DAG does not contain any conditionals for the given variables. If the DAG resulted from eliminating a factor graph, this is true for the elimination ordering.</p>
-<dl class="section return"><dt>Returns</dt><dd>given assignment extended w. optimal assignment for all variables. </dd></dl>
+<p>Constructor that reads in faculty, slots, availibility. </p>
+<p>Still need to add areas and students after this </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a7c224e06b4669170d75ba1c95e67234a" name="a7c224e06b4669170d75ba1c95e67234a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c224e06b4669170d75ba1c95e67234a">&#9670;&#160;</a></span>enqueue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Y, typename Policy&gt; </div>
+<div class="memtemplate">
+template&lt;typename T = Y, typename = std::enable_if_t&lt;                std::is_void_v&lt;T&gt; &amp;&amp; std::is_same_v&lt;Metadata, std::monostate&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a03435.html">gtsam::Scheduler</a>&lt; Y, Policy &gt;::enqueue </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void()&gt;</td>          <td class="paramname"><span class="paramname"><em>job</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enqueue a fire-and-forget task for execution. </p>
+<p>Enabled only for <span class="tt"><a class="el" href="a02242.html#adf7fc12038fae7502b352dca019bad7e" title="Thread pool scheduler that executes tasks without priority ordering.">TaskScheduler</a>&lt;void&gt;</span> (i.e., <span class="tt">Y = void</span> and no metadata). </p>
+
+</div>
+</div>
+<a id="aa4670a88ec6253d1cc4f0dbee9e81b6c" name="aa4670a88ec6253d1cc4f0dbee9e81b6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4670a88ec6253d1cc4f0dbee9e81b6c">&#9670;&#160;</a></span>enqueueOrRunInline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Y, typename Policy&gt; </div>
+<div class="memtemplate">
+template&lt;typename T = Y, typename = std::enable_if_t&lt;                std::is_void_v&lt;T&gt; &amp;&amp; std::is_same_v&lt;Metadata, std::monostate&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a03435.html">gtsam::Scheduler</a>&lt; Y, Policy &gt;::enqueueOrRunInline </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void()&gt;</td>          <td class="paramname"><span class="paramname"><em>job</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enqueue a fire-and-forget task or run it inline on worker threads. </p>
+<p>Enabled only for <span class="tt"><a class="el" href="a02242.html#adf7fc12038fae7502b352dca019bad7e" title="Thread pool scheduler that executes tasks without priority ordering.">TaskScheduler</a>&lt;void&gt;</span> (i.e., <span class="tt">Y = void</span> and no metadata). </p>
+
+</div>
+</div>
+<a id="a396cecfe9d113f0a859fc6eaf40cf943" name="a396cecfe9d113f0a859fc6eaf40cf943"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a396cecfe9d113f0a859fc6eaf40cf943">&#9670;&#160;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Y, typename Policy&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a03435.html">gtsam::Scheduler</a>&lt; Y, Policy &gt;::print </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;Scheduler&lt;&#160;Y,&#160;Policy&#160;&gt;&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>formatter</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>print </p>
+
+<p>Reimplemented from <a class="el" href="a03915.html#ab247469e086e1f78c2b99d0ba8f4f236">gtsam::DiscreteFactorGraph</a>.</p>
+
+</div>
+</div>
+<a id="ae02411e31cf557d1c8b0c92b416d2a24" name="ae02411e31cf557d1c8b0c92b416d2a24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae02411e31cf557d1c8b0c92b416d2a24">&#9670;&#160;</a></span>schedule() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Y, typename Policy&gt; </div>
+<div class="memtemplate">
+template&lt;typename P = Policy, typename = std::enable_if_t&lt;!std::is_same_v&lt;                                     typename P::Metadata, std::monostate&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::future&lt; Y &gt; <a class="el" href="a03435.html">gtsam::Scheduler</a>&lt; Y, Policy &gt;::schedule </td>
+          <td>(</td>
+          <td class="paramtype">Metadata</td>          <td class="paramname"><span class="paramname"><em>metadata</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; Y()&gt;</td>          <td class="paramname"><span class="paramname"><em>job</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enqueue a task for execution with metadata. </p>
+<p>Enabled when <span class="tt">Policy::Metadata</span> is not <span class="tt">std::monostate</span>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">metadata</td><td>Policy-defined metadata for ordering (e.g., priority). </td></tr>
+    <tr><td class="paramname">job</td><td>Callable returning a <span class="tt">Y</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">std::future&lt;Y&gt;</span> associated with the task. </dd></dl>
+
+</div>
+</div>
+<a id="a1c2887e21547ef18c8241b21eb3598df" name="a1c2887e21547ef18c8241b21eb3598df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c2887e21547ef18c8241b21eb3598df">&#9670;&#160;</a></span>schedule() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Y, typename Policy&gt; </div>
+<div class="memtemplate">
+template&lt;typename P = Policy, typename = std::enable_if_t&lt;std::is_same_v&lt;                                     typename P::Metadata, std::monostate&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::future&lt; Y &gt; <a class="el" href="a03435.html">gtsam::Scheduler</a>&lt; Y, Policy &gt;::schedule </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; Y()&gt;</td>          <td class="paramname"><span class="paramname"><em>job</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enqueue a task for execution (no metadata). </p>
+<p><a class="el" href="a07579.html" title="symbolic elimination etc.">Only</a> enabled when <span class="tt">Policy::Metadata</span> is <span class="tt">std::monostate</span>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">job</td><td>Callable returning a <span class="tt">Y</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">std::future&lt;Y&gt;</span> associated with the task. </dd></dl>
+
+</div>
+</div>
+<a id="a3b29ff22bb319bfbbcfba67b2c6566da" name="a3b29ff22bb319bfbbcfba67b2c6566da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b29ff22bb319bfbbcfba67b2c6566da">&#9670;&#160;</a></span>scheduleOrRunInline() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Y, typename Policy&gt; </div>
+<div class="memtemplate">
+template&lt;typename T = Y, typename = std::enable_if_t&lt;                std::is_void_v&lt;T&gt; &amp;&amp; !std::is_same_v&lt;Metadata, std::monostate&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a03435.html">gtsam::Scheduler</a>&lt; Y, Policy &gt;::scheduleOrRunInline </td>
+          <td>(</td>
+          <td class="paramtype">Metadata</td>          <td class="paramname"><span class="paramname"><em>metadata</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void()&gt;</td>          <td class="paramname"><span class="paramname"><em>job</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Schedule or run inline when called from a worker thread. </p>
+<p>Used to fuse continuations without re-entering the queues. </p>
+
+</div>
+</div>
+<a id="a0ee32307b29d5be660c67904eec5d663" name="a0ee32307b29d5be660c67904eec5d663"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ee32307b29d5be660c67904eec5d663">&#9670;&#160;</a></span>scheduleOrRunInline() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Y, typename Policy&gt; </div>
+<div class="memtemplate">
+template&lt;typename T = Y, typename = std::enable_if_t&lt;                std::is_void_v&lt;T&gt; &amp;&amp; std::is_same_v&lt;Metadata, std::monostate&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a03435.html">gtsam::Scheduler</a>&lt; Y, Policy &gt;::scheduleOrRunInline </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void()&gt;</td>          <td class="paramname"><span class="paramname"><em>job</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Schedule or run inline when called from a worker thread. </p>
+<p>Used to fuse continuations without re-entering the queues. </p>
+
+</div>
+</div>
+<a id="af72e89d49cae86b1f6408d6d0790e659" name="af72e89d49cae86b1f6408d6d0790e659"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af72e89d49cae86b1f6408d6d0790e659">&#9670;&#160;</a></span>waitForAllTasks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Y, typename Policy&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a03435.html">gtsam::Scheduler</a>&lt; Y, Policy &gt;::waitForAllTasks </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Block until all queued and active tasks complete. </p>
+<dl class="section note"><dt>Note</dt><dd>If the scheduler is stopping, this returns early. </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/discrete/<a class="el" href="a00257_source.html">DiscreteLookupDAG.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/discrete/<a class="el" href="a00269.html">DiscreteLookupDAG.cpp</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/<a class="el" href="a16319_source.html">Scheduler.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam_unstable/discrete/<a class="el" href="a16322_source.html">Scheduler.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam_unstable/discrete/<b>Scheduler.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -393,7 +953,7 @@ template&lt;class CONTAINER&gt; </td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a03435.html">DiscreteLookupDAG</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a03435.html">Scheduler</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

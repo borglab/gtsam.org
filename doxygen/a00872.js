@@ -1,4 +1,5 @@
 var a00872 =
 [
-    [ "gtsam::traits&lt; VectorValues &gt;", "a04615.html", null ]
+    [ "gtsam::EdgeKey", "a04879.html", "a04879" ],
+    [ "gtsam::traits&lt; EdgeKey &gt;", "a04883.html", null ]
 ];

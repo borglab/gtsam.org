@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::GaussianFactorGraphSystem Class Reference</title>
+<title>gtsam: gtsam::traits&lt; const SL4 &gt; Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,47 +96,120 @@ $(function(){initNavTree('a04523.html','','a04520'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::GaussianFactorGraphSystem Class Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::traits&lt; const SL4 &gt; Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="a04371.html" title="Helper class encapsulating the combined system |Ax-b_|^2 Needed to run Conjugate Gradients on matrice...">System</a> class needed for calling preconditionedConjugateGradient. </p>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a9bd4d49a4e33144809dcf7059a44362c" id="r_a9bd4d49a4e33144809dcf7059a44362c"><td class="memItemLeft"><a id="a9bd4d49a4e33144809dcf7059a44362c" name="a9bd4d49a4e33144809dcf7059a44362c"></a>
-&#160;</td><td class="memItemRight"><b>GaussianFactorGraphSystem</b> (const <a class="el" href="a04339.html">GaussianFactorGraph</a> &amp;gfg, const <a class="el" href="a04535.html">Preconditioner</a> &amp;preconditioner, const <a class="el" href="a04387.html">KeyInfo</a> &amp;info, const std::map&lt; <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, Vector &gt; &amp;lambda)</td></tr>
-<tr class="memitem:a031ef417c089cfce367d1565a6059506" id="r_a031ef417c089cfce367d1565a6059506"><td class="memItemLeft"><a id="a031ef417c089cfce367d1565a6059506" name="a031ef417c089cfce367d1565a6059506"></a>
-void&#160;</td><td class="memItemRight"><b>residual</b> (const Vector &amp;x, Vector &amp;r) const</td></tr>
-<tr class="memitem:aacdb4b27958c00bbc27ee6da41d44be7" id="r_aacdb4b27958c00bbc27ee6da41d44be7"><td class="memItemLeft"><a id="aacdb4b27958c00bbc27ee6da41d44be7" name="aacdb4b27958c00bbc27ee6da41d44be7"></a>
-void&#160;</td><td class="memItemRight"><b>multiply</b> (const Vector &amp;x, Vector &amp;y) const</td></tr>
-<tr class="memitem:a90472b3b8236cc617ce46317c6a30894" id="r_a90472b3b8236cc617ce46317c6a30894"><td class="memItemLeft"><a id="a90472b3b8236cc617ce46317c6a30894" name="a90472b3b8236cc617ce46317c6a30894"></a>
-void&#160;</td><td class="memItemRight"><b>leftPrecondition</b> (const Vector &amp;x, Vector &amp;y) const</td></tr>
-<tr class="memitem:ae2c029749ec9c55513a6da0459824946" id="r_ae2c029749ec9c55513a6da0459824946"><td class="memItemLeft"><a id="ae2c029749ec9c55513a6da0459824946" name="ae2c029749ec9c55513a6da0459824946"></a>
-void&#160;</td><td class="memItemRight"><b>rightPrecondition</b> (const Vector &amp;x, Vector &amp;y) const</td></tr>
-<tr class="memitem:af8f5b794be7334d35102c32022e59b2e" id="r_af8f5b794be7334d35102c32022e59b2e"><td class="memItemLeft"><a id="af8f5b794be7334d35102c32022e59b2e" name="af8f5b794be7334d35102c32022e59b2e"></a>
-void&#160;</td><td class="memItemRight"><b>scal</b> (const double alpha, Vector &amp;x) const</td></tr>
-<tr class="memitem:a02ed5849e179429c5cf7cca73c9d8ec8" id="r_a02ed5849e179429c5cf7cca73c9d8ec8"><td class="memItemLeft"><a id="a02ed5849e179429c5cf7cca73c9d8ec8" name="a02ed5849e179429c5cf7cca73c9d8ec8"></a>
-double&#160;</td><td class="memItemRight"><b>dot</b> (const Vector &amp;x, const Vector &amp;y) const</td></tr>
-<tr class="memitem:ae7931d4c4f1e2eae77c3bbf44382f941" id="r_ae7931d4c4f1e2eae77c3bbf44382f941"><td class="memItemLeft"><a id="ae7931d4c4f1e2eae77c3bbf44382f941" name="ae7931d4c4f1e2eae77c3bbf44382f941"></a>
-void&#160;</td><td class="memItemRight"><b>axpy</b> (const double alpha, const Vector &amp;x, Vector &amp;y) const</td></tr>
-<tr class="memitem:a7f322f0ac43e7bca7e7cf60591939e90" id="r_a7f322f0ac43e7bca7e7cf60591939e90"><td class="memItemLeft"><a id="a7f322f0ac43e7bca7e7cf60591939e90" name="a7f322f0ac43e7bca7e7cf60591939e90"></a>
-void&#160;</td><td class="memItemRight"><b>getb</b> (Vector &amp;b) const</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:ac74adcf4be438db04d56ea33f3d803d3" id="r_ac74adcf4be438db04d56ea33f3d803d3"><td class="memItemLeft"><a id="ac74adcf4be438db04d56ea33f3d803d3" name="ac74adcf4be438db04d56ea33f3d803d3"></a>
-const <a class="el" href="a04339.html">GaussianFactorGraph</a> &amp;&#160;</td><td class="memItemRight"><b>gfg_</b></td></tr>
-<tr class="memitem:acda35cecd747c9ffef8129896c553874" id="r_acda35cecd747c9ffef8129896c553874"><td class="memItemLeft"><a id="acda35cecd747c9ffef8129896c553874" name="acda35cecd747c9ffef8129896c553874"></a>
-const <a class="el" href="a04535.html">Preconditioner</a> &amp;&#160;</td><td class="memItemRight"><b>preconditioner_</b></td></tr>
-<tr class="memitem:a2865ac50a00d2f4e8d2fafeda21a74af" id="r_a2865ac50a00d2f4e8d2fafeda21a74af"><td class="memItemLeft"><a id="a2865ac50a00d2f4e8d2fafeda21a74af" name="a2865ac50a00d2f4e8d2fafeda21a74af"></a>
-const <a class="el" href="a04387.html">KeyInfo</a> &amp;&#160;</td><td class="memItemRight"><b>keyInfo_</b></td></tr>
-<tr class="memitem:a41bb6536c2275a6448398bb45e4456a7" id="r_a41bb6536c2275a6448398bb45e4456a7"><td class="memItemLeft"><a id="a41bb6536c2275a6448398bb45e4456a7" name="a41bb6536c2275a6448398bb45e4456a7"></a>
-const std::map&lt; <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, Vector &gt; &amp;&#160;</td><td class="memItemRight"><b>lambda_</b></td></tr>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::traits&lt; const SL4 &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="a04523.png" usemap="#gtsam_3A_3Atraits_3C_20const_20SL4_20_3E_map" alt=""/>
+  <map id="gtsam_3A_3Atraits_3C_20const_20SL4_20_3E_map" name="gtsam_3A_3Atraits_3C_20const_20SL4_20_3E_map">
+<area href="a03343.html" alt="gtsam::internal::MatrixLieGroup&lt; SL4, 4 &gt;" shape="rect" coords="173,224,509,248"/>
+<area href="a03339.html" alt="gtsam::internal::MatrixLieGroupTraits&lt; SL4, N &gt;" shape="rect" coords="0,168,336,192"/>
+<area href="a03535.html" alt="gtsam::Testable&lt; SL4 &gt;" shape="rect" coords="346,168,682,192"/>
+<area href="a03275.html" alt="gtsam::internal::LieGroupTraits&lt; SL4 &gt;" shape="rect" coords="0,112,336,136"/>
+<area href="a03303.html" alt="gtsam::internal::ManifoldTraits&lt; SL4 &gt;" shape="rect" coords="0,56,336,80"/>
+<area href="a03299.html" alt="gtsam::internal::GetDimensionImpl&lt; SL4, SL4::dimension &gt;" shape="rect" coords="0,0,336,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_methods_a03303"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03303')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03303.html">gtsam::internal::ManifoldTraits&lt; SL4 &gt;</a></td></tr>
+<tr class="memitem:aeb508be8e109605ae7647ed7bc710715 inherit pub_methods_a03303" id="r_aeb508be8e109605ae7647ed7bc710715"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>GTSAM_CONCEPT_ASSERT</b> (<a class="el" href="a03295.html">HasManifoldPrereqs</a>&lt; <a class="el" href="a04511.html">SL4</a> &gt;)</td></tr>
+<tr class="inherit_header pub_methods_a03535"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03535')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03535.html">gtsam::Testable&lt; SL4 &gt;</a></td></tr>
+<tr class="memitem:a6fd5215e8e80961b347f5bc16e8ce672 inherit pub_methods_a03535" id="r_a6fd5215e8e80961b347f5bc16e8ce672"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>GTSAM_CONCEPT_ASSERT</b> (<a class="el" href="a03531.html">HasTestablePrereqs</a>&lt; <a class="el" href="a04511.html">SL4</a> &gt;)</td></tr>
+<tr class="inherit_header pub_static_methods_a03339"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03339')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03339.html">gtsam::internal::MatrixLieGroupTraits&lt; SL4, N &gt;</a></td></tr>
+<tr class="memitem:ae005dc436a68f1e33cac010b07a10c97 inherit pub_static_methods_a03339" id="r_ae005dc436a68f1e33cac010b07a10c97"><td class="memItemLeft">
+static LieAlgebra&#160;</td><td class="memItemRight"><b>Hat</b> (const TangentVector &amp;v)</td></tr>
+<tr class="memitem:a43936b4e6a7fe39dc920bbb9b34b3572 inherit pub_static_methods_a03339" id="r_a43936b4e6a7fe39dc920bbb9b34b3572"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>Vee</b> (const LieAlgebra &amp;X)</td></tr>
+<tr class="memitem:a15f150f1e3db3f6cd70b68db078500c4 inherit pub_static_methods_a03339" id="r_a15f150f1e3db3f6cd70b68db078500c4"><td class="memItemLeft">
+static Eigen::Matrix&lt; double, product(N, N), 1 &gt;&#160;</td><td class="memItemRight"><b>Vec</b> (const <a class="el" href="a04511.html">SL4</a> &amp;m, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; product(N, N), <a class="el" href="a03275.html">LieGroupTraits</a>&lt; <a class="el" href="a04511.html">SL4</a> &gt;::dimension &gt; H={})</td></tr>
+<tr class="memdesc:a15f150f1e3db3f6cd70b68db078500c4 inherit pub_static_methods_a03339"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vectorize the matrix representation of a Lie group element. <br /></td></tr>
+<tr class="memitem:a53d02985cb0985bbf3d9aa31a907e56b inherit pub_static_methods_a03339" id="r_a53d02985cb0985bbf3d9aa31a907e56b"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>AdjointTranspose</b> (const <a class="el" href="a04511.html">SL4</a> &amp;m, const TangentVector &amp;x, ChartJacobian Hm={}, ChartJacobian Hx={})</td></tr>
+<tr class="memitem:afd4c4b958c1141a9897663ff4a5c6a32 inherit pub_static_methods_a03339" id="r_afd4c4b958c1141a9897663ff4a5c6a32"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>Adjoint</b> (const <a class="el" href="a04511.html">SL4</a> &amp;m, const TangentVector &amp;x, ChartJacobian Hm={}, ChartJacobian Hx={})</td></tr>
+<tr class="memitem:a0a1a5d3b81ecd4f4a5f7a2689ebcebc4 inherit pub_static_methods_a03339" id="r_a0a1a5d3b81ecd4f4a5f7a2689ebcebc4"><td class="memItemLeft">
+static Jacobian&#160;</td><td class="memItemRight"><b>adjointMap</b> (const TangentVector &amp;xi)</td></tr>
+<tr class="memitem:a2ed0cda1c1d4381de7b2b46f65115a0b inherit pub_static_methods_a03339" id="r_a2ed0cda1c1d4381de7b2b46f65115a0b"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>adjoint</b> (const TangentVector &amp;xi, const TangentVector &amp;y, ChartJacobian Hxi={}, ChartJacobian H_y={})</td></tr>
+<tr class="memitem:aa8c00caa3aaa0d41658ec5b277b6cc87 inherit pub_static_methods_a03339" id="r_aa8c00caa3aaa0d41658ec5b277b6cc87"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>adjointTranspose</b> (const TangentVector &amp;xi, const TangentVector &amp;y, ChartJacobian Hxi={}, ChartJacobian H_y={})</td></tr>
+<tr class="inherit_header pub_static_methods_a03275"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03275')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03275.html">gtsam::internal::LieGroupTraits&lt; SL4 &gt;</a></td></tr>
+<tr class="memitem:a16fee620f783604f3b51acc3ac9a29eb inherit pub_static_methods_a03275" id="r_a16fee620f783604f3b51acc3ac9a29eb"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>Logmap</b> (const <a class="el" href="a04511.html">SL4</a> &amp;m)</td></tr>
+<tr class="memitem:a6958a8601fefa337834f6372c83eb970 inherit pub_static_methods_a03275" id="r_a6958a8601fefa337834f6372c83eb970"><td class="memItemLeft">
+static <a class="el" href="a04511.html">SL4</a>&#160;</td><td class="memItemRight"><b>Expmap</b> (const TangentVector &amp;v)</td></tr>
+<tr class="memitem:a975a7fe12b3ae80ffd6e2d2f24c3d5d9 inherit pub_static_methods_a03275" id="r_a975a7fe12b3ae80ffd6e2d2f24c3d5d9"><td class="memItemLeft">
+static <a class="el" href="a04511.html">SL4</a>&#160;</td><td class="memItemRight"><b>Compose</b> (const <a class="el" href="a04511.html">SL4</a> &amp;m1, const <a class="el" href="a04511.html">SL4</a> &amp;m2, ChartJacobian H1={}, ChartJacobian H2={})</td></tr>
+<tr class="memitem:acc8d4521c88252685a5d5303bfa7f3d4 inherit pub_static_methods_a03275" id="r_acc8d4521c88252685a5d5303bfa7f3d4"><td class="memItemLeft">
+static <a class="el" href="a04511.html">SL4</a>&#160;</td><td class="memItemRight"><b>Between</b> (const <a class="el" href="a04511.html">SL4</a> &amp;m1, const <a class="el" href="a04511.html">SL4</a> &amp;m2, ChartJacobian H1={}, ChartJacobian H2={})</td></tr>
+<tr class="memitem:a4e9880fea478276cb528e6fd13d10485 inherit pub_static_methods_a03275" id="r_a4e9880fea478276cb528e6fd13d10485"><td class="memItemLeft">
+static <a class="el" href="a04511.html">SL4</a>&#160;</td><td class="memItemRight"><b>Inverse</b> (const <a class="el" href="a04511.html">SL4</a> &amp;m, ChartJacobian H={})</td></tr>
+<tr class="memitem:abf5682111cced2762528222c6e476093 inherit pub_static_methods_a03275" id="r_abf5682111cced2762528222c6e476093"><td class="memItemLeft">
+static Eigen::Matrix&lt; double, dimension, dimension &gt;&#160;</td><td class="memItemRight"><b>AdjointMap</b> (const <a class="el" href="a04511.html">SL4</a> &amp;m)</td></tr>
+<tr class="memitem:ad36e535be6899c627f2f796f6c9e605a inherit pub_static_methods_a03275" id="r_ad36e535be6899c627f2f796f6c9e605a"><td class="memItemLeft">
+static <a class="el" href="a04511.html">SL4</a>&#160;</td><td class="memItemRight"><b>Identity</b> ()</td></tr>
+<tr class="inherit_header pub_static_methods_a03303"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03303')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03303.html">gtsam::internal::ManifoldTraits&lt; SL4 &gt;</a></td></tr>
+<tr class="memitem:a94e4b4a741e92bf6ed629aa7ef36d0b4 inherit pub_static_methods_a03303" id="r_a94e4b4a741e92bf6ed629aa7ef36d0b4"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>Local</b> (const <a class="el" href="a04511.html">SL4</a> &amp;origin, const <a class="el" href="a04511.html">SL4</a> &amp;other)</td></tr>
+<tr class="memitem:adf31f3fd2ec15a2f70a20fd0ffd8d957 inherit pub_static_methods_a03303" id="r_adf31f3fd2ec15a2f70a20fd0ffd8d957"><td class="memItemLeft">
+static <a class="el" href="a04511.html">SL4</a>&#160;</td><td class="memItemRight"><b>Retract</b> (const <a class="el" href="a04511.html">SL4</a> &amp;origin, const TangentVector &amp;v)</td></tr>
+<tr class="inherit_header pub_static_methods_a03299"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03299')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03299.html">gtsam::internal::GetDimensionImpl&lt; SL4, SL4::dimension &gt;</a></td></tr>
+<tr class="memitem:a1fc02dfed9e5bb053cc0acb5532f708c inherit pub_static_methods_a03299" id="r_a1fc02dfed9e5bb053cc0acb5532f708c"><td class="memItemLeft">
+static size_t&#160;</td><td class="memItemRight"><b>GetDimension</b> (const <a class="el" href="a04511.html">SL4</a> &amp;m)</td></tr>
+<tr class="inherit_header pub_static_methods_a03535"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03535')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03535.html">gtsam::Testable&lt; SL4 &gt;</a></td></tr>
+<tr class="memitem:a27b246d77898916925c676895348fedf inherit pub_static_methods_a03535" id="r_a27b246d77898916925c676895348fedf"><td class="memItemLeft">
+static void&#160;</td><td class="memItemRight"><b>Print</b> (const <a class="el" href="a04511.html">SL4</a> &amp;m, const std::string &amp;str=&quot;&quot;)</td></tr>
+<tr class="memitem:a29a5699453b92070b31ca7fa42609d98 inherit pub_static_methods_a03535" id="r_a29a5699453b92070b31ca7fa42609d98"><td class="memItemLeft">
+static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el" href="a04511.html">SL4</a> &amp;m1, const <a class="el" href="a04511.html">SL4</a> &amp;m2, double tol=1e-8)</td></tr>
+<tr class="memitem:a86080f2529adac4f3f47421423059e05" id="r_a86080f2529adac4f3f47421423059e05"><td class="memItemLeft"><a id="a86080f2529adac4f3f47421423059e05" name="a86080f2529adac4f3f47421423059e05"></a>
+static constexpr auto&#160;</td><td class="memItemRight"><b>dimension</b></td></tr>
+<tr class="inherit_header pub_static_attribs_a03303"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_attribs_a03303')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Attributes inherited from <a class="el" href="a03303.html">gtsam::internal::ManifoldTraits&lt; SL4 &gt;</a></td></tr>
+<tr class="memitem:a900e659562b6e1deef63481461afdc4c inherit pub_static_attribs_a03303" id="r_a900e659562b6e1deef63481461afdc4c"><td class="memItemLeft">
+static constexpr auto&#160;</td><td class="memItemRight"><b>dimension</b></td></tr>
+<tr class="inherit_header pub_types_a03339"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03339')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03339.html">gtsam::internal::MatrixLieGroupTraits&lt; SL4, N &gt;</a></td></tr>
+<tr class="memitem:ab45cb6e6c36399167a2c21df61b40328 inherit pub_types_a03339" id="r_ab45cb6e6c36399167a2c21df61b40328"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>LieAlgebra</b></td></tr>
+<tr class="memitem:afff5c420498ecf8b6a769fbad8e624b9 inherit pub_types_a03339" id="r_afff5c420498ecf8b6a769fbad8e624b9"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+<tr class="memitem:ad910b13b10fe85170eac4cc25bfbe216 inherit pub_types_a03339" id="r_ad910b13b10fe85170eac4cc25bfbe216"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Jacobian</b></td></tr>
+<tr class="memitem:a9fdc53f383b4aadb8ae25ce295cb9b0c inherit pub_types_a03339" id="r_a9fdc53f383b4aadb8ae25ce295cb9b0c"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
+<tr class="inherit_header pub_types_a03275"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03275')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03275.html">gtsam::internal::LieGroupTraits&lt; SL4 &gt;</a></td></tr>
+<tr class="memitem:afc21e691a11b4b8bc2ed0abbe3782705 inherit pub_types_a03275" id="r_afc21e691a11b4b8bc2ed0abbe3782705"><td class="memItemLeft">
+typedef <a class="el" href="a03363.html">OptionalJacobian</a>&lt; dimension, dimension &gt;&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
+<tr class="memitem:aecd8dd24df157a38744ce7d52893ddef inherit pub_types_a03275" id="r_aecd8dd24df157a38744ce7d52893ddef"><td class="memItemLeft">
+typedef <a class="el" href="a04511.html">SL4</a>&#160;</td><td class="memItemRight"><b>ManifoldType</b></td></tr>
+<tr class="memitem:a7fd4430a3d3639de6e4a4bab2c82214d inherit pub_types_a03275" id="r_a7fd4430a3d3639de6e4a4bab2c82214d"><td class="memItemLeft">
+typedef Eigen::Matrix&lt; double, dimension, 1 &gt;&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+<tr class="memitem:a02152ea559c5ae9a08ae9ca3e63f7103 inherit pub_types_a03275" id="r_a02152ea559c5ae9a08ae9ca3e63f7103"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Manifold</b></td></tr>
+<tr class="memitem:a9d6e4e6485704f01932a19d2902b61ea inherit pub_types_a03275" id="r_a9d6e4e6485704f01932a19d2902b61ea"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>structure_category</b></td></tr>
+<tr class="memitem:aaf7299413c5ca8e5965e5f76582b8d6d inherit pub_types_a03275" id="r_aaf7299413c5ca8e5965e5f76582b8d6d"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>group_flavor</b></td></tr>
+<tr class="memitem:a2a536fb12d54ce916a1ed0bd0df9b258 inherit pub_types_a03275" id="r_a2a536fb12d54ce916a1ed0bd0df9b258"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Jacobian</b></td></tr>
+<tr class="inherit_header pub_types_a03303"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03303')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03303.html">gtsam::internal::ManifoldTraits&lt; SL4 &gt;</a></td></tr>
+<tr class="memitem:aecd8dd24df157a38744ce7d52893ddef inherit pub_types_a03303" id="r_aecd8dd24df157a38744ce7d52893ddef"><td class="memItemLeft">
+typedef <a class="el" href="a04511.html">SL4</a>&#160;</td><td class="memItemRight"><b>ManifoldType</b></td></tr>
+<tr class="memitem:aeabfd4c402e097eedb55ad543117d4e2 inherit pub_types_a03303" id="r_aeabfd4c402e097eedb55ad543117d4e2"><td class="memItemLeft">
+typedef <a class="el" href="a03291.html">manifold_tag</a>&#160;</td><td class="memItemRight"><b>structure_category</b></td></tr>
+<tr class="memitem:a7fd4430a3d3639de6e4a4bab2c82214d inherit pub_types_a03303" id="r_a7fd4430a3d3639de6e4a4bab2c82214d"><td class="memItemLeft">
+typedef Eigen::Matrix&lt; double, dimension, 1 &gt;&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+<tr class="memitem:afc21e691a11b4b8bc2ed0abbe3782705 inherit pub_types_a03303" id="r_afc21e691a11b4b8bc2ed0abbe3782705"><td class="memItemLeft">
+typedef <a class="el" href="a03363.html">OptionalJacobian</a>&lt; dimension, dimension &gt;&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/<a class="el" href="a00764_source.html">PCGSolver.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/<b>PCGSolver.cpp</b></li>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00590_source.html">SL4.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -151,7 +224,7 @@ const std::map&lt; <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04523.html">GaussianFactorGraphSystem</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04523.html">traits&lt; const SL4 &gt;</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

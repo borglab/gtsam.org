@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,33 +96,12 @@ $(function(){initNavTree('a05011.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::NonlinearConjugateGradientOptimizer Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::traits&lt; VariableSlots &gt; Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a05011.html">gtsam::NonlinearConjugateGradientOptimizer</a>, including all inherited members.</p>
-<table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_params</b>() const override (defined in <a class="el" href="a05011.html">gtsam::NonlinearConjugateGradientOptimizer</a>)</td><td class="entry"><a class="el" href="a05011.html">gtsam::NonlinearConjugateGradientOptimizer</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Base</b> typedef (defined in <a class="el" href="a05011.html">gtsam::NonlinearConjugateGradientOptimizer</a>)</td><td class="entry"><a class="el" href="a05011.html">gtsam::NonlinearConjugateGradientOptimizer</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a05103.html#acd13b9acb0d502edafac78c63815a9f1">defaultOptimize</a>()</td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05103.html#aae495c988fe69aec8ff0f4b4eba83bde">error</a>() const</td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a05103.html#a2ffd892baed9b62d31ce39a9243f3c78">graph</a>() const</td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05103.html#a7142764a820ba039a610074f855bce13">graph_</a></td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a05011.html#af3c7e05ebc6e57faf4b4754da4349131">iterate</a>() override</td><td class="entry"><a class="el" href="a05011.html">gtsam::NonlinearConjugateGradientOptimizer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05103.html#ad87eeae75b136c470a59df02ce3414aa">iterations</a>() const</td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a05011.html#afdd9a2c13cf10cd09e1631de75c04c70">NonlinearConjugateGradientOptimizer</a>(const NonlinearFactorGraph &amp;graph, const Values &amp;initialValues, const Parameters &amp;params=Parameters())</td><td class="entry"><a class="el" href="a05011.html">gtsam::NonlinearConjugateGradientOptimizer</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05103.html#ac6b7a069a596fda982cc4aa1ddc79324">NonlinearOptimizer</a>(const NonlinearFactorGraph &amp;graph, std::unique_ptr&lt; internal::NonlinearOptimizerState &gt; state)</td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a05011.html#ac2c578988b04c1027ec8a8ce57c4adce">optimize</a>() override</td><td class="entry"><a class="el" href="a05011.html">gtsam::NonlinearConjugateGradientOptimizer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05103.html#a3f5f50cd14a0b2862b886f8eb9ffaeeb">optimizeSafely</a>()</td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Parameters</b> typedef (defined in <a class="el" href="a05011.html">gtsam::NonlinearConjugateGradientOptimizer</a>)</td><td class="entry"><a class="el" href="a05011.html">gtsam::NonlinearConjugateGradientOptimizer</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>params_</b> (defined in <a class="el" href="a05011.html">gtsam::NonlinearConjugateGradientOptimizer</a>)</td><td class="entry"><a class="el" href="a05011.html">gtsam::NonlinearConjugateGradientOptimizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>shared_ptr</b> typedef (defined in <a class="el" href="a05011.html">gtsam::NonlinearConjugateGradientOptimizer</a>)</td><td class="entry"><a class="el" href="a05011.html">gtsam::NonlinearConjugateGradientOptimizer</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05103.html#a541e8b6b63d4bce95e56cf043416e10f">solve</a>(const GaussianFactorGraph &amp;gfg, const NonlinearOptimizerParams &amp;params) const</td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a05103.html#aa51bf89ae24b609a58201f224c36b7b8">state_</a></td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05103.html#ac7240fdeae0ca240e20e74ae593eb32c">values</a>() const</td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a05011.html#ab6b66f719378f19f3476473736bed1d2">~NonlinearConjugateGradientOptimizer</a>() override</td><td class="entry"><a class="el" href="a05011.html">gtsam::NonlinearConjugateGradientOptimizer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05103.html#ab852c8574086cacb316c579bcf19f294">~NonlinearOptimizer</a>()</td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-</table></div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="a05011.html">gtsam::traits&lt; VariableSlots &gt;</a>, including all inherited members.</p>
+</div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->

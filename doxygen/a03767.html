@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::traits&lt; Rot2 &gt; Struct Reference</title>
+<title>gtsam: gtsam::CumulativeSplineTrajectory&lt; T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,68 +96,296 @@ $(function(){initNavTree('a03767.html','','a03764'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; Rot2 &gt; Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::CumulativeSplineTrajectory&lt; T &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::traits&lt; Rot2 &gt;:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
- <div class="center">
-  <img src="a03767.png" usemap="#gtsam_3A_3Atraits_3C_20Rot2_20_3E_map" alt=""/>
-  <map id="gtsam_3A_3Atraits_3C_20Rot2_20_3E_map" name="gtsam_3A_3Atraits_3C_20Rot2_20_3E_map">
-<area href="a02923.html" alt="gtsam::internal::LieGroup&lt; Rot2 &gt;" shape="rect" coords="176,112,518,136"/>
-<area href="a02919.html" alt="gtsam::internal::LieGroupTraits&lt; Rot2 &gt;" shape="rect" coords="0,56,342,80"/>
-<area href="a03039.html" alt="gtsam::Testable&lt; Rot2 &gt;" shape="rect" coords="352,56,694,80"/>
-<area href="a02943.html" alt="gtsam::internal::GetDimensionImpl&lt; Rot2, Rot2::dimension &gt;" shape="rect" coords="0,0,342,24"/>
-  </map>
-</div></div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; Rot2 &gt;</a></td></tr>
-<tr class="memitem:a0b809ea2931c6c4a2ecbd17e8f3fab39 inherit pub_methods_a03039" id="r_a0b809ea2931c6c4a2ecbd17e8f3fab39"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>BOOST_CONCEPT_ASSERT</b> ((<a class="el" href="a03035.html">HasTestablePrereqs</a>&lt; <a class="el" href="a03759.html">Rot2</a> &gt;))</td></tr>
-<tr class="inherit_header pub_static_methods_a02919"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a02919')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a02919.html">gtsam::internal::LieGroupTraits&lt; Rot2 &gt;</a></td></tr>
-<tr class="memitem:acc954169d88d5d32f788ba1db02d6984 inherit pub_static_methods_a02919" id="r_acc954169d88d5d32f788ba1db02d6984"><td class="memItemLeft">
-static TangentVector&#160;</td><td class="memItemRight"><b>Logmap</b> (const <a class="el" href="a03759.html">Rot2</a> &amp;m, ChartJacobian Hm=boost::none)</td></tr>
-<tr class="memitem:a48361c84002a6b734d56001015734a92 inherit pub_static_methods_a02919" id="r_a48361c84002a6b734d56001015734a92"><td class="memItemLeft">
-static <a class="el" href="a03759.html">Rot2</a>&#160;</td><td class="memItemRight"><b>Expmap</b> (const TangentVector &amp;v, ChartJacobian Hv=boost::none)</td></tr>
-<tr class="memitem:ae34b9c6ec8da5f0b37c063f1696fa69c inherit pub_static_methods_a02919" id="r_ae34b9c6ec8da5f0b37c063f1696fa69c"><td class="memItemLeft">
-static <a class="el" href="a03759.html">Rot2</a>&#160;</td><td class="memItemRight"><b>Compose</b> (const <a class="el" href="a03759.html">Rot2</a> &amp;m1, const <a class="el" href="a03759.html">Rot2</a> &amp;m2, ChartJacobian H1=boost::none, ChartJacobian H2=boost::none)</td></tr>
-<tr class="memitem:acd03e0aa071ea42266a04beac00e842a inherit pub_static_methods_a02919" id="r_acd03e0aa071ea42266a04beac00e842a"><td class="memItemLeft">
-static <a class="el" href="a03759.html">Rot2</a>&#160;</td><td class="memItemRight"><b>Between</b> (const <a class="el" href="a03759.html">Rot2</a> &amp;m1, const <a class="el" href="a03759.html">Rot2</a> &amp;m2, ChartJacobian H1=boost::none, ChartJacobian H2=boost::none)</td></tr>
-<tr class="memitem:a58df2137b3c1e71bd7b8b008a004bd84 inherit pub_static_methods_a02919" id="r_a58df2137b3c1e71bd7b8b008a004bd84"><td class="memItemLeft">
-static <a class="el" href="a03759.html">Rot2</a>&#160;</td><td class="memItemRight"><b>Inverse</b> (const <a class="el" href="a03759.html">Rot2</a> &amp;m, ChartJacobian H=boost::none)</td></tr>
-<tr class="memitem:a100e35ada8c76cd82b3692d37ef5f40b inherit pub_static_methods_a02919" id="r_a100e35ada8c76cd82b3692d37ef5f40b"><td class="memItemLeft">
-static TangentVector&#160;</td><td class="memItemRight"><b>Local</b> (const <a class="el" href="a03759.html">Rot2</a> &amp;origin, const <a class="el" href="a03759.html">Rot2</a> &amp;other, ChartJacobian Horigin=boost::none, ChartJacobian Hother=boost::none)</td></tr>
-<tr class="memitem:a0c75624aef3367f913d17e4afe67bd42 inherit pub_static_methods_a02919" id="r_a0c75624aef3367f913d17e4afe67bd42"><td class="memItemLeft">
-static <a class="el" href="a03759.html">Rot2</a>&#160;</td><td class="memItemRight"><b>Retract</b> (const <a class="el" href="a03759.html">Rot2</a> &amp;origin, const TangentVector &amp;v, ChartJacobian Horigin=boost::none, ChartJacobian Hv=boost::none)</td></tr>
-<tr class="memitem:ad36e535be6899c627f2f796f6c9e605a inherit pub_static_methods_a02919" id="r_ad36e535be6899c627f2f796f6c9e605a"><td class="memItemLeft">
-static <a class="el" href="a03759.html">Rot2</a>&#160;</td><td class="memItemRight"><b>Identity</b> ()</td></tr>
-<tr class="inherit_header pub_static_methods_a02943"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a02943')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a02943.html">gtsam::internal::GetDimensionImpl&lt; Rot2, Rot2::dimension &gt;</a></td></tr>
-<tr class="memitem:ad7762628c56f5de5eae9eb8ba0ed8897 inherit pub_static_methods_a02943" id="r_ad7762628c56f5de5eae9eb8ba0ed8897"><td class="memItemLeft">
-static int&#160;</td><td class="memItemRight"><b>GetDimension</b> (const <a class="el" href="a03759.html">Rot2</a> &amp;)</td></tr>
-<tr class="inherit_header pub_static_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; Rot2 &gt;</a></td></tr>
-<tr class="memitem:a27b246d77898916925c676895348fedf inherit pub_static_methods_a03039" id="r_a27b246d77898916925c676895348fedf"><td class="memItemLeft">
-static void&#160;</td><td class="memItemRight"><b>Print</b> (const <a class="el" href="a03759.html">Rot2</a> &amp;m, const std::string &amp;str=&quot;&quot;)</td></tr>
-<tr class="memitem:a29a5699453b92070b31ca7fa42609d98 inherit pub_static_methods_a03039" id="r_a29a5699453b92070b31ca7fa42609d98"><td class="memItemLeft">
-static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el" href="a03759.html">Rot2</a> &amp;m1, const <a class="el" href="a03759.html">Rot2</a> &amp;m2, double tol=1e-8)</td></tr>
-<tr class="inherit_header pub_types_a02919"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a02919')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a02919.html">gtsam::internal::LieGroupTraits&lt; Rot2 &gt;</a></td></tr>
-<tr class="memitem:a065c169dbb6b9823694d19e045613145 inherit pub_types_a02919" id="r_a065c169dbb6b9823694d19e045613145"><td class="memItemLeft">
-typedef <a class="el" href="a02915.html">lie_group_tag</a>&#160;</td><td class="memItemRight"><b>structure_category</b></td></tr>
-<tr class="memitem:a23ac452851b342b7e72b28600732ab5c inherit pub_types_a02919" id="r_a23ac452851b342b7e72b28600732ab5c"><td class="memItemLeft"><a id="a23ac452851b342b7e72b28600732ab5c" name="a23ac452851b342b7e72b28600732ab5c"></a>enum &#160;</td><td class="memItemRight"></td></tr>
-<tr class="memitem:ac114ce5554f819cdb74ed223b8ad8c9a inherit pub_types_a02919" id="r_ac114ce5554f819cdb74ed223b8ad8c9a"><td class="memItemLeft">
-typedef <a class="el" href="a03759.html">Rot2</a>&#160;</td><td class="memItemRight"><b>ManifoldType</b></td></tr>
-<tr class="memitem:a6a1718140ca7d06da1f8662b891ec7ba inherit pub_types_a02919" id="r_a6a1718140ca7d06da1f8662b891ec7ba"><td class="memItemLeft">
-typedef Eigen::Matrix&lt; double, dimension, 1 &gt;&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
-<tr class="memitem:aeeca78cf1ef276a9cb72ff05b9e7ece8 inherit pub_types_a02919" id="r_aeeca78cf1ef276a9cb72ff05b9e7ece8"><td class="memItemLeft">
-typedef <a class="el" href="a02995.html">OptionalJacobian</a>&lt; dimension, dimension &gt;&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
-<tr class="memitem:ac851cf8141809789f7e205a86c1b8302 inherit pub_types_a02919" id="r_ac851cf8141809789f7e205a86c1b8302"><td class="memItemLeft">
-typedef <a class="el" href="a02883.html">multiplicative_group_tag</a>&#160;</td><td class="memItemRight"><b>group_flavor</b></td></tr>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
+class gtsam::CumulativeSplineTrajectory&lt; T &gt;</div><p>Factory for expressions that sample a cumulative spline on a Lie group. </p>
+<p>For control points \(T_0,\ldots,T_{N-1}\), define consecutive tangent increments \(\xi_i=\operatorname{Log}(T_{i-1}^{-1}T_i)\). The sampled curve is</p>
+<p class="formulaDsp">
+\[T(t)=T_0\operatorname{Exp}\left(\sum_{i=1}^{N-1}c_i(t)\xi_i\right),
+\]
+</p>
+<p>where each \(c_i\) is a shifted cumulative kernel. This is the cumulative Lie-group spline formulation of Sommer et al., "Efficient Derivative
+Computation for Cumulative B-Splines on Lie Groups" (CVPR 2020). Time-reversed Irwin-Hall CDF kernels produce uniform cardinal splines. Control points and the sample coordinate are expressions, so both may be optimized in a factor graph. The optional sample window keeps the resulting expression sparse by excluding control points outside the kernel support.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Lie-group value represented by each control point. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a8667aee3f61e48de1ef1ab3034f6e946" id="r_a8667aee3f61e48de1ef1ab3034f6e946"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8667aee3f61e48de1ef1ab3034f6e946">CumulativeSplineTrajectory</a> (double <a class="el" href="#a9ad161052547bc8a3d98dd5dfd7e3d0d">density</a>=1.0, const <a class="el" href="a03779.html">KernelBase</a> &amp;<a class="el" href="#a17e7bbd0ed47ab17bda442833c691137">kernel</a>=<a class="el" href="a00233.html#ad6ec7a4a99fa34a68a7b81e80b0ce829">kernels::IrwinHallCDF2</a>, const std::vector&lt; <a class="el" href="a06191.html">Expression</a>&lt; T &gt; &gt; &amp;points={}, bool <a class="el" href="#a5bb32eb462c1e54e3ad1eceda87512e5">padFront</a>=false)</td></tr>
+<tr class="memdesc:a8667aee3f61e48de1ef1ab3034f6e946"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a trajectory model.  <br /></td></tr>
+<tr class="memitem:a10db5e474cf3db28d2b034bb61951ea6" id="r_a10db5e474cf3db28d2b034bb61951ea6"><td class="memItemLeft"><a id="a10db5e474cf3db28d2b034bb61951ea6" name="a10db5e474cf3db28d2b034bb61951ea6"></a>
+&#160;</td><td class="memItemRight"><b>CumulativeSplineTrajectory</b> (double <a class="el" href="#a9ad161052547bc8a3d98dd5dfd7e3d0d">density</a>, bool <a class="el" href="#a5bb32eb462c1e54e3ad1eceda87512e5">padFront</a>)</td></tr>
+<tr class="memdesc:a10db5e474cf3db28d2b034bb61951ea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a trajectory with the default cubic kernel and padding mode. <br /></td></tr>
+<tr class="memitem:a9ad161052547bc8a3d98dd5dfd7e3d0d" id="r_a9ad161052547bc8a3d98dd5dfd7e3d0d"><td class="memItemLeft"><a id="a9ad161052547bc8a3d98dd5dfd7e3d0d" name="a9ad161052547bc8a3d98dd5dfd7e3d0d"></a>
+double&#160;</td><td class="memItemRight"><b>density</b> () const</td></tr>
+<tr class="memdesc:a9ad161052547bc8a3d98dd5dfd7e3d0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of control points per unit sample coordinate. <br /></td></tr>
+<tr class="memitem:a17e7bbd0ed47ab17bda442833c691137" id="r_a17e7bbd0ed47ab17bda442833c691137"><td class="memItemLeft"><a id="a17e7bbd0ed47ab17bda442833c691137" name="a17e7bbd0ed47ab17bda442833c691137"></a>
+const <a class="el" href="a03779.html">KernelBase</a> &amp;&#160;</td><td class="memItemRight"><b>kernel</b> () const</td></tr>
+<tr class="memdesc:a17e7bbd0ed47ab17bda442833c691137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kernel used to interpolate the trajectory. <br /></td></tr>
+<tr class="memitem:a5bb32eb462c1e54e3ad1eceda87512e5" id="r_a5bb32eb462c1e54e3ad1eceda87512e5"><td class="memItemLeft"><a id="a5bb32eb462c1e54e3ad1eceda87512e5" name="a5bb32eb462c1e54e3ad1eceda87512e5"></a>
+bool&#160;</td><td class="memItemRight"><b>padFront</b> () const</td></tr>
+<tr class="memdesc:a5bb32eb462c1e54e3ad1eceda87512e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether kernel support is padded before each control point. <br /></td></tr>
+<tr class="memitem:a8be33c3412393b349922eab37e4d491e" id="r_a8be33c3412393b349922eab37e4d491e"><td class="memItemLeft"><a id="a8be33c3412393b349922eab37e4d491e" name="a8be33c3412393b349922eab37e4d491e"></a>
+void&#160;</td><td class="memItemRight"><b>addControlPoint</b> (const <a class="el" href="a06191.html">Expression</a>&lt; T &gt; &amp;point)</td></tr>
+<tr class="memdesc:a8be33c3412393b349922eab37e4d491e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a key, constant, or computed expression as a control point. <br /></td></tr>
+<tr class="memitem:abab4d03b0022407fe89a46e91347d139" id="r_abab4d03b0022407fe89a46e91347d139"><td class="memItemLeft"><a id="abab4d03b0022407fe89a46e91347d139" name="abab4d03b0022407fe89a46e91347d139"></a>
+void&#160;</td><td class="memItemRight"><b>addControlPoint</b> (const T &amp;point)</td></tr>
+<tr class="memdesc:abab4d03b0022407fe89a46e91347d139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a constant value as a control point. <br /></td></tr>
+<tr class="memitem:ae0f1d4815e783fc219069729002b6cfa" id="r_ae0f1d4815e783fc219069729002b6cfa"><td class="memItemLeft"><a id="ae0f1d4815e783fc219069729002b6cfa" name="ae0f1d4815e783fc219069729002b6cfa"></a>
+const std::vector&lt; <a class="el" href="a06191.html">Expression</a>&lt; T &gt; &gt; &amp;&#160;</td><td class="memItemRight"><b>getControlPoints</b> () const</td></tr>
+<tr class="memdesc:ae0f1d4815e783fc219069729002b6cfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read-only access to the control-point expressions. <br /></td></tr>
+<tr class="memitem:ad897be7723314982e95af240d7b2bab1" id="r_ad897be7723314982e95af240d7b2bab1"><td class="memItemLeft"><a class="el" href="a06191.html">Expression</a>&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ad897be7723314982e95af240d7b2bab1">sampleTrajectory</a> (const Double_ &amp;timestamp, double windowStart=0.0, double windowEnd=-1.0) const</td></tr>
+<tr class="memdesc:ad897be7723314982e95af240d7b2bab1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an expression that samples the trajectory.  <br /></td></tr>
+<tr class="memitem:aff6743e3fb9b2d637f50b71e533a845c" id="r_aff6743e3fb9b2d637f50b71e533a845c"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="#aff6743e3fb9b2d637f50b71e533a845c">sampleTrajectory</a> (double timestamp, double windowStart=0.0, double windowEnd=-1.0) const</td></tr>
+<tr class="memdesc:aff6743e3fb9b2d637f50b71e533a845c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a02242.html#a355c8c681435089f6f0c244435078e16" title="A sample is a key-value pair from a sequence.">Sample</a> a constant-control trajectory at a numeric timestamp.  <br /></td></tr>
+<tr class="memitem:a015d9db5160b31983cbc6415be1cb386" id="r_a015d9db5160b31983cbc6415be1cb386"><td class="memItemLeft"><a class="el" href="#a186024a81ff8c11dde2c33bab8305ecf">TangentExpression</a>&#160;</td><td class="memItemRight"><a class="el" href="#a015d9db5160b31983cbc6415be1cb386">sampleTrajectoryDerivative</a> (const Double_ &amp;timestamp, double windowStart=0.0, double windowEnd=-1.0, size_t derivative=1) const</td></tr>
+<tr class="memdesc:a015d9db5160b31983cbc6415be1cb386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an expression for a trajectory derivative in the tangent space.  <br /></td></tr>
+<tr class="memitem:a3a5ee3a146987070e6afd10b35476f80" id="r_a3a5ee3a146987070e6afd10b35476f80"><td class="memItemLeft"><a class="el" href="#afd3ac990fd230bbf4ca9baf6554effb6">TangentVector</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3a5ee3a146987070e6afd10b35476f80">sampleTrajectoryDerivative</a> (double timestamp, double windowStart=0.0, double windowEnd=-1.0, size_t derivative=1) const</td></tr>
+<tr class="memdesc:a3a5ee3a146987070e6afd10b35476f80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate a tangent derivative for constant controls and numeric time.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:afd3ac990fd230bbf4ca9baf6554effb6" id="r_afd3ac990fd230bbf4ca9baf6554effb6"><td class="memItemLeft"><a id="afd3ac990fd230bbf4ca9baf6554effb6" name="afd3ac990fd230bbf4ca9baf6554effb6"></a>
+using&#160;</td><td class="memItemRight"><b>TangentVector</b> = typename <a class="el" href="a03203.html">traits</a>&lt;T&gt;::TangentVector</td></tr>
+<tr class="memdesc:afd3ac990fd230bbf4ca9baf6554effb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tangent-space value associated with one trajectory sample. <br /></td></tr>
+<tr class="memitem:a186024a81ff8c11dde2c33bab8305ecf" id="r_a186024a81ff8c11dde2c33bab8305ecf"><td class="memItemLeft"><a id="a186024a81ff8c11dde2c33bab8305ecf" name="a186024a81ff8c11dde2c33bab8305ecf"></a>
+using&#160;</td><td class="memItemRight"><b>TangentExpression</b> = <a class="el" href="a06191.html">Expression</a>&lt;<a class="el" href="#afd3ac990fd230bbf4ca9baf6554effb6">TangentVector</a>&gt;</td></tr>
+<tr class="memdesc:a186024a81ff8c11dde2c33bab8305ecf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a06191.html" title="Expression class that supports automatic differentiation.">Expression</a> whose value is a trajectory tangent vector. <br /></td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/geometry/<a class="el" href="a00299_source.html">Rot2.h</a></li>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a8667aee3f61e48de1ef1ab3034f6e946" name="a8667aee3f61e48de1ef1ab3034f6e946"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8667aee3f61e48de1ef1ab3034f6e946">&#9670;&#160;</a></span>CumulativeSplineTrajectory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a03767.html">gtsam::CumulativeSplineTrajectory</a>&lt; T &gt;::CumulativeSplineTrajectory </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>density</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1.0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a03779.html">KernelBase</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>kernel</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="a00233.html#ad6ec7a4a99fa34a68a7b81e80b0ce829">kernels::IrwinHallCDF2</a></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="a06191.html">Expression</a>&lt; T &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>points</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>padFront</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a trajectory model. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="#a9ad161052547bc8a3d98dd5dfd7e3d0d" title="Number of control points per unit sample coordinate.">density</a></td><td>Number of control points per unit sample coordinate. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a17e7bbd0ed47ab17bda442833c691137" title="Kernel used to interpolate the trajectory.">kernel</a></td><td>Integrated interpolation kernel. The default produces a cubic cardinal spline. </td></tr>
+    <tr><td class="paramname">points</td><td>Initial control-point expressions. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a5bb32eb462c1e54e3ad1eceda87512e5" title="Whether kernel support is padded before each control point.">padFront</a></td><td>If true, place the kernel support before each control point; otherwise place it after the point. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ad897be7723314982e95af240d7b2bab1" name="ad897be7723314982e95af240d7b2bab1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad897be7723314982e95af240d7b2bab1">&#9670;&#160;</a></span>sampleTrajectory() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a06191.html">Expression</a>&lt; T &gt; <a class="el" href="a03767.html">gtsam::CumulativeSplineTrajectory</a>&lt; T &gt;::sampleTrajectory </td>
+          <td>(</td>
+          <td class="paramtype">const Double_ &amp;</td>          <td class="paramname"><span class="paramname"><em>timestamp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>windowStart</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>windowEnd</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1.0</span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create an expression that samples the trajectory. </p>
+<p><span class="tt">windowStart</span> and <span class="tt">windowEnd</span> bound the plausible sample coordinate and prune unrelated control points from the expression. A negative <span class="tt">windowEnd</span> includes all remaining control points. </p>
+
+</div>
+</div>
+<a id="aff6743e3fb9b2d637f50b71e533a845c" name="aff6743e3fb9b2d637f50b71e533a845c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff6743e3fb9b2d637f50b71e533a845c">&#9670;&#160;</a></span>sampleTrajectory() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="a03767.html">gtsam::CumulativeSplineTrajectory</a>&lt; T &gt;::sampleTrajectory </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>timestamp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>windowStart</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>windowEnd</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1.0</span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a02242.html#a355c8c681435089f6f0c244435078e16" title="A sample is a key-value pair from a sequence.">Sample</a> a constant-control trajectory at a numeric timestamp. </p>
+<p>This value-based overload evaluates the same expression tree as the expression API and is convenient for language wrappers and visualization. Every control point must be constant; keyed expressions require the expression overload and a <span class="tt"><a class="el" href="a06527.html" title="A non-templated config holding any types of Manifold-group elements.">Values</a></span> assignment. </p>
+
+</div>
+</div>
+<a id="a015d9db5160b31983cbc6415be1cb386" name="a015d9db5160b31983cbc6415be1cb386"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a015d9db5160b31983cbc6415be1cb386">&#9670;&#160;</a></span>sampleTrajectoryDerivative() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a186024a81ff8c11dde2c33bab8305ecf">TangentExpression</a> <a class="el" href="a03767.html">gtsam::CumulativeSplineTrajectory</a>&lt; T &gt;::sampleTrajectoryDerivative </td>
+          <td>(</td>
+          <td class="paramtype">const Double_ &amp;</td>          <td class="paramname"><span class="paramname"><em>timestamp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>windowStart</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>windowEnd</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1.0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>derivative</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create an expression for a trajectory derivative in the tangent space. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">derivative</td><td>Derivative order: 1 for velocity, 2 for acceleration, and so on. Zero returns the cumulative tangent displacement. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3a5ee3a146987070e6afd10b35476f80" name="a3a5ee3a146987070e6afd10b35476f80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a5ee3a146987070e6afd10b35476f80">&#9670;&#160;</a></span>sampleTrajectoryDerivative() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#afd3ac990fd230bbf4ca9baf6554effb6">TangentVector</a> <a class="el" href="a03767.html">gtsam::CumulativeSplineTrajectory</a>&lt; T &gt;::sampleTrajectoryDerivative </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>timestamp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>windowStart</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>windowEnd</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1.0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>derivative</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Evaluate a tangent derivative for constant controls and numeric time. </p>
+<p>The result is the derivative of the accumulated tangent coordinate. It is not a body-frame velocity without the appropriate Lie-group Jacobian. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/basis/<a class="el" href="a00209_source.html">CumulativeSplineTrajectory.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -172,7 +400,7 @@ typedef <a class="el" href="a02883.html">multiplicative_group_tag</a>&#160;</td>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a03767.html">traits&lt; Rot2 &gt;</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a03767.html">CumulativeSplineTrajectory</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::detail::NoiseModelFactorAliases&lt; T1, T2, T3, T4, T5 &gt; Struct Template Reference</title>
+<title>gtsam: gtsam::FlatGaussianFactor Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,25 +96,148 @@ $(function(){initNavTree('a05079.html','','a05076'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::detail::NoiseModelFactorAliases&lt; T1, T2, T3, T4, T5 &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::FlatGaussianFactor Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Optional preindexed kernels for matrix-free <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> factors. </p>
+<p>A <a class="el" href="a05123.html" title="An abstract virtual base class for JacobianFactor and HessianFactor.">GaussianFactor</a> can additionally implement this interface so iterative solvers can apply it using scalar offsets and block slots compiled from the solver's ordering. This avoids rebuilding <a class="el" href="a05531.html" title="VectorValues represents a collection of vector-valued variables associated each with a unique integer...">VectorValues</a> and keyed maps in hot loops without changing the factor's ordinary <a class="el" href="a05123.html" title="An abstract virtual base class for JacobianFactor and HessianFactor.">GaussianFactor</a> interface. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::FlatGaussianFactor:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="a05079.png" usemap="#gtsam_3A_3AFlatGaussianFactor_map" alt=""/>
+  <map id="gtsam_3A_3AFlatGaussianFactor_map" name="gtsam_3A_3AFlatGaussianFactor_map">
+<area href="a05023.html" title="Common interface for compact batch Jacobian factors." alt="gtsam::BatchJacobianFactorBase" shape="rect" coords="167,56,492,80"/>
+<area href="a07059.html" title="RegularImplicitSchurFactor." alt="gtsam::RegularImplicitSchurFactor&lt; CAMERA &gt;" shape="rect" coords="502,56,827,80"/>
+<area href="a05027.html" alt="gtsam::BatchJacobianFactor&lt; ErrorDim, BlockDims... &gt;" shape="rect" coords="0,112,325,136"/>
+<area href="a05027.html" title="Fixed-dimension row-sparse batch Jacobian factor." alt="gtsam::BatchJacobianFactor&lt; ErrorDim, BlockDims &gt;" shape="rect" coords="335,112,660,136"/>
+  </map>
+</div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:ae7ced93a48395163ed8de9e4c6c672a7" id="r_ae7ced93a48395163ed8de9e4c6c672a7"><td class="memItemLeft"><a id="ae7ced93a48395163ed8de9e4c6c672a7" name="ae7ced93a48395163ed8de9e4c6c672a7"></a>
-using&#160;</td><td class="memItemRight"><b>X1</b> = T1</td></tr>
-<tr class="memitem:ae154c920119749cb3d48d1a1bc3f42ec" id="r_ae154c920119749cb3d48d1a1bc3f42ec"><td class="memItemLeft"><a id="ae154c920119749cb3d48d1a1bc3f42ec" name="ae154c920119749cb3d48d1a1bc3f42ec"></a>
-using&#160;</td><td class="memItemRight"><b>X2</b> = T2</td></tr>
-<tr class="memitem:a2826499ad56a13f4429b2beb4ca23e9f" id="r_a2826499ad56a13f4429b2beb4ca23e9f"><td class="memItemLeft"><a id="a2826499ad56a13f4429b2beb4ca23e9f" name="a2826499ad56a13f4429b2beb4ca23e9f"></a>
-using&#160;</td><td class="memItemRight"><b>X3</b> = T3</td></tr>
-<tr class="memitem:a5cb368bad295967e9cbb7239924ecfdd" id="r_a5cb368bad295967e9cbb7239924ecfdd"><td class="memItemLeft"><a id="a5cb368bad295967e9cbb7239924ecfdd" name="a5cb368bad295967e9cbb7239924ecfdd"></a>
-using&#160;</td><td class="memItemRight"><b>X4</b> = T4</td></tr>
-<tr class="memitem:a000b55f986a5a00e06a9012c3b47e211" id="r_a000b55f986a5a00e06a9012c3b47e211"><td class="memItemLeft"><a id="a000b55f986a5a00e06a9012c3b47e211" name="a000b55f986a5a00e06a9012c3b47e211"></a>
-using&#160;</td><td class="memItemRight"><b>X5</b> = T5</td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a4f734f7fa277be5f2ca6ad066dd796ca" id="r_a4f734f7fa277be5f2ca6ad066dd796ca"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a4f734f7fa277be5f2ca6ad066dd796ca">multiplyHessianAdd</a> (double alpha, const std::vector&lt; size_t &gt; &amp;scalarOffsets, const double *x, double *y) const =0</td></tr>
+<tr class="memdesc:a4f734f7fa277be5f2ca6ad066dd796ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add this factor's Hessian-vector product to a flat output vector.  <br /></td></tr>
+<tr class="memitem:a47a1cf67d98cbaf2ff68c5eac3f78d71" id="r_a47a1cf67d98cbaf2ff68c5eac3f78d71"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a47a1cf67d98cbaf2ff68c5eac3f78d71">gradientAtZeroAdd</a> (const std::vector&lt; size_t &gt; &amp;scalarOffsets, double *gradient) const =0</td></tr>
+<tr class="memdesc:a47a1cf67d98cbaf2ff68c5eac3f78d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add this factor's zero-point gradient to a flat output vector.  <br /></td></tr>
+<tr class="memitem:a83d3bd4996043f2515732ea866759102" id="r_a83d3bd4996043f2515732ea866759102"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a83d3bd4996043f2515732ea866759102">hessianBlockDiagonalAdd</a> (const std::vector&lt; size_t &gt; &amp;blockSlots, std::vector&lt; Matrix &gt; *diagonalBlocks) const =0</td></tr>
+<tr class="memdesc:a83d3bd4996043f2515732ea866759102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add this factor's Hessian diagonal to ordered variable blocks.  <br /></td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/<a class="el" href="a01157_source.html">NonlinearFactor.h</a></li>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a47a1cf67d98cbaf2ff68c5eac3f78d71" name="a47a1cf67d98cbaf2ff68c5eac3f78d71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47a1cf67d98cbaf2ff68c5eac3f78d71">&#9670;&#160;</a></span>gradientAtZeroAdd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void gtsam::FlatGaussianFactor::gradientAtZeroAdd </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; size_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>scalarOffsets</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *</td>          <td class="paramname"><span class="paramname"><em>gradient</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add this factor's zero-point gradient to a flat output vector. </p>
+
+<p>Implemented in <a class="el" href="a05027.html#a3c1a1acaf781469984c2657816336ec2">gtsam::BatchJacobianFactor&lt; ErrorDim, BlockDims &gt;</a>, <a class="el" href="a05027.html#a3c1a1acaf781469984c2657816336ec2">gtsam::BatchJacobianFactor&lt; ErrorDim, BlockDims... &gt;</a>, <a class="el" href="a05023.html#aa8f86bdfb4b712e4f6b7f3e954ce7963">gtsam::BatchJacobianFactorBase</a>, and <a class="el" href="a07059.html#a05c6ac6af4d50fcfdb84be7d506390ae">gtsam::RegularImplicitSchurFactor&lt; CAMERA &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a83d3bd4996043f2515732ea866759102" name="a83d3bd4996043f2515732ea866759102"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83d3bd4996043f2515732ea866759102">&#9670;&#160;</a></span>hessianBlockDiagonalAdd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void gtsam::FlatGaussianFactor::hessianBlockDiagonalAdd </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; size_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>blockSlots</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Matrix &gt; *</td>          <td class="paramname"><span class="paramname"><em>diagonalBlocks</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add this factor's Hessian diagonal to ordered variable blocks. </p>
+
+<p>Implemented in <a class="el" href="a05027.html#a733a5fa9c29a5bfd1907b6e1e959dac8">gtsam::BatchJacobianFactor&lt; ErrorDim, BlockDims &gt;</a>, <a class="el" href="a05027.html#a733a5fa9c29a5bfd1907b6e1e959dac8">gtsam::BatchJacobianFactor&lt; ErrorDim, BlockDims... &gt;</a>, <a class="el" href="a05023.html#ae709955d98b38eb0c699f2821a86d351">gtsam::BatchJacobianFactorBase</a>, and <a class="el" href="a07059.html#a0a5b36192b265a412cd176a15d88373b">gtsam::RegularImplicitSchurFactor&lt; CAMERA &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a4f734f7fa277be5f2ca6ad066dd796ca" name="a4f734f7fa277be5f2ca6ad066dd796ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f734f7fa277be5f2ca6ad066dd796ca">&#9670;&#160;</a></span>multiplyHessianAdd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void gtsam::FlatGaussianFactor::multiplyHessianAdd </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>alpha</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; size_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>scalarOffsets</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add this factor's Hessian-vector product to a flat output vector. </p>
+
+<p>Implemented in <a class="el" href="a05027.html#aa8f9bf5777788b17f7032c4a07c292db">gtsam::BatchJacobianFactor&lt; ErrorDim, BlockDims &gt;</a>, <a class="el" href="a05027.html#aa8f9bf5777788b17f7032c4a07c292db">gtsam::BatchJacobianFactor&lt; ErrorDim, BlockDims... &gt;</a>, <a class="el" href="a05023.html#acedcf466904774e31ed4677b83eae5e0">gtsam::BatchJacobianFactorBase</a>, and <a class="el" href="a07059.html#a40761cd0fa5084008c72afd9e1acd513">gtsam::RegularImplicitSchurFactor&lt; CAMERA &gt;</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/<a class="el" href="a01061_source.html">FlatGaussianFactor.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/<a class="el" href="a00947.html">FlatGaussianFactor.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -129,7 +252,7 @@ using&#160;</td><td class="memItemRight"><b>X5</b> = T5</td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><b>detail</b></li><li class="navelem"><a href="a05079.html">NoiseModelFactorAliases&lt; T1, T2, T3, T4, T5 &gt;</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a05079.html">FlatGaussianFactor</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

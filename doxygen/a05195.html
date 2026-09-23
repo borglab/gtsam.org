@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::NoMatchFoundForFixed Class Reference</title>
+<title>gtsam: gtsam::KalmanFilter Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,38 +96,499 @@ $(function(){initNavTree('a05195.html','','a05192'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::NoMatchFoundForFixed Class Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::KalmanFilter Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::NoMatchFoundForFixed:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
- <div class="center">
-  <img src="a05195.png" alt=""/>
- </div></div>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Kalman Filter class. </p>
+<p>Maintains a <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> density under linear-Gaussian motion and measurement models using the square-root information form.</p>
+<p>The filter is functional; it does not maintain internal state. Instead:</p><ul>
+<li>Use <span class="tt"><a class="el" href="#acb9daee749e2ef26748b521997f07e5c" title="Create the initial state (prior density at time ).">init()</a></span> to create an initial filter state,</li>
+<li>Call <span class="tt"><a class="el" href="#ab13a9d493e5a274d55930633f3465e9e" title="Predict the next state .">predict()</a></span> and <span class="tt"><a class="el" href="#a7cfd02544165e7a80eee93ab9e04fb57" title="Update the Kalman filter with a measurement.">update()</a></span> to create new states. </li>
+</ul>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a835c74f98c29fa076579e71fde854413" id="r_a835c74f98c29fa076579e71fde854413"><td class="memItemLeft"><a id="a835c74f98c29fa076579e71fde854413" name="a835c74f98c29fa076579e71fde854413"></a>
-&#160;</td><td class="memItemRight"><b>NoMatchFoundForFixed</b> (size_t M1, size_t N1, size_t M2, size_t N2) noexcept</td></tr>
-<tr class="memitem:adb79aff375b9f812c09b2fda68655656" id="r_adb79aff375b9f812c09b2fda68655656"><td class="memItemLeft"><a id="adb79aff375b9f812c09b2fda68655656" name="adb79aff375b9f812c09b2fda68655656"></a>
-GTSAM_EXPORT const char *&#160;</td><td class="memItemRight"><b>what</b> () const noexcept override</td></tr>
+<tr class="memitem:a14c14a0e743a0cdf5996622455406d68" id="r_a14c14a0e743a0cdf5996622455406d68"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a14c14a0e743a0cdf5996622455406d68">KalmanFilter</a> (size_t n, <a class="el" href="#a0e169084c003be746ef37e980b8266a0">Factorization</a> method=KALMANFILTER_DEFAULT_FACTORIZATION)</td></tr>
+<tr class="memdesc:a14c14a0e743a0cdf5996622455406d68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="memitem:acb9daee749e2ef26748b521997f07e5c" id="r_acb9daee749e2ef26748b521997f07e5c"><td class="memItemLeft"><a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">State</a>&#160;</td><td class="memItemRight"><a class="el" href="#acb9daee749e2ef26748b521997f07e5c">init</a> (const Vector &amp;x0, const SharedDiagonal &amp;P0) const</td></tr>
+<tr class="memdesc:acb9daee749e2ef26748b521997f07e5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the initial state (prior density at time \( k=0 \)).  <br /></td></tr>
+<tr class="memitem:a90e5b9b28e841532e440df526dae5724" id="r_a90e5b9b28e841532e440df526dae5724"><td class="memItemLeft"><a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">State</a>&#160;</td><td class="memItemRight"><a class="el" href="#a90e5b9b28e841532e440df526dae5724">init</a> (const Vector &amp;x0, const Matrix &amp;P0) const</td></tr>
+<tr class="memdesc:a90e5b9b28e841532e440df526dae5724"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the initial state with a full covariance matrix.  <br /></td></tr>
+<tr class="memitem:ac986e5f05f8b7f238263aabc5531bad2" id="r_ac986e5f05f8b7f238263aabc5531bad2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac986e5f05f8b7f238263aabc5531bad2">print</a> (const std::string &amp;s=&quot;&quot;) const</td></tr>
+<tr class="memdesc:ac986e5f05f8b7f238263aabc5531bad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the Kalman filter details.  <br /></td></tr>
+<tr class="memitem:ab13a9d493e5a274d55930633f3465e9e" id="r_ab13a9d493e5a274d55930633f3465e9e"><td class="memItemLeft"><a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">State</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab13a9d493e5a274d55930633f3465e9e">predict</a> (const <a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">State</a> &amp;p, const Matrix &amp;F, const Matrix &amp;B, const Vector &amp;u, const SharedDiagonal &amp;modelQ) const</td></tr>
+<tr class="memdesc:ab13a9d493e5a274d55930633f3465e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predict the next state \( P(x_{k+1}|Z^k) \).  <br /></td></tr>
+<tr class="memitem:ae4cba8671520881113b27c75123fc9f8" id="r_ae4cba8671520881113b27c75123fc9f8"><td class="memItemLeft"><a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">State</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae4cba8671520881113b27c75123fc9f8">predictQ</a> (const <a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">State</a> &amp;p, const Matrix &amp;F, const Matrix &amp;B, const Vector &amp;u, const Matrix &amp;Q) const</td></tr>
+<tr class="memdesc:ae4cba8671520881113b27c75123fc9f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predict the next state with a full covariance matrix.  <br /></td></tr>
+<tr class="memitem:a66542be01d45b59d0a77050454080a84" id="r_a66542be01d45b59d0a77050454080a84"><td class="memItemLeft"><a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">State</a>&#160;</td><td class="memItemRight"><a class="el" href="#a66542be01d45b59d0a77050454080a84">predict2</a> (const <a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">State</a> &amp;p, const Matrix &amp;A0, const Matrix &amp;A1, const Vector &amp;b, const SharedDiagonal &amp;model=nullptr) const</td></tr>
+<tr class="memdesc:a66542be01d45b59d0a77050454080a84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predict the next state using a <a class="el" href="a05123.html" title="An abstract virtual base class for JacobianFactor and HessianFactor.">GaussianFactor</a> motion model.  <br /></td></tr>
+<tr class="memitem:a7cfd02544165e7a80eee93ab9e04fb57" id="r_a7cfd02544165e7a80eee93ab9e04fb57"><td class="memItemLeft"><a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">State</a>&#160;</td><td class="memItemRight"><a class="el" href="#a7cfd02544165e7a80eee93ab9e04fb57">update</a> (const <a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">State</a> &amp;p, const Matrix &amp;H, const Vector &amp;z, const SharedDiagonal &amp;model) const</td></tr>
+<tr class="memdesc:a7cfd02544165e7a80eee93ab9e04fb57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the Kalman filter with a measurement.  <br /></td></tr>
+<tr class="memitem:aba4db08db961ccfb24006f62a7fe6643" id="r_aba4db08db961ccfb24006f62a7fe6643"><td class="memItemLeft"><a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">State</a>&#160;</td><td class="memItemRight"><a class="el" href="#aba4db08db961ccfb24006f62a7fe6643">updateQ</a> (const <a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">State</a> &amp;p, const Matrix &amp;H, const Vector &amp;z, const Matrix &amp;R) const</td></tr>
+<tr class="memdesc:aba4db08db961ccfb24006f62a7fe6643"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the Kalman filter with a measurement using a full covariance matrix.  <br /></td></tr>
+<tr class="memitem:aafcd31469fa8e94aeacd0ca70e0f741f" id="r_aafcd31469fa8e94aeacd0ca70e0f741f"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#aafcd31469fa8e94aeacd0ca70e0f741f">dim</a> () const</td></tr>
+<tr class="memdesc:aafcd31469fa8e94aeacd0ca70e0f741f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the dimensionality of the state.  <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:ae930bcd87a2f8f1c4c38a7dd4b9403cb" id="r_ae930bcd87a2f8f1c4c38a7dd4b9403cb"><td class="memItemLeft"><a id="ae930bcd87a2f8f1c4c38a7dd4b9403cb" name="ae930bcd87a2f8f1c4c38a7dd4b9403cb"></a>
-const size_t&#160;</td><td class="memItemRight"><b>M1_</b></td></tr>
-<tr class="memitem:a71551a10dbdeb738f4c9a1774af35536" id="r_a71551a10dbdeb738f4c9a1774af35536"><td class="memItemLeft"><a id="a71551a10dbdeb738f4c9a1774af35536" name="a71551a10dbdeb738f4c9a1774af35536"></a>
-const size_t&#160;</td><td class="memItemRight"><b>N1_</b></td></tr>
-<tr class="memitem:a9f02196218f40d8393e39c2adf643687" id="r_a9f02196218f40d8393e39c2adf643687"><td class="memItemLeft"><a id="a9f02196218f40d8393e39c2adf643687" name="a9f02196218f40d8393e39c2adf643687"></a>
-const size_t&#160;</td><td class="memItemRight"><b>M2_</b></td></tr>
-<tr class="memitem:a790b35735d79922bada444d50bf925b5" id="r_a790b35735d79922bada444d50bf925b5"><td class="memItemLeft"><a id="a790b35735d79922bada444d50bf925b5" name="a790b35735d79922bada444d50bf925b5"></a>
-const size_t&#160;</td><td class="memItemRight"><b>N2_</b></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a511b92f76e4d965f50f88a805af12ff8" id="r_a511b92f76e4d965f50f88a805af12ff8"><td class="memItemLeft">static <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><a class="el" href="#a511b92f76e4d965f50f88a805af12ff8">step</a> (const <a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">State</a> &amp;p)</td></tr>
+<tr class="memdesc:a511b92f76e4d965f50f88a805af12ff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the step index \( k \) (starts at 0, incremented at each predict step).  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a0e169084c003be746ef37e980b8266a0" id="r_a0e169084c003be746ef37e980b8266a0"><td class="memItemLeft"><a id="a0e169084c003be746ef37e980b8266a0" name="a0e169084c003be746ef37e980b8266a0"></a>enum &#160;</td><td class="memItemRight"><a class="el" href="#a0e169084c003be746ef37e980b8266a0">Factorization</a> { <b>QR</b>
+, <b>CHOLESKY</b>
+ }</td></tr>
+<tr class="memdesc:a0e169084c003be746ef37e980b8266a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the factorization variant to use. <br /></td></tr>
+<tr class="memitem:a943f07d46bc01eac1070cd08fc193cc1" id="r_a943f07d46bc01eac1070cd08fc193cc1"><td class="memItemLeft"><a id="a943f07d46bc01eac1070cd08fc193cc1" name="a943f07d46bc01eac1070cd08fc193cc1"></a>
+typedef GaussianDensity::shared_ptr&#160;</td><td class="memItemRight"><b>State</b></td></tr>
+<tr class="memdesc:a943f07d46bc01eac1070cd08fc193cc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Kalman filter state, represented as a shared pointer to a <a class="el" href="a05115.html" title="A GaussianDensity is a GaussianConditional without parents.">GaussianDensity</a>. <br /></td></tr>
 </table>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a14c14a0e743a0cdf5996622455406d68" name="a14c14a0e743a0cdf5996622455406d68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14c14a0e743a0cdf5996622455406d68">&#9670;&#160;</a></span>KalmanFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gtsam::KalmanFilter::KalmanFilter </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a0e169084c003be746ef37e980b8266a0">Factorization</a></td>          <td class="paramname"><span class="paramname"><em>method</em></span><span class="paramdefsep"> = </span><span class="paramdefval">KALMANFILTER_DEFAULT_FACTORIZATION</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Dimensionality of the state. </td></tr>
+    <tr><td class="paramname">method</td><td><a class="el" href="#a0e169084c003be746ef37e980b8266a0" title="Specifies the factorization variant to use.">Factorization</a> method (default: QR unless compile-flag set). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="aafcd31469fa8e94aeacd0ca70e0f741f" name="aafcd31469fa8e94aeacd0ca70e0f741f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafcd31469fa8e94aeacd0ca70e0f741f">&#9670;&#160;</a></span>dim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t gtsam::KalmanFilter::dim </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the dimensionality of the state. </p>
+<dl class="section return"><dt>Returns</dt><dd>Dimensionality of the state. </dd></dl>
+
+</div>
+</div>
+<a id="a90e5b9b28e841532e440df526dae5724" name="a90e5b9b28e841532e440df526dae5724"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90e5b9b28e841532e440df526dae5724">&#9670;&#160;</a></span>init() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">KalmanFilter::State</a> gtsam::KalmanFilter::init </td>
+          <td>(</td>
+          <td class="paramtype">const Vector &amp;</td>          <td class="paramname"><span class="paramname"><em>x0</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Matrix &amp;</td>          <td class="paramname"><span class="paramname"><em>P0</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create the initial state with a full covariance matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x0</td><td>Initial state estimate. </td></tr>
+    <tr><td class="paramname">P0</td><td>Full covariance matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Initial Kalman filter state. </dd></dl>
+
+</div>
+</div>
+<a id="acb9daee749e2ef26748b521997f07e5c" name="acb9daee749e2ef26748b521997f07e5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb9daee749e2ef26748b521997f07e5c">&#9670;&#160;</a></span>init() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">KalmanFilter::State</a> gtsam::KalmanFilter::init </td>
+          <td>(</td>
+          <td class="paramtype">const Vector &amp;</td>          <td class="paramname"><span class="paramname"><em>x0</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const SharedDiagonal &amp;</td>          <td class="paramname"><span class="paramname"><em>P0</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create the initial state (prior density at time \( k=0 \)). </p>
+<p>In Kalman Filter notation:</p><ul>
+<li>\( x_{0|0} \): Initial state estimate.</li>
+<li>\( P_{0|0} \): Initial covariance matrix.</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x0</td><td>Estimate of the state at time 0 ( \( x_{0|0} \)). </td></tr>
+    <tr><td class="paramname">P0</td><td>Covariance matrix ( \( P_{0|0} \)), given as a diagonal <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> model. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Initial Kalman filter state. </dd></dl>
+
+</div>
+</div>
+<a id="ab13a9d493e5a274d55930633f3465e9e" name="ab13a9d493e5a274d55930633f3465e9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab13a9d493e5a274d55930633f3465e9e">&#9670;&#160;</a></span>predict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">KalmanFilter::State</a> gtsam::KalmanFilter::predict </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">State</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Matrix &amp;</td>          <td class="paramname"><span class="paramname"><em>F</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Matrix &amp;</td>          <td class="paramname"><span class="paramname"><em>B</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector &amp;</td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const SharedDiagonal &amp;</td>          <td class="paramname"><span class="paramname"><em>modelQ</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Predict the next state \( P(x_{k+1}|Z^k) \). </p>
+<p>In Kalman Filter notation:</p><ul>
+<li>\( x_{k+1|k} \): Predicted state.</li>
+<li>\( P_{k+1|k} \): Predicted covariance.</li>
+</ul>
+<p>Motion model:   </p><p class="formulaDsp">
+\[x_{k+1} = F \cdot x_k + B \cdot u_k + w
+\]
+</p>
+<p> where \( w \) is zero-mean <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> noise with covariance \( Q \).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>Previous state ( \( x_k \)). </td></tr>
+    <tr><td class="paramname">F</td><td><a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1" title="The Kalman filter state, represented as a shared pointer to a GaussianDensity.">State</a> transition matrix ( \( F \)). </td></tr>
+    <tr><td class="paramname">B</td><td>Control input matrix ( \( B \)). </td></tr>
+    <tr><td class="paramname">u</td><td>Control vector ( \( u_k \)). </td></tr>
+    <tr><td class="paramname">modelQ</td><td>Noise model ( \( Q \), diagonal <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Predicted state ( \( x_{k+1|k} \)). </dd></dl>
+
+</div>
+</div>
+<a id="a66542be01d45b59d0a77050454080a84" name="a66542be01d45b59d0a77050454080a84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66542be01d45b59d0a77050454080a84">&#9670;&#160;</a></span>predict2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">KalmanFilter::State</a> gtsam::KalmanFilter::predict2 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">State</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Matrix &amp;</td>          <td class="paramname"><span class="paramname"><em>A0</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Matrix &amp;</td>          <td class="paramname"><span class="paramname"><em>A1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector &amp;</td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const SharedDiagonal &amp;</td>          <td class="paramname"><span class="paramname"><em>model</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Predict the next state using a <a class="el" href="a05123.html" title="An abstract virtual base class for JacobianFactor and HessianFactor.">GaussianFactor</a> motion model. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>Previous state. </td></tr>
+    <tr><td class="paramname">A0</td><td><a class="el" href="a04899.html">Factor</a> matrix. </td></tr>
+    <tr><td class="paramname">A1</td><td><a class="el" href="a04899.html">Factor</a> matrix. </td></tr>
+    <tr><td class="paramname">b</td><td>Constant term vector. </td></tr>
+    <tr><td class="paramname">model</td><td>Noise model (optional). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Predicted state. </dd></dl>
+
+</div>
+</div>
+<a id="ae4cba8671520881113b27c75123fc9f8" name="ae4cba8671520881113b27c75123fc9f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4cba8671520881113b27c75123fc9f8">&#9670;&#160;</a></span>predictQ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">KalmanFilter::State</a> gtsam::KalmanFilter::predictQ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">State</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Matrix &amp;</td>          <td class="paramname"><span class="paramname"><em>F</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Matrix &amp;</td>          <td class="paramname"><span class="paramname"><em>B</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector &amp;</td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Matrix &amp;</td>          <td class="paramname"><span class="paramname"><em>Q</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Predict the next state with a full covariance matrix. </p>
+<dl class="section note"><dt>Note</dt><dd>Q is normally derived as G*w*G^T where w models uncertainty of some physical property, such as velocity or acceleration, and G is derived from physics. This version allows more realistic models than a diagonal matrix.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>Previous state. </td></tr>
+    <tr><td class="paramname">F</td><td><a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1" title="The Kalman filter state, represented as a shared pointer to a GaussianDensity.">State</a> transition matrix. </td></tr>
+    <tr><td class="paramname">B</td><td>Control input matrix. </td></tr>
+    <tr><td class="paramname">u</td><td>Control vector. </td></tr>
+    <tr><td class="paramname">Q</td><td>Full covariance matrix ( \( Q \)). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Predicted state. </dd></dl>
+
+</div>
+</div>
+<a id="ac986e5f05f8b7f238263aabc5531bad2" name="ac986e5f05f8b7f238263aabc5531bad2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac986e5f05f8b7f238263aabc5531bad2">&#9670;&#160;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gtsam::KalmanFilter::print </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print the Kalman filter details. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Optional string prefix. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a511b92f76e4d965f50f88a805af12ff8" name="a511b92f76e4d965f50f88a805af12ff8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a511b92f76e4d965f50f88a805af12ff8">&#9670;&#160;</a></span>step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> gtsam::KalmanFilter::step </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">State</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the step index \( k \) (starts at 0, incremented at each predict step). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>The current state. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Step index. </dd></dl>
+
+</div>
+</div>
+<a id="a7cfd02544165e7a80eee93ab9e04fb57" name="a7cfd02544165e7a80eee93ab9e04fb57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cfd02544165e7a80eee93ab9e04fb57">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">KalmanFilter::State</a> gtsam::KalmanFilter::update </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">State</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Matrix &amp;</td>          <td class="paramname"><span class="paramname"><em>H</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector &amp;</td>          <td class="paramname"><span class="paramname"><em>z</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const SharedDiagonal &amp;</td>          <td class="paramname"><span class="paramname"><em>model</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Update the Kalman filter with a measurement. </p>
+<p>Observation model:   </p><p class="formulaDsp">
+\[z_k = H \cdot x_k + v
+\]
+</p>
+<p> where \( v \) is zero-mean <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> noise with covariance R. In this version, R is restricted to diagonal Gaussians (model parameter)</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>Previous state. </td></tr>
+    <tr><td class="paramname">H</td><td>Observation matrix. </td></tr>
+    <tr><td class="paramname">z</td><td>Measurement vector. </td></tr>
+    <tr><td class="paramname">model</td><td>Noise model (diagonal <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Updated state. </dd></dl>
+
+</div>
+</div>
+<a id="aba4db08db961ccfb24006f62a7fe6643" name="aba4db08db961ccfb24006f62a7fe6643"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba4db08db961ccfb24006f62a7fe6643">&#9670;&#160;</a></span>updateQ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">KalmanFilter::State</a> gtsam::KalmanFilter::updateQ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a943f07d46bc01eac1070cd08fc193cc1">State</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Matrix &amp;</td>          <td class="paramname"><span class="paramname"><em>H</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector &amp;</td>          <td class="paramname"><span class="paramname"><em>z</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Matrix &amp;</td>          <td class="paramname"><span class="paramname"><em>R</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Update the Kalman filter with a measurement using a full covariance matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>Previous state. </td></tr>
+    <tr><td class="paramname">H</td><td>Observation matrix. </td></tr>
+    <tr><td class="paramname">z</td><td>Measurement vector. </td></tr>
+    <tr><td class="paramname">R</td><td>Full covariance matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Updated state. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/<a class="el" href="a01079_source.html">Values.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/<b>Values.cpp</b></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/<a class="el" href="a00929_source.html">KalmanFilter.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/<a class="el" href="a01115.html">KalmanFilter.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -142,7 +603,7 @@ const size_t&#160;</td><td class="memItemRight"><b>N2_</b></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a05195.html">NoMatchFoundForFixed</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a05195.html">KalmanFilter</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

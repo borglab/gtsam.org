@@ -1,4 +1,5 @@
 var a01349 =
 [
-    [ "gtsam::SymbolicCluster", "a01968.html#a3b3f37c57baad5e12367263fc14f098d", null ]
+    [ "gtsam::BayesTreeMarginalizationHelper&lt; BayesTree &gt;", "a06123.html", "a06123" ],
+    [ "gtsam::BayesTreeMarginalizationHelper&lt; BayesTree &gt;::CachedSearch", "a06127.html", null ]
 ];

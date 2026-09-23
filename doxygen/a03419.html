@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::DiscreteJunctionTree Class Reference</title>
+<title>gtsam: gtsam::PowerLieGroup&lt; G, N &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,192 +96,242 @@ $(function(){initNavTree('a03419.html','','a03416'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::DiscreteJunctionTree Class Reference<div class="ingroups"><a class="el" href="a01951.html">Solving by multifrontal variable elimination (QR and Cholesky)</a> &#124; <a class="el" href="a01955.html">Discrete</a></div></div></div>
+  <div class="headertitle"><div class="title">gtsam::PowerLieGroup&lt; G, N &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>An <a class="el" href="a04075.html" title="A cluster-tree that eliminates to a Bayes tree.">EliminatableClusterTree</a>, i.e., a set of variable clusters with factors, arranged in a tree, with the additional property that it represents the clique tree associated with a Bayes net. </p>
-<p>In GTSAM a junction tree is an intermediate data structure in multifrontal variable elimination. Each node is a cluster of factors, along with a clique of variables that are eliminated all at once. In detail, every node k represents a clique (maximal fully connected subset) of an associated chordal graph, such as a chordal Bayes net resulting from elimination.</p>
-<p>The difference with the <a class="el" href="a04087.html" title="Bayes tree.">BayesTree</a> is that a <a class="el" href="a04199.html" title="A JunctionTree is a cluster tree, a set of variable clusters with factors, arranged in a tree,...">JunctionTree</a> stores factors, whereas a <a class="el" href="a04087.html" title="Bayes tree.">BayesTree</a> stores conditionals, that are the product of eliminating the factors in the corresponding <a class="el" href="a04199.html" title="A JunctionTree is a cluster tree, a set of variable clusters with factors, arranged in a tree,...">JunctionTree</a> cliques.</p>
-<p>The tree structure and elimination method are exactly analogous to the <a class="el" href="a04131.html" title="An elimination tree is a data structure used intermediately during elimination.">EliminationTree</a>, except that in the <a class="el" href="a04199.html" title="A JunctionTree is a cluster tree, a set of variable clusters with factors, arranged in a tree,...">JunctionTree</a>, at each node multiple variables are eliminated at a time. </p>
-</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::DiscreteJunctionTree:</div>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename G, int N&gt;<br />
+class gtsam::PowerLieGroup&lt; G, N &gt;</div><p>Template to construct the N-fold power of a Lie group Represents the group G^N = G x G x ... x G (N times) Assumes Lie group structure for fixed-size G and fixed N &gt;= 1. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::PowerLieGroup&lt; G, N &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a03419.png" usemap="#gtsam_3A_3ADiscreteJunctionTree_map" alt=""/>
-  <map id="gtsam_3A_3ADiscreteJunctionTree_map" name="gtsam_3A_3ADiscreteJunctionTree_map">
-<area href="a04199.html" alt="gtsam::JunctionTree&lt; DiscreteBayesTree, DiscreteFactorGraph &gt;" shape="rect" coords="0,112,443,136"/>
-<area href="a04075.html" title="A cluster-tree that eliminates to a Bayes tree." alt="gtsam::EliminatableClusterTree&lt; BAYESTREE, GRAPH &gt;" shape="rect" coords="0,56,443,80"/>
-<area href="a04111.html" title="A cluster-tree is associated with a factor graph and is defined as in Koller-Friedman: each node k re..." alt="gtsam::ClusterTree&lt; GRAPH &gt;" shape="rect" coords="0,0,443,24"/>
+  <img src="a03419.png" usemap="#gtsam_3A_3APowerLieGroup_3C_20G_2C_20N_20_3E_map" alt=""/>
+  <map id="gtsam_3A_3APowerLieGroup_3C_20G_2C_20N_20_3E_map" name="gtsam_3A_3APowerLieGroup_3C_20G_2C_20N_20_3E_map">
+<area href="a03411.html" alt="gtsam::PowerLieGroupBase&lt; G, N, PowerLieGroup&lt; G, N &gt; &gt;" shape="rect" coords="575,56,1140,80"/>
+<area href="a03267.html" alt="gtsam::LieGroup&lt; PowerLieGroup&lt; G, N &gt;, internal::dimensionProduct(N, traits&lt; G &gt;::dimension)&gt;" shape="rect" coords="575,0,1140,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4555ca722f81654a9aeb9983913dd6fc" id="r_a4555ca722f81654a9aeb9983913dd6fc"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4555ca722f81654a9aeb9983913dd6fc">DiscreteJunctionTree</a> (const <a class="el" href="a03395.html">DiscreteEliminationTree</a> &amp;eliminationTree)</td></tr>
-<tr class="memdesc:a4555ca722f81654a9aeb9983913dd6fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the elimination tree of a factor graph using precomputed column structure.  <br /></td></tr>
-<tr class="inherit_header pub_methods_a04075"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a04075')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a04075.html">gtsam::EliminatableClusterTree&lt; BAYESTREE, GRAPH &gt;</a></td></tr>
-<tr class="memitem:a48864b139f927eee46de3078bfbf9234 inherit pub_methods_a04075" id="r_a48864b139f927eee46de3078bfbf9234"><td class="memItemLeft">std::pair&lt; boost::shared_ptr&lt; <a class="el" href="a04075.html#a903f18641237cb3ade58d72aeb8ba89c">BayesTreeType</a> &gt;, boost::shared_ptr&lt; <a class="el" href="a04075.html#aa90e00878d09f0f6536a487b6c083604">FactorGraphType</a> &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04075.html#a48864b139f927eee46de3078bfbf9234">eliminate</a> (const <a class="el" href="a04075.html#af809c368808a33b15a8669ae1a04912e">Eliminate</a> &amp;function) const</td></tr>
-<tr class="memdesc:a48864b139f927eee46de3078bfbf9234 inherit pub_methods_a04075"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a04075.html#af809c368808a33b15a8669ae1a04912e" title="Typedef for an eliminate subroutine.">Eliminate</a> the factors to a Bayes tree and remaining factor graph.  <br /></td></tr>
-<tr class="memitem:a7217da44c142b6a3703841888406038e inherit pub_methods_a04075" id="r_a7217da44c142b6a3703841888406038e"><td class="memItemLeft">
-const <a class="el" href="a01953.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; <a class="el" href="a04075.html#a673bca4ae33509fc9903516d9fba8794">sharedFactor</a> &gt; &amp;&#160;</td><td class="memItemRight"><b>remainingFactors</b> () const</td></tr>
-<tr class="memdesc:a7217da44c142b6a3703841888406038e inherit pub_methods_a04075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the remaining factors that are not pulled into elimination. <br /></td></tr>
-<tr class="inherit_header pub_methods_a04111"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a04111')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a04111.html">gtsam::ClusterTree&lt; GRAPH &gt;</a></td></tr>
-<tr class="memitem:ad0a639242851874afb9e9e4a001da7ae inherit pub_methods_a04111" id="r_ad0a639242851874afb9e9e4a001da7ae"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>ClusterTree</b> ()</td></tr>
-<tr class="memdesc:ad0a639242851874afb9e9e4a001da7ae inherit pub_methods_a04111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
-<tr class="memitem:ab53322af9cd6bd65e3feb3fc7b3761f3 inherit pub_methods_a04111" id="r_ab53322af9cd6bd65e3feb3fc7b3761f3"><td class="memItemLeft">
-void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;&quot;, const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=DefaultKeyFormatter) const</td></tr>
-<tr class="memdesc:ab53322af9cd6bd65e3feb3fc7b3761f3 inherit pub_methods_a04111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the cluster tree. <br /></td></tr>
-<tr class="memitem:ac915dc26573c2f4d3fa4b56463eb70d1 inherit pub_methods_a04111" id="r_ac915dc26573c2f4d3fa4b56463eb70d1"><td class="memItemLeft">
-void&#160;</td><td class="memItemRight"><b>addRoot</b> (const boost::shared_ptr&lt; <a class="el" href="a04115.html">Cluster</a> &gt; &amp;cluster)</td></tr>
-<tr class="memitem:ac1edb64945aa8ac8bfbe7e918ad2fba7 inherit pub_methods_a04111" id="r_ac1edb64945aa8ac8bfbe7e918ad2fba7"><td class="memItemLeft">
-void&#160;</td><td class="memItemRight"><b>addChildrenAsRoots</b> (const boost::shared_ptr&lt; <a class="el" href="a04115.html">Cluster</a> &gt; &amp;cluster)</td></tr>
-<tr class="memitem:a8d6563f65c3bbd66a1141c9a69af3fd3 inherit pub_methods_a04111" id="r_a8d6563f65c3bbd66a1141c9a69af3fd3"><td class="memItemLeft">
-size_t&#160;</td><td class="memItemRight"><b>nrRoots</b> () const</td></tr>
-<tr class="memitem:ac5dc97339e19946d6db0042d0d3f5da8 inherit pub_methods_a04111" id="r_ac5dc97339e19946d6db0042d0d3f5da8"><td class="memItemLeft">
-const <a class="el" href="a01953.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; sharedNode &gt; &amp;&#160;</td><td class="memItemRight"><b>roots</b> () const</td></tr>
-<tr class="memdesc:ac5dc97339e19946d6db0042d0d3f5da8 inherit pub_methods_a04111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the set of roots (one for a tree, multiple for a forest). <br /></td></tr>
-<tr class="memitem:a78c333e0b5a8baed58074babf8ceb263 inherit pub_methods_a04111" id="r_a78c333e0b5a8baed58074babf8ceb263"><td class="memItemLeft">
-const <a class="el" href="a04115.html">Cluster</a> &amp;&#160;</td><td class="memItemRight"><b>operator[]</b> (size_t i) const</td></tr>
+<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Standard Constructors</div></td></tr>
+<tr class="memitem:acb6de629fd2a15366fd8b76d8dd43d6b" id="r_acb6de629fd2a15366fd8b76d8dd43d6b"><td class="memItemLeft"><a id="acb6de629fd2a15366fd8b76d8dd43d6b" name="acb6de629fd2a15366fd8b76d8dd43d6b"></a>
+&#160;</td><td class="memItemRight"><b>PowerLieGroup</b> ()</td></tr>
+<tr class="memdesc:acb6de629fd2a15366fd8b76d8dd43d6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor yields identity. <br /></td></tr>
+<tr class="memitem:ad18284c0f7d6d4c8991b2ed2b7e2581e" id="r_ad18284c0f7d6d4c8991b2ed2b7e2581e"><td class="memItemLeft"><a id="ad18284c0f7d6d4c8991b2ed2b7e2581e" name="ad18284c0f7d6d4c8991b2ed2b7e2581e"></a>
+&#160;</td><td class="memItemRight"><b>PowerLieGroup</b> (const <a class="el" href="#aceeed0e8a7f7da22e1ffe6076b067886">Base</a> &amp;elements)</td></tr>
+<tr class="memdesc:ad18284c0f7d6d4c8991b2ed2b7e2581e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from array of group elements. <br /></td></tr>
+<tr class="memitem:ab141ce647db33a27791d51e16c7a5920" id="r_ab141ce647db33a27791d51e16c7a5920"><td class="memItemLeft"><a id="ab141ce647db33a27791d51e16c7a5920" name="ab141ce647db33a27791d51e16c7a5920"></a>
+&#160;</td><td class="memItemRight"><b>PowerLieGroup</b> (const std::initializer_list&lt; G &gt; &amp;elements)</td></tr>
+<tr class="memdesc:ab141ce647db33a27791d51e16c7a5920"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from initializer list. <br /></td></tr>
+<tr class="inherit_header pub_methods_a03411"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03411')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03411.html">gtsam::PowerLieGroupBase&lt; G, N, PowerLieGroup&lt; G, N &gt; &gt;</a></td></tr>
+<tr class="memitem:a17427e4caf1bdb9f77799ca03e800e81 inherit pub_methods_a03411" id="r_a17427e4caf1bdb9f77799ca03e800e81"><td class="memItemLeft">
+Class&#160;</td><td class="memItemRight"><b>between</b> (const Class &amp;g) const</td></tr>
+<tr class="memitem:a1eee956d250e4464648c7decd1a3527b inherit pub_methods_a03411" id="r_a1eee956d250e4464648c7decd1a3527b"><td class="memItemLeft">
+Class&#160;</td><td class="memItemRight"><b>between</b> (const Class &amp;g, ChartJacobian H1, ChartJacobian H2={}) const</td></tr>
+<tr class="memitem:a9e72cc544bd4345bf2012cd7efa14ce0 inherit pub_methods_a03411" id="r_a9e72cc544bd4345bf2012cd7efa14ce0"><td class="memItemLeft">
+SOn&#160;</td><td class="memItemRight"><b>between</b> (const SOn &amp;g, DynamicJacobian H1, DynamicJacobian H2) const</td></tr>
+<tr class="memitem:ab47bec789bc80e364c5c96c02ff4efb9 inherit pub_methods_a03411" id="r_ab47bec789bc80e364c5c96c02ff4efb9"><td class="memItemLeft">
+Class&#160;</td><td class="memItemRight"><b>compose</b> (const Class &amp;g) const</td></tr>
+<tr class="memitem:afc608afa517d8e2b0d9884817b99fd15 inherit pub_methods_a03411" id="r_afc608afa517d8e2b0d9884817b99fd15"><td class="memItemLeft">
+Class&#160;</td><td class="memItemRight"><b>compose</b> (const Class &amp;g, ChartJacobian H1, ChartJacobian H2={}) const</td></tr>
+<tr class="memitem:a4d639d44e18ea2a491c680caddfba53a inherit pub_methods_a03411" id="r_a4d639d44e18ea2a491c680caddfba53a"><td class="memItemLeft">
+SOn&#160;</td><td class="memItemRight"><b>compose</b> (const SOn &amp;g, DynamicJacobian H1, DynamicJacobian H2) const</td></tr>
+<tr class="memitem:aee395d766c6c8afb27a9bece5c42400e inherit pub_methods_a03411" id="r_aee395d766c6c8afb27a9bece5c42400e"><td class="memItemLeft">
+Class&#160;</td><td class="memItemRight"><b>expmap</b> (const TangentVector &amp;v) const</td></tr>
+<tr class="memdesc:aee395d766c6c8afb27a9bece5c42400e inherit pub_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">expmap as required by manifold concept Applies exponential map to v and composes with *this <br /></td></tr>
+<tr class="memitem:a4d5eaddd8b731ca23dc8bbee130ae41d inherit pub_methods_a03411" id="r_a4d5eaddd8b731ca23dc8bbee130ae41d"><td class="memItemLeft">
+Class&#160;</td><td class="memItemRight"><b>expmap</b> (const TangentVector &amp;v, ChartJacobian H1, ChartJacobian H2={}) const</td></tr>
+<tr class="memdesc:a4d5eaddd8b731ca23dc8bbee130ae41d inherit pub_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">expmap with optional derivatives, when the class provides them <br /></td></tr>
+<tr class="memitem:a1d345a3bc578a7b20713e1bc0e003251 inherit pub_methods_a03411" id="r_a1d345a3bc578a7b20713e1bc0e003251"><td class="memItemLeft">
+Class&#160;</td><td class="memItemRight"><b>inverse</b> (ChartJacobian H) const</td></tr>
+<tr class="memitem:a9a8ba0a0f7442929df460d79292134aa inherit pub_methods_a03411" id="r_a9a8ba0a0f7442929df460d79292134aa"><td class="memItemLeft">
+TangentVector&#160;</td><td class="memItemRight"><b>logmap</b> (const Class &amp;g) const</td></tr>
+<tr class="memdesc:a9a8ba0a0f7442929df460d79292134aa inherit pub_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">logmap as required by manifold concept Applies logarithmic map to group element that takes *this to g <br /></td></tr>
+<tr class="memitem:a73b6ef7675a980c3049d8297ab64a45a inherit pub_methods_a03411" id="r_a73b6ef7675a980c3049d8297ab64a45a"><td class="memItemLeft">
+TangentVector&#160;</td><td class="memItemRight"><b>logmap</b> (const Class &amp;g, ChartJacobian H1, ChartJacobian H2={}) const</td></tr>
+<tr class="memdesc:a73b6ef7675a980c3049d8297ab64a45a inherit pub_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">logmap with optional derivatives, when the class provides them <br /></td></tr>
+<tr class="memitem:add63fcbd20c0b7c7288da92b482e9cd3 inherit pub_methods_a03411" id="r_add63fcbd20c0b7c7288da92b482e9cd3"><td class="memItemLeft">
+size_t&#160;</td><td class="memItemRight"><b>dim</b> () const</td></tr>
+<tr class="memdesc:add63fcbd20c0b7c7288da92b482e9cd3 inherit pub_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return manifold dimension. <br /></td></tr>
+<tr class="memitem:a0ce79f52afd0b4504f2450495dfb3803 inherit pub_methods_a03411" id="r_a0ce79f52afd0b4504f2450495dfb3803"><td class="memItemLeft">
+<a class="el" href="a03419.html">PowerLieGroup</a>&lt; G, N &gt;&#160;</td><td class="memItemRight"><b>operator*</b> (const <a class="el" href="a03419.html">PowerLieGroup</a>&lt; G, N &gt; &amp;other) const</td></tr>
+<tr class="memdesc:a0ce79f52afd0b4504f2450495dfb3803 inherit pub_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Group multiplication. <br /></td></tr>
+<tr class="memitem:a3dc8cd666fe302cc296c47cbc088544b inherit pub_methods_a03411" id="r_a3dc8cd666fe302cc296c47cbc088544b"><td class="memItemLeft">
+<a class="el" href="a03419.html">PowerLieGroup</a>&lt; G, N &gt;&#160;</td><td class="memItemRight"><b>retract</b> (const TangentVector &amp;v, ChartJacobian H1={}, ChartJacobian H2={}) const</td></tr>
+<tr class="memdesc:a3dc8cd666fe302cc296c47cbc088544b inherit pub_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retract to manifold. <br /></td></tr>
+<tr class="memitem:aed6ac253221ff7cea3c8e72ab82a929b inherit pub_methods_a03411" id="r_aed6ac253221ff7cea3c8e72ab82a929b"><td class="memItemLeft">
+TangentVector&#160;</td><td class="memItemRight"><b>localCoordinates</b> (const <a class="el" href="a03419.html">PowerLieGroup</a>&lt; G, N &gt; &amp;g, ChartJacobian H1={}, ChartJacobian H2={}) const</td></tr>
+<tr class="memdesc:aed6ac253221ff7cea3c8e72ab82a929b inherit pub_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local coordinates on manifold. <br /></td></tr>
+<tr class="memitem:ac3cd349d2b9838e489ef44cdf80261c0 inherit pub_methods_a03411" id="r_ac3cd349d2b9838e489ef44cdf80261c0"><td class="memItemLeft">
+Jacobian&#160;</td><td class="memItemRight"><b>AdjointMap</b> () const</td></tr>
+<tr class="memdesc:ac3cd349d2b9838e489ef44cdf80261c0 inherit pub_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjoint map. <br /></td></tr>
+<tr class="memitem:ad012689bf70defad7e87b026d5e3f241 inherit pub_methods_a03411" id="r_ad012689bf70defad7e87b026d5e3f241"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;&quot;) const</td></tr>
+<tr class="memdesc:ad012689bf70defad7e87b026d5e3f241 inherit pub_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print for debugging. <br /></td></tr>
+<tr class="memitem:a62df50ee480a3ffe38444dc55dde0cd7 inherit pub_methods_a03411" id="r_a62df50ee480a3ffe38444dc55dde0cd7"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="a03419.html">PowerLieGroup</a>&lt; G, N &gt; &amp;other, double tol=1e-9) const</td></tr>
+<tr class="memdesc:a62df50ee480a3ffe38444dc55dde0cd7 inherit pub_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality with tolerance. <br /></td></tr>
+<tr class="inherit_header pub_methods_a03267"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03267')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03267.html">gtsam::LieGroup&lt; PowerLieGroup&lt; G, N &gt;, internal::dimensionProduct(N, traits&lt; G &gt;::dimension)&gt;</a></td></tr>
+<tr class="memitem:a4d639d44e18ea2a491c680caddfba53a inherit pub_methods_a03267" id="r_a4d639d44e18ea2a491c680caddfba53a"><td class="memItemLeft">
+SOn&#160;</td><td class="memItemRight"><b>compose</b> (const SOn &amp;g, DynamicJacobian H1, DynamicJacobian H2) const</td></tr>
+<tr class="memitem:a9e72cc544bd4345bf2012cd7efa14ce0 inherit pub_methods_a03267" id="r_a9e72cc544bd4345bf2012cd7efa14ce0"><td class="memItemLeft">
+SOn&#160;</td><td class="memItemRight"><b>between</b> (const SOn &amp;g, DynamicJacobian H1, DynamicJacobian H2) const</td></tr>
+<tr class="memitem:a293913cc58b7a609eec111c39ebb8fad inherit pub_methods_a03267" id="r_a293913cc58b7a609eec111c39ebb8fad"><td class="memItemLeft">
+GTSAM_EXPORT SOn&#160;</td><td class="memItemRight"><b>compose</b> (const SOn &amp;g, DynamicJacobian H1, DynamicJacobian H2) const</td></tr>
+<tr class="memitem:ad5b82e78a18fec58ac8e07f671c7104c inherit pub_methods_a03267" id="r_ad5b82e78a18fec58ac8e07f671c7104c"><td class="memItemLeft">
+GTSAM_EXPORT SOn&#160;</td><td class="memItemRight"><b>between</b> (const SOn &amp;g, DynamicJacobian H1, DynamicJacobian H2) const</td></tr>
+<tr class="memitem:afa084a36d7054e3c837519a96cc12377 inherit pub_methods_a03267" id="r_afa084a36d7054e3c837519a96cc12377"><td class="memItemLeft">
+std::enable_if_t&lt; M !=Eigen::Dynamic, int &gt;&#160;</td><td class="memItemRight"><b>dim</b> () const</td></tr>
+<tr class="memdesc:afa084a36d7054e3c837519a96cc12377 inherit pub_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provided fixed dimension in dim() if needed. <br /></td></tr>
+<tr class="memitem:a6e2cc5a215c0aa077ecd13caaa080858 inherit pub_methods_a03267" id="r_a6e2cc5a215c0aa077ecd13caaa080858"><td class="memItemLeft">
+const <a class="el" href="a03419.html">PowerLieGroup</a>&lt; G, N &gt; &amp;&#160;</td><td class="memItemRight"><b>derived</b> () const</td></tr>
+<tr class="memitem:a1d345a3bc578a7b20713e1bc0e003251 inherit pub_methods_a03267" id="r_a1d345a3bc578a7b20713e1bc0e003251"><td class="memItemLeft">
+<a class="el" href="a03419.html">PowerLieGroup</a>&lt; G, N &gt;&#160;</td><td class="memItemRight"><b>inverse</b> (ChartJacobian H) const</td></tr>
+<tr class="memitem:aee395d766c6c8afb27a9bece5c42400e inherit pub_methods_a03267" id="r_aee395d766c6c8afb27a9bece5c42400e"><td class="memItemLeft">
+<a class="el" href="a03419.html">PowerLieGroup</a>&lt; G, N &gt;&#160;</td><td class="memItemRight"><b>expmap</b> (const TangentVector &amp;v) const</td></tr>
+<tr class="memdesc:aee395d766c6c8afb27a9bece5c42400e inherit pub_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">expmap as required by manifold concept Applies exponential map to v and composes with *this <br /></td></tr>
+<tr class="memitem:a9a8ba0a0f7442929df460d79292134aa inherit pub_methods_a03267" id="r_a9a8ba0a0f7442929df460d79292134aa"><td class="memItemLeft">
+TangentVector&#160;</td><td class="memItemRight"><b>logmap</b> (const <a class="el" href="a03419.html">PowerLieGroup</a>&lt; G, N &gt; &amp;g) const</td></tr>
+<tr class="memdesc:a9a8ba0a0f7442929df460d79292134aa inherit pub_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">logmap as required by manifold concept Applies logarithmic map to group element that takes *this to g <br /></td></tr>
+<tr class="memitem:adf52076de7615c335b4574f577a22b77 inherit pub_methods_a03267" id="r_adf52076de7615c335b4574f577a22b77"><td class="memItemLeft">
+<a class="el" href="a03419.html">PowerLieGroup</a>&lt; G, N &gt;&#160;</td><td class="memItemRight"><b>retract</b> (const TangentVector &amp;v) const</td></tr>
+<tr class="memdesc:adf52076de7615c335b4574f577a22b77 inherit pub_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">retract as required by manifold concept: applies v at *this <br /></td></tr>
+<tr class="memitem:a5380bfede1eb39fa9473824009a747a7 inherit pub_methods_a03267" id="r_a5380bfede1eb39fa9473824009a747a7"><td class="memItemLeft">
+TangentVector&#160;</td><td class="memItemRight"><b>localCoordinates</b> (const <a class="el" href="a03419.html">PowerLieGroup</a>&lt; G, N &gt; &amp;g) const</td></tr>
+<tr class="memdesc:a5380bfede1eb39fa9473824009a747a7 inherit pub_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">localCoordinates as required by manifold concept: finds tangent vector between *this and g <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a6e484f6111aca8a809cd05cd164a127f" id="r_a6e484f6111aca8a809cd05cd164a127f"><td class="memItemLeft"><a id="a6e484f6111aca8a809cd05cd164a127f" name="a6e484f6111aca8a809cd05cd164a127f"></a>
+static constexpr int&#160;</td><td class="memItemRight"><b>Dim</b> ()</td></tr>
+<tr class="memdesc:a6e484f6111aca8a809cd05cd164a127f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static method to get the dimension (compile-time or dynamic). <br /></td></tr>
+<tr id="pub-static-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Group Operations</div></td></tr>
+<tr class="memitem:a412998f1187ee9dd4b07aee3a315ce64" id="r_a412998f1187ee9dd4b07aee3a315ce64"><td class="memItemLeft"><a id="a412998f1187ee9dd4b07aee3a315ce64" name="a412998f1187ee9dd4b07aee3a315ce64"></a>
+static <a class="el" href="#acb6de629fd2a15366fd8b76d8dd43d6b">PowerLieGroup</a>&#160;</td><td class="memItemRight"><b>Identity</b> ()</td></tr>
+<tr class="memdesc:a412998f1187ee9dd4b07aee3a315ce64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identity element. <br /></td></tr>
+<tr class="inherit_header pub_static_methods_a03411"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03411')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03411.html">gtsam::PowerLieGroupBase&lt; G, N, PowerLieGroup&lt; G, N &gt; &gt;</a></td></tr>
+<tr class="memitem:a5454833785925037137a2eef98edf558 inherit pub_static_methods_a03411" id="r_a5454833785925037137a2eef98edf558"><td class="memItemLeft">
+static constexpr int&#160;</td><td class="memItemRight"><b>Dim</b> ()</td></tr>
+<tr class="memdesc:a5454833785925037137a2eef98edf558 inherit pub_static_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static method to get the dimension (compile-time or dynamic). <br /></td></tr>
+<tr class="memitem:a93596edc001563b2442071be32286890 inherit pub_static_methods_a03411" id="r_a93596edc001563b2442071be32286890"><td class="memItemLeft">
+static <a class="el" href="a03419.html">PowerLieGroup</a>&lt; G, N &gt;&#160;</td><td class="memItemRight"><b>Expmap</b> (const TangentVector &amp;v, ChartJacobian Hv={})</td></tr>
+<tr class="memdesc:a93596edc001563b2442071be32286890 inherit pub_static_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exponential map. <br /></td></tr>
+<tr class="memitem:a2b5850e0d0dc5bde12830076243e6143 inherit pub_static_methods_a03411" id="r_a2b5850e0d0dc5bde12830076243e6143"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>Logmap</b> (const <a class="el" href="a03419.html">PowerLieGroup</a>&lt; G, N &gt; &amp;p, ChartJacobian Hp={})</td></tr>
+<tr class="memdesc:a2b5850e0d0dc5bde12830076243e6143 inherit pub_static_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logarithmic map. <br /></td></tr>
+<tr class="memitem:a4d4cbf61335ebba911a485a9a1fcd25a inherit pub_static_methods_a03411" id="r_a4d4cbf61335ebba911a485a9a1fcd25a"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>LocalCoordinates</b> (const <a class="el" href="a03419.html">PowerLieGroup</a>&lt; G, N &gt; &amp;p, ChartJacobian Hp={})</td></tr>
+<tr class="memdesc:a4d4cbf61335ebba911a485a9a1fcd25a inherit pub_static_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local coordinates (same as Logmap). <br /></td></tr>
+<tr class="inherit_header pub_static_methods_a03267"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03267')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03267.html">gtsam::LieGroup&lt; PowerLieGroup&lt; G, N &gt;, internal::dimensionProduct(N, traits&lt; G &gt;::dimension)&gt;</a></td></tr>
+<tr class="memitem:a5454833785925037137a2eef98edf558 inherit pub_static_methods_a03267" id="r_a5454833785925037137a2eef98edf558"><td class="memItemLeft">
+static constexpr int&#160;</td><td class="memItemRight"><b>Dim</b> ()</td></tr>
+<tr class="memdesc:a5454833785925037137a2eef98edf558 inherit pub_static_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static method to get the dimension (compile-time or dynamic). <br /></td></tr>
+<tr class="memitem:af0dab5bebe52a8ccebe8ea8a1dbafd21 inherit pub_static_methods_a03267" id="r_af0dab5bebe52a8ccebe8ea8a1dbafd21"><td class="memItemLeft">
+static <a class="el" href="a03419.html">PowerLieGroup</a>&lt; G, N &gt;&#160;</td><td class="memItemRight"><b>Retract</b> (const TangentVector &amp;v)</td></tr>
+<tr class="memdesc:af0dab5bebe52a8ccebe8ea8a1dbafd21 inherit pub_static_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retract at origin: possible in Lie group because it has an identity. <br /></td></tr>
+<tr class="memitem:aaa535efd2e685eeb1f26e828d49d7819 inherit pub_static_methods_a03267" id="r_aaa535efd2e685eeb1f26e828d49d7819"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>LocalCoordinates</b> (const <a class="el" href="a03419.html">PowerLieGroup</a>&lt; G, N &gt; &amp;g)</td></tr>
+<tr class="memdesc:aaa535efd2e685eeb1f26e828d49d7819 inherit pub_static_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">LocalCoordinates at origin: possible in Lie group because it has an identity. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:ac4cf4802b30127a6ae42a1a1798c51b3" id="r_ac4cf4802b30127a6ae42a1a1798c51b3"><td class="memItemLeft"><a id="ac4cf4802b30127a6ae42a1a1798c51b3" name="ac4cf4802b30127a6ae42a1a1798c51b3"></a>
+static constexpr auto&#160;</td><td class="memItemRight"><b>dimension</b></td></tr>
+<tr class="inherit_header pub_static_attribs_a03411"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_attribs_a03411')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Attributes inherited from <a class="el" href="a03411.html">gtsam::PowerLieGroupBase&lt; G, N, PowerLieGroup&lt; G, N &gt; &gt;</a></td></tr>
+<tr class="memitem:ab6addf52238ea8c6ba895b0f2496cbec inherit pub_static_attribs_a03411" id="r_ab6addf52238ea8c6ba895b0f2496cbec"><td class="memItemLeft">
+static constexpr auto&#160;</td><td class="memItemRight"><b>dimension</b></td></tr>
+<tr class="inherit_header pub_static_attribs_a03267"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_attribs_a03267')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Attributes inherited from <a class="el" href="a03267.html">gtsam::LieGroup&lt; PowerLieGroup&lt; G, N &gt;, internal::dimensionProduct(N, traits&lt; G &gt;::dimension)&gt;</a></td></tr>
+<tr class="memitem:ab6addf52238ea8c6ba895b0f2496cbec inherit pub_static_attribs_a03267" id="r_ab6addf52238ea8c6ba895b0f2496cbec"><td class="memItemLeft">
+static constexpr auto&#160;</td><td class="memItemRight"><b>dimension</b></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a187d382e5e43fcc23e55bbbcf8cdb75c" id="r_a187d382e5e43fcc23e55bbbcf8cdb75c"><td class="memItemLeft"><a id="a187d382e5e43fcc23e55bbbcf8cdb75c" name="a187d382e5e43fcc23e55bbbcf8cdb75c"></a>
-typedef <a class="el" href="a04199.html#a5812db967ae1a284a243c5a695656d52">JunctionTree</a>&lt; <a class="el" href="a03375.html">DiscreteBayesTree</a>, <a class="el" href="a03411.html">DiscreteFactorGraph</a> &gt;&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
-<tr class="memdesc:a187d382e5e43fcc23e55bbbcf8cdb75c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a187d382e5e43fcc23e55bbbcf8cdb75c" title="Base class.">Base</a> class. <br /></td></tr>
-<tr class="memitem:ad6782b47cf2c877b9073da597c774d96" id="r_ad6782b47cf2c877b9073da597c774d96"><td class="memItemLeft"><a id="ad6782b47cf2c877b9073da597c774d96" name="ad6782b47cf2c877b9073da597c774d96"></a>
-typedef <a class="el" href="#a4555ca722f81654a9aeb9983913dd6fc">DiscreteJunctionTree</a>&#160;</td><td class="memItemRight"><b>This</b></td></tr>
-<tr class="memdesc:ad6782b47cf2c877b9073da597c774d96"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#ad6782b47cf2c877b9073da597c774d96" title="This class.">This</a> class. <br /></td></tr>
-<tr class="memitem:a67b80ddc56d75698e966b76590ab6cf0" id="r_a67b80ddc56d75698e966b76590ab6cf0"><td class="memItemLeft"><a id="a67b80ddc56d75698e966b76590ab6cf0" name="a67b80ddc56d75698e966b76590ab6cf0"></a>
-typedef boost::shared_ptr&lt; <a class="el" href="#ad6782b47cf2c877b9073da597c774d96">This</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
-<tr class="memdesc:a67b80ddc56d75698e966b76590ab6cf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to this class. <br /></td></tr>
-<tr class="inherit_header pub_types_a04199"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04199')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04199.html">gtsam::JunctionTree&lt; DiscreteBayesTree, DiscreteFactorGraph &gt;</a></td></tr>
-<tr class="memitem:a5cd5f2112feb82893591bc85c5608dfc inherit pub_types_a04199" id="r_a5cd5f2112feb82893591bc85c5608dfc"><td class="memItemLeft">
-typedef <a class="el" href="a04199.html#a5812db967ae1a284a243c5a695656d52">JunctionTree</a>&lt; <a class="el" href="a03375.html">DiscreteBayesTree</a>, <a class="el" href="a03411.html">DiscreteFactorGraph</a> &gt;&#160;</td><td class="memItemRight"><b>This</b></td></tr>
-<tr class="memdesc:a5cd5f2112feb82893591bc85c5608dfc inherit pub_types_a04199"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a04199.html#a5cd5f2112feb82893591bc85c5608dfc">This</a> class. <br /></td></tr>
-<tr class="memitem:acf4f22ad215c4df3d6f76cc82189a205 inherit pub_types_a04199" id="r_acf4f22ad215c4df3d6f76cc82189a205"><td class="memItemLeft">
-typedef boost::shared_ptr&lt; <a class="el" href="a04199.html#a5cd5f2112feb82893591bc85c5608dfc">This</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
-<tr class="memdesc:acf4f22ad215c4df3d6f76cc82189a205 inherit pub_types_a04199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to this class. <br /></td></tr>
-<tr class="memitem:ab2fa0727164979796294c2231971bfb4 inherit pub_types_a04199" id="r_ab2fa0727164979796294c2231971bfb4"><td class="memItemLeft">
-typedef <a class="el" href="a04075.html#a8ca5e336fa4998b33d1745c52c592897">EliminatableClusterTree</a>&lt; <a class="el" href="a03375.html">DiscreteBayesTree</a>, <a class="el" href="a03411.html">DiscreteFactorGraph</a> &gt;&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
-<tr class="memdesc:ab2fa0727164979796294c2231971bfb4 inherit pub_types_a04199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Our base class. <br /></td></tr>
-<tr class="inherit_header pub_types_a04075"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04075')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04075.html">gtsam::EliminatableClusterTree&lt; BAYESTREE, GRAPH &gt;</a></td></tr>
-<tr class="memitem:a903f18641237cb3ade58d72aeb8ba89c inherit pub_types_a04075" id="r_a903f18641237cb3ade58d72aeb8ba89c"><td class="memItemLeft">
-typedef BAYESTREE&#160;</td><td class="memItemRight"><b>BayesTreeType</b></td></tr>
-<tr class="memdesc:a903f18641237cb3ade58d72aeb8ba89c inherit pub_types_a04075"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="a04087.html" title="Bayes tree.">BayesTree</a> type produced by elimination. <br /></td></tr>
-<tr class="memitem:aa90e00878d09f0f6536a487b6c083604 inherit pub_types_a04075" id="r_aa90e00878d09f0f6536a487b6c083604"><td class="memItemLeft">
-typedef GRAPH&#160;</td><td class="memItemRight"><b>FactorGraphType</b></td></tr>
-<tr class="memdesc:aa90e00878d09f0f6536a487b6c083604 inherit pub_types_a04075"><td class="mdescLeft">&#160;</td><td class="mdescRight">The factor graph type. <br /></td></tr>
-<tr class="memitem:a0223c734101df3eebb97e09eabc0ecaf inherit pub_types_a04075" id="r_a0223c734101df3eebb97e09eabc0ecaf"><td class="memItemLeft">
-typedef <a class="el" href="a04075.html#a8ca5e336fa4998b33d1745c52c592897">EliminatableClusterTree</a>&lt; BAYESTREE, GRAPH &gt;&#160;</td><td class="memItemRight"><b>This</b></td></tr>
-<tr class="memdesc:a0223c734101df3eebb97e09eabc0ecaf inherit pub_types_a04075"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a04075.html#a0223c734101df3eebb97e09eabc0ecaf" title="This class.">This</a> class. <br /></td></tr>
-<tr class="memitem:acc8911d6ebde85bca47b51baede3fff8 inherit pub_types_a04075" id="r_acc8911d6ebde85bca47b51baede3fff8"><td class="memItemLeft">
-typedef boost::shared_ptr&lt; <a class="el" href="a04075.html#a0223c734101df3eebb97e09eabc0ecaf">This</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
-<tr class="memdesc:acc8911d6ebde85bca47b51baede3fff8 inherit pub_types_a04075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to this class. <br /></td></tr>
-<tr class="memitem:a0a4068d88de38214cc40f4a74d655c44 inherit pub_types_a04075" id="r_a0a4068d88de38214cc40f4a74d655c44"><td class="memItemLeft">
-typedef BAYESTREE::ConditionalType&#160;</td><td class="memItemRight"><b>ConditionalType</b></td></tr>
-<tr class="memdesc:a0a4068d88de38214cc40f4a74d655c44 inherit pub_types_a04075"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of conditionals. <br /></td></tr>
-<tr class="memitem:a6157893772d92c0ea04206a8f02ddb05 inherit pub_types_a04075" id="r_a6157893772d92c0ea04206a8f02ddb05"><td class="memItemLeft">
-typedef boost::shared_ptr&lt; <a class="el" href="a04075.html#a0a4068d88de38214cc40f4a74d655c44">ConditionalType</a> &gt;&#160;</td><td class="memItemRight"><b>sharedConditional</b></td></tr>
-<tr class="memdesc:a6157893772d92c0ea04206a8f02ddb05 inherit pub_types_a04075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to a conditional. <br /></td></tr>
-<tr class="memitem:af809c368808a33b15a8669ae1a04912e inherit pub_types_a04075" id="r_af809c368808a33b15a8669ae1a04912e"><td class="memItemLeft">
-typedef GRAPH::Eliminate&#160;</td><td class="memItemRight"><b>Eliminate</b></td></tr>
-<tr class="memdesc:af809c368808a33b15a8669ae1a04912e inherit pub_types_a04075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef for an eliminate subroutine. <br /></td></tr>
-<tr class="memitem:a9327311eb33b3bfc88da2473d355e56d inherit pub_types_a04075" id="r_a9327311eb33b3bfc88da2473d355e56d"><td class="memItemLeft">
-typedef GRAPH::FactorType&#160;</td><td class="memItemRight"><b>FactorType</b></td></tr>
-<tr class="memdesc:a9327311eb33b3bfc88da2473d355e56d inherit pub_types_a04075"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of factors. <br /></td></tr>
-<tr class="memitem:a673bca4ae33509fc9903516d9fba8794 inherit pub_types_a04075" id="r_a673bca4ae33509fc9903516d9fba8794"><td class="memItemLeft">
-typedef boost::shared_ptr&lt; <a class="el" href="a04075.html#a9327311eb33b3bfc88da2473d355e56d">FactorType</a> &gt;&#160;</td><td class="memItemRight"><b>sharedFactor</b></td></tr>
-<tr class="memdesc:a673bca4ae33509fc9903516d9fba8794 inherit pub_types_a04075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to a factor. <br /></td></tr>
-<tr class="inherit_header pub_types_a04111"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04111')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04111.html">gtsam::ClusterTree&lt; GRAPH &gt;</a></td></tr>
-<tr class="memitem:a918d9e3e91e7707059ee6360e15b0e19 inherit pub_types_a04111" id="r_a918d9e3e91e7707059ee6360e15b0e19"><td class="memItemLeft">
-typedef GRAPH&#160;</td><td class="memItemRight"><b>FactorGraphType</b></td></tr>
-<tr class="memdesc:a918d9e3e91e7707059ee6360e15b0e19 inherit pub_types_a04111"><td class="mdescLeft">&#160;</td><td class="mdescRight">The factor graph type. <br /></td></tr>
-<tr class="memitem:a5bdaf6c5ff6f7a774e3dbc871e9effd0 inherit pub_types_a04111" id="r_a5bdaf6c5ff6f7a774e3dbc871e9effd0"><td class="memItemLeft">
-typedef <a class="el" href="a04111.html#acd26df0cc3df2af1c22e4bc2dc76e226">ClusterTree</a>&lt; GRAPH &gt;&#160;</td><td class="memItemRight"><b>This</b></td></tr>
-<tr class="memdesc:a5bdaf6c5ff6f7a774e3dbc871e9effd0 inherit pub_types_a04111"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a04111.html#a5bdaf6c5ff6f7a774e3dbc871e9effd0" title="This class.">This</a> class. <br /></td></tr>
-<tr class="memitem:a5bf3295cef6338605ac53b6831be8d65 inherit pub_types_a04111" id="r_a5bf3295cef6338605ac53b6831be8d65"><td class="memItemLeft">
-typedef boost::shared_ptr&lt; <a class="el" href="a04111.html#a5bdaf6c5ff6f7a774e3dbc871e9effd0">This</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
-<tr class="memdesc:a5bf3295cef6338605ac53b6831be8d65 inherit pub_types_a04111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to this class. <br /></td></tr>
-<tr class="memitem:a6f94687be7774294808f190e9c5b10c6 inherit pub_types_a04111" id="r_a6f94687be7774294808f190e9c5b10c6"><td class="memItemLeft">
-typedef GRAPH::FactorType&#160;</td><td class="memItemRight"><b>FactorType</b></td></tr>
-<tr class="memdesc:a6f94687be7774294808f190e9c5b10c6 inherit pub_types_a04111"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of factors. <br /></td></tr>
-<tr class="memitem:ac1b883466c2402549b5bc2899fe6025d inherit pub_types_a04111" id="r_ac1b883466c2402549b5bc2899fe6025d"><td class="memItemLeft">
-typedef boost::shared_ptr&lt; <a class="el" href="a04111.html#a6f94687be7774294808f190e9c5b10c6">FactorType</a> &gt;&#160;</td><td class="memItemRight"><b>sharedFactor</b></td></tr>
-<tr class="memdesc:ac1b883466c2402549b5bc2899fe6025d inherit pub_types_a04111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to a factor. <br /></td></tr>
-<tr class="memitem:ad5fb900835112e8c6b463e3cde07b730 inherit pub_types_a04111" id="r_ad5fb900835112e8c6b463e3cde07b730"><td class="memItemLeft">
-typedef boost::shared_ptr&lt; <a class="el" href="a04115.html">Cluster</a> &gt;&#160;</td><td class="memItemRight"><b>sharedCluster</b></td></tr>
-<tr class="memdesc:ad5fb900835112e8c6b463e3cde07b730 inherit pub_types_a04111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to <a class="el" href="a04115.html" title="A Cluster is just a collection of factors.">Cluster</a>. <br /></td></tr>
-<tr class="memitem:a6e7efc57d93c56796bf6b0d6b6461a53 inherit pub_types_a04111" id="r_a6e7efc57d93c56796bf6b0d6b6461a53"><td class="memItemLeft">
-typedef <a class="el" href="a04115.html">Cluster</a>&#160;</td><td class="memItemRight"><b>Node</b></td></tr>
-<tr class="memitem:a88f7c1020667afd0634a22258e6727bc inherit pub_types_a04111" id="r_a88f7c1020667afd0634a22258e6727bc"><td class="memItemLeft">
-typedef <a class="el" href="a04111.html#ad5fb900835112e8c6b463e3cde07b730">sharedCluster</a>&#160;</td><td class="memItemRight"><b>sharedNode</b></td></tr>
+<tr class="memitem:aceeed0e8a7f7da22e1ffe6076b067886" id="r_aceeed0e8a7f7da22e1ffe6076b067886"><td class="memItemLeft"><a id="aceeed0e8a7f7da22e1ffe6076b067886" name="aceeed0e8a7f7da22e1ffe6076b067886"></a>
+typedef std::array&lt; G, N &gt;&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
+<tr class="memdesc:aceeed0e8a7f7da22e1ffe6076b067886"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#aceeed0e8a7f7da22e1ffe6076b067886" title="Base array type.">Base</a> array type. <br /></td></tr>
+<tr class="memitem:aa82d7c2ba9b1ff669bb5566c655d0c40" id="r_aa82d7c2ba9b1ff669bb5566c655d0c40"><td class="memItemLeft"><a id="aa82d7c2ba9b1ff669bb5566c655d0c40" name="aa82d7c2ba9b1ff669bb5566c655d0c40"></a>
+typedef <a class="el" href="a03411.html">PowerLieGroupBase</a>&lt; G, N, <a class="el" href="#acb6de629fd2a15366fd8b76d8dd43d6b">PowerLieGroup</a> &gt;&#160;</td><td class="memItemRight"><b>Helper</b></td></tr>
+<tr class="inherit_header pub_types_a03411"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03411')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03411.html">gtsam::PowerLieGroupBase&lt; G, N, PowerLieGroup&lt; G, N &gt; &gt;</a></td></tr>
+<tr class="memitem:af569a4fa3eb67d4f76f5de6f7705273f inherit pub_types_a03411" id="r_af569a4fa3eb67d4f76f5de6f7705273f"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>LieBase</b></td></tr>
+<tr class="memitem:a8c4fc3b647ee08aa5c95e288277e786a inherit pub_types_a03411" id="r_a8c4fc3b647ee08aa5c95e288277e786a"><td class="memItemLeft">
+typedef <a class="el" href="a03195.html">multiplicative_group_tag</a>&#160;</td><td class="memItemRight"><b>group_flavor</b></td></tr>
+<tr class="memitem:af1ca42b652f5ace9b301322b676afcc3 inherit pub_types_a03411" id="r_af1ca42b652f5ace9b301322b676afcc3"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+<tr class="memitem:a17fb350d0178fee5c0b3d62b45fdeaea inherit pub_types_a03411" id="r_a17fb350d0178fee5c0b3d62b45fdeaea"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
+<tr class="memitem:aacb772298ad58b928a9cfcac5a01a6a1 inherit pub_types_a03411" id="r_aacb772298ad58b928a9cfcac5a01a6a1"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Jacobian</b></td></tr>
+<tr class="memitem:ae4e04b13f6dcc9a6424eac244a60226d inherit pub_types_a03411" id="r_ae4e04b13f6dcc9a6424eac244a60226d"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>BaseJacobian</b></td></tr>
+<tr class="memitem:a5abfb19f9ecfde48a59644c17eb6fa9f inherit pub_types_a03411" id="r_a5abfb19f9ecfde48a59644c17eb6fa9f"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>JacobianStorage</b></td></tr>
+<tr class="inherit_header pub_types_a03267"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03267')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03267.html">gtsam::LieGroup&lt; PowerLieGroup&lt; G, N &gt;, internal::dimensionProduct(N, traits&lt; G &gt;::dimension)&gt;</a></td></tr>
+<tr class="memitem:ad674a7648d8381edcc9ed80919937bfd inherit pub_types_a03267" id="r_ad674a7648d8381edcc9ed80919937bfd"><td class="memItemLeft">
+typedef <a class="el" href="a03363.html">OptionalJacobian</a>&lt; N, N &gt;&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
+<tr class="memitem:a65ba8c4c1e30c31c5d9262c611771067 inherit pub_types_a03267" id="r_a65ba8c4c1e30c31c5d9262c611771067"><td class="memItemLeft">
+typedef Eigen::Matrix&lt; double, N, N &gt;&#160;</td><td class="memItemRight"><b>Jacobian</b></td></tr>
+<tr class="memitem:a58064c114e3fca97921ff802590ce10f inherit pub_types_a03267" id="r_a58064c114e3fca97921ff802590ce10f"><td class="memItemLeft">
+typedef Eigen::Matrix&lt; double, N, 1 &gt;&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="memitem:a5812db967ae1a284a243c5a695656d52" id="r_a5812db967ae1a284a243c5a695656d52"><td class="memItemLeft"><a id="a5812db967ae1a284a243c5a695656d52" name="a5812db967ae1a284a243c5a695656d52"></a>
-&#160;</td><td class="memItemRight"><b>JunctionTree</b> (const <a class="el" href="a04131.html">EliminationTree</a>&lt; ETREE_BAYESNET, ETREE_GRAPH &gt; &amp;eliminationTree)</td></tr>
-<tr class="memdesc:a5812db967ae1a284a243c5a695656d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the junction tree from an elimination tree. <br /></td></tr>
-<tr class="inherit_header pro_methods_a04075"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_a04075')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="a04075.html">gtsam::EliminatableClusterTree&lt; BAYESTREE, GRAPH &gt;</a></td></tr>
-<tr class="memitem:a8ca5e336fa4998b33d1745c52c592897 inherit pro_methods_a04075" id="r_a8ca5e336fa4998b33d1745c52c592897"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>EliminatableClusterTree</b> (const <a class="el" href="a04075.html#a0223c734101df3eebb97e09eabc0ecaf">This</a> &amp;other)</td></tr>
-<tr class="memdesc:a8ca5e336fa4998b33d1745c52c592897 inherit pro_methods_a04075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor - makes a deep copy of the tree structure, but only pointers to factors are copied, factors are not cloned. <br /></td></tr>
-<tr class="memitem:a19b6f69043d78e06565db935e9d0b460 inherit pro_methods_a04075" id="r_a19b6f69043d78e06565db935e9d0b460"><td class="memItemLeft">
-<a class="el" href="a04075.html#a0223c734101df3eebb97e09eabc0ecaf">This</a> &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (const <a class="el" href="a04075.html#a0223c734101df3eebb97e09eabc0ecaf">This</a> &amp;other)</td></tr>
-<tr class="memdesc:a19b6f69043d78e06565db935e9d0b460 inherit pro_methods_a04075"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a03319.html" title="An assignment from labels to value index (size_t).">Assignment</a> operator - makes a deep copy of the tree structure, but only pointers to factors are copied, factors are not cloned. <br /></td></tr>
-<tr class="memitem:a025f8403f75d9e98e29e99a4ed318aea inherit pro_methods_a04075" id="r_a025f8403f75d9e98e29e99a4ed318aea"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>EliminatableClusterTree</b> ()</td></tr>
-<tr class="memdesc:a025f8403f75d9e98e29e99a4ed318aea inherit pro_methods_a04075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor to be used in derived classes. <br /></td></tr>
-<tr class="memitem:acd26df0cc3df2af1c22e4bc2dc76e226" id="r_acd26df0cc3df2af1c22e4bc2dc76e226"><td class="memItemLeft"><a id="acd26df0cc3df2af1c22e4bc2dc76e226" name="acd26df0cc3df2af1c22e4bc2dc76e226"></a>
-&#160;</td><td class="memItemRight"><b>ClusterTree</b> (const <a class="el" href="a04111.html#a5bdaf6c5ff6f7a774e3dbc871e9effd0">This</a> &amp;other)</td></tr>
-<tr class="memdesc:acd26df0cc3df2af1c22e4bc2dc76e226"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor - makes a deep copy of the tree structure, but only pointers to factors are copied, factors are not cloned. <br /></td></tr>
-<tr class="memitem:a1e7239faf89a9160221c3ae89bf15325" id="r_a1e7239faf89a9160221c3ae89bf15325"><td class="memItemLeft"><a id="a1e7239faf89a9160221c3ae89bf15325" name="a1e7239faf89a9160221c3ae89bf15325"></a>
-<a class="el" href="a04111.html#a5bdaf6c5ff6f7a774e3dbc871e9effd0">This</a> &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (const <a class="el" href="a04111.html#a5bdaf6c5ff6f7a774e3dbc871e9effd0">This</a> &amp;other)</td></tr>
-<tr class="memdesc:a1e7239faf89a9160221c3ae89bf15325"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a03319.html" title="An assignment from labels to value index (size_t).">Assignment</a> operator - makes a deep copy of the tree structure, but only pointers to factors are copied, factors are not cloned. <br /></td></tr>
-<tr class="memitem:a0a0aed924d0fb7d666de293d7e8611d1" id="r_a0a0aed924d0fb7d666de293d7e8611d1"><td class="memItemLeft"><a id="a0a0aed924d0fb7d666de293d7e8611d1" name="a0a0aed924d0fb7d666de293d7e8611d1"></a>
-static <a class="el" href="a04199.html#a5cd5f2112feb82893591bc85c5608dfc">This</a>&#160;</td><td class="memItemRight"><b>FromEliminationTree</b> (const ETREE &amp;eliminationTree)</td></tr>
-<tr class="memdesc:a0a0aed924d0fb7d666de293d7e8611d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the junction tree from an elimination tree. <br /></td></tr>
-<tr class="inherit_header pro_attribs_a04075"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a04075')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a04075.html">gtsam::EliminatableClusterTree&lt; BAYESTREE, GRAPH &gt;</a></td></tr>
-<tr class="memitem:a7e64656e04c49480f840ddc030270557 inherit pro_attribs_a04075" id="r_a7e64656e04c49480f840ddc030270557"><td class="memItemLeft">
-<a class="el" href="a01953.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; <a class="el" href="a04075.html#a673bca4ae33509fc9903516d9fba8794">sharedFactor</a> &gt;&#160;</td><td class="memItemRight"><b>remainingFactors_</b></td></tr>
-<tr class="inherit_header pro_attribs_a04111"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a04111')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a04111.html">gtsam::ClusterTree&lt; GRAPH &gt;</a></td></tr>
-<tr class="memitem:a6bf40ec963bf6cf9b2c28f532811a532 inherit pro_attribs_a04111" id="r_a6bf40ec963bf6cf9b2c28f532811a532"><td class="memItemLeft">
-<a class="el" href="a01953.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; sharedNode &gt;&#160;</td><td class="memItemRight"><b>roots_</b></td></tr>
-<tr class="memdesc:a6bf40ec963bf6cf9b2c28f532811a532 inherit pro_attribs_a04111"><td class="mdescLeft">&#160;</td><td class="mdescRight">concept check <br /></td></tr>
+<tr class="inherit_header pro_methods_a03411"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_a03411')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="a03411.html">gtsam::PowerLieGroupBase&lt; G, N, PowerLieGroup&lt; G, N &gt; &gt;</a></td></tr>
+<tr class="memitem:a8af126ec08d2f3bde45a8c4a345ae11b inherit pro_methods_a03411" id="r_a8af126ec08d2f3bde45a8c4a345ae11b"><td class="memItemLeft">
+const <a class="el" href="a03419.html">PowerLieGroup</a>&lt; G, N &gt; &amp;&#160;</td><td class="memItemRight"><b>derived</b> () const</td></tr>
+<tr class="memdesc:a8af126ec08d2f3bde45a8c4a345ae11b inherit pro_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Downcast to the derived storage type. <br /></td></tr>
+<tr class="memitem:a98da05ef318e6f812b420e133556df2a inherit pro_methods_a03411" id="r_a98da05ef318e6f812b420e133556df2a"><td class="memItemLeft">
+size_t&#160;</td><td class="memItemRight"><b>componentCount</b> () const</td></tr>
+<tr class="memdesc:a98da05ef318e6f812b420e133556df2a inherit pro_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runtime component count. <br /></td></tr>
+<tr class="memitem:ae388e10d590fe1610cd7a9d1c57667ba inherit pro_methods_a03411" id="r_ae388e10d590fe1610cd7a9d1c57667ba"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>checkMatchingCounts</b> (const <a class="el" href="a03419.html">PowerLieGroup</a>&lt; G, N &gt; &amp;other, const char *operation) const</td></tr>
+<tr class="memdesc:ae388e10d590fe1610cd7a9d1c57667ba inherit pro_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate matching component counts for binary operations. <br /></td></tr>
+<tr class="inherit_header pro_static_methods_a03411"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_static_methods_a03411')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Protected Member Functions inherited from <a class="el" href="a03411.html">gtsam::PowerLieGroupBase&lt; G, N, PowerLieGroup&lt; G, N &gt; &gt;</a></td></tr>
+<tr class="memitem:aec39e584996a77d5d45c44c7c090751e inherit pro_static_methods_a03411" id="r_aec39e584996a77d5d45c44c7c090751e"><td class="memItemLeft">
+static size_t&#160;</td><td class="memItemRight"><b>totalDimension</b> (size_t count)</td></tr>
+<tr class="memdesc:aec39e584996a77d5d45c44c7c090751e inherit pro_static_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total tangent dimension for a given component count. <br /></td></tr>
+<tr class="memitem:af4704ab6a0cc411e98367819ced58214 inherit pro_static_methods_a03411" id="r_af4704ab6a0cc411e98367819ced58214"><td class="memItemLeft">
+static Eigen::Index&#160;</td><td class="memItemRight"><b>offset</b> (size_t i)</td></tr>
+<tr class="memdesc:af4704ab6a0cc411e98367819ced58214 inherit pro_static_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starting offset of one component inside the concatenated tangent. <br /></td></tr>
+<tr class="memitem:ac913ca07b893bbade2784848c613d89e inherit pro_static_methods_a03411" id="r_ac913ca07b893bbade2784848c613d89e"><td class="memItemLeft">
+static void&#160;</td><td class="memItemRight"><b>checkDynamicTangentSize</b> (const TangentVector &amp;v, size_t count, const char *operation)</td></tr>
+<tr class="memdesc:ac913ca07b893bbade2784848c613d89e inherit pro_static_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate tangent size for dynamic-count groups. <br /></td></tr>
+<tr class="memitem:ab422b7a2e87ff0715254f6bb7a23c493 inherit pro_static_methods_a03411" id="r_ab422b7a2e87ff0715254f6bb7a23c493"><td class="memItemLeft">
+static <a class="el" href="a03203.html">traits</a>&lt; G &gt;::TangentVector&#160;</td><td class="memItemRight"><b>tangentSegment</b> (const TangentVector &amp;v, size_t i)</td></tr>
+<tr class="memdesc:ab422b7a2e87ff0715254f6bb7a23c493 inherit pro_static_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract one component tangent from the concatenated tangent. <br /></td></tr>
+<tr class="memitem:a0cbfcc47e1215fb32306a24b842ff5cc inherit pro_static_methods_a03411" id="r_a0cbfcc47e1215fb32306a24b842ff5cc"><td class="memItemLeft">
+static <a class="el" href="a03419.html">PowerLieGroup</a>&lt; G, N &gt;&#160;</td><td class="memItemRight"><b>makeResult</b> (size_t count)</td></tr>
+<tr class="memdesc:a0cbfcc47e1215fb32306a24b842ff5cc inherit pro_static_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a result object with the requested component count. <br /></td></tr>
+<tr class="memitem:afce91f11181255213c98db2be4195df9 inherit pro_static_methods_a03411" id="r_afce91f11181255213c98db2be4195df9"><td class="memItemLeft">
+static JacobianStorage&#160;</td><td class="memItemRight"><b>makeJacobianStorage</b> (size_t count)</td></tr>
+<tr class="memdesc:afce91f11181255213c98db2be4195df9 inherit pro_static_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create per-component Jacobian storage. <br /></td></tr>
+<tr class="memitem:a3685975587963a0687494a63eee3d52f inherit pro_static_methods_a03411" id="r_a3685975587963a0687494a63eee3d52f"><td class="memItemLeft">
+static void&#160;</td><td class="memItemRight"><b>assignTangentSegment</b> (TangentVector &amp;v, size_t i, const typename <a class="el" href="a03203.html">traits</a>&lt; G &gt;::TangentVector &amp;vi)</td></tr>
+<tr class="memdesc:a3685975587963a0687494a63eee3d52f inherit pro_static_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write one component tangent into the concatenated tangent. <br /></td></tr>
+<tr class="memitem:a274d597033bbac27667c867d720c1740 inherit pro_static_methods_a03411" id="r_a274d597033bbac27667c867d720c1740"><td class="memItemLeft">
+static void&#160;</td><td class="memItemRight"><b>assignJacobianBlock</b> (MatrixType &amp;H, size_t i, const BaseJacobian &amp;block)</td></tr>
+<tr class="memdesc:a274d597033bbac27667c867d720c1740 inherit pro_static_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write one component block into a block-diagonal Jacobian. <br /></td></tr>
+<tr class="memitem:a62b676b95ae7aa61580bfba4b002d3ca inherit pro_static_methods_a03411" id="r_a62b676b95ae7aa61580bfba4b002d3ca"><td class="memItemLeft">
+static void&#160;</td><td class="memItemRight"><b>fillJacobianBlocks</b> (ChartJacobian H, const JacobianStorage &amp;jacobians, size_t count)</td></tr>
+<tr class="memdesc:a62b676b95ae7aa61580bfba4b002d3ca inherit pro_static_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assemble a block-diagonal Jacobian from per-component blocks. <br /></td></tr>
+<tr class="memitem:a32af5dd9ec9fb331cfda63c5cfdbc8e7 inherit pro_static_methods_a03411" id="r_a32af5dd9ec9fb331cfda63c5cfdbc8e7"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>zeroTangent</b> (size_t count)</td></tr>
+<tr class="memdesc:a32af5dd9ec9fb331cfda63c5cfdbc8e7 inherit pro_static_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a zero tangent with the requested runtime size. <br /></td></tr>
+<tr class="memitem:a161d5b601d79c504181671d74ccdaaaf inherit pro_static_methods_a03411" id="r_a161d5b601d79c504181671d74ccdaaaf"><td class="memItemLeft">
+static Jacobian&#160;</td><td class="memItemRight"><b>zeroJacobian</b> (size_t count)</td></tr>
+<tr class="memdesc:a161d5b601d79c504181671d74ccdaaaf inherit pro_static_methods_a03411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a zero Jacobian with the requested runtime size. <br /></td></tr>
+<tr class="inherit_header pro_static_attribs_a03411"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_static_attribs_a03411')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Protected Attributes inherited from <a class="el" href="a03411.html">gtsam::PowerLieGroupBase&lt; G, N, PowerLieGroup&lt; G, N &gt; &gt;</a></td></tr>
+<tr class="memitem:a4fccac49b506844314122e5d3afdc66f inherit pro_static_attribs_a03411" id="r_a4fccac49b506844314122e5d3afdc66f"><td class="memItemLeft">
+static constexpr bool&#160;</td><td class="memItemRight"><b>isDynamic</b></td></tr>
+<tr class="memitem:a7acd62020da75681fedc8929d572b6b0 inherit pro_static_attribs_a03411" id="r_a7acd62020da75681fedc8929d572b6b0"><td class="memItemLeft">
+static constexpr int&#160;</td><td class="memItemRight"><b>n</b></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a4555ca722f81654a9aeb9983913dd6fc" name="a4555ca722f81654a9aeb9983913dd6fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4555ca722f81654a9aeb9983913dd6fc">&#9670;&#160;</a></span>DiscreteJunctionTree()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">gtsam::DiscreteJunctionTree::DiscreteJunctionTree </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a03395.html">DiscreteEliminationTree</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>eliminationTree</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Build the elimination tree of a factor graph using precomputed column structure. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">factorGraph</td><td>The factor graph for which to build the elimination tree </td></tr>
-    <tr><td class="paramname">structure</td><td>The set of factors involving each variable. If this is not precomputed, you can call the Create(const FactorGraph&lt;DERIVEDFACTOR&gt;&amp;) named constructor instead. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The elimination tree </dd></dl>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/discrete/<a class="el" href="a00242_source.html">DiscreteJunctionTree.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/discrete/<a class="el" href="a00245.html">DiscreteJunctionTree.cpp</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/<a class="el" href="a00065_source.html">ProductLieGroup.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/<a class="el" href="a00098_source.html">ProductLieGroup-inl.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -296,7 +346,7 @@ static <a class="el" href="a04199.html#a5cd5f2112feb82893591bc85c5608dfc">This</
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a03419.html">DiscreteJunctionTree</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a03419.html">PowerLieGroup</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

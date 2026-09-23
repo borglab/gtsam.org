@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::ISAM2DoglegParams Struct Reference</title>
+<title>gtsam: gtsam::LabeledSymbol Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,109 +96,111 @@ $(function(){initNavTree('a04963.html','','a04960'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::ISAM2DoglegParams Struct Reference<div class="ingroups"><a class="el" href="a01966.html">ISAM2</a></div></div></div>
+  <div class="headertitle"><div class="title">gtsam::LabeledSymbol Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Parameters for <a class="el" href="a04947.html" title="Implementation of the full ISAM2 algorithm for incremental nonlinear optimization.">ISAM2</a> using Dogleg optimization. </p>
-<p>Either this class or <a class="el" href="a04959.html" title="Parameters for ISAM2 using Gauss-Newton optimization.">ISAM2GaussNewtonParams</a> should be specified as the optimizationParams in <a class="el" href="a04967.html">ISAM2Params</a>, which should in turn be passed to ISAM2(const ISAM2Params&amp;). </p>
+<div class="textblock"><p>Customized version of <a class="el" href="a04987.html" title="Character and index key used to refer to variables.">gtsam::Symbol</a> for multi-robot use. </p>
+<p>This variation of <a class="el" href="a04987.html" title="Character and index key used to refer to variables.">Symbol</a> stores two char values in addition to an integer key, which is useful for encoding a group for a variable. This was originally designed for multi-robot systems, which allows expressing "Pose 7 from robot B" as "xB7". </p>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Standard API</h2></td></tr>
+<tr class="memitem:ad2b0d9bc3a5495d6006a8edbdd387394" id="r_ad2b0d9bc3a5495d6006a8edbdd387394"><td class="memItemLeft"><a id="ad2b0d9bc3a5495d6006a8edbdd387394" name="ad2b0d9bc3a5495d6006a8edbdd387394"></a>
+&#160;</td><td class="memItemRight"><b>operator Key</b> () const</td></tr>
+<tr class="memdesc:ad2b0d9bc3a5495d6006a8edbdd387394"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cast to <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2" title="Integer nonlinear key type.">Key</a>. <br /></td></tr>
+<tr class="memitem:a1e532e8857910450e0d4eee2528b7909" id="r_a1e532e8857910450e0d4eee2528b7909"><td class="memItemLeft"><a id="a1e532e8857910450e0d4eee2528b7909" name="a1e532e8857910450e0d4eee2528b7909"></a>
+<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>key</b> () const</td></tr>
+<tr class="memdesc:a1e532e8857910450e0d4eee2528b7909"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the integer version <br /></td></tr>
+<tr class="memitem:ad222539e4fb96408cb54a19cdd736a5b" id="r_ad222539e4fb96408cb54a19cdd736a5b"><td class="memItemLeft"><a id="ad222539e4fb96408cb54a19cdd736a5b" name="ad222539e4fb96408cb54a19cdd736a5b"></a>
+unsigned char&#160;</td><td class="memItemRight"><b>label</b> () const</td></tr>
+<tr class="memdesc:ad222539e4fb96408cb54a19cdd736a5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve label character. <br /></td></tr>
+<tr class="memitem:a9b4c02257d2f21b0be48725cfe5fbe01" id="r_a9b4c02257d2f21b0be48725cfe5fbe01"><td class="memItemLeft"><a id="a9b4c02257d2f21b0be48725cfe5fbe01" name="a9b4c02257d2f21b0be48725cfe5fbe01"></a>
+unsigned char&#160;</td><td class="memItemRight"><b>chr</b> () const</td></tr>
+<tr class="memdesc:a9b4c02257d2f21b0be48725cfe5fbe01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve key character. <br /></td></tr>
+<tr class="memitem:a7d7fe2674ddf7d86ad53bea6c26cd03f" id="r_a7d7fe2674ddf7d86ad53bea6c26cd03f"><td class="memItemLeft"><a id="a7d7fe2674ddf7d86ad53bea6c26cd03f" name="a7d7fe2674ddf7d86ad53bea6c26cd03f"></a>
+std::uint64_t&#160;</td><td class="memItemRight"><b>index</b> () const</td></tr>
+<tr class="memdesc:a7d7fe2674ddf7d86ad53bea6c26cd03f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve key index. <br /></td></tr>
+<tr class="memitem:ae2acaada18ce4cf5328b7c7524f2566d" id="r_ae2acaada18ce4cf5328b7c7524f2566d"><td class="memItemLeft"><a id="ae2acaada18ce4cf5328b7c7524f2566d" name="ae2acaada18ce4cf5328b7c7524f2566d"></a>
+&#160;</td><td class="memItemRight"><b>operator std::string</b> () const</td></tr>
+<tr class="memdesc:ae2acaada18ce4cf5328b7c7524f2566d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a string from the key. <br /></td></tr>
+<tr class="memitem:ad31471ce03e13cea848e082c65b76c41" id="r_ad31471ce03e13cea848e082c65b76c41"><td class="memItemLeft"><a id="ad31471ce03e13cea848e082c65b76c41" name="ad31471ce03e13cea848e082c65b76c41"></a>
+GTSAM_EXPORT std::ostream &amp;&#160;</td><td class="memItemRight"><b>operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="#a26423032387e3e0615c2f168a3ad0389">LabeledSymbol</a> &amp;<a class="el" href="a02242.html#a3bfdb8456463015b2dda092a5805a745">symbol</a>)</td></tr>
+<tr class="memdesc:ad31471ce03e13cea848e082c65b76c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output stream operator that can be used with <a class="el" href="a04955.html" title="Output stream manipulator that will format gtsam::Keys according to the given KeyFormatter,...">key_formatter</a> (see <a class="el" href="a00815.html">Key.h</a>). <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a68b79a86c44c9bec6549ecdfaf0cf536" id="r_a68b79a86c44c9bec6549ecdfaf0cf536"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a68b79a86c44c9bec6549ecdfaf0cf536">ISAM2DoglegParams</a> (double _initialDelta=1.0, double _wildfireThreshold=1e-5, <a class="el" href="a04815.html#a52e03ca11a892d070c911db43f22cf04">DoglegOptimizerImpl::TrustRegionAdaptationMode</a> _adaptationMode=DoglegOptimizerImpl::SEARCH_EACH_ITERATION, bool _verbose=false)</td></tr>
-<tr class="memdesc:a68b79a86c44c9bec6549ecdfaf0cf536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify parameters as constructor arguments.  <br /></td></tr>
-<tr class="memitem:a5d331f0820ae32e2b5f13b70a5816313" id="r_a5d331f0820ae32e2b5f13b70a5816313"><td class="memItemLeft"><a id="a5d331f0820ae32e2b5f13b70a5816313" name="a5d331f0820ae32e2b5f13b70a5816313"></a>
-void&#160;</td><td class="memItemRight"><b>print</b> (const std::string str=&quot;&quot;) const</td></tr>
-<tr class="memitem:a3b1f8e82e133667f1273a1c1ebd75947" id="r_a3b1f8e82e133667f1273a1c1ebd75947"><td class="memItemLeft"><a id="a3b1f8e82e133667f1273a1c1ebd75947" name="a3b1f8e82e133667f1273a1c1ebd75947"></a>
-double&#160;</td><td class="memItemRight"><b>getInitialDelta</b> () const</td></tr>
-<tr class="memitem:a3d62e105a7243abb96e894c815ce8dd2" id="r_a3d62e105a7243abb96e894c815ce8dd2"><td class="memItemLeft"><a id="a3d62e105a7243abb96e894c815ce8dd2" name="a3d62e105a7243abb96e894c815ce8dd2"></a>
-double&#160;</td><td class="memItemRight"><b>getWildfireThreshold</b> () const</td></tr>
-<tr class="memitem:a70eb9cd085642bc54e5ac0a3953019a9" id="r_a70eb9cd085642bc54e5ac0a3953019a9"><td class="memItemLeft"><a id="a70eb9cd085642bc54e5ac0a3953019a9" name="a70eb9cd085642bc54e5ac0a3953019a9"></a>
-std::string&#160;</td><td class="memItemRight"><b>getAdaptationMode</b> () const</td></tr>
-<tr class="memitem:a8f1d4933447f72714a8ce5c0ab93f000" id="r_a8f1d4933447f72714a8ce5c0ab93f000"><td class="memItemLeft"><a id="a8f1d4933447f72714a8ce5c0ab93f000" name="a8f1d4933447f72714a8ce5c0ab93f000"></a>
-bool&#160;</td><td class="memItemRight"><b>isVerbose</b> () const</td></tr>
-<tr class="memitem:a1c96400f91041b28ce8f3eac34349824" id="r_a1c96400f91041b28ce8f3eac34349824"><td class="memItemLeft"><a id="a1c96400f91041b28ce8f3eac34349824" name="a1c96400f91041b28ce8f3eac34349824"></a>
-void&#160;</td><td class="memItemRight"><b>setInitialDelta</b> (double <a class="el" href="#a929d62bcb7aefda2b8514a813360d272">initialDelta</a>)</td></tr>
-<tr class="memitem:ac186a6431b183c13fa153d4528e99709" id="r_ac186a6431b183c13fa153d4528e99709"><td class="memItemLeft"><a id="ac186a6431b183c13fa153d4528e99709" name="ac186a6431b183c13fa153d4528e99709"></a>
-void&#160;</td><td class="memItemRight"><b>setWildfireThreshold</b> (double <a class="el" href="#aaf78f71297ce1a510acd290b3e7289f2">wildfireThreshold</a>)</td></tr>
-<tr class="memitem:ae1a717bed113c87e80eeb5f612bb27a5" id="r_ae1a717bed113c87e80eeb5f612bb27a5"><td class="memItemLeft"><a id="ae1a717bed113c87e80eeb5f612bb27a5" name="ae1a717bed113c87e80eeb5f612bb27a5"></a>
-void&#160;</td><td class="memItemRight"><b>setAdaptationMode</b> (const std::string &amp;<a class="el" href="#a4011adf62546c0fca59e62c0522136b8">adaptationMode</a>)</td></tr>
-<tr class="memitem:a9b2d2ddeac61d7c9589e162534148bde" id="r_a9b2d2ddeac61d7c9589e162534148bde"><td class="memItemLeft"><a id="a9b2d2ddeac61d7c9589e162534148bde" name="a9b2d2ddeac61d7c9589e162534148bde"></a>
-void&#160;</td><td class="memItemRight"><b>setVerbose</b> (bool <a class="el" href="#a423adc06cbc8c72f89469d1c3eb24571">verbose</a>)</td></tr>
-<tr class="memitem:a074edc7ff3321365ad6e47d15aa10700" id="r_a074edc7ff3321365ad6e47d15aa10700"><td class="memItemLeft"><a id="a074edc7ff3321365ad6e47d15aa10700" name="a074edc7ff3321365ad6e47d15aa10700"></a>
-std::string&#160;</td><td class="memItemRight"><b>adaptationModeTranslator</b> (const <a class="el" href="a04815.html#a52e03ca11a892d070c911db43f22cf04">DoglegOptimizerImpl::TrustRegionAdaptationMode</a> &amp;<a class="el" href="#a4011adf62546c0fca59e62c0522136b8">adaptationMode</a>) const</td></tr>
-<tr class="memitem:ad287f5ba78b36deb53be1de3bfe9c891" id="r_ad287f5ba78b36deb53be1de3bfe9c891"><td class="memItemLeft"><a id="ad287f5ba78b36deb53be1de3bfe9c891" name="ad287f5ba78b36deb53be1de3bfe9c891"></a>
-<a class="el" href="a04815.html#a52e03ca11a892d070c911db43f22cf04">DoglegOptimizerImpl::TrustRegionAdaptationMode</a>&#160;</td><td class="memItemRight"><b>adaptationModeTranslator</b> (const std::string &amp;<a class="el" href="#a4011adf62546c0fca59e62c0522136b8">adaptationMode</a>) const</td></tr>
+<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Constructors</div></td></tr>
+<tr class="memitem:a26423032387e3e0615c2f168a3ad0389" id="r_a26423032387e3e0615c2f168a3ad0389"><td class="memItemLeft"><a id="a26423032387e3e0615c2f168a3ad0389" name="a26423032387e3e0615c2f168a3ad0389"></a>
+&#160;</td><td class="memItemRight"><b>LabeledSymbol</b> ()</td></tr>
+<tr class="memdesc:a26423032387e3e0615c2f168a3ad0389"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
+<tr class="memitem:aa3fb596d35048a62db4081d6805a2788" id="r_aa3fb596d35048a62db4081d6805a2788"><td class="memItemLeft"><a id="aa3fb596d35048a62db4081d6805a2788" name="aa3fb596d35048a62db4081d6805a2788"></a>
+&#160;</td><td class="memItemRight"><b>LabeledSymbol</b> (const LabeledSymbol &amp;<a class="el" href="#a1e532e8857910450e0d4eee2528b7909">key</a>)</td></tr>
+<tr class="memdesc:aa3fb596d35048a62db4081d6805a2788"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor. <br /></td></tr>
+<tr class="memitem:a67e7b55ea34de161202e6cc27ede4d3a" id="r_a67e7b55ea34de161202e6cc27ede4d3a"><td class="memItemLeft"><a id="a67e7b55ea34de161202e6cc27ede4d3a" name="a67e7b55ea34de161202e6cc27ede4d3a"></a>
+&#160;</td><td class="memItemRight"><b>LabeledSymbol</b> (unsigned char c, unsigned char <a class="el" href="#ad222539e4fb96408cb54a19cdd736a5b">label</a>, std::uint64_t j)</td></tr>
+<tr class="memdesc:a67e7b55ea34de161202e6cc27ede4d3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor fro characters c and label, and integer j. <br /></td></tr>
+<tr class="memitem:a52a5852303788751d46cddc7e5f5bcc2" id="r_a52a5852303788751d46cddc7e5f5bcc2"><td class="memItemLeft"><a id="a52a5852303788751d46cddc7e5f5bcc2" name="a52a5852303788751d46cddc7e5f5bcc2"></a>
+&#160;</td><td class="memItemRight"><b>LabeledSymbol</b> (<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="el" href="#a1e532e8857910450e0d4eee2528b7909">key</a>)</td></tr>
+<tr class="memdesc:a52a5852303788751d46cddc7e5f5bcc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that decodes an integer <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2" title="Integer nonlinear key type.">Key</a>. <br /></td></tr>
+<tr id="pub-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Testable</div></td></tr>
+<tr class="memitem:a0965abf1a8e67d0d7753be3c72060101" id="r_a0965abf1a8e67d0d7753be3c72060101"><td class="memItemLeft"><a id="a0965abf1a8e67d0d7753be3c72060101" name="a0965abf1a8e67d0d7753be3c72060101"></a>
+void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;&quot;) const</td></tr>
+<tr class="memdesc:a0965abf1a8e67d0d7753be3c72060101"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the <a class="el" href="a04963.html" title="Customized version of gtsam::Symbol for multi-robot use.">LabeledSymbol</a> with an optional prefix string. <br /></td></tr>
+<tr class="memitem:ad51a23852d39a3a45acd2199ab64b044" id="r_ad51a23852d39a3a45acd2199ab64b044"><td class="memItemLeft"><a id="ad51a23852d39a3a45acd2199ab64b044" name="ad51a23852d39a3a45acd2199ab64b044"></a>
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="#a26423032387e3e0615c2f168a3ad0389">LabeledSymbol</a> &amp;expected, double tol=0.0) const</td></tr>
+<tr class="memdesc:ad51a23852d39a3a45acd2199ab64b044"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if this <a class="el" href="a04963.html" title="Customized version of gtsam::Symbol for multi-robot use.">LabeledSymbol</a> is equal to another, tolerance is ignored. <br /></td></tr>
+<tr id="pub-methods-2" class="groupHeader"><td colspan="2"><div class="groupHeader">Comparison</div></td></tr>
+<tr class="memitem:ab35881951614403c3bfb08cc117e488b" id="r_ab35881951614403c3bfb08cc117e488b"><td class="memItemLeft"><a id="ab35881951614403c3bfb08cc117e488b" name="ab35881951614403c3bfb08cc117e488b"></a>
+bool&#160;</td><td class="memItemRight"><b>operator&lt;</b> (const <a class="el" href="#a26423032387e3e0615c2f168a3ad0389">LabeledSymbol</a> &amp;comp) const</td></tr>
+<tr class="memitem:a3c6fc5366b4a180a8c82c16a75427eeb" id="r_a3c6fc5366b4a180a8c82c16a75427eeb"><td class="memItemLeft"><a id="a3c6fc5366b4a180a8c82c16a75427eeb" name="a3c6fc5366b4a180a8c82c16a75427eeb"></a>
+bool&#160;</td><td class="memItemRight"><b>operator==</b> (const <a class="el" href="#a26423032387e3e0615c2f168a3ad0389">LabeledSymbol</a> &amp;comp) const</td></tr>
+<tr class="memitem:abc3a0b5ceb4bdc1e6aa7aee3ffd17116" id="r_abc3a0b5ceb4bdc1e6aa7aee3ffd17116"><td class="memItemLeft"><a id="abc3a0b5ceb4bdc1e6aa7aee3ffd17116" name="abc3a0b5ceb4bdc1e6aa7aee3ffd17116"></a>
+bool&#160;</td><td class="memItemRight"><b>operator==</b> (<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> comp) const</td></tr>
+<tr class="memitem:a3c54b67e0be5ce423d5bfb7708e23fa5" id="r_a3c54b67e0be5ce423d5bfb7708e23fa5"><td class="memItemLeft"><a id="a3c54b67e0be5ce423d5bfb7708e23fa5" name="a3c54b67e0be5ce423d5bfb7708e23fa5"></a>
+bool&#160;</td><td class="memItemRight"><b>operator!=</b> (const <a class="el" href="#a26423032387e3e0615c2f168a3ad0389">LabeledSymbol</a> &amp;comp) const</td></tr>
+<tr class="memitem:aad9e921b640856b7681b29377a532a59" id="r_aad9e921b640856b7681b29377a532a59"><td class="memItemLeft"><a id="aad9e921b640856b7681b29377a532a59" name="aad9e921b640856b7681b29377a532a59"></a>
+bool&#160;</td><td class="memItemRight"><b>operator!=</b> (<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> comp) const</td></tr>
+<tr id="pub-methods-3" class="groupHeader"><td colspan="2"><div class="groupHeader">Advanced API</div></td></tr>
+<tr class="memitem:a7e81de6913223277546ecdd779818565" id="r_a7e81de6913223277546ecdd779818565"><td class="memItemLeft"><a id="a7e81de6913223277546ecdd779818565" name="a7e81de6913223277546ecdd779818565"></a>
+<a class="el" href="#a26423032387e3e0615c2f168a3ad0389">LabeledSymbol</a>&#160;</td><td class="memItemRight"><b>upper</b> () const</td></tr>
+<tr class="memdesc:a7e81de6913223277546ecdd779818565"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts to upper/lower versions of labels. <br /></td></tr>
+<tr class="memitem:a87b54ddbd609f17daa166e49bfd0d769" id="r_a87b54ddbd609f17daa166e49bfd0d769"><td class="memItemLeft"><a id="a87b54ddbd609f17daa166e49bfd0d769" name="a87b54ddbd609f17daa166e49bfd0d769"></a>
+<a class="el" href="#a26423032387e3e0615c2f168a3ad0389">LabeledSymbol</a>&#160;</td><td class="memItemRight"><b>lower</b> () const</td></tr>
+<tr class="memitem:a4b9fac7737d9d05797d12d4d70b49a56" id="r_a4b9fac7737d9d05797d12d4d70b49a56"><td class="memItemLeft"><a id="a4b9fac7737d9d05797d12d4d70b49a56" name="a4b9fac7737d9d05797d12d4d70b49a56"></a>
+<a class="el" href="#a26423032387e3e0615c2f168a3ad0389">LabeledSymbol</a>&#160;</td><td class="memItemRight"><b>newChr</b> (unsigned char c) const</td></tr>
+<tr class="memdesc:a4b9fac7737d9d05797d12d4d70b49a56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new symbol with a different character. <br /></td></tr>
+<tr class="memitem:aeb802d0fc048ecdf24ae694398a1c3c8" id="r_aeb802d0fc048ecdf24ae694398a1c3c8"><td class="memItemLeft"><a id="aeb802d0fc048ecdf24ae694398a1c3c8" name="aeb802d0fc048ecdf24ae694398a1c3c8"></a>
+<a class="el" href="#a26423032387e3e0615c2f168a3ad0389">LabeledSymbol</a>&#160;</td><td class="memItemRight"><b>newLabel</b> (unsigned char <a class="el" href="#ad222539e4fb96408cb54a19cdd736a5b">label</a>) const</td></tr>
+<tr class="memdesc:aeb802d0fc048ecdf24ae694398a1c3c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new symbol with a different label. <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a929d62bcb7aefda2b8514a813360d272" id="r_a929d62bcb7aefda2b8514a813360d272"><td class="memItemLeft"><a id="a929d62bcb7aefda2b8514a813360d272" name="a929d62bcb7aefda2b8514a813360d272"></a>
-double&#160;</td><td class="memItemRight"><b>initialDelta</b></td></tr>
-<tr class="memdesc:a929d62bcb7aefda2b8514a813360d272"><td class="mdescLeft">&#160;</td><td class="mdescRight">The initial trust region radius for Dogleg. <br /></td></tr>
-<tr class="memitem:aaf78f71297ce1a510acd290b3e7289f2" id="r_aaf78f71297ce1a510acd290b3e7289f2"><td class="memItemLeft"><a id="aaf78f71297ce1a510acd290b3e7289f2" name="aaf78f71297ce1a510acd290b3e7289f2"></a>
-double&#160;</td><td class="memItemRight"><b>wildfireThreshold</b></td></tr>
-<tr class="memdesc:aaf78f71297ce1a510acd290b3e7289f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Continue updating the linear delta only when changes are above this threshold (default: 1e-5). <br /></td></tr>
-<tr class="memitem:a4011adf62546c0fca59e62c0522136b8" id="r_a4011adf62546c0fca59e62c0522136b8"><td class="memItemLeft"><a id="a4011adf62546c0fca59e62c0522136b8" name="a4011adf62546c0fca59e62c0522136b8"></a>
-<a class="el" href="a04815.html#a52e03ca11a892d070c911db43f22cf04">DoglegOptimizerImpl::TrustRegionAdaptationMode</a>&#160;</td><td class="memItemRight"><b>adaptationMode</b></td></tr>
-<tr class="memdesc:a4011adf62546c0fca59e62c0522136b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">See description in <a class="el" href="a04815.html#a52e03ca11a892d070c911db43f22cf04" title="Specifies how the trust region is adapted at each Dogleg iteration.">DoglegOptimizerImpl::TrustRegionAdaptationMode</a>. <br /></td></tr>
-<tr class="memitem:a423adc06cbc8c72f89469d1c3eb24571" id="r_a423adc06cbc8c72f89469d1c3eb24571"><td class="memItemLeft"><a id="a423adc06cbc8c72f89469d1c3eb24571" name="a423adc06cbc8c72f89469d1c3eb24571"></a>
-bool&#160;</td><td class="memItemRight"><b>verbose</b></td></tr>
-<tr class="memdesc:a423adc06cbc8c72f89469d1c3eb24571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether Dogleg prints iteration and convergence information. <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr id="pub-static-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Filtering</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Return a filter function that returns true when evaluated on a <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2" title="Integer nonlinear key type.">Key</a> whose character (when converted to a <a class="el" href="a04963.html" title="Customized version of gtsam::Symbol for multi-robot use.">LabeledSymbol</a>) matches <code>c</code>.</p>
+<p>Use this with the Values::filter() function to retrieve all key-value pairs with the requested character. </p>
+</div></td></tr>
+<tr class="memitem:a09ae767d472370836a43228960039702" id="r_a09ae767d472370836a43228960039702"><td class="memItemLeft"><a id="a09ae767d472370836a43228960039702" name="a09ae767d472370836a43228960039702"></a>
+static std::function&lt; bool(<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>)&gt;&#160;</td><td class="memItemRight"><b>TypeTest</b> (unsigned char c)</td></tr>
+<tr class="memdesc:a09ae767d472370836a43228960039702"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks only the type. <br /></td></tr>
+<tr class="memitem:a727256d908fae0e8d3bb75cd17f31c6e" id="r_a727256d908fae0e8d3bb75cd17f31c6e"><td class="memItemLeft"><a id="a727256d908fae0e8d3bb75cd17f31c6e" name="a727256d908fae0e8d3bb75cd17f31c6e"></a>
+static std::function&lt; bool(<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>)&gt;&#160;</td><td class="memItemRight"><b>LabelTest</b> (unsigned char <a class="el" href="#ad222539e4fb96408cb54a19cdd736a5b">label</a>)</td></tr>
+<tr class="memdesc:a727256d908fae0e8d3bb75cd17f31c6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks only the robot ID (label_). <br /></td></tr>
+<tr class="memitem:ad0df145a5e7980e5a31ada9f3d99e9fb" id="r_ad0df145a5e7980e5a31ada9f3d99e9fb"><td class="memItemLeft"><a id="ad0df145a5e7980e5a31ada9f3d99e9fb" name="ad0df145a5e7980e5a31ada9f3d99e9fb"></a>
+static std::function&lt; bool(<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>)&gt;&#160;</td><td class="memItemRight"><b>TypeLabelTest</b> (unsigned char c, unsigned char <a class="el" href="#ad222539e4fb96408cb54a19cdd736a5b">label</a>)</td></tr>
+<tr class="memdesc:ad0df145a5e7980e5a31ada9f3d99e9fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks both type and the robot ID. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:ae7f325cf35fb4a4092181f818a93befc" id="r_ae7f325cf35fb4a4092181f818a93befc"><td class="memItemLeft"><a id="ae7f325cf35fb4a4092181f818a93befc" name="ae7f325cf35fb4a4092181f818a93befc"></a>
+unsigned char&#160;</td><td class="memItemRight"><b>c_</b></td></tr>
+<tr class="memitem:a4e86b25cd34e8e6ea7aefa7f6e3b3d3c" id="r_a4e86b25cd34e8e6ea7aefa7f6e3b3d3c"><td class="memItemLeft"><a id="a4e86b25cd34e8e6ea7aefa7f6e3b3d3c" name="a4e86b25cd34e8e6ea7aefa7f6e3b3d3c"></a>
+unsigned char&#160;</td><td class="memItemRight"><b>label_</b></td></tr>
+<tr class="memitem:a1f189ced5c342dc1151ac8b7ae417838" id="r_a1f189ced5c342dc1151ac8b7ae417838"><td class="memItemLeft"><a id="a1f189ced5c342dc1151ac8b7ae417838" name="a1f189ced5c342dc1151ac8b7ae417838"></a>
+std::uint64_t&#160;</td><td class="memItemRight"><b>j_</b></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a68b79a86c44c9bec6549ecdfaf0cf536" name="a68b79a86c44c9bec6549ecdfaf0cf536"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68b79a86c44c9bec6549ecdfaf0cf536">&#9670;&#160;</a></span>ISAM2DoglegParams()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">gtsam::ISAM2DoglegParams::ISAM2DoglegParams </td>
-          <td>(</td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>_initialDelta</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1.0</span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>_wildfireThreshold</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1e-5</span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a04815.html#a52e03ca11a892d070c911db43f22cf04">DoglegOptimizerImpl::TrustRegionAdaptationMode</a></td>          <td class="paramname"><span class="paramname"><em>_adaptationMode</em></span><span class="paramdefsep"> = </span><span class="paramdefval">DoglegOptimizerImpl::&#160;SEARCH_EACH_ITERATION</span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>_verbose</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Specify parameters as constructor arguments. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">_initialDelta</td><td>see <a class="el" href="#a929d62bcb7aefda2b8514a813360d272" title="The initial trust region radius for Dogleg.">ISAM2DoglegParams::initialDelta</a>  </td></tr>
-    <tr><td class="paramname">_wildfireThreshold</td><td>see <a class="el" href="#aaf78f71297ce1a510acd290b3e7289f2" title="Continue updating the linear delta only when changes are above this threshold (default: 1e-5).">ISAM2DoglegParams::wildfireThreshold</a>  </td></tr>
-    <tr><td class="paramname">_adaptationMode</td><td>see <a class="el" href="#a4011adf62546c0fca59e62c0522136b8" title="See description in DoglegOptimizerImpl::TrustRegionAdaptationMode.">ISAM2DoglegParams::adaptationMode</a>  </td></tr>
-    <tr><td class="paramname">_verbose</td><td>see <a class="el" href="#a423adc06cbc8c72f89469d1c3eb24571" title="Whether Dogleg prints iteration and convergence information.">ISAM2DoglegParams::verbose</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/<a class="el" href="a01094_source.html">ISAM2Params.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/<a class="el" href="a01052.html">ISAM2Params.cpp</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/inference/<a class="el" href="a00842_source.html">LabeledSymbol.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/inference/<b>LabeledSymbol.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -213,7 +215,7 @@ bool&#160;</td><td class="memItemRight"><b>verbose</b></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04963.html">ISAM2DoglegParams</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04963.html">LabeledSymbol</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::traits&lt; ExpressionFactor&lt; T &gt; &gt; Struct Template Reference</title>
+<title>gtsam: gtsam::Conditional&lt; FACTOR, DERIVEDCONDITIONAL &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,36 +96,264 @@ $(function(){initNavTree('a04867.html','','a04864'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; ExpressionFactor&lt; T &gt; &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::Conditional&lt; FACTOR, DERIVEDCONDITIONAL &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
-struct gtsam::traits&lt; ExpressionFactor&lt; T &gt; &gt;</div><p>traits </p>
-</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::traits&lt; ExpressionFactor&lt; T &gt; &gt;:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
- <div class="center">
-  <img src="a04867.png" usemap="#gtsam_3A_3Atraits_3C_20ExpressionFactor_3C_20T_20_3E_20_3E_map" alt=""/>
-  <map id="gtsam_3A_3Atraits_3C_20ExpressionFactor_3C_20T_20_3E_20_3E_map" name="gtsam_3A_3Atraits_3C_20ExpressionFactor_3C_20T_20_3E_20_3E_map">
-<area href="a03039.html" alt="gtsam::Testable&lt; ExpressionFactor&lt; T &gt; &gt;" shape="rect" coords="0,0,251,24"/>
-  </map>
-</div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; ExpressionFactor&lt; T &gt; &gt;</a></td></tr>
-<tr class="memitem:a0b809ea2931c6c4a2ecbd17e8f3fab39 inherit pub_methods_a03039" id="r_a0b809ea2931c6c4a2ecbd17e8f3fab39"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>BOOST_CONCEPT_ASSERT</b> ((<a class="el" href="a03035.html">HasTestablePrereqs</a>&lt; T &gt;))</td></tr>
-<tr class="inherit_header pub_static_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; ExpressionFactor&lt; T &gt; &gt;</a></td></tr>
-<tr class="memitem:a27b246d77898916925c676895348fedf inherit pub_static_methods_a03039" id="r_a27b246d77898916925c676895348fedf"><td class="memItemLeft">
-static void&#160;</td><td class="memItemRight"><b>Print</b> (const T &amp;m, const std::string &amp;str=&quot;&quot;)</td></tr>
-<tr class="memitem:a29a5699453b92070b31ca7fa42609d98 inherit pub_static_methods_a03039" id="r_a29a5699453b92070b31ca7fa42609d98"><td class="memItemLeft">
-static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const T &amp;m1, const T &amp;m2, double tol=1e-8)</td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Advanced Interface</h2></td></tr>
+<tr class="memitem:acca063529671c6783551c694061f17ab" id="r_acca063529671c6783551c694061f17ab"><td class="memItemLeft"><a id="acca063529671c6783551c694061f17ab" name="acca063529671c6783551c694061f17ab"></a>
+FACTOR::const_iterator&#160;</td><td class="memItemRight"><b>beginFrontals</b> () const</td></tr>
+<tr class="memdesc:acca063529671c6783551c694061f17ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator pointing to first frontal key. <br /></td></tr>
+<tr class="memitem:a2da329d78e91e9b7b7110c7a8370872e" id="r_a2da329d78e91e9b7b7110c7a8370872e"><td class="memItemLeft"><a id="a2da329d78e91e9b7b7110c7a8370872e" name="a2da329d78e91e9b7b7110c7a8370872e"></a>
+FACTOR::const_iterator&#160;</td><td class="memItemRight"><b>endFrontals</b> () const</td></tr>
+<tr class="memdesc:a2da329d78e91e9b7b7110c7a8370872e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator pointing past the last frontal key. <br /></td></tr>
+<tr class="memitem:af1f80fbcb599d244f1f83998996d34b0" id="r_af1f80fbcb599d244f1f83998996d34b0"><td class="memItemLeft"><a id="af1f80fbcb599d244f1f83998996d34b0" name="af1f80fbcb599d244f1f83998996d34b0"></a>
+FACTOR::const_iterator&#160;</td><td class="memItemRight"><b>beginParents</b> () const</td></tr>
+<tr class="memdesc:af1f80fbcb599d244f1f83998996d34b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator pointing to the first parent key. <br /></td></tr>
+<tr class="memitem:ae97aeba1e243d7dbbf90aff659bc490b" id="r_ae97aeba1e243d7dbbf90aff659bc490b"><td class="memItemLeft"><a id="ae97aeba1e243d7dbbf90aff659bc490b" name="ae97aeba1e243d7dbbf90aff659bc490b"></a>
+FACTOR::const_iterator&#160;</td><td class="memItemRight"><b>endParents</b> () const</td></tr>
+<tr class="memdesc:ae97aeba1e243d7dbbf90aff659bc490b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator pointing past the last parent key. <br /></td></tr>
+<tr class="memitem:ab1bb0a9fa1d3e1a462c7f57853f693f6" id="r_ab1bb0a9fa1d3e1a462c7f57853f693f6"><td class="memItemLeft"><a id="ab1bb0a9fa1d3e1a462c7f57853f693f6" name="ab1bb0a9fa1d3e1a462c7f57853f693f6"></a>
+size_t &amp;&#160;</td><td class="memItemRight"><b>nrFrontals</b> ()</td></tr>
+<tr class="memdesc:ab1bb0a9fa1d3e1a462c7f57853f693f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutable version of nrFrontals. <br /></td></tr>
+<tr class="memitem:ab2b9bbc643244dbabfc6c82bee870499" id="r_ab2b9bbc643244dbabfc6c82bee870499"><td class="memItemLeft"><a id="ab2b9bbc643244dbabfc6c82bee870499" name="ab2b9bbc643244dbabfc6c82bee870499"></a>
+FACTOR::iterator&#160;</td><td class="memItemRight"><b>beginFrontals</b> ()</td></tr>
+<tr class="memdesc:ab2b9bbc643244dbabfc6c82bee870499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutable iterator pointing to first frontal key. <br /></td></tr>
+<tr class="memitem:a3ec8e5074bea26f7cc04f680d9fbd4af" id="r_a3ec8e5074bea26f7cc04f680d9fbd4af"><td class="memItemLeft"><a id="a3ec8e5074bea26f7cc04f680d9fbd4af" name="a3ec8e5074bea26f7cc04f680d9fbd4af"></a>
+FACTOR::iterator&#160;</td><td class="memItemRight"><b>endFrontals</b> ()</td></tr>
+<tr class="memdesc:a3ec8e5074bea26f7cc04f680d9fbd4af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutable iterator pointing past the last frontal key. <br /></td></tr>
+<tr class="memitem:aa44803c99d5df7869d1151468c49afad" id="r_aa44803c99d5df7869d1151468c49afad"><td class="memItemLeft"><a id="aa44803c99d5df7869d1151468c49afad" name="aa44803c99d5df7869d1151468c49afad"></a>
+FACTOR::iterator&#160;</td><td class="memItemRight"><b>beginParents</b> ()</td></tr>
+<tr class="memdesc:aa44803c99d5df7869d1151468c49afad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutable iterator pointing to the first parent key. <br /></td></tr>
+<tr class="memitem:a3b07df7eeb50133c0b40388e80c455ab" id="r_a3b07df7eeb50133c0b40388e80c455ab"><td class="memItemLeft"><a id="a3b07df7eeb50133c0b40388e80c455ab" name="a3b07df7eeb50133c0b40388e80c455ab"></a>
+FACTOR::iterator&#160;</td><td class="memItemRight"><b>endParents</b> ()</td></tr>
+<tr class="memdesc:a3b07df7eeb50133c0b40388e80c455ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutable iterator pointing past the last parent key. <br /></td></tr>
+<tr class="memitem:a0581ba698d3f008f2a572c9b0474d6c2" id="r_a0581ba698d3f008f2a572c9b0474d6c2"><td class="memTemplParams" colspan="2">template&lt;class VALUES&gt; </td></tr>
+<tr class="memitem:a0581ba698d3f008f2a572c9b0474d6c2 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a0581ba698d3f008f2a572c9b0474d6c2">CheckInvariants</a> (const DERIVEDCONDITIONAL &amp;conditional, const VALUES &amp;x)</td></tr>
+<tr class="memdesc:a0581ba698d3f008f2a572c9b0474d6c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check invariants of this conditional, given the values <span class="tt">x</span>.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Testable</div></td></tr>
+<tr class="memitem:ae420d24aff203ccfb249e939a48730f5" id="r_ae420d24aff203ccfb249e939a48730f5"><td class="memItemLeft"><a id="ae420d24aff203ccfb249e939a48730f5" name="ae420d24aff203ccfb249e939a48730f5"></a>
+void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;Conditional&quot;, const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;formatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) const</td></tr>
+<tr class="memdesc:ae420d24aff203ccfb249e939a48730f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">print with optional formatter <br /></td></tr>
+<tr class="memitem:a53fe6e88f668f9ee971204d7d22b0c44" id="r_a53fe6e88f668f9ee971204d7d22b0c44"><td class="memItemLeft"><a id="a53fe6e88f668f9ee971204d7d22b0c44" name="a53fe6e88f668f9ee971204d7d22b0c44"></a>
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const This &amp;c, double tol=1e-9) const</td></tr>
+<tr class="memdesc:a53fe6e88f668f9ee971204d7d22b0c44"><td class="mdescLeft">&#160;</td><td class="mdescRight">check equality <br /></td></tr>
+<tr id="pub-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Standard Interface</div></td></tr>
+<tr class="memitem:a87e48132e41995e8327bc5b1daefd41d" id="r_a87e48132e41995e8327bc5b1daefd41d"><td class="memItemLeft"><a id="a87e48132e41995e8327bc5b1daefd41d" name="a87e48132e41995e8327bc5b1daefd41d"></a>
+size_t&#160;</td><td class="memItemRight"><b>nrFrontals</b> () const</td></tr>
+<tr class="memdesc:a87e48132e41995e8327bc5b1daefd41d"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the number of frontals <br /></td></tr>
+<tr class="memitem:ae19763bc0d1b12bea9e7bfcb304b40bb" id="r_ae19763bc0d1b12bea9e7bfcb304b40bb"><td class="memItemLeft"><a id="ae19763bc0d1b12bea9e7bfcb304b40bb" name="ae19763bc0d1b12bea9e7bfcb304b40bb"></a>
+size_t&#160;</td><td class="memItemRight"><b>nrParents</b> () const</td></tr>
+<tr class="memdesc:ae19763bc0d1b12bea9e7bfcb304b40bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the number of parents <br /></td></tr>
+<tr class="memitem:a2c239cc3a58d08302df173d4e464f2f1" id="r_a2c239cc3a58d08302df173d4e464f2f1"><td class="memItemLeft"><a id="a2c239cc3a58d08302df173d4e464f2f1" name="a2c239cc3a58d08302df173d4e464f2f1"></a>
+<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>firstFrontalKey</b> () const</td></tr>
+<tr class="memdesc:a2c239cc3a58d08302df173d4e464f2f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience function to get the first frontal key. <br /></td></tr>
+<tr class="memitem:ac32c96f2070f1c0a882101e02a9b3d01" id="r_ac32c96f2070f1c0a882101e02a9b3d01"><td class="memItemLeft"><a id="ac32c96f2070f1c0a882101e02a9b3d01" name="ac32c96f2070f1c0a882101e02a9b3d01"></a>
+<a class="el" href="#ae07bb3864d21815e8f18c81e3c1dc662">Frontals</a>&#160;</td><td class="memItemRight"><b>frontals</b> () const</td></tr>
+<tr class="memdesc:ac32c96f2070f1c0a882101e02a9b3d01"><td class="mdescLeft">&#160;</td><td class="mdescRight">return a view of the frontal keys <br /></td></tr>
+<tr class="memitem:a4f7dab2390695c0972df2fc8da2ee6c4" id="r_a4f7dab2390695c0972df2fc8da2ee6c4"><td class="memItemLeft"><a id="a4f7dab2390695c0972df2fc8da2ee6c4" name="a4f7dab2390695c0972df2fc8da2ee6c4"></a>
+<a class="el" href="#ad6765642a6a0e0e8a84a3b1fe9204855">Parents</a>&#160;</td><td class="memItemRight"><b>parents</b> () const</td></tr>
+<tr class="memdesc:a4f7dab2390695c0972df2fc8da2ee6c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">return a view of the parent keys <br /></td></tr>
+<tr class="memitem:a7a24baed122d1eb00499fd96e85e806a" id="r_a7a24baed122d1eb00499fd96e85e806a"><td class="memItemLeft">virtual double&#160;</td><td class="memItemRight"><a class="el" href="#a7a24baed122d1eb00499fd96e85e806a">logProbability</a> (const <a class="el" href="a07563.html">HybridValues</a> &amp;c) const</td></tr>
+<tr class="memdesc:a7a24baed122d1eb00499fd96e85e806a"><td class="mdescLeft">&#160;</td><td class="mdescRight">All conditional types need to implement a <span class="tt"><a class="el" href="#a7a24baed122d1eb00499fd96e85e806a" title="All conditional types need to implement a logProbability function, for which exp(logProbability(x)) =...">logProbability</a></span> function, for which exp(logProbability(x)) = evaluate(x).  <br /></td></tr>
+<tr class="memitem:a4a897d1d1ac21785781623eba0276289" id="r_a4a897d1d1ac21785781623eba0276289"><td class="memItemLeft">virtual double&#160;</td><td class="memItemRight"><a class="el" href="#a4a897d1d1ac21785781623eba0276289">evaluate</a> (const <a class="el" href="a07563.html">HybridValues</a> &amp;c) const</td></tr>
+<tr class="memdesc:a4a897d1d1ac21785781623eba0276289"><td class="mdescLeft">&#160;</td><td class="mdescRight">All conditional types need to implement an <span class="tt"><a class="el" href="#a4a897d1d1ac21785781623eba0276289" title="All conditional types need to implement an evaluate function, that yields a true probability.">evaluate</a></span> function, that yields a true probability.  <br /></td></tr>
+<tr class="memitem:a6ac62b932a5cd666e309028392e27b29" id="r_a6ac62b932a5cd666e309028392e27b29"><td class="memItemLeft"><a id="a6ac62b932a5cd666e309028392e27b29" name="a6ac62b932a5cd666e309028392e27b29"></a>
+double&#160;</td><td class="memItemRight"><b>operator()</b> (const <a class="el" href="a07563.html">HybridValues</a> &amp;x) const</td></tr>
+<tr class="memdesc:a6ac62b932a5cd666e309028392e27b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate probability density, sugar. <br /></td></tr>
+<tr class="memitem:a5ce0a649e8b30499add42356840846cd" id="r_a5ce0a649e8b30499add42356840846cd"><td class="memItemLeft">virtual double&#160;</td><td class="memItemRight"><a class="el" href="#a5ce0a649e8b30499add42356840846cd">negLogConstant</a> () const</td></tr>
+<tr class="memdesc:a5ce0a649e8b30499add42356840846cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">All conditional types need to implement this as the negative log of the normalization constant to make it such that error&gt;=0.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a636e74b8a20bac4817bd1d86e3e67ed7" id="r_a636e74b8a20bac4817bd1d86e3e67ed7"><td class="memItemLeft"><a id="a636e74b8a20bac4817bd1d86e3e67ed7" name="a636e74b8a20bac4817bd1d86e3e67ed7"></a>
+typedef std::pair&lt; typename FACTOR::const_iterator, typename FACTOR::const_iterator &gt;&#160;</td><td class="memItemRight"><b>ConstFactorRange</b></td></tr>
+<tr class="memdesc:a636e74b8a20bac4817bd1d86e3e67ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">A mini implementation of an iterator range, to share const views of frontals and parents. <br /></td></tr>
+<tr class="memitem:ae07bb3864d21815e8f18c81e3c1dc662" id="r_ae07bb3864d21815e8f18c81e3c1dc662"><td class="memItemLeft"><a id="ae07bb3864d21815e8f18c81e3c1dc662" name="ae07bb3864d21815e8f18c81e3c1dc662"></a>
+typedef <a class="el" href="a04871.html">ConstFactorRangeIterator</a>&#160;</td><td class="memItemRight"><b>Frontals</b></td></tr>
+<tr class="memdesc:ae07bb3864d21815e8f18c81e3c1dc662"><td class="mdescLeft">&#160;</td><td class="mdescRight">View of the frontal keys (call <a class="el" href="#ac32c96f2070f1c0a882101e02a9b3d01" title="return a view of the frontal keys">frontals()</a>). <br /></td></tr>
+<tr class="memitem:ad6765642a6a0e0e8a84a3b1fe9204855" id="r_ad6765642a6a0e0e8a84a3b1fe9204855"><td class="memItemLeft"><a id="ad6765642a6a0e0e8a84a3b1fe9204855" name="ad6765642a6a0e0e8a84a3b1fe9204855"></a>
+typedef <a class="el" href="a04871.html">ConstFactorRangeIterator</a>&#160;</td><td class="memItemRight"><b>Parents</b></td></tr>
+<tr class="memdesc:ad6765642a6a0e0e8a84a3b1fe9204855"><td class="mdescLeft">&#160;</td><td class="mdescRight">View of the separator keys (call <a class="el" href="#a4f7dab2390695c0972df2fc8da2ee6c4" title="return a view of the parent keys">parents()</a>). <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:ConstFactorRangeIterator" id="r_ConstFactorRangeIterator"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04871.html">ConstFactorRangeIterator</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr id="pro-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Standard Constructors</div></td></tr>
+<tr class="memitem:a92872ac46ea07c2953eabbdfe816f3ed" id="r_a92872ac46ea07c2953eabbdfe816f3ed"><td class="memItemLeft"><a id="a92872ac46ea07c2953eabbdfe816f3ed" name="a92872ac46ea07c2953eabbdfe816f3ed"></a>
+&#160;</td><td class="memItemRight"><b>Conditional</b> ()</td></tr>
+<tr class="memdesc:a92872ac46ea07c2953eabbdfe816f3ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty Constructor to make serialization possible. <br /></td></tr>
+<tr class="memitem:a97b7d1439af9d6bd666946a7d22d2fd5" id="r_a97b7d1439af9d6bd666946a7d22d2fd5"><td class="memItemLeft"><a id="a97b7d1439af9d6bd666946a7d22d2fd5" name="a97b7d1439af9d6bd666946a7d22d2fd5"></a>
+&#160;</td><td class="memItemRight"><b>Conditional</b> (size_t <a class="el" href="#a87e48132e41995e8327bc5b1daefd41d">nrFrontals</a>)</td></tr>
+<tr class="memdesc:a97b7d1439af9d6bd666946a7d22d2fd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a1700745916154a78b30a2fc15e28ce70" id="r_a1700745916154a78b30a2fc15e28ce70"><td class="memItemLeft"><a id="a1700745916154a78b30a2fc15e28ce70" name="a1700745916154a78b30a2fc15e28ce70"></a>
+size_t&#160;</td><td class="memItemRight"><b>nrFrontals_</b></td></tr>
+<tr class="memdesc:a1700745916154a78b30a2fc15e28ce70"><td class="mdescLeft">&#160;</td><td class="mdescRight">The first nrFrontal variables are frontal and the rest are parents. <br /></td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/<a class="el" href="a01133_source.html">ExpressionFactor.h</a></li>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a0581ba698d3f008f2a572c9b0474d6c2" name="a0581ba698d3f008f2a572c9b0474d6c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0581ba698d3f008f2a572c9b0474d6c2">&#9670;&#160;</a></span>CheckInvariants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class FACTOR, class DERIVEDCONDITIONAL&gt; </div>
+<div class="memtemplate">
+template&lt;class VALUES&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="a04867.html">gtsam::Conditional</a>&lt; FACTOR, DERIVEDCONDITIONAL &gt;::CheckInvariants </td>
+          <td>(</td>
+          <td class="paramtype">const DERIVEDCONDITIONAL &amp;</td>          <td class="paramname"><span class="paramname"><em>conditional</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const VALUES &amp;</td>          <td class="paramname"><span class="paramname"><em>x</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check invariants of this conditional, given the values <span class="tt">x</span>. </p>
+<p>It tests:</p><ul>
+<li>evaluate &gt;= 0.0</li>
+<li>evaluate(x) == conditional(x)</li>
+<li>exp(logProbability(x)) == evaluate(x)</li>
+<li><a class="el" href="#a5ce0a649e8b30499add42356840846cd" title="All conditional types need to implement this as the negative log of the normalization constant to mak...">negLogConstant()</a> = -log(normalizationConstant())</li>
+<li>error &gt;= 0.0</li>
+<li>logProbability(x) == -(<a class="el" href="#a5ce0a649e8b30499add42356840846cd" title="All conditional types need to implement this as the negative log of the normalization constant to mak...">negLogConstant()</a> + error(x))</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conditional</td><td>The conditional to test, as a reference to the derived type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">VALUES</td><td><a class="el" href="a04803.html" title="HybridValues represents a collection of DiscreteValues and VectorValues.">HybridValues</a>, or a more narrow type like <a class="el" href="a03979.html" title="A map from keys to values.">DiscreteValues</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4a897d1d1ac21785781623eba0276289" name="a4a897d1d1ac21785781623eba0276289"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a897d1d1ac21785781623eba0276289">&#9670;&#160;</a></span>evaluate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class FACTOR, class DERIVEDCONDITIONAL&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="a04867.html">gtsam::Conditional</a>&lt; FACTOR, DERIVEDCONDITIONAL &gt;::evaluate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a07563.html">HybridValues</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>All conditional types need to implement an <span class="tt"><a class="el" href="#a4a897d1d1ac21785781623eba0276289" title="All conditional types need to implement an evaluate function, that yields a true probability.">evaluate</a></span> function, that yields a true probability. </p>
+<p>The default implementation just exponentiates logProbability. </p>
+
+<p>Reimplemented in <a class="el" href="a03883.html#a7dc57300d844ee3b7adc0fe6de3ec8a0">gtsam::DiscreteConditional</a>, <a class="el" href="a05107.html#a697a0381178286d02a2c6241fcb894b8">gtsam::GaussianConditional</a>, <a class="el" href="a04683.html#ad7f1ade3f6c8854f8363435f10166a4d">gtsam::HybridConditional</a>, <a class="el" href="a04711.html#ab70cf642caadcd8ec86eb4e8a9a98513">gtsam::HybridGaussianConditional</a>, <a class="el" href="a07167.html#a3a08c69c2cc9219da8b34f79e5fedf60">gtsam::SymbolicConditional</a>, and <a class="el" href="a04007.html#a7dc57300d844ee3b7adc0fe6de3ec8a0">gtsam::TableDistribution</a>.</p>
+
+</div>
+</div>
+<a id="a7a24baed122d1eb00499fd96e85e806a" name="a7a24baed122d1eb00499fd96e85e806a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a24baed122d1eb00499fd96e85e806a">&#9670;&#160;</a></span>logProbability()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class FACTOR, class DERIVEDCONDITIONAL&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="a04867.html">gtsam::Conditional</a>&lt; FACTOR, DERIVEDCONDITIONAL &gt;::logProbability </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a07563.html">HybridValues</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>All conditional types need to implement a <span class="tt"><a class="el" href="#a7a24baed122d1eb00499fd96e85e806a" title="All conditional types need to implement a logProbability function, for which exp(logProbability(x)) =...">logProbability</a></span> function, for which exp(logProbability(x)) = evaluate(x). </p>
+
+<p>Reimplemented in <a class="el" href="a03883.html#a7be64c2df6e77908ed9844541638ae81">gtsam::DiscreteConditional</a>, <a class="el" href="a05107.html#a5f2147b91f9106d41bf556a0dbd7f9c6">gtsam::GaussianConditional</a>, <a class="el" href="a04683.html#a09248627e216ca920aa1ee9e9857eaf5">gtsam::HybridConditional</a>, <a class="el" href="a04711.html#af33f8bf41bc7a090654f8892de1770fb">gtsam::HybridGaussianConditional</a>, and <a class="el" href="a07167.html#aed2b00c56ffb931c268c7317edd94f3c">gtsam::SymbolicConditional</a>.</p>
+
+</div>
+</div>
+<a id="a5ce0a649e8b30499add42356840846cd" name="a5ce0a649e8b30499add42356840846cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ce0a649e8b30499add42356840846cd">&#9670;&#160;</a></span>negLogConstant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class FACTOR, class DERIVEDCONDITIONAL&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="a04867.html">gtsam::Conditional</a>&lt; FACTOR, DERIVEDCONDITIONAL &gt;::negLogConstant </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>All conditional types need to implement this as the negative log of the normalization constant to make it such that error&gt;=0. </p>
+<dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
+
+<p>Reimplemented in <a class="el" href="a03883.html#a3ad98541a9ac4e3823635f2858322f8e">gtsam::DiscreteConditional</a>, <a class="el" href="a05107.html#ab9018aaffb8cf5db190c25f16618030d">gtsam::GaussianConditional</a>, <a class="el" href="a04683.html#a8a2b7238115f00df636d49161c55d0a3">gtsam::HybridConditional</a>, and <a class="el" href="a04711.html#aab029f05fc45a301f8d26d365ad20485">gtsam::HybridGaussianConditional</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/inference/<a class="el" href="a00905_source.html">Conditional.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/inference/<a class="el" href="a00782_source.html">Conditional-inst.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -140,7 +368,7 @@ static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const T &amp;m1, c
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04867.html">traits&lt; ExpressionFactor&lt; T &gt; &gt;</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04867.html">Conditional</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

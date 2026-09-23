@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['relinearizationthreshold_0',['RelinearizationThreshold',['../a04967.html#aaca0be318ade6e00378389976c5cb761',1,'gtsam::ISAM2Params']]],
-  ['roots_1',['Roots',['../a04087.html#af38ef93cf38589e7866441c51aa5117b',1,'gtsam::BayesTree']]],
-  ['rot3vector_2',['Rot3Vector',['../a01968.html#a6852056a11367eed75fece01ba3e775e',1,'gtsam']]],
-  ['rotation_3',['Rotation',['../a03571.html#ada38a77a8898dce412f93c8f097d656d',1,'gtsam::PinholeBase::Rotation'],['../a03703.html#ab75a2a0b67f731473b712ffea2ed1593',1,'gtsam::Pose2::Rotation'],['../a03727.html#ab8bad91d0d31f7fe4858738e257917ca',1,'gtsam::Pose3::Rotation'],['../a11817.html#ab75a2a0b67f731473b712ffea2ed1593',1,'Pose2::Rotation']]],
-  ['row_4',['Row',['../a03459.html#a058b129adfd1cdb887c88efedf2c8ca3',1,'gtsam::Signature']]]
+  ['optimizationparams_0',['OptimizationParams',['../a06347.html#ac4c864daa53101e130db85fed1ae474b',1,'gtsam::ISAM2Params']]],
+  ['optimizertype_1',['OptimizerType',['../a06287.html#a14b9310dc6d8421cc8e8fff0db4cf545',1,'gtsam::GncParams']]],
+  ['optionaljacobianvector_2',['OptionalJacobianVector',['../a02242.html#a606b85d1e74cb6d2c45f38bc6b1b2dea',1,'gtsam']]],
+  ['optionalmatrixtype_3',['OptionalMatrixType',['../a02242.html#a39c52c49d5301ff2f020e66bf69bbf69',1,'gtsam']]],
+  ['optionalmatrixvectype_4',['OptionalMatrixVecType',['../a02242.html#a943ae34c4e906cbae9766253bf95f7c7',1,'gtsam']]],
+  ['optionalorderingtype_5',['OptionalOrderingType',['../a04887.html#af27e3d79ee48b6ed40b7640a1bb26229',1,'gtsam::EliminateableFactorGraph']]],
+  ['optionalvariableindex_6',['OptionalVariableIndex',['../a04887.html#adeca465639c6ef3737b4b53d22256ed1',1,'gtsam::EliminateableFactorGraph']]]
 ];

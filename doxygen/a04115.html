@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::ClusterTree&lt; GRAPH &gt;::Cluster Struct Reference</title>
+<title>gtsam: gtsam::traits&lt; const Cal3DS2 &gt; Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,73 +96,59 @@ $(function(){initNavTree('a04115.html','','a04112'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::ClusterTree&lt; GRAPH &gt;::Cluster Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::traits&lt; const Cal3DS2 &gt; Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class GRAPH&gt;<br />
-struct gtsam::ClusterTree&lt; GRAPH &gt;::Cluster</div><p>A <a class="el" href="a04115.html" title="A Cluster is just a collection of factors.">Cluster</a> is just a collection of factors. </p>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a6506f894eda1c810ed6c8975415d4d6e" id="r_a6506f894eda1c810ed6c8975415d4d6e"><td class="memItemLeft"><a id="a6506f894eda1c810ed6c8975415d4d6e" name="a6506f894eda1c810ed6c8975415d4d6e"></a>
-const Cluster &amp;&#160;</td><td class="memItemRight"><b>operator[]</b> (size_t i) const</td></tr>
-<tr class="memitem:a02ea1b9ff2d9ad0486b593d3f404ea6a" id="r_a02ea1b9ff2d9ad0486b593d3f404ea6a"><td class="memTemplParams" colspan="2"><a id="a02ea1b9ff2d9ad0486b593d3f404ea6a" name="a02ea1b9ff2d9ad0486b593d3f404ea6a"></a>
-template&lt;class CONTAINER&gt; </td></tr>
-<tr class="memitem:a02ea1b9ff2d9ad0486b593d3f404ea6a template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>Cluster</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key, const CONTAINER &amp;factorsToAdd)</td></tr>
-<tr class="memdesc:a02ea1b9ff2d9ad0486b593d3f404ea6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from factors associated with a single key. <br /></td></tr>
-<tr class="memitem:af0baff380d5b7c23c15f6b615af3665b" id="r_af0baff380d5b7c23c15f6b615af3665b"><td class="memTemplParams" colspan="2"><a id="af0baff380d5b7c23c15f6b615af3665b" name="af0baff380d5b7c23c15f6b615af3665b"></a>
-template&lt;class CONTAINER&gt; </td></tr>
-<tr class="memitem:af0baff380d5b7c23c15f6b615af3665b template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><b>addFactors</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key, const CONTAINER &amp;factorsToAdd)</td></tr>
-<tr class="memdesc:af0baff380d5b7c23c15f6b615af3665b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add factors associated with a single key. <br /></td></tr>
-<tr class="memitem:ab1c98ac426f00fff853601e6b3c79345" id="r_ab1c98ac426f00fff853601e6b3c79345"><td class="memItemLeft"><a id="ab1c98ac426f00fff853601e6b3c79345" name="ab1c98ac426f00fff853601e6b3c79345"></a>
-void&#160;</td><td class="memItemRight"><b>addChild</b> (const boost::shared_ptr&lt; Cluster &gt; &amp;cluster)</td></tr>
-<tr class="memdesc:ab1c98ac426f00fff853601e6b3c79345"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a child cluster. <br /></td></tr>
-<tr class="memitem:aee3401bc46dc4d23e9bacf956c8819d0" id="r_aee3401bc46dc4d23e9bacf956c8819d0"><td class="memItemLeft"><a id="aee3401bc46dc4d23e9bacf956c8819d0" name="aee3401bc46dc4d23e9bacf956c8819d0"></a>
-size_t&#160;</td><td class="memItemRight"><b>nrChildren</b> () const</td></tr>
-<tr class="memitem:a505481b06ba1ef6a85222c4149133bdc" id="r_a505481b06ba1ef6a85222c4149133bdc"><td class="memItemLeft"><a id="a505481b06ba1ef6a85222c4149133bdc" name="a505481b06ba1ef6a85222c4149133bdc"></a>
-size_t&#160;</td><td class="memItemRight"><b>nrFactors</b> () const</td></tr>
-<tr class="memitem:a2aa82af1914aac38e23c545fb1186fd2" id="r_a2aa82af1914aac38e23c545fb1186fd2"><td class="memItemLeft"><a id="a2aa82af1914aac38e23c545fb1186fd2" name="a2aa82af1914aac38e23c545fb1186fd2"></a>
-size_t&#160;</td><td class="memItemRight"><b>nrFrontals</b> () const</td></tr>
-<tr class="memitem:aed523e274b706817c0a3007331fb4953" id="r_aed523e274b706817c0a3007331fb4953"><td class="memItemLeft"><a id="aed523e274b706817c0a3007331fb4953" name="aed523e274b706817c0a3007331fb4953"></a>
-int&#160;</td><td class="memItemRight"><b>problemSize</b> () const</td></tr>
-<tr class="memitem:a2c09076a9fd810570b76613e3f7f84ff" id="r_a2c09076a9fd810570b76613e3f7f84ff"><td class="memItemLeft"><a id="a2c09076a9fd810570b76613e3f7f84ff" name="a2c09076a9fd810570b76613e3f7f84ff"></a>
-virtual void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;&quot;, const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=DefaultKeyFormatter) const</td></tr>
-<tr class="memdesc:a2c09076a9fd810570b76613e3f7f84ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">print this node <br /></td></tr>
-<tr class="memitem:a757d8c52d104d96298a1060943a00c77" id="r_a757d8c52d104d96298a1060943a00c77"><td class="memItemLeft"><a id="a757d8c52d104d96298a1060943a00c77" name="a757d8c52d104d96298a1060943a00c77"></a>
-std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight"><b>nrFrontalsOfChildren</b> () const</td></tr>
-<tr class="memdesc:a757d8c52d104d96298a1060943a00c77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a vector with nrFrontal keys for each child. <br /></td></tr>
-<tr class="memitem:a72af85e48bd9b8ea2ea36db0bad5253b" id="r_a72af85e48bd9b8ea2ea36db0bad5253b"><td class="memItemLeft"><a id="a72af85e48bd9b8ea2ea36db0bad5253b" name="a72af85e48bd9b8ea2ea36db0bad5253b"></a>
-void&#160;</td><td class="memItemRight"><b>merge</b> (const boost::shared_ptr&lt; Cluster &gt; &amp;cluster)</td></tr>
-<tr class="memdesc:a72af85e48bd9b8ea2ea36db0bad5253b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merge in given cluster. <br /></td></tr>
-<tr class="memitem:a5a35c15894923c99a38d393657169be0" id="r_a5a35c15894923c99a38d393657169be0"><td class="memItemLeft"><a id="a5a35c15894923c99a38d393657169be0" name="a5a35c15894923c99a38d393657169be0"></a>
-void&#160;</td><td class="memItemRight"><b>mergeChildren</b> (const std::vector&lt; bool &gt; &amp;<a class="el" href="#a72af85e48bd9b8ea2ea36db0bad5253b">merge</a>)</td></tr>
-<tr class="memdesc:a5a35c15894923c99a38d393657169be0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merge all children for which bit is set into this node. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a1eacaf4f309980a98aa00907c016acbd" id="r_a1eacaf4f309980a98aa00907c016acbd"><td class="memItemLeft"><a id="a1eacaf4f309980a98aa00907c016acbd" name="a1eacaf4f309980a98aa00907c016acbd"></a>
-Children&#160;</td><td class="memItemRight"><b>children</b></td></tr>
-<tr class="memdesc:a1eacaf4f309980a98aa00907c016acbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">sub-trees <br /></td></tr>
-<tr class="memitem:a572bf7152d93d7cda0f2745f90e28411" id="r_a572bf7152d93d7cda0f2745f90e28411"><td class="memItemLeft"><a id="a572bf7152d93d7cda0f2745f90e28411" name="a572bf7152d93d7cda0f2745f90e28411"></a>
-Keys&#160;</td><td class="memItemRight"><b>orderedFrontalKeys</b></td></tr>
-<tr class="memdesc:a572bf7152d93d7cda0f2745f90e28411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frontal keys of this node. <br /></td></tr>
-<tr class="memitem:a962cb87201fac628ab4a0717b0e9ae50" id="r_a962cb87201fac628ab4a0717b0e9ae50"><td class="memItemLeft"><a id="a962cb87201fac628ab4a0717b0e9ae50" name="a962cb87201fac628ab4a0717b0e9ae50"></a>
-<a class="el" href="a04111.html#a918d9e3e91e7707059ee6360e15b0e19">FactorGraphType</a>&#160;</td><td class="memItemRight"><b>factors</b></td></tr>
-<tr class="memdesc:a962cb87201fac628ab4a0717b0e9ae50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factors associated with this node. <br /></td></tr>
-<tr class="memitem:a5c1fa68dce938c7b5b79c10c6e47c7fa" id="r_a5c1fa68dce938c7b5b79c10c6e47c7fa"><td class="memItemLeft"><a id="a5c1fa68dce938c7b5b79c10c6e47c7fa" name="a5c1fa68dce938c7b5b79c10c6e47c7fa"></a>
-int&#160;</td><td class="memItemRight"><b>problemSize_</b></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a6e8c3ab90169d3c4eae7ef2c9d92bd07" id="r_a6e8c3ab90169d3c4eae7ef2c9d92bd07"><td class="memItemLeft"><a id="a6e8c3ab90169d3c4eae7ef2c9d92bd07" name="a6e8c3ab90169d3c4eae7ef2c9d92bd07"></a>
-typedef <a class="el" href="a01953.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; boost::shared_ptr&lt; Cluster &gt; &gt;&#160;</td><td class="memItemRight"><b>Children</b></td></tr>
-<tr class="memitem:aa6b36b4475283ecca2cb51bed2fb7fe9" id="r_aa6b36b4475283ecca2cb51bed2fb7fe9"><td class="memItemLeft"><a id="aa6b36b4475283ecca2cb51bed2fb7fe9" name="aa6b36b4475283ecca2cb51bed2fb7fe9"></a>
-typedef <a class="el" href="a04227.html">Ordering</a>&#160;</td><td class="memItemRight"><b>Keys</b></td></tr>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::traits&lt; const Cal3DS2 &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="a04115.png" usemap="#gtsam_3A_3Atraits_3C_20const_20Cal3DS2_20_3E_map" alt=""/>
+  <map id="gtsam_3A_3Atraits_3C_20const_20Cal3DS2_20_3E_map" name="gtsam_3A_3Atraits_3C_20const_20Cal3DS2_20_3E_map">
+<area href="a03315.html" alt="gtsam::internal::Manifold&lt; Cal3DS2 &gt;" shape="rect" coords="201,112,593,136"/>
+<area href="a03303.html" alt="gtsam::internal::ManifoldTraits&lt; Cal3DS2 &gt;" shape="rect" coords="0,56,392,80"/>
+<area href="a03535.html" alt="gtsam::Testable&lt; Cal3DS2 &gt;" shape="rect" coords="402,56,794,80"/>
+<area href="a03299.html" alt="gtsam::internal::GetDimensionImpl&lt; Cal3DS2, Cal3DS2::dimension &gt;" shape="rect" coords="0,0,392,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_methods_a03303"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03303')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03303.html">gtsam::internal::ManifoldTraits&lt; Cal3DS2 &gt;</a></td></tr>
+<tr class="memitem:aeb508be8e109605ae7647ed7bc710715 inherit pub_methods_a03303" id="r_aeb508be8e109605ae7647ed7bc710715"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>GTSAM_CONCEPT_ASSERT</b> (<a class="el" href="a03295.html">HasManifoldPrereqs</a>&lt; <a class="el" href="a04107.html">Cal3DS2</a> &gt;)</td></tr>
+<tr class="inherit_header pub_methods_a03535"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03535')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03535.html">gtsam::Testable&lt; Cal3DS2 &gt;</a></td></tr>
+<tr class="memitem:a6fd5215e8e80961b347f5bc16e8ce672 inherit pub_methods_a03535" id="r_a6fd5215e8e80961b347f5bc16e8ce672"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>GTSAM_CONCEPT_ASSERT</b> (<a class="el" href="a03531.html">HasTestablePrereqs</a>&lt; <a class="el" href="a04107.html">Cal3DS2</a> &gt;)</td></tr>
+<tr class="inherit_header pub_static_methods_a03303"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03303')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03303.html">gtsam::internal::ManifoldTraits&lt; Cal3DS2 &gt;</a></td></tr>
+<tr class="memitem:a94e4b4a741e92bf6ed629aa7ef36d0b4 inherit pub_static_methods_a03303" id="r_a94e4b4a741e92bf6ed629aa7ef36d0b4"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>Local</b> (const <a class="el" href="a04107.html">Cal3DS2</a> &amp;origin, const <a class="el" href="a04107.html">Cal3DS2</a> &amp;other)</td></tr>
+<tr class="memitem:adf31f3fd2ec15a2f70a20fd0ffd8d957 inherit pub_static_methods_a03303" id="r_adf31f3fd2ec15a2f70a20fd0ffd8d957"><td class="memItemLeft">
+static <a class="el" href="a04107.html">Cal3DS2</a>&#160;</td><td class="memItemRight"><b>Retract</b> (const <a class="el" href="a04107.html">Cal3DS2</a> &amp;origin, const TangentVector &amp;v)</td></tr>
+<tr class="inherit_header pub_static_methods_a03299"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03299')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03299.html">gtsam::internal::GetDimensionImpl&lt; Cal3DS2, Cal3DS2::dimension &gt;</a></td></tr>
+<tr class="memitem:a1fc02dfed9e5bb053cc0acb5532f708c inherit pub_static_methods_a03299" id="r_a1fc02dfed9e5bb053cc0acb5532f708c"><td class="memItemLeft">
+static size_t&#160;</td><td class="memItemRight"><b>GetDimension</b> (const <a class="el" href="a04107.html">Cal3DS2</a> &amp;m)</td></tr>
+<tr class="inherit_header pub_static_methods_a03535"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03535')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03535.html">gtsam::Testable&lt; Cal3DS2 &gt;</a></td></tr>
+<tr class="memitem:a27b246d77898916925c676895348fedf inherit pub_static_methods_a03535" id="r_a27b246d77898916925c676895348fedf"><td class="memItemLeft">
+static void&#160;</td><td class="memItemRight"><b>Print</b> (const <a class="el" href="a04107.html">Cal3DS2</a> &amp;m, const std::string &amp;str=&quot;&quot;)</td></tr>
+<tr class="memitem:a29a5699453b92070b31ca7fa42609d98 inherit pub_static_methods_a03535" id="r_a29a5699453b92070b31ca7fa42609d98"><td class="memItemLeft">
+static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el" href="a04107.html">Cal3DS2</a> &amp;m1, const <a class="el" href="a04107.html">Cal3DS2</a> &amp;m2, double tol=1e-8)</td></tr>
+<tr class="inherit_header pub_static_attribs_a03303"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_attribs_a03303')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Attributes inherited from <a class="el" href="a03303.html">gtsam::internal::ManifoldTraits&lt; Cal3DS2 &gt;</a></td></tr>
+<tr class="memitem:a900e659562b6e1deef63481461afdc4c inherit pub_static_attribs_a03303" id="r_a900e659562b6e1deef63481461afdc4c"><td class="memItemLeft">
+static constexpr auto&#160;</td><td class="memItemRight"><b>dimension</b></td></tr>
+<tr class="inherit_header pub_types_a03303"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03303')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03303.html">gtsam::internal::ManifoldTraits&lt; Cal3DS2 &gt;</a></td></tr>
+<tr class="memitem:aecd8dd24df157a38744ce7d52893ddef inherit pub_types_a03303" id="r_aecd8dd24df157a38744ce7d52893ddef"><td class="memItemLeft">
+typedef <a class="el" href="a04107.html">Cal3DS2</a>&#160;</td><td class="memItemRight"><b>ManifoldType</b></td></tr>
+<tr class="memitem:aeabfd4c402e097eedb55ad543117d4e2 inherit pub_types_a03303" id="r_aeabfd4c402e097eedb55ad543117d4e2"><td class="memItemLeft">
+typedef <a class="el" href="a03291.html">manifold_tag</a>&#160;</td><td class="memItemRight"><b>structure_category</b></td></tr>
+<tr class="memitem:a7fd4430a3d3639de6e4a4bab2c82214d inherit pub_types_a03303" id="r_a7fd4430a3d3639de6e4a4bab2c82214d"><td class="memItemLeft">
+typedef Eigen::Matrix&lt; double, dimension, 1 &gt;&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+<tr class="memitem:afc21e691a11b4b8bc2ed0abbe3782705 inherit pub_types_a03303" id="r_afc21e691a11b4b8bc2ed0abbe3782705"><td class="memItemLeft">
+typedef <a class="el" href="a03363.html">OptionalJacobian</a>&lt; dimension, dimension &gt;&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/inference/<a class="el" href="a00683_source.html">ClusterTree.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/inference/<a class="el" href="a00680_source.html">ClusterTree-inst.h</a></li>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00587_source.html">Cal3DS2.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -177,7 +163,7 @@ typedef <a class="el" href="a04227.html">Ordering</a>&#160;</td><td class="memIt
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04111.html">ClusterTree</a></li><li class="navelem"><a href="a04115.html">Cluster</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04115.html">traits&lt; const Cal3DS2 &gt;</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

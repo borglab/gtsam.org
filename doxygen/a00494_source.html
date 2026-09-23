@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/hybrid/HybridJunctionTree.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/Quaternion.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,7 +89,7 @@ $(function(){initNavTree('a00494_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">HybridJunctionTree.h</div></div>
+  <div class="headertitle"><div class="title">Quaternion.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a00494.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
@@ -106,47 +106,193 @@ $(function(){initNavTree('a00494_source.html','',''); });
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="a00548.html">gtsam/hybrid/HybridBayesTree.h</a>&gt;</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="a00509.html">gtsam/hybrid/HybridGaussianFactorGraph.h</a>&gt;</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="a00647.html">gtsam/inference/JunctionTree.h</a>&gt;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// Forward declarations</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">class </span><a class="code hl_class" href="a03991.html">HybridEliminationTree</a>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
-<div class="foldopen" id="foldopen00052" data-start="{" data-end="};">
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="a04031.html">   52</a></span><span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a04031.html#a75f0d363a8543bb2f1119bd3fe9b303b">HybridJunctionTree</a></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    : <span class="keyword">public</span> <a class="code hl_function" href="a04199.html#a5812db967ae1a284a243c5a695656d52">JunctionTree</a>&lt;HybridBayesTree, HybridGaussianFactorGraph&gt; {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a04199.html#a5812db967ae1a284a243c5a695656d52">JunctionTree&lt;HybridBayesTree, HybridGaussianFactorGraph&gt;</a></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="a04031.html#adc5a4ce83a37d629dd2a33f22123a9ab">   57</a></span>      <a class="code hl_typedef" href="a04031.html#adc5a4ce83a37d629dd2a33f22123a9ab">Base</a>;                                    </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="a04031.html#ae1e6fccff4dbeb26ab992853a2f3d333">   58</a></span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a04031.html#a75f0d363a8543bb2f1119bd3fe9b303b">HybridJunctionTree</a> <a class="code hl_typedef" href="a04031.html#ae1e6fccff4dbeb26ab992853a2f3d333">This</a>;             </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="a04031.html#a500b8a70d2480bd538d99ebf3be546f9">   59</a></span>  <span class="keyword">typedef</span> boost::shared_ptr&lt;This&gt; <a class="code hl_typedef" href="a04031.html#a500b8a70d2480bd538d99ebf3be546f9">shared_ptr</a>;  </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <a class="code hl_function" href="a04031.html#a75f0d363a8543bb2f1119bd3fe9b303b">HybridJunctionTree</a>(<span class="keyword">const</span> <a class="code hl_class" href="a03991.html">HybridEliminationTree</a>&amp; eliminationTree);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>};</div>
-</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="a00170.html">gtsam/base/Lie.h</a>&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="a00080.html">gtsam/base/MatrixConstants.h</a>&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;gtsam/base/concepts.h&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="a00515.html">gtsam/geometry/SO3.h</a>&gt;</span>  <span class="comment">// Logmap/Expmap derivatives</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;limits&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#define QUATERNION_TYPE Eigen::Quaternion&lt;_Scalar,_Options&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">// Define traits</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> _Scalar, <span class="keywordtype">int</span> _Options&gt;</div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="};">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="a04431.html">   34</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03203.html">traits</a>&lt;QUATERNION_TYPE&gt; {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">typedef</span> QUATERNION_TYPE ManifoldType;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keyword">typedef</span> QUATERNION_TYPE Q;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keyword">typedef</span> <a class="code hl_struct" href="a03271.html">lie_group_tag</a> structure_category;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">typedef</span> <a class="code hl_struct" href="a03195.html">multiplicative_group_tag</a> group_flavor;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keyword">static</span> Q Identity() {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">return</span> Q::Identity();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keyword">auto</span> dimension = 3;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keyword">static</span> <span class="keywordtype">int</span> GetDimension(<span class="keyword">const</span> Q&amp; <span class="comment">/* g */</span>) { <span class="keywordflow">return</span> 3; }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keyword">typedef</span> <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;3, 3&gt;</a> ChartJacobian;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keyword">typedef</span> Eigen::Matrix&lt;_Scalar, 3, 1, _Options, 3, 1&gt; TangentVector;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keyword">static</span> Q Compose(<span class="keyword">const</span> Q &amp;g, <span class="keyword">const</span> Q &amp; h,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      ChartJacobian Hg = {}, ChartJacobian Hh = {}) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">if</span> (Hg) *Hg = h.toRotationMatrix().transpose();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">if</span> (Hh) *Hh = I_3x3;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">return</span> g * h;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keyword">static</span> Q Between(<span class="keyword">const</span> Q &amp;g, <span class="keyword">const</span> Q &amp; h,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      ChartJacobian Hg = {}, ChartJacobian Hh = {}) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    Q d = g.inverse() * h;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">if</span> (Hg) *Hg = -d.toRotationMatrix().transpose();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">if</span> (Hh) *Hh = I_3x3;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">return</span> d;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  }</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}  <span class="comment">// namespace gtsam</span></div>
-<div class="ttc" id="aa00509_html"><div class="ttname"><a href="a00509.html">HybridGaussianFactorGraph.h</a></div><div class="ttdoc">Linearized Hybrid factor graph that uses type erasure.</div></div>
-<div class="ttc" id="aa00548_html"><div class="ttname"><a href="a00548.html">HybridBayesTree.h</a></div><div class="ttdoc">Hybrid Bayes Tree, the result of eliminating a HybridJunctionTree.</div></div>
-<div class="ttc" id="aa00647_html"><div class="ttname"><a href="a00647.html">JunctionTree.h</a></div><div class="ttdoc">The junction tree.</div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa03991_html"><div class="ttname"><a href="a03991.html">gtsam::HybridEliminationTree</a></div><div class="ttdoc">Elimination Tree type for Hybrid Factor Graphs.</div><div class="ttdef"><b>Definition</b> HybridEliminationTree.h:32</div></div>
-<div class="ttc" id="aa04031_html_a500b8a70d2480bd538d99ebf3be546f9"><div class="ttname"><a href="a04031.html#a500b8a70d2480bd538d99ebf3be546f9">gtsam::HybridJunctionTree::shared_ptr</a></div><div class="ttdeci">boost::shared_ptr&lt; This &gt; shared_ptr</div><div class="ttdoc">Shared pointer to this class.</div><div class="ttdef"><b>Definition</b> HybridJunctionTree.h:59</div></div>
-<div class="ttc" id="aa04031_html_a75f0d363a8543bb2f1119bd3fe9b303b"><div class="ttname"><a href="a04031.html#a75f0d363a8543bb2f1119bd3fe9b303b">gtsam::HybridJunctionTree::HybridJunctionTree</a></div><div class="ttdeci">HybridJunctionTree(const HybridEliminationTree &amp;eliminationTree)</div><div class="ttdoc">Build the elimination tree of a factor graph using precomputed column structure.</div><div class="ttdef"><b>Definition</b> HybridJunctionTree.cpp:150</div></div>
-<div class="ttc" id="aa04031_html_adc5a4ce83a37d629dd2a33f22123a9ab"><div class="ttname"><a href="a04031.html#adc5a4ce83a37d629dd2a33f22123a9ab">gtsam::HybridJunctionTree::Base</a></div><div class="ttdeci">JunctionTree&lt; HybridBayesTree, HybridGaussianFactorGraph &gt; Base</div><div class="ttdoc">Base class.</div><div class="ttdef"><b>Definition</b> HybridJunctionTree.h:57</div></div>
-<div class="ttc" id="aa04031_html_ae1e6fccff4dbeb26ab992853a2f3d333"><div class="ttname"><a href="a04031.html#ae1e6fccff4dbeb26ab992853a2f3d333">gtsam::HybridJunctionTree::This</a></div><div class="ttdeci">HybridJunctionTree This</div><div class="ttdoc">This class.</div><div class="ttdef"><b>Definition</b> HybridJunctionTree.h:58</div></div>
-<div class="ttc" id="aa04199_html_a5812db967ae1a284a243c5a695656d52"><div class="ttname"><a href="a04199.html#a5812db967ae1a284a243c5a695656d52">gtsam::JunctionTree&lt; HybridBayesTree, HybridGaussianFactorGraph &gt;::JunctionTree</a></div><div class="ttdeci">JunctionTree(const EliminationTree&lt; ETREE_BAYESNET, ETREE_GRAPH &gt; &amp;eliminationTree)</div></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keyword">static</span> Q Inverse(<span class="keyword">const</span> Q &amp;g,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      ChartJacobian H = {}) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">if</span> (H) *H = -g.toRotationMatrix();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">return</span> g.inverse();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="a04431.html#a729d599d50cde518579c93e15c21e19e">   80</a></span>  <span class="keyword">static</span> Q <a class="code hl_function" href="a04431.html#a729d599d50cde518579c93e15c21e19e">Expmap</a>(<span class="keyword">const</span> Eigen::Ref&lt;const TangentVector&gt;&amp; omega,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                  ChartJacobian H = {}) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">using </span>std::cos;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keyword">using </span>std::sin;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">if</span> (H) *H = <a class="code hl_function" href="a04551.html#aa4e8baefba55afd5bc9aee70e636426b">SO3::ExpmapDerivative</a>(omega.template cast&lt;double&gt;());</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    _Scalar theta2 = omega.dot(omega);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">if</span> (theta2 &gt; std::numeric_limits&lt;_Scalar&gt;::epsilon()) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      _Scalar theta = std::sqrt(theta2);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>      _Scalar ha = _Scalar(0.5) * theta;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      Vector3 vec = (sin(ha) / theta) * omega;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      <span class="keywordflow">return</span> Q(cos(ha), vec.x(), vec.y(), vec.z());</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>      <span class="comment">// first order approximation sin(theta/2)/theta = 0.5</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>      Vector3 vec = _Scalar(0.5) * omega;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>      <span class="keywordflow">return</span> Q(1.0, vec.x(), vec.y(), vec.z());</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  }</div>
+</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="a04431.html#a2d626a9f8b3e96d32e37a3fa57012069">   99</a></span>  <span class="keyword">static</span> TangentVector <a class="code hl_function" href="a04431.html#a2d626a9f8b3e96d32e37a3fa57012069">Logmap</a>(<span class="keyword">const</span> Q&amp; q, ChartJacobian H = {}) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keyword">using </span>std::atan;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="comment">// theta = 2 * atan2(|v|, w),  omega = theta * v / |v|</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="comment">// (C. Hertzberg et al., Information Fusion, 2011), written with atan()</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="comment">// because it is measurably cheaper than atan2() and w &gt;= 0 is arranged</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="comment">// below anyway. Both theta and v/|v| are invariant to a positive rescaling</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="comment">// of (w, v), so this stays correct when q is not of unit norm -- which</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="comment">// matters because Rot3Q builds its quaternion straight from a rotation</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="comment">// matrix supplied by the caller and never renormalizes.</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="comment">// This also removes the need for the two Taylor branches the previous</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="comment">// acos-based form required: atan is accurate as |v| -&gt; 0, so the only</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="comment">// degenerate case left is |v| == 0 exactly, i.e. the identity.</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keyword">const</span> _Scalar qw = q.w();</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keyword">const</span> _Scalar n = q.vec().norm();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    TangentVector omega;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">if</span> (n == _Scalar(0)) {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      omega = TangentVector::Zero();</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>      <span class="comment">// Branch exactly as the previous implementation did, so that the sign</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      <span class="comment">// chosen at qw == 0 (an exact pi rotation, where both signs are valid</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>      <span class="comment">// logs) is unchanged. Note !(qw &gt; 0) rather than qw &lt; 0.</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>      <span class="keyword">const</span> <span class="keywordtype">bool</span> negate = !(qw &gt; _Scalar(0));</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      <span class="keyword">const</span> _Scalar w = negate ? -qw : qw;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      <span class="keyword">const</span> _Scalar theta = (w &gt; n) ? _Scalar(2) * atan(n / w)</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                                    : _Scalar(M_PI) - _Scalar(2) * atan(w / n);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>      omega = (negate ? -theta / n : theta / n) * q.vec();</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordflow">if</span> (H) *H = <a class="code hl_function" href="a04551.html#aa05ed8e50343cac6f98ebebe8cb80507">SO3::LogmapDerivative</a>(omega.template cast&lt;double&gt;());</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordflow">return</span> omega;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  }</div>
+</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  <span class="keyword">static</span> Matrix3 AdjointMap(<span class="keyword">const</span> Q &amp;g) {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordflow">return</span> g.toRotationMatrix();</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  <span class="keyword">using </span>LieAlgebra = Matrix3;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  <span class="keyword">static</span> Matrix3 Hat(<span class="keyword">const</span> Vector3&amp; v) {</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="a04551.html#a813e60e77bd1e2b7ade8c7076b37579a">SO3::Hat</a>(v);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  }</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  <span class="keyword">static</span> Vector3 Vee(<span class="keyword">const</span> Matrix3&amp; X) {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="a04551.html#a43f11eb2cba2be51ba3fa6ee8d46f823">SO3::Vee</a>(X);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  <span class="keyword">static</span> Vector9 Vec(<span class="keyword">const</span> Q&amp; q, OptionalJacobian&lt;9, 3&gt; H = {}) {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordflow">return</span> SO3(q.toRotationMatrix()).SO3::vec(H);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  }</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  <span class="keyword">static</span> TangentVector Local(<span class="keyword">const</span> Q&amp; g, <span class="keyword">const</span> Q&amp; h,</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>      ChartJacobian H1 = {}, ChartJacobian H2 = {}) {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    Q b = Between(g, h, H1, H2);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    Matrix3 D_v_b;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    TangentVector v = <a class="code hl_enumvalue" href="a02242.html#ab64572cd24ae3a56d5dd13c4ef3ddb63ae145daec7848b941c9f602ccadeb2a58">Logmap</a>(b, (H1 || H2) ? &amp;D_v_b : 0);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordflow">if</span> (H1) *H1 = D_v_b * (*H1);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keywordflow">if</span> (H2) *H2 = D_v_b * (*H2);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordflow">return</span> v;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  }</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <span class="keyword">static</span> Q Retract(<span class="keyword">const</span> Q&amp; g, <span class="keyword">const</span> TangentVector&amp; v,</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>      ChartJacobian H1 = {}, ChartJacobian H2 = {}) {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    Matrix3 D_h_v;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    Q b = Expmap(v,H2 ? &amp;D_h_v : 0);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    Q h = Compose(g, b, H1, H2);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordflow">if</span> (H2) *H2 = (*H2) * D_h_v;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keywordflow">return</span> h;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  }</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> Print(<span class="keyword">const</span> Q&amp; q, <span class="keyword">const</span> std::string&amp; str = <span class="stringliteral">&quot;&quot;</span>) {</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keywordflow">if</span> (str.size() == 0)</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Eigen::Quaternion: &quot;</span>;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    std::cout &lt;&lt; str &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    std::cout &lt;&lt; q.vec().transpose() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span> Equals(<span class="keyword">const</span> Q&amp; q1, <span class="keyword">const</span> Q&amp; q2, <span class="keywordtype">double</span> tol = 1e-8) {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordflow">return</span> Between(q1, q2).vec().array().abs().maxCoeff() &lt; tol;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  }</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>};</div>
+</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="keyword">typedef</span> Eigen::Quaternion&lt;double, Eigen::DontAlign&gt; Quaternion;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>} <span class="comment">// \namespace gtsam</span></div>
+<div class="ttc" id="aa00080_html"><div class="ttname"><a href="a00080.html">MatrixConstants.h</a></div><div class="ttdoc">Macros for Matrix constants to avoid excessive template instantiation.</div></div>
+<div class="ttc" id="aa00170_html"><div class="ttname"><a href="a00170.html">Lie.h</a></div><div class="ttdoc">Base class and basic functions for Lie types.</div></div>
+<div class="ttc" id="aa00515_html"><div class="ttname"><a href="a00515.html">SO3.h</a></div><div class="ttdoc">3*3 matrix representation of SO(3)</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa02242_html_ab64572cd24ae3a56d5dd13c4ef3ddb63ae145daec7848b941c9f602ccadeb2a58"><div class="ttname"><a href="a02242.html#ab64572cd24ae3a56d5dd13c4ef3ddb63ae145daec7848b941c9f602ccadeb2a58">gtsam::ImuFactorErrorMode::Logmap</a></div><div class="ttdeci">@ Logmap</div><div class="ttdoc">Use the SE_2(3) NavState Logmap for every backend.</div><div class="ttdef"><b>Definition</b> PreintegrationParams.h:32</div></div>
+<div class="ttc" id="aa03195_html"><div class="ttname"><a href="a03195.html">gtsam::multiplicative_group_tag</a></div><div class="ttdoc">Group operator syntax flavors.</div><div class="ttdef"><b>Definition</b> Group.h:34</div></div>
+<div class="ttc" id="aa03203_html"><div class="ttname"><a href="a03203.html">gtsam::traits</a></div><div class="ttdoc">A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...</div><div class="ttdef"><b>Definition</b> Group.h:37</div></div>
+<div class="ttc" id="aa03271_html"><div class="ttname"><a href="a03271.html">gtsam::lie_group_tag</a></div><div class="ttdoc">tag to assert a type is a Lie group</div><div class="ttdef"><b>Definition</b> Lie.h:271</div></div>
+<div class="ttc" id="aa03363_html"><div class="ttname"><a href="a03363.html">gtsam::OptionalJacobian</a></div><div class="ttdoc">OptionalJacobian is an Eigen::Ref like class that can take be constructed using either a fixed size o...</div><div class="ttdef"><b>Definition</b> OptionalJacobian.h:40</div></div>
+<div class="ttc" id="aa04431_html_a2d626a9f8b3e96d32e37a3fa57012069"><div class="ttname"><a href="a04431.html#a2d626a9f8b3e96d32e37a3fa57012069">gtsam::traits&lt; QUATERNION_TYPE &gt;::Logmap</a></div><div class="ttdeci">static TangentVector Logmap(const Q &amp;q, ChartJacobian H={})</div><div class="ttdoc">We use our own Logmap, as there is a slight bug in Eigen.</div><div class="ttdef"><b>Definition</b> Quaternion.h:99</div></div>
+<div class="ttc" id="aa04431_html_a729d599d50cde518579c93e15c21e19e"><div class="ttname"><a href="a04431.html#a729d599d50cde518579c93e15c21e19e">gtsam::traits&lt; QUATERNION_TYPE &gt;::Expmap</a></div><div class="ttdeci">static Q Expmap(const Eigen::Ref&lt; const TangentVector &gt; &amp;omega, ChartJacobian H={})</div><div class="ttdoc">Exponential map, using the inlined code from Eigen&#39;s conversion from axis/angle.</div><div class="ttdef"><b>Definition</b> Quaternion.h:80</div></div>
+<div class="ttc" id="aa04551_html_a43f11eb2cba2be51ba3fa6ee8d46f823"><div class="ttname"><a href="a04551.html#a43f11eb2cba2be51ba3fa6ee8d46f823">gtsam::SO&lt; 3 &gt;::Vee</a></div><div class="ttdeci">static TangentVector Vee(const MatrixNN &amp;X)</div></div>
+<div class="ttc" id="aa04551_html_a813e60e77bd1e2b7ade8c7076b37579a"><div class="ttname"><a href="a04551.html#a813e60e77bd1e2b7ade8c7076b37579a">gtsam::SO&lt; 3 &gt;::Hat</a></div><div class="ttdeci">static MatrixNN Hat(const TangentVector &amp;xi)</div></div>
+<div class="ttc" id="aa04551_html_aa05ed8e50343cac6f98ebebe8cb80507"><div class="ttname"><a href="a04551.html#aa05ed8e50343cac6f98ebebe8cb80507">gtsam::SO&lt; 3 &gt;::LogmapDerivative</a></div><div class="ttdeci">static MatrixDD LogmapDerivative(const TangentVector &amp;omega)=delete</div></div>
+<div class="ttc" id="aa04551_html_aa4e8baefba55afd5bc9aee70e636426b"><div class="ttname"><a href="a04551.html#aa4e8baefba55afd5bc9aee70e636426b">gtsam::SO&lt; 3 &gt;::ExpmapDerivative</a></div><div class="ttdeci">static MatrixDD ExpmapDerivative(const TangentVector &amp;omega)=delete</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>hybrid</b></li><li class="navelem"><a href="a00494.html">HybridJunctionTree.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>geometry</b></li><li class="navelem"><a href="a00494.html">Quaternion.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

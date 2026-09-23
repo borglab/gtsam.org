@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::Range&lt; CalibratedCamera, T &gt; Struct Template Reference</title>
+<title>gtsam: gtsam::RedirectCout Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,31 +96,28 @@ $(function(){initNavTree('a03587.html','','a03584'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::Range&lt; CalibratedCamera, T &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::RedirectCout Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::Range&lt; CalibratedCamera, T &gt;:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
- <div class="center">
-  <img src="a03587.png" usemap="#gtsam_3A_3ARange_3C_20CalibratedCamera_2C_20T_20_3E_map" alt=""/>
-  <map id="gtsam_3A_3ARange_3C_20CalibratedCamera_2C_20T_20_3E_map" name="gtsam_3A_3ARange_3C_20CalibratedCamera_2C_20T_20_3E_map">
-<area href="a03483.html" alt="gtsam::HasRange&lt; CalibratedCamera, T, double &gt;" shape="rect" coords="0,0,297,24"/>
-  </map>
-</div></div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_methods_a03483"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03483')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03483.html">gtsam::HasRange&lt; CalibratedCamera, T, double &gt;</a></td></tr>
-<tr class="memitem:a3473187a5abd736623426357e7ab7946 inherit pub_methods_a03483" id="r_a3473187a5abd736623426357e7ab7946"><td class="memItemLeft">
-double&#160;</td><td class="memItemRight"><b>operator()</b> (const <a class="el" href="a03575.html">CalibratedCamera</a> &amp;a1, const T &amp;a2, <a class="el" href="a02995.html">OptionalJacobian</a>&lt; <a class="el" href="a02823.html">traits</a>&lt; double &gt;::dimension, <a class="el" href="a02823.html">traits</a>&lt; <a class="el" href="a03575.html">CalibratedCamera</a> &gt;::dimension &gt; H1=boost::none, <a class="el" href="a02995.html">OptionalJacobian</a>&lt; <a class="el" href="a02823.html">traits</a>&lt; double &gt;::dimension, <a class="el" href="a02823.html">traits</a>&lt; T &gt;::dimension &gt; H2=boost::none)</td></tr>
-<tr class="inherit_header pub_types_a03483"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03483')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03483.html">gtsam::HasRange&lt; CalibratedCamera, T, double &gt;</a></td></tr>
-<tr class="memitem:aef42dee92183e12ed308977a64df7858 inherit pub_types_a03483" id="r_aef42dee92183e12ed308977a64df7858"><td class="memItemLeft">
-typedef double&#160;</td><td class="memItemRight"><b>result_type</b></td></tr>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>For Python <b>str</b>(). </p>
+<p>Redirect std cout to a string stream so we can return a string representation of an object when it prints to cout. <a href="https://stackoverflow.com/questions/5419356/redirect-stdout-stderr-to-a-string">https://stackoverflow.com/questions/5419356/redirect-stdout-stderr-to-a-string</a> </p>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:acea65ff66039691f574aea2894a255d8" id="r_acea65ff66039691f574aea2894a255d8"><td class="memItemLeft"><a id="acea65ff66039691f574aea2894a255d8" name="acea65ff66039691f574aea2894a255d8"></a>
+&#160;</td><td class="memItemRight"><b>RedirectCout</b> ()</td></tr>
+<tr class="memdesc:acea65ff66039691f574aea2894a255d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor &ndash; redirect stdout buffer to a stringstream buffer <br /></td></tr>
+<tr class="memitem:a65a98f77981bd096f65841afb0215747" id="r_a65a98f77981bd096f65841afb0215747"><td class="memItemLeft"><a id="a65a98f77981bd096f65841afb0215747" name="a65a98f77981bd096f65841afb0215747"></a>
+std::string&#160;</td><td class="memItemRight"><b>str</b> () const</td></tr>
+<tr class="memdesc:a65a98f77981bd096f65841afb0215747"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the string <br /></td></tr>
+<tr class="memitem:a37b3ac486d866219fe29f05bd0d742b2" id="r_a37b3ac486d866219fe29f05bd0d742b2"><td class="memItemLeft"><a id="a37b3ac486d866219fe29f05bd0d742b2" name="a37b3ac486d866219fe29f05bd0d742b2"></a>
+&#160;</td><td class="memItemRight"><b>~RedirectCout</b> ()</td></tr>
+<tr class="memdesc:a37b3ac486d866219fe29f05bd0d742b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">destructor &ndash; redirect stdout buffer to its original buffer <br /></td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/geometry/<a class="el" href="a00323_source.html">CalibratedCamera.h</a></li>
+<hr/>The documentation for this struct was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/<a class="el" href="a16331_source.html">utilities.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/<b>utilities.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -135,7 +132,7 @@ typedef double&#160;</td><td class="memItemRight"><b>result_type</b></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a03587.html">Range&lt; CalibratedCamera, T &gt;</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a03587.html">RedirectCout</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

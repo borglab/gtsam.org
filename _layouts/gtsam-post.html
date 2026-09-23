@@ -1,12 +1,16 @@
 ---
-layout: post
+layout: default
 ---
-<article class="post">
-
-  {% include jumbotron-post.html %}
-
-  <div class="post-content">
-    {{ content }}
+<article class="content-page content-article">
+  <header class="content-hero content-hero-article">
+    <div class="content-hero-inner">
+      <div class="content-kicker">GTSAM blog{% if page.date %} · {{ page.date | date: "%B %-d, %Y" }}{% endif %}</div>
+      <h1>{{ page.title }}</h1>
+    </div>
+  </header>
+  <div class="content-frame">
+    <div class="post-content content-prose">
+      {{ content }}
+    </div>
   </div>
-
 </article>

@@ -1,6 +1,7 @@
 var a01334 =
 [
-    [ "gtsam::SmartProjectionParams", "a05483.html", "a05483" ],
-    [ "gtsam::DegeneracyMode", "a01968.html#ac3d021280c8a8b84903a8ce81f73ea0f", null ],
-    [ "gtsam::LinearizationMode", "a01968.html#adf2020f3f6087064dde501c99794aac3", null ]
+    [ "gtsam::MagFactor", "a05879.html", "a05879" ],
+    [ "gtsam::MagFactor1", "a05883.html", "a05883" ],
+    [ "gtsam::MagFactor2", "a05887.html", "a05887" ],
+    [ "gtsam::MagFactor3", "a05891.html", "a05891" ]
 ];

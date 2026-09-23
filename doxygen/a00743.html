@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/NoiseModel.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/hybrid/HybridGaussianProductFactor.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,7 +96,7 @@ $(function(){initNavTree('a00743.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">NoiseModel.h File Reference</div></div>
+  <div class="headertitle"><div class="title">HybridGaussianProductFactor.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -104,57 +104,30 @@ $(function(){initNavTree('a00743.html','',''); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3AnoiseModel_3A_3ABase" id="r_gtsam_3A_3AnoiseModel_3A_3ABase"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04467.html">gtsam::noiseModel::Base</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a04467.html" title="noiseModel::Base is the abstract base class for all noise models.">noiseModel::Base</a> is the abstract base class for all noise models.  <a href="a04467.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3AnoiseModel_3A_3AGaussian" id="r_gtsam_3A_3AnoiseModel_3A_3AGaussian"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04471.html">gtsam::noiseModel::Gaussian</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a04471.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> implements the mathematical model |R*x|^2 = |y|^2 with R'*R=inv(Sigma) where y = whiten(x) = R*x x = unwhiten(x) = inv(R)*y as indeed |y|^2 = y'*y = x'*R'*R*x Various derived classes are available that are more efficient.  <a href="a04471.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3AnoiseModel_3A_3ADiagonal" id="r_gtsam_3A_3AnoiseModel_3A_3ADiagonal"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04475.html">gtsam::noiseModel::Diagonal</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A diagonal noise model implements a diagonal covariance matrix, with the elements of the diagonal specified in a Vector.  <a href="a04475.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3AnoiseModel_3A_3AConstrained" id="r_gtsam_3A_3AnoiseModel_3A_3AConstrained"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04479.html">gtsam::noiseModel::Constrained</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="a04479.html" title="A Constrained constrained model is a specialization of Diagonal which allows some or all of the sigma...">Constrained</a> constrained model is a specialization of <a class="el" href="a04475.html" title="A diagonal noise model implements a diagonal covariance matrix, with the elements of the diagonal spe...">Diagonal</a> which allows some or all of the sigmas to be zero, forcing the error to be zero there.  <a href="a04479.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3AnoiseModel_3A_3AIsotropic" id="r_gtsam_3A_3AnoiseModel_3A_3AIsotropic"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04483.html">gtsam::noiseModel::Isotropic</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An isotropic noise model corresponds to a scaled diagonal covariance To construct, use one of the static methods.  <a href="a04483.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3AnoiseModel_3A_3AUnit" id="r_gtsam_3A_3AnoiseModel_3A_3AUnit"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04487.html">gtsam::noiseModel::Unit</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a04487.html" title="Unit: i.i.d.">Unit</a>: i.i.d.  <a href="a04487.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3AnoiseModel_3A_3ARobust" id="r_gtsam_3A_3AnoiseModel_3A_3ARobust"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04491.html">gtsam::noiseModel::Robust</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a04467.html" title="noiseModel::Base is the abstract base class for all noise models.">Base</a> class for robust error models The robust M-estimators above simply tell us how to re-weight the residual, and are isotropic kernels, in that they do not allow for correlated noise.  <a href="a04491.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3Atraits_3C_20noiseModel_3A_3AGaussian_20_3E" id="r_gtsam_3A_3Atraits_3C_20noiseModel_3A_3AGaussian_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04495.html">gtsam::traits&lt; noiseModel::Gaussian &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">traits  <a href="a04495.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3Atraits_3C_20noiseModel_3A_3ADiagonal_20_3E" id="r_gtsam_3A_3Atraits_3C_20noiseModel_3A_3ADiagonal_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04499.html">gtsam::traits&lt; noiseModel::Diagonal &gt;</a></td></tr>
-<tr class="memitem:gtsam_3A_3Atraits_3C_20noiseModel_3A_3AConstrained_20_3E" id="r_gtsam_3A_3Atraits_3C_20noiseModel_3A_3AConstrained_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04503.html">gtsam::traits&lt; noiseModel::Constrained &gt;</a></td></tr>
-<tr class="memitem:gtsam_3A_3Atraits_3C_20noiseModel_3A_3AIsotropic_20_3E" id="r_gtsam_3A_3Atraits_3C_20noiseModel_3A_3AIsotropic_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04507.html">gtsam::traits&lt; noiseModel::Isotropic &gt;</a></td></tr>
-<tr class="memitem:gtsam_3A_3Atraits_3C_20noiseModel_3A_3AUnit_20_3E" id="r_gtsam_3A_3Atraits_3C_20noiseModel_3A_3AUnit_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04511.html">gtsam::traits&lt; noiseModel::Unit &gt;</a></td></tr>
+<tr class="memitem:gtsam_3A_3AHybridGaussianProductFactor" id="r_gtsam_3A_3AHybridGaussianProductFactor"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04755.html">gtsam::HybridGaussianProductFactor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for <a class="el" href="a03835.html" title="a decision tree is a function from assignments to values.">DecisionTree</a> of GaussianFactorGraphs and their scalar sums.  <a href="a04755.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Atraits_3C_20HybridGaussianProductFactor_20_3E" id="r_gtsam_3A_3Atraits_3C_20HybridGaussianProductFactor_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04759.html">gtsam::traits&lt; HybridGaussianProductFactor &gt;</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
-<tr class="memitem:gtsam_3A_3AnoiseModel" id="r_gtsam_3A_3AnoiseModel"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01989.html">gtsam::noiseModel</a></td></tr>
-<tr class="memdesc:a01989"><td class="mdescLeft">&#160;</td><td class="mdescRight">All noise models live in the <a class="el" href="a01989.html" title="All noise models live in the noiseModel namespace.">noiseModel</a> namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ab6e5a4884342656e0837ef07008ec03f" id="r_ab6e5a4884342656e0837ef07008ec03f"><td class="memItemLeft">typedef noiseModel::Base::shared_ptr&#160;</td><td class="memItemRight"><a class="el" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">gtsam::SharedNoiseModel</a></td></tr>
-<tr class="memdesc:ab6e5a4884342656e0837ef07008ec03f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aliases.  <br /></td></tr>
-<tr class="memitem:a78bc6f977e83dce647b2c006ea3dca5f" id="r_a78bc6f977e83dce647b2c006ea3dca5f"><td class="memItemLeft"><a id="a78bc6f977e83dce647b2c006ea3dca5f" name="a78bc6f977e83dce647b2c006ea3dca5f"></a>
-typedef noiseModel::Gaussian::shared_ptr&#160;</td><td class="memItemRight"><b>gtsam::SharedGaussian</b></td></tr>
-<tr class="memitem:a413190e269d694931cd6c69fafa7985a" id="r_a413190e269d694931cd6c69fafa7985a"><td class="memItemLeft"><a id="a413190e269d694931cd6c69fafa7985a" name="a413190e269d694931cd6c69fafa7985a"></a>
-typedef noiseModel::Diagonal::shared_ptr&#160;</td><td class="memItemRight"><b>gtsam::SharedDiagonal</b></td></tr>
-<tr class="memitem:ac62861a84dc6597e73a4d01cfbb36974" id="r_ac62861a84dc6597e73a4d01cfbb36974"><td class="memItemLeft"><a id="ac62861a84dc6597e73a4d01cfbb36974" name="ac62861a84dc6597e73a4d01cfbb36974"></a>
-typedef noiseModel::Constrained::shared_ptr&#160;</td><td class="memItemRight"><b>gtsam::SharedConstrained</b></td></tr>
-<tr class="memitem:a6ca200c72f4453bdc0fa3341bd9ca6f3" id="r_a6ca200c72f4453bdc0fa3341bd9ca6f3"><td class="memItemLeft"><a id="a6ca200c72f4453bdc0fa3341bd9ca6f3" name="a6ca200c72f4453bdc0fa3341bd9ca6f3"></a>
-typedef noiseModel::Isotropic::shared_ptr&#160;</td><td class="memItemRight"><b>gtsam::SharedIsotropic</b></td></tr>
+<tr class="memitem:afb2cfec22bf6e72561e7a8a4e3fde9f8" id="r_afb2cfec22bf6e72561e7a8a4e3fde9f8"><td class="memItemLeft"><a id="afb2cfec22bf6e72561e7a8a4e3fde9f8" name="afb2cfec22bf6e72561e7a8a4e3fde9f8"></a>
+using&#160;</td><td class="memItemRight"><b>gtsam::GaussianFactorGraphValuePair</b> = std::pair&lt;<a class="el" href="a05135.html">GaussianFactorGraph</a>, double&gt;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af48f40567638eb9c84232fc2902ed8d3" id="r_af48f40567638eb9c84232fc2902ed8d3"><td class="memItemLeft"><a id="af48f40567638eb9c84232fc2902ed8d3" name="af48f40567638eb9c84232fc2902ed8d3"></a>
-boost::optional&lt; Vector &gt;&#160;</td><td class="memItemRight"><b>gtsam::noiseModel::checkIfDiagonal</b> (const Matrix &amp;M)</td></tr>
+<tr class="memitem:af240fa816476ce401c830800f15bcd6b" id="r_af240fa816476ce401c830800f15bcd6b"><td class="memItemLeft">std::istream &amp;&#160;</td><td class="memItemRight"><a class="el" href="a02242.html#af240fa816476ce401c830800f15bcd6b">gtsam::operator&gt;&gt;</a> (std::istream &amp;is, GaussianFactorGraphValuePair &amp;<a class="el" href="a16153.html">pair</a>)</td></tr>
+<tr class="memdesc:af240fa816476ce401c830800f15bcd6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a dummy overload of &gt;&gt; for GaussianFactorGraphValuePair so that <a class="el" href="a04755.html" title="Alias for DecisionTree of GaussianFactorGraphs and their scalar sums.">HybridGaussianProductFactor</a> compiles with the constructor <span class="tt"><a class="el" href="a03835.html" title="a decision tree is a function from assignments to values.">DecisionTree</a>(const std::vector&lt;LabelC&gt;&amp; labelCs, const std::string&amp; table)</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section date"><dt>Date</dt><dd>Jan 13, 2010 </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Richard Roberts </dd>
+<div class="textblock"><dl class="section date"><dt>Date</dt><dd>Oct 2, 2024 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Frank Dellaert </dd>
 <dd>
-Frank Dellaert </dd></dl>
+Varun Agrawal </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -168,7 +141,7 @@ Frank Dellaert </dd></dl>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>linear</b></li><li class="navelem"><a href="a00743.html">NoiseModel.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>hybrid</b></li><li class="navelem"><a href="a00743.html">HybridGaussianProductFactor.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

@@ -1,7 +1,6 @@
 var a01259 =
 [
-    [ "gtsam::FrobeniusPrior&lt; Rot &gt;", "a05379.html", "a05379" ],
-    [ "gtsam::FrobeniusFactor&lt; Rot &gt;", "a05383.html", "a05383" ],
-    [ "gtsam::FrobeniusBetweenFactor&lt; Rot &gt;", "a05387.html", "a05387" ],
-    [ "gtsam::ConvertNoiseModel", "a01968.html#aa43e7fd7c2b86873458a91ddafc506e4", null ]
+    [ "gtsam::detail::is_extended_pose3&lt; T &gt;", "a05555.html", null ],
+    [ "gtsam::detail::is_extended_pose3&lt; gtsam::ExtendedPose3&lt; K, Derived &gt; &gt;", "a05559.html", null ],
+    [ "gtsam::traits&lt; AttitudeFactor&lt; VALUE &gt; &gt;", "a05567.html", null ]
 ];

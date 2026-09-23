@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::AlgebraicDecisionTree&lt; L &gt;::Ring Struct Reference</title>
+<title>gtsam: gtsam::internal::HasLocalJacobians&lt; T, std::void_t&lt; decltype(traits&lt; T &gt;::Local(std::declval&lt; const T &amp; &gt;(), std::declval&lt; const T &amp; &gt;(), std::declval&lt; typename traits&lt; T &gt;::ChartJacobian &gt;(), std::declval&lt; typename traits&lt; T &gt;::ChartJacobian &gt;()))&gt; &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -70,7 +70,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('a03311.html','','a03308'); });
+$(function(){initNavTree('a03311.html','',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -96,32 +96,18 @@ $(function(){initNavTree('a03311.html','','a03308'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::AlgebraicDecisionTree&lt; L &gt;::Ring Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::internal::HasLocalJacobians&lt; T, std::void_t&lt; decltype(traits&lt; T &gt;::Local(std::declval&lt; const T &amp; &gt;(), std::declval&lt; const T &amp; &gt;(), std::declval&lt; typename traits&lt; T &gt;::ChartJacobian &gt;(), std::declval&lt; typename traits&lt; T &gt;::ChartJacobian &gt;()))&gt; &gt; Struct Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename L&gt;<br />
-struct gtsam::AlgebraicDecisionTree&lt; L &gt;::Ring</div><p>The Real ring with addition and multiplication. </p>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a06d28156521b166cb6d94bfa7f9e90ab" id="r_a06d28156521b166cb6d94bfa7f9e90ab"><td class="memItemLeft"><a id="a06d28156521b166cb6d94bfa7f9e90ab" name="a06d28156521b166cb6d94bfa7f9e90ab"></a>
-static double&#160;</td><td class="memItemRight"><b>zero</b> ()</td></tr>
-<tr class="memitem:a736325466eace754e4f212bad3e93a09" id="r_a736325466eace754e4f212bad3e93a09"><td class="memItemLeft"><a id="a736325466eace754e4f212bad3e93a09" name="a736325466eace754e4f212bad3e93a09"></a>
-static double&#160;</td><td class="memItemRight"><b>one</b> ()</td></tr>
-<tr class="memitem:a3e3b07ef25f3f4ac8efeba2b847b8dba" id="r_a3e3b07ef25f3f4ac8efeba2b847b8dba"><td class="memItemLeft"><a id="a3e3b07ef25f3f4ac8efeba2b847b8dba" name="a3e3b07ef25f3f4ac8efeba2b847b8dba"></a>
-static double&#160;</td><td class="memItemRight"><b>add</b> (const double &amp;a, const double &amp;b)</td></tr>
-<tr class="memitem:a271b45005566110af4ced7e930dbfae7" id="r_a271b45005566110af4ced7e930dbfae7"><td class="memItemLeft"><a id="a271b45005566110af4ced7e930dbfae7" name="a271b45005566110af4ced7e930dbfae7"></a>
-static double&#160;</td><td class="memItemRight"><b>max</b> (const double &amp;a, const double &amp;b)</td></tr>
-<tr class="memitem:a1ff347004e0916d5d595237e1a641d9e" id="r_a1ff347004e0916d5d595237e1a641d9e"><td class="memItemLeft"><a id="a1ff347004e0916d5d595237e1a641d9e" name="a1ff347004e0916d5d595237e1a641d9e"></a>
-static double&#160;</td><td class="memItemRight"><b>mul</b> (const double &amp;a, const double &amp;b)</td></tr>
-<tr class="memitem:a10fa184151db65affd92123a3fdbf29f" id="r_a10fa184151db65affd92123a3fdbf29f"><td class="memItemLeft"><a id="a10fa184151db65affd92123a3fdbf29f" name="a10fa184151db65affd92123a3fdbf29f"></a>
-static double&#160;</td><td class="memItemRight"><b>div</b> (const double &amp;a, const double &amp;b)</td></tr>
-<tr class="memitem:af3433903d2928fc9809119b2b44d5ad2" id="r_af3433903d2928fc9809119b2b44d5ad2"><td class="memItemLeft"><a id="af3433903d2928fc9809119b2b44d5ad2" name="af3433903d2928fc9809119b2b44d5ad2"></a>
-static double&#160;</td><td class="memItemRight"><b>id</b> (const double &amp;x)</td></tr>
-</table>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::internal::HasLocalJacobians&lt; T, std::void_t&lt; decltype(traits&lt; T &gt;::Local(std::declval&lt; const T &amp; &gt;(), std::declval&lt; const T &amp; &gt;(), std::declval&lt; typename traits&lt; T &gt;::ChartJacobian &gt;(), std::declval&lt; typename traits&lt; T &gt;::ChartJacobian &gt;()))&gt; &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="a03311.png" alt=""/>
+ </div></div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/discrete/<a class="el" href="a00212_source.html">AlgebraicDecisionTree.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/<a class="el" href="a00143_source.html">Manifold.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -136,7 +122,7 @@ static double&#160;</td><td class="memItemRight"><b>id</b> (const double &amp;x)
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a03307.html">AlgebraicDecisionTree</a></li><li class="navelem"><a href="a03311.html">Ring</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><b>internal</b></li><li class="navelem"><a href="a03311.html">HasLocalJacobians&lt; T, std::void_t&lt; decltype(traits&lt; T &gt;::Local(std::declval&lt; const T &amp; &gt;(), std::declval&lt; const T &amp; &gt;(), std::declval&lt; typename traits&lt; T &gt;::ChartJacobian &gt;(), std::declval&lt; typename traits&lt; T &gt;::ChartJacobian &gt;()))&gt; &gt;</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

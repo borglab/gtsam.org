@@ -1,12 +1,16 @@
 var a05643 =
 [
-    [ "SingleValue", "a05643.html#a2acd3b9fa0cd3477a5798635897faf42", null ],
-    [ "SingleValue", "a05643.html#a5ebc0644c4e787c77db513e4d803564b", null ],
-    [ "equals", "a05643.html#a40a26be8605953addfad85d5c44bc19b", null ],
-    [ "operator()", "a05643.html#aedba3a22b827131fcb7c4ccee0931546", null ],
-    [ "operator*", "a05643.html#aa86925cf27b4d84c81866ec582aa0e67", null ],
-    [ "partiallyApply", "a05643.html#a2469803deeed59645922fad5ba7bbad3", null ],
-    [ "partiallyApply", "a05643.html#a788d55b1563a54aa0c0c89921b0516b8", null ],
-    [ "print", "a05643.html#ae615447229d1a63fdbde2e7f37c828c6", null ],
-    [ "toDecisionTreeFactor", "a05643.html#a6a7147d3ed073bf6ebbf49dbbc685173", null ]
+    [ "shared_ptr", "a05643.html#aa795e208304b9b39b77f647bf09b68d4", null ],
+    [ "CombinedImuFactorWithGravityT", "a05643.html#aa223d32a33c0dc8fdbe3635bac1b0c60", null ],
+    [ "CombinedImuFactorWithGravityT", "a05643.html#a007ab0e27a621de8ea74282f682949ab", null ],
+    [ "clone", "a05643.html#a23743f546c0016fd1c1cd5f1dab677e3", null ],
+    [ "equals", "a05643.html#afdfd581f7638658874c7ca00c6c908d8", null ],
+    [ "evaluateError", "a05643.html#aa67244cddd7703589f77231b32386c34", null ],
+    [ "evaluateError", "a05643.html#a71f4debb874a78dd3ad1d2ddf6f4b820", null ],
+    [ "evaluateError", "a05643.html#a88ee57a39a882ccfb81bb7c4fa0e57e7", null ],
+    [ "evaluateError", "a05643.html#a53333826f4ae35a7a5c2285d43697909", null ],
+    [ "evaluateError", "a05643.html#a4d3bc076bbbdd1dc2e23e8f3562c7425", null ],
+    [ "gravityMagnitude", "a05643.html#afb3d613e790766e493837d6abe3db6e0", null ],
+    [ "preintegratedMeasurements", "a05643.html#ac890169073fca7cb098a56084e0ae5ce", null ],
+    [ "print", "a05643.html#aa95fd9a68caf5d2078b422f37f06acc7", null ]
 ];

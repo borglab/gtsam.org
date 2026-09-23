@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::traits&lt; LinearCost &gt; Struct Reference</title>
+<title>gtsam: gtsam::LeftLinearEKF&lt; G &gt;::is_automorphism&lt; Phi &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -70,7 +70,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('a05795.html','','a05792'); });
+$(function(){initNavTree('a05795.html','',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -96,35 +96,26 @@ $(function(){initNavTree('a05795.html','','a05792'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; LinearCost &gt; Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::LeftLinearEKF&lt; G &gt;::is_automorphism&lt; Phi &gt; Struct Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>traits </p>
-</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::traits&lt; LinearCost &gt;:</div>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename G&gt;<br />
+template&lt;typename Phi&gt;<br />
+struct gtsam::LeftLinearEKF&lt; G &gt;::is_automorphism&lt; Phi &gt;</div><p>SFINAE template to check if a type satisfies the automorphism concept. </p>
+<p>Specifically, it checks for the existence of:</p><ul>
+<li>G operator()(const G&amp;) const</li>
+<li><a class="el" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470" title="Dim x Dim.">Jacobian</a> dIdentity() const </li>
+</ul>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::LeftLinearEKF&lt; G &gt;::is_automorphism&lt; Phi &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a05795.png" usemap="#gtsam_3A_3Atraits_3C_20LinearCost_20_3E_map" alt=""/>
-  <map id="gtsam_3A_3Atraits_3C_20LinearCost_20_3E_map" name="gtsam_3A_3Atraits_3C_20LinearCost_20_3E_map">
-<area href="a03039.html" alt="gtsam::Testable&lt; LinearCost &gt;" shape="rect" coords="0,0,182,24"/>
-  </map>
-</div></div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; LinearCost &gt;</a></td></tr>
-<tr class="memitem:a0b809ea2931c6c4a2ecbd17e8f3fab39 inherit pub_methods_a03039" id="r_a0b809ea2931c6c4a2ecbd17e8f3fab39"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>BOOST_CONCEPT_ASSERT</b> ((<a class="el" href="a03035.html">HasTestablePrereqs</a>&lt; <a class="el" href="a05791.html">LinearCost</a> &gt;))</td></tr>
-<tr class="inherit_header pub_static_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; LinearCost &gt;</a></td></tr>
-<tr class="memitem:a27b246d77898916925c676895348fedf inherit pub_static_methods_a03039" id="r_a27b246d77898916925c676895348fedf"><td class="memItemLeft">
-static void&#160;</td><td class="memItemRight"><b>Print</b> (const <a class="el" href="a05791.html">LinearCost</a> &amp;m, const std::string &amp;str=&quot;&quot;)</td></tr>
-<tr class="memitem:a29a5699453b92070b31ca7fa42609d98 inherit pub_static_methods_a03039" id="r_a29a5699453b92070b31ca7fa42609d98"><td class="memItemLeft">
-static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el" href="a05791.html">LinearCost</a> &amp;m1, const <a class="el" href="a05791.html">LinearCost</a> &amp;m2, double tol=1e-8)</td></tr>
-</table>
+  <img src="a05795.png" alt=""/>
+ </div></div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/linear/<a class="el" href="a01583_source.html">LinearCost.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/<a class="el" href="a01283_source.html">LeftLinearEKF.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -139,7 +130,7 @@ static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a05795.html">traits&lt; LinearCost &gt;</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a05791.html">LeftLinearEKF</a></li><li class="navelem"><a href="a05795.html">is_automorphism</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,12 +96,58 @@ $(function(){initNavTree('a04495.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; noiseModel::Gaussian &gt; Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::Similarity3 Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a04495.html">gtsam::traits&lt; noiseModel::Gaussian &gt;</a>, including all inherited members.</p>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="a04495.html">gtsam::Similarity3</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="a03335.html#acf7d38ce38e9df02c00f6afc65f6a97c">Adjoint</a>(const TangentVector &amp;xi, ChartJacobian H_this={}, ChartJacobian H_xi={}) const</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Similarity3, 7, 4 &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03335.html#a83cf162a62639adfb8013f79d6aea754">adjoint</a>(const TangentVector &amp;xi, const TangentVector &amp;y, ChartJacobian Hxi={}, ChartJacobian H_y={})</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Similarity3, 7, 4 &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04495.html#a17e108e5ab54a6f626ba0659ecdb5387">AdjointMap</a>() const</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04495.html#ae76db4d969c9d697153802dabf164e32">adjointMap</a>(const Vector7 &amp;xi)</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03335.html#a3e46364311f36a12b6dcccabaf7e5207">gtsam::MatrixLieGroup&lt; Similarity3, 7, 4 &gt;::adjointMap</a>(const TangentVector &amp;xi)</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Similarity3, 7, 4 &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03335.html#a7229eba7283c6e3334111dedcdc88cea">AdjointTranspose</a>(const TangentVector &amp;x, ChartJacobian H_this={}, ChartJacobian H_x={}) const</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Similarity3, 7, 4 &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03335.html#a20e1ae24f0e452ad88658f028bc56c2b">adjointTranspose</a>(const TangentVector &amp;xi, const TangentVector &amp;y, ChartJacobian Hxi={}, ChartJacobian H_y={})</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Similarity3, 7, 4 &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04495.html#a592b3d2a0756ddcd0a35b0bdbd345da0">Align</a>(const Point3Pairs &amp;abPointPairs)</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04495.html#a518d0cee3bce398978f313b562759544">Align</a>(const Pose3Pairs &amp;abPosePairs)</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03335.html#a5454833785925037137a2eef98edf558">Dim</a>()</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Similarity3, 7, 4 &gt;</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03335.html#a2b529a1efa04542a822c0dcd36e26e81">dim</a>() const</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Similarity3, 7, 4 &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04495.html#aa6f77a24dbaa26292115a8406df9630c">equals</a>(const Similarity3 &amp;sim, double tol) const</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04495.html#a50d596bef8ef9d5ece8ba45e433c2e58">Expmap</a>(const Vector7 &amp;v)</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03267.html#aee395d766c6c8afb27a9bece5c42400e">expmap</a>(const TangentVector &amp;v) const</td><td class="entry"><a class="el" href="a03267.html">gtsam::LieGroup&lt; Similarity3, D &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04495.html#a6d34356b9d706d3f951d240dc4283ec1">Hat</a>(const Vector7 &amp;xi)</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04495.html#a40b0a07456cfd469eb62b9bf7c7895f5">Identity</a>()</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04495.html#a5873b80995627940cdf79da5b631fa6c">inverse</a>() const</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>LieAlgebra</b> typedef (defined in <a class="el" href="a04495.html">gtsam::Similarity3</a>)</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03267.html#aaa535efd2e685eeb1f26e828d49d7819">LocalCoordinates</a>(const Similarity3 &amp;g)</td><td class="entry"><a class="el" href="a03267.html">gtsam::LieGroup&lt; Similarity3, D &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03267.html#a5380bfede1eb39fa9473824009a747a7">localCoordinates</a>(const Similarity3 &amp;g) const</td><td class="entry"><a class="el" href="a03267.html">gtsam::LieGroup&lt; Similarity3, D &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04495.html#af530c4faa52f82660a14f3f70028d847">Logmap</a>(const Similarity3 &amp;s)</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03267.html#a9a8ba0a0f7442929df460d79292134aa">logmap</a>(const Similarity3 &amp;g) const</td><td class="entry"><a class="el" href="a03267.html">gtsam::LieGroup&lt; Similarity3, D &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04495.html#aa0582c2ebeb9681798eced182eac3720">matrix</a>() const</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04495.html#aefe14b1c24257fe1975d69a85c78c56a">operator*</a>(const Similarity3 &amp;S) const</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04495.html#a9fafe89d73317ae47d47b93d422405cf">operator*</a>(const Point3 &amp;p) const</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>operator&lt;&lt;</b> (defined in <a class="el" href="a04495.html">gtsam::Similarity3</a>)</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04495.html#afc94281a3f187c6baf75c824e1c55ee1">operator==</a>(const Similarity3 &amp;other) const</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04495.html#a364c75a34dcd6fed5daa66d381762f73">print</a>(const std::string &amp;s=&quot;&quot;) const</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03267.html#af0dab5bebe52a8ccebe8ea8a1dbafd21">Retract</a>(const TangentVector &amp;v)</td><td class="entry"><a class="el" href="a03267.html">gtsam::LieGroup&lt; Similarity3, D &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03267.html#adf52076de7615c335b4574f577a22b77">retract</a>(const TangentVector &amp;v) const</td><td class="entry"><a class="el" href="a03267.html">gtsam::LieGroup&lt; Similarity3, D &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Rotation</b> typedef (defined in <a class="el" href="a04495.html">gtsam::Similarity3</a>)</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04495.html#a5c49505d4c250bc93419c46ce42bcbb3">rotation</a>(OptionalJacobian&lt; 3, 7 &gt; Hself={}) const</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04495.html#a12932054071dfcfafb53037c309af999">scale</a>(OptionalJacobian&lt; 1, 7 &gt; Hself={}) const</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04495.html#a5bd853342d60651fc03695e950564a47">Similarity3</a>()</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04495.html#a37c7935249173dbef177d1615fa47c21">Similarity3</a>(double s)</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04495.html#a7e69a343835c52aee6ada8a48a2e9680">Similarity3</a>(const Rot3 &amp;R, const Point3 &amp;t, double s)</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04495.html#a62d827f2276a6c98b47d9b5724f01a45">Similarity3</a>(const Matrix3 &amp;R, const Vector3 &amp;t, double s)</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04495.html#ad3203c1d4df89ae786dd7dc5263fdcca">Similarity3</a>(const Matrix4 &amp;T)</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04495.html#a7418aa223d13d7117f0c63ea204dff4c">transformFrom</a>(const Point3 &amp;p, OptionalJacobian&lt; 3, 7 &gt; H1={}, OptionalJacobian&lt; 3, 3 &gt; H2={}) const</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04495.html#a0d73dc8a055272b59fb8db45ab652920">transformFrom</a>(const Pose3 &amp;T, OptionalJacobian&lt; 6, 7 &gt; H1={}, OptionalJacobian&lt; 6, 6 &gt; H2={}) const</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Translation</b> typedef (defined in <a class="el" href="a04495.html">gtsam::Similarity3</a>)</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04495.html#a5f944edc9f73c4283e78fd9a9a637934">translation</a>(OptionalJacobian&lt; 3, 7 &gt; Hself={}) const</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03335.html#adaedee37b2d50e9a3cda87a7cbc6060b">vec</a>(OptionalJacobian&lt; internal::product(N, N), D &gt; H={}) const</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Similarity3, 7, 4 &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Vector16</b> typedef (defined in <a class="el" href="a04495.html">gtsam::Similarity3</a>)</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04495.html#a7b8376055f9f8e0ca7b34729d459c9e2">Vee</a>(const Matrix4 &amp;X)</td><td class="entry"><a class="el" href="a04495.html">gtsam::Similarity3</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+</table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->

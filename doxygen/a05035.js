@@ -1,8 +1,9 @@
 var a05035 =
 [
-    [ "NonlinearEquality2", "a05035.html#ad9f7e774a73917e34dcd0ed7f7df32b0", null ],
-    [ "NonlinearEquality2", "a05035.html#a712bbf54a226defd53f67679ad7f16fe", null ],
-    [ "clone", "a05035.html#a0f3aca0fcd5a4c6621a77965e06b219e", null ],
-    [ "evaluateError", "a05035.html#a1d4e632e8fd8d32b0a170f10587aa644", null ],
-    [ "boost::serialization::access", "a05035.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ]
+    [ "converged", "a05035.html#a8a67e16883fbee32bdc70e22bb5253c1", null ],
+    [ "finalPreconditionedResidualNorm", "a05035.html#a7a1671b167a8b453eb7751427b0d0743", null ],
+    [ "initialPreconditionedResidualNorm", "a05035.html#a64ea2163e10ceec9215de1fad0645335", null ],
+    [ "iterations", "a05035.html#ae2fbc5d51e9ef5a5af583afb312387a7", null ],
+    [ "preconditionedResidualNormHistory", "a05035.html#adc8af3e7591ec6bf24b802d12f5b7e88", null ],
+    [ "terminationReason", "a05035.html#a21fb5ab6defa9df5739bb5e7173350e0", null ]
 ];

@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::partition::GenericNode3D Struct Reference</title>
+<title>gtsam: gtsam::PreintegratedRotationParams Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,26 +96,76 @@ $(function(){initNavTree('a05971.html','','a05968'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::partition::GenericNode3D Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::PreintegratedRotationParams Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>the index of the node and the type of the node </p>
-</div><table class="memberdecls">
+<div class="textblock"><p>Parameters for pre-integration: Usage: Create just a single Params and pass a shared pointer to the constructor. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::PreintegratedRotationParams:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="a05971.png" usemap="#gtsam_3A_3APreintegratedRotationParams_map" alt=""/>
+  <map id="gtsam_3A_3APreintegratedRotationParams_map" name="gtsam_3A_3APreintegratedRotationParams_map">
+<area href="a06003.html" title="Parameters for pre-integration: Usage: Create just a single Params and pass a shared pointer to the c..." alt="gtsam::PreintegrationParams" shape="rect" coords="0,56,227,80"/>
+<area href="a05999.html" title="Parameters for pre-integration using PreintegratedCombinedMeasurements: Usage: Create just a single P..." alt="gtsam::PreintegrationCombinedParams" shape="rect" coords="0,112,227,136"/>
+  </map>
+</div></div>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae99c400fafe4f6da61635d54303ff5a7" id="r_ae99c400fafe4f6da61635d54303ff5a7"><td class="memItemLeft"><a id="ae99c400fafe4f6da61635d54303ff5a7" name="ae99c400fafe4f6da61635d54303ff5a7"></a>
-&#160;</td><td class="memItemRight"><b>GenericNode3D</b> (const std::size_t &amp;index_in, const GenericNode3DType &amp;type_in)</td></tr>
+<tr class="memitem:a20d84857da4b957b953903fc811916aa" id="r_a20d84857da4b957b953903fc811916aa"><td class="memItemLeft"><a id="a20d84857da4b957b953903fc811916aa" name="a20d84857da4b957b953903fc811916aa"></a>
+&#160;</td><td class="memItemRight"><b>PreintegratedRotationParams</b> (const Matrix3 &amp;gyroscope_covariance, std::optional&lt; Vector3 &gt; omega_coriolis={}, std::optional&lt; <a class="el" href="a04403.html">Pose3</a> &gt; <a class="el" href="#a79a9c6893153cb61f98f43d06d064a8f">body_P_sensor</a>={})</td></tr>
+<tr class="memitem:adabdf5b7b6b670a9a341ada6afc236b9" id="r_adabdf5b7b6b670a9a341ada6afc236b9"><td class="memItemLeft"><a id="adabdf5b7b6b670a9a341ada6afc236b9" name="adabdf5b7b6b670a9a341ada6afc236b9"></a>
+virtual void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s) const</td></tr>
+<tr class="memitem:abcb0e8c05d6496251c71ce90e60f37ec" id="r_abcb0e8c05d6496251c71ce90e60f37ec"><td class="memItemLeft"><a id="abcb0e8c05d6496251c71ce90e60f37ec" name="abcb0e8c05d6496251c71ce90e60f37ec"></a>
+virtual bool&#160;</td><td class="memItemRight"><b>equals</b> (const PreintegratedRotationParams &amp;other, double tol=1e-9) const</td></tr>
+<tr class="memitem:a2531f994612bab48cea6852cad17e726" id="r_a2531f994612bab48cea6852cad17e726"><td class="memItemLeft"><a id="a2531f994612bab48cea6852cad17e726" name="a2531f994612bab48cea6852cad17e726"></a>
+void&#160;</td><td class="memItemRight"><b>setGyroscopeCovariance</b> (const Matrix3 &amp;cov)</td></tr>
+<tr class="memitem:a6435de39b52c3c1cc126e00cf8df6128" id="r_a6435de39b52c3c1cc126e00cf8df6128"><td class="memItemLeft"><a id="a6435de39b52c3c1cc126e00cf8df6128" name="a6435de39b52c3c1cc126e00cf8df6128"></a>
+void&#160;</td><td class="memItemRight"><b>setOmegaCoriolis</b> (const Vector3 &amp;omega)</td></tr>
+<tr class="memitem:a006e8f38343ccffccc8a9a50aaa06eea" id="r_a006e8f38343ccffccc8a9a50aaa06eea"><td class="memItemLeft"><a id="a006e8f38343ccffccc8a9a50aaa06eea" name="a006e8f38343ccffccc8a9a50aaa06eea"></a>
+void&#160;</td><td class="memItemRight"><b>setBodyPSensor</b> (const <a class="el" href="a04403.html">Pose3</a> &amp;pose)</td></tr>
+<tr class="memitem:a1034afa9ca07fd0c1c7ec87f5fb6060e" id="r_a1034afa9ca07fd0c1c7ec87f5fb6060e"><td class="memItemLeft"><a id="a1034afa9ca07fd0c1c7ec87f5fb6060e" name="a1034afa9ca07fd0c1c7ec87f5fb6060e"></a>
+const Matrix3 &amp;&#160;</td><td class="memItemRight"><b>getGyroscopeCovariance</b> () const</td></tr>
+<tr class="memitem:a124ab81dd1571b1982668aaca2cf3501" id="r_a124ab81dd1571b1982668aaca2cf3501"><td class="memItemLeft"><a id="a124ab81dd1571b1982668aaca2cf3501" name="a124ab81dd1571b1982668aaca2cf3501"></a>
+std::optional&lt; Vector3 &gt;&#160;</td><td class="memItemRight"><b>getOmegaCoriolis</b> () const</td></tr>
+<tr class="memitem:a7573008a7615f2e2f7378d65429a0a7e" id="r_a7573008a7615f2e2f7378d65429a0a7e"><td class="memItemLeft"><a id="a7573008a7615f2e2f7378d65429a0a7e" name="a7573008a7615f2e2f7378d65429a0a7e"></a>
+std::optional&lt; <a class="el" href="a04403.html">Pose3</a> &gt;&#160;</td><td class="memItemRight"><b>getBodyPSensor</b> () const</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:af99acbc6803ee31da5294674729162e1" id="r_af99acbc6803ee31da5294674729162e1"><td class="memItemLeft"><a id="af99acbc6803ee31da5294674729162e1" name="af99acbc6803ee31da5294674729162e1"></a>
-std::size_t&#160;</td><td class="memItemRight"><b>index</b></td></tr>
-<tr class="memitem:a69d92b80cad5cb3d3dbb46f268dc8105" id="r_a69d92b80cad5cb3d3dbb46f268dc8105"><td class="memItemLeft"><a id="a69d92b80cad5cb3d3dbb46f268dc8105" name="a69d92b80cad5cb3d3dbb46f268dc8105"></a>
-GenericNode3DType&#160;</td><td class="memItemRight"><b>type</b></td></tr>
+<tr class="memitem:a59e97f78c2725df39d3844e75d950fa8" id="r_a59e97f78c2725df39d3844e75d950fa8"><td class="memItemLeft"><a id="a59e97f78c2725df39d3844e75d950fa8" name="a59e97f78c2725df39d3844e75d950fa8"></a>
+Matrix3&#160;</td><td class="memItemRight"><b>gyroscopeCovariance</b></td></tr>
+<tr class="memdesc:a59e97f78c2725df39d3844e75d950fa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Continuous-time "Covariance" of gyroscope measurements The units for stddev are σ = rad/s/√Hz. <br /></td></tr>
+<tr class="memitem:a751a0ba3ffc093a38e913a92bc9fd644" id="r_a751a0ba3ffc093a38e913a92bc9fd644"><td class="memItemLeft">std::optional&lt; Vector3 &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a751a0ba3ffc093a38e913a92bc9fd644">omegaCoriolis</a></td></tr>
+<tr class="memdesc:a751a0ba3ffc093a38e913a92bc9fd644"><td class="mdescLeft">&#160;</td><td class="mdescRight">Navigation-frame angular velocity in radians per second.  <br /></td></tr>
+<tr class="memitem:a79a9c6893153cb61f98f43d06d064a8f" id="r_a79a9c6893153cb61f98f43d06d064a8f"><td class="memItemLeft"><a id="a79a9c6893153cb61f98f43d06d064a8f" name="a79a9c6893153cb61f98f43d06d064a8f"></a>
+std::optional&lt; <a class="el" href="a04403.html">Pose3</a> &gt;&#160;</td><td class="memItemRight"><b>body_P_sensor</b></td></tr>
+<tr class="memdesc:a79a9c6893153cb61f98f43d06d064a8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pose of the sensor in the body frame. <br /></td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/partition/<a class="el" href="a01664_source.html">GenericGraph.h</a></li>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a751a0ba3ffc093a38e913a92bc9fd644" name="a751a0ba3ffc093a38e913a92bc9fd644"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a751a0ba3ffc093a38e913a92bc9fd644">&#9670;&#160;</a></span>omegaCoriolis</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;Vector3&gt; gtsam::PreintegratedRotationParams::omegaCoriolis</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Navigation-frame angular velocity in radians per second. </p>
+<p>When present, prediction uses the exact rotating-frame transition. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/<a class="el" href="a01160_source.html">PreintegratedRotation.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/<a class="el" href="a01178.html">PreintegratedRotation.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -130,7 +180,7 @@ GenericNode3DType&#160;</td><td class="memItemRight"><b>type</b></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><b>partition</b></li><li class="navelem"><a href="a05971.html">GenericNode3D</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a05971.html">PreintegratedRotationParams</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::traits&lt; const Pose2 &gt; Struct Reference</title>
+<title>gtsam: gtsam::Basis&lt; DERIVED &gt;::VectorDerivativeFunctor Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,68 +96,104 @@ $(function(){initNavTree('a03715.html','','a03712'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; const Pose2 &gt; Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::Basis&lt; DERIVED &gt;::VectorDerivativeFunctor Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::traits&lt; const Pose2 &gt;:</div>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename DERIVED&gt;<br />
+class gtsam::Basis&lt; DERIVED &gt;::VectorDerivativeFunctor</div><p><a class="el" href="a03715.html" title="VectorDerivativeFunctor at a given x, applied to a parameter Matrix.">VectorDerivativeFunctor</a> at a given x, applied to a parameter Matrix. </p>
+<p>This functor is used to evaluate the derivatives of a parameterized function at a given scalar value x. When given a specific M*N parameters, returns an M-vector the M corresponding function derivatives at x, possibly with Jacobians wrpt the parameters. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::Basis&lt; DERIVED &gt;::VectorDerivativeFunctor:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a03715.png" usemap="#gtsam_3A_3Atraits_3C_20const_20Pose2_20_3E_map" alt=""/>
-  <map id="gtsam_3A_3Atraits_3C_20const_20Pose2_20_3E_map" name="gtsam_3A_3Atraits_3C_20const_20Pose2_20_3E_map">
-<area href="a02923.html" alt="gtsam::internal::LieGroup&lt; Pose2 &gt;" shape="rect" coords="186,112,548,136"/>
-<area href="a02919.html" alt="gtsam::internal::LieGroupTraits&lt; Pose2 &gt;" shape="rect" coords="0,56,362,80"/>
-<area href="a03039.html" alt="gtsam::Testable&lt; Pose2 &gt;" shape="rect" coords="372,56,734,80"/>
-<area href="a02943.html" alt="gtsam::internal::GetDimensionImpl&lt; Pose2, Pose2::dimension &gt;" shape="rect" coords="0,0,362,24"/>
+  <img src="a03715.png" usemap="#gtsam_3A_3ABasis_3C_20DERIVED_20_3E_3A_3AVectorDerivativeFunctor_map" alt=""/>
+  <map id="gtsam_3A_3ABasis_3C_20DERIVED_20_3E_3A_3AVectorDerivativeFunctor_map" name="gtsam_3A_3ABasis_3C_20DERIVED_20_3E_3A_3AVectorDerivativeFunctor_map">
+<area href="a03707.html" title="Base class for functors below that calculate derivative weights." alt="gtsam::Basis&lt; DERIVED &gt;::DerivativeFunctorBase" shape="rect" coords="0,0,304,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; Pose2 &gt;</a></td></tr>
-<tr class="memitem:a0b809ea2931c6c4a2ecbd17e8f3fab39 inherit pub_methods_a03039" id="r_a0b809ea2931c6c4a2ecbd17e8f3fab39"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>BOOST_CONCEPT_ASSERT</b> ((<a class="el" href="a03035.html">HasTestablePrereqs</a>&lt; <a class="el" href="a11817.html">Pose2</a> &gt;))</td></tr>
-<tr class="inherit_header pub_static_methods_a02919"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a02919')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a02919.html">gtsam::internal::LieGroupTraits&lt; Pose2 &gt;</a></td></tr>
-<tr class="memitem:acc954169d88d5d32f788ba1db02d6984 inherit pub_static_methods_a02919" id="r_acc954169d88d5d32f788ba1db02d6984"><td class="memItemLeft">
-static TangentVector&#160;</td><td class="memItemRight"><b>Logmap</b> (const <a class="el" href="a11817.html">Pose2</a> &amp;m, ChartJacobian Hm=boost::none)</td></tr>
-<tr class="memitem:a48361c84002a6b734d56001015734a92 inherit pub_static_methods_a02919" id="r_a48361c84002a6b734d56001015734a92"><td class="memItemLeft">
-static <a class="el" href="a11817.html">Pose2</a>&#160;</td><td class="memItemRight"><b>Expmap</b> (const TangentVector &amp;v, ChartJacobian Hv=boost::none)</td></tr>
-<tr class="memitem:ae34b9c6ec8da5f0b37c063f1696fa69c inherit pub_static_methods_a02919" id="r_ae34b9c6ec8da5f0b37c063f1696fa69c"><td class="memItemLeft">
-static <a class="el" href="a11817.html">Pose2</a>&#160;</td><td class="memItemRight"><b>Compose</b> (const <a class="el" href="a11817.html">Pose2</a> &amp;m1, const <a class="el" href="a11817.html">Pose2</a> &amp;m2, ChartJacobian H1=boost::none, ChartJacobian H2=boost::none)</td></tr>
-<tr class="memitem:acd03e0aa071ea42266a04beac00e842a inherit pub_static_methods_a02919" id="r_acd03e0aa071ea42266a04beac00e842a"><td class="memItemLeft">
-static <a class="el" href="a11817.html">Pose2</a>&#160;</td><td class="memItemRight"><b>Between</b> (const <a class="el" href="a11817.html">Pose2</a> &amp;m1, const <a class="el" href="a11817.html">Pose2</a> &amp;m2, ChartJacobian H1=boost::none, ChartJacobian H2=boost::none)</td></tr>
-<tr class="memitem:a58df2137b3c1e71bd7b8b008a004bd84 inherit pub_static_methods_a02919" id="r_a58df2137b3c1e71bd7b8b008a004bd84"><td class="memItemLeft">
-static <a class="el" href="a11817.html">Pose2</a>&#160;</td><td class="memItemRight"><b>Inverse</b> (const <a class="el" href="a11817.html">Pose2</a> &amp;m, ChartJacobian H=boost::none)</td></tr>
-<tr class="memitem:a100e35ada8c76cd82b3692d37ef5f40b inherit pub_static_methods_a02919" id="r_a100e35ada8c76cd82b3692d37ef5f40b"><td class="memItemLeft">
-static TangentVector&#160;</td><td class="memItemRight"><b>Local</b> (const <a class="el" href="a11817.html">Pose2</a> &amp;origin, const <a class="el" href="a11817.html">Pose2</a> &amp;other, ChartJacobian Horigin=boost::none, ChartJacobian Hother=boost::none)</td></tr>
-<tr class="memitem:a0c75624aef3367f913d17e4afe67bd42 inherit pub_static_methods_a02919" id="r_a0c75624aef3367f913d17e4afe67bd42"><td class="memItemLeft">
-static <a class="el" href="a11817.html">Pose2</a>&#160;</td><td class="memItemRight"><b>Retract</b> (const <a class="el" href="a11817.html">Pose2</a> &amp;origin, const TangentVector &amp;v, ChartJacobian Horigin=boost::none, ChartJacobian Hv=boost::none)</td></tr>
-<tr class="memitem:ad36e535be6899c627f2f796f6c9e605a inherit pub_static_methods_a02919" id="r_ad36e535be6899c627f2f796f6c9e605a"><td class="memItemLeft">
-static <a class="el" href="a11817.html">Pose2</a>&#160;</td><td class="memItemRight"><b>Identity</b> ()</td></tr>
-<tr class="inherit_header pub_static_methods_a02943"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a02943')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a02943.html">gtsam::internal::GetDimensionImpl&lt; Pose2, Pose2::dimension &gt;</a></td></tr>
-<tr class="memitem:ad7762628c56f5de5eae9eb8ba0ed8897 inherit pub_static_methods_a02943" id="r_ad7762628c56f5de5eae9eb8ba0ed8897"><td class="memItemLeft">
-static int&#160;</td><td class="memItemRight"><b>GetDimension</b> (const <a class="el" href="a11817.html">Pose2</a> &amp;)</td></tr>
-<tr class="inherit_header pub_static_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; Pose2 &gt;</a></td></tr>
-<tr class="memitem:a27b246d77898916925c676895348fedf inherit pub_static_methods_a03039" id="r_a27b246d77898916925c676895348fedf"><td class="memItemLeft">
-static void&#160;</td><td class="memItemRight"><b>Print</b> (const <a class="el" href="a11817.html">Pose2</a> &amp;m, const std::string &amp;str=&quot;&quot;)</td></tr>
-<tr class="memitem:a29a5699453b92070b31ca7fa42609d98 inherit pub_static_methods_a03039" id="r_a29a5699453b92070b31ca7fa42609d98"><td class="memItemLeft">
-static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el" href="a11817.html">Pose2</a> &amp;m1, const <a class="el" href="a11817.html">Pose2</a> &amp;m2, double tol=1e-8)</td></tr>
-<tr class="inherit_header pub_types_a02919"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a02919')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a02919.html">gtsam::internal::LieGroupTraits&lt; Pose2 &gt;</a></td></tr>
-<tr class="memitem:a065c169dbb6b9823694d19e045613145 inherit pub_types_a02919" id="r_a065c169dbb6b9823694d19e045613145"><td class="memItemLeft">
-typedef <a class="el" href="a02915.html">lie_group_tag</a>&#160;</td><td class="memItemRight"><b>structure_category</b></td></tr>
-<tr class="memitem:a23ac452851b342b7e72b28600732ab5c inherit pub_types_a02919" id="r_a23ac452851b342b7e72b28600732ab5c"><td class="memItemLeft"><a id="a23ac452851b342b7e72b28600732ab5c" name="a23ac452851b342b7e72b28600732ab5c"></a>enum &#160;</td><td class="memItemRight"></td></tr>
-<tr class="memitem:ac114ce5554f819cdb74ed223b8ad8c9a inherit pub_types_a02919" id="r_ac114ce5554f819cdb74ed223b8ad8c9a"><td class="memItemLeft">
-typedef <a class="el" href="a11817.html">Pose2</a>&#160;</td><td class="memItemRight"><b>ManifoldType</b></td></tr>
-<tr class="memitem:a6a1718140ca7d06da1f8662b891ec7ba inherit pub_types_a02919" id="r_a6a1718140ca7d06da1f8662b891ec7ba"><td class="memItemLeft">
-typedef Eigen::Matrix&lt; double, dimension, 1 &gt;&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
-<tr class="memitem:aeeca78cf1ef276a9cb72ff05b9e7ece8 inherit pub_types_a02919" id="r_aeeca78cf1ef276a9cb72ff05b9e7ece8"><td class="memItemLeft">
-typedef <a class="el" href="a02995.html">OptionalJacobian</a>&lt; dimension, dimension &gt;&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
-<tr class="memitem:ac851cf8141809789f7e205a86c1b8302 inherit pub_types_a02919" id="r_ac851cf8141809789f7e205a86c1b8302"><td class="memItemLeft">
-typedef <a class="el" href="a02883.html">multiplicative_group_tag</a>&#160;</td><td class="memItemRight"><b>group_flavor</b></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a7c043413c8ea5860dd62253ebb8c4ab7" id="r_a7c043413c8ea5860dd62253ebb8c4ab7"><td class="memItemLeft"><a id="a7c043413c8ea5860dd62253ebb8c4ab7" name="a7c043413c8ea5860dd62253ebb8c4ab7"></a>
+&#160;</td><td class="memItemRight"><b>VectorDerivativeFunctor</b> ()</td></tr>
+<tr class="memdesc:a7c043413c8ea5860dd62253ebb8c4ab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">For serialization. <br /></td></tr>
+<tr class="memitem:aeca4adc12e98d0c2cd78f15159010787" id="r_aeca4adc12e98d0c2cd78f15159010787"><td class="memItemLeft"><a id="aeca4adc12e98d0c2cd78f15159010787" name="aeca4adc12e98d0c2cd78f15159010787"></a>
+&#160;</td><td class="memItemRight"><b>VectorDerivativeFunctor</b> (size_t M, size_t N, double x)</td></tr>
+<tr class="memdesc:aeca4adc12e98d0c2cd78f15159010787"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor. <br /></td></tr>
+<tr class="memitem:ae28343732df25dc26e77401d7d19b184" id="r_ae28343732df25dc26e77401d7d19b184"><td class="memItemLeft"><a id="ae28343732df25dc26e77401d7d19b184" name="ae28343732df25dc26e77401d7d19b184"></a>
+&#160;</td><td class="memItemRight"><b>VectorDerivativeFunctor</b> (size_t M, size_t N, double x, double a, double b)</td></tr>
+<tr class="memdesc:ae28343732df25dc26e77401d7d19b184"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor, with optional interval [a,b]. <br /></td></tr>
+<tr class="memitem:ab8d5744436c811c31dca9ae11948ffee" id="r_ab8d5744436c811c31dca9ae11948ffee"><td class="memItemLeft"><a id="ab8d5744436c811c31dca9ae11948ffee" name="ab8d5744436c811c31dca9ae11948ffee"></a>
+Vector&#160;</td><td class="memItemRight"><b>apply</b> (const Matrix &amp;P, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; -1, -1 &gt; H={}) const</td></tr>
+<tr class="memitem:ae98564c65408ec21515f590d797c32b7" id="r_ae98564c65408ec21515f590d797c32b7"><td class="memItemLeft"><a id="ae98564c65408ec21515f590d797c32b7" name="ae98564c65408ec21515f590d797c32b7"></a>
+Vector&#160;</td><td class="memItemRight"><b>operator()</b> (const Matrix &amp;P, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; -1, -1 &gt; H={}) const</td></tr>
+<tr class="memdesc:ae98564c65408ec21515f590d797c32b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">c++ sugar <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-types" class="groupheader"><a id="pro-types" name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr class="memitem:ae31f01b095eda9b7f6996d02a3ed5736" id="r_ae31f01b095eda9b7f6996d02a3ed5736"><td class="memItemLeft"><a id="ae31f01b095eda9b7f6996d02a3ed5736" name="ae31f01b095eda9b7f6996d02a3ed5736"></a>
+using&#160;</td><td class="memItemRight"><b>Jacobian</b> = Eigen::Matrix&lt;double, -1, -1&gt;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a328e8ad0853226359c8d8badfd05b184" id="r_a328e8ad0853226359c8d8badfd05b184"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a328e8ad0853226359c8d8badfd05b184">calculateJacobian</a> ()</td></tr>
+<tr class="memdesc:a328e8ad0853226359c8d8badfd05b184"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the <span class="tt">M*(M*N)</span> Jacobian of this functor with respect to the M*N parameter matrix <span class="tt">P</span>.  <br /></td></tr>
+<tr class="inherit_header pro_methods_a03707"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_a03707')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="a03707.html">gtsam::Basis&lt; DERIVED &gt;::DerivativeFunctorBase</a></td></tr>
+<tr class="memitem:a266e4f6a20307b0001f8adbf047cb9c0 inherit pro_methods_a03707" id="r_a266e4f6a20307b0001f8adbf047cb9c0"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DerivativeFunctorBase</b> ()</td></tr>
+<tr class="memdesc:a266e4f6a20307b0001f8adbf047cb9c0 inherit pro_methods_a03707"><td class="mdescLeft">&#160;</td><td class="mdescRight">For serialization. <br /></td></tr>
+<tr class="memitem:a758d29d4b31fd4b94d68cdc6bf94c96f inherit pro_methods_a03707" id="r_a758d29d4b31fd4b94d68cdc6bf94c96f"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DerivativeFunctorBase</b> (size_t N, double x)</td></tr>
+<tr class="memitem:ab3364c2be06118cb0fbddac463628e31 inherit pro_methods_a03707" id="r_ab3364c2be06118cb0fbddac463628e31"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DerivativeFunctorBase</b> (size_t N, double x, double a, double b)</td></tr>
+<tr class="memitem:a95ff27e76f9cc5e2b0055905c32c8b1f inherit pro_methods_a03707" id="r_a95ff27e76f9cc5e2b0055905c32c8b1f"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;&quot;) const</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:af33c65ae845276aec9f080977376c220" id="r_af33c65ae845276aec9f080977376c220"><td class="memItemLeft"><a id="af33c65ae845276aec9f080977376c220" name="af33c65ae845276aec9f080977376c220"></a>
+Jacobian&#160;</td><td class="memItemRight"><b>H_</b></td></tr>
+<tr class="memitem:a810a9ac6716185f48cc3ea4f4b035446" id="r_a810a9ac6716185f48cc3ea4f4b035446"><td class="memItemLeft"><a id="a810a9ac6716185f48cc3ea4f4b035446" name="a810a9ac6716185f48cc3ea4f4b035446"></a>
+size_t&#160;</td><td class="memItemRight"><b>M_</b></td></tr>
+<tr class="inherit_header pro_attribs_a03707"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a03707')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a03707.html">gtsam::Basis&lt; DERIVED &gt;::DerivativeFunctorBase</a></td></tr>
+<tr class="memitem:a8189d1e0071821552141e5e1689b69c5 inherit pro_attribs_a03707" id="r_a8189d1e0071821552141e5e1689b69c5"><td class="memItemLeft">
+Weights&#160;</td><td class="memItemRight"><b>weights_</b></td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/geometry/<a class="el" href="a00431_source.html">Pose2.h</a></li>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a328e8ad0853226359c8d8badfd05b184" name="a328e8ad0853226359c8d8badfd05b184"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a328e8ad0853226359c8d8badfd05b184">&#9670;&#160;</a></span>calculateJacobian()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DERIVED&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a03687.html">gtsam::Basis</a>&lt; DERIVED &gt;::VectorDerivativeFunctor::calculateJacobian </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate the <span class="tt">M*(M*N)</span> Jacobian of this functor with respect to the M*N parameter matrix <span class="tt">P</span>. </p>
+<p>We flatten assuming column-major order, e.g., if N=3 and M=2, we have H =[ w(0) 0 w(1) 0 w(2) 0 0 w(0) 0 w(1) 0 w(2) ] i.e., the Kronecker product of weights_ with the MxM identity matrix. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/basis/<a class="el" href="a00200_source.html">Basis.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -172,7 +208,7 @@ typedef <a class="el" href="a02883.html">multiplicative_group_tag</a>&#160;</td>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a03715.html">traits&lt; const Pose2 &gt;</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a03687.html">Basis</a></li><li class="navelem"><a href="a03715.html">VectorDerivativeFunctor</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

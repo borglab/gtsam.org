@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,14 +96,24 @@ $(function(){initNavTree('a03783.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::Rot3::ChartAtOrigin Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::PiecewisePolynomial&lt; Order, Pieces &gt; Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a03783.html">gtsam::Rot3::ChartAtOrigin</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a03783.html">gtsam::PiecewisePolynomial&lt; Order, Pieces &gt;</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Local</b>(const Rot3 &amp;r, ChartJacobian H=boost::none) (defined in <a class="el" href="a03783.html">gtsam::Rot3::ChartAtOrigin</a>)</td><td class="entry"><a class="el" href="a03783.html">gtsam::Rot3::ChartAtOrigin</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Retract</b>(const Vector3 &amp;v, ChartJacobian H=boost::none) (defined in <a class="el" href="a03783.html">gtsam::Rot3::ChartAtOrigin</a>)</td><td class="entry"><a class="el" href="a03783.html">gtsam::Rot3::ChartAtOrigin</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03783.html#a2091942309fc51c40f866bfb9944ca1e">evaluate</a>(double t, OptionalJacobian&lt; 1, 1 &gt; H={}) const override</td><td class="entry"><a class="el" href="a03783.html">gtsam::PiecewisePolynomial&lt; Order, Pieces &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03783.html#a5e84126dea3b70eb33cb8405f0efd578">evaluateDerivative</a>(size_t derivative, double t, OptionalJacobian&lt; 1, 1 &gt; H={}) const override</td><td class="entry"><a class="el" href="a03783.html">gtsam::PiecewisePolynomial&lt; Order, Pieces &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03783.html#a7055671fad39ad34908922d55321fa4c">getBeginning</a>() const override</td><td class="entry"><a class="el" href="a03783.html">gtsam::PiecewisePolynomial&lt; Order, Pieces &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03783.html#a8237e8e603d4e598db35029cdc7b2fcf">getCenter</a>() const override</td><td class="entry"><a class="el" href="a03783.html">gtsam::PiecewisePolynomial&lt; Order, Pieces &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03783.html#a1a84fce68cc3cae26afe2d6b53566fe2">getEnd</a>() const override</td><td class="entry"><a class="el" href="a03783.html">gtsam::PiecewisePolynomial&lt; Order, Pieces &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03783.html#a2e2fd1406e276301321cd54cc835003c">getIntervals</a>() const</td><td class="entry"><a class="el" href="a03783.html">gtsam::PiecewisePolynomial&lt; Order, Pieces &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03779.html#a05dbeb6631918786ad4236e7df0aec3d">getLength</a>() const</td><td class="entry"><a class="el" href="a03779.html">gtsam::KernelBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03783.html#a92ea3872958cd103e3b05d05d8b3d244">getValidDerivatives</a>() const override</td><td class="entry"><a class="el" href="a03783.html">gtsam::PiecewisePolynomial&lt; Order, Pieces &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>order</b> (defined in <a class="el" href="a03783.html">gtsam::PiecewisePolynomial&lt; Order, Pieces &gt;</a>)</td><td class="entry"><a class="el" href="a03783.html">gtsam::PiecewisePolynomial&lt; Order, Pieces &gt;</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>pieces</b> (defined in <a class="el" href="a03783.html">gtsam::PiecewisePolynomial&lt; Order, Pieces &gt;</a>)</td><td class="entry"><a class="el" href="a03783.html">gtsam::PiecewisePolynomial&lt; Order, Pieces &gt;</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03783.html#af45d006064c69f65528d00c2c7229ef1">PiecewisePolynomial</a>(const Parameters &amp;parameters)</td><td class="entry"><a class="el" href="a03783.html">gtsam::PiecewisePolynomial&lt; Order, Pieces &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">explicit</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03779.html#ac196dc2f990e14642a467d2a1af8ad74">~KernelBase</a>()=default</td><td class="entry"><a class="el" href="a03779.html">gtsam::KernelBase</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

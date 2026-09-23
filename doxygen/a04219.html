@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::traits&lt; LabeledSymbol &gt; Struct Reference</title>
+<title>gtsam: gtsam::Event Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,35 +96,51 @@ $(function(){initNavTree('a04219.html','','a04216'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; LabeledSymbol &gt; Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::Event Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>traits </p>
-</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::traits&lt; LabeledSymbol &gt;:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
- <div class="center">
-  <img src="a04219.png" usemap="#gtsam_3A_3Atraits_3C_20LabeledSymbol_20_3E_map" alt=""/>
-  <map id="gtsam_3A_3Atraits_3C_20LabeledSymbol_20_3E_map" name="gtsam_3A_3Atraits_3C_20LabeledSymbol_20_3E_map">
-<area href="a03039.html" alt="gtsam::Testable&lt; LabeledSymbol &gt;" shape="rect" coords="0,0,207,24"/>
-  </map>
-</div></div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; LabeledSymbol &gt;</a></td></tr>
-<tr class="memitem:a0b809ea2931c6c4a2ecbd17e8f3fab39 inherit pub_methods_a03039" id="r_a0b809ea2931c6c4a2ecbd17e8f3fab39"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>BOOST_CONCEPT_ASSERT</b> ((<a class="el" href="a03035.html">HasTestablePrereqs</a>&lt; <a class="el" href="a04215.html">LabeledSymbol</a> &gt;))</td></tr>
-<tr class="inherit_header pub_static_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; LabeledSymbol &gt;</a></td></tr>
-<tr class="memitem:a27b246d77898916925c676895348fedf inherit pub_static_methods_a03039" id="r_a27b246d77898916925c676895348fedf"><td class="memItemLeft">
-static void&#160;</td><td class="memItemRight"><b>Print</b> (const <a class="el" href="a04215.html">LabeledSymbol</a> &amp;m, const std::string &amp;str=&quot;&quot;)</td></tr>
-<tr class="memitem:a29a5699453b92070b31ca7fa42609d98 inherit pub_static_methods_a03039" id="r_a29a5699453b92070b31ca7fa42609d98"><td class="memItemLeft">
-static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el" href="a04215.html">LabeledSymbol</a> &amp;m1, const <a class="el" href="a04215.html">LabeledSymbol</a> &amp;m2, double tol=1e-8)</td></tr>
+<div class="textblock"><p>A space-time event models an event that happens at a certain 3D location, at a certain time. </p>
+<p>One use for it is in sound-based or UWB-ranging tracking or SLAM, where we have "time of arrival" measurements at a set of sensors. The TOA functor below provides a measurement function for those applications. </p>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a6d892cfbe7c5a9af2e2d6df60f8e6c34" id="r_a6d892cfbe7c5a9af2e2d6df60f8e6c34"><td class="memItemLeft"><a id="a6d892cfbe7c5a9af2e2d6df60f8e6c34" name="a6d892cfbe7c5a9af2e2d6df60f8e6c34"></a>
+&#160;</td><td class="memItemRight"><b>Event</b> ()</td></tr>
+<tr class="memdesc:a6d892cfbe7c5a9af2e2d6df60f8e6c34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor. <br /></td></tr>
+<tr class="memitem:a0466e771cf51ec2bf5c371f3d29b25c2" id="r_a0466e771cf51ec2bf5c371f3d29b25c2"><td class="memItemLeft"><a id="a0466e771cf51ec2bf5c371f3d29b25c2" name="a0466e771cf51ec2bf5c371f3d29b25c2"></a>
+&#160;</td><td class="memItemRight"><b>Event</b> (double t, const <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp;p)</td></tr>
+<tr class="memdesc:a0466e771cf51ec2bf5c371f3d29b25c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from time and location. <br /></td></tr>
+<tr class="memitem:a3d9ed6e18b00c45e43cb5d3f08e310c6" id="r_a3d9ed6e18b00c45e43cb5d3f08e310c6"><td class="memItemLeft"><a id="a3d9ed6e18b00c45e43cb5d3f08e310c6" name="a3d9ed6e18b00c45e43cb5d3f08e310c6"></a>
+&#160;</td><td class="memItemRight"><b>Event</b> (double t, double x, double y, double z)</td></tr>
+<tr class="memdesc:a3d9ed6e18b00c45e43cb5d3f08e310c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with doubles. <br /></td></tr>
+<tr class="memitem:aa1e4c44ae51d3b05ce1d7741b35ba5d1" id="r_aa1e4c44ae51d3b05ce1d7741b35ba5d1"><td class="memItemLeft"><a id="aa1e4c44ae51d3b05ce1d7741b35ba5d1" name="aa1e4c44ae51d3b05ce1d7741b35ba5d1"></a>
+double&#160;</td><td class="memItemRight"><b>time</b> () const</td></tr>
+<tr class="memitem:a67db8044c73f6a8c2a446824a348d57e" id="r_a67db8044c73f6a8c2a446824a348d57e"><td class="memItemLeft"><a id="a67db8044c73f6a8c2a446824a348d57e" name="a67db8044c73f6a8c2a446824a348d57e"></a>
+<a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&#160;</td><td class="memItemRight"><b>location</b> () const</td></tr>
+<tr class="memitem:afb3936e1a094061b9043c23d36b98e1e" id="r_afb3936e1a094061b9043c23d36b98e1e"><td class="memItemLeft"><a id="afb3936e1a094061b9043c23d36b98e1e" name="afb3936e1a094061b9043c23d36b98e1e"></a>
+double&#160;</td><td class="memItemRight"><b>height</b> (<a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 4 &gt; H={}) const</td></tr>
+<tr class="memitem:a28b0247d03e592719582c8b655231e6c" id="r_a28b0247d03e592719582c8b655231e6c"><td class="memItemLeft"><a id="a28b0247d03e592719582c8b655231e6c" name="a28b0247d03e592719582c8b655231e6c"></a>
+void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;&quot;) const</td></tr>
+<tr class="memdesc:a28b0247d03e592719582c8b655231e6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">print with optional string <br /></td></tr>
+<tr class="memitem:a7fab15fe167ef1f28c170f54b1e2f339" id="r_a7fab15fe167ef1f28c170f54b1e2f339"><td class="memItemLeft"><a id="a7fab15fe167ef1f28c170f54b1e2f339" name="a7fab15fe167ef1f28c170f54b1e2f339"></a>
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="#a6d892cfbe7c5a9af2e2d6df60f8e6c34">Event</a> &amp;other, double tol=1e-9) const</td></tr>
+<tr class="memdesc:a7fab15fe167ef1f28c170f54b1e2f339"><td class="mdescLeft">&#160;</td><td class="mdescRight">equals with an tolerance <br /></td></tr>
+<tr class="memitem:ab7fe822d6b3e003fe7c3d0d4a87386c0" id="r_ab7fe822d6b3e003fe7c3d0d4a87386c0"><td class="memItemLeft"><a id="ab7fe822d6b3e003fe7c3d0d4a87386c0" name="ab7fe822d6b3e003fe7c3d0d4a87386c0"></a>
+<a class="el" href="#a6d892cfbe7c5a9af2e2d6df60f8e6c34">Event</a>&#160;</td><td class="memItemRight"><b>retract</b> (const Vector4 &amp;v) const</td></tr>
+<tr class="memdesc:ab7fe822d6b3e003fe7c3d0d4a87386c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates a with tangent space delta. <br /></td></tr>
+<tr class="memitem:abd43fcacccd28fcb849344a352573d48" id="r_abd43fcacccd28fcb849344a352573d48"><td class="memItemLeft"><a id="abd43fcacccd28fcb849344a352573d48" name="abd43fcacccd28fcb849344a352573d48"></a>
+Vector4&#160;</td><td class="memItemRight"><b>localCoordinates</b> (const <a class="el" href="#a6d892cfbe7c5a9af2e2d6df60f8e6c34">Event</a> &amp;q) const</td></tr>
+<tr class="memdesc:abd43fcacccd28fcb849344a352573d48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns inverse retraction. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a88b1608a366c21685aed69e53c717de0" id="r_a88b1608a366c21685aed69e53c717de0"><td class="memItemLeft"><a id="a88b1608a366c21685aed69e53c717de0" name="a88b1608a366c21685aed69e53c717de0"></a>
+static constexpr auto&#160;</td><td class="memItemRight"><b>dimension</b> = 4</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/inference/<a class="el" href="a00638_source.html">LabeledSymbol.h</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00458_source.html">Event.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00602.html">Event.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -139,7 +155,7 @@ static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04219.html">traits&lt; LabeledSymbol &gt;</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04219.html">Event</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

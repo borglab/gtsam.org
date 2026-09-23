@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,12 +96,60 @@ $(function(){initNavTree('a06099.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; ProjectionFactorPPPC&lt; POSE, LANDMARK, CALIBRATION &gt; &gt; Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::TangentPreintegration Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a06099.html">gtsam::traits&lt; ProjectionFactorPPPC&lt; POSE, LANDMARK, CALIBRATION &gt; &gt;</a>, including all inherited members.</p>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="a06099.html">gtsam::TangentPreintegration</a>, including all inherited members.</p>
+<table class="directory">
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Bias</b> typedef (defined in <a class="el" href="a05983.html">gtsam::PreintegrationBase</a>)</td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a06099.html#ad635c05762ca4d334ed025060ea5b728">biasCorrectedDelta</a>(const imuBias::ConstantBias &amp;bias_i, OptionalJacobian&lt; 9, 6 &gt; H={}) const override</td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>biasHat</b>() const (defined in <a class="el" href="a05983.html">gtsam::PreintegrationBase</a>)</td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05983.html#a774c243fcec68bbfcfc2c62db3ca2d2a">biasHat_</a></td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>biasHatVector</b>() const (defined in <a class="el" href="a05983.html">gtsam::PreintegrationBase</a>)</td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a06099.html#ab6fb3b1120c4536bba60521d378bfc8c">clone</a>() const</td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Compose</b>(const Vector9 &amp;zeta01, const Vector9 &amp;zeta12, double deltaT12, OptionalJacobian&lt; 9, 9 &gt; H1={}, OptionalJacobian&lt; 9, 9 &gt; H2={}) (defined in <a class="el" href="a06099.html">gtsam::TangentPreintegration</a>)</td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05983.html#ab5f498b5ca91e9e35a3356735f66a1b1">correctMeasurementsBySensorPose</a>(const Vector3 &amp;unbiasedAcc, const Vector3 &amp;unbiasedOmega, OptionalJacobian&lt; 3, 3 &gt; correctedAcc_H_unbiasedAcc={}, OptionalJacobian&lt; 3, 3 &gt; correctedAcc_H_unbiasedOmega={}, OptionalJacobian&lt; 3, 3 &gt; correctedOmega_H_unbiasedOmega={}) const</td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>deltaPij</b>() const override (defined in <a class="el" href="a06099.html">gtsam::TangentPreintegration</a>)</td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>deltaRij</b>() const override (defined in <a class="el" href="a06099.html">gtsam::TangentPreintegration</a>)</td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>deltaTij</b>() const (defined in <a class="el" href="a05983.html">gtsam::PreintegrationBase</a>)</td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05983.html#a05698caf670ddcd7a108505898a71134">deltaTij_</a></td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>deltaVij</b>() const override (defined in <a class="el" href="a06099.html">gtsam::TangentPreintegration</a>)</td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>deltaXij</b>() const override (defined in <a class="el" href="a06099.html">gtsam::TangentPreintegration</a>)</td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05983.html#ac87cbbb91fa4e0a2fb4bfcf27261398d">deskewPoints</a>(ConstMatrixView points, const Vector3 &amp;velocity_i=Vector3::Zero()) const</td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05983.html#ab1b3c7709869457623f92e582e789f8b">deskewPointsAtTimes</a>(ConstMatrixView points, const Vector &amp;times, const Vector3 &amp;velocity_i=Vector3::Zero()) const</td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>equals</b>(const TangentPreintegration &amp;other, double tol) const (defined in <a class="el" href="a06099.html">gtsam::TangentPreintegration</a>)</td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05983.html#af81180bb6e01ac950d29784a43e8f18d">integrateMeasurement</a>(const Vector3 &amp;measuredAcc, const Vector3 &amp;measuredOmega, const double dt)</td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05983.html#aa75b77f620c3fa3da3ef23e4802a6034">integrateMeasurements</a>(const Matrix &amp;measuredAccs, const Matrix &amp;measuredOmegas, const Matrix &amp;dts)</td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05983.html#a608671064739d912a70888ba1bd570dd">kLegacyUsesLogmap</a></td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05983.html#a4d978fd06c9d44dfdcf2eee1e4b33e79">matchesParamsWith</a>(const PreintegrationBase &amp;other) const</td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a06099.html#a47d5b5a9a0695d464b70a1674db3d5f8">mergeWith</a>(const TangentPreintegration &amp;pim, Matrix9 *H1, Matrix9 *H2)</td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05983.html#a62835e11ff9409ffd26a59c6ec8d7cfd">p</a>() const</td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>p_</b> (defined in <a class="el" href="a05983.html">gtsam::PreintegrationBase</a>)</td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Params</b> typedef (defined in <a class="el" href="a05983.html">gtsam::PreintegrationBase</a>)</td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05983.html#a454b6547322d3222dc4e8ebf98b9f249">params</a>() const</td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05983.html#a0f1e454c5530d64fdd4b7bf431bc30ba">predict</a>(const NavState &amp;state_i, const imuBias::ConstantBias &amp;bias_i, const Vector3 &amp;n_gravity, OptionalJacobian&lt; 9, 9 &gt; H1={}, OptionalJacobian&lt; 9, 6 &gt; H2={}, OptionalJacobian&lt; 9, 3 &gt; H3={}) const</td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05983.html#ae9a0aa0456d4b873bfbd7dd672c2636b">predict</a>(const NavState &amp;state_i, const imuBias::ConstantBias &amp;bias_i, OptionalJacobian&lt; 9, 9 &gt; H1={}, OptionalJacobian&lt; 9, 6 &gt; H2={}) const</td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>preintegrated</b>() const (defined in <a class="el" href="a06099.html">gtsam::TangentPreintegration</a>)</td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a06099.html#aa35dd8359cdcc5adf12b79602f6f1f11">preintegrated_</a></td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>preintegrated_H_biasAcc</b>() const (defined in <a class="el" href="a06099.html">gtsam::TangentPreintegration</a>)</td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a06099.html#ace8fc0be6d82355b59de1376708185af">preintegrated_H_biasAcc_</a></td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>preintegrated_H_biasOmega</b>() const (defined in <a class="el" href="a06099.html">gtsam::TangentPreintegration</a>)</td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a06099.html#a610e8d7b5615146efd0ae18fe984f1a0">preintegrated_H_biasOmega_</a></td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05983.html#a85da47fc93662940e6bd38d02a3b3118">PreintegrationBase</a>()</td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05983.html#a17b06ef93308974307ed45e41b9247e2">PreintegrationBase</a>(const std::shared_ptr&lt; Params &gt; &amp;p, const imuBias::ConstantBias &amp;biasHat=imuBias::ConstantBias())</td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>print</b>(const std::string &amp;s=&quot;&quot;) const (defined in <a class="el" href="a05983.html">gtsam::PreintegrationBase</a>)</td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>resetIntegration</b>() override (defined in <a class="el" href="a06099.html">gtsam::TangentPreintegration</a>)</td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>resetIntegrationAndSetBias</b>(const Bias &amp;biasHat) (defined in <a class="el" href="a05983.html">gtsam::PreintegrationBase</a>)</td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a06099.html#a1b7b7d54ec4c293642693e5827e7c4db">so3TangentAt</a>(double t) const override</td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a06099.html#ab0683675722a4b8774b08f4f23538a33">TangentPreintegration</a>()</td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a06099.html#a64b178d493a32916cd1c6749774bf212">TangentPreintegration</a>(const std::shared_ptr&lt; Params &gt; &amp;p, const imuBias::ConstantBias &amp;biasHat=imuBias::ConstantBias())</td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>theta</b>() const (defined in <a class="el" href="a06099.html">gtsam::TangentPreintegration</a>)</td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a06099.html#a29246e35a8351b6e9f66039401f445e8">update</a>(const Vector3 &amp;measuredAcc, const Vector3 &amp;measuredOmega, const double dt, Matrix9 *A, Matrix93 *B, Matrix93 *C) override</td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>UpdatePreintegrated</b>(const Vector3 &amp;a_body, const Vector3 &amp;w_body, const double dt, const Vector9 &amp;preintegrated, OptionalJacobian&lt; 9, 9 &gt; A={}, OptionalJacobian&lt; 9, 3 &gt; B={}, OptionalJacobian&lt; 9, 3 &gt; C={}) (defined in <a class="el" href="a06099.html">gtsam::TangentPreintegration</a>)</td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05983.html#a4d5ead934c4582183ddc8a7b415decef">~PreintegrationBase</a>()</td><td class="entry"><a class="el" href="a05983.html">gtsam::PreintegrationBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a06099.html#a87e4e0455266ed19974f576d141648ef">~TangentPreintegration</a>() override</td><td class="entry"><a class="el" href="a06099.html">gtsam::TangentPreintegration</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+</table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->

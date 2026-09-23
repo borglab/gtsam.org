@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/sfm/ShonanFactor.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/ManifoldPreintegration.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,36 +96,34 @@ $(function(){initNavTree('a01211.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">ShonanFactor.h File Reference</div></div>
+  <div class="headertitle"><div class="title">ManifoldPreintegration.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Main factor type in Shonan averaging, on SO(n) pairs.  
-<a href="#details">More...</a></p>
 
 <p><a href="a01211_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3AShonanFactor_3C_20d_20_3E" id="r_gtsam_3A_3AShonanFactor_3C_20d_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a05295.html">gtsam::ShonanFactor&lt; d &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a05295.html" title="ShonanFactor is a BetweenFactor that moves in SO(p), but will land on the SO(d) sub-manifold of SO(p)...">ShonanFactor</a> is a <a class="el" href="a05315.html" title="A class for a measurement predicted by &quot;between(config[key1],config[key2])&quot;.">BetweenFactor</a> that moves in SO(p), but will land on the SO(d) sub-manifold of SO(p) at the global minimum.  <a href="a05295.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3AManifoldPreintegration" id="r_gtsam_3A_3AManifoldPreintegration"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a05911.html">gtsam::ManifoldPreintegration</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">IMU pre-integration on <a class="el" href="a05927.html" title="Navigation state: Pose (rotation, translation) + velocity Following Barrau20icra, this class belongs ...">NavState</a> manifold.  <a href="a05911.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a9692876f2454845b450e933ad7fe79c3" id="r_a9692876f2454845b450e933ad7fe79c3"><td class="memItemLeft"><a id="a9692876f2454845b450e933ad7fe79c3" name="a9692876f2454845b450e933ad7fe79c3"></a>
-using&#160;</td><td class="memItemRight"><b>gtsam::ShonanFactor2</b> = <a class="el" href="a05295.html">ShonanFactor</a>&lt;2&gt;</td></tr>
-<tr class="memitem:a5255151667466cc27a8077c3b557885f" id="r_a5255151667466cc27a8077c3b557885f"><td class="memItemLeft"><a id="a5255151667466cc27a8077c3b557885f" name="a5255151667466cc27a8077c3b557885f"></a>
-using&#160;</td><td class="memItemRight"><b>gtsam::ShonanFactor3</b> = <a class="el" href="a05295.html">ShonanFactor</a>&lt;3&gt;</td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Main factor type in Shonan averaging, on SO(n) pairs. </p>
-<dl class="section date"><dt>Date</dt><dd>March 2019 </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Frank Dellaert </dd></dl>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Luca Carlone </dd>
+<dd>
+Stephen Williams </dd>
+<dd>
+Richard Roberts </dd>
+<dd>
+Vadim Indelman </dd>
+<dd>
+David Jensen </dd>
+<dd>
+Frank Dellaert </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -139,7 +137,7 @@ using&#160;</td><td class="memItemRight"><b>gtsam::ShonanFactor3</b> = <a class=
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>sfm</b></li><li class="navelem"><a href="a01211.html">ShonanFactor.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>navigation</b></li><li class="navelem"><a href="a01211.html">ManifoldPreintegration.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

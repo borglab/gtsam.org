@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,30 +96,22 @@ $(function(){initNavTree('a03347.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::DecisionTree&lt; L, Y &gt;::Node Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::IsMatrixLieGroup&lt; T &gt; Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a03347.html">gtsam::IsMatrixLieGroup&lt; T &gt;</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>apply</b>(const Unary &amp;op) const =0 (defined in <a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>)</td><td class="entry"><a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>apply</b>(const UnaryAssignment &amp;op, const Assignment&lt; L &gt; &amp;assignment) const =0 (defined in <a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>)</td><td class="entry"><a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>apply_f_op_g</b>(const Node &amp;, const Binary &amp;) const =0 (defined in <a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>)</td><td class="entry"><a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>apply_g_op_fC</b>(const Choice &amp;, const Binary &amp;) const =0 (defined in <a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>)</td><td class="entry"><a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>apply_g_op_fL</b>(const Leaf &amp;, const Binary &amp;) const =0 (defined in <a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>)</td><td class="entry"><a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a03347.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">boost::serialization::access</a> class</td><td class="entry"><a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>choose</b>(const L &amp;label, size_t index) const =0 (defined in <a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>)</td><td class="entry"><a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>dot</b>(std::ostream &amp;os, const LabelFormatter &amp;labelFormatter, const ValueFormatter &amp;valueFormatter, bool showZero) const =0 (defined in <a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>)</td><td class="entry"><a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>equals</b>(const Node &amp;other, const CompareFunc &amp;compare=&amp;DefaultCompare) const =0 (defined in <a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>)</td><td class="entry"><a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>id</b>() const (defined in <a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>)</td><td class="entry"><a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>isLeaf</b>() const =0 (defined in <a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>)</td><td class="entry"><a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Node</b>() (defined in <a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>)</td><td class="entry"><a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator()</b>(const Assignment&lt; L &gt; &amp;x) const =0 (defined in <a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>)</td><td class="entry"><a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>print</b>(const std::string &amp;s, const LabelFormatter &amp;labelFormatter, const ValueFormatter &amp;valueFormatter) const =0 (defined in <a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>)</td><td class="entry"><a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Ptr</b> typedef (defined in <a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>)</td><td class="entry"><a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>sameLeaf</b>(const Leaf &amp;q) const =0 (defined in <a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>)</td><td class="entry"><a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>sameLeaf</b>(const Node &amp;q) const =0 (defined in <a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>)</td><td class="entry"><a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>~Node</b>() (defined in <a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>)</td><td class="entry"><a class="el" href="a03347.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>ChartJacobian</b> typedef (defined in <a class="el" href="a03283.html">gtsam::IsLieGroup&lt; T &gt;</a>)</td><td class="entry"><a class="el" href="a03283.html">gtsam::IsLieGroup&lt; T &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>dim</b> (defined in <a class="el" href="a03319.html">gtsam::IsManifold&lt; T &gt;</a>)</td><td class="entry"><a class="el" href="a03319.html">gtsam::IsManifold&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>GTSAM_CONCEPT_USAGE</b>(IsMatrixLieGroup) (defined in <a class="el" href="a03347.html">gtsam::IsMatrixLieGroup&lt; T &gt;</a>)</td><td class="entry"><a class="el" href="a03347.html">gtsam::IsMatrixLieGroup&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>GTSAM_CONCEPT_USAGE</b>(IsLieGroup) (defined in <a class="el" href="a03283.html">gtsam::IsLieGroup&lt; T &gt;</a>)</td><td class="entry"><a class="el" href="a03283.html">gtsam::IsLieGroup&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>GTSAM_CONCEPT_USAGE</b>(IsManifold) (defined in <a class="el" href="a03319.html">gtsam::IsManifold&lt; T &gt;</a>)</td><td class="entry"><a class="el" href="a03319.html">gtsam::IsManifold&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>LieAlgebra</b> typedef (defined in <a class="el" href="a03347.html">gtsam::IsMatrixLieGroup&lt; T &gt;</a>)</td><td class="entry"><a class="el" href="a03347.html">gtsam::IsMatrixLieGroup&lt; T &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>ManifoldType</b> typedef (defined in <a class="el" href="a03283.html">gtsam::IsLieGroup&lt; T &gt;</a>)</td><td class="entry"><a class="el" href="a03283.html">gtsam::IsLieGroup&lt; T &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>structure_category_tag</b> typedef (defined in <a class="el" href="a03283.html">gtsam::IsLieGroup&lt; T &gt;</a>)</td><td class="entry"><a class="el" href="a03283.html">gtsam::IsLieGroup&lt; T &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>TangentVector</b> typedef (defined in <a class="el" href="a03347.html">gtsam::IsMatrixLieGroup&lt; T &gt;</a>)</td><td class="entry"><a class="el" href="a03347.html">gtsam::IsMatrixLieGroup&lt; T &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>value</b> (defined in <a class="el" href="a03283.html">gtsam::IsLieGroup&lt; T &gt;</a>)</td><td class="entry"><a class="el" href="a03283.html">gtsam::IsLieGroup&lt; T &gt;</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

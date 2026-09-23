@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/base/SymmetricBlockMatrix.cpp File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/VectorConstants.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,22 +96,37 @@ $(function(){initNavTree('a00113.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SymmetricBlockMatrix.cpp File Reference</div></div>
+  <div class="headertitle"><div class="title">VectorConstants.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Access to matrices via blocks of pre-defined sizes.  
+<p>Macros for Vector constants to avoid excessive template instantiation.  
 <a href="#details">More...</a></p>
+
+<p><a href="a00113_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a62ac357fa8a3d4d8e52acaf81da40c71" id="r_a62ac357fa8a3d4d8e52acaf81da40c71"><td class="memItemLeft"><a id="a62ac357fa8a3d4d8e52acaf81da40c71" name="a62ac357fa8a3d4d8e52acaf81da40c71"></a>
+#define&#160;</td><td class="memItemRight"><b>Z_2x1</b>&#160;&#160;&#160;Vector2::Constant(0.0)</td></tr>
+<tr class="memitem:a3d828c39549b907579ef5b53b2d5abf0" id="r_a3d828c39549b907579ef5b53b2d5abf0"><td class="memItemLeft"><a id="a3d828c39549b907579ef5b53b2d5abf0" name="a3d828c39549b907579ef5b53b2d5abf0"></a>
+#define&#160;</td><td class="memItemRight"><b>Z_3x1</b>&#160;&#160;&#160;Vector3::Constant(0.0)</td></tr>
+<tr class="memitem:af4dcd7460633cf29f210cff023191448" id="r_af4dcd7460633cf29f210cff023191448"><td class="memItemLeft"><a id="af4dcd7460633cf29f210cff023191448" name="af4dcd7460633cf29f210cff023191448"></a>
+#define&#160;</td><td class="memItemRight"><b>Z_4x1</b>&#160;&#160;&#160;Vector4::Constant(0.0)</td></tr>
+<tr class="memitem:a9ea9245e4a440000b34b76cdbebe0cf4" id="r_a9ea9245e4a440000b34b76cdbebe0cf4"><td class="memItemLeft"><a id="a9ea9245e4a440000b34b76cdbebe0cf4" name="a9ea9245e4a440000b34b76cdbebe0cf4"></a>
+#define&#160;</td><td class="memItemRight"><b>Z_5x1</b>&#160;&#160;&#160;Vector5::Constant(0.0)</td></tr>
+<tr class="memitem:a76471b1807ac1049bc17100e6788cd8d" id="r_a76471b1807ac1049bc17100e6788cd8d"><td class="memItemLeft"><a id="a76471b1807ac1049bc17100e6788cd8d" name="a76471b1807ac1049bc17100e6788cd8d"></a>
+#define&#160;</td><td class="memItemRight"><b>Z_6x1</b>&#160;&#160;&#160;Vector6::Constant(0.0)</td></tr>
+<tr class="memitem:ac92a9aef695a9307553202c30fcf702e" id="r_ac92a9aef695a9307553202c30fcf702e"><td class="memItemLeft"><a id="ac92a9aef695a9307553202c30fcf702e" name="ac92a9aef695a9307553202c30fcf702e"></a>
+#define&#160;</td><td class="memItemRight"><b>Z_7x1</b>&#160;&#160;&#160;Vector7::Constant(0.0)</td></tr>
+<tr class="memitem:ab29bc6e763e49225da44da3e3e566667" id="r_ab29bc6e763e49225da44da3e3e566667"><td class="memItemLeft"><a id="ab29bc6e763e49225da44da3e3e566667" name="ab29bc6e763e49225da44da3e3e566667"></a>
+#define&#160;</td><td class="memItemRight"><b>Z_8x1</b>&#160;&#160;&#160;Vector8::Constant(0.0)</td></tr>
+<tr class="memitem:a77ea44684f2ee01e56c4d79a260a836d" id="r_a77ea44684f2ee01e56c4d79a260a836d"><td class="memItemLeft"><a id="a77ea44684f2ee01e56c4d79a260a836d" name="a77ea44684f2ee01e56c4d79a260a836d"></a>
+#define&#160;</td><td class="memItemRight"><b>Z_9x1</b>&#160;&#160;&#160;Vector9::Constant(0.0)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Access to matrices via blocks of pre-defined sizes. </p>
-<p>Used in GaussianFactor and <a class="el" href="a06235.html" title="is the normalization constant.">GaussianConditional</a>. </p><dl class="section author"><dt>Author</dt><dd>Richard Roberts </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>Sep 18, 2010 </dd></dl>
+<div class="textblock"><p>Macros for Vector constants to avoid excessive template instantiation. </p>
+<p>Avoid using in headers to prevent name pollution. </p><dl class="section author"><dt>Author</dt><dd>Gold856 </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -125,7 +140,7 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>base</b></li><li class="navelem"><a href="a00113.html">SymmetricBlockMatrix.cpp</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>base</b></li><li class="navelem"><a href="a00113.html">VectorConstants.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

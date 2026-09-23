@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::ValuesIncorrectType Class Reference</title>
+<title>gtsam: gtsam::JointMarginal Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,48 +96,104 @@ $(function(){initNavTree('a05187.html','','a05184'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::ValuesIncorrectType Class Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::JointMarginal Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::ValuesIncorrectType:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
- <div class="center">
-  <img src="a05187.png" alt=""/>
- </div></div>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class to store and access a joint marginal, returned from <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> and nonlinear covariance query APIs. </p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a880882802e51b570132ac2eceee3ac1a" id="r_a880882802e51b570132ac2eceee3ac1a"><td class="memItemLeft"><a id="a880882802e51b570132ac2eceee3ac1a" name="a880882802e51b570132ac2eceee3ac1a"></a>
-&#160;</td><td class="memItemRight"><b>ValuesIncorrectType</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="el" href="#a44a4c94d77ad8ffb01cd0689efa3ddfe">key</a>, const std::type_info &amp;<a class="el" href="#a20a8da2172f95796a00469b9fc6e29ff">storedTypeId</a>, const std::type_info &amp;<a class="el" href="#af5d47c3bd130f6e6ba2ed9ef12787938">requestedTypeId</a>) noexcept</td></tr>
-<tr class="memdesc:a880882802e51b570132ac2eceee3ac1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with the key that does not exist in the values. <br /></td></tr>
-<tr class="memitem:a44a4c94d77ad8ffb01cd0689efa3ddfe" id="r_a44a4c94d77ad8ffb01cd0689efa3ddfe"><td class="memItemLeft"><a id="a44a4c94d77ad8ffb01cd0689efa3ddfe" name="a44a4c94d77ad8ffb01cd0689efa3ddfe"></a>
-<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>key</b> () const noexcept</td></tr>
-<tr class="memdesc:a44a4c94d77ad8ffb01cd0689efa3ddfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The key that was attempted to be accessed that does not exist. <br /></td></tr>
-<tr class="memitem:a20a8da2172f95796a00469b9fc6e29ff" id="r_a20a8da2172f95796a00469b9fc6e29ff"><td class="memItemLeft"><a id="a20a8da2172f95796a00469b9fc6e29ff" name="a20a8da2172f95796a00469b9fc6e29ff"></a>
-const std::type_info &amp;&#160;</td><td class="memItemRight"><b>storedTypeId</b> () const</td></tr>
-<tr class="memdesc:a20a8da2172f95796a00469b9fc6e29ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">The typeid of the value stores in the <a class="el" href="a05163.html" title="A non-templated config holding any types of Manifold-group elements.">Values</a>. <br /></td></tr>
-<tr class="memitem:af5d47c3bd130f6e6ba2ed9ef12787938" id="r_af5d47c3bd130f6e6ba2ed9ef12787938"><td class="memItemLeft"><a id="af5d47c3bd130f6e6ba2ed9ef12787938" name="af5d47c3bd130f6e6ba2ed9ef12787938"></a>
-const std::type_info &amp;&#160;</td><td class="memItemRight"><b>requestedTypeId</b> () const</td></tr>
-<tr class="memdesc:af5d47c3bd130f6e6ba2ed9ef12787938"><td class="mdescLeft">&#160;</td><td class="mdescRight">The requested typeid. <br /></td></tr>
-<tr class="memitem:a147349a2428365bcc4f9dea6b14355d4" id="r_a147349a2428365bcc4f9dea6b14355d4"><td class="memItemLeft"><a id="a147349a2428365bcc4f9dea6b14355d4" name="a147349a2428365bcc4f9dea6b14355d4"></a>
-GTSAM_EXPORT const char *&#160;</td><td class="memItemRight"><b>what</b> () const noexcept override</td></tr>
-<tr class="memdesc:a147349a2428365bcc4f9dea6b14355d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The message to be displayed to the user. <br /></td></tr>
+<tr class="memitem:ab2fcf64154122a05a99c0d7c29611d34" id="r_ab2fcf64154122a05a99c0d7c29611d34"><td class="memItemLeft"><a id="ab2fcf64154122a05a99c0d7c29611d34" name="ab2fcf64154122a05a99c0d7c29611d34"></a>
+&#160;</td><td class="memItemRight"><b>JointMarginal</b> ()</td></tr>
+<tr class="memdesc:ab2fcf64154122a05a99c0d7c29611d34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor only for wrappers. <br /></td></tr>
+<tr class="memitem:a6a6394311df16f326cab72ef545cbd9c" id="r_a6a6394311df16f326cab72ef545cbd9c"><td class="memItemLeft">Matrix&#160;</td><td class="memItemRight"><a class="el" href="#a6a6394311df16f326cab72ef545cbd9c">operator()</a> (<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> iVariable, <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> jVariable) const</td></tr>
+<tr class="memdesc:a6a6394311df16f326cab72ef545cbd9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access a block, corresponding to a pair of variables, of the joint marginal.  <br /></td></tr>
+<tr class="memitem:a31082f007860b235520dfe7e427d7c88" id="r_a31082f007860b235520dfe7e427d7c88"><td class="memItemLeft"><a id="a31082f007860b235520dfe7e427d7c88" name="a31082f007860b235520dfe7e427d7c88"></a>
+Matrix&#160;</td><td class="memItemRight"><b>at</b> (<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> iVariable, <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> jVariable) const</td></tr>
+<tr class="memdesc:a31082f007860b235520dfe7e427d7c88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synonym for operator() See operator() for indexing semantics. <br /></td></tr>
+<tr class="memitem:a5faff6a6fe223f246b99c727fcb59e8a" id="r_a5faff6a6fe223f246b99c727fcb59e8a"><td class="memItemLeft">Matrix&#160;</td><td class="memItemRight"><a class="el" href="#a5faff6a6fe223f246b99c727fcb59e8a">fullMatrix</a> () const</td></tr>
+<tr class="memdesc:a5faff6a6fe223f246b99c727fcb59e8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The full, dense covariance/information matrix of the joint marginal.  <br /></td></tr>
+<tr class="memitem:ae436258b48812bdea2492f505a8d66c2" id="r_ae436258b48812bdea2492f505a8d66c2"><td class="memItemLeft"><a id="ae436258b48812bdea2492f505a8d66c2" name="ae436258b48812bdea2492f505a8d66c2"></a>
+void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;&quot;, const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;formatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) const</td></tr>
+<tr class="memdesc:ae436258b48812bdea2492f505a8d66c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print. <br /></td></tr>
+<tr class="memitem:a0873257fc3523023784e274b6bd1abc5" id="r_a0873257fc3523023784e274b6bd1abc5"><td class="memItemLeft"><a id="a0873257fc3523023784e274b6bd1abc5" name="a0873257fc3523023784e274b6bd1abc5"></a>
+&#160;</td><td class="memItemRight"><b>JointMarginal</b> (const Matrix &amp;<a class="el" href="#a5faff6a6fe223f246b99c727fcb59e8a">fullMatrix</a>, const <a class="el" href="a05495.html">Scatter</a> &amp;scatter)</td></tr>
+<tr class="memdesc:a0873257fc3523023784e274b6bd1abc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from a dense matrix and its block layout. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a6303f8c7ce66e97c3107fd4f6cf24d28" id="r_a6303f8c7ce66e97c3107fd4f6cf24d28"><td class="memItemLeft"><a id="a6303f8c7ce66e97c3107fd4f6cf24d28" name="a6303f8c7ce66e97c3107fd4f6cf24d28"></a>
-const <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>key_</b></td></tr>
-<tr class="memdesc:a6303f8c7ce66e97c3107fd4f6cf24d28"><td class="mdescLeft">&#160;</td><td class="mdescRight">The key requested. <br /></td></tr>
-<tr class="memitem:a69b6bfc602ff8696756cbef2f5a3b6a4" id="r_a69b6bfc602ff8696756cbef2f5a3b6a4"><td class="memItemLeft"><a id="a69b6bfc602ff8696756cbef2f5a3b6a4" name="a69b6bfc602ff8696756cbef2f5a3b6a4"></a>
-const std::type_info &amp;&#160;</td><td class="memItemRight"><b>storedTypeId_</b></td></tr>
-<tr class="memitem:a5d1010a7808de971cb9f4abac4ef152f" id="r_a5d1010a7808de971cb9f4abac4ef152f"><td class="memItemLeft"><a id="a5d1010a7808de971cb9f4abac4ef152f" name="a5d1010a7808de971cb9f4abac4ef152f"></a>
-const std::type_info &amp;&#160;</td><td class="memItemRight"><b>requestedTypeId_</b></td></tr>
+<tr class="memitem:ada6ac17670b92339ff3a434a01425735" id="r_ada6ac17670b92339ff3a434a01425735"><td class="memItemLeft"><a id="ada6ac17670b92339ff3a434a01425735" name="ada6ac17670b92339ff3a434a01425735"></a>
+<a class="el" href="a03487.html">SymmetricBlockMatrix</a>&#160;</td><td class="memItemRight"><b>blockMatrix_</b></td></tr>
+<tr class="memitem:a2267608c9cebe754201484a9ef76ab9c" id="r_a2267608c9cebe754201484a9ef76ab9c"><td class="memItemLeft"><a id="a2267608c9cebe754201484a9ef76ab9c" name="a2267608c9cebe754201484a9ef76ab9c"></a>
+<a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&#160;</td><td class="memItemRight"><b>keys_</b></td></tr>
+<tr class="memitem:a9af9b5e29b58a445771ea28e53db0cdc" id="r_a9af9b5e29b58a445771ea28e53db0cdc"><td class="memItemLeft"><a id="a9af9b5e29b58a445771ea28e53db0cdc" name="a9af9b5e29b58a445771ea28e53db0cdc"></a>
+<a class="el" href="a03159.html">FastMap</a>&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, size_t &gt;&#160;</td><td class="memItemRight"><b>indices_</b></td></tr>
 </table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a5faff6a6fe223f246b99c727fcb59e8a" name="a5faff6a6fe223f246b99c727fcb59e8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5faff6a6fe223f246b99c727fcb59e8a">&#9670;&#160;</a></span>fullMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Matrix gtsam::JointMarginal::fullMatrix </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The full, dense covariance/information matrix of the joint marginal. </p>
+<p>Blocks follow the order of the keys in the query that created this object. </p>
+
+</div>
+</div>
+<a id="a6a6394311df16f326cab72ef545cbd9c" name="a6a6394311df16f326cab72ef545cbd9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a6394311df16f326cab72ef545cbd9c">&#9670;&#160;</a></span>operator()()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Matrix gtsam::JointMarginal::operator() </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a></td>          <td class="paramname"><span class="paramname"><em>iVariable</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a></td>          <td class="paramname"><span class="paramname"><em>jVariable</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Access a block, corresponding to a pair of variables, of the joint marginal. </p>
+<p>Note: iVariable and jVariable are the actual nonlinear Keys used to construct this <a class="el" href="a05187.html" title="A class to store and access a joint marginal, returned from Gaussian and nonlinear covariance query A...">JointMarginal</a> (the keys passed to jointMarginalCovariance()/jointMarginalInformation()), NOT positional indices into the block matrix. To retrieve the single variable marginal for <span class="tt">key</span> (equivalent to Marginals::marginalCovariance(key)), call at(key, key), not at(0, key) or any other cross covariance block, which represents the covariance <em>between</em> two different variables and will generally differ. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/<a class="el" href="a01079_source.html">Values.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/<b>Values.cpp</b></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/<a class="el" href="a01007_source.html">JointMarginal.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/<a class="el" href="a00959.html">JointMarginal.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -152,7 +208,7 @@ const std::type_info &amp;&#160;</td><td class="memItemRight"><b>requestedTypeId
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a05187.html">ValuesIncorrectType</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a05187.html">JointMarginal</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

@@ -1,5 +1,4 @@
 var a01076 =
 [
-    [ "gtsam::GaussNewtonParams", "a04903.html", null ],
-    [ "gtsam::GaussNewtonOptimizer", "a04907.html", "a04907" ]
+    [ "gtsam::MultifrontalParameters", "a05315.html", "a05315" ]
 ];

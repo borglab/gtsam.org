@@ -1,5 +1,5 @@
 var a00794 =
 [
-    [ "gtsam::SlotEntry", "a04571.html", null ],
-    [ "gtsam::Scatter", "a04575.html", "a04575" ]
+    [ "gtsam::EliminationTree&lt; BAYESNET, GRAPH &gt;", "a04891.html", "a04891" ],
+    [ "gtsam::EliminationTree&lt; BAYESNET, GRAPH &gt;::Node", "a04895.html", "a04895" ]
 ];

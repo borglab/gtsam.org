@@ -1,4 +1,4 @@
 var a00722 =
 [
-    [ "gtsam::AcceleratedPowerMethod&lt; Operator &gt;", "a04263.html", "a04263" ]
+    [ "gtsam::HybridNonlinearISAM", "a04795.html", "a04795" ]
 ];

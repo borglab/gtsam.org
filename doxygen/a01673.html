@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/slam/TSAMFactors.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/sfm/ShonanFactor.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,33 +96,36 @@ $(function(){initNavTree('a01673.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">TSAMFactors.h File Reference</div></div>
+  <div class="headertitle"><div class="title">ShonanFactor.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>TSAM 1 Factors, simpler than the hierarchical TSAM 2.  
+<p>Main factor type in Shonan averaging, on SO(n) pairs.  
 <a href="#details">More...</a></p>
 
 <p><a href="a01673_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3ADeltaFactor" id="r_gtsam_3A_3ADeltaFactor"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a06175.html">gtsam::DeltaFactor</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a06175.html" title="DeltaFactor: relative 2D measurement between Pose2 and Point2.">DeltaFactor</a>: relative 2D measurement between <a class="el" href="a03703.html" title="A 2D pose (Point2,Rot2).">Pose2</a> and <a class="el" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d" title="As of GTSAM 4, in order to make GTSAM more lean, it is now possible to just typedef Point2 to Vector2...">Point2</a>.  <a href="a06175.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3ADeltaFactorBase" id="r_gtsam_3A_3ADeltaFactorBase"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a06179.html">gtsam::DeltaFactorBase</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a06179.html" title="DeltaFactorBase: relative 2D measurement between Pose2 and Point2, with Basenodes.">DeltaFactorBase</a>: relative 2D measurement between <a class="el" href="a03703.html" title="A 2D pose (Point2,Rot2).">Pose2</a> and <a class="el" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d" title="As of GTSAM 4, in order to make GTSAM more lean, it is now possible to just typedef Point2 to Vector2...">Point2</a>, with Basenodes.  <a href="a06179.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3AOdometryFactorBase" id="r_gtsam_3A_3AOdometryFactorBase"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a06183.html">gtsam::OdometryFactorBase</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a06183.html" title="OdometryFactorBase: Pose2 odometry, with Basenodes.">OdometryFactorBase</a>: <a class="el" href="a03703.html" title="A 2D pose (Point2,Rot2).">Pose2</a> odometry, with Basenodes.  <a href="a06183.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3AShonanFactor_3C_20d_20_3E" id="r_gtsam_3A_3AShonanFactor_3C_20d_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a06807.html">gtsam::ShonanFactor&lt; d &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a06807.html" title="ShonanFactor is a BetweenFactor that moves in SO(p), but will land on the SO(d) sub-manifold of SO(p)...">ShonanFactor</a> is a <a class="el" href="a06855.html" title="A class for a measurement predicted by &quot;between(config[key1],config[key2])&quot;.">BetweenFactor</a> that moves in SO(p), but will land on the SO(d) sub-manifold of SO(p) at the global minimum.  <a href="a06807.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a9692876f2454845b450e933ad7fe79c3" id="r_a9692876f2454845b450e933ad7fe79c3"><td class="memItemLeft"><a id="a9692876f2454845b450e933ad7fe79c3" name="a9692876f2454845b450e933ad7fe79c3"></a>
+using&#160;</td><td class="memItemRight"><b>gtsam::ShonanFactor2</b> = <a class="el" href="a06807.html">ShonanFactor</a>&lt;2&gt;</td></tr>
+<tr class="memitem:a5255151667466cc27a8077c3b557885f" id="r_a5255151667466cc27a8077c3b557885f"><td class="memItemLeft"><a id="a5255151667466cc27a8077c3b557885f" name="a5255151667466cc27a8077c3b557885f"></a>
+using&#160;</td><td class="memItemRight"><b>gtsam::ShonanFactor3</b> = <a class="el" href="a06807.html">ShonanFactor</a>&lt;3&gt;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>TSAM 1 Factors, simpler than the hierarchical TSAM 2. </p>
+<div class="textblock"><p>Main factor type in Shonan averaging, on SO(n) pairs. </p>
+<dl class="section date"><dt>Date</dt><dd>March 2019 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Frank Dellaert </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>May 2014 </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -136,7 +139,7 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam_unstable</b></li><li class="navelem"><b>slam</b></li><li class="navelem"><a href="a01673.html">TSAMFactors.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>sfm</b></li><li class="navelem"><a href="a01673.html">ShonanFactor.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

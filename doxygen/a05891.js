@@ -1,11 +1,10 @@
 var a05891 =
 [
-    [ "ConcurrentSmoother", "a05891.html#aaaf5a11b3c127522d5629d250b2aba56", null ],
-    [ "~ConcurrentSmoother", "a05891.html#af75fe5536e50079a580bce98b77c8a17", null ],
-    [ "equals", "a05891.html#a30ef1039401b7511b53e6caf36c55d0e", null ],
-    [ "getSummarizedFactors", "a05891.html#a920a30be4d282d0c6a528aea212c3ccd", null ],
-    [ "postsync", "a05891.html#ab7325f60eb936c3dc89dfd5d83d6898f", null ],
-    [ "presync", "a05891.html#ac61da2c7f833ba4cf81572971b3c8659", null ],
-    [ "print", "a05891.html#ac28d5eecacd14c145aba3ece8fac29ad", null ],
-    [ "synchronize", "a05891.html#a2f4a1f28d7b3881a137c538f0cd08ade", null ]
+    [ "MagFactor3", "a05891.html#a796f1b1585f0c205eb6d7ced3ff40a86", null ],
+    [ "clone", "a05891.html#ae81baf0e93a8bc7c4fbbf712fa0e6c21", null ],
+    [ "evaluateError", "a05891.html#a3f0c15a923bccc75afa95ff3aa4800b7", null ],
+    [ "evaluateError", "a05891.html#a5ec5a9eeab0ba8a845e83337fda5a56a", null ],
+    [ "evaluateError", "a05891.html#a937088edd0737da396429340e0f7f32e", null ],
+    [ "evaluateError", "a05891.html#a03258341e52b460f8cda8baca9aef21a", null ],
+    [ "evaluateError", "a05891.html#a1bd8f7c8c961fcb4c16ce4027f4c33fe", null ]
 ];

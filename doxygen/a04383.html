@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::KeyInfoEntry Struct Reference</title>
+<title>gtsam: gtsam::Pose2::ChartAtOrigin Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,28 +96,20 @@ $(function(){initNavTree('a04383.html','','a04380'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::KeyInfoEntry Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::Pose2::ChartAtOrigin Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Handy data structure for iterative solvers key to (index, dimension, start). </p>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a6cc54a7432e300c189e83580f6ebdd40" id="r_a6cc54a7432e300c189e83580f6ebdd40"><td class="memItemLeft"><a id="a6cc54a7432e300c189e83580f6ebdd40" name="a6cc54a7432e300c189e83580f6ebdd40"></a>
-&#160;</td><td class="memItemRight"><b>KeyInfoEntry</b> (size_t idx, size_t d, <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> start)</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a03cf7bf6ef7a3a4d430cf1adb8c9d7e6" id="r_a03cf7bf6ef7a3a4d430cf1adb8c9d7e6"><td class="memItemLeft"><a id="a03cf7bf6ef7a3a4d430cf1adb8c9d7e6" name="a03cf7bf6ef7a3a4d430cf1adb8c9d7e6"></a>
-size_t&#160;</td><td class="memItemRight"><b>index</b></td></tr>
-<tr class="memitem:aa8ba5598d565e864f06184ad26b7829b" id="r_aa8ba5598d565e864f06184ad26b7829b"><td class="memItemLeft"><a id="aa8ba5598d565e864f06184ad26b7829b" name="aa8ba5598d565e864f06184ad26b7829b"></a>
-size_t&#160;</td><td class="memItemRight"><b>dim</b></td></tr>
-<tr class="memitem:a7a9c2a6059fdd180c557b84f3eb8b5eb" id="r_a7a9c2a6059fdd180c557b84f3eb8b5eb"><td class="memItemLeft"><a id="a7a9c2a6059fdd180c557b84f3eb8b5eb" name="a7a9c2a6059fdd180c557b84f3eb8b5eb"></a>
-size_t&#160;</td><td class="memItemRight"><b>start</b></td></tr>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:abd4f0528fb54640d430f70f8a963b760" id="r_abd4f0528fb54640d430f70f8a963b760"><td class="memItemLeft"><a id="abd4f0528fb54640d430f70f8a963b760" name="abd4f0528fb54640d430f70f8a963b760"></a>
+static <a class="el" href="a04379.html#ab9d2ac29304985d9ccfd66ef0f9a9aaf">Pose2</a>&#160;</td><td class="memItemRight"><b>Retract</b> (const Vector3 &amp;v, ChartJacobian H={})</td></tr>
+<tr class="memitem:acf4884ec9bb1b7cbba818a682746f1f1" id="r_acf4884ec9bb1b7cbba818a682746f1f1"><td class="memItemLeft"><a id="acf4884ec9bb1b7cbba818a682746f1f1" name="acf4884ec9bb1b7cbba818a682746f1f1"></a>
+static Vector3&#160;</td><td class="memItemRight"><b>Local</b> (const <a class="el" href="a04379.html#ab9d2ac29304985d9ccfd66ef0f9a9aaf">Pose2</a> &amp;<a class="el" href="a04379.html#a7a70ba51dc16fe3d18cd2c16cb10b46c">r</a>, ChartJacobian H={})</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/<a class="el" href="a00845_source.html">IterativeSolver.h</a></li>
+<hr/>The documentation for this struct was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00581_source.html">Pose2.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00569.html">Pose2.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -132,7 +124,7 @@ size_t&#160;</td><td class="memItemRight"><b>start</b></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04383.html">KeyInfoEntry</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04379.html">Pose2</a></li><li class="navelem"><a href="a04383.html">ChartAtOrigin</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

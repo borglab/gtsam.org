@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/slam/SmartFactorParams.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/MagFactor.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,7 +89,7 @@ $(function(){initNavTree('a01334_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SmartFactorParams.h</div></div>
+  <div class="headertitle"><div class="title">MagFactor.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a01334.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
@@ -103,135 +103,240 @@ $(function(){initNavTree('a01334_source.html','',''); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="a00458.html">gtsam/geometry/triangulation.h</a>&gt;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
-<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="a01968.html#adf2020f3f6087064dde501c99794aac3">   30</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="a01968.html#adf2020f3f6087064dde501c99794aac3">LinearizationMode</a> {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  HESSIAN, IMPLICIT_SCHUR, JACOBIAN_Q, JACOBIAN_SVD</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
-</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="a00080.html">gtsam/base/MatrixConstants.h</a>&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="a00428.html">gtsam/geometry/Rot2.h</a>&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="a00620.html">gtsam/geometry/Rot3.h</a>&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;<a class="code" href="a01472.html">gtsam/nonlinear/NoiseModelFactorN.h</a>&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;<a class="code" href="a01556.html">gtsam/nonlinear/NonlinearFactor.h</a>&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
 <div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="a01968.html#ac3d021280c8a8b84903a8ce81f73ea0f">   35</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="a01968.html#ac3d021280c8a8b84903a8ce81f73ea0f">DegeneracyMode</a> {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  IGNORE_DEGENERACY, ZERO_ON_DEGENERACY, HANDLE_INFINITY</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>};</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="a05879.html">   35</a></span><span class="keyword">class </span><a class="code hl_function" href="a05879.html#ae9daca6c0ee19dd63e4889c6acbb13d9">MagFactor</a>: <span class="keyword">public</span> <a class="code hl_typedef" href="a02242.html#a42753ad9c0f6a9f0a11ca356aba9a080">NoiseModelFactorN</a>&lt;Rot2&gt; {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> measured_; </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> nM_; </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> bias_; </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="comment">// Provide access to Matrix&amp; version of evaluateError:</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">using </span>NoiseModelFactor1&lt;<a class="code hl_class" href="a04435.html">Rot2</a>&gt;<a class="code hl_function" href="a05879.html#a7c3c9e2bbbe65259224014140ee0bcd0">::evaluateError</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="a05879.html#ae9daca6c0ee19dd63e4889c6acbb13d9">   55</a></span>  <a class="code hl_function" href="a05879.html#ae9daca6c0ee19dd63e4889c6acbb13d9">MagFactor</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; measured, <span class="keywordtype">double</span> scale,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      <span class="keyword">const</span> <a class="code hl_class" href="a04627.html">Unit3</a>&amp; direction, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; bias,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a>&amp; model) :</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      <a class="code hl_typedef" href="a02242.html#a42753ad9c0f6a9f0a11ca356aba9a080">NoiseModelFactorN</a>&lt;<a class="code hl_class" href="a04435.html">Rot2</a>&gt;(model, <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>), <span class="comment">//</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      measured_(measured), nM_(scale * direction), bias_(bias) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  }</div>
 </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"> *  Parameters for the smart (stereo) projection factors</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"> */</span></div>
-<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="a05483.html">   42</a></span><span class="keyword">struct </span>SmartProjectionParams {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="a05483.html#a4afa132d1f394b6256605752b3b8aab0">   44</a></span>  <a class="code hl_enumeration" href="a01968.html#adf2020f3f6087064dde501c99794aac3">LinearizationMode</a> <a class="code hl_variable" href="a05483.html#a4afa132d1f394b6256605752b3b8aab0">linearizationMode</a>; </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="a05483.html#a695982b029b814dffdd8a34bae523575">   45</a></span>  <a class="code hl_enumeration" href="a01968.html#ac3d021280c8a8b84903a8ce81f73ea0f">DegeneracyMode</a> <a class="code hl_variable" href="a05483.html#a695982b029b814dffdd8a34bae523575">degeneracyMode</a>; </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <a class="code hl_struct" href="a03919.html">TriangulationParameters</a> triangulation;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="a05483.html#a5b1fa239a2827c833e2d6c035392d7d5">   50</a></span>  <span class="keywordtype">double</span> <a class="code hl_variable" href="a05483.html#a5b1fa239a2827c833e2d6c035392d7d5">retriangulationThreshold</a>; </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="a05483.html#a11f8b823fcb922edff9bc2847e5fe36c">   55</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="a05483.html#a11f8b823fcb922edff9bc2847e5fe36c">throwCheirality</a>; </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="a05483.html#ab8353996f6c8ea607c213c854b6b0bc1">   56</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="a05483.html#ab8353996f6c8ea607c213c854b6b0bc1">verboseCheirality</a>; </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="comment">// Constructor</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  SmartProjectionParams(<a class="code hl_enumeration" href="a01968.html#adf2020f3f6087064dde501c99794aac3">LinearizationMode</a> linMode = HESSIAN,</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      <a class="code hl_enumeration" href="a01968.html#ac3d021280c8a8b84903a8ce81f73ea0f">DegeneracyMode</a> degMode = IGNORE_DEGENERACY, <span class="keywordtype">bool</span> <a class="code hl_variable" href="a05483.html#a11f8b823fcb922edff9bc2847e5fe36c">throwCheirality</a> = <span class="keyword">false</span>,</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      <span class="keywordtype">bool</span> <a class="code hl_variable" href="a05483.html#ab8353996f6c8ea607c213c854b6b0bc1">verboseCheirality</a> = <span class="keyword">false</span>, <span class="keywordtype">double</span> retriangulationTh = 1e-5) :</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <a class="code hl_variable" href="a05483.html#a4afa132d1f394b6256605752b3b8aab0">linearizationMode</a>(linMode), <a class="code hl_variable" href="a05483.html#a695982b029b814dffdd8a34bae523575">degeneracyMode</a>(degMode), <a class="code hl_variable" href="a05483.html#a5b1fa239a2827c833e2d6c035392d7d5">retriangulationThreshold</a>(</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            retriangulationTh), <a class="code hl_variable" href="a05483.html#a11f8b823fcb922edff9bc2847e5fe36c">throwCheirality</a>(<a class="code hl_variable" href="a05483.html#a11f8b823fcb922edff9bc2847e5fe36c">throwCheirality</a>), <a class="code hl_variable" href="a05483.html#ab8353996f6c8ea607c213c854b6b0bc1">verboseCheirality</a>(</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                <a class="code hl_variable" href="a05483.html#ab8353996f6c8ea607c213c854b6b0bc1">verboseCheirality</a>) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="foldopen" id="foldopen00063" data-start="{" data-end="}">
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="a05879.html#ac2f56a15b85ac3cdb6d3152bba310478">   63</a></span>  NonlinearFactor::shared_ptr <a class="code hl_function" href="a05879.html#ac2f56a15b85ac3cdb6d3152bba310478">clone</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">return</span> std::static_pointer_cast&lt;NonlinearFactor&gt;(</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        NonlinearFactor::shared_ptr(<span class="keyword">new</span> <a class="code hl_function" href="a05879.html#ae9daca6c0ee19dd63e4889c6acbb13d9">MagFactor</a>(*<span class="keyword">this</span>)));</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keyword">virtual</span> <a class="code hl_struct" href="a05483.html">~SmartProjectionParams</a>() {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  }</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keywordtype">void</span> print(<span class="keyword">const</span> std::string&amp; str = <span class="stringliteral">&quot;&quot;</span>)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;linearizationMode: &quot;</span> &lt;&lt; <a class="code hl_variable" href="a05483.html#a4afa132d1f394b6256605752b3b8aab0">linearizationMode</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;   degeneracyMode: &quot;</span> &lt;&lt; <a class="code hl_variable" href="a05483.html#a695982b029b814dffdd8a34bae523575">degeneracyMode</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    std::cout &lt;&lt; triangulation &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  }</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="comment">// get class variables</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <a class="code hl_enumeration" href="a01968.html#adf2020f3f6087064dde501c99794aac3">LinearizationMode</a> getLinearizationMode()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="a05483.html#a4afa132d1f394b6256605752b3b8aab0">linearizationMode</a>;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <a class="code hl_enumeration" href="a01968.html#ac3d021280c8a8b84903a8ce81f73ea0f">DegeneracyMode</a> getDegeneracyMode()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="a05483.html#a695982b029b814dffdd8a34bae523575">degeneracyMode</a>;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  }</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  TriangulationParameters getTriangulationParameters()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">return</span> triangulation;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  }</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordtype">bool</span> getVerboseCheirality()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="a05483.html#ab8353996f6c8ea607c213c854b6b0bc1">verboseCheirality</a>;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  }</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keywordtype">bool</span> getThrowCheirality()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="a05483.html#a11f8b823fcb922edff9bc2847e5fe36c">throwCheirality</a>;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  }</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keywordtype">double</span> getRetriangulationThreshold()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="a05483.html#a5b1fa239a2827c833e2d6c035392d7d5">retriangulationThreshold</a>;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  }</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="comment">// set class variables</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keywordtype">void</span> setLinearizationMode(<a class="code hl_enumeration" href="a01968.html#adf2020f3f6087064dde501c99794aac3">LinearizationMode</a> linMode) {</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <a class="code hl_variable" href="a05483.html#a4afa132d1f394b6256605752b3b8aab0">linearizationMode</a> = linMode;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  }</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keywordtype">void</span> setDegeneracyMode(<a class="code hl_enumeration" href="a01968.html#ac3d021280c8a8b84903a8ce81f73ea0f">DegeneracyMode</a> degMode) {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <a class="code hl_variable" href="a05483.html#a695982b029b814dffdd8a34bae523575">degeneracyMode</a> = degMode;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  }</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keywordtype">void</span> setRetriangulationThreshold(<span class="keywordtype">double</span> retriangulationTh) {</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <a class="code hl_variable" href="a05483.html#a5b1fa239a2827c833e2d6c035392d7d5">retriangulationThreshold</a> = retriangulationTh;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  }</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keywordtype">void</span> setRankTolerance(<span class="keywordtype">double</span> rankTol) {</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    triangulation.rankTolerance = rankTol;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  }</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="keywordtype">void</span> setEnableEPI(<span class="keywordtype">bool</span> enableEPI) {</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    triangulation.enableEPI = enableEPI;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  }</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keywordtype">void</span> setLandmarkDistanceThreshold(<span class="keywordtype">double</span> landmarkDistanceThreshold) {</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    triangulation.landmarkDistanceThreshold = landmarkDistanceThreshold;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  }</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="keywordtype">void</span> setDynamicOutlierRejectionThreshold(<span class="keywordtype">double</span> dynOutRejectionThreshold) {</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    triangulation.dynamicOutlierRejectionThreshold = dynOutRejectionThreshold;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  }</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span></div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="a05483.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">  122</a></span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_friend" href="a05483.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">boost::serialization::access</a>;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> ARCHIVE&gt;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="keywordtype">void</span> serialize(ARCHIVE &amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> version) {</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    ar &amp; BOOST_SERIALIZATION_NVP(<a class="code hl_variable" href="a05483.html#a4afa132d1f394b6256605752b3b8aab0">linearizationMode</a>);</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    ar &amp; BOOST_SERIALIZATION_NVP(<a class="code hl_variable" href="a05483.html#a695982b029b814dffdd8a34bae523575">degeneracyMode</a>);</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    ar &amp; BOOST_SERIALIZATION_NVP(triangulation);</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    ar &amp; BOOST_SERIALIZATION_NVP(<a class="code hl_variable" href="a05483.html#a5b1fa239a2827c833e2d6c035392d7d5">retriangulationThreshold</a>);</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    ar &amp; BOOST_SERIALIZATION_NVP(<a class="code hl_variable" href="a05483.html#a11f8b823fcb922edff9bc2847e5fe36c">throwCheirality</a>);</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    ar &amp; BOOST_SERIALIZATION_NVP(<a class="code hl_variable" href="a05483.html#ab8353996f6c8ea607c213c854b6b0bc1">verboseCheirality</a>);</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  }</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>};</div>
 </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>} <span class="comment">// \ namespace gtsam</span></div>
-<div class="ttc" id="aa00458_html"><div class="ttname"><a href="a00458.html">triangulation.h</a></div><div class="ttdoc">Functions for triangulation.</div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa01968_html_ac3d021280c8a8b84903a8ce81f73ea0f"><div class="ttname"><a href="a01968.html#ac3d021280c8a8b84903a8ce81f73ea0f">gtsam::DegeneracyMode</a></div><div class="ttdeci">DegeneracyMode</div><div class="ttdoc">How to manage degeneracy.</div><div class="ttdef"><b>Definition</b> SmartFactorParams.h:35</div></div>
-<div class="ttc" id="aa01968_html_adf2020f3f6087064dde501c99794aac3"><div class="ttname"><a href="a01968.html#adf2020f3f6087064dde501c99794aac3">gtsam::LinearizationMode</a></div><div class="ttdeci">LinearizationMode</div><div class="ttdoc">SmartFactorParams: parameters and (linearization/degeneracy) modes for SmartProjection and SmartStere...</div><div class="ttdef"><b>Definition</b> SmartFactorParams.h:30</div></div>
-<div class="ttc" id="aa03919_html"><div class="ttname"><a href="a03919.html">gtsam::TriangulationParameters</a></div><div class="ttdef"><b>Definition</b> triangulation.h:556</div></div>
-<div class="ttc" id="aa05483_html"><div class="ttname"><a href="a05483.html">gtsam::SmartProjectionParams</a></div><div class="ttdef"><b>Definition</b> SmartFactorParams.h:42</div></div>
-<div class="ttc" id="aa05483_html_a11f8b823fcb922edff9bc2847e5fe36c"><div class="ttname"><a href="a05483.html#a11f8b823fcb922edff9bc2847e5fe36c">gtsam::SmartProjectionParams::throwCheirality</a></div><div class="ttdeci">bool throwCheirality</div><div class="ttdoc">If true, re-throws Cheirality exceptions (default: false).</div><div class="ttdef"><b>Definition</b> SmartFactorParams.h:55</div></div>
-<div class="ttc" id="aa05483_html_a4afa132d1f394b6256605752b3b8aab0"><div class="ttname"><a href="a05483.html#a4afa132d1f394b6256605752b3b8aab0">gtsam::SmartProjectionParams::linearizationMode</a></div><div class="ttdeci">LinearizationMode linearizationMode</div><div class="ttdoc">How to linearize the factor.</div><div class="ttdef"><b>Definition</b> SmartFactorParams.h:44</div></div>
-<div class="ttc" id="aa05483_html_a5b1fa239a2827c833e2d6c035392d7d5"><div class="ttname"><a href="a05483.html#a5b1fa239a2827c833e2d6c035392d7d5">gtsam::SmartProjectionParams::retriangulationThreshold</a></div><div class="ttdeci">double retriangulationThreshold</div><div class="ttdoc">threshold to decide whether to re-triangulate</div><div class="ttdef"><b>Definition</b> SmartFactorParams.h:50</div></div>
-<div class="ttc" id="aa05483_html_a695982b029b814dffdd8a34bae523575"><div class="ttname"><a href="a05483.html#a695982b029b814dffdd8a34bae523575">gtsam::SmartProjectionParams::degeneracyMode</a></div><div class="ttdeci">DegeneracyMode degeneracyMode</div><div class="ttdoc">How to linearize the factor.</div><div class="ttdef"><b>Definition</b> SmartFactorParams.h:45</div></div>
-<div class="ttc" id="aa05483_html_ab8353996f6c8ea607c213c854b6b0bc1"><div class="ttname"><a href="a05483.html#ab8353996f6c8ea607c213c854b6b0bc1">gtsam::SmartProjectionParams::verboseCheirality</a></div><div class="ttdeci">bool verboseCheirality</div><div class="ttdoc">If true, prints text for Cheirality exceptions (default: false).</div><div class="ttdef"><b>Definition</b> SmartFactorParams.h:56</div></div>
-<div class="ttc" id="aa05483_html_ac98d07dd8f7b70e16ccb9a01abf56b9c"><div class="ttname"><a href="a05483.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">gtsam::SmartProjectionParams::access</a></div><div class="ttdeci">friend class boost::serialization::access</div><div class="ttdoc">Serialization function.</div><div class="ttdef"><b>Definition</b> SmartFactorParams.h:122</div></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keyword">static</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> unrotate(<span class="keyword">const</span> <a class="code hl_class" href="a04435.html">Rot2</a>&amp; R, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; p,</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> HR = <a class="code hl_define" href="a01556.html#a60dbbc16637d770e100d6ab35358e1c8">OptionalNone</a>) {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> q = <a class="code hl_function" href="a04451.html#a4c246f45dd2c3522aa137d6a7daa2c48">Rot3::Yaw</a>(R.theta()).<a class="code hl_function" href="a04451.html#aceb16fd9b0415f9e2ca6b1537ac3e9c1">unrotate</a>(p, HR, {});</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">if</span> (HR) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      <span class="comment">// assign to temporary first to avoid error in Win-Debug mode</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      Matrix H = HR-&gt;col(2);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      *HR = H;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">return</span> q;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="a05879.html#a7c3c9e2bbbe65259224014140ee0bcd0">   82</a></span>  Vector <a class="code hl_function" href="a05879.html#a7c3c9e2bbbe65259224014140ee0bcd0">evaluateError</a>(<span class="keyword">const</span> <a class="code hl_class" href="a04435.html">Rot2</a>&amp; nRb, <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H)<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="comment">// measured bM = nRb� * nM + b</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> hx = unrotate(nRb, nM_, H) + bias_;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">return</span> (hx - measured_);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  }</div>
+</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>};</div>
+</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="};">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="a05883.html">   94</a></span><span class="keyword">class </span><a class="code hl_function" href="a05883.html#a5667d9e3964646f534760bab0b309241">MagFactor1</a>: <span class="keyword">public</span> <a class="code hl_typedef" href="a02242.html#a42753ad9c0f6a9f0a11ca356aba9a080">NoiseModelFactorN</a>&lt;Rot3&gt; {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> measured_; </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> nM_; </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> bias_; </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="comment">// Provide access to Matrix&amp; version of evaluateError:</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keyword">using </span>NoiseModelFactor1&lt;<a class="code hl_class" href="a04451.html">Rot3</a>&gt;<a class="code hl_function" href="a05883.html#a7793b9a8b6a40587a1937c3abf460009">::evaluateError</a>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="a05883.html#a5667d9e3964646f534760bab0b309241">  107</a></span>  <a class="code hl_function" href="a05883.html#a5667d9e3964646f534760bab0b309241">MagFactor1</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; measured, <span class="keywordtype">double</span> scale,</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <span class="keyword">const</span> <a class="code hl_class" href="a04627.html">Unit3</a>&amp; direction, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; bias,</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a>&amp; model) :</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>      <a class="code hl_typedef" href="a02242.html#a42753ad9c0f6a9f0a11ca356aba9a080">NoiseModelFactorN</a>&lt;<a class="code hl_class" href="a04451.html">Rot3</a>&gt;(model, <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>), <span class="comment">//</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      measured_(measured), nM_(scale * direction), bias_(bias) {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  }</div>
+</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span></div>
+<div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="a05883.html#ab33c8f9faac8b893842bd7161deb7dbf">  115</a></span>  NonlinearFactor::shared_ptr <a class="code hl_function" href="a05883.html#ab33c8f9faac8b893842bd7161deb7dbf">clone</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">return</span> std::static_pointer_cast&lt;NonlinearFactor&gt;(</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        NonlinearFactor::shared_ptr(<span class="keyword">new</span> <a class="code hl_function" href="a05883.html#a5667d9e3964646f534760bab0b309241">MagFactor1</a>(*<span class="keyword">this</span>)));</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  }</div>
+</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span></div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="a05883.html#a7793b9a8b6a40587a1937c3abf460009">  123</a></span>  Vector <a class="code hl_function" href="a05883.html#a7793b9a8b6a40587a1937c3abf460009">evaluateError</a>(<span class="keyword">const</span> <a class="code hl_class" href="a04451.html">Rot3</a>&amp; nRb, <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H)<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="comment">// measured bM = nRb� * nM + b</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> hx = nRb.<a class="code hl_function" href="a04451.html#aceb16fd9b0415f9e2ca6b1537ac3e9c1">unrotate</a>(nM_, H, <a class="code hl_define" href="a01556.html#a60dbbc16637d770e100d6ab35358e1c8">OptionalNone</a>) + bias_;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordflow">return</span> (hx - measured_);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  }</div>
+</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>};</div>
+</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span></div>
+<div class="foldopen" id="foldopen00135" data-start="{" data-end="};">
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="a05887.html">  135</a></span><span class="keyword">class </span><a class="code hl_function" href="a05887.html#a5d8d154a6e667e362d68d1250b2c5f40">MagFactor2</a> : <span class="keyword">public</span> <a class="code hl_function" href="a06419.html#a07b2b3e0025aa31715484a185a7b91cc">NoiseModelFactorT</a>&lt;Vector3, Point3, Point3&gt; {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> measured_; </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="keyword">const</span> <a class="code hl_class" href="a04451.html">Rot3</a> bRn_; </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  <span class="comment">// Provide access to Matrix&amp; version of evaluateError:</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  <span class="keyword">using </span>Base = <a class="code hl_function" href="a06419.html#a07b2b3e0025aa31715484a185a7b91cc">NoiseModelFactorT&lt;Vector3, Point3, Point3&gt;</a>;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  <span class="keyword">using </span><a class="code hl_function" href="a06419.html#a52743df64c5153c7bf35da457e185fed">Base::evaluateError</a>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span></div>
+<div class="foldopen" id="foldopen00148" data-start="{" data-end="}">
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="a05887.html#a5d8d154a6e667e362d68d1250b2c5f40">  148</a></span>  <a class="code hl_function" href="a05887.html#a5d8d154a6e667e362d68d1250b2c5f40">MagFactor2</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key1, <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key2, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; measured, <span class="keyword">const</span> <a class="code hl_class" href="a04451.html">Rot3</a>&amp; nRb,</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a>&amp; model) :</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>      Base(model, key1, key2), <span class="comment">//</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>      measured_(measured), bRn_(nRb.inverse()) {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  }</div>
+</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span></div>
+<div class="foldopen" id="foldopen00155" data-start="{" data-end="}">
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="a05887.html#a28f8be461fbacaff200cec07cbb6073b">  155</a></span>  NonlinearFactor::shared_ptr <a class="code hl_function" href="a05887.html#a28f8be461fbacaff200cec07cbb6073b">clone</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordflow">return</span> std::static_pointer_cast&lt;NonlinearFactor&gt;(</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        NonlinearFactor::shared_ptr(<span class="keyword">new</span> <a class="code hl_function" href="a05887.html#a5d8d154a6e667e362d68d1250b2c5f40">MagFactor2</a>(*<span class="keyword">this</span>)));</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  }</div>
+</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span></div>
+<div class="foldopen" id="foldopen00165" data-start="{" data-end="}">
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="a05887.html#ac834000ac26c2e304c2f5eb0c7c2b0f6">  165</a></span>  Vector3 <a class="code hl_function" href="a05887.html#ac834000ac26c2e304c2f5eb0c7c2b0f6">evaluateError</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; nM, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; bias,</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                        <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H1,</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                        <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H2)<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="comment">// measured bM = nRb� * nM + b, where b is unknown bias</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> hx = bRn_.rotate(nM, <a class="code hl_define" href="a01556.html#a60dbbc16637d770e100d6ab35358e1c8">OptionalNone</a>, H1) + bias;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordflow">if</span> (H2)</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>      *H2 = I_3x3;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordflow">return</span> (hx - measured_);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  }</div>
+</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>};</div>
+</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span></div>
+<div class="foldopen" id="foldopen00181" data-start="{" data-end="};">
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="a05891.html">  181</a></span><span class="keyword">class </span><a class="code hl_function" href="a05891.html#a796f1b1585f0c205eb6d7ced3ff40a86">MagFactor3</a></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    : <span class="keyword">public</span> <a class="code hl_function" href="a06419.html#a07b2b3e0025aa31715484a185a7b91cc">NoiseModelFactorT</a>&lt;Vector3, double, Unit3, Point3&gt; {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> measured_; </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>  <span class="keyword">const</span> <a class="code hl_class" href="a04451.html">Rot3</a> bRn_; </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  <span class="comment">// Provide access to Matrix&amp; version of evaluateError:</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  <span class="keyword">using </span>Base = <a class="code hl_function" href="a06419.html#a07b2b3e0025aa31715484a185a7b91cc">NoiseModelFactorT&lt;Vector3, double, Unit3, Point3&gt;</a>;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  <span class="keyword">using </span><a class="code hl_function" href="a06419.html#a52743df64c5153c7bf35da457e185fed">Base::evaluateError</a>;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span></div>
+<div class="foldopen" id="foldopen00195" data-start="{" data-end="}">
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="a05891.html#a796f1b1585f0c205eb6d7ced3ff40a86">  195</a></span>  <a class="code hl_function" href="a05891.html#a796f1b1585f0c205eb6d7ced3ff40a86">MagFactor3</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key1, <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key2, <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key3, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; measured,</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>      <span class="keyword">const</span> <a class="code hl_class" href="a04451.html">Rot3</a>&amp; nRb, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a>&amp; model) :</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>      Base(model, key1, key2, key3), <span class="comment">//</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>      measured_(measured), bRn_(nRb.inverse()) {</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  }</div>
+</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span></div>
+<div class="foldopen" id="foldopen00202" data-start="{" data-end="}">
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="a05891.html#ae81baf0e93a8bc7c4fbbf712fa0e6c21">  202</a></span>  NonlinearFactor::shared_ptr <a class="code hl_function" href="a05891.html#ae81baf0e93a8bc7c4fbbf712fa0e6c21">clone</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <span class="keywordflow">return</span> std::static_pointer_cast&lt;NonlinearFactor&gt;(</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        NonlinearFactor::shared_ptr(<span class="keyword">new</span> <a class="code hl_function" href="a05891.html#a796f1b1585f0c205eb6d7ced3ff40a86">MagFactor3</a>(*<span class="keyword">this</span>)));</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  }</div>
+</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span></div>
+<div class="foldopen" id="foldopen00212" data-start="{" data-end="}">
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno"><a class="line" href="a05891.html#a3f0c15a923bccc75afa95ff3aa4800b7">  212</a></span>  Vector3 <a class="code hl_function" href="a05891.html#a3f0c15a923bccc75afa95ff3aa4800b7">evaluateError</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; scale, <span class="keyword">const</span> <a class="code hl_class" href="a04627.html">Unit3</a>&amp; direction,</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; bias, <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H1,</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>      <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H2, <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H3)<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="comment">// measured bM = nRb� * nM + b, where b is unknown bias</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <a class="code hl_class" href="a04627.html">Unit3</a> rotated = bRn_.rotate(direction, <a class="code hl_define" href="a01556.html#a60dbbc16637d770e100d6ab35358e1c8">OptionalNone</a>, H2);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> hx = scale * rotated.<a class="code hl_function" href="a04627.html#a5fced59c20f0a417735b67f4a5e7f4a1">point3</a>() + bias;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <span class="keywordflow">if</span> (H1)</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>      *H1 = rotated.<a class="code hl_function" href="a04627.html#a5fced59c20f0a417735b67f4a5e7f4a1">point3</a>();</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <span class="keywordflow">if</span> (H2) <span class="comment">// H2 is 2*2, but we need 3*2</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    {</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>      Matrix H;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>      rotated.<a class="code hl_function" href="a04627.html#a5fced59c20f0a417735b67f4a5e7f4a1">point3</a>(H);</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>      *H2 = scale * H * (*H2);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    }</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="keywordflow">if</span> (H3)</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>      *H3 = I_3x3;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <span class="keywordflow">return</span> (hx - measured_);</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  }</div>
+</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>};</div>
+</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>}</div>
+<div class="ttc" id="aa00080_html"><div class="ttname"><a href="a00080.html">MatrixConstants.h</a></div><div class="ttdoc">Macros for Matrix constants to avoid excessive template instantiation.</div></div>
+<div class="ttc" id="aa00428_html"><div class="ttname"><a href="a00428.html">Rot2.h</a></div><div class="ttdoc">2D rotation</div></div>
+<div class="ttc" id="aa00620_html"><div class="ttname"><a href="a00620.html">Rot3.h</a></div><div class="ttdoc">3D rotation represented as a rotation matrix or quaternion</div></div>
+<div class="ttc" id="aa01472_html"><div class="ttname"><a href="a01472.html">NoiseModelFactorN.h</a></div><div class="ttdoc">Base class for noise model factors with N variables.</div></div>
+<div class="ttc" id="aa01556_html"><div class="ttname"><a href="a01556.html">NonlinearFactor.h</a></div><div class="ttdoc">Non-linear factor base classes.</div></div>
+<div class="ttc" id="aa01556_html_a60dbbc16637d770e100d6ab35358e1c8"><div class="ttname"><a href="a01556.html#a60dbbc16637d770e100d6ab35358e1c8">OptionalNone</a></div><div class="ttdeci">#define OptionalNone</div><div class="ttdoc">These typedefs and aliases will help with making the evaluateError interface independent of boost TOD...</div><div class="ttdef"><b>Definition</b> NonlinearFactor.h:51</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa02242_html_a39c52c49d5301ff2f020e66bf69bbf69"><div class="ttname"><a href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">gtsam::OptionalMatrixType</a></div><div class="ttdeci">Matrix * OptionalMatrixType</div><div class="ttdoc">This typedef will be used everywhere boost::optional&lt;Matrix&amp;&gt; reference was used previously.</div><div class="ttdef"><b>Definition</b> NonlinearFactor.h:57</div></div>
+<div class="ttc" id="aa02242_html_a42753ad9c0f6a9f0a11ca356aba9a080"><div class="ttname"><a href="a02242.html#a42753ad9c0f6a9f0a11ca356aba9a080">gtsam::NoiseModelFactorN</a></div><div class="ttdeci">NoiseModelFactorT&lt; Vector, ValueTypes... &gt; NoiseModelFactorN</div><div class="ttdoc">Noise model factor with N value types and dynamic-sized error vector.</div><div class="ttdef"><b>Definition</b> NoiseModelFactorN.h:561</div></div>
+<div class="ttc" id="aa02242_html_a4705ef3536019dc2a384e26ef0fde932"><div class="ttname"><a href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">gtsam::Point3</a></div><div class="ttdeci">Vector3 Point3</div><div class="ttdoc">As of GTSAM 4, in order to make GTSAM more lean, it is now possible to just typedef Point3 to Vector3...</div><div class="ttdef"><b>Definition</b> Point3.h:38</div></div>
+<div class="ttc" id="aa02242_html_ab6e5a4884342656e0837ef07008ec03f"><div class="ttname"><a href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">gtsam::SharedNoiseModel</a></div><div class="ttdeci">noiseModel::Base::shared_ptr SharedNoiseModel</div><div class="ttdoc">Aliases.</div><div class="ttdef"><b>Definition</b> NoiseModel.h:846</div></div>
+<div class="ttc" id="aa02242_html_adad029f5f6ffce610428b5fe768b0df2"><div class="ttname"><a href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">gtsam::Key</a></div><div class="ttdeci">std::uint64_t Key</div><div class="ttdoc">Integer nonlinear key type.</div><div class="ttdef"><b>Definition</b> types.h:43</div></div>
+<div class="ttc" id="aa04435_html"><div class="ttname"><a href="a04435.html">gtsam::Rot2</a></div><div class="ttdoc">Rotation matrix NOTE: the angle theta is in radians unless explicitly stated.</div><div class="ttdef"><b>Definition</b> Rot2.h:40</div></div>
+<div class="ttc" id="aa04451_html"><div class="ttname"><a href="a04451.html">gtsam::Rot3</a></div><div class="ttdoc">Rot3 is a 3D rotation represented as a rotation matrix if the preprocessor symbol GTSAM_USE_QUATERNIO...</div><div class="ttdef"><b>Definition</b> Rot3.h:65</div></div>
+<div class="ttc" id="aa04451_html_a4c246f45dd2c3522aa137d6a7daa2c48"><div class="ttname"><a href="a04451.html#a4c246f45dd2c3522aa137d6a7daa2c48">gtsam::Rot3::Yaw</a></div><div class="ttdeci">static Rot3 Yaw(double t)</div><div class="ttdoc">Positive yaw is to right (as in aircraft heading). See ypr.</div><div class="ttdef"><b>Definition</b> Rot3.h:190</div></div>
+<div class="ttc" id="aa04451_html_aceb16fd9b0415f9e2ca6b1537ac3e9c1"><div class="ttname"><a href="a04451.html#aceb16fd9b0415f9e2ca6b1537ac3e9c1">gtsam::Rot3::unrotate</a></div><div class="ttdeci">Point3 unrotate(const Point3 &amp;p, OptionalJacobian&lt; 3, 3 &gt; H1={}, OptionalJacobian&lt; 3, 3 &gt; H2={}) const</div><div class="ttdoc">rotate point from world to rotated frame</div><div class="ttdef"><b>Definition</b> Rot3.cpp:143</div></div>
+<div class="ttc" id="aa04627_html"><div class="ttname"><a href="a04627.html">gtsam::Unit3</a></div><div class="ttdoc">Represents a 3D point on a unit sphere.</div><div class="ttdef"><b>Definition</b> Unit3.h:44</div></div>
+<div class="ttc" id="aa04627_html_a5fced59c20f0a417735b67f4a5e7f4a1"><div class="ttname"><a href="a04627.html#a5fced59c20f0a417735b67f4a5e7f4a1">gtsam::Unit3::point3</a></div><div class="ttdeci">Point3 point3(OptionalJacobian&lt; 3, 2 &gt; H={}) const</div><div class="ttdoc">Return unit-norm Point3.</div><div class="ttdef"><b>Definition</b> Unit3.cpp:144</div></div>
+<div class="ttc" id="aa05879_html_a7c3c9e2bbbe65259224014140ee0bcd0"><div class="ttname"><a href="a05879.html#a7c3c9e2bbbe65259224014140ee0bcd0">gtsam::MagFactor::evaluateError</a></div><div class="ttdeci">Vector evaluateError(const Rot2 &amp;nRb, OptionalMatrixType H) const override</div><div class="ttdoc">vector of errors</div><div class="ttdef"><b>Definition</b> MagFactor.h:82</div></div>
+<div class="ttc" id="aa05879_html_ac2f56a15b85ac3cdb6d3152bba310478"><div class="ttname"><a href="a05879.html#ac2f56a15b85ac3cdb6d3152bba310478">gtsam::MagFactor::clone</a></div><div class="ttdeci">NonlinearFactor::shared_ptr clone() const override</div><div class="ttdef"><b>Definition</b> MagFactor.h:63</div></div>
+<div class="ttc" id="aa05879_html_ae9daca6c0ee19dd63e4889c6acbb13d9"><div class="ttname"><a href="a05879.html#ae9daca6c0ee19dd63e4889c6acbb13d9">gtsam::MagFactor::MagFactor</a></div><div class="ttdeci">MagFactor(Key key, const Point3 &amp;measured, double scale, const Unit3 &amp;direction, const Point3 &amp;bias, const SharedNoiseModel &amp;model)</div><div class="ttdoc">Constructor of factor that estimates nav to body rotation bRn.</div><div class="ttdef"><b>Definition</b> MagFactor.h:55</div></div>
+<div class="ttc" id="aa05883_html_a5667d9e3964646f534760bab0b309241"><div class="ttname"><a href="a05883.html#a5667d9e3964646f534760bab0b309241">gtsam::MagFactor1::MagFactor1</a></div><div class="ttdeci">MagFactor1(Key key, const Point3 &amp;measured, double scale, const Unit3 &amp;direction, const Point3 &amp;bias, const SharedNoiseModel &amp;model)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> MagFactor.h:107</div></div>
+<div class="ttc" id="aa05883_html_a7793b9a8b6a40587a1937c3abf460009"><div class="ttname"><a href="a05883.html#a7793b9a8b6a40587a1937c3abf460009">gtsam::MagFactor1::evaluateError</a></div><div class="ttdeci">Vector evaluateError(const Rot3 &amp;nRb, OptionalMatrixType H) const override</div><div class="ttdoc">vector of errors</div><div class="ttdef"><b>Definition</b> MagFactor.h:123</div></div>
+<div class="ttc" id="aa05883_html_ab33c8f9faac8b893842bd7161deb7dbf"><div class="ttname"><a href="a05883.html#ab33c8f9faac8b893842bd7161deb7dbf">gtsam::MagFactor1::clone</a></div><div class="ttdeci">NonlinearFactor::shared_ptr clone() const override</div><div class="ttdef"><b>Definition</b> MagFactor.h:115</div></div>
+<div class="ttc" id="aa05887_html_a28f8be461fbacaff200cec07cbb6073b"><div class="ttname"><a href="a05887.html#a28f8be461fbacaff200cec07cbb6073b">gtsam::MagFactor2::clone</a></div><div class="ttdeci">NonlinearFactor::shared_ptr clone() const override</div><div class="ttdef"><b>Definition</b> MagFactor.h:155</div></div>
+<div class="ttc" id="aa05887_html_a5d8d154a6e667e362d68d1250b2c5f40"><div class="ttname"><a href="a05887.html#a5d8d154a6e667e362d68d1250b2c5f40">gtsam::MagFactor2::MagFactor2</a></div><div class="ttdeci">MagFactor2(Key key1, Key key2, const Point3 &amp;measured, const Rot3 &amp;nRb, const SharedNoiseModel &amp;model)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> MagFactor.h:148</div></div>
+<div class="ttc" id="aa05887_html_ac834000ac26c2e304c2f5eb0c7c2b0f6"><div class="ttname"><a href="a05887.html#ac834000ac26c2e304c2f5eb0c7c2b0f6">gtsam::MagFactor2::evaluateError</a></div><div class="ttdeci">Vector3 evaluateError(const Point3 &amp;nM, const Point3 &amp;bias, OptionalMatrixType H1, OptionalMatrixType H2) const override</div><div class="ttdoc">vector of errors</div><div class="ttdef"><b>Definition</b> MagFactor.h:165</div></div>
+<div class="ttc" id="aa05891_html_a3f0c15a923bccc75afa95ff3aa4800b7"><div class="ttname"><a href="a05891.html#a3f0c15a923bccc75afa95ff3aa4800b7">gtsam::MagFactor3::evaluateError</a></div><div class="ttdeci">Vector3 evaluateError(const double &amp;scale, const Unit3 &amp;direction, const Point3 &amp;bias, OptionalMatrixType H1, OptionalMatrixType H2, OptionalMatrixType H3) const override</div><div class="ttdoc">vector of errors</div><div class="ttdef"><b>Definition</b> MagFactor.h:212</div></div>
+<div class="ttc" id="aa05891_html_a796f1b1585f0c205eb6d7ced3ff40a86"><div class="ttname"><a href="a05891.html#a796f1b1585f0c205eb6d7ced3ff40a86">gtsam::MagFactor3::MagFactor3</a></div><div class="ttdeci">MagFactor3(Key key1, Key key2, Key key3, const Point3 &amp;measured, const Rot3 &amp;nRb, const SharedNoiseModel &amp;model)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> MagFactor.h:195</div></div>
+<div class="ttc" id="aa05891_html_ae81baf0e93a8bc7c4fbbf712fa0e6c21"><div class="ttname"><a href="a05891.html#ae81baf0e93a8bc7c4fbbf712fa0e6c21">gtsam::MagFactor3::clone</a></div><div class="ttdeci">NonlinearFactor::shared_ptr clone() const override</div><div class="ttdef"><b>Definition</b> MagFactor.h:202</div></div>
+<div class="ttc" id="aa06419_html_a07b2b3e0025aa31715484a185a7b91cc"><div class="ttname"><a href="a06419.html#a07b2b3e0025aa31715484a185a7b91cc">gtsam::NoiseModelFactorT&lt; Vector3, Point3, Point3 &gt;::NoiseModelFactorT</a></div><div class="ttdeci">NoiseModelFactorT()</div><div class="ttdef"><b>Definition</b> NoiseModelFactorN.h:257</div></div>
+<div class="ttc" id="aa06419_html_a52743df64c5153c7bf35da457e185fed"><div class="ttname"><a href="a06419.html#a52743df64c5153c7bf35da457e185fed">gtsam::NoiseModelFactorT&lt; Vector3, Point3, Point3 &gt;::evaluateError</a></div><div class="ttdeci">virtual Vector3 evaluateError(const ValueTypes &amp;... x, OptionalMatrixTypeT&lt; ValueTypes &gt;... H) const=0</div></div>
+<div class="ttc" id="aa06419_html_ab35df17c328be5a40f999c6f41d22337"><div class="ttname"><a href="a06419.html#ab35df17c328be5a40f999c6f41d22337">gtsam::NoiseModelFactorT&lt; Vector, ValueTypes... &gt;::key</a></div><div class="ttdeci">Key key() const</div><div class="ttdef"><b>Definition</b> NoiseModelFactorN.h:307</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>slam</b></li><li class="navelem"><a href="a01334.html">SmartFactorParams.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>navigation</b></li><li class="navelem"><a href="a01334.html">MagFactor.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/expressionTesting.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/ManifoldEKF.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,7 +89,7 @@ $(function(){initNavTree('a01148_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">expressionTesting.h</div></div>
+  <div class="headertitle"><div class="title">ManifoldEKF.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a01148.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
@@ -103,46 +103,256 @@ $(function(){initNavTree('a01148_source.html','',''); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;gtsam/nonlinear/ExpressionFactor.h&gt;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="a01061.html">gtsam/nonlinear/factorTesting.h</a>&gt;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;<a class="code" href="a00098.html">gtsam/base/Testable.h</a>&gt;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">namespace </span>internal {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">// CPPUnitLite-style test for linearization of an ExpressionFactor</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">bool</span> testExpressionJacobians(<span class="keyword">const</span> std::string&amp; name_,</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">const</span> gtsam::Expression&lt;T&gt;&amp; expression, <span class="keyword">const</span> gtsam::Values&amp; values,</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">double</span> nd_step, <span class="keywordtype">double</span> tolerance) {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="comment">// Create factor</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordtype">size_t</span> size = traits&lt;T&gt;::dimension;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  ExpressionFactor&lt;T&gt; f(<a class="code hl_function" href="a04487.html#a61fda7a7390d3fc40f5618185e801bfe">noiseModel::Unit::Create</a>(size),</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      expression.<a class="code hl_function" href="a04843.html#acb8e427a376afb1eec8bcda057128c11">value</a>(values), expression);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordflow">return</span> testFactorJacobians(name_, f, values, nd_step, tolerance);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>} <span class="comment">// namespace internal</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>} <span class="comment">// namespace gtsam</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
-<div class="foldopen" id="foldopen00048" data-start="" data-end="">
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="a01148.html#a701d0cd12b81a725f7f9cd2432fe9e2a">   48</a></span><span class="preprocessor">#define EXPECT_CORRECT_EXPRESSION_JACOBIANS(expression, values, numerical_derivative_step, tolerance) \</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">    { EXPECT(gtsam::internal::testExpressionJacobians(name_, expression, values, numerical_derivative_step, tolerance)); }</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;<a class="code" href="a00143.html">gtsam/base/Manifold.h</a>&gt;</span>  <span class="comment">// Include for traits and IsManifold</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;<a class="code" href="a00071.html">gtsam/base/Matrix.h</a>&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;<a class="code" href="a00173.html">gtsam/base/Vector.h</a>&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> M&gt;</div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="};">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="a05899.html">   50</a></span><span class="keyword">class </span><a class="code hl_function" href="a05899.html#abb1f5b37d4a0787e0d9a7849d1860aa1">ManifoldEKF</a> {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="a05899.html#a83ea27f4336af4529ffb658241f13622">   53</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="a05899.html#a83ea27f4336af4529ffb658241f13622">Dim</a> = <a class="code hl_struct" href="a03203.html">traits&lt;M&gt;::dimension</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="a05899.html#ad6c04d78b407b75040a7b39ec2d80e97">   56</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="a05899.html#ad6c04d78b407b75040a7b39ec2d80e97">TangentVector</a> = <span class="keyword">typename</span> <a class="code hl_struct" href="a03203.html">traits&lt;M&gt;::TangentVector</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="a05899.html#a2c444a34779013ffa864f9dd93d3c4bd">   58</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="a05899.html#a2c444a34779013ffa864f9dd93d3c4bd">Covariance</a> = Eigen::Matrix&lt;double, Dim, Dim&gt;;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="a05899.html#aba0b080f64441371a909380ffcfdc2a7">   60</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="a05899.html#aba0b080f64441371a909380ffcfdc2a7">Jacobian</a> = Eigen::Matrix&lt;double, Dim, Dim&gt;;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="a05899.html#abb1f5b37d4a0787e0d9a7849d1860aa1">   67</a></span>  <a class="code hl_function" href="a05899.html#abb1f5b37d4a0787e0d9a7849d1860aa1">ManifoldEKF</a>(<span class="keyword">const</span> M&amp; X0, <span class="keyword">const</span> <a class="code hl_typedef" href="a05899.html#a2c444a34779013ffa864f9dd93d3c4bd">Covariance</a>&amp; P0) : <a class="code hl_variable" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">X_</a>(X0) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keyword">static_assert</span>(IsManifold&lt;M&gt;::value,</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                  <span class="stringliteral">&quot;Template parameter M must be a GTSAM Manifold.&quot;</span>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_variable" href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">n_</a> = <a class="code hl_struct" href="a03203.html">traits&lt;M&gt;::GetDimension</a>(X0);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variable" href="a05899.html#a83ea27f4336af4529ffb658241f13622">Dim</a> == Eigen::Dynamic) {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      <span class="comment">// Validate dimensions of initial covariance P0.</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      <span class="keywordflow">if</span> (!<a class="code hl_function" href="a05899.html#ac2be0b57fd34a284fe248b7a75e8702b">isMatrixOfSize</a>(P0, <a class="code hl_variable" href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">n_</a>, <a class="code hl_variable" href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">n_</a>)) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">throw</span> std::invalid_argument(</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="stringliteral">&quot;ManifoldEKF: Initial covariance P0 dimensions (&quot;</span> +</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            std::to_string(P0.rows()) + <span class="stringliteral">&quot;x&quot;</span> + std::to_string(P0.cols()) +</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <span class="stringliteral">&quot;) do not match state&#39;s tangent space dimension (&quot;</span> +</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            std::to_string(<a class="code hl_variable" href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">n_</a>) + <span class="stringliteral">&quot;).&quot;</span>);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      <a class="code hl_variable" href="a05899.html#a49c735a4d113438242b495343cea91a3">I_</a> = Jacobian::Identity(<a class="code hl_variable" href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">n_</a>, <a class="code hl_variable" href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">n_</a>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      <a class="code hl_variable" href="a05899.html#a49c735a4d113438242b495343cea91a3">I_</a> = Jacobian::Identity();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_variable" href="a05899.html#aca671898b062ed32a1d23bda95ebc8ff">P_</a> = P0;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  }</div>
 </div>
-<div class="ttc" id="aa00098_html"><div class="ttname"><a href="a00098.html">Testable.h</a></div><div class="ttdoc">Concept check for values that can be used in unit tests.</div></div>
-<div class="ttc" id="aa01061_html"><div class="ttname"><a href="a01061.html">factorTesting.h</a></div><div class="ttdoc">Evaluate derivatives of a nonlinear factor numerically.</div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa04487_html_a61fda7a7390d3fc40f5618185e801bfe"><div class="ttname"><a href="a04487.html#a61fda7a7390d3fc40f5618185e801bfe">gtsam::noiseModel::Unit::Create</a></div><div class="ttdeci">static shared_ptr Create(size_t dim)</div><div class="ttdoc">Create a unit covariance noise model.</div><div class="ttdef"><b>Definition</b> NoiseModel.h:597</div></div>
-<div class="ttc" id="aa04843_html_acb8e427a376afb1eec8bcda057128c11"><div class="ttname"><a href="a04843.html#acb8e427a376afb1eec8bcda057128c11">gtsam::Expression::value</a></div><div class="ttdeci">T value(const Values &amp;values, boost::optional&lt; std::vector&lt; Matrix &gt; &amp; &gt; H=boost::none) const</div><div class="ttdoc">Return value and optional derivatives, reverse AD version Notes: this is not terribly efficient,...</div><div class="ttdef"><b>Definition</b> Expression-inl.h:147</div></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keyword">virtual</span> <a class="code hl_class" href="a05899.html">~ManifoldEKF</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="a05899.html#a3ffdf165b5c1ae13de091ee09f7a0f88">   92</a></span>  <span class="keyword">const</span> M&amp; <a class="code hl_function" href="a05899.html#a3ffdf165b5c1ae13de091ee09f7a0f88">state</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">X_</a>; }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="a05899.html#acb0f9c60d1cbdeb7a4fecf8f40a6fb05">   95</a></span>  <span class="keyword">const</span> <a class="code hl_typedef" href="a05899.html#a2c444a34779013ffa864f9dd93d3c4bd">Covariance</a>&amp; <a class="code hl_function" href="a05899.html#acb0f9c60d1cbdeb7a4fecf8f40a6fb05">covariance</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="a05899.html#aca671898b062ed32a1d23bda95ebc8ff">P_</a>; }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="a05899.html#aba67f9cb33185359d5bb20099d1f06d5">   98</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="a05899.html#aba67f9cb33185359d5bb20099d1f06d5">dimension</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">n_</a>; }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
+<div class="foldopen" id="foldopen00114" data-start="{" data-end="}">
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="a05899.html#af2199dd0989f1c573ff96ffdc63f6b12">  114</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a05899.html#af2199dd0989f1c573ff96ffdc63f6b12">predict</a>(<span class="keyword">const</span> M&amp; X_next, <span class="keyword">const</span> <a class="code hl_typedef" href="a05899.html#aba0b080f64441371a909380ffcfdc2a7">Jacobian</a>&amp; F, <span class="keyword">const</span> <a class="code hl_typedef" href="a05899.html#a2c444a34779013ffa864f9dd93d3c4bd">Covariance</a>&amp; Q) {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variable" href="a05899.html#a83ea27f4336af4529ffb658241f13622">Dim</a> == Eigen::Dynamic) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      <span class="keywordflow">if</span> (!<a class="code hl_function" href="a05899.html#ac2be0b57fd34a284fe248b7a75e8702b">isMatrixOfSize</a>(F, <a class="code hl_variable" href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">n_</a>, <a class="code hl_variable" href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">n_</a>) || !<a class="code hl_function" href="a05899.html#ac2be0b57fd34a284fe248b7a75e8702b">isMatrixOfSize</a>(Q, <a class="code hl_variable" href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">n_</a>, <a class="code hl_variable" href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">n_</a>)) {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordflow">throw</span> std::invalid_argument(</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            <span class="stringliteral">&quot;ManifoldEKF::predict: Dynamic F/Q dimensions must match state &quot;</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <span class="stringliteral">&quot;dimension &quot;</span> +</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            std::to_string(<a class="code hl_variable" href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">n_</a>) + <span class="stringliteral">&quot;.&quot;</span>);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <a class="code hl_variable" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">X_</a> = X_next;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <a class="code hl_variable" href="a05899.html#aca671898b062ed32a1d23bda95ebc8ff">P_</a> = F * <a class="code hl_variable" href="a05899.html#aca671898b062ed32a1d23bda95ebc8ff">P_</a> * F.transpose() + Q;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  }</div>
+</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> HMatrix, <span class="keyword">typename</span> RMatrix&gt;</div>
+<div class="foldopen" id="foldopen00130" data-start="{" data-end="}">
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="a05899.html#a2099eba6ce1acbc98bd1efae16d1d89c">  130</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="a05899.html#a2099eba6ce1acbc98bd1efae16d1d89c">KalmanGain</a>(<span class="keyword">const</span> HMatrix&amp; H, <span class="keyword">const</span> RMatrix&amp; R)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keyword">auto</span> S = H * <a class="code hl_variable" href="a05899.html#aca671898b062ed32a1d23bda95ebc8ff">P_</a> * H.transpose() + R;  <span class="comment">// Innovation covariance</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="a05899.html#aca671898b062ed32a1d23bda95ebc8ff">P_</a> * H.transpose() * S.inverse();</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  }</div>
+</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> GainMatrix, <span class="keyword">typename</span> HMatrix, <span class="keyword">typename</span> RMatrix&gt;</div>
+<div class="foldopen" id="foldopen00138" data-start="{" data-end="}">
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="a05899.html#ac8b0901cc7e6cc17a62373a7cc43d2f0">  138</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a05899.html#ac8b0901cc7e6cc17a62373a7cc43d2f0">JosephUpdate</a>(<span class="keyword">const</span> GainMatrix&amp; K, <span class="keyword">const</span> HMatrix&amp; H, <span class="keyword">const</span> RMatrix&amp; R) {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <a class="code hl_typedef" href="a05899.html#aba0b080f64441371a909380ffcfdc2a7">Jacobian</a> I_KH = <a class="code hl_variable" href="a05899.html#a49c735a4d113438242b495343cea91a3">I_</a> - K * H;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <a class="code hl_variable" href="a05899.html#aca671898b062ed32a1d23bda95ebc8ff">P_</a> = I_KH * <a class="code hl_variable" href="a05899.html#aca671898b062ed32a1d23bda95ebc8ff">P_</a> * I_KH.transpose() + K * R * K.transpose();</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  }</div>
+</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Measurement&gt;</div>
+<div class="foldopen" id="foldopen00156" data-start="{" data-end="}">
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="a05899.html#a1b6f29e10e588b114074ff54fc78c6c2">  156</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a05899.html#a1b6f29e10e588b114074ff54fc78c6c2">update</a>(</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>      <span class="keyword">const</span> Measurement&amp; prediction,</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      <span class="keyword">const</span> Eigen::Matrix&lt;<span class="keywordtype">double</span>, <a class="code hl_struct" href="a03203.html">traits&lt;Measurement&gt;::dimension</a>, <a class="code hl_variable" href="a05899.html#a83ea27f4336af4529ffb658241f13622">Dim</a>&gt;&amp; H,</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>      <span class="keyword">const</span> Measurement&amp; z,</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>      <span class="keyword">const</span> Eigen::Matrix&lt;<span class="keywordtype">double</span>, <a class="code hl_struct" href="a03203.html">traits&lt;Measurement&gt;::dimension</a>,</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                          <a class="code hl_struct" href="a03203.html">traits&lt;Measurement&gt;::dimension</a>&gt;&amp; R,</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>      <span class="keywordtype">bool</span> performReset = <span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> MeasDim = <a class="code hl_struct" href="a03203.html">traits&lt;Measurement&gt;::dimension</a>;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="comment">// Innovation: y = h(x_pred) - z. In tangent space: local(z, h(x_pred))</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="comment">// NOTE: we use the `z_hat - z` sign convention, NOT `z - z_hat`.</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keyword">typename</span> <a class="code hl_struct" href="a03203.html">traits&lt;Measurement&gt;::TangentVector</a> innovation =</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <a class="code hl_struct" href="a03203.html">traits&lt;Measurement&gt;::Local</a>(z, prediction);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="comment">// Kalman Gain: K = P H^T S^-1</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="comment">// K will be Eigen::Matrix&lt;double, Dim, MeasDim&gt;</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    Eigen::Matrix&lt;double, Dim, MeasDim&gt; K = <a class="code hl_function" href="a05899.html#a2099eba6ce1acbc98bd1efae16d1d89c">KalmanGain</a>(H, R);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="comment">// Correction vector in tangent space of M: delta_xi = K * innovation</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="a05899.html#ad6c04d78b407b75040a7b39ec2d80e97">TangentVector</a> delta_xi =</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        -K * innovation;  <span class="comment">// delta_xi is Dim x 1 (or n_ x 1 if dynamic)</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="comment">// --- Update covariance in the tangent space at the current state</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    this-&gt;<a class="code hl_function" href="a05899.html#ac8b0901cc7e6cc17a62373a7cc43d2f0">JosephUpdate</a>(K, H, R);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="comment">// Update state using retract/ transport or just retract</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keywordflow">if</span> (performReset)</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>      <a class="code hl_function" href="a05899.html#a57ff8f348fe4e3288087d0833cb6255b">reset</a>(delta_xi);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>      <a class="code hl_variable" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">X_</a> = <a class="code hl_struct" href="a03203.html">traits&lt;M&gt;::Retract</a>(<a class="code hl_variable" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">X_</a>, delta_xi);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  }</div>
+</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Measurement, <span class="keyword">typename</span> MeasurementFunction&gt;</div>
+<div class="foldopen" id="foldopen00200" data-start="{" data-end="}">
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="a05899.html#a64d300c8f9c1dba5ff1d5094c10dad5f">  200</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a05899.html#a64d300c8f9c1dba5ff1d5094c10dad5f">update</a>(MeasurementFunction&amp;&amp; h, <span class="keyword">const</span> Measurement&amp; z,</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>              <span class="keyword">const</span> Eigen::Matrix&lt;<span class="keywordtype">double</span>, <a class="code hl_struct" href="a03203.html">traits&lt;Measurement&gt;::dimension</a>,</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                                  <a class="code hl_struct" href="a03203.html">traits&lt;Measurement&gt;::dimension</a>&gt;&amp; R,</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>              <span class="keywordtype">bool</span> performReset = <span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keyword">static_assert</span>(IsManifold&lt;Measurement&gt;::value,</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                  <span class="stringliteral">&quot;Template parameter Measurement must be a GTSAM Manifold.&quot;</span>);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="comment">// Predict measurement and get Jacobian H = dh/dlocal(X)</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    Matrix H(<a class="code hl_struct" href="a03203.html">traits&lt;Measurement&gt;::GetDimension</a>(z), <a class="code hl_variable" href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">n_</a>);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    Measurement prediction = h(<a class="code hl_variable" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">X_</a>, H);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="comment">// Call the other update function</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <a class="code hl_function" href="a05899.html#a1b6f29e10e588b114074ff54fc78c6c2">update&lt;Measurement&gt;</a>(prediction, H, z, R, performReset);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  }</div>
+</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span></div>
+<div class="foldopen" id="foldopen00226" data-start="{" data-end="}">
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="a05899.html#aff9ffb5da1d2748394d8dc4ead680c1d">  226</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a05899.html#aff9ffb5da1d2748394d8dc4ead680c1d">updateWithVector</a>(<span class="keyword">const</span> gtsam::Vector&amp; prediction, <span class="keyword">const</span> Matrix&amp; H,</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                        <span class="keyword">const</span> gtsam::Vector&amp; z, <span class="keyword">const</span> Matrix&amp; R,</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                        <span class="keywordtype">bool</span> performReset = <span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <a class="code hl_function" href="a05899.html#a3ace7edf20ae3a4bc4c59ebb6dabe073">validateInputs</a>(prediction, H, z, R);</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <a class="code hl_function" href="a05899.html#a1b6f29e10e588b114074ff54fc78c6c2">update&lt;Vector&gt;</a>(prediction, H, z, R, performReset);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>  }</div>
+</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span></div>
+<div class="foldopen" id="foldopen00241" data-start="{" data-end="}">
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno"><a class="line" href="a05899.html#a57ff8f348fe4e3288087d0833cb6255b">  241</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a05899.html#a57ff8f348fe4e3288087d0833cb6255b">reset</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="a05899.html#ad6c04d78b407b75040a7b39ec2d80e97">TangentVector</a>&amp; eta) {</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (HasRetractJacobian&lt;M&gt;::value) {</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>      <a class="code hl_typedef" href="a05899.html#aba0b080f64441371a909380ffcfdc2a7">Jacobian</a> B;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variable" href="a05899.html#a83ea27f4336af4529ffb658241f13622">Dim</a> == Eigen::Dynamic) B.resize(<a class="code hl_variable" href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">n_</a>, <a class="code hl_variable" href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">n_</a>);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>      <a class="code hl_variable" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">X_</a> = <a class="code hl_struct" href="a03203.html">traits&lt;M&gt;::Retract</a>(<a class="code hl_variable" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">X_</a>, eta, &amp;B);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>      <a class="code hl_variable" href="a05899.html#aca671898b062ed32a1d23bda95ebc8ff">P_</a> = B * <a class="code hl_variable" href="a05899.html#aca671898b062ed32a1d23bda95ebc8ff">P_</a> * B.transpose();</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>      <a class="code hl_variable" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">X_</a> = <a class="code hl_struct" href="a03203.html">traits&lt;M&gt;::Retract</a>(<a class="code hl_variable" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">X_</a>, eta);</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>      <span class="comment">// Covariance unchanged when Jacobian is not available.</span></div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    }</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  }</div>
+</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> <span class="keyword">protected</span>:</div>
+<div class="foldopen" id="foldopen00255" data-start="{" data-end="}">
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno"><a class="line" href="a05899.html#a3ace7edf20ae3a4bc4c59ebb6dabe073">  255</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a05899.html#a3ace7edf20ae3a4bc4c59ebb6dabe073">validateInputs</a>(<span class="keyword">const</span> gtsam::Vector&amp; prediction, <span class="keyword">const</span> Matrix&amp; H,</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                      <span class="keyword">const</span> gtsam::Vector&amp; z, <span class="keyword">const</span> Matrix&amp; R) {</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> m = <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(prediction.size());</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(z.size()) != m) {</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>      <span class="keywordflow">throw</span> std::invalid_argument(</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>          <span class="stringliteral">&quot;ManifoldEKF::updateWithVector: prediction and z must have same &quot;</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>          <span class="stringliteral">&quot;length.&quot;</span>);</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    }</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="a05899.html#ac2be0b57fd34a284fe248b7a75e8702b">isMatrixOfSize</a>(H, m, <a class="code hl_variable" href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">n_</a>)) {</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>      <span class="keywordflow">throw</span> std::invalid_argument(</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>          <span class="stringliteral">&quot;ManifoldEKF::updateWithVector: H must be m x n where m = &quot;</span></div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>          <span class="stringliteral">&quot;measurement size and n = state dimension.&quot;</span>);</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    }</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="a05899.html#ac2be0b57fd34a284fe248b7a75e8702b">isMatrixOfSize</a>(R, m, m)) {</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>      <span class="keywordflow">throw</span> std::invalid_argument(</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>          <span class="stringliteral">&quot;ManifoldEKF::updateWithVector: R must be m x m where m = &quot;</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>          <span class="stringliteral">&quot;measurement size.&quot;</span>);</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    }</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  }</div>
+</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> MatrixType&gt;</div>
+<div class="foldopen" id="foldopen00277" data-start="{" data-end="}">
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno"><a class="line" href="a05899.html#ac2be0b57fd34a284fe248b7a75e8702b">  277</a></span>  <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="a05899.html#ac2be0b57fd34a284fe248b7a75e8702b">isMatrixOfSize</a>(<span class="keyword">const</span> MatrixType&amp; matrix, <span class="keywordtype">size_t</span> rows,</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                             <span class="keywordtype">size_t</span> cols) {</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(matrix.rows()) == rows &amp;&amp;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>           <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(matrix.cols()) == cols;</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  }</div>
+</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno"><a class="line" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">  284</a></span>  M <a class="code hl_variable" href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">X_</a>;           </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno"><a class="line" href="a05899.html#aca671898b062ed32a1d23bda95ebc8ff">  285</a></span>  <a class="code hl_typedef" href="a05899.html#a2c444a34779013ffa864f9dd93d3c4bd">Covariance</a> <a class="code hl_variable" href="a05899.html#aca671898b062ed32a1d23bda95ebc8ff">P_</a>;  </div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno"><a class="line" href="a05899.html#a49c735a4d113438242b495343cea91a3">  286</a></span>  <a class="code hl_typedef" href="a05899.html#aba0b080f64441371a909380ffcfdc2a7">Jacobian</a> <a class="code hl_variable" href="a05899.html#a49c735a4d113438242b495343cea91a3">I_</a>;    </div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno"><a class="line" href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">  287</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">n_</a>;      </div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>  <span class="comment">// Detection helper: check if traits&lt;T&gt;::Retract(x, v, Jacobian*) is valid.</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> = <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>  <span class="keyword">struct </span>HasRetractJacobian : std::false_type {};</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>  <span class="keyword">struct </span>HasRetractJacobian&lt;</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>      T, <a class="code hl_namespace" href="a02241.html">std</a>::void_t&lt;decltype(traits&lt;T&gt;::Retract(</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>             std::declval&lt;const T&amp;&gt;(),</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>             std::declval&lt;const typename traits&lt;T&gt;::TangentVector&amp;&gt;(),</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>             (Jacobian*)nullptr))&gt;&gt; : std::true_type {};</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>};</div>
+</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span> </div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>}  <span class="comment">// namespace gtsam</span></div>
+<div class="ttc" id="aa00071_html"><div class="ttname"><a href="a00071.html">Matrix.h</a></div><div class="ttdoc">typedef and functions to augment Eigen&#39;s MatrixXd</div></div>
+<div class="ttc" id="aa00143_html"><div class="ttname"><a href="a00143.html">Manifold.h</a></div><div class="ttdoc">Base class and basic functions for Manifold types.</div></div>
+<div class="ttc" id="aa00173_html"><div class="ttname"><a href="a00173.html">Vector.h</a></div><div class="ttdoc">typedef and functions to augment Eigen&#39;s VectorXd</div></div>
+<div class="ttc" id="aa02241_html"><div class="ttname"><a href="a02241.html">std</a></div><div class="ttdoc">STL namespace.</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa03203_html"><div class="ttname"><a href="a03203.html">gtsam::traits</a></div><div class="ttdoc">A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...</div><div class="ttdef"><b>Definition</b> Group.h:37</div></div>
+<div class="ttc" id="aa05899_html"><div class="ttname"><a href="a05899.html">gtsam::ManifoldEKF</a></div><div class="ttdoc">Extended Kalman Filter on a generic manifold M.</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:50</div></div>
+<div class="ttc" id="aa05899_html_a1b6f29e10e588b114074ff54fc78c6c2"><div class="ttname"><a href="a05899.html#a1b6f29e10e588b114074ff54fc78c6c2">gtsam::ManifoldEKF::update</a></div><div class="ttdeci">void update(const Measurement &amp;prediction, const Eigen::Matrix&lt; double, traits&lt; Measurement &gt;::dimension, Dim &gt; &amp;H, const Measurement &amp;z, const Eigen::Matrix&lt; double, traits&lt; Measurement &gt;::dimension, traits&lt; Measurement &gt;::dimension &gt; &amp;R, bool performReset=true)</div><div class="ttdoc">Measurement update: Corrects the state and covariance using a pre-calculated predicted measurement an...</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:156</div></div>
+<div class="ttc" id="aa05899_html_a2099eba6ce1acbc98bd1efae16d1d89c"><div class="ttname"><a href="a05899.html#a2099eba6ce1acbc98bd1efae16d1d89c">gtsam::ManifoldEKF::KalmanGain</a></div><div class="ttdeci">auto KalmanGain(const HMatrix &amp;H, const RMatrix &amp;R) const</div><div class="ttdoc">Kalman gain K = P H^T S^-1.</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:130</div></div>
+<div class="ttc" id="aa05899_html_a2c444a34779013ffa864f9dd93d3c4bd"><div class="ttname"><a href="a05899.html#a2c444a34779013ffa864f9dd93d3c4bd">gtsam::ManifoldEKF&lt; G &gt;::Covariance</a></div><div class="ttdeci">Eigen::Matrix&lt; double, Dim, Dim &gt; Covariance</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:58</div></div>
+<div class="ttc" id="aa05899_html_a3ace7edf20ae3a4bc4c59ebb6dabe073"><div class="ttname"><a href="a05899.html#a3ace7edf20ae3a4bc4c59ebb6dabe073">gtsam::ManifoldEKF::validateInputs</a></div><div class="ttdeci">void validateInputs(const gtsam::Vector &amp;prediction, const Matrix &amp;H, const gtsam::Vector &amp;z, const Matrix &amp;R)</div><div class="ttdoc">Validate inputs to update.</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:255</div></div>
+<div class="ttc" id="aa05899_html_a3ffdf165b5c1ae13de091ee09f7a0f88"><div class="ttname"><a href="a05899.html#a3ffdf165b5c1ae13de091ee09f7a0f88">gtsam::ManifoldEKF::state</a></div><div class="ttdeci">const M &amp; state() const</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:92</div></div>
+<div class="ttc" id="aa05899_html_a49c735a4d113438242b495343cea91a3"><div class="ttname"><a href="a05899.html#a49c735a4d113438242b495343cea91a3">gtsam::ManifoldEKF&lt; G &gt;::I_</a></div><div class="ttdeci">Jacobian I_</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:286</div></div>
+<div class="ttc" id="aa05899_html_a57ff8f348fe4e3288087d0833cb6255b"><div class="ttname"><a href="a05899.html#a57ff8f348fe4e3288087d0833cb6255b">gtsam::ManifoldEKF::reset</a></div><div class="ttdeci">void reset(const TangentVector &amp;eta)</div><div class="ttdoc">Reset step: retract the state by a tangent perturbation and, if available, transport the covariance f...</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:241</div></div>
+<div class="ttc" id="aa05899_html_a64d300c8f9c1dba5ff1d5094c10dad5f"><div class="ttname"><a href="a05899.html#a64d300c8f9c1dba5ff1d5094c10dad5f">gtsam::ManifoldEKF::update</a></div><div class="ttdeci">void update(MeasurementFunction &amp;&amp;h, const Measurement &amp;z, const Eigen::Matrix&lt; double, traits&lt; Measurement &gt;::dimension, traits&lt; Measurement &gt;::dimension &gt; &amp;R, bool performReset=true)</div><div class="ttdoc">Measurement update: Corrects the state and covariance using a measurement model function.</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:200</div></div>
+<div class="ttc" id="aa05899_html_a83ea27f4336af4529ffb658241f13622"><div class="ttname"><a href="a05899.html#a83ea27f4336af4529ffb658241f13622">gtsam::ManifoldEKF&lt; G &gt;::Dim</a></div><div class="ttdeci">static constexpr int Dim</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:53</div></div>
+<div class="ttc" id="aa05899_html_aa86516b3f8c951690adeb9c64965ebed"><div class="ttname"><a href="a05899.html#aa86516b3f8c951690adeb9c64965ebed">gtsam::ManifoldEKF&lt; G &gt;::X_</a></div><div class="ttdeci">G X_</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:284</div></div>
+<div class="ttc" id="aa05899_html_aba0b080f64441371a909380ffcfdc2a7"><div class="ttname"><a href="a05899.html#aba0b080f64441371a909380ffcfdc2a7">gtsam::ManifoldEKF&lt; G &gt;::Jacobian</a></div><div class="ttdeci">Eigen::Matrix&lt; double, Dim, Dim &gt; Jacobian</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:60</div></div>
+<div class="ttc" id="aa05899_html_aba67f9cb33185359d5bb20099d1f06d5"><div class="ttname"><a href="a05899.html#aba67f9cb33185359d5bb20099d1f06d5">gtsam::ManifoldEKF::dimension</a></div><div class="ttdeci">size_t dimension() const</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:98</div></div>
+<div class="ttc" id="aa05899_html_abb1f5b37d4a0787e0d9a7849d1860aa1"><div class="ttname"><a href="a05899.html#abb1f5b37d4a0787e0d9a7849d1860aa1">gtsam::ManifoldEKF::ManifoldEKF</a></div><div class="ttdeci">ManifoldEKF(const M &amp;X0, const Covariance &amp;P0)</div><div class="ttdoc">Constructor: initialize with state and covariance.</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:67</div></div>
+<div class="ttc" id="aa05899_html_ac2be0b57fd34a284fe248b7a75e8702b"><div class="ttname"><a href="a05899.html#ac2be0b57fd34a284fe248b7a75e8702b">gtsam::ManifoldEKF::isMatrixOfSize</a></div><div class="ttdeci">static bool isMatrixOfSize(const MatrixType &amp;matrix, size_t rows, size_t cols)</div><div class="ttdoc">Check whether a matrix has the expected runtime dimensions.</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:277</div></div>
+<div class="ttc" id="aa05899_html_ac8b0901cc7e6cc17a62373a7cc43d2f0"><div class="ttname"><a href="a05899.html#ac8b0901cc7e6cc17a62373a7cc43d2f0">gtsam::ManifoldEKF::JosephUpdate</a></div><div class="ttdeci">void JosephUpdate(const GainMatrix &amp;K, const HMatrix &amp;H, const RMatrix &amp;R)</div><div class="ttdoc">Joseph-form covariance update in the current tangent space using a precomputed gain.</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:138</div></div>
+<div class="ttc" id="aa05899_html_aca671898b062ed32a1d23bda95ebc8ff"><div class="ttname"><a href="a05899.html#aca671898b062ed32a1d23bda95ebc8ff">gtsam::ManifoldEKF&lt; G &gt;::P_</a></div><div class="ttdeci">Covariance P_</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:285</div></div>
+<div class="ttc" id="aa05899_html_acb0f9c60d1cbdeb7a4fecf8f40a6fb05"><div class="ttname"><a href="a05899.html#acb0f9c60d1cbdeb7a4fecf8f40a6fb05">gtsam::ManifoldEKF::covariance</a></div><div class="ttdeci">const Covariance &amp; covariance() const</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:95</div></div>
+<div class="ttc" id="aa05899_html_ad6c04d78b407b75040a7b39ec2d80e97"><div class="ttname"><a href="a05899.html#ad6c04d78b407b75040a7b39ec2d80e97">gtsam::ManifoldEKF&lt; G &gt;::TangentVector</a></div><div class="ttdeci">typename traits&lt; G &gt;::TangentVector TangentVector</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:56</div></div>
+<div class="ttc" id="aa05899_html_aed62e118a5f1d94198beb7a62ed2bdd5"><div class="ttname"><a href="a05899.html#aed62e118a5f1d94198beb7a62ed2bdd5">gtsam::ManifoldEKF&lt; G &gt;::n_</a></div><div class="ttdeci">size_t n_</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:287</div></div>
+<div class="ttc" id="aa05899_html_af2199dd0989f1c573ff96ffdc63f6b12"><div class="ttname"><a href="a05899.html#af2199dd0989f1c573ff96ffdc63f6b12">gtsam::ManifoldEKF::predict</a></div><div class="ttdeci">void predict(const M &amp;X_next, const Jacobian &amp;F, const Covariance &amp;Q)</div><div class="ttdoc">Basic predict step: Updates state and covariance given the predicted next state and the state transit...</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:114</div></div>
+<div class="ttc" id="aa05899_html_aff9ffb5da1d2748394d8dc4ead680c1d"><div class="ttname"><a href="a05899.html#aff9ffb5da1d2748394d8dc4ead680c1d">gtsam::ManifoldEKF::updateWithVector</a></div><div class="ttdeci">void updateWithVector(const gtsam::Vector &amp;prediction, const Matrix &amp;H, const gtsam::Vector &amp;z, const Matrix &amp;R, bool performReset=true)</div><div class="ttdoc">Convenience bridge for wrappers: vector measurement update calling update&lt;Vector&gt;.</div><div class="ttdef"><b>Definition</b> ManifoldEKF.h:226</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>nonlinear</b></li><li class="navelem"><a href="a01148.html">expressionTesting.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>navigation</b></li><li class="navelem"><a href="a01148.html">ManifoldEKF.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

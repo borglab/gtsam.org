@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/discrete/DiscreteFactorGraph.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/discrete/DiscreteBayesTree.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,36 +96,23 @@ $(function(){initNavTree('a00263.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">DiscreteFactorGraph.h File Reference</div></div>
+  <div class="headertitle"><div class="title">DiscreteBayesTree.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p><a href="a00263_source.html">Go to the source code of this file.</a></p>
+<p>Discrete Bayes Tree, the result of eliminating a DiscreteJunctionTree.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3AEliminationTraits_3C_20DiscreteFactorGraph_20_3E" id="r_gtsam_3A_3AEliminationTraits_3C_20DiscreteFactorGraph_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03407.html">gtsam::EliminationTraits&lt; DiscreteFactorGraph &gt;</a></td></tr>
-<tr class="memitem:gtsam_3A_3ADiscreteFactorGraph" id="r_gtsam_3A_3ADiscreteFactorGraph"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a03411.html">gtsam::DiscreteFactorGraph</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Discrete <a class="el" href="a04139.html">Factor</a> Graph is a factor graph where all factors are Discrete, i.e.  <a href="a03411.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3Atraits_3C_20DiscreteFactorGraph_20_3E" id="r_gtsam_3A_3Atraits_3C_20DiscreteFactorGraph_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03415.html">gtsam::traits&lt; DiscreteFactorGraph &gt;</a></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga6996e9c84467350b071645649231223a" id="r_ga6996e9c84467350b071645649231223a"><td class="memItemLeft">std::pair&lt; <a class="el" href="a03379.html#a4d8b3999aa607019946cbcfd255c09dd">DiscreteConditional::shared_ptr</a>, DecisionTreeFactor::shared_ptr &gt;&#160;</td><td class="memItemRight"><a class="el" href="a01955.html#ga6996e9c84467350b071645649231223a">gtsam::EliminateDiscrete</a> (const <a class="el" href="a03411.html">DiscreteFactorGraph</a> &amp;factors, const <a class="el" href="a04227.html">Ordering</a> &amp;frontalKeys)</td></tr>
-<tr class="memdesc:ga6996e9c84467350b071645649231223a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main elimination function for <a class="el" href="a03411.html" title="A Discrete Factor Graph is a factor graph where all factors are Discrete, i.e.">DiscreteFactorGraph</a>.  <br /></td></tr>
-<tr class="memitem:ga9bd0b2859a7513198a369f5de3c8cde3" id="r_ga9bd0b2859a7513198a369f5de3c8cde3"><td class="memItemLeft">std::pair&lt; <a class="el" href="a03379.html#a4d8b3999aa607019946cbcfd255c09dd">DiscreteConditional::shared_ptr</a>, DecisionTreeFactor::shared_ptr &gt;&#160;</td><td class="memItemRight"><a class="el" href="a01955.html#ga9bd0b2859a7513198a369f5de3c8cde3">gtsam::EliminateForMPE</a> (const <a class="el" href="a03411.html">DiscreteFactorGraph</a> &amp;factors, const <a class="el" href="a04227.html">Ordering</a> &amp;frontalKeys)</td></tr>
-<tr class="memdesc:ga9bd0b2859a7513198a369f5de3c8cde3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alternate elimination function for that creates non-normalized lookup tables.  <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section date"><dt>Date</dt><dd>Feb 14, 2011 </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Duy-Nguyen Ta </dd>
+<div class="textblock"><p>Discrete Bayes Tree, the result of eliminating a DiscreteJunctionTree. </p>
+<p>DiscreteBayesTree </p><dl class="section author"><dt>Author</dt><dd>Frank Dellaert </dd>
 <dd>
-Frank Dellaert </dd></dl>
+Richard Roberts </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -139,7 +126,7 @@ Frank Dellaert </dd></dl>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>discrete</b></li><li class="navelem"><a href="a00263.html">DiscreteFactorGraph.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>discrete</b></li><li class="navelem"><a href="a00263.html">DiscreteBayesTree.cpp</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::CGState&lt; S, V, E &gt; Struct Template Reference</title>
+<title>gtsam: gtsam::Range&lt; Point1, Point1 &gt; Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,51 +96,24 @@ $(function(){initNavTree('a04367.html','','a04364'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::CGState&lt; S, V, E &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::Range&lt; Point1, Point1 &gt; Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="a04047.html">Range</a> functor between two Point1 values, using L1 distance. </p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a40e8d5648fb88db398e206f8c9a78669" id="r_a40e8d5648fb88db398e206f8c9a78669"><td class="memItemLeft"><a id="a40e8d5648fb88db398e206f8c9a78669" name="a40e8d5648fb88db398e206f8c9a78669"></a>
-&#160;</td><td class="memItemRight"><b>CGState</b> (const S &amp;Ab, const V &amp;x, const Parameters &amp;parameters, bool steep)</td></tr>
-<tr class="memitem:ac1a537d2c947cc0f1a3da83215bd06b9" id="r_ac1a537d2c947cc0f1a3da83215bd06b9"><td class="memItemLeft"><a id="ac1a537d2c947cc0f1a3da83215bd06b9" name="ac1a537d2c947cc0f1a3da83215bd06b9"></a>
-void&#160;</td><td class="memItemRight"><b>print</b> (const V &amp;x)</td></tr>
-<tr class="memitem:a0b7dd3b756d145a2fdcda4060e8c4923" id="r_a0b7dd3b756d145a2fdcda4060e8c4923"><td class="memItemLeft"><a id="a0b7dd3b756d145a2fdcda4060e8c4923" name="a0b7dd3b756d145a2fdcda4060e8c4923"></a>
-double&#160;</td><td class="memItemRight"><b>takeOptimalStep</b> (V &amp;x)</td></tr>
-<tr class="memitem:ad457bfcf0debd36a50d6cd5e6358ed35" id="r_ad457bfcf0debd36a50d6cd5e6358ed35"><td class="memItemLeft"><a id="ad457bfcf0debd36a50d6cd5e6358ed35" name="ad457bfcf0debd36a50d6cd5e6358ed35"></a>
-bool&#160;</td><td class="memItemRight"><b>step</b> (const S &amp;Ab, V &amp;x)</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:addc17948654ab70a8c5fff47a3ecd160" id="r_addc17948654ab70a8c5fff47a3ecd160"><td class="memItemLeft"><a id="addc17948654ab70a8c5fff47a3ecd160" name="addc17948654ab70a8c5fff47a3ecd160"></a>
-const Parameters &amp;&#160;</td><td class="memItemRight"><b>parameters_</b></td></tr>
-<tr class="memitem:a57ba7e407a63bdc77e53e8ff76985ab3" id="r_a57ba7e407a63bdc77e53e8ff76985ab3"><td class="memItemLeft"><a id="a57ba7e407a63bdc77e53e8ff76985ab3" name="a57ba7e407a63bdc77e53e8ff76985ab3"></a>
-int&#160;</td><td class="memItemRight"><b>k</b></td></tr>
-<tr class="memdesc:a57ba7e407a63bdc77e53e8ff76985ab3"><td class="mdescLeft">&#160;</td><td class="mdescRight">iteration <br /></td></tr>
-<tr class="memitem:a0ec86902a54fdd09f879a398b60fb585" id="r_a0ec86902a54fdd09f879a398b60fb585"><td class="memItemLeft"><a id="a0ec86902a54fdd09f879a398b60fb585" name="a0ec86902a54fdd09f879a398b60fb585"></a>
-bool&#160;</td><td class="memItemRight"><b>steepest</b></td></tr>
-<tr class="memdesc:a0ec86902a54fdd09f879a398b60fb585"><td class="mdescLeft">&#160;</td><td class="mdescRight">flag to indicate we are doing steepest descent <br /></td></tr>
-<tr class="memitem:a325a16a9d2400c8eb05d57c58a00b0b2" id="r_a325a16a9d2400c8eb05d57c58a00b0b2"><td class="memItemLeft"><a id="a325a16a9d2400c8eb05d57c58a00b0b2" name="a325a16a9d2400c8eb05d57c58a00b0b2"></a>
-V&#160;</td><td class="memItemRight"><b>g</b></td></tr>
-<tr class="memitem:af7b2174dd081a48416a7f4b3bdbeda66" id="r_af7b2174dd081a48416a7f4b3bdbeda66"><td class="memItemLeft"><a id="af7b2174dd081a48416a7f4b3bdbeda66" name="af7b2174dd081a48416a7f4b3bdbeda66"></a>
-V&#160;</td><td class="memItemRight"><b>d</b></td></tr>
-<tr class="memdesc:af7b2174dd081a48416a7f4b3bdbeda66"><td class="mdescLeft">&#160;</td><td class="mdescRight">gradient g and search direction d for CG <br /></td></tr>
-<tr class="memitem:a961ba7ea85f4ae12cd95ac8de67efec1" id="r_a961ba7ea85f4ae12cd95ac8de67efec1"><td class="memItemLeft"><a id="a961ba7ea85f4ae12cd95ac8de67efec1" name="a961ba7ea85f4ae12cd95ac8de67efec1"></a>
-double&#160;</td><td class="memItemRight"><b>gamma</b></td></tr>
-<tr class="memitem:a377969b240efda1b91aec68ac0fd1273" id="r_a377969b240efda1b91aec68ac0fd1273"><td class="memItemLeft"><a id="a377969b240efda1b91aec68ac0fd1273" name="a377969b240efda1b91aec68ac0fd1273"></a>
-double&#160;</td><td class="memItemRight"><b>threshold</b></td></tr>
-<tr class="memdesc:a377969b240efda1b91aec68ac0fd1273"><td class="mdescLeft">&#160;</td><td class="mdescRight">gamma (squared L2 norm of g) and convergence threshold <br /></td></tr>
-<tr class="memitem:a6443bb257727c06ff94b0d05963f7c69" id="r_a6443bb257727c06ff94b0d05963f7c69"><td class="memItemLeft"><a id="a6443bb257727c06ff94b0d05963f7c69" name="a6443bb257727c06ff94b0d05963f7c69"></a>
-E&#160;</td><td class="memItemRight"><b>Ad</b></td></tr>
+<tr class="memitem:a1827230dc3a1962acd42f597256997fb" id="r_a1827230dc3a1962acd42f597256997fb"><td class="memItemLeft"><a id="a1827230dc3a1962acd42f597256997fb" name="a1827230dc3a1962acd42f597256997fb"></a>
+double&#160;</td><td class="memItemRight"><b>operator()</b> (const Point1 &amp;p, const Point1 &amp;q, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 1 &gt; H1={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 1 &gt; H2={})</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:aaa2df423e9d2af5f40875c6ab6f6e326" id="r_aaa2df423e9d2af5f40875c6ab6f6e326"><td class="memItemLeft"><a id="aaa2df423e9d2af5f40875c6ab6f6e326" name="aaa2df423e9d2af5f40875c6ab6f6e326"></a>
-typedef <a class="el" href="a04275.html">ConjugateGradientParameters</a>&#160;</td><td class="memItemRight"><b>Parameters</b></td></tr>
+<tr class="memitem:a8fa7f147530da3b1e136fe960dca4488" id="r_a8fa7f147530da3b1e136fe960dca4488"><td class="memItemLeft"><a id="a8fa7f147530da3b1e136fe960dca4488" name="a8fa7f147530da3b1e136fe960dca4488"></a>
+typedef double&#160;</td><td class="memItemRight"><b>result_type</b></td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/<a class="el" href="a00890_source.html">iterative-inl.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00611_source.html">Point1.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -155,7 +128,7 @@ typedef <a class="el" href="a04275.html">ConjugateGradientParameters</a>&#160;</
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04367.html">CGState</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04367.html">Range&lt; Point1, Point1 &gt;</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

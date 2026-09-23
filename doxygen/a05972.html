@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,18 +96,30 @@ $(function(){initNavTree('a05975.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::partition::GenericFactor3D Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::PreintegratedRotation Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a05975.html">gtsam::partition::GenericFactor3D</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a05975.html">gtsam::PreintegratedRotation</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>GenericFactor3D</b>() (defined in <a class="el" href="a05975.html">gtsam::partition::GenericFactor3D</a>)</td><td class="entry"><a class="el" href="a05975.html">gtsam::partition::GenericFactor3D</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>GenericFactor3D</b>(const size_t index1, const size_t index2, const int index_=-1, const GenericNode3DType type1=NODE_POSE_3D, const GenericNode3DType type2=NODE_LANDMARK_3D, const int weight_=1) (defined in <a class="el" href="a05975.html">gtsam::partition::GenericFactor3D</a>)</td><td class="entry"><a class="el" href="a05975.html">gtsam::partition::GenericFactor3D</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>index</b> (defined in <a class="el" href="a05975.html">gtsam::partition::GenericFactor3D</a>)</td><td class="entry"><a class="el" href="a05975.html">gtsam::partition::GenericFactor3D</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>key1</b> (defined in <a class="el" href="a05975.html">gtsam::partition::GenericFactor3D</a>)</td><td class="entry"><a class="el" href="a05975.html">gtsam::partition::GenericFactor3D</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>key2</b> (defined in <a class="el" href="a05975.html">gtsam::partition::GenericFactor3D</a>)</td><td class="entry"><a class="el" href="a05975.html">gtsam::partition::GenericFactor3D</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>weight</b> (defined in <a class="el" href="a05975.html">gtsam::partition::GenericFactor3D</a>)</td><td class="entry"><a class="el" href="a05975.html">gtsam::partition::GenericFactor3D</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05975.html#a4d7cb4be97cf577b4a8bed5a1b4b24e0">biascorrectedDeltaRij</a>(const Vector3 &amp;biasOmegaIncr, OptionalJacobian&lt; 3, 3 &gt; H={}) const</td><td class="entry"><a class="el" href="a05975.html">gtsam::PreintegratedRotation</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>delRdelBiasOmega</b>() const (defined in <a class="el" href="a05975.html">gtsam::PreintegratedRotation</a>)</td><td class="entry"><a class="el" href="a05975.html">gtsam::PreintegratedRotation</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05975.html#a44e2af0899009e3d0eb935bc411d14a1">delRdelBiasOmega_</a></td><td class="entry"><a class="el" href="a05975.html">gtsam::PreintegratedRotation</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>deltaRij</b>() const (defined in <a class="el" href="a05975.html">gtsam::PreintegratedRotation</a>)</td><td class="entry"><a class="el" href="a05975.html">gtsam::PreintegratedRotation</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05975.html#aead7cee1ef09b022ad4e2836c51c4cc0">deltaRij_</a></td><td class="entry"><a class="el" href="a05975.html">gtsam::PreintegratedRotation</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>deltaTij</b>() const (defined in <a class="el" href="a05975.html">gtsam::PreintegratedRotation</a>)</td><td class="entry"><a class="el" href="a05975.html">gtsam::PreintegratedRotation</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05975.html#ac290e4fa241ce8f6a7a1c94e6f2fccb8">deltaTij_</a></td><td class="entry"><a class="el" href="a05975.html">gtsam::PreintegratedRotation</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>equals</b>(const PreintegratedRotation &amp;other, double tol) const (defined in <a class="el" href="a05975.html">gtsam::PreintegratedRotation</a>)</td><td class="entry"><a class="el" href="a05975.html">gtsam::PreintegratedRotation</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05975.html#aad72bfed5e69710f52962521aa5dd4a4">integrateGyroMeasurement</a>(const Vector3 &amp;measuredOmega, const Vector3 &amp;biasHat, double deltaT, OptionalJacobian&lt; 3, 3 &gt; F={})</td><td class="entry"><a class="el" href="a05975.html">gtsam::PreintegratedRotation</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05975.html#ad4a13c89dc8226456aaeef68736b9ae2">matchesParamsWith</a>(const PreintegratedRotation &amp;other) const</td><td class="entry"><a class="el" href="a05975.html">gtsam::PreintegratedRotation</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05975.html#a5b756d9109834326be74f7cd351772bf">p_</a></td><td class="entry"><a class="el" href="a05975.html">gtsam::PreintegratedRotation</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Params</b> typedef (defined in <a class="el" href="a05975.html">gtsam::PreintegratedRotation</a>)</td><td class="entry"><a class="el" href="a05975.html">gtsam::PreintegratedRotation</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>params</b>() const (defined in <a class="el" href="a05975.html">gtsam::PreintegratedRotation</a>)</td><td class="entry"><a class="el" href="a05975.html">gtsam::PreintegratedRotation</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05975.html#ae744d5c7fcf27da650d08f65467f15e1">PreintegratedRotation</a>()</td><td class="entry"><a class="el" href="a05975.html">gtsam::PreintegratedRotation</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05975.html#af2d4ad989ae04d571435398073e5fbfe">PreintegratedRotation</a>(const std::shared_ptr&lt; Params &gt; &amp;p)</td><td class="entry"><a class="el" href="a05975.html">gtsam::PreintegratedRotation</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">explicit</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05975.html#a49b447ee52234cc39c305c5ee6fb5e7f">PreintegratedRotation</a>(const std::shared_ptr&lt; Params &gt; &amp;p, double deltaTij, const Rot3 &amp;deltaRij, const Matrix3 &amp;delRdelBiasOmega)</td><td class="entry"><a class="el" href="a05975.html">gtsam::PreintegratedRotation</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>print</b>(const std::string &amp;s) const (defined in <a class="el" href="a05975.html">gtsam::PreintegratedRotation</a>)</td><td class="entry"><a class="el" href="a05975.html">gtsam::PreintegratedRotation</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05975.html#afef7a62e383296931b88afe371ec8f3c">resetIntegration</a>()</td><td class="entry"><a class="el" href="a05975.html">gtsam::PreintegratedRotation</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

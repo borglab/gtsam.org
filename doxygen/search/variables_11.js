@@ -1,8 +1,28 @@
 var searchData=
 [
-  ['unusedkeys_0',['unusedKeys',['../a04971.html#acdadbbcde16f1bed137cff50aab3cdc3',1,'gtsam::ISAM2Result']]],
-  ['update_5fcount_5f_1',['update_count_',['../a04947.html#a29b30773e68652011e31ee0a9a0cfa4d',1,'gtsam::ISAM2']]],
-  ['use2ndordercoriolis_2',['use2ndOrderCoriolis',['../a04767.html#a2732ec155327ae88f23a6b983c173162',1,'gtsam::PreintegrationParams']]],
-  ['usefixedlambdafactor_3',['useFixedLambdaFactor',['../a04991.html#ad003372fa93954c8f2c86fd3e413f3ae',1,'gtsam::LevenbergMarquardtParams']]],
-  ['usehuber_4',['useHuber',['../a05279.html#a4ecbf5f9a9e9ecbc2c4ef549af57d543',1,'gtsam::ShonanAveragingParameters']]]
+  ['r_5f_0',['R_',['../a04231.html#a856141204c45779a1d8e3d84268cfd1e',1,'gtsam::ExtendedPose3']]],
+  ['ranktolerance_1',['rankTolerance',['../a04619.html#a6bc48052dd695ad190eeb3de24abbdca',1,'gtsam::TriangulationParameters']]],
+  ['referencepoint_5f_2',['referencePoint_',['../a07427.html#a1751ebcce9070692b0323a99e500b5c3',1,'gtsam::InvDepthFactorVariant2']]],
+  ['relativecosttol_3',['relativeCostTol',['../a06287.html#ad5d72e89bed6a0cd85b91ea3e5586ca3',1,'gtsam::GncParams']]],
+  ['relativeerrortol_4',['relativeErrorTol',['../a06471.html#a9525e668e93fbb60ea4bffeab963629e',1,'gtsam::NonlinearOptimizerParams']]],
+  ['relinearizeskip_5',['relinearizeSkip',['../a06347.html#ab914df94ba4aeff0d19293240f61838c',1,'gtsam::ISAM2Params']]],
+  ['relinearizethreshold_6',['relinearizeThreshold',['../a06347.html#af5da340f5774c8ccbbdecfc0a5299888',1,'gtsam::ISAM2Params']]],
+  ['removefactorindices_7',['removeFactorIndices',['../a06363.html#a722ee268dfe1cf90d65433b01bc02a9e',1,'gtsam::ISAM2UpdateParams']]],
+  ['reorderinterval_5f_8',['reorderInterval_',['../a04795.html#a83959d538b1f8c11e5d2d18098320d16',1,'gtsam::HybridNonlinearISAM::reorderInterval_'],['../a06455.html#ae53203f6b84dc0f29f9fb52afdc49fd9',1,'gtsam::NonlinearISAM::reorderInterval_']]],
+  ['reportstream_9',['reportStream',['../a05315.html#a9b6800424a3fe2f57a1747d49dd2e3ad',1,'gtsam::MultifrontalParameters']]],
+  ['reset_10',['reset',['../a05031.html#a2185c0d346b1debc869f5e95ee021da9',1,'gtsam::ConjugateGradientParameters']]],
+  ['responses_11',['responses',['../a06703.html#a424b5d2961c64463a6a58adff030fa17',1,'gtsam::gtsfm::Keypoints']]],
+  ['result_5f_12',['result_',['../a07095.html#adb2e04086f08d5a7c33a5663fe48b96d',1,'gtsam::SmartProjectionFactorBase::result_'],['../a07503.html#a7723f7ed159174a646771591045e203b',1,'gtsam::SmartStereoProjectionFactor::result_']]],
+  ['retriangulationthreshold_13',['retriangulationThreshold',['../a07083.html#a5b1fa239a2827c833e2d6c035392d7d5',1,'gtsam::SmartProjectionParams']]],
+  ['reweight_5f_14',['reweight_',['../a05231.html#a324ead5e657531310058f768f9daf0e8',1,'gtsam::noiseModel::mEstimator::Base']]],
+  ['robust_5f_15',['robust_',['../a05387.html#adbe38b28c96ab791af4c5539ad31aa04',1,'gtsam::noiseModel::Robust']]],
+  ['robustcontacthuberk_16',['robustContactHuberK',['../a05815.html#a5d2d60644d0ff308d79f3b11dad4a085',1,'gtsam::LeggedEstimatorParams']]],
+  ['robustloss_5f_17',['robustLoss_',['../a06687.html#abba2078e0f0b87c7ac823f97ad5bfe96',1,'gtsam::GraduatedFactor']]],
+  ['root_5f_18',['root_',['../a03835.html#a768a8bde0e6dc5d0b0e6f12f57560e9c',1,'gtsam::DecisionTree']]],
+  ['roots_5f_19',['roots_',['../a04835.html#a69d492bb6b4b2d48c132528e687a897b',1,'gtsam::BayesTree::roots_'],['../a04859.html#a6bf40ec963bf6cf9b2c28f532811a532',1,'gtsam::ClusterTree::roots_'],['../a04891.html#a335b2e576f841c10c6cf722214c5799e',1,'gtsam::EliminationTree::roots_'],['../a05355.html#ae48141547b3d9f8053e1ad14979e88dd',1,'gtsam::MultifrontalSolver::roots_']]],
+  ['rovref_20',['rovRef',['../a05687.html#aec4bd5816774907a156b96fc63eeba2c',1,'gtsam::gnss::DoubleDifferenceData']]],
+  ['rovtarget_21',['rovTarget',['../a05687.html#ae5bb49a80957220f853ad929e1544221',1,'gtsam::gnss::DoubleDifferenceData']]],
+  ['rowcounts_22',['rowCounts',['../a05359.html#a64cbdda9ee3b999e44f75e3178588729',1,'gtsam::MultifrontalSolver::PrecomputedData']]],
+  ['rowend_5f_23',['rowEnd_',['../a03679.html#a30f8297f16323a7471154f7eb9f2828a',1,'gtsam::VerticalBlockMatrix']]],
+  ['rowstart_5f_24',['rowStart_',['../a03679.html#ac17eb9545a5eb49245a4ed598c3cfbd1',1,'gtsam::VerticalBlockMatrix']]]
 ];

@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::Basis&lt; DERIVED &gt;::EvaluationFunctor Class Reference</title>
+<title>gtsam: gtsam::internal::AdditiveGroupTraits&lt; Class &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,54 +96,44 @@ $(function(){initNavTree('a03219.html','','a03216'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::Basis&lt; DERIVED &gt;::EvaluationFunctor Class Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::internal::AdditiveGroupTraits&lt; Class &gt; Struct Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename DERIVED&gt;<br />
-class gtsam::Basis&lt; DERIVED &gt;::EvaluationFunctor</div><p>An instance of an <a class="el" href="a03219.html" title="An instance of an EvaluationFunctor calculates f(x;p) at a given x, applied to Parameters p.">EvaluationFunctor</a> calculates f(x;p) at a given <span class="tt">x</span>, applied to Parameters <span class="tt">p</span>. </p>
-<p>This functor is used to evaluate a parameterized function at a given scalar value x. When given a specific N*1 vector of Parameters, returns the scalar value of the function at x, possibly with Jacobians wrpt the parameters. </p>
-</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::Basis&lt; DERIVED &gt;::EvaluationFunctor:</div>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class Class&gt;<br />
+struct gtsam::internal::AdditiveGroupTraits&lt; Class &gt;</div><p>A helper class that implements the traits interface for additive groups. </p>
+<p>Assumes existence of identity and three additive operators </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::internal::AdditiveGroupTraits&lt; Class &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a03219.png" usemap="#gtsam_3A_3ABasis_3C_20DERIVED_20_3E_3A_3AEvaluationFunctor_map" alt=""/>
-  <map id="gtsam_3A_3ABasis_3C_20DERIVED_20_3E_3A_3AEvaluationFunctor_map" name="gtsam_3A_3ABasis_3C_20DERIVED_20_3E_3A_3AEvaluationFunctor_map">
-<area href="a03223.html" alt="gtsam::Basis&lt; DERIVED &gt;::VectorEvaluationFunctor&lt; traits&lt; T &gt;::dimension &gt;" shape="rect" coords="0,56,449,80"/>
-<area href="a03227.html" title="Given a M*N Matrix of M-vectors at N polynomial points, an instance of VectorComponentFunctor compute..." alt="gtsam::Basis&lt; DERIVED &gt;::VectorComponentFunctor&lt; M &gt;" shape="rect" coords="459,56,908,80"/>
-<area href="a03223.html" title="VectorEvaluationFunctor at a given x, applied to ParameterMatrix&lt;M&gt;." alt="gtsam::Basis&lt; DERIVED &gt;::VectorEvaluationFunctor&lt; M &gt;" shape="rect" coords="918,56,1367,80"/>
-<area href="a03231.html" title="Manifold EvaluationFunctor at a given x, applied to ParameterMatrix&lt;M&gt;." alt="gtsam::Basis&lt; DERIVED &gt;::ManifoldEvaluationFunctor&lt; T &gt;" shape="rect" coords="0,112,449,136"/>
+  <img src="a03219.png" usemap="#gtsam_3A_3Ainternal_3A_3AAdditiveGroupTraits_3C_20Class_20_3E_map" alt=""/>
+  <map id="gtsam_3A_3Ainternal_3A_3AAdditiveGroupTraits_3C_20Class_20_3E_map" name="gtsam_3A_3Ainternal_3A_3AAdditiveGroupTraits_3C_20Class_20_3E_map">
+<area href="a03223.html" title="Both additive group traits and Testable." alt="gtsam::internal::AdditiveGroup&lt; Class &gt;" shape="rect" coords="0,56,265,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:af40cf6dc6a2d3826e0db9cce0a5fc37f" id="r_af40cf6dc6a2d3826e0db9cce0a5fc37f"><td class="memItemLeft"><a id="af40cf6dc6a2d3826e0db9cce0a5fc37f" name="af40cf6dc6a2d3826e0db9cce0a5fc37f"></a>
-&#160;</td><td class="memItemRight"><b>EvaluationFunctor</b> ()</td></tr>
-<tr class="memdesc:af40cf6dc6a2d3826e0db9cce0a5fc37f"><td class="mdescLeft">&#160;</td><td class="mdescRight">For serialization. <br /></td></tr>
-<tr class="memitem:a525a4e981be95de1a5b9fef7b34ec253" id="r_a525a4e981be95de1a5b9fef7b34ec253"><td class="memItemLeft"><a id="a525a4e981be95de1a5b9fef7b34ec253" name="a525a4e981be95de1a5b9fef7b34ec253"></a>
-&#160;</td><td class="memItemRight"><b>EvaluationFunctor</b> (size_t N, double x)</td></tr>
-<tr class="memdesc:a525a4e981be95de1a5b9fef7b34ec253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with interval [a,b]. <br /></td></tr>
-<tr class="memitem:a9be4f88fb81c5e28cfef8aea269e08e4" id="r_a9be4f88fb81c5e28cfef8aea269e08e4"><td class="memItemLeft"><a id="a9be4f88fb81c5e28cfef8aea269e08e4" name="a9be4f88fb81c5e28cfef8aea269e08e4"></a>
-&#160;</td><td class="memItemRight"><b>EvaluationFunctor</b> (size_t N, double x, double a, double b)</td></tr>
-<tr class="memdesc:a9be4f88fb81c5e28cfef8aea269e08e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with interval [a,b]. <br /></td></tr>
-<tr class="memitem:ad973cb88d6390c928ce903874ad2c2ef" id="r_ad973cb88d6390c928ce903874ad2c2ef"><td class="memItemLeft"><a id="ad973cb88d6390c928ce903874ad2c2ef" name="ad973cb88d6390c928ce903874ad2c2ef"></a>
-double&#160;</td><td class="memItemRight"><b>apply</b> (const typename DERIVED::Parameters &amp;p, <a class="el" href="a02995.html">OptionalJacobian</a>&lt;-1, -1 &gt; H=boost::none) const</td></tr>
-<tr class="memdesc:ad973cb88d6390c928ce903874ad2c2ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Regular 1D evaluation. <br /></td></tr>
-<tr class="memitem:af86622dfa0d4e4fc34258aed0e03910c" id="r_af86622dfa0d4e4fc34258aed0e03910c"><td class="memItemLeft"><a id="af86622dfa0d4e4fc34258aed0e03910c" name="af86622dfa0d4e4fc34258aed0e03910c"></a>
-double&#160;</td><td class="memItemRight"><b>operator()</b> (const typename DERIVED::Parameters &amp;p, <a class="el" href="a02995.html">OptionalJacobian</a>&lt;-1, -1 &gt; H=boost::none) const</td></tr>
-<tr class="memdesc:af86622dfa0d4e4fc34258aed0e03910c"><td class="mdescLeft">&#160;</td><td class="mdescRight">c++ sugar <br /></td></tr>
-<tr class="memitem:ac30c2160299692be57be8661e11ffe08" id="r_ac30c2160299692be57be8661e11ffe08"><td class="memItemLeft"><a id="ac30c2160299692be57be8661e11ffe08" name="ac30c2160299692be57be8661e11ffe08"></a>
-void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;&quot;) const</td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:acbce5cd8d89b43cb53ef3b12b1261d1e" id="r_acbce5cd8d89b43cb53ef3b12b1261d1e"><td class="memItemLeft"><a id="acbce5cd8d89b43cb53ef3b12b1261d1e" name="acbce5cd8d89b43cb53ef3b12b1261d1e"></a>
+static Class&#160;</td><td class="memItemRight"><b>Identity</b> ()</td></tr>
+<tr class="memitem:ad57665f5c25b1164cbed34dd8ef802f4" id="r_ad57665f5c25b1164cbed34dd8ef802f4"><td class="memItemLeft"><a id="ad57665f5c25b1164cbed34dd8ef802f4" name="ad57665f5c25b1164cbed34dd8ef802f4"></a>
+static Class&#160;</td><td class="memItemRight"><b>Compose</b> (const Class &amp;g, const Class &amp;h)</td></tr>
+<tr class="memitem:a639bb8ff6960d5186e1c6abd48630258" id="r_a639bb8ff6960d5186e1c6abd48630258"><td class="memItemLeft"><a id="a639bb8ff6960d5186e1c6abd48630258" name="a639bb8ff6960d5186e1c6abd48630258"></a>
+static Class&#160;</td><td class="memItemRight"><b>Between</b> (const Class &amp;g, const Class &amp;h)</td></tr>
+<tr class="memitem:a68b8bb5fb32186f1075db3e564e20d4f" id="r_a68b8bb5fb32186f1075db3e564e20d4f"><td class="memItemLeft"><a id="a68b8bb5fb32186f1075db3e564e20d4f" name="a68b8bb5fb32186f1075db3e564e20d4f"></a>
+static Class&#160;</td><td class="memItemRight"><b>Inverse</b> (const Class &amp;g)</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a4785180aa2c4038450d2f3cf4f60db5a" id="r_a4785180aa2c4038450d2f3cf4f60db5a"><td class="memItemLeft"><a id="a4785180aa2c4038450d2f3cf4f60db5a" name="a4785180aa2c4038450d2f3cf4f60db5a"></a>
-Weights&#160;</td><td class="memItemRight"><b>weights_</b></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a67b116774515bf80c4a4a399463e85b0" id="r_a67b116774515bf80c4a4a399463e85b0"><td class="memItemLeft"><a id="a67b116774515bf80c4a4a399463e85b0" name="a67b116774515bf80c4a4a399463e85b0"></a>
+typedef <a class="el" href="a03191.html">group_tag</a>&#160;</td><td class="memItemRight"><b>structure_category</b></td></tr>
+<tr class="memitem:ab23b0b2ce64d600dcfd2cf5f034d8026" id="r_ab23b0b2ce64d600dcfd2cf5f034d8026"><td class="memItemLeft"><a id="ab23b0b2ce64d600dcfd2cf5f034d8026" name="ab23b0b2ce64d600dcfd2cf5f034d8026"></a>
+typedef <a class="el" href="a03199.html">additive_group_tag</a>&#160;</td><td class="memItemRight"><b>group_flavor</b></td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/basis/<a class="el" href="a00152_source.html">Basis.h</a></li>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/<a class="el" href="a00122_source.html">Group.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -158,7 +148,7 @@ Weights&#160;</td><td class="memItemRight"><b>weights_</b></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a03215.html">Basis</a></li><li class="navelem"><a href="a03219.html">EvaluationFunctor</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><b>internal</b></li><li class="navelem"><a href="a03219.html">AdditiveGroupTraits</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

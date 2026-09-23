@@ -1,9 +1,11 @@
 var a01163 =
 [
-    [ "gtsam::FunctorizedFactor&lt; R, T &gt;", "a04887.html", "a04887" ],
-    [ "gtsam::traits&lt; FunctorizedFactor&lt; R, T &gt; &gt;", "a04891.html", null ],
-    [ "gtsam::FunctorizedFactor2&lt; R, T1, T2 &gt;", "a04895.html", "a04895" ],
-    [ "gtsam::traits&lt; FunctorizedFactor2&lt; R, T1, T2 &gt; &gt;", "a04899.html", null ],
-    [ "gtsam::MakeFunctorizedFactor", "a01968.html#a9d2a0b16c9f78f20fc78fa39c7426242", null ],
-    [ "gtsam::MakeFunctorizedFactor2", "a01968.html#a313f0e290f370cff0b7e25024d1b8c6d", null ]
+    [ "gtsam::NavState", "a05927.html", "a05927" ],
+    [ "gtsam::NavState::AutonomousFlow", "a05931.html", null ],
+    [ "gtsam::traits&lt; NavState &gt;", "a05935.html", null ],
+    [ "gtsam::traits&lt; const NavState &gt;", "a05939.html", null ],
+    [ "gtsam::Bearing&lt; NavState, Point3 &gt;", "a05943.html", null ],
+    [ "gtsam::Range&lt; NavState, Point3 &gt;", "a05947.html", null ],
+    [ "gtsam::internal::navStateComponentWiseLocalCoordinates", "a01163.html#a655a0c6f126fdc7d57c3be11cfc6804f", null ],
+    [ "gtsam::internal::navStateComponentWiseRetract", "a01163.html#ab157112468ca0ce2bd0b42f4a0bbaf3b", null ]
 ];

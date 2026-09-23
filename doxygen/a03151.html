@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::internal::VectorSpaceImpl&lt; Class, N &gt; Struct Template Reference</title>
+<title>gtsam: gtsam::internal::FastDefaultVectorAllocator&lt; T &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,44 +96,29 @@ $(function(){initNavTree('a03151.html','','a03148'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::internal::VectorSpaceImpl&lt; Class, N &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::internal::FastDefaultVectorAllocator&lt; T &gt; Struct Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class Class, int N&gt;<br />
-struct gtsam::internal::VectorSpaceImpl&lt; Class, N &gt;</div><p><a class="el" href="a03163.html" title="A helper that implements the traits interface for classes that define vector spaces To use this for y...">VectorSpaceTraits</a> Implementation for Fixed sizes. </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
+struct gtsam::internal::FastDefaultVectorAllocator&lt; T &gt;</div><p>Default allocator for vector types (we never use boost pool for vectors). </p>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Manifold</h2></td></tr>
-<tr class="memitem:a3af4e05365d0db01453a76cb2479c446" id="r_a3af4e05365d0db01453a76cb2479c446"><td class="memItemLeft"><a id="a3af4e05365d0db01453a76cb2479c446" name="a3af4e05365d0db01453a76cb2479c446"></a>
-typedef Eigen::Matrix&lt; double, N, 1 &gt;&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
-<tr class="memitem:af75812a841edef85cabc4e06b65a1121" id="r_af75812a841edef85cabc4e06b65a1121"><td class="memItemLeft"><a id="af75812a841edef85cabc4e06b65a1121" name="af75812a841edef85cabc4e06b65a1121"></a>
-typedef <a class="el" href="a02995.html">OptionalJacobian</a>&lt; N, N &gt;&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
-<tr class="memitem:ab2461a41d72cb29e2fd6ffd05be40b42" id="r_ab2461a41d72cb29e2fd6ffd05be40b42"><td class="memItemLeft"><a id="ab2461a41d72cb29e2fd6ffd05be40b42" name="ab2461a41d72cb29e2fd6ffd05be40b42"></a>
-typedef Eigen::Matrix&lt; double, N, N &gt;&#160;</td><td class="memItemRight"><b>Jacobian</b></td></tr>
-<tr class="memitem:a453c30a66ad1b51aa4f9a28c7b030d85" id="r_a453c30a66ad1b51aa4f9a28c7b030d85"><td class="memItemLeft"><a id="a453c30a66ad1b51aa4f9a28c7b030d85" name="a453c30a66ad1b51aa4f9a28c7b030d85"></a>
-static int&#160;</td><td class="memItemRight"><b>GetDimension</b> (const Class &amp;)</td></tr>
-<tr class="memitem:a941df3941c2985e3cc6e353d7d5697c4" id="r_a941df3941c2985e3cc6e353d7d5697c4"><td class="memItemLeft"><a id="a941df3941c2985e3cc6e353d7d5697c4" name="a941df3941c2985e3cc6e353d7d5697c4"></a>
-static TangentVector&#160;</td><td class="memItemRight"><b>Local</b> (const Class &amp;origin, const Class &amp;other, ChartJacobian H1=boost::none, ChartJacobian H2=boost::none)</td></tr>
-<tr class="memitem:a853fc3666d40680ef13810ff29654af6" id="r_a853fc3666d40680ef13810ff29654af6"><td class="memItemLeft"><a id="a853fc3666d40680ef13810ff29654af6" name="a853fc3666d40680ef13810ff29654af6"></a>
-static Class&#160;</td><td class="memItemRight"><b>Retract</b> (const Class &amp;origin, const TangentVector &amp;v, ChartJacobian H1=boost::none, ChartJacobian H2=boost::none)</td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a0b9e68a4b4455c17a9286520695b8434" id="r_a0b9e68a4b4455c17a9286520695b8434"><td class="memItemLeft"><a id="a0b9e68a4b4455c17a9286520695b8434" name="a0b9e68a4b4455c17a9286520695b8434"></a>
+static const bool&#160;</td><td class="memItemRight"><b>isBoost</b> = false</td></tr>
+<tr class="memitem:a5801a7774439d595cc67f9cf296e19c6" id="r_a5801a7774439d595cc67f9cf296e19c6"><td class="memItemLeft"><a id="a5801a7774439d595cc67f9cf296e19c6" name="a5801a7774439d595cc67f9cf296e19c6"></a>
+static const bool&#160;</td><td class="memItemRight"><b>isTBB</b> = false</td></tr>
+<tr class="memitem:af218e6b654fc925e4863ebbd96550f97" id="r_af218e6b654fc925e4863ebbd96550f97"><td class="memItemLeft"><a id="af218e6b654fc925e4863ebbd96550f97" name="af218e6b654fc925e4863ebbd96550f97"></a>
+static const bool&#160;</td><td class="memItemRight"><b>isSTL</b> = true</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr id="pub-static-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Lie Group</div></td></tr>
-<tr class="memitem:ab96190290044c64bc101f4a7a384af87" id="r_ab96190290044c64bc101f4a7a384af87"><td class="memItemLeft"><a id="ab96190290044c64bc101f4a7a384af87" name="ab96190290044c64bc101f4a7a384af87"></a>
-static TangentVector&#160;</td><td class="memItemRight"><b>Logmap</b> (const Class &amp;m, ChartJacobian Hm=boost::none)</td></tr>
-<tr class="memitem:a04d1621fb13640fd81bf235d18660b84" id="r_a04d1621fb13640fd81bf235d18660b84"><td class="memItemLeft"><a id="a04d1621fb13640fd81bf235d18660b84" name="a04d1621fb13640fd81bf235d18660b84"></a>
-static Class&#160;</td><td class="memItemRight"><b>Expmap</b> (const TangentVector &amp;v, ChartJacobian Hv=boost::none)</td></tr>
-<tr class="memitem:af593ab82fde05514b666e174a2435964" id="r_af593ab82fde05514b666e174a2435964"><td class="memItemLeft"><a id="af593ab82fde05514b666e174a2435964" name="af593ab82fde05514b666e174a2435964"></a>
-static Class&#160;</td><td class="memItemRight"><b>Compose</b> (const Class &amp;v1, const Class &amp;v2, ChartJacobian H1=boost::none, ChartJacobian H2=boost::none)</td></tr>
-<tr class="memitem:abc406a29d2318d71a4f0e958f821ae8b" id="r_abc406a29d2318d71a4f0e958f821ae8b"><td class="memItemLeft"><a id="abc406a29d2318d71a4f0e958f821ae8b" name="abc406a29d2318d71a4f0e958f821ae8b"></a>
-static Class&#160;</td><td class="memItemRight"><b>Between</b> (const Class &amp;v1, const Class &amp;v2, ChartJacobian H1=boost::none, ChartJacobian H2=boost::none)</td></tr>
-<tr class="memitem:af83be522c5faac805c95c3c338f747ae" id="r_af83be522c5faac805c95c3c338f747ae"><td class="memItemLeft"><a id="af83be522c5faac805c95c3c338f747ae" name="af83be522c5faac805c95c3c338f747ae"></a>
-static Class&#160;</td><td class="memItemRight"><b>Inverse</b> (const Class &amp;v, ChartJacobian H=boost::none)</td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:aafe99557b7da5ca4c9a79ff14c606a6b" id="r_aafe99557b7da5ca4c9a79ff14c606a6b"><td class="memItemLeft"><a id="aafe99557b7da5ca4c9a79ff14c606a6b" name="aafe99557b7da5ca4c9a79ff14c606a6b"></a>
+typedef std::allocator&lt; T &gt;&#160;</td><td class="memItemRight"><b>type</b></td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/base/<a class="el" href="a00068_source.html">VectorSpace.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/<a class="el" href="a00008_source.html">FastDefaultAllocator.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -148,7 +133,7 @@ static Class&#160;</td><td class="memItemRight"><b>Inverse</b> (const Class &amp
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><b>internal</b></li><li class="navelem"><a href="a03151.html">VectorSpaceImpl</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><b>internal</b></li><li class="navelem"><a href="a03151.html">FastDefaultVectorAllocator</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

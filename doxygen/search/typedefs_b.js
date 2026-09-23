@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['names_0',['Names',['../a03399.html#aae698929b94d5072aa4c81d6f6e1d13f',1,'gtsam::DiscreteFactor::Names'],['../a03447.html#a2f4c4cec67e87d392581e639e12375a2',1,'gtsam::DiscreteValues::Names']]],
-  ['node_1',['Node',['../a04087.html#a560ef1c155691cd0ec623efd09c73565',1,'gtsam::BayesTree']]],
-  ['nodeptr_2',['NodePtr',['../a03343.html#a36a98f61b0b7df042427b132b313d7fd',1,'gtsam::DecisionTree']]],
-  ['nodes_3',['Nodes',['../a04087.html#ac8f341f38c2c8a6508721994f447a458',1,'gtsam::BayesTree']]]
+  ['labelc_0',['LabelC',['../a03835.html#adcdd80ab1af415d212397a2666320e35',1,'gtsam::DecisionTree']]],
+  ['liealgebra_1',['LieAlgebra',['../a04231.html#abfde617e79c3414c1f97869d000ba668',1,'gtsam::ExtendedPose3::LieAlgebra'],['../a04379.html#a28ba36bab7e39c80a248cef0000cdcc2',1,'gtsam::Pose2::LieAlgebra'],['../a04551.html#a518c51b6333c606de54587cc20c79134',1,'gtsam::SO::LieAlgebra']]],
+  ['localcoordinateswithjacobians_2',['LocalCoordinatesWithJacobians',['../a00143.html#af6c74f6902414350b5daa5e17aef7dc1',1,'gtsam::internal']]],
+  ['logmapwithjacobian_3',['LogmapWithJacobian',['../a00170.html#abdee0d26543f163f9bab23d65382cb8f',1,'gtsam::internal']]]
 ];

@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::ISAM2GaussNewtonParams Struct Reference</title>
+<title>gtsam: gtsam::traits&lt; Key &gt; Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,66 +96,19 @@ $(function(){initNavTree('a04959.html','','a04956'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::ISAM2GaussNewtonParams Struct Reference<div class="ingroups"><a class="el" href="a01966.html">ISAM2</a></div></div></div>
+  <div class="headertitle"><div class="title">gtsam::traits&lt; Key &gt; Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Parameters for <a class="el" href="a04947.html" title="Implementation of the full ISAM2 algorithm for incremental nonlinear optimization.">ISAM2</a> using Gauss-Newton optimization. </p>
-<p>Either this class or <a class="el" href="a04963.html" title="Parameters for ISAM2 using Dogleg optimization.">ISAM2DoglegParams</a> should be specified as the optimizationParams in <a class="el" href="a04967.html">ISAM2Params</a>, which should in turn be passed to ISAM2(const ISAM2Params&amp;). </p>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:ab1b9012a5a0d91351d13174c5208dc7e" id="r_ab1b9012a5a0d91351d13174c5208dc7e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab1b9012a5a0d91351d13174c5208dc7e">ISAM2GaussNewtonParams</a> (double _wildfireThreshold=0.001)</td></tr>
-<tr class="memdesc:ab1b9012a5a0d91351d13174c5208dc7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify parameters as constructor arguments.  <br /></td></tr>
-<tr class="memitem:ad8eb43c1fc85e741bc5e3a2ef3e0b92c" id="r_ad8eb43c1fc85e741bc5e3a2ef3e0b92c"><td class="memItemLeft"><a id="ad8eb43c1fc85e741bc5e3a2ef3e0b92c" name="ad8eb43c1fc85e741bc5e3a2ef3e0b92c"></a>
-void&#160;</td><td class="memItemRight"><b>print</b> (const std::string str=&quot;&quot;) const</td></tr>
-<tr class="memitem:a7d2dfdab4805fd154093d71811b78ce6" id="r_a7d2dfdab4805fd154093d71811b78ce6"><td class="memItemLeft"><a id="a7d2dfdab4805fd154093d71811b78ce6" name="a7d2dfdab4805fd154093d71811b78ce6"></a>
-double&#160;</td><td class="memItemRight"><b>getWildfireThreshold</b> () const</td></tr>
-<tr class="memitem:aa1638318373877fbcffed9d016de1cbb" id="r_aa1638318373877fbcffed9d016de1cbb"><td class="memItemLeft"><a id="aa1638318373877fbcffed9d016de1cbb" name="aa1638318373877fbcffed9d016de1cbb"></a>
-void&#160;</td><td class="memItemRight"><b>setWildfireThreshold</b> (double <a class="el" href="#a2d9c7345a550e3719689a75a4e203f3b">wildfireThreshold</a>)</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a2d9c7345a550e3719689a75a4e203f3b" id="r_a2d9c7345a550e3719689a75a4e203f3b"><td class="memItemLeft"><a id="a2d9c7345a550e3719689a75a4e203f3b" name="a2d9c7345a550e3719689a75a4e203f3b"></a>
-double&#160;</td><td class="memItemRight"><b>wildfireThreshold</b></td></tr>
-<tr class="memdesc:a2d9c7345a550e3719689a75a4e203f3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Continue updating the linear delta only when changes are above this threshold (default: 0.001). <br /></td></tr>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ad305af726d09ad14a5384eca880f70b9" id="r_ad305af726d09ad14a5384eca880f70b9"><td class="memItemLeft"><a id="ad305af726d09ad14a5384eca880f70b9" name="ad305af726d09ad14a5384eca880f70b9"></a>
+static void&#160;</td><td class="memItemRight"><b>Print</b> (const <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &amp;val, const std::string &amp;str=&quot;&quot;)</td></tr>
+<tr class="memitem:a54d57b088d5ba3dc2e8a2ab004d66c4c" id="r_a54d57b088d5ba3dc2e8a2ab004d66c4c"><td class="memItemLeft"><a id="a54d57b088d5ba3dc2e8a2ab004d66c4c" name="a54d57b088d5ba3dc2e8a2ab004d66c4c"></a>
+static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &amp;val1, const <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &amp;val2, double tol=1e-8)</td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab1b9012a5a0d91351d13174c5208dc7e" name="ab1b9012a5a0d91351d13174c5208dc7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1b9012a5a0d91351d13174c5208dc7e">&#9670;&#160;</a></span>ISAM2GaussNewtonParams()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">gtsam::ISAM2GaussNewtonParams::ISAM2GaussNewtonParams </td>
-          <td>(</td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>_wildfireThreshold</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.001</span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Specify parameters as constructor arguments. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">_wildfireThreshold</td><td>see <a class="el" href="a04959.html" title="Parameters for ISAM2 using Gauss-Newton optimization.">ISAM2GaussNewtonParams</a> public variables, <a class="el" href="#a2d9c7345a550e3719689a75a4e203f3b" title="Continue updating the linear delta only when changes are above this threshold (default: 0....">ISAM2GaussNewtonParams::wildfireThreshold</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/<a class="el" href="a01094_source.html">ISAM2Params.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/inference/<a class="el" href="a00815_source.html">Key.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -170,7 +123,7 @@ double&#160;</td><td class="memItemRight"><b>wildfireThreshold</b></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04959.html">ISAM2GaussNewtonParams</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04959.html">traits&lt; Key &gt;</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

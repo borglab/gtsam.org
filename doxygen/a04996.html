@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,12 +96,48 @@ $(function(){initNavTree('a04999.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; LinearContainerFactor &gt; Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::VariableIndex Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a04999.html">gtsam::traits&lt; LinearContainerFactor &gt;</a>, including all inherited members.</p>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="a04999.html">gtsam::VariableIndex</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="a04999.html#a673b6178a5143115d771eed2ac795904">at</a>(Key variable) const</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04999.html#af7759dbdbc1255ec6db4f4e0be50049d">augment</a>(const FG &amp;factors, const FactorIndices *newFactorIndices=nullptr)</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04999.html#aed36d1b3e558cf5df247d1079995d5c7">augment</a>(const FG &amp;factor, const FactorIndices &amp;newFactorIndices)</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04999.html#abc7db49d64ddfd7a946bd4d349cb785f">augmentExistingFactor</a>(const FactorIndex factorIndex, const KeySet &amp;newKeys)</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04999.html#a50a87dee69788ba684075cdee8d09719">begin</a>() const</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>const_iterator</b> typedef (defined in <a class="el" href="a04999.html">gtsam::VariableIndex</a>)</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04999.html#a7dba7c396a250716ed9ede2b1ac7e384">empty</a>(Key variable) const</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04999.html#ad09ff18e34330ec023386a8d46dc6caf">end</a>() const</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04999.html#a792ee68c3840fb9cc8019841c7e9e677">equals</a>(const VariableIndex &amp;other, double tol=0.0) const</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Factor_const_iterator</b> typedef (defined in <a class="el" href="a04999.html">gtsam::VariableIndex</a>)</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Factor_iterator</b> typedef (defined in <a class="el" href="a04999.html">gtsam::VariableIndex</a>)</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>factorsBegin</b>(Key variable) (defined in <a class="el" href="a04999.html">gtsam::VariableIndex</a>)</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>factorsBegin</b>(Key variable) const (defined in <a class="el" href="a04999.html">gtsam::VariableIndex</a>)</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>factorsEnd</b>(Key variable) (defined in <a class="el" href="a04999.html">gtsam::VariableIndex</a>)</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>factorsEnd</b>(Key variable) const (defined in <a class="el" href="a04999.html">gtsam::VariableIndex</a>)</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04999.html#a56ed25e46e57f984ff70554371bc6bf9">find</a>(Key key) const</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>index_</b> (defined in <a class="el" href="a04999.html">gtsam::VariableIndex</a>)</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04999.html#a11479e896e15a83a49e9888c8a9f8ae3">internalAt</a>(Key variable) const</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04999.html#a820c6f5b0f83a1303d35dac9fd33a0a9">internalAt</a>(Key variable)</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>iterator</b> typedef (defined in <a class="el" href="a04999.html">gtsam::VariableIndex</a>)</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>KeyMap</b> typedef (defined in <a class="el" href="a04999.html">gtsam::VariableIndex</a>)</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04999.html#a2af38862502064df2169a7d5b623a8c3">nEntries</a>() const</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>nEntries_</b> (defined in <a class="el" href="a04999.html">gtsam::VariableIndex</a>)</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04999.html#aff88eee65d8bcf51062cd99a1ae90977">nFactors</a>() const</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>nFactors_</b> (defined in <a class="el" href="a04999.html">gtsam::VariableIndex</a>)</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04999.html#a62c0610e8960b3d7c077a90e2acf8a00">operator[]</a>(Key variable) const</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04999.html#a191a7a81a1bb41196315a5889cb7e820">outputMetisFormat</a>(std::ostream &amp;os) const</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04999.html#a5a0b5d62298677a730c179c8837f0834">print</a>(const std::string &amp;str=&quot;VariableIndex: &quot;, const KeyFormatter &amp;keyFormatter=DefaultKeyFormatter) const</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04999.html#a4094920c9d0ce534ff3d8a953730f09b">remove</a>(ITERATOR firstFactor, ITERATOR lastFactor, const FG &amp;factors)</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04999.html#adba150211d074457621ace80632a0267">removeUnusedVariables</a>(ITERATOR firstKey, ITERATOR lastKey)</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>shared_ptr</b> typedef (defined in <a class="el" href="a04999.html">gtsam::VariableIndex</a>)</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04999.html#a7e83a7dee6daaa33da9d69b34e5426f4">size</a>() const</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>value_type</b> typedef (defined in <a class="el" href="a04999.html">gtsam::VariableIndex</a>)</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04999.html#af85147163ce24cb4db4505471440402c">VariableIndex</a>()</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04999.html#a79bebdf9292c00135d5605fe38319142">VariableIndex</a>(const FG &amp;factorGraph)</td><td class="entry"><a class="el" href="a04999.html">gtsam::VariableIndex</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">explicit</span></td></tr>
+</table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->

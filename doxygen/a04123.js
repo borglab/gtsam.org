@@ -1,17 +1,15 @@
 var a04123 =
 [
-    [ "digraphPreamble", "a04123.html#a876d727f31eb655d720aa1e87e32ede7", null ],
-    [ "drawVariable", "a04123.html#a0d63bade68d3f7d15a1596c228e145f6", null ],
-    [ "graphPreamble", "a04123.html#ac690a3b9f1d210e2f36aa6de55503d2a", null ],
-    [ "processFactor", "a04123.html#a1c53c6ec38ca0a2549182f74ba935b3b", null ],
-    [ "variablePos", "a04123.html#aa805566fe2c6879c6e36fbc75de30b35", null ],
-    [ "binaryEdges", "a04123.html#aaae41b37832d3b1d53b56ff11901567e", null ],
-    [ "boxes", "a04123.html#ad250d3e6ff7a1de61c3272c9f292d540", null ],
-    [ "connectKeysToFactor", "a04123.html#a72f901153a3eede8769c898ac1c5a64b", null ],
-    [ "factorPositions", "a04123.html#ad5f0f317b4e78aa2c3364b49cdc5408a", null ],
-    [ "figureHeightInches", "a04123.html#ad918cbf35b3baf520d91033b61523565", null ],
-    [ "figureWidthInches", "a04123.html#a35970a94248630c844b1d02ea6e77e35", null ],
-    [ "plotFactorPoints", "a04123.html#a39eaabf9c4cffe59766b4b8d03652f62", null ],
-    [ "positionHints", "a04123.html#ac273a9f2ab53aacd7f270ea862d58164", null ],
-    [ "variablePositions", "a04123.html#a8f926f761e5ce55089228f6496762b2d", null ]
+    [ "Cal3f", "a04123.html#a85df2cc088640f246afe2e2ad0b72032", null ],
+    [ "Cal3f", "a04123.html#a41139ef4639e6098da2c49b24cc8acfa", null ],
+    [ "calibrate", "a04123.html#ad093cac4a6f473873d534922630bb025", null ],
+    [ "dim", "a04123.html#a0d6fc830e515929b3f977e126382c0ea", null ],
+    [ "equals", "a04123.html#a92417bf8a16bbad43b2ff1ef7ebc5ab1", null ],
+    [ "f", "a04123.html#a0533e508a2f491a7a3504104366f55e5", null ],
+    [ "localCoordinates", "a04123.html#abeeb7e87534f8efc1286c82dfde96594", null ],
+    [ "print", "a04123.html#a8225c3f84162acc792fb2539d24bb47e", null ],
+    [ "retract", "a04123.html#a86702634a08350233853020a466f9609", null ],
+    [ "uncalibrate", "a04123.html#a95db108852effeb8e1ea0f4d4611f15b", null ],
+    [ "vector", "a04123.html#a5cc539ef971356a46c3f0c684cf62d7b", null ],
+    [ "operator<<", "a04123.html#a566af58692fb4f3432818e7dd962ebff", null ]
 ];

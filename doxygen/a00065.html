@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/base/OptionalJacobian.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/ProductLieGroup.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,36 +96,52 @@ $(function(){initNavTree('a00065.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">OptionalJacobian.h File Reference</div></div>
+  <div class="headertitle"><div class="title">ProductLieGroup.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Special class for optional Jacobian arguments.  
+<p>Group product of two Lie Groups.  
 <a href="#details">More...</a></p>
 
 <p><a href="a00065_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3AOptionalJacobian_3C_20Rows_2C_20Cols_20_3E" id="r_gtsam_3A_3AOptionalJacobian_3C_20Rows_2C_20Cols_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a02995.html">gtsam::OptionalJacobian&lt; Rows, Cols &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a02995.html" title="OptionalJacobian is an Eigen::Ref like class that can take be constructed using either a fixed size o...">OptionalJacobian</a> is an Eigen::Ref like class that can take be constructed using either a fixed size or dynamic Eigen matrix.  <a href="a02995.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3AOptionalJacobian_3C_20Eigen_3A_3ADynamic_2C_20Eigen_3A_3ADynamic_20_3E" id="r_gtsam_3A_3AOptionalJacobian_3C_20Eigen_3A_3ADynamic_2C_20Eigen_3A_3ADynamic_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a02999.html">gtsam::OptionalJacobian&lt; Eigen::Dynamic, Eigen::Dynamic &gt;</a></td></tr>
-<tr class="memitem:gtsam_3A_3AMakeJacobian_3C_20T_2C_20A_20_3E" id="r_gtsam_3A_3AMakeJacobian_3C_20T_2C_20A_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03003.html">gtsam::MakeJacobian&lt; T, A &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">: meta-function to generate Jacobian  <a href="a03003.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3AMakeOptionalJacobian_3C_20T_2C_20A_20_3E" id="r_gtsam_3A_3AMakeOptionalJacobian_3C_20T_2C_20A_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03007.html">gtsam::MakeOptionalJacobian&lt; T, A &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">: meta-function to generate JacobianTA optional reference Used mainly by Expressions  <a href="a03007.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Ainternal_3A_3AProductLieGroupIsVector_3C_20T_20_3E" id="r_gtsam_3A_3Ainternal_3A_3AProductLieGroupIsVector_3C_20T_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03387.html">gtsam::internal::ProductLieGroupIsVector&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detects vector-space Lie groups (Eigen column vectors, group law = addition).  <a href="a03387.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Ainternal_3A_3AProductLieGroupIsVector_3C_20Eigen_3A_3AMatrix_3C_20double_2C_20N_2C_201_20_3E_20_3E" id="r_gtsam_3A_3Ainternal_3A_3AProductLieGroupIsVector_3C_20Eigen_3A_3AMatrix_3C_20double_2C_20N_2C_201_20_3E_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03391.html">gtsam::internal::ProductLieGroupIsVector&lt; Eigen::Matrix&lt; double, N, 1 &gt; &gt;</a></td></tr>
+<tr class="memitem:gtsam_3A_3AProductLieGroup_3C_20G_2C_20H_20_3E" id="r_gtsam_3A_3AProductLieGroup_3C_20G_2C_20H_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a03395.html">gtsam::ProductLieGroup&lt; G, H &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Direct product Lie group G × H.  <a href="a03395.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3AProductLieGroup_3C_20G_2C_20H_20_3E_3A_3AChartAtOrigin" id="r_gtsam_3A_3AProductLieGroup_3C_20G_2C_20H_20_3E_3A_3AChartAtOrigin"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03399.html">gtsam::ProductLieGroup&lt; G, H &gt;::ChartAtOrigin</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Component-wise chart at the product identity.  <a href="a03399.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3APowerLieGroupJacobianStorage_3C_20T_2C_20N_20_3E" id="r_gtsam_3A_3APowerLieGroupJacobianStorage_3C_20T_2C_20N_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03403.html">gtsam::PowerLieGroupJacobianStorage&lt; T, N &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared implementation for fixed-size and dynamic-count <a class="el" href="a03419.html" title="Template to construct the N-fold power of a Lie group Represents the group G^N = G x G x ....">PowerLieGroup</a>.  <a href="a03403.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3APowerLieGroupJacobianStorage_3C_20T_2C_20Eigen_3A_3ADynamic_20_3E" id="r_gtsam_3A_3APowerLieGroupJacobianStorage_3C_20T_2C_20Eigen_3A_3ADynamic_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03407.html">gtsam::PowerLieGroupJacobianStorage&lt; T, Eigen::Dynamic &gt;</a></td></tr>
+<tr class="memitem:gtsam_3A_3APowerLieGroupBase_3C_20G_2C_20N_2C_20Derived_20_3E" id="r_gtsam_3A_3APowerLieGroupBase_3C_20G_2C_20N_2C_20Derived_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a03411.html">gtsam::PowerLieGroupBase&lt; G, N, Derived &gt;</a></td></tr>
+<tr class="memitem:gtsam_3A_3APowerLieGroupBase_3C_20G_2C_20N_2C_20Derived_20_3E_3A_3AChartAtOrigin" id="r_gtsam_3A_3APowerLieGroupBase_3C_20G_2C_20N_2C_20Derived_20_3E_3A_3AChartAtOrigin"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03415.html">gtsam::PowerLieGroupBase&lt; G, N, Derived &gt;::ChartAtOrigin</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Component-wise chart at the identity.  <a href="a03415.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3APowerLieGroup_3C_20G_2C_20N_20_3E" id="r_gtsam_3A_3APowerLieGroup_3C_20G_2C_20N_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a03419.html">gtsam::PowerLieGroup&lt; G, N &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template to construct the N-fold power of a Lie group Represents the group G^N = G x G x ... x G (N times) Assumes Lie group structure for fixed-size G and fixed N &gt;= 1.  <a href="a03419.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3APowerLieGroup_3C_20G_2C_20Eigen_3A_3ADynamic_20_3E" id="r_gtsam_3A_3APowerLieGroup_3C_20G_2C_20Eigen_3A_3ADynamic_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a03423.html">gtsam::PowerLieGroup&lt; G, Eigen::Dynamic &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dynamic-count specialization of <a class="el" href="a03419.html" title="Template to construct the N-fold power of a Lie group Represents the group G^N = G x G x ....">PowerLieGroup</a> Represents G^N for runtime-sized N while keeping G fixed-size.  <a href="a03423.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Atraits_3C_20ProductLieGroup_3C_20G_2C_20H_20_3E_20_3E" id="r_gtsam_3A_3Atraits_3C_20ProductLieGroup_3C_20G_2C_20H_20_3E_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03427.html">gtsam::traits&lt; ProductLieGroup&lt; G, H &gt; &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traits specialization for <a class="el" href="a03395.html" title="Direct product Lie group G × H.">ProductLieGroup</a>.  <a href="a03427.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Atraits_3C_20PowerLieGroup_3C_20G_2C_20N_20_3E_20_3E" id="r_gtsam_3A_3Atraits_3C_20PowerLieGroup_3C_20G_2C_20N_20_3E_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03431.html">gtsam::traits&lt; PowerLieGroup&lt; G, N &gt; &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traits specialization for <a class="el" href="a03419.html" title="Template to construct the N-fold power of a Lie group Represents the group G^N = G x G x ....">PowerLieGroup</a>.  <a href="a03431.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Special class for optional Jacobian arguments. </p>
+<div class="textblock"><p>Group product of two Lie Groups. </p>
+<dl class="section date"><dt>Date</dt><dd>May, 2015 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Frank Dellaert </dd>
 <dd>
-Natesh Srinivasan </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>Nov 28, 2014 </dd></dl>
+Rohan Bansal </dd>
+<dd>
+Alessandro Fornasier </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -139,7 +155,7 @@ Natesh Srinivasan </dd></dl>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>base</b></li><li class="navelem"><a href="a00065.html">OptionalJacobian.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>base</b></li><li class="navelem"><a href="a00065.html">ProductLieGroup.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

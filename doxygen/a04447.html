@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::noiseModel::mEstimator::Tukey Class Reference</title>
+<title>gtsam: gtsam::traits&lt; const Rot2 &gt; Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,224 +96,135 @@ $(function(){initNavTree('a04447.html','','a04444'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::noiseModel::mEstimator::Tukey Class Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::traits&lt; const Rot2 &gt; Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implementation of the "Tukey" robust error model (Zhang97ivc). </p>
-<p>This model has a scalar parameter "c".</p>
-<ul>
-<li>Loss \rho(x) = c² (1 - (1-x²/c²)³)/6 if |x|&lt;c, c²/6 otherwise</li>
-<li>Derivative \phi(x) = x(1-x²/c²)² if |x|&lt;c, 0 otherwise</li>
-<li>Weight w(x) = \phi(x)/x = (1-x²/c²)² if |x|&lt;c, 0 otherwise </li>
-</ul>
-</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::noiseModel::mEstimator::Tukey:</div>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::traits&lt; const Rot2 &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a04447.png" usemap="#gtsam_3A_3AnoiseModel_3A_3AmEstimator_3A_3ATukey_map" alt=""/>
-  <map id="gtsam_3A_3AnoiseModel_3A_3AmEstimator_3A_3ATukey_map" name="gtsam_3A_3AnoiseModel_3A_3AmEstimator_3A_3ATukey_map">
-<area href="a04427.html" title="Pure virtual class for all robust error function classes." alt="gtsam::noiseModel::mEstimator::Base" shape="rect" coords="0,0,221,24"/>
+  <img src="a04447.png" usemap="#gtsam_3A_3Atraits_3C_20const_20Rot2_20_3E_map" alt=""/>
+  <map id="gtsam_3A_3Atraits_3C_20const_20Rot2_20_3E_map" name="gtsam_3A_3Atraits_3C_20const_20Rot2_20_3E_map">
+<area href="a04443.html" alt="gtsam::traits&lt; Rot2 &gt;" shape="rect" coords="176,280,518,304"/>
+<area href="a03343.html" alt="gtsam::internal::MatrixLieGroup&lt; Rot2, 2 &gt;" shape="rect" coords="176,224,518,248"/>
+<area href="a03339.html" alt="gtsam::internal::MatrixLieGroupTraits&lt; Rot2, N &gt;" shape="rect" coords="0,168,342,192"/>
+<area href="a03535.html" alt="gtsam::Testable&lt; Rot2 &gt;" shape="rect" coords="352,168,694,192"/>
+<area href="a03275.html" alt="gtsam::internal::LieGroupTraits&lt; Rot2 &gt;" shape="rect" coords="0,112,342,136"/>
+<area href="a03303.html" alt="gtsam::internal::ManifoldTraits&lt; Rot2 &gt;" shape="rect" coords="0,56,342,80"/>
+<area href="a03299.html" alt="gtsam::internal::GetDimensionImpl&lt; Rot2, Rot2::dimension &gt;" shape="rect" coords="0,0,342,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:af98771cfb1fa139fa10a99e9f7d5c050" id="r_af98771cfb1fa139fa10a99e9f7d5c050"><td class="memItemLeft"><a id="af98771cfb1fa139fa10a99e9f7d5c050" name="af98771cfb1fa139fa10a99e9f7d5c050"></a>
-&#160;</td><td class="memItemRight"><b>Tukey</b> (double c=4.6851, const <a class="el" href="a04427.html#ac2f379f230a3a8f2624e6f39172cf782">ReweightScheme</a> <a class="el" href="a04427.html#a7b99210b97477669026faafe4c1c5f86">reweight</a>=Block)</td></tr>
-<tr class="memitem:aa7b166f4788a6e620165c740924e4cea" id="r_aa7b166f4788a6e620165c740924e4cea"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#aa7b166f4788a6e620165c740924e4cea">weight</a> (double distance) const override</td></tr>
-<tr class="memdesc:aa7b166f4788a6e620165c740924e4cea"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is responsible for returning the weight function for a given amount of error.  <br /></td></tr>
-<tr class="memitem:a33959b21c0c5d3b06d0e908e65afd071" id="r_a33959b21c0c5d3b06d0e908e65afd071"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a33959b21c0c5d3b06d0e908e65afd071">loss</a> (double distance) const override</td></tr>
-<tr class="memdesc:a33959b21c0c5d3b06d0e908e65afd071"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is responsible for returning the total penalty for a given amount of error.  <br /></td></tr>
-<tr class="memitem:ab81e107eb2ddccf6bdf9efddcfa047d5" id="r_ab81e107eb2ddccf6bdf9efddcfa047d5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab81e107eb2ddccf6bdf9efddcfa047d5">print</a> (const std::string &amp;s) const override</td></tr>
-<tr class="memitem:aba7b5ba616d7e794a11b33d6f0f05312" id="r_aba7b5ba616d7e794a11b33d6f0f05312"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aba7b5ba616d7e794a11b33d6f0f05312">equals</a> (const Base &amp;expected, double tol=1e-8) const override</td></tr>
-<tr class="memitem:a246038e14197d8bd4598fef28e68be0b" id="r_a246038e14197d8bd4598fef28e68be0b"><td class="memItemLeft"><a id="a246038e14197d8bd4598fef28e68be0b" name="a246038e14197d8bd4598fef28e68be0b"></a>
-double&#160;</td><td class="memItemRight"><b>modelParameter</b> () const</td></tr>
-<tr class="inherit_header pub_methods_a04427"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a04427')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a04427.html">gtsam::noiseModel::mEstimator::Base</a></td></tr>
-<tr class="memitem:a55554101eb10b92a1a41d85b35e48028 inherit pub_methods_a04427" id="r_a55554101eb10b92a1a41d85b35e48028"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>Base</b> (const <a class="el" href="a04427.html#ac2f379f230a3a8f2624e6f39172cf782">ReweightScheme</a> <a class="el" href="a04427.html#a7b99210b97477669026faafe4c1c5f86">reweight</a>=Block)</td></tr>
-<tr class="memitem:a61b5819c5c9f21d52184f1b3d540047a inherit pub_methods_a04427" id="r_a61b5819c5c9f21d52184f1b3d540047a"><td class="memItemLeft">
-<a class="el" href="a04427.html#ac2f379f230a3a8f2624e6f39172cf782">ReweightScheme</a>&#160;</td><td class="memItemRight"><b>reweightScheme</b> () const</td></tr>
-<tr class="memdesc:a61b5819c5c9f21d52184f1b3d540047a inherit pub_methods_a04427"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the reweight scheme, as explained in <a class="el" href="a04427.html#ac2f379f230a3a8f2624e6f39172cf782" title="the rows can be weighted independently according to the error or uniformly with the norm of the right...">ReweightScheme</a>. <br /></td></tr>
-<tr class="memitem:a9423442c05eba380c37a6fdaa35407a4 inherit pub_methods_a04427" id="r_a9423442c05eba380c37a6fdaa35407a4"><td class="memItemLeft">
-double&#160;</td><td class="memItemRight"><b>sqrtWeight</b> (double distance) const</td></tr>
-<tr class="memitem:a91b748d275ce0c13d9b76c580c6d29a9 inherit pub_methods_a04427" id="r_a91b748d275ce0c13d9b76c580c6d29a9"><td class="memItemLeft">
-Vector&#160;</td><td class="memItemRight"><b>weight</b> (const Vector &amp;error) const</td></tr>
-<tr class="memdesc:a91b748d275ce0c13d9b76c580c6d29a9 inherit pub_methods_a04427"><td class="mdescLeft">&#160;</td><td class="mdescRight">produce a weight vector according to an error vector and the implemented robust function <br /></td></tr>
-<tr class="memitem:a3e620f2a766b0a890426a961eedefb72 inherit pub_methods_a04427" id="r_a3e620f2a766b0a890426a961eedefb72"><td class="memItemLeft">
-Vector&#160;</td><td class="memItemRight"><b>sqrtWeight</b> (const Vector &amp;error) const</td></tr>
-<tr class="memdesc:a3e620f2a766b0a890426a961eedefb72 inherit pub_methods_a04427"><td class="mdescLeft">&#160;</td><td class="mdescRight">square root version of the weight function <br /></td></tr>
-<tr class="memitem:a7b99210b97477669026faafe4c1c5f86 inherit pub_methods_a04427" id="r_a7b99210b97477669026faafe4c1c5f86"><td class="memItemLeft">
-void&#160;</td><td class="memItemRight"><b>reweight</b> (Vector &amp;error) const</td></tr>
-<tr class="memdesc:a7b99210b97477669026faafe4c1c5f86 inherit pub_methods_a04427"><td class="mdescLeft">&#160;</td><td class="mdescRight">reweight block matrices and a vector according to their weight implementation <br /></td></tr>
-<tr class="memitem:a12bfcbeb6812485cccd75653042b9249 inherit pub_methods_a04427" id="r_a12bfcbeb6812485cccd75653042b9249"><td class="memItemLeft">
-void&#160;</td><td class="memItemRight"><b>reweight</b> (std::vector&lt; Matrix &gt; &amp;A, Vector &amp;error) const</td></tr>
-<tr class="memitem:a5dc3cbfd9d22b3343a666b3307a12a4b inherit pub_methods_a04427" id="r_a5dc3cbfd9d22b3343a666b3307a12a4b"><td class="memItemLeft">
-void&#160;</td><td class="memItemRight"><b>reweight</b> (Matrix &amp;A, Vector &amp;error) const</td></tr>
-<tr class="memitem:a09ad3d903b85dd419e0d82d91a8d7b45 inherit pub_methods_a04427" id="r_a09ad3d903b85dd419e0d82d91a8d7b45"><td class="memItemLeft">
-void&#160;</td><td class="memItemRight"><b>reweight</b> (Matrix &amp;A1, Matrix &amp;A2, Vector &amp;error) const</td></tr>
-<tr class="memitem:a549305ffdf3a8efde75d39f0d13427e9 inherit pub_methods_a04427" id="r_a549305ffdf3a8efde75d39f0d13427e9"><td class="memItemLeft">
-void&#160;</td><td class="memItemRight"><b>reweight</b> (Matrix &amp;A1, Matrix &amp;A2, Matrix &amp;A3, Vector &amp;error) const</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a3d502314f1c628c96766d94b22fde54b" id="r_a3d502314f1c628c96766d94b22fde54b"><td class="memItemLeft"><a id="a3d502314f1c628c96766d94b22fde54b" name="a3d502314f1c628c96766d94b22fde54b"></a>
-static shared_ptr&#160;</td><td class="memItemRight"><b>Create</b> (double k, const <a class="el" href="a04427.html#ac2f379f230a3a8f2624e6f39172cf782">ReweightScheme</a> <a class="el" href="a04427.html#a7b99210b97477669026faafe4c1c5f86">reweight</a>=Block)</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:ab76eb8af99f8718c387f6f1e47b243c4" id="r_ab76eb8af99f8718c387f6f1e47b243c4"><td class="memItemLeft"><a id="ab76eb8af99f8718c387f6f1e47b243c4" name="ab76eb8af99f8718c387f6f1e47b243c4"></a>
-typedef boost::shared_ptr&lt; Tukey &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
-<tr class="inherit_header pub_types_a04427"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04427')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04427.html">gtsam::noiseModel::mEstimator::Base</a></td></tr>
-<tr class="memitem:ac2f379f230a3a8f2624e6f39172cf782 inherit pub_types_a04427" id="r_ac2f379f230a3a8f2624e6f39172cf782"><td class="memItemLeft"><a id="ac2f379f230a3a8f2624e6f39172cf782" name="ac2f379f230a3a8f2624e6f39172cf782"></a>enum &#160;</td><td class="memItemRight"><a class="el" href="a04427.html#ac2f379f230a3a8f2624e6f39172cf782">ReweightScheme</a> { <b>Scalar</b>
-, <b>Block</b>
- }</td></tr>
-<tr class="memdesc:ac2f379f230a3a8f2624e6f39172cf782"><td class="mdescLeft">&#160;</td><td class="mdescRight">the rows can be weighted independently according to the error or uniformly with the norm of the right hand side <br /></td></tr>
-<tr class="memitem:ae45fd3e55d4c612936045cdb63de229f inherit pub_types_a04427" id="r_ae45fd3e55d4c612936045cdb63de229f"><td class="memItemLeft">
-typedef boost::shared_ptr&lt; Base &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a95b91c9ce0cbbd5403e58d806a63f9e3" id="r_a95b91c9ce0cbbd5403e58d806a63f9e3"><td class="memItemLeft"><a id="a95b91c9ce0cbbd5403e58d806a63f9e3" name="a95b91c9ce0cbbd5403e58d806a63f9e3"></a>
-double&#160;</td><td class="memItemRight"><b>c_</b></td></tr>
-<tr class="memitem:a2b6687d5eafc947c9f6532ea8221da5c" id="r_a2b6687d5eafc947c9f6532ea8221da5c"><td class="memItemLeft"><a id="a2b6687d5eafc947c9f6532ea8221da5c" name="a2b6687d5eafc947c9f6532ea8221da5c"></a>
-double&#160;</td><td class="memItemRight"><b>csquared_</b></td></tr>
-<tr class="inherit_header pro_attribs_a04427"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a04427')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a04427.html">gtsam::noiseModel::mEstimator::Base</a></td></tr>
-<tr class="memitem:a324ead5e657531310058f768f9daf0e8 inherit pro_attribs_a04427" id="r_a324ead5e657531310058f768f9daf0e8"><td class="memItemLeft"><a class="el" href="a04427.html#ac2f379f230a3a8f2624e6f39172cf782">ReweightScheme</a>&#160;</td><td class="memItemRight"><a class="el" href="a04427.html#a324ead5e657531310058f768f9daf0e8">reweight_</a></td></tr>
-<tr class="memdesc:a324ead5e657531310058f768f9daf0e8 inherit pro_attribs_a04427"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strategy for reweighting.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:ac98d07dd8f7b70e16ccb9a01abf56b9c" id="r_ac98d07dd8f7b70e16ccb9a01abf56b9c"><td class="memItemLeft"><a id="ac98d07dd8f7b70e16ccb9a01abf56b9c" name="ac98d07dd8f7b70e16ccb9a01abf56b9c"></a>
-class&#160;</td><td class="memItemRight"><b>boost::serialization::access</b></td></tr>
-<tr class="memdesc:ac98d07dd8f7b70e16ccb9a01abf56b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialization function. <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_methods_a03303"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03303')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03303.html">gtsam::internal::ManifoldTraits&lt; Rot2 &gt;</a></td></tr>
+<tr class="memitem:aeb508be8e109605ae7647ed7bc710715 inherit pub_methods_a03303" id="r_aeb508be8e109605ae7647ed7bc710715"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>GTSAM_CONCEPT_ASSERT</b> (<a class="el" href="a03295.html">HasManifoldPrereqs</a>&lt; <a class="el" href="a04435.html">Rot2</a> &gt;)</td></tr>
+<tr class="inherit_header pub_methods_a03535"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03535')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03535.html">gtsam::Testable&lt; Rot2 &gt;</a></td></tr>
+<tr class="memitem:a6fd5215e8e80961b347f5bc16e8ce672 inherit pub_methods_a03535" id="r_a6fd5215e8e80961b347f5bc16e8ce672"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>GTSAM_CONCEPT_ASSERT</b> (<a class="el" href="a03531.html">HasTestablePrereqs</a>&lt; <a class="el" href="a04435.html">Rot2</a> &gt;)</td></tr>
+<tr class="inherit_header pub_static_methods_a04443"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a04443')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a04443.html">gtsam::traits&lt; Rot2 &gt;</a></td></tr>
+<tr class="memitem:ac483d62ee7c3fb5589a0763f8f712791 inherit pub_static_methods_a04443" id="r_ac483d62ee7c3fb5589a0763f8f712791"><td class="memTemplParams" colspan="2">template&lt;int D = 1&gt; </td></tr>
+<tr class="memitem:ac483d62ee7c3fb5589a0763f8f712791 inherit pub_static_methods_a04443 template"><td class="memItemLeft">static Matrix&#160;</td><td class="memItemRight"><a class="el" href="a04443.html#ac483d62ee7c3fb5589a0763f8f712791">QcqpValue</a> (const <a class="el" href="a04435.html">Rot2</a> &amp;value)</td></tr>
+<tr class="memdesc:ac483d62ee7c3fb5589a0763f8f712791 inherit pub_static_methods_a04443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a matrix-valued QCQP variable for <a class="el" href="a04435.html" title="Rotation matrix NOTE: the angle theta is in radians unless explicitly stated.">Rot2</a>.  <br /></td></tr>
+<tr class="memitem:a1287eee81cc84ea041649ec88f54bb37 inherit pub_static_methods_a04443" id="r_a1287eee81cc84ea041649ec88f54bb37"><td class="memTemplParams" colspan="2">template&lt;int D = 1&gt; </td></tr>
+<tr class="memitem:a1287eee81cc84ea041649ec88f54bb37 inherit pub_static_methods_a04443 template"><td class="memItemLeft">static std::vector&lt; std::pair&lt; Matrix, double &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04443.html#a1287eee81cc84ea041649ec88f54bb37">QcqpConstraints</a> ()</td></tr>
+<tr class="memdesc:a1287eee81cc84ea041649ec88f54bb37 inherit pub_static_methods_a04443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return row-space QCQP equality constraints A, b such that trace(x_i' A x_i) = b[j].  <br /></td></tr>
+<tr class="memitem:accaa1d37965ba367d5c756a6a1f5ad78 inherit pub_static_methods_a04443" id="r_accaa1d37965ba367d5c756a6a1f5ad78"><td class="memTemplParams" colspan="2">template&lt;int D&gt; </td></tr>
+<tr class="memitem:accaa1d37965ba367d5c756a6a1f5ad78 inherit pub_static_methods_a04443 template"><td class="memItemLeft">static <a class="el" href="a04435.html">Rot2</a>&#160;</td><td class="memItemRight"><a class="el" href="a04443.html#accaa1d37965ba367d5c756a6a1f5ad78">FromQcqpValue</a> (const Matrix &amp;X)</td></tr>
+<tr class="memdesc:accaa1d37965ba367d5c756a6a1f5ad78 inherit pub_static_methods_a04443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project a D=1 minimal vector or canonical 2-by-D lift back to <a class="el" href="a04435.html" title="Rotation matrix NOTE: the angle theta is in radians unless explicitly stated.">Rot2</a>.  <br /></td></tr>
+<tr class="inherit_header pub_static_methods_a03339"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03339')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03339.html">gtsam::internal::MatrixLieGroupTraits&lt; Rot2, N &gt;</a></td></tr>
+<tr class="memitem:ae005dc436a68f1e33cac010b07a10c97 inherit pub_static_methods_a03339" id="r_ae005dc436a68f1e33cac010b07a10c97"><td class="memItemLeft">
+static LieAlgebra&#160;</td><td class="memItemRight"><b>Hat</b> (const TangentVector &amp;v)</td></tr>
+<tr class="memitem:a43936b4e6a7fe39dc920bbb9b34b3572 inherit pub_static_methods_a03339" id="r_a43936b4e6a7fe39dc920bbb9b34b3572"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>Vee</b> (const LieAlgebra &amp;X)</td></tr>
+<tr class="memitem:a15f150f1e3db3f6cd70b68db078500c4 inherit pub_static_methods_a03339" id="r_a15f150f1e3db3f6cd70b68db078500c4"><td class="memItemLeft">
+static Eigen::Matrix&lt; double, product(N, N), 1 &gt;&#160;</td><td class="memItemRight"><b>Vec</b> (const <a class="el" href="a04435.html">Rot2</a> &amp;m, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; product(N, N), <a class="el" href="a03275.html">LieGroupTraits</a>&lt; <a class="el" href="a04435.html">Rot2</a> &gt;::dimension &gt; H={})</td></tr>
+<tr class="memdesc:a15f150f1e3db3f6cd70b68db078500c4 inherit pub_static_methods_a03339"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vectorize the matrix representation of a Lie group element. <br /></td></tr>
+<tr class="memitem:a53d02985cb0985bbf3d9aa31a907e56b inherit pub_static_methods_a03339" id="r_a53d02985cb0985bbf3d9aa31a907e56b"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>AdjointTranspose</b> (const <a class="el" href="a04435.html">Rot2</a> &amp;m, const TangentVector &amp;x, ChartJacobian Hm={}, ChartJacobian Hx={})</td></tr>
+<tr class="memitem:afd4c4b958c1141a9897663ff4a5c6a32 inherit pub_static_methods_a03339" id="r_afd4c4b958c1141a9897663ff4a5c6a32"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>Adjoint</b> (const <a class="el" href="a04435.html">Rot2</a> &amp;m, const TangentVector &amp;x, ChartJacobian Hm={}, ChartJacobian Hx={})</td></tr>
+<tr class="memitem:a0a1a5d3b81ecd4f4a5f7a2689ebcebc4 inherit pub_static_methods_a03339" id="r_a0a1a5d3b81ecd4f4a5f7a2689ebcebc4"><td class="memItemLeft">
+static Jacobian&#160;</td><td class="memItemRight"><b>adjointMap</b> (const TangentVector &amp;xi)</td></tr>
+<tr class="memitem:a2ed0cda1c1d4381de7b2b46f65115a0b inherit pub_static_methods_a03339" id="r_a2ed0cda1c1d4381de7b2b46f65115a0b"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>adjoint</b> (const TangentVector &amp;xi, const TangentVector &amp;y, ChartJacobian Hxi={}, ChartJacobian H_y={})</td></tr>
+<tr class="memitem:aa8c00caa3aaa0d41658ec5b277b6cc87 inherit pub_static_methods_a03339" id="r_aa8c00caa3aaa0d41658ec5b277b6cc87"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>adjointTranspose</b> (const TangentVector &amp;xi, const TangentVector &amp;y, ChartJacobian Hxi={}, ChartJacobian H_y={})</td></tr>
+<tr class="inherit_header pub_static_methods_a03275"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03275')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03275.html">gtsam::internal::LieGroupTraits&lt; Rot2 &gt;</a></td></tr>
+<tr class="memitem:a16fee620f783604f3b51acc3ac9a29eb inherit pub_static_methods_a03275" id="r_a16fee620f783604f3b51acc3ac9a29eb"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>Logmap</b> (const <a class="el" href="a04435.html">Rot2</a> &amp;m)</td></tr>
+<tr class="memitem:a6958a8601fefa337834f6372c83eb970 inherit pub_static_methods_a03275" id="r_a6958a8601fefa337834f6372c83eb970"><td class="memItemLeft">
+static <a class="el" href="a04435.html">Rot2</a>&#160;</td><td class="memItemRight"><b>Expmap</b> (const TangentVector &amp;v)</td></tr>
+<tr class="memitem:a975a7fe12b3ae80ffd6e2d2f24c3d5d9 inherit pub_static_methods_a03275" id="r_a975a7fe12b3ae80ffd6e2d2f24c3d5d9"><td class="memItemLeft">
+static <a class="el" href="a04435.html">Rot2</a>&#160;</td><td class="memItemRight"><b>Compose</b> (const <a class="el" href="a04435.html">Rot2</a> &amp;m1, const <a class="el" href="a04435.html">Rot2</a> &amp;m2, ChartJacobian H1={}, ChartJacobian H2={})</td></tr>
+<tr class="memitem:acc8d4521c88252685a5d5303bfa7f3d4 inherit pub_static_methods_a03275" id="r_acc8d4521c88252685a5d5303bfa7f3d4"><td class="memItemLeft">
+static <a class="el" href="a04435.html">Rot2</a>&#160;</td><td class="memItemRight"><b>Between</b> (const <a class="el" href="a04435.html">Rot2</a> &amp;m1, const <a class="el" href="a04435.html">Rot2</a> &amp;m2, ChartJacobian H1={}, ChartJacobian H2={})</td></tr>
+<tr class="memitem:a4e9880fea478276cb528e6fd13d10485 inherit pub_static_methods_a03275" id="r_a4e9880fea478276cb528e6fd13d10485"><td class="memItemLeft">
+static <a class="el" href="a04435.html">Rot2</a>&#160;</td><td class="memItemRight"><b>Inverse</b> (const <a class="el" href="a04435.html">Rot2</a> &amp;m, ChartJacobian H={})</td></tr>
+<tr class="memitem:abf5682111cced2762528222c6e476093 inherit pub_static_methods_a03275" id="r_abf5682111cced2762528222c6e476093"><td class="memItemLeft">
+static Eigen::Matrix&lt; double, dimension, dimension &gt;&#160;</td><td class="memItemRight"><b>AdjointMap</b> (const <a class="el" href="a04435.html">Rot2</a> &amp;m)</td></tr>
+<tr class="memitem:ad36e535be6899c627f2f796f6c9e605a inherit pub_static_methods_a03275" id="r_ad36e535be6899c627f2f796f6c9e605a"><td class="memItemLeft">
+static <a class="el" href="a04435.html">Rot2</a>&#160;</td><td class="memItemRight"><b>Identity</b> ()</td></tr>
+<tr class="inherit_header pub_static_methods_a03303"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03303')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03303.html">gtsam::internal::ManifoldTraits&lt; Rot2 &gt;</a></td></tr>
+<tr class="memitem:a94e4b4a741e92bf6ed629aa7ef36d0b4 inherit pub_static_methods_a03303" id="r_a94e4b4a741e92bf6ed629aa7ef36d0b4"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>Local</b> (const <a class="el" href="a04435.html">Rot2</a> &amp;origin, const <a class="el" href="a04435.html">Rot2</a> &amp;other)</td></tr>
+<tr class="memitem:adf31f3fd2ec15a2f70a20fd0ffd8d957 inherit pub_static_methods_a03303" id="r_adf31f3fd2ec15a2f70a20fd0ffd8d957"><td class="memItemLeft">
+static <a class="el" href="a04435.html">Rot2</a>&#160;</td><td class="memItemRight"><b>Retract</b> (const <a class="el" href="a04435.html">Rot2</a> &amp;origin, const TangentVector &amp;v)</td></tr>
+<tr class="inherit_header pub_static_methods_a03299"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03299')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03299.html">gtsam::internal::GetDimensionImpl&lt; Rot2, Rot2::dimension &gt;</a></td></tr>
+<tr class="memitem:a1fc02dfed9e5bb053cc0acb5532f708c inherit pub_static_methods_a03299" id="r_a1fc02dfed9e5bb053cc0acb5532f708c"><td class="memItemLeft">
+static size_t&#160;</td><td class="memItemRight"><b>GetDimension</b> (const <a class="el" href="a04435.html">Rot2</a> &amp;m)</td></tr>
+<tr class="inherit_header pub_static_methods_a03535"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03535')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03535.html">gtsam::Testable&lt; Rot2 &gt;</a></td></tr>
+<tr class="memitem:a27b246d77898916925c676895348fedf inherit pub_static_methods_a03535" id="r_a27b246d77898916925c676895348fedf"><td class="memItemLeft">
+static void&#160;</td><td class="memItemRight"><b>Print</b> (const <a class="el" href="a04435.html">Rot2</a> &amp;m, const std::string &amp;str=&quot;&quot;)</td></tr>
+<tr class="memitem:a29a5699453b92070b31ca7fa42609d98 inherit pub_static_methods_a03535" id="r_a29a5699453b92070b31ca7fa42609d98"><td class="memItemLeft">
+static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el" href="a04435.html">Rot2</a> &amp;m1, const <a class="el" href="a04435.html">Rot2</a> &amp;m2, double tol=1e-8)</td></tr>
+<tr class="inherit_header pub_static_attribs_a04443"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_attribs_a04443')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Attributes inherited from <a class="el" href="a04443.html">gtsam::traits&lt; Rot2 &gt;</a></td></tr>
+<tr class="memitem:a36aeeeb4343572f30f4b461262ace968 inherit pub_static_attribs_a04443" id="r_a36aeeeb4343572f30f4b461262ace968"><td class="memItemLeft">
+static constexpr int&#160;</td><td class="memItemRight"><b>QcqpVectorDim</b> = 3</td></tr>
+<tr class="memdesc:a36aeeeb4343572f30f4b461262ace968 inherit pub_static_attribs_a04443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimension of the D=1 homogenized QCQP vector [h, cos(theta), sin(theta)]. <br /></td></tr>
+<tr class="memitem:a86080f2529adac4f3f47421423059e05" id="r_a86080f2529adac4f3f47421423059e05"><td class="memItemLeft"><a id="a86080f2529adac4f3f47421423059e05" name="a86080f2529adac4f3f47421423059e05"></a>
+static constexpr auto&#160;</td><td class="memItemRight"><b>dimension</b></td></tr>
+<tr class="inherit_header pub_static_attribs_a03303"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_attribs_a03303')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Attributes inherited from <a class="el" href="a03303.html">gtsam::internal::ManifoldTraits&lt; Rot2 &gt;</a></td></tr>
+<tr class="memitem:a900e659562b6e1deef63481461afdc4c inherit pub_static_attribs_a03303" id="r_a900e659562b6e1deef63481461afdc4c"><td class="memItemLeft">
+static constexpr auto&#160;</td><td class="memItemRight"><b>dimension</b></td></tr>
+<tr class="inherit_header pub_types_a03339"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03339')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03339.html">gtsam::internal::MatrixLieGroupTraits&lt; Rot2, N &gt;</a></td></tr>
+<tr class="memitem:ab45cb6e6c36399167a2c21df61b40328 inherit pub_types_a03339" id="r_ab45cb6e6c36399167a2c21df61b40328"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>LieAlgebra</b></td></tr>
+<tr class="memitem:afff5c420498ecf8b6a769fbad8e624b9 inherit pub_types_a03339" id="r_afff5c420498ecf8b6a769fbad8e624b9"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+<tr class="memitem:ad910b13b10fe85170eac4cc25bfbe216 inherit pub_types_a03339" id="r_ad910b13b10fe85170eac4cc25bfbe216"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Jacobian</b></td></tr>
+<tr class="memitem:a9fdc53f383b4aadb8ae25ce295cb9b0c inherit pub_types_a03339" id="r_a9fdc53f383b4aadb8ae25ce295cb9b0c"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
+<tr class="inherit_header pub_types_a03275"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03275')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03275.html">gtsam::internal::LieGroupTraits&lt; Rot2 &gt;</a></td></tr>
+<tr class="memitem:afc21e691a11b4b8bc2ed0abbe3782705 inherit pub_types_a03275" id="r_afc21e691a11b4b8bc2ed0abbe3782705"><td class="memItemLeft">
+typedef <a class="el" href="a03363.html">OptionalJacobian</a>&lt; dimension, dimension &gt;&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
+<tr class="memitem:aecd8dd24df157a38744ce7d52893ddef inherit pub_types_a03275" id="r_aecd8dd24df157a38744ce7d52893ddef"><td class="memItemLeft">
+typedef <a class="el" href="a04435.html">Rot2</a>&#160;</td><td class="memItemRight"><b>ManifoldType</b></td></tr>
+<tr class="memitem:a7fd4430a3d3639de6e4a4bab2c82214d inherit pub_types_a03275" id="r_a7fd4430a3d3639de6e4a4bab2c82214d"><td class="memItemLeft">
+typedef Eigen::Matrix&lt; double, dimension, 1 &gt;&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+<tr class="memitem:a02152ea559c5ae9a08ae9ca3e63f7103 inherit pub_types_a03275" id="r_a02152ea559c5ae9a08ae9ca3e63f7103"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Manifold</b></td></tr>
+<tr class="memitem:a9d6e4e6485704f01932a19d2902b61ea inherit pub_types_a03275" id="r_a9d6e4e6485704f01932a19d2902b61ea"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>structure_category</b></td></tr>
+<tr class="memitem:aaf7299413c5ca8e5965e5f76582b8d6d inherit pub_types_a03275" id="r_aaf7299413c5ca8e5965e5f76582b8d6d"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>group_flavor</b></td></tr>
+<tr class="memitem:a2a536fb12d54ce916a1ed0bd0df9b258 inherit pub_types_a03275" id="r_a2a536fb12d54ce916a1ed0bd0df9b258"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Jacobian</b></td></tr>
+<tr class="inherit_header pub_types_a03303"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03303')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03303.html">gtsam::internal::ManifoldTraits&lt; Rot2 &gt;</a></td></tr>
+<tr class="memitem:aecd8dd24df157a38744ce7d52893ddef inherit pub_types_a03303" id="r_aecd8dd24df157a38744ce7d52893ddef"><td class="memItemLeft">
+typedef <a class="el" href="a04435.html">Rot2</a>&#160;</td><td class="memItemRight"><b>ManifoldType</b></td></tr>
+<tr class="memitem:aeabfd4c402e097eedb55ad543117d4e2 inherit pub_types_a03303" id="r_aeabfd4c402e097eedb55ad543117d4e2"><td class="memItemLeft">
+typedef <a class="el" href="a03291.html">manifold_tag</a>&#160;</td><td class="memItemRight"><b>structure_category</b></td></tr>
+<tr class="memitem:a7fd4430a3d3639de6e4a4bab2c82214d inherit pub_types_a03303" id="r_a7fd4430a3d3639de6e4a4bab2c82214d"><td class="memItemLeft">
+typedef Eigen::Matrix&lt; double, dimension, 1 &gt;&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+<tr class="memitem:afc21e691a11b4b8bc2ed0abbe3782705 inherit pub_types_a03303" id="r_afc21e691a11b4b8bc2ed0abbe3782705"><td class="memItemLeft">
+typedef <a class="el" href="a03363.html">OptionalJacobian</a>&lt; dimension, dimension &gt;&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="aba7b5ba616d7e794a11b33d6f0f05312" name="aba7b5ba616d7e794a11b33d6f0f05312"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba7b5ba616d7e794a11b33d6f0f05312">&#9670;&#160;</a></span>equals()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool gtsam::noiseModel::mEstimator::Tukey::equals </td>
-          <td>(</td>
-          <td class="paramtype">const Base &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>tol</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1e-8</span>&#160;) const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="a04427.html">gtsam::noiseModel::mEstimator::Base</a>.</p>
-
-</div>
-</div>
-<a id="a33959b21c0c5d3b06d0e908e65afd071" name="a33959b21c0c5d3b06d0e908e65afd071"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33959b21c0c5d3b06d0e908e65afd071">&#9670;&#160;</a></span>loss()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double gtsam::noiseModel::mEstimator::Tukey::loss </td>
-          <td>(</td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>distance</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>This method is responsible for returning the total penalty for a given amount of error. </p>
-<p>For example, this method is responsible for implementing the quadratic function for an L2 penalty, the absolute value function for an L1 penalty, etc.</p>
-<p>TODO(mikebosse): When the loss function has as input the norm of the error vector, then it prevents implementations of asymmeric loss functions. It would be better for this function to accept the vector and internally call the norm if necessary.</p>
-<p>This returns \rho(x) in <a class="el" href="a01990.html" title="mEstimator">mEstimator</a> </p>
-
-<p>Reimplemented from <a class="el" href="a04427.html#a2a9636c1c6dbb139e68f0d2c6969175f">gtsam::noiseModel::mEstimator::Base</a>.</p>
-
-</div>
-</div>
-<a id="ab81e107eb2ddccf6bdf9efddcfa047d5" name="ab81e107eb2ddccf6bdf9efddcfa047d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab81e107eb2ddccf6bdf9efddcfa047d5">&#9670;&#160;</a></span>print()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gtsam::noiseModel::mEstimator::Tukey::print </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="a04427.html">gtsam::noiseModel::mEstimator::Base</a>.</p>
-
-</div>
-</div>
-<a id="aa7b166f4788a6e620165c740924e4cea" name="aa7b166f4788a6e620165c740924e4cea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7b166f4788a6e620165c740924e4cea">&#9670;&#160;</a></span>weight()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double gtsam::noiseModel::mEstimator::Tukey::weight </td>
-          <td>(</td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>distance</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>This method is responsible for returning the weight function for a given amount of error. </p>
-<p>The weight function is related to the analytic derivative of the loss function. See <a href="https://members.loria.fr/MOBerger/Enseignement/Master2/Documents/ZhangIVC-97-01.pdf">https://members.loria.fr/MOBerger/Enseignement/Master2/Documents/ZhangIVC-97-01.pdf</a> for details. This method is required when optimizing cost functions with robust penalties using iteratively re-weighted least squares.</p>
-<p>This returns w(x) in <a class="el" href="a01990.html" title="mEstimator">mEstimator</a> </p>
-
-<p>Implements <a class="el" href="a04427.html#a93f40d2f9629fd1d9d4aeb53d8b8ffe8">gtsam::noiseModel::mEstimator::Base</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/<a class="el" href="a00860_source.html">LossFunctions.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/<b>LossFunctions.cpp</b></li>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00428_source.html">Rot2.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -328,7 +239,7 @@ class&#160;</td><td class="memItemRight"><b>boost::serialization::access</b></td
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a01989.html">noiseModel</a></li><li class="navelem"><a href="a01990.html">mEstimator</a></li><li class="navelem"><a href="a04447.html">Tukey</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04447.html">traits&lt; const Rot2 &gt;</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/base/WeightedSampler.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/types.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,29 +96,81 @@ $(function(){initNavTree('a00026.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">WeightedSampler.h File Reference</div></div>
+  <div class="headertitle"><div class="title">types.h File Reference<div class="ingroups"><a class="el" href="a02227.html">Base</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Fast sampling without replacement.  
+<p>Typedefs for easier changing of types.  
 <a href="#details">More...</a></p>
 
 <p><a href="a00026_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3AWeightedSampler_3C_20Engine_20_3E" id="r_gtsam_3A_3AWeightedSampler_3C_20Engine_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a03211.html">gtsam::WeightedSampler&lt; Engine &gt;</a></td></tr>
+<tr class="memitem:gtsam_3A_3AValueWithDefault_3C_20T_2C_20defaultValue_20_3E" id="r_gtsam_3A_3AValueWithDefault_3C_20T_2C_20defaultValue_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03579.html">gtsam::ValueWithDefault&lt; T, defaultValue &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper struct that encapsulates a value with a default, this is just used as a member object so you don't have to specify defaults in the class constructor.  <a href="a03579.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3ATbbOpenMPMixedScope" id="r_gtsam_3A_3ATbbOpenMPMixedScope"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a03583.html">gtsam::TbbOpenMPMixedScope</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An object whose scope defines a block where TBB and OpenMP parallelism are mixed.  <a href="a03583.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a30d3af2da1ea940197addce4f3c223c8" id="r_a30d3af2da1ea940197addce4f3c223c8"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a30d3af2da1ea940197addce4f3c223c8">assert_throw</a>(CONDITION,  EXCEPTION)</td></tr>
+<tr class="memdesc:a30d3af2da1ea940197addce4f3c223c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">An assertion that throws an exception if NDEBUG is not defined and evaluates to an empty statement otherwise.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:adad029f5f6ffce610428b5fe768b0df2" id="r_adad029f5f6ffce610428b5fe768b0df2"><td class="memItemLeft"><a id="adad029f5f6ffce610428b5fe768b0df2" name="adad029f5f6ffce610428b5fe768b0df2"></a>
+typedef std::uint64_t&#160;</td><td class="memItemRight"><b>gtsam::Key</b></td></tr>
+<tr class="memdesc:adad029f5f6ffce610428b5fe768b0df2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integer nonlinear key type. <br /></td></tr>
+<tr class="memitem:a19c53f2faabb0f4b4b78ce2f7168cc14" id="r_a19c53f2faabb0f4b4b78ce2f7168cc14"><td class="memItemLeft"><a id="a19c53f2faabb0f4b4b78ce2f7168cc14" name="a19c53f2faabb0f4b4b78ce2f7168cc14"></a>
+typedef std::uint64_t&#160;</td><td class="memItemRight"><b>gtsam::FactorIndex</b></td></tr>
+<tr class="memdesc:a19c53f2faabb0f4b4b78ce2f7168cc14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integer nonlinear factor index type. <br /></td></tr>
+<tr class="memitem:a21006f326f57cdf7d3f35fec40f43e40" id="r_a21006f326f57cdf7d3f35fec40f43e40"><td class="memItemLeft"><a id="a21006f326f57cdf7d3f35fec40f43e40" name="a21006f326f57cdf7d3f35fec40f43e40"></a>
+typedef ptrdiff_t&#160;</td><td class="memItemRight"><b>gtsam::DenseIndex</b></td></tr>
+<tr class="memdesc:a21006f326f57cdf7d3f35fec40f43e40"><td class="mdescLeft">&#160;</td><td class="mdescRight">The index type for Eigen objects. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a0b97fc96e5f69236e81489c66d5b92ba" id="r_a0b97fc96e5f69236e81489c66d5b92ba"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="a02242.html#a0b97fc96e5f69236e81489c66d5b92ba">gtsam::demangle</a> (const char *name)</td></tr>
+<tr class="memdesc:a0b97fc96e5f69236e81489c66d5b92ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pretty print <a class="el" href="a03615.html" title="This is the base class for any type to be stored in Values.">Value</a> type name.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Fast sampling without replacement. </p>
-<dl class="section author"><dt>Author</dt><dd>Frank Dellaert </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>May 2019 </dd></dl>
-</div></div><!-- contents -->
+<div class="textblock"><p>Typedefs for easier changing of types. </p>
+<dl class="section author"><dt>Author</dt><dd>Richard Roberts </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>Aug 21, 2010 </dd></dl>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="a30d3af2da1ea940197addce4f3c223c8" name="a30d3af2da1ea940197addce4f3c223c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30d3af2da1ea940197addce4f3c223c8">&#9670;&#160;</a></span>assert_throw</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define assert_throw</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>CONDITION</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>EXCEPTION</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">if</span> (!(CONDITION)) { \</div>
+<div class="line">throw (EXCEPTION); \</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>An assertion that throws an exception if NDEBUG is not defined and evaluates to an empty statement otherwise. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>
@@ -131,7 +183,7 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>base</b></li><li class="navelem"><a href="a00026.html">WeightedSampler.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>base</b></li><li class="navelem"><a href="a00026.html">types.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

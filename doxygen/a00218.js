@@ -1,4 +1,4 @@
 var a00218 =
 [
-    [ "gtsam::traits&lt; DecisionTreeFactor &gt;", "a03359.html", null ]
+    [ "gtsam::KernelBase", "a03779.html", "a03779" ]
 ];

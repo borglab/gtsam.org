@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::WeightedSampler&lt; Engine &gt; Class Template Reference</title>
+<title>gtsam: gtsam::internal::MultiplicativeGroupTraits&lt; Class &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,20 +96,44 @@ $(function(){initNavTree('a03211.html','','a03208'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::WeightedSampler&lt; Engine &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::internal::MultiplicativeGroupTraits&lt; Class &gt; Struct Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class Class&gt;<br />
+struct gtsam::internal::MultiplicativeGroupTraits&lt; Class &gt;</div><p>A helper class that implements the traits interface for multiplicative groups. </p>
+<p>Assumes existence of identity, operator* and inverse method </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::internal::MultiplicativeGroupTraits&lt; Class &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="a03211.png" usemap="#gtsam_3A_3Ainternal_3A_3AMultiplicativeGroupTraits_3C_20Class_20_3E_map" alt=""/>
+  <map id="gtsam_3A_3Ainternal_3A_3AMultiplicativeGroupTraits_3C_20Class_20_3E_map" name="gtsam_3A_3Ainternal_3A_3AMultiplicativeGroupTraits_3C_20Class_20_3E_map">
+<area href="a03215.html" title="Both multiplicative group traits and Testable." alt="gtsam::internal::MultiplicativeGroup&lt; Class &gt;" shape="rect" coords="0,56,293,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:aa938b7f88f6efd2be5ee3b1cf12c85f7" id="r_aa938b7f88f6efd2be5ee3b1cf12c85f7"><td class="memItemLeft"><a id="aa938b7f88f6efd2be5ee3b1cf12c85f7" name="aa938b7f88f6efd2be5ee3b1cf12c85f7"></a>
-&#160;</td><td class="memItemRight"><b>WeightedSampler</b> (Engine *engine)</td></tr>
-<tr class="memdesc:aa938b7f88f6efd2be5ee3b1cf12c85f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from random number generation engine We only store a pointer to it. <br /></td></tr>
-<tr class="memitem:af9bcf3aeb25def8fb82393fcf89f2638" id="r_af9bcf3aeb25def8fb82393fcf89f2638"><td class="memItemLeft"><a id="af9bcf3aeb25def8fb82393fcf89f2638" name="af9bcf3aeb25def8fb82393fcf89f2638"></a>
-std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight"><b>sampleWithoutReplacement</b> (size_t numSamples, const std::vector&lt; double &gt; &amp;weights)</td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a4c10b13f00833ca4981c69c735672567" id="r_a4c10b13f00833ca4981c69c735672567"><td class="memItemLeft"><a id="a4c10b13f00833ca4981c69c735672567" name="a4c10b13f00833ca4981c69c735672567"></a>
+static Class&#160;</td><td class="memItemRight"><b>Identity</b> ()</td></tr>
+<tr class="memitem:a7a7e0fa708240192b13160e197b9c383" id="r_a7a7e0fa708240192b13160e197b9c383"><td class="memItemLeft"><a id="a7a7e0fa708240192b13160e197b9c383" name="a7a7e0fa708240192b13160e197b9c383"></a>
+static Class&#160;</td><td class="memItemRight"><b>Compose</b> (const Class &amp;g, const Class &amp;h)</td></tr>
+<tr class="memitem:a8cf4596f83607996466388c5ffa11292" id="r_a8cf4596f83607996466388c5ffa11292"><td class="memItemLeft"><a id="a8cf4596f83607996466388c5ffa11292" name="a8cf4596f83607996466388c5ffa11292"></a>
+static Class&#160;</td><td class="memItemRight"><b>Between</b> (const Class &amp;g, const Class &amp;h)</td></tr>
+<tr class="memitem:aa4b87c8a7efcc7d4b8bb3168dda240f5" id="r_aa4b87c8a7efcc7d4b8bb3168dda240f5"><td class="memItemLeft"><a id="aa4b87c8a7efcc7d4b8bb3168dda240f5" name="aa4b87c8a7efcc7d4b8bb3168dda240f5"></a>
+static Class&#160;</td><td class="memItemRight"><b>Inverse</b> (const Class &amp;g)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a167283bdfe8cb5f3fa08bfd6d8785067" id="r_a167283bdfe8cb5f3fa08bfd6d8785067"><td class="memItemLeft"><a id="a167283bdfe8cb5f3fa08bfd6d8785067" name="a167283bdfe8cb5f3fa08bfd6d8785067"></a>
+typedef <a class="el" href="a03191.html">group_tag</a>&#160;</td><td class="memItemRight"><b>structure_category</b></td></tr>
+<tr class="memitem:a128fd58f6f5cb398016efebc614d0e35" id="r_a128fd58f6f5cb398016efebc614d0e35"><td class="memItemLeft"><a id="a128fd58f6f5cb398016efebc614d0e35" name="a128fd58f6f5cb398016efebc614d0e35"></a>
+typedef <a class="el" href="a03195.html">multiplicative_group_tag</a>&#160;</td><td class="memItemRight"><b>group_flavor</b></td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/base/<a class="el" href="a00026_source.html">WeightedSampler.h</a></li>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/<a class="el" href="a00122_source.html">Group.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -124,7 +148,7 @@ std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight"><b>sampleWithoutR
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a03211.html">WeightedSampler</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><b>internal</b></li><li class="navelem"><a href="a03211.html">MultiplicativeGroupTraits</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reweightscheme_0',['ReweightScheme',['../a04427.html#ac2f379f230a3a8f2624e6f39172cf782',1,'gtsam::noiseModel::mEstimator::Base']]]
+  ['orderingtype_0',['OrderingType',['../a04979.html#a41194f31ec42052094cf91d81dcd796d',1,'gtsam::Ordering']]]
 ];

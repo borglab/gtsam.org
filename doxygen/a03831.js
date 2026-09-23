@@ -1,6 +1,7 @@
 var a03831 =
 [
-    [ "DexpFunctor", "a03831.html#a29b8e81214974c238ab4b3be679c68bb", null ],
-    [ "applyDexp", "a03831.html#a14afce1d01aa4f28c77317999ed65288", null ],
-    [ "applyInvDexp", "a03831.html#aaffb5258e5f92b1131846ea2c2fc3c17", null ]
+    [ "VisitWith", "a03831.html#a405758ae32b2d12a2b7c458ba81d0546", null ],
+    [ "operator()", "a03831.html#a9236042ebcd5779446ee35fb858938cb", null ],
+    [ "assignment", "a03831.html#a657934a0c65e404319a0f4d7fe560af1", null ],
+    [ "f", "a03831.html#adc4cfb52d44092cdae9f16ceda850f55", null ]
 ];

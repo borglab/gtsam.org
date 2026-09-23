@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::PreintegratedRotation Class Reference</title>
+<title>gtsam: gtsam::HybridGaussianProductFactor Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,102 +96,354 @@ $(function(){initNavTree('a04755.html','','a04752'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::PreintegratedRotation Class Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::HybridGaussianProductFactor Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="a04755.html" title="PreintegratedRotation is the base class for all PreintegratedMeasurements classes (in AHRSFactor,...">PreintegratedRotation</a> is the base class for all PreintegratedMeasurements classes (in <a class="el" href="a04623.html">AHRSFactor</a>, <a class="el" href="a04699.html" title="ImuFactor is a 5-ways factor involving previous state (pose and velocity of the vehicle at previous t...">ImuFactor</a>, and <a class="el" href="a04659.html" title="CombinedImuFactor is a 6-ways factor involving previous state (pose and velocity of the vehicle,...">CombinedImuFactor</a>). </p>
-<p>It includes the definitions of the preintegrated rotation. </p>
-</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::PreintegratedRotation:</div>
+<div class="textblock"><p>Alias for <a class="el" href="a03835.html" title="a decision tree is a function from assignments to values.">DecisionTree</a> of GaussianFactorGraphs and their scalar sums. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::HybridGaussianProductFactor:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a04755.png" usemap="#gtsam_3A_3APreintegratedRotation_map" alt=""/>
-  <map id="gtsam_3A_3APreintegratedRotation_map" name="gtsam_3A_3APreintegratedRotation_map">
-<area href="a04619.html" title="PreintegratedAHRSMeasurements accumulates (integrates) the Gyroscope measurements (rotation rates) an..." alt="gtsam::PreintegratedAhrsMeasurements" shape="rect" coords="0,56,235,80"/>
+  <img src="a04755.png" usemap="#gtsam_3A_3AHybridGaussianProductFactor_map" alt=""/>
+  <map id="gtsam_3A_3AHybridGaussianProductFactor_map" name="gtsam_3A_3AHybridGaussianProductFactor_map">
+<area href="a03835.html" alt="gtsam::DecisionTree&lt; Key, GaussianFactorGraphValuePair &gt;" shape="rect" coords="0,0,360,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Constructors</div></td></tr>
-<tr class="memitem:aa1900dc3e0d71ae87a3cd149739493dc" id="r_aa1900dc3e0d71ae87a3cd149739493dc"><td class="memItemLeft"><a id="aa1900dc3e0d71ae87a3cd149739493dc" name="aa1900dc3e0d71ae87a3cd149739493dc"></a>
-&#160;</td><td class="memItemRight"><b>PreintegratedRotation</b> (const boost::shared_ptr&lt; Params &gt; &amp;p)</td></tr>
-<tr class="memdesc:aa1900dc3e0d71ae87a3cd149739493dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor, resets integration to zero. <br /></td></tr>
-<tr class="memitem:a845409e08ff8c2de417086eff14aac88" id="r_a845409e08ff8c2de417086eff14aac88"><td class="memItemLeft"><a id="a845409e08ff8c2de417086eff14aac88" name="a845409e08ff8c2de417086eff14aac88"></a>
-&#160;</td><td class="memItemRight"><b>PreintegratedRotation</b> (const boost::shared_ptr&lt; Params &gt; &amp;p, double deltaTij, const <a class="el" href="a03775.html">Rot3</a> &amp;deltaRij, const Matrix3 &amp;delRdelBiasOmega)</td></tr>
-<tr class="memdesc:a845409e08ff8c2de417086eff14aac88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicit initialization of all class members. <br /></td></tr>
-<tr id="pub-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Basic utilities</div></td></tr>
-<tr class="memitem:afef7a62e383296931b88afe371ec8f3c" id="r_afef7a62e383296931b88afe371ec8f3c"><td class="memItemLeft"><a id="afef7a62e383296931b88afe371ec8f3c" name="afef7a62e383296931b88afe371ec8f3c"></a>
-void&#160;</td><td class="memItemRight"><b>resetIntegration</b> ()</td></tr>
-<tr class="memdesc:afef7a62e383296931b88afe371ec8f3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-initialize PreintegratedMeasurements. <br /></td></tr>
-<tr class="memitem:ad4a13c89dc8226456aaeef68736b9ae2" id="r_ad4a13c89dc8226456aaeef68736b9ae2"><td class="memItemLeft"><a id="ad4a13c89dc8226456aaeef68736b9ae2" name="ad4a13c89dc8226456aaeef68736b9ae2"></a>
-bool&#160;</td><td class="memItemRight"><b>matchesParamsWith</b> (const <a class="el" href="#ae744d5c7fcf27da650d08f65467f15e1">PreintegratedRotation</a> &amp;other) const</td></tr>
-<tr class="memdesc:ad4a13c89dc8226456aaeef68736b9ae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">check parameters equality: checks whether shared pointer points to same Params object. <br /></td></tr>
-<tr id="pub-methods-2" class="groupHeader"><td colspan="2"><div class="groupHeader">Access instance variables</div></td></tr>
-<tr class="memitem:a24a35f6c9b9d0184d45b82f2a27ec194" id="r_a24a35f6c9b9d0184d45b82f2a27ec194"><td class="memItemLeft"><a id="a24a35f6c9b9d0184d45b82f2a27ec194" name="a24a35f6c9b9d0184d45b82f2a27ec194"></a>
-const boost::shared_ptr&lt; Params &gt; &amp;&#160;</td><td class="memItemRight"><b>params</b> () const</td></tr>
-<tr class="memitem:af94e84b68eb8235a66d4bad7680b9035" id="r_af94e84b68eb8235a66d4bad7680b9035"><td class="memItemLeft"><a id="af94e84b68eb8235a66d4bad7680b9035" name="af94e84b68eb8235a66d4bad7680b9035"></a>
-const double &amp;&#160;</td><td class="memItemRight"><b>deltaTij</b> () const</td></tr>
-<tr class="memitem:ac9c5b2d8bc27c834f417580dfdbeb4f7" id="r_ac9c5b2d8bc27c834f417580dfdbeb4f7"><td class="memItemLeft"><a id="ac9c5b2d8bc27c834f417580dfdbeb4f7" name="ac9c5b2d8bc27c834f417580dfdbeb4f7"></a>
-const <a class="el" href="a03775.html">Rot3</a> &amp;&#160;</td><td class="memItemRight"><b>deltaRij</b> () const</td></tr>
-<tr class="memitem:a0285c594e05e2db06e7f62c6fcf5ae86" id="r_a0285c594e05e2db06e7f62c6fcf5ae86"><td class="memItemLeft"><a id="a0285c594e05e2db06e7f62c6fcf5ae86" name="a0285c594e05e2db06e7f62c6fcf5ae86"></a>
-const Matrix3 &amp;&#160;</td><td class="memItemRight"><b>delRdelBiasOmega</b> () const</td></tr>
-<tr id="pub-methods-3" class="groupHeader"><td colspan="2"><div class="groupHeader">Testable</div></td></tr>
-<tr class="memitem:a42c246fd9a29fa1b44de40cd8514cbc9" id="r_a42c246fd9a29fa1b44de40cd8514cbc9"><td class="memItemLeft"><a id="a42c246fd9a29fa1b44de40cd8514cbc9" name="a42c246fd9a29fa1b44de40cd8514cbc9"></a>
-void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s) const</td></tr>
-<tr class="memitem:a8c90218f0a58fd961d13d1b11997b71b" id="r_a8c90218f0a58fd961d13d1b11997b71b"><td class="memItemLeft"><a id="a8c90218f0a58fd961d13d1b11997b71b" name="a8c90218f0a58fd961d13d1b11997b71b"></a>
-bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="#ae744d5c7fcf27da650d08f65467f15e1">PreintegratedRotation</a> &amp;other, double tol) const</td></tr>
-<tr id="pub-methods-4" class="groupHeader"><td colspan="2"><div class="groupHeader">Main functionality</div></td></tr>
-<tr class="memitem:a8ae1c42a1167736378498fb09d4a761a" id="r_a8ae1c42a1167736378498fb09d4a761a"><td class="memItemLeft"><a id="a8ae1c42a1167736378498fb09d4a761a" name="a8ae1c42a1167736378498fb09d4a761a"></a>
-<a class="el" href="a03775.html">Rot3</a>&#160;</td><td class="memItemRight"><b>incrementalRotation</b> (const Vector3 &amp;measuredOmega, const Vector3 &amp;biasHat, double deltaT, <a class="el" href="a02995.html">OptionalJacobian</a>&lt; 3, 3 &gt; D_incrR_integratedOmega) const</td></tr>
-<tr class="memdesc:a8ae1c42a1167736378498fb09d4a761a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take the gyro measurement, correct it using the (constant) bias estimate and possibly the sensor pose, and then integrate it forward in time to yield an incremental rotation. <br /></td></tr>
-<tr class="memitem:ac3f08ff7738f84d49725a8b72b7a9af2" id="r_ac3f08ff7738f84d49725a8b72b7a9af2"><td class="memItemLeft"><a id="ac3f08ff7738f84d49725a8b72b7a9af2" name="ac3f08ff7738f84d49725a8b72b7a9af2"></a>
-void&#160;</td><td class="memItemRight"><b>integrateMeasurement</b> (const Vector3 &amp;measuredOmega, const Vector3 &amp;biasHat, double deltaT, <a class="el" href="a02995.html">OptionalJacobian</a>&lt; 3, 3 &gt; D_incrR_integratedOmega=boost::none, <a class="el" href="a02995.html">OptionalJacobian</a>&lt; 3, 3 &gt; F=boost::none)</td></tr>
-<tr class="memdesc:ac3f08ff7738f84d49725a8b72b7a9af2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate an incremental rotation given the gyro measurement and a time interval, and update both deltaTij_ and deltaRij_. <br /></td></tr>
-<tr class="memitem:a10fbefa82ee213aba78f119fb5acafba" id="r_a10fbefa82ee213aba78f119fb5acafba"><td class="memItemLeft"><a id="a10fbefa82ee213aba78f119fb5acafba" name="a10fbefa82ee213aba78f119fb5acafba"></a>
-<a class="el" href="a03775.html">Rot3</a>&#160;</td><td class="memItemRight"><b>biascorrectedDeltaRij</b> (const Vector3 &amp;biasOmegaIncr, <a class="el" href="a02995.html">OptionalJacobian</a>&lt; 3, 3 &gt; H=boost::none) const</td></tr>
-<tr class="memdesc:a10fbefa82ee213aba78f119fb5acafba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a bias corrected version of the integrated rotation, with optional Jacobian. <br /></td></tr>
-<tr class="memitem:ade1b314ed09d29bdcdaa677b202d9a65" id="r_ade1b314ed09d29bdcdaa677b202d9a65"><td class="memItemLeft"><a id="ade1b314ed09d29bdcdaa677b202d9a65" name="ade1b314ed09d29bdcdaa677b202d9a65"></a>
-Vector3&#160;</td><td class="memItemRight"><b>integrateCoriolis</b> (const <a class="el" href="a03775.html">Rot3</a> &amp;rot_i) const</td></tr>
-<tr class="memdesc:ade1b314ed09d29bdcdaa677b202d9a65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integrate coriolis correction in body frame rot_i. <br /></td></tr>
+<tr class="memitem:a35eae9018bf191cdeb11c567fb4b61d8" id="r_a35eae9018bf191cdeb11c567fb4b61d8"><td class="memItemLeft"><a id="a35eae9018bf191cdeb11c567fb4b61d8" name="a35eae9018bf191cdeb11c567fb4b61d8"></a>
+&#160;</td><td class="memItemRight"><b>HybridGaussianProductFactor</b> ()=default</td></tr>
+<tr class="memdesc:a35eae9018bf191cdeb11c567fb4b61d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
+<tr class="memitem:a44c6e4619f62324af9cfe45628be70b9" id="r_a44c6e4619f62324af9cfe45628be70b9"><td class="memTemplParams" colspan="2">template&lt;class FACTOR&gt; </td></tr>
+<tr class="memitem:a44c6e4619f62324af9cfe45628be70b9 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a44c6e4619f62324af9cfe45628be70b9">HybridGaussianProductFactor</a> (const std::shared_ptr&lt; FACTOR &gt; &amp;factor)</td></tr>
+<tr class="memdesc:a44c6e4619f62324af9cfe45628be70b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from a single factor.  <br /></td></tr>
+<tr class="memitem:a9c79b66bbf7cfbb3201be56284aa4ff8" id="r_a9c79b66bbf7cfbb3201be56284aa4ff8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a9c79b66bbf7cfbb3201be56284aa4ff8">HybridGaussianProductFactor</a> (Base &amp;&amp;tree)</td></tr>
+<tr class="memdesc:a9c79b66bbf7cfbb3201be56284aa4ff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from <a class="el" href="a03835.html" title="a decision tree is a function from assignments to values.">DecisionTree</a>.  <br /></td></tr>
+<tr id="pub-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Operators</div></td></tr>
+<tr class="memitem:a45f9ba1802e70bb8559370c4448197ef" id="r_a45f9ba1802e70bb8559370c4448197ef"><td class="memItemLeft"><a id="a45f9ba1802e70bb8559370c4448197ef" name="a45f9ba1802e70bb8559370c4448197ef"></a>
+<a class="el" href="#a35eae9018bf191cdeb11c567fb4b61d8">HybridGaussianProductFactor</a>&#160;</td><td class="memItemRight"><b>operator+</b> (const <a class="el" href="a05123.html#a07958208ac830cd10cbf5530b2c70f7c">GaussianFactor::shared_ptr</a> &amp;factor) const</td></tr>
+<tr class="memdesc:a45f9ba1802e70bb8559370c4448197ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add <a class="el" href="a05123.html" title="An abstract virtual base class for JacobianFactor and HessianFactor.">GaussianFactor</a> into <a class="el" href="a04755.html" title="Alias for DecisionTree of GaussianFactorGraphs and their scalar sums.">HybridGaussianProductFactor</a>. <br /></td></tr>
+<tr class="memitem:a7e6e3ea83daafdf5311ca565427a7826" id="r_a7e6e3ea83daafdf5311ca565427a7826"><td class="memItemLeft"><a id="a7e6e3ea83daafdf5311ca565427a7826" name="a7e6e3ea83daafdf5311ca565427a7826"></a>
+<a class="el" href="#a35eae9018bf191cdeb11c567fb4b61d8">HybridGaussianProductFactor</a>&#160;</td><td class="memItemRight"><b>operator+</b> (const <a class="el" href="a04723.html">HybridGaussianFactor</a> &amp;factor) const</td></tr>
+<tr class="memdesc:a7e6e3ea83daafdf5311ca565427a7826"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add <a class="el" href="a04723.html" title="Implementation of a discrete-conditioned hybrid factor.">HybridGaussianFactor</a> into <a class="el" href="a04755.html" title="Alias for DecisionTree of GaussianFactorGraphs and their scalar sums.">HybridGaussianProductFactor</a>. <br /></td></tr>
+<tr class="memitem:a8540b6129809b4fa5d55e302f69d1597" id="r_a8540b6129809b4fa5d55e302f69d1597"><td class="memItemLeft"><a id="a8540b6129809b4fa5d55e302f69d1597" name="a8540b6129809b4fa5d55e302f69d1597"></a>
+<a class="el" href="#a35eae9018bf191cdeb11c567fb4b61d8">HybridGaussianProductFactor</a> &amp;&#160;</td><td class="memItemRight"><b>operator+=</b> (const <a class="el" href="a05123.html#a07958208ac830cd10cbf5530b2c70f7c">GaussianFactor::shared_ptr</a> &amp;factor)</td></tr>
+<tr class="memdesc:a8540b6129809b4fa5d55e302f69d1597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add-assign operator for <a class="el" href="a05123.html" title="An abstract virtual base class for JacobianFactor and HessianFactor.">GaussianFactor</a>. <br /></td></tr>
+<tr class="memitem:ac31a0d868ada19fda7488f3ad4fa56fc" id="r_ac31a0d868ada19fda7488f3ad4fa56fc"><td class="memItemLeft"><a id="ac31a0d868ada19fda7488f3ad4fa56fc" name="ac31a0d868ada19fda7488f3ad4fa56fc"></a>
+<a class="el" href="#a35eae9018bf191cdeb11c567fb4b61d8">HybridGaussianProductFactor</a> &amp;&#160;</td><td class="memItemRight"><b>operator+=</b> (const <a class="el" href="a04723.html">HybridGaussianFactor</a> &amp;factor)</td></tr>
+<tr class="memdesc:ac31a0d868ada19fda7488f3ad4fa56fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add-assign operator for <a class="el" href="a04723.html" title="Implementation of a discrete-conditioned hybrid factor.">HybridGaussianFactor</a>. <br /></td></tr>
+<tr id="pub-methods-2" class="groupHeader"><td colspan="2"><div class="groupHeader">Testable</div></td></tr>
+<tr class="memitem:a9d613078dbccf0dafeff8de8638e96be" id="r_a9d613078dbccf0dafeff8de8638e96be"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9d613078dbccf0dafeff8de8638e96be">print</a> (const std::string &amp;s=&quot;&quot;, const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;formatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) const</td></tr>
+<tr class="memdesc:a9d613078dbccf0dafeff8de8638e96be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the <a class="el" href="a04755.html" title="Alias for DecisionTree of GaussianFactorGraphs and their scalar sums.">HybridGaussianProductFactor</a>.  <br /></td></tr>
+<tr class="memitem:a3370af2459bed53f68539271366890a5" id="r_a3370af2459bed53f68539271366890a5"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a3370af2459bed53f68539271366890a5">equals</a> (const <a class="el" href="#a35eae9018bf191cdeb11c567fb4b61d8">HybridGaussianProductFactor</a> &amp;other, double tol=1e-9) const</td></tr>
+<tr class="memdesc:a3370af2459bed53f68539271366890a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if this <a class="el" href="a04755.html" title="Alias for DecisionTree of GaussianFactorGraphs and their scalar sums.">HybridGaussianProductFactor</a> is equal to another.  <br /></td></tr>
+<tr id="pub-methods-3" class="groupHeader"><td colspan="2"><div class="groupHeader">Other methods</div></td></tr>
+<tr class="memitem:adbb8b65214407ecdc74c7b0b31c0bc1f" id="r_adbb8b65214407ecdc74c7b0b31c0bc1f"><td class="memItemLeft"><a class="el" href="#a35eae9018bf191cdeb11c567fb4b61d8">HybridGaussianProductFactor</a>&#160;</td><td class="memItemRight"><a class="el" href="#adbb8b65214407ecdc74c7b0b31c0bc1f">removeEmpty</a> () const</td></tr>
+<tr class="memdesc:adbb8b65214407ecdc74c7b0b31c0bc1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove empty GaussianFactorGraphs from the decision tree.  <br /></td></tr>
+<tr class="inherit_header pub_methods_a03835"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03835')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03835.html">gtsam::DecisionTree&lt; Key, GaussianFactorGraphValuePair &gt;</a></td></tr>
+<tr class="memitem:af290fdb29bb254e51bfa295208655bcf inherit pub_methods_a03835" id="r_af290fdb29bb254e51bfa295208655bcf"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DecisionTree</b> ()</td></tr>
+<tr class="memdesc:af290fdb29bb254e51bfa295208655bcf inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor (for serialization). <br /></td></tr>
+<tr class="memitem:a6427d8a417f455f8e143ab09c3d04209 inherit pub_methods_a03835" id="r_a6427d8a417f455f8e143ab09c3d04209"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DecisionTree</b> (const GaussianFactorGraphValuePair &amp;y)</td></tr>
+<tr class="memdesc:a6427d8a417f455f8e143ab09c3d04209 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a constant. <br /></td></tr>
+<tr class="memitem:ae0b844473823aa09c71e668449509cd2 inherit pub_methods_a03835" id="r_ae0b844473823aa09c71e668449509cd2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#ae0b844473823aa09c71e668449509cd2">DecisionTree</a> (const <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &amp;label, const GaussianFactorGraphValuePair &amp;y1, const GaussianFactorGraphValuePair &amp;y2)</td></tr>
+<tr class="memdesc:ae0b844473823aa09c71e668449509cd2 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create tree with 2 assignments <span class="tt">y1</span>, <span class="tt">y2</span>, splitting on variable <span class="tt">label</span>.  <br /></td></tr>
+<tr class="memitem:aaa6cb1a9966203a7f43ccd31b335ca7d inherit pub_methods_a03835" id="r_aaa6cb1a9966203a7f43ccd31b335ca7d"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DecisionTree</b> (const <a class="el" href="a03835.html#adcdd80ab1af415d212397a2666320e35">LabelC</a> &amp;label, const GaussianFactorGraphValuePair &amp;y1, const GaussianFactorGraphValuePair &amp;y2)</td></tr>
+<tr class="memdesc:aaa6cb1a9966203a7f43ccd31b335ca7d inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow Label+Cardinality for convenience. <br /></td></tr>
+<tr class="memitem:ad754d8699cb205788f889f012781bdc2 inherit pub_methods_a03835" id="r_ad754d8699cb205788f889f012781bdc2"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DecisionTree</b> (const std::vector&lt; <a class="el" href="a03835.html#adcdd80ab1af415d212397a2666320e35">LabelC</a> &gt; &amp;labelCs, const std::vector&lt; GaussianFactorGraphValuePair &gt; &amp;ys)</td></tr>
+<tr class="memdesc:ad754d8699cb205788f889f012781bdc2 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create from keys and a corresponding vector of values. <br /></td></tr>
+<tr class="memitem:a3a9a4b4209812f071c1225d9542fa443 inherit pub_methods_a03835" id="r_a3a9a4b4209812f071c1225d9542fa443"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DecisionTree</b> (const std::vector&lt; <a class="el" href="a03835.html#adcdd80ab1af415d212397a2666320e35">LabelC</a> &gt; &amp;labelCs, const std::string &amp;table)</td></tr>
+<tr class="memdesc:a3a9a4b4209812f071c1225d9542fa443 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create from keys and string table. <br /></td></tr>
+<tr class="memitem:a1d535f26a06302403a1bd6dcac87b041 inherit pub_methods_a03835" id="r_a1d535f26a06302403a1bd6dcac87b041"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DecisionTree</b> (Iterator begin, Iterator end, const <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &amp;label)</td></tr>
+<tr class="memdesc:a1d535f26a06302403a1bd6dcac87b041 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="a03835.html" title="a decision tree is a function from assignments to values.">DecisionTree</a> from others. <br /></td></tr>
+<tr class="memitem:afb65bfe5d3dc2b8f294ea894aabc25a3 inherit pub_methods_a03835" id="r_afb65bfe5d3dc2b8f294ea894aabc25a3"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DecisionTree</b> (const <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &amp;label, const DecisionTree &amp;f0, const DecisionTree &amp;f1)</td></tr>
+<tr class="memdesc:afb65bfe5d3dc2b8f294ea894aabc25a3 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="a03835.html" title="a decision tree is a function from assignments to values.">DecisionTree</a> from two others. <br /></td></tr>
+<tr class="memitem:a5ec8fcc3270d3cce93991a4985e6ce0b inherit pub_methods_a03835" id="r_a5ec8fcc3270d3cce93991a4985e6ce0b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#a5ec8fcc3270d3cce93991a4985e6ce0b">DecisionTree</a> (const <a class="el" href="a03835.html#a60ed61625945d0966103a59d9c47c8a6">Unary</a> &amp;op, DecisionTree &amp;&amp;other) noexcept</td></tr>
+<tr class="memdesc:a5ec8fcc3270d3cce93991a4985e6ce0b inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor for <a class="el" href="a03835.html" title="a decision tree is a function from assignments to values.">DecisionTree</a>.  <br /></td></tr>
+<tr class="memitem:a3fe8dfec74c488b61dfd157de62c8ef3 inherit pub_methods_a03835" id="r_a3fe8dfec74c488b61dfd157de62c8ef3"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#a3fe8dfec74c488b61dfd157de62c8ef3">DecisionTree</a> (const DecisionTree&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, X &gt; &amp;other, Func Y_of_X)</td></tr>
+<tr class="memdesc:a3fe8dfec74c488b61dfd157de62c8ef3 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert from a different value type.  <br /></td></tr>
+<tr class="memitem:ad5533f615494992ac69b54571d2449b7 inherit pub_methods_a03835" id="r_ad5533f615494992ac69b54571d2449b7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#ad5533f615494992ac69b54571d2449b7">DecisionTree</a> (const DecisionTree&lt; M, X &gt; &amp;other, const std::map&lt; M, <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &gt; &amp;<a class="el" href="a16201.html">map</a>, Func Y_of_X)</td></tr>
+<tr class="memdesc:ad5533f615494992ac69b54571d2449b7 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert from a different value type X to value type Y, also translate labels via map from type M to L.  <br /></td></tr>
+<tr class="memitem:a908549361598ebcd6ad40a5e5eebc73c inherit pub_methods_a03835" id="r_a908549361598ebcd6ad40a5e5eebc73c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#a908549361598ebcd6ad40a5e5eebc73c">print</a> (const std::string &amp;s, const LabelFormatter &amp;labelFormatter, const ValueFormatter &amp;valueFormatter) const</td></tr>
+<tr class="memdesc:a908549361598ebcd6ad40a5e5eebc73c inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">GTSAM-style print.  <br /></td></tr>
+<tr class="memitem:ae823c0be31b2cc75473fe78d8059c014 inherit pub_methods_a03835" id="r_ae823c0be31b2cc75473fe78d8059c014"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a> &amp;other, const CompareFunc &amp;compare=&amp;<a class="el" href="a03835.html#a35920f74df022d256d9137d3ab2628d2">DefaultCompare</a>) const</td></tr>
+<tr class="memitem:a2cc2a13e370f2f1e4e78dd1a1881eb82 inherit pub_methods_a03835" id="r_a2cc2a13e370f2f1e4e78dd1a1881eb82"><td class="memItemLeft">
+virtual&#160;</td><td class="memItemRight"><b>~DecisionTree</b> ()=default</td></tr>
+<tr class="memdesc:a2cc2a13e370f2f1e4e78dd1a1881eb82 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make virtual. <br /></td></tr>
+<tr class="memitem:a4aafe36874888125319445d2f50c4a90 inherit pub_methods_a03835" id="r_a4aafe36874888125319445d2f50c4a90"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>empty</b> () const</td></tr>
+<tr class="memdesc:a4aafe36874888125319445d2f50c4a90 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if tree is empty. <br /></td></tr>
+<tr class="memitem:ad9c9fc1b8f2aa6bc6466c2e7b61ee693 inherit pub_methods_a03835" id="r_ad9c9fc1b8f2aa6bc6466c2e7b61ee693"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>operator==</b> (const <a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a> &amp;q) const</td></tr>
+<tr class="memdesc:ad9c9fc1b8f2aa6bc6466c2e7b61ee693 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">equality <br /></td></tr>
+<tr class="memitem:aacfdbde11b02b8a95183b8a28af57f37 inherit pub_methods_a03835" id="r_aacfdbde11b02b8a95183b8a28af57f37"><td class="memItemLeft">
+const GaussianFactorGraphValuePair &amp;&#160;</td><td class="memItemRight"><b>operator()</b> (const <a class="el" href="a03803.html">Assignment</a>&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &gt; &amp;x) const</td></tr>
+<tr class="memdesc:aacfdbde11b02b8a95183b8a28af57f37 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">evaluate <br /></td></tr>
+<tr class="memitem:a4d0c2fc8d7f0bf91da569b10bfa4229f inherit pub_methods_a03835" id="r_a4d0c2fc8d7f0bf91da569b10bfa4229f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#a4d0c2fc8d7f0bf91da569b10bfa4229f">visit</a> (Func f) const</td></tr>
+<tr class="memdesc:a4d0c2fc8d7f0bf91da569b10bfa4229f inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a03823.html" title="Functor performing depth-first visit to each leaf with the leaf value as the argument.">Visit</a> all leaves in depth-first fashion.  <br /></td></tr>
+<tr class="memitem:a56c28d3544ad9bdb06ab981cfe518f6b inherit pub_methods_a03835" id="r_a56c28d3544ad9bdb06ab981cfe518f6b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#a56c28d3544ad9bdb06ab981cfe518f6b">visitLeaf</a> (Func f) const</td></tr>
+<tr class="memdesc:a56c28d3544ad9bdb06ab981cfe518f6b inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a03823.html" title="Functor performing depth-first visit to each leaf with the leaf value as the argument.">Visit</a> all leaves in depth-first fashion.  <br /></td></tr>
+<tr class="memitem:aaa6af91fb65c18c735b56a3e2088ec37 inherit pub_methods_a03835" id="r_aaa6af91fb65c18c735b56a3e2088ec37"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#aaa6af91fb65c18c735b56a3e2088ec37">visitWith</a> (Func f) const</td></tr>
+<tr class="memdesc:aaa6af91fb65c18c735b56a3e2088ec37 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a03823.html" title="Functor performing depth-first visit to each leaf with the leaf value as the argument.">Visit</a> all leaves in depth-first fashion.  <br /></td></tr>
+<tr class="memitem:ae80e65a90fe9ac40b5c5a4d07dfbbda7 inherit pub_methods_a03835" id="r_ae80e65a90fe9ac40b5c5a4d07dfbbda7"><td class="memItemLeft">
+size_t&#160;</td><td class="memItemRight"><b>nrLeaves</b> () const</td></tr>
+<tr class="memdesc:ae80e65a90fe9ac40b5c5a4d07dfbbda7 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of leaves in the tree. <br /></td></tr>
+<tr class="memitem:a73ca5583ac2dbb26accfc54de69a9c0a inherit pub_methods_a03835" id="r_a73ca5583ac2dbb26accfc54de69a9c0a"><td class="memItemLeft">X&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#a73ca5583ac2dbb26accfc54de69a9c0a">fold</a> (Func f, X x0) const</td></tr>
+<tr class="memdesc:a73ca5583ac2dbb26accfc54de69a9c0a inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fold a binary function over the tree, returning accumulator.  <br /></td></tr>
+<tr class="memitem:a3c81ed3e00b4ecf14633a107690f9946 inherit pub_methods_a03835" id="r_a3c81ed3e00b4ecf14633a107690f9946"><td class="memItemLeft">std::set&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#a3c81ed3e00b4ecf14633a107690f9946">labels</a> () const</td></tr>
+<tr class="memdesc:a3c81ed3e00b4ecf14633a107690f9946 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve all unique labels as a set.  <br /></td></tr>
+<tr class="memitem:a00d49afa8ffc80de9cbdbb4489e50ffe inherit pub_methods_a03835" id="r_a00d49afa8ffc80de9cbdbb4489e50ffe"><td class="memItemLeft">
+<a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&#160;</td><td class="memItemRight"><b>apply</b> (const <a class="el" href="a03835.html#a60ed61625945d0966103a59d9c47c8a6">Unary</a> &amp;op) const</td></tr>
+<tr class="memdesc:a00d49afa8ffc80de9cbdbb4489e50ffe inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">apply <a class="el" href="a03835.html#a60ed61625945d0966103a59d9c47c8a6">Unary</a> operation "op" to f <br /></td></tr>
+<tr class="memitem:a72f8882dd04d9cccf5dd0151820856f2 inherit pub_methods_a03835" id="r_a72f8882dd04d9cccf5dd0151820856f2"><td class="memItemLeft"><a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#a72f8882dd04d9cccf5dd0151820856f2">apply</a> (const UnaryAssignment &amp;op) const</td></tr>
+<tr class="memdesc:a72f8882dd04d9cccf5dd0151820856f2 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply <a class="el" href="a03835.html#a60ed61625945d0966103a59d9c47c8a6">Unary</a> operation "op" to f while also providing the corresponding assignment.  <br /></td></tr>
+<tr class="memitem:a47f7b5528330806519440a58f587c93b inherit pub_methods_a03835" id="r_a47f7b5528330806519440a58f587c93b"><td class="memItemLeft">
+<a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&#160;</td><td class="memItemRight"><b>apply</b> (const <a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a> &amp;g, const Binary &amp;op) const</td></tr>
+<tr class="memdesc:a47f7b5528330806519440a58f587c93b inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">apply binary operation "op" to f and g <br /></td></tr>
+<tr class="memitem:a0263dc037625a0f804260004b4c80b7b inherit pub_methods_a03835" id="r_a0263dc037625a0f804260004b4c80b7b"><td class="memItemLeft">
+<a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&#160;</td><td class="memItemRight"><b>choose</b> (const <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &amp;label, size_t index) const</td></tr>
+<tr class="memdesc:a0263dc037625a0f804260004b4c80b7b inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a new function where value(label)==index It's like "restrict" in Darwiche09book pg329, 330? <br /></td></tr>
+<tr class="memitem:aac3662ef13544f8ab2d376cc4a463e7e inherit pub_methods_a03835" id="r_aac3662ef13544f8ab2d376cc4a463e7e"><td class="memItemLeft">
+<a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&#160;</td><td class="memItemRight"><b>restrict</b> (const <a class="el" href="a03803.html">Assignment</a>&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &gt; &amp;assignment) const</td></tr>
+<tr class="memdesc:aac3662ef13544f8ab2d376cc4a463e7e inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choose multiple values. <br /></td></tr>
+<tr class="memitem:a9e2c871be4518f8487a8bd610c775924 inherit pub_methods_a03835" id="r_a9e2c871be4518f8487a8bd610c775924"><td class="memItemLeft">
+<a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&#160;</td><td class="memItemRight"><b>combine</b> (const <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &amp;label, size_t cardinality, const Binary &amp;op) const</td></tr>
+<tr class="memdesc:a9e2c871be4518f8487a8bd610c775924 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">combine subtrees on key with binary operation "op" <br /></td></tr>
+<tr class="memitem:a1c8ac39ffe15cbc5370a835277a9c33d inherit pub_methods_a03835" id="r_a1c8ac39ffe15cbc5370a835277a9c33d"><td class="memItemLeft">
+<a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&#160;</td><td class="memItemRight"><b>combine</b> (const <a class="el" href="a03835.html#adcdd80ab1af415d212397a2666320e35">LabelC</a> &amp;labelC, const Binary &amp;op) const</td></tr>
+<tr class="memdesc:a1c8ac39ffe15cbc5370a835277a9c33d inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">combine with <a class="el" href="a03835.html#adcdd80ab1af415d212397a2666320e35">LabelC</a> for convenience <br /></td></tr>
+<tr class="memitem:ab48471de856f9aba900cfe012052f090 inherit pub_methods_a03835" id="r_ab48471de856f9aba900cfe012052f090"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>dot</b> (std::ostream &amp;os, const LabelFormatter &amp;labelFormatter, const ValueFormatter &amp;valueFormatter, bool showZero=true) const</td></tr>
+<tr class="memdesc:ab48471de856f9aba900cfe012052f090 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">output to graphviz format, stream version <br /></td></tr>
+<tr class="memitem:acdcf72499f20d79585a43229848b1843 inherit pub_methods_a03835" id="r_acdcf72499f20d79585a43229848b1843"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>dot</b> (const std::string &amp;name, const LabelFormatter &amp;labelFormatter, const ValueFormatter &amp;valueFormatter, bool showZero=true) const</td></tr>
+<tr class="memdesc:acdcf72499f20d79585a43229848b1843 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">output to graphviz format, open a file <br /></td></tr>
+<tr class="memitem:aa9209aa4da52267e07790be7cff144c5 inherit pub_methods_a03835" id="r_aa9209aa4da52267e07790be7cff144c5"><td class="memItemLeft">
+std::string&#160;</td><td class="memItemRight"><b>dot</b> (const LabelFormatter &amp;labelFormatter, const ValueFormatter &amp;valueFormatter, bool showZero=true) const</td></tr>
+<tr class="memdesc:aa9209aa4da52267e07790be7cff144c5 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">output to graphviz format string <br /></td></tr>
+<tr class="memitem:ab5fdf1cddb7ab213cee4417645ad2c55 inherit pub_methods_a03835" id="r_ab5fdf1cddb7ab213cee4417645ad2c55"><td class="memItemLeft">std::pair&lt; <a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, A &gt;, <a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, B &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#ab5fdf1cddb7ab213cee4417645ad2c55">split</a> (std::function&lt; std::pair&lt; A, B &gt;(const GaussianFactorGraphValuePair &amp;)&gt; AB_of_Y) const</td></tr>
+<tr class="memdesc:ab5fdf1cddb7ab213cee4417645ad2c55 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert into two trees with value types A and B.  <br /></td></tr>
+<tr class="memitem:a81f7f2227e795ec80e014f4edd8b03c9 inherit pub_methods_a03835" id="r_a81f7f2227e795ec80e014f4edd8b03c9"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DecisionTree</b> (const <a class="el" href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">NodePtr</a> &amp;root)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:adecea8249bfa28e12992a35441231488" id="r_adecea8249bfa28e12992a35441231488"><td class="memItemLeft"><a id="adecea8249bfa28e12992a35441231488" name="adecea8249bfa28e12992a35441231488"></a>
-typedef <a class="el" href="a04751.html">PreintegratedRotationParams</a>&#160;</td><td class="memItemRight"><b>Params</b></td></tr>
+<tr class="memitem:a0be5decec73052ee194729c64e35ac9a" id="r_a0be5decec73052ee194729c64e35ac9a"><td class="memItemLeft"><a id="a0be5decec73052ee194729c64e35ac9a" name="a0be5decec73052ee194729c64e35ac9a"></a>
+using&#160;</td><td class="memItemRight"><b>Base</b> = <a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&lt;<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, GaussianFactorGraphValuePair&gt;</td></tr>
+<tr class="inherit_header pub_types_a03835"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03835')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03835.html">gtsam::DecisionTree&lt; Key, GaussianFactorGraphValuePair &gt;</a></td></tr>
+<tr class="memitem:a2e08e76debd7baa74b33a0b748d49e42 inherit pub_types_a03835" id="r_a2e08e76debd7baa74b33a0b748d49e42"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>LabelFormatter</b></td></tr>
+<tr class="memitem:a9585bd3cd5b1dc20dc90ffb64a1b8513 inherit pub_types_a03835" id="r_a9585bd3cd5b1dc20dc90ffb64a1b8513"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>ValueFormatter</b></td></tr>
+<tr class="memitem:a974fbdcb263af0bca580e83524ee3fff inherit pub_types_a03835" id="r_a974fbdcb263af0bca580e83524ee3fff"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>CompareFunc</b></td></tr>
+<tr class="memitem:a60ed61625945d0966103a59d9c47c8a6 inherit pub_types_a03835" id="r_a60ed61625945d0966103a59d9c47c8a6"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Unary</b></td></tr>
+<tr class="memdesc:a60ed61625945d0966103a59d9c47c8a6 inherit pub_types_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handy typedefs for unary and binary function types. <br /></td></tr>
+<tr class="memitem:a7fc249faa350aa563a61c56842588baa inherit pub_types_a03835" id="r_a7fc249faa350aa563a61c56842588baa"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>UnaryAssignment</b></td></tr>
+<tr class="memitem:a944c411a15f624f966584e9bba63fa84 inherit pub_types_a03835" id="r_a944c411a15f624f966584e9bba63fa84"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Binary</b></td></tr>
+<tr class="memitem:adcdd80ab1af415d212397a2666320e35 inherit pub_types_a03835" id="r_adcdd80ab1af415d212397a2666320e35"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>LabelC</b></td></tr>
+<tr class="memdesc:adcdd80ab1af415d212397a2666320e35 inherit pub_types_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">A label annotated with cardinality. <br /></td></tr>
+<tr class="memitem:a36a98f61b0b7df042427b132b313d7fd inherit pub_types_a03835" id="r_a36a98f61b0b7df042427b132b313d7fd"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">NodePtr</a></td></tr>
+<tr class="memdesc:a36a98f61b0b7df042427b132b313d7fd inherit pub_types_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">---------------------&mdash; <a class="el" href="a03835.html">Node</a> base class ------------------------&mdash;  <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:ae744d5c7fcf27da650d08f65467f15e1" id="r_ae744d5c7fcf27da650d08f65467f15e1"><td class="memItemLeft"><a id="ae744d5c7fcf27da650d08f65467f15e1" name="ae744d5c7fcf27da650d08f65467f15e1"></a>
-&#160;</td><td class="memItemRight"><b>PreintegratedRotation</b> ()</td></tr>
-<tr class="memdesc:ae744d5c7fcf27da650d08f65467f15e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for serialization. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a6a57eaeabb9d6144a8dff15e9b895a87" id="r_a6a57eaeabb9d6144a8dff15e9b895a87"><td class="memItemLeft"><a id="a6a57eaeabb9d6144a8dff15e9b895a87" name="a6a57eaeabb9d6144a8dff15e9b895a87"></a>
-boost::shared_ptr&lt; Params &gt;&#160;</td><td class="memItemRight"><b>p_</b></td></tr>
-<tr class="memdesc:a6a57eaeabb9d6144a8dff15e9b895a87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameters. <br /></td></tr>
-<tr class="memitem:ac290e4fa241ce8f6a7a1c94e6f2fccb8" id="r_ac290e4fa241ce8f6a7a1c94e6f2fccb8"><td class="memItemLeft"><a id="ac290e4fa241ce8f6a7a1c94e6f2fccb8" name="ac290e4fa241ce8f6a7a1c94e6f2fccb8"></a>
-double&#160;</td><td class="memItemRight"><b>deltaTij_</b></td></tr>
-<tr class="memdesc:ac290e4fa241ce8f6a7a1c94e6f2fccb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time interval from i to j. <br /></td></tr>
-<tr class="memitem:aead7cee1ef09b022ad4e2836c51c4cc0" id="r_aead7cee1ef09b022ad4e2836c51c4cc0"><td class="memItemLeft"><a id="aead7cee1ef09b022ad4e2836c51c4cc0" name="aead7cee1ef09b022ad4e2836c51c4cc0"></a>
-<a class="el" href="a03775.html">Rot3</a>&#160;</td><td class="memItemRight"><b>deltaRij_</b></td></tr>
-<tr class="memdesc:aead7cee1ef09b022ad4e2836c51c4cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preintegrated relative orientation (in frame i). <br /></td></tr>
-<tr class="memitem:a44e2af0899009e3d0eb935bc411d14a1" id="r_a44e2af0899009e3d0eb935bc411d14a1"><td class="memItemLeft"><a id="a44e2af0899009e3d0eb935bc411d14a1" name="a44e2af0899009e3d0eb935bc411d14a1"></a>
-Matrix3&#160;</td><td class="memItemRight"><b>delRdelBiasOmega_</b></td></tr>
-<tr class="memdesc:a44e2af0899009e3d0eb935bc411d14a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Jacobian of preintegrated rotation w.r.t. angular rate bias. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:ac98d07dd8f7b70e16ccb9a01abf56b9c" id="r_ac98d07dd8f7b70e16ccb9a01abf56b9c"><td class="memItemLeft"><a id="ac98d07dd8f7b70e16ccb9a01abf56b9c" name="ac98d07dd8f7b70e16ccb9a01abf56b9c"></a>
-class&#160;</td><td class="memItemRight"><b>boost::serialization::access</b></td></tr>
-<tr class="memdesc:ac98d07dd8f7b70e16ccb9a01abf56b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialization function. <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="memitem:a5f55b4ca62e40fce54e52b9b41058464" id="r_a5f55b4ca62e40fce54e52b9b41058464"><td class="memItemLeft"><a id="a5f55b4ca62e40fce54e52b9b41058464" name="a5f55b4ca62e40fce54e52b9b41058464"></a>
+static <a class="el" href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">NodePtr</a>&#160;</td><td class="memItemRight"><b>compose</b> (Iterator begin, Iterator end, const <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &amp;label)</td></tr>
+<tr class="inherit_header pub_attribs_a03835"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_a03835')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Attributes inherited from <a class="el" href="a03835.html">gtsam::DecisionTree&lt; Key, GaussianFactorGraphValuePair &gt;</a></td></tr>
+<tr class="memitem:a768a8bde0e6dc5d0b0e6f12f57560e9c inherit pub_attribs_a03835" id="r_a768a8bde0e6dc5d0b0e6f12f57560e9c"><td class="memItemLeft">
+<a class="el" href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">NodePtr</a>&#160;</td><td class="memItemRight"><b>root_</b></td></tr>
+<tr class="memdesc:a768a8bde0e6dc5d0b0e6f12f57560e9c inherit pub_attribs_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="a03835.html" title="a decision tree is a function from assignments to values.">DecisionTree</a> just contains the root. TODO(dellaert): make protected. <br /></td></tr>
+<tr class="inherit_header pro_static_methods_a03835"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_static_methods_a03835')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Protected Member Functions inherited from <a class="el" href="a03835.html">gtsam::DecisionTree&lt; Key, GaussianFactorGraphValuePair &gt;</a></td></tr>
+<tr class="memitem:a35920f74df022d256d9137d3ab2628d2 inherit pro_static_methods_a03835" id="r_a35920f74df022d256d9137d3ab2628d2"><td class="memItemLeft">
+static bool&#160;</td><td class="memItemRight"><b>DefaultCompare</b> (const GaussianFactorGraphValuePair &amp;a, const GaussianFactorGraphValuePair &amp;b)</td></tr>
+<tr class="memdesc:a35920f74df022d256d9137d3ab2628d2 inherit pro_static_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default method for comparison of two objects of type Y. <br /></td></tr>
+<tr class="memitem:a3c6f7c2dcbda0a4429e9cb3dc7824287 inherit pro_static_methods_a03835" id="r_a3c6f7c2dcbda0a4429e9cb3dc7824287"><td class="memItemLeft">
+static <a class="el" href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">NodePtr</a>&#160;</td><td class="memItemRight"><b>build</b> (It begin, It end, ValueIt beginY, ValueIt endY)</td></tr>
+<tr class="memdesc:a3c6f7c2dcbda0a4429e9cb3dc7824287 inherit pro_static_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal recursive function to create from keys, cardinalities, and Y values. <br /></td></tr>
+<tr class="memitem:af264d6ab7a0750c6d497d9ef83105d84 inherit pro_static_methods_a03835" id="r_af264d6ab7a0750c6d497d9ef83105d84"><td class="memItemLeft">static <a class="el" href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">NodePtr</a>&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#af264d6ab7a0750c6d497d9ef83105d84">create</a> (It begin, It end, ValueIt beginY, ValueIt endY)</td></tr>
+<tr class="memdesc:af264d6ab7a0750c6d497d9ef83105d84 inherit pro_static_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal helper function to create a tree from keys, cardinalities, and Y values.  <br /></td></tr>
+<tr class="memitem:abebc343d7c11043436188eec0859f0b8 inherit pro_static_methods_a03835" id="r_abebc343d7c11043436188eec0859f0b8"><td class="memItemLeft">static <a class="el" href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">NodePtr</a>&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#abebc343d7c11043436188eec0859f0b8">convertFrom</a> (const typename <a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, X &gt;<a class="el" href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">::NodePtr</a> &amp;f, std::function&lt; GaussianFactorGraphValuePair(const X &amp;)&gt; Y_of_X)</td></tr>
+<tr class="memdesc:abebc343d7c11043436188eec0859f0b8 inherit pro_static_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert from a DecisionTree&lt;L, X&gt; to DecisionTree&lt;L, Y&gt;.  <br /></td></tr>
+<tr class="memitem:a011bc16d5025032979ee3f66afe59b5b inherit pro_static_methods_a03835" id="r_a011bc16d5025032979ee3f66afe59b5b"><td class="memItemLeft">static <a class="el" href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">NodePtr</a>&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#a011bc16d5025032979ee3f66afe59b5b">convertFrom</a> (const typename <a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&lt; M, X &gt;<a class="el" href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">::NodePtr</a> &amp;f, std::function&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>(const M &amp;)&gt; L_of_M, std::function&lt; GaussianFactorGraphValuePair(const X &amp;)&gt; Y_of_X)</td></tr>
+<tr class="memdesc:a011bc16d5025032979ee3f66afe59b5b inherit pro_static_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert from a DecisionTree&lt;M, X&gt; to DecisionTree&lt;L, Y&gt;.  <br /></td></tr>
 </table>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a44c6e4619f62324af9cfe45628be70b9" name="a44c6e4619f62324af9cfe45628be70b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44c6e4619f62324af9cfe45628be70b9">&#9670;&#160;</a></span>HybridGaussianProductFactor() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class FACTOR&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gtsam::HybridGaussianProductFactor::HybridGaussianProductFactor </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; FACTOR &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>factor</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct from a single factor. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">FACTOR</td><td><a class="el" href="a04899.html">Factor</a> type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">factor</td><td>Shared pointer to the factor </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9c79b66bbf7cfbb3201be56284aa4ff8" name="a9c79b66bbf7cfbb3201be56284aa4ff8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c79b66bbf7cfbb3201be56284aa4ff8">&#9670;&#160;</a></span>HybridGaussianProductFactor() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gtsam::HybridGaussianProductFactor::HybridGaussianProductFactor </td>
+          <td>(</td>
+          <td class="paramtype">Base &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>tree</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct from <a class="el" href="a03835.html" title="a decision tree is a function from assignments to values.">DecisionTree</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>Decision tree to construct from </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a3370af2459bed53f68539271366890a5" name="a3370af2459bed53f68539271366890a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3370af2459bed53f68539271366890a5">&#9670;&#160;</a></span>equals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool gtsam::HybridGaussianProductFactor::equals </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a35eae9018bf191cdeb11c567fb4b61d8">HybridGaussianProductFactor</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>tol</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1e-9</span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if this <a class="el" href="a04755.html" title="Alias for DecisionTree of GaussianFactorGraphs and their scalar sums.">HybridGaussianProductFactor</a> is equal to another. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The other <a class="el" href="a04755.html" title="Alias for DecisionTree of GaussianFactorGraphs and their scalar sums.">HybridGaussianProductFactor</a> to compare with </td></tr>
+    <tr><td class="paramname">tol</td><td>Tolerance for floating point comparisons </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if equal, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a9d613078dbccf0dafeff8de8638e96be" name="a9d613078dbccf0dafeff8de8638e96be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d613078dbccf0dafeff8de8638e96be">&#9670;&#160;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gtsam::HybridGaussianProductFactor::print </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>formatter</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print the <a class="el" href="a04755.html" title="Alias for DecisionTree of GaussianFactorGraphs and their scalar sums.">HybridGaussianProductFactor</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Optional string to prepend </td></tr>
+    <tr><td class="paramname">formatter</td><td>Optional key formatter </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adbb8b65214407ecdc74c7b0b31c0bc1f" name="adbb8b65214407ecdc74c7b0b31c0bc1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbb8b65214407ecdc74c7b0b31c0bc1f">&#9670;&#160;</a></span>removeEmpty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a35eae9018bf191cdeb11c567fb4b61d8">HybridGaussianProductFactor</a> gtsam::HybridGaussianProductFactor::removeEmpty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove empty GaussianFactorGraphs from the decision tree. </p>
+<dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="a04755.html" title="Alias for DecisionTree of GaussianFactorGraphs and their scalar sums.">HybridGaussianProductFactor</a> with empty GaussianFactorGraphs removed</dd></dl>
+<p>If any <a class="el" href="a05135.html" title="A Linear Factor Graph is a factor graph where all factors are Gaussian, i.e.">GaussianFactorGraph</a> in the decision tree contains a nullptr, convert that leaf to an empty <a class="el" href="a05135.html" title="A Linear Factor Graph is a factor graph where all factors are Gaussian, i.e.">GaussianFactorGraph</a> with zero scalar sum. This is needed because the <a class="el" href="a03835.html" title="a decision tree is a function from assignments to values.">DecisionTree</a> will otherwise create a <a class="el" href="a05135.html" title="A Linear Factor Graph is a factor graph where all factors are Gaussian, i.e.">GaussianFactorGraph</a> with a single (null) factor, which doesn't register as null. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/navigation/<a class="el" href="a00908_source.html">PreintegratedRotation.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/navigation/<a class="el" href="a00917.html">PreintegratedRotation.cpp</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/hybrid/<a class="el" href="a00743_source.html">HybridGaussianProductFactor.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/hybrid/<b>HybridGaussianProductFactor.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -206,7 +458,7 @@ class&#160;</td><td class="memItemRight"><b>boost::serialization::access</b></td
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04755.html">PreintegratedRotation</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04755.html">HybridGaussianProductFactor</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

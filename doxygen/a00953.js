@@ -1,4 +1,4 @@
 var a00953 =
 [
-    [ "gtsam::TangentPreintegration", "a04791.html", "a04791" ]
+    [ "gtsam::buildVectorValues", "a02242.html#ac4bcf0cde01107d18a33bfb63bf7588a", null ]
 ];

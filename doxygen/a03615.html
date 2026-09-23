@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::EssentialMatrix Class Reference</title>
+<title>gtsam: gtsam::Value Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,184 +96,56 @@ $(function(){initNavTree('a03615.html','','a03612'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::EssentialMatrix Class Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::Value Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>An essential matrix is like a <a class="el" href="a03727.html" title="A 3D pose (R,t) : (Rot3,Point3).">Pose3</a>, except with translation up to scale It is named after the 3*3 matrix aEb = [aTb]x aRb from computer vision, but here we choose instead to parameterize it as a (<a class="el" href="a03775.html" title="Rot3 is a 3D rotation represented as a rotation matrix if the preprocessor symbol GTSAM_USE_QUATERNIO...">Rot3</a>,<a class="el" href="a03927.html" title="Represents a 3D point on a unit sphere.">Unit3</a>) pair. </p>
-<p>We can then non-linearly optimize immediately on this 5-dimensional manifold. </p>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Manifold</h2></td></tr>
-<tr class="memitem:a695b5505e06e600fe1ea9b9a5b8ebf31" id="r_a695b5505e06e600fe1ea9b9a5b8ebf31"><td class="memItemLeft"><a id="a695b5505e06e600fe1ea9b9a5b8ebf31" name="a695b5505e06e600fe1ea9b9a5b8ebf31"></a>enum &#160;</td><td class="memItemRight">{ <b>dimension</b> = 5
- }</td></tr>
-<tr class="memitem:a6cbf458822514006cf0670363a58e84d" id="r_a6cbf458822514006cf0670363a58e84d"><td class="memItemLeft"><a id="a6cbf458822514006cf0670363a58e84d" name="a6cbf458822514006cf0670363a58e84d"></a>
-typedef <a class="el" href="a02995.html">OptionalJacobian</a>&lt; dimension, dimension &gt;&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
-<tr class="memitem:aa80bef5fb8e29f3f661bb2a0fe2cf6fc" id="r_aa80bef5fb8e29f3f661bb2a0fe2cf6fc"><td class="memItemLeft"><a id="aa80bef5fb8e29f3f661bb2a0fe2cf6fc" name="aa80bef5fb8e29f3f661bb2a0fe2cf6fc"></a>
-static size_t&#160;</td><td class="memItemRight"><b>Dim</b> ()</td></tr>
-<tr class="memitem:a019971c1382801292031e1ce3835e057" id="r_a019971c1382801292031e1ce3835e057"><td class="memItemLeft"><a id="a019971c1382801292031e1ce3835e057" name="a019971c1382801292031e1ce3835e057"></a>
-size_t&#160;</td><td class="memItemRight"><b>dim</b> () const</td></tr>
-<tr class="memitem:a768f014724809c0176d1cae10beb1932" id="r_a768f014724809c0176d1cae10beb1932"><td class="memItemLeft"><a id="a768f014724809c0176d1cae10beb1932" name="a768f014724809c0176d1cae10beb1932"></a>
-<a class="el" href="#a29e768b352dff0cec0e50199663fd18e">EssentialMatrix</a>&#160;</td><td class="memItemRight"><b>retract</b> (const Vector5 &amp;xi) const</td></tr>
-<tr class="memdesc:a768f014724809c0176d1cae10beb1932"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retract delta to manifold. <br /></td></tr>
-<tr class="memitem:a230f448b9900fe0c22a83a14ac7fca3c" id="r_a230f448b9900fe0c22a83a14ac7fca3c"><td class="memItemLeft"><a id="a230f448b9900fe0c22a83a14ac7fca3c" name="a230f448b9900fe0c22a83a14ac7fca3c"></a>
-Vector5&#160;</td><td class="memItemRight"><b>localCoordinates</b> (const <a class="el" href="#a29e768b352dff0cec0e50199663fd18e">EssentialMatrix</a> &amp;other) const</td></tr>
-<tr class="memdesc:a230f448b9900fe0c22a83a14ac7fca3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the coordinates in the tangent space. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Advanced Interface</h2></td></tr>
-<tr class="memitem:ac98d07dd8f7b70e16ccb9a01abf56b9c" id="r_ac98d07dd8f7b70e16ccb9a01abf56b9c"><td class="memItemLeft"><a id="ac98d07dd8f7b70e16ccb9a01abf56b9c" name="ac98d07dd8f7b70e16ccb9a01abf56b9c"></a>
-class&#160;</td><td class="memItemRight"><b>boost::serialization::access</b></td></tr>
-<tr class="memdesc:ac98d07dd8f7b70e16ccb9a01abf56b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialization function. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Essential matrix methods</h2></td></tr>
-<tr class="memitem:a08d715b14a2db37464e532fa79430466" id="r_a08d715b14a2db37464e532fa79430466"><td class="memItemLeft"><a class="el" href="#a29e768b352dff0cec0e50199663fd18e">EssentialMatrix</a>&#160;</td><td class="memItemRight"><a class="el" href="#a08d715b14a2db37464e532fa79430466">operator*</a> (const <a class="el" href="a03775.html">Rot3</a> &amp;cRb, const <a class="el" href="#a29e768b352dff0cec0e50199663fd18e">EssentialMatrix</a> &amp;E)</td></tr>
-<tr class="memdesc:a08d715b14a2db37464e532fa79430466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given essential matrix E in camera frame B, convert to body frame C.  <br /></td></tr>
-<tr class="memitem:a226caafd6197b22966fb6208b00932cc" id="r_a226caafd6197b22966fb6208b00932cc"><td class="memItemLeft"><a id="a226caafd6197b22966fb6208b00932cc" name="a226caafd6197b22966fb6208b00932cc"></a>
-const <a class="el" href="a03775.html">Rot3</a> &amp;&#160;</td><td class="memItemRight"><b>rotation</b> () const</td></tr>
-<tr class="memdesc:a226caafd6197b22966fb6208b00932cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotation. <br /></td></tr>
-<tr class="memitem:ac12aedc3267b87de73518edad3d3bfba" id="r_ac12aedc3267b87de73518edad3d3bfba"><td class="memItemLeft"><a id="ac12aedc3267b87de73518edad3d3bfba" name="ac12aedc3267b87de73518edad3d3bfba"></a>
-const <a class="el" href="a03927.html">Unit3</a> &amp;&#160;</td><td class="memItemRight"><b>direction</b> () const</td></tr>
-<tr class="memdesc:ac12aedc3267b87de73518edad3d3bfba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Direction. <br /></td></tr>
-<tr class="memitem:aed2afb85f3ed40fd981993abd0fee96d" id="r_aed2afb85f3ed40fd981993abd0fee96d"><td class="memItemLeft"><a id="aed2afb85f3ed40fd981993abd0fee96d" name="aed2afb85f3ed40fd981993abd0fee96d"></a>
-const Matrix3 &amp;&#160;</td><td class="memItemRight"><b>matrix</b> () const</td></tr>
-<tr class="memdesc:aed2afb85f3ed40fd981993abd0fee96d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return 3*3 matrix representation. <br /></td></tr>
-<tr class="memitem:aaf9a60e2bf4254ded7e038737e207f53" id="r_aaf9a60e2bf4254ded7e038737e207f53"><td class="memItemLeft"><a id="aaf9a60e2bf4254ded7e038737e207f53" name="aaf9a60e2bf4254ded7e038737e207f53"></a>
-const <a class="el" href="a03927.html">Unit3</a> &amp;&#160;</td><td class="memItemRight"><b>epipole_a</b> () const</td></tr>
-<tr class="memdesc:aaf9a60e2bf4254ded7e038737e207f53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return epipole in image_a , as <a class="el" href="a03927.html" title="Represents a 3D point on a unit sphere.">Unit3</a> to allow for infinity. <br /></td></tr>
-<tr class="memitem:acb6b6c1586e1e5fbfed6d08a6f7abdff" id="r_acb6b6c1586e1e5fbfed6d08a6f7abdff"><td class="memItemLeft"><a id="acb6b6c1586e1e5fbfed6d08a6f7abdff" name="acb6b6c1586e1e5fbfed6d08a6f7abdff"></a>
-<a class="el" href="a03927.html">Unit3</a>&#160;</td><td class="memItemRight"><b>epipole_b</b> () const</td></tr>
-<tr class="memdesc:acb6b6c1586e1e5fbfed6d08a6f7abdff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return epipole in image_b, as <a class="el" href="a03927.html" title="Represents a 3D point on a unit sphere.">Unit3</a> to allow for infinity. <br /></td></tr>
-<tr class="memitem:aca8ee6259be205efec13de59d13ab3a7" id="r_aca8ee6259be205efec13de59d13ab3a7"><td class="memItemLeft">GTSAM_EXPORT <a class="el" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">Point3</a>&#160;</td><td class="memItemRight"><a class="el" href="#aca8ee6259be205efec13de59d13ab3a7">transformTo</a> (const <a class="el" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">Point3</a> &amp;p, <a class="el" href="a02995.html">OptionalJacobian</a>&lt; 3, 5 &gt; DE=boost::none, <a class="el" href="a02995.html">OptionalJacobian</a>&lt; 3, 3 &gt; Dpoint=boost::none) const</td></tr>
-<tr class="memdesc:aca8ee6259be205efec13de59d13ab3a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">takes point in world coordinates and transforms it to pose with |t|==1  <br /></td></tr>
-<tr class="memitem:af9a4340182f05a4d1706d3c1ca5cc678" id="r_af9a4340182f05a4d1706d3c1ca5cc678"><td class="memItemLeft">GTSAM_EXPORT <a class="el" href="#a29e768b352dff0cec0e50199663fd18e">EssentialMatrix</a>&#160;</td><td class="memItemRight"><a class="el" href="#af9a4340182f05a4d1706d3c1ca5cc678">rotate</a> (const <a class="el" href="a03775.html">Rot3</a> &amp;cRb, <a class="el" href="a02995.html">OptionalJacobian</a>&lt; 5, 5 &gt; HE=boost::none, <a class="el" href="a02995.html">OptionalJacobian</a>&lt; 5, 3 &gt; HR=boost::none) const</td></tr>
-<tr class="memdesc:af9a4340182f05a4d1706d3c1ca5cc678"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given essential matrix E in camera frame B, convert to body frame C.  <br /></td></tr>
-<tr class="memitem:a5516f9c1d46c81dae4506c90e8fb7031" id="r_a5516f9c1d46c81dae4506c90e8fb7031"><td class="memItemLeft"><a id="a5516f9c1d46c81dae4506c90e8fb7031" name="a5516f9c1d46c81dae4506c90e8fb7031"></a>
-GTSAM_EXPORT double&#160;</td><td class="memItemRight"><b>error</b> (const Vector3 &amp;vA, const Vector3 &amp;vB, <a class="el" href="a02995.html">OptionalJacobian</a>&lt; 1, 5 &gt; H=boost::none) const</td></tr>
-<tr class="memdesc:a5516f9c1d46c81dae4506c90e8fb7031"><td class="mdescLeft">&#160;</td><td class="mdescRight">epipolar error, algebraic <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Constructors and named constructors</h2></td></tr>
-<tr class="memitem:a4dcbb4588415f7fe874855f113d5008d" id="r_a4dcbb4588415f7fe874855f113d5008d"><td class="memItemLeft"><a id="a4dcbb4588415f7fe874855f113d5008d" name="a4dcbb4588415f7fe874855f113d5008d"></a>
-static GTSAM_EXPORT <a class="el" href="#a29e768b352dff0cec0e50199663fd18e">EssentialMatrix</a>&#160;</td><td class="memItemRight"><b>FromRotationAndDirection</b> (const <a class="el" href="a03775.html">Rot3</a> &amp;aRb, const <a class="el" href="a03927.html">Unit3</a> &amp;aTb, <a class="el" href="a02995.html">OptionalJacobian</a>&lt; 5, 3 &gt; H1=boost::none, <a class="el" href="a02995.html">OptionalJacobian</a>&lt; 5, 2 &gt; H2=boost::none)</td></tr>
-<tr class="memdesc:a4dcbb4588415f7fe874855f113d5008d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Named constructor with derivatives. <br /></td></tr>
-<tr class="memitem:a378802c7da7df87a6fd0bf563b6bdb13" id="r_a378802c7da7df87a6fd0bf563b6bdb13"><td class="memItemLeft"><a id="a378802c7da7df87a6fd0bf563b6bdb13" name="a378802c7da7df87a6fd0bf563b6bdb13"></a>
-static GTSAM_EXPORT <a class="el" href="#a29e768b352dff0cec0e50199663fd18e">EssentialMatrix</a>&#160;</td><td class="memItemRight"><b>FromPose3</b> (const <a class="el" href="a03727.html">Pose3</a> &amp;_1P2_, <a class="el" href="a02995.html">OptionalJacobian</a>&lt; 5, 6 &gt; H=boost::none)</td></tr>
-<tr class="memdesc:a378802c7da7df87a6fd0bf563b6bdb13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Named constructor converting a <a class="el" href="a03727.html" title="A 3D pose (R,t) : (Rot3,Point3).">Pose3</a> with scale to <a class="el" href="a03615.html" title="An essential matrix is like a Pose3, except with translation up to scale It is named after the 3*3 ma...">EssentialMatrix</a> (no scale). <br /></td></tr>
-<tr class="memitem:a4b3fdce1e82ffb2901e53ed9bc5a7aba" id="r_a4b3fdce1e82ffb2901e53ed9bc5a7aba"><td class="memTemplParams" colspan="2"><a id="a4b3fdce1e82ffb2901e53ed9bc5a7aba" name="a4b3fdce1e82ffb2901e53ed9bc5a7aba"></a>
-template&lt;typename Engine&gt; </td></tr>
-<tr class="memitem:a4b3fdce1e82ffb2901e53ed9bc5a7aba template"><td class="memItemLeft">static <a class="el" href="#a29e768b352dff0cec0e50199663fd18e">EssentialMatrix</a>&#160;</td><td class="memItemRight"><b>Random</b> (Engine &amp;rng)</td></tr>
-<tr class="memdesc:a4b3fdce1e82ffb2901e53ed9bc5a7aba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Random, using <a class="el" href="a03775.html#a4529e98aca0ec68b04627cde118b43e1" title="Random, generates a random axis, then random angle  [-pi,pi] Example: std::mt19937 engine(42); Unit3 ...">Rot3::Random</a> and <a class="el" href="a03927.html#ac789022b3cbad1e166725915f8fcbe2c" title="Random direction, using boost::uniform_on_sphere Example: std::mt19937 engine(42); Unit3 unit = Unit3...">Unit3::Random</a>. <br /></td></tr>
-<tr class="memitem:a29e768b352dff0cec0e50199663fd18e" id="r_a29e768b352dff0cec0e50199663fd18e"><td class="memItemLeft"><a id="a29e768b352dff0cec0e50199663fd18e" name="a29e768b352dff0cec0e50199663fd18e"></a>
-&#160;</td><td class="memItemRight"><b>EssentialMatrix</b> ()</td></tr>
-<tr class="memdesc:a29e768b352dff0cec0e50199663fd18e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
-<tr class="memitem:a7ab38f00c9e4e460827a09b02c9e0f20" id="r_a7ab38f00c9e4e460827a09b02c9e0f20"><td class="memItemLeft"><a id="a7ab38f00c9e4e460827a09b02c9e0f20" name="a7ab38f00c9e4e460827a09b02c9e0f20"></a>
-&#160;</td><td class="memItemRight"><b>EssentialMatrix</b> (const <a class="el" href="a03775.html">Rot3</a> &amp;aRb, const <a class="el" href="a03927.html">Unit3</a> &amp;aTb)</td></tr>
-<tr class="memdesc:a7ab38f00c9e4e460827a09b02c9e0f20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from rotation and translation. <br /></td></tr>
-</table><table class="memberdecls">
+<div class="textblock"><p>This is the base class for any type to be stored in <a class="el" href="a06527.html" title="A non-templated config holding any types of Manifold-group elements.">Values</a>. </p>
+<p>Note: As of GTSAM 4.0, <a class="el" href="a03615.html" title="This is the base class for any type to be stored in Values.">Value</a> types should no longer derive from <a class="el" href="a03615.html" title="This is the base class for any type to be stored in Values.">Value</a> or DerivedValue. Use type traits instead. See <a href="https://bitbucket.org/gtborg/gtsam/wiki/Migrating%20from%20GTSAM%203.X%20to%20GTSAM%204.0#markdown-header-custom-value-types">https://bitbucket.org/gtborg/gtsam/wiki/Migrating%20from%20GTSAM%203.X%20to%20GTSAM%204.0#markdown-header-custom-value-types</a> for current usage and migration details. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::Value:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="a03615.png" usemap="#gtsam_3A_3AValue_map" alt=""/>
+  <map id="gtsam_3A_3AValue_map" name="gtsam_3A_3AValue_map">
+<area href="a03183.html" title="Wraps any type T so it can play as a Value." alt="gtsam::GenericValue&lt; T &gt;" shape="rect" coords="0,56,159,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Testable</div></td></tr>
-<tr class="memitem:a921f152188ad8f74fae6328a690f7411" id="r_a921f152188ad8f74fae6328a690f7411"><td class="memItemLeft"><a id="a921f152188ad8f74fae6328a690f7411" name="a921f152188ad8f74fae6328a690f7411"></a>
-GTSAM_EXPORT void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;&quot;) const</td></tr>
-<tr class="memdesc:a921f152188ad8f74fae6328a690f7411"><td class="mdescLeft">&#160;</td><td class="mdescRight">print with optional string <br /></td></tr>
-<tr class="memitem:a24669283146c7e6df3b3d01fbd0b1fed" id="r_a24669283146c7e6df3b3d01fbd0b1fed"><td class="memItemLeft"><a id="a24669283146c7e6df3b3d01fbd0b1fed" name="a24669283146c7e6df3b3d01fbd0b1fed"></a>
-bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="#a29e768b352dff0cec0e50199663fd18e">EssentialMatrix</a> &amp;other, double tol=1e-8) const</td></tr>
-<tr class="memdesc:a24669283146c7e6df3b3d01fbd0b1fed"><td class="mdescLeft">&#160;</td><td class="mdescRight">assert equality up to a tolerance <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aa0ddbe48ef8253475276de478081025d" id="r_aa0ddbe48ef8253475276de478081025d"><td class="memItemLeft"><a id="aa0ddbe48ef8253475276de478081025d" name="aa0ddbe48ef8253475276de478081025d"></a>
-static Vector3&#160;</td><td class="memItemRight"><b>Homogeneous</b> (const <a class="el" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> &amp;p)</td></tr>
-<tr class="memdesc:aa0ddbe48ef8253475276de478081025d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static function to convert <a class="el" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d" title="As of GTSAM 4, in order to make GTSAM more lean, it is now possible to just typedef Point2 to Vector2...">Point2</a> to homogeneous coordinates. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
-Friends</h2></td></tr>
-<tr id="friends-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Streaming operators</div></td></tr>
-<tr class="memitem:ae747d324ecd3008b7c96c28a5eeb496f" id="r_ae747d324ecd3008b7c96c28a5eeb496f"><td class="memItemLeft"><a id="ae747d324ecd3008b7c96c28a5eeb496f" name="ae747d324ecd3008b7c96c28a5eeb496f"></a>
-GTSAM_EXPORT friend std::ostream &amp;&#160;</td><td class="memItemRight"><b>operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="#a29e768b352dff0cec0e50199663fd18e">EssentialMatrix</a> &amp;E)</td></tr>
-<tr class="memdesc:ae747d324ecd3008b7c96c28a5eeb496f"><td class="mdescLeft">&#160;</td><td class="mdescRight">stream to stream <br /></td></tr>
-<tr class="memitem:a3b8375e79cc6e6d30a4aa40e9a011611" id="r_a3b8375e79cc6e6d30a4aa40e9a011611"><td class="memItemLeft"><a id="a3b8375e79cc6e6d30a4aa40e9a011611" name="a3b8375e79cc6e6d30a4aa40e9a011611"></a>
-GTSAM_EXPORT friend std::istream &amp;&#160;</td><td class="memItemRight"><b>operator&gt;&gt;</b> (std::istream &amp;is, <a class="el" href="#a29e768b352dff0cec0e50199663fd18e">EssentialMatrix</a> &amp;E)</td></tr>
-<tr class="memdesc:a3b8375e79cc6e6d30a4aa40e9a011611"><td class="mdescLeft">&#160;</td><td class="mdescRight">stream from stream <br /></td></tr>
+<tr class="memitem:a26ebd8fc98eaf03512e856c16bdf0a66" id="r_a26ebd8fc98eaf03512e856c16bdf0a66"><td class="memItemLeft"><a id="a26ebd8fc98eaf03512e856c16bdf0a66" name="a26ebd8fc98eaf03512e856c16bdf0a66"></a>
+&#160;</td><td class="memItemRight"><b>Value</b> (const Value &amp;other)=default</td></tr>
+<tr class="memitem:ac6245c02ce05c4a87072ebc6bd27a7d5" id="r_ac6245c02ce05c4a87072ebc6bd27a7d5"><td class="memItemLeft">virtual Value *&#160;</td><td class="memItemRight"><a class="el" href="#ac6245c02ce05c4a87072ebc6bd27a7d5">clone_</a> () const =0</td></tr>
+<tr class="memdesc:ac6245c02ce05c4a87072ebc6bd27a7d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clone this value in a special memory pool, must be deleted with <a class="el" href="#a5a0554b9e0758f370073ea3cc5cf1c9f" title="Deallocate a raw pointer of this value.">Value::deallocate_</a>, <em>not</em> with the 'delete' operator.  <br /></td></tr>
+<tr class="memitem:a5a0554b9e0758f370073ea3cc5cf1c9f" id="r_a5a0554b9e0758f370073ea3cc5cf1c9f"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a5a0554b9e0758f370073ea3cc5cf1c9f">deallocate_</a> () const =0</td></tr>
+<tr class="memdesc:a5a0554b9e0758f370073ea3cc5cf1c9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deallocate a raw pointer of this value.  <br /></td></tr>
+<tr class="memitem:a225de1bd0d5b0f44586b6fa70eb09cda" id="r_a225de1bd0d5b0f44586b6fa70eb09cda"><td class="memItemLeft">virtual std::shared_ptr&lt; Value &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a225de1bd0d5b0f44586b6fa70eb09cda">clone</a> () const =0</td></tr>
+<tr class="memdesc:a225de1bd0d5b0f44586b6fa70eb09cda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clone this value (normal clone on the heap, delete with 'delete' operator).  <br /></td></tr>
+<tr class="memitem:a74edb2709fe745b6d09087f6aacf507f" id="r_a74edb2709fe745b6d09087f6aacf507f"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="#a74edb2709fe745b6d09087f6aacf507f">equals_</a> (const Value &amp;other, double tol=1e-9) const =0</td></tr>
+<tr class="memdesc:a74edb2709fe745b6d09087f6aacf507f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare this <a class="el" href="a03615.html" title="This is the base class for any type to be stored in Values.">Value</a> with another for equality.  <br /></td></tr>
+<tr class="memitem:ac338307bb9f00cd29a70a48058069458" id="r_ac338307bb9f00cd29a70a48058069458"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#ac338307bb9f00cd29a70a48058069458">print</a> (const std::string &amp;str=&quot;&quot;) const =0</td></tr>
+<tr class="memdesc:ac338307bb9f00cd29a70a48058069458"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print this value, for debugging and unit tests.  <br /></td></tr>
+<tr class="memitem:a21e0a839ddaabd4c56559684ff887efe" id="r_a21e0a839ddaabd4c56559684ff887efe"><td class="memItemLeft">virtual size_t&#160;</td><td class="memItemRight"><a class="el" href="#a21e0a839ddaabd4c56559684ff887efe">dim</a> () const =0</td></tr>
+<tr class="memdesc:a21e0a839ddaabd4c56559684ff887efe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the dimensionality of the tangent space of this value.  <br /></td></tr>
+<tr class="memitem:a2b95d3ec328cbad775490fa15dae27d5" id="r_a2b95d3ec328cbad775490fa15dae27d5"><td class="memItemLeft">virtual Value *&#160;</td><td class="memItemRight"><a class="el" href="#a2b95d3ec328cbad775490fa15dae27d5">retract_</a> (const Vector &amp;delta) const =0</td></tr>
+<tr class="memdesc:a2b95d3ec328cbad775490fa15dae27d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment the value, by mapping from the vector delta in the tangent space of the current value back to the manifold to produce a new, incremented value.  <br /></td></tr>
+<tr class="memitem:a83429f15b4f68ed92e976649ea52da97" id="r_a83429f15b4f68ed92e976649ea52da97"><td class="memItemLeft">virtual Vector&#160;</td><td class="memItemRight"><a class="el" href="#a83429f15b4f68ed92e976649ea52da97">localCoordinates_</a> (const Value &amp;value) const =0</td></tr>
+<tr class="memdesc:a83429f15b4f68ed92e976649ea52da97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the coordinates in the tangent space of this value that retract() would map to <code>value</code>.  <br /></td></tr>
+<tr class="memitem:abefd5e7e205863119c1f88075070f5df" id="r_abefd5e7e205863119c1f88075070f5df"><td class="memItemLeft">virtual Value &amp;&#160;</td><td class="memItemRight"><a class="el" href="#abefd5e7e205863119c1f88075070f5df">operator=</a> (const Value &amp;)</td></tr>
+<tr class="memdesc:abefd5e7e205863119c1f88075070f5df"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a03803.html" title="An assignment from labels to value index (size_t).">Assignment</a> operator.  <br /></td></tr>
+<tr class="memitem:a3572aa15e1db4d995796f4354d926d49" id="r_a3572aa15e1db4d995796f4354d926d49"><td class="memTemplParams" colspan="2"><a id="a3572aa15e1db4d995796f4354d926d49" name="a3572aa15e1db4d995796f4354d926d49"></a>
+template&lt;typename ValueType&gt; </td></tr>
+<tr class="memitem:a3572aa15e1db4d995796f4354d926d49 template"><td class="memItemLeft">const ValueType &amp;&#160;</td><td class="memItemRight"><b>cast</b> () const</td></tr>
+<tr class="memdesc:a3572aa15e1db4d995796f4354d926d49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cast to known ValueType. <br /></td></tr>
+<tr class="memitem:a616a94e2ce8e99e732d5ceb9af00632c" id="r_a616a94e2ce8e99e732d5ceb9af00632c"><td class="memItemLeft"><a id="a616a94e2ce8e99e732d5ceb9af00632c" name="a616a94e2ce8e99e732d5ceb9af00632c"></a>
+virtual&#160;</td><td class="memItemRight"><b>~Value</b> ()</td></tr>
+<tr class="memdesc:a616a94e2ce8e99e732d5ceb9af00632c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virutal destructor. <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="af9a4340182f05a4d1706d3c1ca5cc678" name="af9a4340182f05a4d1706d3c1ca5cc678"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9a4340182f05a4d1706d3c1ca5cc678">&#9670;&#160;</a></span>rotate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a29e768b352dff0cec0e50199663fd18e">EssentialMatrix</a> gtsam::EssentialMatrix::rotate </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a03775.html">Rot3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>cRb</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a02995.html">OptionalJacobian</a>&lt; 5, 5 &gt;</td>          <td class="paramname"><span class="paramname"><em>HE</em></span><span class="paramdefsep"> = </span><span class="paramdefval">boost::none</span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a02995.html">OptionalJacobian</a>&lt; 5, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>HR</em></span><span class="paramdefsep"> = </span><span class="paramdefval">boost::none</span>&#160;) const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Given essential matrix E in camera frame B, convert to body frame C. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cRb</td><td>rotation from body frame to camera frame </td></tr>
-    <tr><td class="paramname">E</td><td>essential matrix E in camera frame C </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aca8ee6259be205efec13de59d13ab3a7" name="aca8ee6259be205efec13de59d13ab3a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca8ee6259be205efec13de59d13ab3a7">&#9670;&#160;</a></span>transformTo()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">Point3</a> gtsam::EssentialMatrix::transformTo </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">Point3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a02995.html">OptionalJacobian</a>&lt; 3, 5 &gt;</td>          <td class="paramname"><span class="paramname"><em>DE</em></span><span class="paramdefsep"> = </span><span class="paramdefval">boost::none</span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a02995.html">OptionalJacobian</a>&lt; 3, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>Dpoint</em></span><span class="paramdefsep"> = </span><span class="paramdefval">boost::none</span>&#160;) const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>takes point in world coordinates and transforms it to pose with |t|==1 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p</td><td>point in world coordinates </td></tr>
-    <tr><td class="paramname">DE</td><td>optional 3*5 Jacobian wrpt to E </td></tr>
-    <tr><td class="paramname">Dpoint</td><td>optional 3*3 Jacobian wrpt point </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>point in pose coordinates </dd></dl>
-
-</div>
-</div>
-<a name="doc-related-members" id="doc-related-members"></a><h2 id="header-doc-related-members" class="groupheader">Friends And Related Symbol Documentation</h2>
-<a id="a08d715b14a2db37464e532fa79430466" name="a08d715b14a2db37464e532fa79430466"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08d715b14a2db37464e532fa79430466">&#9670;&#160;</a></span>operator*</h2>
+<a id="a225de1bd0d5b0f44586b6fa70eb09cda" name="a225de1bd0d5b0f44586b6fa70eb09cda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a225de1bd0d5b0f44586b6fa70eb09cda">&#9670;&#160;</a></span>clone()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -282,37 +154,278 @@ GTSAM_EXPORT friend std::istream &amp;&#160;</td><td class="memItemRight"><b>ope
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a29e768b352dff0cec0e50199663fd18e">EssentialMatrix</a> operator* </td>
+          <td class="memname">virtual std::shared_ptr&lt; Value &gt; gtsam::Value::clone </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="a03775.html">Rot3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>cRb</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="#a29e768b352dff0cec0e50199663fd18e">EssentialMatrix</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>E</em></span>&#160;)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Given essential matrix E in camera frame B, convert to body frame C. </p>
+<p>Clone this value (normal clone on the heap, delete with 'delete' operator). </p>
+
+<p>Implemented in <a class="el" href="a03183.html#ad5422379c82feea8d3963b6a4aadb635">gtsam::GenericValue&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="ac6245c02ce05c4a87072ebc6bd27a7d5" name="ac6245c02ce05c4a87072ebc6bd27a7d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6245c02ce05c4a87072ebc6bd27a7d5">&#9670;&#160;</a></span>clone_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Value * gtsam::Value::clone_ </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clone this value in a special memory pool, must be deleted with <a class="el" href="#a5a0554b9e0758f370073ea3cc5cf1c9f" title="Deallocate a raw pointer of this value.">Value::deallocate_</a>, <em>not</em> with the 'delete' operator. </p>
+
+<p>Implemented in <a class="el" href="a03183.html#a139a63931a8e8afab4d67cb5bc326659">gtsam::GenericValue&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a5a0554b9e0758f370073ea3cc5cf1c9f" name="a5a0554b9e0758f370073ea3cc5cf1c9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a0554b9e0758f370073ea3cc5cf1c9f">&#9670;&#160;</a></span>deallocate_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void gtsam::Value::deallocate_ </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deallocate a raw pointer of this value. </p>
+
+<p>Implemented in <a class="el" href="a03183.html#a93ec4963773f9cfcfdc34b437b0274b1">gtsam::GenericValue&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a21e0a839ddaabd4c56559684ff887efe" name="a21e0a839ddaabd4c56559684ff887efe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21e0a839ddaabd4c56559684ff887efe">&#9670;&#160;</a></span>dim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual size_t gtsam::Value::dim </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the dimensionality of the tangent space of this value. </p>
+<p>This is the dimensionality of <code>delta</code> passed into retract() and of the vector returned by localCoordinates(). </p><dl class="section return"><dt>Returns</dt><dd>The dimensionality of the tangent space </dd></dl>
+
+<p>Implemented in <a class="el" href="a03183.html#a69007ce84df439ad16eefdd23e55580e">gtsam::GenericValue&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a74edb2709fe745b6d09087f6aacf507f" name="a74edb2709fe745b6d09087f6aacf507f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74edb2709fe745b6d09087f6aacf507f">&#9670;&#160;</a></span>equals_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool gtsam::Value::equals_ </td>
+          <td>(</td>
+          <td class="paramtype">const Value &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>tol</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1e-9</span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compare this <a class="el" href="a03615.html" title="This is the base class for any type to be stored in Values.">Value</a> with another for equality. </p>
+
+<p>Implemented in <a class="el" href="a03183.html#ad352f894df0e4ede3b39e45ffa0cb98d">gtsam::GenericValue&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a83429f15b4f68ed92e976649ea52da97" name="a83429f15b4f68ed92e976649ea52da97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83429f15b4f68ed92e976649ea52da97">&#9670;&#160;</a></span>localCoordinates_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Vector gtsam::Value::localCoordinates_ </td>
+          <td>(</td>
+          <td class="paramtype">const Value &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute the coordinates in the tangent space of this value that retract() would map to <code>value</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cRb</td><td>rotation from body frame to camera frame </td></tr>
-    <tr><td class="paramname">E</td><td>essential matrix E in camera frame C </td></tr>
+    <tr><td class="paramname">value</td><td>The value whose coordinates should be determined in the tangent space of the value on which this function is called. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The coordinates of <code>value</code> in the tangent space of <code>this</code>. </dd></dl>
+
+<p>Implemented in <a class="el" href="a03183.html#aec0e38fe2f3bab85d4e18bb7509ce152">gtsam::GenericValue&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="abefd5e7e205863119c1f88075070f5df" name="abefd5e7e205863119c1f88075070f5df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abefd5e7e205863119c1f88075070f5df">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Value &amp; gtsam::Value::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const Value &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="a03803.html" title="An assignment from labels to value index (size_t).">Assignment</a> operator. </p>
+
+<p>Reimplemented in <a class="el" href="a03183.html#a541ab79b139a7177b1a561ad199f9751">gtsam::GenericValue&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="ac338307bb9f00cd29a70a48058069458" name="ac338307bb9f00cd29a70a48058069458"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac338307bb9f00cd29a70a48058069458">&#9670;&#160;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void gtsam::Value::print </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Print this value, for debugging and unit tests. </p>
+
+<p>Implemented in <a class="el" href="a03183.html#a5a975666c504df56c7c633401e07a0c7">gtsam::GenericValue&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a2b95d3ec328cbad775490fa15dae27d5" name="a2b95d3ec328cbad775490fa15dae27d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b95d3ec328cbad775490fa15dae27d5">&#9670;&#160;</a></span>retract_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Value * gtsam::Value::retract_ </td>
+          <td>(</td>
+          <td class="paramtype">const Vector &amp;</td>          <td class="paramname"><span class="paramname"><em>delta</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Increment the value, by mapping from the vector delta in the tangent space of the current value back to the manifold to produce a new, incremented value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">delta</td><td>The delta vector in the tangent space of this value, by which to increment this value. </td></tr>
   </table>
   </dd>
 </dl>
 
+<p>Implemented in <a class="el" href="a03183.html#a1e837adf9acfec8a734324b76a9266be">gtsam::GenericValue&lt; T &gt;</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/geometry/<a class="el" href="a00308_source.html">EssentialMatrix.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/geometry/<b>EssentialMatrix.cpp</b></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/<a class="el" href="a00083_source.html">Value.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/<a class="el" href="a00194_source.html">GenericValue.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -327,7 +440,7 @@ GTSAM_EXPORT friend std::istream &amp;&#160;</td><td class="memItemRight"><b>ope
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a03615.html">EssentialMatrix</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a03615.html">Value</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

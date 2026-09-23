@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['indexedpose_0',['IndexedPose',['../a01968.html#a6ab764d13f9aaeafc2dc60763b05ec0e',1,'gtsam']]],
-  ['indexvector_1',['IndexVector',['../a04915.html#a2a07e834472648cc31661410ae7457d4',1,'gtsam::GncParams']]],
-  ['indices_2',['Indices',['../a04011.html#a27ac200465a3e557c93ae22b0b437902',1,'gtsam::HybridGaussianFactorGraph']]],
-  ['isam2thresholdmap_3',['ISAM2ThresholdMap',['../a01966.html#ga238e84a1d4a91f43465b12592a8bf8e4',1,'gtsam']]],
-  ['isgaussian_4',['IsGaussian',['../a04011.html#a2dea3f330d7bfd5540f82d7a3521e42f',1,'gtsam::HybridGaussianFactorGraph']]],
-  ['iterationhook_5',['IterationHook',['../a05107.html#a79640db6495bf61de23c63f02d2a9170',1,'gtsam::NonlinearOptimizerParams']]],
-  ['iterator_6',['iterator',['../a04139.html#acb069f38cc81bea20cecfad4070da59e',1,'gtsam::Factor::iterator'],['../a04611.html#a1fb5672c19dff9542baa9375393fb3d8',1,'gtsam::VectorValues::iterator'],['../a05547.html#a9cf431cc004298a77735cf3d51c04629',1,'gtsam::SymbolicConditional::iterator']]]
+  ['galileancombinedimufactor_0',['GalileanCombinedImuFactor',['../a02242.html#aa27c323402710a8d4b2824f04db04421',1,'gtsam']]],
+  ['galileanimufactor_1',['GalileanImuFactor',['../a02242.html#ae6d9afb94e3872686bb719dc06726cb9',1,'gtsam']]],
+  ['galileanimufactor2_2',['GalileanImuFactor2',['../a02242.html#a3dd6710a4046f14577141d21ab02cb0f',1,'gtsam']]],
+  ['gaussian_3',['Gaussian',['../a06235.html#af2b10c02c832badae2d1affc4924b0e0',1,'gtsam::ExtendedPriorFactor']]],
+  ['gaussianfactorvaluepair_4',['GaussianFactorValuePair',['../a02242.html#a89537f1255c2b4741351dd26e325604d',1,'gtsam']]],
+  ['graphandvalues_5',['GraphAndValues',['../a02242.html#a5915e0d9c6a69f62c418e337f6f6f939',1,'gtsam']]],
+  ['group_6',['Group',['../a01979.html#a8dc56cd301781c24a19fa184d80dc1b4',1,'gtsam::abc']]]
 ];

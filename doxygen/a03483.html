@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::HasRange&lt; A1, A2, RT &gt; Struct Template Reference</title>
+<title>gtsam: gtsam::internal::BlockColumnRange Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,22 +96,30 @@ $(function(){initNavTree('a03483.html','','a03480'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::HasRange&lt; A1, A2, RT &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::internal::BlockColumnRange Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Half-open range of physical upper-triangular block columns. </p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3473187a5abd736623426357e7ab7946" id="r_a3473187a5abd736623426357e7ab7946"><td class="memItemLeft"><a id="a3473187a5abd736623426357e7ab7946" name="a3473187a5abd736623426357e7ab7946"></a>
-RT&#160;</td><td class="memItemRight"><b>operator()</b> (const A1 &amp;a1, const A2 &amp;a2, <a class="el" href="a02995.html">OptionalJacobian</a>&lt; <a class="el" href="a02823.html">traits</a>&lt; RT &gt;::dimension, <a class="el" href="a02823.html">traits</a>&lt; A1 &gt;::dimension &gt; H1=boost::none, <a class="el" href="a02995.html">OptionalJacobian</a>&lt; <a class="el" href="a02823.html">traits</a>&lt; RT &gt;::dimension, <a class="el" href="a02823.html">traits</a>&lt; A2 &gt;::dimension &gt; H2=boost::none)</td></tr>
+<tr class="memitem:a3a459e06e87f021cc821f4e95f94f46a" id="r_a3a459e06e87f021cc821f4e95f94f46a"><td class="memItemLeft"><a id="a3a459e06e87f021cc821f4e95f94f46a" name="a3a459e06e87f021cc821f4e95f94f46a"></a>
+bool&#160;</td><td class="memItemRight"><b>operator()</b> (<a class="el" href="a02242.html#a21006f326f57cdf7d3f35fec40f43e40">DenseIndex</a> column) const</td></tr>
+<tr class="memdesc:a3a459e06e87f021cc821f4e95f94f46a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether this range owns a physical block column. <br /></td></tr>
+<tr class="memitem:a76cd01ac8cc38a87fb2a6396ac5cea01" id="r_a76cd01ac8cc38a87fb2a6396ac5cea01"><td class="memItemLeft"><a id="a76cd01ac8cc38a87fb2a6396ac5cea01" name="a76cd01ac8cc38a87fb2a6396ac5cea01"></a>
+bool&#160;</td><td class="memItemRight"><b>owns</b> (<a class="el" href="a02242.html#a21006f326f57cdf7d3f35fec40f43e40">DenseIndex</a> I, <a class="el" href="a02242.html#a21006f326f57cdf7d3f35fec40f43e40">DenseIndex</a> J) const</td></tr>
+<tr class="memdesc:a76cd01ac8cc38a87fb2a6396ac5cea01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether this range owns the stored block for logical indices I,J. <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:aef42dee92183e12ed308977a64df7858" id="r_aef42dee92183e12ed308977a64df7858"><td class="memItemLeft"><a id="aef42dee92183e12ed308977a64df7858" name="aef42dee92183e12ed308977a64df7858"></a>
-typedef RT&#160;</td><td class="memItemRight"><b>result_type</b></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a9762bffccab4ab02fed4afc826302426" id="r_a9762bffccab4ab02fed4afc826302426"><td class="memItemLeft"><a id="a9762bffccab4ab02fed4afc826302426" name="a9762bffccab4ab02fed4afc826302426"></a>
+<a class="el" href="a02242.html#a21006f326f57cdf7d3f35fec40f43e40">DenseIndex</a>&#160;</td><td class="memItemRight"><b>begin</b></td></tr>
+<tr class="memitem:a9ec49c4134250860dea0622b10f79eb6" id="r_a9ec49c4134250860dea0622b10f79eb6"><td class="memItemLeft"><a id="a9ec49c4134250860dea0622b10f79eb6" name="a9ec49c4134250860dea0622b10f79eb6"></a>
+<a class="el" href="a02242.html#a21006f326f57cdf7d3f35fec40f43e40">DenseIndex</a>&#160;</td><td class="memItemRight"><b>end</b></td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/geometry/<a class="el" href="a00428_source.html">BearingRange.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/<a class="el" href="a00119_source.html">SymmetricBlockMatrix.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -126,7 +134,7 @@ typedef RT&#160;</td><td class="memItemRight"><b>result_type</b></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a03483.html">HasRange</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><b>internal</b></li><li class="navelem"><a href="a03483.html">BlockColumnRange</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

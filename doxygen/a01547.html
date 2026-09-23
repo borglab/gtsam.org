@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/linear/QPSParser.cpp File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/nonlinear/expressionTesting.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,31 +96,82 @@ $(function(){initNavTree('a01547.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">QPSParser.cpp File Reference</div></div>
+  <div class="headertitle"><div class="title">expressionTesting.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Test harness methods for expressions.  
+<a href="#details">More...</a></p>
+
+<p><a href="a01547_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a6afb52446a381990649ed6b2cb61d918" id="r_a6afb52446a381990649ed6b2cb61d918"><td class="memItemLeft"><a id="a6afb52446a381990649ed6b2cb61d918" name="a6afb52446a381990649ed6b2cb61d918"></a>
-#define&#160;</td><td class="memItemRight"><b>BOOST_SPIRIT_USE_PHOENIX_V3</b>&#160;&#160;&#160;1</td></tr>
+<tr class="memitem:a701d0cd12b81a725f7f9cd2432fe9e2a" id="r_a701d0cd12b81a725f7f9cd2432fe9e2a"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a701d0cd12b81a725f7f9cd2432fe9e2a">EXPECT_CORRECT_EXPRESSION_JACOBIANS</a>(expression,  values,  numerical_derivative_step,  tolerance)</td></tr>
+<tr class="memdesc:a701d0cd12b81a725f7f9cd2432fe9e2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check the Jacobians produced by an expression against finite differences.  <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a5d1f6eb64fd05f0ac4cd78c96ce8f5ea" id="r_a5d1f6eb64fd05f0ac4cd78c96ce8f5ea"><td class="memItemLeft"><a id="a5d1f6eb64fd05f0ac4cd78c96ce8f5ea" name="a5d1f6eb64fd05f0ac4cd78c96ce8f5ea"></a>
-using&#160;</td><td class="memItemRight"><b>Chars</b> = std::vector&lt;char&gt;</td></tr>
-<tr class="memitem:a7c213e1e9138b45ea5a2ecfc047803d5" id="r_a7c213e1e9138b45ea5a2ecfc047803d5"><td class="memItemLeft"><a id="a7c213e1e9138b45ea5a2ecfc047803d5" name="a7c213e1e9138b45ea5a2ecfc047803d5"></a>
-typedef qi::grammar&lt; boost::spirit::basic_istream_iterator&lt; char &gt; &gt;&#160;</td><td class="memItemRight"><b>gtsam::base_grammar</b></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ab43ff0661c50fd1f6eeb0c7311d52057" id="r_ab43ff0661c50fd1f6eeb0c7311d52057"><td class="memTemplParams" colspan="2"><a id="ab43ff0661c50fd1f6eeb0c7311d52057" name="ab43ff0661c50fd1f6eeb0c7311d52057"></a>
+template&lt;typename T&gt; </td></tr>
+<tr class="memitem:ab43ff0661c50fd1f6eeb0c7311d52057 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::internal::testExpressionJacobians</b> (const std::string &amp;name_, const <a class="el" href="a06191.html">gtsam::Expression</a>&lt; T &gt; &amp;expression, const <a class="el" href="a06527.html">gtsam::Values</a> &amp;values, double nd_step, double tolerance)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Ivan Dario Jimenez </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>3/5/16 </dd></dl>
-</div></div><!-- contents -->
+<div class="textblock"><p>Test harness methods for expressions. </p>
+<dl class="section date"><dt>Date</dt><dd>September 18, 2014 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Frank Dellaert </dd>
+<dd>
+Paul Furgale </dd></dl>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="a701d0cd12b81a725f7f9cd2432fe9e2a" name="a701d0cd12b81a725f7f9cd2432fe9e2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a701d0cd12b81a725f7f9cd2432fe9e2a">&#9670;&#160;</a></span>EXPECT_CORRECT_EXPRESSION_JACOBIANS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EXPECT_CORRECT_EXPRESSION_JACOBIANS</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>expression</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>values</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>numerical_derivative_step</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>tolerance</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">{ EXPECT(gtsam::internal::testExpressionJacobians(name_, expression, values, numerical_derivative_step, tolerance)); }</div>
+</div><!-- fragment -->
+<p>Check the Jacobians produced by an expression against finite differences. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expression</td><td>The expression to test. </td></tr>
+    <tr><td class="paramname">values</td><td><a class="el" href="a07595.html" title="In nonlinear factors, the error function returns the negative log-likelihood as a non-linear function...">Values</a> filled in for testing the Jacobians. </td></tr>
+    <tr><td class="paramname">numerical_derivative_step</td><td>The step to use when computing the finite difference Jacobians </td></tr>
+    <tr><td class="paramname">tolerance</td><td>The numerical tolerance to use when comparing Jacobians. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>
@@ -133,7 +184,7 @@ typedef qi::grammar&lt; boost::spirit::basic_istream_iterator&lt; char &gt; &gt;
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam_unstable</b></li><li class="navelem"><b>linear</b></li><li class="navelem"><a href="a01547.html">QPSParser.cpp</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>nonlinear</b></li><li class="navelem"><a href="a01547.html">expressionTesting.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

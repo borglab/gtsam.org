@@ -1,5 +1,6 @@
 var a00212 =
 [
-    [ "gtsam::AlgebraicDecisionTree&lt; L &gt;::Ring", "a03311.html", null ],
-    [ "gtsam::traits&lt; AlgebraicDecisionTree&lt; T &gt; &gt;", "a03315.html", null ]
+    [ "gtsam::FitBasis&lt; Basis &gt;", "a03771.html", "a03771" ],
+    [ "gtsam::Sample", "a02242.html#a355c8c681435089f6f0c244435078e16", null ],
+    [ "gtsam::Sequence", "a02242.html#a2a137434674936dc624a2087c79ae721", null ]
 ];

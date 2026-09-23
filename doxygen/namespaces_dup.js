@@ -1,4 +1,5 @@
 var namespaces_dup =
 [
-    [ "gtsam", "a01968.html", "a01968" ]
+    [ "gtsam", "a02242.html", "a02242" ],
+    [ "std", "a02241.html", "a02241" ]
 ];

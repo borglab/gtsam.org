@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/sfm/MFAS.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/PreintegrationBase.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,12 +89,12 @@ $(function(){initNavTree('a01208_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">MFAS.h</div></div>
+  <div class="headertitle"><div class="title">PreintegrationBase.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a01208.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"></span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * GTSAM Copyright 2010-2020, Georgia Tech Research Corporation,</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * GTSAM Copyright 2010, Georgia Tech Research Corporation,</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Atlanta, Georgia 30332-0415</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * All Rights Reserved</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * Authors: Frank Dellaert, et al. (see THANKS for the full author list)</span></div>
@@ -102,65 +102,347 @@ $(function(){initNavTree('a01208_source.html','',''); });
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * See LICENSE for the license information</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;gtsam/geometry/Unit3.h&gt;</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="a00611.html">gtsam/inference/Key.h</a>&gt;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="a01202.html">gtsam/sfm/BinaryMeasurement.h</a>&gt;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
-<div class="foldopen" id="foldopen00051" data-start="{" data-end="};">
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="a05251.html">   51</a></span><span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a05251.html#a0fbe57d306aa53ff9f9ef6b4dd5f4ca2">MFAS</a> {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="comment">// used to represent edges between two nodes in the graph. When used in</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="comment">// translation averaging for global SfM</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">using </span>KeyPair = std::pair&lt;Key, Key&gt;;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">using </span>TranslationEdges = std::vector&lt;BinaryMeasurement&lt;Unit3&gt;&gt;;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="comment">// edges with a direction such that all weights are positive</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="comment">// i.e, edges that originally had negative weights are flipped</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  std::map&lt;KeyPair, double&gt; edgeWeights_;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> <span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="a05251.html#a0fbe57d306aa53ff9f9ef6b4dd5f4ca2">   69</a></span>  <a class="code hl_function" href="a05251.html#a0fbe57d306aa53ff9f9ef6b4dd5f4ca2">MFAS</a>(<span class="keyword">const</span> std::map&lt;KeyPair, double&gt; &amp;edgeWeights)</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      : edgeWeights_(edgeWeights) {}</div>
-</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;<a class="code" href="a00071.html">gtsam/base/Matrix.h</a>&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;<a class="code" href="a01217.html">gtsam/navigation/PreintegrationParams.h</a>&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;<a class="code" href="a01163.html">gtsam/navigation/NavState.h</a>&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;<a class="code" href="a01199.html">gtsam/navigation/ImuBias.h</a>&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;gtsam/geometry/Unit3.h&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;<a class="code" href="a00968.html">gtsam/linear/NoiseModel.h</a>&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;iosfwd&gt;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="a05983.html">   45</a></span><span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a05983.html#a85da47fc93662940e6bd38d02a3b3118">PreintegrationBase</a> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">typedef</span> <a class="code hl_class" href="a05739.html">imuBias::ConstantBias</a> Bias;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">typedef</span> <a class="code hl_struct" href="a06003.html">PreintegrationParams</a> Params;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="a05983.html#a608671064739d912a70888ba1bd570dd">   51</a></span>  <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="a05983.html#a608671064739d912a70888ba1bd570dd">kLegacyUsesLogmap</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  std::shared_ptr&lt;Params&gt; p_;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="a05983.html#a774c243fcec68bbfcfc2c62db3ca2d2a">   57</a></span>  Bias <a class="code hl_variable" href="a05983.html#a774c243fcec68bbfcfc2c62db3ca2d2a">biasHat_</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="a05983.html#a05698caf670ddcd7a108505898a71134">   60</a></span>  <span class="keywordtype">double</span> <a class="code hl_variable" href="a05983.html#a05698caf670ddcd7a108505898a71134">deltaTij_</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="a05983.html#a85da47fc93662940e6bd38d02a3b3118">   63</a></span>  <a class="code hl_function" href="a05983.html#a85da47fc93662940e6bd38d02a3b3118">PreintegrationBase</a>() {}</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="a05983.html#a4d5ead934c4582183ddc8a7b415decef">   66</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="a05983.html#a4d5ead934c4582183ddc8a7b415decef">~PreintegrationBase</a>() {}</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <a class="code hl_class" href="a05251.html">MFAS</a>(<span class="keyword">const</span> TranslationEdges &amp;relativeTranslations,</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>       <span class="keyword">const</span> <a class="code hl_class" href="a03927.html">Unit3</a> &amp;projectionDirection);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <a class="code hl_typedef" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> computeOrdering() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  std::map&lt;KeyPair, double&gt; computeOutlierWeights() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>};</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <a class="code hl_class" href="a05983.html">PreintegrationBase</a>(<span class="keyword">const</span> std::shared_ptr&lt;Params&gt;&amp; p,</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      <span class="keyword">const</span> <a class="code hl_class" href="a05739.html">imuBias::ConstantBias</a>&amp; biasHat = <a class="code hl_class" href="a05739.html">imuBias::ConstantBias</a>());</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> resetIntegration() = 0;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keywordtype">void</span> resetIntegrationAndSetBias(<span class="keyword">const</span> Bias&amp; biasHat);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="a05983.html#a4d978fd06c9d44dfdcf2eee1e4b33e79">   93</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="a05983.html#a4d978fd06c9d44dfdcf2eee1e4b33e79">matchesParamsWith</a>(<span class="keyword">const</span> <a class="code hl_function" href="a05983.html#a85da47fc93662940e6bd38d02a3b3118">PreintegrationBase</a>&amp; other)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">return</span> p_.get() == other.p_.get();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  }</div>
 </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keyword">typedef</span> std::map&lt;std::pair&lt;Key, Key&gt;, <span class="keywordtype">double</span>&gt; KeyPairDoubleMap;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>}  <span class="comment">// namespace gtsam</span></div>
-<div class="ttc" id="aa00611_html"><div class="ttname"><a href="a00611.html">Key.h</a></div></div>
-<div class="ttc" id="aa01202_html"><div class="ttname"><a href="a01202.html">BinaryMeasurement.h</a></div><div class="ttdoc">Binary measurement represents a measurement between two keys in a graph. A binary measurement is simi...</div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa01968_html_a2dea5ef4aee9da07a0e0686940c64667"><div class="ttname"><a href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">gtsam::KeyVector</a></div><div class="ttdeci">FastVector&lt; Key &gt; KeyVector</div><div class="ttdoc">Define collection type once and for all - also used in wrappers.</div><div class="ttdef"><b>Definition</b> Key.h:86</div></div>
-<div class="ttc" id="aa03927_html"><div class="ttname"><a href="a03927.html">gtsam::Unit3</a></div><div class="ttdoc">Represents a 3D point on a unit sphere.</div><div class="ttdef"><b>Definition</b> Unit3.h:43</div></div>
-<div class="ttc" id="aa05251_html"><div class="ttname"><a href="a05251.html">gtsam::MFAS</a></div><div class="ttdoc">The MFAS class to solve a Minimum feedback arc set (MFAS) problem.</div><div class="ttdef"><b>Definition</b> MFAS.h:51</div></div>
-<div class="ttc" id="aa05251_html_a0fbe57d306aa53ff9f9ef6b4dd5f4ca2"><div class="ttname"><a href="a05251.html#a0fbe57d306aa53ff9f9ef6b4dd5f4ca2">gtsam::MFAS::MFAS</a></div><div class="ttdeci">MFAS(const std::map&lt; KeyPair, double &gt; &amp;edgeWeights)</div><div class="ttdoc">Construct from the weighted directed edges between the nodes.</div><div class="ttdef"><b>Definition</b> MFAS.h:69</div></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="foldopen" id="foldopen00098" data-start="{" data-end="}">
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="a05983.html#a454b6547322d3222dc4e8ebf98b9f249">   98</a></span>  <span class="keyword">const</span> std::shared_ptr&lt;Params&gt;&amp; <a class="code hl_function" href="a05983.html#a454b6547322d3222dc4e8ebf98b9f249">params</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">return</span> p_;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  }</div>
+</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span></div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="a05983.html#a62835e11ff9409ffd26a59c6ec8d7cfd">  103</a></span>  Params&amp; <a class="code hl_function" href="a05983.html#a62835e11ff9409ffd26a59c6ec8d7cfd">p</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">return</span> *p_;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  }</div>
+</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keyword">const</span> <a class="code hl_class" href="a05739.html">imuBias::ConstantBias</a>&amp; biasHat()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> biasHat_; }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keywordtype">double</span> deltaTij()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> deltaTij_; }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="keyword">virtual</span> Vector3  deltaPij() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="keyword">virtual</span> Vector3  deltaVij() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="keyword">virtual</span> Rot3     deltaRij() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keyword">virtual</span> NavState deltaXij() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keyword">virtual</span> Vector3 so3TangentAt(<span class="keywordtype">double</span> t) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  Matrix deskewPoints(</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>      ConstMatrixView points,</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>      <span class="keyword">const</span> Vector3&amp; velocity_i = Vector3::Zero()) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  Matrix deskewPointsAtTimes(</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>      ConstMatrixView points, <span class="keyword">const</span> Vector&amp; times,</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>      <span class="keyword">const</span> Vector3&amp; velocity_i = Vector3::Zero()) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  <span class="comment">// Exposed for MATLAB</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  Vector6 biasHatVector()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> biasHat_.<a class="code hl_function" href="a05739.html#a93610c76ef81c251cb8d5697ee9334bd">vector</a>(); }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  GTSAM_EXPORT <span class="keyword">friend</span> std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> PreintegrationBase&amp; pim);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a02242.html#a54fa43c89c5334314c8c75939dd5c2d7">print</a>(<span class="keyword">const</span> std::string&amp; s=<span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  std::pair&lt;Vector3, Vector3&gt; correctMeasurementsBySensorPose(</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>      <span class="keyword">const</span> Vector3&amp; unbiasedAcc, <span class="keyword">const</span> Vector3&amp; unbiasedOmega,</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>      OptionalJacobian&lt;3, 3&gt; correctedAcc_H_unbiasedAcc = {},</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>      OptionalJacobian&lt;3, 3&gt; correctedAcc_H_unbiasedOmega = {},</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      OptionalJacobian&lt;3, 3&gt; correctedOmega_H_unbiasedOmega = {}) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="a05983.html#af562d10048eb544a7057443feaefb8c6">  165</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a05983.html#af562d10048eb544a7057443feaefb8c6">update</a>(<span class="keyword">const</span> Vector3&amp; measuredAcc, <span class="keyword">const</span> Vector3&amp; measuredOmega,</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>      <span class="keyword">const</span> <span class="keywordtype">double</span> dt, Matrix9* A, Matrix93* B, Matrix93* C) = 0;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a05983.html#af81180bb6e01ac950d29784a43e8f18d">integrateMeasurement</a>(<span class="keyword">const</span> Vector3&amp; measuredAcc,</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>      <span class="keyword">const</span> Vector3&amp; measuredOmega, <span class="keyword">const</span> <span class="keywordtype">double</span> dt);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a05983.html#aa75b77f620c3fa3da3ef23e4802a6034">integrateMeasurements</a>(<span class="keyword">const</span> Matrix&amp; measuredAccs,</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                             <span class="keyword">const</span> Matrix&amp; measuredOmegas, <span class="keyword">const</span> Matrix&amp; dts);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="a05983.html#a6acc78fecad8c9d8f847cc0e255aa04d">  178</a></span>  <span class="keyword">virtual</span> Vector9 <a class="code hl_function" href="a05983.html#a6acc78fecad8c9d8f847cc0e255aa04d">biasCorrectedDelta</a>(<span class="keyword">const</span> <a class="code hl_class" href="a05739.html">imuBias::ConstantBias</a>&amp; bias_i,</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>      <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;9, 6&gt;</a> H = {}) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  <a class="code hl_class" href="a05927.html">NavState</a> predict(<span class="keyword">const</span> <a class="code hl_class" href="a05927.html">NavState</a>&amp; state_i, <span class="keyword">const</span> <a class="code hl_class" href="a05739.html">imuBias::ConstantBias</a>&amp; bias_i,</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                   <span class="keyword">const</span> Vector3&amp; n_gravity,</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                   <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;9, 9&gt;</a> H1 = {},</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>                   OptionalJacobian&lt;9, 6&gt; H2 = {},</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                   OptionalJacobian&lt;9, 3&gt; H3 = {}) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  NavState predict(<span class="keyword">const</span> NavState&amp; state_i, <span class="keyword">const</span> imuBias::ConstantBias&amp; bias_i,</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                   OptionalJacobian&lt;9, 9&gt; H1 = {},</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                   OptionalJacobian&lt;9, 6&gt; H2 = {}) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="preprocessor">#if GTSAM_ENABLE_BOOST_SERIALIZATION</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> ARCHIVE&gt;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  <span class="keywordtype">void</span> serialize(ARCHIVE &amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    ar &amp; BOOST_SERIALIZATION_NVP(p_);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    ar &amp; BOOST_SERIALIZATION_NVP(biasHat_);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    ar &amp; BOOST_SERIALIZATION_NVP(deltaTij_);</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  }</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>};</div>
+</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="keyword">namespace </span>internal {</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> PIM&gt;</div>
+<div class="foldopen" id="foldopen00215" data-start="{" data-end="}">
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="a01208.html#a47bef45464e0f055434ab54198d144b1">  215</a></span>Vector9 <a class="code hl_function" href="a01208.html#a47bef45464e0f055434ab54198d144b1">preintegrationError</a>(</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="keyword">const</span> PIM&amp; pim, <span class="keyword">const</span> <a class="code hl_class" href="a05927.html">NavState</a>&amp; state_i, <span class="keyword">const</span> <a class="code hl_class" href="a05927.html">NavState</a>&amp; state_j,</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="keyword">const</span> <a class="code hl_class" href="a05739.html">imuBias::ConstantBias</a>&amp; bias_i, <span class="keyword">const</span> Vector3&amp; n_gravity,</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;9, 9&gt;</a> H1 = {}, <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;9, 9&gt;</a> H2 = {},</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    OptionalJacobian&lt;9, 6&gt; H3 = {}, OptionalJacobian&lt;9, 3&gt; H4 = {}) {</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  Matrix9 D_predict_state_i;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  Matrix96 D_predict_bias_i;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>  Matrix93 D_predict_gravity;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <span class="keyword">const</span> NavState predictedState_j = pim.predict(</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>      state_i, bias_i, n_gravity, H1 ? &amp;D_predict_state_i : <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>      H3 ? &amp;D_predict_bias_i : <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>      H4 ? &amp;D_predict_gravity : <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>  Matrix9 D_error_state_j, D_error_predict;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  Vector9 error;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  <span class="keywordtype">bool</span> useLogmap;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>  <span class="keywordflow">switch</span> (pim.params()-&gt;getImuFactorErrorMode()) {</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="a02242.html#ab64572cd24ae3a56d5dd13c4ef3ddb63a0cc0a0507cf3d31e5089f420a4cf8b4b">ImuFactorErrorMode::Legacy</a>:</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>      useLogmap = PIM::kLegacyUsesLogmap;</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="a02242.html#ab64572cd24ae3a56d5dd13c4ef3ddb63a45d7b9a769240f7f46afd3c74ea05e80">ImuFactorErrorMode::ComponentWise</a>:</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>      useLogmap = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="a02242.html#ab64572cd24ae3a56d5dd13c4ef3ddb63ae145daec7848b941c9f602ccadeb2a58">ImuFactorErrorMode::Logmap</a>:</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>      useLogmap = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>      <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Unknown ImuFactorErrorMode&quot;</span>);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  }</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>  <span class="keywordflow">if</span> (useLogmap) {</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    error = state_j.<a class="code hl_function" href="a03267.html#a9a8ba0a0f7442929df460d79292134aa">logmap</a>(predictedState_j,</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                           H2 ? &amp;D_error_state_j : <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                           H1 || H3 || H4 ? &amp;D_error_predict : <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    error = internal::navStateComponentWiseLocalCoordinates(</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        state_j, predictedState_j, H2 ? &amp;D_error_state_j : <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        H1 || H3 || H4 ? &amp;D_error_predict : <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  }</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>  <span class="keywordflow">if</span> (H1) *H1 = D_error_predict * D_predict_state_i;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>  <span class="keywordflow">if</span> (H2) *H2 = D_error_state_j;</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>  <span class="keywordflow">if</span> (H3) *H3 = D_error_predict * D_predict_bias_i;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  <span class="keywordflow">if</span> (H4) *H4 = D_error_predict * D_predict_gravity;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>  <span class="keywordflow">return</span> error;</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>}</div>
+</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span></div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> PIM&gt;</div>
+<div class="foldopen" id="foldopen00264" data-start="{" data-end="}">
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="a01208.html#a9d2871d647e4149aee104c615c0ddb24">  264</a></span>Vector9 <a class="code hl_function" href="a01208.html#a47bef45464e0f055434ab54198d144b1">preintegrationError</a>(</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    <span class="keyword">const</span> PIM&amp; pim, <span class="keyword">const</span> <a class="code hl_class" href="a05927.html">NavState</a>&amp; state_i, <span class="keyword">const</span> <a class="code hl_class" href="a05927.html">NavState</a>&amp; state_j,</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    <span class="keyword">const</span> <a class="code hl_class" href="a05739.html">imuBias::ConstantBias</a>&amp; bias_i,</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;9, 9&gt;</a> H1 = {}, <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;9, 9&gt;</a> H2 = {},</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    OptionalJacobian&lt;9, 6&gt; H3 = {}) {</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="a01208.html#a47bef45464e0f055434ab54198d144b1">preintegrationError</a>(pim, state_i, state_j, bias_i,</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>                             pim.params()-&gt;n_gravity, H1, H2, H3);</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>}</div>
+</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span></div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> PIM&gt;</div>
+<div class="foldopen" id="foldopen00275" data-start="{" data-end="}">
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno"><a class="line" href="a01208.html#ace8ca632ffb7e48ac39188a8faa8512a">  275</a></span>Vector9 <a class="code hl_function" href="a01208.html#ace8ca632ffb7e48ac39188a8faa8512a">preintegrationErrorAndJacobians</a>(</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <span class="keyword">const</span> PIM&amp; pim, <span class="keyword">const</span> <a class="code hl_class" href="a04403.html">Pose3</a>&amp; pose_i, <span class="keyword">const</span> Vector3&amp; vel_i,</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <span class="keyword">const</span> <a class="code hl_class" href="a04403.html">Pose3</a>&amp; pose_j, <span class="keyword">const</span> Vector3&amp; vel_j,</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <span class="keyword">const</span> <a class="code hl_class" href="a05739.html">imuBias::ConstantBias</a>&amp; bias_i, <span class="keyword">const</span> Vector3&amp; n_gravity,</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;9, 6&gt;</a> H1 = {}, <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;9, 3&gt;</a> H2 = {},</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    OptionalJacobian&lt;9, 6&gt; H3 = {}, OptionalJacobian&lt;9, 3&gt; H4 = {},</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    OptionalJacobian&lt;9, 6&gt; H5 = {}, OptionalJacobian&lt;9, 3&gt; H6 = {}) {</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>  <span class="keyword">const</span> NavState state_i(pose_i, vel_i), state_j(pose_j, vel_j);</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>  Matrix9 D_error_state_i, D_error_state_j;</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  <span class="keyword">const</span> Vector9 error = <a class="code hl_function" href="a01208.html#a47bef45464e0f055434ab54198d144b1">preintegrationError</a>(</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>      pim, state_i, state_j, bias_i, n_gravity,</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>      H1 || H2 ? &amp;D_error_state_i : <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>      H3 || H4 ? &amp;D_error_state_j : <span class="keyword">nullptr</span>, H5, H6);</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>  <span class="comment">// Separate NavState derivatives. Independent velocity variables retract by</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>  <span class="comment">// straight addition rather than the NavState semidirect-product update.</span></div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>  <span class="keywordflow">if</span> (H1) *H1 = D_error_state_i.leftCols&lt;6&gt;();</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>  <span class="keywordflow">if</span> (H2) *H2 = D_error_state_i.rightCols&lt;3&gt;() * state_i.<a class="code hl_function" href="a05927.html#a5d380bc53c23a5ace7cf9536a9c7e171">R</a>().transpose();</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>  <span class="keywordflow">if</span> (H3) *H3 = D_error_state_j.leftCols&lt;6&gt;();</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>  <span class="keywordflow">if</span> (H4) *H4 = D_error_state_j.rightCols&lt;3&gt;() * state_j.<a class="code hl_function" href="a05927.html#a5d380bc53c23a5ace7cf9536a9c7e171">R</a>().transpose();</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>  <span class="keywordflow">return</span> error;</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>}</div>
+</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span></div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> PIM&gt;</div>
+<div class="foldopen" id="foldopen00301" data-start="{" data-end="}">
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno"><a class="line" href="a01208.html#a75aa2a75e0f81552e7b029c3c33a6af4">  301</a></span>Vector9 <a class="code hl_function" href="a01208.html#ace8ca632ffb7e48ac39188a8faa8512a">preintegrationErrorAndJacobians</a>(</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    <span class="keyword">const</span> PIM&amp; pim, <span class="keyword">const</span> <a class="code hl_class" href="a04403.html">Pose3</a>&amp; pose_i, <span class="keyword">const</span> Vector3&amp; vel_i,</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    <span class="keyword">const</span> <a class="code hl_class" href="a04403.html">Pose3</a>&amp; pose_j, <span class="keyword">const</span> Vector3&amp; vel_j,</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    <span class="keyword">const</span> <a class="code hl_class" href="a05739.html">imuBias::ConstantBias</a>&amp; bias_i,</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;9, 6&gt;</a> H1 = {}, <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;9, 3&gt;</a> H2 = {},</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    OptionalJacobian&lt;9, 6&gt; H3 = {}, OptionalJacobian&lt;9, 3&gt; H4 = {},</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    OptionalJacobian&lt;9, 6&gt; H5 = {}) {</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="a01208.html#ace8ca632ffb7e48ac39188a8faa8512a">preintegrationErrorAndJacobians</a>(</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>      pim, pose_i, vel_i, pose_j, vel_j, bias_i,</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>      pim.params()-&gt;n_gravity, H1, H2, H3, H4, H5);</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>}</div>
+</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span></div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> GRAVITY&gt;</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno"><a class="line" href="a05987.html">  322</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a05987.html">GravityParametrization</a>;</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span><span class="keyword">template</span> &lt;&gt;</div>
+<div class="foldopen" id="foldopen00325" data-start="{" data-end="};">
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno"><a class="line" href="a05991.html">  325</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a05987.html">GravityParametrization</a>&lt;<a class="code hl_class" href="a04627.html">Unit3</a>&gt; {</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keywordtype">int</span> dimension = 2;</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> usesMagnitude = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>  <span class="keyword">static</span> Vector3 vector(<span class="keyword">const</span> <a class="code hl_class" href="a04627.html">Unit3</a>&amp; gravity, <span class="keywordtype">double</span> magnitude,</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>                        <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;3, 2&gt;</a> H = {}) {</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    <span class="keywordflow">return</span> gravity.<a class="code hl_function" href="a04627.html#a400b6e7bac4fe3fecaf65ee193044dd4">scaled</a>(magnitude, H);</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>  }</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>};</div>
+</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span> </div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span><span class="keyword">template</span> &lt;&gt;</div>
+<div class="foldopen" id="foldopen00335" data-start="{" data-end="};">
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno"><a class="line" href="a05995.html">  335</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a05987.html">GravityParametrization</a>&lt;<a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&gt; {</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keywordtype">int</span> dimension = 3;</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> usesMagnitude = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>  <span class="keyword">static</span> Vector3 vector(<span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; gravity, <span class="keywordtype">double</span> <span class="comment">/*magnitude*/</span>,</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>                        <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;3, 3&gt;</a> H = {}) {</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    <span class="keywordflow">if</span> (H) H-&gt;setIdentity();</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>    <span class="keywordflow">return</span> gravity;</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>  }</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>};</div>
+</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span></div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> GRAVITY, <span class="keyword">class</span> PIM&gt;</div>
+<div class="foldopen" id="foldopen00356" data-start="{" data-end="}">
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno"><a class="line" href="a01208.html#a92a8c09cd28305e0394c9fc93207a215">  356</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="a01208.html#a92a8c09cd28305e0394c9fc93207a215">resolveGravityMagnitude</a>(<span class="keyword">const</span> std::string&amp; factorName, <span class="keyword">const</span> PIM&amp; pim,</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>                               <span class="keyword">const</span> std::optional&lt;double&gt;&amp; gravityMagnitude) {</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>  <span class="keywordflow">if</span> (!<a class="code hl_struct" href="a05987.html">GravityParametrization&lt;GRAVITY&gt;::usesMagnitude</a>) {</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    <span class="keywordflow">if</span> (gravityMagnitude)</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>      <span class="keywordflow">throw</span> std::invalid_argument(</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>          factorName + <span class="stringliteral">&quot;: gravityMagnitude is only used by the Unit3 &quot;</span></div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>          <span class="stringliteral">&quot;parametrization; the Point3 parametrization optimizes the magnitude &quot;</span></div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>          <span class="stringliteral">&quot;as part of the gravity variable - to constrain it, add a &quot;</span></div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>          <span class="stringliteral">&quot;VectorNormFactor&lt;3&gt; on the gravity variable instead&quot;</span>);</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>    <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>  }</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>  <span class="keywordflow">if</span> (!gravityMagnitude &amp;&amp; !pim.params())</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>    <span class="keywordflow">throw</span> std::invalid_argument(</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>        factorName + <span class="stringliteral">&quot;: the preintegrated measurements have no params to take &quot;</span></div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>        <span class="stringliteral">&quot;the default gravityMagnitude from&quot;</span>);</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> magnitude =</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>      gravityMagnitude ? *gravityMagnitude : pim.params()-&gt;n_gravity.norm();</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>  <span class="keywordflow">if</span> (!(magnitude &gt; 0.0))</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>    <span class="keywordflow">throw</span> std::invalid_argument(factorName +</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>                                <span class="stringliteral">&quot;: gravityMagnitude must be positive&quot;</span>);</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>  <span class="keywordflow">return</span> magnitude;</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>}</div>
+</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span> </div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>}  <span class="comment">// namespace internal</span></div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span> </div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>}  </div>
+<div class="ttc" id="aa00071_html"><div class="ttname"><a href="a00071.html">Matrix.h</a></div><div class="ttdoc">typedef and functions to augment Eigen&#39;s MatrixXd</div></div>
+<div class="ttc" id="aa00968_html"><div class="ttname"><a href="a00968.html">NoiseModel.h</a></div></div>
+<div class="ttc" id="aa01163_html"><div class="ttname"><a href="a01163.html">NavState.h</a></div><div class="ttdoc">Navigation state composing of attitude, position, and velocity.</div></div>
+<div class="ttc" id="aa01199_html"><div class="ttname"><a href="a01199.html">ImuBias.h</a></div></div>
+<div class="ttc" id="aa01208_html_a47bef45464e0f055434ab54198d144b1"><div class="ttname"><a href="a01208.html#a47bef45464e0f055434ab54198d144b1">gtsam::internal::preintegrationError</a></div><div class="ttdeci">Vector9 preintegrationError(const PIM &amp;pim, const NavState &amp;state_i, const NavState &amp;state_j, const imuBias::ConstantBias &amp;bias_i, const Vector3 &amp;n_gravity, OptionalJacobian&lt; 9, 9 &gt; H1={}, OptionalJacobian&lt; 9, 9 &gt; H2={}, OptionalJacobian&lt; 9, 6 &gt; H3={}, OptionalJacobian&lt; 9, 3 &gt; H4={})</div><div class="ttdoc">Calculate the 9-dof preintegration error for an explicit gravity vector.</div><div class="ttdef"><b>Definition</b> PreintegrationBase.h:215</div></div>
+<div class="ttc" id="aa01208_html_a92a8c09cd28305e0394c9fc93207a215"><div class="ttname"><a href="a01208.html#a92a8c09cd28305e0394c9fc93207a215">gtsam::internal::resolveGravityMagnitude</a></div><div class="ttdeci">double resolveGravityMagnitude(const std::string &amp;factorName, const PIM &amp;pim, const std::optional&lt; double &gt; &amp;gravityMagnitude)</div><div class="ttdoc">Resolve the gravity magnitude stored by the gravity-aware IMU factors at construction.</div><div class="ttdef"><b>Definition</b> PreintegrationBase.h:356</div></div>
+<div class="ttc" id="aa01208_html_ace8ca632ffb7e48ac39188a8faa8512a"><div class="ttname"><a href="a01208.html#ace8ca632ffb7e48ac39188a8faa8512a">gtsam::internal::preintegrationErrorAndJacobians</a></div><div class="ttdeci">Vector9 preintegrationErrorAndJacobians(const PIM &amp;pim, const Pose3 &amp;pose_i, const Vector3 &amp;vel_i, const Pose3 &amp;pose_j, const Vector3 &amp;vel_j, const imuBias::ConstantBias &amp;bias_i, const Vector3 &amp;n_gravity, OptionalJacobian&lt; 9, 6 &gt; H1={}, OptionalJacobian&lt; 9, 3 &gt; H2={}, OptionalJacobian&lt; 9, 6 &gt; H3={}, OptionalJacobian&lt; 9, 3 &gt; H4={}, OptionalJacobian&lt; 9, 6 &gt; H5={}, OptionalJacobian&lt; 9, 3 &gt; H6={})</div><div class="ttdoc">Assemble pose/velocity Jacobians for an explicit gravity vector.</div><div class="ttdef"><b>Definition</b> PreintegrationBase.h:275</div></div>
+<div class="ttc" id="aa01217_html"><div class="ttname"><a href="a01217.html">PreintegrationParams.h</a></div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa02242_html_a4705ef3536019dc2a384e26ef0fde932"><div class="ttname"><a href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">gtsam::Point3</a></div><div class="ttdeci">Vector3 Point3</div><div class="ttdoc">As of GTSAM 4, in order to make GTSAM more lean, it is now possible to just typedef Point3 to Vector3...</div><div class="ttdef"><b>Definition</b> Point3.h:38</div></div>
+<div class="ttc" id="aa02242_html_a54fa43c89c5334314c8c75939dd5c2d7"><div class="ttname"><a href="a02242.html#a54fa43c89c5334314c8c75939dd5c2d7">gtsam::print</a></div><div class="ttdeci">void print(const Matrix &amp;A, const string &amp;s, ostream &amp;stream)</div><div class="ttdoc">print without optional string, must specify cout yourself</div><div class="ttdef"><b>Definition</b> Matrix.cpp:143</div></div>
+<div class="ttc" id="aa02242_html_ab64572cd24ae3a56d5dd13c4ef3ddb63a0cc0a0507cf3d31e5089f420a4cf8b4b"><div class="ttname"><a href="a02242.html#ab64572cd24ae3a56d5dd13c4ef3ddb63a0cc0a0507cf3d31e5089f420a4cf8b4b">gtsam::ImuFactorErrorMode::Legacy</a></div><div class="ttdeci">@ Legacy</div><div class="ttdoc">Historical backend-dependent error chart.</div><div class="ttdef"><b>Definition</b> PreintegrationParams.h:30</div></div>
+<div class="ttc" id="aa02242_html_ab64572cd24ae3a56d5dd13c4ef3ddb63a45d7b9a769240f7f46afd3c74ea05e80"><div class="ttname"><a href="a02242.html#ab64572cd24ae3a56d5dd13c4ef3ddb63a45d7b9a769240f7f46afd3c74ea05e80">gtsam::ImuFactorErrorMode::ComponentWise</a></div><div class="ttdeci">@ ComponentWise</div><div class="ttdoc">Use the component-wise NavState error for every backend.</div><div class="ttdef"><b>Definition</b> PreintegrationParams.h:31</div></div>
+<div class="ttc" id="aa02242_html_ab64572cd24ae3a56d5dd13c4ef3ddb63ae145daec7848b941c9f602ccadeb2a58"><div class="ttname"><a href="a02242.html#ab64572cd24ae3a56d5dd13c4ef3ddb63ae145daec7848b941c9f602ccadeb2a58">gtsam::ImuFactorErrorMode::Logmap</a></div><div class="ttdeci">@ Logmap</div><div class="ttdoc">Use the SE_2(3) NavState Logmap for every backend.</div><div class="ttdef"><b>Definition</b> PreintegrationParams.h:32</div></div>
+<div class="ttc" id="aa03267_html_a9a8ba0a0f7442929df460d79292134aa"><div class="ttname"><a href="a03267.html#a9a8ba0a0f7442929df460d79292134aa">gtsam::LieGroup::logmap</a></div><div class="ttdeci">TangentVector logmap(const Class &amp;g) const</div><div class="ttdoc">logmap as required by manifold concept Applies logarithmic map to group element that takes *this to g</div><div class="ttdef"><b>Definition</b> Lie.h:161</div></div>
+<div class="ttc" id="aa03363_html"><div class="ttname"><a href="a03363.html">gtsam::OptionalJacobian</a></div><div class="ttdoc">OptionalJacobian is an Eigen::Ref like class that can take be constructed using either a fixed size o...</div><div class="ttdef"><b>Definition</b> OptionalJacobian.h:40</div></div>
+<div class="ttc" id="aa04403_html"><div class="ttname"><a href="a04403.html">gtsam::Pose3</a></div><div class="ttdoc">A 3D pose (R,t) : (Rot3,Point3).</div><div class="ttdef"><b>Definition</b> Pose3.h:42</div></div>
+<div class="ttc" id="aa04627_html"><div class="ttname"><a href="a04627.html">gtsam::Unit3</a></div><div class="ttdoc">Represents a 3D point on a unit sphere.</div><div class="ttdef"><b>Definition</b> Unit3.h:44</div></div>
+<div class="ttc" id="aa04627_html_a400b6e7bac4fe3fecaf65ee193044dd4"><div class="ttname"><a href="a04627.html#a400b6e7bac4fe3fecaf65ee193044dd4">gtsam::Unit3::scaled</a></div><div class="ttdeci">Vector3 scaled(double magnitude, OptionalJacobian&lt; 3, 2 &gt; H_this={}, OptionalJacobian&lt; 3, 1 &gt; H_magnitude={}) const</div><div class="ttdoc">Return this direction scaled by a magnitude, i.e.</div><div class="ttdef"><b>Definition</b> Unit3.cpp:158</div></div>
+<div class="ttc" id="aa05739_html"><div class="ttname"><a href="a05739.html">gtsam::imuBias::ConstantBias</a></div><div class="ttdef"><b>Definition</b> ImuBias.h:34</div></div>
+<div class="ttc" id="aa05739_html_a93610c76ef81c251cb8d5697ee9334bd"><div class="ttname"><a href="a05739.html#a93610c76ef81c251cb8d5697ee9334bd">gtsam::imuBias::ConstantBias::vector</a></div><div class="ttdeci">Vector6 vector() const</div><div class="ttdoc">return the accelerometer and gyro biases in a single vector</div><div class="ttdef"><b>Definition</b> ImuBias.h:61</div></div>
+<div class="ttc" id="aa05927_html"><div class="ttname"><a href="a05927.html">gtsam::NavState</a></div><div class="ttdoc">Navigation state: Pose (rotation, translation) + velocity Following Barrau20icra, this class belongs ...</div><div class="ttdef"><b>Definition</b> NavState.h:45</div></div>
+<div class="ttc" id="aa05927_html_a5d380bc53c23a5ace7cf9536a9c7e171"><div class="ttname"><a href="a05927.html#a5d380bc53c23a5ace7cf9536a9c7e171">gtsam::NavState::R</a></div><div class="ttdeci">Matrix3 R() const</div><div class="ttdoc">Return rotation matrix. Induces computation in quaternion mode.</div><div class="ttdef"><b>Definition</b> NavState.h:119</div></div>
+<div class="ttc" id="aa05983_html"><div class="ttname"><a href="a05983.html">gtsam::PreintegrationBase</a></div><div class="ttdoc">PreintegrationBase is the base class for PreintegratedMeasurements (in ImuFactor) and CombinedPreinte...</div><div class="ttdef"><b>Definition</b> PreintegrationBase.h:45</div></div>
+<div class="ttc" id="aa05983_html_a05698caf670ddcd7a108505898a71134"><div class="ttname"><a href="a05983.html#a05698caf670ddcd7a108505898a71134">gtsam::PreintegrationBase::deltaTij_</a></div><div class="ttdeci">double deltaTij_</div><div class="ttdoc">Time interval from i to j.</div><div class="ttdef"><b>Definition</b> PreintegrationBase.h:60</div></div>
+<div class="ttc" id="aa05983_html_a454b6547322d3222dc4e8ebf98b9f249"><div class="ttname"><a href="a05983.html#a454b6547322d3222dc4e8ebf98b9f249">gtsam::PreintegrationBase::params</a></div><div class="ttdeci">const std::shared_ptr&lt; Params &gt; &amp; params() const</div><div class="ttdoc">shared pointer to params</div><div class="ttdef"><b>Definition</b> PreintegrationBase.h:98</div></div>
+<div class="ttc" id="aa05983_html_a4d5ead934c4582183ddc8a7b415decef"><div class="ttname"><a href="a05983.html#a4d5ead934c4582183ddc8a7b415decef">gtsam::PreintegrationBase::~PreintegrationBase</a></div><div class="ttdeci">virtual ~PreintegrationBase()</div><div class="ttdoc">Virtual destructor for serialization.</div><div class="ttdef"><b>Definition</b> PreintegrationBase.h:66</div></div>
+<div class="ttc" id="aa05983_html_a4d978fd06c9d44dfdcf2eee1e4b33e79"><div class="ttname"><a href="a05983.html#a4d978fd06c9d44dfdcf2eee1e4b33e79">gtsam::PreintegrationBase::matchesParamsWith</a></div><div class="ttdeci">bool matchesParamsWith(const PreintegrationBase &amp;other) const</div><div class="ttdoc">check parameters equality: checks whether shared pointer points to same Params object.</div><div class="ttdef"><b>Definition</b> PreintegrationBase.h:93</div></div>
+<div class="ttc" id="aa05983_html_a608671064739d912a70888ba1bd570dd"><div class="ttname"><a href="a05983.html#a608671064739d912a70888ba1bd570dd">gtsam::PreintegrationBase::kLegacyUsesLogmap</a></div><div class="ttdeci">static constexpr bool kLegacyUsesLogmap</div><div class="ttdoc">Legacy factor-error choice for this preintegration backend.</div><div class="ttdef"><b>Definition</b> PreintegrationBase.h:51</div></div>
+<div class="ttc" id="aa05983_html_a62835e11ff9409ffd26a59c6ec8d7cfd"><div class="ttname"><a href="a05983.html#a62835e11ff9409ffd26a59c6ec8d7cfd">gtsam::PreintegrationBase::p</a></div><div class="ttdeci">Params &amp; p() const</div><div class="ttdoc">const reference to params</div><div class="ttdef"><b>Definition</b> PreintegrationBase.h:103</div></div>
+<div class="ttc" id="aa05983_html_a6acc78fecad8c9d8f847cc0e255aa04d"><div class="ttname"><a href="a05983.html#a6acc78fecad8c9d8f847cc0e255aa04d">gtsam::PreintegrationBase::biasCorrectedDelta</a></div><div class="ttdeci">virtual Vector9 biasCorrectedDelta(const imuBias::ConstantBias &amp;bias_i, OptionalJacobian&lt; 9, 6 &gt; H={}) const =0</div><div class="ttdoc">Given the estimate of the bias, return a NavState tangent vector summarizing the preintegrated IMU me...</div></div>
+<div class="ttc" id="aa05983_html_a774c243fcec68bbfcfc2c62db3ca2d2a"><div class="ttname"><a href="a05983.html#a774c243fcec68bbfcfc2c62db3ca2d2a">gtsam::PreintegrationBase::biasHat_</a></div><div class="ttdeci">Bias biasHat_</div><div class="ttdoc">Acceleration and gyro bias used for preintegration.</div><div class="ttdef"><b>Definition</b> PreintegrationBase.h:57</div></div>
+<div class="ttc" id="aa05983_html_a85da47fc93662940e6bd38d02a3b3118"><div class="ttname"><a href="a05983.html#a85da47fc93662940e6bd38d02a3b3118">gtsam::PreintegrationBase::PreintegrationBase</a></div><div class="ttdeci">PreintegrationBase()</div><div class="ttdoc">Default constructor for serialization.</div><div class="ttdef"><b>Definition</b> PreintegrationBase.h:63</div></div>
+<div class="ttc" id="aa05983_html_aa75b77f620c3fa3da3ef23e4802a6034"><div class="ttname"><a href="a05983.html#aa75b77f620c3fa3da3ef23e4802a6034">gtsam::PreintegrationBase::integrateMeasurements</a></div><div class="ttdeci">void integrateMeasurements(const Matrix &amp;measuredAccs, const Matrix &amp;measuredOmegas, const Matrix &amp;dts)</div><div class="ttdoc">Add multiple measurements, in matrix columns.</div><div class="ttdef"><b>Definition</b> PreintegrationBase.cpp:119</div></div>
+<div class="ttc" id="aa05983_html_af562d10048eb544a7057443feaefb8c6"><div class="ttname"><a href="a05983.html#af562d10048eb544a7057443feaefb8c6">gtsam::PreintegrationBase::update</a></div><div class="ttdeci">virtual void update(const Vector3 &amp;measuredAcc, const Vector3 &amp;measuredOmega, const double dt, Matrix9 *A, Matrix93 *B, Matrix93 *C)=0</div><div class="ttdoc">Update preintegrated measurements and get derivatives It takes measured quantities in the j frame Mod...</div></div>
+<div class="ttc" id="aa05983_html_af81180bb6e01ac950d29784a43e8f18d"><div class="ttname"><a href="a05983.html#af81180bb6e01ac950d29784a43e8f18d">gtsam::PreintegrationBase::integrateMeasurement</a></div><div class="ttdeci">virtual void integrateMeasurement(const Vector3 &amp;measuredAcc, const Vector3 &amp;measuredOmega, const double dt)</div><div class="ttdoc">Version without derivatives.</div><div class="ttdef"><b>Definition</b> PreintegrationBase.cpp:109</div></div>
+<div class="ttc" id="aa05987_html"><div class="ttname"><a href="a05987.html">gtsam::internal::GravityParametrization</a></div><div class="ttdoc">Adapter mapping a gravity parametrization GRAVITY to the nav-frame gravity vector expected by Preinte...</div><div class="ttdef"><b>Definition</b> PreintegrationBase.h:322</div></div>
+<div class="ttc" id="aa06003_html"><div class="ttname"><a href="a06003.html">gtsam::PreintegrationParams</a></div><div class="ttdoc">Parameters for pre-integration: Usage: Create just a single Params and pass a shared pointer to the c...</div><div class="ttdef"><b>Definition</b> PreintegrationParams.h:37</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>sfm</b></li><li class="navelem"><a href="a01208.html">MFAS.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>navigation</b></li><li class="navelem"><a href="a01208.html">PreintegrationBase.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

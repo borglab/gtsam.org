@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/geometry/Point3.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/discrete/DiscreteJunctionTree.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,7 +89,7 @@ $(function(){initNavTree('a00332_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Point3.h</div></div>
+  <div class="headertitle"><div class="title">DiscreteJunctionTree.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a00332.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
@@ -103,94 +103,61 @@ $(function(){initNavTree('a00332_source.html','',''); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">// \callgraph</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;gtsam/config.h&gt;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;gtsam/base/VectorSpace.h&gt;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;<a class="code" href="a00131.html">gtsam/base/Vector.h</a>&gt;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;gtsam/dllexport.h&gt;</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;<a class="code" href="a00140.html">gtsam/base/VectorSerialization.h</a>&gt;</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;boost/serialization/nvp.hpp&gt;</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;numeric&gt;</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">   36</a></span><span class="keyword">typedef</span> Vector3 <a class="code hl_typedef" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">Point3</a>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">typedef</span> std::vector&lt;Point3, Eigen::aligned_allocator&lt;Point3&gt; &gt; Point3Vector;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">// Convenience typedef</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">using </span>Point3Pair = std::pair&lt;Point3, Point3&gt;;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>GTSAM_EXPORT std::ostream &amp;operator&lt;&lt;(std::ostream &amp;os, <span class="keyword">const</span> gtsam::Point3Pair &amp;p);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">using </span>Point3Pairs = std::vector&lt;Point3Pair&gt;;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>GTSAM_EXPORT <span class="keywordtype">double</span> <a class="code hl_function" href="a01968.html#aa42f7ec660b7353de39f9c86a26711cc">distance3</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">Point3</a>&amp; p1, <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">Point3</a>&amp; q,</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                                  <a class="code hl_class" href="a02995.html">OptionalJacobian&lt;1, 3&gt;</a> H1 = boost::none,</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                              <a class="code hl_class" href="a02995.html">OptionalJacobian&lt;1, 3&gt;</a> H2 = boost::none);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>GTSAM_EXPORT <span class="keywordtype">double</span> <a class="code hl_function" href="a01968.html#ac37b6f807985ffd25217e33f6136fe58">norm3</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">Point3</a>&amp; p, <a class="code hl_class" href="a02995.html">OptionalJacobian&lt;1, 3&gt;</a> H = boost::none);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>GTSAM_EXPORT <a class="code hl_typedef" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">Point3</a> normalize(<span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">Point3</a>&amp; p, <a class="code hl_class" href="a02995.html">OptionalJacobian&lt;3, 3&gt;</a> H = boost::none);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>GTSAM_EXPORT <a class="code hl_typedef" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">Point3</a> <a class="code hl_function" href="a01968.html#a86bf6ed2ffb0ecc42a7deb8922f4ca4f">cross</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">Point3</a>&amp; p, <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">Point3</a>&amp; q,</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                          <a class="code hl_class" href="a02995.html">OptionalJacobian&lt;3, 3&gt;</a> H_p = boost::none,</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                          <a class="code hl_class" href="a02995.html">OptionalJacobian&lt;3, 3&gt;</a> H_q = boost::none);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="a00341.html">gtsam/discrete/DiscreteBayesTree.h</a>&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="a00380.html">gtsam/discrete/DiscreteFactorGraph.h</a>&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="a00851.html">gtsam/inference/JunctionTree.h</a>&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">// Forward declarations</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">class </span><a class="code hl_class" href="a03899.html">DiscreteEliminationTree</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="};">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="a03923.html">   53</a></span><span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a03923.html#a4555ca722f81654a9aeb9983913dd6fc">DiscreteJunctionTree</a></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    : <span class="keyword">public</span> <a class="code hl_function" href="a04947.html#a5812db967ae1a284a243c5a695656d52">JunctionTree</a>&lt;DiscreteBayesTree, DiscreteFactorGraph&gt; {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a04947.html#a5812db967ae1a284a243c5a695656d52">JunctionTree&lt;DiscreteBayesTree, DiscreteFactorGraph&gt;</a></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="a03923.html#a187d382e5e43fcc23e55bbbcf8cdb75c">   57</a></span>      <a class="code hl_typedef" href="a03923.html#a187d382e5e43fcc23e55bbbcf8cdb75c">Base</a>;                                  </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="a03923.html#ad6782b47cf2c877b9073da597c774d96">   58</a></span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a03923.html#a4555ca722f81654a9aeb9983913dd6fc">DiscreteJunctionTree</a> <a class="code hl_typedef" href="a03923.html#ad6782b47cf2c877b9073da597c774d96">This</a>;         </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="a03923.html#ac6fd45dd4055ab40c33388f5d0b96294">   59</a></span>  <span class="keyword">typedef</span> std::shared_ptr&lt;This&gt; <a class="code hl_typedef" href="a03923.html#ac6fd45dd4055ab40c33388f5d0b96294">shared_ptr</a>;  </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>GTSAM_EXPORT <span class="keywordtype">double</span> <a class="code hl_function" href="a01968.html#ad80249acf12bbea741e755cd8fc73042">dot</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">Point3</a>&amp; p, <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">Point3</a>&amp; q,</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                        <a class="code hl_class" href="a02995.html">OptionalJacobian&lt;1, 3&gt;</a> H_p = boost::none,</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                        <a class="code hl_class" href="a02995.html">OptionalJacobian&lt;1, 3&gt;</a> H_q = boost::none);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> CONTAINER&gt;</div>
-<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="a01968.html#a300205092710091b8745c0a145da20a1">   68</a></span><a class="code hl_typedef" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">Point3</a> <a class="code hl_function" href="a01968.html#a300205092710091b8745c0a145da20a1">mean</a>(<span class="keyword">const</span> CONTAINER&amp; points) {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keywordflow">if</span> (points.size() == 0) <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Point3::mean input container is empty&quot;</span>);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <a class="code hl_typedef" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">Point3</a> sum(0, 0, 0);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  sum = std::accumulate(points.begin(), points.end(), sum);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keywordflow">return</span> sum / points.size();</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
-</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <a class="code hl_function" href="a03923.html#a4555ca722f81654a9aeb9983913dd6fc">DiscreteJunctionTree</a>(<span class="keyword">const</span> <a class="code hl_class" href="a03899.html">DiscreteEliminationTree</a>&amp; eliminationTree);</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>GTSAM_EXPORT Point3Pair <a class="code hl_function" href="a01968.html#a9e357cda5287fae1438f86bc4df27a80">means</a>(<span class="keyword">const</span> std::vector&lt;Point3Pair&gt; &amp;abPointPairs);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> A1, <span class="keyword">typename</span> A2&gt;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="keyword">struct </span>Range;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keyword">template</span> &lt;&gt;</div>
-<div class="foldopen" id="foldopen00082" data-start="{" data-end="};">
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="a03699.html">   82</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03467.html">Range</a>&lt;<a class="code hl_typedef" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">Point3</a>, <a class="code hl_typedef" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">Point3</a>&gt; {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keyword">typedef</span> <span class="keywordtype">double</span> result_type;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordtype">double</span> operator()(<span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">Point3</a>&amp; p, <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">Point3</a>&amp; q,</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                    <a class="code hl_class" href="a02995.html">OptionalJacobian&lt;1, 3&gt;</a> H1 = boost::none,</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                    <a class="code hl_class" href="a02995.html">OptionalJacobian&lt;1, 3&gt;</a> H2 = boost::none) {</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="a01968.html#aa42f7ec660b7353de39f9c86a26711cc">distance3</a>(p, q, H1, H2);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  }</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>};</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a03923.html#a766d6a0dea6342f4a74ce400af46d643">print</a>(<span class="keyword">const</span> std::string&amp; name = <span class="stringliteral">&quot;DiscreteJunctionTree: &quot;</span>,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>             <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a>&amp; formatter = <a class="code hl_variable" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>};</div>
 </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}  <span class="comment">// namespace gtsam</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">Vector.h</a></div><div class="ttdoc">typedef and functions to augment Eigen&#39;s VectorXd</div></div>
-<div class="ttc" id="aa00140_html"><div class="ttname"><a href="a00140.html">VectorSerialization.h</a></div><div class="ttdoc">serialization for Vectors</div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa01968_html_a300205092710091b8745c0a145da20a1"><div class="ttname"><a href="a01968.html#a300205092710091b8745c0a145da20a1">gtsam::mean</a></div><div class="ttdeci">Point3 mean(const CONTAINER &amp;points)</div><div class="ttdoc">mean</div><div class="ttdef"><b>Definition</b> Point3.h:68</div></div>
-<div class="ttc" id="aa01968_html_a86bf6ed2ffb0ecc42a7deb8922f4ca4f"><div class="ttname"><a href="a01968.html#a86bf6ed2ffb0ecc42a7deb8922f4ca4f">gtsam::cross</a></div><div class="ttdeci">Point3 cross(const Point3 &amp;p, const Point3 &amp;q, OptionalJacobian&lt; 3, 3 &gt; H1, OptionalJacobian&lt; 3, 3 &gt; H2)</div><div class="ttdoc">cross product</div><div class="ttdef"><b>Definition</b> Point3.cpp:64</div></div>
-<div class="ttc" id="aa01968_html_a9e357cda5287fae1438f86bc4df27a80"><div class="ttname"><a href="a01968.html#a9e357cda5287fae1438f86bc4df27a80">gtsam::means</a></div><div class="ttdeci">Point2Pair means(const std::vector&lt; Point2Pair &gt; &amp;abPointPairs)</div><div class="ttdoc">Calculate the two means of a set of Point2 pairs.</div><div class="ttdef"><b>Definition</b> Point2.cpp:116</div></div>
-<div class="ttc" id="aa01968_html_aa42f7ec660b7353de39f9c86a26711cc"><div class="ttname"><a href="a01968.html#aa42f7ec660b7353de39f9c86a26711cc">gtsam::distance3</a></div><div class="ttdeci">double distance3(const Point3 &amp;p1, const Point3 &amp;q, OptionalJacobian&lt; 1, 3 &gt; H1, OptionalJacobian&lt; 1, 3 &gt; H2)</div><div class="ttdoc">distance between two points</div><div class="ttdef"><b>Definition</b> Point3.cpp:27</div></div>
-<div class="ttc" id="aa01968_html_aaa8ed89fd60ea4601d9de63c4811525b"><div class="ttname"><a href="a01968.html#aaa8ed89fd60ea4601d9de63c4811525b">gtsam::Point3</a></div><div class="ttdeci">Vector3 Point3</div><div class="ttdoc">As of GTSAM 4, in order to make GTSAM more lean, it is now possible to just typedef Point3 to Vector3...</div><div class="ttdef"><b>Definition</b> Point3.h:36</div></div>
-<div class="ttc" id="aa01968_html_ac37b6f807985ffd25217e33f6136fe58"><div class="ttname"><a href="a01968.html#ac37b6f807985ffd25217e33f6136fe58">gtsam::norm3</a></div><div class="ttdeci">double norm3(const Point3 &amp;p, OptionalJacobian&lt; 1, 3 &gt; H)</div><div class="ttdoc">Distance of the point from the origin, with Jacobian.</div><div class="ttdef"><b>Definition</b> Point3.cpp:41</div></div>
-<div class="ttc" id="aa01968_html_ad80249acf12bbea741e755cd8fc73042"><div class="ttname"><a href="a01968.html#ad80249acf12bbea741e755cd8fc73042">gtsam::dot</a></div><div class="ttdeci">double dot(const V1 &amp;a, const V2 &amp;b)</div><div class="ttdoc">Dot product.</div><div class="ttdef"><b>Definition</b> Vector.h:195</div></div>
-<div class="ttc" id="aa02995_html"><div class="ttname"><a href="a02995.html">gtsam::OptionalJacobian</a></div><div class="ttdoc">OptionalJacobian is an Eigen::Ref like class that can take be constructed using either a fixed size o...</div><div class="ttdef"><b>Definition</b> OptionalJacobian.h:41</div></div>
-<div class="ttc" id="aa03467_html"><div class="ttname"><a href="a03467.html">gtsam::Range</a></div><div class="ttdef"><b>Definition</b> BearingRange.h:40</div></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="a02242.html#ac138570746a0d64ead60c784827207a3">   87</a></span><span class="keyword">using </span><a class="code hl_typedef" href="a02242.html#ac138570746a0d64ead60c784827207a3">DiscreteCluster</a> = <a class="code hl_struct" href="a04863.html">DiscreteJunctionTree::Cluster</a>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}  <span class="comment">// namespace gtsam</span></div>
+<div class="ttc" id="aa00341_html"><div class="ttname"><a href="a00341.html">DiscreteBayesTree.h</a></div><div class="ttdoc">Discrete Bayes Tree, the result of eliminating a DiscreteJunctionTree.</div></div>
+<div class="ttc" id="aa00380_html"><div class="ttname"><a href="a00380.html">DiscreteFactorGraph.h</a></div></div>
+<div class="ttc" id="aa00851_html"><div class="ttname"><a href="a00851.html">JunctionTree.h</a></div><div class="ttdoc">The junction tree.</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa02242_html_a04921356f5da6203f1a17e84cc8baafd"><div class="ttname"><a href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">gtsam::DefaultKeyFormatter</a></div><div class="ttdeci">KeyFormatter DefaultKeyFormatter</div><div class="ttdoc">Assign default key formatter.</div><div class="ttdef"><b>Definition</b> Key.cpp:30</div></div>
+<div class="ttc" id="aa02242_html_a7d4eaa9f6e32da46e8f287499ee650d2"><div class="ttname"><a href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">gtsam::KeyFormatter</a></div><div class="ttdeci">std::function&lt; std::string(Key)&gt; KeyFormatter</div><div class="ttdoc">Typedef for a function to format a key, i.e. to convert it to a string.</div><div class="ttdef"><b>Definition</b> Key.h:35</div></div>
+<div class="ttc" id="aa02242_html_ac138570746a0d64ead60c784827207a3"><div class="ttname"><a href="a02242.html#ac138570746a0d64ead60c784827207a3">gtsam::DiscreteCluster</a></div><div class="ttdeci">DiscreteJunctionTree::Cluster DiscreteCluster</div><div class="ttdoc">typedef for wrapper:</div><div class="ttdef"><b>Definition</b> DiscreteJunctionTree.h:87</div></div>
+<div class="ttc" id="aa03899_html"><div class="ttname"><a href="a03899.html">gtsam::DiscreteEliminationTree</a></div><div class="ttdoc">Elimination tree for discrete factors.</div><div class="ttdef"><b>Definition</b> DiscreteEliminationTree.h:33</div></div>
+<div class="ttc" id="aa03923_html_a187d382e5e43fcc23e55bbbcf8cdb75c"><div class="ttname"><a href="a03923.html#a187d382e5e43fcc23e55bbbcf8cdb75c">gtsam::DiscreteJunctionTree::Base</a></div><div class="ttdeci">JunctionTree&lt; DiscreteBayesTree, DiscreteFactorGraph &gt; Base</div><div class="ttdoc">Base class.</div><div class="ttdef"><b>Definition</b> DiscreteJunctionTree.h:57</div></div>
+<div class="ttc" id="aa03923_html_a4555ca722f81654a9aeb9983913dd6fc"><div class="ttname"><a href="a03923.html#a4555ca722f81654a9aeb9983913dd6fc">gtsam::DiscreteJunctionTree::DiscreteJunctionTree</a></div><div class="ttdeci">DiscreteJunctionTree(const DiscreteEliminationTree &amp;eliminationTree)</div><div class="ttdoc">Build the elimination tree of a factor graph using precomputed column structure.</div><div class="ttdef"><b>Definition</b> DiscreteJunctionTree.cpp:30</div></div>
+<div class="ttc" id="aa03923_html_a766d6a0dea6342f4a74ce400af46d643"><div class="ttname"><a href="a03923.html#a766d6a0dea6342f4a74ce400af46d643">gtsam::DiscreteJunctionTree::print</a></div><div class="ttdeci">void print(const std::string &amp;name=&quot;DiscreteJunctionTree: &quot;, const KeyFormatter &amp;formatter=DefaultKeyFormatter) const</div><div class="ttdoc">Print the tree to cout.</div><div class="ttdef"><b>Definition</b> DiscreteJunctionTree.cpp:35</div></div>
+<div class="ttc" id="aa03923_html_ac6fd45dd4055ab40c33388f5d0b96294"><div class="ttname"><a href="a03923.html#ac6fd45dd4055ab40c33388f5d0b96294">gtsam::DiscreteJunctionTree::shared_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; This &gt; shared_ptr</div><div class="ttdoc">Shared pointer to this class.</div><div class="ttdef"><b>Definition</b> DiscreteJunctionTree.h:59</div></div>
+<div class="ttc" id="aa03923_html_ad6782b47cf2c877b9073da597c774d96"><div class="ttname"><a href="a03923.html#ad6782b47cf2c877b9073da597c774d96">gtsam::DiscreteJunctionTree::This</a></div><div class="ttdeci">DiscreteJunctionTree This</div><div class="ttdoc">This class.</div><div class="ttdef"><b>Definition</b> DiscreteJunctionTree.h:58</div></div>
+<div class="ttc" id="aa04863_html"><div class="ttname"><a href="a04863.html">gtsam::ClusterTree::Cluster</a></div><div class="ttdoc">A Cluster is just a collection of factors.</div><div class="ttdef"><b>Definition</b> ClusterTree.h:38</div></div>
+<div class="ttc" id="aa04947_html_a5812db967ae1a284a243c5a695656d52"><div class="ttname"><a href="a04947.html#a5812db967ae1a284a243c5a695656d52">gtsam::JunctionTree&lt; DiscreteBayesTree, DiscreteFactorGraph &gt;::JunctionTree</a></div><div class="ttdeci">JunctionTree(const EliminationTree&lt; ETREE_BAYESNET, ETREE_GRAPH &gt; &amp;eliminationTree)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>geometry</b></li><li class="navelem"><a href="a00332.html">Point3.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>discrete</b></li><li class="navelem"><a href="a00332.html">DiscreteJunctionTree.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

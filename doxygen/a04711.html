@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::traits&lt; ImuFactor &gt; Struct Reference</title>
+<title>gtsam: gtsam::HybridGaussianConditional Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,33 +96,801 @@ $(function(){initNavTree('a04711.html','','a04708'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; ImuFactor &gt; Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::HybridGaussianConditional Class Reference<div class="ingroups"><a class="el" href="a02231.html">Hybrid</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::traits&lt; ImuFactor &gt;:</div>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A conditional of gaussian conditionals indexed by discrete variables, as part of a Bayes Network. </p>
+<p>a density over continuous variables given discrete/continuous parents.</p>
+<p>This is the result of the elimination of a continuous variable in a hybrid scheme, such that the remaining variables are discrete+continuous.</p>
+<p>Represents the conditional density P(X | M, Z) where X is the set of continuous random variables, M is the selection of discrete variables corresponding to a subset of the <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> variables and Z is parent of this node .</p>
+<p>The probability P(x|y,z,...) is proportional to \( \sum_i k_i \exp - \frac{1}{2} |R_i x - (d_i - S_i y - T_i z - ...)|^2 \) where i indexes the components and k_i is a component-wise normalization constant.</p>
+<ul>
+<li><b>Symbolic</b> factors, used to represent a graph structure, implemented in </li>
+</ul>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::HybridGaussianConditional:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a04711.png" usemap="#gtsam_3A_3Atraits_3C_20ImuFactor_20_3E_map" alt=""/>
-  <map id="gtsam_3A_3Atraits_3C_20ImuFactor_20_3E_map" name="gtsam_3A_3Atraits_3C_20ImuFactor_20_3E_map">
-<area href="a03039.html" alt="gtsam::Testable&lt; ImuFactor &gt;" shape="rect" coords="0,0,177,24"/>
+  <img src="a04711.png" usemap="#gtsam_3A_3AHybridGaussianConditional_map" alt=""/>
+  <map id="gtsam_3A_3AHybridGaussianConditional_map" name="gtsam_3A_3AHybridGaussianConditional_map">
+<area href="a04723.html" title="Implementation of a discrete-conditioned hybrid factor." alt="gtsam::HybridGaussianFactor" shape="rect" coords="0,112,426,136"/>
+<area href="a04867.html" alt="gtsam::Conditional&lt; HybridGaussianFactor, HybridGaussianConditional &gt;" shape="rect" coords="436,112,862,136"/>
+<area href="a04695.html" title="Base class for truly hybrid probabilistic factors." alt="gtsam::HybridFactor" shape="rect" coords="0,56,426,80"/>
+<area href="a04899.html" alt="gtsam::Factor" shape="rect" coords="0,0,426,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Constructors</div></td></tr>
+<tr class="memitem:a07d34bbbe6bb201f97aa753e3577c2d7" id="r_a07d34bbbe6bb201f97aa753e3577c2d7"><td class="memItemLeft"><a id="a07d34bbbe6bb201f97aa753e3577c2d7" name="a07d34bbbe6bb201f97aa753e3577c2d7"></a>
+&#160;</td><td class="memItemRight"><b>HybridGaussianConditional</b> ()=default</td></tr>
+<tr class="memdesc:a07d34bbbe6bb201f97aa753e3577c2d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor, mainly for serialization. <br /></td></tr>
+<tr class="memitem:af2c2aaaeafe95769f3e8d7cbc00a87f0" id="r_af2c2aaaeafe95769f3e8d7cbc00a87f0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#af2c2aaaeafe95769f3e8d7cbc00a87f0">HybridGaussianConditional</a> (const <a class="el" href="a02229.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &amp;discreteParent, const std::vector&lt; <a class="el" href="a05107.html#ae8fb3069bb61977b858505a9ab031f16">GaussianConditional::shared_ptr</a> &gt; &amp;<a class="el" href="#acb0ef51a879108137ce1269e69b82753">conditionals</a>)</td></tr>
+<tr class="memdesc:af2c2aaaeafe95769f3e8d7cbc00a87f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from one discrete key and vector of conditionals.  <br /></td></tr>
+<tr class="memitem:a2298ddff9e6085eceed2e5af801aae48" id="r_a2298ddff9e6085eceed2e5af801aae48"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2298ddff9e6085eceed2e5af801aae48">HybridGaussianConditional</a> (const <a class="el" href="a02229.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &amp;discreteParent, <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key, const std::vector&lt; std::pair&lt; Vector, double &gt; &gt; &amp;parameters)</td></tr>
+<tr class="memdesc:a2298ddff9e6085eceed2e5af801aae48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="a04711.html" title="A conditional of gaussian conditionals indexed by discrete variables, as part of a Bayes Network.">HybridGaussianConditional</a> with means mu_i and standard deviations sigma_i.  <br /></td></tr>
+<tr class="memitem:a0ef83b6502cdd5c444df399670aea1e4" id="r_a0ef83b6502cdd5c444df399670aea1e4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0ef83b6502cdd5c444df399670aea1e4">HybridGaussianConditional</a> (const <a class="el" href="a02229.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &amp;discreteParent, <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key, const Matrix &amp;A, <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> parent, const std::vector&lt; std::pair&lt; Vector, double &gt; &gt; &amp;parameters)</td></tr>
+<tr class="memdesc:a0ef83b6502cdd5c444df399670aea1e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="a04711.html" title="A conditional of gaussian conditionals indexed by discrete variables, as part of a Bayes Network.">HybridGaussianConditional</a> with conditional means A × parent + b_i and standard deviations sigma_i.  <br /></td></tr>
+<tr class="memitem:a84960096d02315221ac345b48e0c36da" id="r_a84960096d02315221ac345b48e0c36da"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a84960096d02315221ac345b48e0c36da">HybridGaussianConditional</a> (const <a class="el" href="a02229.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &amp;discreteParent, <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key, const Matrix &amp;A1, <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> parent1, const Matrix &amp;A2, <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> parent2, const std::vector&lt; std::pair&lt; Vector, double &gt; &gt; &amp;parameters)</td></tr>
+<tr class="memdesc:a84960096d02315221ac345b48e0c36da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="a04711.html" title="A conditional of gaussian conditionals indexed by discrete variables, as part of a Bayes Network.">HybridGaussianConditional</a> with conditional means A1 × parent1 + A2 × parent2 + b_i and standard deviations sigma_i.  <br /></td></tr>
+<tr class="memitem:a79c4dc6c2330dec3868aff4d754409c0" id="r_a79c4dc6c2330dec3868aff4d754409c0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a79c4dc6c2330dec3868aff4d754409c0">HybridGaussianConditional</a> (const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;discreteParents, const <a class="el" href="#a48b1965f7da24df2d1e1e9a96275ee39">Conditionals</a> &amp;<a class="el" href="#acb0ef51a879108137ce1269e69b82753">conditionals</a>)</td></tr>
+<tr class="memdesc:a79c4dc6c2330dec3868aff4d754409c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from multiple discrete keys and conditional tree.  <br /></td></tr>
+<tr class="memitem:ab05c9b6666c641ac8dbccdaaec46120f" id="r_ab05c9b6666c641ac8dbccdaaec46120f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab05c9b6666c641ac8dbccdaaec46120f">HybridGaussianConditional</a> (const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;discreteParents, const <a class="el" href="a04723.html#ae54ead966a67bc64fe6ec0ebb087de9f">FactorValuePairs</a> &amp;pairs, bool <a class="el" href="#a16bdba3228a81b1d73082340da5e160b">pruned</a>=false)</td></tr>
+<tr class="memdesc:ab05c9b6666c641ac8dbccdaaec46120f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from multiple discrete keys M and a tree of factor/scalar pairs, where the scalar is assumed to be the the negative log constant for each assignment m, up to a constant.  <br /></td></tr>
+<tr id="pub-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Testable</div></td></tr>
+<tr class="memitem:a70666feaaa6dadcc55bd1d4a334c01f7" id="r_a70666feaaa6dadcc55bd1d4a334c01f7"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a70666feaaa6dadcc55bd1d4a334c01f7">equals</a> (const <a class="el" href="a04695.html">HybridFactor</a> &amp;lf, double tol=1e-9) const override</td></tr>
+<tr class="memdesc:a70666feaaa6dadcc55bd1d4a334c01f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test equality with base <a class="el" href="a04695.html" title="Base class for truly hybrid probabilistic factors.">HybridFactor</a>.  <br /></td></tr>
+<tr class="memitem:a6b8f13cf88c52b88c6a4b693f27b1fe1" id="r_a6b8f13cf88c52b88c6a4b693f27b1fe1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6b8f13cf88c52b88c6a4b693f27b1fe1">print</a> (const std::string &amp;s=&quot;HybridGaussianConditional\n&quot;, const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;formatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) const override</td></tr>
+<tr class="memdesc:a6b8f13cf88c52b88c6a4b693f27b1fe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print utility.  <br /></td></tr>
+<tr id="pub-methods-2" class="groupHeader"><td colspan="2"><div class="groupHeader">Standard API</div></td></tr>
+<tr class="memitem:ab2a2d558d2321e082dc84ec2a6e207b4" id="r_ab2a2d558d2321e082dc84ec2a6e207b4"><td class="memItemLeft"><a id="ab2a2d558d2321e082dc84ec2a6e207b4" name="ab2a2d558d2321e082dc84ec2a6e207b4"></a>
+<a class="el" href="a05107.html#ae8fb3069bb61977b858505a9ab031f16">GaussianConditional::shared_ptr</a>&#160;</td><td class="memItemRight"><b>choose</b> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;discreteValues) const</td></tr>
+<tr class="memdesc:ab2a2d558d2321e082dc84ec2a6e207b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the conditional <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> for the given discrete assignment. <br /></td></tr>
+<tr class="memitem:a82139f63d734a351d3c07c1a44066f5f" id="r_a82139f63d734a351d3c07c1a44066f5f"><td class="memItemLeft"><a id="a82139f63d734a351d3c07c1a44066f5f" name="a82139f63d734a351d3c07c1a44066f5f"></a>
+<a class="el" href="a05107.html#ae8fb3069bb61977b858505a9ab031f16">GaussianConditional::shared_ptr</a>&#160;</td><td class="memItemRight"><b>operator()</b> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;discreteValues) const</td></tr>
+<tr class="memdesc:a82139f63d734a351d3c07c1a44066f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Syntactic sugar for choose. <br /></td></tr>
+<tr class="memitem:afd10ff0ba9ba2eed72f9c111da10c609" id="r_afd10ff0ba9ba2eed72f9c111da10c609"><td class="memItemLeft"><a id="afd10ff0ba9ba2eed72f9c111da10c609" name="afd10ff0ba9ba2eed72f9c111da10c609"></a>
+size_t&#160;</td><td class="memItemRight"><b>nrComponents</b> () const</td></tr>
+<tr class="memdesc:afd10ff0ba9ba2eed72f9c111da10c609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of continuous components. <br /></td></tr>
+<tr class="memitem:abfababb2a95ebef37ce0b2507359e65c" id="r_abfababb2a95ebef37ce0b2507359e65c"><td class="memItemLeft"><a id="abfababb2a95ebef37ce0b2507359e65c" name="abfababb2a95ebef37ce0b2507359e65c"></a>
+<a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&#160;</td><td class="memItemRight"><b>continuousParents</b> () const</td></tr>
+<tr class="memdesc:abfababb2a95ebef37ce0b2507359e65c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the continuous keys among the parents. <br /></td></tr>
+<tr class="memitem:aab029f05fc45a301f8d26d365ad20485" id="r_aab029f05fc45a301f8d26d365ad20485"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#aab029f05fc45a301f8d26d365ad20485">negLogConstant</a> () const override</td></tr>
+<tr class="memdesc:aab029f05fc45a301f8d26d365ad20485"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return log normalization constant in negative log space.  <br /></td></tr>
+<tr class="memitem:af19bf60226e10f1d916fa280b9588530" id="r_af19bf60226e10f1d916fa280b9588530"><td class="memItemLeft"><a id="af19bf60226e10f1d916fa280b9588530" name="af19bf60226e10f1d916fa280b9588530"></a>
+std::shared_ptr&lt; <a class="el" href="a04723.html#adf336fb3168e47aef6c3ba36e074c2c9">HybridGaussianFactor</a> &gt;&#160;</td><td class="memItemRight"><b>likelihood</b> (const <a class="el" href="a07591.html">VectorValues</a> &amp;given) const</td></tr>
+<tr class="memdesc:af19bf60226e10f1d916fa280b9588530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a likelihood factor for a hybrid <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> conditional, return a hybrid <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> factor on the parents. <br /></td></tr>
+<tr class="memitem:acb0ef51a879108137ce1269e69b82753" id="r_acb0ef51a879108137ce1269e69b82753"><td class="memItemLeft">const <a class="el" href="#a48b1965f7da24df2d1e1e9a96275ee39">Conditionals</a>&#160;</td><td class="memItemRight"><a class="el" href="#acb0ef51a879108137ce1269e69b82753">conditionals</a> () const</td></tr>
+<tr class="memdesc:acb0ef51a879108137ce1269e69b82753"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <a class="el" href="#a48b1965f7da24df2d1e1e9a96275ee39" title="typedef for Decision Tree of Gaussian Conditionals">Conditionals</a> <a class="el" href="a03835.html" title="a decision tree is a function from assignments to values.">DecisionTree</a> (dynamic cast from factors).  <br /></td></tr>
+<tr class="memitem:af33f8bf41bc7a090654f8892de1770fb" id="r_af33f8bf41bc7a090654f8892de1770fb"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#af33f8bf41bc7a090654f8892de1770fb">logProbability</a> (const <a class="el" href="a07563.html">HybridValues</a> &amp;values) const override</td></tr>
+<tr class="memdesc:af33f8bf41bc7a090654f8892de1770fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the logProbability of this hybrid <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> conditional.  <br /></td></tr>
+<tr class="memitem:ab70cf642caadcd8ec86eb4e8a9a98513" id="r_ab70cf642caadcd8ec86eb4e8a9a98513"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#ab70cf642caadcd8ec86eb4e8a9a98513">evaluate</a> (const <a class="el" href="a07563.html">HybridValues</a> &amp;values) const override</td></tr>
+<tr class="memdesc:ab70cf642caadcd8ec86eb4e8a9a98513"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate probability density for given <span class="tt">values</span>.  <br /></td></tr>
+<tr class="memitem:a71dcb41cddcb1738ff275135d115e66c" id="r_a71dcb41cddcb1738ff275135d115e66c"><td class="memItemLeft"><a id="a71dcb41cddcb1738ff275135d115e66c" name="a71dcb41cddcb1738ff275135d115e66c"></a>
+double&#160;</td><td class="memItemRight"><b>operator()</b> (const <a class="el" href="a07563.html">HybridValues</a> &amp;values) const</td></tr>
+<tr class="memdesc:a71dcb41cddcb1738ff275135d115e66c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate probability density, sugar. <br /></td></tr>
+<tr class="memitem:a36f73eb3a4004fd511ec9d4fed7a9839" id="r_a36f73eb3a4004fd511ec9d4fed7a9839"><td class="memItemLeft">HybridGaussianConditional::shared_ptr&#160;</td><td class="memItemRight"><a class="el" href="#a36f73eb3a4004fd511ec9d4fed7a9839">prune</a> (const <a class="el" href="a03883.html">DiscreteConditional</a> &amp;discreteProbs) const</td></tr>
+<tr class="memdesc:a36f73eb3a4004fd511ec9d4fed7a9839"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prune the decision tree of <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> factors as per the discrete <span class="tt">discreteProbs</span>.  <br /></td></tr>
+<tr class="memitem:a16bdba3228a81b1d73082340da5e160b" id="r_a16bdba3228a81b1d73082340da5e160b"><td class="memItemLeft"><a id="a16bdba3228a81b1d73082340da5e160b" name="a16bdba3228a81b1d73082340da5e160b"></a>
+bool&#160;</td><td class="memItemRight"><b>pruned</b> () const</td></tr>
+<tr class="memdesc:a16bdba3228a81b1d73082340da5e160b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the conditional has already been pruned. <br /></td></tr>
+<tr class="memitem:ad713c6aea4b93a9b5630937ac99beaef" id="r_ad713c6aea4b93a9b5630937ac99beaef"><td class="memItemLeft">std::shared_ptr&lt; <a class="el" href="a04899.html">Factor</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ad713c6aea4b93a9b5630937ac99beaef">restrict</a> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;discreteValues) const override</td></tr>
+<tr class="memdesc:ad713c6aea4b93a9b5630937ac99beaef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restrict to the given discrete values.  <br /></td></tr>
+<tr class="inherit_header pub_methods_a04723"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a04723')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a04723.html">gtsam::HybridGaussianFactor</a></td></tr>
+<tr class="memitem:adf336fb3168e47aef6c3ba36e074c2c9 inherit pub_methods_a04723" id="r_adf336fb3168e47aef6c3ba36e074c2c9"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>HybridGaussianFactor</b> ()=default</td></tr>
+<tr class="memdesc:adf336fb3168e47aef6c3ba36e074c2c9 inherit pub_methods_a04723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor, mainly for serialization. <br /></td></tr>
+<tr class="memitem:a82abfde46c533bcbf6c6db9b168b3c55 inherit pub_methods_a04723" id="r_a82abfde46c533bcbf6c6db9b168b3c55"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04723.html#a82abfde46c533bcbf6c6db9b168b3c55">HybridGaussianFactor</a> (const <a class="el" href="a02229.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &amp;discreteKey, const std::vector&lt; <a class="el" href="a05123.html#a07958208ac830cd10cbf5530b2c70f7c">GaussianFactor::shared_ptr</a> &gt; &amp;<a class="el" href="a04723.html#a60ef808ae767143d1bda550d46d8247e">factors</a>)</td></tr>
+<tr class="memdesc:a82abfde46c533bcbf6c6db9b168b3c55 inherit pub_methods_a04723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="a04723.html" title="Implementation of a discrete-conditioned hybrid factor.">HybridGaussianFactor</a> on a single discrete key, providing the factors for each mode m as a vector of factors ϕ_m(x).  <br /></td></tr>
+<tr class="memitem:a808553f25ab7e2d51b2fc6edef10254b inherit pub_methods_a04723" id="r_a808553f25ab7e2d51b2fc6edef10254b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04723.html#a808553f25ab7e2d51b2fc6edef10254b">HybridGaussianFactor</a> (const <a class="el" href="a02229.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &amp;discreteKey, const std::vector&lt; <a class="el" href="a02242.html#a89537f1255c2b4741351dd26e325604d">GaussianFactorValuePair</a> &gt; &amp;factorPairs)</td></tr>
+<tr class="memdesc:a808553f25ab7e2d51b2fc6edef10254b inherit pub_methods_a04723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="a04723.html" title="Implementation of a discrete-conditioned hybrid factor.">HybridGaussianFactor</a> on a single discrete key, including a scalar error value for each mode m.  <br /></td></tr>
+<tr class="memitem:ac187a7decdc0351e2dcc6c8a8c82b053 inherit pub_methods_a04723" id="r_ac187a7decdc0351e2dcc6c8a8c82b053"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04723.html#ac187a7decdc0351e2dcc6c8a8c82b053">HybridGaussianFactor</a> (const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;<a class="el" href="a04695.html#ae85edac700e36080970d91d4fa2e42f8">discreteKeys</a>, const <a class="el" href="a04723.html#ae54ead966a67bc64fe6ec0ebb087de9f">FactorValuePairs</a> &amp;factorPairs)</td></tr>
+<tr class="memdesc:ac187a7decdc0351e2dcc6c8a8c82b053 inherit pub_methods_a04723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="a04723.html" title="Implementation of a discrete-conditioned hybrid factor.">HybridGaussianFactor</a> on a several discrete keys M, including a scalar error value for each assignment m.  <br /></td></tr>
+<tr class="memitem:af943d9726c5e2dde3be27252e6040e5a inherit pub_methods_a04723" id="r_af943d9726c5e2dde3be27252e6040e5a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="a04723.html#af943d9726c5e2dde3be27252e6040e5a">equals</a> (const <a class="el" href="a04695.html#a97bb25c7e119639c38ae44bb05f53775">HybridFactor</a> &amp;lf, double tol=1e-9) const override</td></tr>
+<tr class="memdesc:af943d9726c5e2dde3be27252e6040e5a inherit pub_methods_a04723"><td class="mdescLeft">&#160;</td><td class="mdescRight">equals  <br /></td></tr>
+<tr class="memitem:a28f3585fad4639e6d286d0b900fdef73 inherit pub_methods_a04723" id="r_a28f3585fad4639e6d286d0b900fdef73"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a04723.html#a28f3585fad4639e6d286d0b900fdef73">print</a> (const std::string &amp;s=&quot;&quot;, const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;formatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) const override</td></tr>
+<tr class="memdesc:a28f3585fad4639e6d286d0b900fdef73 inherit pub_methods_a04723"><td class="mdescLeft">&#160;</td><td class="mdescRight">print  <br /></td></tr>
+<tr class="memitem:ae7baf370f7fd87adab6377e6beaa5911 inherit pub_methods_a04723" id="r_ae7baf370f7fd87adab6377e6beaa5911"><td class="memItemLeft">
+<a class="el" href="a02242.html#a89537f1255c2b4741351dd26e325604d">GaussianFactorValuePair</a>&#160;</td><td class="memItemRight"><b>operator()</b> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;assignment) const</td></tr>
+<tr class="memdesc:ae7baf370f7fd87adab6377e6beaa5911 inherit pub_methods_a04723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get factor at a given discrete assignment. <br /></td></tr>
+<tr class="memitem:a53cb06328835b73d5486ad5682591c52 inherit pub_methods_a04723" id="r_a53cb06328835b73d5486ad5682591c52"><td class="memItemLeft"><a class="el" href="a03791.html">AlgebraicDecisionTree</a>&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04723.html#a53cb06328835b73d5486ad5682591c52">errorTree</a> (const <a class="el" href="a07591.html">VectorValues</a> &amp;continuousValues) const override</td></tr>
+<tr class="memdesc:a53cb06328835b73d5486ad5682591c52 inherit pub_methods_a04723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute error of the <a class="el" href="a04723.html" title="Implementation of a discrete-conditioned hybrid factor.">HybridGaussianFactor</a> as a tree.  <br /></td></tr>
+<tr class="memitem:a8962760bb99fc8a4e5d4354201e79603 inherit pub_methods_a04723" id="r_a8962760bb99fc8a4e5d4354201e79603"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="a04723.html#a8962760bb99fc8a4e5d4354201e79603">error</a> (const <a class="el" href="a07563.html">HybridValues</a> &amp;hybridValues) const override</td></tr>
+<tr class="memdesc:a8962760bb99fc8a4e5d4354201e79603 inherit pub_methods_a04723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the log-likelihood, including the log-normalizing constant.  <br /></td></tr>
+<tr class="memitem:a60ef808ae767143d1bda550d46d8247e inherit pub_methods_a04723" id="r_a60ef808ae767143d1bda550d46d8247e"><td class="memItemLeft">
+const <a class="el" href="a04723.html#ae54ead966a67bc64fe6ec0ebb087de9f">FactorValuePairs</a> &amp;&#160;</td><td class="memItemRight"><b>factors</b> () const</td></tr>
+<tr class="memdesc:a60ef808ae767143d1bda550d46d8247e inherit pub_methods_a04723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for <a class="el" href="a05123.html" title="An abstract virtual base class for JacobianFactor and HessianFactor.">GaussianFactor</a> decision tree. <br /></td></tr>
+<tr class="memitem:ab3915aa97b866fa80a492ef30dc9d623 inherit pub_methods_a04723" id="r_ab3915aa97b866fa80a492ef30dc9d623"><td class="memItemLeft">virtual <a class="el" href="a04755.html">HybridGaussianProductFactor</a>&#160;</td><td class="memItemRight"><a class="el" href="a04723.html#ab3915aa97b866fa80a492ef30dc9d623">asProductFactor</a> () const</td></tr>
+<tr class="memdesc:ab3915aa97b866fa80a492ef30dc9d623 inherit pub_methods_a04723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to return factors and functional to create a <a class="el" href="a03835.html" title="a decision tree is a function from assignments to values.">DecisionTree</a> of <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> <a class="el" href="a04899.html">Factor</a> Graphs.  <br /></td></tr>
+<tr class="memitem:acb44aea71bef2311d7340911a74cade0 inherit pub_methods_a04723" id="r_acb44aea71bef2311d7340911a74cade0"><td class="memItemLeft">std::shared_ptr&lt; <a class="el" href="a04899.html">Factor</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04723.html#acb44aea71bef2311d7340911a74cade0">restrict</a> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;discreteValues) const override</td></tr>
+<tr class="memdesc:acb44aea71bef2311d7340911a74cade0 inherit pub_methods_a04723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restrict the factor to the given discrete values.  <br /></td></tr>
+<tr class="inherit_header pub_methods_a04695"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a04695')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a04695.html">gtsam::HybridFactor</a></td></tr>
+<tr class="memitem:a97bb25c7e119639c38ae44bb05f53775 inherit pub_methods_a04695" id="r_a97bb25c7e119639c38ae44bb05f53775"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>HybridFactor</b> ()=default</td></tr>
+<tr class="memdesc:a97bb25c7e119639c38ae44bb05f53775 inherit pub_methods_a04695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor creates empty factor. <br /></td></tr>
+<tr class="memitem:a2b7f14fac17b0a1f247b944b18a2f74d inherit pub_methods_a04695" id="r_a2b7f14fac17b0a1f247b944b18a2f74d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04695.html#a2b7f14fac17b0a1f247b944b18a2f74d">HybridFactor</a> (const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>)</td></tr>
+<tr class="memdesc:a2b7f14fac17b0a1f247b944b18a2f74d inherit pub_methods_a04695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct hybrid factor from continuous keys.  <br /></td></tr>
+<tr class="memitem:a23d26d651c77055df31ff0ff7fa7bc6c inherit pub_methods_a04695" id="r_a23d26d651c77055df31ff0ff7fa7bc6c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04695.html#a23d26d651c77055df31ff0ff7fa7bc6c">HybridFactor</a> (const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;<a class="el" href="a04695.html#ae85edac700e36080970d91d4fa2e42f8">discreteKeys</a>)</td></tr>
+<tr class="memdesc:a23d26d651c77055df31ff0ff7fa7bc6c inherit pub_methods_a04695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct hybrid factor from discrete keys.  <br /></td></tr>
+<tr class="memitem:a0e1b5e0371fb48bc049dd70009bdfbd0 inherit pub_methods_a04695" id="r_a0e1b5e0371fb48bc049dd70009bdfbd0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04695.html#a0e1b5e0371fb48bc049dd70009bdfbd0">HybridFactor</a> (const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;<a class="el" href="a04695.html#a9e94d7e2a2ddee40dce1d8f3d3572b9f">continuousKeys</a>, const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;<a class="el" href="a04695.html#ae85edac700e36080970d91d4fa2e42f8">discreteKeys</a>)</td></tr>
+<tr class="memdesc:a0e1b5e0371fb48bc049dd70009bdfbd0 inherit pub_methods_a04695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Hybrid <a class="el" href="a04899.html">Factor</a> object.  <br /></td></tr>
+<tr class="memitem:a786571987e7eeff4ee14009f88127b0d inherit pub_methods_a04695" id="r_a786571987e7eeff4ee14009f88127b0d"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>isDiscrete</b> () const</td></tr>
+<tr class="memdesc:a786571987e7eeff4ee14009f88127b0d inherit pub_methods_a04695"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if this is a factor of discrete variables only. <br /></td></tr>
+<tr class="memitem:aa811dd68336ca95a9943090fcbd63d35 inherit pub_methods_a04695" id="r_aa811dd68336ca95a9943090fcbd63d35"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>isContinuous</b> () const</td></tr>
+<tr class="memdesc:aa811dd68336ca95a9943090fcbd63d35 inherit pub_methods_a04695"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if this is a factor of continuous variables only. <br /></td></tr>
+<tr class="memitem:a7bd35e1b055078d3bf8dc1ae1d36769a inherit pub_methods_a04695" id="r_a7bd35e1b055078d3bf8dc1ae1d36769a"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>isHybrid</b> () const</td></tr>
+<tr class="memdesc:a7bd35e1b055078d3bf8dc1ae1d36769a inherit pub_methods_a04695"><td class="mdescLeft">&#160;</td><td class="mdescRight">True is this is a Discrete-Continuous factor. <br /></td></tr>
+<tr class="memitem:a0280a3e7002a62bd8d0ab05f04ec3154 inherit pub_methods_a04695" id="r_a0280a3e7002a62bd8d0ab05f04ec3154"><td class="memItemLeft">
+size_t&#160;</td><td class="memItemRight"><b>nrContinuous</b> () const</td></tr>
+<tr class="memdesc:a0280a3e7002a62bd8d0ab05f04ec3154 inherit pub_methods_a04695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of continuous variables in this factor. <br /></td></tr>
+<tr class="memitem:ae85edac700e36080970d91d4fa2e42f8 inherit pub_methods_a04695" id="r_ae85edac700e36080970d91d4fa2e42f8"><td class="memItemLeft">
+const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;&#160;</td><td class="memItemRight"><b>discreteKeys</b> () const</td></tr>
+<tr class="memdesc:ae85edac700e36080970d91d4fa2e42f8 inherit pub_methods_a04695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the discrete keys for this factor. <br /></td></tr>
+<tr class="memitem:a9e94d7e2a2ddee40dce1d8f3d3572b9f inherit pub_methods_a04695" id="r_a9e94d7e2a2ddee40dce1d8f3d3572b9f"><td class="memItemLeft">
+const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;&#160;</td><td class="memItemRight"><b>continuousKeys</b> () const</td></tr>
+<tr class="memdesc:a9e94d7e2a2ddee40dce1d8f3d3572b9f inherit pub_methods_a04695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return only the continuous keys for this factor. <br /></td></tr>
+<tr class="inherit_header pub_methods_a04899"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a04899')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a04899.html">gtsam::Factor</a></td></tr>
+<tr class="memitem:a6572d1c62aa0f0167fe6ebb0a77af107 inherit pub_methods_a04899" id="r_a6572d1c62aa0f0167fe6ebb0a77af107"><td class="memItemLeft">
+virtual&#160;</td><td class="memItemRight"><b>~Factor</b> ()=default</td></tr>
+<tr class="memdesc:a6572d1c62aa0f0167fe6ebb0a77af107 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor. <br /></td></tr>
+<tr class="memitem:a39490b49d71351affb6953d730f8ebbc inherit pub_methods_a04899" id="r_a39490b49d71351affb6953d730f8ebbc"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>empty</b> () const</td></tr>
+<tr class="memdesc:a39490b49d71351affb6953d730f8ebbc inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the factor is empty (involves zero variables). <br /></td></tr>
+<tr class="memitem:aeb63e9c85c567ee3b06b0d2ad0552a8a inherit pub_methods_a04899" id="r_aeb63e9c85c567ee3b06b0d2ad0552a8a"><td class="memItemLeft">
+<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>front</b> () const</td></tr>
+<tr class="memdesc:aeb63e9c85c567ee3b06b0d2ad0552a8a inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">First key. <br /></td></tr>
+<tr class="memitem:ae38e5024d5b20aa06a5a6bd289e626c4 inherit pub_methods_a04899" id="r_ae38e5024d5b20aa06a5a6bd289e626c4"><td class="memItemLeft">
+<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>back</b> () const</td></tr>
+<tr class="memdesc:ae38e5024d5b20aa06a5a6bd289e626c4 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last key. <br /></td></tr>
+<tr class="memitem:a179a10d0319e87eda55d6925de0f5102 inherit pub_methods_a04899" id="r_a179a10d0319e87eda55d6925de0f5102"><td class="memItemLeft">
+<a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a>&#160;</td><td class="memItemRight"><b>find</b> (<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key) const</td></tr>
+<tr class="memdesc:a179a10d0319e87eda55d6925de0f5102 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">find <br /></td></tr>
+<tr class="memitem:a03d71985cf81a0175a71d1ecf5279edb inherit pub_methods_a04899" id="r_a03d71985cf81a0175a71d1ecf5279edb"><td class="memItemLeft">
+const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;&#160;</td><td class="memItemRight"><b>keys</b> () const</td></tr>
+<tr class="memdesc:a03d71985cf81a0175a71d1ecf5279edb inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the factor's involved variable keys. <br /></td></tr>
+<tr class="memitem:a17c02f11c35bf7768347cad4943f0f64 inherit pub_methods_a04899" id="r_a17c02f11c35bf7768347cad4943f0f64"><td class="memItemLeft">
+<a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a>&#160;</td><td class="memItemRight"><b>begin</b> () const</td></tr>
+<tr class="memdesc:a17c02f11c35bf7768347cad4943f0f64 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator at beginning of involved variable keys. <br /></td></tr>
+<tr class="memitem:aa1f00e05967c0c278beec17af9cb0530 inherit pub_methods_a04899" id="r_aa1f00e05967c0c278beec17af9cb0530"><td class="memItemLeft">
+<a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a>&#160;</td><td class="memItemRight"><b>end</b> () const</td></tr>
+<tr class="memdesc:aa1f00e05967c0c278beec17af9cb0530 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator at end of involved variable keys. <br /></td></tr>
+<tr class="memitem:afac01740aefd22f4f90f49767010f811 inherit pub_methods_a04899" id="r_afac01740aefd22f4f90f49767010f811"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="a04899.html#afac01740aefd22f4f90f49767010f811">size</a> () const</td></tr>
+<tr class="memitem:a52cdda1b64d2d584b1012362963b76f3 inherit pub_methods_a04899" id="r_a52cdda1b64d2d584b1012362963b76f3"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="a04899.html#a52cdda1b64d2d584b1012362963b76f3">printKeys</a> (const std::string &amp;s=&quot;Factor&quot;, const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;formatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) const</td></tr>
+<tr class="memdesc:a52cdda1b64d2d584b1012362963b76f3 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">print only keys  <br /></td></tr>
+<tr class="memitem:a5cc62be07fbcde6678f8b346ab3a3f78 inherit pub_methods_a04899" id="r_a5cc62be07fbcde6678f8b346ab3a3f78"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const This &amp;other, double tol=1e-9) const</td></tr>
+<tr class="memdesc:a5cc62be07fbcde6678f8b346ab3a3f78 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">check equality <br /></td></tr>
+<tr class="memitem:a3fd8a3bd4eb315a0a2186efd103689c6 inherit pub_methods_a04899" id="r_a3fd8a3bd4eb315a0a2186efd103689c6"><td class="memItemLeft"><a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="a04899.html#a3fd8a3bd4eb315a0a2186efd103689c6">keys</a> ()</td></tr>
+<tr class="memitem:a5596dcbc299a2e8eec813b78fbcfe933 inherit pub_methods_a04899" id="r_a5596dcbc299a2e8eec813b78fbcfe933"><td class="memItemLeft">
+<a class="el" href="a04899.html#acb069f38cc81bea20cecfad4070da59e">iterator</a>&#160;</td><td class="memItemRight"><b>begin</b> ()</td></tr>
+<tr class="memdesc:a5596dcbc299a2e8eec813b78fbcfe933 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator at beginning of involved variable keys. <br /></td></tr>
+<tr class="memitem:a33597c74ba8db7396722165424fe5ec3 inherit pub_methods_a04899" id="r_a33597c74ba8db7396722165424fe5ec3"><td class="memItemLeft">
+<a class="el" href="a04899.html#acb069f38cc81bea20cecfad4070da59e">iterator</a>&#160;</td><td class="memItemRight"><b>end</b> ()</td></tr>
+<tr class="memdesc:a33597c74ba8db7396722165424fe5ec3 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator at end of involved variable keys. <br /></td></tr>
+<tr class="inherit_header pub_methods_a04867"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a04867')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a04867.html">gtsam::Conditional&lt; HybridGaussianFactor, HybridGaussianConditional &gt;</a></td></tr>
+<tr class="memitem:ae420d24aff203ccfb249e939a48730f5 inherit pub_methods_a04867" id="r_ae420d24aff203ccfb249e939a48730f5"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;Conditional&quot;, const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;formatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) const</td></tr>
+<tr class="memdesc:ae420d24aff203ccfb249e939a48730f5 inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">print with optional formatter <br /></td></tr>
+<tr class="memitem:a53fe6e88f668f9ee971204d7d22b0c44 inherit pub_methods_a04867" id="r_a53fe6e88f668f9ee971204d7d22b0c44"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const This &amp;c, double tol=1e-9) const</td></tr>
+<tr class="memdesc:a53fe6e88f668f9ee971204d7d22b0c44 inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">check equality <br /></td></tr>
+<tr class="memitem:a87e48132e41995e8327bc5b1daefd41d inherit pub_methods_a04867" id="r_a87e48132e41995e8327bc5b1daefd41d"><td class="memItemLeft">
+size_t&#160;</td><td class="memItemRight"><b>nrFrontals</b> () const</td></tr>
+<tr class="memdesc:a87e48132e41995e8327bc5b1daefd41d inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the number of frontals <br /></td></tr>
+<tr class="memitem:ae19763bc0d1b12bea9e7bfcb304b40bb inherit pub_methods_a04867" id="r_ae19763bc0d1b12bea9e7bfcb304b40bb"><td class="memItemLeft">
+size_t&#160;</td><td class="memItemRight"><b>nrParents</b> () const</td></tr>
+<tr class="memdesc:ae19763bc0d1b12bea9e7bfcb304b40bb inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the number of parents <br /></td></tr>
+<tr class="memitem:a2c239cc3a58d08302df173d4e464f2f1 inherit pub_methods_a04867" id="r_a2c239cc3a58d08302df173d4e464f2f1"><td class="memItemLeft">
+<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>firstFrontalKey</b> () const</td></tr>
+<tr class="memdesc:a2c239cc3a58d08302df173d4e464f2f1 inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience function to get the first frontal key. <br /></td></tr>
+<tr class="memitem:ac32c96f2070f1c0a882101e02a9b3d01 inherit pub_methods_a04867" id="r_ac32c96f2070f1c0a882101e02a9b3d01"><td class="memItemLeft">
+<a class="el" href="a04867.html#ae07bb3864d21815e8f18c81e3c1dc662">Frontals</a>&#160;</td><td class="memItemRight"><b>frontals</b> () const</td></tr>
+<tr class="memdesc:ac32c96f2070f1c0a882101e02a9b3d01 inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">return a view of the frontal keys <br /></td></tr>
+<tr class="memitem:a4f7dab2390695c0972df2fc8da2ee6c4 inherit pub_methods_a04867" id="r_a4f7dab2390695c0972df2fc8da2ee6c4"><td class="memItemLeft">
+<a class="el" href="a04867.html#ad6765642a6a0e0e8a84a3b1fe9204855">Parents</a>&#160;</td><td class="memItemRight"><b>parents</b> () const</td></tr>
+<tr class="memdesc:a4f7dab2390695c0972df2fc8da2ee6c4 inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">return a view of the parent keys <br /></td></tr>
+<tr class="memitem:a6ac62b932a5cd666e309028392e27b29 inherit pub_methods_a04867" id="r_a6ac62b932a5cd666e309028392e27b29"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>operator()</b> (const <a class="el" href="a07563.html">HybridValues</a> &amp;x) const</td></tr>
+<tr class="memdesc:a6ac62b932a5cd666e309028392e27b29 inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate probability density, sugar. <br /></td></tr>
+<tr class="memitem:acca063529671c6783551c694061f17ab inherit pub_methods_a04867" id="r_acca063529671c6783551c694061f17ab"><td class="memItemLeft">
+<a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">HybridGaussianFactor::const_iterator</a>&#160;</td><td class="memItemRight"><b>beginFrontals</b> () const</td></tr>
+<tr class="memdesc:acca063529671c6783551c694061f17ab inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator pointing to first frontal key. <br /></td></tr>
+<tr class="memitem:a2da329d78e91e9b7b7110c7a8370872e inherit pub_methods_a04867" id="r_a2da329d78e91e9b7b7110c7a8370872e"><td class="memItemLeft">
+<a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">HybridGaussianFactor::const_iterator</a>&#160;</td><td class="memItemRight"><b>endFrontals</b> () const</td></tr>
+<tr class="memdesc:a2da329d78e91e9b7b7110c7a8370872e inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator pointing past the last frontal key. <br /></td></tr>
+<tr class="memitem:af1f80fbcb599d244f1f83998996d34b0 inherit pub_methods_a04867" id="r_af1f80fbcb599d244f1f83998996d34b0"><td class="memItemLeft">
+<a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">HybridGaussianFactor::const_iterator</a>&#160;</td><td class="memItemRight"><b>beginParents</b> () const</td></tr>
+<tr class="memdesc:af1f80fbcb599d244f1f83998996d34b0 inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator pointing to the first parent key. <br /></td></tr>
+<tr class="memitem:ae97aeba1e243d7dbbf90aff659bc490b inherit pub_methods_a04867" id="r_ae97aeba1e243d7dbbf90aff659bc490b"><td class="memItemLeft">
+<a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">HybridGaussianFactor::const_iterator</a>&#160;</td><td class="memItemRight"><b>endParents</b> () const</td></tr>
+<tr class="memdesc:ae97aeba1e243d7dbbf90aff659bc490b inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator pointing past the last parent key. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ad97487946a651c944757c6482c543a5b" id="r_ad97487946a651c944757c6482c543a5b"><td class="memItemLeft"><a id="ad97487946a651c944757c6482c543a5b" name="ad97487946a651c944757c6482c543a5b"></a>
+using&#160;</td><td class="memItemRight"><b>This</b> = <a class="el" href="#a07d34bbbe6bb201f97aa753e3577c2d7">HybridGaussianConditional</a></td></tr>
+<tr class="memitem:afb3daf9ffc65e23716a9892960485890" id="r_afb3daf9ffc65e23716a9892960485890"><td class="memItemLeft"><a id="afb3daf9ffc65e23716a9892960485890" name="afb3daf9ffc65e23716a9892960485890"></a>
+using&#160;</td><td class="memItemRight"><b>shared_ptr</b> = std::shared_ptr&lt;This&gt;</td></tr>
+<tr class="memitem:a7cadc9cfdd41af82dc63e28e6ffefb09" id="r_a7cadc9cfdd41af82dc63e28e6ffefb09"><td class="memItemLeft"><a id="a7cadc9cfdd41af82dc63e28e6ffefb09" name="a7cadc9cfdd41af82dc63e28e6ffefb09"></a>
+using&#160;</td><td class="memItemRight"><b>BaseFactor</b> = <a class="el" href="a04723.html#adf336fb3168e47aef6c3ba36e074c2c9">HybridGaussianFactor</a></td></tr>
+<tr class="memitem:a658545953c0282804396adc1bf4ef09f" id="r_a658545953c0282804396adc1bf4ef09f"><td class="memItemLeft"><a id="a658545953c0282804396adc1bf4ef09f" name="a658545953c0282804396adc1bf4ef09f"></a>
+using&#160;</td><td class="memItemRight"><b>BaseConditional</b> = <a class="el" href="a04867.html#a92872ac46ea07c2953eabbdfe816f3ed">Conditional</a>&lt;BaseFactor, <a class="el" href="#a07d34bbbe6bb201f97aa753e3577c2d7">HybridGaussianConditional</a>&gt;</td></tr>
+<tr class="memitem:a48b1965f7da24df2d1e1e9a96275ee39" id="r_a48b1965f7da24df2d1e1e9a96275ee39"><td class="memItemLeft"><a id="a48b1965f7da24df2d1e1e9a96275ee39" name="a48b1965f7da24df2d1e1e9a96275ee39"></a>
+using&#160;</td><td class="memItemRight"><b>Conditionals</b> = <a class="el" href="a03835.html">DecisionTree</a>&lt;<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, <a class="el" href="a05107.html#ae8fb3069bb61977b858505a9ab031f16">GaussianConditional::shared_ptr</a>&gt;</td></tr>
+<tr class="memdesc:a48b1965f7da24df2d1e1e9a96275ee39"><td class="mdescLeft">&#160;</td><td class="mdescRight">typedef for Decision Tree of <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> <a class="el" href="#a48b1965f7da24df2d1e1e9a96275ee39" title="typedef for Decision Tree of Gaussian Conditionals">Conditionals</a> <br /></td></tr>
+<tr class="inherit_header pub_types_a04723"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04723')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04723.html">gtsam::HybridGaussianFactor</a></td></tr>
+<tr class="memitem:ad54d5b0ec2885aa44cce44abae880575 inherit pub_types_a04723" id="r_ad54d5b0ec2885aa44cce44abae880575"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Base</b> = <a class="el" href="a04695.html#a97bb25c7e119639c38ae44bb05f53775">HybridFactor</a></td></tr>
+<tr class="memitem:ad36007d1416e0c7d3e4fea9258ab6ad8 inherit pub_types_a04723" id="r_ad36007d1416e0c7d3e4fea9258ab6ad8"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>This</b> = <a class="el" href="a04723.html#adf336fb3168e47aef6c3ba36e074c2c9">HybridGaussianFactor</a></td></tr>
+<tr class="memitem:ae8546939610e66394f92a1f87b242c5b inherit pub_types_a04723" id="r_ae8546939610e66394f92a1f87b242c5b"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>shared_ptr</b> = std::shared_ptr&lt;This&gt;</td></tr>
+<tr class="memitem:a3656fd79ea190485575180beb48f77d1 inherit pub_types_a04723" id="r_a3656fd79ea190485575180beb48f77d1"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>sharedFactor</b> = std::shared_ptr&lt;GaussianFactor&gt;</td></tr>
+<tr class="memitem:ae54ead966a67bc64fe6ec0ebb087de9f inherit pub_types_a04723" id="r_ae54ead966a67bc64fe6ec0ebb087de9f"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>FactorValuePairs</b> = <a class="el" href="a03835.html">DecisionTree</a>&lt;<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, <a class="el" href="a02242.html#a89537f1255c2b4741351dd26e325604d">GaussianFactorValuePair</a>&gt;</td></tr>
+<tr class="memdesc:ae54ead966a67bc64fe6ec0ebb087de9f inherit pub_types_a04723"><td class="mdescLeft">&#160;</td><td class="mdescRight">typedef for Decision Tree of <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> factors and arbitrary value. <br /></td></tr>
+<tr class="inherit_header pub_types_a04695"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04695')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04695.html">gtsam::HybridFactor</a></td></tr>
+<tr class="memitem:a1b35c62bee7a13a1bc6354835d5da59c inherit pub_types_a04695" id="r_a1b35c62bee7a13a1bc6354835d5da59c"><td class="memItemLeft"><a id="a1b35c62bee7a13a1bc6354835d5da59c" name="a1b35c62bee7a13a1bc6354835d5da59c"></a>enum class &#160;</td><td class="memItemRight"><a class="el" href="a04695.html#a1b35c62bee7a13a1bc6354835d5da59c">Category</a> { <b>None</b>
+, <b>Discrete</b>
+, <b>Continuous</b>
+, <b>Hybrid</b>
+ }</td></tr>
+<tr class="memdesc:a1b35c62bee7a13a1bc6354835d5da59c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum to help with categorizing hybrid factors. <br /></td></tr>
+<tr class="memitem:a2dae31181d923450d6f97e0a67670f71 inherit pub_types_a04695" id="r_a2dae31181d923450d6f97e0a67670f71"><td class="memItemLeft">
+typedef <a class="el" href="a04695.html#a97bb25c7e119639c38ae44bb05f53775">HybridFactor</a>&#160;</td><td class="memItemRight"><b>This</b></td></tr>
+<tr class="memdesc:a2dae31181d923450d6f97e0a67670f71 inherit pub_types_a04695"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a04695.html#a2dae31181d923450d6f97e0a67670f71" title="This class.">This</a> class. <br /></td></tr>
+<tr class="memitem:a7cb445318bf3e3abe5e7d0c311af744d inherit pub_types_a04695" id="r_a7cb445318bf3e3abe5e7d0c311af744d"><td class="memItemLeft">
+typedef std::shared_ptr&lt; <a class="el" href="a04695.html#a97bb25c7e119639c38ae44bb05f53775">HybridFactor</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+<tr class="memdesc:a7cb445318bf3e3abe5e7d0c311af744d inherit pub_types_a04695"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a04695.html#a7cb445318bf3e3abe5e7d0c311af744d" title="shared_ptr to this class">shared_ptr</a> to this class <br /></td></tr>
+<tr class="memitem:a9896814056a8770b842862e3fd4b779f inherit pub_types_a04695" id="r_a9896814056a8770b842862e3fd4b779f"><td class="memItemLeft">
+typedef <a class="el" href="a04899.html#a322a4d391be45b5909a65895fb7b023d">Factor</a>&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
+<tr class="memdesc:a9896814056a8770b842862e3fd4b779f inherit pub_types_a04695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Our base class. <br /></td></tr>
+<tr class="inherit_header pub_types_a04899"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04899')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04899.html">gtsam::Factor</a></td></tr>
+<tr class="memitem:acb069f38cc81bea20cecfad4070da59e inherit pub_types_a04899" id="r_acb069f38cc81bea20cecfad4070da59e"><td class="memItemLeft">
+typedef KeyVector::iterator&#160;</td><td class="memItemRight"><b>iterator</b></td></tr>
+<tr class="memdesc:acb069f38cc81bea20cecfad4070da59e inherit pub_types_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator over keys. <br /></td></tr>
+<tr class="memitem:a71af7ad9e9474ebbcf2fdffc7f31251b inherit pub_types_a04899" id="r_a71af7ad9e9474ebbcf2fdffc7f31251b"><td class="memItemLeft">
+typedef KeyVector::const_iterator&#160;</td><td class="memItemRight"><b>const_iterator</b></td></tr>
+<tr class="memdesc:a71af7ad9e9474ebbcf2fdffc7f31251b inherit pub_types_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Const iterator over keys. <br /></td></tr>
+<tr class="inherit_header pub_types_a04867"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04867')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04867.html">gtsam::Conditional&lt; HybridGaussianFactor, HybridGaussianConditional &gt;</a></td></tr>
+<tr class="memitem:a636e74b8a20bac4817bd1d86e3e67ed7 inherit pub_types_a04867" id="r_a636e74b8a20bac4817bd1d86e3e67ed7"><td class="memItemLeft">
+typedef std::pair&lt; typename <a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">HybridGaussianFactor::const_iterator</a>, typename <a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">HybridGaussianFactor::const_iterator</a> &gt;&#160;</td><td class="memItemRight"><b>ConstFactorRange</b></td></tr>
+<tr class="memdesc:a636e74b8a20bac4817bd1d86e3e67ed7 inherit pub_types_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">A mini implementation of an iterator range, to share const views of frontals and parents. <br /></td></tr>
+<tr class="memitem:ae07bb3864d21815e8f18c81e3c1dc662 inherit pub_types_a04867" id="r_ae07bb3864d21815e8f18c81e3c1dc662"><td class="memItemLeft">
+typedef ConstFactorRangeIterator&#160;</td><td class="memItemRight"><b>Frontals</b></td></tr>
+<tr class="memdesc:ae07bb3864d21815e8f18c81e3c1dc662 inherit pub_types_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">View of the frontal keys (call <a class="el" href="a04867.html#ac32c96f2070f1c0a882101e02a9b3d01">frontals()</a>). <br /></td></tr>
+<tr class="memitem:ad6765642a6a0e0e8a84a3b1fe9204855 inherit pub_types_a04867" id="r_ad6765642a6a0e0e8a84a3b1fe9204855"><td class="memItemLeft">
+typedef ConstFactorRangeIterator&#160;</td><td class="memItemRight"><b>Parents</b></td></tr>
+<tr class="memdesc:ad6765642a6a0e0e8a84a3b1fe9204855 inherit pub_types_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">View of the separator keys (call <a class="el" href="a04867.html#a4f7dab2390695c0972df2fc8da2ee6c4">parents()</a>). <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; ImuFactor &gt;</a></td></tr>
-<tr class="memitem:a0b809ea2931c6c4a2ecbd17e8f3fab39 inherit pub_methods_a03039" id="r_a0b809ea2931c6c4a2ecbd17e8f3fab39"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>BOOST_CONCEPT_ASSERT</b> ((<a class="el" href="a03035.html">HasTestablePrereqs</a>&lt; <a class="el" href="a04699.html">ImuFactor</a> &gt;))</td></tr>
-<tr class="inherit_header pub_static_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; ImuFactor &gt;</a></td></tr>
-<tr class="memitem:a27b246d77898916925c676895348fedf inherit pub_static_methods_a03039" id="r_a27b246d77898916925c676895348fedf"><td class="memItemLeft">
-static void&#160;</td><td class="memItemRight"><b>Print</b> (const <a class="el" href="a04699.html">ImuFactor</a> &amp;m, const std::string &amp;str=&quot;&quot;)</td></tr>
-<tr class="memitem:a29a5699453b92070b31ca7fa42609d98 inherit pub_static_methods_a03039" id="r_a29a5699453b92070b31ca7fa42609d98"><td class="memItemLeft">
-static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el" href="a04699.html">ImuFactor</a> &amp;m1, const <a class="el" href="a04699.html">ImuFactor</a> &amp;m2, double tol=1e-8)</td></tr>
+<tr class="memitem:a0581ba698d3f008f2a572c9b0474d6c2" id="r_a0581ba698d3f008f2a572c9b0474d6c2"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="a04867.html#a0581ba698d3f008f2a572c9b0474d6c2">CheckInvariants</a> (const <a class="el" href="a04711.html">HybridGaussianConditional</a> &amp;conditional, const VALUES &amp;x)</td></tr>
+<tr class="memdesc:a0581ba698d3f008f2a572c9b0474d6c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check invariants of this conditional, given the values <span class="tt">x</span>.  <br /></td></tr>
+<tr class="memitem:a322a4d391be45b5909a65895fb7b023d" id="r_a322a4d391be45b5909a65895fb7b023d"><td class="memItemLeft"><a id="a322a4d391be45b5909a65895fb7b023d" name="a322a4d391be45b5909a65895fb7b023d"></a>
+&#160;</td><td class="memItemRight"><b>Factor</b> ()</td></tr>
+<tr class="memdesc:a322a4d391be45b5909a65895fb7b023d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for I/O. <br /></td></tr>
+<tr class="memitem:aa3d2ef6b21961e708a4cbe10b55be59b" id="r_aa3d2ef6b21961e708a4cbe10b55be59b"><td class="memTemplParams" colspan="2">template&lt;typename CONTAINER&gt; </td></tr>
+<tr class="memitem:aa3d2ef6b21961e708a4cbe10b55be59b template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04899.html#aa3d2ef6b21961e708a4cbe10b55be59b">Factor</a> (const CONTAINER &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>)</td></tr>
+<tr class="memdesc:aa3d2ef6b21961e708a4cbe10b55be59b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct factor from container of keys.  <br /></td></tr>
+<tr class="memitem:a70ff55886664229a25e29cf2a7bb1bb7" id="r_a70ff55886664229a25e29cf2a7bb1bb7"><td class="memTemplParams" colspan="2">template&lt;typename ITERATOR&gt; </td></tr>
+<tr class="memitem:a70ff55886664229a25e29cf2a7bb1bb7 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04899.html#a70ff55886664229a25e29cf2a7bb1bb7">Factor</a> (ITERATOR first, ITERATOR last)</td></tr>
+<tr class="memdesc:a70ff55886664229a25e29cf2a7bb1bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct factor from iterator keys.  <br /></td></tr>
+<tr class="inherit_header pro_methods_a04867"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_a04867')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="a04867.html">gtsam::Conditional&lt; HybridGaussianFactor, HybridGaussianConditional &gt;</a></td></tr>
+<tr class="memitem:a92872ac46ea07c2953eabbdfe816f3ed inherit pro_methods_a04867" id="r_a92872ac46ea07c2953eabbdfe816f3ed"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>Conditional</b> ()</td></tr>
+<tr class="memdesc:a92872ac46ea07c2953eabbdfe816f3ed inherit pro_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty Constructor to make serialization possible. <br /></td></tr>
+<tr class="memitem:a5087976b9e398cd21305d33972feedad" id="r_a5087976b9e398cd21305d33972feedad"><td class="memTemplParams" colspan="2">template&lt;typename CONTAINER&gt; </td></tr>
+<tr class="memitem:a5087976b9e398cd21305d33972feedad template"><td class="memItemLeft">static <a class="el" href="a04899.html#a322a4d391be45b5909a65895fb7b023d">Factor</a>&#160;</td><td class="memItemRight"><a class="el" href="a04899.html#a5087976b9e398cd21305d33972feedad">FromKeys</a> (const CONTAINER &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>)</td></tr>
+<tr class="memdesc:a5087976b9e398cd21305d33972feedad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct factor from container of keys.  <br /></td></tr>
+<tr class="memitem:a4157181261dc47002004d53c8b56f7bf" id="r_a4157181261dc47002004d53c8b56f7bf"><td class="memTemplParams" colspan="2">template&lt;typename ITERATOR&gt; </td></tr>
+<tr class="memitem:a4157181261dc47002004d53c8b56f7bf template"><td class="memItemLeft">static <a class="el" href="a04899.html#a322a4d391be45b5909a65895fb7b023d">Factor</a>&#160;</td><td class="memItemRight"><a class="el" href="a04899.html#a4157181261dc47002004d53c8b56f7bf">FromIterators</a> (ITERATOR first, ITERATOR last)</td></tr>
+<tr class="memdesc:a4157181261dc47002004d53c8b56f7bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct factor from iterator keys.  <br /></td></tr>
+<tr class="inherit_header pro_attribs_a04695"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a04695')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a04695.html">gtsam::HybridFactor</a></td></tr>
+<tr class="memitem:a979801877d43272f0e82d3efeb3dcbc6 inherit pro_attribs_a04695" id="r_a979801877d43272f0e82d3efeb3dcbc6"><td class="memItemLeft">
+<a class="el" href="a03927.html">DiscreteKeys</a>&#160;</td><td class="memItemRight"><b>discreteKeys_</b></td></tr>
+<tr class="memitem:aaa808001f9d06b22b8abd8676254dcfd inherit pro_attribs_a04695" id="r_aaa808001f9d06b22b8abd8676254dcfd"><td class="memItemLeft">
+<a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&#160;</td><td class="memItemRight"><b>continuousKeys_</b></td></tr>
+<tr class="memdesc:aaa808001f9d06b22b8abd8676254dcfd inherit pro_attribs_a04695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Record continuous keys for book-keeping. <br /></td></tr>
+<tr class="inherit_header pro_attribs_a04899"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a04899')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a04899.html">gtsam::Factor</a></td></tr>
+<tr class="memitem:a10e886cc8b8a374e2fe864707e0b6278 inherit pro_attribs_a04899" id="r_a10e886cc8b8a374e2fe864707e0b6278"><td class="memItemLeft">
+<a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&#160;</td><td class="memItemRight"><b>keys_</b></td></tr>
+<tr class="memdesc:a10e886cc8b8a374e2fe864707e0b6278 inherit pro_attribs_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">The keys involved in this factor. <br /></td></tr>
+<tr class="inherit_header pro_attribs_a04867"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a04867')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a04867.html">gtsam::Conditional&lt; HybridGaussianFactor, HybridGaussianConditional &gt;</a></td></tr>
+<tr class="memitem:a1700745916154a78b30a2fc15e28ce70 inherit pro_attribs_a04867" id="r_a1700745916154a78b30a2fc15e28ce70"><td class="memItemLeft">
+size_t&#160;</td><td class="memItemRight"><b>nrFrontals_</b></td></tr>
+<tr class="memdesc:a1700745916154a78b30a2fc15e28ce70 inherit pro_attribs_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">The first nrFrontal variables are frontal and the rest are parents. <br /></td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/navigation/<a class="el" href="a11868_source.html">ImuFactor.h</a></li>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af2c2aaaeafe95769f3e8d7cbc00a87f0" name="af2c2aaaeafe95769f3e8d7cbc00a87f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2c2aaaeafe95769f3e8d7cbc00a87f0">&#9670;&#160;</a></span>HybridGaussianConditional() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gtsam::HybridGaussianConditional::HybridGaussianConditional </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a02229.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>discreteParent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="a05107.html#ae8fb3069bb61977b858505a9ab031f16">GaussianConditional::shared_ptr</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>conditionals</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct from one discrete key and vector of conditionals. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">discreteParent</td><td>Single discrete parent variable </td></tr>
+    <tr><td class="paramname"><a class="el" href="#acb0ef51a879108137ce1269e69b82753" title="Get Conditionals DecisionTree (dynamic cast from factors).">conditionals</a></td><td>Vector of conditionals with the same size as the cardinality of the discrete parent. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2298ddff9e6085eceed2e5af801aae48" name="a2298ddff9e6085eceed2e5af801aae48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2298ddff9e6085eceed2e5af801aae48">&#9670;&#160;</a></span>HybridGaussianConditional() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gtsam::HybridGaussianConditional::HybridGaussianConditional </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a02229.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>discreteParent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a></td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; Vector, double &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>parameters</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="a04711.html" title="A conditional of gaussian conditionals indexed by discrete variables, as part of a Bayes Network.">HybridGaussianConditional</a> with means mu_i and standard deviations sigma_i. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">discreteParent</td><td>The discrete parent or "mode" key. </td></tr>
+    <tr><td class="paramname">key</td><td>The key for this conditional variable. </td></tr>
+    <tr><td class="paramname">parameters</td><td>A vector of pairs (mu_i, sigma_i). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0ef83b6502cdd5c444df399670aea1e4" name="a0ef83b6502cdd5c444df399670aea1e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ef83b6502cdd5c444df399670aea1e4">&#9670;&#160;</a></span>HybridGaussianConditional() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gtsam::HybridGaussianConditional::HybridGaussianConditional </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a02229.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>discreteParent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a></td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Matrix &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a></td>          <td class="paramname"><span class="paramname"><em>parent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; Vector, double &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>parameters</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="a04711.html" title="A conditional of gaussian conditionals indexed by discrete variables, as part of a Bayes Network.">HybridGaussianConditional</a> with conditional means A × parent + b_i and standard deviations sigma_i. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">discreteParent</td><td>The discrete parent or "mode" key. </td></tr>
+    <tr><td class="paramname">key</td><td>The key for this conditional variable. </td></tr>
+    <tr><td class="paramname">A</td><td>The matrix A. </td></tr>
+    <tr><td class="paramname">parent</td><td>The key of the parent variable. </td></tr>
+    <tr><td class="paramname">parameters</td><td>A vector of pairs (b_i, sigma_i). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a84960096d02315221ac345b48e0c36da" name="a84960096d02315221ac345b48e0c36da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84960096d02315221ac345b48e0c36da">&#9670;&#160;</a></span>HybridGaussianConditional() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gtsam::HybridGaussianConditional::HybridGaussianConditional </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a02229.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>discreteParent</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a></td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Matrix &amp;</td>          <td class="paramname"><span class="paramname"><em>A1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a></td>          <td class="paramname"><span class="paramname"><em>parent1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Matrix &amp;</td>          <td class="paramname"><span class="paramname"><em>A2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a></td>          <td class="paramname"><span class="paramname"><em>parent2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; Vector, double &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>parameters</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="a04711.html" title="A conditional of gaussian conditionals indexed by discrete variables, as part of a Bayes Network.">HybridGaussianConditional</a> with conditional means A1 × parent1 + A2 × parent2 + b_i and standard deviations sigma_i. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">discreteParent</td><td>The discrete parent or "mode" key. </td></tr>
+    <tr><td class="paramname">key</td><td>The key for this conditional variable. </td></tr>
+    <tr><td class="paramname">A1</td><td>The first matrix. </td></tr>
+    <tr><td class="paramname">parent1</td><td>The key of the first parent variable. </td></tr>
+    <tr><td class="paramname">A2</td><td>The second matrix. </td></tr>
+    <tr><td class="paramname">parent2</td><td>The key of the second parent variable. </td></tr>
+    <tr><td class="paramname">parameters</td><td>A vector of pairs (b_i, sigma_i). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a79c4dc6c2330dec3868aff4d754409c0" name="a79c4dc6c2330dec3868aff4d754409c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79c4dc6c2330dec3868aff4d754409c0">&#9670;&#160;</a></span>HybridGaussianConditional() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gtsam::HybridGaussianConditional::HybridGaussianConditional </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>discreteParents</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="#a48b1965f7da24df2d1e1e9a96275ee39">Conditionals</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>conditionals</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct from multiple discrete keys and conditional tree. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">discreteParents</td><td>the discrete parents. Will be placed last. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#acb0ef51a879108137ce1269e69b82753" title="Get Conditionals DecisionTree (dynamic cast from factors).">conditionals</a></td><td>a decision tree of GaussianConditionals. The number of conditionals should be C^(number of discrete parents), where C is the cardinality of the <a class="el" href="a03927.html" title="DiscreteKeys is a set of keys that can be assembled using the &amp; operator.">DiscreteKeys</a> in discreteParents, since the discreteParents will be used as the labels in the decision tree. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab05c9b6666c641ac8dbccdaaec46120f" name="ab05c9b6666c641ac8dbccdaaec46120f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab05c9b6666c641ac8dbccdaaec46120f">&#9670;&#160;</a></span>HybridGaussianConditional() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gtsam::HybridGaussianConditional::HybridGaussianConditional </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>discreteParents</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a04723.html#ae54ead966a67bc64fe6ec0ebb087de9f">FactorValuePairs</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>pairs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>pruned</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct from multiple discrete keys M and a tree of factor/scalar pairs, where the scalar is assumed to be the the negative log constant for each assignment m, up to a constant. </p>
+<dl class="section note"><dt>Note</dt><dd>Will throw if factors are not actually conditionals.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">discreteParents</td><td>the discrete parents. Will be placed last. </td></tr>
+    <tr><td class="paramname">conditionalPairs</td><td>Decision tree of GaussianFactor/scalar pairs. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a16bdba3228a81b1d73082340da5e160b" title="Return true if the conditional has already been pruned.">pruned</a></td><td>Flag indicating if conditional has been pruned. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="acb0ef51a879108137ce1269e69b82753" name="acb0ef51a879108137ce1269e69b82753"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb0ef51a879108137ce1269e69b82753">&#9670;&#160;</a></span>conditionals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="#a48b1965f7da24df2d1e1e9a96275ee39">HybridGaussianConditional::Conditionals</a> gtsam::HybridGaussianConditional::conditionals </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get <a class="el" href="#a48b1965f7da24df2d1e1e9a96275ee39" title="typedef for Decision Tree of Gaussian Conditionals">Conditionals</a> <a class="el" href="a03835.html" title="a decision tree is a function from assignments to values.">DecisionTree</a> (dynamic cast from factors). </p>
+<dl class="section note"><dt>Note</dt><dd>Slow: avoid using in favor of <a class="el" href="a04723.html#a60ef808ae767143d1bda550d46d8247e" title="Getter for GaussianFactor decision tree.">factors()</a>, which uses existing tree. </dd></dl>
+
+</div>
+</div>
+<a id="a70666feaaa6dadcc55bd1d4a334c01f7" name="a70666feaaa6dadcc55bd1d4a334c01f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70666feaaa6dadcc55bd1d4a334c01f7">&#9670;&#160;</a></span>equals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool gtsam::HybridGaussianConditional::equals </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a04695.html">HybridFactor</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>lf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>tol</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1e-9</span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Test equality with base <a class="el" href="a04695.html" title="Base class for truly hybrid probabilistic factors.">HybridFactor</a>. </p>
+
+<p>Reimplemented from <a class="el" href="a04695.html#aa53b3cb6743d1455c145a1d863959819">gtsam::HybridFactor</a>.</p>
+
+</div>
+</div>
+<a id="ab70cf642caadcd8ec86eb4e8a9a98513" name="ab70cf642caadcd8ec86eb4e8a9a98513"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab70cf642caadcd8ec86eb4e8a9a98513">&#9670;&#160;</a></span>evaluate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double gtsam::HybridGaussianConditional::evaluate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a07563.html">HybridValues</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate probability density for given <span class="tt">values</span>. </p>
+
+<p>Reimplemented from <a class="el" href="a04867.html#a4a897d1d1ac21785781623eba0276289">gtsam::Conditional&lt; HybridGaussianFactor, HybridGaussianConditional &gt;</a>.</p>
+
+</div>
+</div>
+<a id="af33f8bf41bc7a090654f8892de1770fb" name="af33f8bf41bc7a090654f8892de1770fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af33f8bf41bc7a090654f8892de1770fb">&#9670;&#160;</a></span>logProbability()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double gtsam::HybridGaussianConditional::logProbability </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a07563.html">HybridValues</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute the logProbability of this hybrid <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> conditional. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td>Continuous values and discrete assignment. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
+
+<p>Reimplemented from <a class="el" href="a04867.html#a7a24baed122d1eb00499fd96e85e806a">gtsam::Conditional&lt; HybridGaussianFactor, HybridGaussianConditional &gt;</a>.</p>
+
+</div>
+</div>
+<a id="aab029f05fc45a301f8d26d365ad20485" name="aab029f05fc45a301f8d26d365ad20485"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab029f05fc45a301f8d26d365ad20485">&#9670;&#160;</a></span>negLogConstant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double gtsam::HybridGaussianConditional::negLogConstant </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return log normalization constant in negative log space. </p>
+<p>The log normalization constant is the min of the individual log-normalization constants.</p>
+<dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
+
+<p>Reimplemented from <a class="el" href="a04867.html#a5ce0a649e8b30499add42356840846cd">gtsam::Conditional&lt; HybridGaussianFactor, HybridGaussianConditional &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a6b8f13cf88c52b88c6a4b693f27b1fe1" name="a6b8f13cf88c52b88c6a4b693f27b1fe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b8f13cf88c52b88c6a4b693f27b1fe1">&#9670;&#160;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gtsam::HybridGaussianConditional::print </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;HybridGaussianConditional\n&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>formatter</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Print utility. </p>
+
+<p>Reimplemented from <a class="el" href="a04695.html#a9ba3360f3e23d4840b00e3130b094589">gtsam::HybridFactor</a>.</p>
+
+</div>
+</div>
+<a id="a36f73eb3a4004fd511ec9d4fed7a9839" name="a36f73eb3a4004fd511ec9d4fed7a9839"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36f73eb3a4004fd511ec9d4fed7a9839">&#9670;&#160;</a></span>prune()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HybridGaussianConditional::shared_ptr gtsam::HybridGaussianConditional::prune </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a03883.html">DiscreteConditional</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>discreteProbs</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prune the decision tree of <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> factors as per the discrete <span class="tt">discreteProbs</span>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">discreteProbs</td><td>A pruned set of probabilities for the discrete keys. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Shared pointer to possibly a pruned <a class="el" href="a04711.html" title="A conditional of gaussian conditionals indexed by discrete variables, as part of a Bayes Network.">HybridGaussianConditional</a> </dd></dl>
+
+</div>
+</div>
+<a id="ad713c6aea4b93a9b5630937ac99beaef" name="ad713c6aea4b93a9b5630937ac99beaef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad713c6aea4b93a9b5630937ac99beaef">&#9670;&#160;</a></span>restrict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="a04899.html">Factor</a> &gt; gtsam::HybridGaussianConditional::restrict </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a07559.html">DiscreteValues</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>discreteValues</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Restrict to the given discrete values. </p>
+
+<p>Implements <a class="el" href="a04695.html#aab0673a814e883bf20421b73f9b05de5">gtsam::HybridFactor</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/hybrid/<a class="el" href="a00734_source.html">HybridGaussianConditional.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/hybrid/<a class="el" href="a00692.html">HybridGaussianConditional.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -137,7 +905,7 @@ static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04711.html">traits&lt; ImuFactor &gt;</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04711.html">HybridGaussianConditional</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

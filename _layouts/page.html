@@ -1,12 +1,17 @@
 ---
 layout: default
 ---
-<article class="post">
+<article class="content-page content-page-{{ page.title | slugify }}">
+  <header class="content-hero">
+    <div class="content-hero-inner">
+      <div class="content-kicker">GTSAM documentation</div>
+      <h1>{{ page.title }}</h1>
+    </div>
+  </header>
 
-  {% include jumbotron-page.html %}
-
-  <div class="post-content">
-    {{ content }}
+  <div class="content-frame">
+    <div class="post-content content-prose">
+      {{ content }}
+    </div>
   </div>
-
 </article>

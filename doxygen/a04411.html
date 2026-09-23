@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::IndeterminantLinearSystemException Class Reference</title>
+<title>gtsam: gtsam::traits&lt; Pose3 &gt; Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,74 +96,148 @@ $(function(){initNavTree('a04411.html','','a04408'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::IndeterminantLinearSystemException Class Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::traits&lt; Pose3 &gt; Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Thrown when a linear system is ill-posed. </p>
-<p>The most common cause for this error is having underconstrained variables. Mathematically, the system is either underdetermined, or its quadratic error function is concave in some directions.</p>
-<p>Examples of situations causing this error are:</p><ul>
-<li>A landmark observed by two cameras with a very small baseline will have high uncertainty in its distance from the cameras but low uncertainty in its bearing, creating a poorly-conditioned system.</li>
-<li>A landmark observed by only a single ProjectionFactor, <a class="el" href="a05223.html" title="Binary factor for a range measurement Works for any two types A1,A2 for which the functor Range&lt;A1,...">RangeFactor</a>, or <a class="el" href="a05207.html" title="Binary factor for a bearing measurement Works for any two types A1,A2 for which the functor Bearing&lt;A...">BearingFactor</a> (the landmark is not completely constrained).</li>
-<li>An overall scale or rigid transformation ambiguity, for example missing a prior or hard constraint on the first pose, or missing a scale constraint between the first two cameras (in structure-from-motion).</li>
-</ul>
-<p>Mathematically, the following conditions cause this problem:</p><ul>
-<li>Underdetermined system: This occurs when the variables are not completely constrained by factors. Even if all variables are involved in factors, the variables can still be numerically underconstrained, (for example, if a landmark is observed by only one ProjectionFactor). Mathematically in this case, the rank of the linear Jacobian or Hessian is less than the number of scalars in the system.</li>
-<li>Indefinite system: This condition occurs when the system Hessian is indefinite, i.e. non-positive-semidefinite. Note that this condition can also indicate an underdetermined system, but when solving with Cholesky, accumulation of numerical errors can cause the system to become indefinite (have some negative eigenvalues) even if it is in reality positive semi-definite (has some near-zero positive eigenvalues). Alternatively, if the system contains some <a class="el" href="a04359.html" title="A Gaussian factor using the canonical parameters (information form).">HessianFactor</a>'s with negative eigenvalues, these can create a truly indefinite system, whose quadratic error function has negative curvature in some directions.</li>
-<li>Poorly-conditioned system: A system that is positive-definite (has a unique solution) but is numerically ill-conditioned can accumulate numerical errors during solving that cause the system to become indefinite later during the elimination process. Note that poorly- conditioned systems will usually have inaccurate solutions, even if they do not always trigger this error. Systems with almost- unconstrained variables or vastly different measurement uncertainties or variable units can be poorly-conditioned.</li>
-</ul>
-<p>Resolving this problem:</p><ul>
-<li>This exception contains the variable at which the problem was discovered (IndeterminantLinearSystemException::nearbyVariable()). Note, however, that this is not necessarily the variable where the problem originates. For example, in the case that a prior on the first camera was forgotten, it may only be another camera or landmark where the problem can be detected. Where the problem is detected depends on the graph structure and variable elimination ordering.</li>
-<li>MATLAB (or similar software) is a useful tool to diagnose this problem. Use <a class="el" href="a04339.html#a5856b8544f4d9b76be4b2d8f13807e09" title="Matrix version of sparseJacobian: generates a 3*m matrix with [i,j,s] entries such that S(i(k),...">GaussianFactorGraph::sparseJacobian_()</a>, <a class="el" href="a04339.html#a2ec5f64848183b75a6a3470c0750aeaa" title="Returns a sparse augmented Jacbian matrix as a vector of i, j, and s, where i(k) and j(k) are the bas...">GaussianFactorGraph::sparseJacobian()</a> GaussianFactorGraph::denseJacobian(), and GaussianFactorGraph::denseHessian() to output the linear graph in matrix format. If using the MATLAB wrapper, the returned matrices can be immediately inspected and analyzed using standard methods. If not using the MATLAB wrapper, the output of these functions may be written to text files and then loaded into MATLAB.</li>
-<li>When outputting linear graphs as Jacobian matrices, rows are ordered in the same order as factors in the graph, which each factor occupying the number of rows indicated by its <a class="el" href="a04391.html#abb57c8cec2af9109edb3127ae89f69a8" title="return the number of rows in the corresponding linear system">JacobianFactor::rows()</a> function. Each column appears in elimination ordering, as in the <a class="el" href="a04227.html">Ordering</a> class. Each variable occupies the number of columns indicated by the <a class="el" href="a04391.html#a98d8f3afec4f66783375942908e5a2d6" title="Return the dimension of the variable pointed to by the given key iterator todo: Remove this in favor ...">JacobianFactor::getDim()</a> function.</li>
-<li>When outputting linear graphs as Hessian matrices, rows and columns are ordered in elimination order and occupy scalars in the same way as described for Jacobian columns in the previous bullet. </li>
-</ul>
-</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::IndeterminantLinearSystemException:</div>
+<div class="textblock"><p>Add the Pose3-specific operations used by the generic QCQP conversion code. </p>
+<p><span class="tt">template &lt;&gt; struct <a class="el" href="a03203.html" title="A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...">traits</a>&lt;<a class="el" href="a04403.html" title="A 3D pose (R,t) : (Rot3,Point3).">Pose3</a>&gt;</span> specializes GTSAM's generic <span class="tt"><a class="el" href="a03203.html" title="A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...">traits</a>&lt;T&gt;</span> interface for T=<a class="el" href="a04403.html" title="A 3D pose (R,t) : (Rot3,Point3).">Pose3</a>. Its static methods are called directly through the traits type. The member-template parameter D is the QCQP variable's column count, and <span class="tt">if constexpr (D == 1)</span> selects this exact homogenized vector formulation at compile time.</p>
+<p>The lift discards the fixed last row [0, 0, 0, 1] of the <a class="el" href="a04403.html" title="A 3D pose (R,t) : (Rot3,Point3).">Pose3</a> matrix and stores the first three entries of each column consecutively:</p>
+<p>x = [1, r00, r10, r20, r01, r11, r21, r02, r12, r22, tx, ty, tz]'.</p>
+<p>Eigen's <span class="tt">segment&lt;3&gt;(start)</span> selects three consecutive entries of x, while <span class="tt">T.col(column).head&lt;3&gt;()</span> selects the retained part of one matrix column. QcqpConstraints returns the symmetric matrices A and scalars b for the ten equations x' A x = b. Their translation rows and columns are zero, so these equations constrain only the embedded SO(3) rotation. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::traits&lt; Pose3 &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a04411.png" usemap="#gtsam_3A_3AIndeterminantLinearSystemException_map" alt=""/>
-  <map id="gtsam_3A_3AIndeterminantLinearSystemException_map" name="gtsam_3A_3AIndeterminantLinearSystemException_map">
-<area href="a03043.html" alt="gtsam::ThreadsafeException&lt; IndeterminantLinearSystemException &gt;" shape="rect" coords="0,56,399,80"/>
+  <img src="a04411.png" usemap="#gtsam_3A_3Atraits_3C_20Pose3_20_3E_map" alt=""/>
+  <map id="gtsam_3A_3Atraits_3C_20Pose3_20_3E_map" name="gtsam_3A_3Atraits_3C_20Pose3_20_3E_map">
+<area href="a03343.html" alt="gtsam::internal::MatrixLieGroup&lt; Pose3, 4 &gt;" shape="rect" coords="186,224,548,248"/>
+<area href="a03339.html" alt="gtsam::internal::MatrixLieGroupTraits&lt; Pose3, N &gt;" shape="rect" coords="0,168,362,192"/>
+<area href="a03535.html" alt="gtsam::Testable&lt; Pose3 &gt;" shape="rect" coords="372,168,734,192"/>
+<area href="a03275.html" alt="gtsam::internal::LieGroupTraits&lt; Pose3 &gt;" shape="rect" coords="0,112,362,136"/>
+<area href="a03303.html" alt="gtsam::internal::ManifoldTraits&lt; Pose3 &gt;" shape="rect" coords="0,56,362,80"/>
+<area href="a03299.html" alt="gtsam::internal::GetDimensionImpl&lt; Pose3, Pose3::dimension &gt;" shape="rect" coords="0,0,362,24"/>
+<area href="a04415.html" alt="gtsam::traits&lt; const Pose3 &gt;" shape="rect" coords="186,336,548,360"/>
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a987dbac4a82b3503a7092636fdd49970" id="r_a987dbac4a82b3503a7092636fdd49970"><td class="memItemLeft"><a id="a987dbac4a82b3503a7092636fdd49970" name="a987dbac4a82b3503a7092636fdd49970"></a>
-&#160;</td><td class="memItemRight"><b>IndeterminantLinearSystemException</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j) noexcept</td></tr>
-<tr class="memitem:aeb8cd63ca4f5816caad806ec99fb8ed3" id="r_aeb8cd63ca4f5816caad806ec99fb8ed3"><td class="memItemLeft"><a id="aeb8cd63ca4f5816caad806ec99fb8ed3" name="aeb8cd63ca4f5816caad806ec99fb8ed3"></a>
-<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>nearbyVariable</b> () const</td></tr>
-<tr class="memitem:a2f51ab64e2692738b804151a62284ff0" id="r_a2f51ab64e2692738b804151a62284ff0"><td class="memItemLeft"><a id="a2f51ab64e2692738b804151a62284ff0" name="a2f51ab64e2692738b804151a62284ff0"></a>
-const char *&#160;</td><td class="memItemRight"><b>what</b> () const noexcept override</td></tr>
-<tr class="inherit_header pub_methods_a03043"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03043')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03043.html">gtsam::ThreadsafeException&lt; IndeterminantLinearSystemException &gt;</a></td></tr>
-<tr class="memitem:af5b95de52358c015049206ac1c250d6a inherit pub_methods_a03043" id="r_af5b95de52358c015049206ac1c250d6a"><td class="memItemLeft">
-const char *&#160;</td><td class="memItemRight"><b>what</b> () const noexcept override</td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a04a1555ec0f545ba93e9ff39a8fa278e" id="r_a04a1555ec0f545ba93e9ff39a8fa278e"><td class="memTemplParams" colspan="2"><a id="a04a1555ec0f545ba93e9ff39a8fa278e" name="a04a1555ec0f545ba93e9ff39a8fa278e"></a>
+template&lt;int D = 1&gt; </td></tr>
+<tr class="memitem:a04a1555ec0f545ba93e9ff39a8fa278e template"><td class="memItemLeft">static Matrix&#160;</td><td class="memItemRight"><b>QcqpValue</b> (const <a class="el" href="a04403.html">Pose3</a> &amp;value)</td></tr>
+<tr class="memdesc:a04a1555ec0f545ba93e9ff39a8fa278e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the D=1 homogenized QCQP variable x = [1, vec(R), tx, ty, tz] in column-major order. <br /></td></tr>
+<tr class="memitem:a60056efd8e6bd0af25d648b13094199e" id="r_a60056efd8e6bd0af25d648b13094199e"><td class="memTemplParams" colspan="2"><a id="a60056efd8e6bd0af25d648b13094199e" name="a60056efd8e6bd0af25d648b13094199e"></a>
+template&lt;int D = 1&gt; </td></tr>
+<tr class="memitem:a60056efd8e6bd0af25d648b13094199e template"><td class="memItemLeft">static std::vector&lt; std::pair&lt; Matrix, double &gt; &gt;&#160;</td><td class="memItemRight"><b>QcqpConstraints</b> ()</td></tr>
+<tr class="memdesc:a60056efd8e6bd0af25d648b13094199e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the ten D=1 lifted SE(3) manifold constraints A, b such that trace(x' A x) = b. <br /></td></tr>
+<tr class="memitem:a80ec05a3d274b239804432a381559928" id="r_a80ec05a3d274b239804432a381559928"><td class="memTemplParams" colspan="2"><a id="a80ec05a3d274b239804432a381559928" name="a80ec05a3d274b239804432a381559928"></a>
+template&lt;int D&gt; </td></tr>
+<tr class="memitem:a80ec05a3d274b239804432a381559928 template"><td class="memItemLeft">static <a class="el" href="a04403.html">Pose3</a>&#160;</td><td class="memItemRight"><b>FromQcqpValue</b> (const Matrix &amp;X)</td></tr>
+<tr class="memdesc:a80ec05a3d274b239804432a381559928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project a D=1 homogenized QCQP vector back to <a class="el" href="a04403.html" title="A 3D pose (R,t) : (Rot3,Point3).">Pose3</a>. <br /></td></tr>
+<tr class="inherit_header pub_static_methods_a03339"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03339')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03339.html">gtsam::internal::MatrixLieGroupTraits&lt; Pose3, N &gt;</a></td></tr>
+<tr class="memitem:ae005dc436a68f1e33cac010b07a10c97 inherit pub_static_methods_a03339" id="r_ae005dc436a68f1e33cac010b07a10c97"><td class="memItemLeft">
+static LieAlgebra&#160;</td><td class="memItemRight"><b>Hat</b> (const TangentVector &amp;v)</td></tr>
+<tr class="memitem:a43936b4e6a7fe39dc920bbb9b34b3572 inherit pub_static_methods_a03339" id="r_a43936b4e6a7fe39dc920bbb9b34b3572"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>Vee</b> (const LieAlgebra &amp;X)</td></tr>
+<tr class="memitem:a15f150f1e3db3f6cd70b68db078500c4 inherit pub_static_methods_a03339" id="r_a15f150f1e3db3f6cd70b68db078500c4"><td class="memItemLeft">
+static Eigen::Matrix&lt; double, product(N, N), 1 &gt;&#160;</td><td class="memItemRight"><b>Vec</b> (const <a class="el" href="a04403.html">Pose3</a> &amp;m, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; product(N, N), <a class="el" href="a03275.html">LieGroupTraits</a>&lt; <a class="el" href="a04403.html">Pose3</a> &gt;::dimension &gt; H={})</td></tr>
+<tr class="memdesc:a15f150f1e3db3f6cd70b68db078500c4 inherit pub_static_methods_a03339"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vectorize the matrix representation of a Lie group element. <br /></td></tr>
+<tr class="memitem:a53d02985cb0985bbf3d9aa31a907e56b inherit pub_static_methods_a03339" id="r_a53d02985cb0985bbf3d9aa31a907e56b"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>AdjointTranspose</b> (const <a class="el" href="a04403.html">Pose3</a> &amp;m, const TangentVector &amp;x, ChartJacobian Hm={}, ChartJacobian Hx={})</td></tr>
+<tr class="memitem:afd4c4b958c1141a9897663ff4a5c6a32 inherit pub_static_methods_a03339" id="r_afd4c4b958c1141a9897663ff4a5c6a32"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>Adjoint</b> (const <a class="el" href="a04403.html">Pose3</a> &amp;m, const TangentVector &amp;x, ChartJacobian Hm={}, ChartJacobian Hx={})</td></tr>
+<tr class="memitem:a0a1a5d3b81ecd4f4a5f7a2689ebcebc4 inherit pub_static_methods_a03339" id="r_a0a1a5d3b81ecd4f4a5f7a2689ebcebc4"><td class="memItemLeft">
+static Jacobian&#160;</td><td class="memItemRight"><b>adjointMap</b> (const TangentVector &amp;xi)</td></tr>
+<tr class="memitem:a2ed0cda1c1d4381de7b2b46f65115a0b inherit pub_static_methods_a03339" id="r_a2ed0cda1c1d4381de7b2b46f65115a0b"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>adjoint</b> (const TangentVector &amp;xi, const TangentVector &amp;y, ChartJacobian Hxi={}, ChartJacobian H_y={})</td></tr>
+<tr class="memitem:aa8c00caa3aaa0d41658ec5b277b6cc87 inherit pub_static_methods_a03339" id="r_aa8c00caa3aaa0d41658ec5b277b6cc87"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>adjointTranspose</b> (const TangentVector &amp;xi, const TangentVector &amp;y, ChartJacobian Hxi={}, ChartJacobian H_y={})</td></tr>
+<tr class="inherit_header pub_static_methods_a03275"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03275')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03275.html">gtsam::internal::LieGroupTraits&lt; Pose3 &gt;</a></td></tr>
+<tr class="memitem:a16fee620f783604f3b51acc3ac9a29eb inherit pub_static_methods_a03275" id="r_a16fee620f783604f3b51acc3ac9a29eb"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>Logmap</b> (const <a class="el" href="a04403.html">Pose3</a> &amp;m)</td></tr>
+<tr class="memitem:a6958a8601fefa337834f6372c83eb970 inherit pub_static_methods_a03275" id="r_a6958a8601fefa337834f6372c83eb970"><td class="memItemLeft">
+static <a class="el" href="a04403.html">Pose3</a>&#160;</td><td class="memItemRight"><b>Expmap</b> (const TangentVector &amp;v)</td></tr>
+<tr class="memitem:a975a7fe12b3ae80ffd6e2d2f24c3d5d9 inherit pub_static_methods_a03275" id="r_a975a7fe12b3ae80ffd6e2d2f24c3d5d9"><td class="memItemLeft">
+static <a class="el" href="a04403.html">Pose3</a>&#160;</td><td class="memItemRight"><b>Compose</b> (const <a class="el" href="a04403.html">Pose3</a> &amp;m1, const <a class="el" href="a04403.html">Pose3</a> &amp;m2, ChartJacobian H1={}, ChartJacobian H2={})</td></tr>
+<tr class="memitem:acc8d4521c88252685a5d5303bfa7f3d4 inherit pub_static_methods_a03275" id="r_acc8d4521c88252685a5d5303bfa7f3d4"><td class="memItemLeft">
+static <a class="el" href="a04403.html">Pose3</a>&#160;</td><td class="memItemRight"><b>Between</b> (const <a class="el" href="a04403.html">Pose3</a> &amp;m1, const <a class="el" href="a04403.html">Pose3</a> &amp;m2, ChartJacobian H1={}, ChartJacobian H2={})</td></tr>
+<tr class="memitem:a4e9880fea478276cb528e6fd13d10485 inherit pub_static_methods_a03275" id="r_a4e9880fea478276cb528e6fd13d10485"><td class="memItemLeft">
+static <a class="el" href="a04403.html">Pose3</a>&#160;</td><td class="memItemRight"><b>Inverse</b> (const <a class="el" href="a04403.html">Pose3</a> &amp;m, ChartJacobian H={})</td></tr>
+<tr class="memitem:abf5682111cced2762528222c6e476093 inherit pub_static_methods_a03275" id="r_abf5682111cced2762528222c6e476093"><td class="memItemLeft">
+static Eigen::Matrix&lt; double, dimension, dimension &gt;&#160;</td><td class="memItemRight"><b>AdjointMap</b> (const <a class="el" href="a04403.html">Pose3</a> &amp;m)</td></tr>
+<tr class="memitem:ad36e535be6899c627f2f796f6c9e605a inherit pub_static_methods_a03275" id="r_ad36e535be6899c627f2f796f6c9e605a"><td class="memItemLeft">
+static <a class="el" href="a04403.html">Pose3</a>&#160;</td><td class="memItemRight"><b>Identity</b> ()</td></tr>
+<tr class="inherit_header pub_static_methods_a03303"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03303')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03303.html">gtsam::internal::ManifoldTraits&lt; Pose3 &gt;</a></td></tr>
+<tr class="memitem:a94e4b4a741e92bf6ed629aa7ef36d0b4 inherit pub_static_methods_a03303" id="r_a94e4b4a741e92bf6ed629aa7ef36d0b4"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>Local</b> (const <a class="el" href="a04403.html">Pose3</a> &amp;origin, const <a class="el" href="a04403.html">Pose3</a> &amp;other)</td></tr>
+<tr class="memitem:adf31f3fd2ec15a2f70a20fd0ffd8d957 inherit pub_static_methods_a03303" id="r_adf31f3fd2ec15a2f70a20fd0ffd8d957"><td class="memItemLeft">
+static <a class="el" href="a04403.html">Pose3</a>&#160;</td><td class="memItemRight"><b>Retract</b> (const <a class="el" href="a04403.html">Pose3</a> &amp;origin, const TangentVector &amp;v)</td></tr>
+<tr class="inherit_header pub_static_methods_a03299"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03299')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03299.html">gtsam::internal::GetDimensionImpl&lt; Pose3, Pose3::dimension &gt;</a></td></tr>
+<tr class="memitem:a1fc02dfed9e5bb053cc0acb5532f708c inherit pub_static_methods_a03299" id="r_a1fc02dfed9e5bb053cc0acb5532f708c"><td class="memItemLeft">
+static size_t&#160;</td><td class="memItemRight"><b>GetDimension</b> (const <a class="el" href="a04403.html">Pose3</a> &amp;m)</td></tr>
+<tr class="inherit_header pub_static_methods_a03535"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03535')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03535.html">gtsam::Testable&lt; Pose3 &gt;</a></td></tr>
+<tr class="memitem:a27b246d77898916925c676895348fedf inherit pub_static_methods_a03535" id="r_a27b246d77898916925c676895348fedf"><td class="memItemLeft">
+static void&#160;</td><td class="memItemRight"><b>Print</b> (const <a class="el" href="a04403.html">Pose3</a> &amp;m, const std::string &amp;str=&quot;&quot;)</td></tr>
+<tr class="memitem:a29a5699453b92070b31ca7fa42609d98 inherit pub_static_methods_a03535" id="r_a29a5699453b92070b31ca7fa42609d98"><td class="memItemLeft">
+static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el" href="a04403.html">Pose3</a> &amp;m1, const <a class="el" href="a04403.html">Pose3</a> &amp;m2, double tol=1e-8)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a19f7a57a6887f020c7af68389f98a877" id="r_a19f7a57a6887f020c7af68389f98a877"><td class="memItemLeft"><a id="a19f7a57a6887f020c7af68389f98a877" name="a19f7a57a6887f020c7af68389f98a877"></a>
+static constexpr int&#160;</td><td class="memItemRight"><b>QcqpVectorDim</b> = 13</td></tr>
+<tr class="memdesc:a19f7a57a6887f020c7af68389f98a877"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimension of the D=1 homogenized QCQP vector. <br /></td></tr>
+<tr class="memitem:a86080f2529adac4f3f47421423059e05" id="r_a86080f2529adac4f3f47421423059e05"><td class="memItemLeft"><a id="a86080f2529adac4f3f47421423059e05" name="a86080f2529adac4f3f47421423059e05"></a>
+static constexpr auto&#160;</td><td class="memItemRight"><b>dimension</b></td></tr>
+<tr class="inherit_header pub_static_attribs_a03303"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_attribs_a03303')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Attributes inherited from <a class="el" href="a03303.html">gtsam::internal::ManifoldTraits&lt; Pose3 &gt;</a></td></tr>
+<tr class="memitem:a900e659562b6e1deef63481461afdc4c inherit pub_static_attribs_a03303" id="r_a900e659562b6e1deef63481461afdc4c"><td class="memItemLeft">
+static constexpr auto&#160;</td><td class="memItemRight"><b>dimension</b></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_types_a03043"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_types_a03043')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Types inherited from <a class="el" href="a03043.html">gtsam::ThreadsafeException&lt; IndeterminantLinearSystemException &gt;</a></td></tr>
-<tr class="memitem:ab3e8e328dbd471da099164319a6767ec inherit pro_types_a03043" id="r_ab3e8e328dbd471da099164319a6767ec"><td class="memItemLeft">
-typedef std::string&#160;</td><td class="memItemRight"><b>String</b></td></tr>
-<tr class="inherit_header pro_methods_a03043"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_a03043')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="a03043.html">gtsam::ThreadsafeException&lt; IndeterminantLinearSystemException &gt;</a></td></tr>
-<tr class="memitem:a5e422f39c89802be3c5aaaf65dbfd862 inherit pro_methods_a03043" id="r_a5e422f39c89802be3c5aaaf65dbfd862"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>ThreadsafeException</b> ()</td></tr>
-<tr class="memdesc:a5e422f39c89802be3c5aaaf65dbfd862 inherit pro_methods_a03043"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor is protected - may only be created from derived classes. <br /></td></tr>
-<tr class="memitem:a3a16f8c7e9e195c03a65dd03c65e77c5 inherit pro_methods_a03043" id="r_a3a16f8c7e9e195c03a65dd03c65e77c5"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>~ThreadsafeException</b> () noexcept override</td></tr>
-<tr class="memdesc:a3a16f8c7e9e195c03a65dd03c65e77c5 inherit pro_methods_a03043"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor doesn't have the noexcept. <br /></td></tr>
-<tr class="inherit_header pro_attribs_a03043"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a03043')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a03043.html">gtsam::ThreadsafeException&lt; IndeterminantLinearSystemException &gt;</a></td></tr>
-<tr class="memitem:a4efc6de8e5ea1810c3d32f29a00714c0 inherit pro_attribs_a03043" id="r_a4efc6de8e5ea1810c3d32f29a00714c0"><td class="memItemLeft">
-bool&#160;</td><td class="memItemRight"><b>dynamic_</b></td></tr>
-<tr class="memdesc:a4efc6de8e5ea1810c3d32f29a00714c0 inherit pro_attribs_a03043"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this object was moved. <br /></td></tr>
-<tr class="memitem:a8f7ec9cccffe7d666e3a025546377c32 inherit pro_attribs_a03043" id="r_a8f7ec9cccffe7d666e3a025546377c32"><td class="memItemLeft">
-boost::optional&lt; String &gt;&#160;</td><td class="memItemRight"><b>description_</b></td></tr>
-<tr class="memdesc:a8f7ec9cccffe7d666e3a025546377c32 inherit pro_attribs_a03043"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional description. <br /></td></tr>
+<tr class="inherit_header pub_methods_a03303"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03303')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03303.html">gtsam::internal::ManifoldTraits&lt; Pose3 &gt;</a></td></tr>
+<tr class="memitem:aeb508be8e109605ae7647ed7bc710715 inherit pub_methods_a03303" id="r_aeb508be8e109605ae7647ed7bc710715"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>GTSAM_CONCEPT_ASSERT</b> (<a class="el" href="a03295.html">HasManifoldPrereqs</a>&lt; <a class="el" href="a04403.html">Pose3</a> &gt;)</td></tr>
+<tr class="inherit_header pub_methods_a03535"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03535')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03535.html">gtsam::Testable&lt; Pose3 &gt;</a></td></tr>
+<tr class="memitem:a6fd5215e8e80961b347f5bc16e8ce672 inherit pub_methods_a03535" id="r_a6fd5215e8e80961b347f5bc16e8ce672"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>GTSAM_CONCEPT_ASSERT</b> (<a class="el" href="a03531.html">HasTestablePrereqs</a>&lt; <a class="el" href="a04403.html">Pose3</a> &gt;)</td></tr>
+<tr class="inherit_header pub_types_a03339"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03339')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03339.html">gtsam::internal::MatrixLieGroupTraits&lt; Pose3, N &gt;</a></td></tr>
+<tr class="memitem:ab45cb6e6c36399167a2c21df61b40328 inherit pub_types_a03339" id="r_ab45cb6e6c36399167a2c21df61b40328"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>LieAlgebra</b></td></tr>
+<tr class="memitem:afff5c420498ecf8b6a769fbad8e624b9 inherit pub_types_a03339" id="r_afff5c420498ecf8b6a769fbad8e624b9"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+<tr class="memitem:ad910b13b10fe85170eac4cc25bfbe216 inherit pub_types_a03339" id="r_ad910b13b10fe85170eac4cc25bfbe216"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Jacobian</b></td></tr>
+<tr class="memitem:a9fdc53f383b4aadb8ae25ce295cb9b0c inherit pub_types_a03339" id="r_a9fdc53f383b4aadb8ae25ce295cb9b0c"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
+<tr class="inherit_header pub_types_a03275"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03275')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03275.html">gtsam::internal::LieGroupTraits&lt; Pose3 &gt;</a></td></tr>
+<tr class="memitem:afc21e691a11b4b8bc2ed0abbe3782705 inherit pub_types_a03275" id="r_afc21e691a11b4b8bc2ed0abbe3782705"><td class="memItemLeft">
+typedef <a class="el" href="a03363.html">OptionalJacobian</a>&lt; dimension, dimension &gt;&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
+<tr class="memitem:aecd8dd24df157a38744ce7d52893ddef inherit pub_types_a03275" id="r_aecd8dd24df157a38744ce7d52893ddef"><td class="memItemLeft">
+typedef <a class="el" href="a04403.html">Pose3</a>&#160;</td><td class="memItemRight"><b>ManifoldType</b></td></tr>
+<tr class="memitem:a7fd4430a3d3639de6e4a4bab2c82214d inherit pub_types_a03275" id="r_a7fd4430a3d3639de6e4a4bab2c82214d"><td class="memItemLeft">
+typedef Eigen::Matrix&lt; double, dimension, 1 &gt;&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+<tr class="memitem:a02152ea559c5ae9a08ae9ca3e63f7103 inherit pub_types_a03275" id="r_a02152ea559c5ae9a08ae9ca3e63f7103"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Manifold</b></td></tr>
+<tr class="memitem:a9d6e4e6485704f01932a19d2902b61ea inherit pub_types_a03275" id="r_a9d6e4e6485704f01932a19d2902b61ea"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>structure_category</b></td></tr>
+<tr class="memitem:aaf7299413c5ca8e5965e5f76582b8d6d inherit pub_types_a03275" id="r_aaf7299413c5ca8e5965e5f76582b8d6d"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>group_flavor</b></td></tr>
+<tr class="memitem:a2a536fb12d54ce916a1ed0bd0df9b258 inherit pub_types_a03275" id="r_a2a536fb12d54ce916a1ed0bd0df9b258"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Jacobian</b></td></tr>
+<tr class="inherit_header pub_types_a03303"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03303')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03303.html">gtsam::internal::ManifoldTraits&lt; Pose3 &gt;</a></td></tr>
+<tr class="memitem:aecd8dd24df157a38744ce7d52893ddef inherit pub_types_a03303" id="r_aecd8dd24df157a38744ce7d52893ddef"><td class="memItemLeft">
+typedef <a class="el" href="a04403.html">Pose3</a>&#160;</td><td class="memItemRight"><b>ManifoldType</b></td></tr>
+<tr class="memitem:aeabfd4c402e097eedb55ad543117d4e2 inherit pub_types_a03303" id="r_aeabfd4c402e097eedb55ad543117d4e2"><td class="memItemLeft">
+typedef <a class="el" href="a03291.html">manifold_tag</a>&#160;</td><td class="memItemRight"><b>structure_category</b></td></tr>
+<tr class="memitem:a7fd4430a3d3639de6e4a4bab2c82214d inherit pub_types_a03303" id="r_a7fd4430a3d3639de6e4a4bab2c82214d"><td class="memItemLeft">
+typedef Eigen::Matrix&lt; double, dimension, 1 &gt;&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+<tr class="memitem:afc21e691a11b4b8bc2ed0abbe3782705 inherit pub_types_a03303" id="r_afc21e691a11b4b8bc2ed0abbe3782705"><td class="memItemLeft">
+typedef <a class="el" href="a03363.html">OptionalJacobian</a>&lt; dimension, dimension &gt;&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/<a class="el" href="a00878_source.html">linearExceptions.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/<a class="el" href="a00779.html">linearExceptions.cpp</a></li>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00521_source.html">Pose3.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -178,7 +252,7 @@ boost::optional&lt; String &gt;&#160;</td><td class="memItemRight"><b>descriptio
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04411.html">IndeterminantLinearSystemException</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04411.html">traits&lt; Pose3 &gt;</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

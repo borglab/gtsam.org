@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/navigation/PreintegrationParams.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/Sampler.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,7 +89,7 @@ $(function(){initNavTree('a00944_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">PreintegrationParams.h</div></div>
+  <div class="headertitle"><div class="title">Sampler.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a00944.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
@@ -103,101 +103,81 @@ $(function(){initNavTree('a00944_source.html','',''); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;<a class="code" href="a00908.html">gtsam/navigation/PreintegratedRotation.h</a>&gt;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;boost/make_shared.hpp&gt;</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
-<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="a04767.html">   26</a></span><span class="keyword">struct </span>GTSAM_EXPORT <a class="code hl_function" href="a04767.html#a2b734623439aeb465143f0ca4a918ad8">PreintegrationParams</a>: PreintegratedRotationParams {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="a04767.html#a1fb0a8f02d0568b27b2bd6a25c558935">   29</a></span>  Matrix3 <a class="code hl_variable" href="a04767.html#a1fb0a8f02d0568b27b2bd6a25c558935">accelerometerCovariance</a>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="a04767.html#a593988febdb8bbf93a2524f14b98d16a">   30</a></span>  Matrix3 <a class="code hl_variable" href="a04767.html#a593988febdb8bbf93a2524f14b98d16a">integrationCovariance</a>; </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="a04767.html#a2732ec155327ae88f23a6b983c173162">   31</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="a04767.html#a2732ec155327ae88f23a6b983c173162">use2ndOrderCoriolis</a>; </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="a04767.html#a355a21d1ad3b0ab250ab8596790eb387">   32</a></span>  Vector3 <a class="code hl_variable" href="a04767.html#a355a21d1ad3b0ab250ab8596790eb387">n_gravity</a>; </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
-<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="a04767.html#a2b734623439aeb465143f0ca4a918ad8">   35</a></span>  <a class="code hl_function" href="a04767.html#a2b734623439aeb465143f0ca4a918ad8">PreintegrationParams</a>()</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      : PreintegratedRotationParams(),</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_variable" href="a04767.html#a1fb0a8f02d0568b27b2bd6a25c558935">accelerometerCovariance</a>(I_3x3),</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <a class="code hl_variable" href="a04767.html#a593988febdb8bbf93a2524f14b98d16a">integrationCovariance</a>(I_3x3),</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <a class="code hl_variable" href="a04767.html#a2732ec155327ae88f23a6b983c173162">use2ndOrderCoriolis</a>(false),</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <a class="code hl_variable" href="a04767.html#a355a21d1ad3b0ab250ab8596790eb387">n_gravity</a>(0, 0, -1) {}</div>
-</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
-<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="a04767.html#a4172ae9d785221171cf39c019547ba51">   44</a></span>  <a class="code hl_function" href="a04767.html#a4172ae9d785221171cf39c019547ba51">PreintegrationParams</a>(<span class="keyword">const</span> Vector3&amp; <a class="code hl_variable" href="a04767.html#a355a21d1ad3b0ab250ab8596790eb387">n_gravity</a>)</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      : PreintegratedRotationParams(),</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_variable" href="a04767.html#a1fb0a8f02d0568b27b2bd6a25c558935">accelerometerCovariance</a>(I_3x3),</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_variable" href="a04767.html#a593988febdb8bbf93a2524f14b98d16a">integrationCovariance</a>(I_3x3),</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <a class="code hl_variable" href="a04767.html#a2732ec155327ae88f23a6b983c173162">use2ndOrderCoriolis</a>(false),</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_variable" href="a04767.html#a355a21d1ad3b0ab250ab8596790eb387">n_gravity</a>(<a class="code hl_variable" href="a04767.html#a355a21d1ad3b0ab250ab8596790eb387">n_gravity</a>) {}</div>
-</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="comment">// Default Params for a Z-down navigation frame, such as NED: gravity points along positive Z-axis</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keyword">static</span> boost::shared_ptr&lt;PreintegrationParams&gt; MakeSharedD(<span class="keywordtype">double</span> g = 9.81) {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">return</span> boost::shared_ptr&lt;PreintegrationParams&gt;(<span class="keyword">new</span> <a class="code hl_struct" href="a04767.html">PreintegrationParams</a>(Vector3(0, 0, g)));</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  }</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="comment">// Default Params for a Z-up navigation frame, such as ENU: gravity points along negative Z-axis</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keyword">static</span> boost::shared_ptr&lt;PreintegrationParams&gt; MakeSharedU(<span class="keywordtype">double</span> g = 9.81) {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> boost::shared_ptr&lt;PreintegrationParams&gt;(<span class="keyword">new</span> PreintegrationParams(Vector3(0, 0, -g)));</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  }</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a01968.html#a54fa43c89c5334314c8c75939dd5c2d7">print</a>(<span class="keyword">const</span> std::string&amp; s=<span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> PreintegratedRotationParams&amp; other, <span class="keywordtype">double</span> tol) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keywordtype">void</span> setAccelerometerCovariance(<span class="keyword">const</span> Matrix3&amp; cov) { accelerometerCovariance = cov; }</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordtype">void</span> setIntegrationCovariance(<span class="keyword">const</span> Matrix3&amp; cov)   { integrationCovariance = cov; }</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keywordtype">void</span> setUse2ndOrderCoriolis(<span class="keywordtype">bool</span> flag)              { use2ndOrderCoriolis = flag; }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keyword">const</span> Matrix3&amp; getAccelerometerCovariance()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> accelerometerCovariance; }</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keyword">const</span> Matrix3&amp; getIntegrationCovariance()<span class="keyword">   const </span>{ <span class="keywordflow">return</span> integrationCovariance; }</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keyword">const</span> Vector3&amp; getGravity()<span class="keyword">   const </span>{ <span class="keywordflow">return</span> n_gravity; }</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keywordtype">bool</span>           getUse2ndOrderCoriolis()<span class="keyword">     const </span>{ <span class="keywordflow">return</span> use2ndOrderCoriolis; }</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="a04767.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">   76</a></span>  <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> ARCHIVE&gt;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keywordtype">void</span> serialize(ARCHIVE &amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keyword">namespace </span>bs = ::boost::serialization;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    ar &amp; BOOST_SERIALIZATION_BASE_OBJECT_NVP(PreintegratedRotationParams);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    ar &amp; BOOST_SERIALIZATION_NVP(<a class="code hl_variable" href="a04767.html#a1fb0a8f02d0568b27b2bd6a25c558935">accelerometerCovariance</a>);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    ar &amp; BOOST_SERIALIZATION_NVP(<a class="code hl_variable" href="a04767.html#a593988febdb8bbf93a2524f14b98d16a">integrationCovariance</a>);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    ar &amp; BOOST_SERIALIZATION_NVP(<a class="code hl_variable" href="a04767.html#a2732ec155327ae88f23a6b983c173162">use2ndOrderCoriolis</a>);</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    ar &amp; BOOST_SERIALIZATION_NVP(<a class="code hl_variable" href="a04767.html#a355a21d1ad3b0ab250ab8596790eb387">n_gravity</a>);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  }</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="preprocessor">#ifdef GTSAM_USE_QUATERNIONS</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="comment">// Align if we are using Quaternions</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <a class="code hl_define" href="a00017.html#aa123dd61687e08ae328154a1890b7b86">GTSAM_MAKE_ALIGNED_OPERATOR_NEW</a></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>};</div>
-</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="a00143.html">gtsam/base/Manifold.h</a>&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="a00968.html">gtsam/linear/NoiseModel.h</a>&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;random&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="a05487.html">   32</a></span><span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a05487.html#a0e799f78224c4853560f87c293e14470">Sampler</a> {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="a05487.html#a715947053d2c801444799e4ce00e6118">   35</a></span>  noiseModel::Diagonal::shared_ptr <a class="code hl_variable" href="a05487.html#a715947053d2c801444799e4ce00e6118">model_</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="a05487.html#aafc871086f7dd8ee5bf99795c8f98ba1">   38</a></span>  <span class="keyword">mutable</span> std::mt19937_64 <a class="code hl_variable" href="a05487.html#aafc871086f7dd8ee5bf99795c8f98ba1">generator_</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="a05487.html#a26d7ef2c03597fd7e87ab5f6d4db64d6">   41</a></span>  <span class="keyword">mutable</span> std::mt19937_64* <a class="code hl_variable" href="a05487.html#a26d7ef2c03597fd7e87ab5f6d4db64d6">externalGenerator_</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">typedef</span> std::shared_ptr&lt;Sampler&gt; shared_ptr;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">explicit</span> <a class="code hl_function" href="a05487.html#a0e799f78224c4853560f87c293e14470">Sampler</a>(<span class="keyword">const</span> noiseModel::Diagonal::shared_ptr&amp; model,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                   uint_fast64_t seed = 42u);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keyword">explicit</span> <a class="code hl_function" href="a05487.html#a0e799f78224c4853560f87c293e14470">Sampler</a>(<span class="keyword">const</span> noiseModel::Diagonal::shared_ptr&amp; model,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                   std::mt19937_64&amp; rng);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keyword">explicit</span> <a class="code hl_function" href="a05487.html#a0e799f78224c4853560f87c293e14470">Sampler</a>(<span class="keyword">const</span> Vector&amp; sigmas, uint_fast64_t seed = 42u);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keyword">explicit</span> <a class="code hl_function" href="a05487.html#a0e799f78224c4853560f87c293e14470">Sampler</a>(<span class="keyword">const</span> Vector&amp; sigmas, std::mt19937_64&amp; rng);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>} <span class="comment">// namespace gtsam</span></div>
-<div class="ttc" id="aa00017_html_aa123dd61687e08ae328154a1890b7b86"><div class="ttname"><a href="a00017.html#aa123dd61687e08ae328154a1890b7b86">GTSAM_MAKE_ALIGNED_OPERATOR_NEW</a></div><div class="ttdeci">#define GTSAM_MAKE_ALIGNED_OPERATOR_NEW</div><div class="ttdoc">This marks a GTSAM object to require alignment.</div><div class="ttdef"><b>Definition</b> types.h:308</div></div>
-<div class="ttc" id="aa00908_html"><div class="ttname"><a href="a00908.html">PreintegratedRotation.h</a></div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa01968_html_a54fa43c89c5334314c8c75939dd5c2d7"><div class="ttname"><a href="a01968.html#a54fa43c89c5334314c8c75939dd5c2d7">gtsam::print</a></div><div class="ttdeci">void print(const Matrix &amp;A, const string &amp;s, ostream &amp;stream)</div><div class="ttdoc">print without optional string, must specify cout yourself</div><div class="ttdef"><b>Definition</b> Matrix.cpp:156</div></div>
-<div class="ttc" id="aa04767_html"><div class="ttname"><a href="a04767.html">gtsam::PreintegrationParams</a></div><div class="ttdoc">Parameters for pre-integration: Usage: Create just a single Params and pass a shared pointer to the c...</div><div class="ttdef"><b>Definition</b> PreintegrationParams.h:26</div></div>
-<div class="ttc" id="aa04767_html_a1fb0a8f02d0568b27b2bd6a25c558935"><div class="ttname"><a href="a04767.html#a1fb0a8f02d0568b27b2bd6a25c558935">gtsam::PreintegrationParams::accelerometerCovariance</a></div><div class="ttdeci">Matrix3 accelerometerCovariance</div><div class="ttdoc">Continuous-time &quot;Covariance&quot; of accelerometer The units for stddev are σ = m/s²/√Hz.</div><div class="ttdef"><b>Definition</b> PreintegrationParams.h:29</div></div>
-<div class="ttc" id="aa04767_html_a2732ec155327ae88f23a6b983c173162"><div class="ttname"><a href="a04767.html#a2732ec155327ae88f23a6b983c173162">gtsam::PreintegrationParams::use2ndOrderCoriolis</a></div><div class="ttdeci">bool use2ndOrderCoriolis</div><div class="ttdoc">Whether to use second order Coriolis integration.</div><div class="ttdef"><b>Definition</b> PreintegrationParams.h:31</div></div>
-<div class="ttc" id="aa04767_html_a2b734623439aeb465143f0ca4a918ad8"><div class="ttname"><a href="a04767.html#a2b734623439aeb465143f0ca4a918ad8">gtsam::PreintegrationParams::PreintegrationParams</a></div><div class="ttdeci">PreintegrationParams()</div><div class="ttdoc">Default constructor for serialization only.</div><div class="ttdef"><b>Definition</b> PreintegrationParams.h:35</div></div>
-<div class="ttc" id="aa04767_html_a355a21d1ad3b0ab250ab8596790eb387"><div class="ttname"><a href="a04767.html#a355a21d1ad3b0ab250ab8596790eb387">gtsam::PreintegrationParams::n_gravity</a></div><div class="ttdeci">Vector3 n_gravity</div><div class="ttdoc">Gravity vector in nav frame.</div><div class="ttdef"><b>Definition</b> PreintegrationParams.h:32</div></div>
-<div class="ttc" id="aa04767_html_a4172ae9d785221171cf39c019547ba51"><div class="ttname"><a href="a04767.html#a4172ae9d785221171cf39c019547ba51">gtsam::PreintegrationParams::PreintegrationParams</a></div><div class="ttdeci">PreintegrationParams(const Vector3 &amp;n_gravity)</div><div class="ttdoc">The Params constructor insists on getting the navigation frame gravity vector For convenience,...</div><div class="ttdef"><b>Definition</b> PreintegrationParams.h:44</div></div>
-<div class="ttc" id="aa04767_html_a593988febdb8bbf93a2524f14b98d16a"><div class="ttname"><a href="a04767.html#a593988febdb8bbf93a2524f14b98d16a">gtsam::PreintegrationParams::integrationCovariance</a></div><div class="ttdeci">Matrix3 integrationCovariance</div><div class="ttdoc">continuous-time &quot;Covariance&quot; describing integration uncertainty</div><div class="ttdef"><b>Definition</b> PreintegrationParams.h:30</div></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordtype">size_t</span> dim()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="a05487.html#a715947053d2c801444799e4ce00e6118">model_</a>-&gt;dim(); }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  Vector sigmas()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> model_-&gt;sigmas(); }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keyword">const</span> noiseModel::Diagonal::shared_ptr&amp; model()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> model_; }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  Vector sample() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="a05487.html#a72d64c67d5c271853fc2f5a4fcf643c6">  113</a></span>  T <a class="code hl_function" href="a05487.html#a72d64c67d5c271853fc2f5a4fcf643c6">perturb</a>(<span class="keyword">const</span> T&amp; value)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="a03203.html">traits&lt;T&gt;::Retract</a>(value, <a class="code hl_function" href="a05487.html#a4d30e0a9bec4bdd7e8a882bbb8fab9be">sample</a>());</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  }</div>
+</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keyword">static</span> Vector sampleDiagonal(<span class="keyword">const</span> Vector&amp; sigmas, std::mt19937_64* rng);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  Vector sampleDiagonal(<span class="keyword">const</span> Vector&amp; sigmas) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>};</div>
+</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>}  <span class="comment">// namespace gtsam</span></div>
+<div class="ttc" id="aa00143_html"><div class="ttname"><a href="a00143.html">Manifold.h</a></div><div class="ttdoc">Base class and basic functions for Manifold types.</div></div>
+<div class="ttc" id="aa00968_html"><div class="ttname"><a href="a00968.html">NoiseModel.h</a></div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa03203_html"><div class="ttname"><a href="a03203.html">gtsam::traits</a></div><div class="ttdoc">A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...</div><div class="ttdef"><b>Definition</b> Group.h:37</div></div>
+<div class="ttc" id="aa05487_html_a0e799f78224c4853560f87c293e14470"><div class="ttname"><a href="a05487.html#a0e799f78224c4853560f87c293e14470">gtsam::Sampler::Sampler</a></div><div class="ttdeci">Sampler(const noiseModel::Diagonal::shared_ptr &amp;model, uint_fast64_t seed=42u)</div><div class="ttdoc">Create a sampler for the distribution specified by a diagonal NoiseModel with a manually specified se...</div><div class="ttdef"><b>Definition</b> Sampler.cpp:26</div></div>
+<div class="ttc" id="aa05487_html_a26d7ef2c03597fd7e87ab5f6d4db64d6"><div class="ttname"><a href="a05487.html#a26d7ef2c03597fd7e87ab5f6d4db64d6">gtsam::Sampler::externalGenerator_</a></div><div class="ttdeci">std::mt19937_64 * externalGenerator_</div><div class="ttdoc">Non-owning optional external generator. If non-null, sampling uses this.</div><div class="ttdef"><b>Definition</b> Sampler.h:41</div></div>
+<div class="ttc" id="aa05487_html_a4d30e0a9bec4bdd7e8a882bbb8fab9be"><div class="ttname"><a href="a05487.html#a4d30e0a9bec4bdd7e8a882bbb8fab9be">gtsam::Sampler::sample</a></div><div class="ttdeci">Vector sample() const</div><div class="ttdoc">sample from distribution</div><div class="ttdef"><b>Definition</b> Sampler.cpp:80</div></div>
+<div class="ttc" id="aa05487_html_a715947053d2c801444799e4ce00e6118"><div class="ttname"><a href="a05487.html#a715947053d2c801444799e4ce00e6118">gtsam::Sampler::model_</a></div><div class="ttdeci">noiseModel::Diagonal::shared_ptr model_</div><div class="ttdoc">noiseModel created at generation</div><div class="ttdef"><b>Definition</b> Sampler.h:35</div></div>
+<div class="ttc" id="aa05487_html_a72d64c67d5c271853fc2f5a4fcf643c6"><div class="ttname"><a href="a05487.html#a72d64c67d5c271853fc2f5a4fcf643c6">gtsam::Sampler::perturb</a></div><div class="ttdeci">T perturb(const T &amp;value) const</div><div class="ttdoc">Perturb a value by sampling in its tangent space and applying retract.</div><div class="ttdef"><b>Definition</b> Sampler.h:113</div></div>
+<div class="ttc" id="aa05487_html_aafc871086f7dd8ee5bf99795c8f98ba1"><div class="ttname"><a href="a05487.html#aafc871086f7dd8ee5bf99795c8f98ba1">gtsam::Sampler::generator_</a></div><div class="ttdeci">std::mt19937_64 generator_</div><div class="ttdoc">generator</div><div class="ttdef"><b>Definition</b> Sampler.h:38</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>navigation</b></li><li class="navelem"><a href="a00944.html">PreintegrationParams.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>linear</b></li><li class="navelem"><a href="a00944.html">Sampler.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

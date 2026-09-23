@@ -1,9 +1,19 @@
 var a06111 =
 [
-    [ "clone", "a06111.html#a4dd6f2759e48b20cbd5d3c4c47ea3c6e", null ],
-    [ "equals", "a06111.html#a551402f030dc6d7ecd98680d5eb31b60", null ],
-    [ "evaluateError", "a06111.html#af78eb5fbe1e5b0be89a164d2052efc10", null ],
-    [ "measured", "a06111.html#a398ffcaea8e6a84d1e285e5b9632cf2f", null ],
-    [ "print", "a06111.html#ad7abafd571bb1e34b277f0c0a6a9091e", null ],
-    [ "boost::serialization::access", "a06111.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ]
+    [ "BatchFactor", "a06111.html#aea0cacc75add77a4460ffd6e7f1af3c3", null ],
+    [ "BatchFactor", "a06111.html#a6f144bbce2959fbf8c7cde39b8236f0e", null ],
+    [ "BatchFactor", "a06111.html#af28ba45cd3d9bd475bde34337be7da3a", null ],
+    [ "BatchFactor", "a06111.html#a267eb7f913484fe3a81444496e1e845c", null ],
+    [ "BatchFactor", "a06111.html#a708ec0cf8c0a6cf219f13fc535a74781", null ],
+    [ "BatchFactor", "a06111.html#a2675f8036eb56e4df22639e54e2e004c", null ],
+    [ "BatchFactor", "a06111.html#a568981574436380dd8809cc1a72fb6fb", null ],
+    [ "collectKeys", "a06111.html#a35f8ed8ad92599f17d2b57afea923740", null ],
+    [ "dim", "a06111.html#a7a902ed0e94e5dcee829d184c844b7f1", null ],
+    [ "equals", "a06111.html#a01c5ef780f3c440148531315946923f4", null ],
+    [ "error", "a06111.html#a05a87db4fc34d517dc34853a3893de35", null ],
+    [ "factors", "a06111.html#aa04ac24c43a9a4e2b22dfefa1dceca89", null ],
+    [ "linearize", "a06111.html#ac266d88f32ea540a512cd8e08c0f2a61", null ],
+    [ "numFactors", "a06111.html#a9a8f0dd941d57352791061b526192f86", null ],
+    [ "print", "a06111.html#abe4ac46bab5824d89c3f2805eb744114", null ],
+    [ "updateKeys", "a06111.html#a02cb8c118be166850e6f6ea323247852", null ]
 ];

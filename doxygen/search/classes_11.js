@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['qp_0',['QP',['../a05831.html',1,'gtsam']]],
-  ['qpinitsolver_1',['QPInitSolver',['../a05835.html',1,'gtsam']]],
-  ['qppolicy_2',['QPPolicy',['../a05839.html',1,'gtsam']]],
-  ['qpsparser_3',['QPSParser',['../a05851.html',1,'gtsam']]],
-  ['qpsparserexception_4',['QPSParserException',['../a05855.html',1,'gtsam']]]
+  ['quadraticrangefactor_0',['QuadraticRangeFactor',['../a06647.html',1,'gtsam']]],
+  ['quadraticrangefactor_3c_202_20_3e_1',['QuadraticRangeFactor&lt; 2 &gt;',['../a06647.html',1,'gtsam']]],
+  ['quadraticrangefactor_3c_203_20_3e_2',['QuadraticRangeFactor&lt; 3 &gt;',['../a06647.html',1,'gtsam']]]
 ];

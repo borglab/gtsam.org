@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,12 +96,24 @@ $(function(){initNavTree('a05819.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; LP &gt; Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::LeggedEstimator Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a05819.html">gtsam::traits&lt; LP &gt;</a>, including all inherited members.</p>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="a05819.html">gtsam::LeggedEstimator</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="a05819.html#a2cb215b3ee96cb74d2e8859b171da2f5">estimate</a>() const =0</td><td class="entry"><a class="el" href="a05819.html">gtsam::LeggedEstimator</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05819.html#ae20f3c192f0113b3a5eacbe4a286529c">estimateBias</a>() const =0</td><td class="entry"><a class="el" href="a05819.html">gtsam::LeggedEstimator</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05819.html#af5a7b99a07de9e9fca3edef9e65a1964">EstimateFootholds</a>(const ExtendedPose3d &amp;estimate)</td><td class="entry"><a class="el" href="a05819.html">gtsam::LeggedEstimator</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05819.html#adcadae641838957c5310ca4fc3fbec45">EstimateNavState</a>(const ExtendedPose3d &amp;estimate)</td><td class="entry"><a class="el" href="a05819.html">gtsam::LeggedEstimator</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05819.html#ae5fdd6edc211f197ad64a91f1ded9e25">MakeEstimate</a>(const NavState &amp;navState, const Matrix &amp;footholds)</td><td class="entry"><a class="el" href="a05819.html">gtsam::LeggedEstimator</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05819.html#a0f2f9de652f9aeeffc3dcc20c4f6b8b1">predict</a>(const Vector3 &amp;omegaBody, const Vector3 &amp;specificForceBody, double dt)=0</td><td class="entry"><a class="el" href="a05819.html">gtsam::LeggedEstimator</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05819.html#a786e776d7ba5e665b50abc566a2e4403">processContacts</a>(const std::vector&lt; ContactMeasurement &gt; &amp;activeContacts)=0</td><td class="entry"><a class="el" href="a05819.html">gtsam::LeggedEstimator</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05819.html#a655456c9e808f838f8168460c171c9f3">terrainHeight</a>() const</td><td class="entry"><a class="el" href="a05819.html">gtsam::LeggedEstimator</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05819.html#aeeb56588039ced2c3d2332cae73677bf">turnHeightPriorOff</a>()</td><td class="entry"><a class="el" href="a05819.html">gtsam::LeggedEstimator</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05819.html#a91ffe1982aff4d5b57a0c89f4673b0fd">turnHeightPriorOn</a>(double terrainHeight)</td><td class="entry"><a class="el" href="a05819.html">gtsam::LeggedEstimator</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05819.html#a36dd2b0aaa632bd24f3883d20d0166eb">~LeggedEstimator</a>()=default</td><td class="entry"><a class="el" href="a05819.html">gtsam::LeggedEstimator</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+</table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->

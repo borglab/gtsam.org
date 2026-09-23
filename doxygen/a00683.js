@@ -1,6 +1,5 @@
 var a00683 =
 [
-    [ "gtsam::ClusterTree&lt; GRAPH &gt;", "a04111.html", "a04111" ],
-    [ "gtsam::ClusterTree&lt; GRAPH &gt;::Cluster", "a04115.html", "a04115" ],
-    [ "gtsam::EliminatableClusterTree&lt; BAYESTREE, GRAPH &gt;", "a04075.html", "a04075" ]
+    [ "gtsam::traits&lt; DiscreteBoundaryFactor &gt;", "a04647.html", null ],
+    [ "gtsam::DiscreteFactorFromErrors", "a02242.html#a4252201c555ff8d817f880e69fdbeb96", null ]
 ];

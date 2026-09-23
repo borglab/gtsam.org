@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/inference/DotWriter.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/BearingRange.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,12 +89,12 @@ $(function(){initNavTree('a00578_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">DotWriter.h</div></div>
+  <div class="headertitle"><div class="title">BearingRange.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a00578.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"></span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * GTSAM Copyright 2010-2021, Georgia Tech Research Corporation,</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * GTSAM Copyright 2010, Georgia Tech Research Corporation,</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Atlanta, Georgia 30332-0415</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * All Rights Reserved</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * Authors: Frank Dellaert, et al. (see THANKS for the full author list)</span></div>
@@ -106,86 +106,210 @@ $(function(){initNavTree('a00578_source.html','',''); });
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="a00002.html">gtsam/base/FastVector.h</a>&gt;</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="a00131.html">gtsam/base/Vector.h</a>&gt;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="a00611.html">gtsam/inference/Key.h</a>&gt;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;iosfwd&gt;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;set&gt;</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
-<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="a04123.html">   35</a></span><span class="keyword">struct </span>GTSAM_EXPORT DotWriter {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="a04123.html#a35970a94248630c844b1d02ea6e77e35">   36</a></span>  <span class="keywordtype">double</span> <a class="code hl_variable" href="a04123.html#a35970a94248630c844b1d02ea6e77e35">figureWidthInches</a>;   </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="a04123.html#ad918cbf35b3baf520d91033b61523565">   37</a></span>  <span class="keywordtype">double</span> <a class="code hl_variable" href="a04123.html#ad918cbf35b3baf520d91033b61523565">figureHeightInches</a>;  </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="a04123.html#a39eaabf9c4cffe59766b4b8d03652f62">   38</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="a04123.html#a39eaabf9c4cffe59766b4b8d03652f62">plotFactorPoints</a>;  </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="a04123.html#a72f901153a3eede8769c898ac1c5a64b">   39</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="a04123.html#a72f901153a3eede8769c898ac1c5a64b">connectKeysToFactor</a>;  </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="a04123.html#aaae41b37832d3b1d53b56ff11901567e">   41</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="a04123.html#aaae41b37832d3b1d53b56ff11901567e">binaryEdges</a>;          </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="a04123.html#a8f926f761e5ce55089228f6496762b2d">   47</a></span>  std::map&lt;Key, Vector2&gt; <a class="code hl_variable" href="a04123.html#a8f926f761e5ce55089228f6496762b2d">variablePositions</a>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="a04123.html#ac273a9f2ab53aacd7f270ea862d58164">   54</a></span>  std::map&lt;char, double&gt; <a class="code hl_variable" href="a04123.html#ac273a9f2ab53aacd7f270ea862d58164">positionHints</a>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="a04123.html#ad250d3e6ff7a1de61c3272c9f292d540">   57</a></span>  std::set&lt;Key&gt; <a class="code hl_variable" href="a04123.html#ad250d3e6ff7a1de61c3272c9f292d540">boxes</a>;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="a04123.html#ad5f0f317b4e78aa2c3364b49cdc5408a">   63</a></span>  std::map&lt;size_t, Vector2&gt; <a class="code hl_variable" href="a04123.html#ad5f0f317b4e78aa2c3364b49cdc5408a">factorPositions</a>;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keyword">explicit</span> DotWriter(<span class="keywordtype">double</span> <a class="code hl_variable" href="a04123.html#a35970a94248630c844b1d02ea6e77e35">figureWidthInches</a> = 5,</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                     <span class="keywordtype">double</span> <a class="code hl_variable" href="a04123.html#ad918cbf35b3baf520d91033b61523565">figureHeightInches</a> = 5,</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                     <span class="keywordtype">bool</span> <a class="code hl_variable" href="a04123.html#a39eaabf9c4cffe59766b4b8d03652f62">plotFactorPoints</a> = <span class="keyword">true</span>,</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                     <span class="keywordtype">bool</span> <a class="code hl_variable" href="a04123.html#a72f901153a3eede8769c898ac1c5a64b">connectKeysToFactor</a> = <span class="keyword">true</span>, <span class="keywordtype">bool</span> <a class="code hl_variable" href="a04123.html#aaae41b37832d3b1d53b56ff11901567e">binaryEdges</a> = <span class="keyword">false</span>)</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      : <a class="code hl_variable" href="a04123.html#a35970a94248630c844b1d02ea6e77e35">figureWidthInches</a>(<a class="code hl_variable" href="a04123.html#a35970a94248630c844b1d02ea6e77e35">figureWidthInches</a>),</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <a class="code hl_variable" href="a04123.html#ad918cbf35b3baf520d91033b61523565">figureHeightInches</a>(<a class="code hl_variable" href="a04123.html#ad918cbf35b3baf520d91033b61523565">figureHeightInches</a>),</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <a class="code hl_variable" href="a04123.html#a39eaabf9c4cffe59766b4b8d03652f62">plotFactorPoints</a>(<a class="code hl_variable" href="a04123.html#a39eaabf9c4cffe59766b4b8d03652f62">plotFactorPoints</a>),</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <a class="code hl_variable" href="a04123.html#a72f901153a3eede8769c898ac1c5a64b">connectKeysToFactor</a>(<a class="code hl_variable" href="a04123.html#a72f901153a3eede8769c898ac1c5a64b">connectKeysToFactor</a>),</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <a class="code hl_variable" href="a04123.html#aaae41b37832d3b1d53b56ff11901567e">binaryEdges</a>(<a class="code hl_variable" href="a04123.html#aaae41b37832d3b1d53b56ff11901567e">binaryEdges</a>) {}</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordtype">void</span> graphPreamble(std::ostream* os) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keywordtype">void</span> digraphPreamble(std::ostream* os) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keywordtype">void</span> drawVariable(<a class="code hl_typedef" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key, <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a>&amp; keyFormatter,</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                    <span class="keyword">const</span> boost::optional&lt;Vector2&gt;&amp; position,</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                    std::ostream* os) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> DrawFactor(<span class="keywordtype">size_t</span> i, <span class="keyword">const</span> boost::optional&lt;Vector2&gt;&amp; position,</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                         std::ostream* os);</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  boost::optional&lt;Vector2&gt; variablePos(<a class="code hl_typedef" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordtype">void</span> processFactor(<span class="keywordtype">size_t</span> i, <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&amp; keys,</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                     <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a>&amp; keyFormatter,</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                     <span class="keyword">const</span> boost::optional&lt;Vector2&gt;&amp; position,</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                     std::ostream* os) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>};</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="a00143.html">gtsam/base/Manifold.h</a>&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="a00095.html">gtsam/base/OptionalJacobian.h</a>&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="a00131.html">gtsam/base/Testable.h</a>&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;<a class="code" href="a00026.html">gtsam/base/types.h</a>&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#if GTSAM_ENABLE_BOOST_SERIALIZATION</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;boost/serialization/nvp.hpp&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">// Forward declaration of Bearing functor which should be of A1*A2 -&gt; return_type</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">// For example Bearing&lt;Pose3,Point3&gt;(pose,point), defined in Pose3.h will return Unit3</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">// At time of writing only Pose2 and Pose3 specialize this functor.</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> A1, <span class="keyword">typename</span> A2&gt;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="a04043.html">   36</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a04043.html">Bearing</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">// Forward declaration of Range functor which should be of A1*A2 -&gt; return_type</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">// For example Range&lt;Pose2,Pose2&gt;(T1,T2), defined in Pose2.h  will return double</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">// At time of writing Pose2, Pose3, and several Camera variants specialize this for several types</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> A1, <span class="keyword">typename</span> A2&gt;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="a04047.html">   42</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a04047.html">Range</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> A1, <span class="keyword">typename</span> A2,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>          <span class="keyword">typename</span> B = <span class="keyword">typename</span> <a class="code hl_struct" href="a04043.html">Bearing&lt;A1, A2&gt;::result_type</a>,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>          <span class="keyword">typename</span> R = <span class="keyword">typename</span> <a class="code hl_struct" href="a04047.html">Range&lt;A1, A2&gt;::result_type</a>&gt;</div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="};">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="a04051.html">   53</a></span><span class="keyword">struct </span>BearingRange {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  B bearing_;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  R range_;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> dimB = <a class="code hl_struct" href="a03203.html">traits&lt;B&gt;::dimension</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> dimR = <a class="code hl_struct" href="a03203.html">traits&lt;R&gt;::dimension</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> dimension = dimB + dimR;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keyword">using </span>OptionalJacobian1 =</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>      <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;dimension, traits&lt;A1&gt;::dimension</a>&gt;;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keyword">using </span>OptionalJacobian2 =</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;dimension, traits&lt;A2&gt;::dimension</a>&gt;;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  BearingRange() {}</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  BearingRange(<span class="keyword">const</span> B&amp; b, <span class="keyword">const</span> R&amp; r) : bearing_(b), range_(r) {}</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="a04051.html#a42ac60525c624cfe026c9b5dec721fb3">   78</a></span>  <span class="keyword">const</span> B&amp; <a class="code hl_function" href="a04051.html#a42ac60525c624cfe026c9b5dec721fb3">bearing</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> bearing_; }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="a04051.html#ac29962d29fdc8ec1cfde6449b95ad2af">   81</a></span>  <span class="keyword">const</span> R&amp; <a class="code hl_function" href="a04051.html#ac29962d29fdc8ec1cfde6449b95ad2af">range</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> range_; }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="a04051.html#a51900bddf661ba8f54760fc67a9b85d7">   84</a></span>  <span class="keyword">static</span> BearingRange <a class="code hl_function" href="a04051.html#a51900bddf661ba8f54760fc67a9b85d7">Measure</a>(<span class="keyword">const</span> A1&amp; a1, <span class="keyword">const</span> A2&amp; a2,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                              OptionalJacobian1 H1 = {},</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                              OptionalJacobian2 H2 = {}) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keyword">typename</span> MakeJacobian&lt;B, A1&gt;::type HB1;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">typename</span> MakeJacobian&lt;B, A2&gt;::type HB2;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">typename</span> MakeJacobian&lt;R, A1&gt;::type HR1;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keyword">typename</span> MakeJacobian&lt;R, A2&gt;::type HR2;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    B b = Bearing&lt;A1, A2&gt;()(a1, a2, H1 ? &amp;HB1 : 0, H2 ? &amp;HB2 : 0);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    R r = Range&lt;A1, A2&gt;()(a1, a2, H1 ? &amp;HR1 : 0, H2 ? &amp;HR2 : 0);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">if</span> (H1) *H1 &lt;&lt; HB1, HR1;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">if</span> (H2) *H2 &lt;&lt; HB2, HR2;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">return</span> BearingRange(b, r);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  }</div>
 </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}  <span class="comment">// namespace gtsam</span></div>
-<div class="ttc" id="aa00002_html"><div class="ttname"><a href="a00002.html">FastVector.h</a></div><div class="ttdoc">A thin wrapper around std::vector that uses a custom allocator.</div></div>
-<div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">Vector.h</a></div><div class="ttdoc">typedef and functions to augment Eigen&#39;s VectorXd</div></div>
-<div class="ttc" id="aa00611_html"><div class="ttname"><a href="a00611.html">Key.h</a></div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa01968_html_a2dea5ef4aee9da07a0e0686940c64667"><div class="ttname"><a href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">gtsam::KeyVector</a></div><div class="ttdeci">FastVector&lt; Key &gt; KeyVector</div><div class="ttdoc">Define collection type once and for all - also used in wrappers.</div><div class="ttdef"><b>Definition</b> Key.h:86</div></div>
-<div class="ttc" id="aa01968_html_a7d4eaa9f6e32da46e8f287499ee650d2"><div class="ttname"><a href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">gtsam::KeyFormatter</a></div><div class="ttdeci">std::function&lt; std::string(Key)&gt; KeyFormatter</div><div class="ttdoc">Typedef for a function to format a key, i.e. to convert it to a string.</div><div class="ttdef"><b>Definition</b> Key.h:35</div></div>
-<div class="ttc" id="aa01968_html_adad029f5f6ffce610428b5fe768b0df2"><div class="ttname"><a href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">gtsam::Key</a></div><div class="ttdeci">std::uint64_t Key</div><div class="ttdoc">Integer nonlinear key type.</div><div class="ttdef"><b>Definition</b> types.h:100</div></div>
-<div class="ttc" id="aa04123_html_a35970a94248630c844b1d02ea6e77e35"><div class="ttname"><a href="a04123.html#a35970a94248630c844b1d02ea6e77e35">gtsam::DotWriter::figureWidthInches</a></div><div class="ttdeci">double figureWidthInches</div><div class="ttdoc">The figure width on paper in inches.</div><div class="ttdef"><b>Definition</b> DotWriter.h:36</div></div>
-<div class="ttc" id="aa04123_html_a39eaabf9c4cffe59766b4b8d03652f62"><div class="ttname"><a href="a04123.html#a39eaabf9c4cffe59766b4b8d03652f62">gtsam::DotWriter::plotFactorPoints</a></div><div class="ttdeci">bool plotFactorPoints</div><div class="ttdoc">Plots each factor as a dot between the variables.</div><div class="ttdef"><b>Definition</b> DotWriter.h:38</div></div>
-<div class="ttc" id="aa04123_html_a72f901153a3eede8769c898ac1c5a64b"><div class="ttname"><a href="a04123.html#a72f901153a3eede8769c898ac1c5a64b">gtsam::DotWriter::connectKeysToFactor</a></div><div class="ttdeci">bool connectKeysToFactor</div><div class="ttdoc">Draw a line from each key within a factor to the dot of the factor.</div><div class="ttdef"><b>Definition</b> DotWriter.h:39</div></div>
-<div class="ttc" id="aa04123_html_a8f926f761e5ce55089228f6496762b2d"><div class="ttname"><a href="a04123.html#a8f926f761e5ce55089228f6496762b2d">gtsam::DotWriter::variablePositions</a></div><div class="ttdeci">std::map&lt; Key, Vector2 &gt; variablePositions</div><div class="ttdoc">Variable positions can be optionally specified and will be included in the dot file with a &quot;!...</div><div class="ttdef"><b>Definition</b> DotWriter.h:47</div></div>
-<div class="ttc" id="aa04123_html_aaae41b37832d3b1d53b56ff11901567e"><div class="ttname"><a href="a04123.html#aaae41b37832d3b1d53b56ff11901567e">gtsam::DotWriter::binaryEdges</a></div><div class="ttdeci">bool binaryEdges</div><div class="ttdoc">just use non-dotted edges for binary factors</div><div class="ttdef"><b>Definition</b> DotWriter.h:41</div></div>
-<div class="ttc" id="aa04123_html_ac273a9f2ab53aacd7f270ea862d58164"><div class="ttname"><a href="a04123.html#ac273a9f2ab53aacd7f270ea862d58164">gtsam::DotWriter::positionHints</a></div><div class="ttdeci">std::map&lt; char, double &gt; positionHints</div><div class="ttdoc">The position hints allow one to use symbol character and index to specify position.</div><div class="ttdef"><b>Definition</b> DotWriter.h:54</div></div>
-<div class="ttc" id="aa04123_html_ad250d3e6ff7a1de61c3272c9f292d540"><div class="ttname"><a href="a04123.html#ad250d3e6ff7a1de61c3272c9f292d540">gtsam::DotWriter::boxes</a></div><div class="ttdeci">std::set&lt; Key &gt; boxes</div><div class="ttdoc">A set of keys that will be displayed as a box.</div><div class="ttdef"><b>Definition</b> DotWriter.h:57</div></div>
-<div class="ttc" id="aa04123_html_ad5f0f317b4e78aa2c3364b49cdc5408a"><div class="ttname"><a href="a04123.html#ad5f0f317b4e78aa2c3364b49cdc5408a">gtsam::DotWriter::factorPositions</a></div><div class="ttdeci">std::map&lt; size_t, Vector2 &gt; factorPositions</div><div class="ttdoc">Factor positions can be optionally specified and will be included in the dot file with a &quot;!...</div><div class="ttdef"><b>Definition</b> DotWriter.h:63</div></div>
-<div class="ttc" id="aa04123_html_ad918cbf35b3baf520d91033b61523565"><div class="ttname"><a href="a04123.html#ad918cbf35b3baf520d91033b61523565">gtsam::DotWriter::figureHeightInches</a></div><div class="ttdeci">double figureHeightInches</div><div class="ttdoc">The figure height on paper in inches.</div><div class="ttdef"><b>Definition</b> DotWriter.h:37</div></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
+<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="a04051.html#adbfd59a960fd145374b5e2c44ecf1296">  101</a></span>  <span class="keyword">static</span> B <a class="code hl_function" href="a04051.html#adbfd59a960fd145374b5e2c44ecf1296">MeasureBearing</a>(<span class="keyword">const</span> A1&amp; a1, <span class="keyword">const</span> A2&amp; a2) {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="a04043.html">Bearing&lt;A1, A2&gt;</a>()(a1, a2);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  }</div>
+</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span></div>
+<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="a04051.html#a2699cffab46474e815330ac7ef901481">  106</a></span>  <span class="keyword">static</span> R <a class="code hl_function" href="a04051.html#a2699cffab46474e815330ac7ef901481">MeasureRange</a>(<span class="keyword">const</span> A1&amp; a1, <span class="keyword">const</span> A2&amp; a2) {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="a04047.html">Range&lt;A1, A2&gt;</a>()(a1, a2);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  }</div>
+</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a02242.html#a54fa43c89c5334314c8c75939dd5c2d7">print</a>(<span class="keyword">const</span> std::string&amp; str = <span class="stringliteral">&quot;&quot;</span>)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    std::cout &lt;&lt; str;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <a class="code hl_struct" href="a03203.html">traits&lt;B&gt;::Print</a>(bearing_, <span class="stringliteral">&quot;bearing &quot;</span>);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <a class="code hl_struct" href="a03203.html">traits&lt;R&gt;::Print</a>(range_, <span class="stringliteral">&quot;range &quot;</span>);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> BearingRange&lt;A1, A2&gt;&amp; m2, <span class="keywordtype">double</span> tol = 1e-8)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordflow">return</span> traits&lt;B&gt;::Equals(bearing_, m2.bearing_, tol) &amp;&amp;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      traits&lt;R&gt;::Equals(range_, m2.range_, tol);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">size_t</span> Dim() { <span class="keywordflow">return</span> dimension; }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  <span class="keyword">inline</span> <span class="keywordtype">size_t</span> dim()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> dimension; }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  <span class="keyword">typedef</span> Eigen::Matrix&lt;double, dimension, 1&gt; TangentVector;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <span class="keyword">typedef</span> OptionalJacobian&lt;dimension, dimension&gt; ChartJacobian;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span></div>
+<div class="foldopen" id="foldopen00135" data-start="{" data-end="}">
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="a04051.html#a37c14f336c93fc7accc3fab5e301af38">  135</a></span>  BearingRange <a class="code hl_function" href="a04051.html#a37c14f336c93fc7accc3fab5e301af38">retract</a>(<span class="keyword">const</span> TangentVector&amp; xi)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    B m1 = <a class="code hl_struct" href="a03203.html">traits&lt;B&gt;::Retract</a>(bearing_, xi.template head&lt;dimB&gt;());</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    R m2 = <a class="code hl_struct" href="a03203.html">traits&lt;R&gt;::Retract</a>(range_, xi.template tail&lt;dimR&gt;());</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordflow">return</span> BearingRange(m1, m2);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  }</div>
+</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span></div>
+<div class="foldopen" id="foldopen00142" data-start="{" data-end="}">
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="a04051.html#a86aca14d19ee010904d5db254c45835f">  142</a></span>  TangentVector <a class="code hl_function" href="a04051.html#a86aca14d19ee010904d5db254c45835f">localCoordinates</a>(<span class="keyword">const</span> BearingRange&amp; other)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keyword">typename</span> <a class="code hl_struct" href="a03203.html">traits&lt;B&gt;::TangentVector</a> v1 = <a class="code hl_struct" href="a03203.html">traits&lt;B&gt;::Local</a>(bearing_, other.bearing_);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keyword">typename</span> <a class="code hl_struct" href="a03203.html">traits&lt;R&gt;::TangentVector</a> v2 = <a class="code hl_struct" href="a03203.html">traits&lt;R&gt;::Local</a>(range_, other.range_);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="comment">// Set the first dimB elements to v1, and the next dimR elements to v2</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    TangentVector v;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    v.template head&lt;dimB&gt;() = v1;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    v.template tail&lt;dimR&gt;() = v2;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordflow">return</span> v;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  }</div>
+</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="preprocessor">#if GTSAM_ENABLE_BOOST_SERIALIZATION</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> ARCHIVE&gt;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  <span class="keywordtype">void</span> serialize(ARCHIVE&amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    ar&amp; boost::serialization::make_nvp(<span class="stringliteral">&quot;bearing&quot;</span>, bearing_);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    ar&amp; boost::serialization::make_nvp(<span class="stringliteral">&quot;range&quot;</span>, range_);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  }</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>};</div>
+</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="comment">// Declare this to be both Testable and a Manifold</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> A1, <span class="keyword">typename</span> A2&gt;</div>
+<div class="foldopen" id="foldopen00173" data-start="{" data-end="};">
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="a04055.html">  173</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03203.html">traits</a>&lt;<a class="code hl_struct" href="a04051.html">BearingRange</a>&lt;A1, A2&gt; &gt;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  : <a class="code hl_struct" href="a03535.html">Testable</a>&lt;BearingRange&lt;A1, A2&gt; &gt;,</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  <a class="code hl_struct" href="a03303.html">internal::ManifoldTraits</a>&lt;BearingRange&lt;A1, A2&gt; &gt; {};</div>
+</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="comment">// Helper class for to implement Range traits for classes with a bearing method</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="comment">// For example, to specialize Bearing to Pose3 and Point3, using Pose3::bearing, it suffices to say</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="comment">//   template &lt;&gt; struct Bearing&lt;Pose3, Point3&gt; : HasBearing&lt;Pose3, Point3, Unit3&gt; {};</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="comment">// where the third argument is used to indicate the return type</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> A1, <span class="keyword">typename</span> A2, <span class="keyword">class</span> RT&gt;</div>
+<div class="foldopen" id="foldopen00182" data-start="{" data-end="};">
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="a04059.html">  182</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a04059.html">HasBearing</a> {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>  <span class="keyword">typedef</span> RT result_type;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>  RT operator()(</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>      <span class="keyword">const</span> A1&amp; a1, <span class="keyword">const</span> A2&amp; a2,</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>      <a class="code hl_class" href="a03363.html">OptionalJacobian</a>&lt;<a class="code hl_struct" href="a03203.html">traits&lt;RT&gt;::dimension</a>, <a class="code hl_struct" href="a03203.html">traits&lt;A1&gt;::dimension</a>&gt; H1={},</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>      <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;traits&lt;RT&gt;::dimension</a>, <a class="code hl_struct" href="a03203.html">traits&lt;A2&gt;::dimension</a>&gt; H2={}) {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordflow">return</span> a1.bearing(a2, H1, H2);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  }</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>};</div>
+</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="comment">// Similar helper class for to implement Range traits for classes with a range method</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="comment">// For classes with overloaded range methods, such as PinholeCamera, this can even be templated:</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="comment">//   template &lt;typename T&gt; struct Range&lt;PinholeCamera, T&gt; : HasRange&lt;PinholeCamera, T, double&gt; {};</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> A1, <span class="keyword">typename</span> A2, <span class="keyword">class</span> RT&gt;</div>
+<div class="foldopen" id="foldopen00196" data-start="{" data-end="};">
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="a04063.html">  196</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a04063.html">HasRange</a> {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  <span class="keyword">typedef</span> RT result_type;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  RT operator()(</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>      <span class="keyword">const</span> A1&amp; a1, <span class="keyword">const</span> A2&amp; a2,</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>      <a class="code hl_class" href="a03363.html">OptionalJacobian</a>&lt;<a class="code hl_struct" href="a03203.html">traits&lt;RT&gt;::dimension</a>, <a class="code hl_struct" href="a03203.html">traits&lt;A1&gt;::dimension</a>&gt; H1={},</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>      <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;traits&lt;RT&gt;::dimension</a>, <a class="code hl_struct" href="a03203.html">traits&lt;A2&gt;::dimension</a>&gt; H2={}) {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keywordflow">return</span> a1.range(a2, H1, H2);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  }</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>};</div>
+</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>}  <span class="comment">// namespace gtsam</span></div>
+<div class="ttc" id="aa00026_html"><div class="ttname"><a href="a00026.html">types.h</a></div><div class="ttdoc">Typedefs for easier changing of types.</div></div>
+<div class="ttc" id="aa00095_html"><div class="ttname"><a href="a00095.html">OptionalJacobian.h</a></div><div class="ttdoc">Special class for optional Jacobian arguments.</div></div>
+<div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">Testable.h</a></div><div class="ttdoc">Concept check for values that can be used in unit tests.</div></div>
+<div class="ttc" id="aa00143_html"><div class="ttname"><a href="a00143.html">Manifold.h</a></div><div class="ttdoc">Base class and basic functions for Manifold types.</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa02242_html_a54fa43c89c5334314c8c75939dd5c2d7"><div class="ttname"><a href="a02242.html#a54fa43c89c5334314c8c75939dd5c2d7">gtsam::print</a></div><div class="ttdeci">void print(const Matrix &amp;A, const string &amp;s, ostream &amp;stream)</div><div class="ttdoc">print without optional string, must specify cout yourself</div><div class="ttdef"><b>Definition</b> Matrix.cpp:143</div></div>
+<div class="ttc" id="aa03203_html"><div class="ttname"><a href="a03203.html">gtsam::traits</a></div><div class="ttdoc">A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...</div><div class="ttdef"><b>Definition</b> Group.h:37</div></div>
+<div class="ttc" id="aa03303_html"><div class="ttname"><a href="a03303.html">gtsam::internal::ManifoldTraits</a></div><div class="ttdoc">A helper that implements the traits interface for GTSAM manifolds.</div><div class="ttdef"><b>Definition</b> Manifold.h:104</div></div>
+<div class="ttc" id="aa03363_html"><div class="ttname"><a href="a03363.html">gtsam::OptionalJacobian</a></div><div class="ttdoc">OptionalJacobian is an Eigen::Ref like class that can take be constructed using either a fixed size o...</div><div class="ttdef"><b>Definition</b> OptionalJacobian.h:40</div></div>
+<div class="ttc" id="aa03535_html"><div class="ttname"><a href="a03535.html">gtsam::Testable</a></div><div class="ttdoc">A helper that implements the traits interface for GTSAM types.</div><div class="ttdef"><b>Definition</b> Testable.h:152</div></div>
+<div class="ttc" id="aa04043_html"><div class="ttname"><a href="a04043.html">gtsam::Bearing</a></div><div class="ttdef"><b>Definition</b> BearingRange.h:36</div></div>
+<div class="ttc" id="aa04047_html"><div class="ttname"><a href="a04047.html">gtsam::Range</a></div><div class="ttdef"><b>Definition</b> BearingRange.h:42</div></div>
+<div class="ttc" id="aa04051_html"><div class="ttname"><a href="a04051.html">gtsam::BearingRange</a></div><div class="ttdoc">Bearing-Range product for a particular A1,A2 combination will use the functors above to create a simi...</div><div class="ttdef"><b>Definition</b> BearingRange.h:53</div></div>
+<div class="ttc" id="aa04051_html_a2699cffab46474e815330ac7ef901481"><div class="ttname"><a href="a04051.html#a2699cffab46474e815330ac7ef901481">gtsam::BearingRange::MeasureRange</a></div><div class="ttdeci">static R MeasureRange(const A1 &amp;a1, const A2 &amp;a2)</div><div class="ttdoc">Predict range.</div><div class="ttdef"><b>Definition</b> BearingRange.h:106</div></div>
+<div class="ttc" id="aa04051_html_a37c14f336c93fc7accc3fab5e301af38"><div class="ttname"><a href="a04051.html#a37c14f336c93fc7accc3fab5e301af38">gtsam::BearingRange::retract</a></div><div class="ttdeci">BearingRange retract(const TangentVector &amp;xi) const</div><div class="ttdoc">Retract delta to manifold.</div><div class="ttdef"><b>Definition</b> BearingRange.h:135</div></div>
+<div class="ttc" id="aa04051_html_a42ac60525c624cfe026c9b5dec721fb3"><div class="ttname"><a href="a04051.html#a42ac60525c624cfe026c9b5dec721fb3">gtsam::BearingRange::bearing</a></div><div class="ttdeci">const B &amp; bearing() const</div><div class="ttdoc">Return bearing measurement.</div><div class="ttdef"><b>Definition</b> BearingRange.h:78</div></div>
+<div class="ttc" id="aa04051_html_a51900bddf661ba8f54760fc67a9b85d7"><div class="ttname"><a href="a04051.html#a51900bddf661ba8f54760fc67a9b85d7">gtsam::BearingRange::Measure</a></div><div class="ttdeci">static BearingRange Measure(const A1 &amp;a1, const A2 &amp;a2, OptionalJacobian1 H1={}, OptionalJacobian2 H2={})</div><div class="ttdoc">Prediction function that stacks measurements.</div><div class="ttdef"><b>Definition</b> BearingRange.h:84</div></div>
+<div class="ttc" id="aa04051_html_a86aca14d19ee010904d5db254c45835f"><div class="ttname"><a href="a04051.html#a86aca14d19ee010904d5db254c45835f">gtsam::BearingRange::localCoordinates</a></div><div class="ttdeci">TangentVector localCoordinates(const BearingRange &amp;other) const</div><div class="ttdoc">Compute the coordinates in the tangent space.</div><div class="ttdef"><b>Definition</b> BearingRange.h:142</div></div>
+<div class="ttc" id="aa04051_html_ac29962d29fdc8ec1cfde6449b95ad2af"><div class="ttname"><a href="a04051.html#ac29962d29fdc8ec1cfde6449b95ad2af">gtsam::BearingRange::range</a></div><div class="ttdeci">const R &amp; range() const</div><div class="ttdoc">Return range measurement.</div><div class="ttdef"><b>Definition</b> BearingRange.h:81</div></div>
+<div class="ttc" id="aa04051_html_adbfd59a960fd145374b5e2c44ecf1296"><div class="ttname"><a href="a04051.html#adbfd59a960fd145374b5e2c44ecf1296">gtsam::BearingRange::MeasureBearing</a></div><div class="ttdeci">static B MeasureBearing(const A1 &amp;a1, const A2 &amp;a2)</div><div class="ttdoc">Predict bearing.</div><div class="ttdef"><b>Definition</b> BearingRange.h:101</div></div>
+<div class="ttc" id="aa04059_html"><div class="ttname"><a href="a04059.html">gtsam::HasBearing</a></div><div class="ttdef"><b>Definition</b> BearingRange.h:182</div></div>
+<div class="ttc" id="aa04063_html"><div class="ttname"><a href="a04063.html">gtsam::HasRange</a></div><div class="ttdef"><b>Definition</b> BearingRange.h:196</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>inference</b></li><li class="navelem"><a href="a00578.html">DotWriter.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>geometry</b></li><li class="navelem"><a href="a00578.html">BearingRange.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

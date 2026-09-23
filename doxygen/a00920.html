@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/navigation/ImuFactor.cpp File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/FixedJacobianFactor.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,34 +96,43 @@ $(function(){initNavTree('a00920.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">ImuFactor.cpp File Reference</div></div>
+  <div class="headertitle"><div class="title">FixedJacobianFactor.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Arbitrary-arity Jacobian factor with compile-time block dimensions.  
+<a href="#details">More...</a></p>
+
+<p><a href="a00920_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:gtsam_3A_3Ainternal_3A_3ADimensionAt_3C_20I_2C_20Default_2C_20Dimensions_20_3E" id="r_gtsam_3A_3Ainternal_3A_3ADimensionAt_3C_20I_2C_20Default_2C_20Dimensions_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a05051.html">gtsam::internal::DimensionAt&lt; I, Default, Dimensions &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the element at I in a compile-time integer pack, or Default.  <a href="a05051.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Ainternal_3A_3ADimensionAt_3C_20I_2C_20Default_2C_20First_2C_20Rest_2E_2E_2E_20_3E" id="r_gtsam_3A_3Ainternal_3A_3ADimensionAt_3C_20I_2C_20Default_2C_20First_2C_20Rest_2E_2E_2E_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a05055.html">gtsam::internal::DimensionAt&lt; I, Default, First, Rest... &gt;</a></td></tr>
+<tr class="memitem:gtsam_3A_3Ainternal_3A_3ADimensionAt_3C_200_2C_20Default_2C_20First_2C_20Rest_2E_2E_2E_20_3E" id="r_gtsam_3A_3Ainternal_3A_3ADimensionAt_3C_200_2C_20Default_2C_20First_2C_20Rest_2E_2E_2E_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a05059.html">gtsam::internal::DimensionAt&lt; 0, Default, First, Rest... &gt;</a></td></tr>
+<tr class="memitem:gtsam_3A_3Ainternal_3A_3AFixedSizeDimensions_3C_20OutputVec_2C_20ValueTypes_20_3E" id="r_gtsam_3A_3Ainternal_3A_3AFixedSizeDimensions_3C_20OutputVec_2C_20ValueTypes_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a05063.html">gtsam::internal::FixedSizeDimensions&lt; OutputVec, ValueTypes &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile-time residual and variable dimensions for a factor of any arity.  <a href="a05063.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3AFixedJacobianFactor_3C_20M_2C_20Ns_20_3E" id="r_gtsam_3A_3AFixedJacobianFactor_3C_20M_2C_20Ns_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a05067.html">gtsam::FixedJacobianFactor&lt; M, Ns &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="a05179.html" title="A Gaussian factor in the squared-error form.">JacobianFactor</a> whose residual and variable dimensions are known at compile time.  <a href="a05067.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Atraits_3C_20FixedJacobianFactor_3C_20M_2C_20Ns_2E_2E_2E_20_3E_20_3E" id="r_gtsam_3A_3Atraits_3C_20FixedJacobianFactor_3C_20M_2C_20Ns_2E_2E_2E_20_3E_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a05071.html">gtsam::traits&lt; FixedJacobianFactor&lt; M, Ns... &gt; &gt;</a></td></tr>
+<tr class="memitem:gtsam_3A_3Ainternal_3A_3AFixedJacobianFactorFactory_3C_20M_2C_20Ns_20_3E" id="r_gtsam_3A_3Ainternal_3A_3AFixedJacobianFactorFactory_3C_20M_2C_20Ns_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a05075.html">gtsam::internal::FixedJacobianFactorFactory&lt; M, Ns &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the fixed-size Jacobian factor for a dimension pack.  <a href="a05075.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a27bf3e1cd62b587ef1b3bc76e8fbe720" id="r_a27bf3e1cd62b587ef1b3bc76e8fbe720"><td class="memItemLeft"><a id="a27bf3e1cd62b587ef1b3bc76e8fbe720" name="a27bf3e1cd62b587ef1b3bc76e8fbe720"></a>
-std::ostream &amp;&#160;</td><td class="memItemRight"><b>gtsam::operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="a04699.html">ImuFactor</a> &amp;f)</td></tr>
-<tr class="memitem:afe04e42120f4aacda80ed4fcd9ba2012" id="r_afe04e42120f4aacda80ed4fcd9ba2012"><td class="memItemLeft"><a id="afe04e42120f4aacda80ed4fcd9ba2012" name="afe04e42120f4aacda80ed4fcd9ba2012"></a>
-std::ostream &amp;&#160;</td><td class="memItemRight"><b>gtsam::operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="a04703.html">ImuFactor2</a> &amp;f)</td></tr>
+<tr class="memitem:ae85bf9a98ccce12e8cddc3ab5d9c7240" id="r_ae85bf9a98ccce12e8cddc3ab5d9c7240"><td class="memTemplParams" colspan="2"><a id="ae85bf9a98ccce12e8cddc3ab5d9c7240" name="ae85bf9a98ccce12e8cddc3ab5d9c7240"></a>
+template&lt;typename Dimensions, size_t... Is&gt; </td></tr>
+<tr class="memitem:ae85bf9a98ccce12e8cddc3ab5d9c7240 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::internal::dimensionsMatch</b> (const std::vector&lt; Matrix &gt; &amp;jacobians, std::index_sequence&lt; Is... &gt;)</td></tr>
+<tr class="memdesc:ae85bf9a98ccce12e8cddc3ab5d9c7240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check dynamic Jacobian blocks against their compile-time dimensions. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Luca Carlone </dd>
-<dd>
-Stephen Williams </dd>
-<dd>
-Richard Roberts </dd>
-<dd>
-Vadim Indelman </dd>
-<dd>
-David Jensen </dd>
-<dd>
-Frank Dellaert </dd></dl>
+<div class="textblock"><p>Arbitrary-arity Jacobian factor with compile-time block dimensions. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -137,7 +146,7 @@ Frank Dellaert </dd></dl>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>navigation</b></li><li class="navelem"><a href="a00920.html">ImuFactor.cpp</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>linear</b></li><li class="navelem"><a href="a00920.html">FixedJacobianFactor.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

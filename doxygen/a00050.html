@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/base/serializationTestHelpers.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/PriorityScheduler.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,80 +96,43 @@ $(function(){initNavTree('a00050.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">serializationTestHelpers.h File Reference</div></div>
+  <div class="headertitle"><div class="title">PriorityScheduler.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
+<p>Priority-based task scheduler.  
+<a href="#details">More...</a></p>
+
 <p><a href="a00050_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:gtsam_3A_3Adetail_3A_3APrioritySchedulerPolicy" id="r_gtsam_3A_3Adetail_3A_3APrioritySchedulerPolicy"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03379.html">gtsam::detail::PrioritySchedulerPolicy</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue policy for <a class="el" href="a02242.html#af9c2f35bd24d487a9e610f070f0dc54c" title="Thread pool scheduler that prioritizes tasks by numeric priority.">PriorityScheduler</a>: min-heap priority_queue by task priority.  <a href="a03379.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Adetail_3A_3APrioritySchedulerPolicy_3A_3ACompare_3C_20TaskPtr_20_3E" id="r_gtsam_3A_3Adetail_3A_3APrioritySchedulerPolicy_3A_3ACompare_3C_20TaskPtr_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03383.html">gtsam::detail::PrioritySchedulerPolicy::Compare&lt; TaskPtr &gt;</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ab7a27823bdcfd86f545810fe5b3d4b60" id="r_ab7a27823bdcfd86f545810fe5b3d4b60"><td class="memTemplParams" colspan="2"><a id="ab7a27823bdcfd86f545810fe5b3d4b60" name="ab7a27823bdcfd86f545810fe5b3d4b60"></a>
-template&lt;class T&gt; </td></tr>
-<tr class="memitem:ab7a27823bdcfd86f545810fe5b3d4b60 template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><b>gtsam::serializationTestHelpers::create</b> ()</td></tr>
-<tr class="memitem:a1d974e0dc1fb38de546433b98d6d3585" id="r_a1d974e0dc1fb38de546433b98d6d3585"><td class="memItemLeft"><a id="a1d974e0dc1fb38de546433b98d6d3585" name="a1d974e0dc1fb38de546433b98d6d3585"></a>
-boost::filesystem::path&#160;</td><td class="memItemRight"><b>gtsam::serializationTestHelpers::resetFilesystem</b> (boost::filesystem::path folder=&quot;actual&quot;)</td></tr>
-<tr class="memitem:a28a0db1d956ec46b7961c97f561f1d52" id="r_a28a0db1d956ec46b7961c97f561f1d52"><td class="memTemplParams" colspan="2"><a id="a28a0db1d956ec46b7961c97f561f1d52" name="a28a0db1d956ec46b7961c97f561f1d52"></a>
-template&lt;class T&gt; </td></tr>
-<tr class="memitem:a28a0db1d956ec46b7961c97f561f1d52 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><b>gtsam::serializationTestHelpers::roundtrip</b> (const T &amp;input, T &amp;output)</td></tr>
-<tr class="memitem:a1ce0a0efd90fbaa99a33267d0b5497f2" id="r_a1ce0a0efd90fbaa99a33267d0b5497f2"><td class="memTemplParams" colspan="2"><a id="a1ce0a0efd90fbaa99a33267d0b5497f2" name="a1ce0a0efd90fbaa99a33267d0b5497f2"></a>
-template&lt;class T&gt; </td></tr>
-<tr class="memitem:a1ce0a0efd90fbaa99a33267d0b5497f2 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><b>gtsam::serializationTestHelpers::roundtripFile</b> (const T &amp;input, T &amp;output)</td></tr>
-<tr class="memitem:a7716234e0ed8a78aa754d86770bf7cd2" id="r_a7716234e0ed8a78aa754d86770bf7cd2"><td class="memTemplParams" colspan="2"><a id="a7716234e0ed8a78aa754d86770bf7cd2" name="a7716234e0ed8a78aa754d86770bf7cd2"></a>
-template&lt;class T&gt; </td></tr>
-<tr class="memitem:a7716234e0ed8a78aa754d86770bf7cd2 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::serializationTestHelpers::equality</b> (const T &amp;input=T())</td></tr>
-<tr class="memitem:a211403c98907c641fbbd04c09087948d" id="r_a211403c98907c641fbbd04c09087948d"><td class="memTemplParams" colspan="2"><a id="a211403c98907c641fbbd04c09087948d" name="a211403c98907c641fbbd04c09087948d"></a>
-template&lt;class T&gt; </td></tr>
-<tr class="memitem:a211403c98907c641fbbd04c09087948d template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::serializationTestHelpers::equalsObj</b> (const T &amp;input=T())</td></tr>
-<tr class="memitem:adc9911aad16c4c0c3d7beb2826aba812" id="r_adc9911aad16c4c0c3d7beb2826aba812"><td class="memTemplParams" colspan="2"><a id="adc9911aad16c4c0c3d7beb2826aba812" name="adc9911aad16c4c0c3d7beb2826aba812"></a>
-template&lt;class T&gt; </td></tr>
-<tr class="memitem:adc9911aad16c4c0c3d7beb2826aba812 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::serializationTestHelpers::equalsDereferenced</b> (const T &amp;input)</td></tr>
-<tr class="memitem:a53d913075aae098725e020da48840067" id="r_a53d913075aae098725e020da48840067"><td class="memTemplParams" colspan="2"><a id="a53d913075aae098725e020da48840067" name="a53d913075aae098725e020da48840067"></a>
-template&lt;class T&gt; </td></tr>
-<tr class="memitem:a53d913075aae098725e020da48840067 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><b>gtsam::serializationTestHelpers::roundtripXML</b> (const T &amp;input, T &amp;output)</td></tr>
-<tr class="memitem:a3777b50528d17741fdfeeb77b6c6c012" id="r_a3777b50528d17741fdfeeb77b6c6c012"><td class="memTemplParams" colspan="2"><a id="a3777b50528d17741fdfeeb77b6c6c012" name="a3777b50528d17741fdfeeb77b6c6c012"></a>
-template&lt;class T&gt; </td></tr>
-<tr class="memitem:a3777b50528d17741fdfeeb77b6c6c012 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><b>gtsam::serializationTestHelpers::roundtripXMLFile</b> (const T &amp;input, T &amp;output)</td></tr>
-<tr class="memitem:a2d091b3e02566c09b4757fee29239701" id="r_a2d091b3e02566c09b4757fee29239701"><td class="memTemplParams" colspan="2"><a id="a2d091b3e02566c09b4757fee29239701" name="a2d091b3e02566c09b4757fee29239701"></a>
-template&lt;class T&gt; </td></tr>
-<tr class="memitem:a2d091b3e02566c09b4757fee29239701 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::serializationTestHelpers::equalityXML</b> (const T &amp;input=T())</td></tr>
-<tr class="memitem:a7bd1712ccb1939de2587c2a621c87f45" id="r_a7bd1712ccb1939de2587c2a621c87f45"><td class="memTemplParams" colspan="2"><a id="a7bd1712ccb1939de2587c2a621c87f45" name="a7bd1712ccb1939de2587c2a621c87f45"></a>
-template&lt;class T&gt; </td></tr>
-<tr class="memitem:a7bd1712ccb1939de2587c2a621c87f45 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::serializationTestHelpers::equalsXML</b> (const T &amp;input=T())</td></tr>
-<tr class="memitem:a0ee23a7b74e9d554236804952f7e4bd2" id="r_a0ee23a7b74e9d554236804952f7e4bd2"><td class="memTemplParams" colspan="2"><a id="a0ee23a7b74e9d554236804952f7e4bd2" name="a0ee23a7b74e9d554236804952f7e4bd2"></a>
-template&lt;class T&gt; </td></tr>
-<tr class="memitem:a0ee23a7b74e9d554236804952f7e4bd2 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::serializationTestHelpers::equalsDereferencedXML</b> (const T &amp;input=T())</td></tr>
-<tr class="memitem:a949f5709ff96b291b22ee2a0c16121f7" id="r_a949f5709ff96b291b22ee2a0c16121f7"><td class="memTemplParams" colspan="2"><a id="a949f5709ff96b291b22ee2a0c16121f7" name="a949f5709ff96b291b22ee2a0c16121f7"></a>
-template&lt;class T&gt; </td></tr>
-<tr class="memitem:a949f5709ff96b291b22ee2a0c16121f7 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><b>gtsam::serializationTestHelpers::roundtripBinary</b> (const T &amp;input, T &amp;output)</td></tr>
-<tr class="memitem:a8bd1afa797020a5192f68f2f5989c139" id="r_a8bd1afa797020a5192f68f2f5989c139"><td class="memTemplParams" colspan="2"><a id="a8bd1afa797020a5192f68f2f5989c139" name="a8bd1afa797020a5192f68f2f5989c139"></a>
-template&lt;class T&gt; </td></tr>
-<tr class="memitem:a8bd1afa797020a5192f68f2f5989c139 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><b>gtsam::serializationTestHelpers::roundtripBinaryFile</b> (const T &amp;input, T &amp;output)</td></tr>
-<tr class="memitem:ad75d4fed1638b33f08002a2600aef35d" id="r_ad75d4fed1638b33f08002a2600aef35d"><td class="memTemplParams" colspan="2"><a id="ad75d4fed1638b33f08002a2600aef35d" name="ad75d4fed1638b33f08002a2600aef35d"></a>
-template&lt;class T&gt; </td></tr>
-<tr class="memitem:ad75d4fed1638b33f08002a2600aef35d template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::serializationTestHelpers::equalityBinary</b> (const T &amp;input=T())</td></tr>
-<tr class="memitem:a1e5d51b6c575d0546b547e69bc894aa0" id="r_a1e5d51b6c575d0546b547e69bc894aa0"><td class="memTemplParams" colspan="2"><a id="a1e5d51b6c575d0546b547e69bc894aa0" name="a1e5d51b6c575d0546b547e69bc894aa0"></a>
-template&lt;class T&gt; </td></tr>
-<tr class="memitem:a1e5d51b6c575d0546b547e69bc894aa0 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::serializationTestHelpers::equalsBinary</b> (const T &amp;input=T())</td></tr>
-<tr class="memitem:a8eacbfffb8ec7f3335d0077f57aa0e85" id="r_a8eacbfffb8ec7f3335d0077f57aa0e85"><td class="memTemplParams" colspan="2"><a id="a8eacbfffb8ec7f3335d0077f57aa0e85" name="a8eacbfffb8ec7f3335d0077f57aa0e85"></a>
-template&lt;class T&gt; </td></tr>
-<tr class="memitem:a8eacbfffb8ec7f3335d0077f57aa0e85 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::serializationTestHelpers::equalsDereferencedBinary</b> (const T &amp;input=T())</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a087685f54898c5180dd954bfc1e5fb1f" id="r_a087685f54898c5180dd954bfc1e5fb1f"><td class="memItemLeft"><a id="a087685f54898c5180dd954bfc1e5fb1f" name="a087685f54898c5180dd954bfc1e5fb1f"></a>
-const bool&#160;</td><td class="memItemRight"><b>verbose</b> = false</td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:af9c2f35bd24d487a9e610f070f0dc54c" id="r_af9c2f35bd24d487a9e610f070f0dc54c"><td class="memTemplParams" colspan="2">template&lt;typename Y&gt; </td></tr>
+<tr class="memitem:af9c2f35bd24d487a9e610f070f0dc54c template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="a02242.html#af9c2f35bd24d487a9e610f070f0dc54c">gtsam::PriorityScheduler</a> = <a class="el" href="a03435.html">Scheduler</a>&lt;Y, <a class="el" href="a03379.html">detail::PrioritySchedulerPolicy</a>&gt;</td></tr>
+<tr class="memdesc:af9c2f35bd24d487a9e610f070f0dc54c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread pool scheduler that prioritizes tasks by numeric priority.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Alex Cunningham </dd>
-<dd>
-Richard Roberts </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>Feb 7, 2012 </dd></dl>
+<div class="textblock"><p>Priority-based task scheduler. </p>
+<p>This header defines a small, thread-based scheduler that executes tasks in priority order. A lower numeric priority is executed before a higher numeric priority (min-heap behavior). Tasks return a value of type <span class="tt">Y</span>, and callers can wait on results via <span class="tt">std::future&lt;Y&gt;</span>.</p>
+<p>This is implemented as a policy specialization of <span class="tt"><a class="el" href="a03435.html" title="Thread pool scheduler parameterized by a queue Policy.">gtsam::Scheduler</a></span>.</p>
+<dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="a02242.html#af9c2f35bd24d487a9e610f070f0dc54c">gtsam::PriorityScheduler&lt;int&gt;</a> scheduler(4);</div>
+<div class="line"><span class="keyword">auto</span> future = scheduler.schedule(0, [] { <span class="keywordflow">return</span> 42; });</div>
+<div class="line"><span class="keywordtype">int</span> value = future.get();</div>
+<div class="ttc" id="aa02242_html_af9c2f35bd24d487a9e610f070f0dc54c"><div class="ttname"><a href="a02242.html#af9c2f35bd24d487a9e610f070f0dc54c">gtsam::PriorityScheduler</a></div><div class="ttdeci">Scheduler&lt; Y, detail::PrioritySchedulerPolicy &gt; PriorityScheduler</div><div class="ttdoc">Thread pool scheduler that prioritizes tasks by numeric priority.</div><div class="ttdef"><b>Definition</b> PriorityScheduler.h:93</div></div>
+</div><!-- fragment --></dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Frank Dellaert </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>May, 2025 </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -183,7 +146,7 @@ Richard Roberts </dd></dl>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>base</b></li><li class="navelem"><a href="a00050.html">serializationTestHelpers.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>base</b></li><li class="navelem"><a href="a00050.html">PriorityScheduler.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

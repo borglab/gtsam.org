@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::ValuesCastHelper&lt; Value, CastedKeyValuePairType, KeyValuePairType &gt; Struct Template Reference</title>
+<title>gtsam: gtsam::EliminationTraits&lt; GaussianFactorGraph &gt; Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,17 +96,45 @@ $(function(){initNavTree('a05131.html','','a05128'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::ValuesCastHelper&lt; Value, CastedKeyValuePairType, KeyValuePairType &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::EliminationTraits&lt; GaussianFactorGraph &gt; Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:adaa951e8ee9ca58d8be3993b636f79fa" id="r_adaa951e8ee9ca58d8be3993b636f79fa"><td class="memItemLeft"><a id="adaa951e8ee9ca58d8be3993b636f79fa" name="adaa951e8ee9ca58d8be3993b636f79fa"></a>
-static CastedKeyValuePairType&#160;</td><td class="memItemRight"><b>cast</b> (KeyValuePairType key_value)</td></tr>
+<tr class="memitem:aa1504803b7ac2efdf8b328e5e07ba2eb" id="r_aa1504803b7ac2efdf8b328e5e07ba2eb"><td class="memItemLeft"><a id="aa1504803b7ac2efdf8b328e5e07ba2eb" name="aa1504803b7ac2efdf8b328e5e07ba2eb"></a>
+static std::pair&lt; std::shared_ptr&lt; <a class="el" href="#a3cf2aefb4cd3f92327da069c3c57fd44">ConditionalType</a> &gt;, std::shared_ptr&lt; <a class="el" href="#a44c2163f161ac7e266324bb084c81d82">FactorType</a> &gt; &gt;&#160;</td><td class="memItemRight"><b>DefaultEliminate</b> (const <a class="el" href="#a84da0e567d8c07323dfe3cc962ab9b35">FactorGraphType</a> &amp;factors, const <a class="el" href="a04979.html">Ordering</a> &amp;keys)</td></tr>
+<tr class="memdesc:aa1504803b7ac2efdf8b328e5e07ba2eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default dense elimination function. <br /></td></tr>
+<tr class="memitem:a2e214f374de20db6ec5238d78c5509dd" id="r_a2e214f374de20db6ec5238d78c5509dd"><td class="memItemLeft"><a id="a2e214f374de20db6ec5238d78c5509dd" name="a2e214f374de20db6ec5238d78c5509dd"></a>
+static <a class="el" href="a04979.html">Ordering</a>&#160;</td><td class="memItemRight"><b>DefaultOrderingFunc</b> (const <a class="el" href="#a84da0e567d8c07323dfe3cc962ab9b35">FactorGraphType</a> &amp;graph, std::optional&lt; std::reference_wrapper&lt; const <a class="el" href="a04999.html">VariableIndex</a> &gt; &gt; variableIndex)</td></tr>
+<tr class="memdesc:a2e214f374de20db6ec5238d78c5509dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default ordering generation function. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a44c2163f161ac7e266324bb084c81d82" id="r_a44c2163f161ac7e266324bb084c81d82"><td class="memItemLeft"><a id="a44c2163f161ac7e266324bb084c81d82" name="a44c2163f161ac7e266324bb084c81d82"></a>
+typedef GaussianFactor&#160;</td><td class="memItemRight"><b>FactorType</b></td></tr>
+<tr class="memdesc:a44c2163f161ac7e266324bb084c81d82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of factors in factor graph. <br /></td></tr>
+<tr class="memitem:a84da0e567d8c07323dfe3cc962ab9b35" id="r_a84da0e567d8c07323dfe3cc962ab9b35"><td class="memItemLeft"><a id="a84da0e567d8c07323dfe3cc962ab9b35" name="a84da0e567d8c07323dfe3cc962ab9b35"></a>
+typedef <a class="el" href="a05135.html">GaussianFactorGraph</a>&#160;</td><td class="memItemRight"><b>FactorGraphType</b></td></tr>
+<tr class="memdesc:a84da0e567d8c07323dfe3cc962ab9b35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of the factor graph (e.g. <a class="el" href="a05135.html" title="A Linear Factor Graph is a factor graph where all factors are Gaussian, i.e.">GaussianFactorGraph</a>). <br /></td></tr>
+<tr class="memitem:a3cf2aefb4cd3f92327da069c3c57fd44" id="r_a3cf2aefb4cd3f92327da069c3c57fd44"><td class="memItemLeft"><a id="a3cf2aefb4cd3f92327da069c3c57fd44" name="a3cf2aefb4cd3f92327da069c3c57fd44"></a>
+typedef <a class="el" href="a07587.html">GaussianConditional</a>&#160;</td><td class="memItemRight"><b>ConditionalType</b></td></tr>
+<tr class="memdesc:a3cf2aefb4cd3f92327da069c3c57fd44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of conditionals from elimination. <br /></td></tr>
+<tr class="memitem:a97ec662dcfbdf8116be7df830f288387" id="r_a97ec662dcfbdf8116be7df830f288387"><td class="memItemLeft"><a id="a97ec662dcfbdf8116be7df830f288387" name="a97ec662dcfbdf8116be7df830f288387"></a>
+typedef <a class="el" href="a05083.html">GaussianBayesNet</a>&#160;</td><td class="memItemRight"><b>BayesNetType</b></td></tr>
+<tr class="memdesc:a97ec662dcfbdf8116be7df830f288387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of Bayes net from sequential elimination. <br /></td></tr>
+<tr class="memitem:a847f1955c654f43fa24ff656fa3c763a" id="r_a847f1955c654f43fa24ff656fa3c763a"><td class="memItemLeft"><a id="a847f1955c654f43fa24ff656fa3c763a" name="a847f1955c654f43fa24ff656fa3c763a"></a>
+typedef <a class="el" href="a05119.html">GaussianEliminationTree</a>&#160;</td><td class="memItemRight"><b>EliminationTreeType</b></td></tr>
+<tr class="memdesc:a847f1955c654f43fa24ff656fa3c763a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of elimination tree. <br /></td></tr>
+<tr class="memitem:a3b0578f45d822fdb8feea31cb08fc482" id="r_a3b0578f45d822fdb8feea31cb08fc482"><td class="memItemLeft"><a id="a3b0578f45d822fdb8feea31cb08fc482" name="a3b0578f45d822fdb8feea31cb08fc482"></a>
+typedef <a class="el" href="a05099.html">GaussianBayesTree</a>&#160;</td><td class="memItemRight"><b>BayesTreeType</b></td></tr>
+<tr class="memdesc:a3b0578f45d822fdb8feea31cb08fc482"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of Bayes tree. <br /></td></tr>
+<tr class="memitem:ac9a6d5a1e133796f4ef7957aced8c785" id="r_ac9a6d5a1e133796f4ef7957aced8c785"><td class="memItemLeft"><a id="ac9a6d5a1e133796f4ef7957aced8c785" name="ac9a6d5a1e133796f4ef7957aced8c785"></a>
+typedef <a class="el" href="a05151.html">GaussianJunctionTree</a>&#160;</td><td class="memItemRight"><b>JunctionTreeType</b></td></tr>
+<tr class="memdesc:ac9a6d5a1e133796f4ef7957aced8c785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of Junction tree. <br /></td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/<a class="el" href="a01151_source.html">Values-inl.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/<a class="el" href="a01031_source.html">GaussianFactorGraph.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -121,7 +149,7 @@ static CastedKeyValuePairType&#160;</td><td class="memItemRight"><b>cast</b> (Ke
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a05131.html">ValuesCastHelper&lt; Value, CastedKeyValuePairType, KeyValuePairType &gt;</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a05131.html">EliminationTraits&lt; GaussianFactorGraph &gt;</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/inference/DotWriter.cpp File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/hybrid/HybridGaussianFactorGraph.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,22 +96,37 @@ $(function(){initNavTree('a00686.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">DotWriter.cpp File Reference</div></div>
+  <div class="headertitle"><div class="title">HybridGaussianFactorGraph.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Graphviz formatting for factor graphs.  
+<p>Linearized Hybrid factor graph that uses type erasure.  
 <a href="#details">More...</a></p>
+
+<p><a href="a00686_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:gtsam_3A_3AEliminationTraits_3C_20HybridGaussianFactorGraph_20_3E" id="r_gtsam_3A_3AEliminationTraits_3C_20HybridGaussianFactorGraph_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04735.html">gtsam::EliminationTraits&lt; HybridGaussianFactorGraph &gt;</a></td></tr>
+<tr class="memitem:gtsam_3A_3AHybridGaussianFactorGraph" id="r_gtsam_3A_3AHybridGaussianFactorGraph"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04739.html">gtsam::HybridGaussianFactorGraph</a></td></tr>
+<tr class="memitem:gtsam_3A_3Atraits_3C_20HybridGaussianFactorGraph_20_3E" id="r_gtsam_3A_3Atraits_3C_20HybridGaussianFactorGraph_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04743.html">gtsam::traits&lt; HybridGaussianFactorGraph &gt;</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga92a6667fc90ec1b85269c4082954c3b3" id="r_ga92a6667fc90ec1b85269c4082954c3b3"><td class="memItemLeft">std::pair&lt; <a class="el" href="a04683.html#ad25158d4e89b4d1b0abc651fa02c0c8d">HybridConditional::shared_ptr</a>, std::shared_ptr&lt; <a class="el" href="a04899.html">Factor</a> &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="a02231.html#ga92a6667fc90ec1b85269c4082954c3b3">gtsam::EliminateHybrid</a> (const <a class="el" href="a04739.html">HybridGaussianFactorGraph</a> &amp;factors, const <a class="el" href="a04979.html">Ordering</a> &amp;keys)</td></tr>
+<tr class="memdesc:ga92a6667fc90ec1b85269c4082954c3b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main elimination function for <a class="el" href="a04739.html">HybridGaussianFactorGraph</a>.  <br /></td></tr>
+<tr class="memitem:a584e4e05d52a617c1d313e1f53c8ce58" id="r_a584e4e05d52a617c1d313e1f53c8ce58"><td class="memItemLeft">const <a class="el" href="a04979.html">Ordering</a>&#160;</td><td class="memItemRight"><a class="el" href="a02242.html#a584e4e05d52a617c1d313e1f53c8ce58">gtsam::HybridOrdering</a> (const <a class="el" href="a04739.html">HybridGaussianFactorGraph</a> &amp;graph)</td></tr>
+<tr class="memdesc:a584e4e05d52a617c1d313e1f53c8ce58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a Colamd constrained ordering where the discrete keys are eliminated after the continuous keys.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Graphviz formatting for factor graphs. </p>
-<dl class="section author"><dt>Author</dt><dd>Frank Dellaert </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>December, 2021 </dd></dl>
+<div class="textblock"><p>Linearized Hybrid factor graph that uses type erasure. </p>
+<dl class="section author"><dt>Author</dt><dd>Fan Jiang, Varun Agrawal, Frank Dellaert </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>Mar 11, 2022 </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -125,7 +140,7 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>inference</b></li><li class="navelem"><a href="a00686.html">DotWriter.cpp</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>hybrid</b></li><li class="navelem"><a href="a00686.html">HybridGaussianFactorGraph.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

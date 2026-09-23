@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/examples/Pose2SLAMExample_graphviz.cpp File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/slam/ProjectionFactor.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,22 +96,37 @@ $(function(){initNavTree('a01790.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Pose2SLAMExample_graphviz.cpp File Reference</div></div>
+  <div class="headertitle"><div class="title">ProjectionFactor.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Save factor graph as graphviz dot file.  
+<p>Reprojection of a LANDMARK to a 2D point.  
 <a href="#details">More...</a></p>
+
+<p><a href="a01790_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627" id="r_a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft"><a id="a3c04138a5bfe5d72780bb7e82a18e627" name="a3c04138a5bfe5d72780bb7e82a18e627"></a>
-int&#160;</td><td class="memItemRight"><b>main</b> (int argc, char **argv)</td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:gtsam_3A_3AGenericProjectionFactor_3C_20POSE_2C_20LANDMARK_2C_20CALIBRATION_20_3E" id="r_gtsam_3A_3AGenericProjectionFactor_3C_20POSE_2C_20LANDMARK_2C_20CALIBRATION_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a07043.html">gtsam::GenericProjectionFactor&lt; POSE, LANDMARK, CALIBRATION &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-linear factor for a constraint derived from a 2D measurement.  <a href="a07043.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Atraits_3C_20GenericProjectionFactor_3C_20POSE_2C_20LANDMARK_2C_20CALIBRATION_20_3E_20_3E" id="r_gtsam_3A_3Atraits_3C_20GenericProjectionFactor_3C_20POSE_2C_20LANDMARK_2C_20CALIBRATION_20_3E_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a07047.html">gtsam::traits&lt; GenericProjectionFactor&lt; POSE, LANDMARK, CALIBRATION &gt; &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">traits  <a href="a07047.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Save factor graph as graphviz dot file. </p>
-<dl class="section date"><dt>Date</dt><dd>Sept 6, 2013 </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Frank Dellaert </dd></dl>
+<div class="textblock"><p>Reprojection of a LANDMARK to a 2D point. </p>
+<p>Basic bearing factor from 2D measurement.</p>
+<dl class="section author"><dt>Author</dt><dd>Chris Beall </dd>
+<dd>
+Richard Roberts </dd>
+<dd>
+Frank Dellaert </dd>
+<dd>
+Alex Cunningham </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -125,7 +140,7 @@ int&#160;</td><td class="memItemRight"><b>main</b> (int argc, char **argv)</td><
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>examples</b></li><li class="navelem"><a href="a01790.html">Pose2SLAMExample_graphviz.cpp</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>slam</b></li><li class="navelem"><a href="a01790.html">ProjectionFactor.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

@@ -1,4 +1,5 @@
 var a01628 =
 [
-    [ "gtsam::BatchFixedLagSmoother", "a05859.html", "a05859" ]
+    [ "gtsam::SfmLevenbergMarquardtParams", "a06767.html", "a06767" ],
+    [ "gtsam::SfmLevenbergMarquardtOptimizer", "a06771.html", "a06771" ]
 ];

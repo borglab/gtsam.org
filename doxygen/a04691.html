@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::traits&lt; imuBias::ConstantBias &gt; Struct Reference</title>
+<title>gtsam: gtsam::HybridEliminationTree Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,72 +96,192 @@ $(function(){initNavTree('a04691.html','','a04688'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; imuBias::ConstantBias &gt; Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::HybridEliminationTree Class Reference<div class="ingroups"><a class="el" href="a02231.html">Hybrid</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::traits&lt; imuBias::ConstantBias &gt;:</div>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Elimination Tree type for Hybrid <a class="el" href="a04899.html">Factor</a> Graphs. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::HybridEliminationTree:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a04691.png" usemap="#gtsam_3A_3Atraits_3C_20imuBias_3A_3AConstantBias_20_3E_map" alt=""/>
-  <map id="gtsam_3A_3Atraits_3C_20imuBias_3A_3AConstantBias_20_3E_map" name="gtsam_3A_3Atraits_3C_20imuBias_3A_3AConstantBias_20_3E_map">
-<area href="a03167.html" alt="gtsam::internal::VectorSpace&lt; imuBias::ConstantBias &gt;" shape="rect" coords="271,112,804,136"/>
-<area href="a03039.html" alt="gtsam::Testable&lt; imuBias::ConstantBias &gt;" shape="rect" coords="0,56,533,80"/>
-<area href="a03163.html" alt="gtsam::internal::VectorSpaceTraits&lt; imuBias::ConstantBias &gt;" shape="rect" coords="543,56,1076,80"/>
-<area href="a03151.html" alt="gtsam::internal::VectorSpaceImpl&lt; imuBias::ConstantBias, imuBias::ConstantBias::dimension &gt;" shape="rect" coords="543,0,1076,24"/>
+  <img src="a04691.png" usemap="#gtsam_3A_3AHybridEliminationTree_map" alt=""/>
+  <map id="gtsam_3A_3AHybridEliminationTree_map" name="gtsam_3A_3AHybridEliminationTree_map">
+<area href="a04891.html" alt="gtsam::EliminationTree&lt; HybridBayesNet, HybridGaussianFactorGraph &gt;" shape="rect" coords="0,0,423,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a053773a4c3513cda875dc91f13e7e915" id="r_a053773a4c3513cda875dc91f13e7e915"><td class="memItemLeft"><a id="a053773a4c3513cda875dc91f13e7e915" name="a053773a4c3513cda875dc91f13e7e915"></a>
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="#a1f947f2eca107d6bc9cfc8ed85e0a666">This</a> &amp;other, double tol=1e-9) const</td></tr>
+<tr class="memdesc:a053773a4c3513cda875dc91f13e7e915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test whether the tree is equal to another. <br /></td></tr>
+<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Constructors</div></td></tr>
+<tr class="memitem:ae043665511734e035f01b535f41d32e1" id="r_ae043665511734e035f01b535f41d32e1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae043665511734e035f01b535f41d32e1">HybridEliminationTree</a> (const <a class="el" href="a04739.html">HybridGaussianFactorGraph</a> &amp;factorGraph, const <a class="el" href="a04999.html">VariableIndex</a> &amp;structure, const <a class="el" href="a04979.html">Ordering</a> &amp;order)</td></tr>
+<tr class="memdesc:ae043665511734e035f01b535f41d32e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the elimination tree of a factor graph using pre-computed column structure.  <br /></td></tr>
+<tr class="memitem:a2a4433efc73e96fba7ff726a2f454ec2" id="r_a2a4433efc73e96fba7ff726a2f454ec2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2a4433efc73e96fba7ff726a2f454ec2">HybridEliminationTree</a> (const <a class="el" href="a04739.html">HybridGaussianFactorGraph</a> &amp;factorGraph, const <a class="el" href="a04979.html">Ordering</a> &amp;order)</td></tr>
+<tr class="memdesc:a2a4433efc73e96fba7ff726a2f454ec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the elimination tree of a factor graph.  <br /></td></tr>
+<tr class="inherit_header pub_methods_a04891"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a04891')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a04891.html">gtsam::EliminationTree&lt; HybridBayesNet, HybridGaussianFactorGraph &gt;</a></td></tr>
+<tr class="memitem:aabd3a958809c4524327d937ece611971 inherit pub_methods_a04891" id="r_aabd3a958809c4524327d937ece611971"><td class="memItemLeft">std::pair&lt; std::shared_ptr&lt; <a class="el" href="a04891.html#a5a58f63ccebf38a91c029af056b8a163">BayesNetType</a> &gt;, std::shared_ptr&lt; <a class="el" href="a04891.html#a8e0f85f2f105b76096963f275e801812">FactorGraphType</a> &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04891.html#aabd3a958809c4524327d937ece611971">eliminate</a> (Eliminate function) const</td></tr>
+<tr class="memdesc:aabd3a958809c4524327d937ece611971 inherit pub_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Eliminate the factors to a Bayes net and remaining factor graph.  <br /></td></tr>
+<tr class="memitem:a6a33186ea4ad6a9b0479dc0087ec30db inherit pub_methods_a04891" id="r_a6a33186ea4ad6a9b0479dc0087ec30db"><td class="memItemLeft">
+const <a class="el" href="a02227.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; <a class="el" href="a04891.html#a8cfed22389d7fd062e69a626ee3f876d">sharedNode</a> &gt; &amp;&#160;</td><td class="memItemRight"><b>roots</b> () const</td></tr>
+<tr class="memdesc:a6a33186ea4ad6a9b0479dc0087ec30db inherit pub_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the set of roots (one for a tree, multiple for a forest). <br /></td></tr>
+<tr class="memitem:afe7a2def51316f565425bb711b1a2e65 inherit pub_methods_a04891" id="r_afe7a2def51316f565425bb711b1a2e65"><td class="memItemLeft">
+const <a class="el" href="a02227.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; <a class="el" href="a04891.html#a8250570837e5516e9a2787b41a41d414">sharedFactor</a> &gt; &amp;&#160;</td><td class="memItemRight"><b>remainingFactors</b> () const</td></tr>
+<tr class="memdesc:afe7a2def51316f565425bb711b1a2e65 inherit pub_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the remaining factors that are not pulled into elimination. <br /></td></tr>
+<tr class="memitem:aa803d492b75fb518207fb2b9a6788607 inherit pub_methods_a04891" id="r_aa803d492b75fb518207fb2b9a6788607"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>swap</b> (<a class="el" href="a04891.html#a12e721d9dff82b978888af20a4297ae9">This</a> &amp;other)</td></tr>
+<tr class="memdesc:aa803d492b75fb518207fb2b9a6788607 inherit pub_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swap the data of this tree with another one, this operation is very fast. <br /></td></tr>
+<tr class="memitem:a0d5c769b08d584c53439805f1bdccd38 inherit pub_methods_a04891" id="r_a0d5c769b08d584c53439805f1bdccd38"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;name=&quot;EliminationTree: &quot;, const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;formatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) const</td></tr>
+<tr class="memdesc:a0d5c769b08d584c53439805f1bdccd38 inherit pub_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the tree to cout. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:afe7432e190ac8896e3cbd931c8c5e9fb" id="r_afe7432e190ac8896e3cbd931c8c5e9fb"><td class="memItemLeft"><a id="afe7432e190ac8896e3cbd931c8c5e9fb" name="afe7432e190ac8896e3cbd931c8c5e9fb"></a>
+typedef <a class="el" href="a04891.html#af9d86f2a1c1e084c02982d08b3512385">EliminationTree</a>&lt; <a class="el" href="a04651.html">HybridBayesNet</a>, <a class="el" href="a04739.html">HybridGaussianFactorGraph</a> &gt;&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
+<tr class="memdesc:afe7432e190ac8896e3cbd931c8c5e9fb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#afe7432e190ac8896e3cbd931c8c5e9fb" title="Base class.">Base</a> class. <br /></td></tr>
+<tr class="memitem:a1f947f2eca107d6bc9cfc8ed85e0a666" id="r_a1f947f2eca107d6bc9cfc8ed85e0a666"><td class="memItemLeft"><a id="a1f947f2eca107d6bc9cfc8ed85e0a666" name="a1f947f2eca107d6bc9cfc8ed85e0a666"></a>
+typedef <a class="el" href="#ae043665511734e035f01b535f41d32e1">HybridEliminationTree</a>&#160;</td><td class="memItemRight"><b>This</b></td></tr>
+<tr class="memdesc:a1f947f2eca107d6bc9cfc8ed85e0a666"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a1f947f2eca107d6bc9cfc8ed85e0a666" title="This class.">This</a> class. <br /></td></tr>
+<tr class="memitem:a2f41f81ad67a44770a13b33f0acfcdeb" id="r_a2f41f81ad67a44770a13b33f0acfcdeb"><td class="memItemLeft"><a id="a2f41f81ad67a44770a13b33f0acfcdeb" name="a2f41f81ad67a44770a13b33f0acfcdeb"></a>
+typedef std::shared_ptr&lt; <a class="el" href="#a1f947f2eca107d6bc9cfc8ed85e0a666">This</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+<tr class="memdesc:a2f41f81ad67a44770a13b33f0acfcdeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to this class. <br /></td></tr>
+<tr class="inherit_header pub_types_a04891"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04891')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04891.html">gtsam::EliminationTree&lt; HybridBayesNet, HybridGaussianFactorGraph &gt;</a></td></tr>
+<tr class="memitem:a8e0f85f2f105b76096963f275e801812 inherit pub_types_a04891" id="r_a8e0f85f2f105b76096963f275e801812"><td class="memItemLeft">
+typedef <a class="el" href="a04739.html">HybridGaussianFactorGraph</a>&#160;</td><td class="memItemRight"><b>FactorGraphType</b></td></tr>
+<tr class="memdesc:a8e0f85f2f105b76096963f275e801812 inherit pub_types_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">The factor graph type. <br /></td></tr>
+<tr class="memitem:ae32081c8e91b81d6833173a86c999a49 inherit pub_types_a04891" id="r_ae32081c8e91b81d6833173a86c999a49"><td class="memItemLeft">
+typedef <a class="el" href="a04819.html#aa54fb0b66fd8fee9f3c1f2844cf3edef">HybridGaussianFactorGraph::FactorType</a>&#160;</td><td class="memItemRight"><b>FactorType</b></td></tr>
+<tr class="memdesc:ae32081c8e91b81d6833173a86c999a49 inherit pub_types_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of factors. <br /></td></tr>
+<tr class="memitem:a8250570837e5516e9a2787b41a41d414 inherit pub_types_a04891" id="r_a8250570837e5516e9a2787b41a41d414"><td class="memItemLeft">
+typedef std::shared_ptr&lt; <a class="el" href="a04891.html#ae32081c8e91b81d6833173a86c999a49">FactorType</a> &gt;&#160;</td><td class="memItemRight"><b>sharedFactor</b></td></tr>
+<tr class="memdesc:a8250570837e5516e9a2787b41a41d414 inherit pub_types_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to a factor. <br /></td></tr>
+<tr class="memitem:a5a58f63ccebf38a91c029af056b8a163 inherit pub_types_a04891" id="r_a5a58f63ccebf38a91c029af056b8a163"><td class="memItemLeft">
+typedef <a class="el" href="a04651.html">HybridBayesNet</a>&#160;</td><td class="memItemRight"><b>BayesNetType</b></td></tr>
+<tr class="memdesc:a5a58f63ccebf38a91c029af056b8a163 inherit pub_types_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="a04811.html" title="A BayesNet is a tree of conditionals, stored in elimination order.">BayesNet</a> corresponding to FACTOR. <br /></td></tr>
+<tr class="memitem:ac710dbf0e617559c174181b8441c1a92 inherit pub_types_a04891" id="r_ac710dbf0e617559c174181b8441c1a92"><td class="memItemLeft">
+typedef BayesNetType::ConditionalType&#160;</td><td class="memItemRight"><b>ConditionalType</b></td></tr>
+<tr class="memdesc:ac710dbf0e617559c174181b8441c1a92 inherit pub_types_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of conditionals. <br /></td></tr>
+<tr class="memitem:ae536eba308ec7d73c97ffaebaa9378de inherit pub_types_a04891" id="r_ae536eba308ec7d73c97ffaebaa9378de"><td class="memItemLeft">
+typedef std::shared_ptr&lt; <a class="el" href="a04891.html#ac710dbf0e617559c174181b8441c1a92">ConditionalType</a> &gt;&#160;</td><td class="memItemRight"><b>sharedConditional</b></td></tr>
+<tr class="memdesc:ae536eba308ec7d73c97ffaebaa9378de inherit pub_types_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to a conditional. <br /></td></tr>
+<tr class="memitem:a0878593a56ec193beaf64f3dd564ea29 inherit pub_types_a04891" id="r_a0878593a56ec193beaf64f3dd564ea29"><td class="memItemLeft">
+typedef <a class="el" href="a04887.html#a4053522180fd649baf38a49c515e7b53">HybridGaussianFactorGraph::Eliminate</a>&#160;</td><td class="memItemRight"><b>Eliminate</b></td></tr>
+<tr class="memitem:a8cfed22389d7fd062e69a626ee3f876d inherit pub_types_a04891" id="r_a8cfed22389d7fd062e69a626ee3f876d"><td class="memItemLeft">
+typedef std::shared_ptr&lt; Node &gt;&#160;</td><td class="memItemRight"><b>sharedNode</b></td></tr>
+<tr class="memdesc:a8cfed22389d7fd062e69a626ee3f876d inherit pub_types_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to Node. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:afb1e378ea19d4d4de1a201e467e0699d" id="r_afb1e378ea19d4d4de1a201e467e0699d"><td class="memItemLeft"><a id="afb1e378ea19d4d4de1a201e467e0699d" name="afb1e378ea19d4d4de1a201e467e0699d"></a>
+class&#160;</td><td class="memItemRight"><b>::EliminationTreeTester</b></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; imuBias::ConstantBias &gt;</a></td></tr>
-<tr class="memitem:a0b809ea2931c6c4a2ecbd17e8f3fab39 inherit pub_methods_a03039" id="r_a0b809ea2931c6c4a2ecbd17e8f3fab39"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>BOOST_CONCEPT_ASSERT</b> ((<a class="el" href="a03035.html">HasTestablePrereqs</a>&lt; <a class="el" href="a04687.html">imuBias::ConstantBias</a> &gt;))</td></tr>
-<tr class="inherit_header pub_methods_a03163"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03163')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03163.html">gtsam::internal::VectorSpaceTraits&lt; imuBias::ConstantBias &gt;</a></td></tr>
-<tr class="memitem:a77abb09b9e923be440a721771a935f5c inherit pub_methods_a03163" id="r_a77abb09b9e923be440a721771a935f5c"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>BOOST_CONCEPT_ASSERT</b> ((<a class="el" href="a03159.html">HasVectorSpacePrereqs</a>&lt; <a class="el" href="a04687.html">imuBias::ConstantBias</a> &gt;))</td></tr>
-<tr class="inherit_header pub_static_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; imuBias::ConstantBias &gt;</a></td></tr>
-<tr class="memitem:a27b246d77898916925c676895348fedf inherit pub_static_methods_a03039" id="r_a27b246d77898916925c676895348fedf"><td class="memItemLeft">
-static void&#160;</td><td class="memItemRight"><b>Print</b> (const <a class="el" href="a04687.html">imuBias::ConstantBias</a> &amp;m, const std::string &amp;str=&quot;&quot;)</td></tr>
-<tr class="memitem:a29a5699453b92070b31ca7fa42609d98 inherit pub_static_methods_a03039" id="r_a29a5699453b92070b31ca7fa42609d98"><td class="memItemLeft">
-static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el" href="a04687.html">imuBias::ConstantBias</a> &amp;m1, const <a class="el" href="a04687.html">imuBias::ConstantBias</a> &amp;m2, double tol=1e-8)</td></tr>
-<tr class="memitem:a0422b54b2c5d03d983f102d49ef42648" id="r_a0422b54b2c5d03d983f102d49ef42648"><td class="memItemLeft"><a id="a0422b54b2c5d03d983f102d49ef42648" name="a0422b54b2c5d03d983f102d49ef42648"></a>
-static <a class="el" href="a04687.html">imuBias::ConstantBias</a>&#160;</td><td class="memItemRight"><b>Identity</b> ()</td></tr>
-<tr class="inherit_header pub_static_methods_a03151"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03151')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03151.html">gtsam::internal::VectorSpaceImpl&lt; imuBias::ConstantBias, imuBias::ConstantBias::dimension &gt;</a></td></tr>
-<tr class="memitem:ab96190290044c64bc101f4a7a384af87 inherit pub_static_methods_a03151" id="r_ab96190290044c64bc101f4a7a384af87"><td class="memItemLeft">
-static TangentVector&#160;</td><td class="memItemRight"><b>Logmap</b> (const <a class="el" href="a04687.html">imuBias::ConstantBias</a> &amp;m, ChartJacobian Hm=boost::none)</td></tr>
-<tr class="memitem:a04d1621fb13640fd81bf235d18660b84 inherit pub_static_methods_a03151" id="r_a04d1621fb13640fd81bf235d18660b84"><td class="memItemLeft">
-static <a class="el" href="a04687.html">imuBias::ConstantBias</a>&#160;</td><td class="memItemRight"><b>Expmap</b> (const TangentVector &amp;v, ChartJacobian Hv=boost::none)</td></tr>
-<tr class="memitem:af593ab82fde05514b666e174a2435964 inherit pub_static_methods_a03151" id="r_af593ab82fde05514b666e174a2435964"><td class="memItemLeft">
-static <a class="el" href="a04687.html">imuBias::ConstantBias</a>&#160;</td><td class="memItemRight"><b>Compose</b> (const <a class="el" href="a04687.html">imuBias::ConstantBias</a> &amp;v1, const <a class="el" href="a04687.html">imuBias::ConstantBias</a> &amp;v2, ChartJacobian H1=boost::none, ChartJacobian H2=boost::none)</td></tr>
-<tr class="memitem:abc406a29d2318d71a4f0e958f821ae8b inherit pub_static_methods_a03151" id="r_abc406a29d2318d71a4f0e958f821ae8b"><td class="memItemLeft">
-static <a class="el" href="a04687.html">imuBias::ConstantBias</a>&#160;</td><td class="memItemRight"><b>Between</b> (const <a class="el" href="a04687.html">imuBias::ConstantBias</a> &amp;v1, const <a class="el" href="a04687.html">imuBias::ConstantBias</a> &amp;v2, ChartJacobian H1=boost::none, ChartJacobian H2=boost::none)</td></tr>
-<tr class="memitem:af83be522c5faac805c95c3c338f747ae inherit pub_static_methods_a03151" id="r_af83be522c5faac805c95c3c338f747ae"><td class="memItemLeft">
-static <a class="el" href="a04687.html">imuBias::ConstantBias</a>&#160;</td><td class="memItemRight"><b>Inverse</b> (const <a class="el" href="a04687.html">imuBias::ConstantBias</a> &amp;v, ChartJacobian H=boost::none)</td></tr>
-<tr class="memitem:a453c30a66ad1b51aa4f9a28c7b030d85 inherit pub_static_methods_a03151" id="r_a453c30a66ad1b51aa4f9a28c7b030d85"><td class="memItemLeft">
-static int&#160;</td><td class="memItemRight"><b>GetDimension</b> (const <a class="el" href="a04687.html">imuBias::ConstantBias</a> &amp;)</td></tr>
-<tr class="memitem:a941df3941c2985e3cc6e353d7d5697c4 inherit pub_static_methods_a03151" id="r_a941df3941c2985e3cc6e353d7d5697c4"><td class="memItemLeft">
-static TangentVector&#160;</td><td class="memItemRight"><b>Local</b> (const <a class="el" href="a04687.html">imuBias::ConstantBias</a> &amp;origin, const <a class="el" href="a04687.html">imuBias::ConstantBias</a> &amp;other, ChartJacobian H1=boost::none, ChartJacobian H2=boost::none)</td></tr>
-<tr class="memitem:a853fc3666d40680ef13810ff29654af6 inherit pub_static_methods_a03151" id="r_a853fc3666d40680ef13810ff29654af6"><td class="memItemLeft">
-static <a class="el" href="a04687.html">imuBias::ConstantBias</a>&#160;</td><td class="memItemRight"><b>Retract</b> (const <a class="el" href="a04687.html">imuBias::ConstantBias</a> &amp;origin, const TangentVector &amp;v, ChartJacobian H1=boost::none, ChartJacobian H2=boost::none)</td></tr>
-<tr class="inherit_header pub_types_a03163"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03163')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03163.html">gtsam::internal::VectorSpaceTraits&lt; imuBias::ConstantBias &gt;</a></td></tr>
-<tr class="memitem:aa81faa9ad036cd2fbeb11498753ebbb6 inherit pub_types_a03163" id="r_aa81faa9ad036cd2fbeb11498753ebbb6"><td class="memItemLeft">
-typedef <a class="el" href="a03147.html">vector_space_tag</a>&#160;</td><td class="memItemRight"><b>structure_category</b></td></tr>
-<tr class="memitem:a093e24225ba28550f41867018aa5132f inherit pub_types_a03163" id="r_a093e24225ba28550f41867018aa5132f"><td class="memItemLeft"><a id="a093e24225ba28550f41867018aa5132f" name="a093e24225ba28550f41867018aa5132f"></a>enum &#160;</td><td class="memItemRight"></td></tr>
-<tr class="memitem:a98a79aca4def5818edac55350eb4d5ac inherit pub_types_a03163" id="r_a98a79aca4def5818edac55350eb4d5ac"><td class="memItemLeft">
-typedef <a class="el" href="a04687.html">imuBias::ConstantBias</a>&#160;</td><td class="memItemRight"><b>ManifoldType</b></td></tr>
-<tr class="memitem:a94fc1f2d865652ddd56b9b6272ff63aa inherit pub_types_a03163" id="r_a94fc1f2d865652ddd56b9b6272ff63aa"><td class="memItemLeft">
-typedef <a class="el" href="a02887.html">additive_group_tag</a>&#160;</td><td class="memItemRight"><b>group_flavor</b></td></tr>
-<tr class="memitem:a3af4e05365d0db01453a76cb2479c446" id="r_a3af4e05365d0db01453a76cb2479c446"><td class="memItemLeft"><a id="a3af4e05365d0db01453a76cb2479c446" name="a3af4e05365d0db01453a76cb2479c446"></a>
-typedef Eigen::Matrix&lt; double, N, 1 &gt;&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
-<tr class="memitem:af75812a841edef85cabc4e06b65a1121" id="r_af75812a841edef85cabc4e06b65a1121"><td class="memItemLeft"><a id="af75812a841edef85cabc4e06b65a1121" name="af75812a841edef85cabc4e06b65a1121"></a>
-typedef <a class="el" href="a02995.html">OptionalJacobian</a>&lt; N, N &gt;&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
-<tr class="memitem:ab2461a41d72cb29e2fd6ffd05be40b42" id="r_ab2461a41d72cb29e2fd6ffd05be40b42"><td class="memItemLeft"><a id="ab2461a41d72cb29e2fd6ffd05be40b42" name="ab2461a41d72cb29e2fd6ffd05be40b42"></a>
-typedef Eigen::Matrix&lt; double, N, N &gt;&#160;</td><td class="memItemRight"><b>Jacobian</b></td></tr>
+<tr class="inherit_header pro_types_a04891"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_types_a04891')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Types inherited from <a class="el" href="a04891.html">gtsam::EliminationTree&lt; HybridBayesNet, HybridGaussianFactorGraph &gt;</a></td></tr>
+<tr class="memitem:a12e721d9dff82b978888af20a4297ae9 inherit pro_types_a04891" id="r_a12e721d9dff82b978888af20a4297ae9"><td class="memItemLeft">
+typedef <a class="el" href="a04891.html#af9d86f2a1c1e084c02982d08b3512385">EliminationTree</a>&lt; <a class="el" href="a04651.html">HybridBayesNet</a>, <a class="el" href="a04739.html">HybridGaussianFactorGraph</a> &gt;&#160;</td><td class="memItemRight"><b>This</b></td></tr>
+<tr class="memdesc:a12e721d9dff82b978888af20a4297ae9 inherit pro_types_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a04891.html#a12e721d9dff82b978888af20a4297ae9">This</a> class. <br /></td></tr>
+<tr class="memitem:a407d15a6079500ea4b4359f47026370b inherit pro_types_a04891" id="r_a407d15a6079500ea4b4359f47026370b"><td class="memItemLeft">
+typedef std::shared_ptr&lt; <a class="el" href="a04891.html#a12e721d9dff82b978888af20a4297ae9">This</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+<tr class="memdesc:a407d15a6079500ea4b4359f47026370b inherit pro_types_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to this class. <br /></td></tr>
+<tr class="inherit_header pro_methods_a04891"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_a04891')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="a04891.html">gtsam::EliminationTree&lt; HybridBayesNet, HybridGaussianFactorGraph &gt;</a></td></tr>
+<tr class="memitem:af9d86f2a1c1e084c02982d08b3512385 inherit pro_methods_a04891" id="r_af9d86f2a1c1e084c02982d08b3512385"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04891.html#af9d86f2a1c1e084c02982d08b3512385">EliminationTree</a> (const <a class="el" href="a04891.html#a8e0f85f2f105b76096963f275e801812">FactorGraphType</a> &amp;factorGraph, const <a class="el" href="a04999.html">VariableIndex</a> &amp;structure, const <a class="el" href="a04979.html">Ordering</a> &amp;order)</td></tr>
+<tr class="memdesc:af9d86f2a1c1e084c02982d08b3512385 inherit pro_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the elimination tree of a factor graph using pre-computed column structure.  <br /></td></tr>
+<tr class="memitem:a5767cf9b1e41ecdd681fc3c230e4a651 inherit pro_methods_a04891" id="r_a5767cf9b1e41ecdd681fc3c230e4a651"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04891.html#a5767cf9b1e41ecdd681fc3c230e4a651">EliminationTree</a> (const <a class="el" href="a04891.html#a8e0f85f2f105b76096963f275e801812">FactorGraphType</a> &amp;factorGraph, const <a class="el" href="a04979.html">Ordering</a> &amp;order)</td></tr>
+<tr class="memdesc:a5767cf9b1e41ecdd681fc3c230e4a651 inherit pro_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the elimination tree of a factor graph.  <br /></td></tr>
+<tr class="memitem:a2d9565551bfe73676f82d41d86f158a5 inherit pro_methods_a04891" id="r_a2d9565551bfe73676f82d41d86f158a5"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>EliminationTree</b> (const <a class="el" href="a04891.html#a12e721d9dff82b978888af20a4297ae9">This</a> &amp;other)</td></tr>
+<tr class="memdesc:a2d9565551bfe73676f82d41d86f158a5 inherit pro_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor - makes a deep copy of the tree structure, but only pointers to factors are copied, factors are not cloned. <br /></td></tr>
+<tr class="memitem:a1224c71a07df3951c7d4ca92f2e8c30d inherit pro_methods_a04891" id="r_a1224c71a07df3951c7d4ca92f2e8c30d"><td class="memItemLeft">
+<a class="el" href="a04891.html#a12e721d9dff82b978888af20a4297ae9">This</a> &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (const <a class="el" href="a04891.html#a12e721d9dff82b978888af20a4297ae9">This</a> &amp;other)</td></tr>
+<tr class="memdesc:a1224c71a07df3951c7d4ca92f2e8c30d inherit pro_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a03803.html" title="An assignment from labels to value index (size_t).">Assignment</a> operator - makes a deep copy of the tree structure, but only pointers to factors are copied, factors are not cloned. <br /></td></tr>
+<tr class="memitem:aacb8da2b775867c6bc7bc064ded4f68a inherit pro_methods_a04891" id="r_aacb8da2b775867c6bc7bc064ded4f68a"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>EliminationTree</b> ()</td></tr>
+<tr class="memdesc:aacb8da2b775867c6bc7bc064ded4f68a inherit pro_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protected default constructor. <br /></td></tr>
+<tr class="memitem:a056479065f5685d308ff64ed0cb609a2 inherit pro_methods_a04891" id="r_a056479065f5685d308ff64ed0cb609a2"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="a04891.html#a12e721d9dff82b978888af20a4297ae9">This</a> &amp;other, double tol=1e-9) const</td></tr>
+<tr class="memdesc:a056479065f5685d308ff64ed0cb609a2 inherit pro_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test whether the tree is equal to another. <br /></td></tr>
+<tr class="inherit_header pro_attribs_a04891"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a04891')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a04891.html">gtsam::EliminationTree&lt; HybridBayesNet, HybridGaussianFactorGraph &gt;</a></td></tr>
+<tr class="memitem:a335b2e576f841c10c6cf722214c5799e inherit pro_attribs_a04891" id="r_a335b2e576f841c10c6cf722214c5799e"><td class="memItemLeft">
+<a class="el" href="a02227.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; <a class="el" href="a04891.html#a8cfed22389d7fd062e69a626ee3f876d">sharedNode</a> &gt;&#160;</td><td class="memItemRight"><b>roots_</b></td></tr>
+<tr class="memdesc:a335b2e576f841c10c6cf722214c5799e inherit pro_attribs_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">concept check <br /></td></tr>
+<tr class="memitem:a6947efa3bd051632caca1b6964ea5448 inherit pro_attribs_a04891" id="r_a6947efa3bd051632caca1b6964ea5448"><td class="memItemLeft">
+<a class="el" href="a02227.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; <a class="el" href="a04891.html#a8250570837e5516e9a2787b41a41d414">sharedFactor</a> &gt;&#160;</td><td class="memItemRight"><b>remainingFactors_</b></td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/navigation/<a class="el" href="a00929_source.html">ImuBias.h</a></li>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae043665511734e035f01b535f41d32e1" name="ae043665511734e035f01b535f41d32e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae043665511734e035f01b535f41d32e1">&#9670;&#160;</a></span>HybridEliminationTree() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gtsam::HybridEliminationTree::HybridEliminationTree </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a04739.html">HybridGaussianFactorGraph</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>factorGraph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a04999.html">VariableIndex</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>structure</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a04979.html">Ordering</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>order</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct the elimination tree of a factor graph using pre-computed column structure. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">factorGraph</td><td>The factor graph for which to build the elimination tree </td></tr>
+    <tr><td class="paramname">structure</td><td>The set of factors involving each variable. If this is not precomputed, you can call the Create(const FactorGraph&lt;DERIVEDFACTOR&gt;&amp;) named constructor instead. </td></tr>
+    <tr><td class="paramname">order</td><td>The ordering of the variables. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2a4433efc73e96fba7ff726a2f454ec2" name="a2a4433efc73e96fba7ff726a2f454ec2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a4433efc73e96fba7ff726a2f454ec2">&#9670;&#160;</a></span>HybridEliminationTree() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gtsam::HybridEliminationTree::HybridEliminationTree </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a04739.html">HybridGaussianFactorGraph</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>factorGraph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a04979.html">Ordering</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>order</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct the elimination tree of a factor graph. </p>
+<p>Note that this has to compute the column structure as a <a class="el" href="a04999.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a>, so if you already have this precomputed, use the other constructor instead. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">factorGraph</td><td>The factor graph for which to build the elimination tree </td></tr>
+    <tr><td class="paramname">order</td><td>The ordering of the variables. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/hybrid/<a class="el" href="a00710_source.html">HybridEliminationTree.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/hybrid/<a class="el" href="a00659.html">HybridEliminationTree.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -176,7 +296,7 @@ typedef Eigen::Matrix&lt; double, N, N &gt;&#160;</td><td class="memItemRight"><
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04691.html">traits&lt; imuBias::ConstantBias &gt;</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04691.html">HybridEliminationTree</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

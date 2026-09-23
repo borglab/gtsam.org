@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::LPPolicy Struct Reference</title>
+<title>gtsam: gtsam::LeggedInvariantEKF::AutonomousFlow Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,62 +96,33 @@ $(function(){initNavTree('a05827.html','','a05824'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::LPPolicy Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::LeggedInvariantEKF::AutonomousFlow Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Policy for ActivetSetSolver to solve Linear Programming. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="a05815.html" title="Data structure of a Linear Program.">LP</a> problems </dd></dl>
+<div class="textblock"><p>Autonomous flow used by the left-linear prediction step. </p>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ad38a54d5c4c962b9110e5a74339cc110" id="r_ad38a54d5c4c962b9110e5a74339cc110"><td class="memItemLeft">static <a class="el" href="a04339.html">GaussianFactorGraph</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad38a54d5c4c962b9110e5a74339cc110">buildCostFunction</a> (const <a class="el" href="a05815.html">LP</a> &amp;lp, const <a class="el" href="a06239.html">VectorValues</a> &amp;xk)</td></tr>
-<tr class="memdesc:ad38a54d5c4c962b9110e5a74339cc110"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the factor ||x-xk - (-g)||^2 where xk is the current feasible solution on the constraint surface and g is the gradient of the linear cost, i.e.  <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a8a2de78b1dc05a8e2175146286002a6b" id="r_a8a2de78b1dc05a8e2175146286002a6b"><td class="memItemLeft"><a id="a8a2de78b1dc05a8e2175146286002a6b" name="a8a2de78b1dc05a8e2175146286002a6b"></a>
+&#160;</td><td class="memItemRight"><b>AutonomousFlow</b> (size_t numFeet, double dt)</td></tr>
+<tr class="memdesc:a8a2de78b1dc05a8e2175146286002a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the autonomous-flow functor. <br /></td></tr>
+<tr class="memitem:a65b213fdd2050eb9a579d816b75151c2" id="r_a65b213fdd2050eb9a579d816b75151c2"><td class="memItemLeft"><a id="a65b213fdd2050eb9a579d816b75151c2" name="a65b213fdd2050eb9a579d816b75151c2"></a>
+Matrix&#160;</td><td class="memItemRight"><b>dIdentity</b> () const</td></tr>
+<tr class="memdesc:a65b213fdd2050eb9a579d816b75151c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the differential of the flow at the identity. <br /></td></tr>
+<tr class="memitem:a63886639a45afc8d77b6a9ab37423af5" id="r_a63886639a45afc8d77b6a9ab37423af5"><td class="memItemLeft"><a id="a63886639a45afc8d77b6a9ab37423af5" name="a63886639a45afc8d77b6a9ab37423af5"></a>
+ExtendedPose3d&#160;</td><td class="memItemRight"><b>operator()</b> (const ExtendedPose3d &amp;<a class="el" href="a05899.html#a3ffdf165b5c1ae13de091ee09f7a0f88">state</a>) const</td></tr>
+<tr class="memdesc:a63886639a45afc8d77b6a9ab37423af5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advance the position block while keeping velocity and footholds fixed. <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
-Static Public Attributes</h2></td></tr>
-<tr class="memitem:a43b6a6ed49b3c70474a0424dc3d9ad87" id="r_a43b6a6ed49b3c70474a0424dc3d9ad87"><td class="memItemLeft"><a id="a43b6a6ed49b3c70474a0424dc3d9ad87" name="a43b6a6ed49b3c70474a0424dc3d9ad87"></a>
-static constexpr double&#160;</td><td class="memItemRight"><b>maxAlpha</b> = std::numeric_limits&lt;double&gt;::infinity()</td></tr>
-<tr class="memdesc:a43b6a6ed49b3c70474a0424dc3d9ad87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum alpha for line search x'=xk + alpha*p, where p is the cost gradient For <a class="el" href="a05815.html" title="Data structure of a Linear Program.">LP</a>, maxAlpha = Infinity. <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a931fcf14bf9e0b9f3d1e56b819f02599" id="r_a931fcf14bf9e0b9f3d1e56b819f02599"><td class="memItemLeft"><a id="a931fcf14bf9e0b9f3d1e56b819f02599" name="a931fcf14bf9e0b9f3d1e56b819f02599"></a>
+size_t&#160;</td><td class="memItemRight"><b>numFeet</b></td></tr>
+<tr class="memitem:ae232d44bc0be17d48b3f5f02d3f9060e" id="r_ae232d44bc0be17d48b3f5f02d3f9060e"><td class="memItemLeft"><a id="ae232d44bc0be17d48b3f5f02d3f9060e" name="ae232d44bc0be17d48b3f5f02d3f9060e"></a>
+double&#160;</td><td class="memItemRight"><b>dt</b></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="ad38a54d5c4c962b9110e5a74339cc110" name="ad38a54d5c4c962b9110e5a74339cc110"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad38a54d5c4c962b9110e5a74339cc110">&#9670;&#160;</a></span>buildCostFunction()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a04339.html">GaussianFactorGraph</a> gtsam::LPPolicy::buildCostFunction </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a05815.html">LP</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>lp</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a06239.html">VectorValues</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>xk</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Create the factor ||x-xk - (-g)||^2 where xk is the current feasible solution on the constraint surface and g is the gradient of the linear cost, i.e. </p>
-<p>-g is the direction we wish to follow to decrease the cost.</p>
-<p>Essentially, we try to match the direction d = x-xk with -g as much as possible subject to the condition that x needs to be on the constraint surface, i.e., d is along the surface's subspace.</p>
-<p>The least-square solution of this quadratic subject to a set of linear constraints is the projection of the gradient onto the constraints' subspace </p>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/linear/<a class="el" href="a01565_source.html">LPSolver.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/linear/<a class="el" href="a01568.html">LPSolver.cpp</a></li>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/<a class="el" href="a01238_source.html">LeggedEstimator.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -166,7 +137,7 @@ static constexpr double&#160;</td><td class="memItemRight"><b>maxAlpha</b> = std
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a05827.html">LPPolicy</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a05823.html">LeggedInvariantEKF</a></li><li class="navelem"><a href="a05827.html">AutonomousFlow</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

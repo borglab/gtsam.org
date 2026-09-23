@@ -1,9 +1,13 @@
 var a04979 =
 [
-    [ "inRootClique", "a04979.html#a7318063c0257369484ba51e21c90b86f", null ],
-    [ "isAboveRelinThreshold", "a04979.html#a56611177d7b321070f779f35cb63cd16", null ],
-    [ "isNew", "a04979.html#a4b92b1d5ff516b37acfbc42d619579bb", null ],
-    [ "isObserved", "a04979.html#a3bc9383714196de8f55921f11114f0ee", null ],
-    [ "isReeliminated", "a04979.html#a67d788b600237f67b188f30e8f4fd124", null ],
-    [ "isRelinearizeInvolved", "a04979.html#a32f8f901efa181cc9afd45e6b3739f05", null ]
+    [ "shared_ptr", "a04979.html#a88033239bc9b83145b64addb3a43696f", null ],
+    [ "This", "a04979.html#ad29de1a2966331f21b1fd88a18234091", null ],
+    [ "OrderingType", "a04979.html#a41194f31ec42052094cf91d81dcd796d", null ],
+    [ "Ordering", "a04979.html#ac7ae1fad63b3f21931e61778dd12d7a6", null ],
+    [ "Ordering", "a04979.html#a0fdb342e68a74e19c25a1d3364233cde", null ],
+    [ "contains", "a04979.html#ae84cb77b6a1bc0c5acd4fe1eee347bed", null ],
+    [ "invert", "a04979.html#ac8590c3149674d3b05a8648fd01b97a2", null ],
+    [ "operator+=", "a04979.html#a2c9a505069410569b51dfa08b2fb01bf", null ],
+    [ "operator+=", "a04979.html#ac70abe52c370ce005aa9f6477c6e093d", null ],
+    [ "operator,", "a04979.html#ab39d8bd2f0bb9a2668132bbbf7b9def9", null ]
 ];

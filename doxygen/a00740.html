@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/PowerMethod.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/hybrid/HybridBayesTree.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,29 +96,36 @@ $(function(){initNavTree('a00740.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">PowerMethod.h File Reference</div></div>
+  <div class="headertitle"><div class="title">HybridBayesTree.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Power method for fast eigenvalue and eigenvector computation.  
+<p>Hybrid Bayes Tree, the result of eliminating a HybridJunctionTree.  
 <a href="#details">More...</a></p>
 
 <p><a href="a00740_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3APowerMethod_3C_20Operator_20_3E" id="r_gtsam_3A_3APowerMethod_3C_20Operator_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04527.html">gtsam::PowerMethod&lt; Operator &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute maximum Eigenpair with power method.  <a href="a04527.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3AHybridBayesTreeClique" id="r_gtsam_3A_3AHybridBayesTreeClique"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04663.html">gtsam::HybridBayesTreeClique</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A clique in a <a class="el" href="a04667.html" title="A Bayes tree representing a Hybrid density.">HybridBayesTree</a> which is a <a class="el" href="a04683.html" title="Hybrid Conditional Density.">HybridConditional</a> internally.  <a href="a04663.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3AHybridBayesTree" id="r_gtsam_3A_3AHybridBayesTree"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04667.html">gtsam::HybridBayesTree</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Bayes tree representing a Hybrid density.  <a href="a04667.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Atraits_3C_20HybridBayesTreeClique_20_3E" id="r_gtsam_3A_3Atraits_3C_20HybridBayesTreeClique_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04671.html">gtsam::traits&lt; HybridBayesTreeClique &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">traits  <a href="a04671.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Atraits_3C_20HybridBayesTree_20_3E" id="r_gtsam_3A_3Atraits_3C_20HybridBayesTree_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04675.html">gtsam::traits&lt; HybridBayesTree &gt;</a></td></tr>
+<tr class="memitem:gtsam_3A_3ABayesTreeOrphanWrapper_3C_20HybridBayesTreeClique_20_3E" id="r_gtsam_3A_3ABayesTreeOrphanWrapper_3C_20HybridBayesTreeClique_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04679.html">gtsam::BayesTreeOrphanWrapper&lt; HybridBayesTreeClique &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class for Hybrid Bayes tree orphan subtrees.  <a href="a04679.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Power method for fast eigenvalue and eigenvector computation. </p>
-<dl class="section date"><dt>Date</dt><dd>Sept 2020 </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Jing Wu </dd></dl>
+<div class="textblock"><p>Hybrid Bayes Tree, the result of eliminating a HybridJunctionTree. </p>
+<dl class="section date"><dt>Date</dt><dd>Mar 11, 2022 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Fan Jiang </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -132,7 +139,7 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>linear</b></li><li class="navelem"><a href="a00740.html">PowerMethod.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>hybrid</b></li><li class="navelem"><a href="a00740.html">HybridBayesTree.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

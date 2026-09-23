@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::Expression&lt; T &gt;::BinaryFunction&lt; A1, A2 &gt; Struct Template Reference</title>
+<title>gtsam: gtsam::EliminationData&lt; CLUSTERTREE &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,17 +96,50 @@ $(function(){initNavTree('a04851.html','','a04848'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::Expression&lt; T &gt;::BinaryFunction&lt; A1, A2 &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::EliminationData&lt; CLUSTERTREE &gt; Struct Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a485db8ead99e5e9ed07dc033af14d94d" id="r_a485db8ead99e5e9ed07dc033af14d94d"><td class="memItemLeft"><a id="a485db8ead99e5e9ed07dc033af14d94d" name="a485db8ead99e5e9ed07dc033af14d94d"></a>
+&#160;</td><td class="memItemRight"><b>EliminationData</b> (EliminationData *_parentData, size_t nChildren)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a34ead4985758472398cb6729a14c131f" id="r_a34ead4985758472398cb6729a14c131f"><td class="memItemLeft"><a id="a34ead4985758472398cb6729a14c131f" name="a34ead4985758472398cb6729a14c131f"></a>
+static EliminationData&#160;</td><td class="memItemRight"><b>EliminationPreOrderVisitor</b> (const typename CLUSTERTREE::sharedNode &amp;node, EliminationData &amp;parentData)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ab6ec9e8465fc4559a3b33875ce34c10b" id="r_ab6ec9e8465fc4559a3b33875ce34c10b"><td class="memItemLeft"><a id="ab6ec9e8465fc4559a3b33875ce34c10b" name="ab6ec9e8465fc4559a3b33875ce34c10b"></a>
+EliminationData *const&#160;</td><td class="memItemRight"><b>parentData</b></td></tr>
+<tr class="memitem:aa2c10bcb5bc62e6ac4316ce3252b449d" id="r_aa2c10bcb5bc62e6ac4316ce3252b449d"><td class="memItemLeft"><a id="aa2c10bcb5bc62e6ac4316ce3252b449d" name="aa2c10bcb5bc62e6ac4316ce3252b449d"></a>
+size_t&#160;</td><td class="memItemRight"><b>myIndexInParent</b></td></tr>
+<tr class="memitem:a5cdeba977345bca6671c2092f53993bd" id="r_a5cdeba977345bca6671c2092f53993bd"><td class="memItemLeft"><a id="a5cdeba977345bca6671c2092f53993bd" name="a5cdeba977345bca6671c2092f53993bd"></a>
+<a class="el" href="a02227.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; sharedFactor &gt;&#160;</td><td class="memItemRight"><b>childFactors</b></td></tr>
+<tr class="memitem:a0f037f867e77a007c3b7428443aa4ef6" id="r_a0f037f867e77a007c3b7428443aa4ef6"><td class="memItemLeft"><a id="a0f037f867e77a007c3b7428443aa4ef6" name="a0f037f867e77a007c3b7428443aa4ef6"></a>
+std::shared_ptr&lt; BTNode &gt;&#160;</td><td class="memItemRight"><b>bayesTreeNode</b></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a7ea889399c42fe6864ae1346e17dfcea" id="r_a7ea889399c42fe6864ae1346e17dfcea"><td class="memItemLeft"><a id="a7ea889399c42fe6864ae1346e17dfcea" name="a7ea889399c42fe6864ae1346e17dfcea"></a>
-typedef std::function&lt; T(const A1 &amp;, const A2 &amp;, typename <a class="el" href="a03007.html">MakeOptionalJacobian</a>&lt; T, A1 &gt;::type, typename <a class="el" href="a03007.html">MakeOptionalJacobian</a>&lt; T, A2 &gt;::type)&gt;&#160;</td><td class="memItemRight"><b>type</b></td></tr>
+<tr class="memitem:ac5349511b4bc167ea05d3a4d8950793d" id="r_ac5349511b4bc167ea05d3a4d8950793d"><td class="memItemLeft"><a id="ac5349511b4bc167ea05d3a4d8950793d" name="ac5349511b4bc167ea05d3a4d8950793d"></a>
+typedef CLUSTERTREE::sharedFactor&#160;</td><td class="memItemRight"><b>sharedFactor</b></td></tr>
+<tr class="memitem:a682f5422c98da55e8f85a3d08a6b2f3d" id="r_a682f5422c98da55e8f85a3d08a6b2f3d"><td class="memItemLeft"><a id="a682f5422c98da55e8f85a3d08a6b2f3d" name="a682f5422c98da55e8f85a3d08a6b2f3d"></a>
+typedef CLUSTERTREE::FactorType&#160;</td><td class="memItemRight"><b>FactorType</b></td></tr>
+<tr class="memitem:a3f903054bab0a3b07df4e684b8eab051" id="r_a3f903054bab0a3b07df4e684b8eab051"><td class="memItemLeft"><a id="a3f903054bab0a3b07df4e684b8eab051" name="a3f903054bab0a3b07df4e684b8eab051"></a>
+typedef CLUSTERTREE::FactorGraphType&#160;</td><td class="memItemRight"><b>FactorGraphType</b></td></tr>
+<tr class="memitem:a9882b5c7422ff9cafef1bbaa339eaea9" id="r_a9882b5c7422ff9cafef1bbaa339eaea9"><td class="memItemLeft"><a id="a9882b5c7422ff9cafef1bbaa339eaea9" name="a9882b5c7422ff9cafef1bbaa339eaea9"></a>
+typedef CLUSTERTREE::ConditionalType&#160;</td><td class="memItemRight"><b>ConditionalType</b></td></tr>
+<tr class="memitem:a29ed11cf6afddb1f99159412246e005a" id="r_a29ed11cf6afddb1f99159412246e005a"><td class="memItemLeft"><a id="a29ed11cf6afddb1f99159412246e005a" name="a29ed11cf6afddb1f99159412246e005a"></a>
+typedef CLUSTERTREE::BayesTreeType::Node&#160;</td><td class="memItemRight"><b>BTNode</b></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:EliminationPostOrderVisitor" id="r_EliminationPostOrderVisitor"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04855.html">EliminationPostOrderVisitor</a></td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/<a class="el" href="a01082_source.html">Expression.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/inference/<a class="el" href="a00887_source.html">ClusterTree-inst.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -121,7 +154,7 @@ typedef std::function&lt; T(const A1 &amp;, const A2 &amp;, typename <a class="e
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04843.html">Expression</a></li><li class="navelem"><a href="a04851.html">BinaryFunction</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04851.html">EliminationData</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

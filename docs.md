@@ -8,19 +8,24 @@ For a hands-on mathematical introduction, start with [Factor Graphs and GTSAM: A
 
 For a broader treatment of factor graphs in robotics, see [Factor graphs for robot perception](https://www.cs.cmu.edu/~kaess/pub/Dellaert17fnt.pdf) by Frank Dellaert and Michael Kaess.
 
-The current stable release is 4.2. The active development line is pre-4.3 and recent alpha releases follow that branch.
+The current stable release is GTSAM 4.3.0. The `develop` branch contains changes intended for the next release and may include API changes.
 
-## API and Wrapper Documentation
+## Documentation
 
-Detailed API documentation is available through:
+Choose the documentation that matches what you need:
 
-- [C++ API docs](/doxygen/)
-- [Python API docs](https://borglab.github.io/gtsam/)
+- [User guide](https://borglab.github.io/gtsam/): installation, core concepts, tutorials, and module guides
+- [Example notebooks](https://borglab.github.io/gtsam/examples/): worked examples, many with Colab links; module API notebooks are also available through the user guide. Requirements vary by example.
+- [C++ API reference](/doxygen/): generated reference documentation for GTSAM 4.3.0
+
+## Language Wrappers
 
 GTSAM also ships with Python and MATLAB wrappers. For build and packaging details, see the upstream wrapper READMEs:
 
 - [Python wrapper README](https://github.com/borglab/gtsam/blob/develop/python/README.md)
 - [MATLAB wrapper README](https://github.com/borglab/gtsam/blob/develop/matlab/README.md)
+
+For CUDA from Python, [build GTSAM and its Python wrapper on a CUDA-equipped machine](/build/#cuda-with-python). The standard GTSAM 4.3.0 Python wheels do not include the experimental CUDA bindings.
 
 ## Notes on GTSAM
 

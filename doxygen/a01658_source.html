@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/partition/PartitionWorkSpace.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/sfm/GlobalPositioner.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,66 +89,86 @@ $(function(){initNavTree('a01658_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">PartitionWorkSpace.h</div></div>
+  <div class="headertitle"><div class="title">GlobalPositioner.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * PartitionWorkSpace.h</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *   Created on: Nov 24, 2010</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *       Author: nikai</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *  Description: a preallocated memory space used in partitioning</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;boost/shared_ptr.hpp&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> { <span class="keyword">namespace </span>partition {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keyword">typedef</span> std::vector&lt;int&gt; PartitionTable;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="comment">// the work space, preallocated memory</span></div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="a05987.html">   19</a></span>  <span class="keyword">struct </span>WorkSpace {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    std::vector&lt;int&gt; dictionary;                          <span class="comment">// a mapping from the integer key in the original graph to 0-based index in the subgraph, useful when handling a subset of keys and graphs</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    boost::shared_ptr&lt;std::vector&lt;size_t&gt; &gt; dsf;          <span class="comment">// a block memory pre-allocated for DSFVector</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    PartitionTable partitionTable;                        <span class="comment">// a mapping from a key to the submap index, 0 means the separator, i means the ith submap</span></div>
+<a href="a01658.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"></span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * GTSAM Copyright 2010-2020, Georgia Tech Research Corporation,</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Atlanta, Georgia 30332-0415</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * All Rights Reserved</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * Authors: Frank Dellaert, et al. (see THANKS for the full author list)</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"></span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * See LICENSE for the license information</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="a01649.html">gtsam/sfm/LocationRecovery.h</a>&gt;</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// constructor</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    WorkSpace(<span class="keyword">const</span> <span class="keywordtype">size_t</span> numNodes) : dictionary(numNodes,0),</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>     dsf(<span class="keyword">new</span> std::vector&lt;size_t&gt;(numNodes, 0)), partitionTable(numNodes, -1) { }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;set&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// set up dictionary: -1: no such key, none-zero: the corresponding 0-based index</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> prepareDictionary(<span class="keyword">const</span> std::vector&lt;size_t&gt;&amp; keys) {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      <span class="keywordtype">int</span> index = 0;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      std::fill(dictionary.begin(), dictionary.end(), -1);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>      std::vector&lt;size_t&gt;::const_iterator it=keys.begin(), itLast=keys.end();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      <span class="keywordflow">while</span>(it!=itLast)  dictionary[*(it++)] = index++;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  };</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// Opinionated composition of LocationRecovery for the bipartite</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">// camera+landmark estimation problem (GLOMAP-style global positioning).</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">// Enforces:</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">//   - Explicit separation of camera keys and landmark keys</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">//   - Validation that the anchor key is a camera</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">//   - BILINEAR (BATA) cost function exclusively</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">//   - No DSFMap handling (not applicable to camera-landmark edges)</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">//</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">// For custom graph configurations (mixed edges, custom gauge, etc.),</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// use LocationRecovery directly.</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">//</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">// Reference: Pan, L. et al., &quot;Global Structure-from-Motion Revisited,&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">// ECCV 2024.</span></div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="a06731.html">   41</a></span><span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a06731.html#a5e8587a0fba25aa5d7e81a48c85be6be">GlobalPositioner</a> : <span class="keyword">public</span> <a class="code hl_function" href="a06735.html#a47920a3104c14604b71749a852c11d16">LocationRecovery</a> {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keyword">using </span>CameraPointDirection = <a class="code hl_class" href="a06699.html">BinaryMeasurement&lt;Unit3&gt;</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">using </span>CameraPointDirections = std::vector&lt;CameraPointDirection&gt;;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="a06731.html#a5e8587a0fba25aa5d7e81a48c85be6be">   49</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="a06731.html#a5e8587a0fba25aa5d7e81a48c85be6be">GlobalPositioner</a>(<span class="keyword">const</span> <a class="code hl_class" href="a06371.html">LevenbergMarquardtParams</a> &amp;lmParams)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      : <a class="code hl_function" href="a06735.html#a47920a3104c14604b71749a852c11d16">LocationRecovery</a>(lmParams) {}</div>
 </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="comment">// manually defined cuts</span></div>
-<div class="foldopen" id="foldopen00039" data-start="{" data-end="};">
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="a05991.html">   39</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="a05991.html">Cuts</a> {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    PartitionTable partitionTable;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    std::vector&lt;boost::shared_ptr&lt;Cuts&gt; &gt; children;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  };</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="a06731.html#a8012858c40bd12b355b2b066ade31914">   55</a></span>  <a class="code hl_function" href="a06731.html#a8012858c40bd12b355b2b066ade31914">GlobalPositioner</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <a class="code hl_class" href="a06527.html">Values</a> <a class="code hl_function" href="a06731.html#a3b76604fa4c59d7350bb01d7aa72be42">initializeRandomly</a>(</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      <span class="keyword">const</span> std::set&lt;Key&gt; &amp;cameraKeys, <span class="keyword">const</span> std::set&lt;Key&gt; &amp;landmarkKeys,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>      <span class="keyword">const</span> CameraPointDirections &amp;cameraPointDirections,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>      <span class="keyword">const</span> <a class="code hl_class" href="a06527.html">Values</a> &amp;initialValues = <a class="code hl_class" href="a06527.html">Values</a>()) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <a class="code hl_class" href="a06527.html">Values</a> <a class="code hl_function" href="a06731.html#aa224ee7d8bbf2247cb18eadff0a6316f">run</a>(<span class="keyword">const</span> CameraPointDirections &amp;cameraPointDirections,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>             <span class="keyword">const</span> std::set&lt;Key&gt; &amp;cameraKeys,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>             <span class="keyword">const</span> std::set&lt;Key&gt; &amp;landmarkKeys, <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> anchorCameraKey,</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>             <span class="keyword">const</span> <a class="code hl_class" href="a06527.html">Values</a> &amp;initialValues = <a class="code hl_class" href="a06527.html">Values</a>()) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>};</div>
 </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}} <span class="comment">// namespace</span></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa05991_html"><div class="ttname"><a href="a05991.html">gtsam::partition::Cuts</a></div><div class="ttdef"><b>Definition</b> PartitionWorkSpace.h:39</div></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}  <span class="comment">// namespace gtsam</span></div>
+<div class="ttc" id="aa01649_html"><div class="ttname"><a href="a01649.html">LocationRecovery.h</a></div><div class="ttdoc">Recover absolute Point3 locations from pairwise Unit3 direction measurements, using either chordal or...</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa02242_html_adad029f5f6ffce610428b5fe768b0df2"><div class="ttname"><a href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">gtsam::Key</a></div><div class="ttdeci">std::uint64_t Key</div><div class="ttdoc">Integer nonlinear key type.</div><div class="ttdef"><b>Definition</b> types.h:43</div></div>
+<div class="ttc" id="aa06371_html"><div class="ttname"><a href="a06371.html">gtsam::LevenbergMarquardtParams</a></div><div class="ttdoc">Parameters for Levenberg-Marquardt optimization.</div><div class="ttdef"><b>Definition</b> LevenbergMarquardtParams.h:36</div></div>
+<div class="ttc" id="aa06527_html"><div class="ttname"><a href="a06527.html">gtsam::Values</a></div><div class="ttdoc">A non-templated config holding any types of Manifold-group elements.</div><div class="ttdef"><b>Definition</b> Values.h:65</div></div>
+<div class="ttc" id="aa06699_html"><div class="ttname"><a href="a06699.html">gtsam::BinaryMeasurement</a></div><div class="ttdef"><b>Definition</b> BinaryMeasurement.h:37</div></div>
+<div class="ttc" id="aa06731_html_a3b76604fa4c59d7350bb01d7aa72be42"><div class="ttname"><a href="a06731.html#a3b76604fa4c59d7350bb01d7aa72be42">gtsam::GlobalPositioner::initializeRandomly</a></div><div class="ttdeci">Values initializeRandomly(const std::set&lt; Key &gt; &amp;cameraKeys, const std::set&lt; Key &gt; &amp;landmarkKeys, const CameraPointDirections &amp;cameraPointDirections, const Values &amp;initialValues=Values()) const</div><div class="ttdoc">Initialize cameras, landmarks, and BATA scale variables.</div><div class="ttdef"><b>Definition</b> GlobalPositioner.cpp:27</div></div>
+<div class="ttc" id="aa06731_html_a5e8587a0fba25aa5d7e81a48c85be6be"><div class="ttname"><a href="a06731.html#a5e8587a0fba25aa5d7e81a48c85be6be">gtsam::GlobalPositioner::GlobalPositioner</a></div><div class="ttdeci">GlobalPositioner(const LevenbergMarquardtParams &amp;lmParams)</div><div class="ttdoc">Construct with LM parameters.</div><div class="ttdef"><b>Definition</b> GlobalPositioner.h:49</div></div>
+<div class="ttc" id="aa06731_html_a8012858c40bd12b355b2b066ade31914"><div class="ttname"><a href="a06731.html#a8012858c40bd12b355b2b066ade31914">gtsam::GlobalPositioner::GlobalPositioner</a></div><div class="ttdeci">GlobalPositioner()=default</div><div class="ttdoc">Default constructor.</div></div>
+<div class="ttc" id="aa06731_html_aa224ee7d8bbf2247cb18eadff0a6316f"><div class="ttname"><a href="a06731.html#aa224ee7d8bbf2247cb18eadff0a6316f">gtsam::GlobalPositioner::run</a></div><div class="ttdeci">Values run(const CameraPointDirections &amp;cameraPointDirections, const std::set&lt; Key &gt; &amp;cameraKeys, const std::set&lt; Key &gt; &amp;landmarkKeys, Key anchorCameraKey, const Values &amp;initialValues=Values()) const</div><div class="ttdoc">Build graph, fix gauge, initialize, and optimize.</div><div class="ttdef"><b>Definition</b> GlobalPositioner.cpp:37</div></div>
+<div class="ttc" id="aa06735_html_a47920a3104c14604b71749a852c11d16"><div class="ttname"><a href="a06735.html#a47920a3104c14604b71749a852c11d16">gtsam::LocationRecovery::LocationRecovery</a></div><div class="ttdeci">LocationRecovery(const LevenbergMarquardtParams &amp;lmParams)</div><div class="ttdoc">Construct with LM parameters.</div><div class="ttdef"><b>Definition</b> LocationRecovery.h:58</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam_unstable</b></li><li class="navelem"><b>partition</b></li><li class="navelem"><b>PartitionWorkSpace.h</b></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>sfm</b></li><li class="navelem"><a href="a01658.html">GlobalPositioner.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

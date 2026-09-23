@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::HybridValues Class Reference</title>
+<title>gtsam: gtsam::BearingRange&lt; A1, A2, B, R &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,400 +96,113 @@ $(function(){initNavTree('a04051.html','','a04048'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::HybridValues Class Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::BearingRange&lt; A1, A2, B, R &gt; Struct Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="a04051.html" title="HybridValues represents a collection of DiscreteValues and VectorValues.">HybridValues</a> represents a collection of <a class="el" href="a03447.html" title="A map from keys to values.">DiscreteValues</a> and <a class="el" href="a04611.html" title="VectorValues represents a collection of vector-valued variables associated each with a unique integer...">VectorValues</a>. </p>
-<p>It is typically used to store the variables of a <a class="el" href="a04011.html">HybridGaussianFactorGraph</a>. Optimizing a HybridGaussianBayesNet returns this class. </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename A1, typename A2, typename B = typename Bearing&lt;A1, A2&gt;::result_type, typename R = typename Range&lt;A1, A2&gt;::result_type&gt;<br />
+struct gtsam::BearingRange&lt; A1, A2, B, R &gt;</div><p>Bearing-Range product for a particular A1,A2 combination will use the functors above to create a similar functor of type A1*A2 -&gt; <a class="el" href="a16153.html" title="STL class.">pair&lt;Bearing::return_type,Range::return_type&gt;</a> For example BearingRange&lt;Pose2,Point2&gt;(pose,point) will return <a class="el" href="a16153.html" title="STL class.">pair&lt;Rot2,double&gt;</a> and BearingRange&lt;Pose3,Point3&gt;(pose,point) will return <a class="el" href="a16153.html" title="STL class.">pair&lt;Unit3,double&gt;</a>. </p>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Manifold</h2></td></tr>
+<tr class="memitem:a2d584688fdac25ac19f3d0b0a3d35b64" id="r_a2d584688fdac25ac19f3d0b0a3d35b64"><td class="memItemLeft"><a id="a2d584688fdac25ac19f3d0b0a3d35b64" name="a2d584688fdac25ac19f3d0b0a3d35b64"></a>
+typedef Eigen::Matrix&lt; double, dimension, 1 &gt;&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+<tr class="memitem:a4f0bdeaca50e22b58a3cd32f4c45cc1a" id="r_a4f0bdeaca50e22b58a3cd32f4c45cc1a"><td class="memItemLeft"><a id="a4f0bdeaca50e22b58a3cd32f4c45cc1a" name="a4f0bdeaca50e22b58a3cd32f4c45cc1a"></a>
+typedef <a class="el" href="a03363.html">OptionalJacobian</a>&lt; dimension, dimension &gt;&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
+<tr class="memitem:a7bfe22159f0b5c0df0f5ce6df1d39d86" id="r_a7bfe22159f0b5c0df0f5ce6df1d39d86"><td class="memItemLeft"><a id="a7bfe22159f0b5c0df0f5ce6df1d39d86" name="a7bfe22159f0b5c0df0f5ce6df1d39d86"></a>
+size_t&#160;</td><td class="memItemRight"><b>dim</b> () const</td></tr>
+<tr class="memitem:a37c14f336c93fc7accc3fab5e301af38" id="r_a37c14f336c93fc7accc3fab5e301af38"><td class="memItemLeft"><a id="a37c14f336c93fc7accc3fab5e301af38" name="a37c14f336c93fc7accc3fab5e301af38"></a>
+BearingRange&#160;</td><td class="memItemRight"><b>retract</b> (const TangentVector &amp;xi) const</td></tr>
+<tr class="memdesc:a37c14f336c93fc7accc3fab5e301af38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retract delta to manifold. <br /></td></tr>
+<tr class="memitem:a86aca14d19ee010904d5db254c45835f" id="r_a86aca14d19ee010904d5db254c45835f"><td class="memItemLeft"><a id="a86aca14d19ee010904d5db254c45835f" name="a86aca14d19ee010904d5db254c45835f"></a>
+TangentVector&#160;</td><td class="memItemRight"><b>localCoordinates</b> (const BearingRange &amp;other) const</td></tr>
+<tr class="memdesc:a86aca14d19ee010904d5db254c45835f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the coordinates in the tangent space. <br /></td></tr>
+<tr class="memitem:acaa00cef9232007da17e733f0d7aa7b8" id="r_acaa00cef9232007da17e733f0d7aa7b8"><td class="memItemLeft"><a id="acaa00cef9232007da17e733f0d7aa7b8" name="acaa00cef9232007da17e733f0d7aa7b8"></a>
+static size_t&#160;</td><td class="memItemRight"><b>Dim</b> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Standard Interface</h2></td></tr>
+<tr class="memitem:a42ac60525c624cfe026c9b5dec721fb3" id="r_a42ac60525c624cfe026c9b5dec721fb3"><td class="memItemLeft"><a id="a42ac60525c624cfe026c9b5dec721fb3" name="a42ac60525c624cfe026c9b5dec721fb3"></a>
+const B &amp;&#160;</td><td class="memItemRight"><b>bearing</b> () const</td></tr>
+<tr class="memdesc:a42ac60525c624cfe026c9b5dec721fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return bearing measurement. <br /></td></tr>
+<tr class="memitem:ac29962d29fdc8ec1cfde6449b95ad2af" id="r_ac29962d29fdc8ec1cfde6449b95ad2af"><td class="memItemLeft"><a id="ac29962d29fdc8ec1cfde6449b95ad2af" name="ac29962d29fdc8ec1cfde6449b95ad2af"></a>
+const R &amp;&#160;</td><td class="memItemRight"><b>range</b> () const</td></tr>
+<tr class="memdesc:ac29962d29fdc8ec1cfde6449b95ad2af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return range measurement. <br /></td></tr>
+<tr class="memitem:a51900bddf661ba8f54760fc67a9b85d7" id="r_a51900bddf661ba8f54760fc67a9b85d7"><td class="memItemLeft"><a id="a51900bddf661ba8f54760fc67a9b85d7" name="a51900bddf661ba8f54760fc67a9b85d7"></a>
+static BearingRange&#160;</td><td class="memItemRight"><b>Measure</b> (const A1 &amp;a1, const A2 &amp;a2, OptionalJacobian1 H1={}, OptionalJacobian2 H2={})</td></tr>
+<tr class="memdesc:a51900bddf661ba8f54760fc67a9b85d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prediction function that stacks measurements. <br /></td></tr>
+<tr class="memitem:adbfd59a960fd145374b5e2c44ecf1296" id="r_adbfd59a960fd145374b5e2c44ecf1296"><td class="memItemLeft"><a id="adbfd59a960fd145374b5e2c44ecf1296" name="adbfd59a960fd145374b5e2c44ecf1296"></a>
+static B&#160;</td><td class="memItemRight"><b>MeasureBearing</b> (const A1 &amp;a1, const A2 &amp;a2)</td></tr>
+<tr class="memdesc:adbfd59a960fd145374b5e2c44ecf1296"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predict bearing. <br /></td></tr>
+<tr class="memitem:a2699cffab46474e815330ac7ef901481" id="r_a2699cffab46474e815330ac7ef901481"><td class="memItemLeft"><a id="a2699cffab46474e815330ac7ef901481" name="a2699cffab46474e815330ac7ef901481"></a>
+static R&#160;</td><td class="memItemRight"><b>MeasureRange</b> (const A1 &amp;a1, const A2 &amp;a2)</td></tr>
+<tr class="memdesc:a2699cffab46474e815330ac7ef901481"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predict range. <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Standard Constructors</div></td></tr>
-<tr class="memitem:ac6a6279b5ebc30394ecae7daf9557301" id="r_ac6a6279b5ebc30394ecae7daf9557301"><td class="memItemLeft"><a id="ac6a6279b5ebc30394ecae7daf9557301" name="ac6a6279b5ebc30394ecae7daf9557301"></a>
-&#160;</td><td class="memItemRight"><b>HybridValues</b> ()=default</td></tr>
-<tr class="memdesc:ac6a6279b5ebc30394ecae7daf9557301"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor creates an empty <a class="el" href="a04051.html" title="HybridValues represents a collection of DiscreteValues and VectorValues.">HybridValues</a>. <br /></td></tr>
-<tr class="memitem:ad076208a657b91cce655faccfb61a628" id="r_ad076208a657b91cce655faccfb61a628"><td class="memItemLeft"><a id="ad076208a657b91cce655faccfb61a628" name="ad076208a657b91cce655faccfb61a628"></a>
-&#160;</td><td class="memItemRight"><b>HybridValues</b> (const <a class="el" href="a06239.html">VectorValues</a> &amp;cv, const <a class="el" href="a06207.html">DiscreteValues</a> &amp;dv)</td></tr>
-<tr class="memdesc:ad076208a657b91cce655faccfb61a628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from <a class="el" href="a03447.html" title="A map from keys to values.">DiscreteValues</a> and <a class="el" href="a04611.html" title="VectorValues represents a collection of vector-valued variables associated each with a unique integer...">VectorValues</a>. <br /></td></tr>
-<tr class="memitem:a23cef590dc6f0ea815966ac86780e1b4" id="r_a23cef590dc6f0ea815966ac86780e1b4"><td class="memItemLeft"><a id="a23cef590dc6f0ea815966ac86780e1b4" name="a23cef590dc6f0ea815966ac86780e1b4"></a>
-&#160;</td><td class="memItemRight"><b>HybridValues</b> (const <a class="el" href="a06239.html">VectorValues</a> &amp;cv, const <a class="el" href="a06207.html">DiscreteValues</a> &amp;dv, const <a class="el" href="a06243.html">Values</a> &amp;v)</td></tr>
-<tr class="memdesc:a23cef590dc6f0ea815966ac86780e1b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from all values types. <br /></td></tr>
+<tr class="memitem:a92d26c3ae24709475f819f35c8deebda" id="r_a92d26c3ae24709475f819f35c8deebda"><td class="memItemLeft"><a id="a92d26c3ae24709475f819f35c8deebda" name="a92d26c3ae24709475f819f35c8deebda"></a>
+&#160;</td><td class="memItemRight"><b>BearingRange</b> (const B &amp;b, const R &amp;r)</td></tr>
 <tr id="pub-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Testable</div></td></tr>
-<tr class="memitem:a05e320bf5fcb46d1558a0927156b76ed" id="r_a05e320bf5fcb46d1558a0927156b76ed"><td class="memItemLeft"><a id="a05e320bf5fcb46d1558a0927156b76ed" name="a05e320bf5fcb46d1558a0927156b76ed"></a>
-void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;HybridValues&quot;, const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=DefaultKeyFormatter) const</td></tr>
-<tr class="memdesc:a05e320bf5fcb46d1558a0927156b76ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">print required by <a class="el" href="a03039.html" title="A helper that implements the traits interface for GTSAM types.">Testable</a> for unit testing <br /></td></tr>
-<tr class="memitem:a55c410d99be7a09c25b2675fc5c9ef05" id="r_a55c410d99be7a09c25b2675fc5c9ef05"><td class="memItemLeft"><a id="a55c410d99be7a09c25b2675fc5c9ef05" name="a55c410d99be7a09c25b2675fc5c9ef05"></a>
-bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="a06211.html">HybridValues</a> &amp;other, double tol=1e-9) const</td></tr>
-<tr class="memdesc:a55c410d99be7a09c25b2675fc5c9ef05"><td class="mdescLeft">&#160;</td><td class="mdescRight">equals required by <a class="el" href="a03039.html" title="A helper that implements the traits interface for GTSAM types.">Testable</a> for unit testing <br /></td></tr>
-<tr id="pub-methods-2" class="groupHeader"><td colspan="2"><div class="groupHeader">Interface</div></td></tr>
-<tr class="memitem:a8a1197bf7541c7b70a6371b1f2137395" id="r_a8a1197bf7541c7b70a6371b1f2137395"><td class="memItemLeft"><a id="a8a1197bf7541c7b70a6371b1f2137395" name="a8a1197bf7541c7b70a6371b1f2137395"></a>
-const <a class="el" href="a06239.html">VectorValues</a> &amp;&#160;</td><td class="memItemRight"><b>continuous</b> () const</td></tr>
-<tr class="memdesc:a8a1197bf7541c7b70a6371b1f2137395"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the multi-dimensional vector values. <br /></td></tr>
-<tr class="memitem:a65423001d766d901944ea4796e3a73dd" id="r_a65423001d766d901944ea4796e3a73dd"><td class="memItemLeft"><a id="a65423001d766d901944ea4796e3a73dd" name="a65423001d766d901944ea4796e3a73dd"></a>
-const <a class="el" href="a06207.html">DiscreteValues</a> &amp;&#160;</td><td class="memItemRight"><b>discrete</b> () const</td></tr>
-<tr class="memdesc:a65423001d766d901944ea4796e3a73dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the discrete values. <br /></td></tr>
-<tr class="memitem:ab0d991bb8687f2f6295972536fb8aa75" id="r_ab0d991bb8687f2f6295972536fb8aa75"><td class="memItemLeft"><a id="ab0d991bb8687f2f6295972536fb8aa75" name="ab0d991bb8687f2f6295972536fb8aa75"></a>
-const <a class="el" href="a06243.html">Values</a> &amp;&#160;</td><td class="memItemRight"><b>nonlinear</b> () const</td></tr>
-<tr class="memdesc:ab0d991bb8687f2f6295972536fb8aa75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the nonlinear values. <br /></td></tr>
-<tr class="memitem:ac937aa284ee5e0056a626b70dc8acfae" id="r_ac937aa284ee5e0056a626b70dc8acfae"><td class="memItemLeft"><a id="ac937aa284ee5e0056a626b70dc8acfae" name="ac937aa284ee5e0056a626b70dc8acfae"></a>
-bool&#160;</td><td class="memItemRight"><b>existsVector</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j)</td></tr>
-<tr class="memdesc:ac937aa284ee5e0056a626b70dc8acfae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a variable with key <code>j</code> exists in <a class="el" href="a04611.html" title="VectorValues represents a collection of vector-valued variables associated each with a unique integer...">VectorValues</a>. <br /></td></tr>
-<tr class="memitem:a74556db34e10988347a35bcf552ea64e" id="r_a74556db34e10988347a35bcf552ea64e"><td class="memItemLeft"><a id="a74556db34e10988347a35bcf552ea64e" name="a74556db34e10988347a35bcf552ea64e"></a>
-bool&#160;</td><td class="memItemRight"><b>existsDiscrete</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j)</td></tr>
-<tr class="memdesc:a74556db34e10988347a35bcf552ea64e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a variable with key <code>j</code> exists in <a class="el" href="a03447.html" title="A map from keys to values.">DiscreteValues</a>. <br /></td></tr>
-<tr class="memitem:ac1288cd14023677c5b94e0ad18553141" id="r_ac1288cd14023677c5b94e0ad18553141"><td class="memItemLeft"><a id="ac1288cd14023677c5b94e0ad18553141" name="ac1288cd14023677c5b94e0ad18553141"></a>
-bool&#160;</td><td class="memItemRight"><b>existsNonlinear</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j)</td></tr>
-<tr class="memdesc:ac1288cd14023677c5b94e0ad18553141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a variable with key <code>j</code> exists in values. <br /></td></tr>
-<tr class="memitem:a947bc462ff8b75ac39da81cc02d4409f" id="r_a947bc462ff8b75ac39da81cc02d4409f"><td class="memItemLeft"><a id="a947bc462ff8b75ac39da81cc02d4409f" name="a947bc462ff8b75ac39da81cc02d4409f"></a>
-bool&#160;</td><td class="memItemRight"><b>exists</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j)</td></tr>
-<tr class="memdesc:a947bc462ff8b75ac39da81cc02d4409f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a variable with key <code>j</code> exists. <br /></td></tr>
-<tr class="memitem:a0d17316f8a3c1b15efa18d0ff052c804" id="r_a0d17316f8a3c1b15efa18d0ff052c804"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0d17316f8a3c1b15efa18d0ff052c804">insert</a> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j, const Vector &amp;value)</td></tr>
-<tr class="memdesc:a0d17316f8a3c1b15efa18d0ff052c804"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a vector <code>value</code> with key <code>j</code>.  <br /></td></tr>
-<tr class="memitem:aaf590e42828ec0693b868853449d7ad0" id="r_aaf590e42828ec0693b868853449d7ad0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aaf590e42828ec0693b868853449d7ad0">insert</a> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j, size_t value)</td></tr>
-<tr class="memdesc:aaf590e42828ec0693b868853449d7ad0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a discrete <code>value</code> with key <code>j</code>.  <br /></td></tr>
-<tr class="memitem:a4e27ac3e00f803ac49c4204412719a2f" id="r_a4e27ac3e00f803ac49c4204412719a2f"><td class="memItemLeft"><a id="a4e27ac3e00f803ac49c4204412719a2f" name="a4e27ac3e00f803ac49c4204412719a2f"></a>
-void&#160;</td><td class="memItemRight"><b>insert_or_assign</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j, const Vector &amp;value)</td></tr>
-<tr class="memdesc:a4e27ac3e00f803ac49c4204412719a2f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a4e27ac3e00f803ac49c4204412719a2f" title="insert_or_assign() , similar to Values.h">insert_or_assign()</a> , similar to <a class="el" href="a01079.html" title="A non-templated config holding any types of Manifold-group elements.">Values.h</a> <br /></td></tr>
-<tr class="memitem:aef33d2cc24baa79fd299efb0d1af56a6" id="r_aef33d2cc24baa79fd299efb0d1af56a6"><td class="memItemLeft"><a id="aef33d2cc24baa79fd299efb0d1af56a6" name="aef33d2cc24baa79fd299efb0d1af56a6"></a>
-void&#160;</td><td class="memItemRight"><b>insert_or_assign</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j, size_t value)</td></tr>
-<tr class="memdesc:aef33d2cc24baa79fd299efb0d1af56a6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a4e27ac3e00f803ac49c4204412719a2f" title="insert_or_assign() , similar to Values.h">insert_or_assign()</a> , similar to <a class="el" href="a01079.html" title="A non-templated config holding any types of Manifold-group elements.">Values.h</a> <br /></td></tr>
-<tr class="memitem:aad78196a68a02b327d73dbeda7e8cccb" id="r_aad78196a68a02b327d73dbeda7e8cccb"><td class="memItemLeft"><a class="el" href="a06211.html">HybridValues</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aad78196a68a02b327d73dbeda7e8cccb">insert</a> (const <a class="el" href="a06239.html">VectorValues</a> &amp;values)</td></tr>
-<tr class="memdesc:aad78196a68a02b327d73dbeda7e8cccb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert all continuous values from <code>values</code>.  <br /></td></tr>
-<tr class="memitem:a1cfdd5cb8cc111d0d5d3f69a8005ffe0" id="r_a1cfdd5cb8cc111d0d5d3f69a8005ffe0"><td class="memItemLeft"><a class="el" href="a06211.html">HybridValues</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a1cfdd5cb8cc111d0d5d3f69a8005ffe0">insert</a> (const <a class="el" href="a06207.html">DiscreteValues</a> &amp;values)</td></tr>
-<tr class="memdesc:a1cfdd5cb8cc111d0d5d3f69a8005ffe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert all discrete values from <code>values</code>.  <br /></td></tr>
-<tr class="memitem:a53b62b66758d4b67cea4e94d67eb26b2" id="r_a53b62b66758d4b67cea4e94d67eb26b2"><td class="memItemLeft"><a class="el" href="a06211.html">HybridValues</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a53b62b66758d4b67cea4e94d67eb26b2">insert</a> (const <a class="el" href="a06243.html">Values</a> &amp;values)</td></tr>
-<tr class="memdesc:a53b62b66758d4b67cea4e94d67eb26b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert all values from <code>values</code>.  <br /></td></tr>
-<tr class="memitem:aa579a919c63ecf72cbd7905f821985ba" id="r_aa579a919c63ecf72cbd7905f821985ba"><td class="memItemLeft"><a class="el" href="a06211.html">HybridValues</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aa579a919c63ecf72cbd7905f821985ba">insert</a> (const <a class="el" href="a06211.html">HybridValues</a> &amp;values)</td></tr>
-<tr class="memdesc:aa579a919c63ecf72cbd7905f821985ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert all values from <code>values</code>.  <br /></td></tr>
-<tr class="memitem:a8fa75755b8f39e19263ca2bd93bb0af0" id="r_a8fa75755b8f39e19263ca2bd93bb0af0"><td class="memItemLeft"><a id="a8fa75755b8f39e19263ca2bd93bb0af0" name="a8fa75755b8f39e19263ca2bd93bb0af0"></a>
-Vector &amp;&#160;</td><td class="memItemRight"><b>at</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j)</td></tr>
-<tr class="memdesc:a8fa75755b8f39e19263ca2bd93bb0af0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read/write access to the vector value with key <code>j</code>, throws std::out_of_range if <code>j</code> does not exist. <br /></td></tr>
-<tr class="memitem:ae9a522be7b012de1c785caa3d17dfb7e" id="r_ae9a522be7b012de1c785caa3d17dfb7e"><td class="memItemLeft"><a id="ae9a522be7b012de1c785caa3d17dfb7e" name="ae9a522be7b012de1c785caa3d17dfb7e"></a>
-size_t &amp;&#160;</td><td class="memItemRight"><b>atDiscrete</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j)</td></tr>
-<tr class="memdesc:ae9a522be7b012de1c785caa3d17dfb7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read/write access to the discrete value with key <code>j</code>, throws std::out_of_range if <code>j</code> does not exist. <br /></td></tr>
-<tr class="memitem:a60e21ff4ef0138edd1bc26a37ca2d904" id="r_a60e21ff4ef0138edd1bc26a37ca2d904"><td class="memItemLeft"><a class="el" href="a06211.html">HybridValues</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a60e21ff4ef0138edd1bc26a37ca2d904">update</a> (const <a class="el" href="a06239.html">VectorValues</a> &amp;values)</td></tr>
-<tr class="memdesc:a60e21ff4ef0138edd1bc26a37ca2d904"><td class="mdescLeft">&#160;</td><td class="mdescRight">For all key/value pairs in <code>values</code>, replace continuous values with corresponding keys in this object with those in <code>values</code>.  <br /></td></tr>
-<tr class="memitem:a9515569edbf4a547ecc6dee19302a10f" id="r_a9515569edbf4a547ecc6dee19302a10f"><td class="memItemLeft"><a class="el" href="a06211.html">HybridValues</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a9515569edbf4a547ecc6dee19302a10f">update</a> (const <a class="el" href="a06207.html">DiscreteValues</a> &amp;values)</td></tr>
-<tr class="memdesc:a9515569edbf4a547ecc6dee19302a10f"><td class="mdescLeft">&#160;</td><td class="mdescRight">For all key/value pairs in <code>values</code>, replace discrete values with corresponding keys in this object with those in <code>values</code>.  <br /></td></tr>
-<tr class="memitem:ac13c58d4a9e429e333b15370746a9eed" id="r_ac13c58d4a9e429e333b15370746a9eed"><td class="memItemLeft"><a class="el" href="a06211.html">HybridValues</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ac13c58d4a9e429e333b15370746a9eed">update</a> (const <a class="el" href="a06211.html">HybridValues</a> &amp;values)</td></tr>
-<tr class="memdesc:ac13c58d4a9e429e333b15370746a9eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">For all key/value pairs in <code>values</code>, replace all values with corresponding keys in this object with those in <code>values</code>.  <br /></td></tr>
-<tr class="memitem:a31e90cdb5f3c6983fb36d3e13b04fc27" id="r_a31e90cdb5f3c6983fb36d3e13b04fc27"><td class="memItemLeft"><a id="a31e90cdb5f3c6983fb36d3e13b04fc27" name="a31e90cdb5f3c6983fb36d3e13b04fc27"></a>
-<a class="el" href="a06239.html">VectorValues</a>&#160;</td><td class="memItemRight"><b>continuousSubset</b> (const <a class="el" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;keys) const</td></tr>
-<tr class="memdesc:a31e90cdb5f3c6983fb36d3e13b04fc27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract continuous values with given keys. <br /></td></tr>
-<tr id="pub-methods-3" class="groupHeader"><td colspan="2"><div class="groupHeader">Wrapper support</div></td></tr>
-<tr class="memitem:a29519d2de6e034aea1a046e461187ced" id="r_a29519d2de6e034aea1a046e461187ced"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a29519d2de6e034aea1a046e461187ced">html</a> (const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=DefaultKeyFormatter) const</td></tr>
-<tr class="memdesc:a29519d2de6e034aea1a046e461187ced"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output as a html table.  <br /></td></tr>
+<tr class="memitem:aca7ca2c089f6a954c5903e32cfadfc5c" id="r_aca7ca2c089f6a954c5903e32cfadfc5c"><td class="memItemLeft"><a id="aca7ca2c089f6a954c5903e32cfadfc5c" name="aca7ca2c089f6a954c5903e32cfadfc5c"></a>
+void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;str=&quot;&quot;) const</td></tr>
+<tr class="memitem:a2141b834f25e34f023fbb7398cf3b2ec" id="r_a2141b834f25e34f023fbb7398cf3b2ec"><td class="memItemLeft"><a id="a2141b834f25e34f023fbb7398cf3b2ec" name="a2141b834f25e34f023fbb7398cf3b2ec"></a>
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const BearingRange&lt; A1, A2 &gt; &amp;m2, double tol=1e-8) const</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a6aa70d404729a2b21ff3a3086db5be06" id="r_a6aa70d404729a2b21ff3a3086db5be06"><td class="memItemLeft"><a id="a6aa70d404729a2b21ff3a3086db5be06" name="a6aa70d404729a2b21ff3a3086db5be06"></a>
+static constexpr const size_t&#160;</td><td class="memItemRight"><b>dimB</b> = <a class="el" href="a03203.html">traits</a>&lt;B&gt;::dimension</td></tr>
+<tr class="memitem:aba9198f72b6ca5b42e9fefb26100c10b" id="r_aba9198f72b6ca5b42e9fefb26100c10b"><td class="memItemLeft"><a id="aba9198f72b6ca5b42e9fefb26100c10b" name="aba9198f72b6ca5b42e9fefb26100c10b"></a>
+static constexpr const size_t&#160;</td><td class="memItemRight"><b>dimR</b> = <a class="el" href="a03203.html">traits</a>&lt;R&gt;::dimension</td></tr>
+<tr class="memitem:ae52d2224ea63ae228e42db71a20fed5c" id="r_ae52d2224ea63ae228e42db71a20fed5c"><td class="memItemLeft"><a id="ae52d2224ea63ae228e42db71a20fed5c" name="ae52d2224ea63ae228e42db71a20fed5c"></a>
+static constexpr const size_t&#160;</td><td class="memItemRight"><b>dimension</b> = dimB + dimR</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a89d2260905c1e351fa7436ee9cd6810d" id="r_a89d2260905c1e351fa7436ee9cd6810d"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a89d2260905c1e351fa7436ee9cd6810d">OptionalJacobian1</a></td></tr>
+<tr class="memitem:a0d912f279c8c44eedb599f8995d2a30c" id="r_a0d912f279c8c44eedb599f8995d2a30c"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a0d912f279c8c44eedb599f8995d2a30c">OptionalJacobian2</a></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a29519d2de6e034aea1a046e461187ced" name="a29519d2de6e034aea1a046e461187ced"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29519d2de6e034aea1a046e461187ced">&#9670;&#160;</a></span>html()</h2>
+<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
+<a id="a89d2260905c1e351fa7436ee9cd6810d" name="a89d2260905c1e351fa7436ee9cd6810d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89d2260905c1e351fa7436ee9cd6810d">&#9670;&#160;</a></span>OptionalJacobian1</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+<div class="memtemplate">
+template&lt;typename A1, typename A2, typename B = typename Bearing&lt;A1, A2&gt;::result_type, typename R = typename Range&lt;A1, A2&gt;::result_type&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::string gtsam::HybridValues::html </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>keyFormatter</em></span><span class="paramdefsep"> = </span><span class="paramdefval">DefaultKeyFormatter</span></td><td>)</td>
-          <td> const</td>
+          <td class="memname">using <a class="el" href="a04051.html">gtsam::BearingRange</a>&lt; A1, A2, B, R &gt;::OptionalJacobian1</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-
-<p>Output as a html table. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">keyFormatter</td><td>function that formats keys. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>string html output. </dd></dl>
-
+<b>Initial value:</b><div class="fragment"><div class="line"> </div>
+<div class="line"><a class="code hl_class" href="a03363.html">OptionalJacobian&lt;dimension, traits&lt;A1&gt;::dimension</a>&gt;</div>
+<div class="ttc" id="aa03363_html"><div class="ttname"><a href="a03363.html">gtsam::OptionalJacobian</a></div><div class="ttdoc">OptionalJacobian is an Eigen::Ref like class that can take be constructed using either a fixed size o...</div><div class="ttdef"><b>Definition</b> OptionalJacobian.h:40</div></div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="a1cfdd5cb8cc111d0d5d3f69a8005ffe0" name="a1cfdd5cb8cc111d0d5d3f69a8005ffe0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1cfdd5cb8cc111d0d5d3f69a8005ffe0">&#9670;&#160;</a></span>insert() <span class="overload">[1/6]</span></h2>
+<a id="a0d912f279c8c44eedb599f8995d2a30c" name="a0d912f279c8c44eedb599f8995d2a30c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d912f279c8c44eedb599f8995d2a30c">&#9670;&#160;</a></span>OptionalJacobian2</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+<div class="memtemplate">
+template&lt;typename A1, typename A2, typename B = typename Bearing&lt;A1, A2&gt;::result_type, typename R = typename Range&lt;A1, A2&gt;::result_type&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a06211.html">HybridValues</a> &amp; gtsam::HybridValues::insert </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a06207.html">DiscreteValues</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
-          <td></td>
+          <td class="memname">using <a class="el" href="a04051.html">gtsam::BearingRange</a>&lt; A1, A2, B, R &gt;::OptionalJacobian2</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-
-<p>Insert all discrete values from <code>values</code>. </p>
-<p>Throws an invalid_argument exception if any keys to be inserted are already used. </p>
-
+<b>Initial value:</b><div class="fragment"><div class="line"> </div>
+<div class="line"><a class="code hl_class" href="a03363.html">OptionalJacobian&lt;dimension, traits&lt;A2&gt;::dimension</a>&gt;</div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="aa579a919c63ecf72cbd7905f821985ba" name="aa579a919c63ecf72cbd7905f821985ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa579a919c63ecf72cbd7905f821985ba">&#9670;&#160;</a></span>insert() <span class="overload">[2/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a06211.html">HybridValues</a> &amp; gtsam::HybridValues::insert </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a06211.html">HybridValues</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Insert all values from <code>values</code>. </p>
-<p>Throws an invalid_argument exception if any keys to be inserted are already used. </p>
-
-</div>
-</div>
-<a id="a53b62b66758d4b67cea4e94d67eb26b2" name="a53b62b66758d4b67cea4e94d67eb26b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53b62b66758d4b67cea4e94d67eb26b2">&#9670;&#160;</a></span>insert() <span class="overload">[3/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a06211.html">HybridValues</a> &amp; gtsam::HybridValues::insert </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a06243.html">Values</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Insert all values from <code>values</code>. </p>
-<p>Throws an invalid_argument exception if any keys to be inserted are already used. </p>
-
-</div>
-</div>
-<a id="aad78196a68a02b327d73dbeda7e8cccb" name="aad78196a68a02b327d73dbeda7e8cccb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad78196a68a02b327d73dbeda7e8cccb">&#9670;&#160;</a></span>insert() <span class="overload">[4/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a06211.html">HybridValues</a> &amp; gtsam::HybridValues::insert </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a06239.html">VectorValues</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Insert all continuous values from <code>values</code>. </p>
-<p>Throws an invalid_argument exception if any keys to be inserted are already used. </p>
-
-</div>
-</div>
-<a id="a0d17316f8a3c1b15efa18d0ff052c804" name="a0d17316f8a3c1b15efa18d0ff052c804"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d17316f8a3c1b15efa18d0ff052c804">&#9670;&#160;</a></span>insert() <span class="overload">[5/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gtsam::HybridValues::insert </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a></td>          <td class="paramname"><span class="paramname"><em>j</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Vector &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Insert a vector <code>value</code> with key <code>j</code>. </p>
-<p>Throws an invalid_argument exception if the key <code>j</code> is already used. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The vector to be inserted. </td></tr>
-    <tr><td class="paramname">j</td><td>The index with which the value will be associated. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aaf590e42828ec0693b868853449d7ad0" name="aaf590e42828ec0693b868853449d7ad0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf590e42828ec0693b868853449d7ad0">&#9670;&#160;</a></span>insert() <span class="overload">[6/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gtsam::HybridValues::insert </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a></td>          <td class="paramname"><span class="paramname"><em>j</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Insert a discrete <code>value</code> with key <code>j</code>. </p>
-<p>Replaces the existing value if the key <code>j</code> is already used. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The vector to be inserted. </td></tr>
-    <tr><td class="paramname">j</td><td>The index with which the value will be associated. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a9515569edbf4a547ecc6dee19302a10f" name="a9515569edbf4a547ecc6dee19302a10f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9515569edbf4a547ecc6dee19302a10f">&#9670;&#160;</a></span>update() <span class="overload">[1/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a06211.html">HybridValues</a> &amp; gtsam::HybridValues::update </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a06207.html">DiscreteValues</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>For all key/value pairs in <code>values</code>, replace discrete values with corresponding keys in this object with those in <code>values</code>. </p>
-<p>Throws std::out_of_range if any keys in <code>values</code> are not present in this object. </p>
-
-</div>
-</div>
-<a id="ac13c58d4a9e429e333b15370746a9eed" name="ac13c58d4a9e429e333b15370746a9eed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac13c58d4a9e429e333b15370746a9eed">&#9670;&#160;</a></span>update() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a06211.html">HybridValues</a> &amp; gtsam::HybridValues::update </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a06211.html">HybridValues</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>For all key/value pairs in <code>values</code>, replace all values with corresponding keys in this object with those in <code>values</code>. </p>
-<p>Throws std::out_of_range if any keys in <code>values</code> are not present in this object. </p>
-
-</div>
-</div>
-<a id="a60e21ff4ef0138edd1bc26a37ca2d904" name="a60e21ff4ef0138edd1bc26a37ca2d904"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60e21ff4ef0138edd1bc26a37ca2d904">&#9670;&#160;</a></span>update() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a06211.html">HybridValues</a> &amp; gtsam::HybridValues::update </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a06239.html">VectorValues</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>For all key/value pairs in <code>values</code>, replace continuous values with corresponding keys in this object with those in <code>values</code>. </p>
-<p>Throws std::out_of_range if any keys in <code>values</code> are not present in this object. </p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/hybrid/<a class="el" href="a00491_source.html">HybridValues.h</a></li>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00578_source.html">BearingRange.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -504,7 +217,7 @@ size_t &amp;&#160;</td><td class="memItemRight"><b>atDiscrete</b> (<a class="el"
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04051.html">HybridValues</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04051.html">BearingRange</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,12 +96,35 @@ $(function(){initNavTree('a06091.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; ProjectionFactorPPP&lt; POSE, LANDMARK, CALIBRATION &gt; &gt; Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::CombinedScenarioRunner Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a06091.html">gtsam::traits&lt; ProjectionFactorPPP&lt; POSE, LANDMARK, CALIBRATION &gt; &gt;</a>, including all inherited members.</p>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="a06091.html">gtsam::CombinedScenarioRunner</a>, including all inherited members.</p>
+<table class="directory">
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>accSampler_</b> (defined in <a class="el" href="a06087.html">gtsam::ScenarioRunner</a>)</td><td class="entry"><a class="el" href="a06087.html">gtsam::ScenarioRunner</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a06087.html#a1126a4c63e809c5ff7f32e7a6162272b">actualAngularVelocity</a>(double t) const</td><td class="entry"><a class="el" href="a06087.html">gtsam::ScenarioRunner</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a06087.html#a2387e1d0a8df5f612f04c4c5a997340f">actualSpecificForce</a>(double t) const</td><td class="entry"><a class="el" href="a06087.html">gtsam::ScenarioRunner</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Bias</b> typedef (defined in <a class="el" href="a06087.html">gtsam::ScenarioRunner</a>)</td><td class="entry"><a class="el" href="a06087.html">gtsam::ScenarioRunner</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>CombinedScenarioRunner</b>(const Scenario &amp;scenario, const SharedParams &amp;p, double imuSampleTime=1.0/100.0, const Bias &amp;bias=Bias(), const Eigen::Matrix&lt; double, 15, 15 &gt; &amp;preintMeasCov=Eigen::Matrix&lt; double, 15, 15 &gt;::Zero()) (defined in <a class="el" href="a06091.html">gtsam::CombinedScenarioRunner</a>)</td><td class="entry"><a class="el" href="a06091.html">gtsam::CombinedScenarioRunner</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a06091.html#a5f516d356010b300f333df716f0f0679">estimateCovariance</a>(double T, size_t N=1000, const Bias &amp;estimatedBias=Bias()) const</td><td class="entry"><a class="el" href="a06091.html">gtsam::CombinedScenarioRunner</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>estimatedBias_</b> (defined in <a class="el" href="a06087.html">gtsam::ScenarioRunner</a>)</td><td class="entry"><a class="el" href="a06087.html">gtsam::ScenarioRunner</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a06087.html#a4dc8a7308cf72e5ecea732570a5f84ec">estimateNoiseCovariance</a>(size_t N=1000) const</td><td class="entry"><a class="el" href="a06087.html">gtsam::ScenarioRunner</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>gravity_n</b>() const (defined in <a class="el" href="a06087.html">gtsam::ScenarioRunner</a>)</td><td class="entry"><a class="el" href="a06087.html">gtsam::ScenarioRunner</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>gyroSampler_</b> (defined in <a class="el" href="a06087.html">gtsam::ScenarioRunner</a>)</td><td class="entry"><a class="el" href="a06087.html">gtsam::ScenarioRunner</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a06087.html#a956ff78906f3ef3079350abbdec0cc18">imuSampleTime</a>() const</td><td class="entry"><a class="el" href="a06087.html">gtsam::ScenarioRunner</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>imuSampleTime_</b> (defined in <a class="el" href="a06087.html">gtsam::ScenarioRunner</a>)</td><td class="entry"><a class="el" href="a06087.html">gtsam::ScenarioRunner</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a06091.html#acadb547100f25af8a75a14ba85f097c8">integrate</a>(double T, const Bias &amp;estimatedBias=Bias(), bool corrupted=false) const</td><td class="entry"><a class="el" href="a06091.html">gtsam::CombinedScenarioRunner</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>measuredAngularVelocity</b>(double t) const (defined in <a class="el" href="a06087.html">gtsam::ScenarioRunner</a>)</td><td class="entry"><a class="el" href="a06087.html">gtsam::ScenarioRunner</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a06087.html#a7de92c811508e7f462bc7ea48171d2a8">measuredSpecificForce</a>(double t) const</td><td class="entry"><a class="el" href="a06087.html">gtsam::ScenarioRunner</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a06091.html#acd04df220e7ee25a6ad656eb3080a4b3">predict</a>(const PreintegratedCombinedMeasurements &amp;pim, const Bias &amp;estimatedBias=Bias()) const</td><td class="entry"><a class="el" href="a06091.html">gtsam::CombinedScenarioRunner</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a06087.html#a921c0bae7d51d2e613b767d2719e4ec5">gtsam::ScenarioRunner::predict</a>(const PreintegratedImuMeasurements &amp;pim, const Bias &amp;estimatedBias=Bias()) const</td><td class="entry"><a class="el" href="a06087.html">gtsam::ScenarioRunner</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>scenario</b>() const (defined in <a class="el" href="a06087.html">gtsam::ScenarioRunner</a>)</td><td class="entry"><a class="el" href="a06087.html">gtsam::ScenarioRunner</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>scenario_</b> (defined in <a class="el" href="a06087.html">gtsam::ScenarioRunner</a>)</td><td class="entry"><a class="el" href="a06087.html">gtsam::ScenarioRunner</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>ScenarioRunner</b>(const Scenario &amp;scenario, const SharedParams &amp;p, double imuSampleTime=1.0/100.0, const Bias &amp;bias=Bias()) (defined in <a class="el" href="a06087.html">gtsam::ScenarioRunner</a>)</td><td class="entry"><a class="el" href="a06087.html">gtsam::ScenarioRunner</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>SharedParams</b> typedef (defined in <a class="el" href="a06091.html">gtsam::CombinedScenarioRunner</a>)</td><td class="entry"><a class="el" href="a06091.html">gtsam::CombinedScenarioRunner</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>sqrt_dt_</b> (defined in <a class="el" href="a06087.html">gtsam::ScenarioRunner</a>)</td><td class="entry"><a class="el" href="a06087.html">gtsam::ScenarioRunner</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+</table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->

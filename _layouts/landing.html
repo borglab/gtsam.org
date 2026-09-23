@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  {%- include head.html -%}
+  <link rel="stylesheet" href="{{ '/assets/theme.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/landing.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+  <body class="gtsam-site landing-page">
+    {%- include header.html -%}
+    <main id="main-content" class="landing-main" aria-label="GTSAM 4.3 release highlights" tabindex="-1">
+      {{ content }}
+    </main>
+    {%- include footer.html -%}
+    <script src="{{ '/assets/landing.js' | relative_url }}" defer></script>
+  </body>
+</html>

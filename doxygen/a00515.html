@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/hybrid/HybridConditional.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/SO3.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,27 +96,81 @@ $(function(){initNavTree('a00515.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">HybridConditional.h File Reference</div></div>
+  <div class="headertitle"><div class="title">SO3.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>3*3 matrix representation of SO(3)  
+<a href="#details">More...</a></p>
 
 <p><a href="a00515_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3AHybridConditional" id="r_gtsam_3A_3AHybridConditional"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a03983.html">gtsam::HybridConditional</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hybrid <a class="el" href="a04119.html">Conditional</a> Density.  <a href="a03983.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3Atraits_3C_20HybridConditional_20_3E" id="r_gtsam_3A_3Atraits_3C_20HybridConditional_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03987.html">gtsam::traits&lt; HybridConditional &gt;</a></td></tr>
+<tr class="memitem:gtsam_3A_3Aso3_3A_3AExpmapFunctor" id="r_gtsam_3A_3Aso3_3A_3AExpmapFunctor"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04527.html">gtsam::so3::ExpmapFunctor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opaque evaluation context at ω: caches Ω, Ω², θ, θ², nearZero/nearPi, Lazily computes C, D, E, dA, dB, dC, dE on demand.  <a href="a04527.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Aso3_3A_3ADexpFunctor" id="r_gtsam_3A_3Aso3_3A_3ADexpFunctor"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04531.html">gtsam::so3::DexpFunctor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functor that implements Exponential map <em>and</em> its derivatives Math extends Ethan theme of elegant I + aW + bWW expressions.  <a href="a04531.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Atraits_3C_20SO3_20_3E" id="r_gtsam_3A_3Atraits_3C_20SO3_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04535.html">gtsam::traits&lt; SO3 &gt;</a></td></tr>
+<tr class="memitem:gtsam_3A_3Atraits_3C_20const_20SO3_20_3E" id="r_gtsam_3A_3Atraits_3C_20const_20SO3_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04539.html">gtsam::traits&lt; const SO3 &gt;</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a39c32423a529567efbec813bd72b53bc" id="r_a39c32423a529567efbec813bd72b53bc"><td class="memItemLeft"><a id="a39c32423a529567efbec813bd72b53bc" name="a39c32423a529567efbec813bd72b53bc"></a>
+using&#160;</td><td class="memItemRight"><b>gtsam::SO3</b> = <a class="el" href="a04551.html">SO</a>&lt;3&gt;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aaa91d68e9f1b18aa765596960de61dbe" id="r_aaa91d68e9f1b18aa765596960de61dbe"><td class="memItemLeft">GTSAM_EXPORT Matrix3&#160;</td><td class="memItemRight"><a class="el" href="a00464.html#aaa91d68e9f1b18aa765596960de61dbe">gtsam::so3::compose</a> (const Matrix3 &amp;M, const SO3 &amp;R, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 9, 9 &gt; H={})</td></tr>
+<tr class="memdesc:aaa91d68e9f1b18aa765596960de61dbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compose general matrix with an SO(3) element.  <br /></td></tr>
+<tr class="memitem:a7c7e26b6d07ec0f16363c196247b294d" id="r_a7c7e26b6d07ec0f16363c196247b294d"><td class="memItemLeft"><a id="a7c7e26b6d07ec0f16363c196247b294d" name="a7c7e26b6d07ec0f16363c196247b294d"></a>
+GTSAM_EXPORT Matrix99&#160;</td><td class="memItemRight"><b>gtsam::so3::Dcompose</b> (const SO3 &amp;R)</td></tr>
+<tr class="memdesc:a7c7e26b6d07ec0f16363c196247b294d"><td class="mdescLeft">&#160;</td><td class="mdescRight">(constant) Jacobian of compose wrpt M <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section date"><dt>Date</dt><dd>Mar 11, 2022 </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Fan Jiang </dd></dl>
-</div></div><!-- contents -->
+<div class="textblock"><p>3*3 matrix representation of SO(3) </p>
+<dl class="section author"><dt>Author</dt><dd>Frank Dellaert </dd>
+<dd>
+Luca Carlone </dd>
+<dd>
+Duy Nguyen Ta </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>December 2014 </dd></dl>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="aaa91d68e9f1b18aa765596960de61dbe" name="aaa91d68e9f1b18aa765596960de61dbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa91d68e9f1b18aa765596960de61dbe">&#9670;&#160;</a></span>compose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GTSAM_EXPORT Matrix3 gtsam::so3::compose </td>
+          <td>(</td>
+          <td class="paramtype">const Matrix3 &amp;</td>          <td class="paramname"><span class="paramname"><em>M</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const SO3 &amp;</td>          <td class="paramname"><span class="paramname"><em>R</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 9, 9 &gt;</td>          <td class="paramname"><span class="paramname"><em>H</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compose general matrix with an SO(3) element. </p>
+<p>We only provide the 9*9 derivative in the first argument M. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>
@@ -129,7 +183,7 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>hybrid</b></li><li class="navelem"><a href="a00515.html">HybridConditional.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>geometry</b></li><li class="navelem"><a href="a00515.html">SO3.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

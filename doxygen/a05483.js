@@ -1,9 +1,15 @@
 var a05483 =
 [
-    [ "boost::serialization::access", "a05483.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ],
-    [ "degeneracyMode", "a05483.html#a695982b029b814dffdd8a34bae523575", null ],
-    [ "linearizationMode", "a05483.html#a4afa132d1f394b6256605752b3b8aab0", null ],
-    [ "retriangulationThreshold", "a05483.html#a5b1fa239a2827c833e2d6c035392d7d5", null ],
-    [ "throwCheirality", "a05483.html#a11f8b823fcb922edff9bc2847e5fe36c", null ],
-    [ "verboseCheirality", "a05483.html#ab8353996f6c8ea607c213c854b6b0bc1", null ]
+    [ "RegularJacobianFactor", "a05483.html#ae43bf2cf406f9b68d7aebce9cb7a025a", null ],
+    [ "RegularJacobianFactor", "a05483.html#ad915ad01a506fff9ef5cedc072bd70da", null ],
+    [ "RegularJacobianFactor", "a05483.html#aef8d95559114ea3a3a2ca912994bf923", null ],
+    [ "gradientAtZero", "a05483.html#ad8b04301db47560279f3861d8e758303", null ],
+    [ "gradientAtZero", "a05483.html#a2eedf8a854cd87ae1145e45d0396bf05", null ],
+    [ "hessianDiagonal", "a05483.html#abbefd8b159bd1ac129d054abc7643f24", null ],
+    [ "hessianDiagonal", "a05483.html#a10c15c224df4d13d92667a7141bce671", null ],
+    [ "multiplyHessianAdd", "a05483.html#af9750ddbef0d1c2811726283f3d1e94d", null ],
+    [ "multiplyHessianAdd", "a05483.html#a26771dd80e802601903ef3f93391069e", null ],
+    [ "multiplyHessianAdd", "a05483.html#ade96e8a9580291651b8d26b0c0252da4", null ],
+    [ "operator*", "a05483.html#a0fe685889d37e08930a598d12046b06f", null ],
+    [ "transposeMultiplyAdd", "a05483.html#a66275f36981f3c95ef15fd5638635b22", null ]
 ];

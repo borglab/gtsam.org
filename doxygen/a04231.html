@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::traits&lt; Ordering &gt; Struct Reference</title>
+<title>gtsam: gtsam::ExtendedPose3&lt; K_, Derived &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,35 +96,1256 @@ $(function(){initNavTree('a04231.html','','a04228'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; Ordering &gt; Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::ExtendedPose3&lt; K_, Derived &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>traits </p>
-</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::traits&lt; Ordering &gt;:</div>
+<div class="textblock"><div class="compoundTemplParams">template&lt;int K_, class Derived&gt;<br />
+class gtsam::ExtendedPose3&lt; K_, Derived &gt;</div><p>Lie group SE_k(3): semidirect product of SO(3) with k copies of R^3. </p>
+<p>State ordering is (R, x_1, ..., x_k) with R in SO(3) and x_i in R^3. Tangent ordering is [omega, rho_1, ..., rho_k], each block in R^3.</p>
+<p>The manifold dimension is 3+3k and the homogeneous matrix size is 3+k. Template parameter K can be fixed (K &gt;= 1) or Eigen::Dynamic. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::ExtendedPose3&lt; K_, Derived &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a04231.png" usemap="#gtsam_3A_3Atraits_3C_20Ordering_20_3E_map" alt=""/>
-  <map id="gtsam_3A_3Atraits_3C_20Ordering_20_3E_map" name="gtsam_3A_3Atraits_3C_20Ordering_20_3E_map">
-<area href="a03039.html" alt="gtsam::Testable&lt; Ordering &gt;" shape="rect" coords="0,0,172,24"/>
+  <img src="a04231.png" usemap="#gtsam_3A_3AExtendedPose3_3C_20K_5F_2C_20Derived_20_3E_map" alt=""/>
+  <map id="gtsam_3A_3AExtendedPose3_3C_20K_5F_2C_20Derived_20_3E_map" name="gtsam_3A_3AExtendedPose3_3C_20K_5F_2C_20Derived_20_3E_map">
+<area href="a03335.html" alt="gtsam::MatrixLieGroup&lt; std::conditional_t&lt; std::is_void_v&lt; Derived &gt;, ExtendedPose3&lt; K_, void &gt;, Derived &gt;,(K_==Eigen::Dynamic) ? Eigen::Dynamic :3+3 *K_,(K_==Eigen::Dynamic) ? Eigen::Dynamic :3+K_ &gt;" shape="rect" coords="0,56,1202,80"/>
+<area href="a03267.html" alt="gtsam::LieGroup&lt; std::conditional_t&lt; std::is_void_v&lt; Derived &gt;, ExtendedPose3&lt; K_, void &gt;, Derived &gt;, D &gt;" shape="rect" coords="0,0,1202,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Access</h2></td></tr>
+<tr class="memitem:a872d9a06fddcf86f582e29a19819d785" id="r_a872d9a06fddcf86f582e29a19819d785"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#a872d9a06fddcf86f582e29a19819d785">k</a> () const</td></tr>
+<tr class="memitem:a02649682fd37e4344348317fd04956b5" id="r_a02649682fd37e4344348317fd04956b5"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#a02649682fd37e4344348317fd04956b5">dim</a> () const</td></tr>
+<tr class="memitem:acbb316b1d5fdce7ea2ad73d7d2118d44" id="r_acbb316b1d5fdce7ea2ad73d7d2118d44"><td class="memItemLeft">const <a class="el" href="a04451.html">Rot3</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#acbb316b1d5fdce7ea2ad73d7d2118d44">rotation</a> (ComponentJacobian H={}) const</td></tr>
+<tr class="memdesc:acbb316b1d5fdce7ea2ad73d7d2118d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotation component.  <br /></td></tr>
+<tr class="memitem:a2b1d6225238e2d5b18efb1a9212e8a90" id="r_a2b1d6225238e2d5b18efb1a9212e8a90"><td class="memItemLeft"><a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2b1d6225238e2d5b18efb1a9212e8a90">x</a> (size_t i, ComponentJacobian H={}) const</td></tr>
+<tr class="memdesc:a2b1d6225238e2d5b18efb1a9212e8a90"><td class="mdescLeft">&#160;</td><td class="mdescRight">i-th R^3 component, returned by value.  <br /></td></tr>
+<tr class="memitem:acf355daa093f67ec82b9caecbc2640ab" id="r_acf355daa093f67ec82b9caecbc2640ab"><td class="memItemLeft">const Matrix3K &amp;&#160;</td><td class="memItemRight"><a class="el" href="#acf355daa093f67ec82b9caecbc2640ab">xMatrix</a> () const</td></tr>
+<tr class="memdesc:acf355daa093f67ec82b9caecbc2640ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access all x_i blocks.  <br /></td></tr>
+<tr class="memitem:ad08b627b029d70ac3104165178ea4880" id="r_ad08b627b029d70ac3104165178ea4880"><td class="memItemLeft">Matrix3K &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ad08b627b029d70ac3104165178ea4880">xMatrix</a> ()</td></tr>
+<tr class="memdesc:ad08b627b029d70ac3104165178ea4880"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutable access to all x_i blocks.  <br /></td></tr>
+<tr class="memitem:ad9948758476c62558e197e6444895846" id="r_ad9948758476c62558e197e6444895846"><td class="memItemLeft">static size_t&#160;</td><td class="memItemRight"><a class="el" href="#ad9948758476c62558e197e6444895846">Dimension</a> (size_t <a class="el" href="#a872d9a06fddcf86f582e29a19819d785">k</a>)</td></tr>
+<tr class="memdesc:ad9948758476c62558e197e6444895846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runtime manifold dimension helper.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Group</h2></td></tr>
+<tr class="memitem:a98c1d3b29a52e07471f0f1549f47ee70" id="r_a98c1d3b29a52e07471f0f1549f47ee70"><td class="memItemLeft">This&#160;</td><td class="memItemRight"><a class="el" href="#a98c1d3b29a52e07471f0f1549f47ee70">inverse</a> () const</td></tr>
+<tr class="memdesc:a98c1d3b29a52e07471f0f1549f47ee70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Group inverse.  <br /></td></tr>
+<tr class="memitem:a67f45f1f159a8bf6f920b6354914911e" id="r_a67f45f1f159a8bf6f920b6354914911e"><td class="memItemLeft">This&#160;</td><td class="memItemRight"><a class="el" href="#a67f45f1f159a8bf6f920b6354914911e">operator*</a> (const This &amp;other) const</td></tr>
+<tr class="memdesc:a67f45f1f159a8bf6f920b6354914911e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Group composition.  <br /></td></tr>
+<tr class="memitem:a24df61c3d5ee73fb7d3a311ca318fe55" id="r_a24df61c3d5ee73fb7d3a311ca318fe55"><td class="memTemplParams" colspan="2">template&lt;int K__ = K_, typename = IsFixed&lt;K__&gt;&gt; </td></tr>
+<tr class="memitem:a24df61c3d5ee73fb7d3a311ca318fe55 template"><td class="memItemLeft">static This&#160;</td><td class="memItemRight"><a class="el" href="#a24df61c3d5ee73fb7d3a311ca318fe55">Identity</a> ()</td></tr>
+<tr class="memdesc:a24df61c3d5ee73fb7d3a311ca318fe55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identity element for fixed-size K.  <br /></td></tr>
+<tr class="memitem:a67629df180930f3ddfbd8472dfcb262d" id="r_a67629df180930f3ddfbd8472dfcb262d"><td class="memTemplParams" colspan="2">template&lt;int K__ = K_, typename = IsDynamic&lt;K__&gt;&gt; </td></tr>
+<tr class="memitem:a67629df180930f3ddfbd8472dfcb262d template"><td class="memItemLeft">static This&#160;</td><td class="memItemRight"><a class="el" href="#a67629df180930f3ddfbd8472dfcb262d">Identity</a> (size_t <a class="el" href="#a872d9a06fddcf86f582e29a19819d785">k</a>=0)</td></tr>
+<tr class="memdesc:a67629df180930f3ddfbd8472dfcb262d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identity element for dynamic-size K.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Lie Group</h2></td></tr>
+<tr class="memitem:af2d4622edab99e587f0bc2ab475d832e" id="r_af2d4622edab99e587f0bc2ab475d832e"><td class="memItemLeft">Jacobian&#160;</td><td class="memItemRight"><a class="el" href="#af2d4622edab99e587f0bc2ab475d832e">AdjointMap</a> () const</td></tr>
+<tr class="memdesc:af2d4622edab99e587f0bc2ab475d832e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjoint map.  <br /></td></tr>
+<tr class="memitem:a105c816e8fb076a78ea1b221c1f8e488" id="r_a105c816e8fb076a78ea1b221c1f8e488"><td class="memItemLeft">static This&#160;</td><td class="memItemRight"><a class="el" href="#a105c816e8fb076a78ea1b221c1f8e488">Expmap</a> (const TangentVector &amp;xi, ChartJacobian Hxi={})</td></tr>
+<tr class="memdesc:a105c816e8fb076a78ea1b221c1f8e488"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exponential map from tangent to group.  <br /></td></tr>
+<tr class="memitem:a5e5e33daa2c25fbd80c799ea6444dd96" id="r_a5e5e33daa2c25fbd80c799ea6444dd96"><td class="memItemLeft">static TangentVector&#160;</td><td class="memItemRight"><a class="el" href="#a5e5e33daa2c25fbd80c799ea6444dd96">Logmap</a> (const This &amp;pose, ChartJacobian Hpose={})</td></tr>
+<tr class="memdesc:a5e5e33daa2c25fbd80c799ea6444dd96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logarithm map from group to tangent.  <br /></td></tr>
+<tr class="memitem:a01d53ed38c96a3180a39c3156a81639d" id="r_a01d53ed38c96a3180a39c3156a81639d"><td class="memItemLeft">static Jacobian&#160;</td><td class="memItemRight"><a class="el" href="#a01d53ed38c96a3180a39c3156a81639d">adjointMap</a> (const TangentVector &amp;xi)</td></tr>
+<tr class="memdesc:a01d53ed38c96a3180a39c3156a81639d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lie algebra adjoint map.  <br /></td></tr>
+<tr class="memitem:a61be56bcedd2054b5c2069356242f2be" id="r_a61be56bcedd2054b5c2069356242f2be"><td class="memItemLeft">static Jacobian&#160;</td><td class="memItemRight"><a class="el" href="#a61be56bcedd2054b5c2069356242f2be">ExpmapDerivative</a> (const TangentVector &amp;xi)</td></tr>
+<tr class="memdesc:a61be56bcedd2054b5c2069356242f2be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Jacobian of Expmap.  <br /></td></tr>
+<tr class="memitem:ac0d9d4c10dea8eeda2110fd22cb50e93" id="r_ac0d9d4c10dea8eeda2110fd22cb50e93"><td class="memItemLeft">static Jacobian&#160;</td><td class="memItemRight"><a class="el" href="#ac0d9d4c10dea8eeda2110fd22cb50e93">LogmapDerivative</a> (const TangentVector &amp;xi)</td></tr>
+<tr class="memdesc:ac0d9d4c10dea8eeda2110fd22cb50e93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Jacobian of Logmap evaluated from tangent coordinates.  <br /></td></tr>
+<tr class="memitem:adaa89e93ea5f1993f43cc12ae0c3b15a" id="r_adaa89e93ea5f1993f43cc12ae0c3b15a"><td class="memItemLeft">static Jacobian&#160;</td><td class="memItemRight"><a class="el" href="#adaa89e93ea5f1993f43cc12ae0c3b15a">LogmapDerivative</a> (const This &amp;pose)</td></tr>
+<tr class="memdesc:adaa89e93ea5f1993f43cc12ae0c3b15a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Jacobian of Logmap evaluated at a group element.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Matrix Lie Group</h2></td></tr>
+<tr class="memitem:a01564cb09a8c573a720db812a9910c56" id="r_a01564cb09a8c573a720db812a9910c56"><td class="memItemLeft"><a class="el" href="#a7f4b33bffec6392390f59ec7087e9356">MatrixRep</a>&#160;</td><td class="memItemRight"><a class="el" href="#a01564cb09a8c573a720db812a9910c56">matrix</a> () const</td></tr>
+<tr class="memdesc:a01564cb09a8c573a720db812a9910c56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Homogeneous matrix representation.  <br /></td></tr>
+<tr class="memitem:a0c5316f3a859fe7e3255136be650f96c" id="r_a0c5316f3a859fe7e3255136be650f96c"><td class="memItemLeft">static <a class="el" href="#abfde617e79c3414c1f97869d000ba668">LieAlgebra</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0c5316f3a859fe7e3255136be650f96c">Hat</a> (const TangentVector &amp;xi)</td></tr>
+<tr class="memdesc:a0c5316f3a859fe7e3255136be650f96c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hat operator from tangent to Lie algebra.  <br /></td></tr>
+<tr class="memitem:a8bb21ffc0d18d0ed29236b7bac84c157" id="r_a8bb21ffc0d18d0ed29236b7bac84c157"><td class="memItemLeft">static TangentVector&#160;</td><td class="memItemRight"><a class="el" href="#a8bb21ffc0d18d0ed29236b7bac84c157">Vee</a> (const <a class="el" href="#abfde617e79c3414c1f97869d000ba668">LieAlgebra</a> &amp;X)</td></tr>
+<tr class="memdesc:a8bb21ffc0d18d0ed29236b7bac84c157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vee operator from Lie algebra to tangent.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Constructors</div></td></tr>
+<tr class="memitem:abe984c881da839181b49f5b60c6f3090" id="r_abe984c881da839181b49f5b60c6f3090"><td class="memTemplParams" colspan="2">template&lt;int K__ = K_, typename = IsFixed&lt;K__&gt;&gt; </td></tr>
+<tr class="memitem:abe984c881da839181b49f5b60c6f3090 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a> ()</td></tr>
+<tr class="memdesc:abe984c881da839181b49f5b60c6f3090"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a fixed-size identity element.  <br /></td></tr>
+<tr class="memitem:a778bbd41fcd8d3eea3b43b26f54905ee" id="r_a778bbd41fcd8d3eea3b43b26f54905ee"><td class="memTemplParams" colspan="2">template&lt;int K__ = K_, typename = IsDynamic&lt;K__&gt;&gt; </td></tr>
+<tr class="memitem:a778bbd41fcd8d3eea3b43b26f54905ee template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a778bbd41fcd8d3eea3b43b26f54905ee">ExtendedPose3</a> (size_t <a class="el" href="#a872d9a06fddcf86f582e29a19819d785">k</a>=0)</td></tr>
+<tr class="memdesc:a778bbd41fcd8d3eea3b43b26f54905ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a dynamic-size identity element.  <br /></td></tr>
+<tr class="memitem:acdafc1c6419601c0664a4a6decb237af" id="r_acdafc1c6419601c0664a4a6decb237af"><td class="memItemLeft"><a id="acdafc1c6419601c0664a4a6decb237af" name="acdafc1c6419601c0664a4a6decb237af"></a>
+&#160;</td><td class="memItemRight"><b>ExtendedPose3</b> (const ExtendedPose3 &amp;)=default</td></tr>
+<tr class="memdesc:acdafc1c6419601c0664a4a6decb237af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor. <br /></td></tr>
+<tr class="memitem:a0995e42c8660b4daabbda5801a77f72f" id="r_a0995e42c8660b4daabbda5801a77f72f"><td class="memItemLeft"><a id="a0995e42c8660b4daabbda5801a77f72f" name="a0995e42c8660b4daabbda5801a77f72f"></a>
+<a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a> &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (const <a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a> &amp;)=default</td></tr>
+<tr class="memdesc:a0995e42c8660b4daabbda5801a77f72f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment. <br /></td></tr>
+<tr class="memitem:a22c2f2ce70f69d6a6b7c6263d394e6aa" id="r_a22c2f2ce70f69d6a6b7c6263d394e6aa"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a22c2f2ce70f69d6a6b7c6263d394e6aa">ExtendedPose3</a> (const <a class="el" href="a04451.html">Rot3</a> &amp;R, const Matrix3K &amp;<a class="el" href="#a2b1d6225238e2d5b18efb1a9212e8a90">x</a>)</td></tr>
+<tr class="memdesc:a22c2f2ce70f69d6a6b7c6263d394e6aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from rotation and 3xk block.  <br /></td></tr>
+<tr class="memitem:a0fa67f77d1f7f37d861ae06e8c37ac56" id="r_a0fa67f77d1f7f37d861ae06e8c37ac56"><td class="memTemplParams" colspan="2">template&lt;int FixedK = K, typename = IsFixed&lt;FixedK&gt;, typename... Vecs, typename = std::enable_if_t&lt;                sizeof...(Vecs) == FixedK &amp;&amp;                (std::is_constructible_v&lt;Point3, Vecs&gt; &amp;&amp; ...)&gt;&gt; </td></tr>
+<tr class="memitem:a0fa67f77d1f7f37d861ae06e8c37ac56 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0fa67f77d1f7f37d861ae06e8c37ac56">ExtendedPose3</a> (const <a class="el" href="a04451.html">Rot3</a> &amp;R, const Vecs &amp;... xs)</td></tr>
+<tr class="memdesc:a0fa67f77d1f7f37d861ae06e8c37ac56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a fixed-size state from rotation and K 3-vectors.  <br /></td></tr>
+<tr class="memitem:ae948ed65554fd9130196b79d3603b804" id="r_ae948ed65554fd9130196b79d3603b804"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae948ed65554fd9130196b79d3603b804">ExtendedPose3</a> (const <a class="el" href="#a7f4b33bffec6392390f59ec7087e9356">MatrixRep</a> &amp;T)</td></tr>
+<tr class="memdesc:ae948ed65554fd9130196b79d3603b804"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from homogeneous matrix representation.  <br /></td></tr>
+<tr id="pub-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Testable</div></td></tr>
+<tr class="memitem:a508016113d399e5285fd64a29309c8c4" id="r_a508016113d399e5285fd64a29309c8c4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a508016113d399e5285fd64a29309c8c4">print</a> (const std::string &amp;s=&quot;&quot;) const</td></tr>
+<tr class="memdesc:a508016113d399e5285fd64a29309c8c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print this state.  <br /></td></tr>
+<tr class="memitem:a9f9059d221f60832e31cabf92df425a6" id="r_a9f9059d221f60832e31cabf92df425a6"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a9f9059d221f60832e31cabf92df425a6">equals</a> (const <a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a> &amp;other, double tol=1e-9) const</td></tr>
+<tr class="memdesc:a9f9059d221f60832e31cabf92df425a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality check with tolerance.  <br /></td></tr>
+<tr class="inherit_header pub_methods_a03335"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03335')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; std::conditional_t&lt; std::is_void_v&lt; Derived &gt;, ExtendedPose3&lt; K_, void &gt;, Derived &gt;,(K_==Eigen::Dynamic) ? Eigen::Dynamic :3+3 *K_,(K_==Eigen::Dynamic) ? Eigen::Dynamic :3+K_ &gt;</a></td></tr>
+<tr class="memitem:a2b529a1efa04542a822c0dcd36e26e81 inherit pub_methods_a03335" id="r_a2b529a1efa04542a822c0dcd36e26e81"><td class="memItemLeft">
+std::enable_if_t&lt; M !=Eigen::Dynamic, int &gt;&#160;</td><td class="memItemRight"><b>dim</b> () const</td></tr>
+<tr class="memdesc:a2b529a1efa04542a822c0dcd36e26e81 inherit pub_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provided fixed dimension in <a class="el" href="a03335.html#a2b529a1efa04542a822c0dcd36e26e81">dim()</a> if needed. <br /></td></tr>
+<tr class="memitem:adaedee37b2d50e9a3cda87a7cbc6060b inherit pub_methods_a03335" id="r_adaedee37b2d50e9a3cda87a7cbc6060b"><td class="memItemLeft">Eigen::Matrix&lt; double, internal::product(N, N), 1 &gt;&#160;</td><td class="memItemRight"><a class="el" href="a03335.html#adaedee37b2d50e9a3cda87a7cbc6060b">vec</a> (<a class="el" href="a03363.html">OptionalJacobian</a>&lt; internal::product(N, N), D &gt; H={}) const</td></tr>
+<tr class="memdesc:adaedee37b2d50e9a3cda87a7cbc6060b inherit pub_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vectorize the matrix representation of a Lie group element.  <br /></td></tr>
+<tr class="memitem:a4820aeff8aab258df3c7119a290ef73c inherit pub_methods_a03335" id="r_a4820aeff8aab258df3c7119a290ef73c"><td class="memItemLeft">Jacobian&#160;</td><td class="memItemRight"><a class="el" href="a03335.html#a4820aeff8aab258df3c7119a290ef73c">AdjointMap</a> () const</td></tr>
+<tr class="memdesc:a4820aeff8aab258df3c7119a290ef73c inherit pub_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">A generic implementation of AdjointMap for matrix Lie groups.  <br /></td></tr>
+<tr class="memitem:acf7d38ce38e9df02c00f6afc65f6a97c inherit pub_methods_a03335" id="r_acf7d38ce38e9df02c00f6afc65f6a97c"><td class="memItemLeft">TangentVector&#160;</td><td class="memItemRight"><a class="el" href="a03335.html#acf7d38ce38e9df02c00f6afc65f6a97c">Adjoint</a> (const TangentVector &amp;xi, ChartJacobian H_this={}, ChartJacobian H_xi={}) const</td></tr>
+<tr class="memdesc:acf7d38ce38e9df02c00f6afc65f6a97c inherit pub_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjoint action on a tangent vector.  <br /></td></tr>
+<tr class="memitem:a7229eba7283c6e3334111dedcdc88cea inherit pub_methods_a03335" id="r_a7229eba7283c6e3334111dedcdc88cea"><td class="memItemLeft">TangentVector&#160;</td><td class="memItemRight"><a class="el" href="a03335.html#a7229eba7283c6e3334111dedcdc88cea">AdjointTranspose</a> (const TangentVector &amp;x, ChartJacobian H_this={}, ChartJacobian H_x={}) const</td></tr>
+<tr class="memdesc:a7229eba7283c6e3334111dedcdc88cea inherit pub_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dual Adjoint action on a tangent covector.  <br /></td></tr>
+<tr class="inherit_header pub_methods_a03267"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03267')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03267.html">gtsam::LieGroup&lt; std::conditional_t&lt; std::is_void_v&lt; Derived &gt;, ExtendedPose3&lt; K_, void &gt;, Derived &gt;, D &gt;</a></td></tr>
+<tr class="memitem:a4d639d44e18ea2a491c680caddfba53a inherit pub_methods_a03267" id="r_a4d639d44e18ea2a491c680caddfba53a"><td class="memItemLeft">
+SOn&#160;</td><td class="memItemRight"><b>compose</b> (const SOn &amp;g, DynamicJacobian H1, DynamicJacobian H2) const</td></tr>
+<tr class="memitem:a9e72cc544bd4345bf2012cd7efa14ce0 inherit pub_methods_a03267" id="r_a9e72cc544bd4345bf2012cd7efa14ce0"><td class="memItemLeft">
+SOn&#160;</td><td class="memItemRight"><b>between</b> (const SOn &amp;g, DynamicJacobian H1, DynamicJacobian H2) const</td></tr>
+<tr class="memitem:a293913cc58b7a609eec111c39ebb8fad inherit pub_methods_a03267" id="r_a293913cc58b7a609eec111c39ebb8fad"><td class="memItemLeft">
+GTSAM_EXPORT SOn&#160;</td><td class="memItemRight"><b>compose</b> (const SOn &amp;g, DynamicJacobian H1, DynamicJacobian H2) const</td></tr>
+<tr class="memitem:ad5b82e78a18fec58ac8e07f671c7104c inherit pub_methods_a03267" id="r_ad5b82e78a18fec58ac8e07f671c7104c"><td class="memItemLeft">
+GTSAM_EXPORT SOn&#160;</td><td class="memItemRight"><b>between</b> (const SOn &amp;g, DynamicJacobian H1, DynamicJacobian H2) const</td></tr>
+<tr class="memitem:afa084a36d7054e3c837519a96cc12377 inherit pub_methods_a03267" id="r_afa084a36d7054e3c837519a96cc12377"><td class="memItemLeft">
+std::enable_if_t&lt; M !=Eigen::Dynamic, int &gt;&#160;</td><td class="memItemRight"><b>dim</b> () const</td></tr>
+<tr class="memdesc:afa084a36d7054e3c837519a96cc12377 inherit pub_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provided fixed dimension in <a class="el" href="a03267.html#afa084a36d7054e3c837519a96cc12377">dim()</a> if needed. <br /></td></tr>
+<tr class="memitem:a6e2cc5a215c0aa077ecd13caaa080858 inherit pub_methods_a03267" id="r_a6e2cc5a215c0aa077ecd13caaa080858"><td class="memItemLeft">
+const std::conditional_t&lt; std::is_void_v&lt; Derived &gt;, <a class="el" href="a04231.html">ExtendedPose3</a>&lt; K_, void &gt;, Derived &gt; &amp;&#160;</td><td class="memItemRight"><b>derived</b> () const</td></tr>
+<tr class="memitem:a1d345a3bc578a7b20713e1bc0e003251 inherit pub_methods_a03267" id="r_a1d345a3bc578a7b20713e1bc0e003251"><td class="memItemLeft">
+std::conditional_t&lt; std::is_void_v&lt; Derived &gt;, <a class="el" href="a04231.html">ExtendedPose3</a>&lt; K_, void &gt;, Derived &gt;&#160;</td><td class="memItemRight"><b>inverse</b> (ChartJacobian H) const</td></tr>
+<tr class="memitem:aee395d766c6c8afb27a9bece5c42400e inherit pub_methods_a03267" id="r_aee395d766c6c8afb27a9bece5c42400e"><td class="memItemLeft">
+std::conditional_t&lt; std::is_void_v&lt; Derived &gt;, <a class="el" href="a04231.html">ExtendedPose3</a>&lt; K_, void &gt;, Derived &gt;&#160;</td><td class="memItemRight"><b>expmap</b> (const TangentVector &amp;v) const</td></tr>
+<tr class="memdesc:aee395d766c6c8afb27a9bece5c42400e inherit pub_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">expmap as required by manifold concept Applies exponential map to v and composes with *this <br /></td></tr>
+<tr class="memitem:a9a8ba0a0f7442929df460d79292134aa inherit pub_methods_a03267" id="r_a9a8ba0a0f7442929df460d79292134aa"><td class="memItemLeft">
+TangentVector&#160;</td><td class="memItemRight"><b>logmap</b> (const std::conditional_t&lt; std::is_void_v&lt; Derived &gt;, <a class="el" href="a04231.html">ExtendedPose3</a>&lt; K_, void &gt;, Derived &gt; &amp;g) const</td></tr>
+<tr class="memdesc:a9a8ba0a0f7442929df460d79292134aa inherit pub_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">logmap as required by manifold concept Applies logarithmic map to group element that takes *this to g <br /></td></tr>
+<tr class="memitem:adf52076de7615c335b4574f577a22b77 inherit pub_methods_a03267" id="r_adf52076de7615c335b4574f577a22b77"><td class="memItemLeft">
+std::conditional_t&lt; std::is_void_v&lt; Derived &gt;, <a class="el" href="a04231.html">ExtendedPose3</a>&lt; K_, void &gt;, Derived &gt;&#160;</td><td class="memItemRight"><b>retract</b> (const TangentVector &amp;v) const</td></tr>
+<tr class="memdesc:adf52076de7615c335b4574f577a22b77 inherit pub_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">retract as required by manifold concept: applies v at *this <br /></td></tr>
+<tr class="memitem:a5380bfede1eb39fa9473824009a747a7 inherit pub_methods_a03267" id="r_a5380bfede1eb39fa9473824009a747a7"><td class="memItemLeft">
+TangentVector&#160;</td><td class="memItemRight"><b>localCoordinates</b> (const std::conditional_t&lt; std::is_void_v&lt; Derived &gt;, <a class="el" href="a04231.html">ExtendedPose3</a>&lt; K_, void &gt;, Derived &gt; &amp;g) const</td></tr>
+<tr class="memdesc:a5380bfede1eb39fa9473824009a747a7 inherit pub_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">localCoordinates as required by manifold concept: finds tangent vector between *this and g <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a400907c450124b2239f6cc5a0318c61b" id="r_a400907c450124b2239f6cc5a0318c61b"><td class="memItemLeft"><a id="a400907c450124b2239f6cc5a0318c61b" name="a400907c450124b2239f6cc5a0318c61b"></a>
+static constexpr int&#160;</td><td class="memItemRight"><b>K</b> = K_</td></tr>
+<tr class="memitem:ae806f40b1e147ffb509db537f5366f90" id="r_ae806f40b1e147ffb509db537f5366f90"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#ae806f40b1e147ffb509db537f5366f90">dimension</a></td></tr>
+<tr class="memitem:a2db9e60f640ed4a793ce789d4d140704" id="r_a2db9e60f640ed4a793ce789d4d140704"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#a2db9e60f640ed4a793ce789d4d140704">matrixDim</a></td></tr>
+<tr class="inherit_header pub_static_attribs_a03335"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_attribs_a03335')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Attributes inherited from <a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; std::conditional_t&lt; std::is_void_v&lt; Derived &gt;, ExtendedPose3&lt; K_, void &gt;, Derived &gt;,(K_==Eigen::Dynamic) ? Eigen::Dynamic :3+3 *K_,(K_==Eigen::Dynamic) ? Eigen::Dynamic :3+K_ &gt;</a></td></tr>
+<tr class="memitem:ab6addf52238ea8c6ba895b0f2496cbec inherit pub_static_attribs_a03335" id="r_ab6addf52238ea8c6ba895b0f2496cbec"><td class="memItemLeft">
+static constexpr auto&#160;</td><td class="memItemRight"><b>dimension</b></td></tr>
+<tr class="inherit_header pub_static_attribs_a03267"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_attribs_a03267')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Attributes inherited from <a class="el" href="a03267.html">gtsam::LieGroup&lt; std::conditional_t&lt; std::is_void_v&lt; Derived &gt;, ExtendedPose3&lt; K_, void &gt;, Derived &gt;, D &gt;</a></td></tr>
+<tr class="memitem:ab6addf52238ea8c6ba895b0f2496cbec inherit pub_static_attribs_a03267" id="r_ab6addf52238ea8c6ba895b0f2496cbec"><td class="memItemLeft">
+static constexpr auto&#160;</td><td class="memItemRight"><b>dimension</b></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:add769afa479b0e08c0da35f4103ffec7" id="r_add769afa479b0e08c0da35f4103ffec7"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#add769afa479b0e08c0da35f4103ffec7">This</a></td></tr>
+<tr class="memitem:ac3638ccfb1561d97e148486e75ae9641" id="r_ac3638ccfb1561d97e148486e75ae9641"><td class="memItemLeft"><a id="ac3638ccfb1561d97e148486e75ae9641" name="ac3638ccfb1561d97e148486e75ae9641"></a>
+using&#160;</td><td class="memItemRight"><b>Base</b> = <a class="el" href="a03335.html">MatrixLieGroup</a>&lt;This, dimension, matrixDim&gt;</td></tr>
+<tr class="memitem:a7e1b16b070d003a069bdd3498f7840c6" id="r_a7e1b16b070d003a069bdd3498f7840c6"><td class="memItemLeft"><a id="a7e1b16b070d003a069bdd3498f7840c6" name="a7e1b16b070d003a069bdd3498f7840c6"></a>
+using&#160;</td><td class="memItemRight"><b>TangentVector</b> = typename Base::TangentVector</td></tr>
+<tr class="memitem:a3a7f9261e6e99bf200d45e3e4fe11c4d" id="r_a3a7f9261e6e99bf200d45e3e4fe11c4d"><td class="memItemLeft"><a id="a3a7f9261e6e99bf200d45e3e4fe11c4d" name="a3a7f9261e6e99bf200d45e3e4fe11c4d"></a>
+using&#160;</td><td class="memItemRight"><b>Jacobian</b> = typename Base::Jacobian</td></tr>
+<tr class="memitem:afff4f710ef30e6db2c1cd4798fab92e5" id="r_afff4f710ef30e6db2c1cd4798fab92e5"><td class="memItemLeft"><a id="afff4f710ef30e6db2c1cd4798fab92e5" name="afff4f710ef30e6db2c1cd4798fab92e5"></a>
+using&#160;</td><td class="memItemRight"><b>ChartJacobian</b> = typename Base::ChartJacobian</td></tr>
+<tr class="memitem:a2c7bb1319fd356e4d958fa1231e51903" id="r_a2c7bb1319fd356e4d958fa1231e51903"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a2c7bb1319fd356e4d958fa1231e51903">ComponentJacobian</a></td></tr>
+<tr class="memitem:a7f4b33bffec6392390f59ec7087e9356" id="r_a7f4b33bffec6392390f59ec7087e9356"><td class="memItemLeft"><a id="a7f4b33bffec6392390f59ec7087e9356" name="a7f4b33bffec6392390f59ec7087e9356"></a>
+using&#160;</td><td class="memItemRight"><b>MatrixRep</b> = Eigen::Matrix&lt;double, matrixDim, matrixDim&gt;</td></tr>
+<tr class="memdesc:a7f4b33bffec6392390f59ec7087e9356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Homogeneous matrix representation in the group. <br /></td></tr>
+<tr class="memitem:abfde617e79c3414c1f97869d000ba668" id="r_abfde617e79c3414c1f97869d000ba668"><td class="memItemLeft"><a id="abfde617e79c3414c1f97869d000ba668" name="abfde617e79c3414c1f97869d000ba668"></a>
+using&#160;</td><td class="memItemRight"><b>LieAlgebra</b> = Eigen::Matrix&lt;double, matrixDim, matrixDim&gt;</td></tr>
+<tr class="memdesc:abfde617e79c3414c1f97869d000ba668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lie algebra matrix type used by Hat/Vee. <br /></td></tr>
+<tr class="memitem:ac96f09ca4406c0f6d248c744ed5a16f8" id="r_ac96f09ca4406c0f6d248c744ed5a16f8"><td class="memItemLeft"><a id="ac96f09ca4406c0f6d248c744ed5a16f8" name="ac96f09ca4406c0f6d248c744ed5a16f8"></a>
+using&#160;</td><td class="memItemRight"><b>Matrix3K</b> = Eigen::Matrix&lt;double, 3, K&gt;</td></tr>
+<tr class="inherit_header pub_types_a03335"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03335')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; std::conditional_t&lt; std::is_void_v&lt; Derived &gt;, ExtendedPose3&lt; K_, void &gt;, Derived &gt;,(K_==Eigen::Dynamic) ? Eigen::Dynamic :3+3 *K_,(K_==Eigen::Dynamic) ? Eigen::Dynamic :3+K_ &gt;</a></td></tr>
+<tr class="memitem:a249f47368bec05877aa5f9e5e3e4745e inherit pub_types_a03335" id="r_a249f47368bec05877aa5f9e5e3e4745e"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
+<tr class="memitem:ae8fe60334b88257cf388cf3349623622 inherit pub_types_a03335" id="r_ae8fe60334b88257cf388cf3349623622"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
+<tr class="memitem:a32d0c18eb2460e6f18aec307387c863f inherit pub_types_a03335" id="r_a32d0c18eb2460e6f18aec307387c863f"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Jacobian</b></td></tr>
+<tr class="memitem:a5708d3e1018df83695cf8d39242ad183 inherit pub_types_a03335" id="r_a5708d3e1018df83695cf8d39242ad183"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+<tr class="memitem:a8140474606ed51ea0c453ec30cd78274 inherit pub_types_a03335" id="r_a8140474606ed51ea0c453ec30cd78274"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Vectorized</b></td></tr>
+<tr class="memitem:a25c51d4c609caaca896812321922682b inherit pub_types_a03335" id="r_a25c51d4c609caaca896812321922682b"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>VectorizedJacobian</b></td></tr>
+<tr class="inherit_header pub_types_a03267"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03267')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03267.html">gtsam::LieGroup&lt; std::conditional_t&lt; std::is_void_v&lt; Derived &gt;, ExtendedPose3&lt; K_, void &gt;, Derived &gt;, D &gt;</a></td></tr>
+<tr class="memitem:ad674a7648d8381edcc9ed80919937bfd inherit pub_types_a03267" id="r_ad674a7648d8381edcc9ed80919937bfd"><td class="memItemLeft">
+typedef <a class="el" href="a03363.html">OptionalJacobian</a>&lt; N, N &gt;&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
+<tr class="memitem:a65ba8c4c1e30c31c5d9262c611771067 inherit pub_types_a03267" id="r_a65ba8c4c1e30c31c5d9262c611771067"><td class="memItemLeft">
+typedef Eigen::Matrix&lt; double, N, N &gt;&#160;</td><td class="memItemRight"><b>Jacobian</b></td></tr>
+<tr class="memitem:a58064c114e3fca97921ff802590ce10f inherit pub_types_a03267" id="r_a58064c114e3fca97921ff802590ce10f"><td class="memItemLeft">
+typedef Eigen::Matrix&lt; double, N, 1 &gt;&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:ChartAtOrigin" id="r_ChartAtOrigin"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04235.html">ChartAtOrigin</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chart operations at identity for LieGroup/Manifold compatibility.  <a href="a04235.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-types" class="groupheader"><a id="pro-types" name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr class="memitem:af0d3cdfe704cc96ec301eca717c40116" id="r_af0d3cdfe704cc96ec301eca717c40116"><td class="memTemplParams" colspan="2"><a id="af0d3cdfe704cc96ec301eca717c40116" name="af0d3cdfe704cc96ec301eca717c40116"></a>
+template&lt;int K__&gt; </td></tr>
+<tr class="memitem:af0d3cdfe704cc96ec301eca717c40116 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><b>IsDynamic</b> = typename std::enable_if&lt;K__ == Eigen::Dynamic, void&gt;::type</td></tr>
+<tr class="memitem:a0af88c7f86d5b3c00d03022c537f5431" id="r_a0af88c7f86d5b3c00d03022c537f5431"><td class="memTemplParams" colspan="2"><a id="a0af88c7f86d5b3c00d03022c537f5431" name="a0af88c7f86d5b3c00d03022c537f5431"></a>
+template&lt;int K__&gt; </td></tr>
+<tr class="memitem:a0af88c7f86d5b3c00d03022c537f5431 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><b>IsFixed</b> = typename std::enable_if&lt;K__ &gt;= 1, void&gt;::type</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-methods" class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a141a0fafa7b059372e5de5b59b94dc1a" id="r_a141a0fafa7b059372e5de5b59b94dc1a"><td class="memItemLeft"><a id="a141a0fafa7b059372e5de5b59b94dc1a" name="a141a0fafa7b059372e5de5b59b94dc1a"></a>
+static This&#160;</td><td class="memItemRight"><b>MakeReturn</b> (const <a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a> &amp;value)</td></tr>
+<tr class="memitem:abb3be77ac126a32639e91f50c3249802" id="r_abb3be77ac126a32639e91f50c3249802"><td class="memItemLeft"><a id="abb3be77ac126a32639e91f50c3249802" name="abb3be77ac126a32639e91f50c3249802"></a>
+static const <a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a> &amp;&#160;</td><td class="memItemRight"><b>AsBase</b> (const This &amp;value)</td></tr>
+<tr class="memitem:a2ee774317f03dadc01f1ee4e12d5c234" id="r_a2ee774317f03dadc01f1ee4e12d5c234"><td class="memItemLeft"><a id="a2ee774317f03dadc01f1ee4e12d5c234" name="a2ee774317f03dadc01f1ee4e12d5c234"></a>
+static size_t&#160;</td><td class="memItemRight"><b>RuntimeK</b> (const TangentVector &amp;xi)</td></tr>
+<tr class="memitem:abcf0f86d7fb47cd636b7bbbc60d87f10" id="r_abcf0f86d7fb47cd636b7bbbc60d87f10"><td class="memItemLeft"><a id="abcf0f86d7fb47cd636b7bbbc60d87f10" name="abcf0f86d7fb47cd636b7bbbc60d87f10"></a>
+static void&#160;</td><td class="memItemRight"><b>ZeroJacobian</b> (ChartJacobian H, Eigen::Index d)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a856141204c45779a1d8e3d84268cfd1e" id="r_a856141204c45779a1d8e3d84268cfd1e"><td class="memItemLeft"><a id="a856141204c45779a1d8e3d84268cfd1e" name="a856141204c45779a1d8e3d84268cfd1e"></a>
+<a class="el" href="a04451.html">Rot3</a>&#160;</td><td class="memItemRight"><b>R_</b></td></tr>
+<tr class="memdesc:a856141204c45779a1d8e3d84268cfd1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotation component. <br /></td></tr>
+<tr class="memitem:ab307c732978e66900429a71e72655897" id="r_ab307c732978e66900429a71e72655897"><td class="memItemLeft"><a id="ab307c732978e66900429a71e72655897" name="ab307c732978e66900429a71e72655897"></a>
+Matrix3K&#160;</td><td class="memItemRight"><b>t_</b></td></tr>
+<tr class="memdesc:ab307c732978e66900429a71e72655897"><td class="mdescLeft">&#160;</td><td class="mdescRight">K translation-like columns in world frame. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a599a30492797a4782ac2e7939ff6db9f" id="r_a599a30492797a4782ac2e7939ff6db9f"><td class="memItemLeft"><a id="a599a30492797a4782ac2e7939ff6db9f" name="a599a30492797a4782ac2e7939ff6db9f"></a>
+std::ostream &amp;&#160;</td><td class="memItemRight"><b>operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a> &amp;p)</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; Ordering &gt;</a></td></tr>
-<tr class="memitem:a0b809ea2931c6c4a2ecbd17e8f3fab39 inherit pub_methods_a03039" id="r_a0b809ea2931c6c4a2ecbd17e8f3fab39"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>BOOST_CONCEPT_ASSERT</b> ((<a class="el" href="a03035.html">HasTestablePrereqs</a>&lt; <a class="el" href="a04227.html">Ordering</a> &gt;))</td></tr>
-<tr class="inherit_header pub_static_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; Ordering &gt;</a></td></tr>
-<tr class="memitem:a27b246d77898916925c676895348fedf inherit pub_static_methods_a03039" id="r_a27b246d77898916925c676895348fedf"><td class="memItemLeft">
-static void&#160;</td><td class="memItemRight"><b>Print</b> (const <a class="el" href="a04227.html">Ordering</a> &amp;m, const std::string &amp;str=&quot;&quot;)</td></tr>
-<tr class="memitem:a29a5699453b92070b31ca7fa42609d98 inherit pub_static_methods_a03039" id="r_a29a5699453b92070b31ca7fa42609d98"><td class="memItemLeft">
-static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el" href="a04227.html">Ordering</a> &amp;m1, const <a class="el" href="a04227.html">Ordering</a> &amp;m2, double tol=1e-8)</td></tr>
+<tr class="inherit_header pub_static_methods_a03335"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03335')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; std::conditional_t&lt; std::is_void_v&lt; Derived &gt;, ExtendedPose3&lt; K_, void &gt;, Derived &gt;,(K_==Eigen::Dynamic) ? Eigen::Dynamic :3+3 *K_,(K_==Eigen::Dynamic) ? Eigen::Dynamic :3+K_ &gt;</a></td></tr>
+<tr class="memitem:a5454833785925037137a2eef98edf558 inherit pub_static_methods_a03335" id="r_a5454833785925037137a2eef98edf558"><td class="memItemLeft">
+static constexpr int&#160;</td><td class="memItemRight"><b>Dim</b> ()</td></tr>
+<tr class="memdesc:a5454833785925037137a2eef98edf558 inherit pub_static_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static method to get the dimension (compile-time or dynamic). <br /></td></tr>
+<tr class="memitem:a3e46364311f36a12b6dcccabaf7e5207 inherit pub_static_methods_a03335" id="r_a3e46364311f36a12b6dcccabaf7e5207"><td class="memItemLeft">
+static Jacobian&#160;</td><td class="memItemRight"><b>adjointMap</b> (const TangentVector &amp;xi)</td></tr>
+<tr class="memdesc:a3e46364311f36a12b6dcccabaf7e5207 inherit pub_static_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lie algebra adjoint map ad_xi, with optional specialization in derived classes. <br /></td></tr>
+<tr class="memitem:a83cf162a62639adfb8013f79d6aea754 inherit pub_static_methods_a03335" id="r_a83cf162a62639adfb8013f79d6aea754"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>adjoint</b> (const TangentVector &amp;xi, const TangentVector &amp;y, ChartJacobian Hxi={}, ChartJacobian H_y={})</td></tr>
+<tr class="memdesc:a83cf162a62639adfb8013f79d6aea754 inherit pub_static_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lie algebra action ad_xi(y), with optional Jacobians. <br /></td></tr>
+<tr class="memitem:a20e1ae24f0e452ad88658f028bc56c2b inherit pub_static_methods_a03335" id="r_a20e1ae24f0e452ad88658f028bc56c2b"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>adjointTranspose</b> (const TangentVector &amp;xi, const TangentVector &amp;y, ChartJacobian Hxi={}, ChartJacobian H_y={})</td></tr>
+<tr class="memdesc:a20e1ae24f0e452ad88658f028bc56c2b inherit pub_static_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dual Lie algebra action ad_xi^T(y), with optional Jacobians. <br /></td></tr>
+<tr class="inherit_header pub_static_methods_a03267"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03267')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03267.html">gtsam::LieGroup&lt; std::conditional_t&lt; std::is_void_v&lt; Derived &gt;, ExtendedPose3&lt; K_, void &gt;, Derived &gt;, D &gt;</a></td></tr>
+<tr class="memitem:a5454833785925037137a2eef98edf558 inherit pub_static_methods_a03267" id="r_a5454833785925037137a2eef98edf558"><td class="memItemLeft">
+static constexpr int&#160;</td><td class="memItemRight"><b>Dim</b> ()</td></tr>
+<tr class="memdesc:a5454833785925037137a2eef98edf558 inherit pub_static_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static method to get the dimension (compile-time or dynamic). <br /></td></tr>
+<tr class="memitem:af0dab5bebe52a8ccebe8ea8a1dbafd21 inherit pub_static_methods_a03267" id="r_af0dab5bebe52a8ccebe8ea8a1dbafd21"><td class="memItemLeft">
+static std::conditional_t&lt; std::is_void_v&lt; Derived &gt;, <a class="el" href="a04231.html">ExtendedPose3</a>&lt; K_, void &gt;, Derived &gt;&#160;</td><td class="memItemRight"><b>Retract</b> (const TangentVector &amp;v)</td></tr>
+<tr class="memdesc:af0dab5bebe52a8ccebe8ea8a1dbafd21 inherit pub_static_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retract at origin: possible in Lie group because it has an identity. <br /></td></tr>
+<tr class="memitem:aaa535efd2e685eeb1f26e828d49d7819 inherit pub_static_methods_a03267" id="r_aaa535efd2e685eeb1f26e828d49d7819"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>LocalCoordinates</b> (const std::conditional_t&lt; std::is_void_v&lt; Derived &gt;, <a class="el" href="a04231.html">ExtendedPose3</a>&lt; K_, void &gt;, Derived &gt; &amp;g)</td></tr>
+<tr class="memdesc:aaa535efd2e685eeb1f26e828d49d7819 inherit pub_static_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">LocalCoordinates at origin: possible in Lie group because it has an identity. <br /></td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/inference/<a class="el" href="a00641_source.html">Ordering.h</a></li>
+<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
+<a id="a2c7bb1319fd356e4d958fa1231e51903" name="a2c7bb1319fd356e4d958fa1231e51903"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c7bb1319fd356e4d958fa1231e51903">&#9670;&#160;</a></span>ComponentJacobian</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K_, class Derived&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K_, Derived &gt;::ComponentJacobian</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line"> </div>
+<div class="line">std::conditional_t&lt;dimension == Eigen::Dynamic,</div>
+<div class="line">                   <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;Eigen::Dynamic, Eigen::Dynamic&gt;</a>,</div>
+<div class="line">                   <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;3, dimension&gt;</a>&gt;</div>
+<div class="ttc" id="aa03363_html"><div class="ttname"><a href="a03363.html">gtsam::OptionalJacobian</a></div><div class="ttdoc">OptionalJacobian is an Eigen::Ref like class that can take be constructed using either a fixed size o...</div><div class="ttdef"><b>Definition</b> OptionalJacobian.h:40</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="add769afa479b0e08c0da35f4103ffec7" name="add769afa479b0e08c0da35f4103ffec7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add769afa479b0e08c0da35f4103ffec7">&#9670;&#160;</a></span>This</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K_, class Derived&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K_, Derived &gt;::This</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">std::conditional_t&lt;std::is_void_v&lt;Derived&gt;,</div>
+<div class="line">                                 <a class="code hl_function" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3&lt;K, void&gt;</a>, Derived&gt;</div>
+<div class="ttc" id="aa04231_html_abe984c881da839181b49f5b60c6f3090"><div class="ttname"><a href="#abe984c881da839181b49f5b60c6f3090">gtsam::ExtendedPose3::ExtendedPose3</a></div><div class="ttdeci">ExtendedPose3()</div><div class="ttdoc">Construct a fixed-size identity element.</div><div class="ttdef"><b>Definition</b> ExtendedPose3.h:99</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="abe984c881da839181b49f5b60c6f3090" name="abe984c881da839181b49f5b60c6f3090"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe984c881da839181b49f5b60c6f3090">&#9670;&#160;</a></span>ExtendedPose3() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K_, class Derived&gt; </div>
+<div class="memtemplate">
+template&lt;int K__ = K_, typename = IsFixed&lt;K__&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K_, Derived &gt;::ExtendedPose3 </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a fixed-size identity element. </p>
+<p>For fixed K, this creates R=I and x_i=0 for i=1..k. The manifold dimension is 3+3k and matrix size is (3+k)x(3+k). </p>
+
+</div>
+</div>
+<a id="a778bbd41fcd8d3eea3b43b26f54905ee" name="a778bbd41fcd8d3eea3b43b26f54905ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a778bbd41fcd8d3eea3b43b26f54905ee">&#9670;&#160;</a></span>ExtendedPose3() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K_, class Derived&gt; </div>
+<div class="memtemplate">
+template&lt;int K__ = K_, typename = IsDynamic&lt;K__&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K_, Derived &gt;::ExtendedPose3 </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>k</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a dynamic-size identity element. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="#a872d9a06fddcf86f582e29a19819d785">k</a></td><td>Number of R^3 blocks. Creates R=I and x_i=0 for i=1..k. The manifold dimension is 3+3k and matrix size is (3+k)x(3+k). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a22c2f2ce70f69d6a6b7c6263d394e6aa" name="a22c2f2ce70f69d6a6b7c6263d394e6aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22c2f2ce70f69d6a6b7c6263d394e6aa">&#9670;&#160;</a></span>ExtendedPose3() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K, class Derived&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K, Derived &gt;::ExtendedPose3 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a04451.html">Rot3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>R</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Matrix3K &amp;</td>          <td class="paramname"><span class="paramname"><em>x</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct from rotation and 3xk block. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">R</td><td>Rotation in SO(3). </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a2b1d6225238e2d5b18efb1a9212e8a90" title="i-th R^3 component, returned by value.">x</a></td><td>Matrix in R^(3xk), where column i stores x_i. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0fa67f77d1f7f37d861ae06e8c37ac56" name="a0fa67f77d1f7f37d861ae06e8c37ac56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fa67f77d1f7f37d861ae06e8c37ac56">&#9670;&#160;</a></span>ExtendedPose3() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K, class Derived&gt; </div>
+<div class="memtemplate">
+template&lt;int FixedK, typename, typename... Vecs, typename&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K, Derived &gt;::ExtendedPose3 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a04451.html">Rot3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>R</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vecs &amp;...</td>          <td class="paramname"><span class="paramname"><em>xs</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a fixed-size state from rotation and K 3-vectors. </p>
+<p>The vectors are stored in order as x_1, ..., x_K.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">R</td><td>Rotation in SO(3). </td></tr>
+    <tr><td class="paramname">xs</td><td>K vector blocks in R^3. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae948ed65554fd9130196b79d3603b804" name="ae948ed65554fd9130196b79d3603b804"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae948ed65554fd9130196b79d3603b804">&#9670;&#160;</a></span>ExtendedPose3() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K, class Derived&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K, Derived &gt;::ExtendedPose3 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a7f4b33bffec6392390f59ec7087e9356">MatrixRep</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>T</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct from homogeneous matrix representation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>Homogeneous matrix in R^((3+k)x(3+k)). Top-left 3x3 is R, top-right 3xk stores x_1..x_k. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="af2d4622edab99e587f0bc2ab475d832e" name="af2d4622edab99e587f0bc2ab475d832e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2d4622edab99e587f0bc2ab475d832e">&#9670;&#160;</a></span>AdjointMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K, class Derived&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a>&lt; K, Derived &gt;::Jacobian <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K, Derived &gt;::AdjointMap </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adjoint map. </p>
+<dl class="section return"><dt>Returns</dt><dd>Matrix in R^(dimxdim). </dd></dl>
+
+</div>
+</div>
+<a id="a01d53ed38c96a3180a39c3156a81639d" name="a01d53ed38c96a3180a39c3156a81639d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01d53ed38c96a3180a39c3156a81639d">&#9670;&#160;</a></span>adjointMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K, class Derived&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a>&lt; K, Derived &gt;::Jacobian <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K, Derived &gt;::adjointMap </td>
+          <td>(</td>
+          <td class="paramtype">const TangentVector &amp;</td>          <td class="paramname"><span class="paramname"><em>xi</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lie algebra adjoint map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xi</td><td>Tangent vector in R^dim. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ad_xi matrix in R^(dimxdim). </dd></dl>
+
+</div>
+</div>
+<a id="a02649682fd37e4344348317fd04956b5" name="a02649682fd37e4344348317fd04956b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02649682fd37e4344348317fd04956b5">&#9670;&#160;</a></span>dim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K_, class Derived&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K_, Derived &gt;::dim </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Runtime manifold dimension, 3+3k. </dd></dl>
+
+</div>
+</div>
+<a id="ad9948758476c62558e197e6444895846" name="ad9948758476c62558e197e6444895846"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9948758476c62558e197e6444895846">&#9670;&#160;</a></span>Dimension()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K_, class Derived&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K_, Derived &gt;::Dimension </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>k</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Runtime manifold dimension helper. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="#a872d9a06fddcf86f582e29a19819d785">k</a></td><td>Number of R^3 blocks. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>3+3k. </dd></dl>
+
+</div>
+</div>
+<a id="a9f9059d221f60832e31cabf92df425a6" name="a9f9059d221f60832e31cabf92df425a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f9059d221f60832e31cabf92df425a6">&#9670;&#160;</a></span>equals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K, class Derived&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K, Derived &gt;::equals </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a>&lt; K_, Derived &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>tol</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1e-9</span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Equality check with tolerance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Other state. </td></tr>
+    <tr><td class="paramname">tol</td><td>Absolute tolerance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if rotation and all x_i blocks are equal within tol. </dd></dl>
+
+</div>
+</div>
+<a id="a105c816e8fb076a78ea1b221c1f8e488" name="a105c816e8fb076a78ea1b221c1f8e488"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a105c816e8fb076a78ea1b221c1f8e488">&#9670;&#160;</a></span>Expmap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K, class Derived&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a>&lt; K, Derived &gt;::This <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K, Derived &gt;::Expmap </td>
+          <td>(</td>
+          <td class="paramtype">const TangentVector &amp;</td>          <td class="paramname"><span class="paramname"><em>xi</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ChartJacobian</td>          <td class="paramname"><span class="paramname"><em>Hxi</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Exponential map from tangent to group. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xi</td><td>Tangent vector in R^dim. </td></tr>
+    <tr><td class="paramname">Hxi</td><td>Optional Jacobian in R^(dimxdim). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Group element in SE_k(3). </dd></dl>
+
+</div>
+</div>
+<a id="a61be56bcedd2054b5c2069356242f2be" name="a61be56bcedd2054b5c2069356242f2be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61be56bcedd2054b5c2069356242f2be">&#9670;&#160;</a></span>ExpmapDerivative()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K, class Derived&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a>&lt; K, Derived &gt;::Jacobian <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K, Derived &gt;::ExpmapDerivative </td>
+          <td>(</td>
+          <td class="paramtype">const TangentVector &amp;</td>          <td class="paramname"><span class="paramname"><em>xi</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Jacobian of Expmap. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xi</td><td>Tangent vector in R^dim. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Matrix in R^(dimxdim). </dd></dl>
+
+</div>
+</div>
+<a id="a0c5316f3a859fe7e3255136be650f96c" name="a0c5316f3a859fe7e3255136be650f96c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c5316f3a859fe7e3255136be650f96c">&#9670;&#160;</a></span>Hat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K, class Derived&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a>&lt; K, Derived &gt;<a class="el" href="#abfde617e79c3414c1f97869d000ba668">::LieAlgebra</a> <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K, Derived &gt;::Hat </td>
+          <td>(</td>
+          <td class="paramtype">const TangentVector &amp;</td>          <td class="paramname"><span class="paramname"><em>xi</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Hat operator from tangent to Lie algebra. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xi</td><td>Tangent vector in R^dim. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Matrix in R^((3+k)x(3+k)). </dd></dl>
+
+</div>
+</div>
+<a id="a24df61c3d5ee73fb7d3a311ca318fe55" name="a24df61c3d5ee73fb7d3a311ca318fe55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24df61c3d5ee73fb7d3a311ca318fe55">&#9670;&#160;</a></span>Identity() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K_, class Derived&gt; </div>
+<div class="memtemplate">
+template&lt;int K__ = K_, typename = IsFixed&lt;K__&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">This <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K_, Derived &gt;::Identity </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Identity element for fixed-size K. </p>
+<dl class="section return"><dt>Returns</dt><dd>Identity with manifold dimension 3+3k and matrix size 3+k. </dd></dl>
+
+</div>
+</div>
+<a id="a67629df180930f3ddfbd8472dfcb262d" name="a67629df180930f3ddfbd8472dfcb262d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67629df180930f3ddfbd8472dfcb262d">&#9670;&#160;</a></span>Identity() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K_, class Derived&gt; </div>
+<div class="memtemplate">
+template&lt;int K__ = K_, typename = IsDynamic&lt;K__&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">This <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K_, Derived &gt;::Identity </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>k</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Identity element for dynamic-size K. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="#a872d9a06fddcf86f582e29a19819d785">k</a></td><td>Number of R^3 blocks. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Identity with manifold dimension 3+3k and matrix size 3+k. </dd></dl>
+
+</div>
+</div>
+<a id="a98c1d3b29a52e07471f0f1549f47ee70" name="a98c1d3b29a52e07471f0f1549f47ee70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98c1d3b29a52e07471f0f1549f47ee70">&#9670;&#160;</a></span>inverse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K, class Derived&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a>&lt; K, Derived &gt;::This <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K, Derived &gt;::inverse </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Group inverse. </p>
+<dl class="section return"><dt>Returns</dt><dd>X^{-1}. </dd></dl>
+
+</div>
+</div>
+<a id="a872d9a06fddcf86f582e29a19819d785" name="a872d9a06fddcf86f582e29a19819d785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a872d9a06fddcf86f582e29a19819d785">&#9670;&#160;</a></span>k()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K_, class Derived&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K_, Derived &gt;::k </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Number of R^3 blocks, k. </dd></dl>
+
+</div>
+</div>
+<a id="a5e5e33daa2c25fbd80c799ea6444dd96" name="a5e5e33daa2c25fbd80c799ea6444dd96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e5e33daa2c25fbd80c799ea6444dd96">&#9670;&#160;</a></span>Logmap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K, class Derived&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a>&lt; K, Derived &gt;::TangentVector <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K, Derived &gt;::Logmap </td>
+          <td>(</td>
+          <td class="paramtype">const This &amp;</td>          <td class="paramname"><span class="paramname"><em>pose</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ChartJacobian</td>          <td class="paramname"><span class="paramname"><em>Hpose</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logarithm map from group to tangent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pose</td><td>Group element in SE_k(3). </td></tr>
+    <tr><td class="paramname">Hpose</td><td>Optional Jacobian in R^(dimxdim). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Tangent vector in R^dim. </dd></dl>
+
+</div>
+</div>
+<a id="ac0d9d4c10dea8eeda2110fd22cb50e93" name="ac0d9d4c10dea8eeda2110fd22cb50e93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0d9d4c10dea8eeda2110fd22cb50e93">&#9670;&#160;</a></span>LogmapDerivative() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K, class Derived&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a>&lt; K, Derived &gt;::Jacobian <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K, Derived &gt;::LogmapDerivative </td>
+          <td>(</td>
+          <td class="paramtype">const TangentVector &amp;</td>          <td class="paramname"><span class="paramname"><em>xi</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Jacobian of Logmap evaluated from tangent coordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xi</td><td>Tangent vector in R^dim. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Matrix in R^(dimxdim). </dd></dl>
+
+</div>
+</div>
+<a id="adaa89e93ea5f1993f43cc12ae0c3b15a" name="adaa89e93ea5f1993f43cc12ae0c3b15a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaa89e93ea5f1993f43cc12ae0c3b15a">&#9670;&#160;</a></span>LogmapDerivative() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K, class Derived&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a>&lt; K, Derived &gt;::Jacobian <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K, Derived &gt;::LogmapDerivative </td>
+          <td>(</td>
+          <td class="paramtype">const This &amp;</td>          <td class="paramname"><span class="paramname"><em>pose</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Jacobian of Logmap evaluated at a group element. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pose</td><td>Group element in SE_k(3). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Matrix in R^(dimxdim). </dd></dl>
+
+</div>
+</div>
+<a id="a01564cb09a8c573a720db812a9910c56" name="a01564cb09a8c573a720db812a9910c56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01564cb09a8c573a720db812a9910c56">&#9670;&#160;</a></span>matrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K, class Derived&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a>&lt; K, Derived &gt;<a class="el" href="#a7f4b33bffec6392390f59ec7087e9356">::MatrixRep</a> <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K, Derived &gt;::matrix </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Homogeneous matrix representation. </p>
+<dl class="section return"><dt>Returns</dt><dd>Matrix in R^((3+k)x(3+k)). </dd></dl>
+
+</div>
+</div>
+<a id="a67f45f1f159a8bf6f920b6354914911e" name="a67f45f1f159a8bf6f920b6354914911e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67f45f1f159a8bf6f920b6354914911e">&#9670;&#160;</a></span>operator*()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K, class Derived&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a>&lt; K, Derived &gt;::This <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K, Derived &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const This &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Group composition. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Right-hand operand with the same k. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>this * other. </dd></dl>
+
+</div>
+</div>
+<a id="a508016113d399e5285fd64a29309c8c4" name="a508016113d399e5285fd64a29309c8c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a508016113d399e5285fd64a29309c8c4">&#9670;&#160;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K, class Derived&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K, Derived &gt;::print </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print this state. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Optional prefix string. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acbb316b1d5fdce7ea2ad73d7d2118d44" name="acbb316b1d5fdce7ea2ad73d7d2118d44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbb316b1d5fdce7ea2ad73d7d2118d44">&#9670;&#160;</a></span>rotation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K, class Derived&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="a04451.html">Rot3</a> &amp; <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K, Derived &gt;::rotation </td>
+          <td>(</td>
+          <td class="paramtype">ComponentJacobian</td>          <td class="paramname"><span class="paramname"><em>H</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rotation component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">H</td><td>Optional Jacobian in R^(3xdim) for local rotation coordinates. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Rotation R. </dd></dl>
+
+</div>
+</div>
+<a id="a8bb21ffc0d18d0ed29236b7bac84c157" name="a8bb21ffc0d18d0ed29236b7bac84c157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bb21ffc0d18d0ed29236b7bac84c157">&#9670;&#160;</a></span>Vee()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K, class Derived&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a>&lt; K, Derived &gt;::TangentVector <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K, Derived &gt;::Vee </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#abfde617e79c3414c1f97869d000ba668">LieAlgebra</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Vee operator from Lie algebra to tangent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">X</td><td>Matrix in R^((3+k)x(3+k)). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Tangent vector in R^dim. </dd></dl>
+
+</div>
+</div>
+<a id="a2b1d6225238e2d5b18efb1a9212e8a90" name="a2b1d6225238e2d5b18efb1a9212e8a90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b1d6225238e2d5b18efb1a9212e8a90">&#9670;&#160;</a></span>x()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K, class Derived&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K, Derived &gt;::x </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>i</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ComponentJacobian</td>          <td class="paramname"><span class="paramname"><em>H</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>i-th R^3 component, returned by value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>Zero-based block index in [0, k). </td></tr>
+    <tr><td class="paramname">H</td><td>Optional Jacobian in R^(3xdim). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>x_i in R^3. </dd></dl>
+
+</div>
+</div>
+<a id="ad08b627b029d70ac3104165178ea4880" name="ad08b627b029d70ac3104165178ea4880"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad08b627b029d70ac3104165178ea4880">&#9670;&#160;</a></span>xMatrix() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K, class Derived&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a>&lt; K, Derived &gt;::Matrix3K &amp; <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K, Derived &gt;::xMatrix </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mutable access to all x_i blocks. </p>
+<dl class="section return"><dt>Returns</dt><dd>Matrix in R^(3xk) with columns x_1..x_k. </dd></dl>
+
+</div>
+</div>
+<a id="acf355daa093f67ec82b9caecbc2640ab" name="acf355daa093f67ec82b9caecbc2640ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf355daa093f67ec82b9caecbc2640ab">&#9670;&#160;</a></span>xMatrix() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K, class Derived&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="#abe984c881da839181b49f5b60c6f3090">ExtendedPose3</a>&lt; K, Derived &gt;::Matrix3K &amp; <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K, Derived &gt;::xMatrix </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Access all x_i blocks. </p>
+<dl class="section return"><dt>Returns</dt><dd>Matrix in R^(3xk) with columns x_1..x_k. </dd></dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="ae806f40b1e147ffb509db537f5366f90" name="ae806f40b1e147ffb509db537f5366f90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae806f40b1e147ffb509db537f5366f90">&#9670;&#160;</a></span>dimension</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K_, class Derived&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K_, Derived &gt;::dimension</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">                                  =</div>
+<div class="line">(K == Eigen::Dynamic) ? Eigen::Dynamic : 3 + 3 * K</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2db9e60f640ed4a793ce789d4d140704" name="a2db9e60f640ed4a793ce789d4d140704"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2db9e60f640ed4a793ce789d4d140704">&#9670;&#160;</a></span>matrixDim</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int K_, class Derived&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="a04231.html">gtsam::ExtendedPose3</a>&lt; K_, Derived &gt;::matrixDim</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">                                  =</div>
+<div class="line">(K == Eigen::Dynamic) ? Eigen::Dynamic : 3 + K</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00431_source.html">ExtendedPose3.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00461_source.html">ExtendedPose3-inl.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -139,7 +1360,7 @@ static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04231.html">traits&lt; Ordering &gt;</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04231.html">ExtendedPose3</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

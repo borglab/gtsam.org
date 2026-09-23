@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,19 +96,56 @@ $(function(){initNavTree('a04135.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::EliminationTree&lt; BAYESNET, GRAPH &gt;::Node Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::Cal3Fisheye Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a04135.html">gtsam::EliminationTree&lt; BAYESNET, GRAPH &gt;::Node</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a04135.html">gtsam::Cal3Fisheye</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Children</b> typedef (defined in <a class="el" href="a04135.html">gtsam::EliminationTree&lt; BAYESNET, GRAPH &gt;::Node</a>)</td><td class="entry"><a class="el" href="a04135.html">gtsam::EliminationTree&lt; BAYESNET, GRAPH &gt;::Node</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a04135.html#ad6730594a7070d7cc565e0bdfcc4d699">children</a></td><td class="entry"><a class="el" href="a04135.html">gtsam::EliminationTree&lt; BAYESNET, GRAPH &gt;::Node</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>eliminate</b>(const boost::shared_ptr&lt; BayesNetType &gt; &amp;output, const Eliminate &amp;function, const FastVector&lt; sharedFactor &gt; &amp;childrenFactors) const (defined in <a class="el" href="a04135.html">gtsam::EliminationTree&lt; BAYESNET, GRAPH &gt;::Node</a>)</td><td class="entry"><a class="el" href="a04135.html">gtsam::EliminationTree&lt; BAYESNET, GRAPH &gt;::Node</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Factors</b> typedef (defined in <a class="el" href="a04135.html">gtsam::EliminationTree&lt; BAYESNET, GRAPH &gt;::Node</a>)</td><td class="entry"><a class="el" href="a04135.html">gtsam::EliminationTree&lt; BAYESNET, GRAPH &gt;::Node</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a04135.html#ae4ed45ec77035fd0c0cc91696276ea8f">factors</a></td><td class="entry"><a class="el" href="a04135.html">gtsam::EliminationTree&lt; BAYESNET, GRAPH &gt;::Node</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a04135.html#a725807c0f6a2b62cea3626dec4d12d24">key</a></td><td class="entry"><a class="el" href="a04135.html">gtsam::EliminationTree&lt; BAYESNET, GRAPH &gt;::Node</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>print</b>(const std::string &amp;str, const KeyFormatter &amp;keyFormatter) const (defined in <a class="el" href="a04135.html">gtsam::EliminationTree&lt; BAYESNET, GRAPH &gt;::Node</a>)</td><td class="entry"><a class="el" href="a04135.html">gtsam::EliminationTree&lt; BAYESNET, GRAPH &gt;::Node</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04067.html#ae5043431ecf23b4b87ec7e631c26298f">aspectRatio</a>() const</td><td class="entry"><a class="el" href="a04067.html">gtsam::Cal3</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04067.html#a217dac62e79c531d68a6c7674d326b55">Cal3</a>()=default</td><td class="entry"><a class="el" href="a04067.html">gtsam::Cal3</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04067.html#a00140a3bcdfc1d1aef72c445bf563962">Cal3</a>(double fx, double fy, double s, double u0, double v0)</td><td class="entry"><a class="el" href="a04067.html">gtsam::Cal3</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04067.html#a07d11d8f73bca2e0153e58b3e94b49ac">Cal3</a>(const Vector5 &amp;d)</td><td class="entry"><a class="el" href="a04067.html">gtsam::Cal3</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04067.html#a5422fbe7d6a1c4836aac3e9a391fce1c">Cal3</a>(double fov, int w, int h)</td><td class="entry"><a class="el" href="a04067.html">gtsam::Cal3</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04067.html#a72a4b85d35c7aad6d4efe9c0a8dc59a1">Cal3</a>(const std::string &amp;path)</td><td class="entry"><a class="el" href="a04067.html">gtsam::Cal3</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04135.html#afb3587b815f8d6b25d8dee3704063132">Cal3Fisheye</a>()=default</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Cal3Fisheye</b>(const double fx, const double fy, const double s, const double u0, const double v0, const double k1, const double k2, const double k3, const double k4, double tol=1e-5) (defined in <a class="el" href="a04135.html">gtsam::Cal3Fisheye</a>)</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Cal3Fisheye</b>(const Vector9 &amp;v) (defined in <a class="el" href="a04135.html">gtsam::Cal3Fisheye</a>)</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">explicit</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04135.html#a14fedec198724195185f1ea490d6dce3">calibrate</a>(const Point2 &amp;p, OptionalJacobian&lt; 2, 9 &gt; Dcal={}, OptionalJacobian&lt; 2, 2 &gt; Dp={}) const</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04135.html#ab35dc05c7cfd69999f1b58979e63a5d5">clone</a>() const</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04135.html#a709b5bece67a4edd562d45adbe7d14db">Dim</a>()</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04135.html#a86938ac703380c88a352ca656e1ba764">dim</a>() const</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04135.html#a9d85fe62d2014eb748c00d987917f805">dimension</a></td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04135.html#a780c1182175d2d47f2054b5b8bab90dd">equals</a>(const Cal3Fisheye &amp;K, double tol=10e-9) const</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04067.html#a22d4e8ffc890239c66e4b0a278dc72f4">gtsam::Cal3::equals</a>(const Cal3 &amp;K, double tol=10e-9) const</td><td class="entry"><a class="el" href="a04067.html">gtsam::Cal3</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04067.html#a93e2f9ae7ae50554e9e1e8306485eec9">fx</a>() const</td><td class="entry"><a class="el" href="a04067.html">gtsam::Cal3</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>fx_</b> (defined in <a class="el" href="a04067.html">gtsam::Cal3</a>)</td><td class="entry"><a class="el" href="a04067.html">gtsam::Cal3</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04067.html#aef899ed97ae4c2197f0ceca6d26764f3">fy</a>() const</td><td class="entry"><a class="el" href="a04067.html">gtsam::Cal3</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04067.html#a33811231ccb2620ac12a9f741044190d">fy_</a></td><td class="entry"><a class="el" href="a04067.html">gtsam::Cal3</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04067.html#a04db4819715db2034b5c055d06e39ad3">inverse</a>() const</td><td class="entry"><a class="el" href="a04067.html">gtsam::Cal3</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04067.html#a033c830a304c8e699be7383d13d3b715">K</a>() const</td><td class="entry"><a class="el" href="a04067.html">gtsam::Cal3</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04135.html#aeacf1a728e2d239975a8135e110e7bee">k</a>() const</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04135.html#a299898006c6bb91615df6cdf96aec7af">k1</a>() const</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04135.html#a9b72276cdc3e43515608be1a2ccc92ba">k2</a>() const</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04135.html#a683adc491f83a1e7a0b77ecbb7babe6f">k3</a>() const</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04135.html#a22b48ebb60cd7aca9adc850701880dd5">k4</a>() const</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04135.html#a6cdbc3c9dea1eda0c27581f468edf658">localCoordinates</a>(const Cal3Fisheye &amp;T2) const</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04135.html#a46667b515ddc1b5604f03c8766b73300">operator&lt;&lt;</a>(std::ostream &amp;os, const Cal3Fisheye &amp;cal)</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04067.html#a7c566955fe36140162f090bf290808cd">principalPoint</a>() const</td><td class="entry"><a class="el" href="a04067.html">gtsam::Cal3</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04135.html#a322fc71d2196bcd8d66eb35fdec38009">print</a>(const std::string &amp;s=&quot;&quot;) const override</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04067.html#a449ff8cff79ec3501224b50a26d9f0f9">px</a>() const</td><td class="entry"><a class="el" href="a04067.html">gtsam::Cal3</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04067.html#ac5a875956db6ad65848be742ea92b225">py</a>() const</td><td class="entry"><a class="el" href="a04067.html">gtsam::Cal3</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04135.html#afb53a41a0f7fb92e54b1efb46e750d10">retract</a>(const Vector &amp;d) const</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04067.html#a53228e7ead3f7153f98140486e99b8a6">s_</a></td><td class="entry"><a class="el" href="a04067.html">gtsam::Cal3</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04135.html#ab48aea9600cf16d6a377aa9cceeec838">Scaling</a>(double r)</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>shared_ptr</b> typedef (defined in <a class="el" href="a04135.html">gtsam::Cal3Fisheye</a>)</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04067.html#acefb5c426db131d1ea4fda8ce0410cbd">skew</a>() const</td><td class="entry"><a class="el" href="a04067.html">gtsam::Cal3</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>u0_</b> (defined in <a class="el" href="a04067.html">gtsam::Cal3</a>)</td><td class="entry"><a class="el" href="a04067.html">gtsam::Cal3</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04135.html#a4bf0e8fb6c559887a91c6d2143c30e76">uncalibrate</a>(const Point2 &amp;p, OptionalJacobian&lt; 2, 9 &gt; Dcal={}, OptionalJacobian&lt; 2, 2 &gt; Dp={}) const</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04067.html#ae52d5f4130f18069a281f7e4dbaa6ced">v0_</a></td><td class="entry"><a class="el" href="a04067.html">gtsam::Cal3</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04135.html#acf24577bcdba78c32c94eb7e9e5d4a55">vector</a>() const</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04067.html#a0c740b971ae9fc916a255e7b1ef5a4b9">~Cal3</a>()</td><td class="entry"><a class="el" href="a04067.html">gtsam::Cal3</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>~Cal3Fisheye</b>() override (defined in <a class="el" href="a04135.html">gtsam::Cal3Fisheye</a>)</td><td class="entry"><a class="el" href="a04135.html">gtsam::Cal3Fisheye</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

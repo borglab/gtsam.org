@@ -1,4 +1,4 @@
 var a01508 =
 [
-    [ "gtsam::SimPolygon2D", "a05747.html", "a05747" ]
+    [ "gtsam::traits&lt; ISAM2 &gt;", "a06327.html", null ]
 ];

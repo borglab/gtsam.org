@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::ISAM2Result::DetailedResults::VariableStatus Struct Reference</title>
+<title>gtsam: gtsam::Ordering Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,54 +96,437 @@ $(function(){initNavTree('a04979.html','','a04976'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::ISAM2Result::DetailedResults::VariableStatus Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::Ordering Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The status of a single variable, this struct is stored in <a class="el" href="a04975.html#aa95ea9ffc9e1c58ae54bccea5e5e1c5a" title="The status of each variable during this update, see VariableStatus.">DetailedResults::variableStatus</a>. </p>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a67d788b600237f67b188f30e8f4fd124" id="r_a67d788b600237f67b188f30e8f4fd124"><td class="memItemLeft"><a id="a67d788b600237f67b188f30e8f4fd124" name="a67d788b600237f67b188f30e8f4fd124"></a>
-bool&#160;</td><td class="memItemRight"><b>isReeliminated</b></td></tr>
-<tr class="memdesc:a67d788b600237f67b188f30e8f4fd124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the variable was just reeliminated, due to being relinearized, observed, new, or on the path up to the root clique from another reeliminated variable. <br /></td></tr>
-<tr class="memitem:a56611177d7b321070f779f35cb63cd16" id="r_a56611177d7b321070f779f35cb63cd16"><td class="memItemLeft"><a id="a56611177d7b321070f779f35cb63cd16" name="a56611177d7b321070f779f35cb63cd16"></a>
-bool&#160;</td><td class="memItemRight"><b>isAboveRelinThreshold</b></td></tr>
-<tr class="memdesc:a56611177d7b321070f779f35cb63cd16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the variable was just relinearized due to being above the relinearization threshold. <br /></td></tr>
-<tr class="memitem:a32f8f901efa181cc9afd45e6b3739f05" id="r_a32f8f901efa181cc9afd45e6b3739f05"><td class="memItemLeft"><a id="a32f8f901efa181cc9afd45e6b3739f05" name="a32f8f901efa181cc9afd45e6b3739f05"></a>
-bool&#160;</td><td class="memItemRight"><b>isRelinearizeInvolved</b></td></tr>
-<tr class="memdesc:a32f8f901efa181cc9afd45e6b3739f05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the variable was below the relinearization threshold but was relinearized by being involved in a factor with a variable above the relinearization threshold. <br /></td></tr>
-<tr class="memitem:abb513d3184dad90cf184e2fe5321544f" id="r_abb513d3184dad90cf184e2fe5321544f"><td class="memItemLeft"><a id="abb513d3184dad90cf184e2fe5321544f" name="abb513d3184dad90cf184e2fe5321544f"></a>
-bool&#160;</td><td class="memItemRight"><b>isRelinearized</b></td></tr>
-<tr class="memitem:a3bc9383714196de8f55921f11114f0ee" id="r_a3bc9383714196de8f55921f11114f0ee"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a3bc9383714196de8f55921f11114f0ee">isObserved</a></td></tr>
-<tr class="memdesc:a3bc9383714196de8f55921f11114f0ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the variable was relinearized, either by being above the relinearization threshold or by involvement.  <br /></td></tr>
-<tr class="memitem:a4b92b1d5ff516b37acfbc42d619579bb" id="r_a4b92b1d5ff516b37acfbc42d619579bb"><td class="memItemLeft"><a id="a4b92b1d5ff516b37acfbc42d619579bb" name="a4b92b1d5ff516b37acfbc42d619579bb"></a>
-bool&#160;</td><td class="memItemRight"><b>isNew</b></td></tr>
-<tr class="memdesc:a4b92b1d5ff516b37acfbc42d619579bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the variable itself was just added. <br /></td></tr>
-<tr class="memitem:a7318063c0257369484ba51e21c90b86f" id="r_a7318063c0257369484ba51e21c90b86f"><td class="memItemLeft"><a id="a7318063c0257369484ba51e21c90b86f" name="a7318063c0257369484ba51e21c90b86f"></a>
-bool&#160;</td><td class="memItemRight"><b>inRootClique</b></td></tr>
-<tr class="memdesc:a7318063c0257369484ba51e21c90b86f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the variable is in the root clique. <br /></td></tr>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::Ordering:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="a04979.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ac7ae1fad63b3f21931e61778dd12d7a6" id="r_ac7ae1fad63b3f21931e61778dd12d7a6"><td class="memItemLeft"><a id="ac7ae1fad63b3f21931e61778dd12d7a6" name="ac7ae1fad63b3f21931e61778dd12d7a6"></a>
+&#160;</td><td class="memItemRight"><b>Ordering</b> ()</td></tr>
+<tr class="memdesc:ac7ae1fad63b3f21931e61778dd12d7a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an empty ordering. <br /></td></tr>
+<tr class="memitem:a0fdb342e68a74e19c25a1d3364233cde" id="r_a0fdb342e68a74e19c25a1d3364233cde"><td class="memTemplParams" colspan="2"><a id="a0fdb342e68a74e19c25a1d3364233cde" name="a0fdb342e68a74e19c25a1d3364233cde"></a>
+template&lt;typename KEYS&gt; </td></tr>
+<tr class="memitem:a0fdb342e68a74e19c25a1d3364233cde template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>Ordering</b> (const KEYS &amp;keys)</td></tr>
+<tr class="memdesc:a0fdb342e68a74e19c25a1d3364233cde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create from a container. <br /></td></tr>
+<tr class="memitem:a2c9a505069410569b51dfa08b2fb01bf" id="r_a2c9a505069410569b51dfa08b2fb01bf"><td class="memItemLeft"><a id="a2c9a505069410569b51dfa08b2fb01bf" name="a2c9a505069410569b51dfa08b2fb01bf"></a>
+<a class="el" href="#ad29de1a2966331f21b1fd88a18234091">This</a> &amp;&#160;</td><td class="memItemRight"><b>operator+=</b> (<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key)</td></tr>
+<tr class="memdesc:a2c9a505069410569b51dfa08b2fb01bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add new variables to the ordering as <span class="tt">ordering += key1, key2, ...</span>. <br /></td></tr>
+<tr class="memitem:ab39d8bd2f0bb9a2668132bbbf7b9def9" id="r_ab39d8bd2f0bb9a2668132bbbf7b9def9"><td class="memItemLeft"><a id="ab39d8bd2f0bb9a2668132bbbf7b9def9" name="ab39d8bd2f0bb9a2668132bbbf7b9def9"></a>
+<a class="el" href="#ad29de1a2966331f21b1fd88a18234091">This</a> &amp;&#160;</td><td class="memItemRight"><b>operator,</b> (<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key)</td></tr>
+<tr class="memdesc:ab39d8bd2f0bb9a2668132bbbf7b9def9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloading the comma operator allows for chaining appends. <br /></td></tr>
+<tr class="memitem:ac70abe52c370ce005aa9f6477c6e093d" id="r_ac70abe52c370ce005aa9f6477c6e093d"><td class="memItemLeft"><a class="el" href="#ad29de1a2966331f21b1fd88a18234091">This</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ac70abe52c370ce005aa9f6477c6e093d">operator+=</a> (<a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;keys)</td></tr>
+<tr class="memdesc:ac70abe52c370ce005aa9f6477c6e093d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append new keys to the ordering as <span class="tt">ordering += keys</span>.  <br /></td></tr>
+<tr class="memitem:ae84cb77b6a1bc0c5acd4fe1eee347bed" id="r_ae84cb77b6a1bc0c5acd4fe1eee347bed"><td class="memItemLeft"><a id="ae84cb77b6a1bc0c5acd4fe1eee347bed" name="ae84cb77b6a1bc0c5acd4fe1eee347bed"></a>
+bool&#160;</td><td class="memItemRight"><b>contains</b> (const <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &amp;key) const</td></tr>
+<tr class="memdesc:ae84cb77b6a1bc0c5acd4fe1eee347bed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if key exists in ordering. <br /></td></tr>
+<tr class="memitem:ac8590c3149674d3b05a8648fd01b97a2" id="r_ac8590c3149674d3b05a8648fd01b97a2"><td class="memItemLeft"><a class="el" href="a03159.html">FastMap</a>&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, size_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ac8590c3149674d3b05a8648fd01b97a2">invert</a> () const</td></tr>
+<tr class="memdesc:ac8590c3149674d3b05a8648fd01b97a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invert (not reverse) the ordering - returns a map from key to order position.  <br /></td></tr>
+<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Testable</div></td></tr>
+<tr class="memitem:a19fb1c7d9752d62d568600b2ee8104cb" id="r_a19fb1c7d9752d62d568600b2ee8104cb"><td class="memItemLeft"><a id="a19fb1c7d9752d62d568600b2ee8104cb" name="a19fb1c7d9752d62d568600b2ee8104cb"></a>
+void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;str=&quot;&quot;, const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) const</td></tr>
+<tr class="memitem:a3cf688f730746a83ec75277de6574866" id="r_a3cf688f730746a83ec75277de6574866"><td class="memItemLeft"><a id="a3cf688f730746a83ec75277de6574866" name="a3cf688f730746a83ec75277de6574866"></a>
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a> &amp;other, double tol=1e-9) const</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr id="pub-static-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Fill-reducing Orderings</div></td></tr>
+<tr class="memitem:a39e84731eed0e57cb62dd2c21fa92851" id="r_a39e84731eed0e57cb62dd2c21fa92851"><td class="memTemplParams" colspan="2">template&lt;class FACTOR_GRAPH&gt; </td></tr>
+<tr class="memitem:a39e84731eed0e57cb62dd2c21fa92851 template"><td class="memItemLeft">static <a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a>&#160;</td><td class="memItemRight"><a class="el" href="#a39e84731eed0e57cb62dd2c21fa92851">Colamd</a> (const FACTOR_GRAPH &amp;graph)</td></tr>
+<tr class="memdesc:a39e84731eed0e57cb62dd2c21fa92851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute a fill-reducing ordering using COLAMD from a factor graph (see details for note on performance).  <br /></td></tr>
+<tr class="memitem:ab691d95771d14a1493786c9e71b4bf5a" id="r_ab691d95771d14a1493786c9e71b4bf5a"><td class="memItemLeft"><a id="ab691d95771d14a1493786c9e71b4bf5a" name="ab691d95771d14a1493786c9e71b4bf5a"></a>
+static <a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a>&#160;</td><td class="memItemRight"><b>Colamd</b> (const <a class="el" href="a04999.html">VariableIndex</a> &amp;variableIndex)</td></tr>
+<tr class="memdesc:ab691d95771d14a1493786c9e71b4bf5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute a fill-reducing ordering using COLAMD from a <a class="el" href="a04999.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a>. <br /></td></tr>
+<tr class="memitem:a47d55b354a7f44790dd83c47cf5df5e5" id="r_a47d55b354a7f44790dd83c47cf5df5e5"><td class="memTemplParams" colspan="2">template&lt;class FACTOR_GRAPH&gt; </td></tr>
+<tr class="memitem:a47d55b354a7f44790dd83c47cf5df5e5 template"><td class="memItemLeft">static <a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a>&#160;</td><td class="memItemRight"><a class="el" href="#a47d55b354a7f44790dd83c47cf5df5e5">ColamdConstrainedLast</a> (const FACTOR_GRAPH &amp;graph, const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;constrainLast, bool forceOrder=false)</td></tr>
+<tr class="memdesc:a47d55b354a7f44790dd83c47cf5df5e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute a fill-reducing ordering using constrained COLAMD from a factor graph (see details for note on performance).  <br /></td></tr>
+<tr class="memitem:ad04799ab8db19e9a382059e5ad12db44" id="r_ad04799ab8db19e9a382059e5ad12db44"><td class="memItemLeft">static <a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad04799ab8db19e9a382059e5ad12db44">ColamdConstrainedLast</a> (const <a class="el" href="a04999.html">VariableIndex</a> &amp;variableIndex, const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;constrainLast, bool forceOrder=false)</td></tr>
+<tr class="memdesc:ad04799ab8db19e9a382059e5ad12db44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute a fill-reducing ordering using constrained COLAMD from a <a class="el" href="a04999.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a>.  <br /></td></tr>
+<tr class="memitem:aa631456cdd28f8c8a735b1fb58604d84" id="r_aa631456cdd28f8c8a735b1fb58604d84"><td class="memTemplParams" colspan="2">template&lt;class FACTOR_GRAPH&gt; </td></tr>
+<tr class="memitem:aa631456cdd28f8c8a735b1fb58604d84 template"><td class="memItemLeft">static <a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa631456cdd28f8c8a735b1fb58604d84">ColamdConstrainedFirst</a> (const FACTOR_GRAPH &amp;graph, const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;constrainFirst, bool forceOrder=false)</td></tr>
+<tr class="memdesc:aa631456cdd28f8c8a735b1fb58604d84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute a fill-reducing ordering using constrained COLAMD from a factor graph (see details for note on performance).  <br /></td></tr>
+<tr class="memitem:a8876744fd7db49ce80c12f16666672a8" id="r_a8876744fd7db49ce80c12f16666672a8"><td class="memItemLeft">static <a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8876744fd7db49ce80c12f16666672a8">ColamdConstrainedFirst</a> (const <a class="el" href="a04999.html">VariableIndex</a> &amp;variableIndex, const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;constrainFirst, bool forceOrder=false)</td></tr>
+<tr class="memdesc:a8876744fd7db49ce80c12f16666672a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute a fill-reducing ordering using constrained COLAMD from a <a class="el" href="a04999.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a>.  <br /></td></tr>
+<tr class="memitem:a0eaaa4e1bf99e2adef62867cc57ef531" id="r_a0eaaa4e1bf99e2adef62867cc57ef531"><td class="memTemplParams" colspan="2">template&lt;class FACTOR_GRAPH&gt; </td></tr>
+<tr class="memitem:a0eaaa4e1bf99e2adef62867cc57ef531 template"><td class="memItemLeft">static <a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0eaaa4e1bf99e2adef62867cc57ef531">ColamdConstrained</a> (const FACTOR_GRAPH &amp;graph, const <a class="el" href="a03159.html">FastMap</a>&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, int &gt; &amp;groups)</td></tr>
+<tr class="memdesc:a0eaaa4e1bf99e2adef62867cc57ef531"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute a fill-reducing ordering using constrained COLAMD from a factor graph (see details for note on performance).  <br /></td></tr>
+<tr class="memitem:a317c72a02c46d8560817218e86d4255a" id="r_a317c72a02c46d8560817218e86d4255a"><td class="memItemLeft">static <a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a>&#160;</td><td class="memItemRight"><a class="el" href="#a317c72a02c46d8560817218e86d4255a">ColamdConstrained</a> (const <a class="el" href="a04999.html">VariableIndex</a> &amp;variableIndex, const <a class="el" href="a03159.html">FastMap</a>&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, int &gt; &amp;groups)</td></tr>
+<tr class="memdesc:a317c72a02c46d8560817218e86d4255a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute a fill-reducing ordering using constrained COLAMD from a <a class="el" href="a04999.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a>.  <br /></td></tr>
+<tr class="memitem:a02aaadeaaa80f88b654358d648ed7022" id="r_a02aaadeaaa80f88b654358d648ed7022"><td class="memTemplParams" colspan="2"><a id="a02aaadeaaa80f88b654358d648ed7022" name="a02aaadeaaa80f88b654358d648ed7022"></a>
+template&lt;class FACTOR_GRAPH&gt; </td></tr>
+<tr class="memitem:a02aaadeaaa80f88b654358d648ed7022 template"><td class="memItemLeft">static <a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a>&#160;</td><td class="memItemRight"><b>Natural</b> (const FACTOR_GRAPH &amp;fg)</td></tr>
+<tr class="memdesc:a02aaadeaaa80f88b654358d648ed7022"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a natural <a class="el" href="a04979.html">Ordering</a>. Typically used by iterative solvers. <br /></td></tr>
+<tr class="memitem:aa08554335e7092396d05ae292c8f6109" id="r_aa08554335e7092396d05ae292c8f6109"><td class="memTemplParams" colspan="2"><a id="aa08554335e7092396d05ae292c8f6109" name="aa08554335e7092396d05ae292c8f6109"></a>
+template&lt;class FACTOR_GRAPH&gt; </td></tr>
+<tr class="memitem:aa08554335e7092396d05ae292c8f6109 template"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><b>CSRFormat</b> (std::vector&lt; int &gt; &amp;xadj, std::vector&lt; int &gt; &amp;adj, const FACTOR_GRAPH &amp;graph)</td></tr>
+<tr class="memdesc:aa08554335e7092396d05ae292c8f6109"><td class="mdescLeft">&#160;</td><td class="mdescRight">METIS Formatting function. <br /></td></tr>
+<tr class="memitem:a4b9dee495e61092a3f7db5a057785af6" id="r_a4b9dee495e61092a3f7db5a057785af6"><td class="memItemLeft">static <a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4b9dee495e61092a3f7db5a057785af6">Metis</a> (const <a class="el" href="a04971.html">MetisIndex</a> &amp;met, int seed=4321)</td></tr>
+<tr class="memdesc:a4b9dee495e61092a3f7db5a057785af6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute an ordering determined by METIS from a <a class="el" href="a04999.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a>.  <br /></td></tr>
+<tr class="memitem:a1427db0fdcc882177a10f5f0e3a95fcc" id="r_a1427db0fdcc882177a10f5f0e3a95fcc"><td class="memTemplParams" colspan="2"><a id="a1427db0fdcc882177a10f5f0e3a95fcc" name="a1427db0fdcc882177a10f5f0e3a95fcc"></a>
+template&lt;class FACTOR_GRAPH&gt; </td></tr>
+<tr class="memitem:a1427db0fdcc882177a10f5f0e3a95fcc template"><td class="memItemLeft">static <a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a>&#160;</td><td class="memItemRight"><b>Metis</b> (const FACTOR_GRAPH &amp;graph, int seed=4321)</td></tr>
+<tr id="pub-static-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Named Constructors</div></td></tr>
+<tr class="memitem:ae92b845f102ff9a7c23604fd2c25d059" id="r_ae92b845f102ff9a7c23604fd2c25d059"><td class="memTemplParams" colspan="2"><a id="ae92b845f102ff9a7c23604fd2c25d059" name="ae92b845f102ff9a7c23604fd2c25d059"></a>
+template&lt;class FACTOR_GRAPH&gt; </td></tr>
+<tr class="memitem:ae92b845f102ff9a7c23604fd2c25d059 template"><td class="memItemLeft">static <a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a>&#160;</td><td class="memItemRight"><b>Create</b> (<a class="el" href="#a41194f31ec42052094cf91d81dcd796d">OrderingType</a> orderingType, const FACTOR_GRAPH &amp;graph)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a41194f31ec42052094cf91d81dcd796d" id="r_a41194f31ec42052094cf91d81dcd796d"><td class="memItemLeft"><a id="a41194f31ec42052094cf91d81dcd796d" name="a41194f31ec42052094cf91d81dcd796d"></a>enum &#160;</td><td class="memItemRight"><a class="el" href="#a41194f31ec42052094cf91d81dcd796d">OrderingType</a> { <b>COLAMD</b>
+, <b>METIS</b>
+, <b>NATURAL</b>
+, <b>CUSTOM</b>
+ }</td></tr>
+<tr class="memdesc:a41194f31ec42052094cf91d81dcd796d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of ordering to use. <br /></td></tr>
+<tr class="memitem:ad29de1a2966331f21b1fd88a18234091" id="r_ad29de1a2966331f21b1fd88a18234091"><td class="memItemLeft"><a id="ad29de1a2966331f21b1fd88a18234091" name="ad29de1a2966331f21b1fd88a18234091"></a>
+typedef <a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a>&#160;</td><td class="memItemRight"><b>This</b></td></tr>
+<tr class="memdesc:ad29de1a2966331f21b1fd88a18234091"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef to this class. <br /></td></tr>
+<tr class="memitem:a88033239bc9b83145b64addb3a43696f" id="r_a88033239bc9b83145b64addb3a43696f"><td class="memItemLeft"><a id="a88033239bc9b83145b64addb3a43696f" name="a88033239bc9b83145b64addb3a43696f"></a>
+typedef std::shared_ptr&lt; <a class="el" href="#ad29de1a2966331f21b1fd88a18234091">This</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+<tr class="memdesc:a88033239bc9b83145b64addb3a43696f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a88033239bc9b83145b64addb3a43696f" title="shared_ptr to this class">shared_ptr</a> to this class <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-types" class="groupheader"><a id="pro-types" name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr class="memitem:add63a66a1d8ffc93337f40d3457feffb" id="r_add63a66a1d8ffc93337f40d3457feffb"><td class="memItemLeft"><a id="add63a66a1d8ffc93337f40d3457feffb" name="add63a66a1d8ffc93337f40d3457feffb"></a>
+typedef <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
 </table>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="a3bc9383714196de8f55921f11114f0ee" name="a3bc9383714196de8f55921f11114f0ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3bc9383714196de8f55921f11114f0ee">&#9670;&#160;</a></span>isObserved</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a39e84731eed0e57cb62dd2c21fa92851" name="a39e84731eed0e57cb62dd2c21fa92851"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39e84731eed0e57cb62dd2c21fa92851">&#9670;&#160;</a></span>Colamd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class FACTOR_GRAPH&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a> gtsam::Ordering::Colamd </td>
+          <td>(</td>
+          <td class="paramtype">const FACTOR_GRAPH &amp;</td>          <td class="paramname"><span class="paramname"><em>graph</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute a fill-reducing ordering using COLAMD from a factor graph (see details for note on performance). </p>
+<p><a class="el" href="#ad29de1a2966331f21b1fd88a18234091" title="Typedef to this class.">This</a> internally builds a <a class="el" href="a04999.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a> so if you already have a <a class="el" href="a04999.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a>, it is faster to use COLAMD(const VariableIndex&amp;) </p>
+
+</div>
+</div>
+<a id="a0eaaa4e1bf99e2adef62867cc57ef531" name="a0eaaa4e1bf99e2adef62867cc57ef531"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eaaa4e1bf99e2adef62867cc57ef531">&#9670;&#160;</a></span>ColamdConstrained() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class FACTOR_GRAPH&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a> gtsam::Ordering::ColamdConstrained </td>
+          <td>(</td>
+          <td class="paramtype">const FACTOR_GRAPH &amp;</td>          <td class="paramname"><span class="paramname"><em>graph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a03159.html">FastMap</a>&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, int &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>groups</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute a fill-reducing ordering using constrained COLAMD from a factor graph (see details for note on performance). </p>
+<p><a class="el" href="#ad29de1a2966331f21b1fd88a18234091" title="Typedef to this class.">This</a> internally builds a <a class="el" href="a04999.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a> so if you already have a <a class="el" href="a04999.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a>, it is faster to use COLAMD(const VariableIndex&amp;). In this function, a group for each variable should be specified in <code>groups</code>, and each group of variables will appear in the ordering in group index order. <code>groups</code> should be a map from <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2" title="Integer nonlinear key type.">Key</a> to group index. The group indices used should be consecutive starting at 0, but may appear in <code>groups</code> in arbitrary order. Any variables not present in <code>groups</code> will be assigned to group 0. <a class="el" href="#ad29de1a2966331f21b1fd88a18234091" title="Typedef to this class.">This</a> function simply fills the <code>cmember</code> argument to CCOLAMD with the supplied indices, see the CCOLAMD documentation for more information. </p>
+
+</div>
+</div>
+<a id="a317c72a02c46d8560817218e86d4255a" name="a317c72a02c46d8560817218e86d4255a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a317c72a02c46d8560817218e86d4255a">&#9670;&#160;</a></span>ColamdConstrained() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a> gtsam::Ordering::ColamdConstrained </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a04999.html">VariableIndex</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>variableIndex</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a03159.html">FastMap</a>&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, int &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>groups</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute a fill-reducing ordering using constrained COLAMD from a <a class="el" href="a04999.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a>. </p>
+<p>In this function, a group for each variable should be specified in <code>groups</code>, and each group of variables will appear in the ordering in group index order. <code>groups</code> should be a map from <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2" title="Integer nonlinear key type.">Key</a> to group index. The group indices used should be consecutive starting at 0, but may appear in <code>groups</code> in arbitrary order. Any variables not present in <code>groups</code> will be assigned to group 0. <a class="el" href="#ad29de1a2966331f21b1fd88a18234091" title="Typedef to this class.">This</a> function simply fills the <code>cmember</code> argument to CCOLAMD with the supplied indices, see the CCOLAMD documentation for more information. </p>
+
+</div>
+</div>
+<a id="aa631456cdd28f8c8a735b1fb58604d84" name="aa631456cdd28f8c8a735b1fb58604d84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa631456cdd28f8c8a735b1fb58604d84">&#9670;&#160;</a></span>ColamdConstrainedFirst() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class FACTOR_GRAPH&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a> gtsam::Ordering::ColamdConstrainedFirst </td>
+          <td>(</td>
+          <td class="paramtype">const FACTOR_GRAPH &amp;</td>          <td class="paramname"><span class="paramname"><em>graph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>constrainFirst</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>forceOrder</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute a fill-reducing ordering using constrained COLAMD from a factor graph (see details for note on performance). </p>
+<p><a class="el" href="#ad29de1a2966331f21b1fd88a18234091" title="Typedef to this class.">This</a> internally builds a <a class="el" href="a04999.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a> so if you already have a <a class="el" href="a04999.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a>, it is faster to use COLAMD(const VariableIndex&amp;). <a class="el" href="#ad29de1a2966331f21b1fd88a18234091" title="Typedef to this class.">This</a> function constrains the variables in <code>constrainLast</code> to the end of the ordering, and orders all other variables before in a fill-reducing ordering. If <code>forceOrder</code> is true, the variables in <code>constrainFirst</code> will be ordered in the same order specified in the <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667" title="Define collection type once and for all - also used in wrappers.">KeyVector</a> <code>constrainFirst</code>. If <code>forceOrder</code> is false, the variables in <code>constrainFirst</code> will be ordered before all the others, but will be rearranged by CCOLAMD to reduce fill-in as well. </p>
+
+</div>
+</div>
+<a id="a8876744fd7db49ce80c12f16666672a8" name="a8876744fd7db49ce80c12f16666672a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8876744fd7db49ce80c12f16666672a8">&#9670;&#160;</a></span>ColamdConstrainedFirst() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a> gtsam::Ordering::ColamdConstrainedFirst </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a04999.html">VariableIndex</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>variableIndex</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>constrainFirst</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>forceOrder</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute a fill-reducing ordering using constrained COLAMD from a <a class="el" href="a04999.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a>. </p>
+<p><a class="el" href="#ad29de1a2966331f21b1fd88a18234091" title="Typedef to this class.">This</a> function constrains the variables in <code>constrainFirst</code> to the front of the ordering, and orders all other variables after in a fill-reducing ordering. If <code>forceOrder</code> is true, the variables in <code>constrainFirst</code> will be ordered in the same order specified in the <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667" title="Define collection type once and for all - also used in wrappers.">KeyVector</a> <code>constrainFirst</code>. If <code>forceOrder</code> is false, the variables in <code>constrainFirst</code> will be ordered before all the others, but will be rearranged by CCOLAMD to reduce fill-in as well. </p>
+
+</div>
+</div>
+<a id="a47d55b354a7f44790dd83c47cf5df5e5" name="a47d55b354a7f44790dd83c47cf5df5e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47d55b354a7f44790dd83c47cf5df5e5">&#9670;&#160;</a></span>ColamdConstrainedLast() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class FACTOR_GRAPH&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a> gtsam::Ordering::ColamdConstrainedLast </td>
+          <td>(</td>
+          <td class="paramtype">const FACTOR_GRAPH &amp;</td>          <td class="paramname"><span class="paramname"><em>graph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>constrainLast</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>forceOrder</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute a fill-reducing ordering using constrained COLAMD from a factor graph (see details for note on performance). </p>
+<p><a class="el" href="#ad29de1a2966331f21b1fd88a18234091" title="Typedef to this class.">This</a> internally builds a <a class="el" href="a04999.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a> so if you already have a <a class="el" href="a04999.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a>, it is faster to use COLAMD(const VariableIndex&amp;). <a class="el" href="#ad29de1a2966331f21b1fd88a18234091" title="Typedef to this class.">This</a> function constrains the variables in <code>constrainLast</code> to the end of the ordering, and orders all other variables before in a fill-reducing ordering. If <code>forceOrder</code> is true, the variables in <code>constrainLast</code> will be ordered in the same order specified in the <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667" title="Define collection type once and for all - also used in wrappers.">KeyVector</a> <code>constrainLast</code>. If <code>forceOrder</code> is false, the variables in <code>constrainLast</code> will be ordered after all the others, but will be rearranged by CCOLAMD to reduce fill-in as well. </p>
+
+</div>
+</div>
+<a id="ad04799ab8db19e9a382059e5ad12db44" name="ad04799ab8db19e9a382059e5ad12db44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad04799ab8db19e9a382059e5ad12db44">&#9670;&#160;</a></span>ColamdConstrainedLast() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a> gtsam::Ordering::ColamdConstrainedLast </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a04999.html">VariableIndex</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>variableIndex</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>constrainLast</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>forceOrder</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute a fill-reducing ordering using constrained COLAMD from a <a class="el" href="a04999.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a>. </p>
+<p><a class="el" href="#ad29de1a2966331f21b1fd88a18234091" title="Typedef to this class.">This</a> function constrains the variables in <code>constrainLast</code> to the end of the ordering, and orders all other variables before in a fill-reducing ordering. If <code>forceOrder</code> is true, the variables in <code>constrainLast</code> will be ordered in the same order specified in the <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667" title="Define collection type once and for all - also used in wrappers.">KeyVector</a> <code>constrainLast</code>. If <code>forceOrder</code> is false, the variables in <code>constrainLast</code> will be ordered after all the others, but will be rearranged by CCOLAMD to reduce fill-in as well. </p>
+
+</div>
+</div>
+<a id="ac8590c3149674d3b05a8648fd01b97a2" name="ac8590c3149674d3b05a8648fd01b97a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8590c3149674d3b05a8648fd01b97a2">&#9670;&#160;</a></span>invert()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool gtsam::ISAM2Result::DetailedResults::VariableStatus::isObserved</td>
+          <td class="memname"><a class="el" href="a03159.html">FastMap</a>&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, size_t &gt; gtsam::Ordering::invert </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Whether the variable was relinearized, either by being above the relinearization threshold or by involvement. </p>
-<p>Whether the variable was just involved in new factors </p>
+<p>Invert (not reverse) the ordering - returns a map from key to order position. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a03159.html">FastMap&lt;Key, size_t&gt;</a> </dd></dl>
 
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/<a class="el" href="a01154_source.html">ISAM2Result.h</a></li>
+<a id="a4b9dee495e61092a3f7db5a057785af6" name="a4b9dee495e61092a3f7db5a057785af6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b9dee495e61092a3f7db5a057785af6">&#9670;&#160;</a></span>Metis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ac7ae1fad63b3f21931e61778dd12d7a6">Ordering</a> gtsam::Ordering::Metis </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a04971.html">MetisIndex</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>met</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>seed</em></span><span class="paramdefsep"> = </span><span class="paramdefval">4321</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute an ordering determined by METIS from a <a class="el" href="a04999.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a>. </p>
+<p>METIS's nested dissection is randomized: <span class="tt">seed</span> initializes METIS's internal generator, which drives its initial bisections, matching order, and refinement tie-breaks. The default 4321 is the value METIS itself uses when no seed is supplied, so it reproduces the historical ordering exactly; other seeds draw different orderings, and keeping the best of k seeds (by fill or maximum clique) is a cheap quality boost. </p>
+
+</div>
+</div>
+<a id="ac70abe52c370ce005aa9f6477c6e093d" name="ac70abe52c370ce005aa9f6477c6e093d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac70abe52c370ce005aa9f6477c6e093d">&#9670;&#160;</a></span>operator+=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ad29de1a2966331f21b1fd88a18234091">Ordering::This</a> &amp; gtsam::Ordering::operator+= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>keys</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Append new keys to the ordering as <span class="tt">ordering += keys</span>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keys</td><td>The key vector to append to this ordering. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The ordering variable with appended keys. </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/inference/<a class="el" href="a00845_source.html">Ordering.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/inference/<a class="el" href="a00827.html">Ordering.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -158,7 +541,7 @@ bool&#160;</td><td class="memItemRight"><b>inRootClique</b></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04971.html">ISAM2Result</a></li><li class="navelem"><a href="a04975.html">DetailedResults</a></li><li class="navelem"><a href="a04979.html">VariableStatus</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04979.html">Ordering</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

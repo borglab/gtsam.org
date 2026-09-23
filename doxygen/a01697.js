@@ -1,4 +1,4 @@
 var a01697 =
 [
-    [ "gtsam::traits&lt; ProjectionFactorRollingShutter &gt;", "a06107.html", null ]
+    [ "gtsam::TrajectoryAlignerSim3", "a06819.html", "a06819" ]
 ];

@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,12 +96,27 @@ $(function(){initNavTree('a03767.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; Rot2 &gt; Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::CumulativeSplineTrajectory&lt; T &gt; Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a03767.html">gtsam::traits&lt; Rot2 &gt;</a>, including all inherited members.</p>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="a03767.html">gtsam::CumulativeSplineTrajectory&lt; T &gt;</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="a03767.html#a8be33c3412393b349922eab37e4d491e">addControlPoint</a>(const Expression&lt; T &gt; &amp;point)</td><td class="entry"><a class="el" href="a03767.html">gtsam::CumulativeSplineTrajectory&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03767.html#abab4d03b0022407fe89a46e91347d139">addControlPoint</a>(const T &amp;point)</td><td class="entry"><a class="el" href="a03767.html">gtsam::CumulativeSplineTrajectory&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03767.html#a8667aee3f61e48de1ef1ab3034f6e946">CumulativeSplineTrajectory</a>(double density=1.0, const KernelBase &amp;kernel=kernels::IrwinHallCDF2, const std::vector&lt; Expression&lt; T &gt; &gt; &amp;points={}, bool padFront=false)</td><td class="entry"><a class="el" href="a03767.html">gtsam::CumulativeSplineTrajectory&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">explicit</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03767.html#a10db5e474cf3db28d2b034bb61951ea6">CumulativeSplineTrajectory</a>(double density, bool padFront)</td><td class="entry"><a class="el" href="a03767.html">gtsam::CumulativeSplineTrajectory&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03767.html#a9ad161052547bc8a3d98dd5dfd7e3d0d">density</a>() const</td><td class="entry"><a class="el" href="a03767.html">gtsam::CumulativeSplineTrajectory&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03767.html#ae0f1d4815e783fc219069729002b6cfa">getControlPoints</a>() const</td><td class="entry"><a class="el" href="a03767.html">gtsam::CumulativeSplineTrajectory&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03767.html#a17e7bbd0ed47ab17bda442833c691137">kernel</a>() const</td><td class="entry"><a class="el" href="a03767.html">gtsam::CumulativeSplineTrajectory&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03767.html#a5bb32eb462c1e54e3ad1eceda87512e5">padFront</a>() const</td><td class="entry"><a class="el" href="a03767.html">gtsam::CumulativeSplineTrajectory&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03767.html#ad897be7723314982e95af240d7b2bab1">sampleTrajectory</a>(const Double_ &amp;timestamp, double windowStart=0.0, double windowEnd=-1.0) const</td><td class="entry"><a class="el" href="a03767.html">gtsam::CumulativeSplineTrajectory&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03767.html#aff6743e3fb9b2d637f50b71e533a845c">sampleTrajectory</a>(double timestamp, double windowStart=0.0, double windowEnd=-1.0) const</td><td class="entry"><a class="el" href="a03767.html">gtsam::CumulativeSplineTrajectory&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03767.html#a015d9db5160b31983cbc6415be1cb386">sampleTrajectoryDerivative</a>(const Double_ &amp;timestamp, double windowStart=0.0, double windowEnd=-1.0, size_t derivative=1) const</td><td class="entry"><a class="el" href="a03767.html">gtsam::CumulativeSplineTrajectory&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03767.html#a3a5ee3a146987070e6afd10b35476f80">sampleTrajectoryDerivative</a>(double timestamp, double windowStart=0.0, double windowEnd=-1.0, size_t derivative=1) const</td><td class="entry"><a class="el" href="a03767.html">gtsam::CumulativeSplineTrajectory&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03767.html#a186024a81ff8c11dde2c33bab8305ecf">TangentExpression</a> typedef</td><td class="entry"><a class="el" href="a03767.html">gtsam::CumulativeSplineTrajectory&lt; T &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03767.html#afd3ac990fd230bbf4ca9baf6554effb6">TangentVector</a> typedef</td><td class="entry"><a class="el" href="a03767.html">gtsam::CumulativeSplineTrajectory&lt; T &gt;</a></td><td class="entry"></td></tr>
+</table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->

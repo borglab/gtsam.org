@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,12 +96,45 @@ $(function(){initNavTree('a03819.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; Similarity3 &gt; Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt; Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a03819.html">gtsam::traits&lt; Similarity3 &gt;</a>, including all inherited members.</p>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="a03819.html#a03b97cd01d6c5a88a85bd51601c0628f">apply</a>(const Unary &amp;op) const override</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03819.html#a63aaa3f65da7e7b2a1662377a5126ca9">apply</a>(const UnaryAssignment &amp;op, const Assignment&lt; L &gt; &amp;assignment) const override</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>apply_f_op_g</b>(const Node &amp;g, const Binary &amp;op) const override (defined in <a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a>)</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>apply_fC_op_gL</b>(const Leaf &amp;gL, OP op) const (defined in <a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a>)</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>apply_g_op_fC</b>(const Choice &amp;fC, const Binary &amp;op) const override (defined in <a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a>)</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>apply_g_op_fL</b>(const Leaf &amp;fL, const Binary &amp;op) const override (defined in <a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a>)</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>branches</b>() const (defined in <a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a>)</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>branches</b>() (defined in <a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a>)</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03819.html#aa11216d30fa1d0abf2f4d26f82c1f782">branches_</a></td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03819.html#aaf39031042b62c1565448727ec03de35">Choice</a>()</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03819.html#add2490ac08d196f3faf201b3c1e75168">Choice</a>(const L &amp;label, size_t count)</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03819.html#a83715de1ab3f83cd2c616a39837c2eff">Choice</a>(const Choice &amp;f, const Choice &amp;g, const Binary &amp;op)</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03819.html#aec83227caa2e2aef7537f4e77d8598fc">Choice</a>(const L &amp;label, const Choice &amp;f, const Unary &amp;op)</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03819.html#a3738b2959a70d8a08e1fd595837e807e">Choice</a>(const L &amp;label, const Choice &amp;f, const UnaryAssignment &amp;op, const Assignment&lt; L &gt; &amp;assignment)</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03819.html#ae3892aa5cb09323cfc0e24db1998c526">choose</a>(const L &amp;label, size_t index) const override</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03819.html#af443dc65fc6e17720a393d68218b6ab2">dot</a>(std::ostream &amp;os, const LabelFormatter &amp;labelFormatter, const ValueFormatter &amp;valueFormatter, bool showZero) const override</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03819.html#afb33f6ad5dcfd33c27aab14994d8f962">equals</a>(const Node &amp;q, const CompareFunc &amp;compare) const override</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>id</b>() const (defined in <a class="el" href="a03839.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>)</td><td class="entry"><a class="el" href="a03839.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>isLeaf</b>() const override (defined in <a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a>)</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03819.html#a4015a95396dc75bc251a312db881f4d0">label</a>() const</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03819.html#a7045834d13aed6a1fab65c407e174d05">label_</a></td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Node</b>() (defined in <a class="el" href="a03839.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>)</td><td class="entry"><a class="el" href="a03839.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>nrChoices</b>() const (defined in <a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a>)</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03819.html#ad4e00ef70f8fb8f205e82711f8a37764">operator()</a>(const Assignment&lt; L &gt; &amp;x) const override</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03819.html#a47cf7f3aece8c53eaee1096d6e5e0b04">print</a>(const std::string &amp;s, const LabelFormatter &amp;labelFormatter, const ValueFormatter &amp;valueFormatter) const override</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Ptr</b> typedef (defined in <a class="el" href="a03839.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>)</td><td class="entry"><a class="el" href="a03839.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03819.html#a349a3555e35e7ca494c9150256e1ff48">push_back</a>(NodePtr &amp;&amp;node)</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03819.html#af67f813c2c0f3730857d4e614e6c98a8">sameLeaf</a>(const Leaf &amp;q) const override</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03819.html#a806916553bfc0728406524c7b1700d43">sameLeaf</a>(const Node &amp;q) const override</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03819.html#a4d4fd1eeab4a2b52c0d177e48049ceb6">Unique</a>(const NodePtr &amp;node)</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~Choice</b>() override (defined in <a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a>)</td><td class="entry"><a class="el" href="a03819.html">gtsam::DecisionTree&lt; L, Y &gt;::Choice&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>~Node</b>() (defined in <a class="el" href="a03839.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a>)</td><td class="entry"><a class="el" href="a03839.html">gtsam::DecisionTree&lt; L, Y &gt;::Node</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+</table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->

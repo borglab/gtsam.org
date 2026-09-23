@@ -1,4 +1,4 @@
 var a01577 =
 [
-    [ "gtsam::QP", "a05831.html", "a05831" ]
+    [ "gtsam::BatchFactor&lt; FactorType, ErrorDim &gt;", "a06111.html", "a06111" ]
 ];

@@ -1,9 +1,8 @@
 var a00431 =
 [
-    [ "gtsam::Pose2::ChartAtOrigin", "a03707.html", null ],
-    [ "gtsam::traits&lt; Pose2 &gt;", "a03711.html", null ],
-    [ "gtsam::traits&lt; const Pose2 &gt;", "a03715.html", null ],
-    [ "gtsam::Bearing&lt; Pose2, T &gt;", "a03719.html", null ],
-    [ "gtsam::Range&lt; Pose2, T &gt;", "a03723.html", null ],
-    [ "gtsam::wedge< Pose2 >", "a01968.html#a4b78f4db0e05f3ca838ee4da6187710e", null ]
+    [ "gtsam::ExtendedPose3&lt; K_, Derived &gt;", "a04231.html", "a04231" ],
+    [ "gtsam::ExtendedPose3&lt; K_, Derived &gt;::ChartAtOrigin", "a04235.html", null ],
+    [ "gtsam::traits&lt; ExtendedPose3&lt; K, Derived &gt; &gt;", "a04239.html", null ],
+    [ "gtsam::traits&lt; const ExtendedPose3&lt; K, Derived &gt; &gt;", "a04243.html", null ],
+    [ "gtsam::Se23", "a02242.html#ae7d9201586d23e344ca1c05b75f91399", null ]
 ];

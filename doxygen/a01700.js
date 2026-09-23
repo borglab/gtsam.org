@@ -1,4 +1,4 @@
 var a01700 =
 [
-    [ "gtsam::PartialPriorFactor&lt; VALUE &gt;", "a06071.html", "a06071" ]
+    [ "gtsam::ShonanGaugeFactor", "a06811.html", "a06811" ]
 ];

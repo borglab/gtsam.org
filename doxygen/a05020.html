@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,12 +96,72 @@ $(function(){initNavTree('a05023.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; NonlinearEquality&lt; VALUE &gt; &gt; Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::BatchJacobianFactorBase Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a05023.html">gtsam::traits&lt; NonlinearEquality&lt; VALUE &gt; &gt;</a>, including all inherited members.</p>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="a05023.html#a585181577581aa7cb3f9b087caf1fc09">augmentedInformation</a>() const override</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05023.html#a21cdba7ddddbbb996975716fafa607dd">augmentedJacobian</a>() const override</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04899.html#ae38e5024d5b20aa06a5a6bd289e626c4">back</a>() const</td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05123.html#a3fe9ce76eaef7dac2a434408e960bbd8">Base</a> typedef</td><td class="entry"><a class="el" href="a05123.html">gtsam::GaussianFactor</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04899.html#a17c02f11c35bf7768347cad4943f0f64">begin</a>() const</td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04899.html#a5596dcbc299a2e8eec813b78fbcfe933">begin</a>()</td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05123.html#a3e305eb0950fbb3a5ea6db3cc9f2032b">clone</a>() const =0</td><td class="entry"><a class="el" href="a05123.html">gtsam::GaussianFactor</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a> typedef</td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05023.html#a12b777523abf59741370fcb6c905bf23">deltaError</a>(const VectorValues &amp;values, double *oldError=nullptr, double *newError=nullptr) const override</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04899.html#a39490b49d71351affb6953d730f8ebbc">empty</a>() const</td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04899.html#aa1f00e05967c0c278beec17af9cb0530">end</a>() const</td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04899.html#a33597c74ba8db7396722165424fe5ec3">end</a>()</td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05023.html#afb3a07f7b98c861f59c95afcbe2b62d0">equals</a>(const GaussianFactor &amp;factor, double tol=1e-9) const override</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04899.html#a5cc62be07fbcde6678f8b346ab3a3f78">gtsam::Factor::equals</a>(const This &amp;other, double tol=1e-9) const</td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05023.html#a440376724ecb1e2cbc291f2075abd7f7">error</a>(const VectorValues &amp;values) const override</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05123.html#a2d885c9ef44682ba10bffbefec4e70cf">gtsam::GaussianFactor::error</a>(const HybridValues &amp;c) const override</td><td class="entry"><a class="el" href="a05123.html">gtsam::GaussianFactor</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04899.html#a322a4d391be45b5909a65895fb7b023d">Factor</a>()</td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04899.html#aa3d2ef6b21961e708a4cbe10b55be59b">Factor</a>(const CONTAINER &amp;keys)</td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04899.html#a70ff55886664229a25e29cf2a7bb1bb7">Factor</a>(ITERATOR first, ITERATOR last)</td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04899.html#a179a10d0319e87eda55d6925de0f5102">find</a>(Key key) const</td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04899.html#a4157181261dc47002004d53c8b56f7bf">FromIterators</a>(ITERATOR first, ITERATOR last)</td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04899.html#a5087976b9e398cd21305d33972feedad">FromKeys</a>(const CONTAINER &amp;keys)</td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04899.html#aeb63e9c85c567ee3b06b0d2ad0552a8a">front</a>() const</td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05023.html#ab31173c32b976a81d76af85e1d49e24a">GaussianFactor</a>()</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05023.html#a7fc8684c852571ea09ecea36847ed7a2">GaussianFactor</a>(const CONTAINER &amp;keys)</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05023.html#a7ac8cd4b11500e1c39cd1b26378c13eb">get_model</a>() const =0</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05123.html#a043b7743551077755ab0a2f7ce9145a9">getDim</a>(const_iterator variable) const =0</td><td class="entry"><a class="el" href="a05123.html">gtsam::GaussianFactor</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05023.html#a5d831c85cc5b5b26bfeb9d38a7e5ac0f">gradient</a>(Key key, const VectorValues &amp;x) const override</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05023.html#aa756459e9a4b671877c55872414b60d9">gradientAtZero</a>() const override</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05023.html#a0466596f7cbe2bb5eef44c8ef90eee60">gradientAtZero</a>(double *d) const override</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05023.html#aa8f86bdfb4b712e4f6b7f3e954ce7963">gradientAtZeroAdd</a>(const std::vector&lt; size_t &gt; &amp;scalarOffsets, double *gradient) const override</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05023.html#aa0b0fa1a948534a19739077418da8bd3">hessianBlockDiagonal</a>() const override</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05023.html#ae709955d98b38eb0c699f2821a86d351">hessianBlockDiagonalAdd</a>(const std::vector&lt; size_t &gt; &amp;blockSlots, std::vector&lt; Matrix &gt; *diagonalBlocks) const override</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05023.html#ac4208a6c4057cf838bb9f4bc7ffe5e07">hessianDiagonal</a>(double *diagonal) const override</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05123.html#abbefd8b159bd1ac129d054abc7643f24">gtsam::GaussianFactor::hessianDiagonal</a>() const</td><td class="entry"><a class="el" href="a05123.html">gtsam::GaussianFactor</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05023.html#aa22781398e7750cd0a09790498dee4fc">hessianDiagonalAdd</a>(VectorValues &amp;diagonal) const override</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05023.html#ad8717764486154dd8f2f4ffaf574d506">information</a>() const override</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>internal::BatchJacobianFactorElimination</b> (defined in <a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a>)</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05123.html#a3cf0ac87a55876b754cfd8df218460b8">isJacobian</a>() const</td><td class="entry"><a class="el" href="a05123.html">gtsam::GaussianFactor</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04899.html#acb069f38cc81bea20cecfad4070da59e">iterator</a> typedef</td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05023.html#aa361c4ef1e89bd060c6b8db31ab0c21d">jacobian</a>() const override</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>() const</td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04899.html#a3fd8a3bd4eb315a0a2186efd103689c6">keys</a>()</td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04899.html#a10e886cc8b8a374e2fe864707e0b6278">keys_</a></td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05023.html#acedcf466904774e31ed4677b83eae5e0">multiplyHessianAdd</a>(double alpha, const std::vector&lt; size_t &gt; &amp;scalarOffsets, const double *x, double *y) const override</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05023.html#ac28b3bb1cb8c9247ec019290010feab4">multiplyHessianAdd</a>(double alpha, const VectorValues &amp;x, VectorValues &amp;y) const override</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05023.html#a52842c470f986fd76876354f69b5b47e">negate</a>() const override</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05023.html#a7b425c4aaee5b4cf596580f384643eaa">print</a>(const std::string &amp;s=&quot;&quot;, const KeyFormatter &amp;formatter=DefaultKeyFormatter) const override</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04899.html#a52cdda1b64d2d584b1012362963b76f3">printKeys</a>(const std::string &amp;s=&quot;Factor&quot;, const KeyFormatter &amp;formatter=DefaultKeyFormatter) const</td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05023.html#ad623479a561bf120bda0c7b75cc9cb95">rows</a>() const =0</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05123.html#a07958208ac830cd10cbf5530b2c70f7c">shared_ptr</a> typedef</td><td class="entry"><a class="el" href="a05123.html">gtsam::GaussianFactor</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04899.html#afac01740aefd22f4f90f49767010f811">size</a>() const</td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Slot</b>(const CONTAINER &amp;keys, Key key) (defined in <a class="el" href="a05123.html">gtsam::GaussianFactor</a>)</td><td class="entry"><a class="el" href="a05123.html">gtsam::GaussianFactor</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05123.html#ac49aaf7a5ac8bbf486762e9321a3d34f">This</a> typedef</td><td class="entry"><a class="el" href="a05123.html">gtsam::GaussianFactor</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05023.html#ac1524951498d98e2c93e8f9410da362d">toJacobianFactor</a>() const =0</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05023.html#a2daa6656dc68652cb2b2d9c7de37bfcb">updateHessian</a>(const KeyVector &amp;keys, SymmetricBlockMatrix *info) const override</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05023.html#aea6ce6d5560cec66a2c0787cab33d91c">updateHessian</a>(const KeyVector &amp;keys, SymmetricBlockMatrix *info, DenseIndex beginCol, DenseIndex endCol) const override</td><td class="entry"><a class="el" href="a05023.html">gtsam::BatchJacobianFactorBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04899.html#a6572d1c62aa0f0167fe6ebb0a77af107">~Factor</a>()=default</td><td class="entry"><a class="el" href="a04899.html">gtsam::Factor</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~FlatGaussianFactor</b>() (defined in <a class="el" href="a05079.html">gtsam::FlatGaussianFactor</a>)</td><td class="entry"><a class="el" href="a05079.html">gtsam::FlatGaussianFactor</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+</table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->

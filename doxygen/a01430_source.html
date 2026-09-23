@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/discrete/AllDiff.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/nonlinear/WnoaInterpolator.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,96 +89,286 @@ $(function(){initNavTree('a01430_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">AllDiff.h</div></div>
+  <div class="headertitle"><div class="title">WnoaInterpolator.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * AllDiff.h</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @brief General &quot;all-different&quot; constraint</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * @date Feb 6, 2012</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * @author Frank Dellaert</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="a00185.html">gtsam/discrete/DiscreteKey.h</a>&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;gtsam_unstable/discrete/BinaryAllDiff.h&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="a05615.html">   19</a></span><span class="keyword">class </span>GTSAM_UNSTABLE_EXPORT <a class="code hl_function" href="a05615.html#abdf1c9f275b8408bc8c808d32a5a614e">AllDiff</a> : <span class="keyword">public</span> <a class="code hl_function" href="a05623.html#ac65b64bd3106f19619766800423d72de">Constraint</a> {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  std::map&lt;Key, size_t&gt; cardinalities_;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <a class="code hl_typedef" href="a01955.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> discreteKey(<span class="keywordtype">size_t</span> i)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_typedef" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j = <a class="code hl_variable" href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">keys_</a>[i];</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">return</span> <a class="code hl_typedef" href="a01955.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a>(j, cardinalities_.at(j));</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <a class="code hl_function" href="a05615.html#abdf1c9f275b8408bc8c808d32a5a614e">AllDiff</a>(<span class="keyword">const</span> <a class="code hl_struct" href="a03423.html">DiscreteKeys</a>&amp; dkeys);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="comment">// print</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a05615.html#aa72890371ba33200e560e849c5d124cf">print</a>(<span class="keyword">const</span> std::string&amp; s = <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a>&amp; formatter =</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                                            DefaultKeyFormatter) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
-<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="a05615.html#a1e9ca236489eef0461f41f607f1c9ff4">   36</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="a05615.html#a1e9ca236489eef0461f41f607f1c9ff4">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="a03399.html">DiscreteFactor</a>&amp; other, <span class="keywordtype">double</span> tol)<span class="keyword"> const override </span>{</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">if</span> (!<span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span><a class="code hl_function" href="a05615.html#abdf1c9f275b8408bc8c808d32a5a614e">AllDiff</a>*<span class="keyword">&gt;</span>(&amp;other))</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      <span class="keyword">const</span> <a class="code hl_function" href="a05615.html#abdf1c9f275b8408bc8c808d32a5a614e">AllDiff</a>&amp; f(<span class="keyword">static_cast&lt;</span><span class="keyword">const </span><a class="code hl_function" href="a05615.html#abdf1c9f275b8408bc8c808d32a5a614e">AllDiff</a>&amp;<span class="keyword">&gt;</span>(other));</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      <span class="keywordflow">return</span> cardinalities_.size() == f.cardinalities_.size() &amp;&amp;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>             std::equal(cardinalities_.begin(), cardinalities_.end(),</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                        f.cardinalities_.begin());</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  }</div>
+<a href="a01430.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"></span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * GTSAM Copyright 2010, Georgia Tech Research Corporation,</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Atlanta, Georgia 30332-0415</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * All Rights Reserved</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * Authors: Frank Dellaert, et al. (see THANKS for the full author list)</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"></span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * See LICENSE for the license information</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;<a class="code" href="a01469.html">gtsam/nonlinear/Marginals.h</a>&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;<a class="code" href="a01352.html">gtsam/nonlinear/WnoaFactor.h</a>&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;<a class="code" href="a01478.html">gtsam/nonlinear/WnoaStateData.h</a>&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;set&gt;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="a02242.html#a57d633914d3cb3629244312b15a5fa85">   45</a></span><span class="keyword">using </span><a class="code hl_typedef" href="a02242.html#a57d633914d3cb3629244312b15a5fa85">StateDataInterval</a> =</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    std::pair&lt;std::optional&lt;StateData&gt;, std::optional&lt;StateData&gt;&gt;;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> PoseType&gt;</div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="};">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="a06607.html">   57</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a06607.html">PoseVelocity</a> {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  PoseType pose;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">typename</span> <a class="code hl_struct" href="a03203.html">traits&lt;PoseType&gt;::TangentVector</a> vel;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="a06607.html#ad8518551c545ef69b8dd1954f2b355bd">   62</a></span>  std::pair&lt;PoseType, typename traits&lt;PoseType&gt;::TangentVector&gt; <a class="code hl_function" href="a06607.html#ad8518551c545ef69b8dd1954f2b355bd">asPair</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">return</span> std::make_pair(pose, vel);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  }</div>
 </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordtype">double</span> operator()(<span class="keyword">const</span> <a class="code hl_class" href="a03447.html">DiscreteValues</a>&amp; values) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_class" href="a03355.html">DecisionTreeFactor</a> toDecisionTreeFactor() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <a class="code hl_class" href="a03355.html">DecisionTreeFactor</a> <a class="code hl_function" href="a01968.html#a63d86e99c211c6daeac2b7b4dd9d928e">operator*</a>(<span class="keyword">const</span> <a class="code hl_class" href="a03355.html">DecisionTreeFactor</a>&amp; f) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="comment">/*</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">   * Ensure Arc-consistency by checking every possible value of domain j.</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">   * @param j domain to be checked</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">   * @param (in/out) domains all domains, but only domains-&gt;at(j) will be checked.</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">   * @return true if domains-&gt;at(j) was changed, false otherwise.</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">   */</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keywordtype">bool</span> ensureArcConsistency(<a class="code hl_typedef" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j, Domains* domains) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  Constraint::shared_ptr partiallyApply(<span class="keyword">const</span> <a class="code hl_class" href="a03447.html">DiscreteValues</a>&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>};</div>
+</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  Constraint::shared_ptr partiallyApply(</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      <span class="keyword">const</span> Domains&amp;) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>};</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> PoseType&gt;</div>
+<div class="foldopen" id="foldopen00076" data-start="{" data-end="};">
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="a06611.html">   76</a></span><span class="keyword">struct </span>TimestampedPoseVelocity {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <a class="code hl_struct" href="a06607.html">PoseVelocity&lt;PoseType&gt;</a> poseVel;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keywordtype">double</span> timestamp;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  TimestampedPoseVelocity(PoseType pose,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                          <span class="keyword">typename</span> <a class="code hl_struct" href="a03203.html">traits&lt;PoseType&gt;::TangentVector</a> vel,</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                          <span class="keywordtype">double</span> time)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      : poseVel{pose, vel}, timestamp(time) {}</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  TimestampedPoseVelocity(<a class="code hl_struct" href="a06607.html">PoseVelocity&lt;PoseType&gt;</a> pv, <span class="keywordtype">double</span> time)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>      : poseVel(pv), timestamp(time) {}</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>};</div>
 </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}  <span class="comment">// namespace gtsam</span></div>
-<div class="ttc" id="aa00185_html"><div class="ttname"><a href="a00185.html">DiscreteKey.h</a></div><div class="ttdoc">specialized key for discrete variables</div></div>
-<div class="ttc" id="aa01955_html_ga5d440f1429574be613728cd7ad50946d"><div class="ttname"><a href="a01955.html#ga5d440f1429574be613728cd7ad50946d">gtsam::DiscreteKey</a></div><div class="ttdeci">std::pair&lt; Key, size_t &gt; DiscreteKey</div><div class="ttdoc">Key type for discrete variables.</div><div class="ttdef"><b>Definition</b> DiscreteKey.h:36</div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa01968_html_a63d86e99c211c6daeac2b7b4dd9d928e"><div class="ttname"><a href="a01968.html#a63d86e99c211c6daeac2b7b4dd9d928e">gtsam::operator*</a></div><div class="ttdeci">Point2 operator*(double s, const Point2 &amp;p)</div><div class="ttdoc">multiply with scalar</div><div class="ttdef"><b>Definition</b> Point2.h:47</div></div>
-<div class="ttc" id="aa01968_html_a7d4eaa9f6e32da46e8f287499ee650d2"><div class="ttname"><a href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">gtsam::KeyFormatter</a></div><div class="ttdeci">std::function&lt; std::string(Key)&gt; KeyFormatter</div><div class="ttdoc">Typedef for a function to format a key, i.e. to convert it to a string.</div><div class="ttdef"><b>Definition</b> Key.h:35</div></div>
-<div class="ttc" id="aa01968_html_adad029f5f6ffce610428b5fe768b0df2"><div class="ttname"><a href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">gtsam::Key</a></div><div class="ttdeci">std::uint64_t Key</div><div class="ttdoc">Integer nonlinear key type.</div><div class="ttdef"><b>Definition</b> types.h:100</div></div>
-<div class="ttc" id="aa03355_html"><div class="ttname"><a href="a03355.html">gtsam::DecisionTreeFactor</a></div><div class="ttdoc">A discrete probabilistic factor.</div><div class="ttdef"><b>Definition</b> DecisionTreeFactor.h:45</div></div>
-<div class="ttc" id="aa03399_html"><div class="ttname"><a href="a03399.html">gtsam::DiscreteFactor</a></div><div class="ttdoc">Base class for discrete probabilistic factors The most general one is the derived DecisionTreeFactor.</div><div class="ttdef"><b>Definition</b> DiscreteFactor.h:38</div></div>
-<div class="ttc" id="aa03423_html"><div class="ttname"><a href="a03423.html">gtsam::DiscreteKeys</a></div><div class="ttdoc">DiscreteKeys is a set of keys that can be assembled using the &amp; operator.</div><div class="ttdef"><b>Definition</b> DiscreteKey.h:39</div></div>
-<div class="ttc" id="aa03447_html"><div class="ttname"><a href="a03447.html">gtsam::DiscreteValues</a></div><div class="ttdoc">A map from keys to values.</div><div class="ttdef"><b>Definition</b> DiscreteValues.h:34</div></div>
-<div class="ttc" id="aa04139_html_a10e886cc8b8a374e2fe864707e0b6278"><div class="ttname"><a href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">gtsam::Factor::keys_</a></div><div class="ttdeci">KeyVector keys_</div><div class="ttdoc">The keys involved in this factor.</div><div class="ttdef"><b>Definition</b> Factor.h:85</div></div>
-<div class="ttc" id="aa05615_html_a1e9ca236489eef0461f41f607f1c9ff4"><div class="ttname"><a href="a05615.html#a1e9ca236489eef0461f41f607f1c9ff4">gtsam::AllDiff::equals</a></div><div class="ttdeci">bool equals(const DiscreteFactor &amp;other, double tol) const override</div><div class="ttdoc">equals</div><div class="ttdef"><b>Definition</b> AllDiff.h:36</div></div>
-<div class="ttc" id="aa05615_html_aa72890371ba33200e560e849c5d124cf"><div class="ttname"><a href="a05615.html#aa72890371ba33200e560e849c5d124cf">gtsam::AllDiff::print</a></div><div class="ttdeci">void print(const std::string &amp;s=&quot;&quot;, const KeyFormatter &amp;formatter=DefaultKeyFormatter) const override</div><div class="ttdoc">print</div><div class="ttdef"><b>Definition</b> AllDiff.cpp:22</div></div>
-<div class="ttc" id="aa05615_html_abdf1c9f275b8408bc8c808d32a5a614e"><div class="ttname"><a href="a05615.html#abdf1c9f275b8408bc8c808d32a5a614e">gtsam::AllDiff::AllDiff</a></div><div class="ttdeci">AllDiff(const DiscreteKeys &amp;dkeys)</div><div class="ttdoc">Construct from keys.</div><div class="ttdef"><b>Definition</b> AllDiff.cpp:17</div></div>
-<div class="ttc" id="aa05623_html_ac65b64bd3106f19619766800423d72de"><div class="ttname"><a href="a05623.html#ac65b64bd3106f19619766800423d72de">gtsam::Constraint::Constraint</a></div><div class="ttdeci">Constraint(Key j)</div><div class="ttdoc">Construct unary constraint factor.</div><div class="ttdef"><b>Definition</b> Constraint.h:42</div></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="a02242.html#a6e0b25e86a45f3726bac4fc56ebba338">   92</a></span><span class="keyword">typedef</span> std::map&lt;Key, Matrix&gt; <a class="code hl_typedef" href="a02242.html#a6e0b25e86a45f3726bac4fc56ebba338">InterpCovarianceMap</a>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> PoseType&gt;</div>
+<div class="foldopen" id="foldopen00106" data-start="{" data-end="};">
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="a06615.html">  106</a></span><span class="keyword">class </span>GTSAM_EXPORT Interpolator {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> dim = <a class="code hl_struct" href="a03203.html">traits&lt;PoseType&gt;::dimension</a>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="keyword">using </span>VelocityType = <span class="keyword">typename</span> <a class="code hl_struct" href="a03203.html">traits&lt;PoseType&gt;::TangentVector</a>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keyword">using </span>MatrixN = Eigen::Matrix&lt;double, dim, dim&gt;;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keyword">using </span>VectorN = Eigen::Matrix&lt;double, dim, 1&gt;;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keyword">using </span>Matrix2N = Eigen::Matrix&lt;double, 2 * dim, 2 * dim&gt;;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <span class="keyword">using </span>Vector2N = Eigen::Matrix&lt;double, 2 * dim, 1&gt;;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="keyword">using </span>MatrixNx2N = Eigen::Matrix&lt;double, dim, 2 * dim&gt;;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  VectorN q_psd_diag_;  <span class="comment">// Diagonal power Spectral Density for WNOA</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  std::function&lt;Matrix(<span class="keywordtype">double</span> dt)&gt; transitionFunction_;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  std::function&lt;Matrix(<span class="keywordtype">double</span> dt, <span class="keyword">const</span> VectorN&amp; q_psd_diag)&gt;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>      covarianceFunction_;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  std::function&lt;Matrix(<span class="keywordtype">double</span> dt, <span class="keyword">const</span> VectorN&amp; q_psd_diag)&gt;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      inverseCovarianceFunction_;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="comment">// Todo: need to make the below two functions generalize to cases with no</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="comment">// velocities, e.g. WNOV</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  std::function&lt;Matrix(<span class="keyword">const</span> std::pair&lt;PoseType, VelocityType&gt;&amp;,</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                       <span class="keyword">const</span> std::pair&lt;PoseType, VelocityType&gt;&amp;, <span class="keywordtype">double</span>)&gt;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>      computeJacobianPrev_;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  std::function&lt;Matrix(<span class="keyword">const</span> std::pair&lt;PoseType, VelocityType&gt;&amp;,</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                       <span class="keyword">const</span> std::pair&lt;PoseType, VelocityType&gt;&amp;, <span class="keywordtype">double</span>)&gt;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>      computeJacobianNext_;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <span class="comment">// Type aliases</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="keyword">using </span>StateDataSet = std::set&lt;StateData&gt;;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  <span class="keyword">using </span>PoseVel = <a class="code hl_struct" href="a06607.html">PoseVelocity&lt;PoseType&gt;</a>;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <span class="keyword">using </span>TimestampedPoseVel = <a class="code hl_struct" href="a06611.html">TimestampedPoseVelocity&lt;PoseType&gt;</a>;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  <span class="keyword">using </span>LambdaPsiMats = std::pair&lt;Matrix2N, Matrix2N&gt;;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <span class="keyword">using </span>LocalStateVecs = std::pair&lt;VectorN, VectorN&gt;;</div>
+<div class="foldopen" id="foldopen00138" data-start="{" data-end="};">
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="a06619.html">  138</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="a06619.html">StateJacobians</a> {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    MatrixN dxi_dTk;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    MatrixN dxi_dTkp1;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    MatrixN dxidot_dTk;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    MatrixN dxidot_dTkp1;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    MatrixN dxidotkp1_dvarpikp1;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  };</div>
+</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  Interpolator() = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  Interpolator(</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>      <span class="keyword">const</span> VectorN&amp; q_psd_diag,</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>      std::function&lt;Matrix(<span class="keywordtype">double</span> dt)&gt; transitionFunction,</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>      std::function&lt;Matrix(<span class="keywordtype">double</span> dt, <span class="keyword">const</span> VectorN&amp; q_psd_diag)&gt;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>          covarianceFunction,</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>      std::function&lt;Matrix(<span class="keywordtype">double</span> dt, <span class="keyword">const</span> VectorN&amp; q_psd_diag)&gt;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>          inverseCovarianceFunction,</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>      std::function&lt;Matrix(<span class="keyword">const</span> std::pair&lt;PoseType, VelocityType&gt;&amp;,</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                           <span class="keyword">const</span> std::pair&lt;PoseType, VelocityType&gt;&amp;, <span class="keywordtype">double</span>)&gt;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>          computeJacobianPrev,</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>      std::function&lt;Matrix(<span class="keyword">const</span> std::pair&lt;PoseType, VelocityType&gt;&amp;,</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                           <span class="keyword">const</span> std::pair&lt;PoseType, VelocityType&gt;&amp;, <span class="keywordtype">double</span>)&gt;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>          computeJacobianNext);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>  Interpolator(<span class="keyword">const</span> VectorN&amp; q_psd_diag);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  PoseVel <a class="code hl_function" href="a06615.html#adebd86e9473a6ea9c24f5c3c1abd107b">interpolatePoseAndVelocity</a>(</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>      <span class="keyword">const</span> std::optional&lt;TimestampedPoseVel&gt;&amp; Tvarpi_k,</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>      <span class="keyword">const</span> std::optional&lt;TimestampedPoseVel&gt;&amp; Tvarpi_kp1, <span class="keywordtype">double</span> t_tau,</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>      <a class="code hl_typedef" href="a02242.html#a943ae34c4e906cbae9766253bf95f7c7">OptionalMatrixVecType</a> H = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>      <span class="keyword">const</span> std::shared_ptr&lt;Matrix&gt;&amp; mainSolveMarginalMatrix = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>      Matrix* covarianceOut = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>      <span class="keyword">const</span> std::shared_ptr&lt;const LambdaPsiMats&gt;&amp; LambdaPsiPreComp = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>      <span class="keyword">const</span> std::shared_ptr&lt;const LocalStateVecs&gt;&amp; localStateVecsPreComp =</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>          <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>      <span class="keyword">const</span> std::shared_ptr&lt;const StateJacobians&gt;&amp; stateJacobiansPreComp =</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>          <span class="keyword">nullptr</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span></div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  <a class="code hl_class" href="a06527.html">Values</a> <a class="code hl_function" href="a06615.html#aedbd56ea6ca5a3bb0acb747727593f9f">interpolatePosesAndVelocities</a>(</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>      <span class="keyword">const</span> <a class="code hl_class" href="a06447.html">NonlinearFactorGraph</a>&amp; mainSolveGraph,</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>      <span class="keyword">const</span> <a class="code hl_class" href="a06527.html">Values</a>&amp; mainSolveSolution, <span class="keyword">const</span> StateDataSet&amp; mainSolveStates,</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>      <span class="keyword">const</span> StateDataSet&amp; interpolatedStates,</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>      std::shared_ptr&lt;InterpCovarianceMap&gt; covarianceMapOut = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  Matrix2N <a class="code hl_function" href="a06615.html#aca47d8bd18f69598751a656c1ee8d226">computeConditionalCov</a>(<span class="keyword">const</span> TimestampedPoseVel&amp; pvk,</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>                                 <span class="keyword">const</span> TimestampedPoseVel&amp; pvkp1,</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>                                 <span class="keyword">const</span> TimestampedPoseVel&amp; pvtau,</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>                                 <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> Lambda = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                                 <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> Psi = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  std::pair&lt;Matrix, Matrix&gt; <a class="code hl_function" href="a06615.html#a77672fbbbbcb58b911a6a74606ea7029">getLambdaPsi</a>(<span class="keywordtype">double</span> t_k, <span class="keywordtype">double</span> t_kp1,</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>                                         <span class="keywordtype">double</span> t_tau) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span></div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>  std::pair&lt;Matrix, Matrix&gt; <a class="code hl_function" href="a06615.html#a85e8689e77b89dd5a2c3c7ff3bacfba3">getLambdaPsiGeneral</a>(<span class="keywordtype">double</span> t_k, <span class="keywordtype">double</span> t_kp1,</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>                                                <span class="keywordtype">double</span> t_tau) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>  LocalStateVecs <a class="code hl_function" href="a06615.html#abd0a6069efa01ab7ac1a6ca6c16929bb">computeLocalStateVecs</a>(<span class="keyword">const</span> TimestampedPoseVel&amp; pvk,</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>                                       <span class="keyword">const</span> TimestampedPoseVel&amp; pvkp1,</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>                                       <a class="code hl_struct" href="a06619.html">StateJacobians</a>* jacs = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>  PoseVel <a class="code hl_function" href="a06615.html#a71bf91e68fa5eefb6e5ed29539bd9d43">interpolateBoundaryLeft</a>(</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>      <span class="keyword">const</span> <a class="code hl_struct" href="a06607.html">PoseVelocity&lt;PoseType&gt;</a>&amp; poseVel_k,</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>      <a class="code hl_typedef" href="a02242.html#a943ae34c4e906cbae9766253bf95f7c7">OptionalMatrixVecType</a> H = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>      <span class="keyword">const</span> std::shared_ptr&lt;Matrix&gt;&amp; mainSolveMarginalMatrix = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>      Matrix* covarianceOut = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span></div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>  PoseVel <a class="code hl_function" href="a06615.html#a867ecf66ddc2786ce2424ba982b8f7c2">interpolateBoundaryRight</a>(</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>      <span class="keyword">const</span> <a class="code hl_struct" href="a06607.html">PoseVelocity&lt;PoseType&gt;</a>&amp; poseVel_kp1,</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>      <a class="code hl_typedef" href="a02242.html#a943ae34c4e906cbae9766253bf95f7c7">OptionalMatrixVecType</a> H = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>      <span class="keyword">const</span> std::shared_ptr&lt;Matrix&gt;&amp; mainSolveMarginalMatrix = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>      Matrix* covarianceOut = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span></div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>  PoseVel <a class="code hl_function" href="a06615.html#a5380a81dc6da72a5f3d3dd1ee79c1575">extrapolatePoseAndVelocity</a>(</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>      <span class="keyword">const</span> <a class="code hl_struct" href="a06607.html">PoseVelocity&lt;PoseType&gt;</a>&amp; poseVel, <span class="keywordtype">double</span> t_diff,</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>      <a class="code hl_typedef" href="a02242.html#a943ae34c4e906cbae9766253bf95f7c7">OptionalMatrixVecType</a> H = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>      <span class="keyword">const</span> std::shared_ptr&lt;Matrix&gt;&amp; mainSolveMarginalMatrix = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>      Matrix* covarianceOut = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span></div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>  PoseVel <a class="code hl_function" href="a06615.html#a07dec60d83fa4ab85ab4070833c3cdba">interpolatePoseAndVelocity_</a>(</div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>      <span class="keyword">const</span> TimestampedPoseVel&amp; tPoseVel_k,</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>      <span class="keyword">const</span> TimestampedPoseVel&amp; tPoseVel_kp1, <span class="keywordtype">double</span> t_tau,</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>      <a class="code hl_typedef" href="a02242.html#a943ae34c4e906cbae9766253bf95f7c7">OptionalMatrixVecType</a> H = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>      <span class="keyword">const</span> std::shared_ptr&lt;Matrix&gt;&amp; mainSolveMarginalMatrix = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>      Matrix* covarianceOut = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>      <span class="keyword">const</span> std::shared_ptr&lt;const LambdaPsiMats&gt;&amp; LambdaPsiPreComp = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>      <span class="keyword">const</span> std::shared_ptr&lt;const LocalStateVecs&gt;&amp; localStateVecsPreComp =</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>          <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>      <span class="keyword">const</span> std::shared_ptr&lt;const StateJacobians&gt;&amp; stateJacobiansPreComp =</div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>          <span class="keyword">nullptr</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span></div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a06615.html#a31ea6e3fb881da5d9e2de651221d2649">formLocalStateAndJacobians_</a>(</div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>      <span class="keyword">const</span> TimestampedPoseVel&amp; tPoseVel_k,</div>
+<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>      <span class="keyword">const</span> TimestampedPoseVel&amp; tPoseVel_kp1,</div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>      <span class="keyword">const</span> std::shared_ptr&lt;const LocalStateVecs&gt;&amp; localStateVecsPreComp,</div>
+<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>      <span class="keyword">const</span> std::shared_ptr&lt;const StateJacobians&gt;&amp; stateJacobiansPreComp,</div>
+<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>      VectorN* xi_dot_k, VectorN* xi_kp1, VectorN* xi_dot_kp1,</div>
+<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>      <a class="code hl_struct" href="a06619.html">StateJacobians</a>* jacs = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span></div>
+<div class="line"><a id="l00483" name="l00483"></a><span class="lineno">  483</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a06615.html#a686edf0b4a544331c8bb15128e4f396a">interpolateLocalState_</a>(</div>
+<div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span>      <span class="keywordtype">double</span> t_k, <span class="keywordtype">double</span> t_kp1, <span class="keywordtype">double</span> t_tau, <span class="keyword">const</span> VectorN&amp; xi_dot_k,</div>
+<div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span>      <span class="keyword">const</span> VectorN&amp; xi_kp1, <span class="keyword">const</span> VectorN&amp; xi_dot_kp1,</div>
+<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span>      <span class="keyword">const</span> std::shared_ptr&lt;const LambdaPsiMats&gt;&amp; LambdaPsiPreComp,</div>
+<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>      Matrix2N* Lambda, Matrix2N* Psi, VectorN* xi_tau,</div>
+<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>      VectorN* xidot_tau) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span></div>
+<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>  PoseVel <a class="code hl_function" href="a06615.html#a8af7e66e051686a29c90faa6b924253b">mapLocalStateToManifold_</a>(<span class="keyword">const</span> PoseType&amp; T_k, <span class="keyword">const</span> VectorN&amp; xi_tau,</div>
+<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span>                                   <span class="keyword">const</span> VectorN&amp; xidot_tau,</div>
+<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>                                   MatrixN* right_jac_tau,</div>
+<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>                                   MatrixN* dTtau_dTk = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>                                   MatrixN* dTtau_dxitau = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span></div>
+<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a06615.html#a456b74a84f5f6f22029e73aa1ddf7de7">computeCompleteJacobians_</a>(<span class="keyword">const</span> Matrix2N&amp; Lambda, <span class="keyword">const</span> Matrix2N&amp; Psi,</div>
+<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>                                 <span class="keyword">const</span> VectorN&amp; xidot_tau,</div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>                                 <span class="keyword">const</span> MatrixN&amp; right_jac_tau,</div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>                                 <span class="keyword">const</span> MatrixN&amp; dTtau_dTk,</div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>                                 <span class="keyword">const</span> MatrixN&amp; dTtau_dxitau,</div>
+<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>                                 <span class="keyword">const</span> <a class="code hl_struct" href="a06619.html">StateJacobians</a>&amp; jacs,</div>
+<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>                                 <a class="code hl_typedef" href="a02242.html#a943ae34c4e906cbae9766253bf95f7c7">OptionalMatrixVecType</a> H) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span></div>
+<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a06615.html#a81171fc21d8ff9b95e8a1f7dd4aed2f0">computeInterpolationCovariance_</a>(</div>
+<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span>      <span class="keyword">const</span> TimestampedPoseVel&amp; tPoseVel_k,</div>
+<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span>      <span class="keyword">const</span> TimestampedPoseVel&amp; tPoseVel_kp1, <span class="keyword">const</span> PoseVel&amp; poseVel_tau,</div>
+<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>      <span class="keywordtype">double</span> t_tau, <span class="keyword">const</span> Matrix2N&amp; Lambda, <span class="keyword">const</span> Matrix2N&amp; Psi,</div>
+<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>      <span class="keyword">const</span> std::shared_ptr&lt;Matrix&gt;&amp; mainSolveMarginalMatrix,</div>
+<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>      Matrix* covarianceOut) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span></div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>  <span class="keyword">static</span> std::map&lt;StateDataInterval, std::shared_ptr&lt;Matrix&gt;&gt;</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>  <a class="code hl_function" href="a06615.html#a44eefcd57e19d25323ce5c723f8f551f">ComputeJointMarginals</a>(</div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>      <span class="keyword">const</span> std::map&lt;<a class="code hl_typedef" href="a02242.html#a57d633914d3cb3629244312b15a5fa85">StateDataInterval</a>, std::vector&lt;StateData&gt;&gt;&amp; queryBuckets,</div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>      <span class="keyword">const</span> std::unique_ptr&lt;Marginals&gt;&amp; marginals);</div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span></div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>  <span class="keyword">static</span> Matrix <a class="code hl_function" href="a06615.html#ad142add20a03561d11f93c8a06b0678d">ConstructMatrixFromJointMarginal</a>(</div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>      <span class="keyword">const</span> <a class="code hl_class" href="a05187.html">JointMarginal</a>&amp; blockMatrix, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&amp; keyVector,</div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>      <span class="keywordtype">size_t</span> blockSize);</div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>};</div>
+</div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span> </div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>}  <span class="comment">// namespace gtsam</span></div>
+<div class="ttc" id="aa01352_html"><div class="ttname"><a href="a01352.html">WnoaFactor.h</a></div><div class="ttdoc">White-Noise-On-Acceleration (WNOA) motion prior factor between two states (pose and velocity at times...</div></div>
+<div class="ttc" id="aa01469_html"><div class="ttname"><a href="a01469.html">Marginals.h</a></div><div class="ttdoc">A class for computing marginals in a NonlinearFactorGraph.</div></div>
+<div class="ttc" id="aa01478_html"><div class="ttname"><a href="a01478.html">WnoaStateData.h</a></div><div class="ttdoc">Introduces a lightweight struct for identifying states in continuous-time estimation and interpolatio...</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa02242_html_a2dea5ef4aee9da07a0e0686940c64667"><div class="ttname"><a href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">gtsam::KeyVector</a></div><div class="ttdeci">FastVector&lt; Key &gt; KeyVector</div><div class="ttdoc">Define collection type once and for all - also used in wrappers.</div><div class="ttdef"><b>Definition</b> Key.h:91</div></div>
+<div class="ttc" id="aa02242_html_a39c52c49d5301ff2f020e66bf69bbf69"><div class="ttname"><a href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">gtsam::OptionalMatrixType</a></div><div class="ttdeci">Matrix * OptionalMatrixType</div><div class="ttdoc">This typedef will be used everywhere boost::optional&lt;Matrix&amp;&gt; reference was used previously.</div><div class="ttdef"><b>Definition</b> NonlinearFactor.h:57</div></div>
+<div class="ttc" id="aa02242_html_a57d633914d3cb3629244312b15a5fa85"><div class="ttname"><a href="a02242.html#a57d633914d3cb3629244312b15a5fa85">gtsam::StateDataInterval</a></div><div class="ttdeci">std::pair&lt; std::optional&lt; StateData &gt;, std::optional&lt; StateData &gt; &gt; StateDataInterval</div><div class="ttdoc">Type alias for a pair of optional bordering states for an interpolated state.</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.h:45</div></div>
+<div class="ttc" id="aa02242_html_a6e0b25e86a45f3726bac4fc56ebba338"><div class="ttname"><a href="a02242.html#a6e0b25e86a45f3726bac4fc56ebba338">gtsam::InterpCovarianceMap</a></div><div class="ttdeci">std::map&lt; Key, Matrix &gt; InterpCovarianceMap</div><div class="ttdoc">Type alias for a map from variable keys to interpolated state covariances.</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.h:92</div></div>
+<div class="ttc" id="aa02242_html_a943ae34c4e906cbae9766253bf95f7c7"><div class="ttname"><a href="a02242.html#a943ae34c4e906cbae9766253bf95f7c7">gtsam::OptionalMatrixVecType</a></div><div class="ttdeci">std::vector&lt; Matrix &gt; * OptionalMatrixVecType</div><div class="ttdoc">The OptionalMatrixVecType is a pointer to a vector of matrices.</div><div class="ttdef"><b>Definition</b> NonlinearFactor.h:63</div></div>
+<div class="ttc" id="aa03203_html"><div class="ttname"><a href="a03203.html">gtsam::traits</a></div><div class="ttdoc">A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...</div><div class="ttdef"><b>Definition</b> Group.h:37</div></div>
+<div class="ttc" id="aa05187_html"><div class="ttname"><a href="a05187.html">gtsam::JointMarginal</a></div><div class="ttdoc">A class to store and access a joint marginal, returned from Gaussian and nonlinear covariance query A...</div><div class="ttdef"><b>Definition</b> JointMarginal.h:34</div></div>
+<div class="ttc" id="aa06447_html"><div class="ttname"><a href="a06447.html">gtsam::NonlinearFactorGraph</a></div><div class="ttdef"><b>Definition</b> NonlinearFactorGraph.h:57</div></div>
+<div class="ttc" id="aa06527_html"><div class="ttname"><a href="a06527.html">gtsam::Values</a></div><div class="ttdoc">A non-templated config holding any types of Manifold-group elements.</div><div class="ttdef"><b>Definition</b> Values.h:65</div></div>
+<div class="ttc" id="aa06607_html"><div class="ttname"><a href="a06607.html">gtsam::PoseVelocity</a></div><div class="ttdoc">Simple container for a pose and its corresponding velocity.</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.h:57</div></div>
+<div class="ttc" id="aa06607_html_ad8518551c545ef69b8dd1954f2b355bd"><div class="ttname"><a href="a06607.html#ad8518551c545ef69b8dd1954f2b355bd">gtsam::PoseVelocity::asPair</a></div><div class="ttdeci">std::pair&lt; PoseType, typename traits&lt; PoseType &gt;::TangentVector &gt; asPair() const</div><div class="ttdoc">Returns pose and velocity as a std::pair.</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.h:62</div></div>
+<div class="ttc" id="aa06611_html"><div class="ttname"><a href="a06611.html">gtsam::TimestampedPoseVelocity</a></div><div class="ttdoc">Timestamped pose and velocity container.</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.h:76</div></div>
+<div class="ttc" id="aa06615_html_a07dec60d83fa4ab85ab4070833c3cdba"><div class="ttname"><a href="a06615.html#a07dec60d83fa4ab85ab4070833c3cdba">gtsam::Interpolator::interpolatePoseAndVelocity_</a></div><div class="ttdeci">PoseVel interpolatePoseAndVelocity_(const TimestampedPoseVel &amp;tPoseVel_k, const TimestampedPoseVel &amp;tPoseVel_kp1, double t_tau, OptionalMatrixVecType H=nullptr, const std::shared_ptr&lt; Matrix &gt; &amp;mainSolveMarginalMatrix=nullptr, Matrix *covarianceOut=nullptr, const std::shared_ptr&lt; const LambdaPsiMats &gt; &amp;LambdaPsiPreComp=nullptr, const std::shared_ptr&lt; const LocalStateVecs &gt; &amp;localStateVecsPreComp=nullptr, const std::shared_ptr&lt; const StateJacobians &gt; &amp;stateJacobiansPreComp=nullptr) const</div><div class="ttdoc">Internal implementation that performs interpolation between two bordering states.</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.cpp:217</div></div>
+<div class="ttc" id="aa06615_html_a31ea6e3fb881da5d9e2de651221d2649"><div class="ttname"><a href="a06615.html#a31ea6e3fb881da5d9e2de651221d2649">gtsam::Interpolator::formLocalStateAndJacobians_</a></div><div class="ttdeci">void formLocalStateAndJacobians_(const TimestampedPoseVel &amp;tPoseVel_k, const TimestampedPoseVel &amp;tPoseVel_kp1, const std::shared_ptr&lt; const LocalStateVecs &gt; &amp;localStateVecsPreComp, const std::shared_ptr&lt; const StateJacobians &gt; &amp;stateJacobiansPreComp, VectorN *xi_dot_k, VectorN *xi_kp1, VectorN *xi_dot_kp1, StateJacobians *jacs=nullptr) const</div><div class="ttdoc">Step 1 of interpolatePoseAndVelocity: form local state vectors and optional local Jacobians.</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.cpp:287</div></div>
+<div class="ttc" id="aa06615_html_a44eefcd57e19d25323ce5c723f8f551f"><div class="ttname"><a href="a06615.html#a44eefcd57e19d25323ce5c723f8f551f">gtsam::Interpolator::ComputeJointMarginals</a></div><div class="ttdeci">static std::map&lt; StateDataInterval, std::shared_ptr&lt; Matrix &gt; &gt; ComputeJointMarginals(const std::map&lt; StateDataInterval, std::vector&lt; StateData &gt; &gt; &amp;queryBuckets, const std::unique_ptr&lt; Marginals &gt; &amp;marginals)</div><div class="ttdoc">Compute joint marginal covariances for requested state intervals.</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.cpp:448</div></div>
+<div class="ttc" id="aa06615_html_a456b74a84f5f6f22029e73aa1ddf7de7"><div class="ttname"><a href="a06615.html#a456b74a84f5f6f22029e73aa1ddf7de7">gtsam::Interpolator::computeCompleteJacobians_</a></div><div class="ttdeci">void computeCompleteJacobians_(const Matrix2N &amp;Lambda, const Matrix2N &amp;Psi, const VectorN &amp;xidot_tau, const MatrixN &amp;right_jac_tau, const MatrixN &amp;dTtau_dTk, const MatrixN &amp;dTtau_dxitau, const StateJacobians &amp;jacs, OptionalMatrixVecType H) const</div><div class="ttdoc">Step 4 of interpolatePoseAndVelocity: compose full Jacobians with chain rule.</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.cpp:366</div></div>
+<div class="ttc" id="aa06615_html_a5380a81dc6da72a5f3d3dd1ee79c1575"><div class="ttname"><a href="a06615.html#a5380a81dc6da72a5f3d3dd1ee79c1575">gtsam::Interpolator::extrapolatePoseAndVelocity</a></div><div class="ttdeci">PoseVel extrapolatePoseAndVelocity(const PoseVelocity&lt; PoseType &gt; &amp;poseVel, double t_diff, OptionalMatrixVecType H=nullptr, const std::shared_ptr&lt; Matrix &gt; &amp;mainSolveMarginalMatrix=nullptr, Matrix *covarianceOut=nullptr) const</div><div class="ttdoc">Extrapolate pose and velocity from a border state.</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.cpp:182</div></div>
+<div class="ttc" id="aa06615_html_a686edf0b4a544331c8bb15128e4f396a"><div class="ttname"><a href="a06615.html#a686edf0b4a544331c8bb15128e4f396a">gtsam::Interpolator::interpolateLocalState_</a></div><div class="ttdeci">void interpolateLocalState_(double t_k, double t_kp1, double t_tau, const VectorN &amp;xi_dot_k, const VectorN &amp;xi_kp1, const VectorN &amp;xi_dot_kp1, const std::shared_ptr&lt; const LambdaPsiMats &gt; &amp;LambdaPsiPreComp, Matrix2N *Lambda, Matrix2N *Psi, VectorN *xi_tau, VectorN *xidot_tau) const</div><div class="ttdoc">Step 2 of interpolatePoseAndVelocity: interpolate local state using Lambda/Psi matrices.</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.cpp:324</div></div>
+<div class="ttc" id="aa06615_html_a71bf91e68fa5eefb6e5ed29539bd9d43"><div class="ttname"><a href="a06615.html#a71bf91e68fa5eefb6e5ed29539bd9d43">gtsam::Interpolator::interpolateBoundaryLeft</a></div><div class="ttdeci">PoseVel interpolateBoundaryLeft(const PoseVelocity&lt; PoseType &gt; &amp;poseVel_k, OptionalMatrixVecType H=nullptr, const std::shared_ptr&lt; Matrix &gt; &amp;mainSolveMarginalMatrix=nullptr, Matrix *covarianceOut=nullptr) const</div><div class="ttdoc">Interpolate pose and velocity at the left boundary.</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.cpp:127</div></div>
+<div class="ttc" id="aa06615_html_a77672fbbbbcb58b911a6a74606ea7029"><div class="ttname"><a href="a06615.html#a77672fbbbbcb58b911a6a74606ea7029">gtsam::Interpolator::getLambdaPsi</a></div><div class="ttdeci">std::pair&lt; Matrix, Matrix &gt; getLambdaPsi(double t_k, double t_kp1, double t_tau) const</div><div class="ttdoc">Compute interpolation matrices Lambda and Psi (WNOA-optimized).</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.cpp:567</div></div>
+<div class="ttc" id="aa06615_html_a81171fc21d8ff9b95e8a1f7dd4aed2f0"><div class="ttname"><a href="a06615.html#a81171fc21d8ff9b95e8a1f7dd4aed2f0">gtsam::Interpolator::computeInterpolationCovariance_</a></div><div class="ttdeci">void computeInterpolationCovariance_(const TimestampedPoseVel &amp;tPoseVel_k, const TimestampedPoseVel &amp;tPoseVel_kp1, const PoseVel &amp;poseVel_tau, double t_tau, const Matrix2N &amp;Lambda, const Matrix2N &amp;Psi, const std::shared_ptr&lt; Matrix &gt; &amp;mainSolveMarginalMatrix, Matrix *covarianceOut) const</div><div class="ttdoc">Step 5 of interpolatePoseAndVelocity: compute interpolated covariance when requested.</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.cpp:430</div></div>
+<div class="ttc" id="aa06615_html_a85e8689e77b89dd5a2c3c7ff3bacfba3"><div class="ttname"><a href="a06615.html#a85e8689e77b89dd5a2c3c7ff3bacfba3">gtsam::Interpolator::getLambdaPsiGeneral</a></div><div class="ttdeci">std::pair&lt; Matrix, Matrix &gt; getLambdaPsiGeneral(double t_k, double t_kp1, double t_tau) const</div><div class="ttdoc">Compute interpolation matrices Lambda and Psi for a general motion model.</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.cpp:598</div></div>
+<div class="ttc" id="aa06615_html_a867ecf66ddc2786ce2424ba982b8f7c2"><div class="ttname"><a href="a06615.html#a867ecf66ddc2786ce2424ba982b8f7c2">gtsam::Interpolator::interpolateBoundaryRight</a></div><div class="ttdeci">PoseVel interpolateBoundaryRight(const PoseVelocity&lt; PoseType &gt; &amp;poseVel_kp1, OptionalMatrixVecType H=nullptr, const std::shared_ptr&lt; Matrix &gt; &amp;mainSolveMarginalMatrix=nullptr, Matrix *covarianceOut=nullptr) const</div><div class="ttdoc">Interpolate pose and velocity at the right boundary.</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.cpp:158</div></div>
+<div class="ttc" id="aa06615_html_a8af7e66e051686a29c90faa6b924253b"><div class="ttname"><a href="a06615.html#a8af7e66e051686a29c90faa6b924253b">gtsam::Interpolator::mapLocalStateToManifold_</a></div><div class="ttdeci">PoseVel mapLocalStateToManifold_(const PoseType &amp;T_k, const VectorN &amp;xi_tau, const VectorN &amp;xidot_tau, MatrixN *right_jac_tau, MatrixN *dTtau_dTk=nullptr, MatrixN *dTtau_dxitau=nullptr) const</div><div class="ttdoc">Step 3 of interpolatePoseAndVelocity: map interpolated local state back to manifold.</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.cpp:348</div></div>
+<div class="ttc" id="aa06615_html_abd0a6069efa01ab7ac1a6ca6c16929bb"><div class="ttname"><a href="a06615.html#abd0a6069efa01ab7ac1a6ca6c16929bb">gtsam::Interpolator::computeLocalStateVecs</a></div><div class="ttdeci">LocalStateVecs computeLocalStateVecs(const TimestampedPoseVel &amp;pvk, const TimestampedPoseVel &amp;pvkp1, StateJacobians *jacs=nullptr) const</div><div class="ttdoc">Compute the local state vectors (xi, xi_dot) for a pair of bordering states.</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.cpp:621</div></div>
+<div class="ttc" id="aa06615_html_aca47d8bd18f69598751a656c1ee8d226"><div class="ttname"><a href="a06615.html#aca47d8bd18f69598751a656c1ee8d226">gtsam::Interpolator::computeConditionalCov</a></div><div class="ttdeci">Matrix2N computeConditionalCov(const TimestampedPoseVel &amp;pvk, const TimestampedPoseVel &amp;pvkp1, const TimestampedPoseVel &amp;pvtau, OptionalMatrixType Lambda=nullptr, OptionalMatrixType Psi=nullptr) const</div><div class="ttdoc">Compute the conditional covariance of the interpolated state.</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.cpp:670</div></div>
+<div class="ttc" id="aa06615_html_ad142add20a03561d11f93c8a06b0678d"><div class="ttname"><a href="a06615.html#ad142add20a03561d11f93c8a06b0678d">gtsam::Interpolator::ConstructMatrixFromJointMarginal</a></div><div class="ttdeci">static Matrix ConstructMatrixFromJointMarginal(const JointMarginal &amp;blockMatrix, const KeyVector &amp;keyVector, size_t blockSize)</div><div class="ttdoc">Construct a full covariance matrix from a joint marginal block matrix.</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.cpp:711</div></div>
+<div class="ttc" id="aa06615_html_adebd86e9473a6ea9c24f5c3c1abd107b"><div class="ttname"><a href="a06615.html#adebd86e9473a6ea9c24f5c3c1abd107b">gtsam::Interpolator::interpolatePoseAndVelocity</a></div><div class="ttdeci">PoseVel interpolatePoseAndVelocity(const std::optional&lt; TimestampedPoseVel &gt; &amp;Tvarpi_k, const std::optional&lt; TimestampedPoseVel &gt; &amp;Tvarpi_kp1, double t_tau, OptionalMatrixVecType H=nullptr, const std::shared_ptr&lt; Matrix &gt; &amp;mainSolveMarginalMatrix=nullptr, Matrix *covarianceOut=nullptr, const std::shared_ptr&lt; const LambdaPsiMats &gt; &amp;LambdaPsiPreComp=nullptr, const std::shared_ptr&lt; const LocalStateVecs &gt; &amp;localStateVecsPreComp=nullptr, const std::shared_ptr&lt; const StateJacobians &gt; &amp;stateJacobiansPreComp=nullptr) const</div><div class="ttdoc">Interpolate the pose and velocity at time t_tau.</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.cpp:65</div></div>
+<div class="ttc" id="aa06615_html_aedbd56ea6ca5a3bb0acb747727593f9f"><div class="ttname"><a href="a06615.html#aedbd56ea6ca5a3bb0acb747727593f9f">gtsam::Interpolator::interpolatePosesAndVelocities</a></div><div class="ttdeci">Values interpolatePosesAndVelocities(const NonlinearFactorGraph &amp;mainSolveGraph, const Values &amp;mainSolveSolution, const StateDataSet &amp;mainSolveStates, const StateDataSet &amp;interpolatedStates, std::shared_ptr&lt; InterpCovarianceMap &gt; covarianceMapOut=nullptr) const</div><div class="ttdoc">Interpolate multiple poses and velocities given a solved factor graph.</div><div class="ttdef"><b>Definition</b> WnoaInterpolator.cpp:488</div></div>
+<div class="ttc" id="aa06619_html"><div class="ttname"><a href="a06619.html">gtsam::Interpolator::StateJacobians</a></div><div class="ttdef"><b>Definition</b> WnoaInterpolator.h:138</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam_unstable</b></li><li class="navelem"><b>discrete</b></li><li class="navelem"><b>AllDiff.h</b></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>nonlinear</b></li><li class="navelem"><a href="a01430.html">WnoaInterpolator.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

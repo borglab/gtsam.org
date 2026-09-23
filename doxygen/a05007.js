@@ -1,8 +1,6 @@
 var a05007 =
 [
-    [ "JointMarginal", "a05007.html#ab2fcf64154122a05a99c0d7c29611d34", null ],
-    [ "at", "a05007.html#a31082f007860b235520dfe7e427d7c88", null ],
-    [ "fullMatrix", "a05007.html#a5faff6a6fe223f246b99c727fcb59e8a", null ],
-    [ "operator()", "a05007.html#a6a6394311df16f326cab72ef545cbd9c", null ],
-    [ "print", "a05007.html#ae436258b48812bdea2492f505a8d66c2", null ]
+    [ "VariableSlots", "a05007.html#acd98bd86878e8c5c9596c929439c0a4c", null ],
+    [ "equals", "a05007.html#a814f82c979a1b5f3b93339d17e86d145", null ],
+    [ "print", "a05007.html#a6dff67f5fe6b5d92e2a8f57f71afaee0", null ]
 ];

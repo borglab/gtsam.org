@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/slam/SmartStereoProjectionPoseFactor.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/slam/ReferenceFrameFactor.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,7 +89,7 @@ $(function(){initNavTree('a01724_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SmartStereoProjectionPoseFactor.h</div></div>
+  <div class="headertitle"><div class="title">ReferenceFrameFactor.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a01724.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
@@ -103,111 +103,151 @@ $(function(){initNavTree('a01724_source.html','',''); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * @file ReferenceFrameFactor.h</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * @brief A constraint for combining graphs by common landmarks and a transform node</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> * @author Alex Cunningham</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;<a class="code" href="a01679.html">gtsam_unstable/slam/SmartStereoProjectionFactor.h</a>&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;<a class="code" href="a01556.html">gtsam/nonlinear/NonlinearFactor.h</a>&gt;</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
-<div class="foldopen" id="foldopen00046" data-start="{" data-end="};">
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="a06147.html">   46</a></span><span class="keyword">class </span>GTSAM_UNSTABLE_EXPORT <a class="code hl_function" href="a06147.html#aae9b865c9ec932cf8e00f16b6cb08c68">SmartStereoProjectionPoseFactor</a></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    : <span class="keyword">public</span> <a class="code hl_function" href="a06131.html#ac4923f2a1d591548968f4c3ec1a6b855">SmartStereoProjectionFactor</a> {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="a06147.html#acf970e63a3a8b2daf9d05ebebc273637">   50</a></span>  std::vector&lt;boost::shared_ptr&lt;Cal3_S2Stereo&gt;&gt; <a class="code hl_variable" href="a06147.html#acf970e63a3a8b2daf9d05ebebc273637">K_all_</a>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  EIGEN_MAKE_ALIGNED_OPERATOR_NEW</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="a06147.html#aa51d7b642dddb1a83f02f4b6decca7cd">   56</a></span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a06131.html#ac4923f2a1d591548968f4c3ec1a6b855">SmartStereoProjectionFactor</a> <a class="code hl_variable" href="a06147.html#aa51d7b642dddb1a83f02f4b6decca7cd">Base</a>;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="a06147.html#a13a5dea170b9722e83168f5b56c406ac">   59</a></span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a06147.html#aae9b865c9ec932cf8e00f16b6cb08c68">SmartStereoProjectionPoseFactor</a> <a class="code hl_typedef" href="a06147.html#a13a5dea170b9722e83168f5b56c406ac">This</a>;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="a06147.html#aac62c258da3b17c84017f2f09f97c095">   62</a></span>  <span class="keyword">typedef</span> boost::shared_ptr&lt;This&gt; <a class="code hl_typedef" href="a06147.html#aac62c258da3b17c84017f2f09f97c095">shared_ptr</a>;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <a class="code hl_function" href="a06147.html#aae9b865c9ec932cf8e00f16b6cb08c68">SmartStereoProjectionPoseFactor</a>(</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a>&amp; sharedNoiseModel,</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      <span class="keyword">const</span> SmartStereoProjectionParams&amp; params = SmartStereoProjectionParams(),</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      <span class="keyword">const</span> boost::optional&lt;Pose3&gt;&amp; body_P_sensor = boost::none);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="a06147.html#a9dea05af3240864fc3c40b8d01a3943d">   75</a></span>  <a class="code hl_function" href="a06147.html#a9dea05af3240864fc3c40b8d01a3943d">~SmartStereoProjectionPoseFactor</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a06147.html#a5dd4bbb47c5218276ec0bde35869537e">add</a>(<span class="keyword">const</span> <a class="code hl_class" href="a03899.html">StereoPoint2</a>&amp; <a class="code hl_function" href="a05479.html#ab914ccf9204b0b1fe2573ee0cd976c64">measured</a>, <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&amp; poseKey,</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>           <span class="keyword">const</span> boost::shared_ptr&lt;Cal3_S2Stereo&gt;&amp; K);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a06147.html#a5dd4bbb47c5218276ec0bde35869537e">add</a>(<span class="keyword">const</span> std::vector&lt;StereoPoint2&gt;&amp; measurements,</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>           <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&amp; poseKeys,</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>           <span class="keyword">const</span> std::vector&lt;boost::shared_ptr&lt;Cal3_S2Stereo&gt;&gt;&amp; Ks);</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a06147.html#a5dd4bbb47c5218276ec0bde35869537e">add</a>(<span class="keyword">const</span> std::vector&lt;StereoPoint2&gt;&amp; measurements,</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>           <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&amp; poseKeys,</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>           <span class="keyword">const</span> boost::shared_ptr&lt;Cal3_S2Stereo&gt;&amp; K);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a06147.html#a467c841b3c1618c26760d75605c9c91d">print</a>(<span class="keyword">const</span> std::string&amp; s = <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a>&amp; keyFormatter =</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                                            DefaultKeyFormatter) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span></div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="a06147.html#abd037d1628e9d274f114258b66f082d2">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="a05047.html">NonlinearFactor</a>&amp; p, <span class="keywordtype">double</span> tol = 1e-9) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span></div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  <span class="keywordtype">double</span> <a class="code hl_function" href="a06147.html#a43f293766f3e2d60c0dfdebc53dd5273">error</a>(<span class="keyword">const</span> <a class="code hl_class" href="a05163.html">Values</a>&amp; values) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span></div>
-<div class="foldopen" id="foldopen00130" data-start="{" data-end="}">
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="a06147.html#a73bba517aed20c69f29b8d5f7906f284">  130</a></span>  <span class="keyword">inline</span> std::vector&lt;boost::shared_ptr&lt;Cal3_S2Stereo&gt;&gt; <a class="code hl_function" href="a06147.html#a73bba517aed20c69f29b8d5f7906f284">calibration</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="a06147.html#acf970e63a3a8b2daf9d05ebebc273637">K_all_</a>;</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> P&gt;</div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="a02242.html#a9f2aa5c7dcdf96e2edaa2e352c550677">   34</a></span>P <a class="code hl_function" href="a02242.html#a9f2aa5c7dcdf96e2edaa2e352c550677">transform_point</a>(</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">const</span> T&amp; trans, <span class="keyword">const</span> P&amp; global,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> Dtrans,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> Dglobal) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordflow">return</span> trans.transformFrom(global, Dtrans, Dglobal);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
 </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span></div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  Base::Cameras cameras(<span class="keyword">const</span> <a class="code hl_class" href="a05163.html">Values</a>&amp; values) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="a06147.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">  145</a></span>  <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> ARCHIVE&gt;</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <span class="keywordtype">void</span> serialize(ARCHIVE&amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    ar&amp; BOOST_SERIALIZATION_BASE_OBJECT_NVP(<a class="code hl_variable" href="a06147.html#aa51d7b642dddb1a83f02f4b6decca7cd">Base</a>);</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    ar&amp; BOOST_SERIALIZATION_NVP(<a class="code hl_variable" href="a06147.html#acf970e63a3a8b2daf9d05ebebc273637">K_all_</a>);</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  }</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>};  <span class="comment">// end of class declaration</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> POINT, <span class="keyword">class</span> TRANSFORM&gt;</div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="};">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="a07051.html">   61</a></span><span class="keyword">class </span><a class="code hl_function" href="a07051.html#ae45ff48bf3b510669dbd0105c9970c30">ReferenceFrameFactor</a></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    : <span class="keyword">public</span> <a class="code hl_function" href="a06419.html#a07b2b3e0025aa31715484a185a7b91cc">NoiseModelFactorT</a>&lt;typename traits&lt;POINT&gt;::TangentVector, POINT,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                               TRANSFORM, POINT&gt; {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="a07051.html#ae45ff48bf3b510669dbd0105c9970c30">   66</a></span>  <a class="code hl_function" href="a07051.html#ae45ff48bf3b510669dbd0105c9970c30">ReferenceFrameFactor</a>() {}</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keyword">typedef</span> <a class="code hl_class" href="a06419.html">NoiseModelFactorT&lt;typename traits&lt;POINT&gt;::TangentVector</a>, POINT,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                            TRANSFORM, POINT&gt;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      Base;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keyword">using </span>ErrorVector = <span class="keyword">typename</span> <a class="code hl_struct" href="a03203.html">traits&lt;POINT&gt;::TangentVector</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keyword">typedef</span> <a class="code hl_class" href="a07051.html">ReferenceFrameFactor&lt;POINT, TRANSFORM&gt;</a> This;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="comment">// Provide access to the Matrix&amp; version of evaluateError:</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keyword">using </span><a class="code hl_function" href="a06419.html#a52743df64c5153c7bf35da457e185fed">Base::evaluateError</a>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keyword">typedef</span> POINT Point;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keyword">typedef</span> TRANSFORM Transform;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="a07051.html#a142d0dde9f42aa80e9b6c57d3c49cd58">   84</a></span>  <a class="code hl_function" href="a07051.html#a142d0dde9f42aa80e9b6c57d3c49cd58">ReferenceFrameFactor</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> globalKey, <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> transKey, <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> localKey, <span class="keyword">const</span> noiseModel::Base::shared_ptr&amp; model)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  : Base(model,globalKey, transKey, localKey) {}</div>
 </div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span></div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="keyword">template</span> &lt;&gt;</div>
-<div class="foldopen" id="foldopen00156" data-start="{" data-end="};">
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="a06151.html">  156</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a02823.html">traits</a>&lt;<a class="code hl_class" href="a06147.html">SmartStereoProjectionPoseFactor</a>&gt;</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    : <span class="keyword">public</span> <a class="code hl_struct" href="a03039.html">Testable</a>&lt;SmartStereoProjectionPoseFactor&gt; {};</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="a07051.html#ac48e1fa01565b66115b7faed7d132f89">   91</a></span>  <a class="code hl_function" href="a07051.html#ac48e1fa01565b66115b7faed7d132f89">ReferenceFrameFactor</a>(<span class="keywordtype">double</span> mu, <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> globalKey, <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> transKey, <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> localKey)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>      : Base(<a class="code hl_namespace" href="a02274.html">noiseModel</a>::<a class="code hl_class" href="a05375.html">Constrained</a>::All(Point().<a class="code hl_function" href="a06443.html#a7f892150e927e38368fe55971f001a5e">dim</a>(), mu), globalKey,</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>             transKey, localKey) {}</div>
 </div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>}  <span class="comment">// namespace gtsam</span></div>
-<div class="ttc" id="aa01679_html"><div class="ttname"><a href="a01679.html">SmartStereoProjectionFactor.h</a></div><div class="ttdoc">Smart stereo factor on StereoCameras (pose).</div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa01968_html_a2dea5ef4aee9da07a0e0686940c64667"><div class="ttname"><a href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">gtsam::KeyVector</a></div><div class="ttdeci">FastVector&lt; Key &gt; KeyVector</div><div class="ttdoc">Define collection type once and for all - also used in wrappers.</div><div class="ttdef"><b>Definition</b> Key.h:86</div></div>
-<div class="ttc" id="aa01968_html_a7d4eaa9f6e32da46e8f287499ee650d2"><div class="ttname"><a href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">gtsam::KeyFormatter</a></div><div class="ttdeci">std::function&lt; std::string(Key)&gt; KeyFormatter</div><div class="ttdoc">Typedef for a function to format a key, i.e. to convert it to a string.</div><div class="ttdef"><b>Definition</b> Key.h:35</div></div>
-<div class="ttc" id="aa01968_html_ab6e5a4884342656e0837ef07008ec03f"><div class="ttname"><a href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">gtsam::SharedNoiseModel</a></div><div class="ttdeci">noiseModel::Base::shared_ptr SharedNoiseModel</div><div class="ttdoc">Aliases.</div><div class="ttdef"><b>Definition</b> NoiseModel.h:724</div></div>
-<div class="ttc" id="aa01968_html_adad029f5f6ffce610428b5fe768b0df2"><div class="ttname"><a href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">gtsam::Key</a></div><div class="ttdeci">std::uint64_t Key</div><div class="ttdoc">Integer nonlinear key type.</div><div class="ttdef"><b>Definition</b> types.h:100</div></div>
-<div class="ttc" id="aa02823_html"><div class="ttname"><a href="a02823.html">gtsam::traits</a></div><div class="ttdoc">A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...</div><div class="ttdef"><b>Definition</b> concepts.h:30</div></div>
-<div class="ttc" id="aa03039_html"><div class="ttname"><a href="a03039.html">gtsam::Testable</a></div><div class="ttdoc">A helper that implements the traits interface for GTSAM types.</div><div class="ttdef"><b>Definition</b> Testable.h:151</div></div>
-<div class="ttc" id="aa03899_html"><div class="ttname"><a href="a03899.html">gtsam::StereoPoint2</a></div><div class="ttdoc">A 2D stereo point, v will be same for rectified images.</div><div class="ttdef"><b>Definition</b> StereoPoint2.h:32</div></div>
-<div class="ttc" id="aa05047_html"><div class="ttname"><a href="a05047.html">gtsam::NonlinearFactor</a></div><div class="ttdoc">Nonlinear factor base class.</div><div class="ttdef"><b>Definition</b> NonlinearFactor.h:42</div></div>
-<div class="ttc" id="aa05163_html"><div class="ttname"><a href="a05163.html">gtsam::Values</a></div><div class="ttdoc">A non-templated config holding any types of Manifold-group elements.</div><div class="ttdef"><b>Definition</b> Values.h:65</div></div>
-<div class="ttc" id="aa05479_html_ab914ccf9204b0b1fe2573ee0cd976c64"><div class="ttname"><a href="a05479.html#ab914ccf9204b0b1fe2573ee0cd976c64">gtsam::SmartFactorBase&lt; StereoCamera &gt;::measured</a></div><div class="ttdeci">const ZVector &amp; measured() const</div><div class="ttdef"><b>Definition</b> SmartFactorBase.h:159</div></div>
-<div class="ttc" id="aa06131_html_ac4923f2a1d591548968f4c3ec1a6b855"><div class="ttname"><a href="a06131.html#ac4923f2a1d591548968f4c3ec1a6b855">gtsam::SmartStereoProjectionFactor::SmartStereoProjectionFactor</a></div><div class="ttdeci">SmartStereoProjectionFactor(const SharedNoiseModel &amp;sharedNoiseModel, const SmartStereoProjectionParams &amp;params=SmartStereoProjectionParams(), const boost::optional&lt; Pose3 &gt; body_P_sensor=boost::none)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> SmartStereoProjectionFactor.h:88</div></div>
-<div class="ttc" id="aa06147_html"><div class="ttname"><a href="a06147.html">gtsam::SmartStereoProjectionPoseFactor</a></div><div class="ttdoc">If you are using the factor, please cite: L.</div><div class="ttdef"><b>Definition</b> SmartStereoProjectionPoseFactor.h:47</div></div>
-<div class="ttc" id="aa06147_html_a13a5dea170b9722e83168f5b56c406ac"><div class="ttname"><a href="a06147.html#a13a5dea170b9722e83168f5b56c406ac">gtsam::SmartStereoProjectionPoseFactor::This</a></div><div class="ttdeci">SmartStereoProjectionPoseFactor This</div><div class="ttdoc">shorthand for this class</div><div class="ttdef"><b>Definition</b> SmartStereoProjectionPoseFactor.h:59</div></div>
-<div class="ttc" id="aa06147_html_a43f293766f3e2d60c0dfdebc53dd5273"><div class="ttname"><a href="a06147.html#a43f293766f3e2d60c0dfdebc53dd5273">gtsam::SmartStereoProjectionPoseFactor::error</a></div><div class="ttdeci">double error(const Values &amp;values) const override</div><div class="ttdoc">error calculates the error of the factor.</div><div class="ttdef"><b>Definition</b> SmartStereoProjectionPoseFactor.cpp:75</div></div>
-<div class="ttc" id="aa06147_html_a467c841b3c1618c26760d75605c9c91d"><div class="ttname"><a href="a06147.html#a467c841b3c1618c26760d75605c9c91d">gtsam::SmartStereoProjectionPoseFactor::print</a></div><div class="ttdeci">void print(const std::string &amp;s=&quot;&quot;, const KeyFormatter &amp;keyFormatter=DefaultKeyFormatter) const override</div><div class="ttdoc">print</div><div class="ttdef"><b>Definition</b> SmartStereoProjectionPoseFactor.cpp:58</div></div>
-<div class="ttc" id="aa06147_html_a5dd4bbb47c5218276ec0bde35869537e"><div class="ttname"><a href="a06147.html#a5dd4bbb47c5218276ec0bde35869537e">gtsam::SmartStereoProjectionPoseFactor::add</a></div><div class="ttdeci">void add(const StereoPoint2 &amp;measured, const Key &amp;poseKey, const boost::shared_ptr&lt; Cal3_S2Stereo &gt; &amp;K)</div><div class="ttdoc">add a new measurement and pose key</div><div class="ttdef"><b>Definition</b> SmartStereoProjectionPoseFactor.cpp:32</div></div>
-<div class="ttc" id="aa06147_html_a73bba517aed20c69f29b8d5f7906f284"><div class="ttname"><a href="a06147.html#a73bba517aed20c69f29b8d5f7906f284">gtsam::SmartStereoProjectionPoseFactor::calibration</a></div><div class="ttdeci">std::vector&lt; boost::shared_ptr&lt; Cal3_S2Stereo &gt; &gt; calibration() const</div><div class="ttdoc">return the calibration object</div><div class="ttdef"><b>Definition</b> SmartStereoProjectionPoseFactor.h:130</div></div>
-<div class="ttc" id="aa06147_html_a9dea05af3240864fc3c40b8d01a3943d"><div class="ttname"><a href="a06147.html#a9dea05af3240864fc3c40b8d01a3943d">gtsam::SmartStereoProjectionPoseFactor::~SmartStereoProjectionPoseFactor</a></div><div class="ttdeci">~SmartStereoProjectionPoseFactor() override=default</div><div class="ttdoc">Virtual destructor.</div></div>
-<div class="ttc" id="aa06147_html_aa51d7b642dddb1a83f02f4b6decca7cd"><div class="ttname"><a href="a06147.html#aa51d7b642dddb1a83f02f4b6decca7cd">gtsam::SmartStereoProjectionPoseFactor::Base</a></div><div class="ttdeci">EIGEN_MAKE_ALIGNED_OPERATOR_NEW typedef SmartStereoProjectionFactor Base</div><div class="ttdoc">shorthand for base class type</div><div class="ttdef"><b>Definition</b> SmartStereoProjectionPoseFactor.h:56</div></div>
-<div class="ttc" id="aa06147_html_aac62c258da3b17c84017f2f09f97c095"><div class="ttname"><a href="a06147.html#aac62c258da3b17c84017f2f09f97c095">gtsam::SmartStereoProjectionPoseFactor::shared_ptr</a></div><div class="ttdeci">boost::shared_ptr&lt; This &gt; shared_ptr</div><div class="ttdoc">shorthand for a smart pointer to a factor</div><div class="ttdef"><b>Definition</b> SmartStereoProjectionPoseFactor.h:62</div></div>
-<div class="ttc" id="aa06147_html_aae9b865c9ec932cf8e00f16b6cb08c68"><div class="ttname"><a href="a06147.html#aae9b865c9ec932cf8e00f16b6cb08c68">gtsam::SmartStereoProjectionPoseFactor::SmartStereoProjectionPoseFactor</a></div><div class="ttdeci">SmartStereoProjectionPoseFactor(const SharedNoiseModel &amp;sharedNoiseModel, const SmartStereoProjectionParams &amp;params=SmartStereoProjectionParams(), const boost::optional&lt; Pose3 &gt; &amp;body_P_sensor=boost::none)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> SmartStereoProjectionPoseFactor.cpp:26</div></div>
-<div class="ttc" id="aa06147_html_abd037d1628e9d274f114258b66f082d2"><div class="ttname"><a href="a06147.html#abd037d1628e9d274f114258b66f082d2">gtsam::SmartStereoProjectionPoseFactor::equals</a></div><div class="ttdeci">bool equals(const NonlinearFactor &amp;p, double tol=1e-9) const override</div><div class="ttdoc">equals</div><div class="ttdef"><b>Definition</b> SmartStereoProjectionPoseFactor.cpp:67</div></div>
-<div class="ttc" id="aa06147_html_acf970e63a3a8b2daf9d05ebebc273637"><div class="ttname"><a href="a06147.html#acf970e63a3a8b2daf9d05ebebc273637">gtsam::SmartStereoProjectionPoseFactor::K_all_</a></div><div class="ttdeci">std::vector&lt; boost::shared_ptr&lt; Cal3_S2Stereo &gt; &gt; K_all_</div><div class="ttdoc">shared pointer to calibration object (one for each camera)</div><div class="ttdef"><b>Definition</b> SmartStereoProjectionPoseFactor.h:50</div></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="a07051.html#abf5b0891b95e33c718560d86bb3ffc93">   99</a></span>  <a class="code hl_function" href="a07051.html#abf5b0891b95e33c718560d86bb3ffc93">ReferenceFrameFactor</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> globalKey, <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> transKey, <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> localKey, <span class="keywordtype">double</span> sigma = 1e-2)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  : Base(<a class="code hl_namespace" href="a02274.html">noiseModel</a>::<a class="code hl_class" href="a16253.html">Isotropic</a>::Sigma(<a class="code hl_struct" href="a03203.html">traits</a>&lt;POINT&gt;::dimension, sigma),</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      globalKey, transKey, localKey) {}</div>
+</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <a class="code hl_class" href="a07051.html">~ReferenceFrameFactor</a>()<span class="keyword"> override</span>{}</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="a07051.html#a89ced5876573f8d830506ade112fec56">  105</a></span>  NonlinearFactor::shared_ptr <a class="code hl_function" href="a07051.html#a89ced5876573f8d830506ade112fec56">clone</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">return</span> std::static_pointer_cast&lt;NonlinearFactor&gt;(</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        NonlinearFactor::shared_ptr(<span class="keyword">new</span> This(*<span class="keyword">this</span>))); }</div>
+</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span></div>
+<div class="foldopen" id="foldopen00110" data-start="{" data-end="}">
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="a07051.html#ab01d310013e9e35b76b1a993f0b16074">  110</a></span>  ErrorVector <a class="code hl_function" href="a07051.html#ab01d310013e9e35b76b1a993f0b16074">evaluateError</a>(<span class="keyword">const</span> Point&amp; _global, <span class="keyword">const</span> Transform&amp; trans,</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                            <span class="keyword">const</span> Point&amp; local, <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> Dforeign,</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                            <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> Dtrans,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                            <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> Dlocal)<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    Point newlocal = <a class="code hl_function" href="a02242.html#a9f2aa5c7dcdf96e2edaa2e352c550677">transform_point&lt;Transform,Point&gt;</a>(trans, _global, Dtrans, Dforeign);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">if</span> (Dlocal) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      *Dlocal = -1* Matrix::Identity(<a class="code hl_struct" href="a03203.html">traits&lt;Point&gt;::dimension</a>, <a class="code hl_struct" href="a03203.html">traits&lt;Point&gt;::dimension</a>);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="a03203.html">traits&lt;Point&gt;::Local</a>(local,newlocal);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  }</div>
+</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="foldopen" id="foldopen00121" data-start="{" data-end="}">
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="a07051.html#a03fd8cbe33b239dfb1e99277a6ae947c">  121</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a07051.html#a03fd8cbe33b239dfb1e99277a6ae947c">print</a>(<span class="keyword">const</span> std::string&amp; s=<span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">gtsam::KeyFormatter</a>&amp; keyFormatter = <a class="code hl_variable" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>)<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    std::cout &lt;&lt; s &lt;&lt; <span class="stringliteral">&quot;: ReferenceFrameFactor(&quot;</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        &lt;&lt; <span class="stringliteral">&quot;Global: &quot;</span> &lt;&lt; keyFormatter(this-&gt;key1()) &lt;&lt; <span class="stringliteral">&quot;,&quot;</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        &lt;&lt; <span class="stringliteral">&quot; Transform: &quot;</span> &lt;&lt; keyFormatter(this-&gt;key2()) &lt;&lt; <span class="stringliteral">&quot;,&quot;</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        &lt;&lt; <span class="stringliteral">&quot; Local: &quot;</span> &lt;&lt; keyFormatter(this-&gt;key3()) &lt;&lt; <span class="stringliteral">&quot;)\n&quot;</span>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    this-&gt;noiseModel_-&gt;print(<span class="stringliteral">&quot;  noise model&quot;</span>);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  }</div>
+</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  <span class="comment">// access - convenience functions</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> global_key()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;key1(); }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> transform_key()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;key2(); }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> local_key()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;key3(); }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="preprocessor">#if GTSAM_ENABLE_BOOST_SERIALIZATION</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> ARCHIVE&gt;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  <span class="keywordtype">void</span> serialize(ARCHIVE &amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    ar &amp; boost::serialization::make_nvp(<span class="stringliteral">&quot;NonlinearFactor3&quot;</span>,</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        boost::serialization::base_object&lt;Base&gt;(*<span class="keyword">this</span>));</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  }</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>};</div>
+</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T1, <span class="keyword">class</span> T2&gt;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="a07055.html">  149</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03203.html">traits</a>&lt;<a class="code hl_class" href="a07051.html">ReferenceFrameFactor</a>&lt;T1, T2&gt; &gt; : <span class="keyword">public</span> <a class="code hl_struct" href="a03535.html">Testable</a>&lt;ReferenceFrameFactor&lt;T1, T2&gt; &gt; {};</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>} <span class="comment">// \namespace gtsam</span></div>
+<div class="ttc" id="aa01556_html"><div class="ttname"><a href="a01556.html">NonlinearFactor.h</a></div><div class="ttdoc">Non-linear factor base classes.</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa02242_html_a04921356f5da6203f1a17e84cc8baafd"><div class="ttname"><a href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">gtsam::DefaultKeyFormatter</a></div><div class="ttdeci">KeyFormatter DefaultKeyFormatter</div><div class="ttdoc">Assign default key formatter.</div><div class="ttdef"><b>Definition</b> Key.cpp:30</div></div>
+<div class="ttc" id="aa02242_html_a39c52c49d5301ff2f020e66bf69bbf69"><div class="ttname"><a href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">gtsam::OptionalMatrixType</a></div><div class="ttdeci">Matrix * OptionalMatrixType</div><div class="ttdoc">This typedef will be used everywhere boost::optional&lt;Matrix&amp;&gt; reference was used previously.</div><div class="ttdef"><b>Definition</b> NonlinearFactor.h:57</div></div>
+<div class="ttc" id="aa02242_html_a7d4eaa9f6e32da46e8f287499ee650d2"><div class="ttname"><a href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">gtsam::KeyFormatter</a></div><div class="ttdeci">std::function&lt; std::string(Key)&gt; KeyFormatter</div><div class="ttdoc">Typedef for a function to format a key, i.e. to convert it to a string.</div><div class="ttdef"><b>Definition</b> Key.h:35</div></div>
+<div class="ttc" id="aa02242_html_a9f2aa5c7dcdf96e2edaa2e352c550677"><div class="ttname"><a href="a02242.html#a9f2aa5c7dcdf96e2edaa2e352c550677">gtsam::transform_point</a></div><div class="ttdeci">P transform_point(const T &amp;trans, const P &amp;global, OptionalMatrixType Dtrans, OptionalMatrixType Dglobal)</div><div class="ttdoc">Transform function that must be specialized specific domains.</div><div class="ttdef"><b>Definition</b> ReferenceFrameFactor.h:34</div></div>
+<div class="ttc" id="aa02242_html_adad029f5f6ffce610428b5fe768b0df2"><div class="ttname"><a href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">gtsam::Key</a></div><div class="ttdeci">std::uint64_t Key</div><div class="ttdoc">Integer nonlinear key type.</div><div class="ttdef"><b>Definition</b> types.h:43</div></div>
+<div class="ttc" id="aa02274_html"><div class="ttname"><a href="a02274.html">gtsam::noiseModel</a></div><div class="ttdoc">All noise models live in the noiseModel namespace.</div><div class="ttdef"><b>Definition</b> LossFunctions.cpp:33</div></div>
+<div class="ttc" id="aa03203_html"><div class="ttname"><a href="a03203.html">gtsam::traits</a></div><div class="ttdoc">A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...</div><div class="ttdef"><b>Definition</b> Group.h:37</div></div>
+<div class="ttc" id="aa03535_html"><div class="ttname"><a href="a03535.html">gtsam::Testable</a></div><div class="ttdoc">A helper that implements the traits interface for GTSAM types.</div><div class="ttdef"><b>Definition</b> Testable.h:152</div></div>
+<div class="ttc" id="aa05375_html"><div class="ttname"><a href="a05375.html">gtsam::noiseModel::Constrained</a></div><div class="ttdoc">A Constrained constrained model is a specialization of Diagonal which allows some or all of the sigma...</div><div class="ttdef"><b>Definition</b> NoiseModel.h:436</div></div>
+<div class="ttc" id="aa06419_html"><div class="ttname"><a href="a06419.html">gtsam::NoiseModelFactorT</a></div><div class="ttdoc">A convenient base class for creating your own NoiseModelFactor with n variables.</div><div class="ttdef"><b>Definition</b> NoiseModelFactorN.h:155</div></div>
+<div class="ttc" id="aa06419_html_a07b2b3e0025aa31715484a185a7b91cc"><div class="ttname"><a href="a06419.html#a07b2b3e0025aa31715484a185a7b91cc">gtsam::NoiseModelFactorT&lt; traits&lt; POINT &gt;::TangentVector, POINT, TRANSFORM, POINT &gt;::NoiseModelFactorT</a></div><div class="ttdeci">NoiseModelFactorT()</div><div class="ttdef"><b>Definition</b> NoiseModelFactorN.h:257</div></div>
+<div class="ttc" id="aa06419_html_a52743df64c5153c7bf35da457e185fed"><div class="ttname"><a href="a06419.html#a52743df64c5153c7bf35da457e185fed">gtsam::NoiseModelFactorT::evaluateError</a></div><div class="ttdeci">virtual OutputVec evaluateError(const ValueTypes &amp;... x, OptionalMatrixTypeT&lt; ValueTypes &gt;... H) const =0</div><div class="ttdoc">Override evaluateError to finish implementing an n-way factor.</div></div>
+<div class="ttc" id="aa06443_html_a7f892150e927e38368fe55971f001a5e"><div class="ttname"><a href="a06443.html#a7f892150e927e38368fe55971f001a5e">gtsam::NoiseModelFactor::dim</a></div><div class="ttdeci">size_t dim() const override</div><div class="ttdoc">get the dimension of the factor (number of rows on linearization)</div><div class="ttdef"><b>Definition</b> NonlinearFactor.h:251</div></div>
+<div class="ttc" id="aa07051_html"><div class="ttname"><a href="a07051.html">gtsam::ReferenceFrameFactor</a></div><div class="ttdoc">A constraint between two landmarks in separate maps Templated on: Point : Type of landmark Transform ...</div><div class="ttdef"><b>Definition</b> ReferenceFrameFactor.h:63</div></div>
+<div class="ttc" id="aa07051_html_a03fd8cbe33b239dfb1e99277a6ae947c"><div class="ttname"><a href="a07051.html#a03fd8cbe33b239dfb1e99277a6ae947c">gtsam::ReferenceFrameFactor::print</a></div><div class="ttdeci">void print(const std::string &amp;s=&quot;&quot;, const gtsam::KeyFormatter &amp;keyFormatter=DefaultKeyFormatter) const override</div><div class="ttdoc">Print.</div><div class="ttdef"><b>Definition</b> ReferenceFrameFactor.h:121</div></div>
+<div class="ttc" id="aa07051_html_a142d0dde9f42aa80e9b6c57d3c49cd58"><div class="ttname"><a href="a07051.html#a142d0dde9f42aa80e9b6c57d3c49cd58">gtsam::ReferenceFrameFactor::ReferenceFrameFactor</a></div><div class="ttdeci">ReferenceFrameFactor(Key globalKey, Key transKey, Key localKey, const noiseModel::Base::shared_ptr &amp;model)</div><div class="ttdoc">General constructor with arbitrary noise model (constrained or otherwise).</div><div class="ttdef"><b>Definition</b> ReferenceFrameFactor.h:84</div></div>
+<div class="ttc" id="aa07051_html_a89ced5876573f8d830506ade112fec56"><div class="ttname"><a href="a07051.html#a89ced5876573f8d830506ade112fec56">gtsam::ReferenceFrameFactor::clone</a></div><div class="ttdeci">NonlinearFactor::shared_ptr clone() const override</div><div class="ttdoc">Creates a shared_ptr clone of the factor - needs to be specialized to allow for subclasses.</div><div class="ttdef"><b>Definition</b> ReferenceFrameFactor.h:105</div></div>
+<div class="ttc" id="aa07051_html_ab01d310013e9e35b76b1a993f0b16074"><div class="ttname"><a href="a07051.html#ab01d310013e9e35b76b1a993f0b16074">gtsam::ReferenceFrameFactor::evaluateError</a></div><div class="ttdeci">ErrorVector evaluateError(const Point &amp;_global, const Transform &amp;trans, const Point &amp;local, OptionalMatrixType Dforeign, OptionalMatrixType Dtrans, OptionalMatrixType Dlocal) const override</div><div class="ttdoc">Combined cost and derivative function using boost::optional.</div><div class="ttdef"><b>Definition</b> ReferenceFrameFactor.h:110</div></div>
+<div class="ttc" id="aa07051_html_abf5b0891b95e33c718560d86bb3ffc93"><div class="ttname"><a href="a07051.html#abf5b0891b95e33c718560d86bb3ffc93">gtsam::ReferenceFrameFactor::ReferenceFrameFactor</a></div><div class="ttdeci">ReferenceFrameFactor(Key globalKey, Key transKey, Key localKey, double sigma=1e-2)</div><div class="ttdoc">Simple soft constraint constructor for frame of reference, with equal weighting for each degree of fr...</div><div class="ttdef"><b>Definition</b> ReferenceFrameFactor.h:99</div></div>
+<div class="ttc" id="aa07051_html_ac48e1fa01565b66115b7faed7d132f89"><div class="ttname"><a href="a07051.html#ac48e1fa01565b66115b7faed7d132f89">gtsam::ReferenceFrameFactor::ReferenceFrameFactor</a></div><div class="ttdeci">ReferenceFrameFactor(double mu, Key globalKey, Key transKey, Key localKey)</div><div class="ttdoc">Construct a hard frame of reference reference constraint with equal mu values for each degree of free...</div><div class="ttdef"><b>Definition</b> ReferenceFrameFactor.h:91</div></div>
+<div class="ttc" id="aa07051_html_ae45ff48bf3b510669dbd0105c9970c30"><div class="ttname"><a href="a07051.html#ae45ff48bf3b510669dbd0105c9970c30">gtsam::ReferenceFrameFactor::ReferenceFrameFactor</a></div><div class="ttdeci">ReferenceFrameFactor()</div><div class="ttdoc">default constructor for serialization only</div><div class="ttdef"><b>Definition</b> ReferenceFrameFactor.h:66</div></div>
+<div class="ttc" id="aa16253_html"><div class="ttname"><a href="a16253.html">gtsam::Isotropic</a></div><div class="ttdoc">An isotropic noise model corresponds to a scaled diagonal covariance To construct,...</div><div class="ttdef"><b>Definition</b> NoiseModel.h:581</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam_unstable</b></li><li class="navelem"><b>slam</b></li><li class="navelem"><a href="a01724.html">SmartStereoProjectionPoseFactor.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>slam</b></li><li class="navelem"><a href="a01724.html">ReferenceFrameFactor.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

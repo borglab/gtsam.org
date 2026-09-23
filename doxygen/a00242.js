@@ -1,4 +1,5 @@
 var a00242 =
 [
-    [ "gtsam::DiscreteCluster", "a01968.html#ac138570746a0d64ead60c784827207a3", null ]
+    [ "gtsam::Chebyshev1Basis", "a03755.html", null ],
+    [ "gtsam::Chebyshev2Basis", "a03759.html", null ]
 ];

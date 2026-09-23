@@ -1,7 +1,5 @@
 var a00845 =
 [
-    [ "gtsam::IterativeOptimizationParameters", "a04375.html", null ],
-    [ "gtsam::IterativeSolver", "a04379.html", null ],
-    [ "gtsam::KeyInfoEntry", "a04383.html", null ],
-    [ "gtsam::KeyInfo", "a04387.html", "a04387" ]
+    [ "gtsam::Ordering", "a04979.html", "a04979" ],
+    [ "gtsam::traits&lt; Ordering &gt;", "a04983.html", null ]
 ];

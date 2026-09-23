@@ -1,0 +1,52 @@
+/* Chapter-like release overview; content remains readable without JavaScript. */
+.landing-main { counter-reset: release-chapter; }
+.release-overview { padding: 4.5rem var(--site-gutter) 3rem; background: var(--site-header-wash); }
+.release-overview > p { max-width: 58rem; }
+.release-overview h1 { margin: 0 0 1.25rem; font-size: clamp(3.2rem, 6vw, 4.8rem); }
+.release-version { color: var(--site-muted); font-size: .9rem; }
+.release-summary { font-size: 1.15rem; }
+.release-links { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1.5rem; margin-top: 1.75rem; font-weight: 600; }
+.release-links a:first-child { padding: .65rem 1.1rem; border: 1px solid var(--site-accent); border-radius: 3px; background: var(--site-accent); color: white; text-decoration: none; }
+.release-links a:first-child:hover { background: var(--site-heading); border-color: var(--site-heading); }
+.release-contents { padding: 2rem var(--site-gutter); background: var(--site-header-wash); }
+.release-contents h2 { font-family: var(--site-sans); font-size: 1rem; font-weight: 600; letter-spacing: 0; margin: 0 0 1rem; }
+.release-contents ol { columns: 2; column-gap: 3rem; margin: 0; padding-left: 1.5rem; }
+.release-contents li { break-inside: avoid; margin-bottom: .4rem; }
+.release-contents li::marker { color: var(--site-accent); font-weight: 600; }
+.release-chapters { position: sticky; top: 0; z-index: 10; padding: 0 var(--site-gutter); border-top: 1px solid var(--site-heading); border-bottom: 1px solid var(--site-heading); background-color: var(--site-heading); background-image: linear-gradient(rgba(30, 12, 48, .18), rgba(30, 12, 48, .18)), var(--site-brand-image); background-size: 100% 100%; box-shadow: 0 3px 12px rgba(48, 36, 63, .1); }
+.release-chapters-inner { display: flex; gap: 1.3rem; overflow-x: auto; scrollbar-width: thin; }
+.release-chapters a { flex: 0 0 auto; padding: .85rem 0 .7rem; border-bottom: 3px solid transparent; color: white; font-size: .82rem; text-decoration: none; }
+.release-chapters a:visited { color: white; }
+.release-chapters a:hover { color: white; }
+.release-chapters a[aria-current="location"] { color: white; border-color: var(--site-highlight); }
+.release-chapters a:focus-visible { outline-color: white; outline-offset: -2px; }
+.release-section { position: relative; padding: clamp(3rem, 6vw, 5rem) var(--site-gutter); border-bottom: 1px solid var(--site-line); scroll-margin-top: 3.5rem; }
+.release-section:nth-of-type(even) { background: var(--site-wash); }
+.release-section:not(.release-acknowledgments) { counter-increment: release-chapter; }
+.release-section > h2 { max-width: 58rem; margin: 0 0 2rem; }
+.release-section:not(.release-acknowledgments) > h2::before { content: counter(release-chapter, decimal-leading-zero); display: block; width: 2.5rem; padding-bottom: .6rem; border-bottom: 2px solid var(--site-accent); margin-bottom: 1rem; color: var(--site-accent); font: 600 .8rem/1 var(--site-sans); letter-spacing: .08em; }
+.release-section > p, .release-section > .resource-links { max-width: 58rem; }
+.research-columns { display: grid; grid-template-columns: 1.15fr 1fr; gap: 3rem; align-items: start; }
+.research-columns > * { min-width: 0; }
+.attribution { color: var(--site-muted); }
+.paper-reference { border-left: 2px solid var(--site-accent); padding-left: 1rem; font-size: .95rem; }
+.resource-links { margin: 1.25rem 0 0; padding-left: 1.25rem; }
+.resource-links li { margin-bottom: .5rem; }
+.research-figure { margin: 0; }
+.research-figure > a { display: block; border: 1px solid var(--site-line); background: white; box-shadow: 0 8px 24px rgba(48, 36, 63, .06); }
+.research-figure img { display: block; width: 100%; height: auto; }
+.research-figure figcaption { margin-top: .75rem; color: var(--site-muted); font-size: .875rem; line-height: 1.55; }
+.research-figure-wide { max-width: 54rem; margin: 2rem auto 0; }
+.research-figure-portrait { max-width: 21rem; justify-self: center; }
+.research-figure-hybrid { max-width: 42rem; }
+.release-acknowledgments { border-bottom: 0; }
+@media (min-width: 1000px) {
+  .research-columns > .research-figure { position: sticky; top: 5rem; }
+}
+@media (max-width: 760px) {
+  .release-overview { padding-top: 3rem; }
+  .release-contents ol { columns: 1; }
+  .research-columns { grid-template-columns: 1fr; gap: 2rem; }
+  .research-figure { width: 100%; }
+  .release-chapters-inner { gap: 1.1rem; }
+}

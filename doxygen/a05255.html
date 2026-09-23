@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::SfmData Struct Reference</title>
+<title>gtsam: gtsam::noiseModel::mEstimator::Welsch Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,79 +96,108 @@ $(function(){initNavTree('a05255.html','','a05252'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::SfmData Struct Reference<div class="ingroups"><a class="el" href="a01963.html">SFM</a></div></div></div>
+  <div class="headertitle"><div class="title">gtsam::noiseModel::mEstimator::Welsch Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="a05255.html" title="SfmData stores a bunch of SfmTracks.">SfmData</a> stores a bunch of SfmTracks. </p>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Serialization</h2></td></tr>
-<tr class="memitem:ac98d07dd8f7b70e16ccb9a01abf56b9c" id="r_ac98d07dd8f7b70e16ccb9a01abf56b9c"><td class="memItemLeft"><a id="ac98d07dd8f7b70e16ccb9a01abf56b9c" name="ac98d07dd8f7b70e16ccb9a01abf56b9c"></a>
-class&#160;</td><td class="memItemRight"><b>boost::serialization::access</b></td></tr>
-<tr class="memdesc:ac98d07dd8f7b70e16ccb9a01abf56b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialization function. <br /></td></tr>
-<tr class="memitem:a3c04ebf081d858c5807723d19da979b3" id="r_a3c04ebf081d858c5807723d19da979b3"><td class="memTemplParams" colspan="2"><a id="a3c04ebf081d858c5807723d19da979b3" name="a3c04ebf081d858c5807723d19da979b3"></a>
-template&lt;class Archive&gt; </td></tr>
-<tr class="memitem:a3c04ebf081d858c5807723d19da979b3 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><b>serialize</b> (Archive &amp;ar, const unsigned int)</td></tr>
-</table><table class="memberdecls">
+<div class="textblock"><p>Implementation of the "Welsch" robust error model (Zhang97ivc). </p>
+<p>This model has a scalar parameter "c".</p>
+<ul>
+<li>Loss \( \rho(x) = -0.5 c² (exp(-x²/c²) - 1) \)</li>
+<li>Derivative \( \phi(x) = x exp(-x²/c²) \)</li>
+<li><p class="startli">Weight \( w(x) = \phi(x)/x = exp(-x²/c²) \)</p>
+<p class="startli"><a class="el" href="a05255.html" title="Implementation of the &quot;Welsch&quot; robust error model (Zhang97ivc).">Welsch</a> loss is graduated by scaling c with \lambda = 1 / \mu, i.e. by replacing c² with c²/\mu. \mu = 0 is least squares. </p>
+</li>
+</ul>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::noiseModel::mEstimator::Welsch:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="a05255.png" usemap="#gtsam_3A_3AnoiseModel_3A_3AmEstimator_3A_3AWelsch_map" alt=""/>
+  <map id="gtsam_3A_3AnoiseModel_3A_3AmEstimator_3A_3AWelsch_map" name="gtsam_3A_3AnoiseModel_3A_3AmEstimator_3A_3AWelsch_map">
+<area href="a05231.html" title="Pure virtual class for all robust error function classes." alt="gtsam::noiseModel::mEstimator::Base" shape="rect" coords="0,0,228,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Standard Interface</div></td></tr>
-<tr class="memitem:aa45104530ee1f6a59ccd2fb4bfd87e81" id="r_aa45104530ee1f6a59ccd2fb4bfd87e81"><td class="memItemLeft"><a id="aa45104530ee1f6a59ccd2fb4bfd87e81" name="aa45104530ee1f6a59ccd2fb4bfd87e81"></a>
-void&#160;</td><td class="memItemRight"><b>addTrack</b> (const <a class="el" href="a05267.html">SfmTrack</a> &amp;t)</td></tr>
-<tr class="memdesc:aa45104530ee1f6a59ccd2fb4bfd87e81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a track to <a class="el" href="a05255.html" title="SfmData stores a bunch of SfmTracks.">SfmData</a>. <br /></td></tr>
-<tr class="memitem:a212dc3dacb95e3a07284318f9d55a9cf" id="r_a212dc3dacb95e3a07284318f9d55a9cf"><td class="memItemLeft"><a id="a212dc3dacb95e3a07284318f9d55a9cf" name="a212dc3dacb95e3a07284318f9d55a9cf"></a>
-void&#160;</td><td class="memItemRight"><b>addCamera</b> (const <a class="el" href="a01968.html#acab0207730cf78822bdf274b50739d31">SfmCamera</a> &amp;cam)</td></tr>
-<tr class="memdesc:a212dc3dacb95e3a07284318f9d55a9cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a camera to <a class="el" href="a05255.html" title="SfmData stores a bunch of SfmTracks.">SfmData</a>. <br /></td></tr>
-<tr class="memitem:a43c98621154cdb9484c36d4f98b4b7ab" id="r_a43c98621154cdb9484c36d4f98b4b7ab"><td class="memItemLeft"><a id="a43c98621154cdb9484c36d4f98b4b7ab" name="a43c98621154cdb9484c36d4f98b4b7ab"></a>
-size_t&#160;</td><td class="memItemRight"><b>numberTracks</b> () const</td></tr>
-<tr class="memdesc:a43c98621154cdb9484c36d4f98b4b7ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of reconstructed 3D points. <br /></td></tr>
-<tr class="memitem:a4269e1944bff60fe248fae59a35cc9f2" id="r_a4269e1944bff60fe248fae59a35cc9f2"><td class="memItemLeft"><a id="a4269e1944bff60fe248fae59a35cc9f2" name="a4269e1944bff60fe248fae59a35cc9f2"></a>
-size_t&#160;</td><td class="memItemRight"><b>numberCameras</b> () const</td></tr>
-<tr class="memdesc:a4269e1944bff60fe248fae59a35cc9f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of cameras. <br /></td></tr>
-<tr class="memitem:a46b17be69d78037b9642966bcbea9df7" id="r_a46b17be69d78037b9642966bcbea9df7"><td class="memItemLeft"><a id="a46b17be69d78037b9642966bcbea9df7" name="a46b17be69d78037b9642966bcbea9df7"></a>
-const <a class="el" href="a05267.html">SfmTrack</a> &amp;&#160;</td><td class="memItemRight"><b>track</b> (size_t idx) const</td></tr>
-<tr class="memdesc:a46b17be69d78037b9642966bcbea9df7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The track formed by series of landmark measurements. <br /></td></tr>
-<tr class="memitem:aab4f9598f723b5b76a53a60b6ba65ff9" id="r_aab4f9598f723b5b76a53a60b6ba65ff9"><td class="memItemLeft"><a id="aab4f9598f723b5b76a53a60b6ba65ff9" name="aab4f9598f723b5b76a53a60b6ba65ff9"></a>
-const <a class="el" href="a01968.html#acab0207730cf78822bdf274b50739d31">SfmCamera</a> &amp;&#160;</td><td class="memItemRight"><b>camera</b> (size_t idx) const</td></tr>
-<tr class="memdesc:aab4f9598f723b5b76a53a60b6ba65ff9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The camera pose at frame index <span class="tt">idx</span>. <br /></td></tr>
-<tr class="memitem:a0e3c28537291c933634b8be21a3f53bc" id="r_a0e3c28537291c933634b8be21a3f53bc"><td class="memItemLeft"><a id="a0e3c28537291c933634b8be21a3f53bc" name="a0e3c28537291c933634b8be21a3f53bc"></a>
-const std::vector&lt; <a class="el" href="a01968.html#acab0207730cf78822bdf274b50739d31">SfmCamera</a> &gt; &amp;&#160;</td><td class="memItemRight"><b>cameraList</b> () const</td></tr>
-<tr class="memdesc:a0e3c28537291c933634b8be21a3f53bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getters. <br /></td></tr>
-<tr class="memitem:a4b60c3cda253196fecaf3f53def30fe1" id="r_a4b60c3cda253196fecaf3f53def30fe1"><td class="memItemLeft"><a id="a4b60c3cda253196fecaf3f53def30fe1" name="a4b60c3cda253196fecaf3f53def30fe1"></a>
-const std::vector&lt; <a class="el" href="a05267.html">SfmTrack</a> &gt; &amp;&#160;</td><td class="memItemRight"><b>trackList</b> () const</td></tr>
-<tr class="memitem:a63398992728c6c3196c8d427aa1bff43" id="r_a63398992728c6c3196c8d427aa1bff43"><td class="memItemLeft"><a class="el" href="a05091.html">NonlinearFactorGraph</a>&#160;</td><td class="memItemRight"><a class="el" href="#a63398992728c6c3196c8d427aa1bff43">generalSfmFactors</a> (const <a class="el" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;model=<a class="el" href="a04483.html#a6f34496ff6924bd5552c77810e991015">noiseModel::Isotropic::Sigma</a>(2, 1.0)) const</td></tr>
-<tr class="memdesc:a63398992728c6c3196c8d427aa1bff43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create projection factors using keys i and P(j).  <br /></td></tr>
-<tr class="memitem:a049f72237be36c03d8aa6274e32a22c3" id="r_a049f72237be36c03d8aa6274e32a22c3"><td class="memItemLeft"><a class="el" href="a05091.html">NonlinearFactorGraph</a>&#160;</td><td class="memItemRight"><a class="el" href="#a049f72237be36c03d8aa6274e32a22c3">sfmFactorGraph</a> (const <a class="el" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;model=<a class="el" href="a04483.html#a6f34496ff6924bd5552c77810e991015">noiseModel::Isotropic::Sigma</a>(2, 1.0), boost::optional&lt; size_t &gt; fixedCamera=0, boost::optional&lt; size_t &gt; fixedPoint=0) const</td></tr>
-<tr class="memdesc:a049f72237be36c03d8aa6274e32a22c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create factor graph with projection factors and gauge fix.  <br /></td></tr>
-<tr id="pub-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Testable</div></td></tr>
-<tr class="memitem:a7a750e92aa66d797bc4fd2c81945a26f" id="r_a7a750e92aa66d797bc4fd2c81945a26f"><td class="memItemLeft"><a id="a7a750e92aa66d797bc4fd2c81945a26f" name="a7a750e92aa66d797bc4fd2c81945a26f"></a>
-void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;&quot;) const</td></tr>
-<tr class="memdesc:a7a750e92aa66d797bc4fd2c81945a26f"><td class="mdescLeft">&#160;</td><td class="mdescRight">print <br /></td></tr>
-<tr class="memitem:acfa3f4865e32f376834698b0b5c0015d" id="r_acfa3f4865e32f376834698b0b5c0015d"><td class="memItemLeft"><a id="acfa3f4865e32f376834698b0b5c0015d" name="acfa3f4865e32f376834698b0b5c0015d"></a>
-bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="a05255.html">SfmData</a> &amp;sfmData, double tol=1e-9) const</td></tr>
-<tr class="memdesc:acfa3f4865e32f376834698b0b5c0015d"><td class="mdescLeft">&#160;</td><td class="mdescRight">assert equality up to a tolerance <br /></td></tr>
+<tr class="memitem:a2616f48ef4ef5545927f1f5f8530ab27" id="r_a2616f48ef4ef5545927f1f5f8530ab27"><td class="memItemLeft"><a id="a2616f48ef4ef5545927f1f5f8530ab27" name="a2616f48ef4ef5545927f1f5f8530ab27"></a>
+&#160;</td><td class="memItemRight"><b>Welsch</b> (double c=2.9846, const <a class="el" href="a05231.html#ac2f379f230a3a8f2624e6f39172cf782">ReweightScheme</a> <a class="el" href="a05231.html#a7b99210b97477669026faafe4c1c5f86">reweight</a>=Block)</td></tr>
+<tr class="memitem:a6f69a318866ded407de2a3bd62193301" id="r_a6f69a318866ded407de2a3bd62193301"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a6f69a318866ded407de2a3bd62193301">weight</a> (double distance) const override</td></tr>
+<tr class="memdesc:a6f69a318866ded407de2a3bd62193301"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is responsible for returning the weight function for a given amount of error.  <br /></td></tr>
+<tr class="memitem:a4bf74c59cf99dbba3eec08ef94bd7482" id="r_a4bf74c59cf99dbba3eec08ef94bd7482"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a4bf74c59cf99dbba3eec08ef94bd7482">loss</a> (double distance) const override</td></tr>
+<tr class="memdesc:a4bf74c59cf99dbba3eec08ef94bd7482"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is responsible for returning the total penalty for a given amount of error.  <br /></td></tr>
+<tr class="memitem:af80ee152c56fcbe3b28069b3d4be7205" id="r_af80ee152c56fcbe3b28069b3d4be7205"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#af80ee152c56fcbe3b28069b3d4be7205">graduatedWeight</a> (double distance, double mu) const override</td></tr>
+<tr class="memdesc:af80ee152c56fcbe3b28069b3d4be7205"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is responsible for returning the weight for a given amount of error and the current control parameter \(\mu\).  <br /></td></tr>
+<tr class="memitem:a7512f4e62b059e97772545fc354918fe" id="r_a7512f4e62b059e97772545fc354918fe"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a7512f4e62b059e97772545fc354918fe">graduatedLoss</a> (double distance, double mu) const override</td></tr>
+<tr class="memdesc:a7512f4e62b059e97772545fc354918fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is responsible for returning the total penalty for a given amount of error and the current control parameter \(\mu\).  <br /></td></tr>
+<tr class="memitem:acd2c424c437314a79960364030460ea8" id="r_acd2c424c437314a79960364030460ea8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acd2c424c437314a79960364030460ea8">print</a> (const std::string &amp;s) const override</td></tr>
+<tr class="memitem:a6fe724a07f5f31c821f9b06af234c51d" id="r_a6fe724a07f5f31c821f9b06af234c51d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a6fe724a07f5f31c821f9b06af234c51d">equals</a> (const Base &amp;expected, double tol=1e-8) const override</td></tr>
+<tr class="memitem:a770b254f6f82afce9bca897bf8f521e1" id="r_a770b254f6f82afce9bca897bf8f521e1"><td class="memItemLeft"><a id="a770b254f6f82afce9bca897bf8f521e1" name="a770b254f6f82afce9bca897bf8f521e1"></a>
+double&#160;</td><td class="memItemRight"><b>modelParameter</b> () const</td></tr>
+<tr class="inherit_header pub_methods_a05231"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a05231')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a></td></tr>
+<tr class="memitem:a55554101eb10b92a1a41d85b35e48028 inherit pub_methods_a05231" id="r_a55554101eb10b92a1a41d85b35e48028"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>Base</b> (const <a class="el" href="a05231.html#ac2f379f230a3a8f2624e6f39172cf782">ReweightScheme</a> <a class="el" href="a05231.html#a7b99210b97477669026faafe4c1c5f86">reweight</a>=Block)</td></tr>
+<tr class="memitem:a61b5819c5c9f21d52184f1b3d540047a inherit pub_methods_a05231" id="r_a61b5819c5c9f21d52184f1b3d540047a"><td class="memItemLeft">
+<a class="el" href="a05231.html#ac2f379f230a3a8f2624e6f39172cf782">ReweightScheme</a>&#160;</td><td class="memItemRight"><b>reweightScheme</b> () const</td></tr>
+<tr class="memdesc:a61b5819c5c9f21d52184f1b3d540047a inherit pub_methods_a05231"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the reweight scheme, as explained in <a class="el" href="a05231.html#ac2f379f230a3a8f2624e6f39172cf782" title="the rows can be weighted independently according to the error or uniformly with the norm of the right...">ReweightScheme</a>. <br /></td></tr>
+<tr class="memitem:a9423442c05eba380c37a6fdaa35407a4 inherit pub_methods_a05231" id="r_a9423442c05eba380c37a6fdaa35407a4"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>sqrtWeight</b> (double distance) const</td></tr>
+<tr class="memitem:a91b748d275ce0c13d9b76c580c6d29a9 inherit pub_methods_a05231" id="r_a91b748d275ce0c13d9b76c580c6d29a9"><td class="memItemLeft">
+Vector&#160;</td><td class="memItemRight"><b>weight</b> (const Vector &amp;error) const</td></tr>
+<tr class="memdesc:a91b748d275ce0c13d9b76c580c6d29a9 inherit pub_methods_a05231"><td class="mdescLeft">&#160;</td><td class="mdescRight">produce a weight vector according to an error vector and the implemented robust function <br /></td></tr>
+<tr class="memitem:a3e620f2a766b0a890426a961eedefb72 inherit pub_methods_a05231" id="r_a3e620f2a766b0a890426a961eedefb72"><td class="memItemLeft">
+Vector&#160;</td><td class="memItemRight"><b>sqrtWeight</b> (const Vector &amp;error) const</td></tr>
+<tr class="memdesc:a3e620f2a766b0a890426a961eedefb72 inherit pub_methods_a05231"><td class="mdescLeft">&#160;</td><td class="mdescRight">square root version of the weight function <br /></td></tr>
+<tr class="memitem:a7b99210b97477669026faafe4c1c5f86 inherit pub_methods_a05231" id="r_a7b99210b97477669026faafe4c1c5f86"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>reweight</b> (Vector &amp;error) const</td></tr>
+<tr class="memdesc:a7b99210b97477669026faafe4c1c5f86 inherit pub_methods_a05231"><td class="mdescLeft">&#160;</td><td class="mdescRight">reweight block matrices and a vector according to their weight implementation <br /></td></tr>
+<tr class="memitem:a12bfcbeb6812485cccd75653042b9249 inherit pub_methods_a05231" id="r_a12bfcbeb6812485cccd75653042b9249"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>reweight</b> (std::vector&lt; Matrix &gt; &amp;A, Vector &amp;error) const</td></tr>
+<tr class="memitem:a5dc3cbfd9d22b3343a666b3307a12a4b inherit pub_methods_a05231" id="r_a5dc3cbfd9d22b3343a666b3307a12a4b"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>reweight</b> (Matrix &amp;A, Vector &amp;error) const</td></tr>
+<tr class="memitem:a09ad3d903b85dd419e0d82d91a8d7b45 inherit pub_methods_a05231" id="r_a09ad3d903b85dd419e0d82d91a8d7b45"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>reweight</b> (Matrix &amp;A1, Matrix &amp;A2, Vector &amp;error) const</td></tr>
+<tr class="memitem:a549305ffdf3a8efde75d39f0d13427e9 inherit pub_methods_a05231" id="r_a549305ffdf3a8efde75d39f0d13427e9"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>reweight</b> (Matrix &amp;A1, Matrix &amp;A2, Matrix &amp;A3, Vector &amp;error) const</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr id="pub-static-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Create from file</div></td></tr>
-<tr class="memitem:a00ed0d76356322f3cb0507119a738eaf" id="r_a00ed0d76356322f3cb0507119a738eaf"><td class="memItemLeft">static <a class="el" href="a05255.html">SfmData</a>&#160;</td><td class="memItemRight"><a class="el" href="#a00ed0d76356322f3cb0507119a738eaf">FromBundlerFile</a> (const std::string &amp;filename)</td></tr>
-<tr class="memdesc:a00ed0d76356322f3cb0507119a738eaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a bundler output file and return result as <a class="el" href="a05255.html" title="SfmData stores a bunch of SfmTracks.">SfmData</a> instance.  <br /></td></tr>
-<tr class="memitem:acbfb5d8da364d4d38aa7c7290c3ba37a" id="r_acbfb5d8da364d4d38aa7c7290c3ba37a"><td class="memItemLeft">static <a class="el" href="a05255.html">SfmData</a>&#160;</td><td class="memItemRight"><a class="el" href="#acbfb5d8da364d4d38aa7c7290c3ba37a">FromBalFile</a> (const std::string &amp;filename)</td></tr>
-<tr class="memdesc:acbfb5d8da364d4d38aa7c7290c3ba37a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a "Bundle Adjustment in the Large" (BAL) file and return result as <a class="el" href="a05255.html" title="SfmData stores a bunch of SfmTracks.">SfmData</a> instance.  <br /></td></tr>
+<tr class="memitem:a431f8589e875493882c30dd9f86b2621" id="r_a431f8589e875493882c30dd9f86b2621"><td class="memItemLeft"><a id="a431f8589e875493882c30dd9f86b2621" name="a431f8589e875493882c30dd9f86b2621"></a>
+static shared_ptr&#160;</td><td class="memItemRight"><b>Create</b> (double k, const <a class="el" href="a05231.html#ac2f379f230a3a8f2624e6f39172cf782">ReweightScheme</a> <a class="el" href="a05231.html#a7b99210b97477669026faafe4c1c5f86">reweight</a>=Block)</td></tr>
+<tr class="memitem:a0ac7d11bde61cf29d7290aad02764303" id="r_a0ac7d11bde61cf29d7290aad02764303"><td class="memItemLeft"><a id="a0ac7d11bde61cf29d7290aad02764303" name="a0ac7d11bde61cf29d7290aad02764303"></a>
+static double&#160;</td><td class="memItemRight"><b>Weight</b> (double distance, double csquared)</td></tr>
+<tr class="memdesc:a0ac7d11bde61cf29d7290aad02764303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static implementation of <a class="el" href="a05255.html" title="Implementation of the &quot;Welsch&quot; robust error model (Zhang97ivc).">Welsch</a> Weight. <br /></td></tr>
+<tr class="memitem:ad672bbd39cc885397301c5bbe7d4db0d" id="r_ad672bbd39cc885397301c5bbe7d4db0d"><td class="memItemLeft"><a id="ad672bbd39cc885397301c5bbe7d4db0d" name="ad672bbd39cc885397301c5bbe7d4db0d"></a>
+static double&#160;</td><td class="memItemRight"><b>Loss</b> (double distance, double csquared)</td></tr>
+<tr class="memdesc:ad672bbd39cc885397301c5bbe7d4db0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static implementation of <a class="el" href="a05255.html" title="Implementation of the &quot;Welsch&quot; robust error model (Zhang97ivc).">Welsch</a> Loss. <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:aca9835ee681fe7dfbd3d0e2b58d4f50d" id="r_aca9835ee681fe7dfbd3d0e2b58d4f50d"><td class="memItemLeft"><a id="aca9835ee681fe7dfbd3d0e2b58d4f50d" name="aca9835ee681fe7dfbd3d0e2b58d4f50d"></a>
-std::vector&lt; <a class="el" href="a01968.html#acab0207730cf78822bdf274b50739d31">SfmCamera</a> &gt;&#160;</td><td class="memItemRight"><b>cameras</b></td></tr>
-<tr class="memdesc:aca9835ee681fe7dfbd3d0e2b58d4f50d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of cameras. <br /></td></tr>
-<tr class="memitem:ad005f3beddfb6a8f735ad3369d2b81e6" id="r_ad005f3beddfb6a8f735ad3369d2b81e6"><td class="memItemLeft"><a id="ad005f3beddfb6a8f735ad3369d2b81e6" name="ad005f3beddfb6a8f735ad3369d2b81e6"></a>
-std::vector&lt; <a class="el" href="a05267.html">SfmTrack</a> &gt;&#160;</td><td class="memItemRight"><b>tracks</b></td></tr>
-<tr class="memdesc:ad005f3beddfb6a8f735ad3369d2b81e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sparse set of points. <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:aa42dfc95521f645e908c42b4041973f3" id="r_aa42dfc95521f645e908c42b4041973f3"><td class="memItemLeft"><a id="aa42dfc95521f645e908c42b4041973f3" name="aa42dfc95521f645e908c42b4041973f3"></a>
+typedef std::shared_ptr&lt; Welsch &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+<tr class="inherit_header pub_types_a05231"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a05231')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a></td></tr>
+<tr class="memitem:ac2f379f230a3a8f2624e6f39172cf782 inherit pub_types_a05231" id="r_ac2f379f230a3a8f2624e6f39172cf782"><td class="memItemLeft"><a id="ac2f379f230a3a8f2624e6f39172cf782" name="ac2f379f230a3a8f2624e6f39172cf782"></a>enum &#160;</td><td class="memItemRight"><a class="el" href="a05231.html#ac2f379f230a3a8f2624e6f39172cf782">ReweightScheme</a> { <b>Scalar</b>
+, <b>Block</b>
+ }</td></tr>
+<tr class="memdesc:ac2f379f230a3a8f2624e6f39172cf782"><td class="mdescLeft">&#160;</td><td class="mdescRight">the rows can be weighted independently according to the error or uniformly with the norm of the right hand side <br /></td></tr>
+<tr class="memitem:a812f4ff34b8303b917da947e567722b4 inherit pub_types_a05231" id="r_a812f4ff34b8303b917da947e567722b4"><td class="memItemLeft">
+typedef std::shared_ptr&lt; Base &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:ac0b3ae4a34e4e5d57920f5947a7176a0" id="r_ac0b3ae4a34e4e5d57920f5947a7176a0"><td class="memItemLeft"><a id="ac0b3ae4a34e4e5d57920f5947a7176a0" name="ac0b3ae4a34e4e5d57920f5947a7176a0"></a>
+double&#160;</td><td class="memItemRight"><b>c_</b></td></tr>
+<tr class="memitem:adb4884c99830b60c9659a44dcb5491b1" id="r_adb4884c99830b60c9659a44dcb5491b1"><td class="memItemLeft"><a id="adb4884c99830b60c9659a44dcb5491b1" name="adb4884c99830b60c9659a44dcb5491b1"></a>
+double&#160;</td><td class="memItemRight"><b>csquared_</b></td></tr>
+<tr class="inherit_header pro_attribs_a05231"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a05231')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a></td></tr>
+<tr class="memitem:a324ead5e657531310058f768f9daf0e8 inherit pro_attribs_a05231" id="r_a324ead5e657531310058f768f9daf0e8"><td class="memItemLeft"><a class="el" href="a05231.html#ac2f379f230a3a8f2624e6f39172cf782">ReweightScheme</a>&#160;</td><td class="memItemRight"><a class="el" href="a05231.html#a324ead5e657531310058f768f9daf0e8">reweight_</a></td></tr>
+<tr class="memdesc:a324ead5e657531310058f768f9daf0e8 inherit pro_attribs_a05231"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strategy for reweighting.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="acbfb5d8da364d4d38aa7c7290c3ba37a" name="acbfb5d8da364d4d38aa7c7290c3ba37a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acbfb5d8da364d4d38aa7c7290c3ba37a">&#9670;&#160;</a></span>FromBalFile()</h2>
+<a id="a6fe724a07f5f31c821f9b06af234c51d" name="a6fe724a07f5f31c821f9b06af234c51d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fe724a07f5f31c821f9b06af234c51d">&#9670;&#160;</a></span>equals()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,32 +206,29 @@ std::vector&lt; <a class="el" href="a05267.html">SfmTrack</a> &gt;&#160;</td><td
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a05255.html">SfmData</a> gtsam::SfmData::FromBalFile </td>
+          <td class="memname">bool gtsam::noiseModel::mEstimator::Welsch::equals </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
+          <td class="paramtype">const Base &amp;</td>          <td class="paramname"><span class="paramname"><em>expected</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>tol</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1e-8</span>&#160;) const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Parse a "Bundle Adjustment in the Large" (BAL) file and return result as <a class="el" href="a05255.html" title="SfmData stores a bunch of SfmTracks.">SfmData</a> instance. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">filename</td><td>The name of the BAL file. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>SfM structure where the data is stored. </dd></dl>
+<p>Implements <a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a>.</p>
 
 </div>
 </div>
-<a id="a00ed0d76356322f3cb0507119a738eaf" name="a00ed0d76356322f3cb0507119a738eaf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00ed0d76356322f3cb0507119a738eaf">&#9670;&#160;</a></span>FromBundlerFile()</h2>
+<a id="a7512f4e62b059e97772545fc354918fe" name="a7512f4e62b059e97772545fc354918fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7512f4e62b059e97772545fc354918fe">&#9670;&#160;</a></span>graduatedLoss()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -211,98 +237,157 @@ std::vector&lt; <a class="el" href="a05267.html">SfmTrack</a> &gt;&#160;</td><td
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a05255.html">SfmData</a> gtsam::SfmData::FromBundlerFile </td>
+          <td class="memname">double gtsam::noiseModel::mEstimator::Welsch::graduatedLoss </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>distance</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>mu</em></span>&#160;) const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Parses a bundler output file and return result as <a class="el" href="a05255.html" title="SfmData stores a bunch of SfmTracks.">SfmData</a> instance. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">filename</td><td>The name of the bundler file </td></tr>
-    <tr><td class="paramname">data</td><td>SfM structure where the data is stored </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the parsing was successful, false otherwise </dd></dl>
+<p>This method is responsible for returning the total penalty for a given amount of error and the current control parameter \(\mu\). </p>
+<p>This returns \(\rho(x, \mu)\) in <a class="el" href="a02275.html" title="mEstimator">mEstimator</a> </p>
+
+<p>Implements <a class="el" href="a05231.html#a0cf42765e7618667a618dba6235aca64">gtsam::noiseModel::mEstimator::Base</a>.</p>
 
 </div>
 </div>
-<a id="a63398992728c6c3196c8d427aa1bff43" name="a63398992728c6c3196c8d427aa1bff43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63398992728c6c3196c8d427aa1bff43">&#9670;&#160;</a></span>generalSfmFactors()</h2>
+<a id="af80ee152c56fcbe3b28069b3d4be7205" name="af80ee152c56fcbe3b28069b3d4be7205"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af80ee152c56fcbe3b28069b3d4be7205">&#9670;&#160;</a></span>graduatedWeight()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a05091.html">NonlinearFactorGraph</a> gtsam::SfmData::generalSfmFactors </td>
+          <td class="memname">double gtsam::noiseModel::mEstimator::Welsch::graduatedWeight </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>model</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="a04483.html#a6f34496ff6924bd5552c77810e991015">noiseModel::Isotropic::Sigma</a>(2,&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1.0)</span></td><td>)</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>distance</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>mu</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This method is responsible for returning the weight for a given amount of error and the current control parameter \(\mu\). </p>
+<p>This returns \(w(x, \mu)\) in <a class="el" href="a02275.html" title="mEstimator">mEstimator</a> </p>
+
+<p>Implements <a class="el" href="a05231.html#aa0c8670e7f755df874e986e88becd249">gtsam::noiseModel::mEstimator::Base</a>.</p>
+
+</div>
+</div>
+<a id="a4bf74c59cf99dbba3eec08ef94bd7482" name="a4bf74c59cf99dbba3eec08ef94bd7482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bf74c59cf99dbba3eec08ef94bd7482">&#9670;&#160;</a></span>loss()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double gtsam::noiseModel::mEstimator::Welsch::loss </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>distance</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Create projection factors using keys i and P(j). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">model</td><td>a noise model for projection errors </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a05091.html">NonlinearFactorGraph</a> </dd></dl>
+<p>This method is responsible for returning the total penalty for a given amount of error. </p>
+<p>For example, this method is responsible for implementing the quadratic function for an L2 penalty, the absolute value function for an L1 penalty, etc.</p>
+<p>TODO(mikebosse): When the loss function has as input the norm of the error vector, then it prevents implementations of asymmeric loss functions. It would be better for this function to accept the vector and internally call the norm if necessary.</p>
+<p>This returns \(\rho(x)\) in <a class="el" href="a02275.html" title="mEstimator">mEstimator</a> </p>
+
+<p>Reimplemented from <a class="el" href="a05231.html#a2a9636c1c6dbb139e68f0d2c6969175f">gtsam::noiseModel::mEstimator::Base</a>.</p>
 
 </div>
 </div>
-<a id="a049f72237be36c03d8aa6274e32a22c3" name="a049f72237be36c03d8aa6274e32a22c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a049f72237be36c03d8aa6274e32a22c3">&#9670;&#160;</a></span>sfmFactorGraph()</h2>
+<a id="acd2c424c437314a79960364030460ea8" name="acd2c424c437314a79960364030460ea8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd2c424c437314a79960364030460ea8">&#9670;&#160;</a></span>print()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a05091.html">NonlinearFactorGraph</a> gtsam::SfmData::sfmFactorGraph </td>
+          <td class="memname">void gtsam::noiseModel::mEstimator::Welsch::print </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>model</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="a04483.html#a6f34496ff6924bd5552c77810e991015">noiseModel::Isotropic::Sigma</a>(2,&#160;1.0)</span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">boost::optional&lt; size_t &gt;</td>          <td class="paramname"><span class="paramname"><em>fixedCamera</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">boost::optional&lt; size_t &gt;</td>          <td class="paramname"><span class="paramname"><em>fixedPoint</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;) const</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Create factor graph with projection factors and gauge fix. </p>
-<p>Note: pose keys are simply integer indices, points use <a class="el" href="a04235.html" title="Character and index key used to refer to variables.">Symbol</a>('p', j).</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">model</td><td>a noise model for projection errors </td></tr>
-    <tr><td class="paramname">fixedCamera</td><td>which camera to fix, if any (use boost::none if none) </td></tr>
-    <tr><td class="paramname">fixedPoint</td><td>which point to fix, if any (use boost::none if none) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a05091.html">NonlinearFactorGraph</a> </dd></dl>
+<p>Implements <a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/sfm/<a class="el" href="a11901_source.html">SfmData.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/sfm/<a class="el" href="a01187.html">SfmData.cpp</a></li>
+<a id="a6f69a318866ded407de2a3bd62193301" name="a6f69a318866ded407de2a3bd62193301"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f69a318866ded407de2a3bd62193301">&#9670;&#160;</a></span>weight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double gtsam::noiseModel::mEstimator::Welsch::weight </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>distance</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This method is responsible for returning the weight function for a given amount of error. </p>
+<p>The weight function is related to the analytic derivative of the loss function. See <a href="https://members.loria.fr/MOBerger/Enseignement/Master2/Documents/ZhangIVC-97-01.pdf">https://members.loria.fr/MOBerger/Enseignement/Master2/Documents/ZhangIVC-97-01.pdf</a> for details. This method is required when optimizing cost functions with robust penalties using iteratively re-weighted least squares.</p>
+<p>This returns w(x) in <a class="el" href="a02275.html" title="mEstimator">mEstimator</a> </p>
+
+<p>Implements <a class="el" href="a05231.html#a93f40d2f9629fd1d9d4aeb53d8b8ffe8">gtsam::noiseModel::mEstimator::Base</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/<a class="el" href="a01100_source.html">LossFunctions.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/<b>LossFunctions.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -317,7 +402,7 @@ std::vector&lt; <a class="el" href="a05267.html">SfmTrack</a> &gt;&#160;</td><td
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a05255.html">SfmData</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a02274.html">noiseModel</a></li><li class="navelem"><a href="a02275.html">mEstimator</a></li><li class="navelem"><a href="a05255.html">Welsch</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>
