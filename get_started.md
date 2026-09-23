@@ -43,8 +43,11 @@ permalink: /get_started/
   </div>
   <div class="install-grid">
     <div class="command-panel command-panel-primary">
-      <div class="command-head"><span>Terminal</span><button type="button" data-copy="python-install">Copy</button></div>
-      <pre id="python-install"><code>python -m pip install "gtsam==4.3.0"
+      <div class="command-head"><span>Terminal · Linux / macOS</span><button type="button" data-copy="python-install">Copy</button></div>
+      <pre id="python-install"><code>python3 -m venv .venv-gtsam
+source .venv-gtsam/bin/activate
+python -m pip install --upgrade pip
+python -m pip install "gtsam==4.3.0"
 python -c "from importlib.metadata import version; print(version('gtsam'))"</code></pre>
       <div class="command-result"><span>Expected version</span><code>4.3.0</code></div>
     </div>
@@ -55,10 +58,12 @@ python -c "from importlib.metadata import version; print(version('gtsam'))"</cod
         <li>Core nonlinear, linear, discrete, hybrid, navigation, SLAM, SFM, constrained, and certifiable modules</li>
         <li>No local C++ compilation on supported wheel platforms</li>
       </ul>
-      <p>For unreleased changes from <code>develop</code>, use <code>python -m pip install gtsam-develop</code>. Development wheels can change between builds.</p>
+      <p>Use Python 3.11–3.14. If a suitable virtual or conda environment is already active, skip the environment-creation and activation commands. On Debian/Ubuntu, install the matching <code>python3-venv</code> package if <code>venv</code> is unavailable.</p>
+      <p>For unreleased changes from <code>develop</code>, use <code>python -m pip install gtsam-develop</code> in a separate environment. Development wheels can change between builds.</p>
     </div>
   </div>
   <div class="compat-note"><strong>Windows:</strong> the 4.3.0 PyPI release does not provide Windows wheels. Build from source below, or use the community-maintained conda-forge package.</div>
+  <div class="compat-note"><strong>CUDA with Python:</strong> the standard 4.3.0 wheels do not include <code>gtsam.cuda</code>. You must compile GTSAM and its Python wrapper on a CUDA-equipped machine. Follow the <a href="/build/#cuda-with-python">CUDA Python build recipe</a>; installing the CUDA toolkit alone does not add bindings to an existing wheel.</div>
 </section>
 
 <section class="start-section" id="cpp" aria-labelledby="cpp-title">
@@ -67,7 +72,7 @@ python -c "from importlib.metadata import version; print(version('gtsam'))"</cod
     <div>
       <div class="section-kicker">C++ and custom builds</div>
       <h2 id="cpp-title">Build the tagged source release</h2>
-      <p>Use the 4.3.0 tag for a reproducible build. GTSAM now requires C++17 and CMake 3.16 or newer.</p>
+      <p>Use the 4.3.0 tag for a reproducible build. Install Git, a C++17 toolchain, and CMake 3.16 or newer first. This recipe disables the optional Boost features and installs to a user-writable prefix.</p>
     </div>
   </div>
   <div class="build-layout">
@@ -75,9 +80,14 @@ python -c "from importlib.metadata import version; print(version('gtsam'))"</cod
       <div class="command-head"><span>Terminal · Linux / macOS</span><button type="button" data-copy="cpp-install">Copy</button></div>
       <pre id="cpp-install"><code>git clone --branch 4.3.0 --depth 1 https://github.com/borglab/gtsam.git
 cd gtsam
-cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
-cmake --build build -j
-cmake --build build --target install</code></pre>
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX="$HOME/.local" \
+  -DGTSAM_USE_BOOST_FEATURES=OFF \
+  -DGTSAM_ENABLE_BOOST_SERIALIZATION=OFF
+cmake --build build --parallel 6
+cmake --build build --target install
+cmake --build build --target Pose2SLAMExample --parallel 6
+./build/examples/Pose2SLAMExample</code></pre>
     </div>
     <div class="requirements-card">
       <h3>Continuously tested toolchains</h3>
@@ -93,11 +103,11 @@ cmake --build build --target install</code></pre>
 
   <div class="build-options">
     <details open>
-      <summary>Build without Boost</summary>
-      <p>Boost-dependent features and Boost serialization are optional. Ordinary CMake builds enable both by default; disable both for a Boost-free core build:</p>
+      <summary>Enable optional Boost features</summary>
+      <p>The recipe above disables Boost. To enable Boost-dependent features and serialization, first install Boost 1.70 or newer (<code>brew install boost</code> on macOS or <code>sudo apt-get install libboost-all-dev</code> on Ubuntu), then reconfigure and rebuild. These flags default to <code>ON</code> in ordinary CMake builds:</p>
       <pre><code>cmake -S . -B build \
-  -DGTSAM_USE_BOOST_FEATURES=OFF \
-  -DGTSAM_ENABLE_BOOST_SERIALIZATION=OFF</code></pre>
+  -DGTSAM_USE_BOOST_FEATURES=ON \
+  -DGTSAM_ENABLE_BOOST_SERIALIZATION=ON</code></pre>
     </details>
     <details>
       <summary>Run the test suite</summary>
@@ -106,10 +116,15 @@ cmake --build build --target install</code></pre>
     </details>
     <details>
       <summary>Windows with Ninja</summary>
-      <p>Run from a Visual Studio Developer shell:</p>
-      <pre><code>cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
-cmake --build build
-cmake --build build --target install</code></pre>
+      <p>From a fresh checkout, run in a Visual Studio Developer PowerShell. Use a separate build directory from any existing non-Ninja configuration:</p>
+      <pre><code>cmake -S . -B build-ninja -G Ninja -DCMAKE_BUILD_TYPE=Release `
+  -DCMAKE_INSTALL_PREFIX="$env:USERPROFILE/gtsam-install" `
+  -DGTSAM_USE_BOOST_FEATURES=OFF `
+  -DGTSAM_ENABLE_BOOST_SERIALIZATION=OFF
+cmake --build build-ninja --parallel 6
+cmake --build build-ninja --target install
+cmake --build build-ninja --target Pose2SLAMExample --parallel 6
+.\build-ninja\bin\Pose2SLAMExample.exe</code></pre>
     </details>
     <details>
       <summary>Use GTSAM from another CMake project</summary>
@@ -117,7 +132,8 @@ cmake --build build --target install</code></pre>
 target_link_libraries(my_program PRIVATE gtsam)</code></pre>
     </details>
   </div>
-  <p class="detail-link">CUDA solvers, TBB, MKL, custom install prefixes, MATLAB, and platform details are covered on the <a href="/build/">complete build page</a>.</p>
+  <p>The C++ example prints a five-pose factor graph, its optimized poses, and marginal covariances. See <a href="https://github.com/borglab/gtsam/blob/4.3.0/examples/Pose2SLAMExample.cpp">Pose2SLAMExample.cpp</a> for the source. This C++ build does not install Python bindings; the next section is for the Python installation route.</p>
+  <p class="detail-link">See the <a href="/build/#cuda-with-python">CUDA Python build recipe</a> or the <a href="/build/">complete build page</a> for TBB, MKL, install prefixes, MATLAB, and platform details.</p>
 </section>
 
 <section class="start-section start-section-code" id="first-graph" aria-labelledby="graph-title">
@@ -125,7 +141,7 @@ target_link_libraries(my_program PRIVATE gtsam)</code></pre>
     <div class="section-index">03</div>
     <div>
       <div class="section-kicker">Verify the API</div>
-      <h2 id="graph-title">Run a first factor graph</h2>
+      <h2 id="graph-title">Run a first factor graph in Python</h2>
       <p>This small Pose2 problem anchors one pose, adds an odometry measurement, and estimates the second pose from deliberately perturbed initial values.</p>
     </div>
   </div>
@@ -172,9 +188,9 @@ print(result.atPose2(X(1)))</code></pre>
   <div class="section-heading">
     <div class="section-index">04</div>
     <div>
-      <div class="section-kicker">Runnable documentation</div>
+      <div class="section-kicker">Examples and API guides</div>
       <h2 id="notebooks-title">Continue with a worked example</h2>
-      <p>Choose the notebook closest to your problem. The rendered pages include explanations, outputs, source links, and Colab launchers.</p>
+      <p>Choose the notebook closest to your problem. The 4.3 documentation includes 328 notebooks across worked examples and module API guides; not every notebook is a standalone executable example. Some need optional dependencies or a custom build.</p>
     </div>
   </div>
   <div class="notebook-grid">
@@ -182,8 +198,8 @@ print(result.atPose2(X(1)))</code></pre>
     <a href="https://borglab.github.io/gtsam/fastsyncexample/"><span>Initialization · Python</span><strong>FAST-Sync</strong><small>Initialize large pose graphs before nonlinear refinement.</small><i>Open notebook →</i></a>
     <a href="https://borglab.github.io/gtsam/galileanimufactornees/"><span>Navigation · Python</span><strong>IMU preintegration</strong><small>Compare preintegration backends using NEES.</small><i>Open notebook →</i></a>
     <a href="https://borglab.github.io/gtsam/augmentedlagrangianoptimizer/"><span>Optimization · Python</span><strong>Nonlinear constraints</strong><small>Solve equality- and inequality-constrained problems.</small><i>Open notebook →</i></a>
-    <a href="https://borglab.github.io/gtsam/cudasfmlevenbergmarquardtoptimizer/"><span>SFM · CUDA</span><strong>CUDA bundle adjustment</strong><small>Run the dedicated GPU Levenberg–Marquardt path.</small><i>Open notebook →</i></a>
-    <a href="https://borglab.github.io/gtsam/examples/" class="notebook-all"><span>328 notebooks</span><strong>Browse all examples</strong><small>Search the complete generated Python and C++ notebook index.</small><i>Open index →</i></a>
+    <a href="https://borglab.github.io/gtsam/cudasfmlevenbergmarquardtoptimizer/"><span>SFM · CUDA source build required</span><strong>CUDA bundle adjustment</strong><small>API guide for the experimental GPU Levenberg–Marquardt path.</small><i>Open notebook →</i></a>
+    <a href="https://borglab.github.io/gtsam/examples/" class="notebook-all"><span>Worked examples</span><strong>Browse example notebooks</strong><small>Module API notebooks are also available through the user guide.</small><i>Open index →</i></a>
   </div>
 </section>
 

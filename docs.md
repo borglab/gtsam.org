@@ -15,7 +15,7 @@ The current stable release is GTSAM 4.3.0. The `develop` branch contains changes
 Choose the documentation that matches what you need:
 
 - [User guide](https://borglab.github.io/gtsam/): installation, core concepts, tutorials, and module guides
-- [Example notebooks](https://borglab.github.io/gtsam/examples/): runnable Python examples, many with links to open them directly in Colab
+- [Example notebooks](https://borglab.github.io/gtsam/examples/): worked examples, many with Colab links; module API notebooks are also available through the user guide. Requirements vary by example.
 - [C++ API reference](/doxygen/): generated reference documentation for GTSAM 4.3.0
 
 ## Language Wrappers
@@ -24,6 +24,8 @@ GTSAM also ships with Python and MATLAB wrappers. For build and packaging detail
 
 - [Python wrapper README](https://github.com/borglab/gtsam/blob/develop/python/README.md)
 - [MATLAB wrapper README](https://github.com/borglab/gtsam/blob/develop/matlab/README.md)
+
+For CUDA from Python, [build GTSAM and its Python wrapper on a CUDA-equipped machine](/build/#cuda-with-python). The standard GTSAM 4.3.0 Python wheels do not include the experimental CUDA bindings.
 
 ## Notes on GTSAM
 

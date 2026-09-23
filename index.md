@@ -68,7 +68,8 @@ permalink: /
 
 <section class="release-section" id="cuda" aria-labelledby="cuda-title">
   <h2 id="cuda-title">CUDA optimization</h2>
-  <p>The CUDA backend provides GPU-accelerated Levenberg–Marquardt optimization. The general sparse path retains factor linearization on the CPU and performs the linear solve on the GPU; the specialized structure-from-motion path also moves linearization to the GPU. Available solver configurations include cuDSS and preconditioned conjugate gradients, with a dense Cholesky option for the reduced SfM Schur system.</p>
+  <p>The experimental, opt-in CUDA backend provides GPU-accelerated Levenberg–Marquardt optimization. The general sparse path retains factor linearization on the CPU and performs the linear solve on the GPU; the specialized structure-from-motion path also moves linearization to the GPU. Available solver configurations include cuDSS and preconditioned conjugate gradients, with a dense Cholesky option for the reduced SfM Schur system.</p>
+  <p>To use CUDA from Python, compile GTSAM and its Python wrapper on a CUDA-equipped machine with both <code>GTSAM_ENABLE_CUDA=ON</code> and <code>GTSAM_BUILD_PYTHON=ON</code>. The standard 4.3.0 Python wheels do not include <code>gtsam.cuda</code>. See the <a href="/build/#cuda-with-python">CUDA Python build instructions</a> for prerequisites, installation, and verification.</p>
   <p class="attribution">Ruogu Li implemented the CUDA backend, with contributions from Frank Dellaert. The benchmark article documents the hardware, solver configurations, and timing breakdowns.</p>
   <ul class="resource-links">
     <li>Notebooks: <a href="https://borglab.github.io/gtsam/sparselevenbergmarquardtoptimizer/">Sparse LM</a> · <a href="https://borglab.github.io/gtsam/cudasfmlevenbergmarquardtoptimizer/">CUDA SfM</a> · <a href="https://borglab.github.io/gtsam/cudasfmgncoptimizer/">Robust SfM with GNC</a></li>
@@ -148,7 +149,7 @@ permalink: /
   </ul>
   <figure class="research-figure research-figure-wide">
     <a href="/assets/images/rtk-gnss/tokyo-result.png"><img src="/assets/images/rtk-gnss/tokyo-result.png" alt="Trajectory comparisons and position errors for three Tokyo driving sequences, distinguishing float and fixed GNSS solutions." width="1788" height="1455" loading="lazy"></a>
-    <figcaption>RTK-GNSS results on three Tokyo driving sequences. The plots distinguish float and fixed solutions; the displayed error axis is limited to 0.5 m. Figure and evaluation details from <a href="/2026/06/10/rtk-gnss-double-difference.html">Kosuke Inoue’s article</a>.</figcaption>
+    <figcaption>RTK-GNSS results on three Tokyo driving sequences. The plots distinguish float and fixed solutions; the 3D position-error color scale saturates at 0.5 m, so larger errors share the maximum color. Figure and evaluation details from <a href="/2026/06/10/rtk-gnss-double-difference.html">Kosuke Inoue’s article</a>.</figcaption>
   </figure>
 </section>
 
@@ -158,7 +159,7 @@ permalink: /
     <div>
       <p>FAST-Sync initializes group-synchronization problems on matrix Lie groups from relative measurements. It provides initial estimates for subsequent nonlinear refinement, including pose-graph optimization.</p>
       <p class="attribution">FAST-Sync is joint work by Shane Holmes, Yiran Luo, Firat Taxpulat, David M. Rosen, and Frank Dellaert.</p>
-      <p class="paper-reference">Holmes et al. <a href="https://doi.org/10.1109/LRA.2026.3710327"><cite>FAST-Sync: A Fast Start for Group Synchronization on Any Matrix Lie Group</cite></a>. IEEE Robotics and Automation Letters, 11(9):10377–10384, 2026.</p>
+      <p class="paper-reference">Holmes et al. <a href="https://doi.org/10.1109/LRA.2026.3710327"><cite>FAST-Sync: Fast Group Synchronization for Any Matrix Lie Group</cite></a>. IEEE Robotics and Automation Letters, 11(9):10377–10384, 2026.</p>
       <p>A separate refinement improvement supplies exact <code>Local</code> Jacobians in <code>BetweenFactor</code> and <code>PriorFactor</code> when supported by the Lie-group traits. The <a href="https://github.com/borglab/gtsam/pull/2661">w10000 benchmark</a> compares refinement from identical initial values.</p>
       <ul class="resource-links">
         <li><a href="https://borglab.github.io/gtsam/fastsyncexample/">FAST-Sync example notebook</a> · <a href="https://borglab.github.io/gtsam/fastsync/">Derivation</a></li>
@@ -203,7 +204,7 @@ permalink: /
 
 <section class="release-section" id="python" aria-labelledby="python-title">
   <h2 id="python-title">Python notebooks and documentation</h2>
-  <p>The 4.3 documentation includes 328 runnable notebooks, covering introductory factor graphs and the new modules. Python-interface changes include a PEP 561 type marker and copy-aware APIs.</p>
+  <p>The 4.3 documentation includes 328 notebooks, including runnable examples and API guides, covering introductory factor graphs and the new modules. Some examples require optional dependencies or a custom build. Python-interface changes include a PEP 561 type marker and copy-aware APIs.</p>
   <p class="attribution">Porter Zach and the notebook authors expanded the documentation. Fan Jiang, <a href="https://github.com/DLuminary">@DLuminary</a>, Varun Agrawal, and other contributors extended the language interfaces.</p>
   <ul class="resource-links">
     <li><a href="https://borglab.github.io/gtsam/examples/">Notebook index</a> · <a href="/docs/">User guides</a> · <a href="/doxygen/">C++ API reference</a></li>

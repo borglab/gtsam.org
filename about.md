@@ -6,129 +6,189 @@ permalink: /about/
 
 GTSAM is a sensor fusion library based on factor graphs, developed by researchers and engineers across the open-source robotics community.
 
-## Contributors
+## Contributors with more than one pull request
 
-- Varun Agrawal
+Each person listed in this section has authored **more than one pull request (at least two)** to [borglab/gtsam](https://github.com/borglab/gtsam). This list was checked against GitHub's pull-request records on September 23, 2026; it counts submitted PRs across all states (open, closed, and merged), not only merged PRs, and excludes bot accounts. Names link to GitHub profiles; handles are used where a name is unavailable.
+
+- [Adam Fishman](https://github.com/fishbotics)
+- [Akash Patel](https://github.com/acxz)
+- [Akshay Krishnan](https://github.com/akshay-krishnan)
+- [Alessandro Fornasier](https://github.com/AlessandroFornasier)
+- [Ankur Roy Chowdhury](https://github.com/ankur-rc)
+- [@arutkowski](https://github.com/arutkowski)
+- [@asa](https://github.com/asa)
+- [Avinash Subramanian](https://github.com/avinashresearch1)
+- [Ayush Baid](https://github.com/ayushbaid)
+- [Ben Boyack](https://github.com/bboyack)
+- [Bernd Pfrommer](https://github.com/berndpfrommer)
+- [Binit Shah](https://github.com/binitshah)
+- [Brett Downing](https://github.com/BrettRD)
+- [Brice Rebsamen](https://github.com/bricerebsamen)
+- [Catalina](https://github.com/JokerJohn)
+- [Chris Beall](https://github.com/chrisbeall)
+- [Christian Vaugelade-Kilaas](https://github.com/Eskilade)
+- [Clark Taylor](https://github.com/cntaylor)
+- [Claudius Tewari](https://github.com/cttdev)
+- [Connor Holmes](https://github.com/holmesco)
+- [Daniel McGann](https://github.com/DanMcGann)
+- [David Wisth](https://github.com/dwisth)
+- [@DLuminary](https://github.com/DLuminary)
+- [Ellon Paiva Mendes](https://github.com/Ellon)
+- [Erik Nelson](https://github.com/erik-nelson)
+- [Fan Jiang](https://github.com/ProfFan)
+- [Frank Dellaert](https://github.com/dellaert)
+- [Gerry Chen](https://github.com/gchenfc)
+- [@Gold856](https://github.com/Gold856)
+- [@gradyrw](https://github.com/gradyrw)
+- [Grant Polazzo](https://github.com/thatdudegrantt)
+- [Harneet Singh Khanuja](https://github.com/hkhanuja)
+- [İlkecan Bozdoğan](https://github.com/ilkecan)
+- [Jade](https://github.com/spacey-sooty)
+- [Jash Shah](https://github.com/jashshah999)
+- [Jennifer Oum](https://github.com/jenniferoum)
+- [Jiahao Chen Zhou](https://github.com/zcjhao)
+- [Jianzhu Huai](https://github.com/JzHuai0108)
+- [@jingwuOUO](https://github.com/jingwuOUO)
+- [@jmackay2](https://github.com/jmackay2)
+- [John Lambert](https://github.com/johnwlambert)
+- [Jose Luis Blanco-Claraco](https://github.com/jlblancoc)
+- [Karthik Shaji](https://github.com/kshaji3)
+- [Kartik Arcot](https://github.com/kartikarcot)
+- [Kathir Gounder](https://github.com/kathirgounder)
+- [Kevin Doherty](https://github.com/keevindoherty)
+- [Kosuke Inoue](https://github.com/inuex35)
+- [KV Manohar](https://github.com/kvmanohar22)
+- [@llhuang](https://github.com/huanglilong)
+- [Luca Carlone](https://github.com/lucacarlone)
+- [@magicbycalvin](https://github.com/magicbycalvin)
+- [Mandy Xie](https://github.com/MandyXie)
+- [Martin](https://github.com/martinvl)
+- [Martin Valgur](https://github.com/valgur)
+- [Matt Morley](https://github.com/mcm001)
+- [Matt Van Horn](https://github.com/mvanhorn)
+- [Matthew Broadway](https://github.com/mbway)
+- [Matthew Kielo](https://github.com/mkielo3)
+- [Michael Bosse](https://github.com/michaelbosse)
+- [Mike Sheffler](https://github.com/mikesheffler)
+- [Milo Knowles](https://github.com/miloknowles)
+- [Navid Mahabadi](https://github.com/nmahabadi)
+- [Nikhil Khedekar](https://github.com/nkhedekar)
+- [@oicchris](https://github.com/oicchris)
+- [Oliver S. Lee](https://github.com/CodeXTL)
+- [@owenbales](https://github.com/owenbales)
+- [@OznOg](https://github.com/OznOg)
+- [Porter Zach](https://github.com/p-zach)
+- [@ptrmu](https://github.com/ptrmu)
+- [@roderick-koehle](https://github.com/roderick-koehle)
+- [Rohan Bansal](https://github.com/rohan-bansal)
+- [Ruogu Li](https://github.com/leolrg)
+- [Sammy Guo](https://github.com/masoug)
+- [@scottiyio](https://github.com/scottiyio)
+- [@ScottMcMichael](https://github.com/ScottMcMichael)
+- [@senselessDev](https://github.com/senselessDev)
+- [Shicong Ma](https://github.com/Alexma3312)
+- [@shteren1](https://github.com/shteren1)
+- [@ShuangLiu1992](https://github.com/ShuangLiu1992)
+- [Siddhant Arora](https://github.com/SidArora29)
+- [@stefangachter](https://github.com/stefangachter)
+- [Sushmita Warrier](https://github.com/swarrier246)
+- [Suveer](https://github.com/suveergarg)
+- [@talregev](https://github.com/talregev)
+- [Thomas Kølbæk Jespersen](https://github.com/mindThomas)
+- [Tim McGrath](https://github.com/tmcg0)
+- [Tobias Fischer](https://github.com/Tobias-Fischer)
+- [Toni Rosinol](https://github.com/ToniRV)
+- [Travis Driver](https://github.com/travisdriver)
+- [@truher](https://github.com/truher)
+- [Tyler Veness](https://github.com/calcmogul)
+- [Tzvi Strauss](https://github.com/tzvist)
+- [Varun Agrawal](https://github.com/varunagrawal)
+- [Yang Zhenfei](https://github.com/dvorak0)
+- [Yanwei Du](https://github.com/duyanwei)
+- [Yashas Ambati](https://github.com/yambati03)
+- [Yetong Zhang](https://github.com/yetongumich)
+- [Yiran Luo](https://github.com/yluo5820)
+- [Yoonwoo Kim](https://github.com/ywkim0606)
+- [Yun Chang](https://github.com/yunzc)
+- [@zhangzdd](https://github.com/zhangzdd)
+- [Zheng Robert Jia](https://github.com/Robert-Jia00129)
+- [Zhexin Xu](https://github.com/zhexin1904)
+- [@zubingtan](https://github.com/zubingtan)
+
+## Historical and additional acknowledgments
+
+The following names are retained from GTSAM's broader contributor acknowledgments. This section is not subject to the two-PR threshold: contributions include work predating the GitHub PR workflow and other contributions recorded in the project's history. PR counts are not a measure of the scope or importance of a person's contribution.
+
 - Jeremy Aguilon
 - Pablo F. Alcantarilla
-- Yashas Ambati
 - Sungtae An
 - Amado Antonini
-- Kartik Arcot
-- Siddhant Arora
 - Abe Bachrach
-- Ayush Baid
 - Doru Balcan
-- Rohan Bansal
 - Dan Barladeanu
 - Nick Barrash
-- Chris Beall
 - Suhas Beemineni
-- Jose Luis Blanco-Claraco
-- Michael Bosse
-- Ben Boyack
-- İlkecan Bozdoğan
-- Matthew Broadway
 - Martin Brossard
 - Haldean Brown
 - Adam Bry
 - Russell Buchanan
-- Luca Carlone
 - Krunal Chande
-- Gerry Chen
 - Yao Chen
 - Siddharth Choudhary
-- Ankur Roy Chowdhury
 - Andrei Costinescu
 - Gareth Cross
 - Alex Cunningham
-- Frank Dellaert
-- Kevin Doherty
 - Jing Dong
-- Brett Downing
 - Paul Drews
-- Travis Driver
 - Alejandro Escontrela
 - Aleksei Evlampev
 - Maurice Fallon
 - Jay A. Farrell
 - Alireza Fathi
 - Enrique Fernandez
-- Tobias Fischer
-- Alessandro Fornasier
 - Christian Forster
 - Paul Furgale
 - Eohan George
-- Kathir Gounder
-- Sammy Guo
 - Ashwin Gupta
 - Glen Haggin
 - Alex Hagiopol
 - Maciej Halber
 - Nghia Ho
-- Connor Holmes
-- Matt Van Horn
-- Jianzhu Huai
 - Viorela Ila
 - Vadim Indelman
 - Abhinav Jain
 - Nithya Jayakumar
 - Marek Jelen
 - David Jensen
-- Thomas Kølbæk Jespersen
-- Zheng Robert Jia
 - Yong-Dian Jian
-- Fan Jiang
 - Simon Julier
 - Michael Kaess
 - Klaas Kelchtermans
-- Harneet Singh Khanuja
-- Nikhil Khedekar
-- Matthew Kielo
-- Yoonwoo Kim
 - Zsolt Kira
-- Milo Knowles
-- Akshay Krishnan
 - Abhijit Kundu
-- John Lambert
-- Oliver S. Lee
+- Sven Lilge
 - Hyungtae Lim
 - Arihant Lunawat
-- Yiran Luo
 - Zhaoyang Lv
-- Shicong Ma
-- Navid Mahabadi
-- KV Manohar
 - Hayk Martiros
-- Daniel McGann
-- Tim McGrath
 - Andrew Melim
 - Cassie Melim
-- Ellon Paiva Mendes
 - Kartik Mohta
-- Matt Morley
 - Mustafa Mukadam
-- Erik Nelson
 - Kai Ni
 - Carlos Nieto
 - Morten Nissov
 - Kyel Ok
-- Jennifer Oum
 - Manohar Paluri
 - Anup Parikh
-- Akash Patel
 - Summit Patel
 - Dominic Pattison
-- Bernd Pfrommer
-- Grant Polazzo
 - Easton Potokar
 - Christian Potthast
 - Ramadan Ahmed Ramadan
-- Brice Rebsamen
 - Richard Roberts
 - John Rogers
 - David M. Rosen
-- Toni Rosinol
 - Cyril Roussillon
 - Tuwuh S
 - Rahul Sawhney
@@ -136,39 +196,24 @@ GTSAM is a sensor fusion library based on factor graphs, developed by researcher
 - Grant Schindler
 - Lorenz Schmid
 - Thomas Schneider
-- Binit Shah
-- Jash Shah
 - Vikrant Shah
-- Karthik Shaji
 - Akash Sharma
-- Mike Sheffler
 - Jingnan Shi
 - Matthew Sklar
 - Hannes Sommer
 - Rafael Spring
 - Natesh Srinivasan
-- Tzvi Strauss
-- Avinash Subramanian
 - Duy-Nguyen Ta
 - Zhewen Tan
 - Jean-Philippe Tardif
-- Clark Taylor
-- Claudius Tewari
 - Lachlan Toohey
 - Miguel A. Vega Torres
 - Alex J. Trevor
-- Martin Valgur
-- Christian Vaugelade-Kilaas
-- Tyler Veness
 - Ignacio Vizzo
-- Sushmita Warrier
 - Stephen Williams
-- David Wisth
-- Mandy Xie
-- Zhexin Xu
 - Shangjie Xue
-- Porter Zach
-- Yetong Zhang
-- Jiahao Chen Zhou
+- Hanna Jiamei Zhang
+
+These lists are not an exhaustive record of community contributions. See the [4.3.0 release credits](https://github.com/borglab/gtsam/releases/tag/4.3.0), the upstream [THANKS](https://github.com/borglab/gtsam/blob/4.3.0/THANKS.md), and [GitHub contributor history](https://github.com/borglab/gtsam/graphs/contributors) for additional acknowledgments.
 
 If you contributed but do not see your name, or if your name is incorrect, please [open a pull request](https://github.com/borglab/gtsam.org) to update this page.
