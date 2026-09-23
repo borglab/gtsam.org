@@ -7,7 +7,7 @@ permalink: /get_started/
 
 <section class="start-hero" aria-labelledby="start-title">
   <div class="start-hero-copy">
-    <div class="start-version"><span></span> GTSAM 4.3.0 · stable release</div>
+    <div class="start-version"> GTSAM 4.3.0 · stable release</div>
     <h1 id="start-title">Install GTSAM 4.3</h1>
     <p>Use the official Python wheels for the shortest path, or build the C++17 library from the tagged source release. Both routes below end with a working factor graph.</p>
     <div class="start-actions">
@@ -20,11 +20,6 @@ permalink: /get_started/
     <div><span>Language</span><strong>C++17</strong><small>Required for source builds</small></div>
     <div><span>Python</span><strong>3.11–3.14</strong><small>Official wheels</small></div>
     <div><span>License</span><strong>BSD-3</strong><small>Research and commercial use</small></div>
-  </div>
-  <div class="start-graph" aria-hidden="true">
-    <i class="edge e1"></i><i class="edge e2"></i><i class="edge e3"></i><i class="edge e4"></i>
-    <b class="variable v1"></b><b class="variable v2"></b><b class="variable v3"></b>
-    <b class="factor f1"></b><b class="factor f2"></b>
   </div>
 </section>
 

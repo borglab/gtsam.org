@@ -1,299 +1,203 @@
 ---
 layout: landing
 title: GTSAM 4.3
-description: Built by the GTSAM community, release 4.3 brings continuous-time Gaussian processes, CUDA acceleration, certifiable optimization, GNSS, hybrid inference, and 328 runnable notebooks.
+description: GTSAM 4.3 research contributions, papers, examples, and software documentation.
 permalink: /
 ---
 
-<div class="launch-hero" aria-labelledby="gtsam-launch-title">
-  <div class="launch-kicker"><span>GTSAM 4.3</span><span class="launch-pulse" aria-hidden="true"></span>Stable release</div>
-  <div class="hero-ghost" aria-hidden="true">ESTIMATION / OPTIMIZATION / NAVIGATION</div>
-  <h1 id="gtsam-launch-title"><span>GTSAM 4.3:</span><span><em>built together.</em></span></h1>
-  <div class="launch-lede">A community release shaped by researchers, engineers, and collaborators across institutions. Explore continuous-time Gaussian processes, GPU acceleration, certifiable optimization, GNSS, and hybrid inference—and meet the people behind them.</div>
-  <div class="launch-actions">
-    <a class="launch-button launch-button-primary" href="/get_started/">Install GTSAM 4.3 <span aria-hidden="true">&rarr;</span></a>
-    <a class="launch-button" href="https://borglab.github.io/gtsam/examples/">Run the examples</a>
-    <a class="launch-button" href="https://github.com/borglab/gtsam/releases/tag/4.3.0">Release notes &amp; credits</a>
+<header class="release-overview">
+  <p class="release-version">Release 4.3.0</p>
+  <h1>GTSAM 4.3</h1>
+  <p class="release-summary">GTSAM is a C++ library for inference and optimization with factor graphs, with Python and MATLAB interfaces. Version 4.3 extends continuous-time estimation, certifiable optimization, hybrid inference, satellite navigation, and GPU-accelerated optimization.</p>
+  <p>This overview describes selected contributions, their research collaborations, and resources for using the software. The <a href="https://github.com/borglab/gtsam/releases/tag/4.3.0">release notes</a> provide the full change list and contributor credits.</p>
+  <nav class="release-links" aria-label="GTSAM documentation">
+    <a href="/get_started/">Installation</a>
+    <a href="/docs/">User guides</a>
+    <a href="https://borglab.github.io/gtsam/examples/">Example notebooks</a>
+    <a href="/doxygen/">C++ reference</a>
+    <a href="https://github.com/borglab/gtsam/tree/4.3.0">4.3.0 source</a>
+  </nav>
+</header>
+
+<nav class="release-contents" aria-labelledby="release-contents-title">
+  <h2 id="release-contents-title">Release highlights</h2>
+  <ol>
+    <li><a href="#gaussian-processes">Continuous-time Gaussian processes</a></li>
+    <li><a href="#certifiable">Certifiable estimation</a></li>
+    <li><a href="#hybrid">Discrete–continuous inference</a></li>
+    <li><a href="#gnss">GNSS factors and ambiguity resolution</a></li>
+    <li><a href="#cuda">CUDA optimization</a></li>
+    <li><a href="#pose-graphs">Pose-graph initialization and refinement</a></li>
+    <li><a href="#constraints">Constrained optimization</a></li>
+    <li><a href="#navigation">Inertial and legged navigation</a></li>
+    <li><a href="#linear-solvers">Multifrontal linear solvers</a></li>
+    <li><a href="#python">Python and documentation</a></li>
+  </ol>
+</nav>
+
+<nav class="release-chapters" aria-label="Release sections">
+  <div class="release-chapters-inner">
+    <a href="#gaussian-processes">Gaussian processes</a>
+    <a href="#certifiable">Certifiable</a>
+    <a href="#hybrid">Hybrid</a>
+    <a href="#gnss">GNSS</a>
+    <a href="#cuda">CUDA</a>
+    <a href="#pose-graphs">Pose graphs</a>
+    <a href="#constraints">Constraints</a>
+    <a href="#navigation">Navigation</a>
+    <a href="#linear-solvers">Solvers</a>
+    <a href="#python">Python</a>
   </div>
-  <div class="launch-scroll-cue" aria-hidden="true"><span></span>Review the changes</div>
-</div>
+</nav>
 
-<div class="story-rail" aria-label="Release story progress">
-  <span>4.3</span><span class="story-progress"></span><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span><span>08</span><span>09</span><span>10</span>
-</div>
-
-<div class="release-intro story-manifesto">
-  <div class="release-eyebrow">The people and ideas behind 4.3</div>
-  <h2><span>Shared research.</span><span>Shared effort.</span><span><em>Open source.</em></span></h2>
-  <div class="manifesto-note">New algorithms arrive through research collaborations. They become usable software through implementation, review, tests, documentation, and years of maintenance. This release celebrates both.</div>
-</div>
-
-<div class="story-marquee" aria-hidden="true"><span>GAUSSIAN PROCESSES&nbsp;&nbsp;•&nbsp;&nbsp;CUDA&nbsp;&nbsp;•&nbsp;&nbsp;CERTIFIABLE&nbsp;&nbsp;•&nbsp;&nbsp;GNSS&nbsp;&nbsp;•&nbsp;&nbsp;HYBRID&nbsp;&nbsp;•&nbsp;&nbsp;</span><span>GAUSSIAN PROCESSES&nbsp;&nbsp;•&nbsp;&nbsp;CUDA&nbsp;&nbsp;•&nbsp;&nbsp;CERTIFIABLE&nbsp;&nbsp;•&nbsp;&nbsp;GNSS&nbsp;&nbsp;•&nbsp;&nbsp;HYBRID&nbsp;&nbsp;•&nbsp;&nbsp;</span></div>
-
-<div class="feature-reveal feature-panel feature-python" data-feature="01" aria-labelledby="feature-python-title">
-  <div class="feature-copy">
-    <span class="feature-number">01 / 10</span>
-    <div class="feature-label">Python and documentation</div>
-    <h2 id="feature-python-title">328 runnable notebooks and expanded Python APIs.</h2>
-    <p>Runnable notebooks cover introductory factor graphs, CUDA optimization, invariant filtering, certifiable SLAM, and other modules. The Python wrappers also include a PEP 561 type marker and copy-aware APIs.</p>
-    <p class="feature-credit"><strong>Made accessible by the community.</strong> <a href="https://github.com/p-zach">Porter Zach</a> and many notebook authors expanded the documentation; <a href="https://github.com/ProfFan">Fan Jiang</a>, <a href="https://github.com/DLuminary">@DLuminary</a>, <a href="https://github.com/varunagrawal">Varun Agrawal</a>, and fellow contributors broadened the language interfaces.</p>
-    <div class="feature-proof"><strong>Read the equations, run the code, and inspect the result</strong><span>locally or in Colab.</span></div>
-    <div class="feature-resources" aria-label="Python notebooks">
-      <a href="https://borglab.github.io/gtsam/examples/"><span>Notebook index</span>All 328 notebooks</a>
-      <a href="https://borglab.github.io/gtsam/customfactorexample/"><span>Python notebook</span>Custom factors</a>
-      <a href="https://borglab.github.io/gtsam/fixedlagsmootherexample/"><span>Python notebook</span>Fixed-lag smoothing</a>
-      <a href="https://borglab.github.io/gtsam/visualisamexample/"><span>Python notebook</span>Visual iSAM2</a>
+<section class="release-section" id="gaussian-processes" aria-labelledby="gp-title">
+  <h2 id="gp-title">Continuous-time Gaussian processes</h2>
+  <div class="research-columns">
+    <div>
+      <p>The Gaussian-process framework represents continuous-time trajectories using motion priors on factor graphs. White-noise-on-acceleration (WNOA) priors and interpolation support estimation between trajectory states, including poses on SE(3).</p>
+      <p class="attribution">This work is a collaboration with the University of Toronto. Connor Holmes and Frank Dellaert contributed the GTSAM implementation; the accompanying research is by Connor Holmes, Sven Lilge, Zi Cong Guo, Frank Dellaert, and Timothy D. Barfoot.</p>
+      <p class="paper-reference">Holmes et al. <a href="https://arxiv.org/abs/2605.09073"><cite>Smoothing Out the Edges: Continuous-Time Estimation with Gaussian Process Motion Priors on Factor Graphs</cite></a>, 2026.</p>
+      <ul class="resource-links">
+        <li><a href="https://borglab.github.io/gtsam/gaussianprocesswnoainterpolationse3/">SE(3) interpolation notebook</a> · <a href="https://github.com/borglab/gtsam/blob/4.3.0/python/gtsam/examples/navigation/GaussianProcessWnoaInterpolationSE3.ipynb">Notebook source</a></li>
+        <li>Source: <a href="https://github.com/borglab/gtsam/blob/4.3.0/gtsam/nonlinear/WnoaFactorGraph.h">WnoaFactorGraph</a> · <a href="https://github.com/borglab/gtsam/blob/4.3.0/gtsam/nonlinear/WnoaInterpolator.h">WnoaInterpolator</a></li>
+        <li><a href="https://github.com/utiasASRL/2025-fnt-ctfg">Research examples</a> · <a href="/2026/05/20/gp-ct-in-gtsam.html">Implementation article</a></li>
+      </ul>
     </div>
+    <figure class="research-figure">
+      <a href="/assets/images/gp-ct/cont-time-traj.png"><img src="/assets/images/gp-ct/cont-time-traj.png" alt="Continuous-time factor graph and a three-dimensional trajectory showing estimated and interpolated poses with uncertainty ellipsoids." width="3204" height="3761" loading="lazy"></a>
+      <figcaption>Continuous-time trajectory estimation: factor-graph structure and interpolated SE(3) states with uncertainty. Figure from the <a href="/2026/05/20/gp-ct-in-gtsam.html">Gaussian-process article</a>; select the image for full resolution.</figcaption>
+    </figure>
   </div>
-  <div class="feature-visual notebook-visual" aria-label="A Python notebook combining factor graph code with an interactive result">
-    <div class="notebook-top"><span></span><span></span><span></span><strong>gtsam_4_3.ipynb</strong></div>
-    <div class="notebook-code"><span><b>import</b> gtsam</span><span>&nbsp;</span><span>graph = gtsam.NonlinearFactorGraph()</span><span>graph.add(<mark>measurement_factor</mark>)</span><span>&nbsp;</span><span>result = gtsam.LevenbergMarquardtOptimizer(</span><span>&nbsp;&nbsp;&nbsp;&nbsp;graph, initial</span><span>).optimize()</span></div>
-    <div class="notebook-output" aria-hidden="true"><div class="output-curve"></div><span></span><span></span><span></span><span></span><span></span></div>
-  </div>
-</div>
-
-<div class="feature-reveal feature-panel feature-pgo" data-feature="02" aria-labelledby="feature-pgo-title">
-  <div class="feature-copy">
-    <span class="feature-number">02 / 10</span>
-    <div class="feature-label">Pose-graph optimization</div>
-    <h2 id="feature-pgo-title">FAST-Sync and exact Lie-group Jacobians reduce w10000 refinement from 3.041 s to 1.288 s.</h2>
-    <p>FAST-Sync initializes all 10,000 poses from the graph’s 64,311 relative measurements. During refinement, <code>BetweenFactor</code> and <code>PriorFactor</code> now include the Jacobian of <code>Local</code> whenever the Lie-group traits provide it.</p>
-    <p class="feature-credit"><strong>A collaborative FAST-Sync effort.</strong> Shane Holmes, Yiran Luo, Firat Taxpulat, David M. Rosen, and Frank Dellaert describe the method in the <a href="/2026/08/12/fast-sync.html">FAST-Sync article</a>.</p>
-    <div class="feature-proof"><strong>2.36× faster nonlinear refinement from identical initial values</strong><span>Correct Jacobians required 10 outer LM iterations and 17 inner attempts; the legacy approximation required 23 and 42. Both reached essentially the same final objective.</span></div>
-    <div class="feature-resources" aria-label="Pose-graph notebooks and evidence">
-      <a href="https://borglab.github.io/gtsam/fastsyncexample/"><span>Python notebook</span>FAST-Sync tutorial</a>
-      <a href="https://borglab.github.io/gtsam/fastsync/"><span>Technical notebook</span>FAST-Sync derivation</a>
-      <a href="https://borglab.github.io/gtsam/pose2slamexample/"><span>Python notebook</span>Pose2 SLAM</a>
-      <a href="https://github.com/borglab/gtsam/pull/2661"><span>Benchmark and PR</span>Exact Jacobians #2661</a>
-    </div>
-  </div>
-  <div class="feature-visual posegraph-visual" role="img" aria-label="w10000 pose-graph benchmark showing FAST-Sync initialization followed by refinement with exact Lie-group Jacobians">
-    <div class="visual-caption">w10000 · 10,000 poses · 64,311 factors</div>
-    <div class="pgo-pipeline" aria-hidden="true">
-      <div><span>01</span><strong>FAST-Sync</strong><small>24.7M → 23,454 error<br>0.638 s initialization</small></div>
-      <i></i>
-      <div><span>02</span><strong>Exact Jacobians</strong><small>10 LM iterations<br>17 inner attempts</small></div>
-      <i></i>
-      <div><span>03</span><strong>Refined</strong><small>144.910 final error<br>1.288 s refinement</small></div>
-    </div>
-    <div class="pgo-comparison" aria-hidden="true">
-      <div><span>Exact <code>Local</code> Jacobian</span><strong>1.288 s</strong><i class="pgo-exact"></i></div>
-      <div><span>Legacy approximation</span><strong>3.041 s</strong><i class="pgo-legacy"></i></div>
-    </div>
-    <div class="pgo-ratio" aria-hidden="true"><strong>2.36×</strong><span>refinement speedup</span></div>
-  </div>
-</div>
-
-<div class="feature-reveal feature-panel feature-alt feature-cuda" data-feature="03" aria-labelledby="feature-cuda-title">
-  <div class="feature-copy">
-    <span class="feature-number">03 / 10</span>
-    <div class="feature-label">Experimental CUDA acceleration</div>
-    <h2 id="feature-cuda-title">CUDA bundle adjustment: 4.0–4.9× speedup on three BAL datasets.</h2>
-    <p>A purpose-built CUDA Levenberg–Marquardt implementation for structure from motion supports dense Cholesky, cuDSS, and matrix-free PCG linear solvers.</p>
-    <p class="feature-credit"><strong>Led and implemented primarily by <a href="https://github.com/leolrg">Ruogu Li</a>.</strong> Ruogu developed the CUDA optimization work in collaboration with Frank Dellaert, bringing GPU acceleration into GTSAM.</p>
-    <div class="feature-proof"><strong>Measured on BAL-16, BAL-88, and BAL-135</strong><span>August 21, 2026; Intel i7-14700F and RTX 5060 Ti; timed optimize() calls exclude data loading and optimizer construction.</span></div>
-    <div class="feature-resources" aria-label="CUDA notebooks and evidence">
-      <a href="https://borglab.github.io/gtsam/cudasfmlevenbergmarquardtoptimizer/"><span>Technical notebook</span>CUDA SFM optimizer</a>
-      <a href="https://borglab.github.io/gtsam/sparselevenbergmarquardtoptimizer/"><span>Technical notebook</span>Sparse CUDA LM</a>
-      <a href="https://borglab.github.io/gtsam/cudasfmgncoptimizer/"><span>Technical notebook</span>CUDA SFM with GNC</a>
-      <a href="/2026/08/20/cuda-backend.html"><span>Benchmarks</span>CUDA backend results</a>
-    </div>
-  </div>
-  <div class="feature-visual cuda-visual" aria-label="Benchmark bars comparing CPU and CUDA bundle adjustment performance">
-    <div class="gpu-orbit" aria-hidden="true"></div>
-    <div class="visual-caption">Median optimization time · lower is better</div>
-    <div class="benchmark-row bal-16"><span>BAL-16</span><div><span class="cpu-bar">CPU&nbsp; 0.228s</span><span class="gpu-bar">GPU&nbsp; 0.055s</span></div></div>
-    <div class="benchmark-row bal-88"><span>BAL-88</span><div><span class="cpu-bar">CPU&nbsp; 0.869s</span><span class="gpu-bar">GPU&nbsp; 0.218s</span></div></div>
-    <div class="benchmark-row bal-135"><span>BAL-135</span><div><span class="cpu-bar">CPU&nbsp; 1.427s</span><span class="gpu-bar">GPU&nbsp; 0.290s</span></div></div>
-  </div>
-</div>
-
-<div class="feature-reveal feature-panel feature-alt feature-certifiable" data-feature="04" aria-labelledby="feature-certifiable-title">
-  <div class="feature-copy">
-    <span class="feature-number">04 / 10</span>
-    <div class="feature-label">Certifiable optimization</div>
-    <h2 id="feature-certifiable-title">Certifiable solutions for supported SLAM problems.</h2>
-    <p>The new module converts supported factor graphs to QCQPs and solves semidefinite relaxations with a solver-independent Burer–Monteiro Riemannian Staircase.</p>
-    <p class="feature-credit"><strong>Research across institutions.</strong> Developed in collaboration with <a href="https://duembgen.github.io/">Frederike Dümbgen</a> at Carnegie Mellon and <a href="https://david-m-rosen.github.io/">David M. Rosen</a> and his team at Northeastern. Contributors to the implementation include <a href="https://github.com/zhexin1904">Zhexin (Jason) Xu</a> and <a href="https://github.com/avinashresearch1">Avinash Subramanian</a>, working with Frank Dellaert.</p>
-    <div class="feature-proof"><strong>Recover manifold values and inspect every rank level</strong><span>with an optimality certificate when the relaxation is tight.</span></div>
-    <div class="feature-resources" aria-label="Certifiable optimization notebooks">
-      <a href="https://borglab.github.io/gtsam/certifiableposegraphoptimizationpose2/"><span>Python notebook</span>Certifiable Pose2 PGO</a>
-      <a href="https://borglab.github.io/gtsam/certifiableposegraphoptimizationpose3/"><span>Python notebook</span>Certifiable Pose3 PGO</a>
-      <a href="https://borglab.github.io/gtsam/certifiablelandmarkslampose3/"><span>Python notebook</span>Certifiable landmark SLAM</a>
-      <a href="https://borglab.github.io/gtsam/certifiablerotationaveragingrot3/"><span>Python notebook</span>Rotation averaging</a>
-    </div>
-  </div>
-  <div class="feature-visual certificate-visual" role="img" aria-label="Increasing relaxation ranks leading to a certified globally optimal solution">
-    <div class="visual-caption">Burer–Monteiro rank ladder</div>
-    <div class="rank-ladder" aria-hidden="true"><span>r = 3</span><span>r = 4</span><span>r = 5</span><span class="certified-step">verified</span></div>
-    <div class="certificate-seal" aria-hidden="true"><span>GLOBAL</span><strong>✓</strong><span>CERTIFIED</span></div>
-    <div class="certificate-metric"><span>duality gap</span><strong>≈ 0</strong></div>
-  </div>
-</div>
-
-<div class="feature-reveal feature-panel feature-constraints" data-feature="05" aria-labelledby="feature-constraints-title">
-  <div class="feature-copy">
-    <span class="feature-number">05 / 10</span>
-    <div class="feature-label">Nonlinear constraints</div>
-    <h2 id="feature-constraints-title">Constraints are represented directly in the factor graph.</h2>
-    <p>Model equalities, inequalities, variable bounds, LPs, QPs, and QCQPs alongside objective factors. Available methods include penalty, active-set, and augmented Lagrangian optimization.</p>
-    <p class="feature-credit"><strong>Building the optimization foundations.</strong> The release credits <a href="https://github.com/yetongumich">@yetongumich</a>, <a href="https://github.com/zhexin1904">Zhexin Xu</a>, <a href="https://github.com/avinashresearch1">Avinash Subramanian</a>, <a href="https://github.com/ProfFan">Fan Jiang</a>, and Frank Dellaert for the combined constrained and certifiable optimization work.</p>
-    <div class="feature-proof"><strong>Track objective cost and constraint violation separately</strong><span>at every optimizer iteration.</span></div>
-    <div class="feature-resources" aria-label="Constrained optimization notebooks">
-      <a href="https://borglab.github.io/gtsam/lpproblemexample/"><span>Python notebook</span>Linear programming</a>
-      <a href="https://borglab.github.io/gtsam/qpproblemexample/"><span>Python notebook</span>Quadratic programming</a>
-      <a href="https://borglab.github.io/gtsam/qcqpproblemexample/"><span>Python notebook</span>QCQP examples</a>
-      <a href="https://borglab.github.io/gtsam/nonlinearequalityexample/"><span>Python notebook</span>Nonlinear equalities</a>
-    </div>
-  </div>
-  <div class="feature-visual constraint-visual" role="img" aria-label="An unconstrained optimization path converging onto a curved constraint manifold">
-    <div class="constraint-field" aria-hidden="true"><span></span><span></span><span></span></div>
-    <div class="constraint-manifold" aria-hidden="true"></div>
-    <div class="descent-track" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span class="solution-dot"></span></div>
-    <div class="constraint-equation" aria-hidden="true">h(x) = 0</div>
-    <div class="constraint-tags"><span>Equality</span><span>Inequality</span><span>Bounds</span><span>QP / QCQP</span></div>
-  </div>
-</div>
-
-<div class="feature-reveal feature-panel feature-alt feature-navigation" data-feature="06" aria-labelledby="feature-navigation-title">
-  <div class="feature-copy">
-    <span class="feature-number">06 / 10</span>
-    <div class="feature-label">Inertial navigation</div>
-    <h2 id="feature-navigation-title">Four IMU preintegration backends.</h2>
-    <p>Manifold, tangent-space, Lie-group, and Galilean formulations share one interface. GTSAM 4.3 also adds Logmap-consistent errors, exact rotating-Earth dynamics, gravity-aware factors, and expanded filtering and legged-state estimation.</p>
-    <p class="feature-credit"><strong>A shared navigation effort.</strong> Contributors include <a href="https://github.com/scottiyio">@scottiyio</a>, <a href="https://github.com/jenniferoum">@jenniferoum</a>, <a href="https://github.com/rohan-bansal">@rohan-bansal</a>, <a href="https://github.com/mkielo3">@mkielo3</a>, <a href="https://github.com/nkhedekar">@nkhedekar</a>, <a href="https://github.com/arihantb2">@arihantb2</a>, <a href="https://github.com/DLuminary">@DLuminary</a>, Varun Agrawal, and Frank Dellaert.</p>
-    <div class="feature-proof"><strong>NEES studies compare statistical consistency</strong><span>across the available formulations.</span></div>
-    <div class="feature-resources" aria-label="Inertial navigation notebooks">
-      <a href="https://borglab.github.io/gtsam/gal3imuexample/"><span>Python notebook</span>Gal3 IMU</a>
-      <a href="https://borglab.github.io/gtsam/navstateimuexample/"><span>Python notebook</span>NavState IMU</a>
-      <a href="https://borglab.github.io/gtsam/galileanimufactornees/"><span>NEES notebook</span>Galilean consistency</a>
-      <a href="https://borglab.github.io/gtsam/navstateimupimcovariancecomparison/"><span>Python notebook</span>Covariance comparison</a>
-    </div>
-  </div>
-  <div class="feature-visual nav-visual" role="img" aria-label="An inertial trajectory with pose frames, IMU samples, Earth rotation, and GNSS observations">
-    <div class="nav-globe" aria-hidden="true"><span></span><span></span><span></span></div>
-    <div class="nav-flight" aria-hidden="true"></div>
-    <div class="nav-poses" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-    <div class="nav-fixes" aria-hidden="true"><span></span><span></span><span></span></div>
-    <div class="nav-readout"><span>Gal3</span><span>SE₂(3)</span><span>Earth rate exact</span><span>Gravity in graph</span></div>
-  </div>
-</div>
-
-<div class="feature-reveal feature-panel feature-solver" data-feature="07" aria-labelledby="feature-solver-title">
-  <div class="feature-copy">
-    <span class="feature-number">07 / 10</span>
-    <div class="feature-label">Linear solver performance</div>
-    <h2 id="feature-solver-title">Faster Linear Solvers</h2>
-    <p>The new multifrontal solver retains symbolic structure and packed storage between solves. It supports partial elimination, batch-factor fast paths, parallel task scheduling, and reduced-system export.</p>
-    <p class="feature-credit"><strong>Performance throughout the library.</strong> The broader inference and optimization effort includes contributions from <a href="https://github.com/ProfFan">Fan Jiang</a>, <a href="https://github.com/tzvist">@tzvist</a>, <a href="https://github.com/leolrg">Ruogu Li</a>, <a href="https://github.com/jashshah999">Jash Shah</a>, Varun Agrawal, and Frank Dellaert.</p>
-    <div class="feature-proof"><strong>Reuse the same Bayes tree across LM attempts</strong><span>and back-substitute without repeating symbolic analysis.</span></div>
-    <div class="feature-resources" aria-label="Multifrontal solver resources">
-      <a href="https://borglab.github.io/gtsam/multifrontalsolver/"><span>Technical notebook</span>Solver design and API</a>
-      <a href="https://github.com/borglab/gtsam/blob/develop/gtsam/linear/MultifrontalSolver.h"><span>C++ source</span>MultifrontalSolver</a>
-    </div>
-  </div>
-  <div class="feature-visual solver-visual" role="img" aria-label="A Bayes tree being processed in parallel and reused across optimization iterations">
-    <div class="visual-caption">Reusable Bayes tree · parallel leaf work</div>
-    <div class="tree-diagram" aria-hidden="true">
-      <span class="tree-link link-a"></span><span class="tree-link link-b"></span><span class="tree-link link-c"></span><span class="tree-link link-d"></span><span class="tree-link link-e"></span><span class="tree-link link-f"></span>
-      <span class="tree-node tree-root">R</span><span class="tree-node tree-mid mid-a">C₁</span><span class="tree-node tree-mid mid-b">C₂</span>
-      <span class="tree-node tree-leaf leaf-a">L₁</span><span class="tree-node tree-leaf leaf-b">L₂</span><span class="tree-node tree-leaf leaf-c">L₃</span><span class="tree-node tree-leaf leaf-d">L₄</span>
-      <span class="reuse-loop">REUSE · UPDATE · SOLVE ↻</span>
-    </div>
-  </div>
-</div>
-
-<div class="feature-reveal feature-panel feature-gp" data-feature="08" aria-labelledby="feature-gp-title">
-  <div class="feature-copy">
-    <span class="feature-number">08 / 10</span>
-    <div class="feature-label">Continuous-time Gaussian processes</div>
-    <h2 id="feature-gp-title">Estimate motion between measurements.</h2>
-    <p>White-noise-on-acceleration models bring continuous-time trajectory estimation into GTSAM. Incorporate asynchronous measurements, interpolate poses and velocities, and query trajectory uncertainty between the states you optimize.</p>
-    <p class="feature-credit"><strong>A collaboration with the University of Toronto.</strong> <a href="https://github.com/holmesco">Connor Holmes</a> contributed the GP framework with Frank Dellaert. The research collaboration includes <a href="https://asrl.utias.utoronto.ca/~tdb/">Timothy D. Barfoot</a>, Sven Lilge, and Zi Cong Guo.</p>
-    <div class="feature-resources" aria-label="Gaussian-process resources">
-      <a href="https://borglab.github.io/gtsam/gaussianprocesswnoainterpolationse3/"><span>Python notebook</span>Continuous-time SE(3)</a>
-      <a href="/2026/05/20/gp-ct-in-gtsam.html"><span>Research &amp; contributors</span>Gaussian processes in GTSAM</a>
-    </div>
-  </div>
-  <figure class="feature-visual gp-visual">
-    <img src="/assets/images/gp-ct/gp-trajectory.png" alt="A continuous-time Gaussian-process trajectory with discrete states and an interpolated state between them." loading="lazy" />
-    <figcaption>Estimate at discrete states. Query the trajectory and its uncertainty at arbitrary times. From the <a href="/2026/05/20/gp-ct-in-gtsam.html">collaborators’ continuous-time estimation article</a>.</figcaption>
-  </figure>
-</div>
-
-<div class="feature-reveal feature-panel feature-gnss" data-feature="09" aria-labelledby="feature-gnss-title">
-  <div class="feature-copy">
-    <span class="feature-number">09 / 10</span>
-    <div class="feature-label">GNSS and sensor fusion</div>
-    <h2 id="feature-gnss-title">A community effort in satellite navigation.</h2>
-    <p>New factors cover pseudorange, carrier phase, RTK double differences, PPP-style measurements, Doppler, and antenna lever arms. They connect satellite observations directly to GNSS/IMU estimation in the factor graph.</p>
-    <p class="feature-credit"><strong>Built by a team of community collaborators.</strong> The release credits <a href="https://github.com/inuex35">Kosuke Inoue</a>, <a href="https://github.com/masoug">Sammy Guo</a>, <a href="https://github.com/kathirgounder">Kathir Gounder</a>, <a href="https://github.com/mnissov">Morten Nissov</a>, <a href="https://github.com/scottiyio">@scottiyio</a>, and <a href="https://github.com/varunagrawal">Varun Agrawal</a>.</p>
-    <div class="feature-resources" aria-label="GNSS resources">
-      <a href="/2026/06/10/rtk-gnss-double-difference.html"><span>Contributor article</span>RTK double-difference factors</a>
-      <a href="https://github.com/borglab/gtsam/releases/tag/4.3.0"><span>Release notes</span>GNSS additions and credits</a>
-    </div>
-  </div>
-  <div class="feature-visual capability-notes" aria-label="GNSS capabilities">
-    <div class="visual-caption">Satellite measurements in the graph</div>
-    <dl>
-      <dt>Range &amp; phase</dt><dd>Pseudorange and carrier-phase factors, including RTK double differences.</dd>
-      <dt>Motion &amp; geometry</dt><dd>Doppler/range-rate measurements and antenna lever-arm models.</dd>
-      <dt>Sensor fusion</dt><dd>GNSS/IMU coupling and a GlobalPositioner abstraction.</dd>
-    </dl>
-  </div>
-</div>
-
-<div class="feature-reveal feature-panel feature-hybrid" data-feature="10" aria-labelledby="feature-hybrid-title">
-  <div class="feature-copy">
-    <span class="feature-number">10 / 10</span>
-    <div class="feature-label">Hybrid and discrete inference</div>
-    <h2 id="feature-hybrid-title">Reason about alternatives alongside continuous states.</h2>
-    <p>Hybrid inference combines discrete choices with continuous estimates. GTSAM 4.3 expands pruning, sampling, marginalization, smoothing, and incremental inference, with broader Python support and faster sparse discrete factors.</p>
-    <p class="feature-credit"><strong>Led by <a href="https://github.com/varunagrawal">Varun Agrawal</a>.</strong> Varun drove the hybrid inference effort, with contributions from Frank Dellaert, <a href="https://github.com/ProfFan">Fan Jiang</a>, <a href="https://github.com/ywkim0606">@ywkim0606</a>, and <a href="https://github.com/arutkowski">@arutkowski</a>.</p>
-    <div class="feature-resources" aria-label="Hybrid inference resources">
-      <a href="https://borglab.github.io/gtsam/hybrid/"><span>User guide</span>Hybrid inference</a>
-      <a href="https://borglab.github.io/gtsam/hybridsmoother/"><span>Technical notebook</span>Hybrid smoothing</a>
-    </div>
-  </div>
-  <div class="feature-visual capability-notes" aria-label="Hybrid inference capabilities">
-    <div class="visual-caption">Discrete choices, continuous estimates</div>
-    <dl>
-      <dt>Model alternatives</dt><dd>Represent discrete modes and data-association hypotheses alongside poses and other continuous variables.</dd>
-      <dt>Update beliefs</dt><dd>Use hybrid Bayes nets, Bayes trees, and incremental inference to incorporate new measurements.</dd>
-      <dt>Manage hypotheses</dt><dd>Prune, sample, and marginalize; use sparse TableFactor representations for discrete inference.</dd>
-    </dl>
-  </div>
-</div>
-
-<section class="release-community" aria-labelledby="release-community-title">
-  <div class="release-eyebrow">Thank you to the GTSAM community</div>
-  <h2 id="release-community-title">A release is more than its headline features.</h2>
-  <p>GTSAM 4.3 reflects years of work on correctness, robustness, geometry, incremental inference, language bindings, documentation, and builds across platforms. Every bug report, review, example, and fix helps make the library dependable.</p>
-  <p>The release notes recognize <a href="https://github.com/dellaert">Frank Dellaert</a>, <a href="https://github.com/varunagrawal">Varun Agrawal</a>, and <a href="https://github.com/ProfFan">Fan Jiang</a> for driving the release, and sustained contributions from <a href="https://github.com/talregev">@talregev</a>, <a href="https://github.com/p-zach">Porter Zach</a>, <a href="https://github.com/Gold856">@Gold856</a>, <a href="https://github.com/DLuminary">@DLuminary</a>, <a href="https://github.com/jlblancoc">José Luis Blanco</a>, <a href="https://github.com/jashshah999">Jash Shah</a>, and <a href="https://github.com/akshay-krishnan">Akshay Krishnan</a>.</p>
-  <p>These highlights name only part of that community. The <a href="https://github.com/borglab/gtsam/releases/tag/4.3.0">release notes</a> credit contributors throughout the release and link their pull requests; our <a href="/about/">contributors page</a> recognizes the people who have built GTSAM over its history.</p>
 </section>
 
-<div class="release-stats" aria-label="GTSAM project facts">
-  <div><strong>4.3.0</strong><span>stable release</span></div>
-  <div><strong>328</strong><span>runnable notebooks</span></div>
-  <div><strong>C++17</strong><span>language standard</span></div>
-  <div><strong>BSD</strong><span>open source</span></div>
-</div>
+<section class="release-section" id="certifiable" aria-labelledby="certifiable-title">
+  <h2 id="certifiable-title">Certifiable estimation</h2>
+  <p>The certifiable module provides semidefinite-relaxation and Riemannian-staircase methods for estimation problems, including rotation averaging, pose-graph optimization, and landmark SLAM. These methods can establish global optimality when the relaxation and its certificate satisfy the required conditions.</p>
+  <p class="attribution">The research includes collaborations with David M. Rosen and his team at Northeastern University, and with Frederike Dümbgen at Carnegie Mellon University. The papers below describe the Certifiable Factor Graph Optimization framework and complementary work on exploiting chordal sparsity.</p>
+  <p class="paper-reference">Zhexin Xu, Nikolas R. Sanderson, Hanna Jiamei Zhang, and David M. Rosen. <a href="https://arxiv.org/abs/2603.01267"><cite>Certifiable Factor Graph Optimization</cite></a>, 2026.</p>
+  <p class="paper-reference">Avinash Subramanian, Connor Holmes, Timothy D. Barfoot, Frank Dellaert, and Frederike Dümbgen. <a href="https://arxiv.org/abs/2605.30617"><cite>Exploiting Chordal Sparsity for Globally Optimal Estimation with Factor Graphs</cite></a>, 2026.</p>
+  <ul class="resource-links">
+    <li>Notebooks: <a href="https://borglab.github.io/gtsam/certifiableposegraphoptimizationpose2/">2D pose graphs</a> · <a href="https://borglab.github.io/gtsam/certifiableposegraphoptimizationpose3/">3D pose graphs</a> · <a href="https://borglab.github.io/gtsam/certifiablelandmarkslampose3/">Landmark SLAM</a> · <a href="https://borglab.github.io/gtsam/certifiablerotationaveragingrot3/">Rotation averaging</a></li>
+    <li><a href="https://github.com/borglab/gtsam/tree/4.3.0/gtsam/certifiable">Module source and technical documentation</a></li>
+    <li><a href="/2026/06/03/certifiable-factor-graphs.html">Framework article</a> · <a href="/2026/06/01/icra-for-workshop.html">Chordal-sparsity research</a></li>
+  </ul>
+  <figure class="research-figure research-figure-wide">
+    <a href="/assets/images/certifiable-factor-graphs/benchmarks.png"><img src="/assets/images/certifiable-factor-graphs/benchmarks.png" alt="Six benchmark reconstructions for pose-graph optimization, landmark SLAM, and range-aided SLAM." width="1600" height="1120" loading="lazy"></a>
+    <figcaption>Benchmark problems used in Certifiable Factor Graph Optimization: pose-graph optimization, landmark SLAM, and range-aided SLAM. Figure from <a href="/2026/06/03/certifiable-factor-graphs.html">David Rosen’s framework article</a>.</figcaption>
+  </figure>
+</section>
 
-<div class="launch-finale">
-  <div class="release-eyebrow">Explore, use, and contribute</div>
-  <h2>Build on the community’s work.</h2>
-  <p>Try an example, share what you learn, report a bug, or help improve the next release.</p>
-  <div class="launch-actions launch-actions-center">
-    <a class="launch-button launch-button-primary" href="/get_started/">Install GTSAM 4.3 <span aria-hidden="true">&rarr;</span></a>
-    <a class="launch-button" href="https://borglab.github.io/gtsam/examples/">Browse examples</a>
-    <a class="launch-button" href="https://github.com/borglab/gtsam">Inspect the source</a>
+<section class="release-section" id="hybrid" aria-labelledby="hybrid-title">
+  <h2 id="hybrid-title">Discrete–continuous inference</h2>
+  <p>Hybrid factor graphs combine discrete hypotheses with continuous states. Version 4.3 extends hybrid elimination and incremental smoothing, with pruning to manage the number of hypotheses maintained during inference.</p>
+  <p class="attribution">Varun Agrawal led the hybrid-inference work, with contributions from Frank Dellaert, Fan Jiang, <a href="https://github.com/ywkim0606">@ywkim0606</a>, and <a href="https://github.com/arutkowski">@arutkowski</a>.</p>
+  <p class="paper-reference">Varun Agrawal and Frank Dellaert. <a href="https://arxiv.org/abs/2601.00545"><cite>Variable Elimination in Hybrid Factor Graphs for Discrete-Continuous Inference &amp; Estimation</cite></a>, 2026.</p>
+  <ul class="resource-links">
+    <li><a href="https://borglab.github.io/gtsam/hybrid/">Hybrid inference guide</a> · <a href="https://borglab.github.io/gtsam/hybridsmoother/">HybridSmoother notebook</a></li>
+    <li><a href="https://github.com/borglab/gtsam/tree/4.3.0/gtsam/hybrid">Module source</a></li>
+  </ul>
+</section>
+
+<section class="release-section" id="gnss" aria-labelledby="gnss-title">
+  <h2 id="gnss-title">GNSS factors and ambiguity resolution</h2>
+  <p>New satellite-navigation components include pseudorange, carrier-phase, and Doppler factors, together with integer-ambiguity-resolution utilities. They support GNSS estimation and integration with inertial measurements in a common factor graph.</p>
+  <p class="attribution">These additions were a community effort involving Kosuke Inoue, Sammy Guo, Kathir Gounder, Morten Nissov, <a href="https://github.com/scottiyio">@scottiyio</a>, and Varun Agrawal. Kosuke Inoue’s RTK-GNSS article provides an evaluation on urban driving data and links to the associated implementation.</p>
+  <ul class="resource-links">
+    <li><a href="https://borglab.github.io/gtsam/navigation/">Navigation guide</a></li>
+    <li>Factor source: <a href="https://github.com/borglab/gtsam/blob/4.3.0/gtsam/navigation/PseudorangeFactor.h">Pseudorange</a> · <a href="https://github.com/borglab/gtsam/blob/4.3.0/gtsam/navigation/CarrierPhaseFactor.h">Carrier phase</a> · <a href="https://github.com/borglab/gtsam/blob/4.3.0/gtsam/navigation/DopplerFactor.h">Doppler</a></li>
+    <li><a href="/2026/06/10/rtk-gnss-double-difference.html">RTK-GNSS evaluation</a> · <a href="https://github.com/inuex35/tightly-coupled-gnss-imu-fgo">Evaluation code</a> · <a href="https://github.com/taroz/PPC-Dataset">PPC dataset</a></li>
+  </ul>
+  <figure class="research-figure research-figure-wide">
+    <a href="/assets/images/rtk-gnss/tokyo-result.png"><img src="/assets/images/rtk-gnss/tokyo-result.png" alt="Trajectory comparisons and position errors for three Tokyo driving sequences, distinguishing float and fixed GNSS solutions." width="1788" height="1455" loading="lazy"></a>
+    <figcaption>RTK-GNSS results on three Tokyo driving sequences. The plots distinguish float and fixed solutions; the displayed error axis is limited to 0.5 m. Figure and evaluation details from <a href="/2026/06/10/rtk-gnss-double-difference.html">Kosuke Inoue’s article</a>.</figcaption>
+  </figure>
+</section>
+
+<section class="release-section" id="cuda" aria-labelledby="cuda-title">
+  <h2 id="cuda-title">CUDA optimization</h2>
+  <p>The CUDA backend provides GPU-accelerated Levenberg–Marquardt optimization. The general sparse path retains factor linearization on the CPU and performs the linear solve on the GPU; the specialized structure-from-motion path also moves linearization to the GPU. Available solver configurations include cuDSS and preconditioned conjugate gradients, with a dense Cholesky option for the reduced SfM Schur system.</p>
+  <p class="attribution">Ruogu Li implemented the CUDA backend, with contributions from Frank Dellaert. The benchmark article documents the hardware, solver configurations, and timing breakdowns.</p>
+  <ul class="resource-links">
+    <li>Notebooks: <a href="https://borglab.github.io/gtsam/sparselevenbergmarquardtoptimizer/">Sparse LM</a> · <a href="https://borglab.github.io/gtsam/cudasfmlevenbergmarquardtoptimizer/">CUDA SfM</a> · <a href="https://borglab.github.io/gtsam/cudasfmgncoptimizer/">Robust SfM with GNC</a></li>
+    <li>Source: <a href="https://github.com/borglab/gtsam/tree/4.3.0/gtsam/nonlinear/cuda">Sparse optimization</a> · <a href="https://github.com/borglab/gtsam/tree/4.3.0/gtsam/sfm/cuda">Structure from motion</a></li>
+    <li><a href="/2026/08/20/cuda-backend.html">Implementation and benchmarks</a> · <a href="https://github.com/borglab/gtsam/pull/2706">Backend pull request</a></li>
+  </ul>
+</section>
+
+<section class="release-section" id="pose-graphs" aria-labelledby="pgo-title">
+  <h2 id="pgo-title">Pose-graph initialization and refinement</h2>
+  <div class="research-columns">
+    <div>
+      <p>FAST-Sync initializes group-synchronization problems on matrix Lie groups from relative measurements. It provides initial estimates for subsequent nonlinear refinement, including pose-graph optimization.</p>
+      <p class="attribution">FAST-Sync is joint work by Shane Holmes, Yiran Luo, Firat Taxpulat, David M. Rosen, and Frank Dellaert.</p>
+      <p class="paper-reference">Holmes et al. <a href="https://doi.org/10.1109/LRA.2026.3710327"><cite>FAST-Sync: A Fast Start for Group Synchronization on Any Matrix Lie Group</cite></a>. IEEE Robotics and Automation Letters, 11(9):10377–10384, 2026.</p>
+      <p>A separate refinement improvement supplies exact <code>Local</code> Jacobians in <code>BetweenFactor</code> and <code>PriorFactor</code> when supported by the Lie-group traits. The <a href="https://github.com/borglab/gtsam/pull/2661">w10000 benchmark</a> compares refinement from identical initial values.</p>
+      <ul class="resource-links">
+        <li><a href="https://borglab.github.io/gtsam/fastsyncexample/">FAST-Sync example notebook</a> · <a href="https://borglab.github.io/gtsam/fastsync/">Derivation</a></li>
+        <li><a href="https://github.com/borglab/gtsam/blob/4.3.0/gtsam/slam/FastSync.h">FastSync source</a> · <a href="/2026/08/12/fast-sync.html">Research article</a></li>
+      </ul>
+    </div>
+    <figure class="research-figure research-figure-portrait">
+      <a href="/assets/images/fast-sync/fast-sync-mit-initialization.png"><img src="/assets/images/fast-sync/fast-sync-mit-initialization.png" alt="MIT pose-graph trajectories comparing spanning-tree initialization, FAST-Sync initialization, and nonlinear refinement." width="550" height="1020" loading="lazy"></a>
+      <figcaption>MIT pose graph: spanning-tree initialization, FAST-Sync initialization, and nonlinear refinement. Figure from the <a href="/2026/08/12/fast-sync.html">FAST-Sync article</a>.</figcaption>
+    </figure>
   </div>
-</div>
+</section>
 
-<div class="launch-paths" aria-label="GTSAM documentation paths">
-  <a href="/docs/"><span>01</span><strong>User guide</strong><small>Module documentation</small></a>
-  <a href="https://borglab.github.io/gtsam/examples/"><span>02</span><strong>Examples</strong><small>Executable notebooks</small></a>
-  <a href="/doxygen/"><span>03</span><strong>C++ reference</strong><small>C++ API documentation</small></a>
-  <a href="https://github.com/borglab/gtsam/tree/develop/python"><span>04</span><strong>Python</strong><small>Python package and source</small></a>
-</div>
+<section class="release-section" id="constraints" aria-labelledby="constraints-title">
+  <h2 id="constraints-title">Constrained optimization</h2>
+  <div class="research-columns">
+    <div>
+      <p>The constrained-optimization module supports linear, quadratic, and quadratically constrained quadratic problems, as well as nonlinear equality and inequality constraints. The examples describe problem construction, feasible sets, and solver use.</p>
+      <p class="attribution">Frank Dellaert and Yetong Zhang describe the QP and QCQP implementation. The release notes also credit Zhexin Xu, Avinash Subramanian, and Fan Jiang across the constrained and certifiable optimization additions.</p>
+      <ul class="resource-links">
+        <li><a href="https://borglab.github.io/gtsam/constrained/">Constrained-optimization guide</a></li>
+        <li>Notebooks: <a href="https://borglab.github.io/gtsam/lpproblemexample/">LP</a> · <a href="https://borglab.github.io/gtsam/qpproblemexample/">QP</a> · <a href="https://borglab.github.io/gtsam/qcqpproblemexample/">QCQP</a> · <a href="https://borglab.github.io/gtsam/nonlinearequalityexample/">Nonlinear equality constraints</a></li>
+        <li><a href="https://github.com/borglab/gtsam/tree/4.3.0/gtsam/constrained">Module source</a> · <a href="/2026/05/13/qp-qcqp-in-gtsam.html">QP and QCQP article</a></li>
+      </ul>
+    </div>
+    <figure class="research-figure">
+      <a href="/assets/images/qp-qcqp/qp-projection.png"><img src="/assets/images/qp-qcqp/qp-projection.png" alt="Quadratic objective contours, an equality constraint, an inequality boundary, and the constrained optimum." width="1600" height="1240" loading="lazy"></a>
+      <figcaption>Quadratic-program example showing objective contours, constraints, and the solution. Figure from the <a href="/2026/05/13/qp-qcqp-in-gtsam.html">QP and QCQP article</a>; see the <a href="https://borglab.github.io/gtsam/qpproblemexample/">QP notebook</a> for the formulation.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="release-section" id="navigation" aria-labelledby="navigation-title">
+  <h2 id="navigation-title">Inertial and legged navigation</h2>
+  <p>The navigation module expands IMU preintegration and invariant-filtering formulations, with examples for Gal(3) and NavState-based estimation and studies of covariance consistency. Legged-estimation components support proprioceptive state estimation using inertial and contact information.</p>
+  <p class="attribution">Navigation contributions include Frank Dellaert, <a href="https://github.com/scottiyio">@scottiyio</a>, <a href="https://github.com/jenniferoum">@jenniferoum</a>, Rohan Bansal, <a href="https://github.com/mkielo3">@mkielo3</a>, Nikhil Khedekar, <a href="https://github.com/arihantb2">@arihantb2</a>, <a href="https://github.com/DLuminary">@DLuminary</a>, and Varun Agrawal. The legged-estimation research is a collaboration with Seoul National University.</p>
+  <p class="paper-reference">Frank Dellaert, Chiyun Noh, Varun Agrawal, and Ayoung Kim. <a href="https://arxiv.org/abs/2605.23100"><cite>Four Simple Proprioceptive Estimators for Legged Robots</cite></a>, 2026.</p>
+  <ul class="resource-links">
+    <li><a href="https://borglab.github.io/gtsam/navigation/">Navigation guide</a> · <a href="https://borglab.github.io/gtsam/gal3imuexample/">Gal(3) IMU notebook</a> · <a href="https://borglab.github.io/gtsam/navstateimuexample/">NavState IMU notebook</a></li>
+    <li>Consistency studies: <a href="https://borglab.github.io/gtsam/galileanimufactornees/">Galilean IMU NEES</a> · <a href="https://borglab.github.io/gtsam/navstateimupimcovariancecomparison/">Preintegration covariance comparison</a></li>
+    <li><a href="https://github.com/borglab/gtsam/tree/4.3.0/gtsam/navigation">Module source</a> · <a href="/2026/05/26/two-new-arxiv-papers.html">Legged-estimation research article</a></li>
+  </ul>
+</section>
+
+<section class="release-section" id="linear-solvers" aria-labelledby="solvers-title">
+  <h2 id="solvers-title">Multifrontal linear solvers</h2>
+  <p>The multifrontal solver uses packed storage and reusable symbolic structure for repeated linear solves. Its notebook explains elimination, factorization, and how to configure the solver within an optimization workflow.</p>
+  <p class="attribution">The broader performance work in 4.3 includes contributions from Frank Dellaert, Fan Jiang, <a href="https://github.com/tzvist">@tzvist</a>, Ruogu Li, Jash Shah, and Varun Agrawal. The release notes distinguish these changes from CUDA and other solver additions.</p>
+  <ul class="resource-links">
+    <li><a href="https://borglab.github.io/gtsam/multifrontalsolver/">Multifrontal solver notebook</a></li>
+    <li>Source: <a href="https://github.com/borglab/gtsam/blob/4.3.0/gtsam/linear/MultifrontalSolver.h">MultifrontalSolver</a> · <a href="https://github.com/borglab/gtsam/blob/4.3.0/gtsam/linear/MultifrontalParameters.h">Parameters</a></li>
+  </ul>
+</section>
+
+<section class="release-section" id="python" aria-labelledby="python-title">
+  <h2 id="python-title">Python and documentation</h2>
+  <p>The 4.3 documentation includes 328 runnable notebooks, covering introductory factor graphs and the new modules. Python-interface changes include a PEP 561 type marker and copy-aware APIs.</p>
+  <p class="attribution">Porter Zach and the notebook authors expanded the documentation. Fan Jiang, <a href="https://github.com/DLuminary">@DLuminary</a>, Varun Agrawal, and other contributors extended the language interfaces.</p>
+  <ul class="resource-links">
+    <li><a href="https://borglab.github.io/gtsam/examples/">Notebook index</a> · <a href="/docs/">User guides</a> · <a href="/doxygen/">C++ API reference</a></li>
+    <li>Examples: <a href="https://borglab.github.io/gtsam/customfactorexample/">Custom factors</a> · <a href="https://borglab.github.io/gtsam/fixedlagsmootherexample/">Fixed-lag smoothing</a> · <a href="https://borglab.github.io/gtsam/visualisamexample/">Visual iSAM2</a></li>
+    <li><a href="https://github.com/borglab/gtsam/tree/4.3.0/python">Python source</a></li>
+  </ul>
+</section>
+
+<section class="release-section release-acknowledgments" aria-labelledby="acknowledgments-title">
+  <h2 id="acknowledgments-title">Acknowledgments</h2>
+  <p>GTSAM 4.3 also includes substantial maintenance, testing, portability, packaging, and review work. In addition to the contributors named above, the release notes recognize sustained contributions from <a href="https://github.com/talregev">@talregev</a>, <a href="https://github.com/Gold856">@Gold856</a>, José Luis Blanco, Akshay Krishnan, and many others.</p>
+  <p>The <a href="https://github.com/borglab/gtsam/releases/tag/4.3.0">complete release notes and contributor list</a> record this work in more detail. See also the <a href="/about/">project history and contributors</a>. Source links on this page refer to the 4.3.0 release; the online guides and notebooks may continue to evolve.</p>
+</section>

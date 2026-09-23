@@ -4,18 +4,12 @@ layout: default
 <article class="content-page content-page-{{ page.title | slugify }}">
   <header class="content-hero">
     <div class="content-hero-inner">
-      <div class="content-kicker"><span></span>GTSAM documentation</div>
+      <div class="content-kicker">GTSAM documentation</div>
       <h1>{{ page.title }}</h1>
-    </div>
-    <div class="content-graph" aria-hidden="true">
-      <i class="content-edge edge-a"></i><i class="content-edge edge-b"></i><i class="content-edge edge-c"></i>
-      <b class="content-variable variable-a"></b><b class="content-variable variable-b"></b><b class="content-variable variable-c"></b>
-      <b class="content-factor factor-a"></b><b class="content-factor factor-b"></b>
     </div>
   </header>
 
   <div class="content-frame">
-    <div class="content-rail" aria-hidden="true"><span>{{ page.title }}</span><i></i><strong>GTSAM 4.3</strong></div>
     <div class="post-content content-prose">
       {{ content }}
     </div>
