@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::partition::WorkSpace Struct Reference</title>
+<title>gtsam: gtsam::internal::GravityParametrization&lt; GRAVITY &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -70,7 +70,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('a05987.html','','a05984'); });
+$(function(){initNavTree('a05987.html','',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -96,28 +96,18 @@ $(function(){initNavTree('a05987.html','','a05984'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::partition::WorkSpace Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::internal::GravityParametrization&lt; GRAVITY &gt; Struct Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:abdc850833936c601df4c316600061944" id="r_abdc850833936c601df4c316600061944"><td class="memItemLeft"><a id="abdc850833936c601df4c316600061944" name="abdc850833936c601df4c316600061944"></a>
-&#160;</td><td class="memItemRight"><b>WorkSpace</b> (const size_t numNodes)</td></tr>
-<tr class="memitem:a05a37604c33a4df014503f245ad783a1" id="r_a05a37604c33a4df014503f245ad783a1"><td class="memItemLeft"><a id="a05a37604c33a4df014503f245ad783a1" name="a05a37604c33a4df014503f245ad783a1"></a>
-void&#160;</td><td class="memItemRight"><b>prepareDictionary</b> (const std::vector&lt; size_t &gt; &amp;keys)</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a3617b55cee251c2b5860e3e12be8e52e" id="r_a3617b55cee251c2b5860e3e12be8e52e"><td class="memItemLeft"><a id="a3617b55cee251c2b5860e3e12be8e52e" name="a3617b55cee251c2b5860e3e12be8e52e"></a>
-std::vector&lt; int &gt;&#160;</td><td class="memItemRight"><b>dictionary</b></td></tr>
-<tr class="memitem:a409b9e925337a61afe5ab78b14bfdc36" id="r_a409b9e925337a61afe5ab78b14bfdc36"><td class="memItemLeft"><a id="a409b9e925337a61afe5ab78b14bfdc36" name="a409b9e925337a61afe5ab78b14bfdc36"></a>
-boost::shared_ptr&lt; std::vector&lt; size_t &gt; &gt;&#160;</td><td class="memItemRight"><b>dsf</b></td></tr>
-<tr class="memitem:a8354670ac9d05dcdc691faf766d27971" id="r_a8354670ac9d05dcdc691faf766d27971"><td class="memItemLeft"><a id="a8354670ac9d05dcdc691faf766d27971" name="a8354670ac9d05dcdc691faf766d27971"></a>
-PartitionTable&#160;</td><td class="memItemRight"><b>partitionTable</b></td></tr>
-</table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/partition/<a class="el" href="a01658_source.html">PartitionWorkSpace.h</a></li>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class GRAVITY&gt;<br />
+struct gtsam::internal::GravityParametrization&lt; GRAVITY &gt;</div><p>Adapter mapping a gravity parametrization GRAVITY to the nav-frame gravity vector expected by <a class="el" href="a05983.html" title="PreintegrationBase is the base class for PreintegratedMeasurements (in ImuFactor) and CombinedPreinte...">PreintegrationBase</a>, with the chain-rule Jacobian block. </p>
+<p>Two parametrizations are provided:</p><ul>
+<li><a class="el" href="a04627.html" title="Represents a 3D point on a unit sphere.">Unit3</a>: an optimized direction scaled by a fixed, known magnitude</li>
+<li><a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932" title="As of GTSAM 4, in order to make GTSAM more lean, it is now possible to just typedef Point3 to Vector3...">Point3</a>: a free vector entangling direction and magnitude See <a class="el" href="a02242.html#aa4c1a3e41abd842a51ef996d2f2f9233" title="ImuFactor variant with the gravity direction as an optimized Unit3 variable and a fixed,...">ImuFactorWithGravityDirection</a> and <a class="el" href="a02242.html#a7e321569a1286ce04feac799a379ffb9" title="ImuFactor variant with the gravity vector as a free Point3 variable, ie.">ImuFactorWithGravityVector</a>. </li>
+</ul>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/<a class="el" href="a01208_source.html">PreintegrationBase.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -132,7 +122,7 @@ PartitionTable&#160;</td><td class="memItemRight"><b>partitionTable</b></td></tr
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><b>partition</b></li><li class="navelem"><a href="a05987.html">WorkSpace</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><b>internal</b></li><li class="navelem"><a href="a05987.html">GravityParametrization</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

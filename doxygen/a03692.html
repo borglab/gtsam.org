@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,14 +96,28 @@ $(function(){initNavTree('a03695.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::Range&lt; Point2, Point2 &gt; Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::Basis&lt; DERIVED &gt;::VectorEvaluationFunctor Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a03695.html">gtsam::Range&lt; Point2, Point2 &gt;</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a03695.html">gtsam::Basis&lt; DERIVED &gt;::VectorEvaluationFunctor</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator()</b>(const Point2 &amp;p, const Point2 &amp;q, OptionalJacobian&lt; 1, 2 &gt; H1=boost::none, OptionalJacobian&lt; 1, 2 &gt; H2=boost::none) (defined in <a class="el" href="a03695.html">gtsam::Range&lt; Point2, Point2 &gt;</a>)</td><td class="entry"><a class="el" href="a03695.html">gtsam::Range&lt; Point2, Point2 &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>result_type</b> typedef (defined in <a class="el" href="a03695.html">gtsam::Range&lt; Point2, Point2 &gt;</a>)</td><td class="entry"><a class="el" href="a03695.html">gtsam::Range&lt; Point2, Point2 &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03695.html#afa069627dd8d09623f262c3dcd73a335">apply</a>(const Matrix &amp;P, OptionalJacobian&lt; -1, -1 &gt; H={}) const</td><td class="entry"><a class="el" href="a03695.html">gtsam::Basis&lt; DERIVED &gt;::VectorEvaluationFunctor</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03691.html#aa1410bc0f08a92d417d1fbdd9248b90d">gtsam::Basis::EvaluationFunctor::apply</a>(const typename DERIVED::Parameters &amp;p, OptionalJacobian&lt;-1, -1 &gt; H={}) const</td><td class="entry"><a class="el" href="a03691.html">gtsam::Basis&lt; DERIVED &gt;::EvaluationFunctor</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03695.html#afa6411f9a63d90425d3c9ec8c67f6e9a">calculateJacobian</a>()</td><td class="entry"><a class="el" href="a03695.html">gtsam::Basis&lt; DERIVED &gt;::VectorEvaluationFunctor</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03691.html#af40cf6dc6a2d3826e0db9cce0a5fc37f">EvaluationFunctor</a>()</td><td class="entry"><a class="el" href="a03691.html">gtsam::Basis&lt; DERIVED &gt;::EvaluationFunctor</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03691.html#a525a4e981be95de1a5b9fef7b34ec253">EvaluationFunctor</a>(size_t N, double x)</td><td class="entry"><a class="el" href="a03691.html">gtsam::Basis&lt; DERIVED &gt;::EvaluationFunctor</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03691.html#a9be4f88fb81c5e28cfef8aea269e08e4">EvaluationFunctor</a>(size_t N, double x, double a, double b)</td><td class="entry"><a class="el" href="a03691.html">gtsam::Basis&lt; DERIVED &gt;::EvaluationFunctor</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>H_</b> (defined in <a class="el" href="a03695.html">gtsam::Basis&lt; DERIVED &gt;::VectorEvaluationFunctor</a>)</td><td class="entry"><a class="el" href="a03695.html">gtsam::Basis&lt; DERIVED &gt;::VectorEvaluationFunctor</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Jacobian</b> typedef (defined in <a class="el" href="a03695.html">gtsam::Basis&lt; DERIVED &gt;::VectorEvaluationFunctor</a>)</td><td class="entry"><a class="el" href="a03695.html">gtsam::Basis&lt; DERIVED &gt;::VectorEvaluationFunctor</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>M_</b> (defined in <a class="el" href="a03695.html">gtsam::Basis&lt; DERIVED &gt;::VectorEvaluationFunctor</a>)</td><td class="entry"><a class="el" href="a03695.html">gtsam::Basis&lt; DERIVED &gt;::VectorEvaluationFunctor</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03695.html#a94b91e2ae74c759e286e47848685d2b8">operator()</a>(const Matrix &amp;P, OptionalJacobian&lt; -1, -1 &gt; H={}) const</td><td class="entry"><a class="el" href="a03695.html">gtsam::Basis&lt; DERIVED &gt;::VectorEvaluationFunctor</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03691.html#a8a4f8449b46168d41cd684836d8fd72c">gtsam::Basis::EvaluationFunctor::operator()</a>(const typename DERIVED::Parameters &amp;p, OptionalJacobian&lt;-1, -1 &gt; H={}) const</td><td class="entry"><a class="el" href="a03691.html">gtsam::Basis&lt; DERIVED &gt;::EvaluationFunctor</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>print</b>(const std::string &amp;s=&quot;&quot;) const (defined in <a class="el" href="a03691.html">gtsam::Basis&lt; DERIVED &gt;::EvaluationFunctor</a>)</td><td class="entry"><a class="el" href="a03691.html">gtsam::Basis&lt; DERIVED &gt;::EvaluationFunctor</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03695.html#a9b6b67e6b0011aaff030adac929ee2a6">VectorEvaluationFunctor</a>()</td><td class="entry"><a class="el" href="a03695.html">gtsam::Basis&lt; DERIVED &gt;::VectorEvaluationFunctor</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03695.html#a8fe26a2ef2e5c30d7fdbc4def3485154">VectorEvaluationFunctor</a>(size_t M, size_t N, double x)</td><td class="entry"><a class="el" href="a03695.html">gtsam::Basis&lt; DERIVED &gt;::VectorEvaluationFunctor</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03695.html#a57c51454a178da4f107d0fd3d6e8f7df">VectorEvaluationFunctor</a>(size_t M, size_t N, double x, double a, double b)</td><td class="entry"><a class="el" href="a03695.html">gtsam::Basis&lt; DERIVED &gt;::VectorEvaluationFunctor</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>weights_</b> (defined in <a class="el" href="a03691.html">gtsam::Basis&lt; DERIVED &gt;::EvaluationFunctor</a>)</td><td class="entry"><a class="el" href="a03691.html">gtsam::Basis&lt; DERIVED &gt;::EvaluationFunctor</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

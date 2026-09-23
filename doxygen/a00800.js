@@ -1,7 +1,4 @@
 var a00800 =
 [
-    [ "gtsam::EliminationTraits&lt; GaussianFactorGraph &gt;", "a04335.html", "a04335" ],
-    [ "gtsam::GaussianFactorGraph", "a04339.html", "a04339" ],
-    [ "gtsam::traits&lt; GaussianFactorGraph &gt;", "a04343.html", null ],
-    [ "gtsam::hasConstraints", "a01968.html#a35c269c3243cab16a7475239a9c91021", null ]
+    [ "gtsam::FactorErrorPredicate", "a02242.html#a6cd06919d5d75190596d2e2ef9fb125b", null ]
 ];

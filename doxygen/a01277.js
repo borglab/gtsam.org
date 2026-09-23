@@ -1,5 +1,6 @@
 var a01277 =
 [
-    [ "gtsam::SmartProjectionFactor&lt; CAMERA &gt;", "a05487.html", "a05487" ],
-    [ "gtsam::traits&lt; SmartProjectionFactor&lt; CAMERA &gt; &gt;", "a05491.html", null ]
+    [ "gtsam::Diagonal", "a16245.html", "a16245" ],
+    [ "gtsam::Gaussian", "a16249.html", "a16249" ],
+    [ "gtsam::Isotropic", "a16253.html", "a16253" ]
 ];

@@ -1,4 +1,5 @@
 var a00053 =
 [
-    [ "gtsam::Value", "a03143.html", "a03143" ]
+    [ "gtsam::internal::TimingOutline", "a03559.html", "a03559" ],
+    [ "gtsam::internal::AutoTicToc", "a03563.html", null ]
 ];

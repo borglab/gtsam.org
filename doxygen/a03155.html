@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::internal::VectorSpaceImpl&lt; Class, Eigen::Dynamic &gt; Struct Template Reference</title>
+<title>gtsam: gtsam::FastList&lt; VALUE &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,57 +96,52 @@ $(function(){initNavTree('a03155.html','','a03152'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::internal::VectorSpaceImpl&lt; Class, Eigen::Dynamic &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::FastList&lt; VALUE &gt; Class Template Reference<div class="ingroups"><a class="el" href="a02227.html">Base</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class Class&gt;<br />
-struct gtsam::internal::VectorSpaceImpl&lt; Class, Eigen::Dynamic &gt;</div><p><a class="el" href="a03163.html" title="A helper that implements the traits interface for classes that define vector spaces To use this for y...">VectorSpaceTraits</a> implementation for dynamic types. </p>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Manifold</h2></td></tr>
-<tr class="memitem:ac25742fb7fc170e5ee97cdc9858913fa" id="r_ac25742fb7fc170e5ee97cdc9858913fa"><td class="memItemLeft"><a id="ac25742fb7fc170e5ee97cdc9858913fa" name="ac25742fb7fc170e5ee97cdc9858913fa"></a>
-typedef Eigen::VectorXd&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
-<tr class="memitem:a553e966d60467cf27bb4e4841907266b" id="r_a553e966d60467cf27bb4e4841907266b"><td class="memItemLeft"><a id="a553e966d60467cf27bb4e4841907266b" name="a553e966d60467cf27bb4e4841907266b"></a>
-typedef <a class="el" href="a02995.html">OptionalJacobian</a>&lt; Eigen::Dynamic, Eigen::Dynamic &gt;&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
-<tr class="memitem:a868d3a010017144d53872a0da7e30235" id="r_a868d3a010017144d53872a0da7e30235"><td class="memItemLeft"><a id="a868d3a010017144d53872a0da7e30235" name="a868d3a010017144d53872a0da7e30235"></a>
-static int&#160;</td><td class="memItemRight"><b>GetDimension</b> (const Class &amp;m)</td></tr>
-<tr class="memitem:a7f612140184a89d8ade47257f7fc5c4b" id="r_a7f612140184a89d8ade47257f7fc5c4b"><td class="memItemLeft"><a id="a7f612140184a89d8ade47257f7fc5c4b" name="a7f612140184a89d8ade47257f7fc5c4b"></a>
-static Eigen::MatrixXd&#160;</td><td class="memItemRight"><b>Eye</b> (const Class &amp;m)</td></tr>
-<tr class="memitem:a578fb7c7369295bb2a16dbfb06a5bdbd" id="r_a578fb7c7369295bb2a16dbfb06a5bdbd"><td class="memItemLeft"><a id="a578fb7c7369295bb2a16dbfb06a5bdbd" name="a578fb7c7369295bb2a16dbfb06a5bdbd"></a>
-static TangentVector&#160;</td><td class="memItemRight"><b>Local</b> (const Class &amp;origin, const Class &amp;other, ChartJacobian H1=boost::none, ChartJacobian H2=boost::none)</td></tr>
-<tr class="memitem:a5ed8a30966c1a90848ab8dba31c3cd28" id="r_a5ed8a30966c1a90848ab8dba31c3cd28"><td class="memItemLeft"><a id="a5ed8a30966c1a90848ab8dba31c3cd28" name="a5ed8a30966c1a90848ab8dba31c3cd28"></a>
-static Class&#160;</td><td class="memItemRight"><b>Retract</b> (const Class &amp;origin, const TangentVector &amp;v, ChartJacobian H1=boost::none, ChartJacobian H2=boost::none)</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr id="pub-static-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Group</div></td></tr>
-<tr class="memitem:adcadc1c26887302ba6736bb7828e8e35" id="r_adcadc1c26887302ba6736bb7828e8e35"><td class="memItemLeft"><a id="adcadc1c26887302ba6736bb7828e8e35" name="adcadc1c26887302ba6736bb7828e8e35"></a>
-static Class&#160;</td><td class="memItemRight"><b>Compose</b> (const Class &amp;v1, const Class &amp;v2)</td></tr>
-<tr class="memitem:a28ac8fb09faa87df4114dc6759e3b9fa" id="r_a28ac8fb09faa87df4114dc6759e3b9fa"><td class="memItemLeft"><a id="a28ac8fb09faa87df4114dc6759e3b9fa" name="a28ac8fb09faa87df4114dc6759e3b9fa"></a>
-static Class&#160;</td><td class="memItemRight"><b>Between</b> (const Class &amp;v1, const Class &amp;v2)</td></tr>
-<tr class="memitem:aab0e9211ce0100f117fa5b343bc23335" id="r_aab0e9211ce0100f117fa5b343bc23335"><td class="memItemLeft"><a id="aab0e9211ce0100f117fa5b343bc23335" name="aab0e9211ce0100f117fa5b343bc23335"></a>
-static Class&#160;</td><td class="memItemRight"><b>Inverse</b> (const Class &amp;m)</td></tr>
-<tr id="pub-static-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Lie Group</div></td></tr>
-<tr class="memitem:af0e6efb1540bc1d00d34b78bfd56347c" id="r_af0e6efb1540bc1d00d34b78bfd56347c"><td class="memItemLeft"><a id="af0e6efb1540bc1d00d34b78bfd56347c" name="af0e6efb1540bc1d00d34b78bfd56347c"></a>
-static TangentVector&#160;</td><td class="memItemRight"><b>Logmap</b> (const Class &amp;m, ChartJacobian Hm=boost::none)</td></tr>
-<tr class="memitem:a586d4ce63a8c6d53eac9077f7f8e756c" id="r_a586d4ce63a8c6d53eac9077f7f8e756c"><td class="memItemLeft"><a id="a586d4ce63a8c6d53eac9077f7f8e756c" name="a586d4ce63a8c6d53eac9077f7f8e756c"></a>
-static Class&#160;</td><td class="memItemRight"><b>Expmap</b> (const TangentVector &amp;v, ChartJacobian Hv=boost::none)</td></tr>
-<tr class="memitem:a5c047459c0c2734c1d01dca5fd0b2d89" id="r_a5c047459c0c2734c1d01dca5fd0b2d89"><td class="memItemLeft"><a id="a5c047459c0c2734c1d01dca5fd0b2d89" name="a5c047459c0c2734c1d01dca5fd0b2d89"></a>
-static Class&#160;</td><td class="memItemRight"><b>Compose</b> (const Class &amp;v1, const Class &amp;v2, ChartJacobian H1, ChartJacobian H2=boost::none)</td></tr>
-<tr class="memitem:ac1af6dd5e2626160182714cc5f87b480" id="r_ac1af6dd5e2626160182714cc5f87b480"><td class="memItemLeft"><a id="ac1af6dd5e2626160182714cc5f87b480" name="ac1af6dd5e2626160182714cc5f87b480"></a>
-static Class&#160;</td><td class="memItemRight"><b>Between</b> (const Class &amp;v1, const Class &amp;v2, ChartJacobian H1, ChartJacobian H2=boost::none)</td></tr>
-<tr class="memitem:ad0fdb6598c98e5998f59a3a770c8e73e" id="r_ad0fdb6598c98e5998f59a3a770c8e73e"><td class="memItemLeft"><a id="ad0fdb6598c98e5998f59a3a770c8e73e" name="ad0fdb6598c98e5998f59a3a770c8e73e"></a>
-static Class&#160;</td><td class="memItemRight"><b>Inverse</b> (const Class &amp;v, ChartJacobian H)</td></tr>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename VALUE&gt;<br />
+class gtsam::FastList&lt; VALUE &gt;</div><p><a class="el" href="a03155.html" title="FastList is a thin wrapper around std::list that uses the boost fast_pool_allocator instead of the de...">FastList</a> is a thin wrapper around std::list that uses the boost fast_pool_allocator instead of the default STL allocator. </p>
+<p>This is just a convenience to avoid having lengthy types in the code. Through timing, we've seen that the fast_pool_allocator can lead to speedups of several percent. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::FastList&lt; VALUE &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="a03155.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a4ddfad84c21aa8e028650085d28e64e1" id="r_a4ddfad84c21aa8e028650085d28e64e1"><td class="memItemLeft"><a id="a4ddfad84c21aa8e028650085d28e64e1" name="a4ddfad84c21aa8e028650085d28e64e1"></a>
+&#160;</td><td class="memItemRight"><b>FastList</b> ()</td></tr>
+<tr class="memdesc:a4ddfad84c21aa8e028650085d28e64e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
+<tr class="memitem:a4b392c0cdea93c6af52956ccf6282f44" id="r_a4b392c0cdea93c6af52956ccf6282f44"><td class="memTemplParams" colspan="2"><a id="a4b392c0cdea93c6af52956ccf6282f44" name="a4b392c0cdea93c6af52956ccf6282f44"></a>
+template&lt;typename INPUTITERATOR&gt; </td></tr>
+<tr class="memitem:a4b392c0cdea93c6af52956ccf6282f44 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>FastList</b> (INPUTITERATOR first, INPUTITERATOR last)</td></tr>
+<tr class="memdesc:a4b392c0cdea93c6af52956ccf6282f44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from a range, passes through to base class. <br /></td></tr>
+<tr class="memitem:a64ede4dd260eb040bf895828796af872" id="r_a64ede4dd260eb040bf895828796af872"><td class="memItemLeft"><a id="a64ede4dd260eb040bf895828796af872" name="a64ede4dd260eb040bf895828796af872"></a>
+&#160;</td><td class="memItemRight"><b>FastList</b> (const FastList&lt; VALUE &gt; &amp;x)</td></tr>
+<tr class="memdesc:a64ede4dd260eb040bf895828796af872"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor from another <a class="el" href="a03155.html" title="FastList is a thin wrapper around std::list that uses the boost fast_pool_allocator instead of the de...">FastList</a>. <br /></td></tr>
+<tr class="memitem:ad71cc6bc403f46960f54c75bc956093f" id="r_ad71cc6bc403f46960f54c75bc956093f"><td class="memItemLeft"><a id="ad71cc6bc403f46960f54c75bc956093f" name="ad71cc6bc403f46960f54c75bc956093f"></a>
+&#160;</td><td class="memItemRight"><b>FastList</b> (const Base &amp;x)</td></tr>
+<tr class="memdesc:ad71cc6bc403f46960f54c75bc956093f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor from the base list class. <br /></td></tr>
+<tr class="memitem:a4fe23ef7de32013838ac668231983daf" id="r_a4fe23ef7de32013838ac668231983daf"><td class="memItemLeft"><a id="a4fe23ef7de32013838ac668231983daf" name="a4fe23ef7de32013838ac668231983daf"></a>
+&#160;</td><td class="memItemRight"><b>FastList</b> (std::initializer_list&lt; VALUE &gt; l)</td></tr>
+<tr class="memdesc:a4fe23ef7de32013838ac668231983daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from c++11 initializer list: <br /></td></tr>
+<tr class="memitem:a5fad8396565b1e238eeded8420a1d073" id="r_a5fad8396565b1e238eeded8420a1d073"><td class="memItemLeft"><a id="a5fad8396565b1e238eeded8420a1d073" name="a5fad8396565b1e238eeded8420a1d073"></a>
+<a class="el" href="#a4ddfad84c21aa8e028650085d28e64e1">FastList</a> &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (const <a class="el" href="#a4ddfad84c21aa8e028650085d28e64e1">FastList</a> &amp;other)=default</td></tr>
+<tr class="memitem:a7c6e1a66ccf6adc94022389c3d81af55" id="r_a7c6e1a66ccf6adc94022389c3d81af55"><td class="memItemLeft"><a id="a7c6e1a66ccf6adc94022389c3d81af55" name="a7c6e1a66ccf6adc94022389c3d81af55"></a>
+&#160;</td><td class="memItemRight"><b>operator std::list&lt; VALUE &gt;</b> () const</td></tr>
+<tr class="memdesc:a7c6e1a66ccf6adc94022389c3d81af55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion to a standard STL container. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr id="pub-types-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Manifold</div></td></tr>
-<tr class="memitem:ab2461a41d72cb29e2fd6ffd05be40b42" id="r_ab2461a41d72cb29e2fd6ffd05be40b42"><td class="memItemLeft"><a id="ab2461a41d72cb29e2fd6ffd05be40b42" name="ab2461a41d72cb29e2fd6ffd05be40b42"></a>
-typedef Eigen::Matrix&lt; double, N, N &gt;&#160;</td><td class="memItemRight"><b>Jacobian</b></td></tr>
+<tr class="memitem:ac148510c5a08e9b9faeeb184c0a8d539" id="r_ac148510c5a08e9b9faeeb184c0a8d539"><td class="memItemLeft"><a id="ac148510c5a08e9b9faeeb184c0a8d539" name="ac148510c5a08e9b9faeeb184c0a8d539"></a>
+typedef std::list&lt; VALUE, typename <a class="el" href="a03147.html">internal::FastDefaultAllocator</a>&lt; VALUE &gt;::type &gt;&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/base/<a class="el" href="a00068_source.html">VectorSpace.h</a></li>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/<a class="el" href="a00029_source.html">FastList.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -161,7 +156,7 @@ typedef Eigen::Matrix&lt; double, N, N &gt;&#160;</td><td class="memItemRight"><
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><b>internal</b></li><li class="navelem"><a href="a03155.html">VectorSpaceImpl&lt; Class, Eigen::Dynamic &gt;</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a03155.html">FastList</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

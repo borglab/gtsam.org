@@ -1,15 +1,10 @@
 var a04619 =
 [
-    [ "PreintegratedAhrsMeasurements", "a04619.html#ae37277d97a500ca9ae98682821e5eb61", null ],
-    [ "PreintegratedAhrsMeasurements", "a04619.html#ab223cf8e404c688014e73154d551e85e", null ],
-    [ "PreintegratedAhrsMeasurements", "a04619.html#ad0e3bbcd43f9e574a03292d00c5c2e79", null ],
-    [ "PreintegratedAhrsMeasurements", "a04619.html#a7b586af5a0ce47da8a64cbc6047216fe", null ],
-    [ "equals", "a04619.html#ae3b9f8f5d1d5f397f06e13c12d8ea75b", null ],
-    [ "integrateMeasurement", "a04619.html#a051cbc796709f657c8988c0755aaaf6d", null ],
-    [ "predict", "a04619.html#a89701c96e7d6cbff07900aa2c7bb2c95", null ],
-    [ "print", "a04619.html#a2355d2f603e4ad6d5df418fac26d6579", null ],
-    [ "resetIntegration", "a04619.html#a6b18d19def1f97d5c4c2a3f5f33a9eb7", null ],
-    [ "boost::serialization::access", "a04619.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ],
-    [ "biasHat_", "a04619.html#a2afdb871fd5690fe3017d26728714f18", null ],
-    [ "preintMeasCov_", "a04619.html#ac4e58456c03e2e2ed835d0455e6b591c", null ]
+    [ "TriangulationParameters", "a04619.html#abe8aa091f44281c4f523f29f7ed6aac6", null ],
+    [ "dynamicOutlierRejectionThreshold", "a04619.html#a64046ca36c4e21f7a805b31728317deb", null ],
+    [ "enableEPI", "a04619.html#a84cf135d41ab91ce9957a77ef43284e6", null ],
+    [ "landmarkDistanceThreshold", "a04619.html#a80c1a1257cd5603cfc8710be0a2dbde0", null ],
+    [ "noiseModel", "a04619.html#ab72f327adcb9fce55ab81569c58ec194", null ],
+    [ "rankTolerance", "a04619.html#a6bc48052dd695ad190eeb3de24abbdca", null ],
+    [ "useLOST", "a04619.html#aeb81c4f65306209189d3c0082a54ff9c", null ]
 ];

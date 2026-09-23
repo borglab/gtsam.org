@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::BlockJacobiPreconditioner Class Reference</title>
+<title>gtsam: gtsam::SO&lt; N &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,163 +96,333 @@ $(function(){initNavTree('a04551.html','','a04548'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::BlockJacobiPreconditioner Class Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::SO&lt; N &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::BlockJacobiPreconditioner:</div>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;int N&gt;<br />
+class gtsam::SO&lt; N &gt;</div><p>Manifold of special orthogonal rotation matrices SO&lt;N&gt;. </p>
+<p>Template paramater N can be a fixed integer or can be Eigen::Dynamic </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::SO&lt; N &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a04551.png" usemap="#gtsam_3A_3ABlockJacobiPreconditioner_map" alt=""/>
-  <map id="gtsam_3A_3ABlockJacobiPreconditioner_map" name="gtsam_3A_3ABlockJacobiPreconditioner_map">
-<area href="a04535.html" alt="gtsam::Preconditioner" shape="rect" coords="0,0,202,24"/>
+  <img src="a04551.png" usemap="#gtsam_3A_3ASO_3C_20N_20_3E_map" alt=""/>
+  <map id="gtsam_3A_3ASO_3C_20N_20_3E_map" name="gtsam_3A_3ASO_3C_20N_20_3E_map">
+<area href="a03335.html" alt="gtsam::MatrixLieGroup&lt; SO&lt; N &gt;, internal::DimensionSO(N), N &gt;" shape="rect" coords="0,56,380,80"/>
+<area href="a03267.html" alt="gtsam::LieGroup&lt; SO&lt; N &gt;, D &gt;" shape="rect" coords="0,0,380,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Manifold</h2></td></tr>
+<tr class="memitem:a3228096e485572edff003d5b7202a215" id="r_a3228096e485572edff003d5b7202a215"><td class="memItemLeft"><a id="a3228096e485572edff003d5b7202a215" name="a3228096e485572edff003d5b7202a215"></a>
+using&#160;</td><td class="memItemRight"><b>TangentVector</b> = Eigen::Matrix&lt;double, dimension, 1&gt;</td></tr>
+<tr class="memitem:a7fbfa1ea43db6683bc4d9a49e87533e7" id="r_a7fbfa1ea43db6683bc4d9a49e87533e7"><td class="memItemLeft"><a id="a7fbfa1ea43db6683bc4d9a49e87533e7" name="a7fbfa1ea43db6683bc4d9a49e87533e7"></a>
+using&#160;</td><td class="memItemRight"><b>ChartJacobian</b> = <a class="el" href="a03363.html">OptionalJacobian</a>&lt;dimension, dimension&gt;</td></tr>
+<tr class="memitem:a75f668604e8e453e69b040a4e31aea98" id="r_a75f668604e8e453e69b040a4e31aea98"><td class="memItemLeft"><a id="a75f668604e8e453e69b040a4e31aea98" name="a75f668604e8e453e69b040a4e31aea98"></a>
+size_t&#160;</td><td class="memItemRight"><b>dim</b> () const</td></tr>
+<tr class="memitem:aae7ca348e65a7facbc39016e97097e7c" id="r_aae7ca348e65a7facbc39016e97097e7c"><td class="memItemLeft"><a id="aae7ca348e65a7facbc39016e97097e7c" name="aae7ca348e65a7facbc39016e97097e7c"></a>
+static size_t&#160;</td><td class="memItemRight"><b>Dimension</b> (size_t n)</td></tr>
+<tr class="memitem:a307a659e71f6ddc1e69c9a13a0cc4a14" id="r_a307a659e71f6ddc1e69c9a13a0cc4a14"><td class="memItemLeft"><a id="a307a659e71f6ddc1e69c9a13a0cc4a14" name="a307a659e71f6ddc1e69c9a13a0cc4a14"></a>
+static size_t&#160;</td><td class="memItemRight"><b>AmbientDim</b> (size_t d)</td></tr>
+<tr class="memitem:a813e60e77bd1e2b7ade8c7076b37579a" id="r_a813e60e77bd1e2b7ade8c7076b37579a"><td class="memItemLeft">static MatrixNN&#160;</td><td class="memItemRight"><a class="el" href="#a813e60e77bd1e2b7ade8c7076b37579a">Hat</a> (const TangentVector &amp;xi)</td></tr>
+<tr class="memdesc:a813e60e77bd1e2b7ade8c7076b37579a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hat operator creates Lie algebra element corresponding to d-vector, where d is the dimensionality of the manifold.  <br /></td></tr>
+<tr class="memitem:a7aac4d975d1e9762679372d9f1b2cd73" id="r_a7aac4d975d1e9762679372d9f1b2cd73"><td class="memItemLeft"><a id="a7aac4d975d1e9762679372d9f1b2cd73" name="a7aac4d975d1e9762679372d9f1b2cd73"></a>
+static void&#160;</td><td class="memItemRight"><b>Hat</b> (const Vector &amp;xi, Eigen::Ref&lt; MatrixNN &gt; X)</td></tr>
+<tr class="memdesc:a7aac4d975d1e9762679372d9f1b2cd73"><td class="mdescLeft">&#160;</td><td class="mdescRight">In-place version of Hat (see details there), implements recursion. <br /></td></tr>
+<tr class="memitem:a43f11eb2cba2be51ba3fa6ee8d46f823" id="r_a43f11eb2cba2be51ba3fa6ee8d46f823"><td class="memItemLeft"><a id="a43f11eb2cba2be51ba3fa6ee8d46f823" name="a43f11eb2cba2be51ba3fa6ee8d46f823"></a>
+static TangentVector&#160;</td><td class="memItemRight"><b>Vee</b> (const MatrixNN &amp;X)</td></tr>
+<tr class="memdesc:a43f11eb2cba2be51ba3fa6ee8d46f823"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverse of Hat. See note about xi element order in Hat. <br /></td></tr>
+<tr class="memitem:a9a1128fe2b9e95844d159032f80b8531" id="r_a9a1128fe2b9e95844d159032f80b8531"><td class="memTemplParams" colspan="2"><a id="a9a1128fe2b9e95844d159032f80b8531" name="a9a1128fe2b9e95844d159032f80b8531"></a>
+template&lt;int N_ = N, typename = IsDynamic&lt;N_&gt;&gt; </td></tr>
+<tr class="memitem:a9a1128fe2b9e95844d159032f80b8531 template"><td class="memItemLeft">static MatrixDD&#160;</td><td class="memItemRight"><b>IdentityJacobian</b> (size_t n)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Constructors</h2></td></tr>
+<tr class="memitem:a948b05d57d6a1cd07fd6d1adbe3837c4" id="r_a948b05d57d6a1cd07fd6d1adbe3837c4"><td class="memTemplParams" colspan="2"><a id="a948b05d57d6a1cd07fd6d1adbe3837c4" name="a948b05d57d6a1cd07fd6d1adbe3837c4"></a>
+template&lt;int N_ = N, typename = IsFixed&lt;N_&gt;&gt; </td></tr>
+<tr class="memitem:a948b05d57d6a1cd07fd6d1adbe3837c4 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>SO</b> ()</td></tr>
+<tr class="memdesc:a948b05d57d6a1cd07fd6d1adbe3837c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct SO&lt;N&gt; identity for N &gt;= 2. <br /></td></tr>
+<tr class="memitem:a8d832b038655d584038bda81d277c68e" id="r_a8d832b038655d584038bda81d277c68e"><td class="memTemplParams" colspan="2"><a id="a8d832b038655d584038bda81d277c68e" name="a8d832b038655d584038bda81d277c68e"></a>
+template&lt;int N_ = N, typename = IsDynamic&lt;N_&gt;&gt; </td></tr>
+<tr class="memitem:a8d832b038655d584038bda81d277c68e template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>SO</b> (size_t n=0)</td></tr>
+<tr class="memdesc:a8d832b038655d584038bda81d277c68e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct SO&lt;N&gt; identity for N == Eigen::Dynamic. <br /></td></tr>
+<tr class="memitem:af8ae2ed48dd298937f4c636f5b72daac" id="r_af8ae2ed48dd298937f4c636f5b72daac"><td class="memTemplParams" colspan="2"><a id="af8ae2ed48dd298937f4c636f5b72daac" name="af8ae2ed48dd298937f4c636f5b72daac"></a>
+template&lt;typename Derived&gt; </td></tr>
+<tr class="memitem:af8ae2ed48dd298937f4c636f5b72daac template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>SO</b> (const Eigen::MatrixBase&lt; Derived &gt; &amp;R)</td></tr>
+<tr class="memdesc:af8ae2ed48dd298937f4c636f5b72daac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from Eigen Matrix, dynamic version. <br /></td></tr>
+<tr class="memitem:a882950b6b03acbc05939f197d64c0137" id="r_a882950b6b03acbc05939f197d64c0137"><td class="memTemplParams" colspan="2"><a id="a882950b6b03acbc05939f197d64c0137" name="a882950b6b03acbc05939f197d64c0137"></a>
+template&lt;int M, int N_ = N, typename = IsDynamic&lt;N_&gt;&gt; </td></tr>
+<tr class="memitem:a882950b6b03acbc05939f197d64c0137 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>SO</b> (const SO&lt; M &gt; &amp;R)</td></tr>
+<tr class="memdesc:a882950b6b03acbc05939f197d64c0137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct dynamic SO(n) from Fixed SO&lt;M&gt;. <br /></td></tr>
+<tr class="memitem:af219a052f42764a57bc13e7116e2a65b" id="r_af219a052f42764a57bc13e7116e2a65b"><td class="memTemplParams" colspan="2"><a id="af219a052f42764a57bc13e7116e2a65b" name="af219a052f42764a57bc13e7116e2a65b"></a>
+template&lt;int N_ = N, typename = IsSO3&lt;N_&gt;&gt; </td></tr>
+<tr class="memitem:af219a052f42764a57bc13e7116e2a65b template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>SO</b> (const Eigen::AngleAxisd &amp;angleAxis)</td></tr>
+<tr class="memdesc:af219a052f42764a57bc13e7116e2a65b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from AngleAxisd. <br /></td></tr>
+<tr class="memitem:a04f131bd62ba5f7ebd43d477ced3660a" id="r_a04f131bd62ba5f7ebd43d477ced3660a"><td class="memTemplParams" colspan="2"><a id="a04f131bd62ba5f7ebd43d477ced3660a" name="a04f131bd62ba5f7ebd43d477ced3660a"></a>
+template&lt;typename Derived&gt; </td></tr>
+<tr class="memitem:a04f131bd62ba5f7ebd43d477ced3660a template"><td class="memItemLeft">static <a class="el" href="#a948b05d57d6a1cd07fd6d1adbe3837c4">SO</a>&#160;</td><td class="memItemRight"><b>FromMatrix</b> (const Eigen::MatrixBase&lt; Derived &gt; &amp;R)</td></tr>
+<tr class="memdesc:a04f131bd62ba5f7ebd43d477ced3660a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Named constructor from Eigen Matrix. <br /></td></tr>
+<tr class="memitem:ab44f7055420c8a10ef4549c21347bd74" id="r_ab44f7055420c8a10ef4549c21347bd74"><td class="memTemplParams" colspan="2"><a id="ab44f7055420c8a10ef4549c21347bd74" name="ab44f7055420c8a10ef4549c21347bd74"></a>
+template&lt;typename Derived, int N_ = N, typename = IsDynamic&lt;N_&gt;&gt; </td></tr>
+<tr class="memitem:ab44f7055420c8a10ef4549c21347bd74 template"><td class="memItemLeft">static <a class="el" href="#a948b05d57d6a1cd07fd6d1adbe3837c4">SO</a>&#160;</td><td class="memItemRight"><b>Lift</b> (size_t n, const Eigen::MatrixBase&lt; Derived &gt; &amp;R)</td></tr>
+<tr class="memdesc:ab44f7055420c8a10ef4549c21347bd74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Named constructor from lower dimensional matrix. <br /></td></tr>
+<tr class="memitem:a634b8f685e65a326bbf32615934000ce" id="r_a634b8f685e65a326bbf32615934000ce"><td class="memItemLeft"><a id="a634b8f685e65a326bbf32615934000ce" name="a634b8f685e65a326bbf32615934000ce"></a>
+static <a class="el" href="#a948b05d57d6a1cd07fd6d1adbe3837c4">SO</a>&#160;</td><td class="memItemRight"><b>AxisAngle</b> (const Vector3 &amp;axis, double theta)</td></tr>
+<tr class="memdesc:a634b8f685e65a326bbf32615934000ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from axis and angle. <a class="el" href="a07579.html" title="symbolic elimination etc.">Only</a> defined for SO3. <br /></td></tr>
+<tr class="memitem:aee4daf030f73661fe6e1b361cfe51ea3" id="r_aee4daf030f73661fe6e1b361cfe51ea3"><td class="memItemLeft"><a id="aee4daf030f73661fe6e1b361cfe51ea3" name="aee4daf030f73661fe6e1b361cfe51ea3"></a>
+static <a class="el" href="#a948b05d57d6a1cd07fd6d1adbe3837c4">SO</a>&#160;</td><td class="memItemRight"><b>ClosestTo</b> (const MatrixNN &amp;M)</td></tr>
+<tr class="memdesc:aee4daf030f73661fe6e1b361cfe51ea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Named constructor that finds SO(n) matrix closest to M in Frobenius norm, currently only defined for SO3. <br /></td></tr>
+<tr class="memitem:a3123e38f2e398ac794bb01219d8c2afe" id="r_a3123e38f2e398ac794bb01219d8c2afe"><td class="memItemLeft"><a id="a3123e38f2e398ac794bb01219d8c2afe" name="a3123e38f2e398ac794bb01219d8c2afe"></a>
+static <a class="el" href="#a948b05d57d6a1cd07fd6d1adbe3837c4">SO</a>&#160;</td><td class="memItemRight"><b>ChordalMean</b> (const std::vector&lt; <a class="el" href="#a948b05d57d6a1cd07fd6d1adbe3837c4">SO</a> &gt; &amp;rotations)</td></tr>
+<tr class="memdesc:a3123e38f2e398ac794bb01219d8c2afe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Named constructor that finds chordal mean \( mu = argmin_R \sum sqr(|R-R_i|_F) \), currently only defined for SO3. <br /></td></tr>
+<tr class="memitem:ac75dce8518d64fc0e86a71585fdf466d" id="r_ac75dce8518d64fc0e86a71585fdf466d"><td class="memTemplParams" colspan="2"><a id="ac75dce8518d64fc0e86a71585fdf466d" name="ac75dce8518d64fc0e86a71585fdf466d"></a>
+template&lt;int N_ = N, typename = IsDynamic&lt;N_&gt;&gt; </td></tr>
+<tr class="memitem:ac75dce8518d64fc0e86a71585fdf466d template"><td class="memItemLeft">static <a class="el" href="#a948b05d57d6a1cd07fd6d1adbe3837c4">SO</a>&#160;</td><td class="memItemRight"><b>Random</b> (std::mt19937 &amp;rng, size_t n=0)</td></tr>
+<tr class="memdesc:ac75dce8518d64fc0e86a71585fdf466d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Random SO(n) element (no big claims about uniformity). SO(3) is specialized in <a class="el" href="a00464.html" title="3*3 matrix representation of SO(3)">SO3.cpp</a>. <br /></td></tr>
+<tr class="memitem:ada6376a6c09c102825b50fb1b7bf6391" id="r_ada6376a6c09c102825b50fb1b7bf6391"><td class="memTemplParams" colspan="2"><a id="ada6376a6c09c102825b50fb1b7bf6391" name="ada6376a6c09c102825b50fb1b7bf6391"></a>
+template&lt;int N_ = N, typename = IsFixed&lt;N_&gt;&gt; </td></tr>
+<tr class="memitem:ada6376a6c09c102825b50fb1b7bf6391 template"><td class="memItemLeft">static <a class="el" href="#a948b05d57d6a1cd07fd6d1adbe3837c4">SO</a>&#160;</td><td class="memItemRight"><b>Random</b> (std::mt19937 &amp;rng)</td></tr>
+<tr class="memdesc:ada6376a6c09c102825b50fb1b7bf6391"><td class="mdescLeft">&#160;</td><td class="mdescRight">Random SO(N) element (no big claims about uniformity). <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Group</h2></td></tr>
+<tr class="memitem:a3b481cc2addc4249f1438d5ee4d96a71" id="r_a3b481cc2addc4249f1438d5ee4d96a71"><td class="memItemLeft"><a id="a3b481cc2addc4249f1438d5ee4d96a71" name="a3b481cc2addc4249f1438d5ee4d96a71"></a>
+<a class="el" href="#a948b05d57d6a1cd07fd6d1adbe3837c4">SO</a>&#160;</td><td class="memItemRight"><b>operator*</b> (const <a class="el" href="#a948b05d57d6a1cd07fd6d1adbe3837c4">SO</a> &amp;other) const</td></tr>
+<tr class="memdesc:a3b481cc2addc4249f1438d5ee4d96a71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplication. <br /></td></tr>
+<tr class="memitem:a1c5250f64cea96dcbf0e443744a2f7de" id="r_a1c5250f64cea96dcbf0e443744a2f7de"><td class="memItemLeft"><a id="a1c5250f64cea96dcbf0e443744a2f7de" name="a1c5250f64cea96dcbf0e443744a2f7de"></a>
+<a class="el" href="#a948b05d57d6a1cd07fd6d1adbe3837c4">SO</a>&#160;</td><td class="memItemRight"><b>inverse</b> () const</td></tr>
+<tr class="memdesc:a1c5250f64cea96dcbf0e443744a2f7de"><td class="mdescLeft">&#160;</td><td class="mdescRight">inverse of a rotation = transpose <br /></td></tr>
+<tr class="memitem:a7c4b9598c63ea910d41d6ecdcfa63225" id="r_a7c4b9598c63ea910d41d6ecdcfa63225"><td class="memTemplParams" colspan="2"><a id="a7c4b9598c63ea910d41d6ecdcfa63225" name="a7c4b9598c63ea910d41d6ecdcfa63225"></a>
+template&lt;int N_ = N, typename = IsFixed&lt;N_&gt;&gt; </td></tr>
+<tr class="memitem:a7c4b9598c63ea910d41d6ecdcfa63225 template"><td class="memItemLeft">static <a class="el" href="#a948b05d57d6a1cd07fd6d1adbe3837c4">SO</a>&#160;</td><td class="memItemRight"><b>Identity</b> ()</td></tr>
+<tr class="memdesc:a7c4b9598c63ea910d41d6ecdcfa63225"><td class="mdescLeft">&#160;</td><td class="mdescRight">SO&lt;N&gt; identity for N &gt;= 2. <br /></td></tr>
+<tr class="memitem:acc53605865ed335d85c6002dff0bc675" id="r_acc53605865ed335d85c6002dff0bc675"><td class="memTemplParams" colspan="2"><a id="acc53605865ed335d85c6002dff0bc675" name="acc53605865ed335d85c6002dff0bc675"></a>
+template&lt;int N_ = N, typename = IsDynamic&lt;N_&gt;&gt; </td></tr>
+<tr class="memitem:acc53605865ed335d85c6002dff0bc675 template"><td class="memItemLeft">static <a class="el" href="#a948b05d57d6a1cd07fd6d1adbe3837c4">SO</a>&#160;</td><td class="memItemRight"><b>Identity</b> (size_t n=0)</td></tr>
+<tr class="memdesc:acc53605865ed335d85c6002dff0bc675"><td class="mdescLeft">&#160;</td><td class="mdescRight">SO&lt;N&gt; identity for N == Eigen::Dynamic. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Lie Group</h2></td></tr>
+<tr class="memitem:adba9fff519b297b0cf9a6d2d885e3224" id="r_adba9fff519b297b0cf9a6d2d885e3224"><td class="memItemLeft"><a id="adba9fff519b297b0cf9a6d2d885e3224" name="adba9fff519b297b0cf9a6d2d885e3224"></a>
+MatrixDD&#160;</td><td class="memItemRight"><b>AdjointMap</b> () const</td></tr>
+<tr class="memdesc:adba9fff519b297b0cf9a6d2d885e3224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjoint map. <br /></td></tr>
+<tr class="memitem:a4b698f38234bfecfd1b32aab45319047" id="r_a4b698f38234bfecfd1b32aab45319047"><td class="memItemLeft"><a id="a4b698f38234bfecfd1b32aab45319047" name="a4b698f38234bfecfd1b32aab45319047"></a>
+static <a class="el" href="#a948b05d57d6a1cd07fd6d1adbe3837c4">SO</a>&#160;</td><td class="memItemRight"><b>Expmap</b> (const TangentVector &amp;omega)</td></tr>
+<tr class="memdesc:a4b698f38234bfecfd1b32aab45319047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exponential map at identity - create a rotation from canonical coordinates. <br /></td></tr>
+<tr class="memitem:a617893f77b01c3db3c41b5d35d83ab4f" id="r_a617893f77b01c3db3c41b5d35d83ab4f"><td class="memItemLeft"><a id="a617893f77b01c3db3c41b5d35d83ab4f" name="a617893f77b01c3db3c41b5d35d83ab4f"></a>
+static <a class="el" href="#a948b05d57d6a1cd07fd6d1adbe3837c4">SO</a>&#160;</td><td class="memItemRight"><b>Expmap</b> (const TangentVector &amp;omega, ChartJacobian H)=delete</td></tr>
+<tr class="memdesc:a617893f77b01c3db3c41b5d35d83ab4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exponential map with a Jacobian, specialized when supported. <br /></td></tr>
+<tr class="memitem:aa4e8baefba55afd5bc9aee70e636426b" id="r_aa4e8baefba55afd5bc9aee70e636426b"><td class="memItemLeft"><a id="aa4e8baefba55afd5bc9aee70e636426b" name="aa4e8baefba55afd5bc9aee70e636426b"></a>
+static MatrixDD&#160;</td><td class="memItemRight"><b>ExpmapDerivative</b> (const TangentVector &amp;omega)=delete</td></tr>
+<tr class="memdesc:aa4e8baefba55afd5bc9aee70e636426b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Derivative of Expmap, specialized when supported. <br /></td></tr>
+<tr class="memitem:aa819d2e2068b9788eee888a1e560a9da" id="r_aa819d2e2068b9788eee888a1e560a9da"><td class="memItemLeft"><a id="aa819d2e2068b9788eee888a1e560a9da" name="aa819d2e2068b9788eee888a1e560a9da"></a>
+static TangentVector&#160;</td><td class="memItemRight"><b>Logmap</b> (const <a class="el" href="#a948b05d57d6a1cd07fd6d1adbe3837c4">SO</a> &amp;R)</td></tr>
+<tr class="memdesc:aa819d2e2068b9788eee888a1e560a9da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log map at identity - returns the canonical coordinates of this rotation. <br /></td></tr>
+<tr class="memitem:ad7913f6cecd119ed7f8f0c1ca5b0cbf0" id="r_ad7913f6cecd119ed7f8f0c1ca5b0cbf0"><td class="memItemLeft"><a id="ad7913f6cecd119ed7f8f0c1ca5b0cbf0" name="ad7913f6cecd119ed7f8f0c1ca5b0cbf0"></a>
+static TangentVector&#160;</td><td class="memItemRight"><b>Logmap</b> (const <a class="el" href="#a948b05d57d6a1cd07fd6d1adbe3837c4">SO</a> &amp;R, ChartJacobian H)=delete</td></tr>
+<tr class="memdesc:ad7913f6cecd119ed7f8f0c1ca5b0cbf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logarithm map with a Jacobian, specialized when supported. <br /></td></tr>
+<tr class="memitem:aa05ed8e50343cac6f98ebebe8cb80507" id="r_aa05ed8e50343cac6f98ebebe8cb80507"><td class="memItemLeft"><a id="aa05ed8e50343cac6f98ebebe8cb80507" name="aa05ed8e50343cac6f98ebebe8cb80507"></a>
+static MatrixDD&#160;</td><td class="memItemRight"><b>LogmapDerivative</b> (const TangentVector &amp;omega)=delete</td></tr>
+<tr class="memdesc:aa05ed8e50343cac6f98ebebe8cb80507"><td class="mdescLeft">&#160;</td><td class="mdescRight">Derivative of Logmap, specialized when supported. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Other methods</h2></td></tr>
+<tr class="memitem:a4929079361f5c691dd6802936d083a15" id="r_a4929079361f5c691dd6802936d083a15"><td class="memItemLeft"><a id="a4929079361f5c691dd6802936d083a15" name="a4929079361f5c691dd6802936d083a15"></a>
+VectorN2&#160;</td><td class="memItemRight"><b>vec</b> (<a class="el" href="a03363.html">OptionalJacobian</a>&lt; internal::NSquaredSO(N), dimension &gt; H={}) const</td></tr>
+<tr class="memdesc:a4929079361f5c691dd6802936d083a15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return vectorized rotation matrix in column order. <br /></td></tr>
+<tr class="memitem:a09bafb4b9f43ef9511596c02f955b4d6" id="r_a09bafb4b9f43ef9511596c02f955b4d6"><td class="memTemplParams" colspan="2"><a id="a09bafb4b9f43ef9511596c02f955b4d6" name="a09bafb4b9f43ef9511596c02f955b4d6"></a>
+template&lt;int N_ = N, typename = IsFixed&lt;N_&gt;&gt; </td></tr>
+<tr class="memitem:a09bafb4b9f43ef9511596c02f955b4d6 template"><td class="memItemLeft">static Matrix&#160;</td><td class="memItemRight"><b>VectorizedGenerators</b> ()</td></tr>
+<tr class="memdesc:a09bafb4b9f43ef9511596c02f955b4d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate N^2 x dim matrix of vectorized Lie algebra generators for SO(N). <br /></td></tr>
+<tr class="memitem:af3f84a1a6bc7c004ba2ba762792ea8a4" id="r_af3f84a1a6bc7c004ba2ba762792ea8a4"><td class="memTemplParams" colspan="2"><a id="af3f84a1a6bc7c004ba2ba762792ea8a4" name="af3f84a1a6bc7c004ba2ba762792ea8a4"></a>
+template&lt;int N_ = N, typename = IsDynamic&lt;N_&gt;&gt; </td></tr>
+<tr class="memitem:af3f84a1a6bc7c004ba2ba762792ea8a4 template"><td class="memItemLeft">static Matrix&#160;</td><td class="memItemRight"><b>VectorizedGenerators</b> (size_t n=0)</td></tr>
+<tr class="memdesc:af3f84a1a6bc7c004ba2ba762792ea8a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate n^2 x dim matrix of vectorized Lie algebra generators for SO(n). <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9923c3532ea94c06718fbe2645b08f1f" id="r_a9923c3532ea94c06718fbe2645b08f1f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9923c3532ea94c06718fbe2645b08f1f">solve</a> (const Vector &amp;y, Vector &amp;x) const override</td></tr>
-<tr class="memdesc:a9923c3532ea94c06718fbe2645b08f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">implement x = L^{-1} y  <br /></td></tr>
-<tr class="memitem:a93673122667b3a9edf71e5f9f98ce304" id="r_a93673122667b3a9edf71e5f9f98ce304"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a93673122667b3a9edf71e5f9f98ce304">transposeSolve</a> (const Vector &amp;y, Vector &amp;x) const override</td></tr>
-<tr class="memdesc:a93673122667b3a9edf71e5f9f98ce304"><td class="mdescLeft">&#160;</td><td class="mdescRight">implement x = L^{-T} y  <br /></td></tr>
-<tr class="memitem:aa1fd0d42c6f6a9015f2080c3aa4d66ef" id="r_aa1fd0d42c6f6a9015f2080c3aa4d66ef"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa1fd0d42c6f6a9015f2080c3aa4d66ef">build</a> (const <a class="el" href="a04339.html">GaussianFactorGraph</a> &amp;gfg, const <a class="el" href="a04387.html">KeyInfo</a> &amp;info, const std::map&lt; <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, Vector &gt; &amp;lambda) override</td></tr>
-<tr class="memdesc:aa1fd0d42c6f6a9015f2080c3aa4d66ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">build/factorize the preconditioner  <br /></td></tr>
+<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Standard methods</div></td></tr>
+<tr class="memitem:acdfbb4b1bde5b69752c567a556f1e258" id="r_acdfbb4b1bde5b69752c567a556f1e258"><td class="memItemLeft"><a id="acdfbb4b1bde5b69752c567a556f1e258" name="acdfbb4b1bde5b69752c567a556f1e258"></a>
+const MatrixNN &amp;&#160;</td><td class="memItemRight"><b>matrix</b> () const</td></tr>
+<tr class="memdesc:acdfbb4b1bde5b69752c567a556f1e258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return matrix. <br /></td></tr>
+<tr class="memitem:a9241040dcbc4237a011ed081f5e495bb" id="r_a9241040dcbc4237a011ed081f5e495bb"><td class="memItemLeft"><a id="a9241040dcbc4237a011ed081f5e495bb" name="a9241040dcbc4237a011ed081f5e495bb"></a>
+size_t&#160;</td><td class="memItemRight"><b>rows</b> () const</td></tr>
+<tr class="memitem:ab5b4a354c7c5a24b5cc631b8ef87eac2" id="r_ab5b4a354c7c5a24b5cc631b8ef87eac2"><td class="memItemLeft"><a id="ab5b4a354c7c5a24b5cc631b8ef87eac2" name="ab5b4a354c7c5a24b5cc631b8ef87eac2"></a>
+size_t&#160;</td><td class="memItemRight"><b>cols</b> () const</td></tr>
+<tr id="pub-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Testable</div></td></tr>
+<tr class="memitem:a52c623ba64c6833136d041a79761adb5" id="r_a52c623ba64c6833136d041a79761adb5"><td class="memItemLeft"><a id="a52c623ba64c6833136d041a79761adb5" name="a52c623ba64c6833136d041a79761adb5"></a>
+void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=std::string()) const</td></tr>
+<tr class="memitem:ae6483c06188d6cc50904c59c0f3f74eb" id="r_ae6483c06188d6cc50904c59c0f3f74eb"><td class="memItemLeft"><a id="ae6483c06188d6cc50904c59c0f3f74eb" name="ae6483c06188d6cc50904c59c0f3f74eb"></a>
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="#a948b05d57d6a1cd07fd6d1adbe3837c4">SO</a> &amp;other, double tol) const</td></tr>
+<tr class="inherit_header pub_methods_a03335"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03335')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; SO&lt; N &gt;, internal::DimensionSO(N), N &gt;</a></td></tr>
+<tr class="memitem:a2b529a1efa04542a822c0dcd36e26e81 inherit pub_methods_a03335" id="r_a2b529a1efa04542a822c0dcd36e26e81"><td class="memItemLeft">
+std::enable_if_t&lt; M !=Eigen::Dynamic, int &gt;&#160;</td><td class="memItemRight"><b>dim</b> () const</td></tr>
+<tr class="memdesc:a2b529a1efa04542a822c0dcd36e26e81 inherit pub_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provided fixed dimension in <a class="el" href="a03335.html#a2b529a1efa04542a822c0dcd36e26e81">dim()</a> if needed. <br /></td></tr>
+<tr class="memitem:adaedee37b2d50e9a3cda87a7cbc6060b inherit pub_methods_a03335" id="r_adaedee37b2d50e9a3cda87a7cbc6060b"><td class="memItemLeft">Eigen::Matrix&lt; double, internal::product(N, N), 1 &gt;&#160;</td><td class="memItemRight"><a class="el" href="a03335.html#adaedee37b2d50e9a3cda87a7cbc6060b">vec</a> (<a class="el" href="a03363.html">OptionalJacobian</a>&lt; internal::product(N, N), D &gt; H={}) const</td></tr>
+<tr class="memdesc:adaedee37b2d50e9a3cda87a7cbc6060b inherit pub_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vectorize the matrix representation of a Lie group element.  <br /></td></tr>
+<tr class="memitem:a4820aeff8aab258df3c7119a290ef73c inherit pub_methods_a03335" id="r_a4820aeff8aab258df3c7119a290ef73c"><td class="memItemLeft">Jacobian&#160;</td><td class="memItemRight"><a class="el" href="a03335.html#a4820aeff8aab258df3c7119a290ef73c">AdjointMap</a> () const</td></tr>
+<tr class="memdesc:a4820aeff8aab258df3c7119a290ef73c inherit pub_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">A generic implementation of AdjointMap for matrix Lie groups.  <br /></td></tr>
+<tr class="memitem:acf7d38ce38e9df02c00f6afc65f6a97c inherit pub_methods_a03335" id="r_acf7d38ce38e9df02c00f6afc65f6a97c"><td class="memItemLeft">TangentVector&#160;</td><td class="memItemRight"><a class="el" href="a03335.html#acf7d38ce38e9df02c00f6afc65f6a97c">Adjoint</a> (const TangentVector &amp;xi, ChartJacobian H_this={}, ChartJacobian H_xi={}) const</td></tr>
+<tr class="memdesc:acf7d38ce38e9df02c00f6afc65f6a97c inherit pub_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjoint action on a tangent vector.  <br /></td></tr>
+<tr class="memitem:a7229eba7283c6e3334111dedcdc88cea inherit pub_methods_a03335" id="r_a7229eba7283c6e3334111dedcdc88cea"><td class="memItemLeft">TangentVector&#160;</td><td class="memItemRight"><a class="el" href="a03335.html#a7229eba7283c6e3334111dedcdc88cea">AdjointTranspose</a> (const TangentVector &amp;x, ChartJacobian H_this={}, ChartJacobian H_x={}) const</td></tr>
+<tr class="memdesc:a7229eba7283c6e3334111dedcdc88cea inherit pub_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dual Adjoint action on a tangent covector.  <br /></td></tr>
+<tr class="inherit_header pub_methods_a03267"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03267')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03267.html">gtsam::LieGroup&lt; SO&lt; N &gt;, D &gt;</a></td></tr>
+<tr class="memitem:a4d639d44e18ea2a491c680caddfba53a inherit pub_methods_a03267" id="r_a4d639d44e18ea2a491c680caddfba53a"><td class="memItemLeft">
+SOn&#160;</td><td class="memItemRight"><b>compose</b> (const SOn &amp;g, DynamicJacobian H1, DynamicJacobian H2) const</td></tr>
+<tr class="memitem:a9e72cc544bd4345bf2012cd7efa14ce0 inherit pub_methods_a03267" id="r_a9e72cc544bd4345bf2012cd7efa14ce0"><td class="memItemLeft">
+SOn&#160;</td><td class="memItemRight"><b>between</b> (const SOn &amp;g, DynamicJacobian H1, DynamicJacobian H2) const</td></tr>
+<tr class="memitem:a293913cc58b7a609eec111c39ebb8fad inherit pub_methods_a03267" id="r_a293913cc58b7a609eec111c39ebb8fad"><td class="memItemLeft">
+GTSAM_EXPORT SOn&#160;</td><td class="memItemRight"><b>compose</b> (const SOn &amp;g, DynamicJacobian H1, DynamicJacobian H2) const</td></tr>
+<tr class="memitem:ad5b82e78a18fec58ac8e07f671c7104c inherit pub_methods_a03267" id="r_ad5b82e78a18fec58ac8e07f671c7104c"><td class="memItemLeft">
+GTSAM_EXPORT SOn&#160;</td><td class="memItemRight"><b>between</b> (const SOn &amp;g, DynamicJacobian H1, DynamicJacobian H2) const</td></tr>
+<tr class="memitem:afa084a36d7054e3c837519a96cc12377 inherit pub_methods_a03267" id="r_afa084a36d7054e3c837519a96cc12377"><td class="memItemLeft">
+std::enable_if_t&lt; M !=Eigen::Dynamic, int &gt;&#160;</td><td class="memItemRight"><b>dim</b> () const</td></tr>
+<tr class="memdesc:afa084a36d7054e3c837519a96cc12377 inherit pub_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provided fixed dimension in <a class="el" href="a03267.html#afa084a36d7054e3c837519a96cc12377">dim()</a> if needed. <br /></td></tr>
+<tr class="memitem:a6e2cc5a215c0aa077ecd13caaa080858 inherit pub_methods_a03267" id="r_a6e2cc5a215c0aa077ecd13caaa080858"><td class="memItemLeft">
+const <a class="el" href="a04551.html">SO</a>&lt; N &gt; &amp;&#160;</td><td class="memItemRight"><b>derived</b> () const</td></tr>
+<tr class="memitem:a1d345a3bc578a7b20713e1bc0e003251 inherit pub_methods_a03267" id="r_a1d345a3bc578a7b20713e1bc0e003251"><td class="memItemLeft">
+<a class="el" href="a04551.html">SO</a>&lt; N &gt;&#160;</td><td class="memItemRight"><b>inverse</b> (ChartJacobian H) const</td></tr>
+<tr class="memitem:aee395d766c6c8afb27a9bece5c42400e inherit pub_methods_a03267" id="r_aee395d766c6c8afb27a9bece5c42400e"><td class="memItemLeft">
+<a class="el" href="a04551.html">SO</a>&lt; N &gt;&#160;</td><td class="memItemRight"><b>expmap</b> (const TangentVector &amp;v) const</td></tr>
+<tr class="memdesc:aee395d766c6c8afb27a9bece5c42400e inherit pub_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">expmap as required by manifold concept Applies exponential map to v and composes with *this <br /></td></tr>
+<tr class="memitem:a9a8ba0a0f7442929df460d79292134aa inherit pub_methods_a03267" id="r_a9a8ba0a0f7442929df460d79292134aa"><td class="memItemLeft">
+TangentVector&#160;</td><td class="memItemRight"><b>logmap</b> (const <a class="el" href="a04551.html">SO</a>&lt; N &gt; &amp;g) const</td></tr>
+<tr class="memdesc:a9a8ba0a0f7442929df460d79292134aa inherit pub_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">logmap as required by manifold concept Applies logarithmic map to group element that takes *this to g <br /></td></tr>
+<tr class="memitem:adf52076de7615c335b4574f577a22b77 inherit pub_methods_a03267" id="r_adf52076de7615c335b4574f577a22b77"><td class="memItemLeft">
+<a class="el" href="a04551.html">SO</a>&lt; N &gt;&#160;</td><td class="memItemRight"><b>retract</b> (const TangentVector &amp;v) const</td></tr>
+<tr class="memdesc:adf52076de7615c335b4574f577a22b77 inherit pub_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">retract as required by manifold concept: applies v at *this <br /></td></tr>
+<tr class="memitem:a5380bfede1eb39fa9473824009a747a7 inherit pub_methods_a03267" id="r_a5380bfede1eb39fa9473824009a747a7"><td class="memItemLeft">
+TangentVector&#160;</td><td class="memItemRight"><b>localCoordinates</b> (const <a class="el" href="a04551.html">SO</a>&lt; N &gt; &amp;g) const</td></tr>
+<tr class="memdesc:a5380bfede1eb39fa9473824009a747a7 inherit pub_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">localCoordinates as required by manifold concept: finds tangent vector between *this and g <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a01eff88b0a6b9d13b7d72cf5a6bce873" id="r_a01eff88b0a6b9d13b7d72cf5a6bce873"><td class="memItemLeft"><a id="a01eff88b0a6b9d13b7d72cf5a6bce873" name="a01eff88b0a6b9d13b7d72cf5a6bce873"></a>
+static constexpr auto&#160;</td><td class="memItemRight"><b>dimension</b> = <a class="el" href="a00416.html#afdaebcf25a03a9a9986d35d2831605dd">internal::DimensionSO</a>(N)</td></tr>
+<tr class="inherit_header pub_static_attribs_a03335"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_attribs_a03335')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Attributes inherited from <a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; SO&lt; N &gt;, internal::DimensionSO(N), N &gt;</a></td></tr>
+<tr class="memitem:ab6addf52238ea8c6ba895b0f2496cbec inherit pub_static_attribs_a03335" id="r_ab6addf52238ea8c6ba895b0f2496cbec"><td class="memItemLeft">
+static constexpr auto&#160;</td><td class="memItemRight"><b>dimension</b></td></tr>
+<tr class="inherit_header pub_static_attribs_a03267"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_attribs_a03267')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Attributes inherited from <a class="el" href="a03267.html">gtsam::LieGroup&lt; SO&lt; N &gt;, D &gt;</a></td></tr>
+<tr class="memitem:ab6addf52238ea8c6ba895b0f2496cbec inherit pub_static_attribs_a03267" id="r_ab6addf52238ea8c6ba895b0f2496cbec"><td class="memItemLeft">
+static constexpr auto&#160;</td><td class="memItemRight"><b>dimension</b></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a2d6ea578b0fbd31355e127918334ea4a" id="r_a2d6ea578b0fbd31355e127918334ea4a"><td class="memItemLeft"><a id="a2d6ea578b0fbd31355e127918334ea4a" name="a2d6ea578b0fbd31355e127918334ea4a"></a>
-typedef Preconditioner&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
-<tr class="inherit_header pub_types_a04535"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04535')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04535.html">gtsam::Preconditioner</a></td></tr>
-<tr class="memitem:ae8aa291677d57ac9482287cd69decb69 inherit pub_types_a04535" id="r_ae8aa291677d57ac9482287cd69decb69"><td class="memItemLeft">
-typedef boost::shared_ptr&lt; Preconditioner &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
-<tr class="memitem:a6d414532a3fa2af0e6081d312a020fa1 inherit pub_types_a04535" id="r_a6d414532a3fa2af0e6081d312a020fa1"><td class="memItemLeft">
-typedef std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight"><b>Dimensions</b></td></tr>
+<tr class="memitem:a1d5ce0661051106f4f22bd9737d28a73" id="r_a1d5ce0661051106f4f22bd9737d28a73"><td class="memItemLeft"><a id="a1d5ce0661051106f4f22bd9737d28a73" name="a1d5ce0661051106f4f22bd9737d28a73"></a>
+using&#160;</td><td class="memItemRight"><b>MatrixNN</b> = Eigen::Matrix&lt;double, N, N&gt;</td></tr>
+<tr class="memitem:ac6797a4d096572c5bebd9d93c4604532" id="r_ac6797a4d096572c5bebd9d93c4604532"><td class="memItemLeft"><a id="ac6797a4d096572c5bebd9d93c4604532" name="ac6797a4d096572c5bebd9d93c4604532"></a>
+using&#160;</td><td class="memItemRight"><b>VectorN2</b> = Eigen::Matrix&lt;double, internal::NSquaredSO(N), 1&gt;</td></tr>
+<tr class="memitem:ad00fa6a715eddccbebdc1943f2c3eb1f" id="r_ad00fa6a715eddccbebdc1943f2c3eb1f"><td class="memItemLeft"><a id="ad00fa6a715eddccbebdc1943f2c3eb1f" name="ad00fa6a715eddccbebdc1943f2c3eb1f"></a>
+using&#160;</td><td class="memItemRight"><b>MatrixDD</b> = Eigen::Matrix&lt;double, dimension, dimension&gt;</td></tr>
+<tr class="memitem:a518c51b6333c606de54587cc20c79134" id="r_a518c51b6333c606de54587cc20c79134"><td class="memItemLeft"><a id="a518c51b6333c606de54587cc20c79134" name="a518c51b6333c606de54587cc20c79134"></a>
+using&#160;</td><td class="memItemRight"><b>LieAlgebra</b> = MatrixNN</td></tr>
+<tr class="memdesc:a518c51b6333c606de54587cc20c79134"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a03267.html" title="A CRTP helper class that implements Lie group methods Prerequisites: methods operator*,...">LieGroup</a> Concept requirements. <br /></td></tr>
+<tr class="inherit_header pub_types_a03335"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03335')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; SO&lt; N &gt;, internal::DimensionSO(N), N &gt;</a></td></tr>
+<tr class="memitem:a249f47368bec05877aa5f9e5e3e4745e inherit pub_types_a03335" id="r_a249f47368bec05877aa5f9e5e3e4745e"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
+<tr class="memitem:ae8fe60334b88257cf388cf3349623622 inherit pub_types_a03335" id="r_ae8fe60334b88257cf388cf3349623622"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
+<tr class="memitem:a32d0c18eb2460e6f18aec307387c863f inherit pub_types_a03335" id="r_a32d0c18eb2460e6f18aec307387c863f"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Jacobian</b></td></tr>
+<tr class="memitem:a5708d3e1018df83695cf8d39242ad183 inherit pub_types_a03335" id="r_a5708d3e1018df83695cf8d39242ad183"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+<tr class="memitem:a8140474606ed51ea0c453ec30cd78274 inherit pub_types_a03335" id="r_a8140474606ed51ea0c453ec30cd78274"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Vectorized</b></td></tr>
+<tr class="memitem:a25c51d4c609caaca896812321922682b inherit pub_types_a03335" id="r_a25c51d4c609caaca896812321922682b"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>VectorizedJacobian</b></td></tr>
+<tr class="inherit_header pub_types_a03267"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03267')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03267.html">gtsam::LieGroup&lt; SO&lt; N &gt;, D &gt;</a></td></tr>
+<tr class="memitem:ad674a7648d8381edcc9ed80919937bfd inherit pub_types_a03267" id="r_ad674a7648d8381edcc9ed80919937bfd"><td class="memItemLeft">
+typedef <a class="el" href="a03363.html">OptionalJacobian</a>&lt; N, N &gt;&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
+<tr class="memitem:a65ba8c4c1e30c31c5d9262c611771067 inherit pub_types_a03267" id="r_a65ba8c4c1e30c31c5d9262c611771067"><td class="memItemLeft">
+typedef Eigen::Matrix&lt; double, N, N &gt;&#160;</td><td class="memItemRight"><b>Jacobian</b></td></tr>
+<tr class="memitem:a58064c114e3fca97921ff802590ce10f inherit pub_types_a03267" id="r_a58064c114e3fca97921ff802590ce10f"><td class="memItemLeft">
+typedef Eigen::Matrix&lt; double, N, 1 &gt;&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:aab988e76f9d06919be8caeecce4699bc" id="r_aab988e76f9d06919be8caeecce4699bc"><td class="memItemLeft"><a id="aab988e76f9d06919be8caeecce4699bc" name="aab988e76f9d06919be8caeecce4699bc"></a>
-void&#160;</td><td class="memItemRight"><b>clean</b> ()</td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:ChartAtOrigin" id="r_ChartAtOrigin"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04555.html">ChartAtOrigin</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-types" class="groupheader"><a id="pro-types" name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr class="memitem:a9580f94e0573afc6e22d51a176b64407" id="r_a9580f94e0573afc6e22d51a176b64407"><td class="memTemplParams" colspan="2"><a id="a9580f94e0573afc6e22d51a176b64407" name="a9580f94e0573afc6e22d51a176b64407"></a>
+template&lt;int N_&gt; </td></tr>
+<tr class="memitem:a9580f94e0573afc6e22d51a176b64407 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><b>IsDynamic</b> = typename std::enable_if&lt;N_ == Eigen::Dynamic, void&gt;::type</td></tr>
+<tr class="memitem:a52d2e7e5f5c01754f7843fa627a74ff0" id="r_a52d2e7e5f5c01754f7843fa627a74ff0"><td class="memTemplParams" colspan="2"><a id="a52d2e7e5f5c01754f7843fa627a74ff0" name="a52d2e7e5f5c01754f7843fa627a74ff0"></a>
+template&lt;int N_&gt; </td></tr>
+<tr class="memitem:a52d2e7e5f5c01754f7843fa627a74ff0 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><b>IsFixed</b> = typename std::enable_if&lt;N_ &gt;= 2, void&gt;::type</td></tr>
+<tr class="memitem:af9431c255dd686ae3e8530f94a79bec4" id="r_af9431c255dd686ae3e8530f94a79bec4"><td class="memTemplParams" colspan="2"><a id="af9431c255dd686ae3e8530f94a79bec4" name="af9431c255dd686ae3e8530f94a79bec4"></a>
+template&lt;int N_&gt; </td></tr>
+<tr class="memitem:af9431c255dd686ae3e8530f94a79bec4 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><b>IsSO3</b> = typename std::enable_if&lt;N_ == 3, void&gt;::type</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a8fb901611ac64c2bc472476b8bafc381" id="r_a8fb901611ac64c2bc472476b8bafc381"><td class="memItemLeft"><a id="a8fb901611ac64c2bc472476b8bafc381" name="a8fb901611ac64c2bc472476b8bafc381"></a>
-std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight"><b>dims_</b></td></tr>
-<tr class="memitem:ae9d4c5e3f3cfa14022be527a190f485d" id="r_ae9d4c5e3f3cfa14022be527a190f485d"><td class="memItemLeft"><a id="ae9d4c5e3f3cfa14022be527a190f485d" name="ae9d4c5e3f3cfa14022be527a190f485d"></a>
-double *&#160;</td><td class="memItemRight"><b>buffer_</b></td></tr>
-<tr class="memitem:a06c8b664d31998ab199c5eb498cae81e" id="r_a06c8b664d31998ab199c5eb498cae81e"><td class="memItemLeft"><a id="a06c8b664d31998ab199c5eb498cae81e" name="a06c8b664d31998ab199c5eb498cae81e"></a>
-size_t&#160;</td><td class="memItemRight"><b>bufferSize_</b></td></tr>
-<tr class="memitem:ab2a23f10699bca869d31b6222a9ed558" id="r_ab2a23f10699bca869d31b6222a9ed558"><td class="memItemLeft"><a id="ab2a23f10699bca869d31b6222a9ed558" name="ab2a23f10699bca869d31b6222a9ed558"></a>
-size_t&#160;</td><td class="memItemRight"><b>nnz_</b></td></tr>
+<tr class="memitem:a441993008fe80073e5db4e85af81a3ea" id="r_a441993008fe80073e5db4e85af81a3ea"><td class="memItemLeft"><a id="a441993008fe80073e5db4e85af81a3ea" name="a441993008fe80073e5db4e85af81a3ea"></a>
+MatrixNN&#160;</td><td class="memItemRight"><b>matrix_</b></td></tr>
+<tr class="memdesc:a441993008fe80073e5db4e85af81a3ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotation matrix. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_static_methods_a03335"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03335')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; SO&lt; N &gt;, internal::DimensionSO(N), N &gt;</a></td></tr>
+<tr class="memitem:a5454833785925037137a2eef98edf558 inherit pub_static_methods_a03335" id="r_a5454833785925037137a2eef98edf558"><td class="memItemLeft">
+static constexpr int&#160;</td><td class="memItemRight"><b>Dim</b> ()</td></tr>
+<tr class="memdesc:a5454833785925037137a2eef98edf558 inherit pub_static_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static method to get the dimension (compile-time or dynamic). <br /></td></tr>
+<tr class="memitem:a3e46364311f36a12b6dcccabaf7e5207 inherit pub_static_methods_a03335" id="r_a3e46364311f36a12b6dcccabaf7e5207"><td class="memItemLeft">
+static Jacobian&#160;</td><td class="memItemRight"><b>adjointMap</b> (const TangentVector &amp;xi)</td></tr>
+<tr class="memdesc:a3e46364311f36a12b6dcccabaf7e5207 inherit pub_static_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lie algebra adjoint map ad_xi, with optional specialization in derived classes. <br /></td></tr>
+<tr class="memitem:a83cf162a62639adfb8013f79d6aea754 inherit pub_static_methods_a03335" id="r_a83cf162a62639adfb8013f79d6aea754"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>adjoint</b> (const TangentVector &amp;xi, const TangentVector &amp;y, ChartJacobian Hxi={}, ChartJacobian H_y={})</td></tr>
+<tr class="memdesc:a83cf162a62639adfb8013f79d6aea754 inherit pub_static_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lie algebra action ad_xi(y), with optional Jacobians. <br /></td></tr>
+<tr class="memitem:a20e1ae24f0e452ad88658f028bc56c2b inherit pub_static_methods_a03335" id="r_a20e1ae24f0e452ad88658f028bc56c2b"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>adjointTranspose</b> (const TangentVector &amp;xi, const TangentVector &amp;y, ChartJacobian Hxi={}, ChartJacobian H_y={})</td></tr>
+<tr class="memdesc:a20e1ae24f0e452ad88658f028bc56c2b inherit pub_static_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dual Lie algebra action ad_xi^T(y), with optional Jacobians. <br /></td></tr>
+<tr class="inherit_header pub_static_methods_a03267"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03267')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03267.html">gtsam::LieGroup&lt; SO&lt; N &gt;, D &gt;</a></td></tr>
+<tr class="memitem:a5454833785925037137a2eef98edf558 inherit pub_static_methods_a03267" id="r_a5454833785925037137a2eef98edf558"><td class="memItemLeft">
+static constexpr int&#160;</td><td class="memItemRight"><b>Dim</b> ()</td></tr>
+<tr class="memdesc:a5454833785925037137a2eef98edf558 inherit pub_static_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static method to get the dimension (compile-time or dynamic). <br /></td></tr>
+<tr class="memitem:af0dab5bebe52a8ccebe8ea8a1dbafd21 inherit pub_static_methods_a03267" id="r_af0dab5bebe52a8ccebe8ea8a1dbafd21"><td class="memItemLeft">
+static <a class="el" href="a04551.html">SO</a>&lt; N &gt;&#160;</td><td class="memItemRight"><b>Retract</b> (const TangentVector &amp;v)</td></tr>
+<tr class="memdesc:af0dab5bebe52a8ccebe8ea8a1dbafd21 inherit pub_static_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retract at origin: possible in Lie group because it has an identity. <br /></td></tr>
+<tr class="memitem:aaa535efd2e685eeb1f26e828d49d7819 inherit pub_static_methods_a03267" id="r_aaa535efd2e685eeb1f26e828d49d7819"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>LocalCoordinates</b> (const <a class="el" href="a04551.html">SO</a>&lt; N &gt; &amp;g)</td></tr>
+<tr class="memdesc:aaa535efd2e685eeb1f26e828d49d7819 inherit pub_static_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">LocalCoordinates at origin: possible in Lie group because it has an identity. <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="aa1fd0d42c6f6a9015f2080c3aa4d66ef" name="aa1fd0d42c6f6a9015f2080c3aa4d66ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1fd0d42c6f6a9015f2080c3aa4d66ef">&#9670;&#160;</a></span>build()</h2>
+<a id="a813e60e77bd1e2b7ade8c7076b37579a" name="a813e60e77bd1e2b7ade8c7076b37579a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a813e60e77bd1e2b7ade8c7076b37579a">&#9670;&#160;</a></span>Hat()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;int N&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void gtsam::BlockJacobiPreconditioner::build </td>
+          <td class="memname"><a class="el" href="#a948b05d57d6a1cd07fd6d1adbe3837c4">SO</a>&lt; N &gt;::MatrixNN <a class="el" href="a04551.html">gtsam::SO</a>&lt; N &gt;::Hat </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="a04339.html">GaussianFactorGraph</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>gfg</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">const TangentVector &amp;</td>          <td class="paramname"><span class="paramname"><em>xi</em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="a04387.html">KeyInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>info</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::map&lt; <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, Vector &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>lambda</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>build/factorize the preconditioner </p>
-
-<p>Implements <a class="el" href="a04535.html#a2d978320d9036aa10dcb4cf4ae289739">gtsam::Preconditioner</a>.</p>
-
-</div>
-</div>
-<a id="a9923c3532ea94c06718fbe2645b08f1f" name="a9923c3532ea94c06718fbe2645b08f1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9923c3532ea94c06718fbe2645b08f1f">&#9670;&#160;</a></span>solve()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gtsam::BlockJacobiPreconditioner::solve </td>
-          <td>(</td>
-          <td class="paramtype">const Vector &amp;</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Vector &amp;</td>          <td class="paramname"><span class="paramname"><em>x</em></span>&#160;) const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>implement x = L^{-1} y </p>
-
-<p>Implements <a class="el" href="a04535.html#a1487b9feccdfff75cf25cff86affb81b">gtsam::Preconditioner</a>.</p>
-
-</div>
-</div>
-<a id="a93673122667b3a9edf71e5f9f98ce304" name="a93673122667b3a9edf71e5f9f98ce304"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93673122667b3a9edf71e5f9f98ce304">&#9670;&#160;</a></span>transposeSolve()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gtsam::BlockJacobiPreconditioner::transposeSolve </td>
-          <td>(</td>
-          <td class="paramtype">const Vector &amp;</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Vector &amp;</td>          <td class="paramname"><span class="paramname"><em>x</em></span>&#160;) const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>implement x = L^{-T} y </p>
-
-<p>Implements <a class="el" href="a04535.html#aae3d89e2b3e004d227e9fd28ff8dba64">gtsam::Preconditioner</a>.</p>
+<p>Hat operator creates Lie algebra element corresponding to d-vector, where d is the dimensionality of the manifold. </p>
+<p>This function is implemented recursively, and the d-vector is assumed to laid out such that the last element corresponds to so(2), the last 3 to so(3), the last 6 to so(4) etc... For example, the vector-space isomorphic to so(5) is laid out as: a b c d | u v w | x y | z where the latter elements correspond to "telescoping" sub-algebras: 0 -z y w -d z 0 -x -v c -y x 0 u -b -w v -u 0 a d -c b -a 0 This scheme behaves exactly as expected for SO(2) and SO(3). </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/<a class="el" href="a00731_source.html">Preconditioner.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/<b>Preconditioner.cpp</b></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00416_source.html">SOn.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00632_source.html">SOn-inl.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -267,7 +437,7 @@ size_t&#160;</td><td class="memItemRight"><b>nnz_</b></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04551.html">BlockJacobiPreconditioner</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04551.html">SO</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

@@ -1,4 +1,4 @@
 var a01112 =
 [
-    [ "gtsam::traits&lt; ISAM2 &gt;", "a04951.html", null ]
+    [ "gtsam::traits&lt; VectorValues &gt;", "a05535.html", null ]
 ];

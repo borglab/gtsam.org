@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['integrationmode_0',['IntegrationMode',['../a01487.html#aee7e6f67ebdd7ddfeb5076d39a05077a',1,'gtsam::dynamics']]]
+  ['imufactorerrormode_0',['ImuFactorErrorMode',['../a02242.html#ab64572cd24ae3a56d5dd13c4ef3ddb63',1,'gtsam']]]
 ];

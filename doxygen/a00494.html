@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/hybrid/HybridJunctionTree.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/Quaternion.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,25 +96,37 @@ $(function(){initNavTree('a00494.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">HybridJunctionTree.h File Reference</div></div>
+  <div class="headertitle"><div class="title">Quaternion.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Lie Group wrapper for Eigen Quaternions.  
+<a href="#details">More...</a></p>
 
 <p><a href="a00494_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3AHybridJunctionTree" id="r_gtsam_3A_3AHybridJunctionTree"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04031.html">gtsam::HybridJunctionTree</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An <a class="el" href="a04075.html" title="A cluster-tree that eliminates to a Bayes tree.">EliminatableClusterTree</a>, i.e., a set of variable clusters with factors, arranged in a tree, with the additional property that it represents the clique tree associated with a Bayes net.  <a href="a04031.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Atraits_3C_20QUATERNION_5FTYPE_20_3E" id="r_gtsam_3A_3Atraits_3C_20QUATERNION_5FTYPE_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04431.html">gtsam::traits&lt; QUATERNION_TYPE &gt;</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a8bc3bac5757609822e568dc98245afcb" id="r_a8bc3bac5757609822e568dc98245afcb"><td class="memItemLeft"><a id="a8bc3bac5757609822e568dc98245afcb" name="a8bc3bac5757609822e568dc98245afcb"></a>
+#define&#160;</td><td class="memItemRight"><b>QUATERNION_TYPE</b>&#160;&#160;&#160;Eigen::Quaternion&lt;_Scalar,_Options&gt;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a59e2c1120d40da6062c03ab31e869065" id="r_a59e2c1120d40da6062c03ab31e869065"><td class="memItemLeft"><a id="a59e2c1120d40da6062c03ab31e869065" name="a59e2c1120d40da6062c03ab31e869065"></a>
+typedef Eigen::Quaternion&lt; double, Eigen::DontAlign &gt;&#160;</td><td class="memItemRight"><b>gtsam::Quaternion</b></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section date"><dt>Date</dt><dd>Mar 11, 2022 </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Fan Jiang </dd></dl>
+<div class="textblock"><p>Lie Group wrapper for Eigen Quaternions. </p>
+<dl class="section author"><dt>Author</dt><dd>Frank Dellaert </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -128,7 +140,7 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>hybrid</b></li><li class="navelem"><a href="a00494.html">HybridJunctionTree.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>geometry</b></li><li class="navelem"><a href="a00494.html">Quaternion.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/AcceleratedPowerMethod.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/hybrid/HybridNonlinearISAM.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,34 +96,25 @@ $(function(){initNavTree('a00722.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">AcceleratedPowerMethod.h File Reference</div></div>
+  <div class="headertitle"><div class="title">HybridNonlinearISAM.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>accelerated power method for fast eigenvalue and eigenvector computation  
-<a href="#details">More...</a></p>
 
 <p><a href="a00722_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3AAcceleratedPowerMethod_3C_20Operator_20_3E" id="r_gtsam_3A_3AAcceleratedPowerMethod_3C_20Operator_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04263.html">gtsam::AcceleratedPowerMethod&lt; Operator &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute maximum Eigenpair with accelerated power method.  <a href="a04263.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3AHybridNonlinearISAM" id="r_gtsam_3A_3AHybridNonlinearISAM"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper class to manage <a class="el" href="a04935.html" title="A Bayes tree with an update methods that implements the iSAM algorithm.">ISAM</a> in a nonlinear context.  <a href="a04795.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ab4dc306148051dbe07800a1044cf2f69" id="r_ab4dc306148051dbe07800a1044cf2f69"><td class="memItemLeft"><a id="ab4dc306148051dbe07800a1044cf2f69" name="ab4dc306148051dbe07800a1044cf2f69"></a>
-using&#160;</td><td class="memItemRight"><b>gtsam::Sparse</b> = Eigen::SparseMatrix&lt;double&gt;</td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>accelerated power method for fast eigenvalue and eigenvector computation </p>
-<dl class="section date"><dt>Date</dt><dd>Sept 2020 </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Jing Wu </dd></dl>
+<div class="textblock"><dl class="section date"><dt>Date</dt><dd>Sep 12, 2022 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Varun Agrawal </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -137,7 +128,7 @@ using&#160;</td><td class="memItemRight"><b>gtsam::Sparse</b> = Eigen::SparseMat
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>linear</b></li><li class="navelem"><a href="a00722.html">AcceleratedPowerMethod.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>hybrid</b></li><li class="navelem"><a href="a00722.html">HybridNonlinearISAM.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

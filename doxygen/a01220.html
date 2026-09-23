@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/sfm/TranslationRecovery.cpp File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/CombinedImuFactorWithGravity.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,27 +96,58 @@ $(function(){initNavTree('a01220.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">TranslationRecovery.cpp File Reference</div></div>
+  <div class="headertitle"><div class="title">CombinedImuFactorWithGravity.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Source code for recovering translations when rotations are given.  
-<a href="#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab3336a59cb8f20966b3dc22d3a985951" id="r_ab3336a59cb8f20966b3dc22d3a985951"><td class="memItemLeft"><a id="ab3336a59cb8f20966b3dc22d3a985951" name="ab3336a59cb8f20966b3dc22d3a985951"></a>
-<a class="el" href="a02831.html">DSFMap</a>&lt; <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &gt;&#160;</td><td class="memItemRight"><b>getSameTranslationDSFMap</b> (const std::vector&lt; <a class="el" href="a05239.html">BinaryMeasurement</a>&lt; <a class="el" href="a03927.html">Unit3</a> &gt; &gt; &amp;relativeTranslations)</td></tr>
-<tr class="memitem:a2294f560c12980162304df2e1ce120d1" id="r_a2294f560c12980162304df2e1ce120d1"><td class="memTemplParams" colspan="2"><a id="a2294f560c12980162304df2e1ce120d1" name="a2294f560c12980162304df2e1ce120d1"></a>
-template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a2294f560c12980162304df2e1ce120d1 template"><td class="memItemLeft">std::vector&lt; <a class="el" href="a05239.html">BinaryMeasurement</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight"><b>removeSameTranslationNodes</b> (const std::vector&lt; <a class="el" href="a05239.html">BinaryMeasurement</a>&lt; T &gt; &gt; &amp;edges, const <a class="el" href="a02831.html">DSFMap</a>&lt; <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &gt; &amp;sameTranslationDSFMap)</td></tr>
-<tr class="memitem:a118e54cf9dba4c2f189dc49a950b84c9" id="r_a118e54cf9dba4c2f189dc49a950b84c9"><td class="memItemLeft"><a id="a118e54cf9dba4c2f189dc49a950b84c9" name="a118e54cf9dba4c2f189dc49a950b84c9"></a>
-<a class="el" href="a06243.html">Values</a>&#160;</td><td class="memItemRight"><b>addSameTranslationNodes</b> (const <a class="el" href="a06243.html">Values</a> &amp;result, const <a class="el" href="a02831.html">DSFMap</a>&lt; <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &gt; &amp;sameTranslationDSFMap)</td></tr>
+<tr class="memitem:ab8199d2d95458b5819f77164a408b5d4" id="r_ab8199d2d95458b5819f77164a408b5d4"><td class="memTemplParams" colspan="2"><a id="ab8199d2d95458b5819f77164a408b5d4" name="ab8199d2d95458b5819f77164a408b5d4"></a>
+template&lt;class PIM, class GRAVITY&gt; </td></tr>
+<tr class="memitem:ab8199d2d95458b5819f77164a408b5d4 template"><td class="memItemLeft">std::ostream &amp;&#160;</td><td class="memItemRight"><b>gtsam::operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="a05643.html">CombinedImuFactorWithGravityT</a>&lt; PIM, GRAVITY &gt; &amp;f)</td></tr>
+<tr class="memitem:ac7288bc1de94caf0af62db7e3f618563" id="r_ac7288bc1de94caf0af62db7e3f618563"><td class="memItemLeft"><a id="ac7288bc1de94caf0af62db7e3f618563" name="ac7288bc1de94caf0af62db7e3f618563"></a>
+template GTSAM_EXPORT std::ostream &amp;&#160;</td><td class="memItemRight"><b>gtsam::operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="a05643.html">CombinedImuFactorWithGravityT</a>&lt; <a class="el" href="a05623.html">PreintegratedCombinedMeasurementsT</a>&lt; <a class="el" href="a05911.html">ManifoldPreintegration</a> &gt;, <a class="el" href="a04627.html">Unit3</a> &gt; &amp;f)</td></tr>
+<tr class="memitem:a239e829c340b031fd0b1ebebeb322fef" id="r_a239e829c340b031fd0b1ebebeb322fef"><td class="memItemLeft"><a id="a239e829c340b031fd0b1ebebeb322fef" name="a239e829c340b031fd0b1ebebeb322fef"></a>
+template GTSAM_EXPORT std::ostream &amp;&#160;</td><td class="memItemRight"><b>gtsam::operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="a05643.html">CombinedImuFactorWithGravityT</a>&lt; <a class="el" href="a05623.html">PreintegratedCombinedMeasurementsT</a>&lt; <a class="el" href="a06099.html">TangentPreintegration</a> &gt;, <a class="el" href="a04627.html">Unit3</a> &gt; &amp;f)</td></tr>
+<tr class="memitem:af9bd0f0727b06f37c3de834376778df3" id="r_af9bd0f0727b06f37c3de834376778df3"><td class="memItemLeft"><a id="af9bd0f0727b06f37c3de834376778df3" name="af9bd0f0727b06f37c3de834376778df3"></a>
+template GTSAM_EXPORT std::ostream &amp;&#160;</td><td class="memItemRight"><b>gtsam::operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="a05643.html">CombinedImuFactorWithGravityT</a>&lt; <a class="el" href="a05623.html">PreintegratedCombinedMeasurementsT</a>&lt; <a class="el" href="a05875.html">LieGroupPreintegration</a> &gt;, <a class="el" href="a04627.html">Unit3</a> &gt; &amp;f)</td></tr>
+<tr class="memitem:aa04802077d10fda5d51f3a7e68ed8c1d" id="r_aa04802077d10fda5d51f3a7e68ed8c1d"><td class="memItemLeft"><a id="aa04802077d10fda5d51f3a7e68ed8c1d" name="aa04802077d10fda5d51f3a7e68ed8c1d"></a>
+template GTSAM_EXPORT std::ostream &amp;&#160;</td><td class="memItemRight"><b>gtsam::operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="a05643.html">CombinedImuFactorWithGravityT</a>&lt; <a class="el" href="a02242.html#a35f65d03cd247c1bc1468f912f41c2d3">PreintegratedCombinedMeasurementsG</a>, <a class="el" href="a04627.html">Unit3</a> &gt; &amp;f)</td></tr>
+<tr class="memitem:a462db426ea8e3c6849b3b7f5fbe982c7" id="r_a462db426ea8e3c6849b3b7f5fbe982c7"><td class="memItemLeft"><a id="a462db426ea8e3c6849b3b7f5fbe982c7" name="a462db426ea8e3c6849b3b7f5fbe982c7"></a>
+template GTSAM_EXPORT std::ostream &amp;&#160;</td><td class="memItemRight"><b>gtsam::operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="a05643.html">CombinedImuFactorWithGravityT</a>&lt; <a class="el" href="a05623.html">PreintegratedCombinedMeasurementsT</a>&lt; <a class="el" href="a05911.html">ManifoldPreintegration</a> &gt;, <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &gt; &amp;f)</td></tr>
+<tr class="memitem:a2b74ff786ff0ba583563098e366d8c27" id="r_a2b74ff786ff0ba583563098e366d8c27"><td class="memItemLeft"><a id="a2b74ff786ff0ba583563098e366d8c27" name="a2b74ff786ff0ba583563098e366d8c27"></a>
+template GTSAM_EXPORT std::ostream &amp;&#160;</td><td class="memItemRight"><b>gtsam::operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="a05643.html">CombinedImuFactorWithGravityT</a>&lt; <a class="el" href="a05623.html">PreintegratedCombinedMeasurementsT</a>&lt; <a class="el" href="a06099.html">TangentPreintegration</a> &gt;, <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &gt; &amp;f)</td></tr>
+<tr class="memitem:a2ace76557943084f89169a3c3d8fa1c7" id="r_a2ace76557943084f89169a3c3d8fa1c7"><td class="memItemLeft"><a id="a2ace76557943084f89169a3c3d8fa1c7" name="a2ace76557943084f89169a3c3d8fa1c7"></a>
+template GTSAM_EXPORT std::ostream &amp;&#160;</td><td class="memItemRight"><b>gtsam::operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="a05643.html">CombinedImuFactorWithGravityT</a>&lt; <a class="el" href="a05623.html">PreintegratedCombinedMeasurementsT</a>&lt; <a class="el" href="a05875.html">LieGroupPreintegration</a> &gt;, <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &gt; &amp;f)</td></tr>
+<tr class="memitem:a0f641c62134ec7d3fe3f8994913b2206" id="r_a0f641c62134ec7d3fe3f8994913b2206"><td class="memItemLeft"><a id="a0f641c62134ec7d3fe3f8994913b2206" name="a0f641c62134ec7d3fe3f8994913b2206"></a>
+template GTSAM_EXPORT std::ostream &amp;&#160;</td><td class="memItemRight"><b>gtsam::operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="a05643.html">CombinedImuFactorWithGravityT</a>&lt; <a class="el" href="a02242.html#a35f65d03cd247c1bc1468f912f41c2d3">PreintegratedCombinedMeasurementsG</a>, <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &gt; &amp;f)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a2c00cda37a730264b9c450080c8a531b" id="r_a2c00cda37a730264b9c450080c8a531b"><td class="memItemLeft"><a id="a2c00cda37a730264b9c450080c8a531b" name="a2c00cda37a730264b9c450080c8a531b"></a>
+template class GTSAM_EXPORT&#160;</td><td class="memItemRight"><b>gtsam::CombinedImuFactorWithGravityT&lt; PreintegratedCombinedMeasurementsT&lt; ManifoldPreintegration &gt;, Unit3 &gt;</b></td></tr>
+<tr class="memitem:a6108f3a306f52a38a26573bb74f3b9c1" id="r_a6108f3a306f52a38a26573bb74f3b9c1"><td class="memItemLeft"><a id="a6108f3a306f52a38a26573bb74f3b9c1" name="a6108f3a306f52a38a26573bb74f3b9c1"></a>
+template class GTSAM_EXPORT&#160;</td><td class="memItemRight"><b>gtsam::CombinedImuFactorWithGravityT&lt; PreintegratedCombinedMeasurementsT&lt; TangentPreintegration &gt;, Unit3 &gt;</b></td></tr>
+<tr class="memitem:a33a57cb65158a8a507a12daa60c8512d" id="r_a33a57cb65158a8a507a12daa60c8512d"><td class="memItemLeft"><a id="a33a57cb65158a8a507a12daa60c8512d" name="a33a57cb65158a8a507a12daa60c8512d"></a>
+template class GTSAM_EXPORT&#160;</td><td class="memItemRight"><b>gtsam::CombinedImuFactorWithGravityT&lt; PreintegratedCombinedMeasurementsT&lt; LieGroupPreintegration &gt;, Unit3 &gt;</b></td></tr>
+<tr class="memitem:ac0cd37afe53179f9cf4fa1ffbbdd0579" id="r_ac0cd37afe53179f9cf4fa1ffbbdd0579"><td class="memItemLeft"><a id="ac0cd37afe53179f9cf4fa1ffbbdd0579" name="ac0cd37afe53179f9cf4fa1ffbbdd0579"></a>
+template class GTSAM_EXPORT&#160;</td><td class="memItemRight"><b>gtsam::CombinedImuFactorWithGravityT&lt; PreintegratedCombinedMeasurementsG, Unit3 &gt;</b></td></tr>
+<tr class="memitem:a4cfc2de82202e92d791ca83531cdb77a" id="r_a4cfc2de82202e92d791ca83531cdb77a"><td class="memItemLeft"><a id="a4cfc2de82202e92d791ca83531cdb77a" name="a4cfc2de82202e92d791ca83531cdb77a"></a>
+template class GTSAM_EXPORT&#160;</td><td class="memItemRight"><b>gtsam::CombinedImuFactorWithGravityT&lt; PreintegratedCombinedMeasurementsT&lt; ManifoldPreintegration &gt;, Point3 &gt;</b></td></tr>
+<tr class="memitem:a5058897c071008eff3413752c699a659" id="r_a5058897c071008eff3413752c699a659"><td class="memItemLeft"><a id="a5058897c071008eff3413752c699a659" name="a5058897c071008eff3413752c699a659"></a>
+template class GTSAM_EXPORT&#160;</td><td class="memItemRight"><b>gtsam::CombinedImuFactorWithGravityT&lt; PreintegratedCombinedMeasurementsT&lt; TangentPreintegration &gt;, Point3 &gt;</b></td></tr>
+<tr class="memitem:aed389ba226faa9aa44b1dc7a78b91d2c" id="r_aed389ba226faa9aa44b1dc7a78b91d2c"><td class="memItemLeft"><a id="aed389ba226faa9aa44b1dc7a78b91d2c" name="aed389ba226faa9aa44b1dc7a78b91d2c"></a>
+template class GTSAM_EXPORT&#160;</td><td class="memItemRight"><b>gtsam::CombinedImuFactorWithGravityT&lt; PreintegratedCombinedMeasurementsT&lt; LieGroupPreintegration &gt;, Point3 &gt;</b></td></tr>
+<tr class="memitem:a06a2422342973d97152a25b57ec3635e" id="r_a06a2422342973d97152a25b57ec3635e"><td class="memItemLeft"><a id="a06a2422342973d97152a25b57ec3635e" name="a06a2422342973d97152a25b57ec3635e"></a>
+template class GTSAM_EXPORT&#160;</td><td class="memItemRight"><b>gtsam::CombinedImuFactorWithGravityT&lt; PreintegratedCombinedMeasurementsG, Point3 &gt;</b></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Source code for recovering translations when rotations are given. </p>
-<dl class="section author"><dt>Author</dt><dd>Frank Dellaert, Akshay Krishnan </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>March 2020 </dd></dl>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Nikhil Khedekar </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -130,7 +161,7 @@ template&lt;typename T&gt; </td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>sfm</b></li><li class="navelem"><a href="a01220.html">TranslationRecovery.cpp</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>navigation</b></li><li class="navelem"><a href="a01220.html">CombinedImuFactorWithGravity.cpp</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

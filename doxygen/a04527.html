@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::PowerMethod&lt; Operator &gt; Class Template Reference</title>
+<title>gtsam: gtsam::so3::ExpmapFunctor Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,104 +96,68 @@ $(function(){initNavTree('a04527.html','','a04524'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::PowerMethod&lt; Operator &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::so3::ExpmapFunctor Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class Operator&gt;<br />
-class gtsam::PowerMethod&lt; Operator &gt;</div><p>Compute maximum Eigenpair with power method. </p>
-<p>References : 1) G. Golub and C. V. Loan, Matrix Computations, 3rd ed. Baltimore, Johns Hopkins University Press, 1996, pp.405-411 2) Rosen, D. and Carlone, L., 2017, September. Computational enhancements for certifiably correct SLAM. In Proceedings of the International Conference on Intelligent Robots and Systems. 3) Yulun Tian and Kasra Khosoussi and David M. Rosen and Jonathan P. How, 2020, Aug, Distributed Certifiably Correct Pose-Graph Optimization, Arxiv 4) C. de Sa, B. He, I. Mitliagkas, C. Ré, and P. Xu, “Accelerated stochastic power iteration,” in Proc. Mach. Learn. Res., no. 84, 2018, pp. 58–67</p>
-<p>It performs the following iteration: \( x_{k+1} = A * x_k  \) where A is the aim matrix we want to get eigenpair of, x is the Ritz vector</p>
-<p>Template argument Operator just needs multiplication operator </p>
-</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::PowerMethod&lt; Operator &gt;:</div>
+<div class="textblock"><p>Opaque evaluation context at ω: caches Ω, Ω², θ, θ², nearZero/nearPi, Lazily computes C, D, E, dA, dB, dC, dE on demand. </p>
+<p>Math is based on Ethan Eade's elegant Lie group document, at <a href="https://www.ethaneade.org/lie.pdf">https://www.ethaneade.org/lie.pdf</a>, and the <a class="el" href="a04291.html" title="Kernel: M(ω) = a I + b Ω + c Ω² with radial derivatives db,dc for Fréchet.">Kernel</a> idea in doc/Jacobians.md </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::so3::ExpmapFunctor:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a04527.png" usemap="#gtsam_3A_3APowerMethod_3C_20Operator_20_3E_map" alt=""/>
-  <map id="gtsam_3A_3APowerMethod_3C_20Operator_20_3E_map" name="gtsam_3A_3APowerMethod_3C_20Operator_20_3E_map">
-<area href="a04263.html" title="Compute maximum Eigenpair with accelerated power method." alt="gtsam::AcceleratedPowerMethod&lt; Operator &gt;" shape="rect" coords="0,56,272,80"/>
+  <img src="a04527.png" usemap="#gtsam_3A_3Aso3_3A_3AExpmapFunctor_map" alt=""/>
+  <map id="gtsam_3A_3Aso3_3A_3AExpmapFunctor_map" name="gtsam_3A_3Aso3_3A_3AExpmapFunctor_map">
+<area href="a04531.html" title="Functor that implements Exponential map and its derivatives Math extends Ethan theme of elegant I + a..." alt="gtsam::so3::DexpFunctor" shape="rect" coords="0,56,164,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Standard Constructors</div></td></tr>
-<tr class="memitem:a72f5174af96689cf0a4b2586c592351c" id="r_a72f5174af96689cf0a4b2586c592351c"><td class="memItemLeft"><a id="a72f5174af96689cf0a4b2586c592351c" name="a72f5174af96689cf0a4b2586c592351c"></a>
-&#160;</td><td class="memItemRight"><b>PowerMethod</b> (const Operator &amp;A, const boost::optional&lt; Vector &gt; initial=boost::none)</td></tr>
-<tr class="memdesc:a72f5174af96689cf0a4b2586c592351c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from the aim matrix and intial ritz vector. <br /></td></tr>
-<tr class="memitem:a0f67a41b8945aadb46d2c83167a6dd4c" id="r_a0f67a41b8945aadb46d2c83167a6dd4c"><td class="memItemLeft"><a id="a0f67a41b8945aadb46d2c83167a6dd4c" name="a0f67a41b8945aadb46d2c83167a6dd4c"></a>
-Vector&#160;</td><td class="memItemRight"><b>powerIteration</b> (const Vector &amp;x) const</td></tr>
-<tr class="memdesc:a0f67a41b8945aadb46d2c83167a6dd4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run power iteration to get ritzVector with previous ritzVector x, and return A * x / || A * x ||. <br /></td></tr>
-<tr class="memitem:a88659c24feb5400af80957d4fca5953f" id="r_a88659c24feb5400af80957d4fca5953f"><td class="memItemLeft"><a id="a88659c24feb5400af80957d4fca5953f" name="a88659c24feb5400af80957d4fca5953f"></a>
-Vector&#160;</td><td class="memItemRight"><b>powerIteration</b> () const</td></tr>
-<tr class="memdesc:a88659c24feb5400af80957d4fca5953f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run power iteration to get ritzVector with previous ritzVector x, and return A * x / || A * x ||. <br /></td></tr>
-<tr class="memitem:ab3d3f23ecef093f1610f92207cc13589" id="r_ab3d3f23ecef093f1610f92207cc13589"><td class="memItemLeft"><a id="ab3d3f23ecef093f1610f92207cc13589" name="ab3d3f23ecef093f1610f92207cc13589"></a>
-bool&#160;</td><td class="memItemRight"><b>converged</b> (double tol) const</td></tr>
-<tr class="memdesc:ab3d3f23ecef093f1610f92207cc13589"><td class="mdescLeft">&#160;</td><td class="mdescRight">After Perform power iteration on a single Ritz value, check if the Ritz residual for the current Ritz pair is less than the required convergence tol, return true if yes, else false. <br /></td></tr>
-<tr class="memitem:af6ad9276cf74347a207fc72cac5d79cd" id="r_af6ad9276cf74347a207fc72cac5d79cd"><td class="memItemLeft"><a id="af6ad9276cf74347a207fc72cac5d79cd" name="af6ad9276cf74347a207fc72cac5d79cd"></a>
-size_t&#160;</td><td class="memItemRight"><b>nrIterations</b> () const</td></tr>
-<tr class="memdesc:af6ad9276cf74347a207fc72cac5d79cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of iterations. <br /></td></tr>
-<tr class="memitem:adf125a55542b6b8889e1fbbf8ca6d412" id="r_adf125a55542b6b8889e1fbbf8ca6d412"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#adf125a55542b6b8889e1fbbf8ca6d412">compute</a> (size_t maxIterations, double tol)</td></tr>
-<tr class="memdesc:adf125a55542b6b8889e1fbbf8ca6d412"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the power/accelerated iteration, after performing the power/accelerated iteration, calculate the ritz error, repeat this operation until the ritz error converge.  <br /></td></tr>
-<tr class="memitem:a50cd517d97bfb4e1ab29c1b7b9b8aec5" id="r_a50cd517d97bfb4e1ab29c1b7b9b8aec5"><td class="memItemLeft"><a id="a50cd517d97bfb4e1ab29c1b7b9b8aec5" name="a50cd517d97bfb4e1ab29c1b7b9b8aec5"></a>
-double&#160;</td><td class="memItemRight"><b>eigenvalue</b> () const</td></tr>
-<tr class="memdesc:a50cd517d97bfb4e1ab29c1b7b9b8aec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the eigenvalue. <br /></td></tr>
-<tr class="memitem:a15e499d997ab3e8d388cb8d2cfe138f2" id="r_a15e499d997ab3e8d388cb8d2cfe138f2"><td class="memItemLeft"><a id="a15e499d997ab3e8d388cb8d2cfe138f2" name="a15e499d997ab3e8d388cb8d2cfe138f2"></a>
-Vector&#160;</td><td class="memItemRight"><b>eigenvector</b> () const</td></tr>
-<tr class="memdesc:a15e499d997ab3e8d388cb8d2cfe138f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the eigenvector. <br /></td></tr>
+<tr class="memitem:abe4b1345302e9b642c1300bc43540c2c" id="r_abe4b1345302e9b642c1300bc43540c2c"><td class="memItemLeft"><a id="abe4b1345302e9b642c1300bc43540c2c" name="abe4b1345302e9b642c1300bc43540c2c"></a>
+&#160;</td><td class="memItemRight"><b>ExpmapFunctor</b> (const Vector3 &amp;omega)</td></tr>
+<tr class="memdesc:abe4b1345302e9b642c1300bc43540c2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with element of Lie algebra so(3). <br /></td></tr>
+<tr class="memitem:a31b381b64b30f016bfb03ad01b50e92d" id="r_a31b381b64b30f016bfb03ad01b50e92d"><td class="memItemLeft"><a id="a31b381b64b30f016bfb03ad01b50e92d" name="a31b381b64b30f016bfb03ad01b50e92d"></a>
+&#160;</td><td class="memItemRight"><b>ExpmapFunctor</b> (double nearZeroThresholdSq, const Vector3 &amp;axis)</td></tr>
+<tr class="memdesc:a31b381b64b30f016bfb03ad01b50e92d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with threshold (advanced). <br /></td></tr>
+<tr class="memitem:a38cc80642dbdc3cad308fada480e8545" id="r_a38cc80642dbdc3cad308fada480e8545"><td class="memItemLeft"><a id="a38cc80642dbdc3cad308fada480e8545" name="a38cc80642dbdc3cad308fada480e8545"></a>
+&#160;</td><td class="memItemRight"><b>ExpmapFunctor</b> (const Vector3 &amp;axis, double angle)</td></tr>
+<tr class="memdesc:a38cc80642dbdc3cad308fada480e8545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with axis-angle. <br /></td></tr>
+<tr class="memitem:a8371e906e4bb667c5f8debcfc5e82b39" id="r_a8371e906e4bb667c5f8debcfc5e82b39"><td class="memItemLeft"><a id="a8371e906e4bb667c5f8debcfc5e82b39" name="a8371e906e4bb667c5f8debcfc5e82b39"></a>
+Matrix3&#160;</td><td class="memItemRight"><b>expmap</b> () const</td></tr>
+<tr class="memdesc:a8371e906e4bb667c5f8debcfc5e82b39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rodrigues formula. <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a403a1a99553f905fb490b12c44be24f8" id="r_a403a1a99553f905fb490b12c44be24f8"><td class="memItemLeft"><a id="a403a1a99553f905fb490b12c44be24f8" name="a403a1a99553f905fb490b12c44be24f8"></a>
-const Operator &amp;&#160;</td><td class="memItemRight"><b>A_</b></td></tr>
-<tr class="memdesc:a403a1a99553f905fb490b12c44be24f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Const reference to an externally-held matrix whose minimum-eigenvalue we want to compute. <br /></td></tr>
-<tr class="memitem:aa25b6aed92db37c6af0e6f909e9c67c3" id="r_aa25b6aed92db37c6af0e6f909e9c67c3"><td class="memItemLeft"><a id="aa25b6aed92db37c6af0e6f909e9c67c3" name="aa25b6aed92db37c6af0e6f909e9c67c3"></a>
-const int&#160;</td><td class="memItemRight"><b>dim_</b></td></tr>
-<tr class="memitem:a6a438a8943a8e8fd49fec35b4c0d66f1" id="r_a6a438a8943a8e8fd49fec35b4c0d66f1"><td class="memItemLeft"><a id="a6a438a8943a8e8fd49fec35b4c0d66f1" name="a6a438a8943a8e8fd49fec35b4c0d66f1"></a>
-size_t&#160;</td><td class="memItemRight"><b>nrIterations_</b></td></tr>
-<tr class="memitem:a58d5bd8b322475103f097459bffa275b" id="r_a58d5bd8b322475103f097459bffa275b"><td class="memItemLeft"><a id="a58d5bd8b322475103f097459bffa275b" name="a58d5bd8b322475103f097459bffa275b"></a>
-double&#160;</td><td class="memItemRight"><b>ritzValue_</b></td></tr>
-<tr class="memitem:a1417ca8b5a78b8b29aa43fac051e8206" id="r_a1417ca8b5a78b8b29aa43fac051e8206"><td class="memItemLeft"><a id="a1417ca8b5a78b8b29aa43fac051e8206" name="a1417ca8b5a78b8b29aa43fac051e8206"></a>
-Vector&#160;</td><td class="memItemRight"><b>ritzVector_</b></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ae2059187b3825f1257e635f12c71bcb6" id="r_ae2059187b3825f1257e635f12c71bcb6"><td class="memItemLeft"><a id="ae2059187b3825f1257e635f12c71bcb6" name="ae2059187b3825f1257e635f12c71bcb6"></a>
+double&#160;</td><td class="memItemRight"><b>theta2</b></td></tr>
+<tr class="memdesc:ae2059187b3825f1257e635f12c71bcb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The squared norm of the rotation vector (θ²). <br /></td></tr>
+<tr class="memitem:a53e73ba4173511da528af439dc527287" id="r_a53e73ba4173511da528af439dc527287"><td class="memItemLeft"><a id="a53e73ba4173511da528af439dc527287" name="a53e73ba4173511da528af439dc527287"></a>
+double&#160;</td><td class="memItemRight"><b>theta</b></td></tr>
+<tr class="memdesc:a53e73ba4173511da528af439dc527287"><td class="mdescLeft">&#160;</td><td class="mdescRight">The norm of the rotation vector (θ). <br /></td></tr>
+<tr class="memitem:ab63e2c6592a4df487c77d23702a615b7" id="r_ab63e2c6592a4df487c77d23702a615b7"><td class="memItemLeft"><a id="ab63e2c6592a4df487c77d23702a615b7" name="ab63e2c6592a4df487c77d23702a615b7"></a>
+Matrix3&#160;</td><td class="memItemRight"><b>W</b></td></tr>
+<tr class="memdesc:ab63e2c6592a4df487c77d23702a615b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The skew-symmetric matrix Ω for the rotation vector. <br /></td></tr>
+<tr class="memitem:aa0892dbfe2ca5cd9ae0d30d85c744396" id="r_aa0892dbfe2ca5cd9ae0d30d85c744396"><td class="memItemLeft"><a id="aa0892dbfe2ca5cd9ae0d30d85c744396" name="aa0892dbfe2ca5cd9ae0d30d85c744396"></a>
+Matrix3&#160;</td><td class="memItemRight"><b>WW</b></td></tr>
+<tr class="memdesc:aa0892dbfe2ca5cd9ae0d30d85c744396"><td class="mdescLeft">&#160;</td><td class="mdescRight">The square of the skew-symmetric matrix (Ω²). <br /></td></tr>
+<tr class="memitem:a5206b495b2e855794ee58f74a2bb9631" id="r_a5206b495b2e855794ee58f74a2bb9631"><td class="memItemLeft"><a id="a5206b495b2e855794ee58f74a2bb9631" name="a5206b495b2e855794ee58f74a2bb9631"></a>
+bool&#160;</td><td class="memItemRight"><b>nearZero</b> {false}</td></tr>
+<tr class="memdesc:a5206b495b2e855794ee58f74a2bb9631"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag indicating if theta is near zero. <br /></td></tr>
+<tr class="memitem:a876b8d8e9f52eecf139d8d2644031077" id="r_a876b8d8e9f52eecf139d8d2644031077"><td class="memItemLeft"><a id="a876b8d8e9f52eecf139d8d2644031077" name="a876b8d8e9f52eecf139d8d2644031077"></a>
+double&#160;</td><td class="memItemRight"><b>A</b></td></tr>
+<tr class="memitem:aaeb3c21f7bd4788135d7fa1ea8348405" id="r_aaeb3c21f7bd4788135d7fa1ea8348405"><td class="memItemLeft"><a id="aaeb3c21f7bd4788135d7fa1ea8348405" name="aaeb3c21f7bd4788135d7fa1ea8348405"></a>
+double&#160;</td><td class="memItemRight"><b>B</b></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a003518ae4966ef7312585221b85e929b" id="r_a003518ae4966ef7312585221b85e929b"><td class="memItemLeft"><a id="a003518ae4966ef7312585221b85e929b" name="a003518ae4966ef7312585221b85e929b"></a>
+void&#160;</td><td class="memItemRight"><b>init</b> (double nearZeroThresholdSq)</td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="adf125a55542b6b8889e1fbbf8ca6d412" name="adf125a55542b6b8889e1fbbf8ca6d412"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf125a55542b6b8889e1fbbf8ca6d412">&#9670;&#160;</a></span>compute()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Operator&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="a04527.html">gtsam::PowerMethod</a>&lt; Operator &gt;::compute </td>
-          <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>maxIterations</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>tol</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Start the power/accelerated iteration, after performing the power/accelerated iteration, calculate the ritz error, repeat this operation until the ritz error converge. </p>
-<p>If converged return true, else false. </p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/<a class="el" href="a00740_source.html">PowerMethod.h</a></li>
+<hr/>The documentation for this struct was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00515_source.html">SO3.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00464.html">SO3.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -208,7 +172,7 @@ template&lt;class Operator&gt; </div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04527.html">PowerMethod</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><b>so3</b></li><li class="navelem"><a href="a04527.html">ExpmapFunctor</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

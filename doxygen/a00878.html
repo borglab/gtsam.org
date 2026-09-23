@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/linearExceptions.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/inference/Factor.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,34 +96,25 @@ $(function(){initNavTree('a00878.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">linearExceptions.h File Reference</div></div>
+  <div class="headertitle"><div class="title">Factor.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Exceptions that may be thrown by linear solver components.  
+<p>The base class for all factors.  
 <a href="#details">More...</a></p>
-
-<p><a href="a00878_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3AIndeterminantLinearSystemException" id="r_gtsam_3A_3AIndeterminantLinearSystemException"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04411.html">gtsam::IndeterminantLinearSystemException</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thrown when a linear system is ill-posed.  <a href="a04411.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3AInvalidNoiseModel" id="r_gtsam_3A_3AInvalidNoiseModel"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04415.html">gtsam::InvalidNoiseModel</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An exception indicating that the noise model dimension passed into a <a class="el" href="a04391.html" title="A Gaussian factor in the squared-error form.">JacobianFactor</a> has a different dimensionality than the factor.  <a href="a04415.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3AInvalidMatrixBlock" id="r_gtsam_3A_3AInvalidMatrixBlock"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04419.html">gtsam::InvalidMatrixBlock</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An exception indicating that a matrix block passed into a <a class="el" href="a04391.html" title="A Gaussian factor in the squared-error form.">JacobianFactor</a> has a different dimensionality than the factor.  <a href="a04419.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3AInvalidDenseElimination" id="r_gtsam_3A_3AInvalidDenseElimination"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04423.html">gtsam::InvalidDenseElimination</a></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Exceptions that may be thrown by linear solver components. </p>
-<dl class="section author"><dt>Author</dt><dd>Richard Roberts </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>Aug 17, 2012 </dd></dl>
+<div class="textblock"><p>The base class for all factors. </p>
+<dl class="section author"><dt>Author</dt><dd>Kai Ni </dd>
+<dd>
+Frank Dellaert </dd>
+<dd>
+Richard Roberts </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -137,7 +128,7 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>linear</b></li><li class="navelem"><a href="a00878.html">linearExceptions.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>inference</b></li><li class="navelem"><a href="a00878.html">Factor.cpp</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::NonlinearClusterTree::NonlinearCluster Struct Reference</title>
+<title>gtsam: gtsam::PlanarGyroParams Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,45 +96,70 @@ $(function(){initNavTree('a05955.html','','a05952'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::NonlinearClusterTree::NonlinearCluster Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::PlanarGyroParams Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::NonlinearClusterTree::NonlinearCluster:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
- <div class="center">
-  <img src="a05955.png" alt=""/>
- </div></div>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Modeled parameters of the gyro. </p>
+<p><a href="https://rpg.ifi.uzh.ch/docs/UFFC16_Hidalgo.pdf">https://rpg.ifi.uzh.ch/docs/UFFC16_Hidalgo.pdf</a> <a href="https://telesens.co/wp-content/uploads/2017/05/AllanVariance5087-1.pdf">https://telesens.co/wp-content/uploads/2017/05/AllanVariance5087-1.pdf</a> <a href="https://github.com/borglab/gtsam/issues/213">https://github.com/borglab/gtsam/issues/213</a> <a href="https://github.com/ethz-asl/kalibr/wiki/IMU-Noise-Model">https://github.com/ethz-asl/kalibr/wiki/IMU-Noise-Model</a> </p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acca30485b0a0f2b951b68207b1e00494" id="r_acca30485b0a0f2b951b68207b1e00494"><td class="memItemLeft"><a id="acca30485b0a0f2b951b68207b1e00494" name="acca30485b0a0f2b951b68207b1e00494"></a>
-&#160;</td><td class="memItemRight"><b>NonlinearCluster</b> (const <a class="el" href="a04247.html">VariableIndex</a> &amp;variableIndex, const <a class="el" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;keys, <a class="el" href="a05091.html">NonlinearFactorGraph</a> *graph)</td></tr>
-<tr class="memitem:abbf518e4a32a106291a00ceb42db4e76" id="r_abbf518e4a32a106291a00ceb42db4e76"><td class="memItemLeft"><a id="abbf518e4a32a106291a00ceb42db4e76" name="abbf518e4a32a106291a00ceb42db4e76"></a>
-<a class="el" href="a04339.html#a1f73f4987b9bdaac5c1414a401c0364c">GaussianFactorGraph::shared_ptr</a>&#160;</td><td class="memItemRight"><b>linearize</b> (const <a class="el" href="a06243.html">Values</a> &amp;values)</td></tr>
-<tr class="memitem:a4b61ca8a48c12769e4f4feec8b00d6eb" id="r_a4b61ca8a48c12769e4f4feec8b00d6eb"><td class="memItemLeft"><a id="a4b61ca8a48c12769e4f4feec8b00d6eb" name="a4b61ca8a48c12769e4f4feec8b00d6eb"></a>
-<a class="el" href="a04359.html#a10c151a4d4beb9d9af4249f4a02791ff">HessianFactor::shared_ptr</a>&#160;</td><td class="memItemRight"><b>linearizeToHessianFactor</b> (const <a class="el" href="a06243.html">Values</a> &amp;values, const <a class="el" href="a05091.html#abb04d87a8f860dad18c1898a0f3da21d">NonlinearFactorGraph::Dampen</a> &amp;dampen=nullptr) const</td></tr>
-<tr class="memitem:adefd5d6604f753b15a8afc0ca3d77d2a" id="r_adefd5d6604f753b15a8afc0ca3d77d2a"><td class="memItemLeft"><a id="adefd5d6604f753b15a8afc0ca3d77d2a" name="adefd5d6604f753b15a8afc0ca3d77d2a"></a>
-<a class="el" href="a04359.html#a10c151a4d4beb9d9af4249f4a02791ff">HessianFactor::shared_ptr</a>&#160;</td><td class="memItemRight"><b>linearizeToHessianFactor</b> (const <a class="el" href="a06243.html">Values</a> &amp;values, const <a class="el" href="a04227.html">Ordering</a> &amp;ordering, const <a class="el" href="a05091.html#abb04d87a8f860dad18c1898a0f3da21d">NonlinearFactorGraph::Dampen</a> &amp;dampen=nullptr) const</td></tr>
-<tr class="memitem:a74a999994ccb43d725f37d626064a460" id="r_a74a999994ccb43d725f37d626064a460"><td class="memItemLeft"><a id="a74a999994ccb43d725f37d626064a460" name="a74a999994ccb43d725f37d626064a460"></a>
-std::pair&lt; <a class="el" href="a04287.html">GaussianBayesNet</a>, <a class="el" href="a04359.html#a10c151a4d4beb9d9af4249f4a02791ff">HessianFactor::shared_ptr</a> &gt;&#160;</td><td class="memItemRight"><b>linearizeAndEliminate</b> (const <a class="el" href="a06243.html">Values</a> &amp;values, const <a class="el" href="a04359.html#a10c151a4d4beb9d9af4249f4a02791ff">HessianFactor::shared_ptr</a> &amp;localFactor) const</td></tr>
-<tr class="memitem:a65a1a0981535656fb3e5cd67bc90fdcc" id="r_a65a1a0981535656fb3e5cd67bc90fdcc"><td class="memItemLeft"><a id="a65a1a0981535656fb3e5cd67bc90fdcc" name="a65a1a0981535656fb3e5cd67bc90fdcc"></a>
-std::pair&lt; <a class="el" href="a04287.html">GaussianBayesNet</a>, <a class="el" href="a04359.html#a10c151a4d4beb9d9af4249f4a02791ff">HessianFactor::shared_ptr</a> &gt;&#160;</td><td class="memItemRight"><b>linearizeAndEliminate</b> (const <a class="el" href="a06243.html">Values</a> &amp;values, const <a class="el" href="a05091.html#abb04d87a8f860dad18c1898a0f3da21d">NonlinearFactorGraph::Dampen</a> &amp;dampen=nullptr) const</td></tr>
-<tr class="memitem:afb68bd5c600dddff4d4f05261d8a1bbd" id="r_afb68bd5c600dddff4d4f05261d8a1bbd"><td class="memItemLeft"><a id="afb68bd5c600dddff4d4f05261d8a1bbd" name="afb68bd5c600dddff4d4f05261d8a1bbd"></a>
-std::pair&lt; <a class="el" href="a04287.html">GaussianBayesNet</a>, <a class="el" href="a04359.html#a10c151a4d4beb9d9af4249f4a02791ff">HessianFactor::shared_ptr</a> &gt;&#160;</td><td class="memItemRight"><b>linearizeAndEliminate</b> (const <a class="el" href="a06243.html">Values</a> &amp;values, const <a class="el" href="a04227.html">Ordering</a> &amp;ordering, const <a class="el" href="a05091.html#abb04d87a8f860dad18c1898a0f3da21d">NonlinearFactorGraph::Dampen</a> &amp;dampen=nullptr) const</td></tr>
-<tr class="memitem:a3d5694bbe18a9b17247cbb198e4090d1" id="r_a3d5694bbe18a9b17247cbb198e4090d1"><td class="memItemLeft"><a id="a3d5694bbe18a9b17247cbb198e4090d1" name="a3d5694bbe18a9b17247cbb198e4090d1"></a>
-<a class="el" href="a04359.html#a10c151a4d4beb9d9af4249f4a02791ff">HessianFactor::shared_ptr</a>&#160;</td><td class="memItemRight"><b>linearizeAndEliminate</b> (const <a class="el" href="a06243.html">Values</a> &amp;values, <a class="el" href="a04287.html">GaussianBayesNet</a> *bayesNet, const <a class="el" href="a05091.html#abb04d87a8f860dad18c1898a0f3da21d">NonlinearFactorGraph::Dampen</a> &amp;dampen=nullptr) const</td></tr>
-<tr class="memitem:af814607d89750ce3b95d8878df80828f" id="r_af814607d89750ce3b95d8878df80828f"><td class="memItemLeft"><a id="af814607d89750ce3b95d8878df80828f" name="af814607d89750ce3b95d8878df80828f"></a>
-<a class="el" href="a04359.html#a10c151a4d4beb9d9af4249f4a02791ff">HessianFactor::shared_ptr</a>&#160;</td><td class="memItemRight"><b>linearizeAndEliminate</b> (const <a class="el" href="a06243.html">Values</a> &amp;values, <a class="el" href="a04287.html">GaussianBayesNet</a> *bayesNet, const <a class="el" href="a04227.html">Ordering</a> &amp;ordering, const <a class="el" href="a05091.html#abb04d87a8f860dad18c1898a0f3da21d">NonlinearFactorGraph::Dampen</a> &amp;dampen=nullptr) const</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ac2cec6e04b4fe3fac58b1610edd6d1f7" id="r_ac2cec6e04b4fe3fac58b1610edd6d1f7"><td class="memItemLeft"><a id="ac2cec6e04b4fe3fac58b1610edd6d1f7" name="ac2cec6e04b4fe3fac58b1610edd6d1f7"></a>
-static NonlinearCluster *&#160;</td><td class="memItemRight"><b>DownCast</b> (const boost::shared_ptr&lt; Cluster &gt; &amp;cluster)</td></tr>
+<tr class="memitem:a4a3ae33f372af4fe11f1ecd709e78b1d" id="r_a4a3ae33f372af4fe11f1ecd709e78b1d"><td class="memItemLeft"><a id="a4a3ae33f372af4fe11f1ecd709e78b1d" name="a4a3ae33f372af4fe11f1ecd709e78b1d"></a>
+&#160;</td><td class="memItemRight"><b>PlanarGyroParams</b> (double arw, double biasInstability)</td></tr>
+<tr class="memitem:a0510fbb30f4aa6403326e236cc5aa9d1" id="r_a0510fbb30f4aa6403326e236cc5aa9d1"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a0510fbb30f4aa6403326e236cc5aa9d1">arwSigma</a> (double deltaT)</td></tr>
+<tr class="memdesc:a0510fbb30f4aa6403326e236cc5aa9d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Std dev of the integrated measurement (rad), for the specified duration (sec).  <br /></td></tr>
+<tr class="memitem:a6f0bfe9a6b2c34be40bb9fe2ba6b4ddd" id="r_a6f0bfe9a6b2c34be40bb9fe2ba6b4ddd"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a6f0bfe9a6b2c34be40bb9fe2ba6b4ddd">biasInstabilitySigma</a> ()</td></tr>
+<tr class="memdesc:a6f0bfe9a6b2c34be40bb9fe2ba6b4ddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bias instability is the "zero slope" part of the Allan curve, so it is not dependent on sample rate.  <br /></td></tr>
+<tr class="memitem:ae070a467c363313fdd7b00f5262a6393" id="r_ae070a467c363313fdd7b00f5262a6393"><td class="memItemLeft"><a id="ae070a467c363313fdd7b00f5262a6393" name="ae070a467c363313fdd7b00f5262a6393"></a>
+bool&#160;</td><td class="memItemRight"><b>operator==</b> (const PlanarGyroParams &amp;other) const</td></tr>
+<tr class="memitem:aa72acb4963529815cfd45d1350be49bd" id="r_aa72acb4963529815cfd45d1350be49bd"><td class="memItemLeft"><a id="aa72acb4963529815cfd45d1350be49bd" name="aa72acb4963529815cfd45d1350be49bd"></a>
+void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s) const</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/nonlinear/<a class="el" href="a01610_source.html">NonlinearClusterTree.h</a></li>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a0510fbb30f4aa6403326e236cc5aa9d1" name="a0510fbb30f4aa6403326e236cc5aa9d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0510fbb30f4aa6403326e236cc5aa9d1">&#9670;&#160;</a></span>arwSigma()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double gtsam::PlanarGyroParams::arwSigma </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>deltaT</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Std dev of the integrated measurement (rad), for the specified duration (sec). </p>
+<p>Integrated gaussian white noise is also gaussian, scaled with duration, so std dev scales with sqrt(time), so the unit here is rad. </p>
+
+</div>
+</div>
+<a id="a6f0bfe9a6b2c34be40bb9fe2ba6b4ddd" name="a6f0bfe9a6b2c34be40bb9fe2ba6b4ddd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f0bfe9a6b2c34be40bb9fe2ba6b4ddd">&#9670;&#160;</a></span>biasInstabilitySigma()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double gtsam::PlanarGyroParams::biasInstabilitySigma </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bias instability is the "zero slope" part of the Allan curve, so it is not dependent on sample rate. </p>
+<p>The unit here is rad/s (same as the unit of bias itself). </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/<a class="el" href="a01229_source.html">PlanarGyroFactor.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/<a class="el" href="a01301.html">PlanarGyroFactor.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -149,7 +174,7 @@ static NonlinearCluster *&#160;</td><td class="memItemRight"><b>DownCast</b> (co
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a05951.html">NonlinearClusterTree</a></li><li class="navelem"><a href="a05955.html">NonlinearCluster</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a05955.html">PlanarGyroParams</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

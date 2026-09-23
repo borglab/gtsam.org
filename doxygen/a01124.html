@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/LevenbergMarquardtOptimizer.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/ConjugateGradientSolver.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,33 +96,53 @@ $(function(){initNavTree('a01124.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">LevenbergMarquardtOptimizer.h File Reference</div></div>
+  <div class="headertitle"><div class="title">ConjugateGradientSolver.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>A nonlinear optimizer that uses the Levenberg-Marquardt trust-region scheme.  
+<p>Implementation of Conjugate Gradient solver for a linear system.  
 <a href="#details">More...</a></p>
 
 <p><a href="a01124_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3ALevenbergMarquardtOptimizer" id="r_gtsam_3A_3ALevenbergMarquardtOptimizer"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04987.html">gtsam::LevenbergMarquardtOptimizer</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class performs Levenberg-Marquardt nonlinear optimization.  <a href="a04987.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3AConjugateGradientParameters" id="r_gtsam_3A_3AConjugateGradientParameters"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a05031.html">gtsam::ConjugateGradientParameters</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameters for the Conjugate Gradient method.  <a href="a05031.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3AConjugateGradientStats" id="r_gtsam_3A_3AConjugateGradientStats"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a05035.html">gtsam::ConjugateGradientStats</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diagnostics collected during a conjugate-gradient solve.  <a href="a05035.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3AConjugateGradientResult_3C_20V_20_3E" id="r_gtsam_3A_3AConjugateGradientResult_3C_20V_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a05039.html">gtsam::ConjugateGradientResult&lt; V &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solution and diagnostics returned by the detailed CG interface.  <a href="a05039.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a5bf4c422457829a361b0609332c8d429" id="r_a5bf4c422457829a361b0609332c8d429"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="a02242.html#a5bf4c422457829a361b0609332c8d429">gtsam::ConjugateGradientTerminationReason</a> { <a class="el" href="a02242.html#a5bf4c422457829a361b0609332c8d429ae5e4a18d9d872870db8c99663ec9b3a6">gtsam::kConverged</a>
+, <a class="el" href="a02242.html#a5bf4c422457829a361b0609332c8d429a1429149732d4b342891aba2837c187de">gtsam::kMaxIterations</a>
+, <a class="el" href="a02242.html#a5bf4c422457829a361b0609332c8d429a32f2be615be7e1442dcc8dd5a57d86a4">gtsam::kNumericalBreakdown</a>
+ }</td></tr>
+<tr class="memdesc:a5bf4c422457829a361b0609332c8d429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reason a conjugate-gradient solve stopped.  <a href="a02242.html#a5bf4c422457829a361b0609332c8d429">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a61c0ccdf67c34be3bb7d85674e6446fc" id="r_a61c0ccdf67c34be3bb7d85674e6446fc"><td class="memTemplParams" colspan="2">template&lt;class S, class V&gt; </td></tr>
+<tr class="memitem:a61c0ccdf67c34be3bb7d85674e6446fc template"><td class="memItemLeft"><a class="el" href="a05039.html">ConjugateGradientResult</a>&lt; V &gt;&#160;</td><td class="memItemRight"><a class="el" href="a02242.html#a61c0ccdf67c34be3bb7d85674e6446fc">gtsam::preconditionedConjugateGradientDetailed</a> (const S &amp;system, const V &amp;initial, const <a class="el" href="a05031.html">ConjugateGradientParameters</a> &amp;parameters, bool collectResidualHistory=true)</td></tr>
+<tr class="memdesc:a61c0ccdf67c34be3bb7d85674e6446fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve a linear system with split-preconditioned conjugate gradients.  <br /></td></tr>
+<tr class="memitem:ac59c7e1d84d5e8570a143898def32125" id="r_ac59c7e1d84d5e8570a143898def32125"><td class="memTemplParams" colspan="2">template&lt;class S, class V&gt; </td></tr>
+<tr class="memitem:ac59c7e1d84d5e8570a143898def32125 template"><td class="memItemLeft">V&#160;</td><td class="memItemRight"><a class="el" href="a02242.html#ac59c7e1d84d5e8570a143898def32125">gtsam::preconditionedConjugateGradient</a> (const S &amp;system, const V &amp;initial, const <a class="el" href="a05031.html">ConjugateGradientParameters</a> &amp;parameters)</td></tr>
+<tr class="memdesc:ac59c7e1d84d5e8570a143898def32125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve a preconditioned linear system and return only the estimate.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A nonlinear optimizer that uses the Levenberg-Marquardt trust-region scheme. </p>
-<dl class="section author"><dt>Author</dt><dd>Richard Roberts </dd>
+<div class="textblock"><p>Implementation of Conjugate Gradient solver for a linear system. </p>
+<dl class="section author"><dt>Author</dt><dd>Yong-Dian Jian </dd>
 <dd>
-Frank Dellaert </dd>
-<dd>
-Luca Carlone </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>Feb 26, 2012 </dd></dl>
+Sungtae An </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>Nov 6, 2014 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Fan Jiang </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -136,7 +156,7 @@ Luca Carlone </dd></dl>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>nonlinear</b></li><li class="navelem"><a href="a01124.html">LevenbergMarquardtOptimizer.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>linear</b></li><li class="navelem"><a href="a01124.html">ConjugateGradientSolver.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

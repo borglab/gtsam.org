@@ -1,6 +1,6 @@
 var a04255 =
 [
-    [ "VariableSlots", "a04255.html#acd98bd86878e8c5c9596c929439c0a4c", null ],
-    [ "equals", "a04255.html#a814f82c979a1b5f3b93339d17e86d145", null ],
-    [ "print", "a04255.html#a6dff67f5fe6b5d92e2a8f57f71afaee0", null ]
+    [ "transferToA", "a04255.html#aae47b2ef81466af6088b62b15eb70b95", null ],
+    [ "transferToB", "a04255.html#af71a7b4f09f96e779e645ccb0763fd30", null ],
+    [ "transferToC", "a04255.html#a031908d29e221890e3e9857bce1e00af", null ]
 ];

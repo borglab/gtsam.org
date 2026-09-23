@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,13 +96,33 @@ $(function(){initNavTree('a04795.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::AdaptAutoDiff&lt; FUNCTOR, M, N1, N2 &gt; Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::HybridNonlinearISAM Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a04795.html">gtsam::AdaptAutoDiff&lt; FUNCTOR, M, N1, N2 &gt;</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator()</b>(const Vector1 &amp;v1, const Vector2 &amp;v2, OptionalJacobian&lt; M, N1 &gt; H1=boost::none, OptionalJacobian&lt; M, N2 &gt; H2=boost::none) (defined in <a class="el" href="a04795.html">gtsam::AdaptAutoDiff&lt; FUNCTOR, M, N1, N2 &gt;</a>)</td><td class="entry"><a class="el" href="a04795.html">gtsam::AdaptAutoDiff&lt; FUNCTOR, M, N1, N2 &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04795.html#a53c3580a43dd330492780e45bb94f2b8">assignment</a>() const</td><td class="entry"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04795.html#a231caf8f3176fa7e5000ba121baf4de4">assignment_</a></td><td class="entry"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04795.html#aea6998c026e45222627a188a5927aa24">bayesTree</a>() const</td><td class="entry"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04795.html#ac1b5740936424126b8adf617f7700058">eliminationFunction_</a></td><td class="entry"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04795.html#a7ac08123aba85f6117685aca3cf01bf7">estimate</a>()</td><td class="entry"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04795.html#a37f1f9aa1ba8caa26e236e5bf7326969">factors_</a></td><td class="entry"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04795.html#a07b6c6589c3b45b0e6d6cfa98415d09f">getFactorsUnsafe</a>() const</td><td class="entry"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04795.html#a2dba72b454d069ce34eb9f867351e864">getLinearizationPoint</a>() const</td><td class="entry"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04795.html#a343272d257ca8e8c59b1e8a3d35a9371">HybridNonlinearISAM</a>(int reorderInterval=1, const HybridGaussianFactorGraph::Eliminate &amp;eliminationFunction=HybridGaussianFactorGraph::EliminationTraitsType::DefaultEliminate)</td><td class="entry"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04795.html#abc388dedfd3df948cce9e9844eb07f86">isam_</a></td><td class="entry"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04795.html#a8a56f5375ea8088c0a1b017a4be8528d">linPoint_</a></td><td class="entry"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04795.html#a27595f38f304ef956828977e62ba2d4b">print</a>(const std::string &amp;s=&quot;&quot;, const KeyFormatter &amp;keyFormatter=DefaultKeyFormatter) const</td><td class="entry"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04795.html#a11d7bba21b910f685c0962f544e06eab">printStats</a>() const</td><td class="entry"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04795.html#a772d1dff43202c1969a55ddc6cb78188">prune</a>(const size_t maxNumberLeaves)</td><td class="entry"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04795.html#a59595de9def7249b1e5948c756b72330">reorderCounter</a>() const</td><td class="entry"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>reorderCounter_</b> (defined in <a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a>)</td><td class="entry"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04795.html#a89efbc8aa530fe79757b7eaa463618fd">reorderInterval</a>() const</td><td class="entry"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04795.html#a83959d538b1f8c11e5d2d18098320d16">reorderInterval_</a></td><td class="entry"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04795.html#a3747fb2321cd36711fc49b8f14486671">reorderRelinearize</a>()</td><td class="entry"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04795.html#a863a1d2d2344bbf0ee57c1274ac8f4c4">saveGraph</a>(const std::string &amp;s, const KeyFormatter &amp;keyFormatter=DefaultKeyFormatter) const</td><td class="entry"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04795.html#a421ee7faf3476570226df360f84f65e1">update</a>(const HybridNonlinearFactorGraph &amp;newFactors, const Values &amp;initialValues, const std::optional&lt; size_t &gt; &amp;maxNrLeaves={}, const std::optional&lt; Ordering &gt; &amp;ordering={})</td><td class="entry"><a class="el" href="a04795.html">gtsam::HybridNonlinearISAM</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

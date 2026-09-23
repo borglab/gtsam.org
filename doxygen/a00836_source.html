@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/GaussianDensity.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/inference/graph.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,7 +89,7 @@ $(function(){initNavTree('a00836_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">GaussianDensity.h</div></div>
+  <div class="headertitle"><div class="title">graph.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a00836.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
@@ -104,76 +104,96 @@ $(function(){initNavTree('a00836_source.html','',''); });
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// \callgraph</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="a00776.html">gtsam/linear/GaussianConditional.h</a>&gt;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
-<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="a04319.html">   32</a></span>  <span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a04319.html#a5e87d41948515b0ea5548aed04227acd">GaussianDensity</a> : <span class="keyword">public</span> <a class="code hl_function" href="a04311.html#a350122154dc86824df762ae59ee51f80">GaussianConditional</a> {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">typedef</span> boost::shared_ptr&lt;GaussianDensity&gt; shared_ptr;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
-<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="a04319.html#a5e87d41948515b0ea5548aed04227acd">   39</a></span>    <a class="code hl_function" href="a04319.html#a5e87d41948515b0ea5548aed04227acd">GaussianDensity</a>() :</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      <a class="code hl_function" href="a04311.html#a350122154dc86824df762ae59ee51f80">GaussianConditional</a>() {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define BOOST_NO_HASH  </span><span class="comment">// to pacify the warnings about depricated headers in boost.graph</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;boost/graph/graph_traits.hpp&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;boost/graph/adjacency_list.hpp&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;<a class="code" href="a01454.html">gtsam/nonlinear/Values.h</a>&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="comment">// type definitions :</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> KEY&gt;</div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="a04911.html">   38</a></span>  <span class="keyword">class </span><a class="code hl_class" href="a04911.html">SDGraph</a>: <span class="keyword">public</span> boost::adjacency_list&lt;boost::vecS, boost::vecS, boost::undirectedS,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  boost::property&lt;boost::vertex_name_t, KEY&gt;, boost::property&lt;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  boost::edge_weight_t, double&gt; &gt; {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> boost::graph_traits&lt;SDGraph&lt;KEY&gt; &gt;::vertex_descriptor Vertex;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  };</div>
 </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
-<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="a04319.html#ab87337fa52b848ce99be24006daef46c">   44</a></span>    <a class="code hl_function" href="a04319.html#ab87337fa52b848ce99be24006daef46c">GaussianDensity</a>(<span class="keyword">const</span> <a class="code hl_function" href="a04311.html#a350122154dc86824df762ae59ee51f80">GaussianConditional</a>&amp; conditional) :</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      <a class="code hl_function" href="a04311.html#a350122154dc86824df762ae59ee51f80">GaussianConditional</a>(conditional) {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">if</span>(conditional.<a class="code hl_function" href="a04119.html#ae19763bc0d1b12bea9e7bfcb304b40bb">nrParents</a>() != 0)</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>          <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;GaussianDensity can only be created from a conditional with no parents&quot;</span>);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> KEY&gt;</div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="};">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="a04915.html">   46</a></span>  <span class="keyword">class </span><a class="code hl_class" href="a04915.html">SGraph</a> : <span class="keyword">public</span> boost::adjacency_list&lt;boost::vecS, boost::vecS, boost::directedS,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>      boost::property&lt;boost::vertex_name_t, KEY&gt; &gt; {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> boost::graph_traits&lt;SGraph&lt;KEY&gt; &gt;::vertex_descriptor Vertex;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  };</div>
 </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
-<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="a04319.html#a4c8ce2cd6b2708df545c4fe7778169ee">   51</a></span>    <a class="code hl_function" href="a04319.html#a4c8ce2cd6b2708df545c4fe7778169ee">GaussianDensity</a>(<a class="code hl_typedef" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key, <span class="keyword">const</span> Vector&amp; <a class="code hl_function" href="a04311.html#aef329c61470954e7bec349f444e5e769">d</a>, <span class="keyword">const</span> Matrix&amp; <a class="code hl_function" href="a04311.html#a2f625a1f4f0ebb9db26019586b1abbe5">R</a>, <span class="keyword">const</span> SharedDiagonal&amp; <a class="code hl_namespace" href="a01989.html">noiseModel</a> = SharedDiagonal()) :</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      <a class="code hl_function" href="a04311.html#a350122154dc86824df762ae59ee51f80">GaussianConditional</a>(key, <a class="code hl_function" href="a04311.html#aef329c61470954e7bec349f444e5e769">d</a>, <a class="code hl_function" href="a04311.html#a2f625a1f4f0ebb9db26019586b1abbe5">R</a>, <a class="code hl_namespace" href="a01989.html">noiseModel</a>) {}</div>
-</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="comment">//typedef boost::graph_traits&lt;SGraph&gt;::vertex_descriptor SVertex;</span></div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">static</span> <a class="code hl_class" href="a04319.html">GaussianDensity</a> FromMeanAndStddev(<a class="code hl_typedef" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key, <span class="keyword">const</span> Vector&amp; <a class="code hl_function" href="a01968.html#a300205092710091b8745c0a145da20a1">mean</a>,</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                                             <span class="keywordtype">double</span> sigma);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="a01968.html#a54fa43c89c5334314c8c75939dd5c2d7">print</a>(<span class="keyword">const</span> std::string&amp; = <span class="stringliteral">&quot;GaussianDensity&quot;</span>,</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a>&amp; formatter = DefaultKeyFormatter) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    Vector <a class="code hl_function" href="a01968.html#a300205092710091b8745c0a145da20a1">mean</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    Matrix covariance() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  };</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> KEY&gt;</div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="};">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="a04919.html">   58</a></span>  <span class="keyword">class </span><a class="code hl_class" href="a04919.html">PredecessorMap</a>: <span class="keyword">public</span> std::map&lt;KEY, KEY&gt; {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="a04919.html#a682e34c430a538cf5792a49b2d4697e9">   61</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a04919.html#a682e34c430a538cf5792a49b2d4697e9">insert</a>(<span class="keyword">const</span> KEY&amp; key, <span class="keyword">const</span> KEY&amp; parent) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      std::map&lt;KEY, KEY&gt;::emplace(key, parent);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
 </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="comment">// GaussianDensity</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}<span class="comment">// gtsam</span></div>
-<div class="ttc" id="aa00776_html"><div class="ttname"><a href="a00776.html">GaussianConditional.h</a></div><div class="ttdoc">Conditional Gaussian Base class.</div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa01968_html_a300205092710091b8745c0a145da20a1"><div class="ttname"><a href="a01968.html#a300205092710091b8745c0a145da20a1">gtsam::mean</a></div><div class="ttdeci">Point3 mean(const CONTAINER &amp;points)</div><div class="ttdoc">mean</div><div class="ttdef"><b>Definition</b> Point3.h:68</div></div>
-<div class="ttc" id="aa01968_html_a54fa43c89c5334314c8c75939dd5c2d7"><div class="ttname"><a href="a01968.html#a54fa43c89c5334314c8c75939dd5c2d7">gtsam::print</a></div><div class="ttdeci">void print(const Matrix &amp;A, const string &amp;s, ostream &amp;stream)</div><div class="ttdoc">print without optional string, must specify cout yourself</div><div class="ttdef"><b>Definition</b> Matrix.cpp:156</div></div>
-<div class="ttc" id="aa01968_html_a7d4eaa9f6e32da46e8f287499ee650d2"><div class="ttname"><a href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">gtsam::KeyFormatter</a></div><div class="ttdeci">std::function&lt; std::string(Key)&gt; KeyFormatter</div><div class="ttdoc">Typedef for a function to format a key, i.e. to convert it to a string.</div><div class="ttdef"><b>Definition</b> Key.h:35</div></div>
-<div class="ttc" id="aa01968_html_adad029f5f6ffce610428b5fe768b0df2"><div class="ttname"><a href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">gtsam::Key</a></div><div class="ttdeci">std::uint64_t Key</div><div class="ttdoc">Integer nonlinear key type.</div><div class="ttdef"><b>Definition</b> types.h:100</div></div>
-<div class="ttc" id="aa01989_html"><div class="ttname"><a href="a01989.html">gtsam::noiseModel</a></div><div class="ttdoc">All noise models live in the noiseModel namespace.</div><div class="ttdef"><b>Definition</b> LossFunctions.cpp:27</div></div>
-<div class="ttc" id="aa04119_html_ae19763bc0d1b12bea9e7bfcb304b40bb"><div class="ttname"><a href="a04119.html#ae19763bc0d1b12bea9e7bfcb304b40bb">gtsam::Conditional::nrParents</a></div><div class="ttdeci">size_t nrParents() const</div><div class="ttdoc">return the number of parents</div><div class="ttdef"><b>Definition</b> Conditional.h:113</div></div>
-<div class="ttc" id="aa04311_html_a2f625a1f4f0ebb9db26019586b1abbe5"><div class="ttname"><a href="a04311.html#a2f625a1f4f0ebb9db26019586b1abbe5">gtsam::GaussianConditional::R</a></div><div class="ttdeci">constABlock R() const</div><div class="ttdoc">Return a view of the upper-triangular R block of the conditional.</div><div class="ttdef"><b>Definition</b> GaussianConditional.h:218</div></div>
-<div class="ttc" id="aa04311_html_a350122154dc86824df762ae59ee51f80"><div class="ttname"><a href="a04311.html#a350122154dc86824df762ae59ee51f80">gtsam::GaussianConditional::GaussianConditional</a></div><div class="ttdeci">GaussianConditional()</div><div class="ttdoc">default constructor needed for serialization</div><div class="ttdef"><b>Definition</b> GaussianConditional.h:54</div></div>
-<div class="ttc" id="aa04311_html_aef329c61470954e7bec349f444e5e769"><div class="ttname"><a href="a04311.html#aef329c61470954e7bec349f444e5e769">gtsam::GaussianConditional::d</a></div><div class="ttdeci">const constBVector d() const</div><div class="ttdoc">Get a view of the r.h.s.</div><div class="ttdef"><b>Definition</b> GaussianConditional.h:227</div></div>
-<div class="ttc" id="aa04319_html"><div class="ttname"><a href="a04319.html">gtsam::GaussianDensity</a></div><div class="ttdoc">A GaussianDensity is a GaussianConditional without parents.</div><div class="ttdef"><b>Definition</b> GaussianDensity.h:32</div></div>
-<div class="ttc" id="aa04319_html_a4c8ce2cd6b2708df545c4fe7778169ee"><div class="ttname"><a href="a04319.html#a4c8ce2cd6b2708df545c4fe7778169ee">gtsam::GaussianDensity::GaussianDensity</a></div><div class="ttdeci">GaussianDensity(Key key, const Vector &amp;d, const Matrix &amp;R, const SharedDiagonal &amp;noiseModel=SharedDiagonal())</div><div class="ttdoc">constructor using d, R</div><div class="ttdef"><b>Definition</b> GaussianDensity.h:51</div></div>
-<div class="ttc" id="aa04319_html_a5e87d41948515b0ea5548aed04227acd"><div class="ttname"><a href="a04319.html#a5e87d41948515b0ea5548aed04227acd">gtsam::GaussianDensity::GaussianDensity</a></div><div class="ttdeci">GaussianDensity()</div><div class="ttdoc">default constructor needed for serialization</div><div class="ttdef"><b>Definition</b> GaussianDensity.h:39</div></div>
-<div class="ttc" id="aa04319_html_ab87337fa52b848ce99be24006daef46c"><div class="ttname"><a href="a04319.html#ab87337fa52b848ce99be24006daef46c">gtsam::GaussianDensity::GaussianDensity</a></div><div class="ttdeci">GaussianDensity(const GaussianConditional &amp;conditional)</div><div class="ttdoc">Copy constructor from GaussianConditional.</div><div class="ttdef"><b>Definition</b> GaussianDensity.h:44</div></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  };</div>
+</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> KEY&gt;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  std::list&lt;KEY&gt; <a class="code hl_function" href="a02242.html#a18a265afdea057ea54be10262396be12">predecessorMap2Keys</a>(<span class="keyword">const</span> PredecessorMap&lt;KEY&gt;&amp; p_map);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> G, <span class="keyword">class</span> F, <span class="keyword">class</span> KEY&gt; SDGraph&lt;KEY&gt; <a class="code hl_function" href="a02242.html#a6c0319a6ebcc83d4a5cf9ff51729bb80">toBoostGraph</a>(<span class="keyword">const</span> G&amp; graph);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> G, <span class="keyword">class</span> V, <span class="keyword">class</span> KEY&gt;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  std::tuple&lt;G, V, std::map&lt;KEY,V&gt; &gt;  <a class="code hl_function" href="a02242.html#a1b6a08798440d85f86ae876c15f39676">predecessorMap2Graph</a>(<span class="keyword">const</span> PredecessorMap&lt;KEY&gt;&amp; p_map);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> G, <span class="keyword">class</span> Factor, <span class="keyword">class</span> POSE, <span class="keyword">class</span> KEY&gt;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  std::shared_ptr&lt;Values&gt;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <a class="code hl_function" href="a02242.html#a3003899efc0383f5b58436a4bd0f1774">composePoses</a>(<span class="keyword">const</span> G&amp; graph, <span class="keyword">const</span> PredecessorMap&lt;KEY&gt;&amp; tree, <span class="keyword">const</span> POSE&amp; rootPose);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> G, <span class="keyword">class</span> KEY, <span class="keyword">class</span> FACTOR2&gt;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  PredecessorMap&lt;KEY&gt; <a class="code hl_function" href="a02242.html#a7771a103b41708e88763ff67059ff01d">findMinimumSpanningTree</a>(<span class="keyword">const</span> G&amp; g) ;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> G, <span class="keyword">class</span> KEY, <span class="keyword">class</span> FACTOR2&gt;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a02242.html#a3453247aec1d8b4642947ffd4bca426b">split</a>(<span class="keyword">const</span> G&amp; g, <span class="keyword">const</span> PredecessorMap&lt;KEY&gt;&amp; tree, G&amp; Ab1, G&amp; Ab2) ;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>} <span class="comment">// namespace gtsam</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#include &lt;gtsam/inference/graph-inl.h&gt;</span></div>
+<div class="ttc" id="aa01454_html"><div class="ttname"><a href="a01454.html">Values.h</a></div><div class="ttdoc">A non-templated config holding any types of Manifold-group elements.</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa02242_html_a18a265afdea057ea54be10262396be12"><div class="ttname"><a href="a02242.html#a18a265afdea057ea54be10262396be12">gtsam::predecessorMap2Keys</a></div><div class="ttdeci">std::list&lt; KEY &gt; predecessorMap2Keys(const PredecessorMap&lt; KEY &gt; &amp;p_map)</div><div class="ttdoc">Generate a list of keys from a spanning tree represented by its predecessor map.</div><div class="ttdef"><b>Definition</b> graph-inl.h:50</div></div>
+<div class="ttc" id="aa02242_html_a1b6a08798440d85f86ae876c15f39676"><div class="ttname"><a href="a02242.html#a1b6a08798440d85f86ae876c15f39676">gtsam::predecessorMap2Graph</a></div><div class="ttdeci">std::tuple&lt; G, V, std::map&lt; KEY, V &gt; &gt; predecessorMap2Graph(const PredecessorMap&lt; KEY &gt; &amp;p_map)</div><div class="ttdoc">Build takes a predecessor map, and builds a directed graph corresponding to the tree.</div><div class="ttdef"><b>Definition</b> graph-inl.h:113</div></div>
+<div class="ttc" id="aa02242_html_a3003899efc0383f5b58436a4bd0f1774"><div class="ttname"><a href="a02242.html#a3003899efc0383f5b58436a4bd0f1774">gtsam::composePoses</a></div><div class="ttdeci">std::shared_ptr&lt; Values &gt; composePoses(const G &amp;graph, const PredecessorMap&lt; KEY &gt; &amp;tree, const POSE &amp;rootPose)</div><div class="ttdoc">Compose the poses by following the chain specified by the spanning tree.</div><div class="ttdef"><b>Definition</b> graph-inl.h:167</div></div>
+<div class="ttc" id="aa02242_html_a3453247aec1d8b4642947ffd4bca426b"><div class="ttname"><a href="a02242.html#a3453247aec1d8b4642947ffd4bca426b">gtsam::split</a></div><div class="ttdeci">void split(const G &amp;g, const PredecessorMap&lt; KEY &gt; &amp;tree, G &amp;Ab1, G &amp;Ab2)</div><div class="ttdoc">Split the graph into two parts: one corresponds to the given spanning tree, and the other corresponds...</div><div class="ttdef"><b>Definition</b> graph-inl.h:245</div></div>
+<div class="ttc" id="aa02242_html_a6c0319a6ebcc83d4a5cf9ff51729bb80"><div class="ttname"><a href="a02242.html#a6c0319a6ebcc83d4a5cf9ff51729bb80">gtsam::toBoostGraph</a></div><div class="ttdeci">SDGraph&lt; KEY &gt; toBoostGraph(const G &amp;graph)</div><div class="ttdoc">Convert the factor graph to an SDGraph G = Graph type F = Factor type Key = Key type.</div><div class="ttdef"><b>Definition</b> graph-inl.h:63</div></div>
+<div class="ttc" id="aa02242_html_a7771a103b41708e88763ff67059ff01d"><div class="ttname"><a href="a02242.html#a7771a103b41708e88763ff67059ff01d">gtsam::findMinimumSpanningTree</a></div><div class="ttdeci">PredecessorMap&lt; KEY &gt; findMinimumSpanningTree(const G &amp;fg)</div><div class="ttdoc">find the minimum spanning tree using boost graph library</div><div class="ttdef"><b>Definition</b> graph-inl.h:222</div></div>
+<div class="ttc" id="aa04911_html"><div class="ttname"><a href="a04911.html">gtsam::SDGraph</a></div><div class="ttdoc">SDGraph is undirected graph with variable keys and double edge weights.</div><div class="ttdef"><b>Definition</b> graph.h:40</div></div>
+<div class="ttc" id="aa04915_html"><div class="ttname"><a href="a04915.html">gtsam::SGraph</a></div><div class="ttdef"><b>Definition</b> graph.h:47</div></div>
+<div class="ttc" id="aa04919_html"><div class="ttname"><a href="a04919.html">gtsam::PredecessorMap</a></div><div class="ttdoc">Map from variable key to parent key.</div><div class="ttdef"><b>Definition</b> graph.h:58</div></div>
+<div class="ttc" id="aa04919_html_a682e34c430a538cf5792a49b2d4697e9"><div class="ttname"><a href="a04919.html#a682e34c430a538cf5792a49b2d4697e9">gtsam::PredecessorMap::insert</a></div><div class="ttdeci">void insert(const KEY &amp;key, const KEY &amp;parent)</div><div class="ttdoc">convenience insert so we can pass ints for TypedSymbol keys</div><div class="ttdef"><b>Definition</b> graph.h:61</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>linear</b></li><li class="navelem"><a href="a00836.html">GaussianDensity.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>inference</b></li><li class="navelem"><a href="a00836.html">graph.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

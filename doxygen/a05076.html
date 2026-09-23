@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,17 +96,16 @@ $(function(){initNavTree('a05079.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::detail::NoiseModelFactorAliases&lt; T1, T2, T3, T4, T5 &gt; Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::FlatGaussianFactor Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a05079.html">gtsam::detail::NoiseModelFactorAliases&lt; T1, T2, T3, T4, T5 &gt;</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a05079.html">gtsam::FlatGaussianFactor</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>X1</b> typedef (defined in <a class="el" href="a05079.html">gtsam::detail::NoiseModelFactorAliases&lt; T1, T2, T3, T4, T5 &gt;</a>)</td><td class="entry"><a class="el" href="a05079.html">gtsam::detail::NoiseModelFactorAliases&lt; T1, T2, T3, T4, T5 &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>X2</b> typedef (defined in <a class="el" href="a05079.html">gtsam::detail::NoiseModelFactorAliases&lt; T1, T2, T3, T4, T5 &gt;</a>)</td><td class="entry"><a class="el" href="a05079.html">gtsam::detail::NoiseModelFactorAliases&lt; T1, T2, T3, T4, T5 &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>X3</b> typedef (defined in <a class="el" href="a05079.html">gtsam::detail::NoiseModelFactorAliases&lt; T1, T2, T3, T4, T5 &gt;</a>)</td><td class="entry"><a class="el" href="a05079.html">gtsam::detail::NoiseModelFactorAliases&lt; T1, T2, T3, T4, T5 &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>X4</b> typedef (defined in <a class="el" href="a05079.html">gtsam::detail::NoiseModelFactorAliases&lt; T1, T2, T3, T4, T5 &gt;</a>)</td><td class="entry"><a class="el" href="a05079.html">gtsam::detail::NoiseModelFactorAliases&lt; T1, T2, T3, T4, T5 &gt;</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>X5</b> typedef (defined in <a class="el" href="a05079.html">gtsam::detail::NoiseModelFactorAliases&lt; T1, T2, T3, T4, T5 &gt;</a>)</td><td class="entry"><a class="el" href="a05079.html">gtsam::detail::NoiseModelFactorAliases&lt; T1, T2, T3, T4, T5 &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05079.html#a47a1cf67d98cbaf2ff68c5eac3f78d71">gradientAtZeroAdd</a>(const std::vector&lt; size_t &gt; &amp;scalarOffsets, double *gradient) const =0</td><td class="entry"><a class="el" href="a05079.html">gtsam::FlatGaussianFactor</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05079.html#a83d3bd4996043f2515732ea866759102">hessianBlockDiagonalAdd</a>(const std::vector&lt; size_t &gt; &amp;blockSlots, std::vector&lt; Matrix &gt; *diagonalBlocks) const =0</td><td class="entry"><a class="el" href="a05079.html">gtsam::FlatGaussianFactor</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05079.html#a4f734f7fa277be5f2ca6ad066dd796ca">multiplyHessianAdd</a>(double alpha, const std::vector&lt; size_t &gt; &amp;scalarOffsets, const double *x, double *y) const =0</td><td class="entry"><a class="el" href="a05079.html">gtsam::FlatGaussianFactor</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>~FlatGaussianFactor</b>() (defined in <a class="el" href="a05079.html">gtsam::FlatGaussianFactor</a>)</td><td class="entry"><a class="el" href="a05079.html">gtsam::FlatGaussianFactor</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

@@ -1,7 +1,6 @@
 var a05431 =
 [
-    [ "OrientedPlane3Factor", "a05431.html#a8b12c19ade2fbcafc3dfbddeb5b84f85", null ],
-    [ "OrientedPlane3Factor", "a05431.html#a2cef73cad1acb86d374f8aaa07f3a647", null ],
-    [ "evaluateError", "a05431.html#a6d9b52821e0fc09d0c70117f06b838d3", null ],
-    [ "print", "a05431.html#a3edf9a79b6d769435ebeb0f45e463acc", null ]
+    [ "numThreads", "a05431.html#a41337f0e3d624924e4b8acb828293ce7", null ],
+    [ "parallel", "a05431.html#ab4703badd00cf1cdd5ce615a38111ad3", null ],
+    [ "preconditioner", "a05431.html#a09676e250abb9f08aee2e05b9a3b5b79", null ]
 ];

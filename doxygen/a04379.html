@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::IterativeSolver Class Reference</title>
+<title>gtsam: gtsam::Pose2 Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,39 +96,280 @@ $(function(){initNavTree('a04379.html','','a04376'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::IterativeSolver Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+  <div class="headertitle"><div class="title">gtsam::Pose2 Class Reference<div class="ingroups"><a class="el" href="a02230.html">Geometry</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Base class for Iterative Solvers like <a class="el" href="a04607.html" title="This class implements the linear SPCG solver presented in Dellaert et al in IROS&#39;10.">SubgraphSolver</a>. </p>
-</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::IterativeSolver:</div>
+<div class="textblock"><p>A 2D pose (<a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d" title="As of GTSAM 4, in order to make GTSAM more lean, it is now possible to just typedef Point2 to Vector2...">Point2</a>,<a class="el" href="a04435.html" title="Rotation matrix NOTE: the angle theta is in radians unless explicitly stated.">Rot2</a>). </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::Pose2:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a04379.png" usemap="#gtsam_3A_3AIterativeSolver_map" alt=""/>
-  <map id="gtsam_3A_3AIterativeSolver_map" name="gtsam_3A_3AIterativeSolver_map">
-<area href="a04519.html" title="A virtual base class for the preconditioned conjugate gradient solver." alt="gtsam::PCGSolver" shape="rect" coords="0,56,142,80"/>
-<area href="a04607.html" title="This class implements the linear SPCG solver presented in Dellaert et al in IROS&#39;10." alt="gtsam::SubgraphSolver" shape="rect" coords="152,56,294,80"/>
+  <img src="a04379.png" usemap="#gtsam_3A_3APose2_map" alt=""/>
+  <map id="gtsam_3A_3APose2_map" name="gtsam_3A_3APose2_map">
+<area href="a03335.html" alt="gtsam::MatrixLieGroup&lt; Pose2, 3, 3 &gt;" shape="rect" coords="0,56,228,80"/>
+<area href="a03267.html" alt="gtsam::LieGroup&lt; Pose2, D &gt;" shape="rect" coords="0,0,228,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a8410744c67f20d81f61c0e74fff96ee0" id="r_a8410744c67f20d81f61c0e74fff96ee0"><td class="memItemLeft"><a id="a8410744c67f20d81f61c0e74fff96ee0" name="a8410744c67f20d81f61c0e74fff96ee0"></a>
-GTSAM_EXPORT <a class="el" href="a06239.html">VectorValues</a>&#160;</td><td class="memItemRight"><b>optimize</b> (const <a class="el" href="a04339.html">GaussianFactorGraph</a> &amp;gfg, boost::optional&lt; const <a class="el" href="a04387.html">KeyInfo</a> &amp; &gt;=boost::none, boost::optional&lt; const std::map&lt; <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, Vector &gt; &amp; &gt; lambda=boost::none)</td></tr>
-<tr class="memitem:a8fcdf349082ca630d3d09ae996634df6" id="r_a8fcdf349082ca630d3d09ae996634df6"><td class="memItemLeft"><a id="a8fcdf349082ca630d3d09ae996634df6" name="a8fcdf349082ca630d3d09ae996634df6"></a>
-GTSAM_EXPORT <a class="el" href="a06239.html">VectorValues</a>&#160;</td><td class="memItemRight"><b>optimize</b> (const <a class="el" href="a04339.html">GaussianFactorGraph</a> &amp;gfg, const <a class="el" href="a04387.html">KeyInfo</a> &amp;keyInfo, const std::map&lt; <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, Vector &gt; &amp;lambda)</td></tr>
-<tr class="memitem:aaee1d56959059d7474a31081391307ad" id="r_aaee1d56959059d7474a31081391307ad"><td class="memItemLeft">virtual <a class="el" href="a06239.html">VectorValues</a>&#160;</td><td class="memItemRight"><a class="el" href="#aaee1d56959059d7474a31081391307ad">optimize</a> (const <a class="el" href="a04339.html">GaussianFactorGraph</a> &amp;gfg, const <a class="el" href="a04387.html">KeyInfo</a> &amp;keyInfo, const std::map&lt; <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, Vector &gt; &amp;lambda, const <a class="el" href="a06239.html">VectorValues</a> &amp;initial)=0</td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Standard Constructors</h2></td></tr>
+<tr class="memitem:ab9d2ac29304985d9ccfd66ef0f9a9aaf" id="r_ab9d2ac29304985d9ccfd66ef0f9a9aaf"><td class="memItemLeft"><a id="ab9d2ac29304985d9ccfd66ef0f9a9aaf" name="ab9d2ac29304985d9ccfd66ef0f9a9aaf"></a>
+&#160;</td><td class="memItemRight"><b>Pose2</b> ()</td></tr>
+<tr class="memdesc:ab9d2ac29304985d9ccfd66ef0f9a9aaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">default constructor = origin <br /></td></tr>
+<tr class="memitem:a6986019878b26a70471234052d0db543" id="r_a6986019878b26a70471234052d0db543"><td class="memItemLeft"><a id="a6986019878b26a70471234052d0db543" name="a6986019878b26a70471234052d0db543"></a>
+&#160;</td><td class="memItemRight"><b>Pose2</b> (const Pose2 &amp;pose)=default</td></tr>
+<tr class="memdesc:a6986019878b26a70471234052d0db543"><td class="mdescLeft">&#160;</td><td class="mdescRight">copy constructor <br /></td></tr>
+<tr class="memitem:a3d2b6fe339a3a4c0efa663449893f8db" id="r_a3d2b6fe339a3a4c0efa663449893f8db"><td class="memItemLeft"><a id="a3d2b6fe339a3a4c0efa663449893f8db" name="a3d2b6fe339a3a4c0efa663449893f8db"></a>
+<a class="el" href="#ab9d2ac29304985d9ccfd66ef0f9a9aaf">Pose2</a> &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (const <a class="el" href="#ab9d2ac29304985d9ccfd66ef0f9a9aaf">Pose2</a> &amp;other)=default</td></tr>
+<tr class="memitem:a5d0b6d7bfebdf3f4478407160f480a1a" id="r_a5d0b6d7bfebdf3f4478407160f480a1a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5d0b6d7bfebdf3f4478407160f480a1a">Pose2</a> (double <a class="el" href="#a7228f4c1503c94e90f5d5e5fdbd7fd5e">x</a>, double <a class="el" href="#a31c18f608276bec9877030ce8b1fe9c2">y</a>, double <a class="el" href="#aab82b98ef745bb0f8f487ee83420f606">theta</a>)</td></tr>
+<tr class="memdesc:a5d0b6d7bfebdf3f4478407160f480a1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct from (x,y,theta)  <br /></td></tr>
+<tr class="memitem:a698cbb45d2308207237e0a0ab6b27f2c" id="r_a698cbb45d2308207237e0a0ab6b27f2c"><td class="memItemLeft"><a id="a698cbb45d2308207237e0a0ab6b27f2c" name="a698cbb45d2308207237e0a0ab6b27f2c"></a>
+&#160;</td><td class="memItemRight"><b>Pose2</b> (double <a class="el" href="#aab82b98ef745bb0f8f487ee83420f606">theta</a>, const <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> &amp;<a class="el" href="#a5f4e106e45e7bb12471dc62f4bcd187c">t</a>)</td></tr>
+<tr class="memdesc:a698cbb45d2308207237e0a0ab6b27f2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct from rotation and translation <br /></td></tr>
+<tr class="memitem:ae857f3177acf6c8924aedeebafe10ede" id="r_ae857f3177acf6c8924aedeebafe10ede"><td class="memItemLeft"><a id="ae857f3177acf6c8924aedeebafe10ede" name="ae857f3177acf6c8924aedeebafe10ede"></a>
+&#160;</td><td class="memItemRight"><b>Pose2</b> (const <a class="el" href="a04435.html">Rot2</a> &amp;<a class="el" href="#a7a70ba51dc16fe3d18cd2c16cb10b46c">r</a>, const <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> &amp;<a class="el" href="#a5f4e106e45e7bb12471dc62f4bcd187c">t</a>)</td></tr>
+<tr class="memdesc:ae857f3177acf6c8924aedeebafe10ede"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct from r,t <br /></td></tr>
+<tr class="memitem:afcd35e3178b6b949cc6d5e1009c5e844" id="r_afcd35e3178b6b949cc6d5e1009c5e844"><td class="memItemLeft"><a id="afcd35e3178b6b949cc6d5e1009c5e844" name="afcd35e3178b6b949cc6d5e1009c5e844"></a>
+&#160;</td><td class="memItemRight"><b>Pose2</b> (const Matrix &amp;T)</td></tr>
+<tr class="memdesc:afcd35e3178b6b949cc6d5e1009c5e844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from 3*3 matrix. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Testable</h2></td></tr>
+<tr class="memitem:a12d332c686d07c52f163da1307db90b0" id="r_a12d332c686d07c52f163da1307db90b0"><td class="memItemLeft"><a id="a12d332c686d07c52f163da1307db90b0" name="a12d332c686d07c52f163da1307db90b0"></a>
+void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;&quot;) const</td></tr>
+<tr class="memdesc:a12d332c686d07c52f163da1307db90b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">print with optional string <br /></td></tr>
+<tr class="memitem:aaf55bed292a098e2e2275157d1707b1b" id="r_aaf55bed292a098e2e2275157d1707b1b"><td class="memItemLeft"><a id="aaf55bed292a098e2e2275157d1707b1b" name="aaf55bed292a098e2e2275157d1707b1b"></a>
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="#ab9d2ac29304985d9ccfd66ef0f9a9aaf">Pose2</a> &amp;pose, double tol=1e-9) const</td></tr>
+<tr class="memdesc:aaf55bed292a098e2e2275157d1707b1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">assert equality up to a tolerance <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Group</h2></td></tr>
+<tr class="memitem:a438b73dbeda3e8c7818aeff5954f60b3" id="r_a438b73dbeda3e8c7818aeff5954f60b3"><td class="memItemLeft"><a id="a438b73dbeda3e8c7818aeff5954f60b3" name="a438b73dbeda3e8c7818aeff5954f60b3"></a>
+<a class="el" href="#ab9d2ac29304985d9ccfd66ef0f9a9aaf">Pose2</a>&#160;</td><td class="memItemRight"><b>inverse</b> () const</td></tr>
+<tr class="memdesc:a438b73dbeda3e8c7818aeff5954f60b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">inverse <br /></td></tr>
+<tr class="memitem:a06fa36176baf3acd3360732d61bac68c" id="r_a06fa36176baf3acd3360732d61bac68c"><td class="memItemLeft"><a id="a06fa36176baf3acd3360732d61bac68c" name="a06fa36176baf3acd3360732d61bac68c"></a>
+<a class="el" href="#ab9d2ac29304985d9ccfd66ef0f9a9aaf">Pose2</a>&#160;</td><td class="memItemRight"><b>operator*</b> (const <a class="el" href="#ab9d2ac29304985d9ccfd66ef0f9a9aaf">Pose2</a> &amp;p2) const</td></tr>
+<tr class="memdesc:a06fa36176baf3acd3360732d61bac68c"><td class="mdescLeft">&#160;</td><td class="mdescRight">compose syntactic sugar <br /></td></tr>
+<tr class="memitem:adc4906426a8af68ca89948ab034ea032" id="r_adc4906426a8af68ca89948ab034ea032"><td class="memItemLeft"><a id="adc4906426a8af68ca89948ab034ea032" name="adc4906426a8af68ca89948ab034ea032"></a>
+static <a class="el" href="#ab9d2ac29304985d9ccfd66ef0f9a9aaf">Pose2</a>&#160;</td><td class="memItemRight"><b>Identity</b> ()</td></tr>
+<tr class="memdesc:adc4906426a8af68ca89948ab034ea032"><td class="mdescLeft">&#160;</td><td class="mdescRight">identity for group operation <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Lie Group</h2></td></tr>
+<tr class="memitem:a18b9d32432bf102feaa79876e21144b2" id="r_a18b9d32432bf102feaa79876e21144b2"><td class="memItemLeft"><a id="a18b9d32432bf102feaa79876e21144b2" name="a18b9d32432bf102feaa79876e21144b2"></a>
+Matrix3&#160;</td><td class="memItemRight"><b>AdjointMap</b> () const</td></tr>
+<tr class="memdesc:a18b9d32432bf102feaa79876e21144b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate Adjoint map Ad_pose is 3*3 matrix that when applied to twist xi \( [T_x,T_y,\theta] \), returns Ad_pose(xi). <br /></td></tr>
+<tr class="memitem:a4dc851451327aabdb446d5529b792685" id="r_a4dc851451327aabdb446d5529b792685"><td class="memItemLeft"><a id="a4dc851451327aabdb446d5529b792685" name="a4dc851451327aabdb446d5529b792685"></a>
+static <a class="el" href="#ab9d2ac29304985d9ccfd66ef0f9a9aaf">Pose2</a>&#160;</td><td class="memItemRight"><b>Expmap</b> (const Vector3 &amp;xi, ChartJacobian H={})</td></tr>
+<tr class="memdesc:a4dc851451327aabdb446d5529b792685"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exponential map at identity - create a rotation from canonical coordinates \( [T_x,T_y,\theta] \). <br /></td></tr>
+<tr class="memitem:ae9f71bda11b912bbab0fcb1aa7558528" id="r_ae9f71bda11b912bbab0fcb1aa7558528"><td class="memItemLeft"><a id="ae9f71bda11b912bbab0fcb1aa7558528" name="ae9f71bda11b912bbab0fcb1aa7558528"></a>
+static Vector3&#160;</td><td class="memItemRight"><b>Logmap</b> (const <a class="el" href="#ab9d2ac29304985d9ccfd66ef0f9a9aaf">Pose2</a> &amp;p, ChartJacobian H={})</td></tr>
+<tr class="memdesc:ae9f71bda11b912bbab0fcb1aa7558528"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log map at identity - return the canonical coordinates \( [T_x,T_y,\theta] \) of this rotation. <br /></td></tr>
+<tr class="memitem:aa63d9d4f5080b99b252fe5b4b3788d52" id="r_aa63d9d4f5080b99b252fe5b4b3788d52"><td class="memItemLeft"><a id="aa63d9d4f5080b99b252fe5b4b3788d52" name="aa63d9d4f5080b99b252fe5b4b3788d52"></a>
+static Matrix3&#160;</td><td class="memItemRight"><b>adjointMap</b> (const Vector3 &amp;v)</td></tr>
+<tr class="memdesc:aa63d9d4f5080b99b252fe5b4b3788d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the [ad(w,v)] operator for SE2 as in [Kobilarov09siggraph], pg 19. <br /></td></tr>
+<tr class="memitem:a168cce9546cb8a545a0e7643d92e7946" id="r_a168cce9546cb8a545a0e7643d92e7946"><td class="memItemLeft"><a id="a168cce9546cb8a545a0e7643d92e7946" name="a168cce9546cb8a545a0e7643d92e7946"></a>
+static Matrix3&#160;</td><td class="memItemRight"><b>adjointMap_</b> (const Vector3 &amp;xi)</td></tr>
+<tr class="memitem:a3f7d7852ae6e541ab18f72d42cd1901d" id="r_a3f7d7852ae6e541ab18f72d42cd1901d"><td class="memItemLeft"><a id="a3f7d7852ae6e541ab18f72d42cd1901d" name="a3f7d7852ae6e541ab18f72d42cd1901d"></a>
+static Vector3&#160;</td><td class="memItemRight"><b>adjoint_</b> (const Vector3 &amp;xi, const Vector3 &amp;<a class="el" href="#a31c18f608276bec9877030ce8b1fe9c2">y</a>)</td></tr>
+<tr class="memitem:aad85077d2e761a774cb3867ca58b6dbc" id="r_aad85077d2e761a774cb3867ca58b6dbc"><td class="memItemLeft"><a id="aad85077d2e761a774cb3867ca58b6dbc" name="aad85077d2e761a774cb3867ca58b6dbc"></a>
+static Matrix3&#160;</td><td class="memItemRight"><b>ExpmapDerivative</b> (const Vector3 &amp;v)</td></tr>
+<tr class="memdesc:aad85077d2e761a774cb3867ca58b6dbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Derivative of Expmap. <br /></td></tr>
+<tr class="memitem:a49f10bbdba59ff8bd11d81f494a69b63" id="r_a49f10bbdba59ff8bd11d81f494a69b63"><td class="memItemLeft">static Matrix3&#160;</td><td class="memItemRight"><a class="el" href="#a49f10bbdba59ff8bd11d81f494a69b63">LogmapDerivative</a> (const <a class="el" href="#ab9d2ac29304985d9ccfd66ef0f9a9aaf">Pose2</a> &amp;pose)</td></tr>
+<tr class="memdesc:a49f10bbdba59ff8bd11d81f494a69b63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverse right Jacobian of the exponential map evaluated at a pose.  <br /></td></tr>
+<tr class="memitem:ac894a01ac4e35ca2b6dd74d35537d425" id="r_ac894a01ac4e35ca2b6dd74d35537d425"><td class="memItemLeft">static Matrix3&#160;</td><td class="memItemRight"><a class="el" href="#ac894a01ac4e35ca2b6dd74d35537d425">LogmapDerivative</a> (const Vector3 &amp;xi)</td></tr>
+<tr class="memdesc:ac894a01ac4e35ca2b6dd74d35537d425"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverse right Jacobian of the exponential map evaluated at tangent coordinates xi = (dx, dy, dtheta).  <br /></td></tr>
+<tr class="memitem:af784a4ca14368eaffd6acfb6f973f10a" id="r_af784a4ca14368eaffd6acfb6f973f10a"><td class="memItemLeft"><a id="af784a4ca14368eaffd6acfb6f973f10a" name="af784a4ca14368eaffd6acfb6f973f10a"></a>
+static Matrix3&#160;</td><td class="memItemRight"><b>Hat</b> (const Vector3 &amp;xi)</td></tr>
+<tr class="memdesc:af784a4ca14368eaffd6acfb6f973f10a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hat maps from tangent vector to Lie algebra. <br /></td></tr>
+<tr class="memitem:a1d1ede5e8f76cc4f1451221c59b8b86b" id="r_a1d1ede5e8f76cc4f1451221c59b8b86b"><td class="memItemLeft"><a id="a1d1ede5e8f76cc4f1451221c59b8b86b" name="a1d1ede5e8f76cc4f1451221c59b8b86b"></a>
+static Vector3&#160;</td><td class="memItemRight"><b>Vee</b> (const Matrix3 &amp;X)</td></tr>
+<tr class="memdesc:a1d1ede5e8f76cc4f1451221c59b8b86b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vee maps from Lie algebra to tangent vector. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Group Action on Point2</h2></td></tr>
+<tr class="memitem:ac838e24eb2d1f6f70333323f3b2f535a" id="r_ac838e24eb2d1f6f70333323f3b2f535a"><td class="memItemLeft"><a id="ac838e24eb2d1f6f70333323f3b2f535a" name="ac838e24eb2d1f6f70333323f3b2f535a"></a>
+<a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&#160;</td><td class="memItemRight"><b>transformTo</b> (const <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> &amp;point, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, 3 &gt; Dpose={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, 2 &gt; Dpoint={}) const</td></tr>
+<tr class="memdesc:ac838e24eb2d1f6f70333323f3b2f535a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return point coordinates in pose coordinate frame. <br /></td></tr>
+<tr class="memitem:a1f12b53324f631d9e026ae948f479ed4" id="r_a1f12b53324f631d9e026ae948f479ed4"><td class="memItemLeft">Matrix&#160;</td><td class="memItemRight"><a class="el" href="#a1f12b53324f631d9e026ae948f479ed4">transformTo</a> (<a class="el" href="a02242.html#ac1b1bc700e21fbe3ea82eabf09660d6a">ConstMatrixView</a> points) const</td></tr>
+<tr class="memdesc:a1f12b53324f631d9e026ae948f479ed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">transform many points in world coordinates and transform to Pose.  <br /></td></tr>
+<tr class="memitem:a530f63e3b6c162d6affbee1836182bb2" id="r_a530f63e3b6c162d6affbee1836182bb2"><td class="memItemLeft"><a id="a530f63e3b6c162d6affbee1836182bb2" name="a530f63e3b6c162d6affbee1836182bb2"></a>
+<a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&#160;</td><td class="memItemRight"><b>transformFrom</b> (const <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> &amp;point, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, 3 &gt; Dpose={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, 2 &gt; Dpoint={}) const</td></tr>
+<tr class="memdesc:a530f63e3b6c162d6affbee1836182bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return point coordinates in global frame. <br /></td></tr>
+<tr class="memitem:a366cfb0c695c6b5dc306518012d6126e" id="r_a366cfb0c695c6b5dc306518012d6126e"><td class="memItemLeft">Matrix&#160;</td><td class="memItemRight"><a class="el" href="#a366cfb0c695c6b5dc306518012d6126e">transformFrom</a> (<a class="el" href="a02242.html#ac1b1bc700e21fbe3ea82eabf09660d6a">ConstMatrixView</a> points) const</td></tr>
+<tr class="memdesc:a366cfb0c695c6b5dc306518012d6126e"><td class="mdescLeft">&#160;</td><td class="mdescRight">transform many points in Pose coordinates and transform to world.  <br /></td></tr>
+<tr class="memitem:a5a4294a40d9483ef634f315021ee26de" id="r_a5a4294a40d9483ef634f315021ee26de"><td class="memItemLeft"><a id="a5a4294a40d9483ef634f315021ee26de" name="a5a4294a40d9483ef634f315021ee26de"></a>
+<a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&#160;</td><td class="memItemRight"><b>operator*</b> (const <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> &amp;point) const</td></tr>
+<tr class="memdesc:a5a4294a40d9483ef634f315021ee26de"><td class="mdescLeft">&#160;</td><td class="mdescRight">syntactic sugar for transformFrom <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Standard Interface</h2></td></tr>
+<tr class="memitem:a7228f4c1503c94e90f5d5e5fdbd7fd5e" id="r_a7228f4c1503c94e90f5d5e5fdbd7fd5e"><td class="memItemLeft"><a id="a7228f4c1503c94e90f5d5e5fdbd7fd5e" name="a7228f4c1503c94e90f5d5e5fdbd7fd5e"></a>
+double&#160;</td><td class="memItemRight"><b>x</b> () const</td></tr>
+<tr class="memdesc:a7228f4c1503c94e90f5d5e5fdbd7fd5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">get x <br /></td></tr>
+<tr class="memitem:a31c18f608276bec9877030ce8b1fe9c2" id="r_a31c18f608276bec9877030ce8b1fe9c2"><td class="memItemLeft"><a id="a31c18f608276bec9877030ce8b1fe9c2" name="a31c18f608276bec9877030ce8b1fe9c2"></a>
+double&#160;</td><td class="memItemRight"><b>y</b> () const</td></tr>
+<tr class="memdesc:a31c18f608276bec9877030ce8b1fe9c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">get y <br /></td></tr>
+<tr class="memitem:aab82b98ef745bb0f8f487ee83420f606" id="r_aab82b98ef745bb0f8f487ee83420f606"><td class="memItemLeft"><a id="aab82b98ef745bb0f8f487ee83420f606" name="aab82b98ef745bb0f8f487ee83420f606"></a>
+double&#160;</td><td class="memItemRight"><b>theta</b> () const</td></tr>
+<tr class="memdesc:aab82b98ef745bb0f8f487ee83420f606"><td class="mdescLeft">&#160;</td><td class="mdescRight">get theta <br /></td></tr>
+<tr class="memitem:a5f4e106e45e7bb12471dc62f4bcd187c" id="r_a5f4e106e45e7bb12471dc62f4bcd187c"><td class="memItemLeft"><a id="a5f4e106e45e7bb12471dc62f4bcd187c" name="a5f4e106e45e7bb12471dc62f4bcd187c"></a>
+const <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> &amp;&#160;</td><td class="memItemRight"><b>t</b> () const</td></tr>
+<tr class="memdesc:a5f4e106e45e7bb12471dc62f4bcd187c"><td class="mdescLeft">&#160;</td><td class="mdescRight">translation <br /></td></tr>
+<tr class="memitem:a7a70ba51dc16fe3d18cd2c16cb10b46c" id="r_a7a70ba51dc16fe3d18cd2c16cb10b46c"><td class="memItemLeft"><a id="a7a70ba51dc16fe3d18cd2c16cb10b46c" name="a7a70ba51dc16fe3d18cd2c16cb10b46c"></a>
+const <a class="el" href="a04435.html">Rot2</a> &amp;&#160;</td><td class="memItemRight"><b>r</b> () const</td></tr>
+<tr class="memdesc:a7a70ba51dc16fe3d18cd2c16cb10b46c"><td class="mdescLeft">&#160;</td><td class="mdescRight">rotation <br /></td></tr>
+<tr class="memitem:a3d0ea4cca8648f565196ec88302554b7" id="r_a3d0ea4cca8648f565196ec88302554b7"><td class="memItemLeft"><a id="a3d0ea4cca8648f565196ec88302554b7" name="a3d0ea4cca8648f565196ec88302554b7"></a>
+const <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> &amp;&#160;</td><td class="memItemRight"><b>translation</b> (<a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, 3 &gt; Hself={}) const</td></tr>
+<tr class="memdesc:a3d0ea4cca8648f565196ec88302554b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">translation <br /></td></tr>
+<tr class="memitem:aa2711a3c1ca143505f91bcd361c03aa4" id="r_aa2711a3c1ca143505f91bcd361c03aa4"><td class="memItemLeft"><a id="aa2711a3c1ca143505f91bcd361c03aa4" name="aa2711a3c1ca143505f91bcd361c03aa4"></a>
+const <a class="el" href="a04435.html">Rot2</a> &amp;&#160;</td><td class="memItemRight"><b>rotation</b> (<a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 3 &gt; Hself={}) const</td></tr>
+<tr class="memdesc:aa2711a3c1ca143505f91bcd361c03aa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">rotation <br /></td></tr>
+<tr class="memitem:ae7f12688113137881a1b7c9624185167" id="r_ae7f12688113137881a1b7c9624185167"><td class="memItemLeft"><a id="ae7f12688113137881a1b7c9624185167" name="ae7f12688113137881a1b7c9624185167"></a>
+Matrix3&#160;</td><td class="memItemRight"><b>matrix</b> () const</td></tr>
+<tr class="memdesc:ae7f12688113137881a1b7c9624185167"><td class="mdescLeft">&#160;</td><td class="mdescRight">return transformation matrix <br /></td></tr>
+<tr class="memitem:a45801f53470eec8086babb8630a51964" id="r_a45801f53470eec8086babb8630a51964"><td class="memItemLeft"><a id="a45801f53470eec8086babb8630a51964" name="a45801f53470eec8086babb8630a51964"></a>
+Vector9&#160;</td><td class="memItemRight"><b>vec</b> (<a class="el" href="a03363.html">OptionalJacobian</a>&lt; 9, 3 &gt; H={}) const</td></tr>
+<tr class="memdesc:a45801f53470eec8086babb8630a51964"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vectorize the rotation matrix into a 9D vector. <br /></td></tr>
+<tr class="memitem:a3f2b63558496e651eb750bcee9433cf8" id="r_a3f2b63558496e651eb750bcee9433cf8"><td class="memItemLeft"><a class="el" href="a04435.html">Rot2</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3f2b63558496e651eb750bcee9433cf8">bearing</a> (const <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> &amp;point, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 3 &gt; H1={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 2 &gt; H2={}) const</td></tr>
+<tr class="memdesc:a3f2b63558496e651eb750bcee9433cf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate bearing to a landmark.  <br /></td></tr>
+<tr class="memitem:aa3b68061f0c4636450b8b7787685bf60" id="r_aa3b68061f0c4636450b8b7787685bf60"><td class="memItemLeft"><a class="el" href="a04435.html">Rot2</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa3b68061f0c4636450b8b7787685bf60">bearing</a> (const <a class="el" href="#ab9d2ac29304985d9ccfd66ef0f9a9aaf">Pose2</a> &amp;pose, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 3 &gt; H1={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 3 &gt; H2={}) const</td></tr>
+<tr class="memdesc:aa3b68061f0c4636450b8b7787685bf60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate bearing to another pose.  <br /></td></tr>
+<tr class="memitem:a1621d01bd0432f04192070a2b1f076bd" id="r_a1621d01bd0432f04192070a2b1f076bd"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a1621d01bd0432f04192070a2b1f076bd">range</a> (const <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> &amp;point, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 3 &gt; H1={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 2 &gt; H2={}) const</td></tr>
+<tr class="memdesc:a1621d01bd0432f04192070a2b1f076bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate range to a landmark.  <br /></td></tr>
+<tr class="memitem:ab94e1d6418a749ca71bb1a5ec608488f" id="r_ab94e1d6418a749ca71bb1a5ec608488f"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#ab94e1d6418a749ca71bb1a5ec608488f">range</a> (const <a class="el" href="#ab9d2ac29304985d9ccfd66ef0f9a9aaf">Pose2</a> &amp;point, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 3 &gt; H1={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 3 &gt; H2={}) const</td></tr>
+<tr class="memdesc:ab94e1d6418a749ca71bb1a5ec608488f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate range to another pose.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Advanced Constructors</h2></td></tr>
+<tr class="memitem:a44efece81190c33fd3e160ea4a006e8e" id="r_a44efece81190c33fd3e160ea4a006e8e"><td class="memItemLeft"><a id="a44efece81190c33fd3e160ea4a006e8e" name="a44efece81190c33fd3e160ea4a006e8e"></a>
+static std::optional&lt; <a class="el" href="#ab9d2ac29304985d9ccfd66ef0f9a9aaf">Pose2</a> &gt;&#160;</td><td class="memItemRight"><b>Align</b> (const Point2Pairs &amp;abPointPairs)</td></tr>
+<tr class="memdesc:a44efece81190c33fd3e160ea4a006e8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="a04379.html" title="A 2D pose (Point2,Rot2).">Pose2</a> by aligning two point pairs A pose aTb is estimated between pairs (a_point, b_point) such that a_point = aTb * b_point Note this allows for noise on the points but in that case the mapping will not be exact. <br /></td></tr>
+<tr class="memitem:aa0bfc54a968e3700d97feb8029bc73a5" id="r_aa0bfc54a968e3700d97feb8029bc73a5"><td class="memItemLeft"><a id="aa0bfc54a968e3700d97feb8029bc73a5" name="aa0bfc54a968e3700d97feb8029bc73a5"></a>
+static std::optional&lt; <a class="el" href="#ab9d2ac29304985d9ccfd66ef0f9a9aaf">Pose2</a> &gt;&#160;</td><td class="memItemRight"><b>Align</b> (<a class="el" href="a02242.html#ac1b1bc700e21fbe3ea82eabf09660d6a">ConstMatrixView</a> a, <a class="el" href="a02242.html#ac1b1bc700e21fbe3ea82eabf09660d6a">ConstMatrixView</a> b)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Advanced Interface</h2></td></tr>
+<tr class="memitem:a68e923aa25cf68f1368685e61807e89f" id="r_a68e923aa25cf68f1368685e61807e89f"><td class="memItemLeft">static std::pair&lt; size_t, size_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a68e923aa25cf68f1368685e61807e89f">translationInterval</a> ()</td></tr>
+<tr class="memdesc:a68e923aa25cf68f1368685e61807e89f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the start and end indices (inclusive) of the translation component of the exponential map parameterization.  <br /></td></tr>
+<tr class="memitem:aa639abcd4855c99f69b37e7832092a28" id="r_aa639abcd4855c99f69b37e7832092a28"><td class="memItemLeft">static std::pair&lt; size_t, size_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aa639abcd4855c99f69b37e7832092a28">rotationInterval</a> ()</td></tr>
+<tr class="memdesc:aa639abcd4855c99f69b37e7832092a28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the start and end indices (inclusive) of the rotation component of the exponential map parameterization.  <br /></td></tr>
+<tr class="memitem:a5a26ea88283360b8948b4a18c0a4b0bc" id="r_a5a26ea88283360b8948b4a18c0a4b0bc"><td class="memItemLeft"><a id="a5a26ea88283360b8948b4a18c0a4b0bc" name="a5a26ea88283360b8948b4a18c0a4b0bc"></a>
+GTSAM_EXPORT friend std::ostream &amp;&#160;</td><td class="memItemRight"><b>operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="#ab9d2ac29304985d9ccfd66ef0f9a9aaf">Pose2</a> &amp;p)</td></tr>
+<tr class="memdesc:a5a26ea88283360b8948b4a18c0a4b0bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output stream operator. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:aa1c6c69842c6e2e0a5c35d1b430b81a6" id="r_aa1c6c69842c6e2e0a5c35d1b430b81a6"><td class="memItemLeft"><a id="aa1c6c69842c6e2e0a5c35d1b430b81a6" name="aa1c6c69842c6e2e0a5c35d1b430b81a6"></a>
-typedef boost::shared_ptr&lt; IterativeSolver &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+<tr class="memitem:a5e995b26ed0609517225093fa428be0a" id="r_a5e995b26ed0609517225093fa428be0a"><td class="memItemLeft"><a id="a5e995b26ed0609517225093fa428be0a" name="a5e995b26ed0609517225093fa428be0a"></a>
+using&#160;</td><td class="memItemRight"><b>Rotation</b> = <a class="el" href="a04435.html">Rot2</a></td></tr>
+<tr class="memdesc:a5e995b26ed0609517225093fa428be0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pose Concept requirements. <br /></td></tr>
+<tr class="memitem:a112614a1d4b658d30801c715b4cd7aa1" id="r_a112614a1d4b658d30801c715b4cd7aa1"><td class="memItemLeft"><a id="a112614a1d4b658d30801c715b4cd7aa1" name="a112614a1d4b658d30801c715b4cd7aa1"></a>
+using&#160;</td><td class="memItemRight"><b>Translation</b> = <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a></td></tr>
+<tr class="memitem:a28ba36bab7e39c80a248cef0000cdcc2" id="r_a28ba36bab7e39c80a248cef0000cdcc2"><td class="memItemLeft"><a id="a28ba36bab7e39c80a248cef0000cdcc2" name="a28ba36bab7e39c80a248cef0000cdcc2"></a>
+using&#160;</td><td class="memItemRight"><b>LieAlgebra</b> = Matrix3</td></tr>
+<tr class="memdesc:a28ba36bab7e39c80a248cef0000cdcc2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a03267.html" title="A CRTP helper class that implements Lie group methods Prerequisites: methods operator*,...">LieGroup</a> Concept requirements. <br /></td></tr>
+<tr class="inherit_header pub_types_a03335"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03335')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Pose2, 3, 3 &gt;</a></td></tr>
+<tr class="memitem:a249f47368bec05877aa5f9e5e3e4745e inherit pub_types_a03335" id="r_a249f47368bec05877aa5f9e5e3e4745e"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
+<tr class="memitem:ae8fe60334b88257cf388cf3349623622 inherit pub_types_a03335" id="r_ae8fe60334b88257cf388cf3349623622"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
+<tr class="memitem:a32d0c18eb2460e6f18aec307387c863f inherit pub_types_a03335" id="r_a32d0c18eb2460e6f18aec307387c863f"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Jacobian</b></td></tr>
+<tr class="memitem:a5708d3e1018df83695cf8d39242ad183 inherit pub_types_a03335" id="r_a5708d3e1018df83695cf8d39242ad183"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+<tr class="memitem:a8140474606ed51ea0c453ec30cd78274 inherit pub_types_a03335" id="r_a8140474606ed51ea0c453ec30cd78274"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Vectorized</b></td></tr>
+<tr class="memitem:a25c51d4c609caaca896812321922682b inherit pub_types_a03335" id="r_a25c51d4c609caaca896812321922682b"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>VectorizedJacobian</b></td></tr>
+<tr class="inherit_header pub_types_a03267"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03267')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03267.html">gtsam::LieGroup&lt; Pose2, D &gt;</a></td></tr>
+<tr class="memitem:ad674a7648d8381edcc9ed80919937bfd inherit pub_types_a03267" id="r_ad674a7648d8381edcc9ed80919937bfd"><td class="memItemLeft">
+typedef <a class="el" href="a03363.html">OptionalJacobian</a>&lt; N, N &gt;&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
+<tr class="memitem:a65ba8c4c1e30c31c5d9262c611771067 inherit pub_types_a03267" id="r_a65ba8c4c1e30c31c5d9262c611771067"><td class="memItemLeft">
+typedef Eigen::Matrix&lt; double, N, N &gt;&#160;</td><td class="memItemRight"><b>Jacobian</b></td></tr>
+<tr class="memitem:a58064c114e3fca97921ff802590ce10f inherit pub_types_a03267" id="r_a58064c114e3fca97921ff802590ce10f"><td class="memItemLeft">
+typedef Eigen::Matrix&lt; double, N, 1 &gt;&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:ChartAtOrigin" id="r_ChartAtOrigin"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04383.html">ChartAtOrigin</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_methods_a03335"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03335')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Pose2, 3, 3 &gt;</a></td></tr>
+<tr class="memitem:a2b529a1efa04542a822c0dcd36e26e81 inherit pub_methods_a03335" id="r_a2b529a1efa04542a822c0dcd36e26e81"><td class="memItemLeft">
+std::enable_if_t&lt; M !=Eigen::Dynamic, int &gt;&#160;</td><td class="memItemRight"><b>dim</b> () const</td></tr>
+<tr class="memdesc:a2b529a1efa04542a822c0dcd36e26e81 inherit pub_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provided fixed dimension in <a class="el" href="a03335.html#a2b529a1efa04542a822c0dcd36e26e81">dim()</a> if needed. <br /></td></tr>
+<tr class="memitem:adaedee37b2d50e9a3cda87a7cbc6060b inherit pub_methods_a03335" id="r_adaedee37b2d50e9a3cda87a7cbc6060b"><td class="memItemLeft">Eigen::Matrix&lt; double, internal::product(N, N), 1 &gt;&#160;</td><td class="memItemRight"><a class="el" href="a03335.html#adaedee37b2d50e9a3cda87a7cbc6060b">vec</a> (<a class="el" href="a03363.html">OptionalJacobian</a>&lt; internal::product(N, N), D &gt; H={}) const</td></tr>
+<tr class="memdesc:adaedee37b2d50e9a3cda87a7cbc6060b inherit pub_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vectorize the matrix representation of a Lie group element.  <br /></td></tr>
+<tr class="memitem:a4820aeff8aab258df3c7119a290ef73c inherit pub_methods_a03335" id="r_a4820aeff8aab258df3c7119a290ef73c"><td class="memItemLeft">Jacobian&#160;</td><td class="memItemRight"><a class="el" href="a03335.html#a4820aeff8aab258df3c7119a290ef73c">AdjointMap</a> () const</td></tr>
+<tr class="memdesc:a4820aeff8aab258df3c7119a290ef73c inherit pub_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">A generic implementation of AdjointMap for matrix Lie groups.  <br /></td></tr>
+<tr class="memitem:acf7d38ce38e9df02c00f6afc65f6a97c inherit pub_methods_a03335" id="r_acf7d38ce38e9df02c00f6afc65f6a97c"><td class="memItemLeft">TangentVector&#160;</td><td class="memItemRight"><a class="el" href="a03335.html#acf7d38ce38e9df02c00f6afc65f6a97c">Adjoint</a> (const TangentVector &amp;xi, ChartJacobian H_this={}, ChartJacobian H_xi={}) const</td></tr>
+<tr class="memdesc:acf7d38ce38e9df02c00f6afc65f6a97c inherit pub_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjoint action on a tangent vector.  <br /></td></tr>
+<tr class="memitem:a7229eba7283c6e3334111dedcdc88cea inherit pub_methods_a03335" id="r_a7229eba7283c6e3334111dedcdc88cea"><td class="memItemLeft">TangentVector&#160;</td><td class="memItemRight"><a class="el" href="a03335.html#a7229eba7283c6e3334111dedcdc88cea">AdjointTranspose</a> (const TangentVector &amp;x, ChartJacobian H_this={}, ChartJacobian H_x={}) const</td></tr>
+<tr class="memdesc:a7229eba7283c6e3334111dedcdc88cea inherit pub_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dual Adjoint action on a tangent covector.  <br /></td></tr>
+<tr class="inherit_header pub_methods_a03267"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03267')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03267.html">gtsam::LieGroup&lt; Pose2, D &gt;</a></td></tr>
+<tr class="memitem:a4d639d44e18ea2a491c680caddfba53a inherit pub_methods_a03267" id="r_a4d639d44e18ea2a491c680caddfba53a"><td class="memItemLeft">
+SOn&#160;</td><td class="memItemRight"><b>compose</b> (const SOn &amp;g, DynamicJacobian H1, DynamicJacobian H2) const</td></tr>
+<tr class="memitem:a9e72cc544bd4345bf2012cd7efa14ce0 inherit pub_methods_a03267" id="r_a9e72cc544bd4345bf2012cd7efa14ce0"><td class="memItemLeft">
+SOn&#160;</td><td class="memItemRight"><b>between</b> (const SOn &amp;g, DynamicJacobian H1, DynamicJacobian H2) const</td></tr>
+<tr class="memitem:a293913cc58b7a609eec111c39ebb8fad inherit pub_methods_a03267" id="r_a293913cc58b7a609eec111c39ebb8fad"><td class="memItemLeft">
+GTSAM_EXPORT SOn&#160;</td><td class="memItemRight"><b>compose</b> (const SOn &amp;g, DynamicJacobian H1, DynamicJacobian H2) const</td></tr>
+<tr class="memitem:ad5b82e78a18fec58ac8e07f671c7104c inherit pub_methods_a03267" id="r_ad5b82e78a18fec58ac8e07f671c7104c"><td class="memItemLeft">
+GTSAM_EXPORT SOn&#160;</td><td class="memItemRight"><b>between</b> (const SOn &amp;g, DynamicJacobian H1, DynamicJacobian H2) const</td></tr>
+<tr class="memitem:afa084a36d7054e3c837519a96cc12377 inherit pub_methods_a03267" id="r_afa084a36d7054e3c837519a96cc12377"><td class="memItemLeft">
+std::enable_if_t&lt; M !=Eigen::Dynamic, int &gt;&#160;</td><td class="memItemRight"><b>dim</b> () const</td></tr>
+<tr class="memdesc:afa084a36d7054e3c837519a96cc12377 inherit pub_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provided fixed dimension in <a class="el" href="a03267.html#afa084a36d7054e3c837519a96cc12377">dim()</a> if needed. <br /></td></tr>
+<tr class="memitem:a6e2cc5a215c0aa077ecd13caaa080858 inherit pub_methods_a03267" id="r_a6e2cc5a215c0aa077ecd13caaa080858"><td class="memItemLeft">
+const <a class="el" href="a04379.html">Pose2</a> &amp;&#160;</td><td class="memItemRight"><b>derived</b> () const</td></tr>
+<tr class="memitem:a1d345a3bc578a7b20713e1bc0e003251 inherit pub_methods_a03267" id="r_a1d345a3bc578a7b20713e1bc0e003251"><td class="memItemLeft">
+<a class="el" href="a04379.html">Pose2</a>&#160;</td><td class="memItemRight"><b>inverse</b> (ChartJacobian H) const</td></tr>
+<tr class="memitem:aee395d766c6c8afb27a9bece5c42400e inherit pub_methods_a03267" id="r_aee395d766c6c8afb27a9bece5c42400e"><td class="memItemLeft">
+<a class="el" href="a04379.html">Pose2</a>&#160;</td><td class="memItemRight"><b>expmap</b> (const TangentVector &amp;v) const</td></tr>
+<tr class="memdesc:aee395d766c6c8afb27a9bece5c42400e inherit pub_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">expmap as required by manifold concept Applies exponential map to v and composes with *this <br /></td></tr>
+<tr class="memitem:a9a8ba0a0f7442929df460d79292134aa inherit pub_methods_a03267" id="r_a9a8ba0a0f7442929df460d79292134aa"><td class="memItemLeft">
+TangentVector&#160;</td><td class="memItemRight"><b>logmap</b> (const <a class="el" href="a04379.html">Pose2</a> &amp;g) const</td></tr>
+<tr class="memdesc:a9a8ba0a0f7442929df460d79292134aa inherit pub_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">logmap as required by manifold concept Applies logarithmic map to group element that takes *this to g <br /></td></tr>
+<tr class="memitem:adf52076de7615c335b4574f577a22b77 inherit pub_methods_a03267" id="r_adf52076de7615c335b4574f577a22b77"><td class="memItemLeft">
+<a class="el" href="a04379.html">Pose2</a>&#160;</td><td class="memItemRight"><b>retract</b> (const TangentVector &amp;v) const</td></tr>
+<tr class="memdesc:adf52076de7615c335b4574f577a22b77 inherit pub_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">retract as required by manifold concept: applies v at *this <br /></td></tr>
+<tr class="memitem:a5380bfede1eb39fa9473824009a747a7 inherit pub_methods_a03267" id="r_a5380bfede1eb39fa9473824009a747a7"><td class="memItemLeft">
+TangentVector&#160;</td><td class="memItemRight"><b>localCoordinates</b> (const <a class="el" href="a04379.html">Pose2</a> &amp;g) const</td></tr>
+<tr class="memdesc:a5380bfede1eb39fa9473824009a747a7 inherit pub_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">localCoordinates as required by manifold concept: finds tangent vector between *this and g <br /></td></tr>
+<tr class="inherit_header pub_static_methods_a03335"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03335')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Pose2, 3, 3 &gt;</a></td></tr>
+<tr class="memitem:a5454833785925037137a2eef98edf558 inherit pub_static_methods_a03335" id="r_a5454833785925037137a2eef98edf558"><td class="memItemLeft">
+static constexpr int&#160;</td><td class="memItemRight"><b>Dim</b> ()</td></tr>
+<tr class="memdesc:a5454833785925037137a2eef98edf558 inherit pub_static_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static method to get the dimension (compile-time or dynamic). <br /></td></tr>
+<tr class="memitem:a3e46364311f36a12b6dcccabaf7e5207 inherit pub_static_methods_a03335" id="r_a3e46364311f36a12b6dcccabaf7e5207"><td class="memItemLeft">
+static Jacobian&#160;</td><td class="memItemRight"><b>adjointMap</b> (const TangentVector &amp;xi)</td></tr>
+<tr class="memdesc:a3e46364311f36a12b6dcccabaf7e5207 inherit pub_static_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lie algebra adjoint map ad_xi, with optional specialization in derived classes. <br /></td></tr>
+<tr class="memitem:a83cf162a62639adfb8013f79d6aea754 inherit pub_static_methods_a03335" id="r_a83cf162a62639adfb8013f79d6aea754"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>adjoint</b> (const TangentVector &amp;xi, const TangentVector &amp;y, ChartJacobian Hxi={}, ChartJacobian H_y={})</td></tr>
+<tr class="memdesc:a83cf162a62639adfb8013f79d6aea754 inherit pub_static_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lie algebra action ad_xi(y), with optional Jacobians. <br /></td></tr>
+<tr class="memitem:a20e1ae24f0e452ad88658f028bc56c2b inherit pub_static_methods_a03335" id="r_a20e1ae24f0e452ad88658f028bc56c2b"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>adjointTranspose</b> (const TangentVector &amp;xi, const TangentVector &amp;y, ChartJacobian Hxi={}, ChartJacobian H_y={})</td></tr>
+<tr class="memdesc:a20e1ae24f0e452ad88658f028bc56c2b inherit pub_static_methods_a03335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dual Lie algebra action ad_xi^T(y), with optional Jacobians. <br /></td></tr>
+<tr class="inherit_header pub_static_methods_a03267"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03267')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03267.html">gtsam::LieGroup&lt; Pose2, D &gt;</a></td></tr>
+<tr class="memitem:a5454833785925037137a2eef98edf558 inherit pub_static_methods_a03267" id="r_a5454833785925037137a2eef98edf558"><td class="memItemLeft">
+static constexpr int&#160;</td><td class="memItemRight"><b>Dim</b> ()</td></tr>
+<tr class="memdesc:a5454833785925037137a2eef98edf558 inherit pub_static_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static method to get the dimension (compile-time or dynamic). <br /></td></tr>
+<tr class="memitem:af0dab5bebe52a8ccebe8ea8a1dbafd21 inherit pub_static_methods_a03267" id="r_af0dab5bebe52a8ccebe8ea8a1dbafd21"><td class="memItemLeft">
+static <a class="el" href="a04379.html">Pose2</a>&#160;</td><td class="memItemRight"><b>Retract</b> (const TangentVector &amp;v)</td></tr>
+<tr class="memdesc:af0dab5bebe52a8ccebe8ea8a1dbafd21 inherit pub_static_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retract at origin: possible in Lie group because it has an identity. <br /></td></tr>
+<tr class="memitem:aaa535efd2e685eeb1f26e828d49d7819 inherit pub_static_methods_a03267" id="r_aaa535efd2e685eeb1f26e828d49d7819"><td class="memItemLeft">
+static TangentVector&#160;</td><td class="memItemRight"><b>LocalCoordinates</b> (const <a class="el" href="a04379.html">Pose2</a> &amp;g)</td></tr>
+<tr class="memdesc:aaa535efd2e685eeb1f26e828d49d7819 inherit pub_static_methods_a03267"><td class="mdescLeft">&#160;</td><td class="mdescRight">LocalCoordinates at origin: possible in Lie group because it has an identity. <br /></td></tr>
+<tr class="inherit_header pub_static_attribs_a03335"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_attribs_a03335')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Attributes inherited from <a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Pose2, 3, 3 &gt;</a></td></tr>
+<tr class="memitem:ab6addf52238ea8c6ba895b0f2496cbec inherit pub_static_attribs_a03335" id="r_ab6addf52238ea8c6ba895b0f2496cbec"><td class="memItemLeft">
+static constexpr auto&#160;</td><td class="memItemRight"><b>dimension</b></td></tr>
+<tr class="inherit_header pub_static_attribs_a03267"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_attribs_a03267')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Attributes inherited from <a class="el" href="a03267.html">gtsam::LieGroup&lt; Pose2, D &gt;</a></td></tr>
+<tr class="memitem:ab6addf52238ea8c6ba895b0f2496cbec inherit pub_static_attribs_a03267" id="r_ab6addf52238ea8c6ba895b0f2496cbec"><td class="memItemLeft">
+static constexpr auto&#160;</td><td class="memItemRight"><b>dimension</b></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="aaee1d56959059d7474a31081391307ad" name="aaee1d56959059d7474a31081391307ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaee1d56959059d7474a31081391307ad">&#9670;&#160;</a></span>optimize()</h2>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a5d0b6d7bfebdf3f4478407160f480a1a" name="a5d0b6d7bfebdf3f4478407160f480a1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d0b6d7bfebdf3f4478407160f480a1a">&#9670;&#160;</a></span>Pose2()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,40 +378,360 @@ typedef boost::shared_ptr&lt; IterativeSolver &gt;&#160;</td><td class="memItemR
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="a06239.html">VectorValues</a> gtsam::IterativeSolver::optimize </td>
+          <td class="memname">gtsam::Pose2::Pose2 </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="a04339.html">GaussianFactorGraph</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>gfg</em></span>, </td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="a04387.html">KeyInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>keyInfo</em></span>, </td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::map&lt; <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, Vector &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>lambda</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a06239.html">VectorValues</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>initial</em></span>&#160;)</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>theta</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="a04607.html#a3bb3fc4c5063a8bac80cdd6d40df745e">gtsam::SubgraphSolver</a>.</p>
+<p>construct from (x,y,theta) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="#a7228f4c1503c94e90f5d5e5fdbd7fd5e" title="get x">x</a></td><td>x coordinate </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a31c18f608276bec9877030ce8b1fe9c2" title="get y">y</a></td><td>y coordinate </td></tr>
+    <tr><td class="paramname"><a class="el" href="#aab82b98ef745bb0f8f487ee83420f606" title="get theta">theta</a></td><td>angle with positive X-axis </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a3f2b63558496e651eb750bcee9433cf8" name="a3f2b63558496e651eb750bcee9433cf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f2b63558496e651eb750bcee9433cf8">&#9670;&#160;</a></span>bearing() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a04435.html">Rot2</a> gtsam::Pose2::bearing </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>point</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>H1</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 2 &gt;</td>          <td class="paramname"><span class="paramname"><em>H2</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate bearing to a landmark. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>2D location of landmark </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>2D rotation \( \in SO(2) \) </dd></dl>
+
+</div>
+</div>
+<a id="aa3b68061f0c4636450b8b7787685bf60" name="aa3b68061f0c4636450b8b7787685bf60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3b68061f0c4636450b8b7787685bf60">&#9670;&#160;</a></span>bearing() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a04435.html">Rot2</a> gtsam::Pose2::bearing </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#ab9d2ac29304985d9ccfd66ef0f9a9aaf">Pose2</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>pose</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>H1</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>H2</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate bearing to another pose. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>SO(2) location of other pose </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>2D rotation \( \in SO(2) \) </dd></dl>
+
+</div>
+</div>
+<a id="a49f10bbdba59ff8bd11d81f494a69b63" name="a49f10bbdba59ff8bd11d81f494a69b63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49f10bbdba59ff8bd11d81f494a69b63">&#9670;&#160;</a></span>LogmapDerivative() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Matrix3 gtsam::Pose2::LogmapDerivative </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#ab9d2ac29304985d9ccfd66ef0f9a9aaf">Pose2</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>pose</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inverse right Jacobian of the exponential map evaluated at a pose. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pose</td><td>Pose whose tangent coordinates determine the evaluation point. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The 3-by-3 inverse right Jacobian at Logmap(pose). </dd></dl>
+
+</div>
+</div>
+<a id="ac894a01ac4e35ca2b6dd74d35537d425" name="ac894a01ac4e35ca2b6dd74d35537d425"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac894a01ac4e35ca2b6dd74d35537d425">&#9670;&#160;</a></span>LogmapDerivative() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Matrix3 gtsam::Pose2::LogmapDerivative </td>
+          <td>(</td>
+          <td class="paramtype">const Vector3 &amp;</td>          <td class="paramname"><span class="paramname"><em>xi</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inverse right Jacobian of the exponential map evaluated at tangent coordinates xi = (dx, dy, dtheta). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xi</td><td>Tangent coordinates at which to evaluate the Jacobian. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The 3-by-3 inverse right Jacobian at xi. </dd></dl>
+
+</div>
+</div>
+<a id="a1621d01bd0432f04192070a2b1f076bd" name="a1621d01bd0432f04192070a2b1f076bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1621d01bd0432f04192070a2b1f076bd">&#9670;&#160;</a></span>range() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double gtsam::Pose2::range </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>point</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>H1</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 2 &gt;</td>          <td class="paramname"><span class="paramname"><em>H2</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate range to a landmark. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>2D location of landmark </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>range (double) </dd></dl>
+
+</div>
+</div>
+<a id="ab94e1d6418a749ca71bb1a5ec608488f" name="ab94e1d6418a749ca71bb1a5ec608488f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab94e1d6418a749ca71bb1a5ec608488f">&#9670;&#160;</a></span>range() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double gtsam::Pose2::range </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#ab9d2ac29304985d9ccfd66ef0f9a9aaf">Pose2</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>point</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>H1</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>H2</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate range to another pose. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>2D location of other pose </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>range (double) </dd></dl>
+
+</div>
+</div>
+<a id="aa639abcd4855c99f69b37e7832092a28" name="aa639abcd4855c99f69b37e7832092a28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa639abcd4855c99f69b37e7832092a28">&#9670;&#160;</a></span>rotationInterval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; size_t, size_t &gt; gtsam::Pose2::rotationInterval </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the start and end indices (inclusive) of the rotation component of the exponential map parameterization. </p>
+<dl class="section return"><dt>Returns</dt><dd>a pair of [start, end] indices into the tangent space vector </dd></dl>
+
+</div>
+</div>
+<a id="a366cfb0c695c6b5dc306518012d6126e" name="a366cfb0c695c6b5dc306518012d6126e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a366cfb0c695c6b5dc306518012d6126e">&#9670;&#160;</a></span>transformFrom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Matrix gtsam::Pose2::transformFrom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a02242.html#ac1b1bc700e21fbe3ea82eabf09660d6a">ConstMatrixView</a></td>          <td class="paramname"><span class="paramname"><em>points</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>transform many points in Pose coordinates and transform to world. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">points</td><td>2*N matrix in Pose coordinates </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>points in world coordinates, as 2*N Matrix </dd></dl>
+
+</div>
+</div>
+<a id="a1f12b53324f631d9e026ae948f479ed4" name="a1f12b53324f631d9e026ae948f479ed4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f12b53324f631d9e026ae948f479ed4">&#9670;&#160;</a></span>transformTo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Matrix gtsam::Pose2::transformTo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a02242.html#ac1b1bc700e21fbe3ea82eabf09660d6a">ConstMatrixView</a></td>          <td class="paramname"><span class="paramname"><em>points</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>transform many points in world coordinates and transform to Pose. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">points</td><td>2*N matrix in world coordinates </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>points in Pose coordinates, as 2*N Matrix </dd></dl>
+
+</div>
+</div>
+<a id="a68e923aa25cf68f1368685e61807e89f" name="a68e923aa25cf68f1368685e61807e89f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68e923aa25cf68f1368685e61807e89f">&#9670;&#160;</a></span>translationInterval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; size_t, size_t &gt; gtsam::Pose2::translationInterval </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the start and end indices (inclusive) of the translation component of the exponential map parameterization. </p>
+<dl class="section return"><dt>Returns</dt><dd>a pair of [start, end] indices into the tangent space vector </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/<a class="el" href="a00845_source.html">IterativeSolver.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/<a class="el" href="a00791.html">IterativeSolver.cpp</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00581_source.html">Pose2.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00569.html">Pose2.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -185,7 +746,7 @@ typedef boost::shared_ptr&lt; IterativeSolver &gt;&#160;</td><td class="memItemR
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04379.html">IterativeSolver</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04379.html">Pose2</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

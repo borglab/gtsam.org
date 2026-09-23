@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/base/FastVector.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/FastVector.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -106,26 +106,26 @@ $(function(){initNavTree('a00002_source.html','',''); });
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="a00005.html">gtsam/base/FastDefaultAllocator.h</a>&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="a00008.html">gtsam/base/FastDefaultAllocator.h</a>&gt;</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="a01953.html#ga6c6638ff98b128f20258643d9c7ed725">   33</a></span><span class="keyword">using </span><a class="code hl_typedef" href="a01953.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a> =</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="a02227.html#ga6c6638ff98b128f20258643d9c7ed725">   33</a></span><span class="keyword">using </span><a class="code hl_typedef" href="a02227.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a> =</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    std::vector&lt;T, typename internal::FastDefaultVectorAllocator&lt;T&gt;::type&gt;;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}  <span class="comment">// namespace gtsam</span></div>
-<div class="ttc" id="aa00005_html"><div class="ttname"><a href="a00005.html">FastDefaultAllocator.h</a></div><div class="ttdoc">An easy way to control which allocator is used for Fast* collections.</div></div>
-<div class="ttc" id="aa01953_html_ga6c6638ff98b128f20258643d9c7ed725"><div class="ttname"><a href="a01953.html#ga6c6638ff98b128f20258643d9c7ed725">gtsam::FastVector</a></div><div class="ttdeci">std::vector&lt; T, typename internal::FastDefaultVectorAllocator&lt; T &gt;::type &gt; FastVector</div><div class="ttdoc">FastVector is a type alias to a std::vector with a custom memory allocator.</div><div class="ttdef"><b>Definition</b> FastVector.h:33</div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa00008_html"><div class="ttname"><a href="a00008.html">FastDefaultAllocator.h</a></div><div class="ttdoc">An easy way to control which allocator is used for Fast* collections.</div></div>
+<div class="ttc" id="aa02227_html_ga6c6638ff98b128f20258643d9c7ed725"><div class="ttname"><a href="a02227.html#ga6c6638ff98b128f20258643d9c7ed725">gtsam::FastVector</a></div><div class="ttdeci">std::vector&lt; T, typename internal::FastDefaultVectorAllocator&lt; T &gt;::type &gt; FastVector</div><div class="ttdoc">FastVector is a type alias to a std::vector with a custom memory allocator.</div><div class="ttdef"><b>Definition</b> FastVector.h:33</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>base</b></li><li class="navelem"><a href="a00002.html">FastVector.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>base</b></li><li class="navelem"><a href="a00002.html">FastVector.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

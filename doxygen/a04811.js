@@ -1,11 +1,11 @@
 var a04811 =
 [
-    [ "DoglegOptimizer", "a04811.html#a803a7052a5817fde973bfe18578aee78", null ],
-    [ "DoglegOptimizer", "a04811.html#a1419fd81113aa260374a94a49fe882fe", null ],
-    [ "~DoglegOptimizer", "a04811.html#a332eef22765a857beb71d66946dd86c8", null ],
-    [ "_params", "a04811.html#adaa54f8214eb546568d4d61982251152", null ],
-    [ "ensureHasOrdering", "a04811.html#a900052675c543781cc31d263421d412a", null ],
-    [ "getDelta", "a04811.html#abb1a3d00708a7e24cb89cdd5e939ff92", null ],
-    [ "iterate", "a04811.html#acd3e7c0d62e269ea01eab3f78d952097", null ],
-    [ "params", "a04811.html#ae648869d633326339be7d5d743e97a53", null ]
+    [ "sharedConditional", "a04811.html#af9dfa17f3d5631eb4b2d8d2bef03e6c6", null ],
+    [ "BayesNet", "a04811.html#ae6a59fca7b59061bffe9d3aad97cca69", null ],
+    [ "BayesNet", "a04811.html#ad1f05fb1c55edbb9c84ccb29a0b7464c", null ],
+    [ "BayesNet", "a04811.html#a59aa8d5cffc44d6921cdd347f48f6d65", null ],
+    [ "dot", "a04811.html#ae080be60951c55ae928eb6cc03d23ec2", null ],
+    [ "dot", "a04811.html#a7b9f765c63538beca9e5e667b5c676f8", null ],
+    [ "print", "a04811.html#a5a0adcde7519254c34f75b3563081dcd", null ],
+    [ "saveGraph", "a04811.html#ae0b05918d78c0dd95363bb4affc22f8a", null ]
 ];

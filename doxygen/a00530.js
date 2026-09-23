@@ -1,4 +1,5 @@
 var a00530 =
 [
-    [ "gtsam::HybridSmoother", "a04047.html", "a04047" ]
+    [ "gtsam::traits&lt; Cal3f &gt;", "a04127.html", null ],
+    [ "gtsam::traits&lt; const Cal3f &gt;", "a04131.html", null ]
 ];

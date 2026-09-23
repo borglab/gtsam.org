@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/base/FastList.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/TestableAssertions.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,29 +96,76 @@ $(function(){initNavTree('a00020.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">FastList.h File Reference</div></div>
+  <div class="headertitle"><div class="title">TestableAssertions.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>A thin wrapper around std::list that uses boost's fast_pool_allocator.  
+<p>Provides additional testing facilities for common data structures.  
 <a href="#details">More...</a></p>
 
 <p><a href="a00020_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3AFastList_3C_20VALUE_20_3E" id="r_gtsam_3A_3AFastList_3C_20VALUE_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a02859.html">gtsam::FastList&lt; VALUE &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a02859.html" title="FastList is a thin wrapper around std::list that uses the boost fast_pool_allocator instead of the de...">FastList</a> is a thin wrapper around std::list that uses the boost fast_pool_allocator instead of the default STL allocator.  <a href="a02859.html#details">More...</a><br /></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a25bfc4189dd062b3569f37e3dd6de867" id="r_a25bfc4189dd062b3569f37e3dd6de867"><td class="memItemLeft"><a id="a25bfc4189dd062b3569f37e3dd6de867" name="a25bfc4189dd062b3569f37e3dd6de867"></a>
+bool&#160;</td><td class="memItemRight"><b>gtsam::assert_equal</b> (const <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &amp;expected, const <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &amp;actual)</td></tr>
+<tr class="memdesc:a25bfc4189dd062b3569f37e3dd6de867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equals testing for basic types. <br /></td></tr>
+<tr class="memitem:a364338211c311aeab7591b61e2180982" id="r_a364338211c311aeab7591b61e2180982"><td class="memTemplParams" colspan="2">template&lt;class V&gt; </td></tr>
+<tr class="memitem:a364338211c311aeab7591b61e2180982 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="a02242.html#a364338211c311aeab7591b61e2180982">gtsam::assert_equal</a> (const std::optional&lt; V &gt; &amp;expected, const std::optional&lt; V &gt; &amp;actual, double tol=1e-9)</td></tr>
+<tr class="memdesc:a364338211c311aeab7591b61e2180982"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comparisons for std.optional objects that checks whether objects exist before comparing their values.  <br /></td></tr>
+<tr class="memitem:a23dc97ebb72986554bc17f0ea568dc4d" id="r_a23dc97ebb72986554bc17f0ea568dc4d"><td class="memTemplParams" colspan="2"><a id="a23dc97ebb72986554bc17f0ea568dc4d" name="a23dc97ebb72986554bc17f0ea568dc4d"></a>
+template&lt;class V&gt; </td></tr>
+<tr class="memitem:a23dc97ebb72986554bc17f0ea568dc4d template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::assert_equal</b> (const V &amp;expected, const std::optional&lt; V &gt; &amp;actual, double tol=1e-9)</td></tr>
+<tr class="memitem:a3e42167ce018fe97324ad1e68b780430" id="r_a3e42167ce018fe97324ad1e68b780430"><td class="memTemplParams" colspan="2"><a id="a3e42167ce018fe97324ad1e68b780430" name="a3e42167ce018fe97324ad1e68b780430"></a>
+template&lt;class V&gt; </td></tr>
+<tr class="memitem:a3e42167ce018fe97324ad1e68b780430 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::assert_equal</b> (const V &amp;expected, const std::optional&lt; std::reference_wrapper&lt; const V &gt; &gt; &amp;actual, double tol=1e-9)</td></tr>
+<tr class="memitem:a254be27d6d4b416fa2b546c77ae783fc" id="r_a254be27d6d4b416fa2b546c77ae783fc"><td class="memTemplParams" colspan="2"><a id="a254be27d6d4b416fa2b546c77ae783fc" name="a254be27d6d4b416fa2b546c77ae783fc"></a>
+template&lt;class V1, class V2&gt; </td></tr>
+<tr class="memitem:a254be27d6d4b416fa2b546c77ae783fc template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::assert_container_equal</b> (const std::map&lt; V1, V2 &gt; &amp;expected, const std::map&lt; V1, V2 &gt; &amp;actual, double tol=1e-9)</td></tr>
+<tr class="memdesc:a254be27d6d4b416fa2b546c77ae783fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for comparing maps of testable-&gt;testable TODO: replace with more generalized version. <br /></td></tr>
+<tr class="memitem:a2f509195ea2180d0f7dbd3a99a088ff4" id="r_a2f509195ea2180d0f7dbd3a99a088ff4"><td class="memTemplParams" colspan="2"><a id="a2f509195ea2180d0f7dbd3a99a088ff4" name="a2f509195ea2180d0f7dbd3a99a088ff4"></a>
+template&lt;class V2&gt; </td></tr>
+<tr class="memitem:a2f509195ea2180d0f7dbd3a99a088ff4 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::assert_container_equal</b> (const std::map&lt; size_t, V2 &gt; &amp;expected, const std::map&lt; size_t, V2 &gt; &amp;actual, double tol=1e-9)</td></tr>
+<tr class="memdesc:a2f509195ea2180d0f7dbd3a99a088ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for comparing maps of size_t-&gt;testable. <br /></td></tr>
+<tr class="memitem:a0eec17f894b358dd9f30d7af28082ba5" id="r_a0eec17f894b358dd9f30d7af28082ba5"><td class="memTemplParams" colspan="2"><a id="a0eec17f894b358dd9f30d7af28082ba5" name="a0eec17f894b358dd9f30d7af28082ba5"></a>
+template&lt;class V1, class V2&gt; </td></tr>
+<tr class="memitem:a0eec17f894b358dd9f30d7af28082ba5 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::assert_container_equal</b> (const std::vector&lt; std::pair&lt; V1, V2 &gt; &gt; &amp;expected, const std::vector&lt; std::pair&lt; V1, V2 &gt; &gt; &amp;actual, double tol=1e-9)</td></tr>
+<tr class="memdesc:a0eec17f894b358dd9f30d7af28082ba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for comparing vector of pairs (testable, testable). <br /></td></tr>
+<tr class="memitem:a6d6b2964354593f69848f6bf5d3e0ca1" id="r_a6d6b2964354593f69848f6bf5d3e0ca1"><td class="memTemplParams" colspan="2"><a id="a6d6b2964354593f69848f6bf5d3e0ca1" name="a6d6b2964354593f69848f6bf5d3e0ca1"></a>
+template&lt;class V&gt; </td></tr>
+<tr class="memitem:a6d6b2964354593f69848f6bf5d3e0ca1 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::assert_container_equal</b> (const V &amp;expected, const V &amp;actual, double tol=1e-9)</td></tr>
+<tr class="memdesc:a6d6b2964354593f69848f6bf5d3e0ca1"><td class="mdescLeft">&#160;</td><td class="mdescRight">General function for comparing containers of testable objects. <br /></td></tr>
+<tr class="memitem:a59ba6a7db27344c5cb021f1421905020" id="r_a59ba6a7db27344c5cb021f1421905020"><td class="memTemplParams" colspan="2"><a id="a59ba6a7db27344c5cb021f1421905020" name="a59ba6a7db27344c5cb021f1421905020"></a>
+template&lt;class V2&gt; </td></tr>
+<tr class="memitem:a59ba6a7db27344c5cb021f1421905020 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::assert_container_equality</b> (const std::map&lt; size_t, V2 &gt; &amp;expected, const std::map&lt; size_t, V2 &gt; &amp;actual)</td></tr>
+<tr class="memdesc:a59ba6a7db27344c5cb021f1421905020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for comparing maps of size_t-&gt;testable Types are assumed to have operator ==. <br /></td></tr>
+<tr class="memitem:aa0926a5d779171bd8e1d30fb5982b5c0" id="r_aa0926a5d779171bd8e1d30fb5982b5c0"><td class="memTemplParams" colspan="2"><a id="aa0926a5d779171bd8e1d30fb5982b5c0" name="aa0926a5d779171bd8e1d30fb5982b5c0"></a>
+template&lt;class V&gt; </td></tr>
+<tr class="memitem:aa0926a5d779171bd8e1d30fb5982b5c0 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::assert_container_equality</b> (const V &amp;expected, const V &amp;actual)</td></tr>
+<tr class="memdesc:aa0926a5d779171bd8e1d30fb5982b5c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">General function for comparing containers of objects with operator==. <br /></td></tr>
+<tr class="memitem:a21e760bc75888053afd86a27d56b6148" id="r_a21e760bc75888053afd86a27d56b6148"><td class="memItemLeft"><a id="a21e760bc75888053afd86a27d56b6148" name="a21e760bc75888053afd86a27d56b6148"></a>
+bool&#160;</td><td class="memItemRight"><b>gtsam::assert_equal</b> (const std::string &amp;expected, const std::string &amp;actual)</td></tr>
+<tr class="memdesc:a21e760bc75888053afd86a27d56b6148"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare strings for unit tests. <br /></td></tr>
+<tr class="memitem:a2f19ba6625a264457805513fefcb5c32" id="r_a2f19ba6625a264457805513fefcb5c32"><td class="memTemplParams" colspan="2"><a id="a2f19ba6625a264457805513fefcb5c32" name="a2f19ba6625a264457805513fefcb5c32"></a>
+template&lt;class V&gt; </td></tr>
+<tr class="memitem:a2f19ba6625a264457805513fefcb5c32 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::assert_inequal</b> (const V &amp;expected, const V &amp;actual, double tol=1e-9)</td></tr>
+<tr class="memdesc:a2f19ba6625a264457805513fefcb5c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow for testing inequality. <br /></td></tr>
+<tr class="memitem:a08641f0f7145716bba9159dd95099a44" id="r_a08641f0f7145716bba9159dd95099a44"><td class="memTemplParams" colspan="2"><a id="a08641f0f7145716bba9159dd95099a44" name="a08641f0f7145716bba9159dd95099a44"></a>
+template&lt;class V&gt; </td></tr>
+<tr class="memitem:a08641f0f7145716bba9159dd95099a44 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::assert_stdout_equal</b> (const std::string &amp;expected, const V &amp;actual)</td></tr>
+<tr class="memdesc:a08641f0f7145716bba9159dd95099a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Capture std out via cout stream and compare against string. <br /></td></tr>
+<tr class="memitem:a830c8c65902d7d0e763562e6c9357346" id="r_a830c8c65902d7d0e763562e6c9357346"><td class="memTemplParams" colspan="2">template&lt;class V&gt; </td></tr>
+<tr class="memitem:a830c8c65902d7d0e763562e6c9357346 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="a02242.html#a830c8c65902d7d0e763562e6c9357346">gtsam::assert_print_equal</a> (const std::string &amp;expected, const V &amp;actual, const std::string &amp;s=&quot;&quot;)</td></tr>
+<tr class="memdesc:a830c8c65902d7d0e763562e6c9357346"><td class="mdescLeft">&#160;</td><td class="mdescRight">Capture print function output and compare against string.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A thin wrapper around std::list that uses boost's fast_pool_allocator. </p>
-<dl class="section author"><dt>Author</dt><dd>Richard Roberts </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>Oct 22, 2010 </dd></dl>
+<div class="textblock"><p>Provides additional testing facilities for common data structures. </p>
+<dl class="section author"><dt>Author</dt><dd>Alex Cunningham </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -132,7 +179,7 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>base</b></li><li class="navelem"><a href="a00020.html">FastList.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>base</b></li><li class="navelem"><a href="a00020.html">TestableAssertions.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

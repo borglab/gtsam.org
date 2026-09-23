@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/hybrid/GaussianMixtureFactor.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/Line3.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,148 +89,123 @@ $(function(){initNavTree('a00551_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">GaussianMixtureFactor.h</div></div>
+  <div class="headertitle"><div class="title">Line3.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a00551.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"></span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * GTSAM Copyright 2010, Georgia Tech Research Corporation,</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Atlanta, Georgia 30332-0415</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * All Rights Reserved</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * Authors: Frank Dellaert, et al. (see THANKS for the full author list)</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"></span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * See LICENSE for the license information</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="a00212.html">gtsam/discrete/AlgebraicDecisionTree.h</a>&gt;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;<a class="code" href="a00227.html">gtsam/discrete/DecisionTree.h</a>&gt;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;<a class="code" href="a00185.html">gtsam/discrete/DiscreteKey.h</a>&gt;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;<a class="code" href="a00497.html">gtsam/hybrid/HybridFactor.h</a>&gt;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;<a class="code" href="a00842.html">gtsam/linear/GaussianFactor.h</a>&gt;</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;<a class="code" href="a00800.html">gtsam/linear/GaussianFactorGraph.h</a>&gt;</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">class </span><a class="code hl_class" href="a04051.html">HybridValues</a>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">class </span><a class="code hl_class" href="a03447.html">DiscreteValues</a>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">class </span><a class="code hl_class" href="a04611.html">VectorValues</a>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
-<div class="foldopen" id="foldopen00047" data-start="{" data-end="};">
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="a03947.html">   47</a></span><span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a03947.html#a1fd07541d71b0fc8de61ee3be36c86dc">GaussianMixtureFactor</a> : <span class="keyword">public</span> <a class="code hl_function" href="a03995.html#a97bb25c7e119639c38ae44bb05f53775">HybridFactor</a> {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">using </span>Base = <a class="code hl_function" href="a03995.html#a97bb25c7e119639c38ae44bb05f53775">HybridFactor</a>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keyword">using </span>This = <a class="code hl_function" href="a03947.html#a1fd07541d71b0fc8de61ee3be36c86dc">GaussianMixtureFactor</a>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keyword">using </span>shared_ptr = boost::shared_ptr&lt;This&gt;;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keyword">using </span>sharedFactor = boost::shared_ptr&lt;GaussianFactor&gt;;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="a03947.html#aa9e043f6c690cc0c6f224b0ac0281106">   56</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="a03947.html#aa9e043f6c690cc0c6f224b0ac0281106">Factors</a> = <a class="code hl_class" href="a03343.html">DecisionTree&lt;Key, sharedFactor&gt;</a>;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <a class="code hl_typedef" href="a03947.html#aa9e043f6c690cc0c6f224b0ac0281106">Factors</a> factors_;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <a class="code hl_typedef" href="a01968.html#ae5f15658d772e31ad4f57da0d91e6dd1">GaussianFactorGraphTree</a> asGaussianFactorGraphTree() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="a03947.html#a1fd07541d71b0fc8de61ee3be36c86dc">   75</a></span>  <a class="code hl_function" href="a03947.html#a1fd07541d71b0fc8de61ee3be36c86dc">GaussianMixtureFactor</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <a class="code hl_function" href="a03947.html#a1fd07541d71b0fc8de61ee3be36c86dc">GaussianMixtureFactor</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;<a class="code hl_function" href="a03995.html#a9e94d7e2a2ddee40dce1d8f3d3572b9f">continuousKeys</a>,</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                        <span class="keyword">const</span> <a class="code hl_struct" href="a03423.html">DiscreteKeys</a> &amp;<a class="code hl_function" href="a03995.html#ae85edac700e36080970d91d4fa2e42f8">discreteKeys</a>,</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                        <span class="keyword">const</span> <a class="code hl_typedef" href="a03947.html#aa9e043f6c690cc0c6f224b0ac0281106">Factors</a> &amp;factors);</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
-<div class="foldopen" id="foldopen00098" data-start="{" data-end="}">
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="a03947.html#a4d6fc1d10222e14fb2edade6701c4520">   98</a></span>  <a class="code hl_function" href="a03947.html#a4d6fc1d10222e14fb2edade6701c4520">GaussianMixtureFactor</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;<a class="code hl_function" href="a03995.html#a9e94d7e2a2ddee40dce1d8f3d3572b9f">continuousKeys</a>,</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                        <span class="keyword">const</span> <a class="code hl_struct" href="a03423.html">DiscreteKeys</a> &amp;<a class="code hl_function" href="a03995.html#ae85edac700e36080970d91d4fa2e42f8">discreteKeys</a>,</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                        <span class="keyword">const</span> std::vector&lt;sharedFactor&gt; &amp;factors)</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      : <a class="code hl_function" href="a03947.html#a1fd07541d71b0fc8de61ee3be36c86dc">GaussianMixtureFactor</a>(<a class="code hl_function" href="a03995.html#a9e94d7e2a2ddee40dce1d8f3d3572b9f">continuousKeys</a>, <a class="code hl_function" href="a03995.html#ae85edac700e36080970d91d4fa2e42f8">discreteKeys</a>,</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                              <a class="code hl_typedef" href="a03947.html#aa9e043f6c690cc0c6f224b0ac0281106">Factors</a>(<a class="code hl_function" href="a03995.html#ae85edac700e36080970d91d4fa2e42f8">discreteKeys</a>, factors)) {}</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * GTSAM Copyright 2010, Georgia Tech Research Corporation,</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * Atlanta, Georgia 30332-0415</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * All Rights Reserved</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * Authors: Frank Dellaert, et al. (see THANKS for the full author list)</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * See LICENSE for the license information</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">// \callgraph</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;<a class="code" href="a00620.html">gtsam/geometry/Rot3.h</a>&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="a00521.html">gtsam/geometry/Pose3.h</a>&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">class </span><a class="code hl_class" href="a04299.html">Line3</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>GTSAM_EXPORT <a class="code hl_class" href="a04299.html">Line3</a> <a class="code hl_function" href="a02242.html#abc269192412593dfb11957e16ca0da2a">transformTo</a>(<span class="keyword">const</span> <a class="code hl_class" href="a04403.html">Pose3</a> &amp;wTc, <span class="keyword">const</span> <a class="code hl_class" href="a04299.html">Line3</a> &amp;wL,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                  <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;4, 6&gt;</a> Dpose = {},</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                  <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;4, 4&gt;</a> Dline = {});</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="};">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="a04299.html">   44</a></span><span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a04299.html#a496c45a5ae638d6a7db373c1886c3de6">Line3</a> {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <a class="code hl_class" href="a04451.html">Rot3</a> R_;    <span class="comment">// Rotation of line about x and y in world frame</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordtype">double</span> a_, b_;  <span class="comment">// Intersection of line with the world x-y plane rotated by R_</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="comment">// Also the closest point on line to origin</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keyword">auto</span> dimension = 4;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="a04299.html#a496c45a5ae638d6a7db373c1886c3de6">   53</a></span>  <a class="code hl_function" href="a04299.html#a496c45a5ae638d6a7db373c1886c3de6">Line3</a>() :</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>      a_(0), b_(0) {}</div>
 </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keywordtype">bool</span> <a class="code hl_struct" href="a03027.html">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="a03995.html">HybridFactor</a> &amp;lf, <span class="keywordtype">double</span> tol = 1e-9) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a01968.html#a54fa43c89c5334314c8c75939dd5c2d7">print</a>(</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      <span class="keyword">const</span> std::string &amp;s = <span class="stringliteral">&quot;GaussianMixtureFactor\n&quot;</span>,</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;formatter = DefaultKeyFormatter) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  sharedFactor operator()(<span class="keyword">const</span> <a class="code hl_class" href="a03447.html">DiscreteValues</a> &amp;assignment) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  <a class="code hl_typedef" href="a01968.html#ae5f15658d772e31ad4f57da0d91e6dd1">GaussianFactorGraphTree</a> add(<span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#ae5f15658d772e31ad4f57da0d91e6dd1">GaussianFactorGraphTree</a> &amp;sum) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span></div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <a class="code hl_class" href="a03307.html">AlgebraicDecisionTree&lt;Key&gt;</a> error(<span class="keyword">const</span> <a class="code hl_class" href="a04611.html">VectorValues</a> &amp;continuousValues) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span></div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  <span class="keywordtype">double</span> error(<span class="keyword">const</span> <a class="code hl_class" href="a04051.html">HybridValues</a> &amp;values) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span></div>
-<div class="foldopen" id="foldopen00147" data-start="{" data-end="}">
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="a03947.html#afae4b6b907ad31a9442c65d8929352cd">  147</a></span>  <span class="keyword">friend</span> <a class="code hl_typedef" href="a01968.html#ae5f15658d772e31ad4f57da0d91e6dd1">GaussianFactorGraphTree</a> &amp;<a class="code hl_friend" href="a03947.html#afae4b6b907ad31a9442c65d8929352cd">operator+=</a>(</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>      <a class="code hl_typedef" href="a01968.html#ae5f15658d772e31ad4f57da0d91e6dd1">GaussianFactorGraphTree</a> &amp;sum, <span class="keyword">const</span> <a class="code hl_function" href="a03947.html#a1fd07541d71b0fc8de61ee3be36c86dc">GaussianMixtureFactor</a> &amp;factor) {</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    sum = factor.<a class="code hl_function" href="a03947.html#a61e0b4f311bbcb76fd99206d5d3b98a9">add</a>(sum);</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordflow">return</span> sum;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="a04299.html#a84441b40640c2f8a861272be3ac189eb">   57</a></span>  <a class="code hl_function" href="a04299.html#a84441b40640c2f8a861272be3ac189eb">Line3</a>(<span class="keyword">const</span> <a class="code hl_class" href="a04451.html">Rot3</a> &amp;<a class="code hl_function" href="a04299.html#a36f6ef46daaa96b8b916ed6a9b060476">R</a>, <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_function" href="a04299.html#afae30ed094cdc2596cb4a2afc9e9a6fe">a</a>, <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_function" href="a04299.html#ac303ffcfda71b6a5d3ce0fa8196b4ead">b</a>) :</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      R_(<a class="code hl_function" href="a04299.html#a36f6ef46daaa96b8b916ed6a9b060476">R</a>), a_(<a class="code hl_function" href="a04299.html#afae30ed094cdc2596cb4a2afc9e9a6fe">a</a>), b_(<a class="code hl_function" href="a04299.html#ac303ffcfda71b6a5d3ce0fa8196b4ead">b</a>) {}</div>
 </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <a class="code hl_class" href="a04299.html">Line3</a> retract(<span class="keyword">const</span> Vector4 &amp;v,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;4, 4&gt;</a> Dp = {},</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                OptionalJacobian&lt;4, 4&gt; Dv = {}) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  Vector4 localCoordinates(<span class="keyword">const</span> Line3 &amp;q,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                           OptionalJacobian&lt;4, 4&gt; Dp = {},</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                           OptionalJacobian&lt;4, 4&gt; Dq = {}) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a02242.html#a54fa43c89c5334314c8c75939dd5c2d7">print</a>(<span class="keyword">const</span> std::string &amp;s = <span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> Line3 &amp;l2, <span class="keywordtype">double</span> tol = 10e-9) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  Unit3 <a class="code hl_function" href="a02242.html#ad0024081af88e1b3cc0820c65ad6afd4">project</a>(OptionalJacobian&lt;2, 4&gt; Dline = {}) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> point(<span class="keywordtype">double</span> distance = 0) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span></div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="a04299.html#a36f6ef46daaa96b8b916ed6a9b060476">  123</a></span>  <span class="keyword">inline</span> <a class="code hl_class" href="a04451.html">Rot3</a> <a class="code hl_function" href="a04299.html#a36f6ef46daaa96b8b916ed6a9b060476">R</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordflow">return</span> R_;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  }</div>
+</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span></div>
+<div class="foldopen" id="foldopen00130" data-start="{" data-end="}">
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="a04299.html#afae30ed094cdc2596cb4a2afc9e9a6fe">  130</a></span>  <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code hl_function" href="a04299.html#afae30ed094cdc2596cb4a2afc9e9a6fe">a</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordflow">return</span> a_;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  }</div>
+</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span></div>
+<div class="foldopen" id="foldopen00137" data-start="{" data-end="}">
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="a04299.html#ac303ffcfda71b6a5d3ce0fa8196b4ead">  137</a></span>  <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code hl_function" href="a04299.html#ac303ffcfda71b6a5d3ce0fa8196b4ead">b</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordflow">return</span> b_;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  }</div>
+</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  GTSAM_EXPORT <span class="keyword">friend</span> <a class="code hl_class" href="a04299.html">Line3</a> <a class="code hl_function" href="a02242.html#abc269192412593dfb11957e16ca0da2a">transformTo</a>(<span class="keyword">const</span> <a class="code hl_class" href="a04403.html">Pose3</a> &amp;wTc, <span class="keyword">const</span> <a class="code hl_class" href="a04299.html">Line3</a> &amp;wL,</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                           <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;4, 6&gt;</a> Dpose,</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                           <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;4, 4&gt;</a> Dline);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>};</div>
+</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="a03947.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">  156</a></span>  <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> ARCHIVE&gt;</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  <span class="keywordtype">void</span> serialize(ARCHIVE &amp;ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    ar &amp;BOOST_SERIALIZATION_BASE_OBJECT_NVP(Base);</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    ar &amp;BOOST_SERIALIZATION_NVP(factors_);</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  }</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>};</div>
-</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="comment">// traits</span></div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="keyword">template</span> &lt;&gt;</div>
-<div class="foldopen" id="foldopen00166" data-start="{" data-end="};">
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="a03951.html">  166</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a02823.html">traits</a>&lt;<a class="code hl_class" href="a03947.html">GaussianMixtureFactor</a>&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="a03039.html">Testable</a>&lt;GaussianMixtureFactor&gt; {</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>};</div>
-</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>}  <span class="comment">// namespace gtsam</span></div>
-<div class="ttc" id="aa00185_html"><div class="ttname"><a href="a00185.html">DiscreteKey.h</a></div><div class="ttdoc">specialized key for discrete variables</div></div>
-<div class="ttc" id="aa00212_html"><div class="ttname"><a href="a00212.html">AlgebraicDecisionTree.h</a></div><div class="ttdoc">Algebraic Decision Trees.</div></div>
-<div class="ttc" id="aa00227_html"><div class="ttname"><a href="a00227.html">DecisionTree.h</a></div><div class="ttdoc">Decision Tree for use in DiscreteFactors.</div></div>
-<div class="ttc" id="aa00497_html"><div class="ttname"><a href="a00497.html">HybridFactor.h</a></div></div>
-<div class="ttc" id="aa00800_html"><div class="ttname"><a href="a00800.html">GaussianFactorGraph.h</a></div><div class="ttdoc">Linear Factor Graph where all factors are Gaussians.</div></div>
-<div class="ttc" id="aa00842_html"><div class="ttname"><a href="a00842.html">GaussianFactor.h</a></div><div class="ttdoc">A factor with a quadratic error function - a Gaussian.</div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa01968_html_a2dea5ef4aee9da07a0e0686940c64667"><div class="ttname"><a href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">gtsam::KeyVector</a></div><div class="ttdeci">FastVector&lt; Key &gt; KeyVector</div><div class="ttdoc">Define collection type once and for all - also used in wrappers.</div><div class="ttdef"><b>Definition</b> Key.h:86</div></div>
-<div class="ttc" id="aa01968_html_a54fa43c89c5334314c8c75939dd5c2d7"><div class="ttname"><a href="a01968.html#a54fa43c89c5334314c8c75939dd5c2d7">gtsam::print</a></div><div class="ttdeci">void print(const Matrix &amp;A, const string &amp;s, ostream &amp;stream)</div><div class="ttdoc">print without optional string, must specify cout yourself</div><div class="ttdef"><b>Definition</b> Matrix.cpp:156</div></div>
-<div class="ttc" id="aa01968_html_a7d4eaa9f6e32da46e8f287499ee650d2"><div class="ttname"><a href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">gtsam::KeyFormatter</a></div><div class="ttdeci">std::function&lt; std::string(Key)&gt; KeyFormatter</div><div class="ttdoc">Typedef for a function to format a key, i.e. to convert it to a string.</div><div class="ttdef"><b>Definition</b> Key.h:35</div></div>
-<div class="ttc" id="aa01968_html_ae5f15658d772e31ad4f57da0d91e6dd1"><div class="ttname"><a href="a01968.html#ae5f15658d772e31ad4f57da0d91e6dd1">gtsam::GaussianFactorGraphTree</a></div><div class="ttdeci">DecisionTree&lt; Key, GaussianFactorGraph &gt; GaussianFactorGraphTree</div><div class="ttdoc">Alias for DecisionTree of GaussianFactorGraphs.</div><div class="ttdef"><b>Definition</b> HybridFactor.h:34</div></div>
-<div class="ttc" id="aa02823_html"><div class="ttname"><a href="a02823.html">gtsam::traits</a></div><div class="ttdoc">A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...</div><div class="ttdef"><b>Definition</b> concepts.h:30</div></div>
-<div class="ttc" id="aa03027_html"><div class="ttname"><a href="a03027.html">gtsam::equals</a></div><div class="ttdoc">Template to create a binary predicate.</div><div class="ttdef"><b>Definition</b> Testable.h:111</div></div>
-<div class="ttc" id="aa03039_html"><div class="ttname"><a href="a03039.html">gtsam::Testable</a></div><div class="ttdoc">A helper that implements the traits interface for GTSAM types.</div><div class="ttdef"><b>Definition</b> Testable.h:151</div></div>
-<div class="ttc" id="aa03307_html"><div class="ttname"><a href="a03307.html">gtsam::AlgebraicDecisionTree</a></div><div class="ttdoc">An algebraic decision tree fixes the range of a DecisionTree to double.</div><div class="ttdef"><b>Definition</b> AlgebraicDecisionTree.h:38</div></div>
-<div class="ttc" id="aa03343_html"><div class="ttname"><a href="a03343.html">gtsam::DecisionTree</a></div><div class="ttdoc">a decision tree is a function from assignments to values.</div><div class="ttdef"><b>Definition</b> DecisionTree.h:61</div></div>
-<div class="ttc" id="aa03423_html"><div class="ttname"><a href="a03423.html">gtsam::DiscreteKeys</a></div><div class="ttdoc">DiscreteKeys is a set of keys that can be assembled using the &amp; operator.</div><div class="ttdef"><b>Definition</b> DiscreteKey.h:39</div></div>
-<div class="ttc" id="aa03447_html"><div class="ttname"><a href="a03447.html">gtsam::DiscreteValues</a></div><div class="ttdoc">A map from keys to values.</div><div class="ttdef"><b>Definition</b> DiscreteValues.h:34</div></div>
-<div class="ttc" id="aa03947_html"><div class="ttname"><a href="a03947.html">gtsam::GaussianMixtureFactor</a></div><div class="ttdoc">Implementation of a discrete conditional mixture factor.</div><div class="ttdef"><b>Definition</b> GaussianMixtureFactor.h:47</div></div>
-<div class="ttc" id="aa03947_html_a1fd07541d71b0fc8de61ee3be36c86dc"><div class="ttname"><a href="a03947.html#a1fd07541d71b0fc8de61ee3be36c86dc">gtsam::GaussianMixtureFactor::GaussianMixtureFactor</a></div><div class="ttdeci">GaussianMixtureFactor()=default</div><div class="ttdoc">Default constructor, mainly for serialization.</div></div>
-<div class="ttc" id="aa03947_html_a4d6fc1d10222e14fb2edade6701c4520"><div class="ttname"><a href="a03947.html#a4d6fc1d10222e14fb2edade6701c4520">gtsam::GaussianMixtureFactor::GaussianMixtureFactor</a></div><div class="ttdeci">GaussianMixtureFactor(const KeyVector &amp;continuousKeys, const DiscreteKeys &amp;discreteKeys, const std::vector&lt; sharedFactor &gt; &amp;factors)</div><div class="ttdoc">Construct a new GaussianMixtureFactor object using a vector of GaussianFactor shared pointers.</div><div class="ttdef"><b>Definition</b> GaussianMixtureFactor.h:98</div></div>
-<div class="ttc" id="aa03947_html_a61e0b4f311bbcb76fd99206d5d3b98a9"><div class="ttname"><a href="a03947.html#a61e0b4f311bbcb76fd99206d5d3b98a9">gtsam::GaussianMixtureFactor::add</a></div><div class="ttdeci">GaussianFactorGraphTree add(const GaussianFactorGraphTree &amp;sum) const</div><div class="ttdoc">Combine the Gaussian Factor Graphs in sum and this while maintaining the original tree structure.</div><div class="ttdef"><b>Definition</b> GaussianMixtureFactor.cpp:85</div></div>
-<div class="ttc" id="aa03947_html_aa9e043f6c690cc0c6f224b0ac0281106"><div class="ttname"><a href="a03947.html#aa9e043f6c690cc0c6f224b0ac0281106">gtsam::GaussianMixtureFactor::Factors</a></div><div class="ttdeci">DecisionTree&lt; Key, sharedFactor &gt; Factors</div><div class="ttdoc">typedef for Decision Tree of Gaussian factors and log-constant.</div><div class="ttdef"><b>Definition</b> GaussianMixtureFactor.h:56</div></div>
-<div class="ttc" id="aa03947_html_afae4b6b907ad31a9442c65d8929352cd"><div class="ttname"><a href="a03947.html#afae4b6b907ad31a9442c65d8929352cd">gtsam::GaussianMixtureFactor::operator+=</a></div><div class="ttdeci">friend GaussianFactorGraphTree &amp; operator+=(GaussianFactorGraphTree &amp;sum, const GaussianMixtureFactor &amp;factor)</div><div class="ttdoc">Add MixtureFactor to a Sum, syntactic sugar.</div><div class="ttdef"><b>Definition</b> GaussianMixtureFactor.h:147</div></div>
-<div class="ttc" id="aa03995_html"><div class="ttname"><a href="a03995.html">gtsam::HybridFactor</a></div><div class="ttdoc">Base class for truly hybrid probabilistic factors.</div><div class="ttdef"><b>Definition</b> HybridFactor.h:52</div></div>
-<div class="ttc" id="aa03995_html_a97bb25c7e119639c38ae44bb05f53775"><div class="ttname"><a href="a03995.html#a97bb25c7e119639c38ae44bb05f53775">gtsam::HybridFactor::HybridFactor</a></div><div class="ttdeci">HybridFactor()=default</div><div class="ttdoc">Default constructor creates empty factor.</div></div>
-<div class="ttc" id="aa03995_html_a9e94d7e2a2ddee40dce1d8f3d3572b9f"><div class="ttname"><a href="a03995.html#a9e94d7e2a2ddee40dce1d8f3d3572b9f">gtsam::HybridFactor::continuousKeys</a></div><div class="ttdeci">const KeyVector &amp; continuousKeys() const</div><div class="ttdoc">Return only the continuous keys for this factor.</div><div class="ttdef"><b>Definition</b> HybridFactor.h:135</div></div>
-<div class="ttc" id="aa03995_html_ae85edac700e36080970d91d4fa2e42f8"><div class="ttname"><a href="a03995.html#ae85edac700e36080970d91d4fa2e42f8">gtsam::HybridFactor::discreteKeys</a></div><div class="ttdeci">const DiscreteKeys &amp; discreteKeys() const</div><div class="ttdoc">Return the discrete keys for this factor.</div><div class="ttdef"><b>Definition</b> HybridFactor.h:132</div></div>
-<div class="ttc" id="aa04051_html"><div class="ttname"><a href="a04051.html">gtsam::HybridValues</a></div><div class="ttdoc">HybridValues represents a collection of DiscreteValues and VectorValues.</div><div class="ttdef"><b>Definition</b> HybridValues.h:38</div></div>
-<div class="ttc" id="aa04611_html"><div class="ttname"><a href="a04611.html">gtsam::VectorValues</a></div><div class="ttdoc">VectorValues represents a collection of vector-valued variables associated each with a unique integer...</div><div class="ttdef"><b>Definition</b> VectorValues.h:74</div></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="a04303.html">  155</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03203.html">traits</a>&lt;<a class="code hl_class" href="a04299.html">Line3</a>&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="a03315.html">internal::Manifold</a>&lt;Line3&gt; {};</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="a04307.html">  158</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03203.html">traits</a>&lt;const <a class="code hl_class" href="a04299.html">Line3</a>&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="a03315.html">internal::Manifold</a>&lt;Line3&gt; {};</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>}</div>
+<div class="ttc" id="aa00521_html"><div class="ttname"><a href="a00521.html">Pose3.h</a></div><div class="ttdoc">3D Pose manifold SO(3) x R^3 and group SE(3)</div></div>
+<div class="ttc" id="aa00620_html"><div class="ttname"><a href="a00620.html">Rot3.h</a></div><div class="ttdoc">3D rotation represented as a rotation matrix or quaternion</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa02242_html_a4705ef3536019dc2a384e26ef0fde932"><div class="ttname"><a href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">gtsam::Point3</a></div><div class="ttdeci">Vector3 Point3</div><div class="ttdoc">As of GTSAM 4, in order to make GTSAM more lean, it is now possible to just typedef Point3 to Vector3...</div><div class="ttdef"><b>Definition</b> Point3.h:38</div></div>
+<div class="ttc" id="aa02242_html_a54fa43c89c5334314c8c75939dd5c2d7"><div class="ttname"><a href="a02242.html#a54fa43c89c5334314c8c75939dd5c2d7">gtsam::print</a></div><div class="ttdeci">void print(const Matrix &amp;A, const string &amp;s, ostream &amp;stream)</div><div class="ttdoc">print without optional string, must specify cout yourself</div><div class="ttdef"><b>Definition</b> Matrix.cpp:143</div></div>
+<div class="ttc" id="aa02242_html_abc269192412593dfb11957e16ca0da2a"><div class="ttname"><a href="a02242.html#abc269192412593dfb11957e16ca0da2a">gtsam::transformTo</a></div><div class="ttdeci">Line3 transformTo(const Pose3 &amp;wTc, const Line3 &amp;wL, OptionalJacobian&lt; 4, 6 &gt; Dpose, OptionalJacobian&lt; 4, 4 &gt; Dline)</div><div class="ttdoc">Transform a line from world to camera frame.</div><div class="ttdef"><b>Definition</b> Line3.cpp:91</div></div>
+<div class="ttc" id="aa02242_html_ad0024081af88e1b3cc0820c65ad6afd4"><div class="ttname"><a href="a02242.html#ad0024081af88e1b3cc0820c65ad6afd4">gtsam::project</a></div><div class="ttdeci">Point2_ project(const Point3_ &amp;p_cam)</div><div class="ttdoc">Expression version of PinholeBase::Project.</div><div class="ttdef"><b>Definition</b> expressions.h:134</div></div>
+<div class="ttc" id="aa03203_html"><div class="ttname"><a href="a03203.html">gtsam::traits</a></div><div class="ttdoc">A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...</div><div class="ttdef"><b>Definition</b> Group.h:37</div></div>
+<div class="ttc" id="aa03315_html"><div class="ttname"><a href="a03315.html">gtsam::internal::Manifold</a></div><div class="ttdoc">Both ManifoldTraits and Testable.</div><div class="ttdef"><b>Definition</b> Manifold.h:156</div></div>
+<div class="ttc" id="aa03363_html"><div class="ttname"><a href="a03363.html">gtsam::OptionalJacobian</a></div><div class="ttdoc">OptionalJacobian is an Eigen::Ref like class that can take be constructed using either a fixed size o...</div><div class="ttdef"><b>Definition</b> OptionalJacobian.h:40</div></div>
+<div class="ttc" id="aa04299_html"><div class="ttname"><a href="a04299.html">gtsam::Line3</a></div><div class="ttdoc">A 3D line (R,a,b) : (Rot3,Scalar,Scalar).</div><div class="ttdef"><b>Definition</b> Line3.h:44</div></div>
+<div class="ttc" id="aa04299_html_a36f6ef46daaa96b8b916ed6a9b060476"><div class="ttname"><a href="a04299.html#a36f6ef46daaa96b8b916ed6a9b060476">gtsam::Line3::R</a></div><div class="ttdeci">Rot3 R() const</div><div class="ttdoc">Return the rotation of the line.</div><div class="ttdef"><b>Definition</b> Line3.h:123</div></div>
+<div class="ttc" id="aa04299_html_a496c45a5ae638d6a7db373c1886c3de6"><div class="ttname"><a href="a04299.html#a496c45a5ae638d6a7db373c1886c3de6">gtsam::Line3::Line3</a></div><div class="ttdeci">Line3()</div><div class="ttdoc">Default constructor is the Z axis.</div><div class="ttdef"><b>Definition</b> Line3.h:53</div></div>
+<div class="ttc" id="aa04299_html_a84441b40640c2f8a861272be3ac189eb"><div class="ttname"><a href="a04299.html#a84441b40640c2f8a861272be3ac189eb">gtsam::Line3::Line3</a></div><div class="ttdeci">Line3(const Rot3 &amp;R, const double a, const double b)</div><div class="ttdoc">Constructor for general line from (R, a, b).</div><div class="ttdef"><b>Definition</b> Line3.h:57</div></div>
+<div class="ttc" id="aa04299_html_ac303ffcfda71b6a5d3ce0fa8196b4ead"><div class="ttname"><a href="a04299.html#ac303ffcfda71b6a5d3ce0fa8196b4ead">gtsam::Line3::b</a></div><div class="ttdeci">double b() const</div><div class="ttdoc">Return the y-coordinate of the intersection of the line with the xy plane.</div><div class="ttdef"><b>Definition</b> Line3.h:137</div></div>
+<div class="ttc" id="aa04299_html_afae30ed094cdc2596cb4a2afc9e9a6fe"><div class="ttname"><a href="a04299.html#afae30ed094cdc2596cb4a2afc9e9a6fe">gtsam::Line3::a</a></div><div class="ttdeci">double a() const</div><div class="ttdoc">Return the x-coordinate of the intersection of the line with the xy plane.</div><div class="ttdef"><b>Definition</b> Line3.h:130</div></div>
+<div class="ttc" id="aa04403_html"><div class="ttname"><a href="a04403.html">gtsam::Pose3</a></div><div class="ttdoc">A 3D pose (R,t) : (Rot3,Point3).</div><div class="ttdef"><b>Definition</b> Pose3.h:42</div></div>
+<div class="ttc" id="aa04451_html"><div class="ttname"><a href="a04451.html">gtsam::Rot3</a></div><div class="ttdoc">Rot3 is a 3D rotation represented as a rotation matrix if the preprocessor symbol GTSAM_USE_QUATERNIO...</div><div class="ttdef"><b>Definition</b> Rot3.h:65</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>hybrid</b></li><li class="navelem"><a href="a00551.html">GaussianMixtureFactor.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>geometry</b></li><li class="navelem"><a href="a00551.html">Line3.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

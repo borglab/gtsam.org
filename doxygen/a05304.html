@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,22 +96,14 @@ $(function(){initNavTree('a05307.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::TranslationRecovery Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::MultifrontalClique::ChildInfo Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a05307.html">gtsam::TranslationRecovery</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a05307.html">gtsam::MultifrontalClique::ChildInfo</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a05307.html#aa36f6bd78818a0cc690bca0bb775b119">addPrior</a>(const std::vector&lt; BinaryMeasurement&lt; Unit3 &gt; &gt; &amp;relativeTranslations, const double scale, const std::vector&lt; BinaryMeasurement&lt; Point3 &gt; &gt; &amp;betweenTranslations, NonlinearFactorGraph *graph, const SharedNoiseModel &amp;priorNoiseModel=noiseModel::Isotropic::Sigma(3, 0.01)) const</td><td class="entry"><a class="el" href="a05307.html">gtsam::TranslationRecovery</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05307.html#a1c630863b2c8bedce98f15fd50fa9c03">buildGraph</a>(const std::vector&lt; BinaryMeasurement&lt; Unit3 &gt; &gt; &amp;relativeTranslations) const</td><td class="entry"><a class="el" href="a05307.html">gtsam::TranslationRecovery</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a05307.html#ae6e4812bf6a8523000ce05f18914e035">initializeRandomly</a>(const std::vector&lt; BinaryMeasurement&lt; Unit3 &gt; &gt; &amp;relativeTranslations, const std::vector&lt; BinaryMeasurement&lt; Point3 &gt; &gt; &amp;betweenTranslations, std::mt19937 *rng, const Values &amp;initialValues=Values()) const</td><td class="entry"><a class="el" href="a05307.html">gtsam::TranslationRecovery</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05307.html#a82e04ae68a73a2736f152790adfb3c03">initializeRandomly</a>(const std::vector&lt; BinaryMeasurement&lt; Unit3 &gt; &gt; &amp;relativeTranslations, const std::vector&lt; BinaryMeasurement&lt; Point3 &gt; &gt; &amp;betweenTranslations, const Values &amp;initialValues=Values()) const</td><td class="entry"><a class="el" href="a05307.html">gtsam::TranslationRecovery</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>KeyPair</b> typedef (defined in <a class="el" href="a05307.html">gtsam::TranslationRecovery</a>)</td><td class="entry"><a class="el" href="a05307.html">gtsam::TranslationRecovery</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05307.html#a7e5a0a1dd9ed67285f809de21ee7e767">run</a>(const TranslationEdges &amp;relativeTranslations, const double scale=1.0, const std::vector&lt; BinaryMeasurement&lt; Point3 &gt; &gt; &amp;betweenTranslations={}, const Values &amp;initialValues=Values()) const</td><td class="entry"><a class="el" href="a05307.html">gtsam::TranslationRecovery</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a05307.html#a40209e65971ae772ef42a3f3c294c18d">SimulateMeasurements</a>(const Values &amp;poses, const std::vector&lt; KeyPair &gt; &amp;edges)</td><td class="entry"><a class="el" href="a05307.html">gtsam::TranslationRecovery</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>TranslationEdges</b> typedef (defined in <a class="el" href="a05307.html">gtsam::TranslationRecovery</a>)</td><td class="entry"><a class="el" href="a05307.html">gtsam::TranslationRecovery</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a05307.html#ab6136c6f0473cddbfcfbb32ad8e83ec5">TranslationRecovery</a>(const LevenbergMarquardtParams &amp;lmParams)</td><td class="entry"><a class="el" href="a05307.html">gtsam::TranslationRecovery</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05307.html#a7a327105426ada3cf5b5ddf7415a6bb3">TranslationRecovery</a>()=default</td><td class="entry"><a class="el" href="a05307.html">gtsam::TranslationRecovery</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>clique</b> (defined in <a class="el" href="a05307.html">gtsam::MultifrontalClique::ChildInfo</a>)</td><td class="entry"><a class="el" href="a05307.html">gtsam::MultifrontalClique::ChildInfo</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>separatorKeys</b> (defined in <a class="el" href="a05307.html">gtsam::MultifrontalClique::ChildInfo</a>)</td><td class="entry"><a class="el" href="a05307.html">gtsam::MultifrontalClique::ChildInfo</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

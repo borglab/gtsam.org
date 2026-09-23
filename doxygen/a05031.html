@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::traits&lt; NonlinearEquality1&lt; VALUE &gt; &gt; Struct Template Reference</title>
+<title>gtsam: gtsam::ConjugateGradientParameters Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,33 +96,153 @@ $(function(){initNavTree('a05031.html','','a05028'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; NonlinearEquality1&lt; VALUE &gt; &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::ConjugateGradientParameters Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::traits&lt; NonlinearEquality1&lt; VALUE &gt; &gt;:</div>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Parameters for the Conjugate Gradient method. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::ConjugateGradientParameters:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a05031.png" usemap="#gtsam_3A_3Atraits_3C_20NonlinearEquality1_3C_20VALUE_20_3E_20_3E_map" alt=""/>
-  <map id="gtsam_3A_3Atraits_3C_20NonlinearEquality1_3C_20VALUE_20_3E_20_3E_map" name="gtsam_3A_3Atraits_3C_20NonlinearEquality1_3C_20VALUE_20_3E_20_3E_map">
-<area href="a03039.html" alt="gtsam::Testable&lt; NonlinearEquality1&lt; VALUE &gt; &gt;" shape="rect" coords="0,0,292,24"/>
+  <img src="a05031.png" usemap="#gtsam_3A_3AConjugateGradientParameters_map" alt=""/>
+  <map id="gtsam_3A_3AConjugateGradientParameters_map" name="gtsam_3A_3AConjugateGradientParameters_map">
+<area href="a05171.html" title="parameters for iterative linear solvers" alt="gtsam::IterativeOptimizationParameters" shape="rect" coords="118,0,345,24"/>
+<area href="a05431.html" title="Parameters for Preconditioned Conjugate Gradient solver." alt="gtsam::PCGSolverParameters" shape="rect" coords="0,112,227,136"/>
+<area href="a05523.html" alt="gtsam::SubgraphSolverParameters" shape="rect" coords="237,112,464,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a8d827856ceffd682e84134bc85b36009" id="r_a8d827856ceffd682e84134bc85b36009"><td class="memItemLeft"><a id="a8d827856ceffd682e84134bc85b36009" name="a8d827856ceffd682e84134bc85b36009"></a>
+&#160;</td><td class="memItemRight"><b>ConjugateGradientParameters</b> (size_t <a class="el" href="#a374db6fff7b766c2915798a0da1abcc6">minIterations</a>, size_t <a class="el" href="#a1e7033fa8a872302931409f89fd990c0">maxIterations</a>, size_t <a class="el" href="#a2185c0d346b1debc869f5e95ee021da9">reset</a>, double <a class="el" href="#a98449a01988a747585c90679b7774271">epsilon_rel</a>, double <a class="el" href="#a9c21911222e6c3eb2a083b12a90836b0">epsilon_abs</a>, <a class="el" href="#a5f3c3b9315279cf2112501b7c0a3b499">BLASKernel</a> blas)</td></tr>
+<tr class="memitem:abac1a3b46eac6bc7f93491971c56721b" id="r_abac1a3b46eac6bc7f93491971c56721b"><td class="memItemLeft"><a id="abac1a3b46eac6bc7f93491971c56721b" name="abac1a3b46eac6bc7f93491971c56721b"></a>
+&#160;</td><td class="memItemRight"><b>ConjugateGradientParameters</b> (const ConjugateGradientParameters &amp;p)</td></tr>
+<tr class="memitem:a7ef53d96002e130c1f4f1558a529c96a" id="r_a7ef53d96002e130c1f4f1558a529c96a"><td class="memItemLeft"><a id="a7ef53d96002e130c1f4f1558a529c96a" name="a7ef53d96002e130c1f4f1558a529c96a"></a>
+ConjugateGradientParameters &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (const ConjugateGradientParameters &amp;other)=default</td></tr>
+<tr class="memitem:aeb8591f806757f1174baf00c2c05a363" id="r_aeb8591f806757f1174baf00c2c05a363"><td class="memItemLeft"><a id="aeb8591f806757f1174baf00c2c05a363" name="aeb8591f806757f1174baf00c2c05a363"></a>
+void&#160;</td><td class="memItemRight"><b>print</b> () const</td></tr>
+<tr class="memitem:acc900c4465078130e2d994bc9c461792" id="r_acc900c4465078130e2d994bc9c461792"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acc900c4465078130e2d994bc9c461792">print</a> (std::ostream &amp;os) const override</td></tr>
+<tr class="inherit_header pub_methods_a05171"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a05171')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a05171.html">gtsam::IterativeOptimizationParameters</a></td></tr>
+<tr class="memitem:a4aa53fcbb724c5be3623e9234a1f0a18 inherit pub_methods_a05171" id="r_a4aa53fcbb724c5be3623e9234a1f0a18"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>IterativeOptimizationParameters</b> (Verbosity v=SILENT)</td></tr>
+<tr class="memitem:a25bfe691756d9870c298e314e388da10 inherit pub_methods_a05171" id="r_a25bfe691756d9870c298e314e388da10"><td class="memItemLeft">
+Verbosity&#160;</td><td class="memItemRight"><b>verbosity</b> () const</td></tr>
+<tr class="memitem:a367ef70766dbe51a338c512e3ebde5a6 inherit pub_methods_a05171" id="r_a367ef70766dbe51a338c512e3ebde5a6"><td class="memItemLeft">
+GTSAM_EXPORT std::string&#160;</td><td class="memItemRight"><b>getVerbosity</b> () const</td></tr>
+<tr class="memitem:a11ea619cdf47facb12625c9a7702ca90 inherit pub_methods_a05171" id="r_a11ea619cdf47facb12625c9a7702ca90"><td class="memItemLeft">
+GTSAM_EXPORT void&#160;</td><td class="memItemRight"><b>setVerbosity</b> (const std::string &amp;s)</td></tr>
+<tr class="memitem:afda84a528036717a9827afa64903b4b3 inherit pub_methods_a05171" id="r_afda84a528036717a9827afa64903b4b3"><td class="memItemLeft">
+GTSAM_EXPORT void&#160;</td><td class="memItemRight"><b>print</b> () const</td></tr>
+<tr class="memitem:a9019de7b1279218a439c3d56534b3986 inherit pub_methods_a05171" id="r_a9019de7b1279218a439c3d56534b3986"><td class="memItemLeft">
+virtual GTSAM_EXPORT bool&#160;</td><td class="memItemRight"><b>equals</b> (const IterativeOptimizationParameters &amp;other, double tol=1e-9) const</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a78d329860e7d4ac3f38fcc8c5b0e915c" id="r_a78d329860e7d4ac3f38fcc8c5b0e915c"><td class="memItemLeft"><a id="a78d329860e7d4ac3f38fcc8c5b0e915c" name="a78d329860e7d4ac3f38fcc8c5b0e915c"></a>
+static std::string&#160;</td><td class="memItemRight"><b>blasTranslator</b> (const <a class="el" href="#a5f3c3b9315279cf2112501b7c0a3b499">BLASKernel</a> k)</td></tr>
+<tr class="memitem:a8e0a2ed6d5ba3b8bc896480ec7477501" id="r_a8e0a2ed6d5ba3b8bc896480ec7477501"><td class="memItemLeft"><a id="a8e0a2ed6d5ba3b8bc896480ec7477501" name="a8e0a2ed6d5ba3b8bc896480ec7477501"></a>
+static <a class="el" href="#a5f3c3b9315279cf2112501b7c0a3b499">BLASKernel</a>&#160;</td><td class="memItemRight"><b>blasTranslator</b> (const std::string &amp;s)</td></tr>
+<tr class="inherit_header pub_static_methods_a05171"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a05171')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a05171.html">gtsam::IterativeOptimizationParameters</a></td></tr>
+<tr class="memitem:ab40235628f7aa5566c54b9fa86371e05 inherit pub_static_methods_a05171" id="r_ab40235628f7aa5566c54b9fa86371e05"><td class="memItemLeft">
+static GTSAM_EXPORT Verbosity&#160;</td><td class="memItemRight"><b>verbosityTranslator</b> (const std::string &amp;s)</td></tr>
+<tr class="memitem:a12771f8373cb937dca4dc741bb7e3b15 inherit pub_static_methods_a05171" id="r_a12771f8373cb937dca4dc741bb7e3b15"><td class="memItemLeft">
+static GTSAM_EXPORT std::string&#160;</td><td class="memItemRight"><b>verbosityTranslator</b> (Verbosity v)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a374db6fff7b766c2915798a0da1abcc6" id="r_a374db6fff7b766c2915798a0da1abcc6"><td class="memItemLeft"><a id="a374db6fff7b766c2915798a0da1abcc6" name="a374db6fff7b766c2915798a0da1abcc6"></a>
+size_t&#160;</td><td class="memItemRight"><b>minIterations</b></td></tr>
+<tr class="memdesc:a374db6fff7b766c2915798a0da1abcc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">minimum number of cg iterations <br /></td></tr>
+<tr class="memitem:a1e7033fa8a872302931409f89fd990c0" id="r_a1e7033fa8a872302931409f89fd990c0"><td class="memItemLeft"><a id="a1e7033fa8a872302931409f89fd990c0" name="a1e7033fa8a872302931409f89fd990c0"></a>
+size_t&#160;</td><td class="memItemRight"><b>maxIterations</b></td></tr>
+<tr class="memdesc:a1e7033fa8a872302931409f89fd990c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">maximum number of cg iterations <br /></td></tr>
+<tr class="memitem:a2185c0d346b1debc869f5e95ee021da9" id="r_a2185c0d346b1debc869f5e95ee021da9"><td class="memItemLeft"><a id="a2185c0d346b1debc869f5e95ee021da9" name="a2185c0d346b1debc869f5e95ee021da9"></a>
+size_t&#160;</td><td class="memItemRight"><b>reset</b></td></tr>
+<tr class="memdesc:a2185c0d346b1debc869f5e95ee021da9"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of iterations before reset <br /></td></tr>
+<tr class="memitem:a98449a01988a747585c90679b7774271" id="r_a98449a01988a747585c90679b7774271"><td class="memItemLeft"><a id="a98449a01988a747585c90679b7774271" name="a98449a01988a747585c90679b7774271"></a>
+double&#160;</td><td class="memItemRight"><b>epsilon_rel</b></td></tr>
+<tr class="memdesc:a98449a01988a747585c90679b7774271"><td class="mdescLeft">&#160;</td><td class="mdescRight">threshold for relative error decrease <br /></td></tr>
+<tr class="memitem:a9c21911222e6c3eb2a083b12a90836b0" id="r_a9c21911222e6c3eb2a083b12a90836b0"><td class="memItemLeft"><a id="a9c21911222e6c3eb2a083b12a90836b0" name="a9c21911222e6c3eb2a083b12a90836b0"></a>
+double&#160;</td><td class="memItemRight"><b>epsilon_abs</b></td></tr>
+<tr class="memdesc:a9c21911222e6c3eb2a083b12a90836b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">threshold for absolute error decrease <br /></td></tr>
+<tr class="memitem:a6d0596fd09782dc77ee36c21b3039dc1" id="r_a6d0596fd09782dc77ee36c21b3039dc1"><td class="memItemLeft"><a id="a6d0596fd09782dc77ee36c21b3039dc1" name="a6d0596fd09782dc77ee36c21b3039dc1"></a>
+enum <a class="el" href="#a5f3c3b9315279cf2112501b7c0a3b499">gtsam::ConjugateGradientParameters::BLASKernel</a>&#160;</td><td class="memItemRight"><b>blas_kernel</b></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a5f3c3b9315279cf2112501b7c0a3b499" id="r_a5f3c3b9315279cf2112501b7c0a3b499"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#a5f3c3b9315279cf2112501b7c0a3b499">BLASKernel</a> { <a class="el" href="#a5f3c3b9315279cf2112501b7c0a3b499a6899bab70a92ace73fecfa9de464de3c">GTSAM</a> = 0
+ }</td></tr>
+<tr class="memitem:a8b882bb3171d4677110c503211d62145" id="r_a8b882bb3171d4677110c503211d62145"><td class="memItemLeft"><a id="a8b882bb3171d4677110c503211d62145" name="a8b882bb3171d4677110c503211d62145"></a>
+typedef IterativeOptimizationParameters&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
+<tr class="memitem:ac59591ebcb62ee8d76bbf832c33c3786" id="r_ac59591ebcb62ee8d76bbf832c33c3786"><td class="memItemLeft"><a id="ac59591ebcb62ee8d76bbf832c33c3786" name="ac59591ebcb62ee8d76bbf832c33c3786"></a>
+typedef std::shared_ptr&lt; ConjugateGradientParameters &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+<tr class="inherit_header pub_types_a05171"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a05171')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a05171.html">gtsam::IterativeOptimizationParameters</a></td></tr>
+<tr class="memitem:a7b6ef51d252801f00279adea1802f594 inherit pub_types_a05171" id="r_a7b6ef51d252801f00279adea1802f594"><td class="memItemLeft"><a id="a7b6ef51d252801f00279adea1802f594" name="a7b6ef51d252801f00279adea1802f594"></a>enum &#160;</td><td class="memItemRight"><b>Verbosity</b> { <b>SILENT</b> = 0
+, <b>COMPLEXITY</b>
+, <b>ERROR</b>
+ }</td></tr>
+<tr class="memitem:aec60fa19fddf0398ca788b674f220ce5 inherit pub_types_a05171" id="r_aec60fa19fddf0398ca788b674f220ce5"><td class="memItemLeft">
+typedef std::shared_ptr&lt; IterativeOptimizationParameters &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; NonlinearEquality1&lt; VALUE &gt; &gt;</a></td></tr>
-<tr class="memitem:a0b809ea2931c6c4a2ecbd17e8f3fab39 inherit pub_methods_a03039" id="r_a0b809ea2931c6c4a2ecbd17e8f3fab39"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>BOOST_CONCEPT_ASSERT</b> ((<a class="el" href="a03035.html">HasTestablePrereqs</a>&lt; <a class="el" href="a05027.html">NonlinearEquality1</a>&lt; VALUE &gt; &gt;))</td></tr>
-<tr class="inherit_header pub_static_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; NonlinearEquality1&lt; VALUE &gt; &gt;</a></td></tr>
-<tr class="memitem:a27b246d77898916925c676895348fedf inherit pub_static_methods_a03039" id="r_a27b246d77898916925c676895348fedf"><td class="memItemLeft">
-static void&#160;</td><td class="memItemRight"><b>Print</b> (const <a class="el" href="a05027.html">NonlinearEquality1</a>&lt; VALUE &gt; &amp;m, const std::string &amp;str=&quot;&quot;)</td></tr>
-<tr class="memitem:a29a5699453b92070b31ca7fa42609d98 inherit pub_static_methods_a03039" id="r_a29a5699453b92070b31ca7fa42609d98"><td class="memItemLeft">
-static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el" href="a05027.html">NonlinearEquality1</a>&lt; VALUE &gt; &amp;m1, const <a class="el" href="a05027.html">NonlinearEquality1</a>&lt; VALUE &gt; &amp;m2, double tol=1e-8)</td></tr>
+<tr class="inherit_header pro_attribs_a05171"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a05171')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a05171.html">gtsam::IterativeOptimizationParameters</a></td></tr>
+<tr class="memitem:ad4540f379e20e8c6f7e5b73782df5dc1 inherit pro_attribs_a05171" id="r_ad4540f379e20e8c6f7e5b73782df5dc1"><td class="memItemLeft">
+Verbosity&#160;</td><td class="memItemRight"><b>verbosity_</b></td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/<a class="el" href="a01067_source.html">NonlinearEquality.h</a></li>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
+<a id="a5f3c3b9315279cf2112501b7c0a3b499" name="a5f3c3b9315279cf2112501b7c0a3b499"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f3c3b9315279cf2112501b7c0a3b499">&#9670;&#160;</a></span>BLASKernel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a5f3c3b9315279cf2112501b7c0a3b499">gtsam::ConjugateGradientParameters::BLASKernel</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a5f3c3b9315279cf2112501b7c0a3b499a6899bab70a92ace73fecfa9de464de3c" name="a5f3c3b9315279cf2112501b7c0a3b499a6899bab70a92ace73fecfa9de464de3c"></a>GTSAM&#160;</td><td class="fielddoc"><p>Jacobian <a class="el" href="a04899.html">Factor</a> Graph of GTSAM. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="acc900c4465078130e2d994bc9c461792" name="acc900c4465078130e2d994bc9c461792"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc900c4465078130e2d994bc9c461792">&#9670;&#160;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gtsam::ConjugateGradientParameters::print </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="a05171.html">gtsam::IterativeOptimizationParameters</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/<a class="el" href="a01124_source.html">ConjugateGradientSolver.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/<b>ConjugateGradientSolver.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -137,7 +257,7 @@ static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a05031.html">traits&lt; NonlinearEquality1&lt; VALUE &gt; &gt;</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a05031.html">ConjugateGradientParameters</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

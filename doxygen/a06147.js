@@ -1,18 +1,11 @@
 var a06147 =
 [
-    [ "shared_ptr", "a06147.html#aac62c258da3b17c84017f2f09f97c095", null ],
-    [ "This", "a06147.html#a13a5dea170b9722e83168f5b56c406ac", null ],
-    [ "SmartStereoProjectionPoseFactor", "a06147.html#aae9b865c9ec932cf8e00f16b6cb08c68", null ],
-    [ "~SmartStereoProjectionPoseFactor", "a06147.html#a9dea05af3240864fc3c40b8d01a3943d", null ],
-    [ "add", "a06147.html#a44075fe8683693ee347739ed0d175e13", null ],
-    [ "add", "a06147.html#afe366bd08860245c4c9bdefca9270a43", null ],
-    [ "add", "a06147.html#a5dd4bbb47c5218276ec0bde35869537e", null ],
-    [ "calibration", "a06147.html#a73bba517aed20c69f29b8d5f7906f284", null ],
-    [ "cameras", "a06147.html#a9777ae312e4427500384d7d9e164fe91", null ],
-    [ "equals", "a06147.html#abd037d1628e9d274f114258b66f082d2", null ],
-    [ "error", "a06147.html#a43f293766f3e2d60c0dfdebc53dd5273", null ],
-    [ "print", "a06147.html#a467c841b3c1618c26760d75605c9c91d", null ],
-    [ "boost::serialization::access", "a06147.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ],
-    [ "Base", "a06147.html#aa51d7b642dddb1a83f02f4b6decca7cd", null ],
-    [ "K_all_", "a06147.html#acf970e63a3a8b2daf9d05ebebc273637", null ]
+    [ "DoglegOptimizer", "a06147.html#a803a7052a5817fde973bfe18578aee78", null ],
+    [ "DoglegOptimizer", "a06147.html#a1419fd81113aa260374a94a49fe882fe", null ],
+    [ "~DoglegOptimizer", "a06147.html#a332eef22765a857beb71d66946dd86c8", null ],
+    [ "_params", "a06147.html#adaa54f8214eb546568d4d61982251152", null ],
+    [ "ensureHasOrdering", "a06147.html#a900052675c543781cc31d263421d412a", null ],
+    [ "getDelta", "a06147.html#abb1a3d00708a7e24cb89cdd5e939ff92", null ],
+    [ "iterate", "a06147.html#acd3e7c0d62e269ea01eab3f78d952097", null ],
+    [ "params", "a06147.html#ae648869d633326339be7d5d743e97a53", null ]
 ];

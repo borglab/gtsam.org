@@ -1,7 +1,7 @@
 var a03419 =
 [
-    [ "Base", "a03419.html#a187d382e5e43fcc23e55bbbcf8cdb75c", null ],
-    [ "shared_ptr", "a03419.html#a67b80ddc56d75698e966b76590ab6cf0", null ],
-    [ "This", "a03419.html#ad6782b47cf2c877b9073da597c774d96", null ],
-    [ "DiscreteJunctionTree", "a03419.html#a4555ca722f81654a9aeb9983913dd6fc", null ]
+    [ "Base", "a03419.html#aceeed0e8a7f7da22e1ffe6076b067886", null ],
+    [ "PowerLieGroup", "a03419.html#acb6de629fd2a15366fd8b76d8dd43d6b", null ],
+    [ "PowerLieGroup", "a03419.html#ad18284c0f7d6d4c8991b2ed2b7e2581e", null ],
+    [ "PowerLieGroup", "a03419.html#ab141ce647db33a27791d51e16c7a5920", null ]
 ];

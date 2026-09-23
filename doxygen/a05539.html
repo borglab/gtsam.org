@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::traits&lt; SymbolicBayesTreeClique &gt; Struct Reference</title>
+<title>gtsam: gtsam::PreintegratedAhrsMeasurements Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,35 +96,306 @@ $(function(){initNavTree('a05539.html','','a05536'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; SymbolicBayesTreeClique &gt; Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::PreintegratedAhrsMeasurements Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>traits </p>
-</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::traits&lt; SymbolicBayesTreeClique &gt;:</div>
+<div class="textblock"><p>PreintegratedAHRSMeasurements accumulates (integrates) the gyroscope measurements (rotation rates) and the corresponding covariance matrix. </p>
+<p>Can be built incrementally so as to avoid costly integration at time of factor construction.</p>
+<h1 class="doxsection"><a class="anchor" id="math_notes"></a>
+Mathematical Formulation</h1>
+<p>The preintegrated rotation is updated incrementally with each gyroscope measurement. Given a gyroscope measurement \( \omega_k \) at time \( t_k \), the preintegrated rotation \( \Delta R_{ij} \) from time \( t_i \) to \( t_j \) is the product of many small rotations:   </p><p class="formulaDsp">
+\[\Delta R_{ij} = \prod_{k=i}^{j-1} \text{Exp}((\omega_k - b_g) \Delta t)
+\]
+</p>
+<p> where \( b_g \) is the gyroscope bias, and \( \text{Exp}(\cdot) \) is the exponential map from \( \mathbb{R}^3 \) to SO(3).</p>
+<p>This class also propagates the covariance of the preintegrated rotation. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::PreintegratedAhrsMeasurements:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a05539.png" usemap="#gtsam_3A_3Atraits_3C_20SymbolicBayesTreeClique_20_3E_map" alt=""/>
-  <map id="gtsam_3A_3Atraits_3C_20SymbolicBayesTreeClique_20_3E_map" name="gtsam_3A_3Atraits_3C_20SymbolicBayesTreeClique_20_3E_map">
-<area href="a03039.html" alt="gtsam::Testable&lt; SymbolicBayesTreeClique &gt;" shape="rect" coords="0,0,268,24"/>
+  <img src="a05539.png" usemap="#gtsam_3A_3APreintegratedAhrsMeasurements_map" alt=""/>
+  <map id="gtsam_3A_3APreintegratedAhrsMeasurements_map" name="gtsam_3A_3APreintegratedAhrsMeasurements_map">
+<area href="a05975.html" title="PreintegratedRotation is the base class for all PreintegratedMeasurements classes (in AHRSFactor,..." alt="gtsam::PreintegratedRotation" shape="rect" coords="0,0,235,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ae37277d97a500ca9ae98682821e5eb61" id="r_ae37277d97a500ca9ae98682821e5eb61"><td class="memItemLeft"><a id="ae37277d97a500ca9ae98682821e5eb61" name="ae37277d97a500ca9ae98682821e5eb61"></a>
+&#160;</td><td class="memItemRight"><b>PreintegratedAhrsMeasurements</b> ()</td></tr>
+<tr class="memdesc:ae37277d97a500ca9ae98682821e5eb61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor, only for serialization and wrappers. <br /></td></tr>
+<tr class="memitem:a98ea29c292825e90b8e2201b5faa1adf" id="r_a98ea29c292825e90b8e2201b5faa1adf"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a98ea29c292825e90b8e2201b5faa1adf">PreintegratedAhrsMeasurements</a> (const std::shared_ptr&lt; Params &gt; &amp;p, const Vector3 &amp;biasHat=Vector3::Zero())</td></tr>
+<tr class="memdesc:a98ea29c292825e90b8e2201b5faa1adf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor, initialize with no measurements.  <br /></td></tr>
+<tr class="memitem:a42b978cda282d8ba8c935a87366c8888" id="r_a42b978cda282d8ba8c935a87366c8888"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a42b978cda282d8ba8c935a87366c8888">PreintegratedAhrsMeasurements</a> (const std::shared_ptr&lt; Params &gt; &amp;p, const Vector3 &amp;bias_hat, double deltaTij, const <a class="el" href="a04451.html">Rot3</a> &amp;deltaRij, const Matrix3 &amp;delRdelBiasOmega, const Matrix3 &amp;preint_meas_cov)</td></tr>
+<tr class="memdesc:a42b978cda282d8ba8c935a87366c8888"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-Default constructor, initialize with measurements.  <br /></td></tr>
+<tr class="memitem:aabca8c878e7474fea7866c542df33bb5" id="r_aabca8c878e7474fea7866c542df33bb5"><td class="memItemLeft"><a id="aabca8c878e7474fea7866c542df33bb5" name="aabca8c878e7474fea7866c542df33bb5"></a>
+Params &amp;&#160;</td><td class="memItemRight"><b>p</b> () const</td></tr>
+<tr class="memitem:ad9fb1e7d0c0e462d3438222146733e95" id="r_ad9fb1e7d0c0e462d3438222146733e95"><td class="memItemLeft"><a id="ad9fb1e7d0c0e462d3438222146733e95" name="ad9fb1e7d0c0e462d3438222146733e95"></a>
+const Vector3 &amp;&#160;</td><td class="memItemRight"><b>biasHat</b> () const</td></tr>
+<tr class="memitem:ac6bab82b857626d6677ec4cfd3d4f203" id="r_ac6bab82b857626d6677ec4cfd3d4f203"><td class="memItemLeft"><a id="ac6bab82b857626d6677ec4cfd3d4f203" name="ac6bab82b857626d6677ec4cfd3d4f203"></a>
+const Matrix3 &amp;&#160;</td><td class="memItemRight"><b>preintMeasCov</b> () const</td></tr>
+<tr class="memitem:a2355d2f603e4ad6d5df418fac26d6579" id="r_a2355d2f603e4ad6d5df418fac26d6579"><td class="memItemLeft"><a id="a2355d2f603e4ad6d5df418fac26d6579" name="a2355d2f603e4ad6d5df418fac26d6579"></a>
+void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;Preintegrated Measurements: &quot;) const</td></tr>
+<tr class="memdesc:a2355d2f603e4ad6d5df418fac26d6579"><td class="mdescLeft">&#160;</td><td class="mdescRight">print <br /></td></tr>
+<tr class="memitem:a8d42abd4135631c8a0fb927a3ea09da8" id="r_a8d42abd4135631c8a0fb927a3ea09da8"><td class="memItemLeft"><a id="a8d42abd4135631c8a0fb927a3ea09da8" name="a8d42abd4135631c8a0fb927a3ea09da8"></a>
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="#ae37277d97a500ca9ae98682821e5eb61">PreintegratedAhrsMeasurements</a> &amp;expected, double tol=1e-9) const</td></tr>
+<tr class="memdesc:a8d42abd4135631c8a0fb927a3ea09da8"><td class="mdescLeft">&#160;</td><td class="mdescRight">equals <br /></td></tr>
+<tr class="memitem:a6b18d19def1f97d5c4c2a3f5f33a9eb7" id="r_a6b18d19def1f97d5c4c2a3f5f33a9eb7"><td class="memItemLeft"><a id="a6b18d19def1f97d5c4c2a3f5f33a9eb7" name="a6b18d19def1f97d5c4c2a3f5f33a9eb7"></a>
+void&#160;</td><td class="memItemRight"><b>resetIntegration</b> ()</td></tr>
+<tr class="memdesc:a6b18d19def1f97d5c4c2a3f5f33a9eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset integrated quantities to zero. <br /></td></tr>
+<tr class="memitem:a051cbc796709f657c8988c0755aaaf6d" id="r_a051cbc796709f657c8988c0755aaaf6d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a051cbc796709f657c8988c0755aaaf6d">integrateMeasurement</a> (const Vector3 &amp;measuredOmega, double deltaT)</td></tr>
+<tr class="memdesc:a051cbc796709f657c8988c0755aaaf6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a single gyroscope measurement to the preintegration.  <br /></td></tr>
+<tr class="memitem:a28c117515175f0d75a2d49ccbf1c4562" id="r_a28c117515175f0d75a2d49ccbf1c4562"><td class="memItemLeft"><a class="el" href="a04451.html">Rot3</a>&#160;</td><td class="memItemRight"><a class="el" href="#a28c117515175f0d75a2d49ccbf1c4562">predict</a> (const <a class="el" href="a04451.html">Rot3</a> &amp;Ri, const Vector3 &amp;bias, <a class="el" href="a03363.html">gtsam::OptionalJacobian</a>&lt; 3, 3 &gt; H1={}, <a class="el" href="a03363.html">gtsam::OptionalJacobian</a>&lt; 3, 3 &gt; H2={}) const</td></tr>
+<tr class="memdesc:a28c117515175f0d75a2d49ccbf1c4562"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predict the orientation at time j, given orientation and bias at time i.  <br /></td></tr>
+<tr class="inherit_header pub_methods_a05975"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a05975')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a05975.html">gtsam::PreintegratedRotation</a></td></tr>
+<tr class="memitem:ae744d5c7fcf27da650d08f65467f15e1 inherit pub_methods_a05975" id="r_ae744d5c7fcf27da650d08f65467f15e1"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>PreintegratedRotation</b> ()</td></tr>
+<tr class="memdesc:ae744d5c7fcf27da650d08f65467f15e1 inherit pub_methods_a05975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for serialization. <br /></td></tr>
+<tr class="memitem:af2d4ad989ae04d571435398073e5fbfe inherit pub_methods_a05975" id="r_af2d4ad989ae04d571435398073e5fbfe"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>PreintegratedRotation</b> (const std::shared_ptr&lt; Params &gt; &amp;p)</td></tr>
+<tr class="memdesc:af2d4ad989ae04d571435398073e5fbfe inherit pub_methods_a05975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor, resets integration to zero. <br /></td></tr>
+<tr class="memitem:a49b447ee52234cc39c305c5ee6fb5e7f inherit pub_methods_a05975" id="r_a49b447ee52234cc39c305c5ee6fb5e7f"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>PreintegratedRotation</b> (const std::shared_ptr&lt; Params &gt; &amp;p, double deltaTij, const <a class="el" href="a04451.html">Rot3</a> &amp;deltaRij, const Matrix3 &amp;delRdelBiasOmega)</td></tr>
+<tr class="memdesc:a49b447ee52234cc39c305c5ee6fb5e7f inherit pub_methods_a05975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicit initialization of all class members. <br /></td></tr>
+<tr class="memitem:ad4a13c89dc8226456aaeef68736b9ae2 inherit pub_methods_a05975" id="r_ad4a13c89dc8226456aaeef68736b9ae2"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>matchesParamsWith</b> (const <a class="el" href="a05975.html#ae744d5c7fcf27da650d08f65467f15e1">PreintegratedRotation</a> &amp;other) const</td></tr>
+<tr class="memdesc:ad4a13c89dc8226456aaeef68736b9ae2 inherit pub_methods_a05975"><td class="mdescLeft">&#160;</td><td class="mdescRight">check parameters equality: checks whether shared pointer points to same Params object. <br /></td></tr>
+<tr class="memitem:a3e05b6b368ced16dda70721b7ef98784 inherit pub_methods_a05975" id="r_a3e05b6b368ced16dda70721b7ef98784"><td class="memItemLeft">
+const std::shared_ptr&lt; Params &gt; &amp;&#160;</td><td class="memItemRight"><b>params</b> () const</td></tr>
+<tr class="memitem:af94e84b68eb8235a66d4bad7680b9035 inherit pub_methods_a05975" id="r_af94e84b68eb8235a66d4bad7680b9035"><td class="memItemLeft">
+const double &amp;&#160;</td><td class="memItemRight"><b>deltaTij</b> () const</td></tr>
+<tr class="memitem:ac9c5b2d8bc27c834f417580dfdbeb4f7 inherit pub_methods_a05975" id="r_ac9c5b2d8bc27c834f417580dfdbeb4f7"><td class="memItemLeft">
+const <a class="el" href="a04451.html">Rot3</a> &amp;&#160;</td><td class="memItemRight"><b>deltaRij</b> () const</td></tr>
+<tr class="memitem:a0285c594e05e2db06e7f62c6fcf5ae86 inherit pub_methods_a05975" id="r_a0285c594e05e2db06e7f62c6fcf5ae86"><td class="memItemLeft">
+const Matrix3 &amp;&#160;</td><td class="memItemRight"><b>delRdelBiasOmega</b> () const</td></tr>
+<tr class="memitem:a42c246fd9a29fa1b44de40cd8514cbc9 inherit pub_methods_a05975" id="r_a42c246fd9a29fa1b44de40cd8514cbc9"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s) const</td></tr>
+<tr class="memitem:a8c90218f0a58fd961d13d1b11997b71b inherit pub_methods_a05975" id="r_a8c90218f0a58fd961d13d1b11997b71b"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="a05975.html#ae744d5c7fcf27da650d08f65467f15e1">PreintegratedRotation</a> &amp;other, double tol) const</td></tr>
+<tr class="memitem:afef7a62e383296931b88afe371ec8f3c inherit pub_methods_a05975" id="r_afef7a62e383296931b88afe371ec8f3c"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>resetIntegration</b> ()</td></tr>
+<tr class="memdesc:afef7a62e383296931b88afe371ec8f3c inherit pub_methods_a05975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-initialize PreintegratedMeasurements. <br /></td></tr>
+<tr class="memitem:aad72bfed5e69710f52962521aa5dd4a4 inherit pub_methods_a05975" id="r_aad72bfed5e69710f52962521aa5dd4a4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a05975.html#aad72bfed5e69710f52962521aa5dd4a4">integrateGyroMeasurement</a> (const Vector3 &amp;measuredOmega, const Vector3 &amp;biasHat, double deltaT, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 3 &gt; F={})</td></tr>
+<tr class="memdesc:aad72bfed5e69710f52962521aa5dd4a4 inherit pub_methods_a05975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate an incremental rotation given the gyro measurement and a time interval, and update both deltaTij_ and deltaRij_.  <br /></td></tr>
+<tr class="memitem:a4d7cb4be97cf577b4a8bed5a1b4b24e0 inherit pub_methods_a05975" id="r_a4d7cb4be97cf577b4a8bed5a1b4b24e0"><td class="memItemLeft"><a class="el" href="a04451.html">Rot3</a>&#160;</td><td class="memItemRight"><a class="el" href="a05975.html#a4d7cb4be97cf577b4a8bed5a1b4b24e0">biascorrectedDeltaRij</a> (const Vector3 &amp;biasOmegaIncr, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 3 &gt; H={}) const</td></tr>
+<tr class="memdesc:a4d7cb4be97cf577b4a8bed5a1b4b24e0 inherit pub_methods_a05975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a bias corrected version of the integrated rotation.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a2afdb871fd5690fe3017d26728714f18" id="r_a2afdb871fd5690fe3017d26728714f18"><td class="memItemLeft"><a id="a2afdb871fd5690fe3017d26728714f18" name="a2afdb871fd5690fe3017d26728714f18"></a>
+Vector3&#160;</td><td class="memItemRight"><b>biasHat_</b></td></tr>
+<tr class="memdesc:a2afdb871fd5690fe3017d26728714f18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Angular rate bias values used during preintegration. <br /></td></tr>
+<tr class="memitem:ac4e58456c03e2e2ed835d0455e6b591c" id="r_ac4e58456c03e2e2ed835d0455e6b591c"><td class="memItemLeft"><a id="ac4e58456c03e2e2ed835d0455e6b591c" name="ac4e58456c03e2e2ed835d0455e6b591c"></a>
+Matrix3&#160;</td><td class="memItemRight"><b>preintMeasCov_</b></td></tr>
+<tr class="memdesc:ac4e58456c03e2e2ed835d0455e6b591c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Covariance matrix of the preintegrated measurements (first-order propagation from <em>measurementCovariance</em>). <br /></td></tr>
+<tr class="inherit_header pro_attribs_a05975"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a05975')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a05975.html">gtsam::PreintegratedRotation</a></td></tr>
+<tr class="memitem:a5b756d9109834326be74f7cd351772bf inherit pro_attribs_a05975" id="r_a5b756d9109834326be74f7cd351772bf"><td class="memItemLeft">
+std::shared_ptr&lt; Params &gt;&#160;</td><td class="memItemRight"><b>p_</b></td></tr>
+<tr class="memdesc:a5b756d9109834326be74f7cd351772bf inherit pro_attribs_a05975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameters. <br /></td></tr>
+<tr class="memitem:ac290e4fa241ce8f6a7a1c94e6f2fccb8 inherit pro_attribs_a05975" id="r_ac290e4fa241ce8f6a7a1c94e6f2fccb8"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>deltaTij_</b></td></tr>
+<tr class="memdesc:ac290e4fa241ce8f6a7a1c94e6f2fccb8 inherit pro_attribs_a05975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time interval from i to j. <br /></td></tr>
+<tr class="memitem:aead7cee1ef09b022ad4e2836c51c4cc0 inherit pro_attribs_a05975" id="r_aead7cee1ef09b022ad4e2836c51c4cc0"><td class="memItemLeft">
+<a class="el" href="a04451.html">Rot3</a>&#160;</td><td class="memItemRight"><b>deltaRij_</b></td></tr>
+<tr class="memdesc:aead7cee1ef09b022ad4e2836c51c4cc0 inherit pro_attribs_a05975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preintegrated relative orientation (in frame i). <br /></td></tr>
+<tr class="memitem:a44e2af0899009e3d0eb935bc411d14a1 inherit pro_attribs_a05975" id="r_a44e2af0899009e3d0eb935bc411d14a1"><td class="memItemLeft">
+Matrix3&#160;</td><td class="memItemRight"><b>delRdelBiasOmega_</b></td></tr>
+<tr class="memdesc:a44e2af0899009e3d0eb935bc411d14a1 inherit pro_attribs_a05975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Jacobian of preintegrated rotation w.r.t. angular rate bias. <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; SymbolicBayesTreeClique &gt;</a></td></tr>
-<tr class="memitem:a0b809ea2931c6c4a2ecbd17e8f3fab39 inherit pub_methods_a03039" id="r_a0b809ea2931c6c4a2ecbd17e8f3fab39"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>BOOST_CONCEPT_ASSERT</b> ((<a class="el" href="a03035.html">HasTestablePrereqs</a>&lt; <a class="el" href="a05531.html">SymbolicBayesTreeClique</a> &gt;))</td></tr>
-<tr class="inherit_header pub_static_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; SymbolicBayesTreeClique &gt;</a></td></tr>
-<tr class="memitem:a27b246d77898916925c676895348fedf inherit pub_static_methods_a03039" id="r_a27b246d77898916925c676895348fedf"><td class="memItemLeft">
-static void&#160;</td><td class="memItemRight"><b>Print</b> (const <a class="el" href="a05531.html">SymbolicBayesTreeClique</a> &amp;m, const std::string &amp;str=&quot;&quot;)</td></tr>
-<tr class="memitem:a29a5699453b92070b31ca7fa42609d98 inherit pub_static_methods_a03039" id="r_a29a5699453b92070b31ca7fa42609d98"><td class="memItemLeft">
-static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el" href="a05531.html">SymbolicBayesTreeClique</a> &amp;m1, const <a class="el" href="a05531.html">SymbolicBayesTreeClique</a> &amp;m2, double tol=1e-8)</td></tr>
+<tr class="inherit_header pub_types_a05975"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a05975')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a05975.html">gtsam::PreintegratedRotation</a></td></tr>
+<tr class="memitem:adecea8249bfa28e12992a35441231488 inherit pub_types_a05975" id="r_adecea8249bfa28e12992a35441231488"><td class="memItemLeft">
+typedef <a class="el" href="a05971.html">PreintegratedRotationParams</a>&#160;</td><td class="memItemRight"><b>Params</b></td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/symbolic/<a class="el" href="a01394_source.html">SymbolicBayesTree.h</a></li>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a98ea29c292825e90b8e2201b5faa1adf" name="a98ea29c292825e90b8e2201b5faa1adf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98ea29c292825e90b8e2201b5faa1adf">&#9670;&#160;</a></span>PreintegratedAhrsMeasurements() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gtsam::PreintegratedAhrsMeasurements::PreintegratedAhrsMeasurements </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; Params &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector3 &amp;</td>          <td class="paramname"><span class="paramname"><em>biasHat</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Vector3::Zero()</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default constructor, initialize with no measurements. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bias</td><td>Current estimate of rotation rate biases </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a42b978cda282d8ba8c935a87366c8888" name="a42b978cda282d8ba8c935a87366c8888"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42b978cda282d8ba8c935a87366c8888">&#9670;&#160;</a></span>PreintegratedAhrsMeasurements() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gtsam::PreintegratedAhrsMeasurements::PreintegratedAhrsMeasurements </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; Params &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector3 &amp;</td>          <td class="paramname"><span class="paramname"><em>bias_hat</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>deltaTij</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a04451.html">Rot3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>deltaRij</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Matrix3 &amp;</td>          <td class="paramname"><span class="paramname"><em>delRdelBiasOmega</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Matrix3 &amp;</td>          <td class="paramname"><span class="paramname"><em>preint_meas_cov</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Non-Default constructor, initialize with measurements. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>Parameters for AHRS pre-integration </td></tr>
+    <tr><td class="paramname">bias_hat</td><td>Current estimate of rotation rate biases </td></tr>
+    <tr><td class="paramname">deltaTij</td><td>Delta time in pre-integration </td></tr>
+    <tr><td class="paramname">deltaRij</td><td>Delta rotation in pre-integration </td></tr>
+    <tr><td class="paramname">delRdelBiasOmega</td><td>Jacobian of rotation wrt. to gyro bias </td></tr>
+    <tr><td class="paramname">preint_meas_cov</td><td>Pre-integration covariance </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a051cbc796709f657c8988c0755aaaf6d" name="a051cbc796709f657c8988c0755aaaf6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a051cbc796709f657c8988c0755aaaf6d">&#9670;&#160;</a></span>integrateMeasurement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gtsam::PreintegratedAhrsMeasurements::integrateMeasurement </td>
+          <td>(</td>
+          <td class="paramtype">const Vector3 &amp;</td>          <td class="paramname"><span class="paramname"><em>measuredOmega</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>deltaT</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a single gyroscope measurement to the preintegration. </p>
+<p>Measurements are taken to be in the sensor frame and conversion to the body frame is handled by <span class="tt">body_P_sensor</span> in <span class="tt"><a class="el" href="a05971.html" title="Parameters for pre-integration: Usage: Create just a single Params and pass a shared pointer to the c...">PreintegratedRotationParams</a></span> (if provided).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">measuredOmega</td><td>Measured angular velocity (as given by the sensor) </td></tr>
+    <tr><td class="paramname">deltaT</td><td>Time step </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a28c117515175f0d75a2d49ccbf1c4562" name="a28c117515175f0d75a2d49ccbf1c4562"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28c117515175f0d75a2d49ccbf1c4562">&#9670;&#160;</a></span>predict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a04451.html">Rot3</a> gtsam::PreintegratedAhrsMeasurements::predict </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a04451.html">Rot3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>Ri</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector3 &amp;</td>          <td class="paramname"><span class="paramname"><em>bias</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">gtsam::OptionalJacobian</a>&lt; 3, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>H1</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">gtsam::OptionalJacobian</a>&lt; 3, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>H2</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Predict the orientation at time j, given orientation and bias at time i. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Ri</td><td>orientation at time i </td></tr>
+    <tr><td class="paramname">bias</td><td>gyroscope bias </td></tr>
+    <tr><td class="paramname">H1</td><td>optional 3x3 Jacobian wrt Ri </td></tr>
+    <tr><td class="paramname">H2</td><td>optional 3x3 Jacobian wrt bias </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>predicted orientation at time j </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/<a class="el" href="a01166_source.html">AHRSFactor.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/<a class="el" href="a01343.html">AHRSFactor.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -139,7 +410,7 @@ static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a05539.html">traits&lt; SymbolicBayesTreeClique &gt;</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a05539.html">PreintegratedAhrsMeasurements</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

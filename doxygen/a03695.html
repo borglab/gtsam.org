@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::Range&lt; Point2, Point2 &gt; Struct Reference</title>
+<title>gtsam: gtsam::Basis&lt; DERIVED &gt;::VectorEvaluationFunctor Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,22 +96,114 @@ $(function(){initNavTree('a03695.html','','a03692'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::Range&lt; Point2, Point2 &gt; Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::Basis&lt; DERIVED &gt;::VectorEvaluationFunctor Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename DERIVED&gt;<br />
+class gtsam::Basis&lt; DERIVED &gt;::VectorEvaluationFunctor</div><p><a class="el" href="a03695.html" title="VectorEvaluationFunctor at a given x, applied to a parameter Matrix.">VectorEvaluationFunctor</a> at a given x, applied to a parameter Matrix. </p>
+<p>This functor is used to evaluate a parameterized function at a given scalar value x. When given a specific M*N parameters, returns an M-vector the M corresponding functions at x, possibly with Jacobians wrpt the parameters. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::Basis&lt; DERIVED &gt;::VectorEvaluationFunctor:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="a03695.png" usemap="#gtsam_3A_3ABasis_3C_20DERIVED_20_3E_3A_3AVectorEvaluationFunctor_map" alt=""/>
+  <map id="gtsam_3A_3ABasis_3C_20DERIVED_20_3E_3A_3AVectorEvaluationFunctor_map" name="gtsam_3A_3ABasis_3C_20DERIVED_20_3E_3A_3AVectorEvaluationFunctor_map">
+<area href="a03691.html" title="An instance of an EvaluationFunctor calculates f(x;p) at a given x, applied to Parameters p." alt="gtsam::Basis&lt; DERIVED &gt;::EvaluationFunctor" shape="rect" coords="0,0,347,24"/>
+<area href="a03703.html" title="Manifold EvaluationFunctor at a given x, applied to a parameter Matrix." alt="gtsam::Basis&lt; DERIVED &gt;::ManifoldEvaluationFunctor&lt; T &gt;" shape="rect" coords="0,112,347,136"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad4265eecd27bce0787c3ffc49c64ff40" id="r_ad4265eecd27bce0787c3ffc49c64ff40"><td class="memItemLeft"><a id="ad4265eecd27bce0787c3ffc49c64ff40" name="ad4265eecd27bce0787c3ffc49c64ff40"></a>
-double&#160;</td><td class="memItemRight"><b>operator()</b> (const <a class="el" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> &amp;p, const <a class="el" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> &amp;q, <a class="el" href="a02995.html">OptionalJacobian</a>&lt; 1, 2 &gt; H1=boost::none, <a class="el" href="a02995.html">OptionalJacobian</a>&lt; 1, 2 &gt; H2=boost::none)</td></tr>
+<tr class="memitem:a9b6b67e6b0011aaff030adac929ee2a6" id="r_a9b6b67e6b0011aaff030adac929ee2a6"><td class="memItemLeft"><a id="a9b6b67e6b0011aaff030adac929ee2a6" name="a9b6b67e6b0011aaff030adac929ee2a6"></a>
+&#160;</td><td class="memItemRight"><b>VectorEvaluationFunctor</b> ()</td></tr>
+<tr class="memdesc:a9b6b67e6b0011aaff030adac929ee2a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">For serialization. <br /></td></tr>
+<tr class="memitem:a8fe26a2ef2e5c30d7fdbc4def3485154" id="r_a8fe26a2ef2e5c30d7fdbc4def3485154"><td class="memItemLeft"><a id="a8fe26a2ef2e5c30d7fdbc4def3485154" name="a8fe26a2ef2e5c30d7fdbc4def3485154"></a>
+&#160;</td><td class="memItemRight"><b>VectorEvaluationFunctor</b> (size_t M, size_t N, double x)</td></tr>
+<tr class="memdesc:a8fe26a2ef2e5c30d7fdbc4def3485154"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor. <br /></td></tr>
+<tr class="memitem:a57c51454a178da4f107d0fd3d6e8f7df" id="r_a57c51454a178da4f107d0fd3d6e8f7df"><td class="memItemLeft"><a id="a57c51454a178da4f107d0fd3d6e8f7df" name="a57c51454a178da4f107d0fd3d6e8f7df"></a>
+&#160;</td><td class="memItemRight"><b>VectorEvaluationFunctor</b> (size_t M, size_t N, double x, double a, double b)</td></tr>
+<tr class="memdesc:a57c51454a178da4f107d0fd3d6e8f7df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor, with interval [a,b]. <br /></td></tr>
+<tr class="memitem:afa069627dd8d09623f262c3dcd73a335" id="r_afa069627dd8d09623f262c3dcd73a335"><td class="memItemLeft"><a id="afa069627dd8d09623f262c3dcd73a335" name="afa069627dd8d09623f262c3dcd73a335"></a>
+Vector&#160;</td><td class="memItemRight"><b>apply</b> (const Matrix &amp;P, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; -1, -1 &gt; H={}) const</td></tr>
+<tr class="memdesc:afa069627dd8d09623f262c3dcd73a335"><td class="mdescLeft">&#160;</td><td class="mdescRight">M-dimensional evaluation. <br /></td></tr>
+<tr class="memitem:a94b91e2ae74c759e286e47848685d2b8" id="r_a94b91e2ae74c759e286e47848685d2b8"><td class="memItemLeft"><a id="a94b91e2ae74c759e286e47848685d2b8" name="a94b91e2ae74c759e286e47848685d2b8"></a>
+Vector&#160;</td><td class="memItemRight"><b>operator()</b> (const Matrix &amp;P, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; -1, -1 &gt; H={}) const</td></tr>
+<tr class="memdesc:a94b91e2ae74c759e286e47848685d2b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">c++ sugar <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a2ff9787457404e5da3c6071c6efbf666" id="r_a2ff9787457404e5da3c6071c6efbf666"><td class="memItemLeft"><a id="a2ff9787457404e5da3c6071c6efbf666" name="a2ff9787457404e5da3c6071c6efbf666"></a>
-typedef double&#160;</td><td class="memItemRight"><b>result_type</b></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pro-types" class="groupheader"><a id="pro-types" name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr class="memitem:a862b1c424c2220ec6471eb5c7d468972" id="r_a862b1c424c2220ec6471eb5c7d468972"><td class="memItemLeft"><a id="a862b1c424c2220ec6471eb5c7d468972" name="a862b1c424c2220ec6471eb5c7d468972"></a>
+using&#160;</td><td class="memItemRight"><b>Jacobian</b> = Eigen::Matrix&lt;double, -1, -1&gt;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:afa6411f9a63d90425d3c9ec8c67f6e9a" id="r_afa6411f9a63d90425d3c9ec8c67f6e9a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afa6411f9a63d90425d3c9ec8c67f6e9a">calculateJacobian</a> ()</td></tr>
+<tr class="memdesc:afa6411f9a63d90425d3c9ec8c67f6e9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the <span class="tt">M*(M*N)</span> Jacobian of this functor with respect to the M*N parameter matrix <span class="tt">P</span>.  <br /></td></tr>
+<tr class="inherit_header pro_methods_a03691"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_a03691')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="a03691.html">gtsam::Basis&lt; DERIVED &gt;::EvaluationFunctor</a></td></tr>
+<tr class="memitem:af40cf6dc6a2d3826e0db9cce0a5fc37f inherit pro_methods_a03691" id="r_af40cf6dc6a2d3826e0db9cce0a5fc37f"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>EvaluationFunctor</b> ()</td></tr>
+<tr class="memdesc:af40cf6dc6a2d3826e0db9cce0a5fc37f inherit pro_methods_a03691"><td class="mdescLeft">&#160;</td><td class="mdescRight">For serialization. <br /></td></tr>
+<tr class="memitem:a525a4e981be95de1a5b9fef7b34ec253 inherit pro_methods_a03691" id="r_a525a4e981be95de1a5b9fef7b34ec253"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>EvaluationFunctor</b> (size_t N, double x)</td></tr>
+<tr class="memdesc:a525a4e981be95de1a5b9fef7b34ec253 inherit pro_methods_a03691"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with interval [a,b]. <br /></td></tr>
+<tr class="memitem:a9be4f88fb81c5e28cfef8aea269e08e4 inherit pro_methods_a03691" id="r_a9be4f88fb81c5e28cfef8aea269e08e4"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>EvaluationFunctor</b> (size_t N, double x, double a, double b)</td></tr>
+<tr class="memdesc:a9be4f88fb81c5e28cfef8aea269e08e4 inherit pro_methods_a03691"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with interval [a,b]. <br /></td></tr>
+<tr class="memitem:aa1410bc0f08a92d417d1fbdd9248b90d inherit pro_methods_a03691" id="r_aa1410bc0f08a92d417d1fbdd9248b90d"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>apply</b> (const typename DERIVED::Parameters &amp;p, <a class="el" href="a03363.html">OptionalJacobian</a>&lt;-1, -1 &gt; H={}) const</td></tr>
+<tr class="memdesc:aa1410bc0f08a92d417d1fbdd9248b90d inherit pro_methods_a03691"><td class="mdescLeft">&#160;</td><td class="mdescRight">Regular 1D evaluation. <br /></td></tr>
+<tr class="memitem:a8a4f8449b46168d41cd684836d8fd72c inherit pro_methods_a03691" id="r_a8a4f8449b46168d41cd684836d8fd72c"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>operator()</b> (const typename DERIVED::Parameters &amp;p, <a class="el" href="a03363.html">OptionalJacobian</a>&lt;-1, -1 &gt; H={}) const</td></tr>
+<tr class="memdesc:a8a4f8449b46168d41cd684836d8fd72c inherit pro_methods_a03691"><td class="mdescLeft">&#160;</td><td class="mdescRight">c++ sugar <br /></td></tr>
+<tr class="memitem:ac30c2160299692be57be8661e11ffe08 inherit pro_methods_a03691" id="r_ac30c2160299692be57be8661e11ffe08"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;&quot;) const</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a57f223dfc6ed1a9229c8d4ff922629ea" id="r_a57f223dfc6ed1a9229c8d4ff922629ea"><td class="memItemLeft"><a id="a57f223dfc6ed1a9229c8d4ff922629ea" name="a57f223dfc6ed1a9229c8d4ff922629ea"></a>
+Jacobian&#160;</td><td class="memItemRight"><b>H_</b></td></tr>
+<tr class="memitem:af2bb3a4e2f92320e6a9c734cfee75186" id="r_af2bb3a4e2f92320e6a9c734cfee75186"><td class="memItemLeft"><a id="af2bb3a4e2f92320e6a9c734cfee75186" name="af2bb3a4e2f92320e6a9c734cfee75186"></a>
+size_t&#160;</td><td class="memItemRight"><b>M_</b></td></tr>
+<tr class="inherit_header pro_attribs_a03691"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a03691')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a03691.html">gtsam::Basis&lt; DERIVED &gt;::EvaluationFunctor</a></td></tr>
+<tr class="memitem:a4785180aa2c4038450d2f3cf4f60db5a inherit pro_attribs_a03691" id="r_a4785180aa2c4038450d2f3cf4f60db5a"><td class="memItemLeft">
+Weights&#160;</td><td class="memItemRight"><b>weights_</b></td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/geometry/<a class="el" href="a00407_source.html">Point2.h</a></li>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="afa6411f9a63d90425d3c9ec8c67f6e9a" name="afa6411f9a63d90425d3c9ec8c67f6e9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa6411f9a63d90425d3c9ec8c67f6e9a">&#9670;&#160;</a></span>calculateJacobian()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DERIVED&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a03687.html">gtsam::Basis</a>&lt; DERIVED &gt;::VectorEvaluationFunctor::calculateJacobian </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate the <span class="tt">M*(M*N)</span> Jacobian of this functor with respect to the M*N parameter matrix <span class="tt">P</span>. </p>
+<p>We flatten assuming column-major order, e.g., if N=3 and M=2, we have H =[ w(0) 0 w(1) 0 w(2) 0 0 w(0) 0 w(1) 0 w(2) ] i.e., the Kronecker product of weights_ with the MxM identity matrix. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/basis/<a class="el" href="a00200_source.html">Basis.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -126,7 +218,7 @@ typedef double&#160;</td><td class="memItemRight"><b>result_type</b></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a03695.html">Range&lt; Point2, Point2 &gt;</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a03687.html">Basis</a></li><li class="navelem"><a href="a03695.html">VectorEvaluationFunctor</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

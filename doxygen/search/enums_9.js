@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['noiseformat_0',['NoiseFormat',['../a01968.html#a90552b70a2da9c74595cae4b05c2ce18',1,'gtsam']]]
+  ['mode_0',['Mode',['../a05675.html#a458b1d825eeb79867aa21deddb36ece5',1,'gtsam::Gal3ImuEKF']]]
 ];

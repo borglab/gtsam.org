@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/sfm/DsfTrackGenerator.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/GPSFactor.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,7 +89,7 @@ $(function(){initNavTree('a01205_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">DsfTrackGenerator.h</div></div>
+  <div class="headertitle"><div class="title">GPSFactor.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a01205.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
@@ -103,68 +103,510 @@ $(function(){initNavTree('a01205_source.html','',''); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="a00110.html">gtsam/base/DSFMap.h</a>&gt;</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="a01235.html">gtsam/sfm/SfmTrack.h</a>&gt;</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;boost/optional.hpp&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="a01556.html">gtsam/nonlinear/NonlinearFactor.h</a>&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="a01472.html">gtsam/nonlinear/NoiseModelFactorN.h</a>&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="a01163.html">gtsam/navigation/NavState.h</a>&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="a00521.html">gtsam/geometry/Pose3.h</a>&gt;</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;Eigen/Core&gt;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">namespace </span>gtsfm {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">typedef</span> Eigen::MatrixX2i CorrespondenceIndices;  <span class="comment">// N x 2 array</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">// Output of detections in an image.</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">// Coordinate system convention:</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// 1. The x coordinate denotes the horizontal direction (+ve direction towards</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">// the right).</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">// 2. The y coordinate denotes the vertical direction (+ve direction downwards).</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">// 3. Origin is at the top left corner of the image.</span></div>
-<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="a05243.html">   41</a></span><span class="keyword">struct </span>Keypoints {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="comment">// The (x, y) coordinates of the features, of shape Nx2.</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  Eigen::MatrixX2d coordinates;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="comment">// Optional scale of the detections, of shape N.</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="comment">// Note: gtsam::Vector is typedef&#39;d for Eigen::VectorXd.</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  boost::optional&lt;gtsam::Vector&gt; scales;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="a05243.html#ab906f39dfa48f5a5c0eef453fea324bf">   50</a></span>  boost::optional&lt;gtsam::Vector&gt; <a class="code hl_variable" href="a05243.html#ab906f39dfa48f5a5c0eef453fea324bf">responses</a>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  Keypoints(<span class="keyword">const</span> Eigen::MatrixX2d&amp; coordinates)</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      : coordinates(coordinates){};  <span class="comment">// boost::none</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="a05699.html">   38</a></span><span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a05699.html#a2c18c211bcbb029e12310ed4d6bcc2cd">GPSFactor</a>: <span class="keyword">public</span> <a class="code hl_typedef" href="a02242.html#a42753ad9c0f6a9f0a11ca356aba9a080">NoiseModelFactorN</a>&lt;Pose3&gt; {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keyword">typedef</span> <a class="code hl_typedef" href="a02242.html#a42753ad9c0f6a9f0a11ca356aba9a080">NoiseModelFactorN&lt;Pose3&gt;</a> Base;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> nT_; </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="comment">// Provide access to the Matrix&amp; version of evaluateError:</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">using </span><a class="code hl_function" href="a06419.html#a52743df64c5153c7bf35da457e185fed">Base::evaluateError</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="a05699.html#a64dc0d697a9e0e055475d868544040f9">   52</a></span>  <span class="keyword">typedef</span> std::shared_ptr&lt;GPSFactor&gt; <a class="code hl_typedef" href="a05699.html#a64dc0d697a9e0e055475d868544040f9">shared_ptr</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="a05699.html#a09a484b80ec2d6b518c59cc8012d7895">   55</a></span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a05699.html#a2c18c211bcbb029e12310ed4d6bcc2cd">GPSFactor</a> <a class="code hl_typedef" href="a05699.html#a09a484b80ec2d6b518c59cc8012d7895">This</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="a05699.html#a2c18c211bcbb029e12310ed4d6bcc2cd">   58</a></span>  <a class="code hl_function" href="a05699.html#a2c18c211bcbb029e12310ed4d6bcc2cd">GPSFactor</a>(): nT_(0, 0, 0) {}</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <a class="code hl_class" href="a05699.html">~GPSFactor</a>()<span class="keyword"> override </span>{}</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="a05699.html#aadfaf1bf9a6252628e62a7259baa34a4">   69</a></span>  <a class="code hl_function" href="a05699.html#aadfaf1bf9a6252628e62a7259baa34a4">GPSFactor</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; gpsIn, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a>&amp; model) :</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      Base(model, <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>), nT_(gpsIn) {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  }</div>
 </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">using </span>KeypointsVector = std::vector&lt;Keypoints&gt;;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">// Mapping from each image pair to (N,2) array representing indices of matching</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">// keypoints.</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">using </span>MatchIndicesMap = std::map&lt;IndexPair, CorrespondenceIndices&gt;;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>std::vector&lt;SfmTrack2d&gt; tracksFromPairwiseMatches(</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keyword">const</span> MatchIndicesMap&amp; matches, <span class="keyword">const</span> KeypointsVector&amp; keypoints,</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">bool</span> verbose = <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>}  <span class="comment">// namespace gtsfm</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}  <span class="comment">// namespace gtsam</span></div>
-<div class="ttc" id="aa00110_html"><div class="ttname"><a href="a00110.html">DSFMap.h</a></div><div class="ttdoc">Allow for arbitrary type in DSF.</div></div>
-<div class="ttc" id="aa01235_html"><div class="ttname"><a href="a01235.html">SfmTrack.h</a></div><div class="ttdoc">A simple data structure for a track in Structure from Motion.</div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa05243_html_ab906f39dfa48f5a5c0eef453fea324bf"><div class="ttname"><a href="a05243.html#ab906f39dfa48f5a5c0eef453fea324bf">gtsam::gtsfm::Keypoints::responses</a></div><div class="ttdeci">boost::optional&lt; gtsam::Vector &gt; responses</div><div class="ttdoc">Optional confidences/responses for each detection, of shape N.</div><div class="ttdef"><b>Definition</b> DsfTrackGenerator.h:50</div></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="a05699.html#aae22711fd7e4f7bb66111b9c4de8dea5">   74</a></span>  gtsam::NonlinearFactor::shared_ptr <a class="code hl_function" href="a05699.html#aae22711fd7e4f7bb66111b9c4de8dea5">clone</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">return</span> std::static_pointer_cast&lt;gtsam::NonlinearFactor&gt;(</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        gtsam::NonlinearFactor::shared_ptr(<span class="keyword">new</span> <a class="code hl_typedef" href="a05699.html#a09a484b80ec2d6b518c59cc8012d7895">This</a>(*<span class="keyword">this</span>)));</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  }</div>
+</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a02242.html#a54fa43c89c5334314c8c75939dd5c2d7">print</a>(<span class="keyword">const</span> std::string&amp; s = <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a>&amp; keyFormatter =</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                                            <a class="code hl_variable" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordtype">bool</span> <a class="code hl_struct" href="a03523.html">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="a06435.html">NonlinearFactor</a>&amp; expected, <span class="keywordtype">double</span> tol = 1e-9) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  Vector evaluateError(<span class="keyword">const</span> <a class="code hl_class" href="a04403.html">Pose3</a>&amp; nTb, <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="a05699.html#aa1958c819a32420e7a630e70ea95fccb">   90</a></span>  <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp; <a class="code hl_function" href="a05699.html#aa1958c819a32420e7a630e70ea95fccb">measurementIn</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">return</span> nT_;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  }</div>
+</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keyword">static</span> std::pair&lt;Pose3, Vector3&gt; EstimateState(<span class="keywordtype">double</span> t1, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; NED1,</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      <span class="keywordtype">double</span> t2, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; NED2, <span class="keywordtype">double</span> timestamp);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">#if GTSAM_ENABLE_BOOST_SERIALIZATION  </span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> ARCHIVE&gt;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keywordtype">void</span> serialize(ARCHIVE &amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="comment">// NoiseModelFactor1 instead of NoiseModelFactorN for backward compatibility</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    ar</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        &amp; boost::serialization::make_nvp(<span class="stringliteral">&quot;NoiseModelFactor1&quot;</span>,</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            boost::serialization::base_object&lt;Base&gt;(*<span class="keyword">this</span>));</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    ar &amp; BOOST_SERIALIZATION_NVP(nT_);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>};</div>
+</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span></div>
+<div class="foldopen" id="foldopen00125" data-start="{" data-end="};">
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="a05703.html">  125</a></span><span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a05703.html#a42f90011646f5558ff18b8cbc142b7ae">GPSFactorArm</a>: <span class="keyword">public</span> <a class="code hl_typedef" href="a02242.html#a42753ad9c0f6a9f0a11ca356aba9a080">NoiseModelFactorN</a>&lt;Pose3&gt; {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  <span class="keyword">typedef</span> <a class="code hl_typedef" href="a02242.html#a42753ad9c0f6a9f0a11ca356aba9a080">NoiseModelFactorN&lt;Pose3&gt;</a> Base;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> nT_;  </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> bL_;  </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <span class="comment">// Provide access to the Matrix&amp; version of evaluateError:</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="keyword">using </span><a class="code hl_function" href="a06419.html#a52743df64c5153c7bf35da457e185fed">Base::evaluateError</a>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="a05703.html#a1980f54fe7e3e7552d58ea0403a0860e">  141</a></span>  <span class="keyword">typedef</span> std::shared_ptr&lt;GPSFactorArm&gt; <a class="code hl_typedef" href="a05703.html#a1980f54fe7e3e7552d58ea0403a0860e">shared_ptr</a>;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="a05703.html#a3b179ca46761517aca68c1c3d8f63ef5">  144</a></span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a05703.html#a42f90011646f5558ff18b8cbc142b7ae">GPSFactorArm</a> <a class="code hl_typedef" href="a05703.html#a3b179ca46761517aca68c1c3d8f63ef5">This</a>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="a05703.html#a42f90011646f5558ff18b8cbc142b7ae">  147</a></span>  <a class="code hl_function" href="a05703.html#a42f90011646f5558ff18b8cbc142b7ae">GPSFactorArm</a>():nT_(0, 0, 0), bL_(0, 0, 0) {}</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <a class="code hl_class" href="a05703.html">~GPSFactorArm</a>()<span class="keyword"> override </span>{}</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span></div>
+<div class="foldopen" id="foldopen00157" data-start="{" data-end="}">
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="a05703.html#a6f3c3cd60f38f68f875bb04cb9750abb">  157</a></span>  <a class="code hl_function" href="a05703.html#a6f3c3cd60f38f68f875bb04cb9750abb">GPSFactorArm</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; gpsIn, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; <a class="code hl_function" href="a05703.html#af9cb407689b15eb21f0fedc2e343dda7">leverArm</a>, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a>&amp; model) :</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      Base(model, <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>), nT_(gpsIn), bL_(<a class="code hl_function" href="a05703.html#af9cb407689b15eb21f0fedc2e343dda7">leverArm</a>) {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  }</div>
+</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span></div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="}">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="a05703.html#a68ca65db7bcda8de010ec9170cf4550f">  162</a></span>  gtsam::NonlinearFactor::shared_ptr <a class="code hl_function" href="a05703.html#a68ca65db7bcda8de010ec9170cf4550f">clone</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordflow">return</span> std::static_pointer_cast&lt;gtsam::NonlinearFactor&gt;(</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        gtsam::NonlinearFactor::shared_ptr(<span class="keyword">new</span> <a class="code hl_typedef" href="a05703.html#a3b179ca46761517aca68c1c3d8f63ef5">This</a>(*<span class="keyword">this</span>)));</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  }</div>
+</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a02242.html#a54fa43c89c5334314c8c75939dd5c2d7">print</a>(<span class="keyword">const</span> std::string&amp; s = <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a>&amp; keyFormatter =</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                                            <a class="code hl_variable" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  <span class="keywordtype">bool</span> <a class="code hl_struct" href="a03523.html">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="a06435.html">NonlinearFactor</a>&amp; expected, <span class="keywordtype">double</span> tol = 1e-9) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  Vector evaluateError(<span class="keyword">const</span> <a class="code hl_class" href="a04403.html">Pose3</a>&amp; nTb, <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span></div>
+<div class="foldopen" id="foldopen00178" data-start="{" data-end="}">
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="a05703.html#a9acf403af8b5a3bc2a831f4e13ae3a4c">  178</a></span>  <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp; <a class="code hl_function" href="a05703.html#a9acf403af8b5a3bc2a831f4e13ae3a4c">measurementIn</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordflow">return</span> nT_;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  }</div>
+</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span></div>
+<div class="foldopen" id="foldopen00183" data-start="{" data-end="}">
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="a05703.html#af9cb407689b15eb21f0fedc2e343dda7">  183</a></span>  <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp; <a class="code hl_function" href="a05703.html#af9cb407689b15eb21f0fedc2e343dda7">leverArm</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordflow">return</span> bL_;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>  }</div>
+</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="preprocessor">#if GTSAM_ENABLE_BOOST_SERIALIZATION</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> ARCHIVE&gt;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  <span class="keywordtype">void</span> serialize(ARCHIVE &amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="comment">// NoiseModelFactor1 instead of NoiseModelFactorN for valid XML tag names</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    ar</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        &amp; boost::serialization::make_nvp(<span class="stringliteral">&quot;NoiseModelFactor1&quot;</span>,</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            boost::serialization::base_object&lt;Base&gt;(*<span class="keyword">this</span>));</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    ar &amp; BOOST_SERIALIZATION_NVP(nT_);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    ar &amp; BOOST_SERIALIZATION_NVP(bL_);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  }</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>};</div>
+</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="a05707.html">  206</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03203.html">traits</a>&lt;<a class="code hl_class" href="a05703.html">GPSFactorArm</a>&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="a03535.html">Testable</a>&lt;GPSFactorArm&gt; {};</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span></div>
+<div class="foldopen" id="foldopen00216" data-start="{" data-end="};">
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="a05711.html">  216</a></span><span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a05711.html#a4ed36f36439ae032549e34a84520a745">GPSFactorArmCalib</a></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    : <span class="keyword">public</span> <a class="code hl_function" href="a06419.html#a07b2b3e0025aa31715484a185a7b91cc">NoiseModelFactorT</a>&lt;Vector3, Pose3, Point3&gt; {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a06419.html#a07b2b3e0025aa31715484a185a7b91cc">NoiseModelFactorT&lt;Vector3, Pose3, Point3&gt;</a> Base;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> nT_;  </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>  <span class="comment">// Provide access to the Matrix&amp; version of evaluateError:</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>  <span class="keyword">using </span><a class="code hl_function" href="a06419.html#a52743df64c5153c7bf35da457e185fed">Base::evaluateError</a>;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno"><a class="line" href="a05711.html#a74ba7d061f5d37fe2ec8d225ebab9ca4">  231</a></span>  <span class="keyword">typedef</span> std::shared_ptr&lt;GPSFactorArmCalib&gt; <a class="code hl_typedef" href="a05711.html#a74ba7d061f5d37fe2ec8d225ebab9ca4">shared_ptr</a>;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno"><a class="line" href="a05711.html#a7e6ee2057577a5252e013271feebf0e2">  234</a></span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a05711.html#a4ed36f36439ae032549e34a84520a745">GPSFactorArmCalib</a> <a class="code hl_typedef" href="a05711.html#a7e6ee2057577a5252e013271feebf0e2">This</a>;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno"><a class="line" href="a05711.html#a4ed36f36439ae032549e34a84520a745">  237</a></span>  <a class="code hl_function" href="a05711.html#a4ed36f36439ae032549e34a84520a745">GPSFactorArmCalib</a>() : nT_(0, 0, 0) {}</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  <a class="code hl_class" href="a05711.html">~GPSFactorArmCalib</a>()<span class="keyword"> override </span>{}</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span></div>
+<div class="foldopen" id="foldopen00248" data-start="{" data-end="}">
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno"><a class="line" href="a05711.html#acccaae1c138f83638bff27a549738942">  248</a></span>  <a class="code hl_function" href="a05711.html#acccaae1c138f83638bff27a549738942">GPSFactorArmCalib</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key1, <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key2, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; gpsIn, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a>&amp; model) :</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>      Base(model, key1, key2), nT_(gpsIn) {</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  }</div>
+</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span></div>
+<div class="foldopen" id="foldopen00253" data-start="{" data-end="}">
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="a05711.html#ae43cd856fbc14c2455f6ffd72672e2b5">  253</a></span>  gtsam::NonlinearFactor::shared_ptr <a class="code hl_function" href="a05711.html#ae43cd856fbc14c2455f6ffd72672e2b5">clone</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <span class="keywordflow">return</span> std::static_pointer_cast&lt;gtsam::NonlinearFactor&gt;(</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        gtsam::NonlinearFactor::shared_ptr(<span class="keyword">new</span> <a class="code hl_typedef" href="a05711.html#a7e6ee2057577a5252e013271feebf0e2">This</a>(*<span class="keyword">this</span>)));</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>  }</div>
+</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a02242.html#a54fa43c89c5334314c8c75939dd5c2d7">print</a>(<span class="keyword">const</span> std::string&amp; s = <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a>&amp; keyFormatter =</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                                            <a class="code hl_variable" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span></div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>  <span class="keywordtype">bool</span> <a class="code hl_struct" href="a03523.html">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="a06435.html">NonlinearFactor</a>&amp; expected, <span class="keywordtype">double</span> tol = 1e-9) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span></div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>  Vector3 evaluateError(<span class="keyword">const</span> <a class="code hl_class" href="a04403.html">Pose3</a>&amp; nTb, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; bL,</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>                        <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H1,</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>                        <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H2) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span></div>
+<div class="foldopen" id="foldopen00271" data-start="{" data-end="}">
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno"><a class="line" href="a05711.html#aba5e7da1db3a0f6bb7a226b53f2ae9f9">  271</a></span>  <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp; <a class="code hl_function" href="a05711.html#aba5e7da1db3a0f6bb7a226b53f2ae9f9">measurementIn</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    <span class="keywordflow">return</span> nT_;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  }</div>
+</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="preprocessor">#if GTSAM_ENABLE_BOOST_SERIALIZATION</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> ARCHIVE&gt;</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  <span class="keywordtype">void</span> serialize(ARCHIVE &amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <span class="comment">// NoiseModelFactor2 instead of NoiseModelFactorN for valid XML tag names</span></div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    ar</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        &amp; boost::serialization::make_nvp(<span class="stringliteral">&quot;NoiseModelFactor2&quot;</span>,</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>            boost::serialization::base_object&lt;Base&gt;(*<span class="keyword">this</span>));</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    ar &amp; BOOST_SERIALIZATION_NVP(nT_);</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  }</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>};</div>
+</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span></div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span><span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno"><a class="line" href="a05715.html">  293</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03203.html">traits</a>&lt;<a class="code hl_class" href="a05711.html">GPSFactorArmCalib</a>&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="a03535.html">Testable</a>&lt;GPSFactorArmCalib&gt; {};</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span></div>
+<div class="foldopen" id="foldopen00301" data-start="{" data-end="};">
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno"><a class="line" href="a05719.html">  301</a></span><span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a05719.html#ab2d41c2ac9e0bd92725e0b756dd83fef">GPSFactor2</a>: <span class="keyword">public</span> <a class="code hl_typedef" href="a02242.html#a42753ad9c0f6a9f0a11ca356aba9a080">NoiseModelFactorN</a>&lt;NavState&gt; {</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>  <span class="keyword">typedef</span> <a class="code hl_typedef" href="a02242.html#a42753ad9c0f6a9f0a11ca356aba9a080">NoiseModelFactorN&lt;NavState&gt;</a> Base;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>  <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> nT_; </div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span> </div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>  <span class="comment">// Provide access to the Matrix&amp; version of evaluateError:</span></div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>  <span class="keyword">using </span><a class="code hl_function" href="a06419.html#a52743df64c5153c7bf35da457e185fed">Base::evaluateError</a>;</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span></div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno"><a class="line" href="a05719.html#a9f314dca83e7cc77af343b3593954f0b">  315</a></span>  <span class="keyword">typedef</span> std::shared_ptr&lt;GPSFactor2&gt; <a class="code hl_typedef" href="a05719.html#a9f314dca83e7cc77af343b3593954f0b">shared_ptr</a>;</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span></div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno"><a class="line" href="a05719.html#a435d6411862b6a971171e922b355136e">  318</a></span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a05719.html#ab2d41c2ac9e0bd92725e0b756dd83fef">GPSFactor2</a> <a class="code hl_typedef" href="a05719.html#a435d6411862b6a971171e922b355136e">This</a>;</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span></div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno"><a class="line" href="a05719.html#ab2d41c2ac9e0bd92725e0b756dd83fef">  321</a></span>  <a class="code hl_function" href="a05719.html#ab2d41c2ac9e0bd92725e0b756dd83fef">GPSFactor2</a>():nT_(0, 0, 0) {}</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span> </div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>  <a class="code hl_class" href="a05719.html">~GPSFactor2</a>()<span class="keyword"> override </span>{}</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span></div>
+<div class="foldopen" id="foldopen00330" data-start="{" data-end="}">
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno"><a class="line" href="a05719.html#a54ca84b1574a5f94e83424155cbb3c5c">  330</a></span>  <a class="code hl_function" href="a05719.html#a54ca84b1574a5f94e83424155cbb3c5c">GPSFactor2</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; gpsIn, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a>&amp; model) :</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>      Base(model, <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>), nT_(gpsIn) {</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>  }</div>
+</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span></div>
+<div class="foldopen" id="foldopen00335" data-start="{" data-end="}">
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno"><a class="line" href="a05719.html#a1ad2b8adb95aecf0431905132db48841">  335</a></span>  gtsam::NonlinearFactor::shared_ptr <a class="code hl_function" href="a05719.html#a1ad2b8adb95aecf0431905132db48841">clone</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    <span class="keywordflow">return</span> std::static_pointer_cast&lt;gtsam::NonlinearFactor&gt;(</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>        gtsam::NonlinearFactor::shared_ptr(<span class="keyword">new</span> <a class="code hl_typedef" href="a05719.html#a435d6411862b6a971171e922b355136e">This</a>(*<span class="keyword">this</span>)));</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>  }</div>
+</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span></div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a02242.html#a54fa43c89c5334314c8c75939dd5c2d7">print</a>(<span class="keyword">const</span> std::string&amp; s = <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a>&amp; keyFormatter =</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>                                            <a class="code hl_variable" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span></div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>  <span class="keywordtype">bool</span> <a class="code hl_struct" href="a03523.html">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="a06435.html">NonlinearFactor</a>&amp; expected, <span class="keywordtype">double</span> tol = 1e-9) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span></div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>  Vector evaluateError(<span class="keyword">const</span> <a class="code hl_class" href="a05927.html">NavState</a>&amp; nTb, <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span></div>
+<div class="foldopen" id="foldopen00351" data-start="{" data-end="}">
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno"><a class="line" href="a05719.html#af236d29e5db2a6cfb9b6a543dc8dbf19">  351</a></span>  <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp; <a class="code hl_function" href="a05719.html#af236d29e5db2a6cfb9b6a543dc8dbf19">measurementIn</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>    <span class="keywordflow">return</span> nT_;</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>  }</div>
+</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span> </div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span> </div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span><span class="preprocessor">#if GTSAM_ENABLE_BOOST_SERIALIZATION</span></div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>  <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> ARCHIVE&gt;</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>  <span class="keywordtype">void</span> serialize(ARCHIVE &amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>    <span class="comment">// NoiseModelFactor1 instead of NoiseModelFactorN for backward compatibility</span></div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>    ar</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>        &amp; boost::serialization::make_nvp(<span class="stringliteral">&quot;NoiseModelFactor1&quot;</span>,</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>            boost::serialization::base_object&lt;Base&gt;(*<span class="keyword">this</span>));</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>    ar &amp; BOOST_SERIALIZATION_NVP(nT_);</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>  }</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>};</div>
+</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span></div>
+<div class="foldopen" id="foldopen00378" data-start="{" data-end="};">
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno"><a class="line" href="a05723.html">  378</a></span><span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a05723.html#a489fc6ba6ea33d9462333e843641a1af">GPSFactor2Arm</a>: <span class="keyword">public</span> <a class="code hl_typedef" href="a02242.html#a42753ad9c0f6a9f0a11ca356aba9a080">NoiseModelFactorN</a>&lt;NavState&gt; {</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span> </div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span> </div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>  <span class="keyword">typedef</span> <a class="code hl_typedef" href="a02242.html#a42753ad9c0f6a9f0a11ca356aba9a080">NoiseModelFactorN&lt;NavState&gt;</a> Base;</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span> </div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>  <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> nT_;  </div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>  <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> bL_;  </div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span> </div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span> </div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>  <span class="comment">// Provide access to the Matrix&amp; version of evaluateError:</span></div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>  <span class="keyword">using </span><a class="code hl_function" href="a06419.html#a52743df64c5153c7bf35da457e185fed">Base::evaluateError</a>;</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span></div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno"><a class="line" href="a05723.html#a599d582a87f9ca5234b9674ca4ac4586">  394</a></span>  <span class="keyword">typedef</span> std::shared_ptr&lt;GPSFactor2Arm&gt; <a class="code hl_typedef" href="a05723.html#a599d582a87f9ca5234b9674ca4ac4586">shared_ptr</a>;</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span></div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno"><a class="line" href="a05723.html#ab6dbe3f4eb5065fb897867357c5c18de">  397</a></span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a05723.html#a489fc6ba6ea33d9462333e843641a1af">GPSFactor2Arm</a> <a class="code hl_typedef" href="a05723.html#ab6dbe3f4eb5065fb897867357c5c18de">This</a>;</div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span></div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno"><a class="line" href="a05723.html#a489fc6ba6ea33d9462333e843641a1af">  400</a></span>  <a class="code hl_function" href="a05723.html#a489fc6ba6ea33d9462333e843641a1af">GPSFactor2Arm</a>():nT_(0, 0, 0), bL_(0, 0, 0) {}</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span> </div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>  <a class="code hl_class" href="a05723.html">~GPSFactor2Arm</a>()<span class="keyword"> override </span>{}</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span></div>
+<div class="foldopen" id="foldopen00410" data-start="{" data-end="}">
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno"><a class="line" href="a05723.html#a03aa48997cd7b61d920f90a2b477f9de">  410</a></span>  <a class="code hl_function" href="a05723.html#a03aa48997cd7b61d920f90a2b477f9de">GPSFactor2Arm</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; gpsIn, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; <a class="code hl_function" href="a05723.html#a4591c915a89c75d5423bd2b4063659ee">leverArm</a>, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a>&amp; model) :</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>      Base(model, <a class="code hl_function" href="a06419.html#ab35df17c328be5a40f999c6f41d22337">key</a>), nT_(gpsIn), bL_(<a class="code hl_function" href="a05723.html#a4591c915a89c75d5423bd2b4063659ee">leverArm</a>) {</div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>  }</div>
+</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span></div>
+<div class="foldopen" id="foldopen00415" data-start="{" data-end="}">
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno"><a class="line" href="a05723.html#a2045523ab557a737151faf7aa514c411">  415</a></span>  gtsam::NonlinearFactor::shared_ptr <a class="code hl_function" href="a05723.html#a2045523ab557a737151faf7aa514c411">clone</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>    <span class="keywordflow">return</span> std::static_pointer_cast&lt;gtsam::NonlinearFactor&gt;(</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>        gtsam::NonlinearFactor::shared_ptr(<span class="keyword">new</span> <a class="code hl_typedef" href="a05723.html#ab6dbe3f4eb5065fb897867357c5c18de">This</a>(*<span class="keyword">this</span>)));</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>  }</div>
+</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span></div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a02242.html#a54fa43c89c5334314c8c75939dd5c2d7">print</a>(<span class="keyword">const</span> std::string&amp; s = <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a>&amp; keyFormatter =</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>                                            <a class="code hl_variable" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span></div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>  <span class="keywordtype">bool</span> <a class="code hl_struct" href="a03523.html">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="a06435.html">NonlinearFactor</a>&amp; expected, <span class="keywordtype">double</span> tol = 1e-9) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span></div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>  Vector evaluateError(<span class="keyword">const</span> <a class="code hl_class" href="a05927.html">NavState</a>&amp; nTb, <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span></div>
+<div class="foldopen" id="foldopen00431" data-start="{" data-end="}">
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno"><a class="line" href="a05723.html#a88d4820859a09f4bc1007c66ff49dd2b">  431</a></span>  <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp; <a class="code hl_function" href="a05723.html#a88d4820859a09f4bc1007c66ff49dd2b">measurementIn</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>    <span class="keywordflow">return</span> nT_;</div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>  }</div>
+</div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span></div>
+<div class="foldopen" id="foldopen00436" data-start="{" data-end="}">
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno"><a class="line" href="a05723.html#a4591c915a89c75d5423bd2b4063659ee">  436</a></span>  <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp; <a class="code hl_function" href="a05723.html#a4591c915a89c75d5423bd2b4063659ee">leverArm</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>    <span class="keywordflow">return</span> bL_;</div>
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>  }</div>
+</div>
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span> </div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span> </div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span><span class="preprocessor">#if GTSAM_ENABLE_BOOST_SERIALIZATION</span></div>
+<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>  <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> ARCHIVE&gt;</div>
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>  <span class="keywordtype">void</span> serialize(ARCHIVE &amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {</div>
+<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>    <span class="comment">// NoiseModelFactor1 instead of NoiseModelFactorN for valid XML tag names</span></div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>    ar</div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>        &amp; boost::serialization::make_nvp(<span class="stringliteral">&quot;NoiseModelFactor1&quot;</span>,</div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>            boost::serialization::base_object&lt;Base&gt;(*<span class="keyword">this</span>));</div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>    ar &amp; BOOST_SERIALIZATION_NVP(nT_);</div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>    ar &amp; BOOST_SERIALIZATION_NVP(bL_);</div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>  }</div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>};</div>
+</div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span></div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span><span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a id="l00459" name="l00459"></a><span class="lineno"><a class="line" href="a05727.html">  459</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03203.html">traits</a>&lt;<a class="code hl_class" href="a05723.html">GPSFactor2Arm</a>&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="a03535.html">Testable</a>&lt;GPSFactor2Arm&gt; {};</div>
+<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span></div>
+<div class="foldopen" id="foldopen00468" data-start="{" data-end="};">
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno"><a class="line" href="a05731.html">  468</a></span><span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a05731.html#a5668cf595c9f9e41d3d13488377e3c36">GPSFactor2ArmCalib</a></div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>    : <span class="keyword">public</span> <a class="code hl_function" href="a06419.html#a07b2b3e0025aa31715484a185a7b91cc">NoiseModelFactorT</a>&lt;Vector3, NavState, Point3&gt; {</div>
+<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span> </div>
+<div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span> </div>
+<div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a06419.html#a07b2b3e0025aa31715484a185a7b91cc">NoiseModelFactorT&lt;Vector3, NavState, Point3&gt;</a> Base;</div>
+<div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span> </div>
+<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>  <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> nT_; </div>
+<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span> </div>
+<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span> </div>
+<div class="line"><a id="l00479" name="l00479"></a><span class="lineno">  479</span>  <span class="comment">// Provide access to the Matrix&amp; version of evaluateError:</span></div>
+<div class="line"><a id="l00480" name="l00480"></a><span class="lineno">  480</span>  <span class="keyword">using </span><a class="code hl_function" href="a06419.html#a52743df64c5153c7bf35da457e185fed">Base::evaluateError</a>;</div>
+<div class="line"><a id="l00481" name="l00481"></a><span class="lineno">  481</span></div>
+<div class="line"><a id="l00483" name="l00483"></a><span class="lineno"><a class="line" href="a05731.html#afe9ad57e05c330c6c3f29caf82717038">  483</a></span>  <span class="keyword">typedef</span> std::shared_ptr&lt;GPSFactor2ArmCalib&gt; <a class="code hl_typedef" href="a05731.html#afe9ad57e05c330c6c3f29caf82717038">shared_ptr</a>;</div>
+<div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span></div>
+<div class="line"><a id="l00486" name="l00486"></a><span class="lineno"><a class="line" href="a05731.html#a794feb7d6f7c777c86a2abf818d628d5">  486</a></span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a05731.html#a5668cf595c9f9e41d3d13488377e3c36">GPSFactor2ArmCalib</a> <a class="code hl_typedef" href="a05731.html#a794feb7d6f7c777c86a2abf818d628d5">This</a>;</div>
+<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span></div>
+<div class="line"><a id="l00489" name="l00489"></a><span class="lineno"><a class="line" href="a05731.html#a5668cf595c9f9e41d3d13488377e3c36">  489</a></span>  <a class="code hl_function" href="a05731.html#a5668cf595c9f9e41d3d13488377e3c36">GPSFactor2ArmCalib</a>():nT_(0, 0, 0) {}</div>
+<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span> </div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>  <a class="code hl_class" href="a05731.html">~GPSFactor2ArmCalib</a>()<span class="keyword"> override </span>{}</div>
+<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span></div>
+<div class="foldopen" id="foldopen00499" data-start="{" data-end="}">
+<div class="line"><a id="l00499" name="l00499"></a><span class="lineno"><a class="line" href="a05731.html#af72987f77d61cf10787068911f1bfd24">  499</a></span>  <a class="code hl_function" href="a05731.html#af72987f77d61cf10787068911f1bfd24">GPSFactor2ArmCalib</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key1, <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key2, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; gpsIn, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a>&amp; model) :</div>
+<div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span>      Base(model, key1, key2), nT_(gpsIn) {</div>
+<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>  }</div>
+</div>
+<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span></div>
+<div class="foldopen" id="foldopen00504" data-start="{" data-end="}">
+<div class="line"><a id="l00504" name="l00504"></a><span class="lineno"><a class="line" href="a05731.html#a61382ba867334fbb31a89aebf8152e41">  504</a></span>  gtsam::NonlinearFactor::shared_ptr <a class="code hl_function" href="a05731.html#a61382ba867334fbb31a89aebf8152e41">clone</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span>    <span class="keywordflow">return</span> std::static_pointer_cast&lt;gtsam::NonlinearFactor&gt;(</div>
+<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>        gtsam::NonlinearFactor::shared_ptr(<span class="keyword">new</span> <a class="code hl_typedef" href="a05731.html#a794feb7d6f7c777c86a2abf818d628d5">This</a>(*<span class="keyword">this</span>)));</div>
+<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span>  }</div>
+</div>
+<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span></div>
+<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a02242.html#a54fa43c89c5334314c8c75939dd5c2d7">print</a>(<span class="keyword">const</span> std::string&amp; s = <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a>&amp; keyFormatter =</div>
+<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>                                            <a class="code hl_variable" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span></div>
+<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>  <span class="keywordtype">bool</span> <a class="code hl_struct" href="a03523.html">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="a06435.html">NonlinearFactor</a>&amp; expected, <span class="keywordtype">double</span> tol = 1e-9) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span></div>
+<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>  Vector3 evaluateError(<span class="keyword">const</span> <a class="code hl_class" href="a05927.html">NavState</a>&amp; nTb, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; bL,</div>
+<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>                        <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H1,</div>
+<div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>                        <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H2) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span></div>
+<div class="foldopen" id="foldopen00522" data-start="{" data-end="}">
+<div class="line"><a id="l00522" name="l00522"></a><span class="lineno"><a class="line" href="a05731.html#a2359edfd99927fa6eeeb7fe4d4254767">  522</a></span>  <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp; <a class="code hl_function" href="a05731.html#a2359edfd99927fa6eeeb7fe4d4254767">measurementIn</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span>    <span class="keywordflow">return</span> nT_;</div>
+<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>  }</div>
+</div>
+<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span> </div>
+<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span> </div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span><span class="preprocessor">#if GTSAM_ENABLE_BOOST_SERIALIZATION</span></div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>  <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
+<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> ARCHIVE&gt;</div>
+<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>  <span class="keywordtype">void</span> serialize(ARCHIVE &amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {</div>
+<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>    <span class="comment">// NoiseModelFactor2 instead of NoiseModelFactorN for valid XML tag names</span></div>
+<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>    ar</div>
+<div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>        &amp; boost::serialization::make_nvp(<span class="stringliteral">&quot;NoiseModelFactor2&quot;</span>,</div>
+<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>            boost::serialization::base_object&lt;Base&gt;(*<span class="keyword">this</span>));</div>
+<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span>    ar &amp; BOOST_SERIALIZATION_NVP(nT_);</div>
+<div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span>  }</div>
+<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>};</div>
+</div>
+<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span></div>
+<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span><span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a id="l00544" name="l00544"></a><span class="lineno"><a class="line" href="a05735.html">  544</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03203.html">traits</a>&lt;<a class="code hl_class" href="a05731.html">GPSFactor2ArmCalib</a>&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="a03535.html">Testable</a>&lt;GPSFactor2ArmCalib&gt; {};</div>
+<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span> </div>
+<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>} </div>
+<div class="ttc" id="aa00521_html"><div class="ttname"><a href="a00521.html">Pose3.h</a></div><div class="ttdoc">3D Pose manifold SO(3) x R^3 and group SE(3)</div></div>
+<div class="ttc" id="aa01163_html"><div class="ttname"><a href="a01163.html">NavState.h</a></div><div class="ttdoc">Navigation state composing of attitude, position, and velocity.</div></div>
+<div class="ttc" id="aa01472_html"><div class="ttname"><a href="a01472.html">NoiseModelFactorN.h</a></div><div class="ttdoc">Base class for noise model factors with N variables.</div></div>
+<div class="ttc" id="aa01556_html"><div class="ttname"><a href="a01556.html">NonlinearFactor.h</a></div><div class="ttdoc">Non-linear factor base classes.</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa02242_html_a04921356f5da6203f1a17e84cc8baafd"><div class="ttname"><a href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">gtsam::DefaultKeyFormatter</a></div><div class="ttdeci">KeyFormatter DefaultKeyFormatter</div><div class="ttdoc">Assign default key formatter.</div><div class="ttdef"><b>Definition</b> Key.cpp:30</div></div>
+<div class="ttc" id="aa02242_html_a39c52c49d5301ff2f020e66bf69bbf69"><div class="ttname"><a href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">gtsam::OptionalMatrixType</a></div><div class="ttdeci">Matrix * OptionalMatrixType</div><div class="ttdoc">This typedef will be used everywhere boost::optional&lt;Matrix&amp;&gt; reference was used previously.</div><div class="ttdef"><b>Definition</b> NonlinearFactor.h:57</div></div>
+<div class="ttc" id="aa02242_html_a42753ad9c0f6a9f0a11ca356aba9a080"><div class="ttname"><a href="a02242.html#a42753ad9c0f6a9f0a11ca356aba9a080">gtsam::NoiseModelFactorN</a></div><div class="ttdeci">NoiseModelFactorT&lt; Vector, ValueTypes... &gt; NoiseModelFactorN</div><div class="ttdoc">Noise model factor with N value types and dynamic-sized error vector.</div><div class="ttdef"><b>Definition</b> NoiseModelFactorN.h:561</div></div>
+<div class="ttc" id="aa02242_html_a4705ef3536019dc2a384e26ef0fde932"><div class="ttname"><a href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">gtsam::Point3</a></div><div class="ttdeci">Vector3 Point3</div><div class="ttdoc">As of GTSAM 4, in order to make GTSAM more lean, it is now possible to just typedef Point3 to Vector3...</div><div class="ttdef"><b>Definition</b> Point3.h:38</div></div>
+<div class="ttc" id="aa02242_html_a54fa43c89c5334314c8c75939dd5c2d7"><div class="ttname"><a href="a02242.html#a54fa43c89c5334314c8c75939dd5c2d7">gtsam::print</a></div><div class="ttdeci">void print(const Matrix &amp;A, const string &amp;s, ostream &amp;stream)</div><div class="ttdoc">print without optional string, must specify cout yourself</div><div class="ttdef"><b>Definition</b> Matrix.cpp:143</div></div>
+<div class="ttc" id="aa02242_html_a7d4eaa9f6e32da46e8f287499ee650d2"><div class="ttname"><a href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">gtsam::KeyFormatter</a></div><div class="ttdeci">std::function&lt; std::string(Key)&gt; KeyFormatter</div><div class="ttdoc">Typedef for a function to format a key, i.e. to convert it to a string.</div><div class="ttdef"><b>Definition</b> Key.h:35</div></div>
+<div class="ttc" id="aa02242_html_ab6e5a4884342656e0837ef07008ec03f"><div class="ttname"><a href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">gtsam::SharedNoiseModel</a></div><div class="ttdeci">noiseModel::Base::shared_ptr SharedNoiseModel</div><div class="ttdoc">Aliases.</div><div class="ttdef"><b>Definition</b> NoiseModel.h:846</div></div>
+<div class="ttc" id="aa02242_html_adad029f5f6ffce610428b5fe768b0df2"><div class="ttname"><a href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">gtsam::Key</a></div><div class="ttdeci">std::uint64_t Key</div><div class="ttdoc">Integer nonlinear key type.</div><div class="ttdef"><b>Definition</b> types.h:43</div></div>
+<div class="ttc" id="aa03203_html"><div class="ttname"><a href="a03203.html">gtsam::traits</a></div><div class="ttdoc">A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...</div><div class="ttdef"><b>Definition</b> Group.h:37</div></div>
+<div class="ttc" id="aa03523_html"><div class="ttname"><a href="a03523.html">gtsam::equals</a></div><div class="ttdoc">Template to create a binary predicate.</div><div class="ttdef"><b>Definition</b> Testable.h:112</div></div>
+<div class="ttc" id="aa03535_html"><div class="ttname"><a href="a03535.html">gtsam::Testable</a></div><div class="ttdoc">A helper that implements the traits interface for GTSAM types.</div><div class="ttdef"><b>Definition</b> Testable.h:152</div></div>
+<div class="ttc" id="aa04403_html"><div class="ttname"><a href="a04403.html">gtsam::Pose3</a></div><div class="ttdoc">A 3D pose (R,t) : (Rot3,Point3).</div><div class="ttdef"><b>Definition</b> Pose3.h:42</div></div>
+<div class="ttc" id="aa05699_html"><div class="ttname"><a href="a05699.html">gtsam::GPSFactor</a></div><div class="ttdoc">Prior on position in a Cartesian frame.</div><div class="ttdef"><b>Definition</b> GPSFactor.h:38</div></div>
+<div class="ttc" id="aa05699_html_a09a484b80ec2d6b518c59cc8012d7895"><div class="ttname"><a href="a05699.html#a09a484b80ec2d6b518c59cc8012d7895">gtsam::GPSFactor::This</a></div><div class="ttdeci">GPSFactor This</div><div class="ttdoc">Typedef to this class.</div><div class="ttdef"><b>Definition</b> GPSFactor.h:55</div></div>
+<div class="ttc" id="aa05699_html_a2c18c211bcbb029e12310ed4d6bcc2cd"><div class="ttname"><a href="a05699.html#a2c18c211bcbb029e12310ed4d6bcc2cd">gtsam::GPSFactor::GPSFactor</a></div><div class="ttdeci">GPSFactor()</div><div class="ttdoc">default constructor - only use for serialization</div><div class="ttdef"><b>Definition</b> GPSFactor.h:58</div></div>
+<div class="ttc" id="aa05699_html_a64dc0d697a9e0e055475d868544040f9"><div class="ttname"><a href="a05699.html#a64dc0d697a9e0e055475d868544040f9">gtsam::GPSFactor::shared_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; GPSFactor &gt; shared_ptr</div><div class="ttdoc">shorthand for a smart pointer to a factor</div><div class="ttdef"><b>Definition</b> GPSFactor.h:52</div></div>
+<div class="ttc" id="aa05699_html_aa1958c819a32420e7a630e70ea95fccb"><div class="ttname"><a href="a05699.html#aa1958c819a32420e7a630e70ea95fccb">gtsam::GPSFactor::measurementIn</a></div><div class="ttdeci">const Point3 &amp; measurementIn() const</div><div class="ttdoc">return the measurement, in the navigation frame</div><div class="ttdef"><b>Definition</b> GPSFactor.h:90</div></div>
+<div class="ttc" id="aa05699_html_aadfaf1bf9a6252628e62a7259baa34a4"><div class="ttname"><a href="a05699.html#aadfaf1bf9a6252628e62a7259baa34a4">gtsam::GPSFactor::GPSFactor</a></div><div class="ttdeci">GPSFactor(Key key, const Point3 &amp;gpsIn, const SharedNoiseModel &amp;model)</div><div class="ttdoc">Constructor from a measurement in a Cartesian frame.</div><div class="ttdef"><b>Definition</b> GPSFactor.h:69</div></div>
+<div class="ttc" id="aa05699_html_aae22711fd7e4f7bb66111b9c4de8dea5"><div class="ttname"><a href="a05699.html#aae22711fd7e4f7bb66111b9c4de8dea5">gtsam::GPSFactor::clone</a></div><div class="ttdeci">gtsam::NonlinearFactor::shared_ptr clone() const override</div><div class="ttdef"><b>Definition</b> GPSFactor.h:74</div></div>
+<div class="ttc" id="aa05703_html"><div class="ttname"><a href="a05703.html">gtsam::GPSFactorArm</a></div><div class="ttdoc">Version of GPSFactor (for Pose3) with lever arm between GPS and Body frame.</div><div class="ttdef"><b>Definition</b> GPSFactor.h:125</div></div>
+<div class="ttc" id="aa05703_html_a1980f54fe7e3e7552d58ea0403a0860e"><div class="ttname"><a href="a05703.html#a1980f54fe7e3e7552d58ea0403a0860e">gtsam::GPSFactorArm::shared_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; GPSFactorArm &gt; shared_ptr</div><div class="ttdoc">shorthand for a smart pointer to a factor</div><div class="ttdef"><b>Definition</b> GPSFactor.h:141</div></div>
+<div class="ttc" id="aa05703_html_a3b179ca46761517aca68c1c3d8f63ef5"><div class="ttname"><a href="a05703.html#a3b179ca46761517aca68c1c3d8f63ef5">gtsam::GPSFactorArm::This</a></div><div class="ttdeci">GPSFactorArm This</div><div class="ttdoc">Typedef to this class.</div><div class="ttdef"><b>Definition</b> GPSFactor.h:144</div></div>
+<div class="ttc" id="aa05703_html_a42f90011646f5558ff18b8cbc142b7ae"><div class="ttname"><a href="a05703.html#a42f90011646f5558ff18b8cbc142b7ae">gtsam::GPSFactorArm::GPSFactorArm</a></div><div class="ttdeci">GPSFactorArm()</div><div class="ttdoc">default constructor - only use for serialization</div><div class="ttdef"><b>Definition</b> GPSFactor.h:147</div></div>
+<div class="ttc" id="aa05703_html_a68ca65db7bcda8de010ec9170cf4550f"><div class="ttname"><a href="a05703.html#a68ca65db7bcda8de010ec9170cf4550f">gtsam::GPSFactorArm::clone</a></div><div class="ttdeci">gtsam::NonlinearFactor::shared_ptr clone() const override</div><div class="ttdef"><b>Definition</b> GPSFactor.h:162</div></div>
+<div class="ttc" id="aa05703_html_a6f3c3cd60f38f68f875bb04cb9750abb"><div class="ttname"><a href="a05703.html#a6f3c3cd60f38f68f875bb04cb9750abb">gtsam::GPSFactorArm::GPSFactorArm</a></div><div class="ttdeci">GPSFactorArm(Key key, const Point3 &amp;gpsIn, const Point3 &amp;leverArm, const SharedNoiseModel &amp;model)</div><div class="ttdoc">Constructor from a measurement in a Cartesian frame.</div><div class="ttdef"><b>Definition</b> GPSFactor.h:157</div></div>
+<div class="ttc" id="aa05703_html_a9acf403af8b5a3bc2a831f4e13ae3a4c"><div class="ttname"><a href="a05703.html#a9acf403af8b5a3bc2a831f4e13ae3a4c">gtsam::GPSFactorArm::measurementIn</a></div><div class="ttdeci">const Point3 &amp; measurementIn() const</div><div class="ttdoc">return the measurement, in the navigation frame</div><div class="ttdef"><b>Definition</b> GPSFactor.h:178</div></div>
+<div class="ttc" id="aa05703_html_af9cb407689b15eb21f0fedc2e343dda7"><div class="ttname"><a href="a05703.html#af9cb407689b15eb21f0fedc2e343dda7">gtsam::GPSFactorArm::leverArm</a></div><div class="ttdeci">const Point3 &amp; leverArm() const</div><div class="ttdoc">return the lever arm, a position in the body frame</div><div class="ttdef"><b>Definition</b> GPSFactor.h:183</div></div>
+<div class="ttc" id="aa05711_html"><div class="ttname"><a href="a05711.html">gtsam::GPSFactorArmCalib</a></div><div class="ttdoc">Version of GPSFactorArm (for Pose3) with unknown lever arm between GPS and Body frame.</div><div class="ttdef"><b>Definition</b> GPSFactor.h:217</div></div>
+<div class="ttc" id="aa05711_html_a4ed36f36439ae032549e34a84520a745"><div class="ttname"><a href="a05711.html#a4ed36f36439ae032549e34a84520a745">gtsam::GPSFactorArmCalib::GPSFactorArmCalib</a></div><div class="ttdeci">GPSFactorArmCalib()</div><div class="ttdoc">default constructor - only use for serialization</div><div class="ttdef"><b>Definition</b> GPSFactor.h:237</div></div>
+<div class="ttc" id="aa05711_html_a74ba7d061f5d37fe2ec8d225ebab9ca4"><div class="ttname"><a href="a05711.html#a74ba7d061f5d37fe2ec8d225ebab9ca4">gtsam::GPSFactorArmCalib::shared_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; GPSFactorArmCalib &gt; shared_ptr</div><div class="ttdoc">shorthand for a smart pointer to a factor</div><div class="ttdef"><b>Definition</b> GPSFactor.h:231</div></div>
+<div class="ttc" id="aa05711_html_a7e6ee2057577a5252e013271feebf0e2"><div class="ttname"><a href="a05711.html#a7e6ee2057577a5252e013271feebf0e2">gtsam::GPSFactorArmCalib::This</a></div><div class="ttdeci">GPSFactorArmCalib This</div><div class="ttdoc">Typedef to this class.</div><div class="ttdef"><b>Definition</b> GPSFactor.h:234</div></div>
+<div class="ttc" id="aa05711_html_aba5e7da1db3a0f6bb7a226b53f2ae9f9"><div class="ttname"><a href="a05711.html#aba5e7da1db3a0f6bb7a226b53f2ae9f9">gtsam::GPSFactorArmCalib::measurementIn</a></div><div class="ttdeci">const Point3 &amp; measurementIn() const</div><div class="ttdoc">return the measurement, in the navigation frame</div><div class="ttdef"><b>Definition</b> GPSFactor.h:271</div></div>
+<div class="ttc" id="aa05711_html_acccaae1c138f83638bff27a549738942"><div class="ttname"><a href="a05711.html#acccaae1c138f83638bff27a549738942">gtsam::GPSFactorArmCalib::GPSFactorArmCalib</a></div><div class="ttdeci">GPSFactorArmCalib(Key key1, Key key2, const Point3 &amp;gpsIn, const SharedNoiseModel &amp;model)</div><div class="ttdoc">Constructor from a measurement in a Cartesian frame.</div><div class="ttdef"><b>Definition</b> GPSFactor.h:248</div></div>
+<div class="ttc" id="aa05711_html_ae43cd856fbc14c2455f6ffd72672e2b5"><div class="ttname"><a href="a05711.html#ae43cd856fbc14c2455f6ffd72672e2b5">gtsam::GPSFactorArmCalib::clone</a></div><div class="ttdeci">gtsam::NonlinearFactor::shared_ptr clone() const override</div><div class="ttdef"><b>Definition</b> GPSFactor.h:253</div></div>
+<div class="ttc" id="aa05719_html"><div class="ttname"><a href="a05719.html">gtsam::GPSFactor2</a></div><div class="ttdoc">Version of GPSFactor for NavState, assuming zero lever arm between body frame and GPS.</div><div class="ttdef"><b>Definition</b> GPSFactor.h:301</div></div>
+<div class="ttc" id="aa05719_html_a1ad2b8adb95aecf0431905132db48841"><div class="ttname"><a href="a05719.html#a1ad2b8adb95aecf0431905132db48841">gtsam::GPSFactor2::clone</a></div><div class="ttdeci">gtsam::NonlinearFactor::shared_ptr clone() const override</div><div class="ttdef"><b>Definition</b> GPSFactor.h:335</div></div>
+<div class="ttc" id="aa05719_html_a435d6411862b6a971171e922b355136e"><div class="ttname"><a href="a05719.html#a435d6411862b6a971171e922b355136e">gtsam::GPSFactor2::This</a></div><div class="ttdeci">GPSFactor2 This</div><div class="ttdoc">Typedef to this class.</div><div class="ttdef"><b>Definition</b> GPSFactor.h:318</div></div>
+<div class="ttc" id="aa05719_html_a54ca84b1574a5f94e83424155cbb3c5c"><div class="ttname"><a href="a05719.html#a54ca84b1574a5f94e83424155cbb3c5c">gtsam::GPSFactor2::GPSFactor2</a></div><div class="ttdeci">GPSFactor2(Key key, const Point3 &amp;gpsIn, const SharedNoiseModel &amp;model)</div><div class="ttdoc">Constructor from a measurement in a Cartesian frame.</div><div class="ttdef"><b>Definition</b> GPSFactor.h:330</div></div>
+<div class="ttc" id="aa05719_html_a9f314dca83e7cc77af343b3593954f0b"><div class="ttname"><a href="a05719.html#a9f314dca83e7cc77af343b3593954f0b">gtsam::GPSFactor2::shared_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; GPSFactor2 &gt; shared_ptr</div><div class="ttdoc">shorthand for a smart pointer to a factor</div><div class="ttdef"><b>Definition</b> GPSFactor.h:315</div></div>
+<div class="ttc" id="aa05719_html_ab2d41c2ac9e0bd92725e0b756dd83fef"><div class="ttname"><a href="a05719.html#ab2d41c2ac9e0bd92725e0b756dd83fef">gtsam::GPSFactor2::GPSFactor2</a></div><div class="ttdeci">GPSFactor2()</div><div class="ttdoc">default constructor - only use for serialization</div><div class="ttdef"><b>Definition</b> GPSFactor.h:321</div></div>
+<div class="ttc" id="aa05719_html_af236d29e5db2a6cfb9b6a543dc8dbf19"><div class="ttname"><a href="a05719.html#af236d29e5db2a6cfb9b6a543dc8dbf19">gtsam::GPSFactor2::measurementIn</a></div><div class="ttdeci">const Point3 &amp; measurementIn() const</div><div class="ttdoc">return the measurement, in the navigation frame</div><div class="ttdef"><b>Definition</b> GPSFactor.h:351</div></div>
+<div class="ttc" id="aa05723_html"><div class="ttname"><a href="a05723.html">gtsam::GPSFactor2Arm</a></div><div class="ttdoc">Version of GPSFactor2 with lever arm between GPS and Body frame.</div><div class="ttdef"><b>Definition</b> GPSFactor.h:378</div></div>
+<div class="ttc" id="aa05723_html_a03aa48997cd7b61d920f90a2b477f9de"><div class="ttname"><a href="a05723.html#a03aa48997cd7b61d920f90a2b477f9de">gtsam::GPSFactor2Arm::GPSFactor2Arm</a></div><div class="ttdeci">GPSFactor2Arm(Key key, const Point3 &amp;gpsIn, const Point3 &amp;leverArm, const SharedNoiseModel &amp;model)</div><div class="ttdoc">Constructor from a measurement in a Cartesian frame.</div><div class="ttdef"><b>Definition</b> GPSFactor.h:410</div></div>
+<div class="ttc" id="aa05723_html_a2045523ab557a737151faf7aa514c411"><div class="ttname"><a href="a05723.html#a2045523ab557a737151faf7aa514c411">gtsam::GPSFactor2Arm::clone</a></div><div class="ttdeci">gtsam::NonlinearFactor::shared_ptr clone() const override</div><div class="ttdef"><b>Definition</b> GPSFactor.h:415</div></div>
+<div class="ttc" id="aa05723_html_a4591c915a89c75d5423bd2b4063659ee"><div class="ttname"><a href="a05723.html#a4591c915a89c75d5423bd2b4063659ee">gtsam::GPSFactor2Arm::leverArm</a></div><div class="ttdeci">const Point3 &amp; leverArm() const</div><div class="ttdoc">return the lever arm, a position in the body frame</div><div class="ttdef"><b>Definition</b> GPSFactor.h:436</div></div>
+<div class="ttc" id="aa05723_html_a489fc6ba6ea33d9462333e843641a1af"><div class="ttname"><a href="a05723.html#a489fc6ba6ea33d9462333e843641a1af">gtsam::GPSFactor2Arm::GPSFactor2Arm</a></div><div class="ttdeci">GPSFactor2Arm()</div><div class="ttdoc">default constructor - only use for serialization</div><div class="ttdef"><b>Definition</b> GPSFactor.h:400</div></div>
+<div class="ttc" id="aa05723_html_a599d582a87f9ca5234b9674ca4ac4586"><div class="ttname"><a href="a05723.html#a599d582a87f9ca5234b9674ca4ac4586">gtsam::GPSFactor2Arm::shared_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; GPSFactor2Arm &gt; shared_ptr</div><div class="ttdoc">shorthand for a smart pointer to a factor</div><div class="ttdef"><b>Definition</b> GPSFactor.h:394</div></div>
+<div class="ttc" id="aa05723_html_a88d4820859a09f4bc1007c66ff49dd2b"><div class="ttname"><a href="a05723.html#a88d4820859a09f4bc1007c66ff49dd2b">gtsam::GPSFactor2Arm::measurementIn</a></div><div class="ttdeci">const Point3 &amp; measurementIn() const</div><div class="ttdoc">return the measurement, in the navigation frame</div><div class="ttdef"><b>Definition</b> GPSFactor.h:431</div></div>
+<div class="ttc" id="aa05723_html_ab6dbe3f4eb5065fb897867357c5c18de"><div class="ttname"><a href="a05723.html#ab6dbe3f4eb5065fb897867357c5c18de">gtsam::GPSFactor2Arm::This</a></div><div class="ttdeci">GPSFactor2Arm This</div><div class="ttdoc">Typedef to this class.</div><div class="ttdef"><b>Definition</b> GPSFactor.h:397</div></div>
+<div class="ttc" id="aa05731_html"><div class="ttname"><a href="a05731.html">gtsam::GPSFactor2ArmCalib</a></div><div class="ttdoc">Version of GPSFactor2Arm for an unknown lever arm between GPS and Body frame.</div><div class="ttdef"><b>Definition</b> GPSFactor.h:469</div></div>
+<div class="ttc" id="aa05731_html_a2359edfd99927fa6eeeb7fe4d4254767"><div class="ttname"><a href="a05731.html#a2359edfd99927fa6eeeb7fe4d4254767">gtsam::GPSFactor2ArmCalib::measurementIn</a></div><div class="ttdeci">const Point3 &amp; measurementIn() const</div><div class="ttdoc">return the measurement, in the navigation frame</div><div class="ttdef"><b>Definition</b> GPSFactor.h:522</div></div>
+<div class="ttc" id="aa05731_html_a5668cf595c9f9e41d3d13488377e3c36"><div class="ttname"><a href="a05731.html#a5668cf595c9f9e41d3d13488377e3c36">gtsam::GPSFactor2ArmCalib::GPSFactor2ArmCalib</a></div><div class="ttdeci">GPSFactor2ArmCalib()</div><div class="ttdoc">default constructor - only use for serialization</div><div class="ttdef"><b>Definition</b> GPSFactor.h:489</div></div>
+<div class="ttc" id="aa05731_html_a61382ba867334fbb31a89aebf8152e41"><div class="ttname"><a href="a05731.html#a61382ba867334fbb31a89aebf8152e41">gtsam::GPSFactor2ArmCalib::clone</a></div><div class="ttdeci">gtsam::NonlinearFactor::shared_ptr clone() const override</div><div class="ttdef"><b>Definition</b> GPSFactor.h:504</div></div>
+<div class="ttc" id="aa05731_html_a794feb7d6f7c777c86a2abf818d628d5"><div class="ttname"><a href="a05731.html#a794feb7d6f7c777c86a2abf818d628d5">gtsam::GPSFactor2ArmCalib::This</a></div><div class="ttdeci">GPSFactor2ArmCalib This</div><div class="ttdoc">Typedef to this class.</div><div class="ttdef"><b>Definition</b> GPSFactor.h:486</div></div>
+<div class="ttc" id="aa05731_html_af72987f77d61cf10787068911f1bfd24"><div class="ttname"><a href="a05731.html#af72987f77d61cf10787068911f1bfd24">gtsam::GPSFactor2ArmCalib::GPSFactor2ArmCalib</a></div><div class="ttdeci">GPSFactor2ArmCalib(Key key1, Key key2, const Point3 &amp;gpsIn, const SharedNoiseModel &amp;model)</div><div class="ttdoc">Constructor from a measurement in a Cartesian frame.</div><div class="ttdef"><b>Definition</b> GPSFactor.h:499</div></div>
+<div class="ttc" id="aa05731_html_afe9ad57e05c330c6c3f29caf82717038"><div class="ttname"><a href="a05731.html#afe9ad57e05c330c6c3f29caf82717038">gtsam::GPSFactor2ArmCalib::shared_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; GPSFactor2ArmCalib &gt; shared_ptr</div><div class="ttdoc">shorthand for a smart pointer to a factor</div><div class="ttdef"><b>Definition</b> GPSFactor.h:483</div></div>
+<div class="ttc" id="aa05927_html"><div class="ttname"><a href="a05927.html">gtsam::NavState</a></div><div class="ttdoc">Navigation state: Pose (rotation, translation) + velocity Following Barrau20icra, this class belongs ...</div><div class="ttdef"><b>Definition</b> NavState.h:45</div></div>
+<div class="ttc" id="aa06419_html_a07b2b3e0025aa31715484a185a7b91cc"><div class="ttname"><a href="a06419.html#a07b2b3e0025aa31715484a185a7b91cc">gtsam::NoiseModelFactorT&lt; Vector3, Pose3, Point3 &gt;::NoiseModelFactorT</a></div><div class="ttdeci">NoiseModelFactorT()</div><div class="ttdef"><b>Definition</b> NoiseModelFactorN.h:257</div></div>
+<div class="ttc" id="aa06419_html_a52743df64c5153c7bf35da457e185fed"><div class="ttname"><a href="a06419.html#a52743df64c5153c7bf35da457e185fed">gtsam::NoiseModelFactorT&lt; Vector, ValueTypes... &gt;::evaluateError</a></div><div class="ttdeci">virtual Vector evaluateError(const ValueTypes &amp;... x, OptionalMatrixTypeT&lt; ValueTypes &gt;... H) const=0</div></div>
+<div class="ttc" id="aa06419_html_ab35df17c328be5a40f999c6f41d22337"><div class="ttname"><a href="a06419.html#ab35df17c328be5a40f999c6f41d22337">gtsam::NoiseModelFactorT&lt; Vector, ValueTypes... &gt;::key</a></div><div class="ttdeci">Key key() const</div><div class="ttdef"><b>Definition</b> NoiseModelFactorN.h:307</div></div>
+<div class="ttc" id="aa06435_html"><div class="ttname"><a href="a06435.html">gtsam::NonlinearFactor</a></div><div class="ttdoc">Nonlinear factor base class.</div><div class="ttdef"><b>Definition</b> NonlinearFactor.h:70</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>sfm</b></li><li class="navelem"><a href="a01205.html">DsfTrackGenerator.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>navigation</b></li><li class="navelem"><a href="a01205.html">GPSFactor.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

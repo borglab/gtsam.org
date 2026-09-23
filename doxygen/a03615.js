@@ -1,21 +1,14 @@
 var a03615 =
 [
-    [ "EssentialMatrix", "a03615.html#a29e768b352dff0cec0e50199663fd18e", null ],
-    [ "EssentialMatrix", "a03615.html#a7ab38f00c9e4e460827a09b02c9e0f20", null ],
-    [ "direction", "a03615.html#ac12aedc3267b87de73518edad3d3bfba", null ],
-    [ "epipole_a", "a03615.html#aaf9a60e2bf4254ded7e038737e207f53", null ],
-    [ "epipole_b", "a03615.html#acb6b6c1586e1e5fbfed6d08a6f7abdff", null ],
-    [ "equals", "a03615.html#a24669283146c7e6df3b3d01fbd0b1fed", null ],
-    [ "error", "a03615.html#a5516f9c1d46c81dae4506c90e8fb7031", null ],
-    [ "localCoordinates", "a03615.html#a230f448b9900fe0c22a83a14ac7fca3c", null ],
-    [ "matrix", "a03615.html#aed2afb85f3ed40fd981993abd0fee96d", null ],
-    [ "print", "a03615.html#a921f152188ad8f74fae6328a690f7411", null ],
-    [ "retract", "a03615.html#a768f014724809c0176d1cae10beb1932", null ],
-    [ "rotate", "a03615.html#af9a4340182f05a4d1706d3c1ca5cc678", null ],
-    [ "rotation", "a03615.html#a226caafd6197b22966fb6208b00932cc", null ],
-    [ "transformTo", "a03615.html#aca8ee6259be205efec13de59d13ab3a7", null ],
-    [ "boost::serialization::access", "a03615.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ],
-    [ "operator*", "a03615.html#a08d715b14a2db37464e532fa79430466", null ],
-    [ "operator<<", "a03615.html#ae747d324ecd3008b7c96c28a5eeb496f", null ],
-    [ "operator>>", "a03615.html#a3b8375e79cc6e6d30a4aa40e9a011611", null ]
+    [ "~Value", "a03615.html#a616a94e2ce8e99e732d5ceb9af00632c", null ],
+    [ "cast", "a03615.html#a3572aa15e1db4d995796f4354d926d49", null ],
+    [ "clone", "a03615.html#a225de1bd0d5b0f44586b6fa70eb09cda", null ],
+    [ "clone_", "a03615.html#ac6245c02ce05c4a87072ebc6bd27a7d5", null ],
+    [ "deallocate_", "a03615.html#a5a0554b9e0758f370073ea3cc5cf1c9f", null ],
+    [ "dim", "a03615.html#a21e0a839ddaabd4c56559684ff887efe", null ],
+    [ "equals_", "a03615.html#a74edb2709fe745b6d09087f6aacf507f", null ],
+    [ "localCoordinates_", "a03615.html#a83429f15b4f68ed92e976649ea52da97", null ],
+    [ "operator=", "a03615.html#abefd5e7e205863119c1f88075070f5df", null ],
+    [ "print", "a03615.html#ac338307bb9f00cd29a70a48058069458", null ],
+    [ "retract_", "a03615.html#a2b95d3ec328cbad775490fa15dae27d5", null ]
 ];

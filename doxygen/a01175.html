@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/ISAM2UpdateParams.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/CombinedImuFactorWithGravity.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,28 +96,38 @@ $(function(){initNavTree('a01175.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">ISAM2UpdateParams.h File Reference</div></div>
+  <div class="headertitle"><div class="title">CombinedImuFactorWithGravity.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Class that stores extra params for ISAM2::update().  
-<a href="#details">More...</a></p>
 
 <p><a href="a01175_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3AISAM2UpdateParams" id="r_gtsam_3A_3AISAM2UpdateParams"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04983.html">gtsam::ISAM2UpdateParams</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This struct is used by <a class="el" href="a04947.html#abd282f9b00477204ab09590993a974e6" title="Add new factors, updating the solution and relinearizing as needed.">ISAM2::update()</a> to pass additional parameters to give the user a fine-grained control on how factors and relinearized, etc.  <a href="a04983.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3ACombinedImuFactorWithGravityT_3C_20PIM_2C_20GRAVITY_20_3E" id="r_gtsam_3A_3ACombinedImuFactorWithGravityT_3C_20PIM_2C_20GRAVITY_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a05643.html">gtsam::CombinedImuFactorWithGravityT&lt; PIM, GRAVITY &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a05643.html" title="CombinedImuFactorWithGravityT is CombinedImuFactorT with an additional GRAVITY variable,...">CombinedImuFactorWithGravityT</a> is <a class="el" href="a05627.html" title="CombinedImuFactor is a 6-ways factor involving previous state (pose and velocity of the vehicle,...">CombinedImuFactorT</a> with an additional GRAVITY variable, so that gravity can be optimized instead of being fixed by the preintegration parameters.  <a href="a05643.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Atraits_3C_20CombinedImuFactorWithGravityT_3C_20PIM_2C_20GRAVITY_20_3E_20_3E" id="r_gtsam_3A_3Atraits_3C_20CombinedImuFactorWithGravityT_3C_20PIM_2C_20GRAVITY_20_3E_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a05647.html">gtsam::traits&lt; CombinedImuFactorWithGravityT&lt; PIM, GRAVITY &gt; &gt;</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a11feeffd69ba394b281a9a984e1ad3fd" id="r_a11feeffd69ba394b281a9a984e1ad3fd"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="a02242.html#a11feeffd69ba394b281a9a984e1ad3fd">gtsam::CombinedImuFactorWithGravityDirection</a></td></tr>
+<tr class="memdesc:a11feeffd69ba394b281a9a984e1ad3fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">CombinedImuFactor variant optimizing the gravity direction (<a class="el" href="a04627.html" title="Represents a 3D point on a unit sphere.">Unit3</a>) with a fixed, known magnitude; see <a class="el" href="a02242.html#aa4c1a3e41abd842a51ef996d2f2f9233" title="ImuFactor variant with the gravity direction as an optimized Unit3 variable and a fixed,...">ImuFactorWithGravityDirection</a>.  <br /></td></tr>
+<tr class="memitem:a68eb88fbccb3c76ade89482e784620b3" id="r_a68eb88fbccb3c76ade89482e784620b3"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="a02242.html#a68eb88fbccb3c76ade89482e784620b3">gtsam::CombinedImuFactorWithGravityVector</a></td></tr>
+<tr class="memdesc:a68eb88fbccb3c76ade89482e784620b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">CombinedImuFactor variant optimizing the free gravity vector (<a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932" title="As of GTSAM 4, in order to make GTSAM more lean, it is now possible to just typedef Point3 to Vector3...">Point3</a>); see <a class="el" href="a02242.html#a7e321569a1286ce04feac799a379ffb9" title="ImuFactor variant with the gravity vector as a free Point3 variable, ie.">ImuFactorWithGravityVector</a>.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a71e8c7ba36d3e9837b667dcd17247a77" id="r_a71e8c7ba36d3e9837b667dcd17247a77"><td class="memTemplParams" colspan="2"><a id="a71e8c7ba36d3e9837b667dcd17247a77" name="a71e8c7ba36d3e9837b667dcd17247a77"></a>
+template&lt;class PIM, class GRAVITY&gt; </td></tr>
+<tr class="memitem:a71e8c7ba36d3e9837b667dcd17247a77 template"><td class="memItemLeft">GTSAM_EXPORT std::ostream &amp;&#160;</td><td class="memItemRight"><b>gtsam::operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="a05643.html">CombinedImuFactorWithGravityT</a>&lt; PIM, GRAVITY &gt; &amp;f)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class that stores extra params for ISAM2::update(). </p>
-<dl class="section author"><dt>Author</dt><dd>Michael Kaess, Richard Roberts, Frank Dellaert, Jose Luis Blanco </dd></dl>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Nikhil Khedekar </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -131,7 +141,7 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>nonlinear</b></li><li class="navelem"><a href="a01175.html">ISAM2UpdateParams.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>navigation</b></li><li class="navelem"><a href="a01175.html">CombinedImuFactorWithGravity.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

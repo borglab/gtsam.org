@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/Errors.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/hybrid/HybridFactor.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,60 +96,29 @@ $(function(){initNavTree('a00758.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Errors.h File Reference</div></div>
+  <div class="headertitle"><div class="title">HybridFactor.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>vector of errors  
-<a href="#details">More...</a></p>
-
-<p><a href="a00758_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3Atraits_3C_20Errors_20_3E" id="r_gtsam_3A_3Atraits_3C_20Errors_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04283.html">gtsam::traits&lt; Errors &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">traits  <a href="a04283.html#details">More...</a><br /></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a9793011498324af94cfcc3cea206991b" id="r_a9793011498324af94cfcc3cea206991b"><td class="memItemLeft"><a id="a9793011498324af94cfcc3cea206991b" name="a9793011498324af94cfcc3cea206991b"></a>
-using&#160;</td><td class="memItemRight"><b>gtsam::Errors</b> = <a class="el" href="a02859.html">FastList</a>&lt;Vector&gt;</td></tr>
-<tr class="memdesc:a9793011498324af94cfcc3cea206991b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b" title="Errors is a vector of errors.">Errors</a> is a vector of errors. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa84fa88db91d429bec261c655fc54bd6" id="r_aa84fa88db91d429bec261c655fc54bd6"><td class="memItemLeft"><a id="aa84fa88db91d429bec261c655fc54bd6" name="aa84fa88db91d429bec261c655fc54bd6"></a>
-<a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b">Errors</a>&#160;</td><td class="memItemRight"><b>gtsam::createErrors</b> (const <a class="el" href="a06239.html">VectorValues</a> &amp;V)</td></tr>
-<tr class="memdesc:aa84fa88db91d429bec261c655fc54bd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Break V into pieces according to its start indices. <br /></td></tr>
-<tr class="memitem:a6abcac97e441f1454790ff53caa1b229" id="r_a6abcac97e441f1454790ff53caa1b229"><td class="memItemLeft"><a id="a6abcac97e441f1454790ff53caa1b229" name="a6abcac97e441f1454790ff53caa1b229"></a>
-void&#160;</td><td class="memItemRight"><b>gtsam::print</b> (const <a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b">Errors</a> &amp;e, const std::string &amp;s=&quot;Errors&quot;)</td></tr>
-<tr class="memdesc:a6abcac97e441f1454790ff53caa1b229"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print an <a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b" title="Errors is a vector of errors.">Errors</a> instance. <br /></td></tr>
-<tr class="memitem:a8c4b4499ddc5f0b219d70b002dc2d55c" id="r_a8c4b4499ddc5f0b219d70b002dc2d55c"><td class="memItemLeft"><a id="a8c4b4499ddc5f0b219d70b002dc2d55c" name="a8c4b4499ddc5f0b219d70b002dc2d55c"></a>
-bool&#160;</td><td class="memItemRight"><b>gtsam::equality</b> (const <a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b">Errors</a> &amp;actual, const <a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b">Errors</a> &amp;expected, double tol)</td></tr>
-<tr class="memitem:a552de56fca49d1b4942dd9b8e8357b0a" id="r_a552de56fca49d1b4942dd9b8e8357b0a"><td class="memItemLeft"><a id="a552de56fca49d1b4942dd9b8e8357b0a" name="a552de56fca49d1b4942dd9b8e8357b0a"></a>
-<a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b">Errors</a>&#160;</td><td class="memItemRight"><b>gtsam::operator+</b> (const <a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b">Errors</a> &amp;a, const <a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b">Errors</a> &amp;b)</td></tr>
-<tr class="memdesc:a552de56fca49d1b4942dd9b8e8357b0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Addition. <br /></td></tr>
-<tr class="memitem:af2dc48a6a2e9abf4d0636578847a6b5a" id="r_af2dc48a6a2e9abf4d0636578847a6b5a"><td class="memItemLeft"><a id="af2dc48a6a2e9abf4d0636578847a6b5a" name="af2dc48a6a2e9abf4d0636578847a6b5a"></a>
-<a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b">Errors</a>&#160;</td><td class="memItemRight"><b>gtsam::operator-</b> (const <a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b">Errors</a> &amp;a, const <a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b">Errors</a> &amp;b)</td></tr>
-<tr class="memdesc:af2dc48a6a2e9abf4d0636578847a6b5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtraction. <br /></td></tr>
-<tr class="memitem:aa91c0485819ec2bfd249a922c81e3eb4" id="r_aa91c0485819ec2bfd249a922c81e3eb4"><td class="memItemLeft"><a id="aa91c0485819ec2bfd249a922c81e3eb4" name="aa91c0485819ec2bfd249a922c81e3eb4"></a>
-<a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b">Errors</a>&#160;</td><td class="memItemRight"><b>gtsam::operator-</b> (const <a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b">Errors</a> &amp;a)</td></tr>
-<tr class="memdesc:aa91c0485819ec2bfd249a922c81e3eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Negation. <br /></td></tr>
-<tr class="memitem:a106ec458ddb425604809da93346af55d" id="r_a106ec458ddb425604809da93346af55d"><td class="memItemLeft"><a id="a106ec458ddb425604809da93346af55d" name="a106ec458ddb425604809da93346af55d"></a>
-double&#160;</td><td class="memItemRight"><b>gtsam::dot</b> (const <a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b">Errors</a> &amp;a, const <a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b">Errors</a> &amp;b)</td></tr>
-<tr class="memdesc:a106ec458ddb425604809da93346af55d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dot product. <br /></td></tr>
-<tr class="memitem:a5644e12e89afaac433f5d61c3d8e9003" id="r_a5644e12e89afaac433f5d61c3d8e9003"><td class="memItemLeft"><a id="a5644e12e89afaac433f5d61c3d8e9003" name="a5644e12e89afaac433f5d61c3d8e9003"></a>
-void&#160;</td><td class="memItemRight"><b>gtsam::axpy</b> (double alpha, const <a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b">Errors</a> &amp;x, <a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b">Errors</a> &amp;y)</td></tr>
-<tr class="memdesc:a5644e12e89afaac433f5d61c3d8e9003"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLAS level 2 style AXPY, <span class="tt">y := alpha*x + y</span>. <br /></td></tr>
+<tr class="memitem:a3b4d763982fb92592316d228bfb42e14" id="r_a3b4d763982fb92592316d228bfb42e14"><td class="memItemLeft"><a id="a3b4d763982fb92592316d228bfb42e14" name="a3b4d763982fb92592316d228bfb42e14"></a>
+<a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&#160;</td><td class="memItemRight"><b>gtsam::CollectKeys</b> (const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;continuousKeys, const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;discreteKeys)</td></tr>
+<tr class="memitem:af7cc2321c95559dfdd2d0957a7a4cd68" id="r_af7cc2321c95559dfdd2d0957a7a4cd68"><td class="memItemLeft"><a id="af7cc2321c95559dfdd2d0957a7a4cd68" name="af7cc2321c95559dfdd2d0957a7a4cd68"></a>
+<a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&#160;</td><td class="memItemRight"><b>gtsam::CollectKeys</b> (const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;keys1, const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;keys2)</td></tr>
+<tr class="memitem:ac79f331c6412bc074d6e4ef9d4dabd6b" id="r_ac79f331c6412bc074d6e4ef9d4dabd6b"><td class="memItemLeft"><a id="ac79f331c6412bc074d6e4ef9d4dabd6b" name="ac79f331c6412bc074d6e4ef9d4dabd6b"></a>
+<a class="el" href="a03927.html">DiscreteKeys</a>&#160;</td><td class="memItemRight"><b>gtsam::CollectDiscreteKeys</b> (const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;key1, const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;key2)</td></tr>
+<tr class="memitem:a4292446b6f4d1e33d874aaa451b7310b" id="r_a4292446b6f4d1e33d874aaa451b7310b"><td class="memItemLeft"><a id="a4292446b6f4d1e33d874aaa451b7310b" name="a4292446b6f4d1e33d874aaa451b7310b"></a>
+<a class="el" href="a04695.html#a1b35c62bee7a13a1bc6354835d5da59c">HybridFactor::Category</a>&#160;</td><td class="memItemRight"><b>gtsam::GetCategory</b> (const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;continuousKeys, const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;discreteKeys)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>vector of errors </p>
-<dl class="section author"><dt>Author</dt><dd>Frank Dellaert </dd></dl>
+<div class="textblock"><dl class="section date"><dt>Date</dt><dd>Mar 11, 2022 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Fan Jiang </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -163,7 +132,7 @@ void&#160;</td><td class="memItemRight"><b>gtsam::axpy</b> (double alpha, const 
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>linear</b></li><li class="navelem"><a href="a00758.html">Errors.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>hybrid</b></li><li class="navelem"><a href="a00758.html">HybridFactor.cpp</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/linear/LPInitSolver.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/nonlinear/WnoaInterpFactor.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,36 +96,34 @@ $(function(){initNavTree('a01559.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">LPInitSolver.h File Reference</div></div>
+  <div class="headertitle"><div class="title">WnoaInterpFactor.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This finds a feasible solution for an LP problem.  
+<p>White-Noise-On-Acceleration (WNOA) continuous time interpolation wrapper factor and functions to automatically update a given graph by interpolating some variables (removing them from the optimization).  
 <a href="#details">More...</a></p>
 
 <p><a href="a01559_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3ALPInitSolver" id="r_gtsam_3A_3ALPInitSolver"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a05823.html">gtsam::LPInitSolver</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This <a class="el" href="a05823.html" title="This LPInitSolver implements the strategy in Matlab: http://www.mathworks.com/help/optim/ug/linear-pr...">LPInitSolver</a> implements the strategy in Matlab: <a href="http://www.mathworks.com/help/optim/ug/linear-programming-algorithms.html#brozyzb-9">http://www.mathworks.com/help/optim/ug/linear-programming-algorithms.html#brozyzb-9</a> Solve for x and y: min y st Ax = b Cx - y &lt;= d where \(y \in R\), \(x \in R^n\), and Ax = b and Cx &lt;= d is the constraints of the original problem.  <a href="a05823.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3AWnoaInterpFactor_3C_20PoseType_20_3E" id="r_gtsam_3A_3AWnoaInterpFactor_3C_20PoseType_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a06591.html">gtsam::WnoaInterpFactor&lt; PoseType &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper factor that evaluates an inner <a class="el" href="a06443.html" title="A nonlinear sum-of-squares factor with a zero-mean noise model implementing the density  Templated on...">NoiseModelFactor</a> on states interpolated from neighboring estimated states using a WNOA (white-noise-on-acceleration) <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> process interpolator.  <a href="a06591.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3AWnoaInterpFactor_3C_20PoseType_20_3E_3A_3APassedInterpData" id="r_gtsam_3A_3AWnoaInterpFactor_3C_20PoseType_20_3E_3A_3APassedInterpData"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a06599.html">gtsam::WnoaInterpFactor&lt; PoseType &gt;::PassedInterpData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container for externally-computed interpolation data.  <a href="a06599.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Atraits_3C_20WnoaInterpFactor_3C_20POSE_20_3E_20_3E" id="r_gtsam_3A_3Atraits_3C_20WnoaInterpFactor_3C_20POSE_20_3E_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a06603.html">gtsam::traits&lt; WnoaInterpFactor&lt; POSE &gt; &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">traits  <a href="a06603.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This finds a feasible solution for an LP problem. </p>
-<p>This LPInitSolver implements the strategy in Matlab.</p>
-<dl class="section author"><dt>Author</dt><dd>Duy Nguyen Ta </dd>
+<div class="textblock"><p>White-Noise-On-Acceleration (WNOA) continuous time interpolation wrapper factor and functions to automatically update a given graph by interpolating some variables (removing them from the optimization). </p>
+<dl class="section author"><dt>Author</dt><dd>Connor Holmes </dd>
 <dd>
-Ivan Dario Jimenez </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>6/16/16</dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Duy Nguyen Ta </dd>
-<dd>
-Ivan Dario Jimenez </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>1/24/16 </dd></dl>
+Sven Lilge </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -139,7 +137,7 @@ Ivan Dario Jimenez </dd></dl>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam_unstable</b></li><li class="navelem"><b>linear</b></li><li class="navelem"><a href="a01559.html">LPInitSolver.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>nonlinear</b></li><li class="navelem"><a href="a01559.html">WnoaInterpFactor.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

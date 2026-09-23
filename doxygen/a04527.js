@@ -1,12 +1,12 @@
 var a04527 =
 [
-    [ "PowerMethod", "a04527.html#a72f5174af96689cf0a4b2586c592351c", null ],
-    [ "compute", "a04527.html#adf125a55542b6b8889e1fbbf8ca6d412", null ],
-    [ "converged", "a04527.html#ab3d3f23ecef093f1610f92207cc13589", null ],
-    [ "eigenvalue", "a04527.html#a50cd517d97bfb4e1ab29c1b7b9b8aec5", null ],
-    [ "eigenvector", "a04527.html#a15e499d997ab3e8d388cb8d2cfe138f2", null ],
-    [ "nrIterations", "a04527.html#af6ad9276cf74347a207fc72cac5d79cd", null ],
-    [ "powerIteration", "a04527.html#a88659c24feb5400af80957d4fca5953f", null ],
-    [ "powerIteration", "a04527.html#a0f67a41b8945aadb46d2c83167a6dd4c", null ],
-    [ "A_", "a04527.html#a403a1a99553f905fb490b12c44be24f8", null ]
+    [ "ExpmapFunctor", "a04527.html#abe4b1345302e9b642c1300bc43540c2c", null ],
+    [ "ExpmapFunctor", "a04527.html#a31b381b64b30f016bfb03ad01b50e92d", null ],
+    [ "ExpmapFunctor", "a04527.html#a38cc80642dbdc3cad308fada480e8545", null ],
+    [ "expmap", "a04527.html#a8371e906e4bb667c5f8debcfc5e82b39", null ],
+    [ "nearZero", "a04527.html#a5206b495b2e855794ee58f74a2bb9631", null ],
+    [ "theta", "a04527.html#a53e73ba4173511da528af439dc527287", null ],
+    [ "theta2", "a04527.html#ae2059187b3825f1257e635f12c71bcb6", null ],
+    [ "W", "a04527.html#ab63e2c6592a4df487c77d23702a615b7", null ],
+    [ "WW", "a04527.html#aa0892dbfe2ca5cd9ae0d30d85c744396", null ]
 ];

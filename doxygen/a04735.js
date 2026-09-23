@@ -1,11 +1,10 @@
 var a04735 =
 [
-    [ "~MagPoseFactor", "a04735.html#a656d17c286ec113767ef884aee0f8824", null ],
-    [ "MagPoseFactor", "a04735.html#af2dcbb081485187cf5c939fb6d11971c", null ],
-    [ "MagPoseFactor", "a04735.html#ae8ceef5add571dd7693f07c94a53bf15", null ],
-    [ "clone", "a04735.html#a92332428d020dd43443bef64b5d7d60b", null ],
-    [ "equals", "a04735.html#a7ef0d9702290ea515cbb502ab0acdbb8", null ],
-    [ "evaluateError", "a04735.html#ae97cf77232a179037cc8076aa4c6a591", null ],
-    [ "print", "a04735.html#a2aca2cdd3d1977fbacd40c4795baf777", null ],
-    [ "boost::serialization::access", "a04735.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ]
+    [ "BayesNetType", "a04735.html#aee157d14895e684c199b0aafb2f09ee7", null ],
+    [ "BayesTreeType", "a04735.html#ab4b4041c7fead838e9a5737bfed6b351", null ],
+    [ "ConditionalType", "a04735.html#a24354092ece146997c715d100780526b", null ],
+    [ "EliminationTreeType", "a04735.html#a6293e3b5655ff2a43e6695f11ad6b365", null ],
+    [ "FactorGraphType", "a04735.html#a2bee0de8cdb8531c7b37a2765511756f", null ],
+    [ "FactorType", "a04735.html#a9d9657e2321be924b27a8bb043ebbccb", null ],
+    [ "JunctionTreeType", "a04735.html#a44470007a0869929ac408f3781e949b2", null ]
 ];

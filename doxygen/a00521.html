@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/hybrid/HybridBayesTree.cpp File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/Pose3.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,22 +96,43 @@ $(function(){initNavTree('a00521.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">HybridBayesTree.cpp File Reference</div></div>
+  <div class="headertitle"><div class="title">Pose3.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Hybrid Bayes Tree, the result of eliminating a HybridJunctionTree.  
+<p>3D Pose manifold SO(3) x R^3 and group SE(3)  
 <a href="#details">More...</a></p>
+
+<p><a href="a00521_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:gtsam_3A_3APose3" id="r_gtsam_3A_3APose3"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04403.html">gtsam::Pose3</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 3D pose (R,t) : (<a class="el" href="a04451.html" title="Rot3 is a 3D rotation represented as a rotation matrix if the preprocessor symbol GTSAM_USE_QUATERNIO...">Rot3</a>,<a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932" title="As of GTSAM 4, in order to make GTSAM more lean, it is now possible to just typedef Point3 to Vector3...">Point3</a>).  <a href="a04403.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3APose3_3A_3AChartAtOrigin" id="r_gtsam_3A_3APose3_3A_3AChartAtOrigin"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04407.html">gtsam::Pose3::ChartAtOrigin</a></td></tr>
+<tr class="memitem:gtsam_3A_3Atraits_3C_20Pose3_20_3E" id="r_gtsam_3A_3Atraits_3C_20Pose3_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04411.html">gtsam::traits&lt; Pose3 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the Pose3-specific operations used by the generic QCQP conversion code.  <a href="a04411.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Atraits_3C_20const_20Pose3_20_3E" id="r_gtsam_3A_3Atraits_3C_20const_20Pose3_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04415.html">gtsam::traits&lt; const Pose3 &gt;</a></td></tr>
+<tr class="memitem:gtsam_3A_3ABearing_3C_20Pose3_2C_20Point3_20_3E" id="r_gtsam_3A_3ABearing_3C_20Pose3_2C_20Point3_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04419.html">gtsam::Bearing&lt; Pose3, Point3 &gt;</a></td></tr>
+<tr class="memitem:gtsam_3A_3ABearing_3C_20Pose3_2C_20Pose3_20_3E" id="r_gtsam_3A_3ABearing_3C_20Pose3_2C_20Pose3_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04423.html">gtsam::Bearing&lt; Pose3, Pose3 &gt;</a></td></tr>
+<tr class="memitem:gtsam_3A_3ARange_3C_20Pose3_2C_20T_20_3E" id="r_gtsam_3A_3ARange_3C_20Pose3_2C_20T_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04427.html">gtsam::Range&lt; Pose3, T &gt;</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a8cce5b958d97a65ddfb9c5ffac95cf9d" id="r_a8cce5b958d97a65ddfb9c5ffac95cf9d"><td class="memItemLeft"><a id="a8cce5b958d97a65ddfb9c5ffac95cf9d" name="a8cce5b958d97a65ddfb9c5ffac95cf9d"></a>
+using&#160;</td><td class="memItemRight"><b>gtsam::Pose3Pair</b> = std::pair&lt;<a class="el" href="a04403.html">Pose3</a>, <a class="el" href="a04403.html">Pose3</a>&gt;</td></tr>
+<tr class="memitem:a79bce06aaab2f06c8d11fd74c0cc596f" id="r_a79bce06aaab2f06c8d11fd74c0cc596f"><td class="memItemLeft"><a id="a79bce06aaab2f06c8d11fd74c0cc596f" name="a79bce06aaab2f06c8d11fd74c0cc596f"></a>
+using&#160;</td><td class="memItemRight"><b>gtsam::Pose3Pairs</b> = std::vector&lt;std::pair&lt;<a class="el" href="a04403.html">Pose3</a>, <a class="el" href="a04403.html">Pose3</a>&gt; &gt;</td></tr>
+<tr class="memitem:a129e0259e63b71905155066a55daedcd" id="r_a129e0259e63b71905155066a55daedcd"><td class="memItemLeft"><a id="a129e0259e63b71905155066a55daedcd" name="a129e0259e63b71905155066a55daedcd"></a>
+typedef std::vector&lt; <a class="el" href="a04403.html">Pose3</a> &gt;&#160;</td><td class="memItemRight"><b>gtsam::Pose3Vector</b></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Hybrid Bayes Tree, the result of eliminating a HybridJunctionTree. </p>
-<dl class="section date"><dt>Date</dt><dd>Mar 11, 2022 </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Fan Jiang, Varun Agrawal </dd></dl>
+<div class="textblock"><p>3D Pose manifold SO(3) x R^3 and group SE(3) </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -125,7 +146,7 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>hybrid</b></li><li class="navelem"><a href="a00521.html">HybridBayesTree.cpp</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>geometry</b></li><li class="navelem"><a href="a00521.html">Pose3.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

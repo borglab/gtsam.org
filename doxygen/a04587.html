@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::SubgraphBuilderParameters Struct Reference</title>
+<title>gtsam: gtsam::StereoCamera Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,68 +96,199 @@ $(function(){initNavTree('a04587.html','','a04584'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::SubgraphBuilderParameters Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::StereoCamera Class Reference<div class="ingroups"><a class="el" href="a02230.html">Geometry</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A stereo camera class, parameterize by left camera pose and stereo calibration. </p>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Manifold</h2></td></tr>
+<tr class="memitem:a36d3e0cee1635544adfbf7dc0be188ee" id="r_a36d3e0cee1635544adfbf7dc0be188ee"><td class="memItemLeft"><a id="a36d3e0cee1635544adfbf7dc0be188ee" name="a36d3e0cee1635544adfbf7dc0be188ee"></a>
+size_t&#160;</td><td class="memItemRight"><b>dim</b> () const</td></tr>
+<tr class="memdesc:a36d3e0cee1635544adfbf7dc0be188ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimensionality of the tangent space. <br /></td></tr>
+<tr class="memitem:a37c85bfef85af4eaeeff0a501b2290cb" id="r_a37c85bfef85af4eaeeff0a501b2290cb"><td class="memItemLeft"><a id="a37c85bfef85af4eaeeff0a501b2290cb" name="a37c85bfef85af4eaeeff0a501b2290cb"></a>
+<a class="el" href="#a0f564c53fc04f67cd6d801f53fd83050">StereoCamera</a>&#160;</td><td class="memItemRight"><b>retract</b> (const Vector &amp;v) const</td></tr>
+<tr class="memdesc:a37c85bfef85af4eaeeff0a501b2290cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates a with tangent space delta. <br /></td></tr>
+<tr class="memitem:a24b860fb6a80d4773466a744c21530ac" id="r_a24b860fb6a80d4773466a744c21530ac"><td class="memItemLeft"><a id="a24b860fb6a80d4773466a744c21530ac" name="a24b860fb6a80d4773466a744c21530ac"></a>
+Vector6&#160;</td><td class="memItemRight"><b>localCoordinates</b> (const <a class="el" href="#a0f564c53fc04f67cd6d801f53fd83050">StereoCamera</a> &amp;t2) const</td></tr>
+<tr class="memdesc:a24b860fb6a80d4773466a744c21530ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local coordinates of manifold neighborhood around current value. <br /></td></tr>
+<tr class="memitem:a158dd137f09cfb8f041de46bd4a47851" id="r_a158dd137f09cfb8f041de46bd4a47851"><td class="memItemLeft"><a id="a158dd137f09cfb8f041de46bd4a47851" name="a158dd137f09cfb8f041de46bd4a47851"></a>
+static size_t&#160;</td><td class="memItemRight"><b>Dim</b> ()</td></tr>
+<tr class="memdesc:a158dd137f09cfb8f041de46bd4a47851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimensionality of the tangent space. <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8634b3244b176018b6b107f55a70db75" id="r_a8634b3244b176018b6b107f55a70db75"><td class="memItemLeft"><a id="a8634b3244b176018b6b107f55a70db75" name="a8634b3244b176018b6b107f55a70db75"></a>
-void&#160;</td><td class="memItemRight"><b>print</b> () const</td></tr>
-<tr class="memitem:a80179b3d9a4ec8f1224d0823ef352d39" id="r_a80179b3d9a4ec8f1224d0823ef352d39"><td class="memItemLeft"><a id="a80179b3d9a4ec8f1224d0823ef352d39" name="a80179b3d9a4ec8f1224d0823ef352d39"></a>
-virtual void&#160;</td><td class="memItemRight"><b>print</b> (std::ostream &amp;os) const</td></tr>
+<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Standard Constructors</div></td></tr>
+<tr class="memitem:a0f564c53fc04f67cd6d801f53fd83050" id="r_a0f564c53fc04f67cd6d801f53fd83050"><td class="memItemLeft"><a id="a0f564c53fc04f67cd6d801f53fd83050" name="a0f564c53fc04f67cd6d801f53fd83050"></a>
+&#160;</td><td class="memItemRight"><b>StereoCamera</b> ()</td></tr>
+<tr class="memdesc:a0f564c53fc04f67cd6d801f53fd83050"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor allocates a calibration! <br /></td></tr>
+<tr class="memitem:a8e6d34f7069c0c7e0caa6359d1b8aafe" id="r_a8e6d34f7069c0c7e0caa6359d1b8aafe"><td class="memItemLeft"><a id="a8e6d34f7069c0c7e0caa6359d1b8aafe" name="a8e6d34f7069c0c7e0caa6359d1b8aafe"></a>
+&#160;</td><td class="memItemRight"><b>StereoCamera</b> (const <a class="el" href="a04403.html">Pose3</a> &amp;leftCamPose, const Cal3_S2Stereo::shared_ptr K)</td></tr>
+<tr class="memdesc:a8e6d34f7069c0c7e0caa6359d1b8aafe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from pose and shared calibration. <br /></td></tr>
+<tr class="memitem:a3b043ee7ca8db08515800c0aeff8050c" id="r_a3b043ee7ca8db08515800c0aeff8050c"><td class="memItemLeft"><a id="a3b043ee7ca8db08515800c0aeff8050c" name="a3b043ee7ca8db08515800c0aeff8050c"></a>
+const <a class="el" href="a04083.html">Cal3_S2Stereo</a> &amp;&#160;</td><td class="memItemRight"><b>calibration</b> () const</td></tr>
+<tr class="memdesc:a3b043ee7ca8db08515800c0aeff8050c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return shared pointer to calibration. <br /></td></tr>
+<tr id="pub-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Testable</div></td></tr>
+<tr class="memitem:a1dbb6420724b6649b871b06fbe8c2696" id="r_a1dbb6420724b6649b871b06fbe8c2696"><td class="memItemLeft"><a id="a1dbb6420724b6649b871b06fbe8c2696" name="a1dbb6420724b6649b871b06fbe8c2696"></a>
+void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;&quot;) const</td></tr>
+<tr class="memdesc:a1dbb6420724b6649b871b06fbe8c2696"><td class="mdescLeft">&#160;</td><td class="mdescRight">print <br /></td></tr>
+<tr class="memitem:a2cd29824e3bab5b6468aa4d897629b04" id="r_a2cd29824e3bab5b6468aa4d897629b04"><td class="memItemLeft"><a id="a2cd29824e3bab5b6468aa4d897629b04" name="a2cd29824e3bab5b6468aa4d897629b04"></a>
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="#a0f564c53fc04f67cd6d801f53fd83050">StereoCamera</a> &amp;camera, double tol=1e-9) const</td></tr>
+<tr class="memdesc:a2cd29824e3bab5b6468aa4d897629b04"><td class="mdescLeft">&#160;</td><td class="mdescRight">equals <br /></td></tr>
+<tr id="pub-methods-2" class="groupHeader"><td colspan="2"><div class="groupHeader">Standard Interface</div></td></tr>
+<tr class="memitem:ab3804358cf9ac8fd391405b1a0632919" id="r_ab3804358cf9ac8fd391405b1a0632919"><td class="memItemLeft"><a id="ab3804358cf9ac8fd391405b1a0632919" name="ab3804358cf9ac8fd391405b1a0632919"></a>
+const <a class="el" href="a04403.html">Pose3</a> &amp;&#160;</td><td class="memItemRight"><b>pose</b> () const</td></tr>
+<tr class="memdesc:ab3804358cf9ac8fd391405b1a0632919"><td class="mdescLeft">&#160;</td><td class="mdescRight">pose <br /></td></tr>
+<tr class="memitem:aa3b9da0154ae3757285ce95c92e56b69" id="r_aa3b9da0154ae3757285ce95c92e56b69"><td class="memItemLeft"><a id="aa3b9da0154ae3757285ce95c92e56b69" name="aa3b9da0154ae3757285ce95c92e56b69"></a>
+double&#160;</td><td class="memItemRight"><b>baseline</b> () const</td></tr>
+<tr class="memdesc:aa3b9da0154ae3757285ce95c92e56b69"><td class="mdescLeft">&#160;</td><td class="mdescRight">baseline <br /></td></tr>
+<tr class="memitem:a58351937581d58a9e5308a4fc7cebfba" id="r_a58351937581d58a9e5308a4fc7cebfba"><td class="memItemLeft"><a id="a58351937581d58a9e5308a4fc7cebfba" name="a58351937581d58a9e5308a4fc7cebfba"></a>
+<a class="el" href="a04599.html">StereoPoint2</a>&#160;</td><td class="memItemRight"><b>project</b> (const <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp;point) const</td></tr>
+<tr class="memdesc:a58351937581d58a9e5308a4fc7cebfba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project 3D point to <a class="el" href="a04599.html" title="A 2D stereo point, v will be same for rectified images.">StereoPoint2</a> (uL,uR,v). <br /></td></tr>
+<tr class="memitem:abf6e9621ae77848bc3aaec056a258623" id="r_abf6e9621ae77848bc3aaec056a258623"><td class="memItemLeft"><a class="el" href="a04599.html">StereoPoint2</a>&#160;</td><td class="memItemRight"><a class="el" href="#abf6e9621ae77848bc3aaec056a258623">project2</a> (const <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp;point, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 6 &gt; H1={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 3 &gt; H2={}) const</td></tr>
+<tr class="memdesc:abf6e9621ae77848bc3aaec056a258623"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project 3D point and compute optional derivatives.  <br /></td></tr>
+<tr class="memitem:aac8dee12b601fa444680b0d073f1cd6c" id="r_aac8dee12b601fa444680b0d073f1cd6c"><td class="memItemLeft"><a id="aac8dee12b601fa444680b0d073f1cd6c" name="aac8dee12b601fa444680b0d073f1cd6c"></a>
+<a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&#160;</td><td class="memItemRight"><b>backproject</b> (const <a class="el" href="a04599.html">StereoPoint2</a> &amp;z) const</td></tr>
+<tr class="memdesc:aac8dee12b601fa444680b0d073f1cd6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">back-project a measurement <br /></td></tr>
+<tr class="memitem:ab5b2eeb887305a22ace9b649fd48501b" id="r_ab5b2eeb887305a22ace9b649fd48501b"><td class="memItemLeft"><a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab5b2eeb887305a22ace9b649fd48501b">backproject2</a> (const <a class="el" href="a04599.html">StereoPoint2</a> &amp;z, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 6 &gt; H1={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 3 &gt; H2={}) const</td></tr>
+<tr class="memdesc:ab5b2eeb887305a22ace9b649fd48501b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Back-project the 2D point and compute optional derivatives.  <br /></td></tr>
+<tr id="pub-methods-3" class="groupHeader"><td colspan="2"><div class="groupHeader">Deprecated</div></td></tr>
+<tr class="memitem:a6d9bbe61eb7ab1bf4d1a41c39276c7ac" id="r_a6d9bbe61eb7ab1bf4d1a41c39276c7ac"><td class="memItemLeft"><a class="el" href="a04599.html">StereoPoint2</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6d9bbe61eb7ab1bf4d1a41c39276c7ac">project</a> (const <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp;point, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 6 &gt; H1, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 3 &gt; H2={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 0 &gt; H3={}) const</td></tr>
+<tr class="memdesc:a6d9bbe61eb7ab1bf4d1a41c39276c7ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project 3D point and compute optional derivatives.  <br /></td></tr>
+<tr class="memitem:ae80046243c7a6914331f18084efa24ec" id="r_ae80046243c7a6914331f18084efa24ec"><td class="memItemLeft"><a id="ae80046243c7a6914331f18084efa24ec" name="ae80046243c7a6914331f18084efa24ec"></a>
+Vector&#160;</td><td class="memItemRight"><b>defaultErrorWhenTriangulatingBehindCamera</b> () const</td></tr>
+<tr class="memdesc:ae80046243c7a6914331f18084efa24ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">for Nonlinear Triangulation <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ab4e1d9664515b80747121ef1a4aeeff1" id="r_ab4e1d9664515b80747121ef1a4aeeff1"><td class="memItemLeft"><a id="ab4e1d9664515b80747121ef1a4aeeff1" name="ab4e1d9664515b80747121ef1a4aeeff1"></a>
-static Skeleton&#160;</td><td class="memItemRight"><b>skeletonTranslator</b> (const std::string &amp;s)</td></tr>
-<tr class="memitem:acb235c0e9bbca64fd3e6532e5ece70ca" id="r_acb235c0e9bbca64fd3e6532e5ece70ca"><td class="memItemLeft"><a id="acb235c0e9bbca64fd3e6532e5ece70ca" name="acb235c0e9bbca64fd3e6532e5ece70ca"></a>
-static std::string&#160;</td><td class="memItemRight"><b>skeletonTranslator</b> (Skeleton s)</td></tr>
-<tr class="memitem:a8460ff2ca36b7633d960e6c1475dcc06" id="r_a8460ff2ca36b7633d960e6c1475dcc06"><td class="memItemLeft"><a id="a8460ff2ca36b7633d960e6c1475dcc06" name="a8460ff2ca36b7633d960e6c1475dcc06"></a>
-static SkeletonWeight&#160;</td><td class="memItemRight"><b>skeletonWeightTranslator</b> (const std::string &amp;s)</td></tr>
-<tr class="memitem:a08470e9374e79a101c55673eae98f6cd" id="r_a08470e9374e79a101c55673eae98f6cd"><td class="memItemLeft"><a id="a08470e9374e79a101c55673eae98f6cd" name="a08470e9374e79a101c55673eae98f6cd"></a>
-static std::string&#160;</td><td class="memItemRight"><b>skeletonWeightTranslator</b> (SkeletonWeight w)</td></tr>
-<tr class="memitem:afd5c1448197807adb0d9e23acc51dd89" id="r_afd5c1448197807adb0d9e23acc51dd89"><td class="memItemLeft"><a id="afd5c1448197807adb0d9e23acc51dd89" name="afd5c1448197807adb0d9e23acc51dd89"></a>
-static AugmentationWeight&#160;</td><td class="memItemRight"><b>augmentationWeightTranslator</b> (const std::string &amp;s)</td></tr>
-<tr class="memitem:aaf3b8e75dd22ae7a49206c4f56ac397c" id="r_aaf3b8e75dd22ae7a49206c4f56ac397c"><td class="memItemLeft"><a id="aaf3b8e75dd22ae7a49206c4f56ac397c" name="aaf3b8e75dd22ae7a49206c4f56ac397c"></a>
-static std::string&#160;</td><td class="memItemRight"><b>augmentationWeightTranslator</b> (AugmentationWeight w)</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a9d8bbd44e67dfe233d957320e297a53b" id="r_a9d8bbd44e67dfe233d957320e297a53b"><td class="memItemLeft"><a id="a9d8bbd44e67dfe233d957320e297a53b" name="a9d8bbd44e67dfe233d957320e297a53b"></a>
-enum gtsam::SubgraphBuilderParameters::Skeleton&#160;</td><td class="memItemRight"><b>skeletonType</b></td></tr>
-<tr class="memitem:a98af3eecbdd5a7be14c831e5eaf50af1" id="r_a98af3eecbdd5a7be14c831e5eaf50af1"><td class="memItemLeft"><a id="a98af3eecbdd5a7be14c831e5eaf50af1" name="a98af3eecbdd5a7be14c831e5eaf50af1"></a>
-enum gtsam::SubgraphBuilderParameters::SkeletonWeight&#160;</td><td class="memItemRight"><b>skeletonWeight</b></td></tr>
-<tr class="memitem:ae247b9a11e28d134e99b79bdccdd6e02" id="r_ae247b9a11e28d134e99b79bdccdd6e02"><td class="memItemLeft"><a id="ae247b9a11e28d134e99b79bdccdd6e02" name="ae247b9a11e28d134e99b79bdccdd6e02"></a>
-enum gtsam::SubgraphBuilderParameters::AugmentationWeight&#160;</td><td class="memItemRight"><b>augmentationWeight</b></td></tr>
-<tr class="memitem:a927dc3d350c0cf449755cb5f491c0af7" id="r_a927dc3d350c0cf449755cb5f491c0af7"><td class="memItemLeft"><a id="a927dc3d350c0cf449755cb5f491c0af7" name="a927dc3d350c0cf449755cb5f491c0af7"></a>
-double&#160;</td><td class="memItemRight"><b>augmentationFactor</b></td></tr>
-<tr class="memdesc:a927dc3d350c0cf449755cb5f491c0af7"><td class="mdescLeft">&#160;</td><td class="mdescRight">factor multiplied with n, yields number of extra edges. <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a88442fd94c552e280c4307d1dd436bc2" id="r_a88442fd94c552e280c4307d1dd436bc2"><td class="memItemLeft"><a id="a88442fd94c552e280c4307d1dd436bc2" name="a88442fd94c552e280c4307d1dd436bc2"></a>
+static constexpr auto&#160;</td><td class="memItemRight"><b>dimension</b> = 6</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:adeffde84a97ddcc84c7476a3f5034763" id="r_adeffde84a97ddcc84c7476a3f5034763"><td class="memItemLeft"><a id="adeffde84a97ddcc84c7476a3f5034763" name="adeffde84a97ddcc84c7476a3f5034763"></a>enum &#160;</td><td class="memItemRight"><b>Skeleton</b> { <b>NATURALCHAIN</b> = 0
-, <b>BFS</b>
-, <b>KRUSKAL</b>
- }</td></tr>
-<tr class="memitem:a277b4f68198c263ed141a0d7feb6b2a7" id="r_a277b4f68198c263ed141a0d7feb6b2a7"><td class="memItemLeft"><a id="a277b4f68198c263ed141a0d7feb6b2a7" name="a277b4f68198c263ed141a0d7feb6b2a7"></a>enum &#160;</td><td class="memItemRight"><b>SkeletonWeight</b> { <b>EQUAL</b> = 0
-, <b>RHS_2NORM</b>
-, <b>LHS_FNORM</b>
-, <b>RANDOM</b>
- }</td></tr>
-<tr class="memitem:a44095179b43752d5991a2c13a54f3758" id="r_a44095179b43752d5991a2c13a54f3758"><td class="memItemLeft"><a id="a44095179b43752d5991a2c13a54f3758" name="a44095179b43752d5991a2c13a54f3758"></a>enum &#160;</td><td class="memItemRight"><b>AugmentationWeight</b> { <b>SKELETON</b> = 0
- }</td></tr>
-<tr class="memitem:af4b8360eeda4680636eda08cde72c66c" id="r_af4b8360eeda4680636eda08cde72c66c"><td class="memItemLeft"><a id="af4b8360eeda4680636eda08cde72c66c" name="af4b8360eeda4680636eda08cde72c66c"></a>
-typedef boost::shared_ptr&lt; SubgraphBuilderParameters &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:a16b02c0c12beb5f7175fd3cfc609c27b" id="r_a16b02c0c12beb5f7175fd3cfc609c27b"><td class="memItemLeft"><a id="a16b02c0c12beb5f7175fd3cfc609c27b" name="a16b02c0c12beb5f7175fd3cfc609c27b"></a>
-std::ostream &amp;&#160;</td><td class="memItemRight"><b>operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="a04531.html">PreconditionerParameters</a> &amp;p)</td></tr>
+<tr class="memitem:aa24025c20efc2344f046776fd6381e2f" id="r_aa24025c20efc2344f046776fd6381e2f"><td class="memItemLeft"><a id="aa24025c20efc2344f046776fd6381e2f" name="aa24025c20efc2344f046776fd6381e2f"></a>
+using&#160;</td><td class="memItemRight"><b>Measurement</b> = <a class="el" href="a04599.html">StereoPoint2</a></td></tr>
+<tr class="memdesc:aa24025c20efc2344f046776fd6381e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Some classes template on either <a class="el" href="a04323.html" title="A pinhole camera class that has a Pose3 and a Calibration.">PinholeCamera</a> or <a class="el" href="a04587.html" title="A stereo camera class, parameterize by left camera pose and stereo calibration.">StereoCamera</a>, and this typedef informs those classes what "project" returns. <br /></td></tr>
+<tr class="memitem:a75982dea9644c9296782c75eb31c2769" id="r_a75982dea9644c9296782c75eb31c2769"><td class="memItemLeft"><a id="a75982dea9644c9296782c75eb31c2769" name="a75982dea9644c9296782c75eb31c2769"></a>
+using&#160;</td><td class="memItemRight"><b>MeasurementVector</b> = StereoPoint2Vector</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/<a class="el" href="a00881_source.html">SubgraphBuilder.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/<a class="el" href="a00851.html">SubgraphBuilder.cpp</a></li>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ab5b2eeb887305a22ace9b649fd48501b" name="ab5b2eeb887305a22ace9b649fd48501b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5b2eeb887305a22ace9b649fd48501b">&#9670;&#160;</a></span>backproject2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> gtsam::StereoCamera::backproject2 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a04599.html">StereoPoint2</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>z</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 6 &gt;</td>          <td class="paramname"><span class="paramname"><em>H1</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>H2</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Back-project the 2D point and compute optional derivatives. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">H1</td><td>derivative with respect to pose </td></tr>
+    <tr><td class="paramname">H2</td><td>derivative with respect to point </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6d9bbe61eb7ab1bf4d1a41c39276c7ac" name="a6d9bbe61eb7ab1bf4d1a41c39276c7ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d9bbe61eb7ab1bf4d1a41c39276c7ac">&#9670;&#160;</a></span>project()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a04599.html">StereoPoint2</a> gtsam::StereoCamera::project </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>point</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 6 &gt;</td>          <td class="paramname"><span class="paramname"><em>H1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>H2</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 0 &gt;</td>          <td class="paramname"><span class="paramname"><em>H3</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Project 3D point and compute optional derivatives. </p>
+<dl class="deprecated"><dt><b><a class="el" href="a02222.html#_deprecated000008">Deprecated</a></b></dt><dd>, use project2 - this class has fixed calibration </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">H1</td><td>derivative with respect to pose </td></tr>
+    <tr><td class="paramname">H2</td><td>derivative with respect to point </td></tr>
+    <tr><td class="paramname">H3</td><td>IGNORED (for calibration) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abf6e9621ae77848bc3aaec056a258623" name="abf6e9621ae77848bc3aaec056a258623"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf6e9621ae77848bc3aaec056a258623">&#9670;&#160;</a></span>project2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a04599.html">StereoPoint2</a> gtsam::StereoCamera::project2 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>point</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 6 &gt;</td>          <td class="paramname"><span class="paramname"><em>H1</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>H2</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Project 3D point and compute optional derivatives. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">H1</td><td>derivative with respect to pose </td></tr>
+    <tr><td class="paramname">H2</td><td>derivative with respect to point </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00635_source.html">StereoCamera.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<b>StereoCamera.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -172,7 +303,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight"><b>operator&lt;&lt;</b> (s
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04587.html">SubgraphBuilderParameters</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04587.html">StereoCamera</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

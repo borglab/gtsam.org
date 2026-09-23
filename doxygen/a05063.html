@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::detail::NoiseModelFactorAliases&lt; T1 &gt; Struct Template Reference</title>
+<title>gtsam: gtsam::internal::FixedSizeDimensions&lt; OutputVec, ValueTypes &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,19 +96,82 @@ $(function(){initNavTree('a05063.html','','a05060'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::detail::NoiseModelFactorAliases&lt; T1 &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::internal::FixedSizeDimensions&lt; OutputVec, ValueTypes &gt; Struct Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a4dcc7b20ace6ac71739ed04607170a54" id="r_a4dcc7b20ace6ac71739ed04607170a54"><td class="memItemLeft"><a id="a4dcc7b20ace6ac71739ed04607170a54" name="a4dcc7b20ace6ac71739ed04607170a54"></a>
-using&#160;</td><td class="memItemRight"><b>X</b> = T1</td></tr>
-<tr class="memitem:a631fb331443770caaae8d994fd774dbb" id="r_a631fb331443770caaae8d994fd774dbb"><td class="memItemLeft"><a id="a631fb331443770caaae8d994fd774dbb" name="a631fb331443770caaae8d994fd774dbb"></a>
-using&#160;</td><td class="memItemRight"><b>X1</b> = T1</td></tr>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename OutputVec, typename... ValueTypes&gt;<br />
+struct gtsam::internal::FixedSizeDimensions&lt; OutputVec, ValueTypes &gt;</div><p>Compile-time residual and variable dimensions for a factor of any arity. </p>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a0376f7f1d49345d5de726374043dc901" id="r_a0376f7f1d49345d5de726374043dc901"><td class="memItemLeft"><a id="a0376f7f1d49345d5de726374043dc901" name="a0376f7f1d49345d5de726374043dc901"></a>
+static constexpr size_t&#160;</td><td class="memItemRight"><b>arity</b> = sizeof...(ValueTypes)</td></tr>
+<tr class="memitem:ae08cdfa73ef9cefb8eb8e96c6ed041a7" id="r_ae08cdfa73ef9cefb8eb8e96c6ed041a7"><td class="memItemLeft"><a id="ae08cdfa73ef9cefb8eb8e96c6ed041a7" name="ae08cdfa73ef9cefb8eb8e96c6ed041a7"></a>
+static constexpr int&#160;</td><td class="memItemRight"><b>M</b> = <a class="el" href="a03203.html">traits</a>&lt;OutputVec&gt;::dimension</td></tr>
+<tr class="memitem:af23eb27682c53addf4d9f21a13f26781" id="r_af23eb27682c53addf4d9f21a13f26781"><td class="memItemLeft">static constexpr std::array&lt; int, arity+1 &gt;&#160;</td><td class="memItemRight"><a class="el" href="#af23eb27682c53addf4d9f21a13f26781">dimensions</a></td></tr>
+<tr class="memitem:a998d9775372cd2653306f24537930c7d" id="r_a998d9775372cd2653306f24537930c7d"><td class="memTemplParams" colspan="2"><a id="a998d9775372cd2653306f24537930c7d" name="a998d9775372cd2653306f24537930c7d"></a>
+template&lt;size_t I&gt; </td></tr>
+<tr class="memitem:a998d9775372cd2653306f24537930c7d template"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><b>N</b> = dimensions.at(I + 1)</td></tr>
+<tr class="memitem:ad529d12d0a4fe7542fc0d4d03781f205" id="r_ad529d12d0a4fe7542fc0d4d03781f205"><td class="memItemLeft">static constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#ad529d12d0a4fe7542fc0d4d03781f205">allFixed</a></td></tr>
 </table>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="ad529d12d0a4fe7542fc0d4d03781f205" name="ad529d12d0a4fe7542fc0d4d03781f205"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad529d12d0a4fe7542fc0d4d03781f205">&#9670;&#160;</a></span>allFixed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputVec, typename... ValueTypes&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="a05063.html">gtsam::internal::FixedSizeDimensions</a>&lt; OutputVec, ValueTypes &gt;::allFixed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">                                  =</div>
+<div class="line">M != Eigen::Dynamic &amp;&amp;</div>
+<div class="line">((<a class="code hl_struct" href="a03203.html">traits&lt;ValueTypes&gt;::dimension</a> != Eigen::Dynamic) &amp;&amp; ...)</div>
+<div class="ttc" id="aa03203_html"><div class="ttname"><a href="a03203.html">gtsam::traits</a></div><div class="ttdoc">A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...</div><div class="ttdef"><b>Definition</b> Group.h:37</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af23eb27682c53addf4d9f21a13f26781" name="af23eb27682c53addf4d9f21a13f26781"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af23eb27682c53addf4d9f21a13f26781">&#9670;&#160;</a></span>dimensions</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename OutputVec, typename... ValueTypes&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;int, arity + 1&gt; <a class="el" href="a05063.html">gtsam::internal::FixedSizeDimensions</a>&lt; OutputVec, ValueTypes &gt;::dimensions</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{</div>
+<div class="line">      M, <a class="code hl_struct" href="a03203.html">traits&lt;ValueTypes&gt;::dimension</a>...}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/<a class="el" href="a01157_source.html">NonlinearFactor.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/<a class="el" href="a00920_source.html">FixedJacobianFactor.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -123,7 +186,7 @@ using&#160;</td><td class="memItemRight"><b>X1</b> = T1</td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><b>detail</b></li><li class="navelem"><a href="a05063.html">NoiseModelFactorAliases&lt; T1 &gt;</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><b>internal</b></li><li class="navelem"><a href="a05063.html">FixedSizeDimensions</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

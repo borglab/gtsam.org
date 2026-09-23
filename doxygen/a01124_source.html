@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/LevenbergMarquardtOptimizer.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/ConjugateGradientSolver.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,7 +89,7 @@ $(function(){initNavTree('a01124_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">LevenbergMarquardtOptimizer.h</div></div>
+  <div class="headertitle"><div class="title">ConjugateGradientSolver.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a01124.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
@@ -106,111 +106,347 @@ $(function(){initNavTree('a01124_source.html','',''); });
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="a01109.html">gtsam/nonlinear/NonlinearOptimizer.h</a>&gt;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;<a class="code" href="a01118.html">gtsam/nonlinear/LevenbergMarquardtParams.h</a>&gt;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;<a class="code" href="a00872.html">gtsam/linear/VectorValues.h</a>&gt;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;boost/date_time/posix_time/posix_time.hpp&gt;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">class </span>NonlinearOptimizerMoreOptimizationTest;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="a01082.html">gtsam/linear/IterativeSolver.h</a>&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;limits&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
 <div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="a04987.html">   35</a></span><span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a04987.html#afbc0d366428f3339505587ac0848e2f3">LevenbergMarquardtOptimizer</a>: <span class="keyword">public</span> <a class="code hl_function" href="a05103.html#ac6b7a069a596fda982cc4aa1ddc79324">NonlinearOptimizer</a> {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="a04987.html#a81721702704bfbd35d14db2b1978f911">   38</a></span>  <span class="keyword">const</span> <a class="code hl_class" href="a04991.html">LevenbergMarquardtParams</a> <a class="code hl_variable" href="a04987.html#a81721702704bfbd35d14db2b1978f911">params_</a>; </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  boost::posix_time::ptime startTime_;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordtype">void</span> initTime();</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">typedef</span> boost::shared_ptr&lt;LevenbergMarquardtOptimizer&gt; shared_ptr;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <a class="code hl_function" href="a04987.html#afbc0d366428f3339505587ac0848e2f3">LevenbergMarquardtOptimizer</a>(<span class="keyword">const</span> <a class="code hl_class" href="a05091.html">NonlinearFactorGraph</a>&amp; <a class="code hl_function" href="a05103.html#a2ffd892baed9b62d31ce39a9243f3c78">graph</a>, <span class="keyword">const</span> <a class="code hl_class" href="a05163.html">Values</a>&amp; initialValues,</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                              <span class="keyword">const</span> <a class="code hl_class" href="a04991.html">LevenbergMarquardtParams</a>&amp; <a class="code hl_function" href="a04987.html#a3b8146a2452e87a600c61d9a2b195ef0">params</a> = <a class="code hl_class" href="a04991.html">LevenbergMarquardtParams</a>());</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <a class="code hl_function" href="a04987.html#afbc0d366428f3339505587ac0848e2f3">LevenbergMarquardtOptimizer</a>(<span class="keyword">const</span> <a class="code hl_class" href="a05091.html">NonlinearFactorGraph</a>&amp; <a class="code hl_function" href="a05103.html#a2ffd892baed9b62d31ce39a9243f3c78">graph</a>, <span class="keyword">const</span> <a class="code hl_class" href="a05163.html">Values</a>&amp; initialValues,</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                              <span class="keyword">const</span> <a class="code hl_class" href="a04227.html">Ordering</a>&amp; ordering,</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                              <span class="keyword">const</span> <a class="code hl_class" href="a04991.html">LevenbergMarquardtParams</a>&amp; <a class="code hl_function" href="a04987.html#a3b8146a2452e87a600c61d9a2b195ef0">params</a> = <a class="code hl_class" href="a04991.html">LevenbergMarquardtParams</a>());</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
-<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="a04987.html#a173eabb76bd68cf8fb01665c64d9a649">   72</a></span>  <a class="code hl_function" href="a04987.html#a173eabb76bd68cf8fb01665c64d9a649">~LevenbergMarquardtOptimizer</a>()<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="a05031.html">   35</a></span><span class="keyword">struct </span>GTSAM_EXPORT ConjugateGradientParameters</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    : <span class="keyword">public</span> IterativeOptimizationParameters {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keyword">typedef</span> IterativeOptimizationParameters Base;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keyword">typedef</span> std::shared_ptr&lt;ConjugateGradientParameters&gt; shared_ptr;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="a05031.html#a374db6fff7b766c2915798a0da1abcc6">   40</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a05031.html#a374db6fff7b766c2915798a0da1abcc6">minIterations</a>;  </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="a05031.html#a1e7033fa8a872302931409f89fd990c0">   41</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a05031.html#a1e7033fa8a872302931409f89fd990c0">maxIterations</a>;  </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="a05031.html#a2185c0d346b1debc869f5e95ee021da9">   42</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a05031.html#a2185c0d346b1debc869f5e95ee021da9">reset</a>;          </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="a05031.html#a98449a01988a747585c90679b7774271">   43</a></span>  <span class="keywordtype">double</span> <a class="code hl_variable" href="a05031.html#a98449a01988a747585c90679b7774271">epsilon_rel</a>;    </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="a05031.html#a9c21911222e6c3eb2a083b12a90836b0">   44</a></span>  <span class="keywordtype">double</span> <a class="code hl_variable" href="a05031.html#a9c21911222e6c3eb2a083b12a90836b0">epsilon_abs</a>;    </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="comment">/* Matrix Operation Kernel */</span></div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="};">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="a05031.html#a5f3c3b9315279cf2112501b7c0a3b499">   47</a></span>  <span class="keyword">enum</span> <a class="code hl_enumeration" href="a05031.html#a5f3c3b9315279cf2112501b7c0a3b499">BLASKernel</a> {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="a05031.html#a5f3c3b9315279cf2112501b7c0a3b499a6899bab70a92ace73fecfa9de464de3c">   48</a></span>    <a class="code hl_enumvalue" href="a05031.html#a5f3c3b9315279cf2112501b7c0a3b499a6899bab70a92ace73fecfa9de464de3c">GTSAM</a> = 0,  </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  } blas_kernel;</div>
 </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keywordtype">double</span> lambda() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordtype">int</span> getInnerIterations() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
-<div class="foldopen" id="foldopen00087" data-start="{" data-end="}">
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="a04987.html#a899353dce14ec64bf389164011b58c72">   87</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a04987.html#a899353dce14ec64bf389164011b58c72">print</a>(<span class="keyword">const</span> std::string&amp; str = <span class="stringliteral">&quot;&quot;</span>)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    std::cout &lt;&lt; str &lt;&lt; <span class="stringliteral">&quot;LevenbergMarquardtOptimizer&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    this-&gt;params_.print(<span class="stringliteral">&quot;  parameters:\n&quot;</span>);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_struct" href="a05031.html">ConjugateGradientParameters</a>()</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      : minIterations(1),</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        maxIterations(500),</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        reset(501),</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        epsilon_rel(1e-3),</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        epsilon_abs(1e-3),</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        blas_kernel(GTSAM) {}</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  ConjugateGradientParameters(<span class="keywordtype">size_t</span> minIterations, <span class="keywordtype">size_t</span> maxIterations,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                              <span class="keywordtype">size_t</span> reset, <span class="keywordtype">double</span> epsilon_rel,</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                              <span class="keywordtype">double</span> epsilon_abs, BLASKernel blas)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      : minIterations(minIterations),</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        maxIterations(maxIterations),</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        reset(reset),</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        epsilon_rel(epsilon_rel),</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        epsilon_abs(epsilon_abs),</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        blas_kernel(blas) {}</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  ConjugateGradientParameters(<span class="keyword">const</span> ConjugateGradientParameters&amp; p)</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      : Base(p),</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        minIterations(p.minIterations),</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        maxIterations(p.maxIterations),</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        reset(p.reset),</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        epsilon_rel(p.epsilon_rel),</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        epsilon_abs(p.epsilon_abs),</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        blas_kernel(GTSAM) {}</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  ConjugateGradientParameters&amp; operator=(</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      <span class="keyword">const</span> ConjugateGradientParameters&amp; other) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">#ifdef GTSAM_ALLOW_DEPRECATED_SINCE_V43</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keyword">inline</span> <span class="keywordtype">size_t</span> getMinIterations()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> minIterations; }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keyword">inline</span> <span class="keywordtype">size_t</span> getMaxIterations()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> maxIterations; }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keyword">inline</span> <span class="keywordtype">size_t</span> getReset()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> reset; }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keyword">inline</span> <span class="keywordtype">double</span> getEpsilon()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> epsilon_rel; }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keyword">inline</span> <span class="keywordtype">double</span> getEpsilon_rel()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> epsilon_rel; }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keyword">inline</span> <span class="keywordtype">double</span> getEpsilon_abs()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> epsilon_abs; }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keyword">inline</span> <span class="keywordtype">void</span> setMinIterations(<span class="keywordtype">size_t</span> value) { minIterations = value; }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keyword">inline</span> <span class="keywordtype">void</span> setMaxIterations(<span class="keywordtype">size_t</span> value) { maxIterations = value; }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keyword">inline</span> <span class="keywordtype">void</span> setReset(<span class="keywordtype">size_t</span> value) { reset = value; }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keyword">inline</span> <span class="keywordtype">void</span> setEpsilon(<span class="keywordtype">double</span> value) { epsilon_rel = value; }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keyword">inline</span> <span class="keywordtype">void</span> setEpsilon_rel(<span class="keywordtype">double</span> value) { epsilon_rel = value; }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keyword">inline</span> <span class="keywordtype">void</span> setEpsilon_abs(<span class="keywordtype">double</span> value) { epsilon_abs = value; }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a02242.html#a54fa43c89c5334314c8c75939dd5c2d7">print</a>()<span class="keyword"> const </span>{ Base::print(); }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a02242.html#a54fa43c89c5334314c8c75939dd5c2d7">print</a>(std::ostream&amp; os) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keyword">static</span> std::string blasTranslator(<span class="keyword">const</span> BLASKernel k);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keyword">static</span> BLASKernel blasTranslator(<span class="keyword">const</span> std::string&amp; s);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>};</div>
 </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <a class="code hl_typedef" href="a04339.html#a1f73f4987b9bdaac5c1414a401c0364c">GaussianFactorGraph::shared_ptr</a> iterate() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
-<div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="a04987.html#a3b8146a2452e87a600c61d9a2b195ef0">  104</a></span>  <span class="keyword">const</span> <a class="code hl_class" href="a04991.html">LevenbergMarquardtParams</a>&amp; <a class="code hl_function" href="a04987.html#a3b8146a2452e87a600c61d9a2b195ef0">params</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="a04987.html#a81721702704bfbd35d14db2b1978f911">params_</a>;</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="};">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="a02242.html#a5bf4c422457829a361b0609332c8d429">  105</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="a02242.html#a5bf4c422457829a361b0609332c8d429">ConjugateGradientTerminationReason</a> {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="a02242.html#a5bf4c422457829a361b0609332c8d429ae5e4a18d9d872870db8c99663ec9b3a6">  106</a></span>  <a class="code hl_enumvalue" href="a02242.html#a5bf4c422457829a361b0609332c8d429ae5e4a18d9d872870db8c99663ec9b3a6">kConverged</a>,           </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="a02242.html#a5bf4c422457829a361b0609332c8d429a1429149732d4b342891aba2837c187de">  107</a></span>  <a class="code hl_enumvalue" href="a02242.html#a5bf4c422457829a361b0609332c8d429a1429149732d4b342891aba2837c187de">kMaxIterations</a>,       </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="a02242.html#a5bf4c422457829a361b0609332c8d429a32f2be615be7e1442dcc8dd5a57d86a4">  108</a></span>  <a class="code hl_enumvalue" href="a02242.html#a5bf4c422457829a361b0609332c8d429a32f2be615be7e1442dcc8dd5a57d86a4">kNumericalBreakdown</a>,  </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>};</div>
 </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keywordtype">void</span> writeLogFile(<span class="keywordtype">double</span> currentError);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keyword">virtual</span> <a class="code hl_typedef" href="a04339.html#a1f73f4987b9bdaac5c1414a401c0364c">GaussianFactorGraph::shared_ptr</a> linearize() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <a class="code hl_class" href="a04339.html">GaussianFactorGraph</a> buildDampedSystem(<span class="keyword">const</span> <a class="code hl_class" href="a04339.html">GaussianFactorGraph</a>&amp; linear,</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                                        <span class="keyword">const</span> <a class="code hl_class" href="a04611.html">VectorValues</a>&amp; sqrtHessianDiagonal) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keywordtype">bool</span> tryLambda(<span class="keyword">const</span> <a class="code hl_class" href="a04339.html">GaussianFactorGraph</a>&amp; linear, <span class="keyword">const</span> <a class="code hl_class" href="a04611.html">VectorValues</a>&amp; sqrtHessianDiagonal);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span></div>
+<div class="foldopen" id="foldopen00112" data-start="{" data-end="};">
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="a05035.html">  112</a></span><span class="keyword">struct </span>GTSAM_EXPORT <a class="code hl_struct" href="a05035.html">ConjugateGradientStats</a> {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="a05035.html#ae2fbc5d51e9ef5a5af583afb312387a7">  113</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a05035.html#ae2fbc5d51e9ef5a5af583afb312387a7">iterations</a> = 0;  </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="a05035.html#a64ea2163e10ceec9215de1fad0645335">  114</a></span>  <span class="keywordtype">double</span> <a class="code hl_variable" href="a05035.html#a64ea2163e10ceec9215de1fad0645335">initialPreconditionedResidualNorm</a> =</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>      0.0;  </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="a05035.html#a7a1671b167a8b453eb7751427b0d0743">  116</a></span>  <span class="keywordtype">double</span> <a class="code hl_variable" href="a05035.html#a7a1671b167a8b453eb7751427b0d0743">finalPreconditionedResidualNorm</a> =</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      0.0;  </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="a05035.html#adc8af3e7591ec6bf24b802d12f5b7e88">  119</a></span>  std::vector&lt;double&gt; <a class="code hl_variable" href="a05035.html#adc8af3e7591ec6bf24b802d12f5b7e88">preconditionedResidualNormHistory</a>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="a05035.html#a21fb5ab6defa9df5739bb5e7173350e0">  121</a></span>  <a class="code hl_enumeration" href="a02242.html#a5bf4c422457829a361b0609332c8d429">ConjugateGradientTerminationReason</a> <a class="code hl_variable" href="a05035.html#a21fb5ab6defa9df5739bb5e7173350e0">terminationReason</a> =</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>      <a class="code hl_enumvalue" href="a02242.html#a5bf4c422457829a361b0609332c8d429a1429149732d4b342891aba2837c187de">ConjugateGradientTerminationReason::kMaxIterations</a>;</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span></div>
 <div class="foldopen" id="foldopen00125" data-start="{" data-end="}">
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="a04987.html#a4e5a89a3c51d32d018a0ecfd194d1f9d">  125</a></span>  <span class="keyword">const</span> <a class="code hl_class" href="a05107.html">NonlinearOptimizerParams</a>&amp; <a class="code hl_function" href="a04987.html#a4e5a89a3c51d32d018a0ecfd194d1f9d">_params</a>()<span class="keyword"> const override </span>{</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="a04987.html#a81721702704bfbd35d14db2b1978f911">params_</a>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="a05035.html#a8a67e16883fbee32bdc70e22bb5253c1">  125</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="a05035.html#a8a67e16883fbee32bdc70e22bb5253c1">converged</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="a05035.html#a21fb5ab6defa9df5739bb5e7173350e0">terminationReason</a> == <a class="code hl_enumvalue" href="a02242.html#a5bf4c422457829a361b0609332c8d429ae5e4a18d9d872870db8c99663ec9b3a6">ConjugateGradientTerminationReason::kConverged</a>;</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  }</div>
 </div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>};</div>
 </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>}</div>
-<div class="ttc" id="aa00872_html"><div class="ttname"><a href="a00872.html">VectorValues.h</a></div><div class="ttdoc">Factor Graph Values.</div></div>
-<div class="ttc" id="aa01109_html"><div class="ttname"><a href="a01109.html">NonlinearOptimizer.h</a></div><div class="ttdoc">Base class and parameters for nonlinear optimization algorithms.</div></div>
-<div class="ttc" id="aa01118_html"><div class="ttname"><a href="a01118.html">LevenbergMarquardtParams.h</a></div><div class="ttdoc">Parameters for Levenberg-Marquardt trust-region scheme.</div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa04227_html"><div class="ttname"><a href="a04227.html">gtsam::Ordering</a></div><div class="ttdef"><b>Definition</b> Ordering.h:34</div></div>
-<div class="ttc" id="aa04339_html"><div class="ttname"><a href="a04339.html">gtsam::GaussianFactorGraph</a></div><div class="ttdoc">A Linear Factor Graph is a factor graph where all factors are Gaussian, i.e.</div><div class="ttdef"><b>Definition</b> GaussianFactorGraph.h:75</div></div>
-<div class="ttc" id="aa04339_html_a1f73f4987b9bdaac5c1414a401c0364c"><div class="ttname"><a href="a04339.html#a1f73f4987b9bdaac5c1414a401c0364c">gtsam::GaussianFactorGraph::shared_ptr</a></div><div class="ttdeci">boost::shared_ptr&lt; This &gt; shared_ptr</div><div class="ttdoc">shared_ptr to this class</div><div class="ttdef"><b>Definition</b> GaussianFactorGraph.h:81</div></div>
-<div class="ttc" id="aa04611_html"><div class="ttname"><a href="a04611.html">gtsam::VectorValues</a></div><div class="ttdoc">VectorValues represents a collection of vector-valued variables associated each with a unique integer...</div><div class="ttdef"><b>Definition</b> VectorValues.h:74</div></div>
-<div class="ttc" id="aa04987_html_a173eabb76bd68cf8fb01665c64d9a649"><div class="ttname"><a href="a04987.html#a173eabb76bd68cf8fb01665c64d9a649">gtsam::LevenbergMarquardtOptimizer::~LevenbergMarquardtOptimizer</a></div><div class="ttdeci">~LevenbergMarquardtOptimizer() override</div><div class="ttdoc">Virtual destructor.</div><div class="ttdef"><b>Definition</b> LevenbergMarquardtOptimizer.h:72</div></div>
-<div class="ttc" id="aa04987_html_a3b8146a2452e87a600c61d9a2b195ef0"><div class="ttname"><a href="a04987.html#a3b8146a2452e87a600c61d9a2b195ef0">gtsam::LevenbergMarquardtOptimizer::params</a></div><div class="ttdeci">const LevenbergMarquardtParams &amp; params() const</div><div class="ttdoc">Read-only access the parameters.</div><div class="ttdef"><b>Definition</b> LevenbergMarquardtOptimizer.h:104</div></div>
-<div class="ttc" id="aa04987_html_a4e5a89a3c51d32d018a0ecfd194d1f9d"><div class="ttname"><a href="a04987.html#a4e5a89a3c51d32d018a0ecfd194d1f9d">gtsam::LevenbergMarquardtOptimizer::_params</a></div><div class="ttdeci">const NonlinearOptimizerParams &amp; _params() const override</div><div class="ttdoc">Access the parameters (base class version).</div><div class="ttdef"><b>Definition</b> LevenbergMarquardtOptimizer.h:125</div></div>
-<div class="ttc" id="aa04987_html_a81721702704bfbd35d14db2b1978f911"><div class="ttname"><a href="a04987.html#a81721702704bfbd35d14db2b1978f911">gtsam::LevenbergMarquardtOptimizer::params_</a></div><div class="ttdeci">const LevenbergMarquardtParams params_</div><div class="ttdoc">LM parameters.</div><div class="ttdef"><b>Definition</b> LevenbergMarquardtOptimizer.h:38</div></div>
-<div class="ttc" id="aa04987_html_a899353dce14ec64bf389164011b58c72"><div class="ttname"><a href="a04987.html#a899353dce14ec64bf389164011b58c72">gtsam::LevenbergMarquardtOptimizer::print</a></div><div class="ttdeci">void print(const std::string &amp;str=&quot;&quot;) const</div><div class="ttdoc">print</div><div class="ttdef"><b>Definition</b> LevenbergMarquardtOptimizer.h:87</div></div>
-<div class="ttc" id="aa04987_html_afbc0d366428f3339505587ac0848e2f3"><div class="ttname"><a href="a04987.html#afbc0d366428f3339505587ac0848e2f3">gtsam::LevenbergMarquardtOptimizer::LevenbergMarquardtOptimizer</a></div><div class="ttdeci">LevenbergMarquardtOptimizer(const NonlinearFactorGraph &amp;graph, const Values &amp;initialValues, const LevenbergMarquardtParams &amp;params=LevenbergMarquardtParams())</div><div class="ttdoc">Standard constructor, requires a nonlinear factor graph, initial variable assignments,...</div><div class="ttdef"><b>Definition</b> LevenbergMarquardtOptimizer.cpp:49</div></div>
-<div class="ttc" id="aa04991_html"><div class="ttname"><a href="a04991.html">gtsam::LevenbergMarquardtParams</a></div><div class="ttdoc">Parameters for Levenberg-Marquardt optimization.</div><div class="ttdef"><b>Definition</b> LevenbergMarquardtParams.h:35</div></div>
-<div class="ttc" id="aa05091_html"><div class="ttname"><a href="a05091.html">gtsam::NonlinearFactorGraph</a></div><div class="ttdef"><b>Definition</b> NonlinearFactorGraph.h:55</div></div>
-<div class="ttc" id="aa05103_html_a2ffd892baed9b62d31ce39a9243f3c78"><div class="ttname"><a href="a05103.html#a2ffd892baed9b62d31ce39a9243f3c78">gtsam::NonlinearOptimizer::graph</a></div><div class="ttdeci">const NonlinearFactorGraph &amp; graph() const</div><div class="ttdoc">return the graph with nonlinear factors</div><div class="ttdef"><b>Definition</b> NonlinearOptimizer.h:118</div></div>
-<div class="ttc" id="aa05103_html_ac6b7a069a596fda982cc4aa1ddc79324"><div class="ttname"><a href="a05103.html#ac6b7a069a596fda982cc4aa1ddc79324">gtsam::NonlinearOptimizer::NonlinearOptimizer</a></div><div class="ttdeci">NonlinearOptimizer(const NonlinearFactorGraph &amp;graph, std::unique_ptr&lt; internal::NonlinearOptimizerState &gt; state)</div><div class="ttdoc">Constructor for initial construction of base classes.</div><div class="ttdef"><b>Definition</b> NonlinearOptimizer.cpp:44</div></div>
-<div class="ttc" id="aa05107_html"><div class="ttname"><a href="a05107.html">gtsam::NonlinearOptimizerParams</a></div><div class="ttdoc">The common parameters for Nonlinear optimizers.</div><div class="ttdef"><b>Definition</b> NonlinearOptimizerParams.h:34</div></div>
-<div class="ttc" id="aa05163_html"><div class="ttname"><a href="a05163.html">gtsam::Values</a></div><div class="ttdoc">A non-templated config holding any types of Manifold-group elements.</div><div class="ttdef"><b>Definition</b> Values.h:65</div></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> V&gt;</div>
+<div class="foldopen" id="foldopen00132" data-start="{" data-end="};">
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="a05039.html">  132</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a05039.html">ConjugateGradientResult</a> {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="a05039.html#a4d102cf1b2100f7c6b90f2d84ec05c92">  133</a></span>  V <a class="code hl_variable" href="a05039.html#a4d102cf1b2100f7c6b90f2d84ec05c92">solution</a>;  </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="a05039.html#ada54dab5e926dc7316da1e7d4cf5628a">  134</a></span>  <a class="code hl_struct" href="a05035.html">ConjugateGradientStats</a> <a class="code hl_variable" href="a05039.html#ada54dab5e926dc7316da1e7d4cf5628a">stats</a>;  </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>};</div>
+</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> S, <span class="keyword">class</span> V&gt;</div>
+<div class="foldopen" id="foldopen00159" data-start="{" data-end="}">
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="a02242.html#a61c0ccdf67c34be3bb7d85674e6446fc">  159</a></span><a class="code hl_struct" href="a05039.html">ConjugateGradientResult&lt;V&gt;</a> <a class="code hl_function" href="a02242.html#a61c0ccdf67c34be3bb7d85674e6446fc">preconditionedConjugateGradientDetailed</a>(</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keyword">const</span> S&amp; system, <span class="keyword">const</span> V&amp; initial,</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keyword">const</span> <a class="code hl_struct" href="a05031.html">ConjugateGradientParameters</a>&amp; parameters,</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordtype">bool</span> collectResidualHistory = <span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  V estimate, residual, direction, q1, q2;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  estimate = residual = direction = q1 = q2 = initial;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  <span class="comment">// Initialize the split-preconditioned residual and search direction.</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  system.residual(estimate, q1);                 <span class="comment">/* q1 = b-Ax */</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  system.leftPrecondition(q1, residual);         <span class="comment">/* r = L^{-1} (b-Ax) */</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  system.rightPrecondition(residual, direction); <span class="comment">/* p = L^{-T} r */</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  <span class="keywordtype">double</span> currentGamma = system.dot(residual, residual);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> initialGamma = currentGamma;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> iMaxIterations = parameters.<a class="code hl_variable" href="a05031.html#a1e7033fa8a872302931409f89fd990c0">maxIterations</a>,</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>               iMinIterations = parameters.<a class="code hl_variable" href="a05031.html#a374db6fff7b766c2915798a0da1abcc6">minIterations</a>,</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>               iReset = parameters.<a class="code hl_variable" href="a05031.html#a2185c0d346b1debc869f5e95ee021da9">reset</a>;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> threshold =</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>      std::max(parameters.<a class="code hl_variable" href="a05031.html#a9c21911222e6c3eb2a083b12a90836b0">epsilon_abs</a>,</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>               parameters.<a class="code hl_variable" href="a05031.html#a98449a01988a747585c90679b7774271">epsilon_rel</a> * parameters.<a class="code hl_variable" href="a05031.html#a98449a01988a747585c90679b7774271">epsilon_rel</a> * initialGamma);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>  <a class="code hl_struct" href="a05035.html">ConjugateGradientStats</a> stats;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>  stats.<a class="code hl_variable" href="a05035.html#a64ea2163e10ceec9215de1fad0645335">initialPreconditionedResidualNorm</a> =</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>      std::isfinite(initialGamma) &amp;&amp; initialGamma &gt;= 0.0</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>          ? std::sqrt(initialGamma)</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>          : std::numeric_limits&lt;double&gt;::quiet_NaN();</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  stats.<a class="code hl_variable" href="a05035.html#a7a1671b167a8b453eb7751427b0d0743">finalPreconditionedResidualNorm</a> =</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>      stats.<a class="code hl_variable" href="a05035.html#a64ea2163e10ceec9215de1fad0645335">initialPreconditionedResidualNorm</a>;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  <span class="keywordflow">if</span> (collectResidualHistory) {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    stats.<a class="code hl_variable" href="a05035.html#adc8af3e7591ec6bf24b802d12f5b7e88">preconditionedResidualNormHistory</a>.reserve(iMaxIterations + 1);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    stats.<a class="code hl_variable" href="a05035.html#adc8af3e7591ec6bf24b802d12f5b7e88">preconditionedResidualNormHistory</a>.push_back(</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        stats.<a class="code hl_variable" href="a05035.html#a64ea2163e10ceec9215de1fad0645335">initialPreconditionedResidualNorm</a>);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  }</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  <span class="keywordflow">if</span> (parameters.verbosity() &gt;= ConjugateGradientParameters::COMPLEXITY)</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;[PCG] epsilon = &quot;</span> &lt;&lt; parameters.<a class="code hl_variable" href="a05031.html#a98449a01988a747585c90679b7774271">epsilon_rel</a></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>              &lt;&lt; <span class="stringliteral">&quot;, max = &quot;</span> &lt;&lt; parameters.<a class="code hl_variable" href="a05031.html#a1e7033fa8a872302931409f89fd990c0">maxIterations</a></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>              &lt;&lt; <span class="stringliteral">&quot;, reset = &quot;</span> &lt;&lt; parameters.<a class="code hl_variable" href="a05031.html#a2185c0d346b1debc869f5e95ee021da9">reset</a></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>              &lt;&lt; <span class="stringliteral">&quot;, ||r0||^2 = &quot;</span> &lt;&lt; currentGamma</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>              &lt;&lt; <span class="stringliteral">&quot;, threshold = &quot;</span> &lt;&lt; threshold &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  <span class="comment">// Classify invalid and already-converged initial states before iterating.</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  <span class="keywordflow">if</span> (!std::isfinite(currentGamma) || currentGamma &lt; 0.0) {</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    stats.<a class="code hl_variable" href="a05035.html#a21fb5ab6defa9df5739bb5e7173350e0">terminationReason</a> =</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        <a class="code hl_enumvalue" href="a02242.html#a5bf4c422457829a361b0609332c8d429a32f2be615be7e1442dcc8dd5a57d86a4">ConjugateGradientTerminationReason::kNumericalBreakdown</a>;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (currentGamma == 0.0 ||</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>             (currentGamma &lt;= threshold &amp;&amp; iMinIterations == 0)) {</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    stats.<a class="code hl_variable" href="a05035.html#a21fb5ab6defa9df5739bb5e7173350e0">terminationReason</a> = <a class="code hl_enumvalue" href="a02242.html#a5bf4c422457829a361b0609332c8d429ae5e4a18d9d872870db8c99663ec9b3a6">ConjugateGradientTerminationReason::kConverged</a>;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="keywordflow">while</span> (stats.<a class="code hl_variable" href="a05035.html#ae2fbc5d51e9ef5a5af583afb312387a7">iterations</a> &lt; iMaxIterations &amp;&amp;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>           (currentGamma &gt; threshold || stats.<a class="code hl_variable" href="a05035.html#ae2fbc5d51e9ef5a5af583afb312387a7">iterations</a> &lt; iMinIterations)) {</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>      <span class="keyword">const</span> <span class="keywordtype">size_t</span> iteration = stats.<a class="code hl_variable" href="a05035.html#ae2fbc5d51e9ef5a5af583afb312387a7">iterations</a> + 1;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>      <span class="comment">// Periodically replace the recursive residual with the exact residual.</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>      <span class="keywordflow">if</span> (iReset != 0 &amp;&amp; iteration % iReset == 0) {</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        system.residual(estimate, q1);                 <span class="comment">/* q1 = b-Ax */</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        system.leftPrecondition(q1, residual);         <span class="comment">/* r = L^{-1} (b-Ax) */</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        system.rightPrecondition(residual, direction); <span class="comment">/* p = L^{-T} r */</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        currentGamma = system.dot(residual, residual);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        <span class="keywordflow">if</span> (!std::isfinite(currentGamma) || currentGamma &lt; 0.0) {</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>          stats.<a class="code hl_variable" href="a05035.html#a7a1671b167a8b453eb7751427b0d0743">finalPreconditionedResidualNorm</a> =</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>              std::numeric_limits&lt;double&gt;::quiet_NaN();</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>          <span class="keywordflow">if</span> (collectResidualHistory) {</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>            stats.<a class="code hl_variable" href="a05035.html#adc8af3e7591ec6bf24b802d12f5b7e88">preconditionedResidualNormHistory</a>.back() =</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                stats.<a class="code hl_variable" href="a05035.html#a7a1671b167a8b453eb7751427b0d0743">finalPreconditionedResidualNorm</a>;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>          }</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>          stats.<a class="code hl_variable" href="a05035.html#a21fb5ab6defa9df5739bb5e7173350e0">terminationReason</a> =</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>              <a class="code hl_enumvalue" href="a02242.html#a5bf4c422457829a361b0609332c8d429a32f2be615be7e1442dcc8dd5a57d86a4">ConjugateGradientTerminationReason::kNumericalBreakdown</a>;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>          <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        }</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        stats.<a class="code hl_variable" href="a05035.html#a7a1671b167a8b453eb7751427b0d0743">finalPreconditionedResidualNorm</a> = std::sqrt(currentGamma);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        <span class="keywordflow">if</span> (collectResidualHistory) {</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>          stats.<a class="code hl_variable" href="a05035.html#adc8af3e7591ec6bf24b802d12f5b7e88">preconditionedResidualNormHistory</a>.back() =</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>              stats.<a class="code hl_variable" href="a05035.html#a7a1671b167a8b453eb7751427b0d0743">finalPreconditionedResidualNorm</a>;</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        }</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        <span class="keywordflow">if</span> (currentGamma == 0.0 ||</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>            (currentGamma &lt;= threshold &amp;&amp; stats.iterations &gt;= iMinIterations)) {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>          stats.<a class="code hl_variable" href="a05035.html#a21fb5ab6defa9df5739bb5e7173350e0">terminationReason</a> =</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>              <a class="code hl_enumvalue" href="a02242.html#a5bf4c422457829a361b0609332c8d429ae5e4a18d9d872870db8c99663ec9b3a6">ConjugateGradientTerminationReason::kConverged</a>;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>          <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        }</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>      }</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>      <span class="comment">// Apply one PCG step, rejecting invalid or non-positive curvature.</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>      system.multiply(direction, q1); <span class="comment">/* q1 = A p */</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>      <span class="keyword">const</span> <span class="keywordtype">double</span> directionCurvature = system.dot(direction, q1);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>      <span class="keywordflow">if</span> (!std::isfinite(directionCurvature) || directionCurvature &lt;= 0.0) {</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        stats.<a class="code hl_variable" href="a05035.html#a21fb5ab6defa9df5739bb5e7173350e0">terminationReason</a> =</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            <a class="code hl_enumvalue" href="a02242.html#a5bf4c422457829a361b0609332c8d429a32f2be615be7e1442dcc8dd5a57d86a4">ConjugateGradientTerminationReason::kNumericalBreakdown</a>;</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>      }</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>      <span class="keyword">const</span> <span class="keywordtype">double</span> alpha = currentGamma / directionCurvature;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>      <span class="keywordflow">if</span> (!std::isfinite(alpha)) {</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        stats.<a class="code hl_variable" href="a05035.html#a21fb5ab6defa9df5739bb5e7173350e0">terminationReason</a> =</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            <a class="code hl_enumvalue" href="a02242.html#a5bf4c422457829a361b0609332c8d429a32f2be615be7e1442dcc8dd5a57d86a4">ConjugateGradientTerminationReason::kNumericalBreakdown</a>;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>      }</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>      system.axpy(alpha, direction, estimate); <span class="comment">/* estimate += alpha * p */</span></div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>      system.leftPrecondition(q1, q2);         <span class="comment">/* q2 = L^{-1} * q1 */</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>      system.axpy(-alpha, q2, residual);       <span class="comment">/* r -= alpha * q2 */</span></div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>      <span class="keyword">const</span> <span class="keywordtype">double</span> previousGamma = currentGamma;</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>      currentGamma = system.dot(residual, residual); <span class="comment">/* gamma = |r|^2 */</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>      ++stats.<a class="code hl_variable" href="a05035.html#ae2fbc5d51e9ef5a5af583afb312387a7">iterations</a>;</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>      <span class="keywordflow">if</span> (!std::isfinite(currentGamma) || currentGamma &lt; 0.0) {</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        stats.<a class="code hl_variable" href="a05035.html#a7a1671b167a8b453eb7751427b0d0743">finalPreconditionedResidualNorm</a> =</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>            std::numeric_limits&lt;double&gt;::quiet_NaN();</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>        <span class="keywordflow">if</span> (collectResidualHistory) {</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>          stats.<a class="code hl_variable" href="a05035.html#adc8af3e7591ec6bf24b802d12f5b7e88">preconditionedResidualNormHistory</a>.push_back(</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>              stats.<a class="code hl_variable" href="a05035.html#a7a1671b167a8b453eb7751427b0d0743">finalPreconditionedResidualNorm</a>);</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        }</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        stats.<a class="code hl_variable" href="a05035.html#a21fb5ab6defa9df5739bb5e7173350e0">terminationReason</a> =</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>            <a class="code hl_enumvalue" href="a02242.html#a5bf4c422457829a361b0609332c8d429a32f2be615be7e1442dcc8dd5a57d86a4">ConjugateGradientTerminationReason::kNumericalBreakdown</a>;</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>      }</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>      stats.<a class="code hl_variable" href="a05035.html#a7a1671b167a8b453eb7751427b0d0743">finalPreconditionedResidualNorm</a> =</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>          std::sqrt(std::max(0.0, currentGamma));</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>      <span class="keywordflow">if</span> (collectResidualHistory) {</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        stats.<a class="code hl_variable" href="a05035.html#adc8af3e7591ec6bf24b802d12f5b7e88">preconditionedResidualNormHistory</a>.push_back(</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>            stats.<a class="code hl_variable" href="a05035.html#a7a1671b167a8b453eb7751427b0d0743">finalPreconditionedResidualNorm</a>);</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>      }</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>      <span class="keywordflow">if</span> (parameters.verbosity() &gt;= ConjugateGradientParameters::ERROR)</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;[PCG] k = &quot;</span> &lt;&lt; iteration &lt;&lt; <span class="stringliteral">&quot;, alpha = &quot;</span> &lt;&lt; alpha</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>                  &lt;&lt; <span class="stringliteral">&quot;, ||r||^2 = &quot;</span></div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>                  &lt;&lt; currentGamma</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>                  <span class="comment">//                 &lt;&lt; &quot;\nx =\n&quot; &lt;&lt; estimate</span></div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>                  <span class="comment">//                 &lt;&lt; &quot;\nr =\n&quot; &lt;&lt; residual</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>                  &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span> </div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>      <span class="keywordflow">if</span> (currentGamma == 0.0 ||</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>          (currentGamma &lt;= threshold &amp;&amp; stats.iterations &gt;= iMinIterations)) {</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        stats.<a class="code hl_variable" href="a05035.html#a21fb5ab6defa9df5739bb5e7173350e0">terminationReason</a> =</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>            <a class="code hl_enumvalue" href="a02242.html#a5bf4c422457829a361b0609332c8d429ae5e4a18d9d872870db8c99663ec9b3a6">ConjugateGradientTerminationReason::kConverged</a>;</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>      }</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>      <span class="comment">// Update the conjugate search direction for the next iteration.</span></div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>      <span class="keyword">const</span> <span class="keywordtype">double</span> beta = currentGamma / previousGamma;</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>      <span class="keywordflow">if</span> (!std::isfinite(beta)) {</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        stats.<a class="code hl_variable" href="a05035.html#a21fb5ab6defa9df5739bb5e7173350e0">terminationReason</a> =</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>            <a class="code hl_enumvalue" href="a02242.html#a5bf4c422457829a361b0609332c8d429a32f2be615be7e1442dcc8dd5a57d86a4">ConjugateGradientTerminationReason::kNumericalBreakdown</a>;</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>      }</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>      system.rightPrecondition(residual, q1); <span class="comment">/* q1 = L^{-T} r */</span></div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>      system.scal(beta, direction);</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>      system.axpy(1.0, q1, direction); <span class="comment">/* p = q1 + beta * p */</span></div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    }</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span> </div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    <span class="keywordflow">if</span> (stats.<a class="code hl_variable" href="a05035.html#a21fb5ab6defa9df5739bb5e7173350e0">terminationReason</a> !=</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>            <a class="code hl_enumvalue" href="a02242.html#a5bf4c422457829a361b0609332c8d429a32f2be615be7e1442dcc8dd5a57d86a4">ConjugateGradientTerminationReason::kNumericalBreakdown</a> &amp;&amp;</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        stats.<a class="code hl_variable" href="a05035.html#a21fb5ab6defa9df5739bb5e7173350e0">terminationReason</a> !=</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>            <a class="code hl_enumvalue" href="a02242.html#a5bf4c422457829a361b0609332c8d429ae5e4a18d9d872870db8c99663ec9b3a6">ConjugateGradientTerminationReason::kConverged</a>) {</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>      stats.<a class="code hl_variable" href="a05035.html#a21fb5ab6defa9df5739bb5e7173350e0">terminationReason</a> =</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>          currentGamma &lt;= threshold &amp;&amp; stats.<a class="code hl_variable" href="a05035.html#ae2fbc5d51e9ef5a5af583afb312387a7">iterations</a> &gt;= iMinIterations</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>              ? <a class="code hl_enumvalue" href="a02242.html#a5bf4c422457829a361b0609332c8d429ae5e4a18d9d872870db8c99663ec9b3a6">ConjugateGradientTerminationReason::kConverged</a></div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>              : <a class="code hl_enumvalue" href="a02242.html#a5bf4c422457829a361b0609332c8d429a1429149732d4b342891aba2837c187de">ConjugateGradientTerminationReason::kMaxIterations</a>;</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    }</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>  }</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span> </div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>  <span class="keywordflow">if</span> (std::isfinite(currentGamma) &amp;&amp; currentGamma &gt;= 0.0) {</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    stats.<a class="code hl_variable" href="a05035.html#a7a1671b167a8b453eb7751427b0d0743">finalPreconditionedResidualNorm</a> = std::sqrt(currentGamma);</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>  }</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span> </div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>  <span class="keywordflow">if</span> (parameters.verbosity() &gt;= ConjugateGradientParameters::COMPLEXITY)</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;[PCG] iterations = &quot;</span> &lt;&lt; stats.<a class="code hl_variable" href="a05035.html#ae2fbc5d51e9ef5a5af583afb312387a7">iterations</a></div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>              &lt;&lt; <span class="stringliteral">&quot;, ||r||^2 = &quot;</span> &lt;&lt; currentGamma &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span> </div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>  <span class="keywordflow">return</span> {std::move(estimate), std::move(stats)};</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>}</div>
+</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span></div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> S, <span class="keyword">class</span> V&gt;</div>
+<div class="foldopen" id="foldopen00348" data-start="{" data-end="}">
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno"><a class="line" href="a02242.html#ac59c7e1d84d5e8570a143898def32125">  348</a></span>V <a class="code hl_function" href="a02242.html#ac59c7e1d84d5e8570a143898def32125">preconditionedConjugateGradient</a>(</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>    <span class="keyword">const</span> S&amp; system, <span class="keyword">const</span> V&amp; initial,</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>    <span class="keyword">const</span> <a class="code hl_struct" href="a05031.html">ConjugateGradientParameters</a>&amp; parameters) {</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="a02242.html#a61c0ccdf67c34be3bb7d85674e6446fc">preconditionedConjugateGradientDetailed</a>(system, initial, parameters,</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>                                                 <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>      .solution;</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>}</div>
+</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span> </div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>}  <span class="comment">// namespace gtsam</span></div>
+<div class="ttc" id="aa01082_html"><div class="ttname"><a href="a01082.html">IterativeSolver.h</a></div><div class="ttdoc">Some support classes for iterative solvers.</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa02242_html_a54fa43c89c5334314c8c75939dd5c2d7"><div class="ttname"><a href="a02242.html#a54fa43c89c5334314c8c75939dd5c2d7">gtsam::print</a></div><div class="ttdeci">void print(const Matrix &amp;A, const string &amp;s, ostream &amp;stream)</div><div class="ttdoc">print without optional string, must specify cout yourself</div><div class="ttdef"><b>Definition</b> Matrix.cpp:143</div></div>
+<div class="ttc" id="aa02242_html_a5bf4c422457829a361b0609332c8d429"><div class="ttname"><a href="a02242.html#a5bf4c422457829a361b0609332c8d429">gtsam::ConjugateGradientTerminationReason</a></div><div class="ttdeci">ConjugateGradientTerminationReason</div><div class="ttdoc">Reason a conjugate-gradient solve stopped.</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:105</div></div>
+<div class="ttc" id="aa02242_html_a5bf4c422457829a361b0609332c8d429a1429149732d4b342891aba2837c187de"><div class="ttname"><a href="a02242.html#a5bf4c422457829a361b0609332c8d429a1429149732d4b342891aba2837c187de">gtsam::ConjugateGradientTerminationReason::kMaxIterations</a></div><div class="ttdeci">@ kMaxIterations</div><div class="ttdoc">The iteration limit was reached first.</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:107</div></div>
+<div class="ttc" id="aa02242_html_a5bf4c422457829a361b0609332c8d429a32f2be615be7e1442dcc8dd5a57d86a4"><div class="ttname"><a href="a02242.html#a5bf4c422457829a361b0609332c8d429a32f2be615be7e1442dcc8dd5a57d86a4">gtsam::ConjugateGradientTerminationReason::kNumericalBreakdown</a></div><div class="ttdeci">@ kNumericalBreakdown</div><div class="ttdoc">The recurrence encountered invalid numerics.</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:108</div></div>
+<div class="ttc" id="aa02242_html_a5bf4c422457829a361b0609332c8d429ae5e4a18d9d872870db8c99663ec9b3a6"><div class="ttname"><a href="a02242.html#a5bf4c422457829a361b0609332c8d429ae5e4a18d9d872870db8c99663ec9b3a6">gtsam::ConjugateGradientTerminationReason::kConverged</a></div><div class="ttdeci">@ kConverged</div><div class="ttdoc">The requested residual tolerance was reached.</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:106</div></div>
+<div class="ttc" id="aa02242_html_a61c0ccdf67c34be3bb7d85674e6446fc"><div class="ttname"><a href="a02242.html#a61c0ccdf67c34be3bb7d85674e6446fc">gtsam::preconditionedConjugateGradientDetailed</a></div><div class="ttdeci">ConjugateGradientResult&lt; V &gt; preconditionedConjugateGradientDetailed(const S &amp;system, const V &amp;initial, const ConjugateGradientParameters &amp;parameters, bool collectResidualHistory=true)</div><div class="ttdoc">Solve a linear system with split-preconditioned conjugate gradients.</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:159</div></div>
+<div class="ttc" id="aa02242_html_ac59c7e1d84d5e8570a143898def32125"><div class="ttname"><a href="a02242.html#ac59c7e1d84d5e8570a143898def32125">gtsam::preconditionedConjugateGradient</a></div><div class="ttdeci">V preconditionedConjugateGradient(const S &amp;system, const V &amp;initial, const ConjugateGradientParameters &amp;parameters)</div><div class="ttdoc">Solve a preconditioned linear system and return only the estimate.</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:348</div></div>
+<div class="ttc" id="aa05031_html"><div class="ttname"><a href="a05031.html">gtsam::ConjugateGradientParameters</a></div><div class="ttdoc">Parameters for the Conjugate Gradient method.</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:36</div></div>
+<div class="ttc" id="aa05031_html_a1e7033fa8a872302931409f89fd990c0"><div class="ttname"><a href="a05031.html#a1e7033fa8a872302931409f89fd990c0">gtsam::ConjugateGradientParameters::maxIterations</a></div><div class="ttdeci">size_t maxIterations</div><div class="ttdoc">maximum number of cg iterations</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:41</div></div>
+<div class="ttc" id="aa05031_html_a2185c0d346b1debc869f5e95ee021da9"><div class="ttname"><a href="a05031.html#a2185c0d346b1debc869f5e95ee021da9">gtsam::ConjugateGradientParameters::reset</a></div><div class="ttdeci">size_t reset</div><div class="ttdoc">number of iterations before reset</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:42</div></div>
+<div class="ttc" id="aa05031_html_a374db6fff7b766c2915798a0da1abcc6"><div class="ttname"><a href="a05031.html#a374db6fff7b766c2915798a0da1abcc6">gtsam::ConjugateGradientParameters::minIterations</a></div><div class="ttdeci">size_t minIterations</div><div class="ttdoc">minimum number of cg iterations</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:40</div></div>
+<div class="ttc" id="aa05031_html_a5f3c3b9315279cf2112501b7c0a3b499"><div class="ttname"><a href="a05031.html#a5f3c3b9315279cf2112501b7c0a3b499">gtsam::ConjugateGradientParameters::BLASKernel</a></div><div class="ttdeci">BLASKernel</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:47</div></div>
+<div class="ttc" id="aa05031_html_a5f3c3b9315279cf2112501b7c0a3b499a6899bab70a92ace73fecfa9de464de3c"><div class="ttname"><a href="a05031.html#a5f3c3b9315279cf2112501b7c0a3b499a6899bab70a92ace73fecfa9de464de3c">gtsam::ConjugateGradientParameters::GTSAM</a></div><div class="ttdeci">@ GTSAM</div><div class="ttdoc">Jacobian Factor Graph of GTSAM.</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:48</div></div>
+<div class="ttc" id="aa05031_html_a98449a01988a747585c90679b7774271"><div class="ttname"><a href="a05031.html#a98449a01988a747585c90679b7774271">gtsam::ConjugateGradientParameters::epsilon_rel</a></div><div class="ttdeci">double epsilon_rel</div><div class="ttdoc">threshold for relative error decrease</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:43</div></div>
+<div class="ttc" id="aa05031_html_a9c21911222e6c3eb2a083b12a90836b0"><div class="ttname"><a href="a05031.html#a9c21911222e6c3eb2a083b12a90836b0">gtsam::ConjugateGradientParameters::epsilon_abs</a></div><div class="ttdeci">double epsilon_abs</div><div class="ttdoc">threshold for absolute error decrease</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:44</div></div>
+<div class="ttc" id="aa05035_html"><div class="ttname"><a href="a05035.html">gtsam::ConjugateGradientStats</a></div><div class="ttdoc">Diagnostics collected during a conjugate-gradient solve.</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:112</div></div>
+<div class="ttc" id="aa05035_html_a21fb5ab6defa9df5739bb5e7173350e0"><div class="ttname"><a href="a05035.html#a21fb5ab6defa9df5739bb5e7173350e0">gtsam::ConjugateGradientStats::terminationReason</a></div><div class="ttdeci">ConjugateGradientTerminationReason terminationReason</div><div class="ttdoc">Reason the solve stopped.</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:121</div></div>
+<div class="ttc" id="aa05035_html_a64ea2163e10ceec9215de1fad0645335"><div class="ttname"><a href="a05035.html#a64ea2163e10ceec9215de1fad0645335">gtsam::ConjugateGradientStats::initialPreconditionedResidualNorm</a></div><div class="ttdeci">double initialPreconditionedResidualNorm</div><div class="ttdoc">Norm of the initial split-preconditioned residual.</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:114</div></div>
+<div class="ttc" id="aa05035_html_a7a1671b167a8b453eb7751427b0d0743"><div class="ttname"><a href="a05035.html#a7a1671b167a8b453eb7751427b0d0743">gtsam::ConjugateGradientStats::finalPreconditionedResidualNorm</a></div><div class="ttdeci">double finalPreconditionedResidualNorm</div><div class="ttdoc">Norm of the final split-preconditioned residual.</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:116</div></div>
+<div class="ttc" id="aa05035_html_a8a67e16883fbee32bdc70e22bb5253c1"><div class="ttname"><a href="a05035.html#a8a67e16883fbee32bdc70e22bb5253c1">gtsam::ConjugateGradientStats::converged</a></div><div class="ttdeci">bool converged() const</div><div class="ttdoc">Return whether the requested residual tolerance was reached.</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:125</div></div>
+<div class="ttc" id="aa05035_html_adc8af3e7591ec6bf24b802d12f5b7e88"><div class="ttname"><a href="a05035.html#adc8af3e7591ec6bf24b802d12f5b7e88">gtsam::ConjugateGradientStats::preconditionedResidualNormHistory</a></div><div class="ttdeci">std::vector&lt; double &gt; preconditionedResidualNormHistory</div><div class="ttdoc">Initial norm followed by one entry per completed PCG update, when enabled.</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:119</div></div>
+<div class="ttc" id="aa05035_html_ae2fbc5d51e9ef5a5af583afb312387a7"><div class="ttname"><a href="a05035.html#ae2fbc5d51e9ef5a5af583afb312387a7">gtsam::ConjugateGradientStats::iterations</a></div><div class="ttdeci">size_t iterations</div><div class="ttdoc">Number of completed PCG updates.</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:113</div></div>
+<div class="ttc" id="aa05039_html"><div class="ttname"><a href="a05039.html">gtsam::ConjugateGradientResult</a></div><div class="ttdoc">Solution and diagnostics returned by the detailed CG interface.</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:132</div></div>
+<div class="ttc" id="aa05039_html_a4d102cf1b2100f7c6b90f2d84ec05c92"><div class="ttname"><a href="a05039.html#a4d102cf1b2100f7c6b90f2d84ec05c92">gtsam::ConjugateGradientResult::solution</a></div><div class="ttdeci">V solution</div><div class="ttdoc">Final estimate in the caller&#39;s vector type.</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:133</div></div>
+<div class="ttc" id="aa05039_html_ada54dab5e926dc7316da1e7d4cf5628a"><div class="ttname"><a href="a05039.html#ada54dab5e926dc7316da1e7d4cf5628a">gtsam::ConjugateGradientResult::stats</a></div><div class="ttdeci">ConjugateGradientStats stats</div><div class="ttdoc">Convergence diagnostics for the solve.</div><div class="ttdef"><b>Definition</b> ConjugateGradientSolver.h:134</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>nonlinear</b></li><li class="navelem"><a href="a01124.html">LevenbergMarquardtOptimizer.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>linear</b></li><li class="navelem"><a href="a01124.html">ConjugateGradientSolver.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

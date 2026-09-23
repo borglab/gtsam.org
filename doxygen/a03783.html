@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::Rot3::ChartAtOrigin Struct Reference</title>
+<title>gtsam: gtsam::PiecewisePolynomial&lt; Order, Pieces &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,20 +96,273 @@ $(function(){initNavTree('a03783.html','','a03780'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::Rot3::ChartAtOrigin Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::PiecewisePolynomial&lt; Order, Pieces &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;size_t Order, size_t Pieces&gt;<br />
+class gtsam::PiecewisePolynomial&lt; Order, Pieces &gt;</div><p>A one-dimensional piecewise polynomial kernel. </p>
+<p>On interval \([b_j,b_{j+1}]\), the value is \(p_j(t)=\sum_{k=0}^{Order} a_{j,k}t^k\). Coefficients for each piece are therefore stored in ascending power order. The \(r\)-th derivative uses the exact power rule, \(p_j^{(r)}(t)=\sum_{k=r}^{Order}\frac{k!}{(k-r)!}a_{j,k}t^{k-r}\). <a class="el" href="a06527.html" title="A non-templated config holding any types of Manifold-group elements.">Values</a> outside the declared interval range are evaluated at the nearest endpoint, which lets cumulative kernels remain constant outside support.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Order</td><td>Polynomial order of every piece. </td></tr>
+    <tr><td class="paramname">Pieces</td><td>Number of polynomial pieces. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::PiecewisePolynomial&lt; Order, Pieces &gt;:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="a03783.png" usemap="#gtsam_3A_3APiecewisePolynomial_3C_20Order_2C_20Pieces_20_3E_map" alt=""/>
+  <map id="gtsam_3A_3APiecewisePolynomial_3C_20Order_2C_20Pieces_20_3E_map" name="gtsam_3A_3APiecewisePolynomial_3C_20Order_2C_20Pieces_20_3E_map">
+<area href="a03779.html" title="Interface for a compactly supported continuous convolution kernel." alt="gtsam::KernelBase" shape="rect" coords="0,0,273,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a434a938d880f921759ecb83206092e9a" id="r_a434a938d880f921759ecb83206092e9a"><td class="memItemLeft"><a id="a434a938d880f921759ecb83206092e9a" name="a434a938d880f921759ecb83206092e9a"></a>
-static <a class="el" href="a03775.html#a790096d9b3f1cd0d90a723915339d847">Rot3</a>&#160;</td><td class="memItemRight"><b>Retract</b> (const Vector3 &amp;v, ChartJacobian H=boost::none)</td></tr>
-<tr class="memitem:a4119a680930e8defc2f2cfa620f7caa3" id="r_a4119a680930e8defc2f2cfa620f7caa3"><td class="memItemLeft"><a id="a4119a680930e8defc2f2cfa620f7caa3" name="a4119a680930e8defc2f2cfa620f7caa3"></a>
-static Vector3&#160;</td><td class="memItemRight"><b>Local</b> (const <a class="el" href="a03775.html#a790096d9b3f1cd0d90a723915339d847">Rot3</a> &amp;r, ChartJacobian H=boost::none)</td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:af45d006064c69f65528d00c2c7229ef1" id="r_af45d006064c69f65528d00c2c7229ef1"><td class="memItemLeft"><a id="af45d006064c69f65528d00c2c7229ef1" name="af45d006064c69f65528d00c2c7229ef1"></a>
+&#160;</td><td class="memItemRight"><b>PiecewisePolynomial</b> (const <a class="el" href="a03787.html">Parameters</a> &amp;parameters)</td></tr>
+<tr class="memdesc:af45d006064c69f65528d00c2c7229ef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a kernel from fixed-size coefficient data. <br /></td></tr>
+<tr class="memitem:a8237e8e603d4e598db35029cdc7b2fcf" id="r_a8237e8e603d4e598db35029cdc7b2fcf"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a8237e8e603d4e598db35029cdc7b2fcf">getCenter</a> () const override</td></tr>
+<tr class="memdesc:a8237e8e603d4e598db35029cdc7b2fcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the representative center of the kernel support.  <br /></td></tr>
+<tr class="memitem:a7055671fad39ad34908922d55321fa4c" id="r_a7055671fad39ad34908922d55321fa4c"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a7055671fad39ad34908922d55321fa4c">getBeginning</a> () const override</td></tr>
+<tr class="memdesc:a7055671fad39ad34908922d55321fa4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the first boundary of the kernel support.  <br /></td></tr>
+<tr class="memitem:a1a84fce68cc3cae26afe2d6b53566fe2" id="r_a1a84fce68cc3cae26afe2d6b53566fe2"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a1a84fce68cc3cae26afe2d6b53566fe2">getEnd</a> () const override</td></tr>
+<tr class="memdesc:a1a84fce68cc3cae26afe2d6b53566fe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the last boundary of the kernel support.  <br /></td></tr>
+<tr class="memitem:a92ea3872958cd103e3b05d05d8b3d244" id="r_a92ea3872958cd103e3b05d05d8b3d244"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#a92ea3872958cd103e3b05d05d8b3d244">getValidDerivatives</a> () const override</td></tr>
+<tr class="memdesc:a92ea3872958cd103e3b05d05d8b3d244"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the largest derivative order available analytically.  <br /></td></tr>
+<tr class="memitem:a2e2fd1406e276301321cd54cc835003c" id="r_a2e2fd1406e276301321cd54cc835003c"><td class="memItemLeft"><a id="a2e2fd1406e276301321cd54cc835003c" name="a2e2fd1406e276301321cd54cc835003c"></a>
+const std::array&lt; double, pieces+1 &gt; &amp;&#160;</td><td class="memItemRight"><b>getIntervals</b> () const</td></tr>
+<tr class="memdesc:a2e2fd1406e276301321cd54cc835003c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return interval boundaries, primarily for validation and visualization. <br /></td></tr>
+<tr class="memitem:a2091942309fc51c40f866bfb9944ca1e" id="r_a2091942309fc51c40f866bfb9944ca1e"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a2091942309fc51c40f866bfb9944ca1e">evaluate</a> (double t, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 1 &gt; H={}) const override</td></tr>
+<tr class="memdesc:a2091942309fc51c40f866bfb9944ca1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the selected polynomial piece and optionally its slope.  <br /></td></tr>
+<tr class="memitem:a5e84126dea3b70eb33cb8405f0efd578" id="r_a5e84126dea3b70eb33cb8405f0efd578"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a5e84126dea3b70eb33cb8405f0efd578">evaluateDerivative</a> (size_t derivative, double t, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 1 &gt; H={}) const override</td></tr>
+<tr class="memdesc:a5e84126dea3b70eb33cb8405f0efd578"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate an analytic derivative and optionally the next derivative.  <br /></td></tr>
+<tr class="inherit_header pub_methods_a03779"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03779')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03779.html">gtsam::KernelBase</a></td></tr>
+<tr class="memitem:a05dbeb6631918786ad4236e7df0aec3d inherit pub_methods_a03779" id="r_a05dbeb6631918786ad4236e7df0aec3d"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>getLength</b> () const</td></tr>
+<tr class="memdesc:a05dbeb6631918786ad4236e7df0aec3d inherit pub_methods_a03779"><td class="mdescLeft">&#160;</td><td class="mdescRight">Width of the kernel support. <br /></td></tr>
+<tr class="memitem:ac196dc2f990e14642a467d2a1af8ad74 inherit pub_methods_a03779" id="r_ac196dc2f990e14642a467d2a1af8ad74"><td class="memItemLeft">
+virtual&#160;</td><td class="memItemRight"><b>~KernelBase</b> ()=default</td></tr>
+<tr class="memdesc:ac196dc2f990e14642a467d2a1af8ad74 inherit pub_methods_a03779"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the polymorphic kernel interface. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:ae181f88d62c0994a59908abf6eb18c97" id="r_ae181f88d62c0994a59908abf6eb18c97"><td class="memItemLeft"><a id="ae181f88d62c0994a59908abf6eb18c97" name="ae181f88d62c0994a59908abf6eb18c97"></a>
+static constexpr size_t&#160;</td><td class="memItemRight"><b>order</b> = Order</td></tr>
+<tr class="memitem:a1f795f3601597f8cea1e7ca3ba1f2b1b" id="r_a1f795f3601597f8cea1e7ca3ba1f2b1b"><td class="memItemLeft"><a id="a1f795f3601597f8cea1e7ca3ba1f2b1b" name="a1f795f3601597f8cea1e7ca3ba1f2b1b"></a>
+static constexpr size_t&#160;</td><td class="memItemRight"><b>pieces</b> = Pieces</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:Parameters" id="r_Parameters"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03787.html">Parameters</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coefficients, interval boundaries, and center defining the kernel.  <a href="a03787.html#details">More...</a><br /></td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/geometry/<a class="el" href="a00449_source.html">Rot3.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/geometry/<a class="el" href="a00341.html">Rot3M.cpp</a></li>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a2091942309fc51c40f866bfb9944ca1e" name="a2091942309fc51c40f866bfb9944ca1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2091942309fc51c40f866bfb9944ca1e">&#9670;&#160;</a></span>evaluate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Order, size_t Pieces&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="a03783.html">gtsam::PiecewisePolynomial</a>&lt; Order, Pieces &gt;::evaluate </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>t</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 1 &gt;</td>          <td class="paramname"><span class="paramname"><em>H</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Evaluate the selected polynomial piece and optionally its slope. </p>
+
+<p>Implements <a class="el" href="a03779.html#ae991abeebd423ae4213331cf8725ba01">gtsam::KernelBase</a>.</p>
+
+</div>
+</div>
+<a id="a5e84126dea3b70eb33cb8405f0efd578" name="a5e84126dea3b70eb33cb8405f0efd578"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e84126dea3b70eb33cb8405f0efd578">&#9670;&#160;</a></span>evaluateDerivative()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Order, size_t Pieces&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="a03783.html">gtsam::PiecewisePolynomial</a>&lt; Order, Pieces &gt;::evaluateDerivative </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>derivative</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>t</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 1 &gt;</td>          <td class="paramname"><span class="paramname"><em>H</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Evaluate an analytic derivative and optionally the next derivative. </p>
+
+<p>Implements <a class="el" href="a03779.html#a4a700adeb4a451152278ce6e7fd949b9">gtsam::KernelBase</a>.</p>
+
+</div>
+</div>
+<a id="a7055671fad39ad34908922d55321fa4c" name="a7055671fad39ad34908922d55321fa4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7055671fad39ad34908922d55321fa4c">&#9670;&#160;</a></span>getBeginning()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Order, size_t Pieces&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="a03783.html">gtsam::PiecewisePolynomial</a>&lt; Order, Pieces &gt;::getBeginning </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the first boundary of the kernel support. </p>
+
+<p>Implements <a class="el" href="a03779.html#a4e52e1e9d4e026df47e64466096ceb8a">gtsam::KernelBase</a>.</p>
+
+</div>
+</div>
+<a id="a8237e8e603d4e598db35029cdc7b2fcf" name="a8237e8e603d4e598db35029cdc7b2fcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8237e8e603d4e598db35029cdc7b2fcf">&#9670;&#160;</a></span>getCenter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Order, size_t Pieces&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="a03783.html">gtsam::PiecewisePolynomial</a>&lt; Order, Pieces &gt;::getCenter </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the representative center of the kernel support. </p>
+
+<p>Implements <a class="el" href="a03779.html#a2bddce68c1dd5532f4ae7fc12def5358">gtsam::KernelBase</a>.</p>
+
+</div>
+</div>
+<a id="a1a84fce68cc3cae26afe2d6b53566fe2" name="a1a84fce68cc3cae26afe2d6b53566fe2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a84fce68cc3cae26afe2d6b53566fe2">&#9670;&#160;</a></span>getEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Order, size_t Pieces&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="a03783.html">gtsam::PiecewisePolynomial</a>&lt; Order, Pieces &gt;::getEnd </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the last boundary of the kernel support. </p>
+
+<p>Implements <a class="el" href="a03779.html#ab1c046e1c9f824b7910469318171152f">gtsam::KernelBase</a>.</p>
+
+</div>
+</div>
+<a id="a92ea3872958cd103e3b05d05d8b3d244" name="a92ea3872958cd103e3b05d05d8b3d244"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92ea3872958cd103e3b05d05d8b3d244">&#9670;&#160;</a></span>getValidDerivatives()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Order, size_t Pieces&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="a03783.html">gtsam::PiecewisePolynomial</a>&lt; Order, Pieces &gt;::getValidDerivatives </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the largest derivative order available analytically. </p>
+
+<p>Implements <a class="el" href="a03779.html#a79a79830bc875da6cf160cbf6ac641ba">gtsam::KernelBase</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/basis/<a class="el" href="a00236_source.html">PiecewisePolynomial.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -124,7 +377,7 @@ static Vector3&#160;</td><td class="memItemRight"><b>Local</b> (const <a class="
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a03775.html">Rot3</a></li><li class="navelem"><a href="a03783.html">ChartAtOrigin</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a03783.html">PiecewisePolynomial</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

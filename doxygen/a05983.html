@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::partition::NestedDissection&lt; NLG, SubNLG, GenericGraph &gt; Class Template Reference</title>
+<title>gtsam: gtsam::PreintegrationBase Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,30 +96,440 @@ $(function(){initNavTree('a05983.html','','a05980'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::partition::NestedDissection&lt; NLG, SubNLG, GenericGraph &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::PreintegrationBase Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class NLG, class SubNLG, class GenericGraph&gt;<br />
-class gtsam::partition::NestedDissection&lt; NLG, SubNLG, GenericGraph &gt;</div><p>Apply nested dissection algorithm to nonlinear factor graphs. </p>
-</div><table class="memberdecls">
+<div class="textblock"><p><a class="el" href="a05983.html" title="PreintegrationBase is the base class for PreintegratedMeasurements (in ImuFactor) and CombinedPreinte...">PreintegrationBase</a> is the base class for PreintegratedMeasurements (in ImuFactor) and CombinedPreintegratedMeasurements (in CombinedImuFactor). </p>
+<p>It includes the definitions of the preintegrated variables and the methods to access, print, and compare them. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::PreintegrationBase:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="a05983.png" usemap="#gtsam_3A_3APreintegrationBase_map" alt=""/>
+  <map id="gtsam_3A_3APreintegrationBase_map" name="gtsam_3A_3APreintegrationBase_map">
+<area href="a05679.html" title="IMU preintegration on Gal(3) using GTSAM&#39;s left-invariant local error." alt="gtsam::GalileanPreintegration" shape="rect" coords="226,56,668,80"/>
+<area href="a05911.html" title="IMU pre-integration on NavState manifold." alt="gtsam::ManifoldPreintegration" shape="rect" coords="1356,56,1798,80"/>
+<area href="a06099.html" title="Integrate on the 9D tangent space of the NavState manifold." alt="gtsam::TangentPreintegration" shape="rect" coords="1808,56,2250,80"/>
+<area href="a05623.html" alt="gtsam::PreintegratedCombinedMeasurementsT&lt; GalileanPreintegration &gt;" shape="rect" coords="0,112,442,136"/>
+<area href="a05747.html" alt="gtsam::PreintegratedImuMeasurementsT&lt; GalileanPreintegration &gt;" shape="rect" coords="452,112,894,136"/>
+<area href="a05623.html" alt="gtsam::PreintegratedCombinedMeasurementsT&lt; DefaultPreintegrationType &gt;" shape="rect" coords="904,112,1346,136"/>
+<area href="a05747.html" alt="gtsam::PreintegratedImuMeasurementsT&lt; DefaultPreintegrationType &gt;" shape="rect" coords="1356,112,1798,136"/>
+<area href="a05875.html" title="IMU preintegration using the SE_2(3) Lie-group structure of NavState." alt="gtsam::LieGroupPreintegration" shape="rect" coords="1808,112,2250,136"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Testable</h2></td></tr>
+<tr class="memitem:a9ba7a99fc6c8b6ac117e7909855a7040" id="r_a9ba7a99fc6c8b6ac117e7909855a7040"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a9ba7a99fc6c8b6ac117e7909855a7040">print</a> (const std::string &amp;s=&quot;&quot;) const</td></tr>
+<tr class="memitem:aba922607bd3a5dedd1f71ef3c26516ed" id="r_aba922607bd3a5dedd1f71ef3c26516ed"><td class="memItemLeft"><a id="aba922607bd3a5dedd1f71ef3c26516ed" name="aba922607bd3a5dedd1f71ef3c26516ed"></a>
+GTSAM_EXPORT friend std::ostream &amp;&#160;</td><td class="memItemRight"><b>operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="#a85da47fc93662940e6bd38d02a3b3118">PreintegrationBase</a> &amp;pim)</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a284bb2603ed2c95d9bd011a66cd70f24" id="r_a284bb2603ed2c95d9bd011a66cd70f24"><td class="memItemLeft"><a id="a284bb2603ed2c95d9bd011a66cd70f24" name="a284bb2603ed2c95d9bd011a66cd70f24"></a>
-sharedSubNLG&#160;</td><td class="memItemRight"><b>root</b> () const</td></tr>
-<tr class="memitem:a911642f65b28544c77d87a0e2e670fe0" id="r_a911642f65b28544c77d87a0e2e670fe0"><td class="memItemLeft"><a id="a911642f65b28544c77d87a0e2e670fe0" name="a911642f65b28544c77d87a0e2e670fe0"></a>
-&#160;</td><td class="memItemRight"><b>NestedDissection</b> (const NLG &amp;fg, const <a class="el" href="a04227.html">Ordering</a> &amp;ordering, const int numNodeStopPartition, const int minNodesPerMap, const bool verbose=false)</td></tr>
-<tr class="memitem:a69783a4f268a685f736b141c1924cec0" id="r_a69783a4f268a685f736b141c1924cec0"><td class="memItemLeft"><a id="a69783a4f268a685f736b141c1924cec0" name="a69783a4f268a685f736b141c1924cec0"></a>
-&#160;</td><td class="memItemRight"><b>NestedDissection</b> (const NLG &amp;fg, const <a class="el" href="a04227.html">Ordering</a> &amp;ordering, const boost::shared_ptr&lt; <a class="el" href="a05991.html">Cuts</a> &gt; &amp;cuts, const bool verbose=false)</td></tr>
+<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Constructors</div></td></tr>
+<tr class="memitem:a17b06ef93308974307ed45e41b9247e2" id="r_a17b06ef93308974307ed45e41b9247e2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a17b06ef93308974307ed45e41b9247e2">PreintegrationBase</a> (const std::shared_ptr&lt; Params &gt; &amp;<a class="el" href="#a62835e11ff9409ffd26a59c6ec8d7cfd">p</a>, const <a class="el" href="a05739.html">imuBias::ConstantBias</a> &amp;biasHat=<a class="el" href="a05739.html">imuBias::ConstantBias</a>())</td></tr>
+<tr class="memdesc:a17b06ef93308974307ed45e41b9247e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor, initializes the variables in the base class.  <br /></td></tr>
+<tr id="pub-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Basic utilities</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Re-initialize PreintegratedMeasurements and set new bias </p>
+</div></td></tr>
+<tr class="memitem:ae0df9ee3bb9ad6ffdbbcc81fc68fe1e3" id="r_ae0df9ee3bb9ad6ffdbbcc81fc68fe1e3"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#ae0df9ee3bb9ad6ffdbbcc81fc68fe1e3">resetIntegration</a> ()=0</td></tr>
+<tr class="memitem:abe753b749ca8e30bf68b399af83162b4" id="r_abe753b749ca8e30bf68b399af83162b4"><td class="memItemLeft"><a id="abe753b749ca8e30bf68b399af83162b4" name="abe753b749ca8e30bf68b399af83162b4"></a>
+void&#160;</td><td class="memItemRight"><b>resetIntegrationAndSetBias</b> (const Bias &amp;biasHat)</td></tr>
+<tr class="memitem:a4d978fd06c9d44dfdcf2eee1e4b33e79" id="r_a4d978fd06c9d44dfdcf2eee1e4b33e79"><td class="memItemLeft"><a id="a4d978fd06c9d44dfdcf2eee1e4b33e79" name="a4d978fd06c9d44dfdcf2eee1e4b33e79"></a>
+bool&#160;</td><td class="memItemRight"><b>matchesParamsWith</b> (const <a class="el" href="#a85da47fc93662940e6bd38d02a3b3118">PreintegrationBase</a> &amp;other) const</td></tr>
+<tr class="memdesc:a4d978fd06c9d44dfdcf2eee1e4b33e79"><td class="mdescLeft">&#160;</td><td class="mdescRight">check parameters equality: checks whether shared pointer points to same Params object. <br /></td></tr>
+<tr class="memitem:a454b6547322d3222dc4e8ebf98b9f249" id="r_a454b6547322d3222dc4e8ebf98b9f249"><td class="memItemLeft"><a id="a454b6547322d3222dc4e8ebf98b9f249" name="a454b6547322d3222dc4e8ebf98b9f249"></a>
+const std::shared_ptr&lt; Params &gt; &amp;&#160;</td><td class="memItemRight"><b>params</b> () const</td></tr>
+<tr class="memdesc:a454b6547322d3222dc4e8ebf98b9f249"><td class="mdescLeft">&#160;</td><td class="mdescRight">shared pointer to params <br /></td></tr>
+<tr class="memitem:a62835e11ff9409ffd26a59c6ec8d7cfd" id="r_a62835e11ff9409ffd26a59c6ec8d7cfd"><td class="memItemLeft"><a id="a62835e11ff9409ffd26a59c6ec8d7cfd" name="a62835e11ff9409ffd26a59c6ec8d7cfd"></a>
+Params &amp;&#160;</td><td class="memItemRight"><b>p</b> () const</td></tr>
+<tr class="memdesc:a62835e11ff9409ffd26a59c6ec8d7cfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">const reference to params <br /></td></tr>
+<tr id="pub-methods-2" class="groupHeader"><td colspan="2"><div class="groupHeader">Instance variables access</div></td></tr>
+<tr class="memitem:a7b796a31a38cf9b1f55c94289cc9b0cd" id="r_a7b796a31a38cf9b1f55c94289cc9b0cd"><td class="memItemLeft"><a id="a7b796a31a38cf9b1f55c94289cc9b0cd" name="a7b796a31a38cf9b1f55c94289cc9b0cd"></a>
+const <a class="el" href="a05739.html">imuBias::ConstantBias</a> &amp;&#160;</td><td class="memItemRight"><b>biasHat</b> () const</td></tr>
+<tr class="memitem:a518f25b7d7bd9ff40de56df479366762" id="r_a518f25b7d7bd9ff40de56df479366762"><td class="memItemLeft"><a id="a518f25b7d7bd9ff40de56df479366762" name="a518f25b7d7bd9ff40de56df479366762"></a>
+double&#160;</td><td class="memItemRight"><b>deltaTij</b> () const</td></tr>
+<tr class="memitem:ac57296795517415cfe1d5b5031ba04a7" id="r_ac57296795517415cfe1d5b5031ba04a7"><td class="memItemLeft"><a id="ac57296795517415cfe1d5b5031ba04a7" name="ac57296795517415cfe1d5b5031ba04a7"></a>
+virtual Vector3&#160;</td><td class="memItemRight"><b>deltaPij</b> () const =0</td></tr>
+<tr class="memitem:abf1a6c65b4421f3e123f989b6f92700c" id="r_abf1a6c65b4421f3e123f989b6f92700c"><td class="memItemLeft"><a id="abf1a6c65b4421f3e123f989b6f92700c" name="abf1a6c65b4421f3e123f989b6f92700c"></a>
+virtual Vector3&#160;</td><td class="memItemRight"><b>deltaVij</b> () const =0</td></tr>
+<tr class="memitem:a89b4151ce9b05c2a6780059e1e00a423" id="r_a89b4151ce9b05c2a6780059e1e00a423"><td class="memItemLeft"><a id="a89b4151ce9b05c2a6780059e1e00a423" name="a89b4151ce9b05c2a6780059e1e00a423"></a>
+virtual <a class="el" href="a04451.html">Rot3</a>&#160;</td><td class="memItemRight"><b>deltaRij</b> () const =0</td></tr>
+<tr class="memitem:a2369b1ea48fd183b27e789f11a06b6dd" id="r_a2369b1ea48fd183b27e789f11a06b6dd"><td class="memItemLeft"><a id="a2369b1ea48fd183b27e789f11a06b6dd" name="a2369b1ea48fd183b27e789f11a06b6dd"></a>
+virtual <a class="el" href="a05927.html">NavState</a>&#160;</td><td class="memItemRight"><b>deltaXij</b> () const =0</td></tr>
+<tr class="memitem:acfc337450585ca3294d9d5cb71d47a10" id="r_acfc337450585ca3294d9d5cb71d47a10"><td class="memItemLeft">virtual Vector3&#160;</td><td class="memItemRight"><a class="el" href="#acfc337450585ca3294d9d5cb71d47a10">so3TangentAt</a> (double t) const</td></tr>
+<tr class="memdesc:acfc337450585ca3294d9d5cb71d47a10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the SO(3) tangent vector at local time t in [0, deltaTij].  <br /></td></tr>
+<tr class="memitem:ac87cbbb91fa4e0a2fb4bfcf27261398d" id="r_ac87cbbb91fa4e0a2fb4bfcf27261398d"><td class="memItemLeft">Matrix&#160;</td><td class="memItemRight"><a class="el" href="#ac87cbbb91fa4e0a2fb4bfcf27261398d">deskewPoints</a> (<a class="el" href="a02242.html#ac1b1bc700e21fbe3ea82eabf09660d6a">ConstMatrixView</a> points, const Vector3 &amp;velocity_i=Vector3::Zero()) const</td></tr>
+<tr class="memdesc:ac87cbbb91fa4e0a2fb4bfcf27261398d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deskew endpoint-exclusive ordered point batches over the integration interval.  <br /></td></tr>
+<tr class="memitem:ab1b3c7709869457623f92e582e789f8b" id="r_ab1b3c7709869457623f92e582e789f8b"><td class="memItemLeft"><a id="ab1b3c7709869457623f92e582e789f8b" name="ab1b3c7709869457623f92e582e789f8b"></a>
+Matrix&#160;</td><td class="memItemRight"><b>deskewPointsAtTimes</b> (<a class="el" href="a02242.html#ac1b1bc700e21fbe3ea82eabf09660d6a">ConstMatrixView</a> points, const Vector &amp;times, const Vector3 &amp;velocity_i=Vector3::Zero()) const</td></tr>
+<tr class="memdesc:ab1b3c7709869457623f92e582e789f8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deskew stacked point batches at explicit times and initial velocity. <br /></td></tr>
+<tr class="memitem:af452c25dab9c1e1d3f116ddc3191e0b2" id="r_af452c25dab9c1e1d3f116ddc3191e0b2"><td class="memItemLeft"><a id="af452c25dab9c1e1d3f116ddc3191e0b2" name="af452c25dab9c1e1d3f116ddc3191e0b2"></a>
+Vector6&#160;</td><td class="memItemRight"><b>biasHatVector</b> () const</td></tr>
+<tr id="pub-methods-3" class="groupHeader"><td colspan="2"><div class="groupHeader">Main functionality</div></td></tr>
+<tr class="memitem:ab5f498b5ca91e9e35a3356735f66a1b1" id="r_ab5f498b5ca91e9e35a3356735f66a1b1"><td class="memItemLeft"><a id="ab5f498b5ca91e9e35a3356735f66a1b1" name="ab5f498b5ca91e9e35a3356735f66a1b1"></a>
+std::pair&lt; Vector3, Vector3 &gt;&#160;</td><td class="memItemRight"><b>correctMeasurementsBySensorPose</b> (const Vector3 &amp;unbiasedAcc, const Vector3 &amp;unbiasedOmega, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 3 &gt; correctedAcc_H_unbiasedAcc={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 3 &gt; correctedAcc_H_unbiasedOmega={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 3 &gt; correctedOmega_H_unbiasedOmega={}) const</td></tr>
+<tr class="memdesc:ab5f498b5ca91e9e35a3356735f66a1b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract estimate and correct for sensor pose Compute the derivatives due to non-identity body_P_sensor (rotation and centrifugal acc) Ignore D_correctedOmega_measuredAcc as it is trivially zero. <br /></td></tr>
+<tr class="memitem:af562d10048eb544a7057443feaefb8c6" id="r_af562d10048eb544a7057443feaefb8c6"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#af562d10048eb544a7057443feaefb8c6">update</a> (const Vector3 &amp;measuredAcc, const Vector3 &amp;measuredOmega, const double dt, Matrix9 *A, Matrix93 *B, Matrix93 *C)=0</td></tr>
+<tr class="memdesc:af562d10048eb544a7057443feaefb8c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update preintegrated measurements and get derivatives It takes measured quantities in the j frame Modifies preintegrated quantities in place after correcting for bias and possibly sensor pose.  <br /></td></tr>
+<tr class="memitem:af81180bb6e01ac950d29784a43e8f18d" id="r_af81180bb6e01ac950d29784a43e8f18d"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#af81180bb6e01ac950d29784a43e8f18d">integrateMeasurement</a> (const Vector3 &amp;measuredAcc, const Vector3 &amp;measuredOmega, const double dt)</td></tr>
+<tr class="memdesc:af81180bb6e01ac950d29784a43e8f18d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Version without derivatives.  <br /></td></tr>
+<tr class="memitem:aa75b77f620c3fa3da3ef23e4802a6034" id="r_aa75b77f620c3fa3da3ef23e4802a6034"><td class="memItemLeft"><a id="aa75b77f620c3fa3da3ef23e4802a6034" name="aa75b77f620c3fa3da3ef23e4802a6034"></a>
+void&#160;</td><td class="memItemRight"><b>integrateMeasurements</b> (const Matrix &amp;measuredAccs, const Matrix &amp;measuredOmegas, const Matrix &amp;dts)</td></tr>
+<tr class="memdesc:aa75b77f620c3fa3da3ef23e4802a6034"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add multiple measurements, in matrix columns. <br /></td></tr>
+<tr class="memitem:a6acc78fecad8c9d8f847cc0e255aa04d" id="r_a6acc78fecad8c9d8f847cc0e255aa04d"><td class="memItemLeft">virtual Vector9&#160;</td><td class="memItemRight"><a class="el" href="#a6acc78fecad8c9d8f847cc0e255aa04d">biasCorrectedDelta</a> (const <a class="el" href="a05739.html">imuBias::ConstantBias</a> &amp;bias_i, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 9, 6 &gt; H={}) const =0</td></tr>
+<tr class="memdesc:a6acc78fecad8c9d8f847cc0e255aa04d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given the estimate of the bias, return a <a class="el" href="a05927.html" title="Navigation state: Pose (rotation, translation) + velocity Following Barrau20icra, this class belongs ...">NavState</a> tangent vector summarizing the preintegrated IMU measurements so far.  <br /></td></tr>
+<tr class="memitem:a0f1e454c5530d64fdd4b7bf431bc30ba" id="r_a0f1e454c5530d64fdd4b7bf431bc30ba"><td class="memItemLeft"><a class="el" href="a05927.html">NavState</a>&#160;</td><td class="memItemRight"><a class="el" href="#a0f1e454c5530d64fdd4b7bf431bc30ba">predict</a> (const <a class="el" href="a05927.html">NavState</a> &amp;state_i, const <a class="el" href="a05739.html">imuBias::ConstantBias</a> &amp;bias_i, const Vector3 &amp;n_gravity, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 9, 9 &gt; H1={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 9, 6 &gt; H2={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 9, 3 &gt; H3={}) const</td></tr>
+<tr class="memdesc:a0f1e454c5530d64fdd4b7bf431bc30ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predict state at time j, for a given gravity vector in the nav frame.  <br /></td></tr>
+<tr class="memitem:ae9a0aa0456d4b873bfbd7dd672c2636b" id="r_ae9a0aa0456d4b873bfbd7dd672c2636b"><td class="memItemLeft"><a id="ae9a0aa0456d4b873bfbd7dd672c2636b" name="ae9a0aa0456d4b873bfbd7dd672c2636b"></a>
+<a class="el" href="a05927.html">NavState</a>&#160;</td><td class="memItemRight"><b>predict</b> (const <a class="el" href="a05927.html">NavState</a> &amp;state_i, const <a class="el" href="a05739.html">imuBias::ConstantBias</a> &amp;bias_i, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 9, 9 &gt; H1={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 9, 6 &gt; H2={}) const</td></tr>
+<tr class="memdesc:ae9a0aa0456d4b873bfbd7dd672c2636b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predict state at time j, using the gravity vector from params. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a608671064739d912a70888ba1bd570dd" id="r_a608671064739d912a70888ba1bd570dd"><td class="memItemLeft"><a id="a608671064739d912a70888ba1bd570dd" name="a608671064739d912a70888ba1bd570dd"></a>
+static constexpr bool&#160;</td><td class="memItemRight"><b>kLegacyUsesLogmap</b> = false</td></tr>
+<tr class="memdesc:a608671064739d912a70888ba1bd570dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legacy factor-error choice for this preintegration backend. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a397ef8d90d302a16ed94c6f1843db212" id="r_a397ef8d90d302a16ed94c6f1843db212"><td class="memItemLeft"><a id="a397ef8d90d302a16ed94c6f1843db212" name="a397ef8d90d302a16ed94c6f1843db212"></a>
-typedef boost::shared_ptr&lt; SubNLG &gt;&#160;</td><td class="memItemRight"><b>sharedSubNLG</b></td></tr>
+<tr class="memitem:ae321678007b534064e77940595b3b7c5" id="r_ae321678007b534064e77940595b3b7c5"><td class="memItemLeft"><a id="ae321678007b534064e77940595b3b7c5" name="ae321678007b534064e77940595b3b7c5"></a>
+typedef <a class="el" href="a05739.html">imuBias::ConstantBias</a>&#160;</td><td class="memItemRight"><b>Bias</b></td></tr>
+<tr class="memitem:af5ad509e12d31ad8baa2bee90b214899" id="r_af5ad509e12d31ad8baa2bee90b214899"><td class="memItemLeft"><a id="af5ad509e12d31ad8baa2bee90b214899" name="af5ad509e12d31ad8baa2bee90b214899"></a>
+typedef <a class="el" href="a06003.html">PreintegrationParams</a>&#160;</td><td class="memItemRight"><b>Params</b></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a85da47fc93662940e6bd38d02a3b3118" id="r_a85da47fc93662940e6bd38d02a3b3118"><td class="memItemLeft"><a id="a85da47fc93662940e6bd38d02a3b3118" name="a85da47fc93662940e6bd38d02a3b3118"></a>
+&#160;</td><td class="memItemRight"><b>PreintegrationBase</b> ()</td></tr>
+<tr class="memdesc:a85da47fc93662940e6bd38d02a3b3118"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for serialization. <br /></td></tr>
+<tr class="memitem:a4d5ead934c4582183ddc8a7b415decef" id="r_a4d5ead934c4582183ddc8a7b415decef"><td class="memItemLeft"><a id="a4d5ead934c4582183ddc8a7b415decef" name="a4d5ead934c4582183ddc8a7b415decef"></a>
+virtual&#160;</td><td class="memItemRight"><b>~PreintegrationBase</b> ()</td></tr>
+<tr class="memdesc:a4d5ead934c4582183ddc8a7b415decef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for serialization. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a8f4e43825aef6dcf08e6b4005227db4c" id="r_a8f4e43825aef6dcf08e6b4005227db4c"><td class="memItemLeft"><a id="a8f4e43825aef6dcf08e6b4005227db4c" name="a8f4e43825aef6dcf08e6b4005227db4c"></a>
+std::shared_ptr&lt; Params &gt;&#160;</td><td class="memItemRight"><b>p_</b></td></tr>
+<tr class="memitem:a774c243fcec68bbfcfc2c62db3ca2d2a" id="r_a774c243fcec68bbfcfc2c62db3ca2d2a"><td class="memItemLeft"><a id="a774c243fcec68bbfcfc2c62db3ca2d2a" name="a774c243fcec68bbfcfc2c62db3ca2d2a"></a>
+Bias&#160;</td><td class="memItemRight"><b>biasHat_</b></td></tr>
+<tr class="memdesc:a774c243fcec68bbfcfc2c62db3ca2d2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acceleration and gyro bias used for preintegration. <br /></td></tr>
+<tr class="memitem:a05698caf670ddcd7a108505898a71134" id="r_a05698caf670ddcd7a108505898a71134"><td class="memItemLeft"><a id="a05698caf670ddcd7a108505898a71134" name="a05698caf670ddcd7a108505898a71134"></a>
+double&#160;</td><td class="memItemRight"><b>deltaTij_</b></td></tr>
+<tr class="memdesc:a05698caf670ddcd7a108505898a71134"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time interval from i to j. <br /></td></tr>
 </table>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a17b06ef93308974307ed45e41b9247e2" name="a17b06ef93308974307ed45e41b9247e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17b06ef93308974307ed45e41b9247e2">&#9670;&#160;</a></span>PreintegrationBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gtsam::PreintegrationBase::PreintegrationBase </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; Params &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a05739.html">imuBias::ConstantBias</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>biasHat</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="a05739.html">imuBias::ConstantBias</a>()</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor, initializes the variables in the base class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="#a62835e11ff9409ffd26a59c6ec8d7cfd" title="const reference to params">p</a></td><td>Parameters, typically fixed in a single application </td></tr>
+    <tr><td class="paramname">bias</td><td>Current estimate of acceleration and rotation rate biases </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a6acc78fecad8c9d8f847cc0e255aa04d" name="a6acc78fecad8c9d8f847cc0e255aa04d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6acc78fecad8c9d8f847cc0e255aa04d">&#9670;&#160;</a></span>biasCorrectedDelta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Vector9 gtsam::PreintegrationBase::biasCorrectedDelta </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a05739.html">imuBias::ConstantBias</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>bias_i</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 9, 6 &gt;</td>          <td class="paramname"><span class="paramname"><em>H</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Given the estimate of the bias, return a <a class="el" href="a05927.html" title="Navigation state: Pose (rotation, translation) + velocity Following Barrau20icra, this class belongs ...">NavState</a> tangent vector summarizing the preintegrated IMU measurements so far. </p>
+
+<p>Implemented in <a class="el" href="a05679.html#a75d22e7c3dc07e5796c2ca9039cbe6b9">gtsam::GalileanPreintegration</a>, <a class="el" href="a05875.html#a2966699b893acc02270adc1a3c476d32">gtsam::LieGroupPreintegration</a>, <a class="el" href="a05911.html#a5a663188ca23bd2ad503f2f663fd8446">gtsam::ManifoldPreintegration</a>, and <a class="el" href="a06099.html#ad635c05762ca4d334ed025060ea5b728">gtsam::TangentPreintegration</a>.</p>
+
+</div>
+</div>
+<a id="ac87cbbb91fa4e0a2fb4bfcf27261398d" name="ac87cbbb91fa4e0a2fb4bfcf27261398d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac87cbbb91fa4e0a2fb4bfcf27261398d">&#9670;&#160;</a></span>deskewPoints()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Matrix gtsam::PreintegrationBase::deskewPoints </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a02242.html#ac1b1bc700e21fbe3ea82eabf09660d6a">ConstMatrixView</a></td>          <td class="paramname"><span class="paramname"><em>points</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector3 &amp;</td>          <td class="paramname"><span class="paramname"><em>velocity_i</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Vector3::Zero()</span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deskew endpoint-exclusive ordered point batches over the integration interval. </p>
+<p>Each column is a batch containing one or more stacked 3-vectors, so points must have shape 3m x n. </p>
+
+</div>
+</div>
+<a id="af81180bb6e01ac950d29784a43e8f18d" name="af81180bb6e01ac950d29784a43e8f18d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af81180bb6e01ac950d29784a43e8f18d">&#9670;&#160;</a></span>integrateMeasurement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gtsam::PreintegrationBase::integrateMeasurement </td>
+          <td>(</td>
+          <td class="paramtype">const Vector3 &amp;</td>          <td class="paramname"><span class="paramname"><em>measuredAcc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector3 &amp;</td>          <td class="paramname"><span class="paramname"><em>measuredOmega</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double</td>          <td class="paramname"><span class="paramname"><em>dt</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Version without derivatives. </p>
+
+<p>Reimplemented in <a class="el" href="a05623.html#a8223489f68b78d6ca81248f187cbc634">gtsam::PreintegratedCombinedMeasurementsT&lt; DefaultPreintegrationType &gt;</a>, <a class="el" href="a05623.html#a8223489f68b78d6ca81248f187cbc634">gtsam::PreintegratedCombinedMeasurementsT&lt; GalileanPreintegration &gt;</a>, <a class="el" href="a05747.html#ae8a0d84446865560db793e3acc733a3f">gtsam::PreintegratedImuMeasurementsT&lt; DefaultPreintegrationType &gt;</a>, and <a class="el" href="a05747.html#ae8a0d84446865560db793e3acc733a3f">gtsam::PreintegratedImuMeasurementsT&lt; GalileanPreintegration &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a0f1e454c5530d64fdd4b7bf431bc30ba" name="a0f1e454c5530d64fdd4b7bf431bc30ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f1e454c5530d64fdd4b7bf431bc30ba">&#9670;&#160;</a></span>predict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a05927.html">NavState</a> gtsam::PreintegrationBase::predict </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a05927.html">NavState</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>state_i</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a05739.html">imuBias::ConstantBias</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>bias_i</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector3 &amp;</td>          <td class="paramname"><span class="paramname"><em>n_gravity</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 9, 9 &gt;</td>          <td class="paramname"><span class="paramname"><em>H1</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 9, 6 &gt;</td>          <td class="paramname"><span class="paramname"><em>H2</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 9, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>H3</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Predict state at time j, for a given gravity vector in the nav frame. </p>
+<p>This overload allows gravity to differ from params (eg. when gravity is an optimized variable, see <a class="el" href="a02242.html#aa4c1a3e41abd842a51ef996d2f2f9233" title="ImuFactor variant with the gravity direction as an optimized Unit3 variable and a fixed,...">ImuFactorWithGravityDirection</a> and <a class="el" href="a02242.html#a7e321569a1286ce04feac799a379ffb9" title="ImuFactor variant with the gravity vector as a free Point3 variable, ie.">ImuFactorWithGravityVector</a>); H3 is the Jacobian wrt that vector. </p>
+
+</div>
+</div>
+<a id="a9ba7a99fc6c8b6ac117e7909855a7040" name="a9ba7a99fc6c8b6ac117e7909855a7040"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ba7a99fc6c8b6ac117e7909855a7040">&#9670;&#160;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gtsam::PreintegrationBase::print </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="a05747.html#aaf0620c722703c4ee6bd949d8f203924">gtsam::PreintegratedImuMeasurementsT&lt; DefaultPreintegrationType &gt;</a>, and <a class="el" href="a05747.html#aaf0620c722703c4ee6bd949d8f203924">gtsam::PreintegratedImuMeasurementsT&lt; GalileanPreintegration &gt;</a>.</p>
+
+</div>
+</div>
+<a id="ae0df9ee3bb9ad6ffdbbcc81fc68fe1e3" name="ae0df9ee3bb9ad6ffdbbcc81fc68fe1e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0df9ee3bb9ad6ffdbbcc81fc68fe1e3">&#9670;&#160;</a></span>resetIntegration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void gtsam::PreintegrationBase::resetIntegration </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="a05679.html#a163b6cca66e09a81828bff09d8d71ebe">gtsam::GalileanPreintegration</a>, <a class="el" href="a05623.html#aca8ffc97cbaad63e128df4ee5fe65fe4">gtsam::PreintegratedCombinedMeasurementsT&lt; DefaultPreintegrationType &gt;</a>, <a class="el" href="a05623.html#aca8ffc97cbaad63e128df4ee5fe65fe4">gtsam::PreintegratedCombinedMeasurementsT&lt; GalileanPreintegration &gt;</a>, <a class="el" href="a05747.html#a0d57144658f88f86d7cb656b08c3f6e3">gtsam::PreintegratedImuMeasurementsT&lt; DefaultPreintegrationType &gt;</a>, and <a class="el" href="a05747.html#a0d57144658f88f86d7cb656b08c3f6e3">gtsam::PreintegratedImuMeasurementsT&lt; GalileanPreintegration &gt;</a>.</p>
+
+</div>
+</div>
+<a id="acfc337450585ca3294d9d5cb71d47a10" name="acfc337450585ca3294d9d5cb71d47a10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfc337450585ca3294d9d5cb71d47a10">&#9670;&#160;</a></span>so3TangentAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector3 gtsam::PreintegrationBase::so3TangentAt </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>t</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the SO(3) tangent vector at local time t in [0, deltaTij]. </p>
+
+<p>Reimplemented in <a class="el" href="a06099.html#a1b7b7d54ec4c293642693e5827e7c4db">gtsam::TangentPreintegration</a>.</p>
+
+</div>
+</div>
+<a id="af562d10048eb544a7057443feaefb8c6" name="af562d10048eb544a7057443feaefb8c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af562d10048eb544a7057443feaefb8c6">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void gtsam::PreintegrationBase::update </td>
+          <td>(</td>
+          <td class="paramtype">const Vector3 &amp;</td>          <td class="paramname"><span class="paramname"><em>measuredAcc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector3 &amp;</td>          <td class="paramname"><span class="paramname"><em>measuredOmega</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double</td>          <td class="paramname"><span class="paramname"><em>dt</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Matrix9 *</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Matrix93 *</td>          <td class="paramname"><span class="paramname"><em>B</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Matrix93 *</td>          <td class="paramname"><span class="paramname"><em>C</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Update preintegrated measurements and get derivatives It takes measured quantities in the j frame Modifies preintegrated quantities in place after correcting for bias and possibly sensor pose. </p>
+
+<p>Implemented in <a class="el" href="a05679.html#a2d40c4f5ed2c7500cc8cffda85ec8440">gtsam::GalileanPreintegration</a>, <a class="el" href="a05911.html#a5634a540fa491ed01c0a84341d91d9ff">gtsam::ManifoldPreintegration</a>, and <a class="el" href="a06099.html#a29246e35a8351b6e9f66039401f445e8">gtsam::TangentPreintegration</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/partition/<a class="el" href="a01652_source.html">NestedDissection.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/partition/<a class="el" href="a01646_source.html">NestedDissection-inl.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/<a class="el" href="a01208_source.html">PreintegrationBase.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/<b>PreintegrationBase.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -134,7 +544,7 @@ typedef boost::shared_ptr&lt; SubNLG &gt;&#160;</td><td class="memItemRight"><b>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><b>partition</b></li><li class="navelem"><a href="a05983.html">NestedDissection</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a05983.html">PreintegrationBase</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

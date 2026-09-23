@@ -1,5 +1,5 @@
 var a01502 =
 [
-    [ "gtsam::BearingS2", "a05715.html", "a05715" ],
-    [ "gtsam::traits&lt; BearingS2 &gt;", "a05719.html", null ]
+    [ "gtsam::NonlinearOptimizer", "a06467.html", "a06467" ],
+    [ "gtsam::checkConvergence", "a02242.html#afa3eb60c0919fab3b062089f7fa48ab8", null ]
 ];

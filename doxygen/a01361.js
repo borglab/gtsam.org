@@ -1,6 +1,7 @@
 var a01361 =
 [
-    [ "gtsam::SymbolicFactor", "a05563.html", "a05563" ],
-    [ "gtsam::traits&lt; SymbolicFactor &gt;", "a05567.html", null ],
-    [ "gtsam::EliminateSymbolic", "a01968.html#a659f20993995258b1405737e375efd10", null ]
+    [ "gtsam::DoglegOptimizerImpl", "a06151.html", "a06151" ],
+    [ "gtsam::DoglegOptimizerImpl::IterationResult", "a06155.html", null ],
+    [ "gtsam::DoglegLineSearchImpl", "a06159.html", "a06159" ],
+    [ "gtsam::DoglegLineSearchImpl::Params", "a06163.html", "a06163" ]
 ];

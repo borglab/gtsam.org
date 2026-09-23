@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::traits&lt; const Unit3 &gt; Struct Reference</title>
+<title>gtsam: gtsam::DiscreteLookupTable Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,55 +96,828 @@ $(function(){initNavTree('a03935.html','','a03932'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; const Unit3 &gt; Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::DiscreteLookupTable Class Reference<div class="ingroups"><a class="el" href="a02229.html">Discrete</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::traits&lt; const Unit3 &gt;:</div>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="a03935.html" title="DiscreteLookupTable table for max-product.">DiscreteLookupTable</a> table for max-product. </p>
+<p>Inherits from discrete conditional for convenience, but is not normalized. Is used in the max-product algorithm. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::DiscreteLookupTable:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a03935.png" usemap="#gtsam_3A_3Atraits_3C_20const_20Unit3_20_3E_map" alt=""/>
-  <map id="gtsam_3A_3Atraits_3C_20const_20Unit3_20_3E_map" name="gtsam_3A_3Atraits_3C_20const_20Unit3_20_3E_map">
-<area href="a02955.html" alt="gtsam::internal::Manifold&lt; Unit3 &gt;" shape="rect" coords="179,112,527,136"/>
-<area href="a02951.html" alt="gtsam::internal::ManifoldTraits&lt; Unit3 &gt;" shape="rect" coords="0,56,348,80"/>
-<area href="a03039.html" alt="gtsam::Testable&lt; Unit3 &gt;" shape="rect" coords="358,56,706,80"/>
-<area href="a02943.html" alt="gtsam::internal::GetDimensionImpl&lt; Unit3, Unit3::dimension &gt;" shape="rect" coords="0,0,348,24"/>
+  <img src="a03935.png" usemap="#gtsam_3A_3ADiscreteLookupTable_map" alt=""/>
+  <map id="gtsam_3A_3ADiscreteLookupTable_map" name="gtsam_3A_3ADiscreteLookupTable_map">
+<area href="a03883.html" title="Discrete Conditional Density Derives from DecisionTreeFactor." alt="gtsam::DiscreteConditional" shape="rect" coords="378,168,746,192"/>
+<area href="a03851.html" title="A discrete probabilistic factor." alt="gtsam::DecisionTreeFactor" shape="rect" coords="189,112,557,136"/>
+<area href="a04867.html" alt="gtsam::Conditional&lt; DecisionTreeFactor, DiscreteConditional &gt;" shape="rect" coords="567,112,935,136"/>
+<area href="a03903.html" title="Base class for discrete probabilistic factors The most general one is the derived DecisionTreeFactor." alt="gtsam::DiscreteFactor" shape="rect" coords="0,56,368,80"/>
+<area href="a03791.html" alt="gtsam::AlgebraicDecisionTree&lt; Key &gt;" shape="rect" coords="378,56,746,80"/>
+<area href="a04899.html" alt="gtsam::Factor" shape="rect" coords="0,0,368,24"/>
+<area href="a03835.html" title="a decision tree is a function from assignments to values." alt="gtsam::DecisionTree&lt; L, Y &gt;" shape="rect" coords="378,0,746,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a981d836a4c625af0a5e021fac9b2bdfa" id="r_a981d836a4c625af0a5e021fac9b2bdfa"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a981d836a4c625af0a5e021fac9b2bdfa">DiscreteLookupTable</a> (size_t nFrontals, const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>, const ADT &amp;potentials)</td></tr>
+<tr class="memdesc:a981d836a4c625af0a5e021fac9b2bdfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Discrete Lookup Table object.  <br /></td></tr>
+<tr class="memitem:ae4b692315aa1857599c5c6c14fb77ac5" id="r_ae4b692315aa1857599c5c6c14fb77ac5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae4b692315aa1857599c5c6c14fb77ac5">DiscreteLookupTable</a> (size_t nFrontals, const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>, const <a class="el" href="a04023.html">TableFactor</a> &amp;potentials)</td></tr>
+<tr class="memdesc:ae4b692315aa1857599c5c6c14fb77ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Discrete Lookup Table object.  <br /></td></tr>
+<tr class="memitem:a081dca4f8c65b0d6fd3b05342f2bf53a" id="r_a081dca4f8c65b0d6fd3b05342f2bf53a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a081dca4f8c65b0d6fd3b05342f2bf53a">print</a> (const std::string &amp;s=&quot;Discrete Lookup Table: &quot;, const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;formatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) const override</td></tr>
+<tr class="memdesc:a081dca4f8c65b0d6fd3b05342f2bf53a"><td class="mdescLeft">&#160;</td><td class="mdescRight">GTSAM-style print.  <br /></td></tr>
+<tr class="memitem:abeb8c6b66c058cc51feb62b8cc0f32f8" id="r_abeb8c6b66c058cc51feb62b8cc0f32f8"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#abeb8c6b66c058cc51feb62b8cc0f32f8">argmax</a> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;parentsValues) const</td></tr>
+<tr class="memdesc:abeb8c6b66c058cc51feb62b8cc0f32f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">return assignment for single frontal variable that maximizes value.  <br /></td></tr>
+<tr class="memitem:a7a8bcceb30597059da78b7fa4753c678" id="r_a7a8bcceb30597059da78b7fa4753c678"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7a8bcceb30597059da78b7fa4753c678">argmaxInPlace</a> (<a class="el" href="a07559.html">DiscreteValues</a> *parentsValues) const</td></tr>
+<tr class="memdesc:a7a8bcceb30597059da78b7fa4753c678"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate assignment for frontal variables that maximizes value.  <br /></td></tr>
+<tr class="inherit_header pub_methods_a03883"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03883')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03883.html">gtsam::DiscreteConditional</a></td></tr>
+<tr class="memitem:abde5b7e78cd17f518afb2e8048e6748d inherit pub_methods_a03883" id="r_abde5b7e78cd17f518afb2e8048e6748d"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DiscreteConditional</b> ()</td></tr>
+<tr class="memdesc:abde5b7e78cd17f518afb2e8048e6748d inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor needed for serialization. <br /></td></tr>
+<tr class="memitem:a02a780ad430daf913c2579255f50b5fa inherit pub_methods_a03883" id="r_a02a780ad430daf913c2579255f50b5fa"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DiscreteConditional</b> (size_t nFrontals, const DiscreteFactor &amp;f)</td></tr>
+<tr class="memdesc:a02a780ad430daf913c2579255f50b5fa inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from factor, taking the first <span class="tt">nFrontals</span> keys as frontals. <br /></td></tr>
+<tr class="memitem:a831a4f839912d7e18276657926081fdf inherit pub_methods_a03883" id="r_a831a4f839912d7e18276657926081fdf"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DiscreteConditional</b> (size_t nFrontals, const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>, const ADT &amp;potentials)</td></tr>
+<tr class="memdesc:a831a4f839912d7e18276657926081fdf inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from <a class="el" href="a03927.html" title="DiscreteKeys is a set of keys that can be assembled using the &amp; operator.">DiscreteKeys</a> and <a class="el" href="a03791.html" title="An algebraic decision tree fixes the range of a DecisionTree to double.">AlgebraicDecisionTree</a>, taking the first <span class="tt">nFrontals</span> keys as frontals, in the order given. <br /></td></tr>
+<tr class="memitem:a4213103c28d8fe4b6e9f6ee28672b192 inherit pub_methods_a03883" id="r_a4213103c28d8fe4b6e9f6ee28672b192"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DiscreteConditional</b> (const <a class="el" href="a03995.html">Signature</a> &amp;signature)</td></tr>
+<tr class="memdesc:a4213103c28d8fe4b6e9f6ee28672b192 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from signature. <br /></td></tr>
+<tr class="memitem:a760caf04f6b2961d98fdd94a44d87456 inherit pub_methods_a03883" id="r_a760caf04f6b2961d98fdd94a44d87456"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#a760caf04f6b2961d98fdd94a44d87456">DiscreteConditional</a> (const <a class="el" href="a02229.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &amp;key, const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;<a class="el" href="a04867.html#a4f7dab2390695c0972df2fc8da2ee6c4">parents</a>, const Signature::Table &amp;table)</td></tr>
+<tr class="memdesc:a760caf04f6b2961d98fdd94a44d87456 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from key, parents, and a Signature::Table specifying the conditional probability table (CPT) in 00 01 10 11 order.  <br /></td></tr>
+<tr class="memitem:a972bbd51705cc0786166b88a9c6e6cdb inherit pub_methods_a03883" id="r_a972bbd51705cc0786166b88a9c6e6cdb"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#a972bbd51705cc0786166b88a9c6e6cdb">DiscreteConditional</a> (const <a class="el" href="a02229.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &amp;key, const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;<a class="el" href="a04867.html#a4f7dab2390695c0972df2fc8da2ee6c4">parents</a>, const std::vector&lt; double &gt; &amp;table)</td></tr>
+<tr class="memdesc:a972bbd51705cc0786166b88a9c6e6cdb inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from key, parents, and a <a class="el" href="a16221.html" title="STL class.">vector&lt;double&gt;</a> specifying the conditional probability table (CPT) in 00 01 10 11 order.  <br /></td></tr>
+<tr class="memitem:a3250313d8ad45a84e65925165ec772a4 inherit pub_methods_a03883" id="r_a3250313d8ad45a84e65925165ec772a4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#a3250313d8ad45a84e65925165ec772a4">DiscreteConditional</a> (const <a class="el" href="a02229.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &amp;key, const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;<a class="el" href="a04867.html#a4f7dab2390695c0972df2fc8da2ee6c4">parents</a>, const std::string &amp;spec)</td></tr>
+<tr class="memdesc:a3250313d8ad45a84e65925165ec772a4 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from key, parents, and a string specifying the conditional probability table (CPT) in 00 01 10 11 order.  <br /></td></tr>
+<tr class="memitem:a178e9c87e767bad37f4f4924632bb099 inherit pub_methods_a03883" id="r_a178e9c87e767bad37f4f4924632bb099"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DiscreteConditional</b> (const <a class="el" href="a02229.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &amp;key, const std::string &amp;spec)</td></tr>
+<tr class="memdesc:a178e9c87e767bad37f4f4924632bb099 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">No-parent specialization; can also use <a class="el" href="a03891.html" title="A prior probability on a set of discrete variables.">DiscreteDistribution</a>. <br /></td></tr>
+<tr class="memitem:ab1bdb57afa98f368e4c228a360b0ba15 inherit pub_methods_a03883" id="r_ab1bdb57afa98f368e4c228a360b0ba15"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DiscreteConditional</b> (const <a class="el" href="a03851.html#ad52196341d54cfcb396eb62a52ceb7d6">DecisionTreeFactor</a> &amp;joint, const <a class="el" href="a03851.html#ad52196341d54cfcb396eb62a52ceb7d6">DecisionTreeFactor</a> &amp;<a class="el" href="a03883.html#ab24c83c6ba69f7942259eec76799b7a4">marginal</a>)</td></tr>
+<tr class="memdesc:ab1bdb57afa98f368e4c228a360b0ba15 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct P(X|Y) = f(X,Y)/f(Y) from f(X,Y) and f(Y) Assumes but <em>does not check</em> that f(Y)=sum_X f(X,Y). <br /></td></tr>
+<tr class="memitem:ac18ed1a2d5c0a781729c3b68b24dc424 inherit pub_methods_a03883" id="r_ac18ed1a2d5c0a781729c3b68b24dc424"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#ac18ed1a2d5c0a781729c3b68b24dc424">DiscreteConditional</a> (const <a class="el" href="a03851.html#ad52196341d54cfcb396eb62a52ceb7d6">DecisionTreeFactor</a> &amp;joint, const <a class="el" href="a03851.html#ad52196341d54cfcb396eb62a52ceb7d6">DecisionTreeFactor</a> &amp;<a class="el" href="a03883.html#ab24c83c6ba69f7942259eec76799b7a4">marginal</a>, const <a class="el" href="a04979.html">Ordering</a> &amp;orderedKeys)</td></tr>
+<tr class="memdesc:ac18ed1a2d5c0a781729c3b68b24dc424 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct P(X|Y) = f(X,Y)/f(Y) from f(X,Y) and f(Y) Assumes but <em>does not check</em> that f(Y)=sum_X f(X,Y).  <br /></td></tr>
+<tr class="memitem:a75cacc0119a9f6e4d743c5f40f15aa96 inherit pub_methods_a03883" id="r_a75cacc0119a9f6e4d743c5f40f15aa96"><td class="memItemLeft"><a class="el" href="a03883.html#abde5b7e78cd17f518afb2e8048e6748d">DiscreteConditional</a>&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#a75cacc0119a9f6e4d743c5f40f15aa96">operator*</a> (const <a class="el" href="a03883.html#abde5b7e78cd17f518afb2e8048e6748d">DiscreteConditional</a> &amp;other) const</td></tr>
+<tr class="memdesc:a75cacc0119a9f6e4d743c5f40f15aa96 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combine two conditionals, yielding a new conditional with the union of the frontal keys, ordered by <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2" title="Integer nonlinear key type.">gtsam::Key</a>.  <br /></td></tr>
+<tr class="memitem:ab24c83c6ba69f7942259eec76799b7a4 inherit pub_methods_a03883" id="r_ab24c83c6ba69f7942259eec76799b7a4"><td class="memItemLeft">
+<a class="el" href="a03883.html#abde5b7e78cd17f518afb2e8048e6748d">DiscreteConditional</a>&#160;</td><td class="memItemRight"><b>marginal</b> (<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key) const</td></tr>
+<tr class="memdesc:ab24c83c6ba69f7942259eec76799b7a4 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate marginal on given key, no parent case. <br /></td></tr>
+<tr class="memitem:acdad2d0f455784b1ce2aeb1d58042714 inherit pub_methods_a03883" id="r_acdad2d0f455784b1ce2aeb1d58042714"><td class="memItemLeft"><a class="el" href="a03903.html#a45ed456d883c06209028320c8299127e">DiscreteFactor::shared_ptr</a>&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#acdad2d0f455784b1ce2aeb1d58042714">operator*</a> (double s) const override</td></tr>
+<tr class="memdesc:acdad2d0f455784b1ce2aeb1d58042714 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">multiply with a scalar  <br /></td></tr>
+<tr class="memitem:a37f14b34b202ae7ab770e8f55ebf64fd inherit pub_methods_a03883" id="r_a37f14b34b202ae7ab770e8f55ebf64fd"><td class="memItemLeft"><a class="el" href="a03851.html#ad52196341d54cfcb396eb62a52ceb7d6">DecisionTreeFactor</a>&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#a37f14b34b202ae7ab770e8f55ebf64fd">operator*</a> (const <a class="el" href="a03851.html#ad52196341d54cfcb396eb62a52ceb7d6">DecisionTreeFactor</a> &amp;f) const override</td></tr>
+<tr class="memdesc:a37f14b34b202ae7ab770e8f55ebf64fd inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">multiply two factors  <br /></td></tr>
+<tr class="memitem:a695f7da7b3c741b74a682796d049d6fc inherit pub_methods_a03883" id="r_a695f7da7b3c741b74a682796d049d6fc"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#a695f7da7b3c741b74a682796d049d6fc">equals</a> (const DiscreteFactor &amp;other, double tol=1e-9) const override</td></tr>
+<tr class="memdesc:a695f7da7b3c741b74a682796d049d6fc inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">GTSAM-style equals.  <br /></td></tr>
+<tr class="memitem:ad71db99a9875dfe2f1b616ea5e845f47 inherit pub_methods_a03883" id="r_ad71db99a9875dfe2f1b616ea5e845f47"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>logProbability</b> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;x) const</td></tr>
+<tr class="memdesc:ad71db99a9875dfe2f1b616ea5e845f47 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log-probability is just -error(x). <br /></td></tr>
+<tr class="memitem:af92db4c13444cf5454945d36c84a193e inherit pub_methods_a03883" id="r_af92db4c13444cf5454945d36c84a193e"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>printSignature</b> (const std::string &amp;s=&quot;Discrete Conditional: &quot;, const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;formatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) const</td></tr>
+<tr class="memdesc:af92db4c13444cf5454945d36c84a193e inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">print index signature only <br /></td></tr>
+<tr class="memitem:a0377b5532edec6b1a92ea9cad2316608 inherit pub_methods_a03883" id="r_a0377b5532edec6b1a92ea9cad2316608"><td class="memItemLeft"><a class="el" href="a03883.html#a46584bee41a684dcb96d484954384dff">shared_ptr</a>&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#a0377b5532edec6b1a92ea9cad2316608">choose</a> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;given) const</td></tr>
+<tr class="memdesc:a0377b5532edec6b1a92ea9cad2316608 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; <a class="el" href="a03979.html" title="A map from keys to values.">DiscreteValues</a> version  <br /></td></tr>
+<tr class="memitem:adfd02e7c5cbb6bf839c4c37fdb0e1ccf inherit pub_methods_a03883" id="r_adfd02e7c5cbb6bf839c4c37fdb0e1ccf"><td class="memItemLeft">
+<a class="el" href="a03903.html#a45ed456d883c06209028320c8299127e">DecisionTreeFactor::shared_ptr</a>&#160;</td><td class="memItemRight"><b>likelihood</b> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;frontalValues) const</td></tr>
+<tr class="memdesc:adfd02e7c5cbb6bf839c4c37fdb0e1ccf inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert to a likelihood factor by providing value before bar. <br /></td></tr>
+<tr class="memitem:a88eb69cea6ab6745e6455d418c18a451 inherit pub_methods_a03883" id="r_a88eb69cea6ab6745e6455d418c18a451"><td class="memItemLeft">
+<a class="el" href="a03903.html#a45ed456d883c06209028320c8299127e">DecisionTreeFactor::shared_ptr</a>&#160;</td><td class="memItemRight"><b>likelihood</b> (size_t frontal) const</td></tr>
+<tr class="memdesc:a88eb69cea6ab6745e6455d418c18a451 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single variable version of likelihood. <br /></td></tr>
+<tr class="memitem:a35bfd49d1a8a3abb133303a40d6b1c7d inherit pub_methods_a03883" id="r_a35bfd49d1a8a3abb133303a40d6b1c7d"><td class="memItemLeft">virtual size_t&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#a35bfd49d1a8a3abb133303a40d6b1c7d">sample</a> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;parentsValues, std::mt19937_64 *rng=nullptr) const</td></tr>
+<tr class="memdesc:a35bfd49d1a8a3abb133303a40d6b1c7d inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a02242.html#a355c8c681435089f6f0c244435078e16" title="A sample is a key-value pair from a sequence.">Sample</a> from conditional, given missing variables Example: std::mt19937_64 rng(42); <a class="el" href="a03979.html" title="A map from keys to values.">DiscreteValues</a> given = ...; size_t sample = dc.sample(given, &amp;rng);.  <br /></td></tr>
+<tr class="memitem:a190bfe2e5674ade76fb472489dd7458c inherit pub_methods_a03883" id="r_a190bfe2e5674ade76fb472489dd7458c"><td class="memItemLeft">
+size_t&#160;</td><td class="memItemRight"><b>sample</b> (size_t parent_value, std::mt19937_64 *rng=nullptr) const</td></tr>
+<tr class="memdesc:a190bfe2e5674ade76fb472489dd7458c inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single parent version. <br /></td></tr>
+<tr class="memitem:a9be1574d34c1064771e740176fbba17a inherit pub_methods_a03883" id="r_a9be1574d34c1064771e740176fbba17a"><td class="memItemLeft">
+size_t&#160;</td><td class="memItemRight"><b>sample</b> (std::mt19937_64 *rng=nullptr) const</td></tr>
+<tr class="memdesc:a9be1574d34c1064771e740176fbba17a inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a02242.html#a355c8c681435089f6f0c244435078e16" title="A sample is a key-value pair from a sequence.">Sample</a> from conditional, zero parent version Example: std::mt19937_64 rng(42); auto sample = dc.sample(&amp;rng);. <br /></td></tr>
+<tr class="memitem:af6bc294edb9e9ecaf8896e4c66c5fef1 inherit pub_methods_a03883" id="r_af6bc294edb9e9ecaf8896e4c66c5fef1"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#af6bc294edb9e9ecaf8896e4c66c5fef1">argmax</a> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;parentsValues=<a class="el" href="a07559.html">DiscreteValues</a>()) const</td></tr>
+<tr class="memdesc:af6bc294edb9e9ecaf8896e4c66c5fef1 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return assignment for single frontal variable that maximizes value.  <br /></td></tr>
+<tr class="memitem:a917b0e211ec6bc520d726880014b4b58 inherit pub_methods_a03883" id="r_a917b0e211ec6bc520d726880014b4b58"><td class="memItemLeft">virtual <a class="el" href="a03903.html#a45ed456d883c06209028320c8299127e">DiscreteFactor::shared_ptr</a>&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#a917b0e211ec6bc520d726880014b4b58">max</a> (const <a class="el" href="a04979.html">Ordering</a> &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>) const override</td></tr>
+<tr class="memdesc:a917b0e211ec6bc520d726880014b4b58 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create new factor by maximizing over all values with the same separator.  <br /></td></tr>
+<tr class="memitem:a150e645e00b062693bd21a19315576e4 inherit pub_methods_a03883" id="r_a150e645e00b062693bd21a19315576e4"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#a150e645e00b062693bd21a19315576e4">error</a> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;values) const override</td></tr>
+<tr class="memdesc:a150e645e00b062693bd21a19315576e4 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate error for <a class="el" href="a03979.html" title="A map from keys to values.">DiscreteValues</a> <span class="tt">x</span>, is -log(probability).  <br /></td></tr>
+<tr class="memitem:ab3c8b223ba7af17dc4a0047ff692dbd8 inherit pub_methods_a03883" id="r_ab3c8b223ba7af17dc4a0047ff692dbd8"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#ab3c8b223ba7af17dc4a0047ff692dbd8">error</a> (const <a class="el" href="a07563.html">HybridValues</a> &amp;values) const override</td></tr>
+<tr class="memdesc:ab3c8b223ba7af17dc4a0047ff692dbd8 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate error for <a class="el" href="a04803.html" title="HybridValues represents a collection of DiscreteValues and VectorValues.">HybridValues</a> <span class="tt">x</span>, is -log(probability) Simply dispatches to <a class="el" href="a03979.html" title="A map from keys to values.">DiscreteValues</a> version.  <br /></td></tr>
+<tr class="memitem:a457f0a5b828950b88f848974d71c9bc2 inherit pub_methods_a03883" id="r_a457f0a5b828950b88f848974d71c9bc2"><td class="memItemLeft">virtual double&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#a457f0a5b828950b88f848974d71c9bc2">evaluate</a> (const <a class="el" href="a03803.html">Assignment</a>&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &gt; &amp;values) const override</td></tr>
+<tr class="memdesc:a457f0a5b828950b88f848974d71c9bc2 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; <a class="el" href="a03979.html" title="A map from keys to values.">DiscreteValues</a> version  <br /></td></tr>
+<tr class="memitem:ab42e9c595ec23348d0ed936037cab2fd inherit pub_methods_a03883" id="r_ab42e9c595ec23348d0ed936037cab2fd"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>operator()</b> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;values) const</td></tr>
+<tr class="memdesc:ab42e9c595ec23348d0ed936037cab2fd inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; <a class="el" href="a03979.html" title="A map from keys to values.">DiscreteValues</a> version <br /></td></tr>
+<tr class="memitem:afab7dd995a41d562ae31d9cf20f61360 inherit pub_methods_a03883" id="r_afab7dd995a41d562ae31d9cf20f61360"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>sampleInPlace</b> (<a class="el" href="a07559.html">DiscreteValues</a> *parentsValues, std::mt19937_64 *rng=nullptr) const</td></tr>
+<tr class="memdesc:afab7dd995a41d562ae31d9cf20f61360 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a02242.html#a355c8c681435089f6f0c244435078e16" title="A sample is a key-value pair from a sequence.">Sample</a> in place with optional PRNG, stores result in partial solution. <br /></td></tr>
+<tr class="memitem:ad14e9d9d67077ce7f6cd1de3c6bf2669 inherit pub_methods_a03883" id="r_ad14e9d9d67077ce7f6cd1de3c6bf2669"><td class="memItemLeft">
+std::vector&lt; <a class="el" href="a07559.html">DiscreteValues</a> &gt;&#160;</td><td class="memItemRight"><b>frontalAssignments</b> () const</td></tr>
+<tr class="memdesc:ad14e9d9d67077ce7f6cd1de3c6bf2669 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return all assignments for frontal variables. <br /></td></tr>
+<tr class="memitem:acb58c46a7ecc70dcd4f52f87419cb27d inherit pub_methods_a03883" id="r_acb58c46a7ecc70dcd4f52f87419cb27d"><td class="memItemLeft">
+std::vector&lt; <a class="el" href="a07559.html">DiscreteValues</a> &gt;&#160;</td><td class="memItemRight"><b>allAssignments</b> () const</td></tr>
+<tr class="memdesc:acb58c46a7ecc70dcd4f52f87419cb27d inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return all assignments for frontal <em>and</em> parent variables. <br /></td></tr>
+<tr class="memitem:a8bd5e595f890079222029e2ba13875a0 inherit pub_methods_a03883" id="r_a8bd5e595f890079222029e2ba13875a0"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#a8bd5e595f890079222029e2ba13875a0">markdown</a> (const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>, const <a class="el" href="a03903.html#aae698929b94d5072aa4c81d6f6e1d13f">Names</a> &amp;names={}) const override</td></tr>
+<tr class="memdesc:a8bd5e595f890079222029e2ba13875a0 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render as markdown table.  <br /></td></tr>
+<tr class="memitem:aa6e226202b543bca3a6cbc3979482380 inherit pub_methods_a03883" id="r_aa6e226202b543bca3a6cbc3979482380"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#aa6e226202b543bca3a6cbc3979482380">html</a> (const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>, const <a class="el" href="a03903.html#aae698929b94d5072aa4c81d6f6e1d13f">Names</a> &amp;names={}) const override</td></tr>
+<tr class="memdesc:aa6e226202b543bca3a6cbc3979482380 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render as html table.  <br /></td></tr>
+<tr class="memitem:a7dc57300d844ee3b7adc0fe6de3ec8a0 inherit pub_methods_a03883" id="r_a7dc57300d844ee3b7adc0fe6de3ec8a0"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#a7dc57300d844ee3b7adc0fe6de3ec8a0">evaluate</a> (const <a class="el" href="a07563.html">HybridValues</a> &amp;x) const override</td></tr>
+<tr class="memdesc:a7dc57300d844ee3b7adc0fe6de3ec8a0 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate probability for <a class="el" href="a04803.html" title="HybridValues represents a collection of DiscreteValues and VectorValues.">HybridValues</a> <span class="tt">x</span>.  <br /></td></tr>
+<tr class="memitem:a7be64c2df6e77908ed9844541638ae81 inherit pub_methods_a03883" id="r_a7be64c2df6e77908ed9844541638ae81"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#a7be64c2df6e77908ed9844541638ae81">logProbability</a> (const <a class="el" href="a07563.html">HybridValues</a> &amp;x) const override</td></tr>
+<tr class="memdesc:a7be64c2df6e77908ed9844541638ae81 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; <a class="el" href="a04803.html" title="HybridValues represents a collection of DiscreteValues and VectorValues.">HybridValues</a> version  <br /></td></tr>
+<tr class="memitem:a3ad98541a9ac4e3823635f2858322f8e inherit pub_methods_a03883" id="r_a3ad98541a9ac4e3823635f2858322f8e"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#a3ad98541a9ac4e3823635f2858322f8e">negLogConstant</a> () const override</td></tr>
+<tr class="memdesc:a3ad98541a9ac4e3823635f2858322f8e inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">negLogConstant is just zero, such that -logProbability(x) = -log(evaluate(x)) = error(x) and hence error(x) &gt; 0 for all x.  <br /></td></tr>
+<tr class="memitem:af0848994542fb49328ad2bfdca70f754 inherit pub_methods_a03883" id="r_af0848994542fb49328ad2bfdca70f754"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#af0848994542fb49328ad2bfdca70f754">prune</a> (size_t maxNrAssignments)</td></tr>
+<tr class="memdesc:af0848994542fb49328ad2bfdca70f754 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prune the conditional.  <br /></td></tr>
+<tr class="memitem:aa5e0da0bc193e9b7d8c628b785b29c37 inherit pub_methods_a03883" id="r_aa5e0da0bc193e9b7d8c628b785b29c37"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a03883.html#aa5e0da0bc193e9b7d8c628b785b29c37">removeDiscreteModes</a> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;given)</td></tr>
+<tr class="memdesc:aa5e0da0bc193e9b7d8c628b785b29c37 inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the discrete modes whose assignments are given to us.  <br /></td></tr>
+<tr class="memitem:ab1045126a362dd82a578aa9222adb5bb inherit pub_methods_a03883" id="r_ab1045126a362dd82a578aa9222adb5bb"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>operator()</b> (const <a class="el" href="a07563.html">HybridValues</a> &amp;x) const</td></tr>
+<tr class="memdesc:ab1045126a362dd82a578aa9222adb5bb inherit pub_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate probability density, sugar. <br /></td></tr>
+<tr class="inherit_header pub_methods_a03851"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03851')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03851.html">gtsam::DecisionTreeFactor</a></td></tr>
+<tr class="memitem:ad52196341d54cfcb396eb62a52ceb7d6 inherit pub_methods_a03851" id="r_ad52196341d54cfcb396eb62a52ceb7d6"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DecisionTreeFactor</b> ()</td></tr>
+<tr class="memdesc:ad52196341d54cfcb396eb62a52ceb7d6 inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for I/O. <br /></td></tr>
+<tr class="memitem:a0276612e37428bac98fbe8f00f280cbb inherit pub_methods_a03851" id="r_a0276612e37428bac98fbe8f00f280cbb"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DecisionTreeFactor</b> (const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>, const ADT &amp;potentials)</td></tr>
+<tr class="memdesc:a0276612e37428bac98fbe8f00f280cbb inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from <a class="el" href="a03927.html" title="DiscreteKeys is a set of keys that can be assembled using the &amp; operator.">DiscreteKeys</a> and <a class="el" href="a03791.html" title="An algebraic decision tree fixes the range of a DecisionTree to double.">AlgebraicDecisionTree</a>. <br /></td></tr>
+<tr class="memitem:ab5b4a6a081aecedc204c8fd2e9694d4d inherit pub_methods_a03851" id="r_ab5b4a6a081aecedc204c8fd2e9694d4d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03851.html#ab5b4a6a081aecedc204c8fd2e9694d4d">DecisionTreeFactor</a> (const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>, const std::vector&lt; double &gt; &amp;table)</td></tr>
+<tr class="memdesc:ab5b4a6a081aecedc204c8fd2e9694d4d inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from doubles.  <br /></td></tr>
+<tr class="memitem:a96e0b5dc34641dda4ee2f0848416adbb inherit pub_methods_a03851" id="r_a96e0b5dc34641dda4ee2f0848416adbb"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03851.html#a96e0b5dc34641dda4ee2f0848416adbb">DecisionTreeFactor</a> (const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>, const std::string &amp;table)</td></tr>
+<tr class="memdesc:a96e0b5dc34641dda4ee2f0848416adbb inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from string.  <br /></td></tr>
+<tr class="memitem:ac3619f52469989d3b09537d4a8e1e124 inherit pub_methods_a03851" id="r_ac3619f52469989d3b09537d4a8e1e124"><td class="memTemplParams" colspan="2">
+template&lt;class SOURCE&gt; </td></tr>
+<tr class="memitem:ac3619f52469989d3b09537d4a8e1e124 inherit pub_methods_a03851 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>DecisionTreeFactor</b> (const <a class="el" href="a02229.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &amp;key, SOURCE table)</td></tr>
+<tr class="memdesc:ac3619f52469989d3b09537d4a8e1e124 inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single-key specialization. <br /></td></tr>
+<tr class="memitem:aeba9d3ebc7094a8dbe6246c1c8fdc921 inherit pub_methods_a03851" id="r_aeba9d3ebc7094a8dbe6246c1c8fdc921"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DecisionTreeFactor</b> (const <a class="el" href="a02229.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &amp;key, const std::vector&lt; double &gt; &amp;row)</td></tr>
+<tr class="memdesc:aeba9d3ebc7094a8dbe6246c1c8fdc921 inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single-key specialization, with vector of doubles. <br /></td></tr>
+<tr class="memitem:a5f99b1a4066ec5cf56d4d5a89cb492be inherit pub_methods_a03851" id="r_a5f99b1a4066ec5cf56d4d5a89cb492be"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DecisionTreeFactor</b> (const <a class="el" href="a03883.html">DiscreteConditional</a> &amp;c)</td></tr>
+<tr class="memdesc:a5f99b1a4066ec5cf56d4d5a89cb492be inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from a <a class="el" href="a03883.html" title="Discrete Conditional Density Derives from DecisionTreeFactor.">DiscreteConditional</a> type. <br /></td></tr>
+<tr class="memitem:a5215a5e58d55c358a9acab884663bfc6 inherit pub_methods_a03851" id="r_a5215a5e58d55c358a9acab884663bfc6"><td class="memItemLeft"><a class="el" href="a03851.html#ad52196341d54cfcb396eb62a52ceb7d6">DecisionTreeFactor</a>&#160;</td><td class="memItemRight"><a class="el" href="a03851.html#a5215a5e58d55c358a9acab884663bfc6">apply</a> (<a class="el" href="a03835.html#a60ed61625945d0966103a59d9c47c8a6">Unary</a> op) const</td></tr>
+<tr class="memdesc:a5215a5e58d55c358a9acab884663bfc6 inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply unary operator (*this) "op" f.  <br /></td></tr>
+<tr class="memitem:ac14fd89fdb95d0b6ad907ed8f088a4f0 inherit pub_methods_a03851" id="r_ac14fd89fdb95d0b6ad907ed8f088a4f0"><td class="memItemLeft"><a class="el" href="a03851.html#ad52196341d54cfcb396eb62a52ceb7d6">DecisionTreeFactor</a>&#160;</td><td class="memItemRight"><a class="el" href="a03851.html#ac14fd89fdb95d0b6ad907ed8f088a4f0">apply</a> (UnaryAssignment op) const</td></tr>
+<tr class="memdesc:ac14fd89fdb95d0b6ad907ed8f088a4f0 inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply unary operator (*this) "op" f.  <br /></td></tr>
+<tr class="memitem:a33e6cb86e6a3a0e07ebc5ce931966ea4 inherit pub_methods_a03851" id="r_a33e6cb86e6a3a0e07ebc5ce931966ea4"><td class="memItemLeft"><a class="el" href="a03851.html#ad52196341d54cfcb396eb62a52ceb7d6">DecisionTreeFactor</a>&#160;</td><td class="memItemRight"><a class="el" href="a03851.html#a33e6cb86e6a3a0e07ebc5ce931966ea4">apply</a> (const <a class="el" href="a03851.html#ad52196341d54cfcb396eb62a52ceb7d6">DecisionTreeFactor</a> &amp;f, Binary op) const</td></tr>
+<tr class="memdesc:a33e6cb86e6a3a0e07ebc5ce931966ea4 inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply binary operator (*this) "op" f.  <br /></td></tr>
+<tr class="memitem:a686023c305150b51860f8aa6253a9017 inherit pub_methods_a03851" id="r_a686023c305150b51860f8aa6253a9017"><td class="memItemLeft">shared_ptr&#160;</td><td class="memItemRight"><a class="el" href="a03851.html#a686023c305150b51860f8aa6253a9017">combine</a> (size_t nrFrontals, Binary op) const</td></tr>
+<tr class="memdesc:a686023c305150b51860f8aa6253a9017 inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combine frontal variables using binary operator "op".  <br /></td></tr>
+<tr class="memitem:ad43e07f4434a46e63e0b2d0ad35dd00e inherit pub_methods_a03851" id="r_ad43e07f4434a46e63e0b2d0ad35dd00e"><td class="memItemLeft">shared_ptr&#160;</td><td class="memItemRight"><a class="el" href="a03851.html#ad43e07f4434a46e63e0b2d0ad35dd00e">combine</a> (const <a class="el" href="a04979.html">Ordering</a> &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>, Binary op) const</td></tr>
+<tr class="memdesc:ad43e07f4434a46e63e0b2d0ad35dd00e inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combine frontal variables in an <a class="el" href="a04979.html">Ordering</a> using binary operator "op".  <br /></td></tr>
+<tr class="memitem:ad35ee80f43a085eddc75240f3a3fb28c inherit pub_methods_a03851" id="r_ad35ee80f43a085eddc75240f3a3fb28c"><td class="memItemLeft">
+std::vector&lt; std::pair&lt; <a class="el" href="a07559.html">DiscreteValues</a>, double &gt; &gt;&#160;</td><td class="memItemRight"><b>enumerate</b> () const</td></tr>
+<tr class="memdesc:ad35ee80f43a085eddc75240f3a3fb28c inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumerate all values into a map from values to double. <br /></td></tr>
+<tr class="memitem:a703e134db699e20b48d547ad97cd7f20 inherit pub_methods_a03851" id="r_a703e134db699e20b48d547ad97cd7f20"><td class="memItemLeft">
+std::vector&lt; double &gt;&#160;</td><td class="memItemRight"><b>probabilities</b> () const</td></tr>
+<tr class="memdesc:a703e134db699e20b48d547ad97cd7f20 inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all the probabilities in order of assignment values. <br /></td></tr>
+<tr class="memitem:a463da6bdd8f0eb385ab738c4d7aa31cc inherit pub_methods_a03851" id="r_a463da6bdd8f0eb385ab738c4d7aa31cc"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="a03851.html#a463da6bdd8f0eb385ab738c4d7aa31cc">computeThreshold</a> (const size_t N) const</td></tr>
+<tr class="memdesc:a463da6bdd8f0eb385ab738c4d7aa31cc inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the probability value which is the threshold above which only <span class="tt">N</span> leaves are present.  <br /></td></tr>
+<tr class="memitem:a4c7de63ccfd8f780fd1d4d01d8531c4d inherit pub_methods_a03851" id="r_a4c7de63ccfd8f780fd1d4d01d8531c4d"><td class="memItemLeft"><a class="el" href="a03851.html#ad52196341d54cfcb396eb62a52ceb7d6">DecisionTreeFactor</a>&#160;</td><td class="memItemRight"><a class="el" href="a03851.html#a4c7de63ccfd8f780fd1d4d01d8531c4d">prune</a> (size_t maxNrAssignments) const</td></tr>
+<tr class="memdesc:a4c7de63ccfd8f780fd1d4d01d8531c4d inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prune the decision tree of discrete variables.  <br /></td></tr>
+<tr class="memitem:a9c977d125cc50ca12289826a91159c5d inherit pub_methods_a03851" id="r_a9c977d125cc50ca12289826a91159c5d"><td class="memItemLeft">uint64_t&#160;</td><td class="memItemRight"><a class="el" href="a03851.html#a9c977d125cc50ca12289826a91159c5d">nrValues</a> () const override</td></tr>
+<tr class="memdesc:a9c977d125cc50ca12289826a91159c5d inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of non-zero values contained in this factor.  <br /></td></tr>
+<tr class="memitem:aa43ae4eb9e5823c91a423d7884779742 inherit pub_methods_a03851" id="r_aa43ae4eb9e5823c91a423d7884779742"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>dot</b> (std::ostream &amp;os, const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>, bool showZero=true) const</td></tr>
+<tr class="memdesc:aa43ae4eb9e5823c91a423d7884779742 inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">output to graphviz format, stream version <br /></td></tr>
+<tr class="memitem:a958e9476c9c9c2b444a473ec1490ff4c inherit pub_methods_a03851" id="r_a958e9476c9c9c2b444a473ec1490ff4c"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>dot</b> (const std::string &amp;name, const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>, bool showZero=true) const</td></tr>
+<tr class="memdesc:a958e9476c9c9c2b444a473ec1490ff4c inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">output to graphviz format, open a file <br /></td></tr>
+<tr class="memitem:ae847552627dea1e06a318d1ee90bdb3b inherit pub_methods_a03851" id="r_ae847552627dea1e06a318d1ee90bdb3b"><td class="memItemLeft">
+std::string&#160;</td><td class="memItemRight"><b>dot</b> (const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>, bool showZero=true) const</td></tr>
+<tr class="memdesc:ae847552627dea1e06a318d1ee90bdb3b inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">output to graphviz format string <br /></td></tr>
+<tr class="memitem:aca2fceb8abaf90307cd613047d5c5679 inherit pub_methods_a03851" id="r_aca2fceb8abaf90307cd613047d5c5679"><td class="memItemLeft">virtual <a class="el" href="a03903.html#a45ed456d883c06209028320c8299127e">DiscreteFactor::shared_ptr</a>&#160;</td><td class="memItemRight"><a class="el" href="a03851.html#aca2fceb8abaf90307cd613047d5c5679">multiply</a> (const <a class="el" href="a03903.html#a45ed456d883c06209028320c8299127e">DiscreteFactor::shared_ptr</a> &amp;f) const override</td></tr>
+<tr class="memdesc:aca2fceb8abaf90307cd613047d5c5679 inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply factors, <a class="el" href="a03903.html#a45ed456d883c06209028320c8299127e" title="shared_ptr to this class">DiscreteFactor::shared_ptr</a> edition.  <br /></td></tr>
+<tr class="memitem:ae4e9dfe9ba689937cca26a497920ef43 inherit pub_methods_a03851" id="r_ae4e9dfe9ba689937cca26a497920ef43"><td class="memItemLeft"><a class="el" href="a03851.html#ad52196341d54cfcb396eb62a52ceb7d6">DecisionTreeFactor</a>&#160;</td><td class="memItemRight"><a class="el" href="a03851.html#ae4e9dfe9ba689937cca26a497920ef43">operator/</a> (const <a class="el" href="a03851.html#ad52196341d54cfcb396eb62a52ceb7d6">DecisionTreeFactor</a> &amp;f) const</td></tr>
+<tr class="memdesc:ae4e9dfe9ba689937cca26a497920ef43 inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide by factor f (safely).  <br /></td></tr>
+<tr class="memitem:a7e8c7f28b3fc88c900804f06dd0961cd inherit pub_methods_a03851" id="r_a7e8c7f28b3fc88c900804f06dd0961cd"><td class="memItemLeft"><a class="el" href="a03903.html#a45ed456d883c06209028320c8299127e">DiscreteFactor::shared_ptr</a>&#160;</td><td class="memItemRight"><a class="el" href="a03851.html#a7e8c7f28b3fc88c900804f06dd0961cd">operator/</a> (const <a class="el" href="a03903.html#a45ed456d883c06209028320c8299127e">DiscreteFactor::shared_ptr</a> &amp;f) const override</td></tr>
+<tr class="memdesc:a7e8c7f28b3fc88c900804f06dd0961cd inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">divide by <a class="el" href="a03903.html#a45ed456d883c06209028320c8299127e" title="shared_ptr to this class">DiscreteFactor::shared_ptr</a> f (safely)  <br /></td></tr>
+<tr class="memitem:ac42b7ab20c67cefbf162dd9f53a09680 inherit pub_methods_a03851" id="r_ac42b7ab20c67cefbf162dd9f53a09680"><td class="memItemLeft"><a class="el" href="a03851.html#ad52196341d54cfcb396eb62a52ceb7d6">DecisionTreeFactor</a>&#160;</td><td class="memItemRight"><a class="el" href="a03851.html#ac42b7ab20c67cefbf162dd9f53a09680">toDecisionTreeFactor</a> () const override</td></tr>
+<tr class="memdesc:ac42b7ab20c67cefbf162dd9f53a09680 inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert into a decision tree.  <br /></td></tr>
+<tr class="memitem:a29fce2eda5e7db368c812e7e517e4ec7 inherit pub_methods_a03851" id="r_a29fce2eda5e7db368c812e7e517e4ec7"><td class="memItemLeft"><a class="el" href="a04023.html">TableFactor</a>&#160;</td><td class="memItemRight"><a class="el" href="a03851.html#a29fce2eda5e7db368c812e7e517e4ec7">toTableFactor</a> () const override</td></tr>
+<tr class="memdesc:a29fce2eda5e7db368c812e7e517e4ec7 inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert directly into a sparse table.  <br /></td></tr>
+<tr class="memitem:ac41b2eaa67152747f5d1786bcb6ec525 inherit pub_methods_a03851" id="r_ac41b2eaa67152747f5d1786bcb6ec525"><td class="memItemLeft"><a class="el" href="a03903.html#a45ed456d883c06209028320c8299127e">DiscreteFactor::shared_ptr</a>&#160;</td><td class="memItemRight"><a class="el" href="a03851.html#ac41b2eaa67152747f5d1786bcb6ec525">sum</a> (size_t nrFrontals) const override</td></tr>
+<tr class="memdesc:ac41b2eaa67152747f5d1786bcb6ec525 inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create new factor by summing all values with the same separator values.  <br /></td></tr>
+<tr class="memitem:ab9f3c32b88c79922132c0ace7e32b534 inherit pub_methods_a03851" id="r_ab9f3c32b88c79922132c0ace7e32b534"><td class="memItemLeft"><a class="el" href="a03903.html#a45ed456d883c06209028320c8299127e">DiscreteFactor::shared_ptr</a>&#160;</td><td class="memItemRight"><a class="el" href="a03851.html#ab9f3c32b88c79922132c0ace7e32b534">sum</a> (const <a class="el" href="a04979.html">Ordering</a> &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>) const override</td></tr>
+<tr class="memdesc:ab9f3c32b88c79922132c0ace7e32b534 inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create new factor by summing all values with the same separator values.  <br /></td></tr>
+<tr class="memitem:a8468de5c233af4fb67a3a93506e08fa9 inherit pub_methods_a03851" id="r_a8468de5c233af4fb67a3a93506e08fa9"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="a03851.html#a8468de5c233af4fb67a3a93506e08fa9">max</a> () const override</td></tr>
+<tr class="memdesc:a8468de5c233af4fb67a3a93506e08fa9 inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the maximum value in the factor.  <br /></td></tr>
+<tr class="memitem:a70c08de72b5c154712504798d4ee8978 inherit pub_methods_a03851" id="r_a70c08de72b5c154712504798d4ee8978"><td class="memItemLeft"><a class="el" href="a03903.html#a45ed456d883c06209028320c8299127e">DiscreteFactor::shared_ptr</a>&#160;</td><td class="memItemRight"><a class="el" href="a03851.html#a70c08de72b5c154712504798d4ee8978">max</a> (size_t nrFrontals) const override</td></tr>
+<tr class="memdesc:a70c08de72b5c154712504798d4ee8978 inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create new factor by maximizing over all values with the same separator.  <br /></td></tr>
+<tr class="memitem:a5952cb32333ddae3064c019e98ab4c23 inherit pub_methods_a03851" id="r_a5952cb32333ddae3064c019e98ab4c23"><td class="memItemLeft"><a class="el" href="a03903.html#a45ed456d883c06209028320c8299127e">DiscreteFactor::shared_ptr</a>&#160;</td><td class="memItemRight"><a class="el" href="a03851.html#a5952cb32333ddae3064c019e98ab4c23">restrict</a> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;assignment) const override</td></tr>
+<tr class="memdesc:a5952cb32333ddae3064c019e98ab4c23 inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restrict the factor to the given assignment.  <br /></td></tr>
+<tr class="memitem:ab42e9c595ec23348d0ed936037cab2fd inherit pub_methods_a03851" id="r_ab42e9c595ec23348d0ed936037cab2fd"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>operator()</b> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;values) const</td></tr>
+<tr class="memdesc:ab42e9c595ec23348d0ed936037cab2fd inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disambiguate to use <a class="el" href="a03903.html" title="Base class for discrete probabilistic factors The most general one is the derived DecisionTreeFactor.">DiscreteFactor</a> version. Mainly for wrapper. <br /></td></tr>
+<tr class="memitem:abf25c134fed2c8217c87c006d7c28ac7 inherit pub_methods_a03851" id="r_abf25c134fed2c8217c87c006d7c28ac7"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>sum</b> () const</td></tr>
+<tr class="memdesc:abf25c134fed2c8217c87c006d7c28ac7 inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <a class="el" href="a03851.html#ac41b2eaa67152747f5d1786bcb6ec525" title="Create new factor by summing all values with the same separator values.">sum()</a> from <a class="el" href="a03791.html" title="An algebraic decision tree fixes the range of a DecisionTree to double.">AlgebraicDecisionTree</a>. <br /></td></tr>
+<tr class="memitem:a7e2bcefa7eb4efaa905b7118f7639965 inherit pub_methods_a03851" id="r_a7e2bcefa7eb4efaa905b7118f7639965"><td class="memItemLeft">
+AlgebraicDecisionTree&#160;</td><td class="memItemRight"><b>sum</b> (const <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &amp;label, size_t cardinality) const</td></tr>
+<tr class="memdesc:a7e2bcefa7eb4efaa905b7118f7639965 inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <a class="el" href="a03851.html#ac41b2eaa67152747f5d1786bcb6ec525" title="Create new factor by summing all values with the same separator values.">sum()</a> from <a class="el" href="a03791.html" title="An algebraic decision tree fixes the range of a DecisionTree to double.">AlgebraicDecisionTree</a>. <br /></td></tr>
+<tr class="memitem:ab3c964f85f391f2c534c7e7aea5b6756 inherit pub_methods_a03851" id="r_ab3c964f85f391f2c534c7e7aea5b6756"><td class="memItemLeft">
+AlgebraicDecisionTree&#160;</td><td class="memItemRight"><b>sum</b> (const typename Base::LabelC &amp;labelC) const</td></tr>
+<tr class="memdesc:ab3c964f85f391f2c534c7e7aea5b6756 inherit pub_methods_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <a class="el" href="a03851.html#ac41b2eaa67152747f5d1786bcb6ec525" title="Create new factor by summing all values with the same separator values.">sum()</a> from <a class="el" href="a03791.html" title="An algebraic decision tree fixes the range of a DecisionTree to double.">AlgebraicDecisionTree</a>. <br /></td></tr>
+<tr class="inherit_header pub_methods_a03903"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03903')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03903.html">gtsam::DiscreteFactor</a></td></tr>
+<tr class="memitem:afadb0ff9285b8ef4c5efe5fb98167a60 inherit pub_methods_a03903" id="r_afadb0ff9285b8ef4c5efe5fb98167a60"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DiscreteFactor</b> ()</td></tr>
+<tr class="memdesc:afadb0ff9285b8ef4c5efe5fb98167a60 inherit pub_methods_a03903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor creates empty factor. <br /></td></tr>
+<tr class="memitem:a4a5caae05e457bf5bcdae46862cca75d inherit pub_methods_a03903" id="r_a4a5caae05e457bf5bcdae46862cca75d"><td class="memTemplParams" colspan="2">template&lt;typename CONTAINER&gt; </td></tr>
+<tr class="memitem:a4a5caae05e457bf5bcdae46862cca75d inherit pub_methods_a03903 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03903.html#a4a5caae05e457bf5bcdae46862cca75d">DiscreteFactor</a> (const CONTAINER &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>, const std::map&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, size_t &gt; cardinalities={})</td></tr>
+<tr class="memdesc:a4a5caae05e457bf5bcdae46862cca75d inherit pub_methods_a03903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from container of keys and map of cardinalities.  <br /></td></tr>
+<tr class="memitem:afaa7364be913a35705ba0ed6aa107355 inherit pub_methods_a03903" id="r_afaa7364be913a35705ba0ed6aa107355"><td class="memItemLeft">
+<a class="el" href="a03927.html">DiscreteKeys</a>&#160;</td><td class="memItemRight"><b>discreteKeys</b> () const</td></tr>
+<tr class="memdesc:afaa7364be913a35705ba0ed6aa107355 inherit pub_methods_a03903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return all the discrete keys associated with this factor. <br /></td></tr>
+<tr class="memitem:a4f4524403e256eee6a3ef593d274374d inherit pub_methods_a03903" id="r_a4f4524403e256eee6a3ef593d274374d"><td class="memItemLeft">
+std::map&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, size_t &gt;&#160;</td><td class="memItemRight"><b>cardinalities</b> () const</td></tr>
+<tr class="memitem:a5245020364d6edde336416c34970e6dc inherit pub_methods_a03903" id="r_a5245020364d6edde336416c34970e6dc"><td class="memItemLeft">
+size_t&#160;</td><td class="memItemRight"><b>cardinality</b> (<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j) const</td></tr>
+<tr class="memitem:ab42e9c595ec23348d0ed936037cab2fd inherit pub_methods_a03903" id="r_ab42e9c595ec23348d0ed936037cab2fd"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>operator()</b> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;values) const</td></tr>
+<tr class="memdesc:ab42e9c595ec23348d0ed936037cab2fd inherit pub_methods_a03903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find value for given assignment of values to variables. <br /></td></tr>
+<tr class="memitem:a3c0cf74c246d61c6b02b90aa2911ef00 inherit pub_methods_a03903" id="r_a3c0cf74c246d61c6b02b90aa2911ef00"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="a03903.html#a3c0cf74c246d61c6b02b90aa2911ef00">error</a> (const <a class="el" href="a07563.html">HybridValues</a> &amp;c) const override</td></tr>
+<tr class="memdesc:a3c0cf74c246d61c6b02b90aa2911ef00 inherit pub_methods_a03903"><td class="mdescLeft">&#160;</td><td class="mdescRight">All factor types need to implement an error function.  <br /></td></tr>
+<tr class="memitem:aa21480ae00613e156454e4b144f40d3e inherit pub_methods_a03903" id="r_aa21480ae00613e156454e4b144f40d3e"><td class="memItemLeft">virtual <a class="el" href="a03791.html">AlgebraicDecisionTree</a>&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="a03903.html#aa21480ae00613e156454e4b144f40d3e">errorTree</a> () const</td></tr>
+<tr class="memdesc:aa21480ae00613e156454e4b144f40d3e inherit pub_methods_a03903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute error for each assignment and return as a tree.  <br /></td></tr>
+<tr class="memitem:a559bfc8926866458b3af2d2065eba6c2 inherit pub_methods_a03903" id="r_a559bfc8926866458b3af2d2065eba6c2"><td class="memItemLeft"><a class="el" href="a03903.html#a45ed456d883c06209028320c8299127e">DiscreteFactor::shared_ptr</a>&#160;</td><td class="memItemRight"><a class="el" href="a03903.html#a559bfc8926866458b3af2d2065eba6c2">scale</a> () const</td></tr>
+<tr class="memdesc:a559bfc8926866458b3af2d2065eba6c2 inherit pub_methods_a03903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale the factor values by the maximum to prevent underflow/overflow.  <br /></td></tr>
+<tr class="inherit_header pub_methods_a04899"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a04899')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a04899.html">gtsam::Factor</a></td></tr>
+<tr class="memitem:a6572d1c62aa0f0167fe6ebb0a77af107 inherit pub_methods_a04899" id="r_a6572d1c62aa0f0167fe6ebb0a77af107"><td class="memItemLeft">
+virtual&#160;</td><td class="memItemRight"><b>~Factor</b> ()=default</td></tr>
+<tr class="memdesc:a6572d1c62aa0f0167fe6ebb0a77af107 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor. <br /></td></tr>
+<tr class="memitem:a39490b49d71351affb6953d730f8ebbc inherit pub_methods_a04899" id="r_a39490b49d71351affb6953d730f8ebbc"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>empty</b> () const</td></tr>
+<tr class="memdesc:a39490b49d71351affb6953d730f8ebbc inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the factor is empty (involves zero variables). <br /></td></tr>
+<tr class="memitem:aeb63e9c85c567ee3b06b0d2ad0552a8a inherit pub_methods_a04899" id="r_aeb63e9c85c567ee3b06b0d2ad0552a8a"><td class="memItemLeft">
+<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>front</b> () const</td></tr>
+<tr class="memdesc:aeb63e9c85c567ee3b06b0d2ad0552a8a inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">First key. <br /></td></tr>
+<tr class="memitem:ae38e5024d5b20aa06a5a6bd289e626c4 inherit pub_methods_a04899" id="r_ae38e5024d5b20aa06a5a6bd289e626c4"><td class="memItemLeft">
+<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>back</b> () const</td></tr>
+<tr class="memdesc:ae38e5024d5b20aa06a5a6bd289e626c4 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last key. <br /></td></tr>
+<tr class="memitem:a179a10d0319e87eda55d6925de0f5102 inherit pub_methods_a04899" id="r_a179a10d0319e87eda55d6925de0f5102"><td class="memItemLeft">
+<a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a>&#160;</td><td class="memItemRight"><b>find</b> (<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key) const</td></tr>
+<tr class="memdesc:a179a10d0319e87eda55d6925de0f5102 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">find <br /></td></tr>
+<tr class="memitem:a03d71985cf81a0175a71d1ecf5279edb inherit pub_methods_a04899" id="r_a03d71985cf81a0175a71d1ecf5279edb"><td class="memItemLeft">
+const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;&#160;</td><td class="memItemRight"><b>keys</b> () const</td></tr>
+<tr class="memdesc:a03d71985cf81a0175a71d1ecf5279edb inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the factor's involved variable keys. <br /></td></tr>
+<tr class="memitem:a17c02f11c35bf7768347cad4943f0f64 inherit pub_methods_a04899" id="r_a17c02f11c35bf7768347cad4943f0f64"><td class="memItemLeft">
+<a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a>&#160;</td><td class="memItemRight"><b>begin</b> () const</td></tr>
+<tr class="memdesc:a17c02f11c35bf7768347cad4943f0f64 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator at beginning of involved variable keys. <br /></td></tr>
+<tr class="memitem:aa1f00e05967c0c278beec17af9cb0530 inherit pub_methods_a04899" id="r_aa1f00e05967c0c278beec17af9cb0530"><td class="memItemLeft">
+<a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a>&#160;</td><td class="memItemRight"><b>end</b> () const</td></tr>
+<tr class="memdesc:aa1f00e05967c0c278beec17af9cb0530 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator at end of involved variable keys. <br /></td></tr>
+<tr class="memitem:afac01740aefd22f4f90f49767010f811 inherit pub_methods_a04899" id="r_afac01740aefd22f4f90f49767010f811"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="a04899.html#afac01740aefd22f4f90f49767010f811">size</a> () const</td></tr>
+<tr class="memitem:a52cdda1b64d2d584b1012362963b76f3 inherit pub_methods_a04899" id="r_a52cdda1b64d2d584b1012362963b76f3"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="a04899.html#a52cdda1b64d2d584b1012362963b76f3">printKeys</a> (const std::string &amp;s=&quot;Factor&quot;, const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;formatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) const</td></tr>
+<tr class="memdesc:a52cdda1b64d2d584b1012362963b76f3 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">print only keys  <br /></td></tr>
+<tr class="memitem:a5cc62be07fbcde6678f8b346ab3a3f78 inherit pub_methods_a04899" id="r_a5cc62be07fbcde6678f8b346ab3a3f78"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const This &amp;other, double tol=1e-9) const</td></tr>
+<tr class="memdesc:a5cc62be07fbcde6678f8b346ab3a3f78 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">check equality <br /></td></tr>
+<tr class="memitem:a3fd8a3bd4eb315a0a2186efd103689c6 inherit pub_methods_a04899" id="r_a3fd8a3bd4eb315a0a2186efd103689c6"><td class="memItemLeft"><a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="a04899.html#a3fd8a3bd4eb315a0a2186efd103689c6">keys</a> ()</td></tr>
+<tr class="memitem:a5596dcbc299a2e8eec813b78fbcfe933 inherit pub_methods_a04899" id="r_a5596dcbc299a2e8eec813b78fbcfe933"><td class="memItemLeft">
+<a class="el" href="a04899.html#acb069f38cc81bea20cecfad4070da59e">iterator</a>&#160;</td><td class="memItemRight"><b>begin</b> ()</td></tr>
+<tr class="memdesc:a5596dcbc299a2e8eec813b78fbcfe933 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator at beginning of involved variable keys. <br /></td></tr>
+<tr class="memitem:a33597c74ba8db7396722165424fe5ec3 inherit pub_methods_a04899" id="r_a33597c74ba8db7396722165424fe5ec3"><td class="memItemLeft">
+<a class="el" href="a04899.html#acb069f38cc81bea20cecfad4070da59e">iterator</a>&#160;</td><td class="memItemRight"><b>end</b> ()</td></tr>
+<tr class="memdesc:a33597c74ba8db7396722165424fe5ec3 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator at end of involved variable keys. <br /></td></tr>
+<tr class="inherit_header pub_methods_a03791"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03791')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03791.html">gtsam::AlgebraicDecisionTree&lt; Key &gt;</a></td></tr>
+<tr class="memitem:afad5381ebf877c7b7519806f33ee0e81 inherit pub_methods_a03791" id="r_afad5381ebf877c7b7519806f33ee0e81"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>AlgebraicDecisionTree</b> (double leaf=1.0)</td></tr>
+<tr class="memitem:a7d4804b7f188bbb3ff2bc97316252197 inherit pub_methods_a03791" id="r_a7d4804b7f188bbb3ff2bc97316252197"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>AlgebraicDecisionTree</b> (const typename Base::NodePtr root)</td></tr>
+<tr class="memdesc:a7d4804b7f188bbb3ff2bc97316252197 inherit pub_methods_a03791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor which accepts root pointer. <br /></td></tr>
+<tr class="memitem:a72428b902c6fb5e31c7af5c88b58b2c0 inherit pub_methods_a03791" id="r_a72428b902c6fb5e31c7af5c88b58b2c0"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>AlgebraicDecisionTree</b> (const Base &amp;add)</td></tr>
+<tr class="memitem:a4e42a5ca3fc306d2d83c88dd3532f71d inherit pub_methods_a03791" id="r_a4e42a5ca3fc306d2d83c88dd3532f71d"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>AlgebraicDecisionTree</b> (const <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &amp;label, double y1, double y2)</td></tr>
+<tr class="memdesc:a4e42a5ca3fc306d2d83c88dd3532f71d inherit pub_methods_a03791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new leaf function splitting on a variable. <br /></td></tr>
+<tr class="memitem:a1568fefa4bc0727d9833722f782f4bb4 inherit pub_methods_a03791" id="r_a1568fefa4bc0727d9833722f782f4bb4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03791.html#a1568fefa4bc0727d9833722f782f4bb4">AlgebraicDecisionTree</a> (const typename Base::LabelC &amp;labelC, double y1, double y2)</td></tr>
+<tr class="memdesc:a1568fefa4bc0727d9833722f782f4bb4 inherit pub_methods_a03791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new leaf function splitting on a variable.  <br /></td></tr>
+<tr class="memitem:a9d6239fa73a7e13ec702bacf1b5604ca inherit pub_methods_a03791" id="r_a9d6239fa73a7e13ec702bacf1b5604ca"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03791.html#a9d6239fa73a7e13ec702bacf1b5604ca">AlgebraicDecisionTree</a> (const std::vector&lt; typename Base::LabelC &gt; &amp;labelCs, const std::vector&lt; double &gt; &amp;ys)</td></tr>
+<tr class="memdesc:a9d6239fa73a7e13ec702bacf1b5604ca inherit pub_methods_a03791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create from keys with cardinalities and a vector table.  <br /></td></tr>
+<tr class="memitem:a224c622a5f3ffb1f2055f35b724dfdf4 inherit pub_methods_a03791" id="r_a224c622a5f3ffb1f2055f35b724dfdf4"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03791.html#a224c622a5f3ffb1f2055f35b724dfdf4">AlgebraicDecisionTree</a> (const std::vector&lt; typename Base::LabelC &gt; &amp;labelCs, const std::string &amp;table)</td></tr>
+<tr class="memdesc:a224c622a5f3ffb1f2055f35b724dfdf4 inherit pub_methods_a03791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create from keys and string table.  <br /></td></tr>
+<tr class="memitem:af0cd622a320a4a202473ebae5dd289a7 inherit pub_methods_a03791" id="r_af0cd622a320a4a202473ebae5dd289a7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03791.html#af0cd622a320a4a202473ebae5dd289a7">AlgebraicDecisionTree</a> (Iterator begin, Iterator end, const <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &amp;label)</td></tr>
+<tr class="memdesc:af0cd622a320a4a202473ebae5dd289a7 inherit pub_methods_a03791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a range of decision trees, splitting on a single variable.  <br /></td></tr>
+<tr class="memitem:a3cd971460a346293b80eae2f125c5bbe inherit pub_methods_a03791" id="r_a3cd971460a346293b80eae2f125c5bbe"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03791.html#a3cd971460a346293b80eae2f125c5bbe">AlgebraicDecisionTree</a> (const AlgebraicDecisionTree&lt; M &gt; &amp;other, const std::map&lt; M, <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &gt; &amp;<a class="el" href="a16201.html">map</a>)</td></tr>
+<tr class="memdesc:a3cd971460a346293b80eae2f125c5bbe inherit pub_methods_a03791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert labels from type M to type L.  <br /></td></tr>
+<tr class="memitem:a522111c4972aa70de7576dd2d3ad94fc inherit pub_methods_a03791" id="r_a522111c4972aa70de7576dd2d3ad94fc"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03791.html#a522111c4972aa70de7576dd2d3ad94fc">AlgebraicDecisionTree</a> (const <a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, X &gt; &amp;other, Func f)</td></tr>
+<tr class="memdesc:a522111c4972aa70de7576dd2d3ad94fc inherit pub_methods_a03791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create from an arbitrary DecisionTree&lt;L, X&gt; by operating on it with a functional <span class="tt">f</span>.  <br /></td></tr>
+<tr class="memitem:a73d781b3f789fe5361ac8ce253799585 inherit pub_methods_a03791" id="r_a73d781b3f789fe5361ac8ce253799585"><td class="memItemLeft">
+AlgebraicDecisionTree&#160;</td><td class="memItemRight"><b>operator+</b> (const AlgebraicDecisionTree &amp;g) const</td></tr>
+<tr class="memdesc:a73d781b3f789fe5361ac8ce253799585 inherit pub_methods_a03791"><td class="mdescLeft">&#160;</td><td class="mdescRight">sum <br /></td></tr>
+<tr class="memitem:ab63bc2da2f05fd6582618edb681e4e23 inherit pub_methods_a03791" id="r_ab63bc2da2f05fd6582618edb681e4e23"><td class="memItemLeft">
+AlgebraicDecisionTree&#160;</td><td class="memItemRight"><b>operator-</b> () const</td></tr>
+<tr class="memdesc:ab63bc2da2f05fd6582618edb681e4e23 inherit pub_methods_a03791"><td class="mdescLeft">&#160;</td><td class="mdescRight">negation <br /></td></tr>
+<tr class="memitem:aa4a33760f5593e92c138db6628f56cfa inherit pub_methods_a03791" id="r_aa4a33760f5593e92c138db6628f56cfa"><td class="memItemLeft">
+AlgebraicDecisionTree&#160;</td><td class="memItemRight"><b>operator-</b> (const AlgebraicDecisionTree &amp;g) const</td></tr>
+<tr class="memdesc:aa4a33760f5593e92c138db6628f56cfa inherit pub_methods_a03791"><td class="mdescLeft">&#160;</td><td class="mdescRight">subtract <br /></td></tr>
+<tr class="memitem:ad4d6619ec05009c9a0e83ae23b772e03 inherit pub_methods_a03791" id="r_ad4d6619ec05009c9a0e83ae23b772e03"><td class="memItemLeft">
+AlgebraicDecisionTree&#160;</td><td class="memItemRight"><b>operator*</b> (const AlgebraicDecisionTree &amp;g) const</td></tr>
+<tr class="memdesc:ad4d6619ec05009c9a0e83ae23b772e03 inherit pub_methods_a03791"><td class="mdescLeft">&#160;</td><td class="mdescRight">product <br /></td></tr>
+<tr class="memitem:a0fb758bf01cbb66dfb631913f150ed00 inherit pub_methods_a03791" id="r_a0fb758bf01cbb66dfb631913f150ed00"><td class="memItemLeft">
+AlgebraicDecisionTree&#160;</td><td class="memItemRight"><b>operator/</b> (const AlgebraicDecisionTree &amp;g) const</td></tr>
+<tr class="memdesc:a0fb758bf01cbb66dfb631913f150ed00 inherit pub_methods_a03791"><td class="mdescLeft">&#160;</td><td class="mdescRight">division <br /></td></tr>
+<tr class="memitem:a39933bb8f42da8ca660c8515ae547264 inherit pub_methods_a03791" id="r_a39933bb8f42da8ca660c8515ae547264"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>sum</b> () const</td></tr>
+<tr class="memdesc:a39933bb8f42da8ca660c8515ae547264 inherit pub_methods_a03791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute sum of all values. <br /></td></tr>
+<tr class="memitem:a3fd59f48ebcf98adc655754a1b685222 inherit pub_methods_a03791" id="r_a3fd59f48ebcf98adc655754a1b685222"><td class="memItemLeft">AlgebraicDecisionTree&#160;</td><td class="memItemRight"><a class="el" href="a03791.html#a3fd59f48ebcf98adc655754a1b685222">normalize</a> () const</td></tr>
+<tr class="memdesc:a3fd59f48ebcf98adc655754a1b685222 inherit pub_methods_a03791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper method to perform normalization such that all leaves in the tree sum to 1.  <br /></td></tr>
+<tr class="memitem:a3f7c65d6e04431943b4e7451f7c71915 inherit pub_methods_a03791" id="r_a3f7c65d6e04431943b4e7451f7c71915"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>min</b> () const</td></tr>
+<tr class="memdesc:a3f7c65d6e04431943b4e7451f7c71915 inherit pub_methods_a03791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the minimum values amongst all leaves. <br /></td></tr>
+<tr class="memitem:a8df5307c91b7b7b5c3ccbc4631c13004 inherit pub_methods_a03791" id="r_a8df5307c91b7b7b5c3ccbc4631c13004"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>max</b> () const</td></tr>
+<tr class="memdesc:a8df5307c91b7b7b5c3ccbc4631c13004 inherit pub_methods_a03791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the maximum values amongst all leaves. <br /></td></tr>
+<tr class="memitem:a12a2cd3038c73481b8af276cf5aeea25 inherit pub_methods_a03791" id="r_a12a2cd3038c73481b8af276cf5aeea25"><td class="memItemLeft">
+AlgebraicDecisionTree&#160;</td><td class="memItemRight"><b>sum</b> (const <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &amp;label, size_t cardinality) const</td></tr>
+<tr class="memdesc:a12a2cd3038c73481b8af276cf5aeea25 inherit pub_methods_a03791"><td class="mdescLeft">&#160;</td><td class="mdescRight">sum out variable <br /></td></tr>
+<tr class="memitem:a387bebf75e75a5d1b31759322c184a04 inherit pub_methods_a03791" id="r_a387bebf75e75a5d1b31759322c184a04"><td class="memItemLeft">
+AlgebraicDecisionTree&#160;</td><td class="memItemRight"><b>sum</b> (const typename Base::LabelC &amp;labelC) const</td></tr>
+<tr class="memdesc:a387bebf75e75a5d1b31759322c184a04 inherit pub_methods_a03791"><td class="mdescLeft">&#160;</td><td class="mdescRight">sum out variable <br /></td></tr>
+<tr class="memitem:a308714e620f75fcbd41ce3c6d85ab1a5 inherit pub_methods_a03791" id="r_a308714e620f75fcbd41ce3c6d85ab1a5"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;&quot;, const typename Base::LabelFormatter &amp;labelFormatter=&amp;DefaultFormatter) const</td></tr>
+<tr class="memdesc:a308714e620f75fcbd41ce3c6d85ab1a5 inherit pub_methods_a03791"><td class="mdescLeft">&#160;</td><td class="mdescRight">print method customized to value type <span class="tt">double</span>. <br /></td></tr>
+<tr class="memitem:a63e43d53d7ddc013188cbc2cdc798fd4 inherit pub_methods_a03791" id="r_a63e43d53d7ddc013188cbc2cdc798fd4"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const AlgebraicDecisionTree &amp;other, double tol=1e-9) const</td></tr>
+<tr class="memdesc:a63e43d53d7ddc013188cbc2cdc798fd4 inherit pub_methods_a03791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality method customized to value type <span class="tt">double</span>. <br /></td></tr>
+<tr class="inherit_header pub_methods_a03835"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03835')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03835.html">gtsam::DecisionTree&lt; L, Y &gt;</a></td></tr>
+<tr class="memitem:af290fdb29bb254e51bfa295208655bcf inherit pub_methods_a03835" id="r_af290fdb29bb254e51bfa295208655bcf"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DecisionTree</b> ()</td></tr>
+<tr class="memdesc:af290fdb29bb254e51bfa295208655bcf inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor (for serialization). <br /></td></tr>
+<tr class="memitem:a6427d8a417f455f8e143ab09c3d04209 inherit pub_methods_a03835" id="r_a6427d8a417f455f8e143ab09c3d04209"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DecisionTree</b> (const Y &amp;y)</td></tr>
+<tr class="memdesc:a6427d8a417f455f8e143ab09c3d04209 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a constant. <br /></td></tr>
+<tr class="memitem:ae0b844473823aa09c71e668449509cd2 inherit pub_methods_a03835" id="r_ae0b844473823aa09c71e668449509cd2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#ae0b844473823aa09c71e668449509cd2">DecisionTree</a> (const L &amp;label, const Y &amp;y1, const Y &amp;y2)</td></tr>
+<tr class="memdesc:ae0b844473823aa09c71e668449509cd2 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create tree with 2 assignments <span class="tt">y1</span>, <span class="tt">y2</span>, splitting on variable <span class="tt">label</span>.  <br /></td></tr>
+<tr class="memitem:aaa6cb1a9966203a7f43ccd31b335ca7d inherit pub_methods_a03835" id="r_aaa6cb1a9966203a7f43ccd31b335ca7d"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DecisionTree</b> (const <a class="el" href="a03835.html#adcdd80ab1af415d212397a2666320e35">LabelC</a> &amp;label, const Y &amp;y1, const Y &amp;y2)</td></tr>
+<tr class="memdesc:aaa6cb1a9966203a7f43ccd31b335ca7d inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow Label+Cardinality for convenience. <br /></td></tr>
+<tr class="memitem:ad754d8699cb205788f889f012781bdc2 inherit pub_methods_a03835" id="r_ad754d8699cb205788f889f012781bdc2"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DecisionTree</b> (const std::vector&lt; <a class="el" href="a03835.html#adcdd80ab1af415d212397a2666320e35">LabelC</a> &gt; &amp;labelCs, const std::vector&lt; Y &gt; &amp;ys)</td></tr>
+<tr class="memdesc:ad754d8699cb205788f889f012781bdc2 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create from keys and a corresponding vector of values. <br /></td></tr>
+<tr class="memitem:a3a9a4b4209812f071c1225d9542fa443 inherit pub_methods_a03835" id="r_a3a9a4b4209812f071c1225d9542fa443"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DecisionTree</b> (const std::vector&lt; <a class="el" href="a03835.html#adcdd80ab1af415d212397a2666320e35">LabelC</a> &gt; &amp;labelCs, const std::string &amp;table)</td></tr>
+<tr class="memdesc:a3a9a4b4209812f071c1225d9542fa443 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create from keys and string table. <br /></td></tr>
+<tr class="memitem:a1d535f26a06302403a1bd6dcac87b041 inherit pub_methods_a03835" id="r_a1d535f26a06302403a1bd6dcac87b041"><td class="memTemplParams" colspan="2">
+template&lt;typename Iterator&gt; </td></tr>
+<tr class="memitem:a1d535f26a06302403a1bd6dcac87b041 inherit pub_methods_a03835 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>DecisionTree</b> (Iterator begin, Iterator end, const L &amp;label)</td></tr>
+<tr class="memdesc:a1d535f26a06302403a1bd6dcac87b041 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="a03835.html" title="a decision tree is a function from assignments to values.">DecisionTree</a> from others. <br /></td></tr>
+<tr class="memitem:afb65bfe5d3dc2b8f294ea894aabc25a3 inherit pub_methods_a03835" id="r_afb65bfe5d3dc2b8f294ea894aabc25a3"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DecisionTree</b> (const L &amp;label, const DecisionTree &amp;f0, const DecisionTree &amp;f1)</td></tr>
+<tr class="memdesc:afb65bfe5d3dc2b8f294ea894aabc25a3 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="a03835.html" title="a decision tree is a function from assignments to values.">DecisionTree</a> from two others. <br /></td></tr>
+<tr class="memitem:a5ec8fcc3270d3cce93991a4985e6ce0b inherit pub_methods_a03835" id="r_a5ec8fcc3270d3cce93991a4985e6ce0b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#a5ec8fcc3270d3cce93991a4985e6ce0b">DecisionTree</a> (const <a class="el" href="a03835.html#a60ed61625945d0966103a59d9c47c8a6">Unary</a> &amp;op, DecisionTree &amp;&amp;other) noexcept</td></tr>
+<tr class="memdesc:a5ec8fcc3270d3cce93991a4985e6ce0b inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor for <a class="el" href="a03835.html" title="a decision tree is a function from assignments to values.">DecisionTree</a>.  <br /></td></tr>
+<tr class="memitem:a3fe8dfec74c488b61dfd157de62c8ef3 inherit pub_methods_a03835" id="r_a3fe8dfec74c488b61dfd157de62c8ef3"><td class="memTemplParams" colspan="2">template&lt;typename X, typename Func&gt; </td></tr>
+<tr class="memitem:a3fe8dfec74c488b61dfd157de62c8ef3 inherit pub_methods_a03835 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#a3fe8dfec74c488b61dfd157de62c8ef3">DecisionTree</a> (const DecisionTree&lt; L, X &gt; &amp;other, Func Y_of_X)</td></tr>
+<tr class="memdesc:a3fe8dfec74c488b61dfd157de62c8ef3 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert from a different value type.  <br /></td></tr>
+<tr class="memitem:ad5533f615494992ac69b54571d2449b7 inherit pub_methods_a03835" id="r_ad5533f615494992ac69b54571d2449b7"><td class="memTemplParams" colspan="2">template&lt;typename M, typename X, typename Func&gt; </td></tr>
+<tr class="memitem:ad5533f615494992ac69b54571d2449b7 inherit pub_methods_a03835 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#ad5533f615494992ac69b54571d2449b7">DecisionTree</a> (const DecisionTree&lt; M, X &gt; &amp;other, const std::map&lt; M, L &gt; &amp;<a class="el" href="a16201.html">map</a>, Func Y_of_X)</td></tr>
+<tr class="memdesc:ad5533f615494992ac69b54571d2449b7 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert from a different value type X to value type Y, also translate labels via map from type M to L.  <br /></td></tr>
+<tr class="memitem:a908549361598ebcd6ad40a5e5eebc73c inherit pub_methods_a03835" id="r_a908549361598ebcd6ad40a5e5eebc73c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#a908549361598ebcd6ad40a5e5eebc73c">print</a> (const std::string &amp;s, const LabelFormatter &amp;labelFormatter, const ValueFormatter &amp;valueFormatter) const</td></tr>
+<tr class="memdesc:a908549361598ebcd6ad40a5e5eebc73c inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">GTSAM-style print.  <br /></td></tr>
+<tr class="memitem:ae823c0be31b2cc75473fe78d8059c014 inherit pub_methods_a03835" id="r_ae823c0be31b2cc75473fe78d8059c014"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a> &amp;other, const CompareFunc &amp;compare=&amp;<a class="el" href="a03835.html#a35920f74df022d256d9137d3ab2628d2">DefaultCompare</a>) const</td></tr>
+<tr class="memitem:a2cc2a13e370f2f1e4e78dd1a1881eb82 inherit pub_methods_a03835" id="r_a2cc2a13e370f2f1e4e78dd1a1881eb82"><td class="memItemLeft">
+virtual&#160;</td><td class="memItemRight"><b>~DecisionTree</b> ()=default</td></tr>
+<tr class="memdesc:a2cc2a13e370f2f1e4e78dd1a1881eb82 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make virtual. <br /></td></tr>
+<tr class="memitem:a4aafe36874888125319445d2f50c4a90 inherit pub_methods_a03835" id="r_a4aafe36874888125319445d2f50c4a90"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>empty</b> () const</td></tr>
+<tr class="memdesc:a4aafe36874888125319445d2f50c4a90 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if tree is empty. <br /></td></tr>
+<tr class="memitem:ad9c9fc1b8f2aa6bc6466c2e7b61ee693 inherit pub_methods_a03835" id="r_ad9c9fc1b8f2aa6bc6466c2e7b61ee693"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>operator==</b> (const <a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a> &amp;q) const</td></tr>
+<tr class="memdesc:ad9c9fc1b8f2aa6bc6466c2e7b61ee693 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">equality <br /></td></tr>
+<tr class="memitem:aacfdbde11b02b8a95183b8a28af57f37 inherit pub_methods_a03835" id="r_aacfdbde11b02b8a95183b8a28af57f37"><td class="memItemLeft">
+const Y &amp;&#160;</td><td class="memItemRight"><b>operator()</b> (const <a class="el" href="a03803.html">Assignment</a>&lt; L &gt; &amp;x) const</td></tr>
+<tr class="memdesc:aacfdbde11b02b8a95183b8a28af57f37 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">evaluate <br /></td></tr>
+<tr class="memitem:a4d0c2fc8d7f0bf91da569b10bfa4229f inherit pub_methods_a03835" id="r_a4d0c2fc8d7f0bf91da569b10bfa4229f"><td class="memTemplParams" colspan="2">template&lt;typename Func&gt; </td></tr>
+<tr class="memitem:a4d0c2fc8d7f0bf91da569b10bfa4229f inherit pub_methods_a03835 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#a4d0c2fc8d7f0bf91da569b10bfa4229f">visit</a> (Func f) const</td></tr>
+<tr class="memdesc:a4d0c2fc8d7f0bf91da569b10bfa4229f inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a03823.html" title="Functor performing depth-first visit to each leaf with the leaf value as the argument.">Visit</a> all leaves in depth-first fashion.  <br /></td></tr>
+<tr class="memitem:a56c28d3544ad9bdb06ab981cfe518f6b inherit pub_methods_a03835" id="r_a56c28d3544ad9bdb06ab981cfe518f6b"><td class="memTemplParams" colspan="2">template&lt;typename Func&gt; </td></tr>
+<tr class="memitem:a56c28d3544ad9bdb06ab981cfe518f6b inherit pub_methods_a03835 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#a56c28d3544ad9bdb06ab981cfe518f6b">visitLeaf</a> (Func f) const</td></tr>
+<tr class="memdesc:a56c28d3544ad9bdb06ab981cfe518f6b inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a03823.html" title="Functor performing depth-first visit to each leaf with the leaf value as the argument.">Visit</a> all leaves in depth-first fashion.  <br /></td></tr>
+<tr class="memitem:aaa6af91fb65c18c735b56a3e2088ec37 inherit pub_methods_a03835" id="r_aaa6af91fb65c18c735b56a3e2088ec37"><td class="memTemplParams" colspan="2">template&lt;typename Func&gt; </td></tr>
+<tr class="memitem:aaa6af91fb65c18c735b56a3e2088ec37 inherit pub_methods_a03835 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#aaa6af91fb65c18c735b56a3e2088ec37">visitWith</a> (Func f) const</td></tr>
+<tr class="memdesc:aaa6af91fb65c18c735b56a3e2088ec37 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a03823.html" title="Functor performing depth-first visit to each leaf with the leaf value as the argument.">Visit</a> all leaves in depth-first fashion.  <br /></td></tr>
+<tr class="memitem:ae80e65a90fe9ac40b5c5a4d07dfbbda7 inherit pub_methods_a03835" id="r_ae80e65a90fe9ac40b5c5a4d07dfbbda7"><td class="memItemLeft">
+size_t&#160;</td><td class="memItemRight"><b>nrLeaves</b> () const</td></tr>
+<tr class="memdesc:ae80e65a90fe9ac40b5c5a4d07dfbbda7 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of leaves in the tree. <br /></td></tr>
+<tr class="memitem:a73ca5583ac2dbb26accfc54de69a9c0a inherit pub_methods_a03835" id="r_a73ca5583ac2dbb26accfc54de69a9c0a"><td class="memTemplParams" colspan="2">template&lt;typename Func, typename X&gt; </td></tr>
+<tr class="memitem:a73ca5583ac2dbb26accfc54de69a9c0a inherit pub_methods_a03835 template"><td class="memItemLeft">X&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#a73ca5583ac2dbb26accfc54de69a9c0a">fold</a> (Func f, X x0) const</td></tr>
+<tr class="memdesc:a73ca5583ac2dbb26accfc54de69a9c0a inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fold a binary function over the tree, returning accumulator.  <br /></td></tr>
+<tr class="memitem:a3c81ed3e00b4ecf14633a107690f9946 inherit pub_methods_a03835" id="r_a3c81ed3e00b4ecf14633a107690f9946"><td class="memItemLeft">std::set&lt; L &gt;&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#a3c81ed3e00b4ecf14633a107690f9946">labels</a> () const</td></tr>
+<tr class="memdesc:a3c81ed3e00b4ecf14633a107690f9946 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve all unique labels as a set.  <br /></td></tr>
+<tr class="memitem:a00d49afa8ffc80de9cbdbb4489e50ffe inherit pub_methods_a03835" id="r_a00d49afa8ffc80de9cbdbb4489e50ffe"><td class="memItemLeft">
+<a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&#160;</td><td class="memItemRight"><b>apply</b> (const <a class="el" href="a03835.html#a60ed61625945d0966103a59d9c47c8a6">Unary</a> &amp;op) const</td></tr>
+<tr class="memdesc:a00d49afa8ffc80de9cbdbb4489e50ffe inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">apply <a class="el" href="a03835.html#a60ed61625945d0966103a59d9c47c8a6" title="Handy typedefs for unary and binary function types.">Unary</a> operation "op" to f <br /></td></tr>
+<tr class="memitem:a72f8882dd04d9cccf5dd0151820856f2 inherit pub_methods_a03835" id="r_a72f8882dd04d9cccf5dd0151820856f2"><td class="memItemLeft"><a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#a72f8882dd04d9cccf5dd0151820856f2">apply</a> (const UnaryAssignment &amp;op) const</td></tr>
+<tr class="memdesc:a72f8882dd04d9cccf5dd0151820856f2 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply <a class="el" href="a03835.html#a60ed61625945d0966103a59d9c47c8a6" title="Handy typedefs for unary and binary function types.">Unary</a> operation "op" to f while also providing the corresponding assignment.  <br /></td></tr>
+<tr class="memitem:a47f7b5528330806519440a58f587c93b inherit pub_methods_a03835" id="r_a47f7b5528330806519440a58f587c93b"><td class="memItemLeft">
+<a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&#160;</td><td class="memItemRight"><b>apply</b> (const <a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a> &amp;g, const Binary &amp;op) const</td></tr>
+<tr class="memdesc:a47f7b5528330806519440a58f587c93b inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">apply binary operation "op" to f and g <br /></td></tr>
+<tr class="memitem:a0263dc037625a0f804260004b4c80b7b inherit pub_methods_a03835" id="r_a0263dc037625a0f804260004b4c80b7b"><td class="memItemLeft">
+<a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&#160;</td><td class="memItemRight"><b>choose</b> (const L &amp;label, size_t index) const</td></tr>
+<tr class="memdesc:a0263dc037625a0f804260004b4c80b7b inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a new function where value(label)==index It's like "restrict" in Darwiche09book pg329, 330? <br /></td></tr>
+<tr class="memitem:aac3662ef13544f8ab2d376cc4a463e7e inherit pub_methods_a03835" id="r_aac3662ef13544f8ab2d376cc4a463e7e"><td class="memItemLeft">
+<a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&#160;</td><td class="memItemRight"><b>restrict</b> (const <a class="el" href="a03803.html">Assignment</a>&lt; L &gt; &amp;assignment) const</td></tr>
+<tr class="memdesc:aac3662ef13544f8ab2d376cc4a463e7e inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choose multiple values. <br /></td></tr>
+<tr class="memitem:a9e2c871be4518f8487a8bd610c775924 inherit pub_methods_a03835" id="r_a9e2c871be4518f8487a8bd610c775924"><td class="memItemLeft">
+<a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&#160;</td><td class="memItemRight"><b>combine</b> (const L &amp;label, size_t cardinality, const Binary &amp;op) const</td></tr>
+<tr class="memdesc:a9e2c871be4518f8487a8bd610c775924 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">combine subtrees on key with binary operation "op" <br /></td></tr>
+<tr class="memitem:a1c8ac39ffe15cbc5370a835277a9c33d inherit pub_methods_a03835" id="r_a1c8ac39ffe15cbc5370a835277a9c33d"><td class="memItemLeft">
+<a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&#160;</td><td class="memItemRight"><b>combine</b> (const <a class="el" href="a03835.html#adcdd80ab1af415d212397a2666320e35">LabelC</a> &amp;labelC, const Binary &amp;op) const</td></tr>
+<tr class="memdesc:a1c8ac39ffe15cbc5370a835277a9c33d inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">combine with <a class="el" href="a03835.html#adcdd80ab1af415d212397a2666320e35" title="A label annotated with cardinality.">LabelC</a> for convenience <br /></td></tr>
+<tr class="memitem:ab48471de856f9aba900cfe012052f090 inherit pub_methods_a03835" id="r_ab48471de856f9aba900cfe012052f090"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>dot</b> (std::ostream &amp;os, const LabelFormatter &amp;labelFormatter, const ValueFormatter &amp;valueFormatter, bool showZero=true) const</td></tr>
+<tr class="memdesc:ab48471de856f9aba900cfe012052f090 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">output to graphviz format, stream version <br /></td></tr>
+<tr class="memitem:acdcf72499f20d79585a43229848b1843 inherit pub_methods_a03835" id="r_acdcf72499f20d79585a43229848b1843"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>dot</b> (const std::string &amp;name, const LabelFormatter &amp;labelFormatter, const ValueFormatter &amp;valueFormatter, bool showZero=true) const</td></tr>
+<tr class="memdesc:acdcf72499f20d79585a43229848b1843 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">output to graphviz format, open a file <br /></td></tr>
+<tr class="memitem:aa9209aa4da52267e07790be7cff144c5 inherit pub_methods_a03835" id="r_aa9209aa4da52267e07790be7cff144c5"><td class="memItemLeft">
+std::string&#160;</td><td class="memItemRight"><b>dot</b> (const LabelFormatter &amp;labelFormatter, const ValueFormatter &amp;valueFormatter, bool showZero=true) const</td></tr>
+<tr class="memdesc:aa9209aa4da52267e07790be7cff144c5 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">output to graphviz format string <br /></td></tr>
+<tr class="memitem:ab5fdf1cddb7ab213cee4417645ad2c55 inherit pub_methods_a03835" id="r_ab5fdf1cddb7ab213cee4417645ad2c55"><td class="memTemplParams" colspan="2">template&lt;typename A, typename B&gt; </td></tr>
+<tr class="memitem:ab5fdf1cddb7ab213cee4417645ad2c55 inherit pub_methods_a03835 template"><td class="memItemLeft">std::pair&lt; <a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&lt; L, A &gt;, <a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&lt; L, B &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#ab5fdf1cddb7ab213cee4417645ad2c55">split</a> (std::function&lt; std::pair&lt; A, B &gt;(const Y &amp;)&gt; AB_of_Y) const</td></tr>
+<tr class="memdesc:ab5fdf1cddb7ab213cee4417645ad2c55 inherit pub_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert into two trees with value types A and B.  <br /></td></tr>
+<tr class="memitem:a81f7f2227e795ec80e014f4edd8b03c9 inherit pub_methods_a03835" id="r_a81f7f2227e795ec80e014f4edd8b03c9"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>DecisionTree</b> (const <a class="el" href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">NodePtr</a> &amp;root)</td></tr>
+<tr class="inherit_header pub_methods_a04867"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a04867')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a04867.html">gtsam::Conditional&lt; DecisionTreeFactor, DiscreteConditional &gt;</a></td></tr>
+<tr class="memitem:ae420d24aff203ccfb249e939a48730f5 inherit pub_methods_a04867" id="r_ae420d24aff203ccfb249e939a48730f5"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;Conditional&quot;, const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;formatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) const</td></tr>
+<tr class="memdesc:ae420d24aff203ccfb249e939a48730f5 inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">print with optional formatter <br /></td></tr>
+<tr class="memitem:a53fe6e88f668f9ee971204d7d22b0c44 inherit pub_methods_a04867" id="r_a53fe6e88f668f9ee971204d7d22b0c44"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const This &amp;c, double tol=1e-9) const</td></tr>
+<tr class="memdesc:a53fe6e88f668f9ee971204d7d22b0c44 inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">check equality <br /></td></tr>
+<tr class="memitem:a87e48132e41995e8327bc5b1daefd41d inherit pub_methods_a04867" id="r_a87e48132e41995e8327bc5b1daefd41d"><td class="memItemLeft">
+size_t&#160;</td><td class="memItemRight"><b>nrFrontals</b> () const</td></tr>
+<tr class="memdesc:a87e48132e41995e8327bc5b1daefd41d inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the number of frontals <br /></td></tr>
+<tr class="memitem:ae19763bc0d1b12bea9e7bfcb304b40bb inherit pub_methods_a04867" id="r_ae19763bc0d1b12bea9e7bfcb304b40bb"><td class="memItemLeft">
+size_t&#160;</td><td class="memItemRight"><b>nrParents</b> () const</td></tr>
+<tr class="memdesc:ae19763bc0d1b12bea9e7bfcb304b40bb inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the number of parents <br /></td></tr>
+<tr class="memitem:a2c239cc3a58d08302df173d4e464f2f1 inherit pub_methods_a04867" id="r_a2c239cc3a58d08302df173d4e464f2f1"><td class="memItemLeft">
+<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>firstFrontalKey</b> () const</td></tr>
+<tr class="memdesc:a2c239cc3a58d08302df173d4e464f2f1 inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience function to get the first frontal key. <br /></td></tr>
+<tr class="memitem:ac32c96f2070f1c0a882101e02a9b3d01 inherit pub_methods_a04867" id="r_ac32c96f2070f1c0a882101e02a9b3d01"><td class="memItemLeft">
+<a class="el" href="a04867.html#ae07bb3864d21815e8f18c81e3c1dc662">Frontals</a>&#160;</td><td class="memItemRight"><b>frontals</b> () const</td></tr>
+<tr class="memdesc:ac32c96f2070f1c0a882101e02a9b3d01 inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">return a view of the frontal keys <br /></td></tr>
+<tr class="memitem:a4f7dab2390695c0972df2fc8da2ee6c4 inherit pub_methods_a04867" id="r_a4f7dab2390695c0972df2fc8da2ee6c4"><td class="memItemLeft">
+<a class="el" href="a04867.html#ad6765642a6a0e0e8a84a3b1fe9204855">Parents</a>&#160;</td><td class="memItemRight"><b>parents</b> () const</td></tr>
+<tr class="memdesc:a4f7dab2390695c0972df2fc8da2ee6c4 inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">return a view of the parent keys <br /></td></tr>
+<tr class="memitem:a6ac62b932a5cd666e309028392e27b29 inherit pub_methods_a04867" id="r_a6ac62b932a5cd666e309028392e27b29"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>operator()</b> (const <a class="el" href="a07563.html">HybridValues</a> &amp;x) const</td></tr>
+<tr class="memdesc:a6ac62b932a5cd666e309028392e27b29 inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate probability density, sugar. <br /></td></tr>
+<tr class="memitem:acca063529671c6783551c694061f17ab inherit pub_methods_a04867" id="r_acca063529671c6783551c694061f17ab"><td class="memItemLeft">
+<a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">DecisionTreeFactor::const_iterator</a>&#160;</td><td class="memItemRight"><b>beginFrontals</b> () const</td></tr>
+<tr class="memdesc:acca063529671c6783551c694061f17ab inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator pointing to first frontal key. <br /></td></tr>
+<tr class="memitem:a2da329d78e91e9b7b7110c7a8370872e inherit pub_methods_a04867" id="r_a2da329d78e91e9b7b7110c7a8370872e"><td class="memItemLeft">
+<a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">DecisionTreeFactor::const_iterator</a>&#160;</td><td class="memItemRight"><b>endFrontals</b> () const</td></tr>
+<tr class="memdesc:a2da329d78e91e9b7b7110c7a8370872e inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator pointing past the last frontal key. <br /></td></tr>
+<tr class="memitem:af1f80fbcb599d244f1f83998996d34b0 inherit pub_methods_a04867" id="r_af1f80fbcb599d244f1f83998996d34b0"><td class="memItemLeft">
+<a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">DecisionTreeFactor::const_iterator</a>&#160;</td><td class="memItemRight"><b>beginParents</b> () const</td></tr>
+<tr class="memdesc:af1f80fbcb599d244f1f83998996d34b0 inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator pointing to the first parent key. <br /></td></tr>
+<tr class="memitem:ae97aeba1e243d7dbbf90aff659bc490b inherit pub_methods_a04867" id="r_ae97aeba1e243d7dbbf90aff659bc490b"><td class="memItemLeft">
+<a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">DecisionTreeFactor::const_iterator</a>&#160;</td><td class="memItemRight"><b>endParents</b> () const</td></tr>
+<tr class="memdesc:ae97aeba1e243d7dbbf90aff659bc490b inherit pub_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator pointing past the last parent key. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:aa0b62f5ea3cbf7cd95f2832a8c7958a9" id="r_aa0b62f5ea3cbf7cd95f2832a8c7958a9"><td class="memItemLeft"><a id="aa0b62f5ea3cbf7cd95f2832a8c7958a9" name="aa0b62f5ea3cbf7cd95f2832a8c7958a9"></a>
+using&#160;</td><td class="memItemRight"><b>This</b> = <a class="el" href="#a981d836a4c625af0a5e021fac9b2bdfa">DiscreteLookupTable</a></td></tr>
+<tr class="memitem:ad63f14b6288fc898c1927edf3e2df6e3" id="r_ad63f14b6288fc898c1927edf3e2df6e3"><td class="memItemLeft"><a id="ad63f14b6288fc898c1927edf3e2df6e3" name="ad63f14b6288fc898c1927edf3e2df6e3"></a>
+using&#160;</td><td class="memItemRight"><b>shared_ptr</b> = std::shared_ptr&lt;This&gt;</td></tr>
+<tr class="memitem:ac42500b42ae0e2fa4ced4f7c327b864e" id="r_ac42500b42ae0e2fa4ced4f7c327b864e"><td class="memItemLeft"><a id="ac42500b42ae0e2fa4ced4f7c327b864e" name="ac42500b42ae0e2fa4ced4f7c327b864e"></a>
+using&#160;</td><td class="memItemRight"><b>BaseConditional</b> = <a class="el" href="a04867.html">Conditional</a>&lt;<a class="el" href="a03851.html">DecisionTreeFactor</a>, This&gt;</td></tr>
+<tr class="inherit_header pub_types_a03883"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03883')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03883.html">gtsam::DiscreteConditional</a></td></tr>
+<tr class="memitem:a87b5d53bfcabc8afdacbee26d4ef9916 inherit pub_types_a03883" id="r_a87b5d53bfcabc8afdacbee26d4ef9916"><td class="memItemLeft">
+typedef <a class="el" href="a03883.html#abde5b7e78cd17f518afb2e8048e6748d">DiscreteConditional</a>&#160;</td><td class="memItemRight"><b>This</b></td></tr>
+<tr class="memdesc:a87b5d53bfcabc8afdacbee26d4ef9916 inherit pub_types_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef to this class. <br /></td></tr>
+<tr class="memitem:a46584bee41a684dcb96d484954384dff inherit pub_types_a03883" id="r_a46584bee41a684dcb96d484954384dff"><td class="memItemLeft">
+typedef std::shared_ptr&lt; <a class="el" href="a03883.html#a87b5d53bfcabc8afdacbee26d4ef9916">This</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+<tr class="memdesc:a46584bee41a684dcb96d484954384dff inherit pub_types_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a03883.html#a46584bee41a684dcb96d484954384dff" title="shared_ptr to this class">shared_ptr</a> to this class <br /></td></tr>
+<tr class="memitem:a9ab81fc33a84e5f1d886f771e8492967 inherit pub_types_a03883" id="r_a9ab81fc33a84e5f1d886f771e8492967"><td class="memItemLeft">
+typedef <a class="el" href="a03851.html#ad52196341d54cfcb396eb62a52ceb7d6">DecisionTreeFactor</a>&#160;</td><td class="memItemRight"><b>BaseFactor</b></td></tr>
+<tr class="memdesc:a9ab81fc33a84e5f1d886f771e8492967 inherit pub_types_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef to our factor base class. <br /></td></tr>
+<tr class="memitem:a7a8d450dab8cd70ce0e971fa92bc5982 inherit pub_types_a03883" id="r_a7a8d450dab8cd70ce0e971fa92bc5982"><td class="memItemLeft">
+typedef <a class="el" href="a04867.html#a92872ac46ea07c2953eabbdfe816f3ed">Conditional</a>&lt; <a class="el" href="a03883.html#a9ab81fc33a84e5f1d886f771e8492967">BaseFactor</a>, <a class="el" href="a03883.html#a87b5d53bfcabc8afdacbee26d4ef9916">This</a> &gt;&#160;</td><td class="memItemRight"><b>BaseConditional</b></td></tr>
+<tr class="memdesc:a7a8d450dab8cd70ce0e971fa92bc5982 inherit pub_types_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef to our conditional base class. <br /></td></tr>
+<tr class="memitem:a5352ef4cd5bdf50707d65de6066dd157 inherit pub_types_a03883" id="r_a5352ef4cd5bdf50707d65de6066dd157"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Values</b> = <a class="el" href="a07559.html">DiscreteValues</a></td></tr>
+<tr class="memdesc:a5352ef4cd5bdf50707d65de6066dd157 inherit pub_types_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">backwards compatibility <br /></td></tr>
+<tr class="inherit_header pub_types_a03851"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03851')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03851.html">gtsam::DecisionTreeFactor</a></td></tr>
+<tr class="memitem:a76dd630f38039e9cc3900a18588bf453 inherit pub_types_a03851" id="r_a76dd630f38039e9cc3900a18588bf453"><td class="memItemLeft">
+typedef <a class="el" href="a03851.html#ad52196341d54cfcb396eb62a52ceb7d6">DecisionTreeFactor</a>&#160;</td><td class="memItemRight"><b>This</b></td></tr>
+<tr class="memitem:a96e20fc5f4cc476df586d28dab2da00c inherit pub_types_a03851" id="r_a96e20fc5f4cc476df586d28dab2da00c"><td class="memItemLeft">
+typedef <a class="el" href="a03903.html#afadb0ff9285b8ef4c5efe5fb98167a60">DiscreteFactor</a>&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
+<tr class="memdesc:a96e20fc5f4cc476df586d28dab2da00c inherit pub_types_a03851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef to base class. <br /></td></tr>
+<tr class="memitem:af498ba81eaccf852360f0cd0ed24ae96 inherit pub_types_a03851" id="r_af498ba81eaccf852360f0cd0ed24ae96"><td class="memItemLeft">
+typedef std::shared_ptr&lt; <a class="el" href="a03851.html#ad52196341d54cfcb396eb62a52ceb7d6">DecisionTreeFactor</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+<tr class="memitem:a660f8c1465839ad55cfe5be0a153477d inherit pub_types_a03851" id="r_a660f8c1465839ad55cfe5be0a153477d"><td class="memItemLeft">
+typedef AlgebraicDecisionTree&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &gt;&#160;</td><td class="memItemRight"><b>ADT</b></td></tr>
+<tr class="memitem:a92e325a3fd7f76ab078da2cf336b8a88 inherit pub_types_a03851" id="r_a92e325a3fd7f76ab078da2cf336b8a88"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Binary</b></td></tr>
+<tr class="memitem:a4a80a1a40dbffa363fff86af8841621f inherit pub_types_a03851" id="r_a4a80a1a40dbffa363fff86af8841621f"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Unary</b></td></tr>
+<tr class="memitem:a45915cb53a2ff600bcb49c080897107e inherit pub_types_a03851" id="r_a45915cb53a2ff600bcb49c080897107e"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>UnaryAssignment</b></td></tr>
+<tr class="inherit_header pub_types_a03903"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03903')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03903.html">gtsam::DiscreteFactor</a></td></tr>
+<tr class="memitem:ac3ef2648a55e80cefac3ce07b99a4236 inherit pub_types_a03903" id="r_ac3ef2648a55e80cefac3ce07b99a4236"><td class="memItemLeft">
+typedef <a class="el" href="a03903.html#afadb0ff9285b8ef4c5efe5fb98167a60">DiscreteFactor</a>&#160;</td><td class="memItemRight"><b>This</b></td></tr>
+<tr class="memdesc:ac3ef2648a55e80cefac3ce07b99a4236 inherit pub_types_a03903"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a03903.html#ac3ef2648a55e80cefac3ce07b99a4236" title="This class.">This</a> class. <br /></td></tr>
+<tr class="memitem:a45ed456d883c06209028320c8299127e inherit pub_types_a03903" id="r_a45ed456d883c06209028320c8299127e"><td class="memItemLeft">
+typedef std::shared_ptr&lt; <a class="el" href="a03903.html#afadb0ff9285b8ef4c5efe5fb98167a60">DiscreteFactor</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+<tr class="memdesc:a45ed456d883c06209028320c8299127e inherit pub_types_a03903"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a03903.html#a45ed456d883c06209028320c8299127e" title="shared_ptr to this class">shared_ptr</a> to this class <br /></td></tr>
+<tr class="memitem:a1fe887e0f0c0a7506db99e662f91aa29 inherit pub_types_a03903" id="r_a1fe887e0f0c0a7506db99e662f91aa29"><td class="memItemLeft">
+typedef <a class="el" href="a04899.html#a322a4d391be45b5909a65895fb7b023d">Factor</a>&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
+<tr class="memdesc:a1fe887e0f0c0a7506db99e662f91aa29 inherit pub_types_a03903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Our base class. <br /></td></tr>
+<tr class="memitem:a5dbf05011b75348e3fdae2c4dd18b2f5 inherit pub_types_a03903" id="r_a5dbf05011b75348e3fdae2c4dd18b2f5"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Values</b> = <a class="el" href="a07559.html">DiscreteValues</a></td></tr>
+<tr class="memdesc:a5dbf05011b75348e3fdae2c4dd18b2f5 inherit pub_types_a03903"><td class="mdescLeft">&#160;</td><td class="mdescRight">backwards compatibility <br /></td></tr>
+<tr class="memitem:a4a80a1a40dbffa363fff86af8841621f inherit pub_types_a03903" id="r_a4a80a1a40dbffa363fff86af8841621f"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Unary</b> = std::function&lt;double(const double&amp;)&gt;</td></tr>
+<tr class="memitem:a45915cb53a2ff600bcb49c080897107e inherit pub_types_a03903" id="r_a45915cb53a2ff600bcb49c080897107e"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="a03903.html#a45915cb53a2ff600bcb49c080897107e">UnaryAssignment</a></td></tr>
+<tr class="memitem:a92e325a3fd7f76ab078da2cf336b8a88 inherit pub_types_a03903" id="r_a92e325a3fd7f76ab078da2cf336b8a88"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Binary</b> = std::function&lt;double(const double, const double)&gt;</td></tr>
+<tr class="memitem:aae698929b94d5072aa4c81d6f6e1d13f inherit pub_types_a03903" id="r_aae698929b94d5072aa4c81d6f6e1d13f"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Names</b> = <a class="el" href="a03979.html#a2f4c4cec67e87d392581e639e12375a2">DiscreteValues::Names</a></td></tr>
+<tr class="memdesc:aae698929b94d5072aa4c81d6f6e1d13f inherit pub_types_a03903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translation table from values to strings. <br /></td></tr>
+<tr class="inherit_header pub_types_a04899"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04899')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04899.html">gtsam::Factor</a></td></tr>
+<tr class="memitem:acb069f38cc81bea20cecfad4070da59e inherit pub_types_a04899" id="r_acb069f38cc81bea20cecfad4070da59e"><td class="memItemLeft">
+typedef KeyVector::iterator&#160;</td><td class="memItemRight"><b>iterator</b></td></tr>
+<tr class="memdesc:acb069f38cc81bea20cecfad4070da59e inherit pub_types_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator over keys. <br /></td></tr>
+<tr class="memitem:a71af7ad9e9474ebbcf2fdffc7f31251b inherit pub_types_a04899" id="r_a71af7ad9e9474ebbcf2fdffc7f31251b"><td class="memItemLeft">
+typedef KeyVector::const_iterator&#160;</td><td class="memItemRight"><b>const_iterator</b></td></tr>
+<tr class="memdesc:a71af7ad9e9474ebbcf2fdffc7f31251b inherit pub_types_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Const iterator over keys. <br /></td></tr>
+<tr class="inherit_header pub_types_a03791"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03791')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03791.html">gtsam::AlgebraicDecisionTree&lt; Key &gt;</a></td></tr>
+<tr class="memitem:ad84cb5f892b54e44e05b9edcd45ef613 inherit pub_types_a03791" id="r_ad84cb5f892b54e44e05b9edcd45ef613"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
+<tr class="inherit_header pub_types_a03835"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03835')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03835.html">gtsam::DecisionTree&lt; L, Y &gt;</a></td></tr>
+<tr class="memitem:a2e08e76debd7baa74b33a0b748d49e42 inherit pub_types_a03835" id="r_a2e08e76debd7baa74b33a0b748d49e42"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>LabelFormatter</b> = std::function&lt;std::string(L)&gt;</td></tr>
+<tr class="memitem:a9585bd3cd5b1dc20dc90ffb64a1b8513 inherit pub_types_a03835" id="r_a9585bd3cd5b1dc20dc90ffb64a1b8513"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>ValueFormatter</b> = std::function&lt;std::string(Y)&gt;</td></tr>
+<tr class="memitem:a974fbdcb263af0bca580e83524ee3fff inherit pub_types_a03835" id="r_a974fbdcb263af0bca580e83524ee3fff"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>CompareFunc</b> = std::function&lt;bool(const Y&amp;, const Y&amp;)&gt;</td></tr>
+<tr class="memitem:a60ed61625945d0966103a59d9c47c8a6 inherit pub_types_a03835" id="r_a60ed61625945d0966103a59d9c47c8a6"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Unary</b> = std::function&lt;Y(const Y&amp;)&gt;</td></tr>
+<tr class="memdesc:a60ed61625945d0966103a59d9c47c8a6 inherit pub_types_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handy typedefs for unary and binary function types. <br /></td></tr>
+<tr class="memitem:a7fc249faa350aa563a61c56842588baa inherit pub_types_a03835" id="r_a7fc249faa350aa563a61c56842588baa"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>UnaryAssignment</b> = std::function&lt;Y(const <a class="el" href="a03803.html">Assignment</a>&lt;L&gt;&amp;, const Y&amp;)&gt;</td></tr>
+<tr class="memitem:a944c411a15f624f966584e9bba63fa84 inherit pub_types_a03835" id="r_a944c411a15f624f966584e9bba63fa84"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Binary</b> = std::function&lt;Y(const Y&amp;, const Y&amp;)&gt;</td></tr>
+<tr class="memitem:adcdd80ab1af415d212397a2666320e35 inherit pub_types_a03835" id="r_adcdd80ab1af415d212397a2666320e35"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>LabelC</b> = std::pair&lt;L, size_t&gt;</td></tr>
+<tr class="memdesc:adcdd80ab1af415d212397a2666320e35 inherit pub_types_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">A label annotated with cardinality. <br /></td></tr>
+<tr class="memitem:a36a98f61b0b7df042427b132b313d7fd inherit pub_types_a03835" id="r_a36a98f61b0b7df042427b132b313d7fd"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">NodePtr</a> = typename Node::Ptr</td></tr>
+<tr class="memdesc:a36a98f61b0b7df042427b132b313d7fd inherit pub_types_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">---------------------&mdash; <a class="el" href="a03839.html" title="---------------------— Node base class ------------------------—">Node</a> base class ------------------------&mdash;  <br /></td></tr>
+<tr class="inherit_header pub_types_a04867"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04867')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04867.html">gtsam::Conditional&lt; DecisionTreeFactor, DiscreteConditional &gt;</a></td></tr>
+<tr class="memitem:a636e74b8a20bac4817bd1d86e3e67ed7 inherit pub_types_a04867" id="r_a636e74b8a20bac4817bd1d86e3e67ed7"><td class="memItemLeft">
+typedef std::pair&lt; typename <a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">DecisionTreeFactor::const_iterator</a>, typename <a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">DecisionTreeFactor::const_iterator</a> &gt;&#160;</td><td class="memItemRight"><b>ConstFactorRange</b></td></tr>
+<tr class="memdesc:a636e74b8a20bac4817bd1d86e3e67ed7 inherit pub_types_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">A mini implementation of an iterator range, to share const views of frontals and parents. <br /></td></tr>
+<tr class="memitem:ae07bb3864d21815e8f18c81e3c1dc662 inherit pub_types_a04867" id="r_ae07bb3864d21815e8f18c81e3c1dc662"><td class="memItemLeft">
+typedef ConstFactorRangeIterator&#160;</td><td class="memItemRight"><b>Frontals</b></td></tr>
+<tr class="memdesc:ae07bb3864d21815e8f18c81e3c1dc662 inherit pub_types_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">View of the frontal keys (call frontals()). <br /></td></tr>
+<tr class="memitem:ad6765642a6a0e0e8a84a3b1fe9204855 inherit pub_types_a04867" id="r_ad6765642a6a0e0e8a84a3b1fe9204855"><td class="memItemLeft">
+typedef ConstFactorRangeIterator&#160;</td><td class="memItemRight"><b>Parents</b></td></tr>
+<tr class="memdesc:ad6765642a6a0e0e8a84a3b1fe9204855 inherit pub_types_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">View of the separator keys (call parents()). <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_methods_a02951"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a02951')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a02951.html">gtsam::internal::ManifoldTraits&lt; Unit3 &gt;</a></td></tr>
-<tr class="memitem:a98140bec9ac5059349d40f32f00b1491 inherit pub_methods_a02951" id="r_a98140bec9ac5059349d40f32f00b1491"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>BOOST_CONCEPT_ASSERT</b> ((<a class="el" href="a02939.html">HasManifoldPrereqs</a>&lt; <a class="el" href="a03927.html">Unit3</a> &gt;))</td></tr>
-<tr class="inherit_header pub_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; Unit3 &gt;</a></td></tr>
-<tr class="memitem:a0b809ea2931c6c4a2ecbd17e8f3fab39 inherit pub_methods_a03039" id="r_a0b809ea2931c6c4a2ecbd17e8f3fab39"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>BOOST_CONCEPT_ASSERT</b> ((<a class="el" href="a03035.html">HasTestablePrereqs</a>&lt; <a class="el" href="a03927.html">Unit3</a> &gt;))</td></tr>
-<tr class="inherit_header pub_static_methods_a02951"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a02951')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a02951.html">gtsam::internal::ManifoldTraits&lt; Unit3 &gt;</a></td></tr>
-<tr class="memitem:a94e4b4a741e92bf6ed629aa7ef36d0b4 inherit pub_static_methods_a02951" id="r_a94e4b4a741e92bf6ed629aa7ef36d0b4"><td class="memItemLeft">
-static TangentVector&#160;</td><td class="memItemRight"><b>Local</b> (const <a class="el" href="a03927.html">Unit3</a> &amp;origin, const <a class="el" href="a03927.html">Unit3</a> &amp;other)</td></tr>
-<tr class="memitem:adf31f3fd2ec15a2f70a20fd0ffd8d957 inherit pub_static_methods_a02951" id="r_adf31f3fd2ec15a2f70a20fd0ffd8d957"><td class="memItemLeft">
-static <a class="el" href="a03927.html">Unit3</a>&#160;</td><td class="memItemRight"><b>Retract</b> (const <a class="el" href="a03927.html">Unit3</a> &amp;origin, const TangentVector &amp;v)</td></tr>
-<tr class="inherit_header pub_static_methods_a02943"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a02943')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a02943.html">gtsam::internal::GetDimensionImpl&lt; Unit3, Unit3::dimension &gt;</a></td></tr>
-<tr class="memitem:ad7762628c56f5de5eae9eb8ba0ed8897 inherit pub_static_methods_a02943" id="r_ad7762628c56f5de5eae9eb8ba0ed8897"><td class="memItemLeft">
-static int&#160;</td><td class="memItemRight"><b>GetDimension</b> (const <a class="el" href="a03927.html">Unit3</a> &amp;)</td></tr>
-<tr class="inherit_header pub_static_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; Unit3 &gt;</a></td></tr>
-<tr class="memitem:a27b246d77898916925c676895348fedf inherit pub_static_methods_a03039" id="r_a27b246d77898916925c676895348fedf"><td class="memItemLeft">
-static void&#160;</td><td class="memItemRight"><b>Print</b> (const <a class="el" href="a03927.html">Unit3</a> &amp;m, const std::string &amp;str=&quot;&quot;)</td></tr>
-<tr class="memitem:a29a5699453b92070b31ca7fa42609d98 inherit pub_static_methods_a03039" id="r_a29a5699453b92070b31ca7fa42609d98"><td class="memItemLeft">
-static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el" href="a03927.html">Unit3</a> &amp;m1, const <a class="el" href="a03927.html">Unit3</a> &amp;m2, double tol=1e-8)</td></tr>
-<tr class="inherit_header pub_types_a02951"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a02951')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a02951.html">gtsam::internal::ManifoldTraits&lt; Unit3 &gt;</a></td></tr>
-<tr class="memitem:a35f8bdf1f61b852aebe1362cd6d32430 inherit pub_types_a02951" id="r_a35f8bdf1f61b852aebe1362cd6d32430"><td class="memItemLeft"><a id="a35f8bdf1f61b852aebe1362cd6d32430" name="a35f8bdf1f61b852aebe1362cd6d32430"></a>enum &#160;</td><td class="memItemRight"></td></tr>
-<tr class="memitem:aecd8dd24df157a38744ce7d52893ddef inherit pub_types_a02951" id="r_aecd8dd24df157a38744ce7d52893ddef"><td class="memItemLeft">
-typedef <a class="el" href="a03927.html">Unit3</a>&#160;</td><td class="memItemRight"><b>ManifoldType</b></td></tr>
-<tr class="memitem:aeabfd4c402e097eedb55ad543117d4e2 inherit pub_types_a02951" id="r_aeabfd4c402e097eedb55ad543117d4e2"><td class="memItemLeft">
-typedef <a class="el" href="a02935.html">manifold_tag</a>&#160;</td><td class="memItemRight"><b>structure_category</b></td></tr>
-<tr class="memitem:a7fd4430a3d3639de6e4a4bab2c82214d inherit pub_types_a02951" id="r_a7fd4430a3d3639de6e4a4bab2c82214d"><td class="memItemLeft">
-typedef Eigen::Matrix&lt; double, dimension, 1 &gt;&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+<tr class="memitem:a509cd343a2ca0ac90127c7f3997da867" id="r_a509cd343a2ca0ac90127c7f3997da867"><td class="memItemLeft"><a id="a509cd343a2ca0ac90127c7f3997da867" name="a509cd343a2ca0ac90127c7f3997da867"></a>
+static double&#160;</td><td class="memItemRight"><b>safe_div</b> (const double &amp;a, const double &amp;b)</td></tr>
+<tr class="memitem:a5f55b4ca62e40fce54e52b9b41058464" id="r_a5f55b4ca62e40fce54e52b9b41058464"><td class="memTemplParams" colspan="2"><a id="a5f55b4ca62e40fce54e52b9b41058464" name="a5f55b4ca62e40fce54e52b9b41058464"></a>
+template&lt;typename Iterator&gt; </td></tr>
+<tr class="memitem:a5f55b4ca62e40fce54e52b9b41058464 template"><td class="memItemLeft">static <a class="el" href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">NodePtr</a>&#160;</td><td class="memItemRight"><b>compose</b> (Iterator begin, Iterator end, const L &amp;label)</td></tr>
+<tr class="memitem:a0581ba698d3f008f2a572c9b0474d6c2" id="r_a0581ba698d3f008f2a572c9b0474d6c2"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="a04867.html#a0581ba698d3f008f2a572c9b0474d6c2">CheckInvariants</a> (const <a class="el" href="a03883.html">DiscreteConditional</a> &amp;conditional, const VALUES &amp;x)</td></tr>
+<tr class="memdesc:a0581ba698d3f008f2a572c9b0474d6c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check invariants of this conditional, given the values <span class="tt">x</span>.  <br /></td></tr>
+<tr class="inherit_header pub_attribs_a03835"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_a03835')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Attributes inherited from <a class="el" href="a03835.html">gtsam::DecisionTree&lt; L, Y &gt;</a></td></tr>
+<tr class="memitem:a768a8bde0e6dc5d0b0e6f12f57560e9c inherit pub_attribs_a03835" id="r_a768a8bde0e6dc5d0b0e6f12f57560e9c"><td class="memItemLeft">
+<a class="el" href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">NodePtr</a>&#160;</td><td class="memItemRight"><b>root_</b></td></tr>
+<tr class="memdesc:a768a8bde0e6dc5d0b0e6f12f57560e9c inherit pub_attribs_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="a03835.html" title="a decision tree is a function from assignments to values.">DecisionTree</a> just contains the root. TODO(dellaert): make protected. <br /></td></tr>
+<tr class="inherit_header pro_methods_a03883"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_a03883')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="a03883.html">gtsam::DiscreteConditional</a></td></tr>
+<tr class="memitem:ad613c65cf7a3f39b0b005edbbcc4ea69 inherit pro_methods_a03883" id="r_ad613c65cf7a3f39b0b005edbbcc4ea69"><td class="memItemLeft">
+DiscreteConditional::ADT&#160;</td><td class="memItemRight"><b>choose</b> (const <a class="el" href="a07559.html">DiscreteValues</a> &amp;given, bool forceComplete) const</td></tr>
+<tr class="memdesc:ad613c65cf7a3f39b0b005edbbcc4ea69 inherit pro_methods_a03883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal version of choose. <br /></td></tr>
+<tr class="memitem:a322a4d391be45b5909a65895fb7b023d" id="r_a322a4d391be45b5909a65895fb7b023d"><td class="memItemLeft"><a id="a322a4d391be45b5909a65895fb7b023d" name="a322a4d391be45b5909a65895fb7b023d"></a>
+&#160;</td><td class="memItemRight"><b>Factor</b> ()</td></tr>
+<tr class="memdesc:a322a4d391be45b5909a65895fb7b023d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for I/O. <br /></td></tr>
+<tr class="memitem:aa3d2ef6b21961e708a4cbe10b55be59b" id="r_aa3d2ef6b21961e708a4cbe10b55be59b"><td class="memTemplParams" colspan="2">template&lt;typename CONTAINER&gt; </td></tr>
+<tr class="memitem:aa3d2ef6b21961e708a4cbe10b55be59b template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04899.html#aa3d2ef6b21961e708a4cbe10b55be59b">Factor</a> (const CONTAINER &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>)</td></tr>
+<tr class="memdesc:aa3d2ef6b21961e708a4cbe10b55be59b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct factor from container of keys.  <br /></td></tr>
+<tr class="memitem:a70ff55886664229a25e29cf2a7bb1bb7" id="r_a70ff55886664229a25e29cf2a7bb1bb7"><td class="memTemplParams" colspan="2">template&lt;typename ITERATOR&gt; </td></tr>
+<tr class="memitem:a70ff55886664229a25e29cf2a7bb1bb7 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04899.html#a70ff55886664229a25e29cf2a7bb1bb7">Factor</a> (ITERATOR first, ITERATOR last)</td></tr>
+<tr class="memdesc:a70ff55886664229a25e29cf2a7bb1bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct factor from iterator keys.  <br /></td></tr>
+<tr class="inherit_header pro_methods_a04867"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_a04867')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="a04867.html">gtsam::Conditional&lt; DecisionTreeFactor, DiscreteConditional &gt;</a></td></tr>
+<tr class="memitem:a92872ac46ea07c2953eabbdfe816f3ed inherit pro_methods_a04867" id="r_a92872ac46ea07c2953eabbdfe816f3ed"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>Conditional</b> ()</td></tr>
+<tr class="memdesc:a92872ac46ea07c2953eabbdfe816f3ed inherit pro_methods_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty Constructor to make serialization possible. <br /></td></tr>
+<tr class="memitem:a5087976b9e398cd21305d33972feedad" id="r_a5087976b9e398cd21305d33972feedad"><td class="memTemplParams" colspan="2">template&lt;typename CONTAINER&gt; </td></tr>
+<tr class="memitem:a5087976b9e398cd21305d33972feedad template"><td class="memItemLeft">static <a class="el" href="a04899.html#a322a4d391be45b5909a65895fb7b023d">Factor</a>&#160;</td><td class="memItemRight"><a class="el" href="a04899.html#a5087976b9e398cd21305d33972feedad">FromKeys</a> (const CONTAINER &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>)</td></tr>
+<tr class="memdesc:a5087976b9e398cd21305d33972feedad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct factor from container of keys.  <br /></td></tr>
+<tr class="memitem:a4157181261dc47002004d53c8b56f7bf" id="r_a4157181261dc47002004d53c8b56f7bf"><td class="memTemplParams" colspan="2">template&lt;typename ITERATOR&gt; </td></tr>
+<tr class="memitem:a4157181261dc47002004d53c8b56f7bf template"><td class="memItemLeft">static <a class="el" href="a04899.html#a322a4d391be45b5909a65895fb7b023d">Factor</a>&#160;</td><td class="memItemRight"><a class="el" href="a04899.html#a4157181261dc47002004d53c8b56f7bf">FromIterators</a> (ITERATOR first, ITERATOR last)</td></tr>
+<tr class="memdesc:a4157181261dc47002004d53c8b56f7bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct factor from iterator keys.  <br /></td></tr>
+<tr class="inherit_header pro_static_methods_a03835"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_static_methods_a03835')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Protected Member Functions inherited from <a class="el" href="a03835.html">gtsam::DecisionTree&lt; L, Y &gt;</a></td></tr>
+<tr class="memitem:a35920f74df022d256d9137d3ab2628d2 inherit pro_static_methods_a03835" id="r_a35920f74df022d256d9137d3ab2628d2"><td class="memItemLeft">
+static bool&#160;</td><td class="memItemRight"><b>DefaultCompare</b> (const Y &amp;a, const Y &amp;b)</td></tr>
+<tr class="memdesc:a35920f74df022d256d9137d3ab2628d2 inherit pro_static_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default method for comparison of two objects of type Y. <br /></td></tr>
+<tr class="memitem:a3c6f7c2dcbda0a4429e9cb3dc7824287 inherit pro_static_methods_a03835" id="r_a3c6f7c2dcbda0a4429e9cb3dc7824287"><td class="memTemplParams" colspan="2">
+template&lt;typename It, typename ValueIt&gt; </td></tr>
+<tr class="memitem:a3c6f7c2dcbda0a4429e9cb3dc7824287 inherit pro_static_methods_a03835 template"><td class="memItemLeft">static <a class="el" href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">NodePtr</a>&#160;</td><td class="memItemRight"><b>build</b> (It begin, It end, ValueIt beginY, ValueIt endY)</td></tr>
+<tr class="memdesc:a3c6f7c2dcbda0a4429e9cb3dc7824287 inherit pro_static_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal recursive function to create from keys, cardinalities, and Y values. <br /></td></tr>
+<tr class="memitem:af264d6ab7a0750c6d497d9ef83105d84 inherit pro_static_methods_a03835" id="r_af264d6ab7a0750c6d497d9ef83105d84"><td class="memTemplParams" colspan="2">template&lt;typename It, typename ValueIt&gt; </td></tr>
+<tr class="memitem:af264d6ab7a0750c6d497d9ef83105d84 inherit pro_static_methods_a03835 template"><td class="memItemLeft">static <a class="el" href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">NodePtr</a>&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#af264d6ab7a0750c6d497d9ef83105d84">create</a> (It begin, It end, ValueIt beginY, ValueIt endY)</td></tr>
+<tr class="memdesc:af264d6ab7a0750c6d497d9ef83105d84 inherit pro_static_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal helper function to create a tree from keys, cardinalities, and Y values.  <br /></td></tr>
+<tr class="memitem:abebc343d7c11043436188eec0859f0b8 inherit pro_static_methods_a03835" id="r_abebc343d7c11043436188eec0859f0b8"><td class="memTemplParams" colspan="2">template&lt;typename X&gt; </td></tr>
+<tr class="memitem:abebc343d7c11043436188eec0859f0b8 inherit pro_static_methods_a03835 template"><td class="memItemLeft">static <a class="el" href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">NodePtr</a>&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#abebc343d7c11043436188eec0859f0b8">convertFrom</a> (const typename <a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&lt; L, X &gt;<a class="el" href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">::NodePtr</a> &amp;f, std::function&lt; Y(const X &amp;)&gt; Y_of_X)</td></tr>
+<tr class="memdesc:abebc343d7c11043436188eec0859f0b8 inherit pro_static_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert from a DecisionTree&lt;L, X&gt; to DecisionTree&lt;L, Y&gt;.  <br /></td></tr>
+<tr class="memitem:a011bc16d5025032979ee3f66afe59b5b inherit pro_static_methods_a03835" id="r_a011bc16d5025032979ee3f66afe59b5b"><td class="memTemplParams" colspan="2">template&lt;typename M, typename X&gt; </td></tr>
+<tr class="memitem:a011bc16d5025032979ee3f66afe59b5b inherit pro_static_methods_a03835 template"><td class="memItemLeft">static <a class="el" href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">NodePtr</a>&#160;</td><td class="memItemRight"><a class="el" href="a03835.html#a011bc16d5025032979ee3f66afe59b5b">convertFrom</a> (const typename <a class="el" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&lt; M, X &gt;<a class="el" href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">::NodePtr</a> &amp;f, std::function&lt; L(const M &amp;)&gt; L_of_M, std::function&lt; Y(const X &amp;)&gt; Y_of_X)</td></tr>
+<tr class="memdesc:a011bc16d5025032979ee3f66afe59b5b inherit pro_static_methods_a03835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert from a DecisionTree&lt;M, X&gt; to DecisionTree&lt;L, Y&gt;.  <br /></td></tr>
+<tr class="inherit_header pro_attribs_a03903"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a03903')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a03903.html">gtsam::DiscreteFactor</a></td></tr>
+<tr class="memitem:a9ecfde7fb6f1df955e2fb6726a3903c5 inherit pro_attribs_a03903" id="r_a9ecfde7fb6f1df955e2fb6726a3903c5"><td class="memItemLeft">
+std::map&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, size_t &gt;&#160;</td><td class="memItemRight"><b>cardinalities_</b></td></tr>
+<tr class="memdesc:a9ecfde7fb6f1df955e2fb6726a3903c5 inherit pro_attribs_a03903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map of Keys and their cardinalities. <br /></td></tr>
+<tr class="inherit_header pro_attribs_a04899"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a04899')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a04899.html">gtsam::Factor</a></td></tr>
+<tr class="memitem:a10e886cc8b8a374e2fe864707e0b6278 inherit pro_attribs_a04899" id="r_a10e886cc8b8a374e2fe864707e0b6278"><td class="memItemLeft">
+<a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&#160;</td><td class="memItemRight"><b>keys_</b></td></tr>
+<tr class="memdesc:a10e886cc8b8a374e2fe864707e0b6278 inherit pro_attribs_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">The keys involved in this factor. <br /></td></tr>
+<tr class="inherit_header pro_attribs_a04867"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a04867')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a04867.html">gtsam::Conditional&lt; DecisionTreeFactor, DiscreteConditional &gt;</a></td></tr>
+<tr class="memitem:a1700745916154a78b30a2fc15e28ce70 inherit pro_attribs_a04867" id="r_a1700745916154a78b30a2fc15e28ce70"><td class="memItemLeft">
+size_t&#160;</td><td class="memItemRight"><b>nrFrontals_</b></td></tr>
+<tr class="memdesc:a1700745916154a78b30a2fc15e28ce70 inherit pro_attribs_a04867"><td class="mdescLeft">&#160;</td><td class="mdescRight">The first nrFrontal variables are frontal and the rest are parents. <br /></td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/geometry/<a class="el" href="a00365_source.html">Unit3.h</a></li>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a981d836a4c625af0a5e021fac9b2bdfa" name="a981d836a4c625af0a5e021fac9b2bdfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a981d836a4c625af0a5e021fac9b2bdfa">&#9670;&#160;</a></span>DiscreteLookupTable() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gtsam::DiscreteLookupTable::DiscreteLookupTable </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>nFrontals</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>keys</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const ADT &amp;</td>          <td class="paramname"><span class="paramname"><em>potentials</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new Discrete Lookup Table object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nFrontals</td><td>number of frontal variables </td></tr>
+    <tr><td class="paramname"><a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb" title="Access the factor&#39;s involved variable keys.">keys</a></td><td>a sorted list of gtsam::Keys </td></tr>
+    <tr><td class="paramname">potentials</td><td>the algebraic decision tree with lookup values </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae4b692315aa1857599c5c6c14fb77ac5" name="ae4b692315aa1857599c5c6c14fb77ac5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4b692315aa1857599c5c6c14fb77ac5">&#9670;&#160;</a></span>DiscreteLookupTable() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gtsam::DiscreteLookupTable::DiscreteLookupTable </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>nFrontals</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a03927.html">DiscreteKeys</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>keys</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a04023.html">TableFactor</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>potentials</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new Discrete Lookup Table object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nFrontals</td><td>number of frontal variables </td></tr>
+    <tr><td class="paramname"><a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb" title="Access the factor&#39;s involved variable keys.">keys</a></td><td>a sorted list of gtsam::Keys </td></tr>
+    <tr><td class="paramname">potentials</td><td>Discrete potentials as a <a class="el" href="a04023.html" title="A discrete probabilistic factor optimized for sparsity.">TableFactor</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="abeb8c6b66c058cc51feb62b8cc0f32f8" name="abeb8c6b66c058cc51feb62b8cc0f32f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeb8c6b66c058cc51feb62b8cc0f32f8">&#9670;&#160;</a></span>argmax()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t gtsam::DiscreteLookupTable::argmax </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a07559.html">DiscreteValues</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>parentsValues</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>return assignment for single frontal variable that maximizes value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parentsValues</td><td>Known assignments for the parents. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>maximizing assignment for the frontal variable. </dd></dl>
+
+</div>
+</div>
+<a id="a7a8bcceb30597059da78b7fa4753c678" name="a7a8bcceb30597059da78b7fa4753c678"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a8bcceb30597059da78b7fa4753c678">&#9670;&#160;</a></span>argmaxInPlace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gtsam::DiscreteLookupTable::argmaxInPlace </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a07559.html">DiscreteValues</a> *</td>          <td class="paramname"><span class="paramname"><em>parentsValues</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate assignment for frontal variables that maximizes value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(in/out)</td><td>parentsValues Known assignments for the parents. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a081dca4f8c65b0d6fd3b05342f2bf53a" name="a081dca4f8c65b0d6fd3b05342f2bf53a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a081dca4f8c65b0d6fd3b05342f2bf53a">&#9670;&#160;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gtsam::DiscreteLookupTable::print </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;Discrete&#160;Lookup&#160;Table:&#160;&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>formatter</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>GTSAM-style print. </p>
+
+<p>Reimplemented from <a class="el" href="a03883.html#a79d711fbac861a0d701a8678689477bd">gtsam::DiscreteConditional</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/discrete/<a class="el" href="a00362_source.html">DiscreteLookupDAG.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/discrete/<a class="el" href="a00389.html">DiscreteLookupDAG.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -159,7 +932,7 @@ typedef Eigen::Matrix&lt; double, dimension, 1 &gt;&#160;</td><td class="memItem
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a03935.html">traits&lt; const Unit3 &gt;</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a03935.html">DiscreteLookupTable</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

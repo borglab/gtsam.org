@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/base/FastSet.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/MatrixConstants.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,29 +96,57 @@ $(function(){initNavTree('a00080.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">FastSet.h File Reference</div></div>
+  <div class="headertitle"><div class="title">MatrixConstants.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>A thin wrapper around std::set that uses boost's fast_pool_allocator.  
+<p>Macros for Matrix constants to avoid excessive template instantiation.  
 <a href="#details">More...</a></p>
 
 <p><a href="a00080_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3AFastSet_3C_20VALUE_20_3E" id="r_gtsam_3A_3AFastSet_3C_20VALUE_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a02867.html">gtsam::FastSet&lt; VALUE &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a02867.html" title="FastSet is a thin wrapper around std::set that uses the boost fast_pool_allocator instead of the defa...">FastSet</a> is a thin wrapper around std::set that uses the boost fast_pool_allocator instead of the default STL allocator.  <a href="a02867.html#details">More...</a><br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a9f66ee9251722949fd518ea4dfe67c07" id="r_a9f66ee9251722949fd518ea4dfe67c07"><td class="memItemLeft"><a id="a9f66ee9251722949fd518ea4dfe67c07" name="a9f66ee9251722949fd518ea4dfe67c07"></a>
+#define&#160;</td><td class="memItemRight"><b>I_1x1</b>&#160;&#160;&#160;Matrix1::Identity()</td></tr>
+<tr class="memitem:ad7c995a33ade632d9fb47e5d164d154d" id="r_ad7c995a33ade632d9fb47e5d164d154d"><td class="memItemLeft"><a id="ad7c995a33ade632d9fb47e5d164d154d" name="ad7c995a33ade632d9fb47e5d164d154d"></a>
+#define&#160;</td><td class="memItemRight"><b>Z_1x1</b>&#160;&#160;&#160;Matrix1::Constant(0.0)</td></tr>
+<tr class="memitem:a3b2883049ce9c643fefc553cfd1c6962" id="r_a3b2883049ce9c643fefc553cfd1c6962"><td class="memItemLeft"><a id="a3b2883049ce9c643fefc553cfd1c6962" name="a3b2883049ce9c643fefc553cfd1c6962"></a>
+#define&#160;</td><td class="memItemRight"><b>I_2x2</b>&#160;&#160;&#160;Matrix2::Identity()</td></tr>
+<tr class="memitem:a2d47aa4a8772a3e3b2201d4cc282a4e0" id="r_a2d47aa4a8772a3e3b2201d4cc282a4e0"><td class="memItemLeft"><a id="a2d47aa4a8772a3e3b2201d4cc282a4e0" name="a2d47aa4a8772a3e3b2201d4cc282a4e0"></a>
+#define&#160;</td><td class="memItemRight"><b>Z_2x2</b>&#160;&#160;&#160;Matrix2::Constant(0.0)</td></tr>
+<tr class="memitem:aefa91ebd6b1d7aba1e169beaed8dcccb" id="r_aefa91ebd6b1d7aba1e169beaed8dcccb"><td class="memItemLeft"><a id="aefa91ebd6b1d7aba1e169beaed8dcccb" name="aefa91ebd6b1d7aba1e169beaed8dcccb"></a>
+#define&#160;</td><td class="memItemRight"><b>I_3x3</b>&#160;&#160;&#160;Matrix3::Identity()</td></tr>
+<tr class="memitem:a88c1e321cd5dc9e9fadc9afb6bd17bda" id="r_a88c1e321cd5dc9e9fadc9afb6bd17bda"><td class="memItemLeft"><a id="a88c1e321cd5dc9e9fadc9afb6bd17bda" name="a88c1e321cd5dc9e9fadc9afb6bd17bda"></a>
+#define&#160;</td><td class="memItemRight"><b>Z_3x3</b>&#160;&#160;&#160;Matrix3::Constant(0.0)</td></tr>
+<tr class="memitem:a019ddba4df191873f7b4e30f10fce4cb" id="r_a019ddba4df191873f7b4e30f10fce4cb"><td class="memItemLeft"><a id="a019ddba4df191873f7b4e30f10fce4cb" name="a019ddba4df191873f7b4e30f10fce4cb"></a>
+#define&#160;</td><td class="memItemRight"><b>I_4x4</b>&#160;&#160;&#160;Matrix4::Identity()</td></tr>
+<tr class="memitem:ae7048a80a18675024049e2b5ade0b07e" id="r_ae7048a80a18675024049e2b5ade0b07e"><td class="memItemLeft"><a id="ae7048a80a18675024049e2b5ade0b07e" name="ae7048a80a18675024049e2b5ade0b07e"></a>
+#define&#160;</td><td class="memItemRight"><b>Z_4x4</b>&#160;&#160;&#160;Matrix4::Constant(0.0)</td></tr>
+<tr class="memitem:a692ad397d30e07254ebe8e9d60c9a9bb" id="r_a692ad397d30e07254ebe8e9d60c9a9bb"><td class="memItemLeft"><a id="a692ad397d30e07254ebe8e9d60c9a9bb" name="a692ad397d30e07254ebe8e9d60c9a9bb"></a>
+#define&#160;</td><td class="memItemRight"><b>I_5x5</b>&#160;&#160;&#160;Matrix5::Identity()</td></tr>
+<tr class="memitem:a974c851014e05c8dbb467a62b74d94a2" id="r_a974c851014e05c8dbb467a62b74d94a2"><td class="memItemLeft"><a id="a974c851014e05c8dbb467a62b74d94a2" name="a974c851014e05c8dbb467a62b74d94a2"></a>
+#define&#160;</td><td class="memItemRight"><b>Z_5x5</b>&#160;&#160;&#160;Matrix5::Constant(0.0)</td></tr>
+<tr class="memitem:a08910f07ab5e5780b9569289ebd8c279" id="r_a08910f07ab5e5780b9569289ebd8c279"><td class="memItemLeft"><a id="a08910f07ab5e5780b9569289ebd8c279" name="a08910f07ab5e5780b9569289ebd8c279"></a>
+#define&#160;</td><td class="memItemRight"><b>I_6x6</b>&#160;&#160;&#160;Matrix6::Identity()</td></tr>
+<tr class="memitem:a812dcb15e3d6cdf89ba8529e6ccc4275" id="r_a812dcb15e3d6cdf89ba8529e6ccc4275"><td class="memItemLeft"><a id="a812dcb15e3d6cdf89ba8529e6ccc4275" name="a812dcb15e3d6cdf89ba8529e6ccc4275"></a>
+#define&#160;</td><td class="memItemRight"><b>Z_6x6</b>&#160;&#160;&#160;Matrix6::Constant(0.0)</td></tr>
+<tr class="memitem:a75c955e4a39e35a60004623aee0a5529" id="r_a75c955e4a39e35a60004623aee0a5529"><td class="memItemLeft"><a id="a75c955e4a39e35a60004623aee0a5529" name="a75c955e4a39e35a60004623aee0a5529"></a>
+#define&#160;</td><td class="memItemRight"><b>I_7x7</b>&#160;&#160;&#160;Matrix7::Identity()</td></tr>
+<tr class="memitem:ac4b1815cb68f4e282bcaafc8254d4e6e" id="r_ac4b1815cb68f4e282bcaafc8254d4e6e"><td class="memItemLeft"><a id="ac4b1815cb68f4e282bcaafc8254d4e6e" name="ac4b1815cb68f4e282bcaafc8254d4e6e"></a>
+#define&#160;</td><td class="memItemRight"><b>Z_7x7</b>&#160;&#160;&#160;Matrix7::Constant(0.0)</td></tr>
+<tr class="memitem:aab1275985aa6e4f2c902225c7a356977" id="r_aab1275985aa6e4f2c902225c7a356977"><td class="memItemLeft"><a id="aab1275985aa6e4f2c902225c7a356977" name="aab1275985aa6e4f2c902225c7a356977"></a>
+#define&#160;</td><td class="memItemRight"><b>I_8x8</b>&#160;&#160;&#160;Matrix8::Identity()</td></tr>
+<tr class="memitem:a1d93f41e93f1186748dbe0bcd1738fb7" id="r_a1d93f41e93f1186748dbe0bcd1738fb7"><td class="memItemLeft"><a id="a1d93f41e93f1186748dbe0bcd1738fb7" name="a1d93f41e93f1186748dbe0bcd1738fb7"></a>
+#define&#160;</td><td class="memItemRight"><b>Z_8x8</b>&#160;&#160;&#160;Matrix8::Constant(0.0)</td></tr>
+<tr class="memitem:a5bbedcd0264dcfa1c351e56834826140" id="r_a5bbedcd0264dcfa1c351e56834826140"><td class="memItemLeft"><a id="a5bbedcd0264dcfa1c351e56834826140" name="a5bbedcd0264dcfa1c351e56834826140"></a>
+#define&#160;</td><td class="memItemRight"><b>I_9x9</b>&#160;&#160;&#160;Matrix9::Identity()</td></tr>
+<tr class="memitem:ab0c37626fb25d5cc348b228540b05d3b" id="r_ab0c37626fb25d5cc348b228540b05d3b"><td class="memItemLeft"><a id="ab0c37626fb25d5cc348b228540b05d3b" name="ab0c37626fb25d5cc348b228540b05d3b"></a>
+#define&#160;</td><td class="memItemRight"><b>Z_9x9</b>&#160;&#160;&#160;Matrix9::Constant(0.0)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A thin wrapper around std::set that uses boost's fast_pool_allocator. </p>
-<dl class="section author"><dt>Author</dt><dd>Richard Roberts </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>Oct 17, 2010 </dd></dl>
+<div class="textblock"><p>Macros for Matrix constants to avoid excessive template instantiation. </p>
+<p>Avoid using in headers to prevent name pollution. </p><dl class="section author"><dt>Author</dt><dd>Gold856 </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -132,7 +160,7 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>base</b></li><li class="navelem"><a href="a00080.html">FastSet.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>base</b></li><li class="navelem"><a href="a00080.html">MatrixConstants.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

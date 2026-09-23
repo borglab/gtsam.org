@@ -1,4 +1,5 @@
 var a01742 =
 [
-    [ "gtsam::traits&lt; ProjectionFactorPPP&lt; POSE, LANDMARK, CALIBRATION &gt; &gt;", "a06091.html", null ]
+    [ "gtsam::SmartProjectionFactorBase&lt; CAMERA &gt;", "a07095.html", "a07095" ],
+    [ "gtsam::traits&lt; SmartProjectionFactorBase&lt; CAMERA &gt; &gt;", "a07099.html", null ]
 ];

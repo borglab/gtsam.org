@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/discrete/DiscreteEliminationTree.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/basis/PiecewisePolynomial.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,7 +89,7 @@ $(function(){initNavTree('a00236_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">DiscreteEliminationTree.h</div></div>
+  <div class="headertitle"><div class="title">PiecewisePolynomial.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a00236.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
@@ -103,60 +103,142 @@ $(function(){initNavTree('a00236_source.html','',''); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="a00221.html">gtsam/discrete/DiscreteBayesNet.h</a>&gt;</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="a00263.html">gtsam/discrete/DiscreteFactorGraph.h</a>&gt;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="a00596.html">gtsam/inference/EliminationTree.h</a>&gt;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
-<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="a03395.html">   31</a></span>  <span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a03395.html#a782fad055747d26fb8e876e3cf51bd6f">DiscreteEliminationTree</a> :</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">public</span> <a class="code hl_function" href="a04131.html#af9d86f2a1c1e084c02982d08b3512385">EliminationTree</a>&lt;DiscreteBayesNet, DiscreteFactorGraph&gt;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="a03395.html#ae4e6afc353582183f3c881a3acad57ca">   35</a></span>    <span class="keyword">typedef</span> <a class="code hl_function" href="a04131.html#af9d86f2a1c1e084c02982d08b3512385">EliminationTree&lt;DiscreteBayesNet, DiscreteFactorGraph&gt;</a> <a class="code hl_typedef" href="a03395.html#ae4e6afc353582183f3c881a3acad57ca">Base</a>; </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="a03395.html#a2b315837d2af900fce3ee59ef54a426f">   36</a></span>    <span class="keyword">typedef</span> <a class="code hl_function" href="a03395.html#a782fad055747d26fb8e876e3cf51bd6f">DiscreteEliminationTree</a> <a class="code hl_typedef" href="a03395.html#a2b315837d2af900fce3ee59ef54a426f">This</a>; </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="a03395.html#a850bd2d0f3c1a7b51aebd75582d86b43">   37</a></span>    <span class="keyword">typedef</span> boost::shared_ptr&lt;This&gt; <a class="code hl_typedef" href="a03395.html#a850bd2d0f3c1a7b51aebd75582d86b43">shared_ptr</a>; </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_function" href="a03395.html#a782fad055747d26fb8e876e3cf51bd6f">DiscreteEliminationTree</a>(<span class="keyword">const</span> <a class="code hl_class" href="a03411.html">DiscreteFactorGraph</a>&amp; factorGraph,</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      <span class="keyword">const</span> <a class="code hl_class" href="a04247.html">VariableIndex</a>&amp; structure, <span class="keyword">const</span> <a class="code hl_class" href="a04227.html">Ordering</a>&amp; order);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="a00218.html">gtsam/basis/KernelBase.h</a>&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;initializer_list&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> Order, <span class="keywordtype">size_t</span> Pieces&gt;</div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="a03783.html">   45</a></span><span class="keyword">class </span><a class="code hl_function" href="a03783.html#af45d006064c69f65528d00c2c7229ef1">PiecewisePolynomial</a> : <span class="keyword">public</span> <a class="code hl_class" href="a03779.html">KernelBase</a> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> order = Order;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> pieces = Pieces;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_function" href="a03395.html#a782fad055747d26fb8e876e3cf51bd6f">DiscreteEliminationTree</a>(<span class="keyword">const</span> <a class="code hl_class" href="a03411.html">DiscreteFactorGraph</a>&amp; factorGraph,</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      <span class="keyword">const</span> <a class="code hl_class" href="a04227.html">Ordering</a>&amp; order);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="a03395.html#a708057192d2685853f97fcd30c834cfc">equals</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="a03395.html#a2b315837d2af900fce3ee59ef54a426f">This</a>&amp; other, <span class="keywordtype">double</span> tol = 1e-9) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">friend</span> class ::EliminationTreeTester;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  };</div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="};">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="a03787.html">   51</a></span>  <span class="keyword">struct </span><a class="code hl_function" href="a03787.html#a2a73176d8a54af1af4e55672875b2ce6">Parameters</a> {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="a03787.html#a65d934e2fa62f6f4c42ee0272782ab71">   53</a></span>    std::array&lt;std::array&lt;double, order + 1&gt;, pieces&gt; <a class="code hl_variable" href="a03787.html#a65d934e2fa62f6f4c42ee0272782ab71">coefficients</a>{};</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="a03787.html#aaa2d6d610f188c01062db9d398fc519d">   55</a></span>    std::array&lt;double, pieces + 1&gt; <a class="code hl_variable" href="a03787.html#aaa2d6d610f188c01062db9d398fc519d">intervals</a>{};</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="a03787.html#ae5d9175f8275f05673aee0e880c1a5bc">   57</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="a03787.html#ae5d9175f8275f05673aee0e880c1a5bc">center</a> = 0.0;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="a03787.html#a2a73176d8a54af1af4e55672875b2ce6">   60</a></span>    <a class="code hl_function" href="a03787.html#a2a73176d8a54af1af4e55672875b2ce6">Parameters</a>(std::initializer_list&lt;double&gt; coefficientValues,</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>               std::initializer_list&lt;double&gt; intervalValues, <span class="keywordtype">double</span> centerValue)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        : <a class="code hl_variable" href="a03787.html#ae5d9175f8275f05673aee0e880c1a5bc">center</a>(centerValue) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>      <span class="keywordflow">if</span> (coefficientValues.size() != pieces * (order + 1) ||</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>          intervalValues.size() != pieces + 1) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        throw std::invalid_argument(</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="stringliteral">&quot;PiecewisePolynomial parameter dimensions do not match template &quot;</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="stringliteral">&quot;arguments&quot;</span>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      <span class="keyword">auto</span> coefficient = coefficientValues.begin();</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      for (<span class="keyword">auto</span>&amp; piece : <a class="code hl_variable" href="a03787.html#a65d934e2fa62f6f4c42ee0272782ab71">coefficients</a>) {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">for</span> (<span class="keywordtype">double</span>&amp; value : piece) value = *coefficient++;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      std::copy(intervalValues.begin(), intervalValues.end(),</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                <a class="code hl_variable" href="a03787.html#aaa2d6d610f188c01062db9d398fc519d">intervals</a>.begin());</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
 </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}</div>
-<div class="ttc" id="aa00221_html"><div class="ttname"><a href="a00221.html">DiscreteBayesNet.h</a></div></div>
-<div class="ttc" id="aa00263_html"><div class="ttname"><a href="a00263.html">DiscreteFactorGraph.h</a></div></div>
-<div class="ttc" id="aa00596_html"><div class="ttname"><a href="a00596.html">EliminationTree.h</a></div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa03395_html_a2b315837d2af900fce3ee59ef54a426f"><div class="ttname"><a href="a03395.html#a2b315837d2af900fce3ee59ef54a426f">gtsam::DiscreteEliminationTree::This</a></div><div class="ttdeci">DiscreteEliminationTree This</div><div class="ttdoc">This class.</div><div class="ttdef"><b>Definition</b> DiscreteEliminationTree.h:36</div></div>
-<div class="ttc" id="aa03395_html_a708057192d2685853f97fcd30c834cfc"><div class="ttname"><a href="a03395.html#a708057192d2685853f97fcd30c834cfc">gtsam::DiscreteEliminationTree::equals</a></div><div class="ttdeci">bool equals(const This &amp;other, double tol=1e-9) const</div><div class="ttdoc">Test whether the tree is equal to another.</div><div class="ttdef"><b>Definition</b> DiscreteEliminationTree.cpp:39</div></div>
-<div class="ttc" id="aa03395_html_a782fad055747d26fb8e876e3cf51bd6f"><div class="ttname"><a href="a03395.html#a782fad055747d26fb8e876e3cf51bd6f">gtsam::DiscreteEliminationTree::DiscreteEliminationTree</a></div><div class="ttdeci">DiscreteEliminationTree(const DiscreteFactorGraph &amp;factorGraph, const VariableIndex &amp;structure, const Ordering &amp;order)</div><div class="ttdoc">Build the elimination tree of a factor graph using pre-computed column structure.</div><div class="ttdef"><b>Definition</b> DiscreteEliminationTree.cpp:28</div></div>
-<div class="ttc" id="aa03395_html_a850bd2d0f3c1a7b51aebd75582d86b43"><div class="ttname"><a href="a03395.html#a850bd2d0f3c1a7b51aebd75582d86b43">gtsam::DiscreteEliminationTree::shared_ptr</a></div><div class="ttdeci">boost::shared_ptr&lt; This &gt; shared_ptr</div><div class="ttdoc">Shared pointer to this class.</div><div class="ttdef"><b>Definition</b> DiscreteEliminationTree.h:37</div></div>
-<div class="ttc" id="aa03395_html_ae4e6afc353582183f3c881a3acad57ca"><div class="ttname"><a href="a03395.html#ae4e6afc353582183f3c881a3acad57ca">gtsam::DiscreteEliminationTree::Base</a></div><div class="ttdeci">EliminationTree&lt; DiscreteBayesNet, DiscreteFactorGraph &gt; Base</div><div class="ttdoc">Base class.</div><div class="ttdef"><b>Definition</b> DiscreteEliminationTree.h:35</div></div>
-<div class="ttc" id="aa03411_html"><div class="ttname"><a href="a03411.html">gtsam::DiscreteFactorGraph</a></div><div class="ttdoc">A Discrete Factor Graph is a factor graph where all factors are Discrete, i.e.</div><div class="ttdef"><b>Definition</b> DiscreteFactorGraph.h:101</div></div>
-<div class="ttc" id="aa04131_html_af9d86f2a1c1e084c02982d08b3512385"><div class="ttname"><a href="a04131.html#af9d86f2a1c1e084c02982d08b3512385">gtsam::EliminationTree&lt; DiscreteBayesNet, DiscreteFactorGraph &gt;::EliminationTree</a></div><div class="ttdeci">EliminationTree(const FactorGraphType &amp;factorGraph, const VariableIndex &amp;structure, const Ordering &amp;order)</div></div>
-<div class="ttc" id="aa04227_html"><div class="ttname"><a href="a04227.html">gtsam::Ordering</a></div><div class="ttdef"><b>Definition</b> Ordering.h:34</div></div>
-<div class="ttc" id="aa04247_html"><div class="ttname"><a href="a04247.html">gtsam::VariableIndex</a></div><div class="ttdoc">The VariableIndex class computes and stores the block column structure of a factor graph.</div><div class="ttdef"><b>Definition</b> VariableIndex.h:43</div></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  };</div>
+</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="a03783.html#af45d006064c69f65528d00c2c7229ef1">   79</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="a03783.html#af45d006064c69f65528d00c2c7229ef1">PiecewisePolynomial</a>(<span class="keyword">const</span> <a class="code hl_struct" href="a03787.html">Parameters</a>&amp; parameters)</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      : parameters_(parameters) {}</div>
+</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="a03783.html#a8237e8e603d4e598db35029cdc7b2fcf">   83</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="a03783.html#a8237e8e603d4e598db35029cdc7b2fcf">getCenter</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> parameters_.center; }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="a03783.html#a7055671fad39ad34908922d55321fa4c">   86</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="a03783.html#a7055671fad39ad34908922d55321fa4c">getBeginning</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> parameters_.intervals.front(); }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="a03783.html#a1a84fce68cc3cae26afe2d6b53566fe2">   89</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="a03783.html#a1a84fce68cc3cae26afe2d6b53566fe2">getEnd</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> parameters_.intervals.back(); }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="a03783.html#a92ea3872958cd103e3b05d05d8b3d244">   92</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="a03783.html#a92ea3872958cd103e3b05d05d8b3d244">getValidDerivatives</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> order; }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
+<div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="a03783.html#a2e2fd1406e276301321cd54cc835003c">   95</a></span>  <span class="keyword">const</span> std::array&lt;double, pieces + 1&gt;&amp; <a class="code hl_function" href="a03783.html#a2e2fd1406e276301321cd54cc835003c">getIntervals</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">return</span> parameters_.intervals;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  }</div>
+</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
+<div class="foldopen" id="foldopen00100" data-start="{" data-end="}">
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="a03783.html#a2091942309fc51c40f866bfb9944ca1e">  100</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="a03783.html#a2091942309fc51c40f866bfb9944ca1e">evaluate</a>(<span class="keywordtype">double</span> t, <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;1, 1&gt;</a> H = {}) <span class="keyword">const</span> <span class="keyword">override</span> {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="a03783.html#a5e84126dea3b70eb33cb8405f0efd578">evaluateDerivative</a>(0, t, H);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  }</div>
+</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="a03783.html#a5e84126dea3b70eb33cb8405f0efd578">  105</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="a03783.html#a5e84126dea3b70eb33cb8405f0efd578">evaluateDerivative</a>(<span class="keywordtype">size_t</span> derivative, <span class="keywordtype">double</span> t,</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                            <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;1, 1&gt;</a> H = {}) <span class="keyword">const</span> <span class="keyword">override</span> {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordflow">if</span> (derivative &gt; order) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <span class="keywordflow">if</span> (H) (*H)(0, 0) = 0.0;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>      <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    t = std::max(parameters_.<a class="code hl_variable" href="a03787.html#aaa2d6d610f188c01062db9d398fc519d">intervals</a>.front(),</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                 std::min(t, parameters_.<a class="code hl_variable" href="a03787.html#aaa2d6d610f188c01062db9d398fc519d">intervals</a>.back()));</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> piece = 0; piece &lt; pieces; ++piece) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      <span class="keywordflow">if</span> (t &lt;= parameters_.<a class="code hl_variable" href="a03787.html#aaa2d6d610f188c01062db9d398fc519d">intervals</a>[piece + 1]) {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordtype">double</span> powerOfT = 1.0;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordtype">double</span> result = 0.0;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> exponent = derivative; exponent &lt;= order; ++exponent) {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>          <span class="keywordtype">size_t</span> powerRule = 1;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>          <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> count = 0; count &lt; derivative; ++count) {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            powerRule *= exponent - count;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>          }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>          result +=</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>              powerRule * powerOfT * parameters_.coefficients[piece][exponent];</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>          powerOfT *= t;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">if</span> (H) (*H)(0, 0) = <a class="code hl_function" href="a03783.html#a5e84126dea3b70eb33cb8405f0efd578">evaluateDerivative</a>(derivative + 1, t);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>      }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordflow">if</span> (H) (*H)(0, 0) = 0.0;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  }</div>
+</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="keyword">const</span> <a class="code hl_struct" href="a03787.html">Parameters</a> parameters_;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>};</div>
+</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>}  <span class="comment">// namespace gtsam</span></div>
+<div class="ttc" id="aa00218_html"><div class="ttname"><a href="a00218.html">KernelBase.h</a></div><div class="ttdoc">Continuous kernels for convolution-based trajectory models.</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa03363_html"><div class="ttname"><a href="a03363.html">gtsam::OptionalJacobian</a></div><div class="ttdoc">OptionalJacobian is an Eigen::Ref like class that can take be constructed using either a fixed size o...</div><div class="ttdef"><b>Definition</b> OptionalJacobian.h:40</div></div>
+<div class="ttc" id="aa03779_html"><div class="ttname"><a href="a03779.html">gtsam::KernelBase</a></div><div class="ttdoc">Interface for a compactly supported continuous convolution kernel.</div><div class="ttdef"><b>Definition</b> KernelBase.h:27</div></div>
+<div class="ttc" id="aa03783_html_a1a84fce68cc3cae26afe2d6b53566fe2"><div class="ttname"><a href="a03783.html#a1a84fce68cc3cae26afe2d6b53566fe2">gtsam::PiecewisePolynomial::getEnd</a></div><div class="ttdeci">double getEnd() const override</div><div class="ttdoc">Return the last boundary of the kernel support.</div><div class="ttdef"><b>Definition</b> PiecewisePolynomial.h:89</div></div>
+<div class="ttc" id="aa03783_html_a2091942309fc51c40f866bfb9944ca1e"><div class="ttname"><a href="a03783.html#a2091942309fc51c40f866bfb9944ca1e">gtsam::PiecewisePolynomial::evaluate</a></div><div class="ttdeci">double evaluate(double t, OptionalJacobian&lt; 1, 1 &gt; H={}) const override</div><div class="ttdoc">Evaluate the selected polynomial piece and optionally its slope.</div><div class="ttdef"><b>Definition</b> PiecewisePolynomial.h:100</div></div>
+<div class="ttc" id="aa03783_html_a2e2fd1406e276301321cd54cc835003c"><div class="ttname"><a href="a03783.html#a2e2fd1406e276301321cd54cc835003c">gtsam::PiecewisePolynomial::getIntervals</a></div><div class="ttdeci">const std::array&lt; double, pieces+1 &gt; &amp; getIntervals() const</div><div class="ttdoc">Return interval boundaries, primarily for validation and visualization.</div><div class="ttdef"><b>Definition</b> PiecewisePolynomial.h:95</div></div>
+<div class="ttc" id="aa03783_html_a5e84126dea3b70eb33cb8405f0efd578"><div class="ttname"><a href="a03783.html#a5e84126dea3b70eb33cb8405f0efd578">gtsam::PiecewisePolynomial::evaluateDerivative</a></div><div class="ttdeci">double evaluateDerivative(size_t derivative, double t, OptionalJacobian&lt; 1, 1 &gt; H={}) const override</div><div class="ttdoc">Evaluate an analytic derivative and optionally the next derivative.</div><div class="ttdef"><b>Definition</b> PiecewisePolynomial.h:105</div></div>
+<div class="ttc" id="aa03783_html_a7055671fad39ad34908922d55321fa4c"><div class="ttname"><a href="a03783.html#a7055671fad39ad34908922d55321fa4c">gtsam::PiecewisePolynomial::getBeginning</a></div><div class="ttdeci">double getBeginning() const override</div><div class="ttdoc">Return the first boundary of the kernel support.</div><div class="ttdef"><b>Definition</b> PiecewisePolynomial.h:86</div></div>
+<div class="ttc" id="aa03783_html_a8237e8e603d4e598db35029cdc7b2fcf"><div class="ttname"><a href="a03783.html#a8237e8e603d4e598db35029cdc7b2fcf">gtsam::PiecewisePolynomial::getCenter</a></div><div class="ttdeci">double getCenter() const override</div><div class="ttdoc">Return the representative center of the kernel support.</div><div class="ttdef"><b>Definition</b> PiecewisePolynomial.h:83</div></div>
+<div class="ttc" id="aa03783_html_a92ea3872958cd103e3b05d05d8b3d244"><div class="ttname"><a href="a03783.html#a92ea3872958cd103e3b05d05d8b3d244">gtsam::PiecewisePolynomial::getValidDerivatives</a></div><div class="ttdeci">size_t getValidDerivatives() const override</div><div class="ttdoc">Return the largest derivative order available analytically.</div><div class="ttdef"><b>Definition</b> PiecewisePolynomial.h:92</div></div>
+<div class="ttc" id="aa03783_html_af45d006064c69f65528d00c2c7229ef1"><div class="ttname"><a href="a03783.html#af45d006064c69f65528d00c2c7229ef1">gtsam::PiecewisePolynomial::PiecewisePolynomial</a></div><div class="ttdeci">PiecewisePolynomial(const Parameters &amp;parameters)</div><div class="ttdoc">Construct a kernel from fixed-size coefficient data.</div><div class="ttdef"><b>Definition</b> PiecewisePolynomial.h:79</div></div>
+<div class="ttc" id="aa03787_html"><div class="ttname"><a href="a03787.html">gtsam::PiecewisePolynomial::Parameters</a></div><div class="ttdoc">Coefficients, interval boundaries, and center defining the kernel.</div><div class="ttdef"><b>Definition</b> PiecewisePolynomial.h:51</div></div>
+<div class="ttc" id="aa03787_html_a2a73176d8a54af1af4e55672875b2ce6"><div class="ttname"><a href="a03787.html#a2a73176d8a54af1af4e55672875b2ce6">gtsam::PiecewisePolynomial::Parameters::Parameters</a></div><div class="ttdeci">Parameters(std::initializer_list&lt; double &gt; coefficientValues, std::initializer_list&lt; double &gt; intervalValues, double centerValue)</div><div class="ttdoc">Construct from row-major coefficients and ascending boundaries.</div><div class="ttdef"><b>Definition</b> PiecewisePolynomial.h:60</div></div>
+<div class="ttc" id="aa03787_html_a65d934e2fa62f6f4c42ee0272782ab71"><div class="ttname"><a href="a03787.html#a65d934e2fa62f6f4c42ee0272782ab71">gtsam::PiecewisePolynomial::Parameters::coefficients</a></div><div class="ttdeci">std::array&lt; std::array&lt; double, order+1 &gt;, pieces &gt; coefficients</div><div class="ttdoc">Polynomial coefficients indexed by piece, then ascending power.</div><div class="ttdef"><b>Definition</b> PiecewisePolynomial.h:53</div></div>
+<div class="ttc" id="aa03787_html_aaa2d6d610f188c01062db9d398fc519d"><div class="ttname"><a href="a03787.html#aaa2d6d610f188c01062db9d398fc519d">gtsam::PiecewisePolynomial::Parameters::intervals</a></div><div class="ttdeci">std::array&lt; double, pieces+1 &gt; intervals</div><div class="ttdoc">Monotonically increasing boundaries for the polynomial pieces.</div><div class="ttdef"><b>Definition</b> PiecewisePolynomial.h:55</div></div>
+<div class="ttc" id="aa03787_html_ae5d9175f8275f05673aee0e880c1a5bc"><div class="ttname"><a href="a03787.html#ae5d9175f8275f05673aee0e880c1a5bc">gtsam::PiecewisePolynomial::Parameters::center</a></div><div class="ttdeci">double center</div><div class="ttdoc">Representative center of the complete kernel support.</div><div class="ttdef"><b>Definition</b> PiecewisePolynomial.h:57</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>discrete</b></li><li class="navelem"><a href="a00236.html">DiscreteEliminationTree.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>basis</b></li><li class="navelem"><a href="a00236.html">PiecewisePolynomial.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

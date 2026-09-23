@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['trustregionadaptationmode_0',['TrustRegionAdaptationMode',['../a04815.html#a52e03ca11a892d070c911db43f22cf04',1,'gtsam::DoglegOptimizerImpl']]]
+  ['reweightscheme_0',['ReweightScheme',['../a05231.html#ac2f379f230a3a8f2624e6f39172cf782',1,'gtsam::noiseModel::mEstimator::Base']]]
 ];

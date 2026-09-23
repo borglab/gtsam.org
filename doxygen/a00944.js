@@ -1,4 +1,4 @@
 var a00944 =
 [
-    [ "gtsam::PreintegrationParams", "a04767.html", "a04767" ]
+    [ "gtsam::Sampler", "a05487.html", "a05487" ]
 ];

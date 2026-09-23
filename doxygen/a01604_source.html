@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/nonlinear/IncrementalFixedLagSmoother.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/sam/RangeFactor.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,7 +89,7 @@ $(function(){initNavTree('a01604_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">IncrementalFixedLagSmoother.h</div></div>
+  <div class="headertitle"><div class="title">RangeFactor.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a01604.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
@@ -103,172 +103,346 @@ $(function(){initNavTree('a01604_source.html','',''); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">// \callgraph</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="a01619.html">gtsam_unstable/nonlinear/FixedLagSmoother.h</a>&gt;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;<a class="code" href="a01112.html">gtsam/nonlinear/ISAM2.h</a>&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="a00920.html">gtsam/linear/FixedJacobianFactor.h</a>&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="a01472.html">gtsam/nonlinear/NoiseModelFactorN.h</a>&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
-<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="a05927.html">   33</a></span><span class="keyword">class </span>GTSAM_UNSTABLE_EXPORT <a class="code hl_function" href="a05927.html#afd7daa9f16738872b734787a310ae957">IncrementalFixedLagSmoother</a>: <span class="keyword">public</span> <a class="code hl_function" href="a05919.html#a9384ec1aab2b6062b1de20efda8f0ac9">FixedLagSmoother</a> {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="a05927.html#af49d03dc028e2d965e8b97f65c139d25">   38</a></span>  <span class="keyword">typedef</span> boost::shared_ptr&lt;IncrementalFixedLagSmoother&gt; <a class="code hl_typedef" href="a05927.html#af49d03dc028e2d965e8b97f65c139d25">shared_ptr</a>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
-<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="a05927.html#afd7daa9f16738872b734787a310ae957">   41</a></span>  <a class="code hl_function" href="a05927.html#afd7daa9f16738872b734787a310ae957">IncrementalFixedLagSmoother</a>(<span class="keywordtype">double</span> <a class="code hl_function" href="a05919.html#a2567f13353bd5253181965961390d1c2">smootherLag</a> = 0.0,</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      <span class="keyword">const</span> <a class="code hl_struct" href="a04967.html">ISAM2Params</a>&amp; parameters = <a class="code hl_function" href="a05927.html#abaad8fc60a40939ac60bd3b737e7bdc5">DefaultISAM2Params</a>()) :</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      <a class="code hl_function" href="a05919.html#a9384ec1aab2b6062b1de20efda8f0ac9">FixedLagSmoother</a>(<a class="code hl_function" href="a05919.html#a2567f13353bd5253181965961390d1c2">smootherLag</a>), <a class="code hl_variable" href="a05927.html#a030a15052e4af9e5bcf3554c502f0581">isam_</a>(parameters) {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// forward declaration of Range functor, assumed partially specified</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> A1, <span class="keyword">typename</span> A2&gt;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">struct </span><a class="code hl_struct" href="a04047.html">Range</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> A1, <span class="keyword">typename</span> A2 = A1, <span class="keyword">typename</span> T = <span class="keywordtype">double</span>&gt;</div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="a06651.html">   38</a></span><span class="keyword">class </span><a class="code hl_function" href="a06651.html#ac694c55f5064ca92e2b6fa552ef668ac">RangeFactor</a></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    : <span class="keyword">public</span> <a class="code hl_function" href="a06419.html#a07b2b3e0025aa31715484a185a7b91cc">NoiseModelFactorT</a>&lt;typename traits&lt;T&gt;::TangentVector, A1, A2&gt; {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a06651.html#ac694c55f5064ca92e2b6fa552ef668ac">RangeFactor&lt;A1, A2, T&gt;</a> This;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keyword">using </span>ErrorVector = <span class="keyword">typename</span> <a class="code hl_struct" href="a03203.html">traits&lt;T&gt;::TangentVector</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a06419.html#a07b2b3e0025aa31715484a185a7b91cc">NoiseModelFactorT&lt;ErrorVector, A1, A2&gt;</a> Base;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  T measured_;  </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="a06651.html#ac694c55f5064ca92e2b6fa552ef668ac">   49</a></span>  <a class="code hl_function" href="a06651.html#ac694c55f5064ca92e2b6fa552ef668ac">RangeFactor</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="a06651.html#abcd57a8a93f6bd85b76999bf23ea6947">   52</a></span>  <a class="code hl_function" href="a06651.html#abcd57a8a93f6bd85b76999bf23ea6947">RangeFactor</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key1, <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key2, T <a class="code hl_function" href="a06651.html#a90c90a20899d8f4ec3792dd0ba9d6563">measured</a>, <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a>&amp; model)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      : Base(model, key1, key2), measured_(<a class="code hl_function" href="a06651.html#a90c90a20899d8f4ec3792dd0ba9d6563">measured</a>) {}</div>
 </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
-<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="a05927.html#a2d0267922c9ebfb340ed6f05973f42c1">   47</a></span>  <a class="code hl_function" href="a05927.html#a2d0267922c9ebfb340ed6f05973f42c1">~IncrementalFixedLagSmoother</a>()<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="a06651.html#a30b02823ed76dba9160d21d604c8ea99">   56</a></span>  gtsam::NonlinearFactor::shared_ptr <a class="code hl_function" href="a06651.html#a30b02823ed76dba9160d21d604c8ea99">clone</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">return</span> std::static_pointer_cast&lt;gtsam::NonlinearFactor&gt;(</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        gtsam::NonlinearFactor::shared_ptr(<span class="keyword">new</span> This(*<span class="keyword">this</span>)));</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  }</div>
 </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a01968.html#a54fa43c89c5334314c8c75939dd5c2d7">print</a>(<span class="keyword">const</span> std::string&amp; s = <span class="stringliteral">&quot;IncrementalFixedLagSmoother:\n&quot;</span>,</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a>&amp; keyFormatter = DefaultKeyFormatter) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordtype">bool</span> <a class="code hl_struct" href="a03027.html">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="a05919.html">FixedLagSmoother</a>&amp; rhs, <span class="keywordtype">double</span> tol = 1e-9) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  Result update(<span class="keyword">const</span> <a class="code hl_class" href="a05091.html">NonlinearFactorGraph</a>&amp; newFactors = <a class="code hl_class" href="a05091.html">NonlinearFactorGraph</a>(),</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                <span class="keyword">const</span> <a class="code hl_class" href="a05163.html">Values</a>&amp; newTheta = <a class="code hl_class" href="a05163.html">Values</a>(), <span class="comment">//</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                <span class="keyword">const</span> KeyTimestampMap&amp; timestamps = KeyTimestampMap(),</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a99e63c90a8ac740d99716e73fe97e054">FactorIndices</a>&amp; factorsToRemove = <a class="code hl_typedef" href="a01968.html#a99e63c90a8ac740d99716e73fe97e054">FactorIndices</a>()) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="a06651.html#a90c90a20899d8f4ec3792dd0ba9d6563">   62</a></span>  <span class="keyword">const</span> T&amp; <a class="code hl_function" href="a06651.html#a90c90a20899d8f4ec3792dd0ba9d6563">measured</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> measured_; }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="a06651.html#aa5af8f6c0b720bf9af5486c21c1bc706">   65</a></span>  ErrorVector <a class="code hl_function" href="a06651.html#aa5af8f6c0b720bf9af5486c21c1bc706">evaluateError</a>(<span class="keyword">const</span> A1&amp; a1, <span class="keyword">const</span> A2&amp; a2,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                            <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H1 = <a class="code hl_define" href="a01556.html#a60dbbc16637d770e100d6ab35358e1c8">OptionalNone</a>,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                            <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H2 = <a class="code hl_define" href="a01556.html#a60dbbc16637d770e100d6ab35358e1c8">OptionalNone</a>)<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keyword">const</span> T predicted = <a class="code hl_struct" href="a04047.html">Range&lt;A1, A2&gt;</a>()(a1, a2, H1, H2);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">return</span> -<a class="code hl_struct" href="a03203.html">traits&lt;T&gt;::Local</a>(predicted, measured_);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  }</div>
+</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
 <div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="a05927.html#a463d3c75d447173b3ceb79b2b368511b">   73</a></span>  <a class="code hl_class" href="a05163.html">Values</a> <a class="code hl_function" href="a05927.html#a463d3c75d447173b3ceb79b2b368511b">calculateEstimate</a>()<span class="keyword"> const override </span>{</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="a05927.html#a030a15052e4af9e5bcf3554c502f0581">isam_</a>.calculateEstimate();</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="a06651.html#aa5ba8b8cdf1b802457ebaa265f737cbc">   73</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a06651.html#aa5ba8b8cdf1b802457ebaa265f737cbc">print</a>(<span class="keyword">const</span> std::string&amp; s = <span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>             <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a>&amp; kf = <a class="code hl_variable" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>)<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    std::cout &lt;&lt; s &lt;&lt; <span class="stringliteral">&quot;RangeFactor&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_function" href="a04899.html#a5388ca5d908a0cdfbfdd7dcd9021ade6">Base::print</a>(s, kf);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_struct" href="a03203.html">traits&lt;T&gt;::Print</a>(measured_, <span class="stringliteral">&quot;  measured: &quot;</span>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  }</div>
 </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> VALUE&gt;</div>
-<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="a05927.html#a43bacdbc94462499b206289851dff5f4">   84</a></span>  VALUE <a class="code hl_function" href="a05927.html#a43bacdbc94462499b206289851dff5f4">calculateEstimate</a>(<a class="code hl_typedef" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="a05927.html#a030a15052e4af9e5bcf3554c502f0581">isam_</a>.calculateEstimate&lt;VALUE&gt;(key);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="a06651.html#a6127271e270cee1925d04b09e8d108ca">   81</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="a06651.html#a6127271e270cee1925d04b09e8d108ca">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="a06435.html">NonlinearFactor</a>&amp; f, <span class="keywordtype">double</span> tol)<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">const</span> This* p = <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span>This*<span class="keyword">&gt;</span>(&amp;f);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">return</span> p != <span class="keyword">nullptr</span> &amp;&amp; <a class="code hl_function" href="a04899.html#a5cc62be07fbcde6678f8b346ab3a3f78">Base::equals</a>(f, tol) &amp;&amp;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>           <a class="code hl_struct" href="a03203.html">traits&lt;T&gt;::Equals</a>(measured_, p-&gt;measured_, tol);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  }</div>
 </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
-<div class="foldopen" id="foldopen00089" data-start="{" data-end="}">
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="a05927.html#ae1fae019aec3059e8570a45306df4365">   89</a></span>  <span class="keyword">const</span> <a class="code hl_struct" href="a04967.html">ISAM2Params</a>&amp; <a class="code hl_function" href="a05927.html#ae1fae019aec3059e8570a45306df4365">params</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="a05927.html#a030a15052e4af9e5bcf3554c502f0581">isam_</a>.params();</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  }</div>
-</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
-<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="a05927.html#a64284f8a566c5d5976a60e5d88b967e2">   94</a></span>  <span class="keyword">const</span> <a class="code hl_class" href="a05091.html">NonlinearFactorGraph</a>&amp; <a class="code hl_function" href="a05927.html#a64284f8a566c5d5976a60e5d88b967e2">getFactors</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="a05927.html#a030a15052e4af9e5bcf3554c502f0581">isam_</a>.getFactorsUnsafe();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#if GTSAM_ENABLE_BOOST_SERIALIZATION</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> ARCHIVE&gt;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keywordtype">void</span> serialize(ARCHIVE&amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    ar&amp; boost::serialization::make_nvp(</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="stringliteral">&quot;NoiseModelFactor2&quot;</span>, boost::serialization::base_object&lt;Base&gt;(*<span class="keyword">this</span>));</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    ar&amp; BOOST_SERIALIZATION_NVP(measured_);</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>};  <span class="comment">// \ RangeFactor</span></div>
 </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
-<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="a05927.html#a62e477ac01b8d5852369d6d6282cac17">   99</a></span>  <span class="keyword">const</span> <a class="code hl_class" href="a05163.html">Values</a>&amp; <a class="code hl_function" href="a05927.html#a62e477ac01b8d5852369d6d6282cac17">getLinearizationPoint</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="a05927.html#a030a15052e4af9e5bcf3554c502f0581">isam_</a>.getLinearizationPoint();</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> A1, <span class="keyword">typename</span> A2, <span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00102" data-start="{" data-end="};">
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="a06655.html">  102</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03203.html">traits</a>&lt;<a class="code hl_class" href="a06651.html">RangeFactor</a>&lt;A1, A2, T&gt; &gt;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    : <span class="keyword">public</span> <a class="code hl_struct" href="a03535.html">Testable</a>&lt;RangeFactor&lt;A1, A2, T&gt; &gt; {};</div>
 </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
-<div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="a05927.html#a36b26dbe6cbae0925e58f2b8b92dbfe5">  104</a></span>  <span class="keyword">const</span> <a class="code hl_class" href="a04611.html">VectorValues</a>&amp; <a class="code hl_function" href="a05927.html#a36b26dbe6cbae0925e58f2b8b92dbfe5">getDelta</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="a05927.html#a030a15052e4af9e5bcf3554c502f0581">isam_</a>.getDelta();</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> A1, <span class="keyword">typename</span> A2 = A1,</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>          <span class="keyword">typename</span> T = <span class="keyword">typename</span> <a class="code hl_struct" href="a04047.html">Range&lt;A1, A2&gt;::result_type</a>&gt;</div>
+<div class="foldopen" id="foldopen00111" data-start="{" data-end="};">
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="a06659.html">  111</a></span><span class="keyword">class </span><a class="code hl_function" href="a06659.html#a1baa62144ebc5badcc6a72cede81ce36">RangeFactorWithTransform</a></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    : <span class="keyword">public</span> <a class="code hl_function" href="a06419.html#a07b2b3e0025aa31715484a185a7b91cc">NoiseModelFactorT</a>&lt;typename traits&lt;T&gt;::TangentVector, A1, A2&gt; {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a06659.html#a1baa62144ebc5badcc6a72cede81ce36">RangeFactorWithTransform&lt;A1, A2, T&gt;</a> This;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a06419.html#a07b2b3e0025aa31715484a185a7b91cc">NoiseModelFactorT&lt;typename traits&lt;T&gt;::TangentVector</a>, A1, A2&gt; Base;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="keyword">using </span>ErrorVector = <span class="keyword">typename</span> <a class="code hl_struct" href="a03203.html">traits&lt;T&gt;::TangentVector</a>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  T measured_;        </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  A1 body_T_sensor_;  </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="a06659.html#a1baa62144ebc5badcc6a72cede81ce36">  123</a></span>  <a class="code hl_function" href="a06659.html#a1baa62144ebc5badcc6a72cede81ce36">RangeFactorWithTransform</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span></div>
+<div class="foldopen" id="foldopen00126" data-start="{" data-end="}">
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="a06659.html#a3c79d005b616d5ddc6617ec1e32d11af">  126</a></span>  <a class="code hl_function" href="a06659.html#a3c79d005b616d5ddc6617ec1e32d11af">RangeFactorWithTransform</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key1, <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key2, T <a class="code hl_function" href="a06659.html#ac28ee6e9ec4287ca63fed175ff8d77b6">measured</a>,</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                           <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a>&amp; model,</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                           <span class="keyword">const</span> A1&amp; body_T_sensor)</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>      : Base(model, key1, key2),</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        measured_(<a class="code hl_function" href="a06659.html#ac28ee6e9ec4287ca63fed175ff8d77b6">measured</a>),</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        body_T_sensor_(body_T_sensor) {}</div>
 </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span></div>
-<div class="foldopen" id="foldopen00109" data-start="{" data-end="}">
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="a05927.html#a5c817f301560a2af0c87e5a2a2789f0e">  109</a></span>  Matrix <a class="code hl_function" href="a05927.html#a5c817f301560a2af0c87e5a2a2789f0e">marginalCovariance</a>(<a class="code hl_typedef" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="a05927.html#a030a15052e4af9e5bcf3554c502f0581">isam_</a>.marginalCovariance(key);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="a06659.html#a6e63fbda4d9d4e53f456afc08ea97a80">  134</a></span>  <a class="code hl_function" href="a06659.html#a6e63fbda4d9d4e53f456afc08ea97a80">~RangeFactorWithTransform</a>()<span class="keyword"> override </span>{}</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span></div>
+<div class="foldopen" id="foldopen00137" data-start="{" data-end="}">
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="a06659.html#a1b0af7d9c8b8babcce83d5441e709bd4">  137</a></span>  gtsam::NonlinearFactor::shared_ptr <a class="code hl_function" href="a06659.html#a1b0af7d9c8b8babcce83d5441e709bd4">clone</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordflow">return</span> std::static_pointer_cast&lt;gtsam::NonlinearFactor&gt;(</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        gtsam::NonlinearFactor::shared_ptr(<span class="keyword">new</span> This(*<span class="keyword">this</span>)));</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  }</div>
 </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="a05927.html#afc2e3665911e3e4c0fa4329995929243">  114</a></span>  <span class="keyword">const</span> <a class="code hl_struct" href="a04971.html">ISAM2Result</a>&amp; <a class="code hl_function" href="a05927.html#afc2e3665911e3e4c0fa4329995929243">getISAM2Result</a>()<span class="keyword"> const</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="a05927.html#a8d6bfa51f655245a20f4c2e79f4c98c8">isamResult_</a>; }</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="a05927.html#a2f2a8dff3b5a5fbc7b769277e6adbfb3">  117</a></span>  <span class="keyword">const</span> <a class="code hl_class" href="a04947.html">ISAM2</a>&amp; <a class="code hl_function" href="a05927.html#a2f2a8dff3b5a5fbc7b769277e6adbfb3">getISAM2</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="a05927.html#a030a15052e4af9e5bcf3554c502f0581">isam_</a>; }</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span></div>
-<div class="foldopen" id="foldopen00122" data-start="{" data-end="}">
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="a05927.html#abaad8fc60a40939ac60bd3b737e7bdc5">  122</a></span>  <span class="keyword">static</span> <a class="code hl_struct" href="a04967.html">ISAM2Params</a> <a class="code hl_function" href="a05927.html#abaad8fc60a40939ac60bd3b737e7bdc5">DefaultISAM2Params</a>() {</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <a class="code hl_struct" href="a04967.html">ISAM2Params</a> <a class="code hl_function" href="a05927.html#ae1fae019aec3059e8570a45306df4365">params</a>;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <a class="code hl_function" href="a05927.html#ae1fae019aec3059e8570a45306df4365">params</a>.findUnusedFactorSlots = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="a05927.html#ae1fae019aec3059e8570a45306df4365">params</a>;</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  }</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="a06659.html#ac28ee6e9ec4287ca63fed175ff8d77b6">  143</a></span>  <span class="keyword">const</span> T&amp; <a class="code hl_function" href="a06659.html#ac28ee6e9ec4287ca63fed175ff8d77b6">measured</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> measured_; }</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span></div>
+<div class="foldopen" id="foldopen00146" data-start="{" data-end="}">
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="a06659.html#a668a723167927535265da176d9b305a0">  146</a></span>  ErrorVector <a class="code hl_function" href="a06659.html#a668a723167927535265da176d9b305a0">evaluateError</a>(<span class="keyword">const</span> A1&amp; a1, <span class="keyword">const</span> A2&amp; a2,</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                            <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H1 = <a class="code hl_define" href="a01556.html#a60dbbc16637d770e100d6ab35358e1c8">OptionalNone</a>,</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                            <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H2 = <a class="code hl_define" href="a01556.html#a60dbbc16637d770e100d6ab35358e1c8">OptionalNone</a>)<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    Matrix HposeCompose;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keyword">const</span> A1 nav_T_sensor =</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        a1.compose(body_T_sensor_, H1 ? &amp;HposeCompose : <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keyword">const</span> T predicted = <a class="code hl_struct" href="a04047.html">Range&lt;A1, A2&gt;</a>()(nav_T_sensor, a2, H1, H2);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keywordflow">if</span> (H1) *H1 *= HposeCompose;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keywordflow">return</span> -<a class="code hl_struct" href="a03203.html">traits&lt;T&gt;::Local</a>(predicted, measured_);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  }</div>
 </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="a05927.html#a030a15052e4af9e5bcf3554c502f0581">  130</a></span>  <a class="code hl_class" href="a04947.html">ISAM2</a> <a class="code hl_variable" href="a05927.html#a030a15052e4af9e5bcf3554c502f0581">isam_</a>;</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span></div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="a05927.html#a8d6bfa51f655245a20f4c2e79f4c98c8">  133</a></span>  <a class="code hl_struct" href="a04971.html">ISAM2Result</a> <a class="code hl_variable" href="a05927.html#a8d6bfa51f655245a20f4c2e79f4c98c8">isamResult_</a>;</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span></div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a05927.html#a41b599965a6a30d1b0f2e0362a30331b">eraseKeysBefore</a>(<span class="keywordtype">double</span> timestamp);</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a05927.html#a4f73b7fe3ea0ba38d6f36c859383b141">createOrderingConstraints</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&amp; marginalizableKeys,</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>      boost::optional&lt;<a class="code hl_class" href="a02863.html">FastMap&lt;Key, int&gt;</a> &gt;&amp; constrainedKeys) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> PrintKeySet(<span class="keyword">const</span> std::set&lt;Key&gt;&amp; keys, <span class="keyword">const</span> std::string&amp; label =</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>      <span class="stringliteral">&quot;Keys:&quot;</span>);</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> PrintSymbolicFactor(<span class="keyword">const</span> <a class="code hl_typedef" href="a04327.html#a0eeee0de6e144fedc937d7272be80a36">GaussianFactor::shared_ptr</a>&amp; factor);</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> PrintSymbolicGraph(<span class="keyword">const</span> <a class="code hl_class" href="a04339.html">GaussianFactorGraph</a>&amp; graph,</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>      <span class="keyword">const</span> std::string&amp; label = <span class="stringliteral">&quot;Factor Graph:&quot;</span>);</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> PrintSymbolicTree(<span class="keyword">const</span> <a class="code hl_class" href="a04947.html">gtsam::ISAM2</a>&amp; isam,</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>      <span class="keyword">const</span> std::string&amp; label = <span class="stringliteral">&quot;Bayes Tree:&quot;</span>);</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> PrintSymbolicTreeHelper(</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>      <span class="keyword">const</span> gtsam::ISAM2Clique::shared_ptr&amp; clique, <span class="keyword">const</span> std::string indent =</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>          <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>};</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  <span class="comment">// An evaluateError overload to accept matrices (Matrix&amp;) and pass it to the</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  <span class="comment">// OptionalMatrixType evaluateError overload</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  Vector <a class="code hl_function" href="a06659.html#a668a723167927535265da176d9b305a0">evaluateError</a>(<span class="keyword">const</span> A1&amp; a1, <span class="keyword">const</span> A2&amp; a2, Matrix&amp; H1,</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                       Matrix&amp; H2)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="a06659.html#a668a723167927535265da176d9b305a0">evaluateError</a>(a1, a2, &amp;H1, &amp;H2);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span></div>
+<div class="foldopen" id="foldopen00165" data-start="{" data-end="}">
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="a06659.html#ae81f9104be00e096add7ae6fb6d1b80f">  165</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a06659.html#ae81f9104be00e096add7ae6fb6d1b80f">print</a>(</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>      <span class="keyword">const</span> std::string&amp; s = <span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a>&amp; keyFormatter = <a class="code hl_variable" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>)<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    std::cout &lt;&lt; s &lt;&lt; <span class="stringliteral">&quot;RangeFactorWithTransform&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    this-&gt;body_T_sensor_.print(<span class="stringliteral">&quot;  sensor pose in body frame: &quot;</span>);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <a class="code hl_function" href="a04899.html#a5388ca5d908a0cdfbfdd7dcd9021ade6">Base::print</a>(s, keyFormatter);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <a class="code hl_struct" href="a03203.html">traits&lt;T&gt;::Print</a>(measured_, <span class="stringliteral">&quot;  measured: &quot;</span>);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  }</div>
 </div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="comment">// IncrementalFixedLagSmoother</span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>}</div>
-<div class="ttc" id="aa01112_html"><div class="ttname"><a href="a01112.html">ISAM2.h</a></div><div class="ttdoc">Incremental update functionality (ISAM2) for BayesTree, with fluid relinearization.</div></div>
-<div class="ttc" id="aa01619_html"><div class="ttname"><a href="a01619.html">FixedLagSmoother.h</a></div><div class="ttdoc">Base class for a fixed-lag smoother.</div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa01968_html_a2dea5ef4aee9da07a0e0686940c64667"><div class="ttname"><a href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">gtsam::KeyVector</a></div><div class="ttdeci">FastVector&lt; Key &gt; KeyVector</div><div class="ttdoc">Define collection type once and for all - also used in wrappers.</div><div class="ttdef"><b>Definition</b> Key.h:86</div></div>
-<div class="ttc" id="aa01968_html_a54fa43c89c5334314c8c75939dd5c2d7"><div class="ttname"><a href="a01968.html#a54fa43c89c5334314c8c75939dd5c2d7">gtsam::print</a></div><div class="ttdeci">void print(const Matrix &amp;A, const string &amp;s, ostream &amp;stream)</div><div class="ttdoc">print without optional string, must specify cout yourself</div><div class="ttdef"><b>Definition</b> Matrix.cpp:156</div></div>
-<div class="ttc" id="aa01968_html_a7d4eaa9f6e32da46e8f287499ee650d2"><div class="ttname"><a href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">gtsam::KeyFormatter</a></div><div class="ttdeci">std::function&lt; std::string(Key)&gt; KeyFormatter</div><div class="ttdoc">Typedef for a function to format a key, i.e. to convert it to a string.</div><div class="ttdef"><b>Definition</b> Key.h:35</div></div>
-<div class="ttc" id="aa01968_html_a99e63c90a8ac740d99716e73fe97e054"><div class="ttname"><a href="a01968.html#a99e63c90a8ac740d99716e73fe97e054">gtsam::FactorIndices</a></div><div class="ttdeci">FastVector&lt; FactorIndex &gt; FactorIndices</div><div class="ttdoc">Define collection types:</div><div class="ttdef"><b>Definition</b> Factor.h:34</div></div>
-<div class="ttc" id="aa01968_html_adad029f5f6ffce610428b5fe768b0df2"><div class="ttname"><a href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">gtsam::Key</a></div><div class="ttdeci">std::uint64_t Key</div><div class="ttdoc">Integer nonlinear key type.</div><div class="ttdef"><b>Definition</b> types.h:100</div></div>
-<div class="ttc" id="aa02863_html"><div class="ttname"><a href="a02863.html">gtsam::FastMap</a></div><div class="ttdoc">FastMap is a thin wrapper around std::map that uses the boost fast_pool_allocator instead of the defa...</div><div class="ttdef"><b>Definition</b> FastMap.h:38</div></div>
-<div class="ttc" id="aa03027_html"><div class="ttname"><a href="a03027.html">gtsam::equals</a></div><div class="ttdoc">Template to create a binary predicate.</div><div class="ttdef"><b>Definition</b> Testable.h:111</div></div>
-<div class="ttc" id="aa04327_html_a0eeee0de6e144fedc937d7272be80a36"><div class="ttname"><a href="a04327.html#a0eeee0de6e144fedc937d7272be80a36">gtsam::GaussianFactor::shared_ptr</a></div><div class="ttdeci">boost::shared_ptr&lt; This &gt; shared_ptr</div><div class="ttdoc">shared_ptr to this class</div><div class="ttdef"><b>Definition</b> GaussianFactor.h:42</div></div>
-<div class="ttc" id="aa04339_html"><div class="ttname"><a href="a04339.html">gtsam::GaussianFactorGraph</a></div><div class="ttdoc">A Linear Factor Graph is a factor graph where all factors are Gaussian, i.e.</div><div class="ttdef"><b>Definition</b> GaussianFactorGraph.h:75</div></div>
-<div class="ttc" id="aa04611_html"><div class="ttname"><a href="a04611.html">gtsam::VectorValues</a></div><div class="ttdoc">VectorValues represents a collection of vector-valued variables associated each with a unique integer...</div><div class="ttdef"><b>Definition</b> VectorValues.h:74</div></div>
-<div class="ttc" id="aa04947_html"><div class="ttname"><a href="a04947.html">gtsam::ISAM2</a></div><div class="ttdoc">Implementation of the full ISAM2 algorithm for incremental nonlinear optimization.</div><div class="ttdef"><b>Definition</b> ISAM2.h:45</div></div>
-<div class="ttc" id="aa04967_html"><div class="ttname"><a href="a04967.html">gtsam::ISAM2Params</a></div><div class="ttdef"><b>Definition</b> ISAM2Params.h:135</div></div>
-<div class="ttc" id="aa04971_html"><div class="ttname"><a href="a04971.html">gtsam::ISAM2Result</a></div><div class="ttdoc">This struct is returned from ISAM2::update() and contains information about the update that is useful...</div><div class="ttdef"><b>Definition</b> ISAM2Result.h:41</div></div>
-<div class="ttc" id="aa05091_html"><div class="ttname"><a href="a05091.html">gtsam::NonlinearFactorGraph</a></div><div class="ttdef"><b>Definition</b> NonlinearFactorGraph.h:55</div></div>
-<div class="ttc" id="aa05163_html"><div class="ttname"><a href="a05163.html">gtsam::Values</a></div><div class="ttdoc">A non-templated config holding any types of Manifold-group elements.</div><div class="ttdef"><b>Definition</b> Values.h:65</div></div>
-<div class="ttc" id="aa05919_html"><div class="ttname"><a href="a05919.html">gtsam::FixedLagSmoother</a></div><div class="ttdef"><b>Definition</b> FixedLagSmoother.h:33</div></div>
-<div class="ttc" id="aa05919_html_a2567f13353bd5253181965961390d1c2"><div class="ttname"><a href="a05919.html#a2567f13353bd5253181965961390d1c2">gtsam::FixedLagSmoother::smootherLag</a></div><div class="ttdeci">double smootherLag() const</div><div class="ttdoc">read the current smoother lag</div><div class="ttdef"><b>Definition</b> FixedLagSmoother.h:80</div></div>
-<div class="ttc" id="aa05919_html_a9384ec1aab2b6062b1de20efda8f0ac9"><div class="ttname"><a href="a05919.html#a9384ec1aab2b6062b1de20efda8f0ac9">gtsam::FixedLagSmoother::FixedLagSmoother</a></div><div class="ttdeci">FixedLagSmoother(double smootherLag=0.0)</div><div class="ttdoc">default constructor</div><div class="ttdef"><b>Definition</b> FixedLagSmoother.h:66</div></div>
-<div class="ttc" id="aa05927_html_a030a15052e4af9e5bcf3554c502f0581"><div class="ttname"><a href="a05927.html#a030a15052e4af9e5bcf3554c502f0581">gtsam::IncrementalFixedLagSmoother::isam_</a></div><div class="ttdeci">ISAM2 isam_</div><div class="ttdoc">An iSAM2 object used to perform inference.</div><div class="ttdef"><b>Definition</b> IncrementalFixedLagSmoother.h:130</div></div>
-<div class="ttc" id="aa05927_html_a2d0267922c9ebfb340ed6f05973f42c1"><div class="ttname"><a href="a05927.html#a2d0267922c9ebfb340ed6f05973f42c1">gtsam::IncrementalFixedLagSmoother::~IncrementalFixedLagSmoother</a></div><div class="ttdeci">~IncrementalFixedLagSmoother() override</div><div class="ttdoc">destructor</div><div class="ttdef"><b>Definition</b> IncrementalFixedLagSmoother.h:47</div></div>
-<div class="ttc" id="aa05927_html_a2f2a8dff3b5a5fbc7b769277e6adbfb3"><div class="ttname"><a href="a05927.html#a2f2a8dff3b5a5fbc7b769277e6adbfb3">gtsam::IncrementalFixedLagSmoother::getISAM2</a></div><div class="ttdeci">const ISAM2 &amp; getISAM2() const</div><div class="ttdoc">Get the iSAM2 object which is used for the inference internally.</div><div class="ttdef"><b>Definition</b> IncrementalFixedLagSmoother.h:117</div></div>
-<div class="ttc" id="aa05927_html_a36b26dbe6cbae0925e58f2b8b92dbfe5"><div class="ttname"><a href="a05927.html#a36b26dbe6cbae0925e58f2b8b92dbfe5">gtsam::IncrementalFixedLagSmoother::getDelta</a></div><div class="ttdeci">const VectorValues &amp; getDelta() const</div><div class="ttdoc">Access the current set of deltas to the linearization point.</div><div class="ttdef"><b>Definition</b> IncrementalFixedLagSmoother.h:104</div></div>
-<div class="ttc" id="aa05927_html_a41b599965a6a30d1b0f2e0362a30331b"><div class="ttname"><a href="a05927.html#a41b599965a6a30d1b0f2e0362a30331b">gtsam::IncrementalFixedLagSmoother::eraseKeysBefore</a></div><div class="ttdeci">void eraseKeysBefore(double timestamp)</div><div class="ttdoc">Erase any keys associated with timestamps before the provided time.</div><div class="ttdef"><b>Definition</b> IncrementalFixedLagSmoother.cpp:166</div></div>
-<div class="ttc" id="aa05927_html_a43bacdbc94462499b206289851dff5f4"><div class="ttname"><a href="a05927.html#a43bacdbc94462499b206289851dff5f4">gtsam::IncrementalFixedLagSmoother::calculateEstimate</a></div><div class="ttdeci">VALUE calculateEstimate(Key key) const</div><div class="ttdoc">Compute an estimate for a single variable using its incomplete linear delta computed during the last ...</div><div class="ttdef"><b>Definition</b> IncrementalFixedLagSmoother.h:84</div></div>
-<div class="ttc" id="aa05927_html_a463d3c75d447173b3ceb79b2b368511b"><div class="ttname"><a href="a05927.html#a463d3c75d447173b3ceb79b2b368511b">gtsam::IncrementalFixedLagSmoother::calculateEstimate</a></div><div class="ttdeci">Values calculateEstimate() const override</div><div class="ttdoc">Compute an estimate from the incomplete linear delta computed during the last update.</div><div class="ttdef"><b>Definition</b> IncrementalFixedLagSmoother.h:73</div></div>
-<div class="ttc" id="aa05927_html_a4f73b7fe3ea0ba38d6f36c859383b141"><div class="ttname"><a href="a05927.html#a4f73b7fe3ea0ba38d6f36c859383b141">gtsam::IncrementalFixedLagSmoother::createOrderingConstraints</a></div><div class="ttdeci">void createOrderingConstraints(const KeyVector &amp;marginalizableKeys, boost::optional&lt; FastMap&lt; Key, int &gt; &gt; &amp;constrainedKeys) const</div><div class="ttdoc">Fill in an iSAM2 ConstrainedKeys structure such that the provided keys are eliminated before all othe...</div><div class="ttdef"><b>Definition</b> IncrementalFixedLagSmoother.cpp:176</div></div>
-<div class="ttc" id="aa05927_html_a5c817f301560a2af0c87e5a2a2789f0e"><div class="ttname"><a href="a05927.html#a5c817f301560a2af0c87e5a2a2789f0e">gtsam::IncrementalFixedLagSmoother::marginalCovariance</a></div><div class="ttdeci">Matrix marginalCovariance(Key key) const</div><div class="ttdoc">Calculate marginal covariance on given variable.</div><div class="ttdef"><b>Definition</b> IncrementalFixedLagSmoother.h:109</div></div>
-<div class="ttc" id="aa05927_html_a62e477ac01b8d5852369d6d6282cac17"><div class="ttname"><a href="a05927.html#a62e477ac01b8d5852369d6d6282cac17">gtsam::IncrementalFixedLagSmoother::getLinearizationPoint</a></div><div class="ttdeci">const Values &amp; getLinearizationPoint() const</div><div class="ttdoc">Access the current linearization point.</div><div class="ttdef"><b>Definition</b> IncrementalFixedLagSmoother.h:99</div></div>
-<div class="ttc" id="aa05927_html_a64284f8a566c5d5976a60e5d88b967e2"><div class="ttname"><a href="a05927.html#a64284f8a566c5d5976a60e5d88b967e2">gtsam::IncrementalFixedLagSmoother::getFactors</a></div><div class="ttdeci">const NonlinearFactorGraph &amp; getFactors() const</div><div class="ttdoc">Access the current set of factors.</div><div class="ttdef"><b>Definition</b> IncrementalFixedLagSmoother.h:94</div></div>
-<div class="ttc" id="aa05927_html_a8d6bfa51f655245a20f4c2e79f4c98c8"><div class="ttname"><a href="a05927.html#a8d6bfa51f655245a20f4c2e79f4c98c8">gtsam::IncrementalFixedLagSmoother::isamResult_</a></div><div class="ttdeci">ISAM2Result isamResult_</div><div class="ttdoc">Store results of latest isam2 update.</div><div class="ttdef"><b>Definition</b> IncrementalFixedLagSmoother.h:133</div></div>
-<div class="ttc" id="aa05927_html_abaad8fc60a40939ac60bd3b737e7bdc5"><div class="ttname"><a href="a05927.html#abaad8fc60a40939ac60bd3b737e7bdc5">gtsam::IncrementalFixedLagSmoother::DefaultISAM2Params</a></div><div class="ttdeci">static ISAM2Params DefaultISAM2Params()</div><div class="ttdoc">Create default parameters.</div><div class="ttdef"><b>Definition</b> IncrementalFixedLagSmoother.h:122</div></div>
-<div class="ttc" id="aa05927_html_ae1fae019aec3059e8570a45306df4365"><div class="ttname"><a href="a05927.html#ae1fae019aec3059e8570a45306df4365">gtsam::IncrementalFixedLagSmoother::params</a></div><div class="ttdeci">const ISAM2Params &amp; params() const</div><div class="ttdoc">return the current set of iSAM2 parameters</div><div class="ttdef"><b>Definition</b> IncrementalFixedLagSmoother.h:89</div></div>
-<div class="ttc" id="aa05927_html_af49d03dc028e2d965e8b97f65c139d25"><div class="ttname"><a href="a05927.html#af49d03dc028e2d965e8b97f65c139d25">gtsam::IncrementalFixedLagSmoother::shared_ptr</a></div><div class="ttdeci">boost::shared_ptr&lt; IncrementalFixedLagSmoother &gt; shared_ptr</div><div class="ttdoc">Typedef for a shared pointer to an Incremental Fixed-Lag Smoother.</div><div class="ttdef"><b>Definition</b> IncrementalFixedLagSmoother.h:38</div></div>
-<div class="ttc" id="aa05927_html_afc2e3665911e3e4c0fa4329995929243"><div class="ttname"><a href="a05927.html#afc2e3665911e3e4c0fa4329995929243">gtsam::IncrementalFixedLagSmoother::getISAM2Result</a></div><div class="ttdeci">const ISAM2Result &amp; getISAM2Result() const</div><div class="ttdoc">Get results of latest isam2 update.</div><div class="ttdef"><b>Definition</b> IncrementalFixedLagSmoother.h:114</div></div>
-<div class="ttc" id="aa05927_html_afd7daa9f16738872b734787a310ae957"><div class="ttname"><a href="a05927.html#afd7daa9f16738872b734787a310ae957">gtsam::IncrementalFixedLagSmoother::IncrementalFixedLagSmoother</a></div><div class="ttdeci">IncrementalFixedLagSmoother(double smootherLag=0.0, const ISAM2Params &amp;parameters=DefaultISAM2Params())</div><div class="ttdoc">default constructor</div><div class="ttdef"><b>Definition</b> IncrementalFixedLagSmoother.h:41</div></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span></div>
+<div class="foldopen" id="foldopen00175" data-start="{" data-end="}">
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="a06659.html#a7b3f4b674068018d8d64588838bb8542">  175</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="a06659.html#a7b3f4b674068018d8d64588838bb8542">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="a06435.html">NonlinearFactor</a>&amp; f, <span class="keywordtype">double</span> tol)<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keyword">const</span> This* p = <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span>This*<span class="keyword">&gt;</span>(&amp;f);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordflow">return</span> p != <span class="keyword">nullptr</span> &amp;&amp; <a class="code hl_function" href="a04899.html#a5cc62be07fbcde6678f8b346ab3a3f78">Base::equals</a>(f, tol) &amp;&amp;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>           <a class="code hl_struct" href="a03203.html">traits&lt;T&gt;::Equals</a>(measured_, p-&gt;measured_, tol) &amp;&amp;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>           <a class="code hl_struct" href="a03203.html">traits&lt;A1&gt;::Equals</a>(body_T_sensor_, p-&gt;body_T_sensor_, tol);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  }</div>
+</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="preprocessor">#if GTSAM_ENABLE_BOOST_SERIALIZATION</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>  <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ARCHIVE&gt;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  <span class="keywordtype">void</span> serialize(ARCHIVE&amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    ar&amp; boost::serialization::make_nvp(</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        <span class="stringliteral">&quot;NoiseModelFactor2&quot;</span>, boost::serialization::base_object&lt;Base&gt;(*<span class="keyword">this</span>));</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    ar&amp; BOOST_SERIALIZATION_NVP(measured_);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    ar&amp; BOOST_SERIALIZATION_NVP(body_T_sensor_);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  }</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>};  <span class="comment">// \ RangeFactorWithTransform</span></div>
+</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> A1, <span class="keyword">typename</span> A2, <span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00198" data-start="{" data-end="};">
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="a06663.html">  198</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03203.html">traits</a>&lt;<a class="code hl_class" href="a06659.html">RangeFactorWithTransform</a>&lt;A1, A2, T&gt; &gt;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    : <span class="keyword">public</span> <a class="code hl_struct" href="a03535.html">Testable</a>&lt;RangeFactorWithTransform&lt;A1, A2, T&gt; &gt; {};</div>
+</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> A1, <span class="keyword">typename</span> A2 = A1,</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>          <span class="keyword">typename</span> T = <span class="keyword">typename</span> <a class="code hl_struct" href="a04047.html">Range&lt;A1, A2&gt;::result_type</a>&gt;</div>
+<div class="foldopen" id="foldopen00208" data-start="{" data-end="};">
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="a06667.html">  208</a></span><span class="keyword">class </span><a class="code hl_function" href="a06667.html#a56c90c4ee58f2128146c29918e33bc03">RangeFactorWithTransformBias</a></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    : <span class="keyword">public</span> <a class="code hl_function" href="a06419.html#a07b2b3e0025aa31715484a185a7b91cc">NoiseModelFactorT</a>&lt;typename traits&lt;T&gt;::TangentVector, A1, A2, T&gt; {</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a06667.html#a56c90c4ee58f2128146c29918e33bc03">RangeFactorWithTransformBias&lt;A1, A2, T&gt;</a> This;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  <span class="keyword">typedef</span> <a class="code hl_function" href="a06419.html#a07b2b3e0025aa31715484a185a7b91cc">NoiseModelFactorT&lt;typename traits&lt;T&gt;::TangentVector</a>, A1, A2, T&gt; Base;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  <span class="keyword">using </span>ErrorVector = <span class="keyword">typename</span> <a class="code hl_struct" href="a03203.html">traits&lt;T&gt;::TangentVector</a>;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>  T measured_;        </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  A1 body_T_sensor_;  </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno"><a class="line" href="a06667.html#a56c90c4ee58f2128146c29918e33bc03">  220</a></span>  <a class="code hl_function" href="a06667.html#a56c90c4ee58f2128146c29918e33bc03">RangeFactorWithTransformBias</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span></div>
+<div class="foldopen" id="foldopen00223" data-start="{" data-end="}">
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="a06667.html#a8153d7514e5778fc59ff18b66e87c81d">  223</a></span>  <a class="code hl_function" href="a06667.html#a8153d7514e5778fc59ff18b66e87c81d">RangeFactorWithTransformBias</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key1, <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key2, <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key3, T <a class="code hl_function" href="a06667.html#ac002a8324901ad94e333475118eda544">measured</a>,</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                               <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a>&amp; <a class="code hl_namespace" href="a02274.html">noiseModel</a>,</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                               <span class="keyword">const</span> A1&amp; body_T_sensor)</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>      : Base(<a class="code hl_namespace" href="a02274.html">noiseModel</a>, key1, key2, key3),</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        measured_(<a class="code hl_function" href="a06667.html#ac002a8324901ad94e333475118eda544">measured</a>),</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        body_T_sensor_(body_T_sensor) {}</div>
+</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno"><a class="line" href="a06667.html#a9632fc1593288367e18c9f8910260af9">  231</a></span>  <a class="code hl_function" href="a06667.html#a9632fc1593288367e18c9f8910260af9">~RangeFactorWithTransformBias</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span></div>
+<div class="foldopen" id="foldopen00234" data-start="{" data-end="}">
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno"><a class="line" href="a06667.html#a01920d0181539c0d32a4e5148852c047">  234</a></span>  gtsam::NonlinearFactor::shared_ptr <a class="code hl_function" href="a06667.html#a01920d0181539c0d32a4e5148852c047">clone</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keywordflow">return</span> std::static_pointer_cast&lt;gtsam::NonlinearFactor&gt;(</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        gtsam::NonlinearFactor::shared_ptr(<span class="keyword">new</span> This(*<span class="keyword">this</span>)));</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>  }</div>
+</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span></div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno"><a class="line" href="a06667.html#ac002a8324901ad94e333475118eda544">  240</a></span>  <span class="keyword">const</span> T&amp; <a class="code hl_function" href="a06667.html#ac002a8324901ad94e333475118eda544">measured</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> measured_; }</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span></div>
+<div class="foldopen" id="foldopen00243" data-start="{" data-end="}">
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="a06667.html#a554da650dc15bc4777b26b608939936f">  243</a></span>  ErrorVector <a class="code hl_function" href="a06667.html#a554da650dc15bc4777b26b608939936f">evaluateError</a>(<span class="keyword">const</span> A1&amp; a1, <span class="keyword">const</span> A2&amp; a2, <span class="keyword">const</span> T&amp; bias,</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>                            <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H1 = <a class="code hl_define" href="a01556.html#a60dbbc16637d770e100d6ab35358e1c8">OptionalNone</a>,</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                            <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H2 = <a class="code hl_define" href="a01556.html#a60dbbc16637d770e100d6ab35358e1c8">OptionalNone</a>,</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                            <a class="code hl_typedef" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">OptionalMatrixType</a> H3 = <a class="code hl_define" href="a01556.html#a60dbbc16637d770e100d6ab35358e1c8">OptionalNone</a>)<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    Matrix HposeCompose;</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <span class="keyword">const</span> A1 nav_T_sensor =</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        a1.compose(body_T_sensor_, H1 ? &amp;HposeCompose : <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <span class="keyword">const</span> T predictedRange = <a class="code hl_struct" href="a04047.html">Range&lt;A1, A2&gt;</a>()(nav_T_sensor, a2, H1, H2);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    <span class="keywordflow">if</span> (H1) *H1 *= HposeCompose;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="keywordflow">if</span> (H3) {</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;T, double&gt;) {</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        *H3 = Matrix1::Identity();</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> dimension = <a class="code hl_struct" href="a03203.html">traits&lt;T&gt;::GetDimension</a>(measured_);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        *H3 = Matrix::Identity(dimension, dimension);</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>      }</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    }</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    <span class="keywordflow">return</span> -<a class="code hl_struct" href="a03203.html">traits&lt;T&gt;::Local</a>(predictedRange + bias, measured_);</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>  }</div>
+</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span></div>
+<div class="foldopen" id="foldopen00264" data-start="{" data-end="}">
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="a06667.html#ab3caa40dd9f8a5e1a8514fa8b2f8f0eb">  264</a></span>  Vector <a class="code hl_function" href="a06667.html#ab3caa40dd9f8a5e1a8514fa8b2f8f0eb">evaluateError</a>(<span class="keyword">const</span> A1&amp; a1, <span class="keyword">const</span> A2&amp; a2, <span class="keyword">const</span> T&amp; bias, Matrix&amp; H1,</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>                       Matrix&amp; H2, Matrix&amp; H3)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="a06667.html#a554da650dc15bc4777b26b608939936f">evaluateError</a>(a1, a2, bias, &amp;H1, &amp;H2, &amp;H3);</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>  }</div>
+</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span></div>
+<div class="foldopen" id="foldopen00270" data-start="{" data-end="}">
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno"><a class="line" href="a06667.html#a2be24623547e9edb22f36314c8767c9e">  270</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a06667.html#a2be24623547e9edb22f36314c8767c9e">print</a>(</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>      <span class="keyword">const</span> std::string&amp; s = <span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a>&amp; keyFormatter = <a class="code hl_variable" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>)<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    std::cout &lt;&lt; s &lt;&lt; <span class="stringliteral">&quot;RangeFactorWithTransformBias&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    body_T_sensor_.print(<span class="stringliteral">&quot;  sensor pose in body frame: &quot;</span>);</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    <a class="code hl_function" href="a04899.html#a5388ca5d908a0cdfbfdd7dcd9021ade6">Base::print</a>(s, keyFormatter);</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <a class="code hl_struct" href="a03203.html">traits&lt;T&gt;::Print</a>(measured_, <span class="stringliteral">&quot;  measured: &quot;</span>);</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  }</div>
+</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span></div>
+<div class="foldopen" id="foldopen00280" data-start="{" data-end="}">
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno"><a class="line" href="a06667.html#ac62ad33058d9eb57f4453f7bf66128b7">  280</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="a06667.html#ac62ad33058d9eb57f4453f7bf66128b7">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="a06435.html">NonlinearFactor</a>&amp; f, <span class="keywordtype">double</span> tol)<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    <span class="keyword">const</span> This* p = <span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span>This*<span class="keyword">&gt;</span>(&amp;f);</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <span class="keywordflow">return</span> p != <span class="keyword">nullptr</span> &amp;&amp; <a class="code hl_function" href="a04899.html#a5cc62be07fbcde6678f8b346ab3a3f78">Base::equals</a>(f, tol) &amp;&amp;</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>           <a class="code hl_struct" href="a03203.html">traits&lt;T&gt;::Equals</a>(measured_, p-&gt;measured_, tol) &amp;&amp;</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>           <a class="code hl_struct" href="a03203.html">traits&lt;A1&gt;::Equals</a>(body_T_sensor_, p-&gt;body_T_sensor_, tol);</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  }</div>
+</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span><span class="preprocessor">#if GTSAM_ENABLE_BOOST_SERIALIZATION</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ARCHIVE&gt;</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>  <span class="keywordtype">void</span> serialize(ARCHIVE&amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    ar&amp; boost::serialization::make_nvp(</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        <span class="stringliteral">&quot;NoiseModelFactor3&quot;</span>, boost::serialization::base_object&lt;Base&gt;(*<span class="keyword">this</span>));</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    ar&amp; BOOST_SERIALIZATION_NVP(measured_);</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    ar&amp; BOOST_SERIALIZATION_NVP(body_T_sensor_);</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>  }</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>};  <span class="comment">// \ RangeFactorWithTransformBias</span></div>
+</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span></div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> A1, <span class="keyword">typename</span> A2, <span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00303" data-start="{" data-end="};">
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno"><a class="line" href="a06671.html">  303</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03203.html">traits</a>&lt;<a class="code hl_class" href="a06667.html">RangeFactorWithTransformBias</a>&lt;A1, A2, T&gt; &gt;</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    : <span class="keyword">public</span> <a class="code hl_struct" href="a03535.html">Testable</a>&lt;RangeFactorWithTransformBias&lt;A1, A2, T&gt; &gt; {};</div>
+</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span> </div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>}  <span class="comment">// namespace gtsam</span></div>
+<div class="ttc" id="aa00920_html"><div class="ttname"><a href="a00920.html">FixedJacobianFactor.h</a></div><div class="ttdoc">Arbitrary-arity Jacobian factor with compile-time block dimensions.</div></div>
+<div class="ttc" id="aa01472_html"><div class="ttname"><a href="a01472.html">NoiseModelFactorN.h</a></div><div class="ttdoc">Base class for noise model factors with N variables.</div></div>
+<div class="ttc" id="aa01556_html_a60dbbc16637d770e100d6ab35358e1c8"><div class="ttname"><a href="a01556.html#a60dbbc16637d770e100d6ab35358e1c8">OptionalNone</a></div><div class="ttdeci">#define OptionalNone</div><div class="ttdoc">These typedefs and aliases will help with making the evaluateError interface independent of boost TOD...</div><div class="ttdef"><b>Definition</b> NonlinearFactor.h:51</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa02242_html_a04921356f5da6203f1a17e84cc8baafd"><div class="ttname"><a href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">gtsam::DefaultKeyFormatter</a></div><div class="ttdeci">KeyFormatter DefaultKeyFormatter</div><div class="ttdoc">Assign default key formatter.</div><div class="ttdef"><b>Definition</b> Key.cpp:30</div></div>
+<div class="ttc" id="aa02242_html_a39c52c49d5301ff2f020e66bf69bbf69"><div class="ttname"><a href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">gtsam::OptionalMatrixType</a></div><div class="ttdeci">Matrix * OptionalMatrixType</div><div class="ttdoc">This typedef will be used everywhere boost::optional&lt;Matrix&amp;&gt; reference was used previously.</div><div class="ttdef"><b>Definition</b> NonlinearFactor.h:57</div></div>
+<div class="ttc" id="aa02242_html_a7d4eaa9f6e32da46e8f287499ee650d2"><div class="ttname"><a href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">gtsam::KeyFormatter</a></div><div class="ttdeci">std::function&lt; std::string(Key)&gt; KeyFormatter</div><div class="ttdoc">Typedef for a function to format a key, i.e. to convert it to a string.</div><div class="ttdef"><b>Definition</b> Key.h:35</div></div>
+<div class="ttc" id="aa02242_html_ab6e5a4884342656e0837ef07008ec03f"><div class="ttname"><a href="a02242.html#ab6e5a4884342656e0837ef07008ec03f">gtsam::SharedNoiseModel</a></div><div class="ttdeci">noiseModel::Base::shared_ptr SharedNoiseModel</div><div class="ttdoc">Aliases.</div><div class="ttdef"><b>Definition</b> NoiseModel.h:846</div></div>
+<div class="ttc" id="aa02242_html_adad029f5f6ffce610428b5fe768b0df2"><div class="ttname"><a href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">gtsam::Key</a></div><div class="ttdeci">std::uint64_t Key</div><div class="ttdoc">Integer nonlinear key type.</div><div class="ttdef"><b>Definition</b> types.h:43</div></div>
+<div class="ttc" id="aa02274_html"><div class="ttname"><a href="a02274.html">gtsam::noiseModel</a></div><div class="ttdoc">All noise models live in the noiseModel namespace.</div><div class="ttdef"><b>Definition</b> LossFunctions.cpp:33</div></div>
+<div class="ttc" id="aa03203_html"><div class="ttname"><a href="a03203.html">gtsam::traits</a></div><div class="ttdoc">A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...</div><div class="ttdef"><b>Definition</b> Group.h:37</div></div>
+<div class="ttc" id="aa03535_html"><div class="ttname"><a href="a03535.html">gtsam::Testable</a></div><div class="ttdoc">A helper that implements the traits interface for GTSAM types.</div><div class="ttdef"><b>Definition</b> Testable.h:152</div></div>
+<div class="ttc" id="aa04047_html"><div class="ttname"><a href="a04047.html">gtsam::Range</a></div><div class="ttdef"><b>Definition</b> BearingRange.h:42</div></div>
+<div class="ttc" id="aa04899_html_a5388ca5d908a0cdfbfdd7dcd9021ade6"><div class="ttname"><a href="a04899.html#a5388ca5d908a0cdfbfdd7dcd9021ade6">gtsam::Factor::print</a></div><div class="ttdeci">virtual void print(const std::string &amp;s=&quot;Factor&quot;, const KeyFormatter &amp;formatter=DefaultKeyFormatter) const</div><div class="ttdoc">print</div><div class="ttdef"><b>Definition</b> Factor.cpp:29</div></div>
+<div class="ttc" id="aa04899_html_a5cc62be07fbcde6678f8b346ab3a3f78"><div class="ttname"><a href="a04899.html#a5cc62be07fbcde6678f8b346ab3a3f78">gtsam::Factor::equals</a></div><div class="ttdeci">bool equals(const This &amp;other, double tol=1e-9) const</div><div class="ttdoc">check equality</div><div class="ttdef"><b>Definition</b> Factor.cpp:42</div></div>
+<div class="ttc" id="aa06419_html_a07b2b3e0025aa31715484a185a7b91cc"><div class="ttname"><a href="a06419.html#a07b2b3e0025aa31715484a185a7b91cc">gtsam::NoiseModelFactorT&lt; traits&lt; double &gt;::TangentVector, A1, A1 &gt;::NoiseModelFactorT</a></div><div class="ttdeci">NoiseModelFactorT()</div><div class="ttdef"><b>Definition</b> NoiseModelFactorN.h:257</div></div>
+<div class="ttc" id="aa06435_html"><div class="ttname"><a href="a06435.html">gtsam::NonlinearFactor</a></div><div class="ttdoc">Nonlinear factor base class.</div><div class="ttdef"><b>Definition</b> NonlinearFactor.h:70</div></div>
+<div class="ttc" id="aa06651_html"><div class="ttname"><a href="a06651.html">gtsam::RangeFactor</a></div><div class="ttdoc">Binary factor for a range measurement Works for any two types A1,A2 for which the functor Range&lt;A1,...</div><div class="ttdef"><b>Definition</b> RangeFactor.h:39</div></div>
+<div class="ttc" id="aa06651_html_a30b02823ed76dba9160d21d604c8ea99"><div class="ttname"><a href="a06651.html#a30b02823ed76dba9160d21d604c8ea99">gtsam::RangeFactor::clone</a></div><div class="ttdeci">gtsam::NonlinearFactor::shared_ptr clone() const override</div><div class="ttdef"><b>Definition</b> RangeFactor.h:56</div></div>
+<div class="ttc" id="aa06651_html_a6127271e270cee1925d04b09e8d108ca"><div class="ttname"><a href="a06651.html#a6127271e270cee1925d04b09e8d108ca">gtsam::RangeFactor::equals</a></div><div class="ttdeci">bool equals(const NonlinearFactor &amp;f, double tol) const override</div><div class="ttdoc">Check equality up to a tolerance.</div><div class="ttdef"><b>Definition</b> RangeFactor.h:81</div></div>
+<div class="ttc" id="aa06651_html_a90c90a20899d8f4ec3792dd0ba9d6563"><div class="ttname"><a href="a06651.html#a90c90a20899d8f4ec3792dd0ba9d6563">gtsam::RangeFactor&lt; A1, A2, T &gt;::measured</a></div><div class="ttdeci">const T &amp; measured() const</div><div class="ttdef"><b>Definition</b> RangeFactor.h:62</div></div>
+<div class="ttc" id="aa06651_html_aa5af8f6c0b720bf9af5486c21c1bc706"><div class="ttname"><a href="a06651.html#aa5af8f6c0b720bf9af5486c21c1bc706">gtsam::RangeFactor::evaluateError</a></div><div class="ttdeci">ErrorVector evaluateError(const A1 &amp;a1, const A2 &amp;a2, OptionalMatrixType H1=OptionalNone, OptionalMatrixType H2=OptionalNone) const override</div><div class="ttdoc">Evaluate the unwhitened range error and optional Jacobians.</div><div class="ttdef"><b>Definition</b> RangeFactor.h:65</div></div>
+<div class="ttc" id="aa06651_html_aa5ba8b8cdf1b802457ebaa265f737cbc"><div class="ttname"><a href="a06651.html#aa5ba8b8cdf1b802457ebaa265f737cbc">gtsam::RangeFactor::print</a></div><div class="ttdeci">void print(const std::string &amp;s=&quot;&quot;, const KeyFormatter &amp;kf=DefaultKeyFormatter) const override</div><div class="ttdoc">print</div><div class="ttdef"><b>Definition</b> RangeFactor.h:73</div></div>
+<div class="ttc" id="aa06651_html_abcd57a8a93f6bd85b76999bf23ea6947"><div class="ttname"><a href="a06651.html#abcd57a8a93f6bd85b76999bf23ea6947">gtsam::RangeFactor::RangeFactor</a></div><div class="ttdeci">RangeFactor(Key key1, Key key2, T measured, const SharedNoiseModel &amp;model)</div><div class="ttdoc">Construct from keys, a range measurement, and a noise model.</div><div class="ttdef"><b>Definition</b> RangeFactor.h:52</div></div>
+<div class="ttc" id="aa06651_html_ac694c55f5064ca92e2b6fa552ef668ac"><div class="ttname"><a href="a06651.html#ac694c55f5064ca92e2b6fa552ef668ac">gtsam::RangeFactor::RangeFactor</a></div><div class="ttdeci">RangeFactor()=default</div><div class="ttdoc">default constructor</div></div>
+<div class="ttc" id="aa06659_html"><div class="ttname"><a href="a06659.html">gtsam::RangeFactorWithTransform</a></div><div class="ttdoc">Binary factor for a range measurement, with a transform applied.</div><div class="ttdef"><b>Definition</b> RangeFactor.h:112</div></div>
+<div class="ttc" id="aa06659_html_a1b0af7d9c8b8babcce83d5441e709bd4"><div class="ttname"><a href="a06659.html#a1b0af7d9c8b8babcce83d5441e709bd4">gtsam::RangeFactorWithTransform::clone</a></div><div class="ttdeci">gtsam::NonlinearFactor::shared_ptr clone() const override</div><div class="ttdef"><b>Definition</b> RangeFactor.h:137</div></div>
+<div class="ttc" id="aa06659_html_a1baa62144ebc5badcc6a72cede81ce36"><div class="ttname"><a href="a06659.html#a1baa62144ebc5badcc6a72cede81ce36">gtsam::RangeFactorWithTransform::RangeFactorWithTransform</a></div><div class="ttdeci">RangeFactorWithTransform()=default</div><div class="ttdoc">Default constructor.</div></div>
+<div class="ttc" id="aa06659_html_a3c79d005b616d5ddc6617ec1e32d11af"><div class="ttname"><a href="a06659.html#a3c79d005b616d5ddc6617ec1e32d11af">gtsam::RangeFactorWithTransform::RangeFactorWithTransform</a></div><div class="ttdeci">RangeFactorWithTransform(Key key1, Key key2, T measured, const SharedNoiseModel &amp;model, const A1 &amp;body_T_sensor)</div><div class="ttdoc">Construct from keys, a range measurement, a noise model, and transform.</div><div class="ttdef"><b>Definition</b> RangeFactor.h:126</div></div>
+<div class="ttc" id="aa06659_html_a668a723167927535265da176d9b305a0"><div class="ttname"><a href="a06659.html#a668a723167927535265da176d9b305a0">gtsam::RangeFactorWithTransform::evaluateError</a></div><div class="ttdeci">ErrorVector evaluateError(const A1 &amp;a1, const A2 &amp;a2, OptionalMatrixType H1=OptionalNone, OptionalMatrixType H2=OptionalNone) const override</div><div class="ttdoc">Evaluate the unwhitened range error and optional Jacobians.</div><div class="ttdef"><b>Definition</b> RangeFactor.h:146</div></div>
+<div class="ttc" id="aa06659_html_a6e63fbda4d9d4e53f456afc08ea97a80"><div class="ttname"><a href="a06659.html#a6e63fbda4d9d4e53f456afc08ea97a80">gtsam::RangeFactorWithTransform::~RangeFactorWithTransform</a></div><div class="ttdeci">~RangeFactorWithTransform() override</div><div class="ttdoc">Destroy this factor.</div><div class="ttdef"><b>Definition</b> RangeFactor.h:134</div></div>
+<div class="ttc" id="aa06659_html_a7b3f4b674068018d8d64588838bb8542"><div class="ttname"><a href="a06659.html#a7b3f4b674068018d8d64588838bb8542">gtsam::RangeFactorWithTransform::equals</a></div><div class="ttdeci">bool equals(const NonlinearFactor &amp;f, double tol) const override</div><div class="ttdoc">Check equality up to a tolerance.</div><div class="ttdef"><b>Definition</b> RangeFactor.h:175</div></div>
+<div class="ttc" id="aa06659_html_ac28ee6e9ec4287ca63fed175ff8d77b6"><div class="ttname"><a href="a06659.html#ac28ee6e9ec4287ca63fed175ff8d77b6">gtsam::RangeFactorWithTransform&lt; A1, A2, T &gt;::measured</a></div><div class="ttdeci">const T &amp; measured() const</div><div class="ttdef"><b>Definition</b> RangeFactor.h:143</div></div>
+<div class="ttc" id="aa06659_html_ae81f9104be00e096add7ae6fb6d1b80f"><div class="ttname"><a href="a06659.html#ae81f9104be00e096add7ae6fb6d1b80f">gtsam::RangeFactorWithTransform::print</a></div><div class="ttdeci">void print(const std::string &amp;s=&quot;&quot;, const KeyFormatter &amp;keyFormatter=DefaultKeyFormatter) const override</div><div class="ttdoc">print contents</div><div class="ttdef"><b>Definition</b> RangeFactor.h:165</div></div>
+<div class="ttc" id="aa06667_html"><div class="ttname"><a href="a06667.html">gtsam::RangeFactorWithTransformBias</a></div><div class="ttdoc">Ternary factor for a range measurement with a fixed sensor transform and an additive bias term.</div><div class="ttdef"><b>Definition</b> RangeFactor.h:209</div></div>
+<div class="ttc" id="aa06667_html_a01920d0181539c0d32a4e5148852c047"><div class="ttname"><a href="a06667.html#a01920d0181539c0d32a4e5148852c047">gtsam::RangeFactorWithTransformBias::clone</a></div><div class="ttdeci">gtsam::NonlinearFactor::shared_ptr clone() const override</div><div class="ttdef"><b>Definition</b> RangeFactor.h:234</div></div>
+<div class="ttc" id="aa06667_html_a2be24623547e9edb22f36314c8767c9e"><div class="ttname"><a href="a06667.html#a2be24623547e9edb22f36314c8767c9e">gtsam::RangeFactorWithTransformBias::print</a></div><div class="ttdeci">void print(const std::string &amp;s=&quot;&quot;, const KeyFormatter &amp;keyFormatter=DefaultKeyFormatter) const override</div><div class="ttdoc">Print contents.</div><div class="ttdef"><b>Definition</b> RangeFactor.h:270</div></div>
+<div class="ttc" id="aa06667_html_a554da650dc15bc4777b26b608939936f"><div class="ttname"><a href="a06667.html#a554da650dc15bc4777b26b608939936f">gtsam::RangeFactorWithTransformBias::evaluateError</a></div><div class="ttdeci">ErrorVector evaluateError(const A1 &amp;a1, const A2 &amp;a2, const T &amp;bias, OptionalMatrixType H1=OptionalNone, OptionalMatrixType H2=OptionalNone, OptionalMatrixType H3=OptionalNone) const override</div><div class="ttdoc">Evaluate the unwhitened range error and optional Jacobians.</div><div class="ttdef"><b>Definition</b> RangeFactor.h:243</div></div>
+<div class="ttc" id="aa06667_html_a56c90c4ee58f2128146c29918e33bc03"><div class="ttname"><a href="a06667.html#a56c90c4ee58f2128146c29918e33bc03">gtsam::RangeFactorWithTransformBias::RangeFactorWithTransformBias</a></div><div class="ttdeci">RangeFactorWithTransformBias()=default</div><div class="ttdoc">Default constructor.</div></div>
+<div class="ttc" id="aa06667_html_a8153d7514e5778fc59ff18b66e87c81d"><div class="ttname"><a href="a06667.html#a8153d7514e5778fc59ff18b66e87c81d">gtsam::RangeFactorWithTransformBias::RangeFactorWithTransformBias</a></div><div class="ttdeci">RangeFactorWithTransformBias(Key key1, Key key2, Key key3, T measured, const SharedNoiseModel &amp;noiseModel, const A1 &amp;body_T_sensor)</div><div class="ttdoc">Construct from keys, a range measurement, a noise model, and transform.</div><div class="ttdef"><b>Definition</b> RangeFactor.h:223</div></div>
+<div class="ttc" id="aa06667_html_a9632fc1593288367e18c9f8910260af9"><div class="ttname"><a href="a06667.html#a9632fc1593288367e18c9f8910260af9">gtsam::RangeFactorWithTransformBias::~RangeFactorWithTransformBias</a></div><div class="ttdeci">~RangeFactorWithTransformBias() override=default</div><div class="ttdoc">Destroy this factor.</div></div>
+<div class="ttc" id="aa06667_html_ab3caa40dd9f8a5e1a8514fa8b2f8f0eb"><div class="ttname"><a href="a06667.html#ab3caa40dd9f8a5e1a8514fa8b2f8f0eb">gtsam::RangeFactorWithTransformBias::evaluateError</a></div><div class="ttdeci">Vector evaluateError(const A1 &amp;a1, const A2 &amp;a2, const T &amp;bias, Matrix &amp;H1, Matrix &amp;H2, Matrix &amp;H3) const</div><div class="ttdoc">Matrix-reference overload for evaluateError.</div><div class="ttdef"><b>Definition</b> RangeFactor.h:264</div></div>
+<div class="ttc" id="aa06667_html_ac002a8324901ad94e333475118eda544"><div class="ttname"><a href="a06667.html#ac002a8324901ad94e333475118eda544">gtsam::RangeFactorWithTransformBias&lt; A1, A2, T &gt;::measured</a></div><div class="ttdeci">const T &amp; measured() const</div><div class="ttdef"><b>Definition</b> RangeFactor.h:240</div></div>
+<div class="ttc" id="aa06667_html_ac62ad33058d9eb57f4453f7bf66128b7"><div class="ttname"><a href="a06667.html#ac62ad33058d9eb57f4453f7bf66128b7">gtsam::RangeFactorWithTransformBias::equals</a></div><div class="ttdeci">bool equals(const NonlinearFactor &amp;f, double tol) const override</div><div class="ttdoc">Check equality up to a tolerance.</div><div class="ttdef"><b>Definition</b> RangeFactor.h:280</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam_unstable</b></li><li class="navelem"><b>nonlinear</b></li><li class="navelem"><a href="a01604.html">IncrementalFixedLagSmoother.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>sam</b></li><li class="navelem"><a href="a01604.html">RangeFactor.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

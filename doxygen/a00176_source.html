@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/basis/Chebyshev.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/SemidirectLieGroup.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,7 +89,7 @@ $(function(){initNavTree('a00176_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Chebyshev.h</div></div>
+  <div class="headertitle"><div class="title">SemidirectLieGroup.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a00176.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
@@ -103,58 +103,209 @@ $(function(){initNavTree('a00176_source.html','',''); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="a00107.html">gtsam/base/Manifold.h</a>&gt;</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="a00152.html">gtsam/basis/Basis.h</a>&gt;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
-<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="a03279.html">   32</a></span><span class="keyword">struct </span>GTSAM_EXPORT <a class="code hl_struct" href="a03279.html">Chebyshev1Basis</a> : <a class="code hl_class" href="a03215.html">Basis</a>&lt;Chebyshev1Basis&gt; {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keyword">using </span>Parameters = Eigen::Matrix&lt;double, -1, 1 <span class="comment">/*Nx1*/</span>&gt;;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  Parameters parameters_;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keyword">static</span> Weights <a class="code hl_function" href="a03279.html#a0491db33b838109613611f2d14ce1faa">CalculateWeights</a>(<span class="keywordtype">size_t</span> N, <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> a = -1,</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                                  <span class="keywordtype">double</span> b = 1);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keyword">static</span> Weights <a class="code hl_function" href="a03279.html#a98f67836c3e77c03417ae3466887f084">DerivativeWeights</a>(<span class="keywordtype">size_t</span> N, <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> a = -1,</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                                   <span class="keywordtype">double</span> b = 1);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>};  <span class="comment">// Chebyshev1Basis</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="a00134.html">gtsam/base/GroupAction.h</a>&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;<a class="code" href="a00170.html">gtsam/base/Lie.h</a>&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;<a class="code" href="a00131.html">gtsam/base/Testable.h</a>&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">namespace </span>internal {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="a03447.html">   42</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03447.html">SemidirectLieGroupIsVector</a> : std::false_type {};</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">template</span> &lt;<span class="keywordtype">int</span> N&gt;</div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="};">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="a03451.html">   44</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03447.html">SemidirectLieGroupIsVector</a>&lt;Eigen::Matrix&lt;double, N, 1&gt;&gt;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    : std::true_type {};</div>
 </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
-<div class="foldopen" id="foldopen00080" data-start="{" data-end="};">
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="a03283.html">   80</a></span><span class="keyword">struct </span>GTSAM_EXPORT <a class="code hl_struct" href="a03283.html">Chebyshev2Basis</a> : <a class="code hl_class" href="a03215.html">Basis</a>&lt;Chebyshev2Basis&gt; {</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keyword">using </span>Parameters = Eigen::Matrix&lt;double, -1, 1 <span class="comment">/*Nx1*/</span>&gt;;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keyword">static</span> Weights <a class="code hl_function" href="a03283.html#a460dd616169c1a23386746e99979ba81">CalculateWeights</a>(<span class="keywordtype">size_t</span> N, <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> a = -1,</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                                  <span class="keywordtype">double</span> b = 1);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keyword">static</span> Weights <a class="code hl_function" href="a03283.html#a45c6376306cbb128d20bbd0a8e38d777">DerivativeWeights</a>(<span class="keywordtype">size_t</span> N, <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> a = -1,</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                                   <span class="keywordtype">double</span> b = 1);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>};  <span class="comment">// Chebyshev2Basis</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> = <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="a03455.html">   54</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03455.html">SemidirectLieGroupHasAdjointMap</a> : std::false_type {};</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="};">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="a03459.html">   56</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03455.html">SemidirectLieGroupHasAdjointMap</a>&lt;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    T, <a class="code hl_namespace" href="a02241.html">std</a>::void_t&lt;decltype(T::adjointMap(</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>           std::declval&lt;const typename traits&lt;T&gt;::TangentVector&amp;&gt;()))&gt;&gt;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    : std::true_type {};</div>
 </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}  <span class="comment">// namespace gtsam</span></div>
-<div class="ttc" id="aa00107_html"><div class="ttname"><a href="a00107.html">Manifold.h</a></div><div class="ttdoc">Base class and basic functions for Manifold types.</div></div>
-<div class="ttc" id="aa00152_html"><div class="ttname"><a href="a00152.html">Basis.h</a></div><div class="ttdoc">Compute an interpolating basis.</div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa03215_html"><div class="ttname"><a href="a03215.html">gtsam::Basis</a></div><div class="ttdoc">CRTP Base class for function bases.</div><div class="ttdef"><b>Definition</b> Basis.h:100</div></div>
-<div class="ttc" id="aa03279_html"><div class="ttname"><a href="a03279.html">gtsam::Chebyshev1Basis</a></div><div class="ttdoc">Basis of Chebyshev polynomials of the first kind https://en.wikipedia.org/wiki/Chebyshev_polynomials#...</div><div class="ttdef"><b>Definition</b> Chebyshev.h:32</div></div>
-<div class="ttc" id="aa03279_html_a0491db33b838109613611f2d14ce1faa"><div class="ttname"><a href="a03279.html#a0491db33b838109613611f2d14ce1faa">gtsam::Chebyshev1Basis::CalculateWeights</a></div><div class="ttdeci">static Weights CalculateWeights(size_t N, double x, double a=-1, double b=1)</div><div class="ttdoc">Evaluate Chebyshev Weights on [-1,1] at x up to order N-1 (N values).</div><div class="ttdef"><b>Definition</b> Chebyshev.cpp:39</div></div>
-<div class="ttc" id="aa03279_html_a98f67836c3e77c03417ae3466887f084"><div class="ttname"><a href="a03279.html#a98f67836c3e77c03417ae3466887f084">gtsam::Chebyshev1Basis::DerivativeWeights</a></div><div class="ttdeci">static Weights DerivativeWeights(size_t N, double x, double a=-1, double b=1)</div><div class="ttdoc">Evaluate Chebyshev derivative at x.</div><div class="ttdef"><b>Definition</b> Chebyshev.cpp:54</div></div>
-<div class="ttc" id="aa03283_html"><div class="ttname"><a href="a03283.html">gtsam::Chebyshev2Basis</a></div><div class="ttdoc">Basis of Chebyshev polynomials of the second kind.</div><div class="ttdef"><b>Definition</b> Chebyshev.h:80</div></div>
-<div class="ttc" id="aa03283_html_a45c6376306cbb128d20bbd0a8e38d777"><div class="ttname"><a href="a03283.html#a45c6376306cbb128d20bbd0a8e38d777">gtsam::Chebyshev2Basis::DerivativeWeights</a></div><div class="ttdeci">static Weights DerivativeWeights(size_t N, double x, double a=-1, double b=1)</div><div class="ttdoc">Evaluate Chebyshev derivative at x.</div><div class="ttdef"><b>Definition</b> Chebyshev.cpp:79</div></div>
-<div class="ttc" id="aa03283_html_a460dd616169c1a23386746e99979ba81"><div class="ttname"><a href="a03283.html#a460dd616169c1a23386746e99979ba81">gtsam::Chebyshev2Basis::CalculateWeights</a></div><div class="ttdeci">static Weights CalculateWeights(size_t N, double x, double a=-1, double b=1)</div><div class="ttdoc">Evaluate Chebyshev Weights on [-1,1] at any x up to order N-1 (N values).</div><div class="ttdef"><b>Definition</b> Chebyshev.cpp:64</div></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Action, <span class="keyword">typename</span> G, <span class="keyword">typename</span> H, <span class="keyword">typename</span> = <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="a03463.html">   67</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03463.html">IsCompatibleSemidirectAction</a> : std::false_type {};</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Action, <span class="keyword">typename</span> G, <span class="keyword">typename</span> H&gt;</div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="};">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="a03467.html">   69</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03463.html">IsCompatibleSemidirectAction</a>&lt;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    Action, G, H,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_namespace" href="a02241.html">std</a>::void_t&lt;decltype(Action::type),</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                decltype(Action::generator(</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                    std::declval&lt;const typename traits&lt;G&gt;::TangentVector&amp;&gt;()))&gt;&gt;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    : std::bool_constant&lt;std::is_base_of_v&lt;GroupAction&lt;Action, G, H&gt;, Action&gt; &amp;&amp;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                         std::is_default_constructible_v&lt;Action&gt; &amp;&amp;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                         Action::type == ActionType::Left&gt; {};</div>
+</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}  <span class="comment">// namespace internal</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> G, <span class="keyword">typename</span> H, <span class="keyword">typename</span> Action&gt;</div>
+<div class="foldopen" id="foldopen00092" data-start="{" data-end="};">
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="a03471.html">   92</a></span><span class="keyword">class </span>SemidirectLieGroup</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    : <span class="keyword">public</span> std::pair&lt;G, H&gt;,</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>      <span class="keyword">public</span> <a class="code hl_struct" href="a03267.html">LieGroup</a>&lt;SemidirectLieGroup&lt;G, H, Action&gt;,</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                      internal::dimensionSum(traits&lt;G&gt;::dimension,</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                                             traits&lt;H&gt;::dimension)&gt; {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  GTSAM_CONCEPT_ASSERT(<a class="code hl_class" href="a03283.html">IsLieGroup&lt;G&gt;</a>);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  GTSAM_CONCEPT_ASSERT(<a class="code hl_class" href="a03283.html">IsLieGroup&lt;H&gt;</a>);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  GTSAM_CONCEPT_ASSERT(<a class="code hl_class" href="a03519.html">IsTestable&lt;G&gt;</a>);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  GTSAM_CONCEPT_ASSERT(<a class="code hl_class" href="a03519.html">IsTestable&lt;H&gt;</a>);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keyword">using </span>This = SemidirectLieGroup&lt;G, H, Action&gt;;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  <span class="keyword">using </span>Base = std::pair&lt;G, H&gt;;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keyword">using </span>LieBase = <a class="code hl_struct" href="a03267.html">LieGroup</a>&lt;This, <a class="code hl_function" href="a00170.html#a3b565972ed474591d6c715dabff4f1dc">internal::dimensionSum</a>(<a class="code hl_struct" href="a03203.html">traits&lt;G&gt;::dimension</a>,</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                                                        <a class="code hl_struct" href="a03203.html">traits&lt;H&gt;::dimension</a>)&gt;;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keywordtype">int</span> n = <a class="code hl_struct" href="a03203.html">traits&lt;G&gt;::dimension</a>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keywordtype">int</span> m = <a class="code hl_struct" href="a03203.html">traits&lt;H&gt;::dimension</a>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> firstDynamic = n == Eigen::Dynamic;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keyword">static_assert</span>(<a class="code hl_struct" href="a03463.html">internal::IsCompatibleSemidirectAction&lt;Action, G, H&gt;::value</a> &amp;&amp;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                    <a class="code hl_struct" href="a03447.html">internal::SemidirectLieGroupIsVector&lt;H&gt;::value</a> &amp;&amp;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                    m != Eigen::Dynamic,</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                <span class="stringliteral">&quot;SemidirectLieGroup requires a default-constructible left &quot;</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                <span class="stringliteral">&quot;GroupAction, a fixed-size Eigen vector H, and &quot;</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                <span class="stringliteral">&quot;Action::generator(u)&quot;</span>);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keyword">using </span><a class="code hl_function" href="a03267.html#a5454833785925037137a2eef98edf558">LieBase::Dim</a>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  <span class="keyword">using </span>LieBase::dimension;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keyword">using </span>TangentVector = <span class="keyword">typename</span> LieBase::TangentVector;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keyword">using </span>ChartJacobian = <span class="keyword">typename</span> LieBase::ChartJacobian;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="keyword">using </span>Jacobian = <span class="keyword">typename</span> LieBase::Jacobian;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="keyword">using </span>ChartAtOrigin = <a class="code hl_struct" href="a03263.html">internal::ChartAtIdentity&lt;This, dimension&gt;</a>;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <span class="keyword">using </span>Jacobian1 = <span class="keyword">typename</span> <a class="code hl_struct" href="a03203.html">traits&lt;G&gt;::Jacobian</a>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  <span class="keyword">using </span>Jacobian2 = <span class="keyword">typename</span> <a class="code hl_struct" href="a03203.html">traits&lt;H&gt;::Jacobian</a>;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  <span class="keyword">using </span>ActionJacobianG =</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>      std::conditional_t&lt;firstDynamic, Matrix, Eigen::Matrix&lt;double, m, n&gt;&gt;;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  <span class="keyword">using </span>group_flavor = <a class="code hl_struct" href="a03195.html">multiplicative_group_tag</a>;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  SemidirectLieGroup() : Base(defaultIdentity&lt;G&gt;(), <a class="code hl_struct" href="a03203.html">traits&lt;H&gt;::Identity</a>()) {}</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  SemidirectLieGroup(<span class="keyword">const</span> G&amp; g, <span class="keyword">const</span> H&amp; h) : Base(g, h) {}</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  SemidirectLieGroup(<span class="keyword">const</span> Base&amp; base) : Base(base) {}</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <span class="keyword">static</span> SemidirectLieGroup Identity() { <span class="keywordflow">return</span> SemidirectLieGroup(); }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="a03267.html#afa084a36d7054e3c837519a96cc12377">dim</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> firstDim() + secondDim(); }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  SemidirectLieGroup operator*(<span class="keyword">const</span> SemidirectLieGroup&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  SemidirectLieGroup inverse() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  <span class="keyword">using </span>LieBase::between;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  <span class="keyword">using </span>LieBase::compose;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  <span class="keyword">using </span><a class="code hl_function" href="a03267.html#aee395d766c6c8afb27a9bece5c42400e">LieBase::expmap</a>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  <span class="keyword">using </span>LieBase::inverse;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  <span class="keyword">using </span><a class="code hl_function" href="a03267.html#a9a8ba0a0f7442929df460d79292134aa">LieBase::logmap</a>;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  SemidirectLieGroup retract(<span class="keyword">const</span> TangentVector&amp; v, ChartJacobian H1 = {},</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                             ChartJacobian H2 = {}) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  TangentVector localCoordinates(<span class="keyword">const</span> SemidirectLieGroup&amp; other,</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                                 ChartJacobian H1 = {},</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                                 ChartJacobian H2 = {}) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  <span class="keyword">static</span> SemidirectLieGroup Expmap(<span class="keyword">const</span> TangentVector&amp; xi,</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                                   ChartJacobian D = {});</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <span class="keyword">static</span> SemidirectLieGroup Expmap(</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>      <span class="keyword">const</span> Eigen::Ref&lt;<span class="keyword">const</span> <span class="keyword">typename</span> <a class="code hl_struct" href="a03203.html">traits&lt;G&gt;::TangentVector</a>&gt;&amp; u,</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>      <span class="keyword">const</span> Eigen::Ref&lt;<span class="keyword">const</span> <span class="keyword">typename</span> <a class="code hl_struct" href="a03203.html">traits&lt;H&gt;::TangentVector</a>&gt;&amp; v,</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;Eigen::Dynamic, Eigen::Dynamic&gt;</a> H1 = {},</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>      <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;Eigen::Dynamic, Eigen::Dynamic&gt;</a> H2 = {});</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  <span class="keyword">static</span> TangentVector Logmap(<span class="keyword">const</span> SemidirectLieGroup&amp; p,</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                              ChartJacobian D = {});</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  <span class="keyword">static</span> TangentVector LocalCoordinates(<span class="keyword">const</span> SemidirectLieGroup&amp; p,</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                                        ChartJacobian D = {}) {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keywordflow">return</span> Logmap(p, D);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  Jacobian AdjointMap() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  <span class="keyword">static</span> Jacobian adjointMap(<span class="keyword">const</span> TangentVector&amp; xi);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  <span class="keywordtype">void</span> print(<span class="keyword">const</span> std::string&amp; s = <span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> SemidirectLieGroup&amp; other, <span class="keywordtype">double</span> tol = 1e-9)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="a03203.html">traits&lt;G&gt;::Equals</a>(this-&gt;first, other.first, tol) &amp;&amp;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>           <a class="code hl_struct" href="a03203.html">traits&lt;H&gt;::Equals</a>(this-&gt;second, other.second, tol);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  <span class="keyword">static</span> T defaultIdentity();</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  <span class="keywordtype">size_t</span> firstDim()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_struct" href="a03203.html">traits&lt;G&gt;::GetDimension</a>(this-&gt;first); }</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>  <span class="keywordtype">size_t</span> secondDim()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_struct" href="a03203.html">traits&lt;H&gt;::GetDimension</a>(this-&gt;second); }</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  <span class="keywordtype">void</span> checkMatchingDimensions(<span class="keyword">const</span> SemidirectLieGroup&amp; other,</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                               <span class="keyword">const</span> <span class="keywordtype">char</span>* operation) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>  template &lt;typename T, int D = traits&lt;T&gt;::dimension&gt;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>  <span class="keyword">static</span> <span class="keyword">typename</span> <a class="code hl_struct" href="a03203.html">traits&lt;T&gt;::TangentVector</a> tangentSegment(</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>      <span class="keyword">const</span> TangentVector&amp; xi, <span class="keywordtype">size_t</span> start, <span class="keywordtype">size_t</span> d);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  <span class="keyword">static</span> TangentVector makeTangentVector(</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>      <span class="keyword">const</span> <span class="keyword">typename</span> <a class="code hl_struct" href="a03203.html">traits&lt;G&gt;::TangentVector</a>&amp; u,</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>      <span class="keyword">const</span> <span class="keyword">typename</span> <a class="code hl_struct" href="a03203.html">traits&lt;H&gt;::TangentVector</a>&amp; v, <span class="keywordtype">size_t</span> d1, <span class="keywordtype">size_t</span> d2);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  <span class="keyword">static</span> Jacobian zeroJacobian(<span class="keywordtype">size_t</span> d);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  <span class="keyword">static</span> Jacobian identityJacobian(<span class="keywordtype">size_t</span> d);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  <span class="keyword">struct </span>Phi1KernelResult {</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    Jacobian2 phi0;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    Jacobian2 phi1;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  };</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  <span class="keyword">static</span> Phi1KernelResult phi1Kernel(<span class="keyword">const</span> Jacobian2&amp; A);</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  <span class="keyword">static</span> <span class="keyword">typename</span> <a class="code hl_struct" href="a03203.html">traits&lt;H&gt;::TangentVector</a> phi1FrechetAction(</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>      <span class="keyword">const</span> Jacobian2&amp; A, <span class="keyword">const</span> Jacobian2&amp; B,</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>      <span class="keyword">const</span> <span class="keyword">typename</span> <a class="code hl_struct" href="a03203.html">traits&lt;H&gt;::TangentVector</a>&amp; v);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  <span class="keyword">static</span> Jacobian rightJacobian(<span class="keyword">const</span> TangentVector&amp; xi);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>};</div>
+</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> G, <span class="keyword">typename</span> H, <span class="keyword">typename</span> Action&gt;</div>
+<div class="foldopen" id="foldopen00204" data-start="{" data-end="};">
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="a03479.html">  204</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03203.html">traits</a>&lt;<a class="code hl_class" href="a03471.html">SemidirectLieGroup</a>&lt;G, H, Action&gt;&gt;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    : <a class="code hl_struct" href="a03279.html">internal::LieGroup</a>&lt;SemidirectLieGroup&lt;G, H, Action&gt;&gt; {};</div>
+</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>}  <span class="comment">// namespace gtsam</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="preprocessor">#include &lt;<a class="code" href="a00056.html">gtsam/base/SemidirectLieGroup-inl.h</a>&gt;</span></div>
+<div class="ttc" id="aa00056_html"><div class="ttname"><a href="a00056.html">SemidirectLieGroup-inl.h</a></div><div class="ttdoc">Internal implementation of SemidirectLieGroup.</div></div>
+<div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">Testable.h</a></div><div class="ttdoc">Concept check for values that can be used in unit tests.</div></div>
+<div class="ttc" id="aa00134_html"><div class="ttname"><a href="a00134.html">GroupAction.h</a></div><div class="ttdoc">Group action concept and CRTP base class.</div></div>
+<div class="ttc" id="aa00170_html"><div class="ttname"><a href="a00170.html">Lie.h</a></div><div class="ttdoc">Base class and basic functions for Lie types.</div></div>
+<div class="ttc" id="aa00170_html_a3b565972ed474591d6c715dabff4f1dc"><div class="ttname"><a href="a00170.html#a3b565972ed474591d6c715dabff4f1dc">gtsam::internal::dimensionSum</a></div><div class="ttdeci">constexpr int dimensionSum(int n, int m)</div><div class="ttdoc">Sum compile-time dimensions, propagating Eigen::Dynamic.</div><div class="ttdef"><b>Definition</b> Lie.h:46</div></div>
+<div class="ttc" id="aa02241_html"><div class="ttname"><a href="a02241.html">std</a></div><div class="ttdoc">STL namespace.</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa03195_html"><div class="ttname"><a href="a03195.html">gtsam::multiplicative_group_tag</a></div><div class="ttdoc">Group operator syntax flavors.</div><div class="ttdef"><b>Definition</b> Group.h:34</div></div>
+<div class="ttc" id="aa03203_html"><div class="ttname"><a href="a03203.html">gtsam::traits</a></div><div class="ttdoc">A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...</div><div class="ttdef"><b>Definition</b> Group.h:37</div></div>
+<div class="ttc" id="aa03263_html"><div class="ttname"><a href="a03263.html">gtsam::internal::ChartAtIdentity</a></div><div class="ttdoc">Chart-at-origin adapter for LieGroup-derived classes with explicit instance retract/localCoordinates ...</div><div class="ttdef"><b>Definition</b> Lie.h:65</div></div>
+<div class="ttc" id="aa03267_html"><div class="ttname"><a href="a03267.html">gtsam::LieGroup</a></div><div class="ttdoc">A CRTP helper class that implements Lie group methods Prerequisites: methods operator*,...</div><div class="ttdef"><b>Definition</b> Lie.h:114</div></div>
+<div class="ttc" id="aa03267_html_a5454833785925037137a2eef98edf558"><div class="ttname"><a href="a03267.html#a5454833785925037137a2eef98edf558">gtsam::LieGroup::Dim</a></div><div class="ttdeci">static constexpr int Dim()</div><div class="ttdoc">Static method to get the dimension (compile-time or dynamic).</div><div class="ttdef"><b>Definition</b> Lie.h:121</div></div>
+<div class="ttc" id="aa03267_html_a9a8ba0a0f7442929df460d79292134aa"><div class="ttname"><a href="a03267.html#a9a8ba0a0f7442929df460d79292134aa">gtsam::LieGroup::logmap</a></div><div class="ttdeci">TangentVector logmap(const Class &amp;g) const</div><div class="ttdoc">logmap as required by manifold concept Applies logarithmic map to group element that takes *this to g</div><div class="ttdef"><b>Definition</b> Lie.h:161</div></div>
+<div class="ttc" id="aa03267_html_aee395d766c6c8afb27a9bece5c42400e"><div class="ttname"><a href="a03267.html#aee395d766c6c8afb27a9bece5c42400e">gtsam::LieGroup::expmap</a></div><div class="ttdeci">Class expmap(const TangentVector &amp;v) const</div><div class="ttdoc">expmap as required by manifold concept Applies exponential map to v and composes with *this</div><div class="ttdef"><b>Definition</b> Lie.h:155</div></div>
+<div class="ttc" id="aa03267_html_afa084a36d7054e3c837519a96cc12377"><div class="ttname"><a href="a03267.html#afa084a36d7054e3c837519a96cc12377">gtsam::LieGroup&lt; SemidirectLieGroup&lt; G, H, Action &gt;, internal::dimensionSum(traits&lt; G &gt;::dimension, traits&lt; H &gt;::dimension)&gt;::dim</a></div><div class="ttdeci">std::enable_if_t&lt; M !=Eigen::Dynamic, int &gt; dim() const</div><div class="ttdef"><b>Definition</b> Lie.h:125</div></div>
+<div class="ttc" id="aa03279_html"><div class="ttname"><a href="a03279.html">gtsam::internal::LieGroup</a></div><div class="ttdoc">Both LieGroupTraits and Testable.</div><div class="ttdef"><b>Definition</b> Lie.h:346</div></div>
+<div class="ttc" id="aa03283_html"><div class="ttname"><a href="a03283.html">gtsam::IsLieGroup</a></div><div class="ttdoc">Lie Group Concept.</div><div class="ttdef"><b>Definition</b> Lie.h:377</div></div>
+<div class="ttc" id="aa03363_html"><div class="ttname"><a href="a03363.html">gtsam::OptionalJacobian</a></div><div class="ttdoc">OptionalJacobian is an Eigen::Ref like class that can take be constructed using either a fixed size o...</div><div class="ttdef"><b>Definition</b> OptionalJacobian.h:40</div></div>
+<div class="ttc" id="aa03447_html"><div class="ttname"><a href="a03447.html">gtsam::internal::SemidirectLieGroupIsVector</a></div><div class="ttdoc">Recognizes the vector-space second factor required by SemidirectLieGroup.</div><div class="ttdef"><b>Definition</b> SemidirectLieGroup.h:42</div></div>
+<div class="ttc" id="aa03455_html"><div class="ttname"><a href="a03455.html">gtsam::internal::SemidirectLieGroupHasAdjointMap</a></div><div class="ttdoc">Detects the optional static algebra adjoint on the base group.</div><div class="ttdef"><b>Definition</b> SemidirectLieGroup.h:54</div></div>
+<div class="ttc" id="aa03463_html"><div class="ttname"><a href="a03463.html">gtsam::internal::IsCompatibleSemidirectAction</a></div><div class="ttdoc">Validates the action contract used by SemidirectLieGroup&#39;s group law and matrix-function kernels.</div><div class="ttdef"><b>Definition</b> SemidirectLieGroup.h:67</div></div>
+<div class="ttc" id="aa03471_html"><div class="ttname"><a href="a03471.html">gtsam::SemidirectLieGroup</a></div><div class="ttdoc">Left semidirect product G ⋉ H induced by Action.</div><div class="ttdef"><b>Definition</b> SemidirectLieGroup.h:96</div></div>
+<div class="ttc" id="aa03519_html"><div class="ttname"><a href="a03519.html">gtsam::IsTestable</a></div><div class="ttdoc">A testable concept check that should be placed in applicable unit tests and in generic algorithms.</div><div class="ttdef"><b>Definition</b> Testable.h:59</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>basis</b></li><li class="navelem"><a href="a00176.html">Chebyshev.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>base</b></li><li class="navelem"><a href="a00176.html">SemidirectLieGroup.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

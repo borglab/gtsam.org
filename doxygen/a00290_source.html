@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/geometry/Cal3Unified.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/discrete/AlgebraicDecisionTree.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,7 +89,7 @@ $(function(){initNavTree('a00290_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Cal3Unified.h</div></div>
+  <div class="headertitle"><div class="title">AlgebraicDecisionTree.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a00290.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
@@ -103,116 +103,248 @@ $(function(){initNavTree('a00290_source.html','',''); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;gtsam/geometry/Cal3DS2_Base.h&gt;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
-<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="a03555.html">   45</a></span><span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a03555.html#a6ce150e7037a83dccc3fdbabce4970e7">Cal3Unified</a> : <span class="keyword">public</span> <a class="code hl_function" href="a03539.html#a00a1fad7afcbb3ba09a368c3e4903ddc">Cal3DS2_Base</a> {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keyword">using </span>This = <a class="code hl_function" href="a03555.html#a6ce150e7037a83dccc3fdbabce4970e7">Cal3Unified</a>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">using </span>Base = <a class="code hl_function" href="a03539.html#a00a1fad7afcbb3ba09a368c3e4903ddc">Cal3DS2_Base</a>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordtype">double</span> xi_ = 0.0f;  </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keyword">enum</span> { dimension = 10 };</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">using </span>shared_ptr = boost::shared_ptr&lt;Cal3Unified&gt;;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="a03555.html#a6ce150e7037a83dccc3fdbabce4970e7">   62</a></span>  <a class="code hl_function" href="a03555.html#a6ce150e7037a83dccc3fdbabce4970e7">Cal3Unified</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <a class="code hl_function" href="a03555.html#a6ce150e7037a83dccc3fdbabce4970e7">Cal3Unified</a>(<span class="keywordtype">double</span> <a class="code hl_function" href="a03487.html#a93e2f9ae7ae50554e9e1e8306485eec9">fx</a>, <span class="keywordtype">double</span> <a class="code hl_function" href="a03487.html#aef899ed97ae4c2197f0ceca6d26764f3">fy</a>, <span class="keywordtype">double</span> s, <span class="keywordtype">double</span> u0, <span class="keywordtype">double</span> v0, <span class="keywordtype">double</span> <a class="code hl_function" href="a03539.html#a90a0cc3150156eb17066c3d6bb95a99e">k1</a>,</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>              <span class="keywordtype">double</span> <a class="code hl_function" href="a03539.html#a38ce12c0386aa31d159cedea0076afca">k2</a>, <span class="keywordtype">double</span> <a class="code hl_function" href="a03539.html#add2664cff0283ec8b8299ff0002b019c">p1</a> = 0.0, <span class="keywordtype">double</span> <a class="code hl_function" href="a03539.html#a0a28d69c1e3f12bd9c7d53419cc521e3">p2</a> = 0.0, <span class="keywordtype">double</span> <a class="code hl_function" href="a03555.html#a80a36bbc6309792977cd3a13864a6c2d">xi</a> = 0.0)</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      : Base(<a class="code hl_function" href="a03487.html#a93e2f9ae7ae50554e9e1e8306485eec9">fx</a>, <a class="code hl_function" href="a03487.html#aef899ed97ae4c2197f0ceca6d26764f3">fy</a>, s, u0, v0, <a class="code hl_function" href="a03539.html#a90a0cc3150156eb17066c3d6bb95a99e">k1</a>, <a class="code hl_function" href="a03539.html#a38ce12c0386aa31d159cedea0076afca">k2</a>, <a class="code hl_function" href="a03539.html#add2664cff0283ec8b8299ff0002b019c">p1</a>, <a class="code hl_function" href="a03539.html#a0a28d69c1e3f12bd9c7d53419cc521e3">p2</a>), xi_(<a class="code hl_function" href="a03555.html#a80a36bbc6309792977cd3a13864a6c2d">xi</a>) {}</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <a class="code hl_class" href="a03555.html">~Cal3Unified</a>()<span class="keyword"> override </span>{}</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  Cal3Unified(<span class="keyword">const</span> Vector10&amp; v)</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      : Base(v(0), v(1), v(2), v(3), v(4), v(5), v(6), v(7), v(8)), xi_(v(9)) {}</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  GTSAM_EXPORT <span class="keyword">friend</span> std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os,</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                                               <span class="keyword">const</span> Cal3Unified&amp; cal);</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a01968.html#a54fa43c89c5334314c8c75939dd5c2d7">print</a>(<span class="keyword">const</span> std::string&amp; s = <span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> Cal3Unified&amp; K, <span class="keywordtype">double</span> tol = 10e-9) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="a03555.html#a80a36bbc6309792977cd3a13864a6c2d">   96</a></span>  <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code hl_function" href="a03555.html#a80a36bbc6309792977cd3a13864a6c2d">xi</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> xi_; }</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  Vector10 vector() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <a class="code hl_typedef" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> uncalibrate(<span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&amp; p,</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                     <a class="code hl_class" href="a02995.html">OptionalJacobian&lt;2, 10&gt;</a> Dcal = boost::none,</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                     <a class="code hl_class" href="a02995.html">OptionalJacobian&lt;2, 2&gt;</a> Dp = boost::none) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <a class="code hl_typedef" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> calibrate(<span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&amp; p, <a class="code hl_class" href="a02995.html">OptionalJacobian&lt;2, 10&gt;</a> Dcal = boost::none,</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                   <a class="code hl_class" href="a02995.html">OptionalJacobian&lt;2, 2&gt;</a> Dp = boost::none) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <a class="code hl_typedef" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> spaceToNPlane(<span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&amp; p) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <a class="code hl_typedef" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> nPlaneToSpace(<span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&amp; p) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span></div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  <a class="code hl_class" href="a03555.html">Cal3Unified</a> retract(<span class="keyword">const</span> Vector&amp; d) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  Vector localCoordinates(<span class="keyword">const</span> <a class="code hl_class" href="a03555.html">Cal3Unified</a>&amp; T2) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span></div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="a03555.html#a2703b822e9f3dd4ccb5d32c4ad91bcfb">  133</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_function" href="a03555.html#a2703b822e9f3dd4ccb5d32c4ad91bcfb">dim</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="a03555.html#af74f4e76f00451bbd751ff42786df828">Dim</a>(); }</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span></div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="a03555.html#af74f4e76f00451bbd751ff42786df828">  136</a></span>  <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="a03555.html#af74f4e76f00451bbd751ff42786df828">Dim</a>() { <span class="keywordflow">return</span> dimension; }</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="a03555.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">  142</a></span>  <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Archive&gt;</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  <span class="keywordtype">void</span> serialize(Archive&amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    ar&amp; boost::serialization::make_nvp(</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="stringliteral">&quot;Cal3Unified&quot;</span>, boost::serialization::base_object&lt;Cal3DS2_Base&gt;(*<span class="keyword">this</span>));</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    ar&amp; BOOST_SERIALIZATION_NVP(xi_);</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  }</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>};</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="a00131.html">gtsam/base/Testable.h</a>&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;gtsam/discrete/DecisionTree-inl.h&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="a00296.html">gtsam/discrete/Ring.h</a>&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;iomanip&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;limits&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> L&gt;</div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="a03791.html">   41</a></span>  <span class="keyword">class </span>AlgebraicDecisionTree : <span class="keyword">public</span> <a class="code hl_function" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree</a>&lt;L, double&gt; {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">static</span> std::string DefaultFormatter(<span class="keyword">const</span> L&amp; x) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      std::stringstream ss;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>      ss &lt;&lt; x;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      <span class="keywordflow">return</span> ss.str();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>   <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">using </span>Base = <a class="code hl_function" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree&lt;L, double&gt;</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    AlgebraicDecisionTree(<span class="keywordtype">double</span> leaf = 1.0) : Base(leaf) {}</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="a03791.html#a7d4804b7f188bbb3ff2bc97316252197">   61</a></span>    <a class="code hl_function" href="a03791.html#a7d4804b7f188bbb3ff2bc97316252197">AlgebraicDecisionTree</a>(<span class="keyword">const</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">Base::NodePtr</a> root) : Base(root) {}</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">// Explicitly non-explicit constructor</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_class" href="a03791.html">AlgebraicDecisionTree</a>(<span class="keyword">const</span> Base&amp; add) : Base(add) {}</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="a03791.html#a4e42a5ca3fc306d2d83c88dd3532f71d">   67</a></span>    <a class="code hl_function" href="a03791.html#a4e42a5ca3fc306d2d83c88dd3532f71d">AlgebraicDecisionTree</a>(<span class="keyword">const</span> L&amp; label, <span class="keywordtype">double</span> y1, <span class="keywordtype">double</span> y2)</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        : Base(label, y1, y2) {}</div>
 </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="a03559.html">  152</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a02823.html">traits</a>&lt;<a class="code hl_class" href="a03555.html">Cal3Unified</a>&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="a02955.html">internal::Manifold</a>&lt;Cal3Unified&gt; {};</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="a03563.html">  155</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a02823.html">traits</a>&lt;const <a class="code hl_class" href="a03555.html">Cal3Unified</a>&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="a02955.html">internal::Manifold</a>&lt;Cal3Unified&gt; {};</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>}</div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa01968_html_a54fa43c89c5334314c8c75939dd5c2d7"><div class="ttname"><a href="a01968.html#a54fa43c89c5334314c8c75939dd5c2d7">gtsam::print</a></div><div class="ttdeci">void print(const Matrix &amp;A, const string &amp;s, ostream &amp;stream)</div><div class="ttdoc">print without optional string, must specify cout yourself</div><div class="ttdef"><b>Definition</b> Matrix.cpp:156</div></div>
-<div class="ttc" id="aa01968_html_a6ede8384dee0353a0ce5fb54ea50c21d"><div class="ttname"><a href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d">gtsam::Point2</a></div><div class="ttdeci">Vector2 Point2</div><div class="ttdoc">As of GTSAM 4, in order to make GTSAM more lean, it is now possible to just typedef Point2 to Vector2...</div><div class="ttdef"><b>Definition</b> Point2.h:27</div></div>
-<div class="ttc" id="aa02823_html"><div class="ttname"><a href="a02823.html">gtsam::traits</a></div><div class="ttdoc">A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...</div><div class="ttdef"><b>Definition</b> concepts.h:30</div></div>
-<div class="ttc" id="aa02955_html"><div class="ttname"><a href="a02955.html">gtsam::internal::Manifold</a></div><div class="ttdoc">Both ManifoldTraits and Testable.</div><div class="ttdef"><b>Definition</b> Manifold.h:120</div></div>
-<div class="ttc" id="aa02995_html"><div class="ttname"><a href="a02995.html">gtsam::OptionalJacobian</a></div><div class="ttdoc">OptionalJacobian is an Eigen::Ref like class that can take be constructed using either a fixed size o...</div><div class="ttdef"><b>Definition</b> OptionalJacobian.h:41</div></div>
-<div class="ttc" id="aa03487_html_a93e2f9ae7ae50554e9e1e8306485eec9"><div class="ttname"><a href="a03487.html#a93e2f9ae7ae50554e9e1e8306485eec9">gtsam::Cal3::fx</a></div><div class="ttdeci">double fx() const</div><div class="ttdoc">focal length x</div><div class="ttdef"><b>Definition</b> Cal3.h:139</div></div>
-<div class="ttc" id="aa03487_html_aef899ed97ae4c2197f0ceca6d26764f3"><div class="ttname"><a href="a03487.html#aef899ed97ae4c2197f0ceca6d26764f3">gtsam::Cal3::fy</a></div><div class="ttdeci">double fy() const</div><div class="ttdoc">focal length y</div><div class="ttdef"><b>Definition</b> Cal3.h:142</div></div>
-<div class="ttc" id="aa03539_html_a00a1fad7afcbb3ba09a368c3e4903ddc"><div class="ttname"><a href="a03539.html#a00a1fad7afcbb3ba09a368c3e4903ddc">gtsam::Cal3DS2_Base::Cal3DS2_Base</a></div><div class="ttdeci">Cal3DS2_Base()=default</div><div class="ttdoc">Default Constructor with only unit focal length.</div></div>
-<div class="ttc" id="aa03539_html_a0a28d69c1e3f12bd9c7d53419cc521e3"><div class="ttname"><a href="a03539.html#a0a28d69c1e3f12bd9c7d53419cc521e3">gtsam::Cal3DS2_Base::p2</a></div><div class="ttdeci">double p2() const</div><div class="ttdoc">Second tangential distortion coefficient.</div><div class="ttdef"><b>Definition</b> Cal3DS2_Base.h:110</div></div>
-<div class="ttc" id="aa03539_html_a38ce12c0386aa31d159cedea0076afca"><div class="ttname"><a href="a03539.html#a38ce12c0386aa31d159cedea0076afca">gtsam::Cal3DS2_Base::k2</a></div><div class="ttdeci">double k2() const</div><div class="ttdoc">Second distortion coefficient.</div><div class="ttdef"><b>Definition</b> Cal3DS2_Base.h:104</div></div>
-<div class="ttc" id="aa03539_html_a90a0cc3150156eb17066c3d6bb95a99e"><div class="ttname"><a href="a03539.html#a90a0cc3150156eb17066c3d6bb95a99e">gtsam::Cal3DS2_Base::k1</a></div><div class="ttdeci">double k1() const</div><div class="ttdoc">First distortion coefficient.</div><div class="ttdef"><b>Definition</b> Cal3DS2_Base.h:101</div></div>
-<div class="ttc" id="aa03539_html_add2664cff0283ec8b8299ff0002b019c"><div class="ttname"><a href="a03539.html#add2664cff0283ec8b8299ff0002b019c">gtsam::Cal3DS2_Base::p1</a></div><div class="ttdeci">double p1() const</div><div class="ttdoc">First tangential distortion coefficient.</div><div class="ttdef"><b>Definition</b> Cal3DS2_Base.h:107</div></div>
-<div class="ttc" id="aa03555_html"><div class="ttname"><a href="a03555.html">gtsam::Cal3Unified</a></div><div class="ttdoc">Calibration of a omni-directional camera with mirror + lens radial distortion.</div><div class="ttdef"><b>Definition</b> Cal3Unified.h:45</div></div>
-<div class="ttc" id="aa03555_html_a2703b822e9f3dd4ccb5d32c4ad91bcfb"><div class="ttname"><a href="a03555.html#a2703b822e9f3dd4ccb5d32c4ad91bcfb">gtsam::Cal3Unified::dim</a></div><div class="ttdeci">size_t dim() const override</div><div class="ttdoc">Return dimensions of calibration manifold object.</div><div class="ttdef"><b>Definition</b> Cal3Unified.h:133</div></div>
-<div class="ttc" id="aa03555_html_a6ce150e7037a83dccc3fdbabce4970e7"><div class="ttname"><a href="a03555.html#a6ce150e7037a83dccc3fdbabce4970e7">gtsam::Cal3Unified::Cal3Unified</a></div><div class="ttdeci">Cal3Unified()=default</div><div class="ttdoc">Default Constructor with only unit focal length.</div></div>
-<div class="ttc" id="aa03555_html_a80a36bbc6309792977cd3a13864a6c2d"><div class="ttname"><a href="a03555.html#a80a36bbc6309792977cd3a13864a6c2d">gtsam::Cal3Unified::xi</a></div><div class="ttdeci">double xi() const</div><div class="ttdoc">mirror parameter</div><div class="ttdef"><b>Definition</b> Cal3Unified.h:96</div></div>
-<div class="ttc" id="aa03555_html_af74f4e76f00451bbd751ff42786df828"><div class="ttname"><a href="a03555.html#af74f4e76f00451bbd751ff42786df828">gtsam::Cal3Unified::Dim</a></div><div class="ttdeci">static size_t Dim()</div><div class="ttdoc">Return dimensions of calibration manifold object.</div><div class="ttdef"><b>Definition</b> Cal3Unified.h:136</div></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="a03791.html#a1568fefa4bc0727d9833722f782f4bb4">   83</a></span>    <a class="code hl_function" href="a03791.html#a1568fefa4bc0727d9833722f782f4bb4">AlgebraicDecisionTree</a>(<span class="keyword">const</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="a03835.html#adcdd80ab1af415d212397a2666320e35">Base::LabelC</a>&amp; labelC, <span class="keywordtype">double</span> y1,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                          <span class="keywordtype">double</span> y2)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        : Base(labelC, y1, y2) {}</div>
+</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
+<div class="foldopen" id="foldopen00111" data-start="{" data-end="}">
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="a03791.html#a9d6239fa73a7e13ec702bacf1b5604ca">  111</a></span>    AlgebraicDecisionTree  <span class="comment">//</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        (<span class="keyword">const</span> std::vector&lt;typename Base::LabelC&gt;&amp; labelCs,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>         <span class="keyword">const</span> std::vector&lt;double&gt;&amp; ys) {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      this-&gt;<a class="code hl_variable" href="a03835.html#a768a8bde0e6dc5d0b0e6f12f57560e9c">root_</a> =</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>          <a class="code hl_function" href="a03835.html#af264d6ab7a0750c6d497d9ef83105d84">Base::create</a>(labelCs.begin(), labelCs.end(), ys.begin(), ys.end());</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    }</div>
+</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span></div>
+<div class="foldopen" id="foldopen00126" data-start="{" data-end="}">
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="a03791.html#a224c622a5f3ffb1f2055f35b724dfdf4">  126</a></span>    AlgebraicDecisionTree  <span class="comment">//</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        (<span class="keyword">const</span> std::vector&lt;typename Base::LabelC&gt;&amp; labelCs,</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keyword">const</span> std::string&amp; table) {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>      <span class="comment">// Convert string to doubles</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>      std::vector&lt;double&gt; ys;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>      std::istringstream iss(table);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>      std::copy(std::istream_iterator&lt;double&gt;(iss),</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                std::istream_iterator&lt;double&gt;(), std::back_inserter(ys));</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>      <span class="comment">// now call recursive Create</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>      this-&gt;<a class="code hl_variable" href="a03835.html#a768a8bde0e6dc5d0b0e6f12f57560e9c">root_</a> =</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>          <a class="code hl_function" href="a03835.html#af264d6ab7a0750c6d497d9ef83105d84">Base::create</a>(labelCs.begin(), labelCs.end(), ys.begin(), ys.end());</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
+</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Iterator&gt;</div>
+<div class="foldopen" id="foldopen00148" data-start="{" data-end="}">
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="a03791.html#af0cd622a320a4a202473ebae5dd289a7">  148</a></span>    <a class="code hl_function" href="a03791.html#af0cd622a320a4a202473ebae5dd289a7">AlgebraicDecisionTree</a>(Iterator begin, Iterator end, <span class="keyword">const</span> L&amp; label)</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        : Base(nullptr) {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>      this-&gt;<a class="code hl_variable" href="a03835.html#a768a8bde0e6dc5d0b0e6f12f57560e9c">root_</a> = compose(begin, end, label);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    }</div>
+</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> M&gt;</div>
+<div class="foldopen" id="foldopen00160" data-start="{" data-end="}">
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="a03791.html#a3cd971460a346293b80eae2f125c5bbe">  160</a></span>    <a class="code hl_function" href="a03791.html#a3cd971460a346293b80eae2f125c5bbe">AlgebraicDecisionTree</a>(<span class="keyword">const</span> AlgebraicDecisionTree&lt;M&gt;&amp; other,</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                          <span class="keyword">const</span> std::map&lt;M, L&gt;&amp; map) {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>      <span class="comment">// Functor for label conversion so we can use `convertFrom`.</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>      std::function&lt;L(<span class="keyword">const</span> M&amp;)&gt; L_of_M = [&amp;map](<span class="keyword">const</span> M&amp; label) -&gt; L {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="keywordflow">return</span> map.at(label);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>      };</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>      std::function&lt;double(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp;)&gt; op = Ring::id;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>      this-&gt;<a class="code hl_variable" href="a03835.html#a768a8bde0e6dc5d0b0e6f12f57560e9c">root_</a> = <a class="code hl_function" href="a03835.html#abebc343d7c11043436188eec0859f0b8">DecisionTree&lt;L, double&gt;::convertFrom</a>(other.<a class="code hl_variable" href="a03835.html#a768a8bde0e6dc5d0b0e6f12f57560e9c">root_</a>, L_of_M, op);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    }</div>
+</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> X, <span class="keyword">typename</span> Func&gt;</div>
+<div class="foldopen" id="foldopen00182" data-start="{" data-end="}">
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="a03791.html#a522111c4972aa70de7576dd2d3ad94fc">  182</a></span>    <a class="code hl_function" href="a03791.html#a522111c4972aa70de7576dd2d3ad94fc">AlgebraicDecisionTree</a>(<span class="keyword">const</span> <a class="code hl_function" href="a03835.html#af290fdb29bb254e51bfa295208655bcf">DecisionTree&lt;L, X&gt;</a>&amp; other, Func f)</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        : Base(other, f) {}</div>
+</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span></div>
+<div class="foldopen" id="foldopen00186" data-start="{" data-end="}">
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="a03791.html#a73d781b3f789fe5361ac8ce253799585">  186</a></span>    AlgebraicDecisionTree <a class="code hl_function" href="a03791.html#a73d781b3f789fe5361ac8ce253799585">operator+</a>(<span class="keyword">const</span> AlgebraicDecisionTree&amp; g)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>      <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="a03835.html#a00d49afa8ffc80de9cbdbb4489e50ffe">apply</a>(g, &amp;Ring::add);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    }</div>
+</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span></div>
+<div class="foldopen" id="foldopen00191" data-start="{" data-end="}">
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="a03791.html#ab63bc2da2f05fd6582618edb681e4e23">  191</a></span>    AlgebraicDecisionTree <a class="code hl_function" href="a03791.html#ab63bc2da2f05fd6582618edb681e4e23">operator-</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>      <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="a03835.html#a00d49afa8ffc80de9cbdbb4489e50ffe">apply</a>(&amp;Ring::negate);</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    }</div>
+</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span></div>
+<div class="foldopen" id="foldopen00196" data-start="{" data-end="}">
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="a03791.html#aa4a33760f5593e92c138db6628f56cfa">  196</a></span>    AlgebraicDecisionTree <a class="code hl_function" href="a03791.html#aa4a33760f5593e92c138db6628f56cfa">operator-</a>(<span class="keyword">const</span> AlgebraicDecisionTree&amp; g)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span> + (-g);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    }</div>
+</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span></div>
+<div class="foldopen" id="foldopen00201" data-start="{" data-end="}">
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="a03791.html#ad4d6619ec05009c9a0e83ae23b772e03">  201</a></span>    AlgebraicDecisionTree <a class="code hl_function" href="a03791.html#ad4d6619ec05009c9a0e83ae23b772e03">operator*</a>(<span class="keyword">const</span> AlgebraicDecisionTree&amp; g)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>      <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="a03835.html#a00d49afa8ffc80de9cbdbb4489e50ffe">apply</a>(g, &amp;Ring::mul);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    }</div>
+</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span></div>
+<div class="foldopen" id="foldopen00206" data-start="{" data-end="}">
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="a03791.html#a0fb758bf01cbb66dfb631913f150ed00">  206</a></span>    AlgebraicDecisionTree <a class="code hl_function" href="a03791.html#a0fb758bf01cbb66dfb631913f150ed00">operator/</a>(<span class="keyword">const</span> AlgebraicDecisionTree&amp; g)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>      <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="a03835.html#a00d49afa8ffc80de9cbdbb4489e50ffe">apply</a>(g, &amp;Ring::div);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    }</div>
+</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span></div>
+<div class="foldopen" id="foldopen00211" data-start="{" data-end="}">
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="a03791.html#a39933bb8f42da8ca660c8515ae547264">  211</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="a03791.html#a39933bb8f42da8ca660c8515ae547264">sum</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>      <span class="keywordtype">double</span> <a class="code hl_function" href="a03791.html#a39933bb8f42da8ca660c8515ae547264">sum</a> = 0;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>      <span class="keyword">auto</span> visitor = [&amp;](<span class="keywordtype">double</span> y) { <a class="code hl_function" href="a03791.html#a39933bb8f42da8ca660c8515ae547264">sum</a> += y; };</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>      this-&gt;<a class="code hl_function" href="a03835.html#a4d0c2fc8d7f0bf91da569b10bfa4229f">visit</a>(visitor);</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="a03791.html#a39933bb8f42da8ca660c8515ae547264">sum</a>;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    }</div>
+</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="a03791.html#a3fd59f48ebcf98adc655754a1b685222">  224</a></span>    AlgebraicDecisionTree <a class="code hl_function" href="a03791.html#a3fd59f48ebcf98adc655754a1b685222">normalize</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (*<span class="keyword">this</span>) / this-&gt;<a class="code hl_function" href="a03791.html#a39933bb8f42da8ca660c8515ae547264">sum</a>(); }</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span></div>
+<div class="foldopen" id="foldopen00227" data-start="{" data-end="}">
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno"><a class="line" href="a03791.html#a3f7c65d6e04431943b4e7451f7c71915">  227</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="a03791.html#a3f7c65d6e04431943b4e7451f7c71915">min</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>      <span class="keywordtype">double</span> <a class="code hl_function" href="a03791.html#a3f7c65d6e04431943b4e7451f7c71915">min</a> = std::numeric_limits&lt;double&gt;::max();</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>      <span class="keyword">auto</span> visitor = [&amp;](<span class="keywordtype">double</span> x) { <a class="code hl_function" href="a03791.html#a3f7c65d6e04431943b4e7451f7c71915">min</a> = x &lt; <a class="code hl_function" href="a03791.html#a3f7c65d6e04431943b4e7451f7c71915">min</a> ? x : <a class="code hl_function" href="a03791.html#a3f7c65d6e04431943b4e7451f7c71915">min</a>; };</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>      this-&gt;<a class="code hl_function" href="a03835.html#a4d0c2fc8d7f0bf91da569b10bfa4229f">visit</a>(visitor);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="a03791.html#a3f7c65d6e04431943b4e7451f7c71915">min</a>;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    }</div>
+</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span></div>
+<div class="foldopen" id="foldopen00235" data-start="{" data-end="}">
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno"><a class="line" href="a03791.html#a8df5307c91b7b7b5c3ccbc4631c13004">  235</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="a03791.html#a8df5307c91b7b7b5c3ccbc4631c13004">max</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>      <span class="comment">// Get the most negative value</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>      <span class="keywordtype">double</span> <a class="code hl_function" href="a03791.html#a8df5307c91b7b7b5c3ccbc4631c13004">max</a> = -std::numeric_limits&lt;double&gt;::max();</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>      <span class="keyword">auto</span> visitor = [&amp;](<span class="keywordtype">double</span> x) { <a class="code hl_function" href="a03791.html#a8df5307c91b7b7b5c3ccbc4631c13004">max</a> = x &gt; <a class="code hl_function" href="a03791.html#a8df5307c91b7b7b5c3ccbc4631c13004">max</a> ? x : <a class="code hl_function" href="a03791.html#a8df5307c91b7b7b5c3ccbc4631c13004">max</a>; };</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>      this-&gt;<a class="code hl_function" href="a03835.html#a4d0c2fc8d7f0bf91da569b10bfa4229f">visit</a>(visitor);</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="a03791.html#a8df5307c91b7b7b5c3ccbc4631c13004">max</a>;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    }</div>
+</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span></div>
+<div class="foldopen" id="foldopen00244" data-start="{" data-end="}">
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="a03791.html#a12a2cd3038c73481b8af276cf5aeea25">  244</a></span>    AlgebraicDecisionTree <a class="code hl_function" href="a03791.html#a12a2cd3038c73481b8af276cf5aeea25">sum</a>(<span class="keyword">const</span> L&amp; label, <span class="keywordtype">size_t</span> cardinality)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>      <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="a03835.html#a9e2c871be4518f8487a8bd610c775924">combine</a>(label, cardinality, &amp;Ring::add);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    }</div>
+</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span></div>
+<div class="foldopen" id="foldopen00249" data-start="{" data-end="}">
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno"><a class="line" href="a03791.html#a387bebf75e75a5d1b31759322c184a04">  249</a></span>    AlgebraicDecisionTree <a class="code hl_function" href="a03791.html#a387bebf75e75a5d1b31759322c184a04">sum</a>(<span class="keyword">const</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="a03835.html#adcdd80ab1af415d212397a2666320e35">Base::LabelC</a>&amp; labelC)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>      <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="a03835.html#a9e2c871be4518f8487a8bd610c775924">combine</a>(labelC, &amp;Ring::add);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    }</div>
+</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span></div>
+<div class="foldopen" id="foldopen00254" data-start="{" data-end="}">
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno"><a class="line" href="a03791.html#a308714e620f75fcbd41ce3c6d85ab1a5">  254</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="a03791.html#a308714e620f75fcbd41ce3c6d85ab1a5">print</a>(<span class="keyword">const</span> std::string&amp; s = <span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>               <span class="keyword">const</span> <span class="keyword">typename</span> Base::LabelFormatter&amp; labelFormatter =</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                   &amp;DefaultFormatter)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>      <span class="keyword">auto</span> valueFormatter = [](<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; v) {</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        std::stringstream ss;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        ss &lt;&lt; std::setw(4) &lt;&lt; std::setprecision(8) &lt;&lt; v;</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        <span class="keywordflow">return</span> ss.str();</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>      };</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>      <a class="code hl_function" href="a03835.html#a908549361598ebcd6ad40a5e5eebc73c">Base::print</a>(s, labelFormatter, valueFormatter);</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    }</div>
+</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span></div>
+<div class="foldopen" id="foldopen00266" data-start="{" data-end="}">
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno"><a class="line" href="a03791.html#a63e43d53d7ddc013188cbc2cdc798fd4">  266</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="a03791.html#a63e43d53d7ddc013188cbc2cdc798fd4">equals</a>(<span class="keyword">const</span> AlgebraicDecisionTree&amp; other, <span class="keywordtype">double</span> tol = 1e-9)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>      <span class="comment">// lambda for comparison of two doubles upto some tolerance.</span></div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>      <span class="keyword">auto</span> compare = [tol](<span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b) {</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>        <span class="keywordflow">return</span> std::abs(a - b) &lt; tol;</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>      };</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>      <span class="keywordflow">return</span> Base::equals(other, compare);</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    }</div>
+</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  };</div>
+</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00276" data-start="{" data-end="};">
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno"><a class="line" href="a03795.html">  276</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03203.html">traits</a>&lt;<a class="code hl_class" href="a03791.html">AlgebraicDecisionTree</a>&lt;T&gt;&gt;</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    : <span class="keyword">public</span> <a class="code hl_struct" href="a03535.html">Testable</a>&lt;AlgebraicDecisionTree&lt;T&gt;&gt; {};</div>
+</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>}  <span class="comment">// namespace gtsam</span></div>
+<div class="ttc" id="aa00131_html"><div class="ttname"><a href="a00131.html">Testable.h</a></div><div class="ttdoc">Concept check for values that can be used in unit tests.</div></div>
+<div class="ttc" id="aa00296_html"><div class="ttname"><a href="a00296.html">Ring.h</a></div><div class="ttdoc">Real Ring definition.</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa03203_html"><div class="ttname"><a href="a03203.html">gtsam::traits</a></div><div class="ttdoc">A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...</div><div class="ttdef"><b>Definition</b> Group.h:37</div></div>
+<div class="ttc" id="aa03535_html"><div class="ttname"><a href="a03535.html">gtsam::Testable</a></div><div class="ttdoc">A helper that implements the traits interface for GTSAM types.</div><div class="ttdef"><b>Definition</b> Testable.h:152</div></div>
+<div class="ttc" id="aa03791_html"><div class="ttname"><a href="a03791.html">gtsam::AlgebraicDecisionTree</a></div><div class="ttdoc">An algebraic decision tree fixes the range of a DecisionTree to double.</div><div class="ttdef"><b>Definition</b> AlgebraicDecisionTree.h:41</div></div>
+<div class="ttc" id="aa03791_html_a0fb758bf01cbb66dfb631913f150ed00"><div class="ttname"><a href="a03791.html#a0fb758bf01cbb66dfb631913f150ed00">gtsam::AlgebraicDecisionTree::operator/</a></div><div class="ttdeci">AlgebraicDecisionTree operator/(const AlgebraicDecisionTree &amp;g) const</div><div class="ttdoc">division</div><div class="ttdef"><b>Definition</b> AlgebraicDecisionTree.h:206</div></div>
+<div class="ttc" id="aa03791_html_a12a2cd3038c73481b8af276cf5aeea25"><div class="ttname"><a href="a03791.html#a12a2cd3038c73481b8af276cf5aeea25">gtsam::AlgebraicDecisionTree::sum</a></div><div class="ttdeci">AlgebraicDecisionTree sum(const L &amp;label, size_t cardinality) const</div><div class="ttdoc">sum out variable</div><div class="ttdef"><b>Definition</b> AlgebraicDecisionTree.h:244</div></div>
+<div class="ttc" id="aa03791_html_a1568fefa4bc0727d9833722f782f4bb4"><div class="ttname"><a href="a03791.html#a1568fefa4bc0727d9833722f782f4bb4">gtsam::AlgebraicDecisionTree::AlgebraicDecisionTree</a></div><div class="ttdeci">AlgebraicDecisionTree(const typename Base::LabelC &amp;labelC, double y1, double y2)</div><div class="ttdoc">Create a new leaf function splitting on a variable.</div><div class="ttdef"><b>Definition</b> AlgebraicDecisionTree.h:83</div></div>
+<div class="ttc" id="aa03791_html_a308714e620f75fcbd41ce3c6d85ab1a5"><div class="ttname"><a href="a03791.html#a308714e620f75fcbd41ce3c6d85ab1a5">gtsam::AlgebraicDecisionTree::print</a></div><div class="ttdeci">void print(const std::string &amp;s=&quot;&quot;, const typename Base::LabelFormatter &amp;labelFormatter=&amp;DefaultFormatter) const</div><div class="ttdoc">print method customized to value type double.</div><div class="ttdef"><b>Definition</b> AlgebraicDecisionTree.h:254</div></div>
+<div class="ttc" id="aa03791_html_a387bebf75e75a5d1b31759322c184a04"><div class="ttname"><a href="a03791.html#a387bebf75e75a5d1b31759322c184a04">gtsam::AlgebraicDecisionTree::sum</a></div><div class="ttdeci">AlgebraicDecisionTree sum(const typename Base::LabelC &amp;labelC) const</div><div class="ttdoc">sum out variable</div><div class="ttdef"><b>Definition</b> AlgebraicDecisionTree.h:249</div></div>
+<div class="ttc" id="aa03791_html_a39933bb8f42da8ca660c8515ae547264"><div class="ttname"><a href="a03791.html#a39933bb8f42da8ca660c8515ae547264">gtsam::AlgebraicDecisionTree::sum</a></div><div class="ttdeci">double sum() const</div><div class="ttdoc">Compute sum of all values.</div><div class="ttdef"><b>Definition</b> AlgebraicDecisionTree.h:211</div></div>
+<div class="ttc" id="aa03791_html_a3cd971460a346293b80eae2f125c5bbe"><div class="ttname"><a href="a03791.html#a3cd971460a346293b80eae2f125c5bbe">gtsam::AlgebraicDecisionTree::AlgebraicDecisionTree</a></div><div class="ttdeci">AlgebraicDecisionTree(const AlgebraicDecisionTree&lt; M &gt; &amp;other, const std::map&lt; M, L &gt; &amp;map)</div><div class="ttdoc">Convert labels from type M to type L.</div><div class="ttdef"><b>Definition</b> AlgebraicDecisionTree.h:160</div></div>
+<div class="ttc" id="aa03791_html_a3f7c65d6e04431943b4e7451f7c71915"><div class="ttname"><a href="a03791.html#a3f7c65d6e04431943b4e7451f7c71915">gtsam::AlgebraicDecisionTree::min</a></div><div class="ttdeci">double min() const</div><div class="ttdoc">Find the minimum values amongst all leaves.</div><div class="ttdef"><b>Definition</b> AlgebraicDecisionTree.h:227</div></div>
+<div class="ttc" id="aa03791_html_a3fd59f48ebcf98adc655754a1b685222"><div class="ttname"><a href="a03791.html#a3fd59f48ebcf98adc655754a1b685222">gtsam::AlgebraicDecisionTree::normalize</a></div><div class="ttdeci">AlgebraicDecisionTree normalize() const</div><div class="ttdoc">Helper method to perform normalization such that all leaves in the tree sum to 1.</div><div class="ttdef"><b>Definition</b> AlgebraicDecisionTree.h:224</div></div>
+<div class="ttc" id="aa03791_html_a4e42a5ca3fc306d2d83c88dd3532f71d"><div class="ttname"><a href="a03791.html#a4e42a5ca3fc306d2d83c88dd3532f71d">gtsam::AlgebraicDecisionTree::AlgebraicDecisionTree</a></div><div class="ttdeci">AlgebraicDecisionTree(const L &amp;label, double y1, double y2)</div><div class="ttdoc">Create a new leaf function splitting on a variable.</div><div class="ttdef"><b>Definition</b> AlgebraicDecisionTree.h:67</div></div>
+<div class="ttc" id="aa03791_html_a522111c4972aa70de7576dd2d3ad94fc"><div class="ttname"><a href="a03791.html#a522111c4972aa70de7576dd2d3ad94fc">gtsam::AlgebraicDecisionTree::AlgebraicDecisionTree</a></div><div class="ttdeci">AlgebraicDecisionTree(const DecisionTree&lt; L, X &gt; &amp;other, Func f)</div><div class="ttdoc">Create from an arbitrary DecisionTree&lt;L, X&gt; by operating on it with a functional f.</div><div class="ttdef"><b>Definition</b> AlgebraicDecisionTree.h:182</div></div>
+<div class="ttc" id="aa03791_html_a63e43d53d7ddc013188cbc2cdc798fd4"><div class="ttname"><a href="a03791.html#a63e43d53d7ddc013188cbc2cdc798fd4">gtsam::AlgebraicDecisionTree::equals</a></div><div class="ttdeci">bool equals(const AlgebraicDecisionTree &amp;other, double tol=1e-9) const</div><div class="ttdoc">Equality method customized to value type double.</div><div class="ttdef"><b>Definition</b> AlgebraicDecisionTree.h:266</div></div>
+<div class="ttc" id="aa03791_html_a73d781b3f789fe5361ac8ce253799585"><div class="ttname"><a href="a03791.html#a73d781b3f789fe5361ac8ce253799585">gtsam::AlgebraicDecisionTree::operator+</a></div><div class="ttdeci">AlgebraicDecisionTree operator+(const AlgebraicDecisionTree &amp;g) const</div><div class="ttdoc">sum</div><div class="ttdef"><b>Definition</b> AlgebraicDecisionTree.h:186</div></div>
+<div class="ttc" id="aa03791_html_a7d4804b7f188bbb3ff2bc97316252197"><div class="ttname"><a href="a03791.html#a7d4804b7f188bbb3ff2bc97316252197">gtsam::AlgebraicDecisionTree::AlgebraicDecisionTree</a></div><div class="ttdeci">AlgebraicDecisionTree(const typename Base::NodePtr root)</div><div class="ttdoc">Constructor which accepts root pointer.</div><div class="ttdef"><b>Definition</b> AlgebraicDecisionTree.h:61</div></div>
+<div class="ttc" id="aa03791_html_a8df5307c91b7b7b5c3ccbc4631c13004"><div class="ttname"><a href="a03791.html#a8df5307c91b7b7b5c3ccbc4631c13004">gtsam::AlgebraicDecisionTree::max</a></div><div class="ttdeci">double max() const</div><div class="ttdoc">Find the maximum values amongst all leaves.</div><div class="ttdef"><b>Definition</b> AlgebraicDecisionTree.h:235</div></div>
+<div class="ttc" id="aa03791_html_aa4a33760f5593e92c138db6628f56cfa"><div class="ttname"><a href="a03791.html#aa4a33760f5593e92c138db6628f56cfa">gtsam::AlgebraicDecisionTree::operator-</a></div><div class="ttdeci">AlgebraicDecisionTree operator-(const AlgebraicDecisionTree &amp;g) const</div><div class="ttdoc">subtract</div><div class="ttdef"><b>Definition</b> AlgebraicDecisionTree.h:196</div></div>
+<div class="ttc" id="aa03791_html_ab63bc2da2f05fd6582618edb681e4e23"><div class="ttname"><a href="a03791.html#ab63bc2da2f05fd6582618edb681e4e23">gtsam::AlgebraicDecisionTree::operator-</a></div><div class="ttdeci">AlgebraicDecisionTree operator-() const</div><div class="ttdoc">negation</div><div class="ttdef"><b>Definition</b> AlgebraicDecisionTree.h:191</div></div>
+<div class="ttc" id="aa03791_html_ad4d6619ec05009c9a0e83ae23b772e03"><div class="ttname"><a href="a03791.html#ad4d6619ec05009c9a0e83ae23b772e03">gtsam::AlgebraicDecisionTree::operator*</a></div><div class="ttdeci">AlgebraicDecisionTree operator*(const AlgebraicDecisionTree &amp;g) const</div><div class="ttdoc">product</div><div class="ttdef"><b>Definition</b> AlgebraicDecisionTree.h:201</div></div>
+<div class="ttc" id="aa03791_html_af0cd622a320a4a202473ebae5dd289a7"><div class="ttname"><a href="a03791.html#af0cd622a320a4a202473ebae5dd289a7">gtsam::AlgebraicDecisionTree::AlgebraicDecisionTree</a></div><div class="ttdeci">AlgebraicDecisionTree(Iterator begin, Iterator end, const L &amp;label)</div><div class="ttdoc">Create a range of decision trees, splitting on a single variable.</div><div class="ttdef"><b>Definition</b> AlgebraicDecisionTree.h:148</div></div>
+<div class="ttc" id="aa03835_html_a00d49afa8ffc80de9cbdbb4489e50ffe"><div class="ttname"><a href="a03835.html#a00d49afa8ffc80de9cbdbb4489e50ffe">gtsam::DecisionTree&lt; L, double &gt;::apply</a></div><div class="ttdeci">DecisionTree apply(const Unary &amp;op) const</div></div>
+<div class="ttc" id="aa03835_html_a36a98f61b0b7df042427b132b313d7fd"><div class="ttname"><a href="a03835.html#a36a98f61b0b7df042427b132b313d7fd">gtsam::DecisionTree&lt; L, double &gt;::NodePtr</a></div><div class="ttdeci">typename Node::Ptr NodePtr</div><div class="ttdef"><b>Definition</b> DecisionTree.h:146</div></div>
+<div class="ttc" id="aa03835_html_a4d0c2fc8d7f0bf91da569b10bfa4229f"><div class="ttname"><a href="a03835.html#a4d0c2fc8d7f0bf91da569b10bfa4229f">gtsam::DecisionTree&lt; L, double &gt;::visit</a></div><div class="ttdeci">void visit(Func f) const</div></div>
+<div class="ttc" id="aa03835_html_a768a8bde0e6dc5d0b0e6f12f57560e9c"><div class="ttname"><a href="a03835.html#a768a8bde0e6dc5d0b0e6f12f57560e9c">gtsam::DecisionTree::root_</a></div><div class="ttdeci">NodePtr root_</div><div class="ttdoc">A DecisionTree just contains the root. TODO(dellaert): make protected.</div><div class="ttdef"><b>Definition</b> DecisionTree.h:149</div></div>
+<div class="ttc" id="aa03835_html_a908549361598ebcd6ad40a5e5eebc73c"><div class="ttname"><a href="a03835.html#a908549361598ebcd6ad40a5e5eebc73c">gtsam::DecisionTree&lt; L, double &gt;::print</a></div><div class="ttdeci">void print(const std::string &amp;s, const LabelFormatter &amp;labelFormatter, const ValueFormatter &amp;valueFormatter) const</div></div>
+<div class="ttc" id="aa03835_html_a9e2c871be4518f8487a8bd610c775924"><div class="ttname"><a href="a03835.html#a9e2c871be4518f8487a8bd610c775924">gtsam::DecisionTree&lt; L, double &gt;::combine</a></div><div class="ttdeci">DecisionTree combine(const L &amp;label, size_t cardinality, const Binary &amp;op) const</div></div>
+<div class="ttc" id="aa03835_html_abebc343d7c11043436188eec0859f0b8"><div class="ttname"><a href="a03835.html#abebc343d7c11043436188eec0859f0b8">gtsam::DecisionTree::convertFrom</a></div><div class="ttdeci">static NodePtr convertFrom(const typename DecisionTree&lt; L, X &gt;::NodePtr &amp;f, std::function&lt; Y(const X &amp;)&gt; Y_of_X)</div><div class="ttdoc">Convert from a DecisionTree&lt;L, X&gt; to DecisionTree&lt;L, Y&gt;.</div><div class="ttdef"><b>Definition</b> DecisionTree-inl.h:745</div></div>
+<div class="ttc" id="aa03835_html_adcdd80ab1af415d212397a2666320e35"><div class="ttname"><a href="a03835.html#adcdd80ab1af415d212397a2666320e35">gtsam::DecisionTree&lt; L, double &gt;::LabelC</a></div><div class="ttdeci">std::pair&lt; L, size_t &gt; LabelC</div><div class="ttdef"><b>Definition</b> DecisionTree.h:80</div></div>
+<div class="ttc" id="aa03835_html_af264d6ab7a0750c6d497d9ef83105d84"><div class="ttname"><a href="a03835.html#af264d6ab7a0750c6d497d9ef83105d84">gtsam::DecisionTree&lt; L, double &gt;::create</a></div><div class="ttdeci">static NodePtr create(It begin, It end, ValueIt beginY, ValueIt endY)</div></div>
+<div class="ttc" id="aa03835_html_af290fdb29bb254e51bfa295208655bcf"><div class="ttname"><a href="a03835.html#af290fdb29bb254e51bfa295208655bcf">gtsam::DecisionTree&lt; L, double &gt;::DecisionTree</a></div><div class="ttdeci">DecisionTree()</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>geometry</b></li><li class="navelem"><a href="a00290.html">Cal3Unified.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>discrete</b></li><li class="navelem"><a href="a00290.html">AlgebraicDecisionTree.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

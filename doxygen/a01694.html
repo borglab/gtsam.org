@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/slam/RelativeElevationFactor.cpp File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/sfm/DsfTrackGenerator.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,19 +96,70 @@ $(function(){initNavTree('a01694.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">RelativeElevationFactor.cpp File Reference</div></div>
+  <div class="headertitle"><div class="title">DsfTrackGenerator.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Identifies connected components in the keypoint matches graph.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ad6ed1d283516cb91330d20c8de2f3c84" id="r_ad6ed1d283516cb91330d20c8de2f3c84"><td class="memItemLeft"><a id="ad6ed1d283516cb91330d20c8de2f3c84" name="ad6ed1d283516cb91330d20c8de2f3c84"></a>
+typedef <a class="el" href="a03127.html">DSFMap</a>&lt; <a class="el" href="a03135.html">IndexPair</a> &gt;&#160;</td><td class="memItemRight"><b>gtsam::gtsfm::DSFMapIndexPair</b></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a81437ea4c9f4b9f781e160684cc05149" id="r_a81437ea4c9f4b9f781e160684cc05149"><td class="memItemLeft">std::vector&lt; <a class="el" href="a06775.html">SfmTrack2d</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a81437ea4c9f4b9f781e160684cc05149">gtsam::gtsfm::tracksFromPairwiseMatches</a> (const MatchIndicesMap &amp;matches, const KeypointsVector &amp;keypoints, bool verbose)</td></tr>
+<tr class="memdesc:a81437ea4c9f4b9f781e160684cc05149"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a list of tracks from 2d point correspondences.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section date"><dt>Date</dt><dd>Aug 17, 2012 </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Alex Cunningham </dd></dl>
-</div></div><!-- contents -->
+<div class="textblock"><p>Identifies connected components in the keypoint matches graph. </p>
+<dl class="section date"><dt>Date</dt><dd>October 2022 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>John Lambert </dd></dl>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a81437ea4c9f4b9f781e160684cc05149" name="a81437ea4c9f4b9f781e160684cc05149"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81437ea4c9f4b9f781e160684cc05149">&#9670;&#160;</a></span>tracksFromPairwiseMatches()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; SfmTrack2d &gt; GTSAM_EXPORT gtsam::gtsfm::tracksFromPairwiseMatches </td>
+          <td>(</td>
+          <td class="paramtype">const MatchIndicesMap &amp;</td>          <td class="paramname"><span class="paramname"><em>matches</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const KeypointsVector &amp;</td>          <td class="paramname"><span class="paramname"><em>keypoints</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>verbose</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a list of tracks from 2d point correspondences. </p>
+<p>Creates a disjoint-set forest (DSF) and 2d tracks from pairwise matches. We create a singleton for union-find set elements from camera index of a detection and the index of that detection in that camera's keypoint list, i.e. (i,k).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Map</td><td>from (i1,i2) image pair indices to (K,2) matrix, for K correspondence indices, from each image. </td></tr>
+    <tr><td class="paramname">Length-N</td><td>list of keypoints, for N images/cameras. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>
@@ -121,7 +172,7 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam_unstable</b></li><li class="navelem"><b>slam</b></li><li class="navelem"><a href="a01694.html">RelativeElevationFactor.cpp</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>sfm</b></li><li class="navelem"><a href="a01694.html">DsfTrackGenerator.cpp</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

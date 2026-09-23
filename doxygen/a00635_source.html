@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/inference/Factor.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/StereoCamera.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,7 +89,7 @@ $(function(){initNavTree('a00635_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Factor.h</div></div>
+  <div class="headertitle"><div class="title">StereoCamera.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a00635.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
@@ -103,164 +103,200 @@ $(function(){initNavTree('a00635_source.html','',''); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">// \callgraph</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="a00410.html">gtsam/geometry/Cal3_S2Stereo.h</a>&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="a00521.html">gtsam/geometry/Pose3.h</a>&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="a00440.html">gtsam/geometry/StereoPoint2.h</a>&gt;</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;boost/serialization/nvp.hpp&gt;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;boost/shared_ptr.hpp&gt;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;<a class="code" href="a00017.html">gtsam/base/types.h</a>&gt;</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;<a class="code" href="a00002.html">gtsam/base/FastVector.h</a>&gt;</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;<a class="code" href="a00611.html">gtsam/inference/Key.h</a>&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="a04583.html">   26</a></span><span class="keyword">class </span>GTSAM_EXPORT StereoCheiralityException: <span class="keyword">public</span> std::runtime_error {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  StereoCheiralityException()</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    : StereoCheiralityException(std::numeric_limits&lt;Key&gt;::max()) {}</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="a01968.html#a99e63c90a8ac740d99716e73fe97e054">   34</a></span>  <span class="keyword">typedef</span> <a class="code hl_typedef" href="a01953.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector&lt;FactorIndex&gt;</a> <a class="code hl_typedef" href="a01968.html#a99e63c90a8ac740d99716e73fe97e054">FactorIndices</a>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">typedef</span> <a class="code hl_class" href="a02867.html">FastSet&lt;FactorIndex&gt;</a> FactorIndexSet;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keyword">class </span><a class="code hl_class" href="a04051.html">HybridValues</a>; <span class="comment">// forward declaration of a Value type for error.</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
-<div class="foldopen" id="foldopen00067" data-start="{" data-end="};">
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="a04139.html">   67</a></span>  <span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a04139.html#a322a4d391be45b5909a65895fb7b023d">Factor</a></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">// These typedefs are private because they must be overridden in derived classes.</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">typedef</span> <a class="code hl_function" href="a04139.html#a322a4d391be45b5909a65895fb7b023d">Factor</a> This; </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keyword">typedef</span> boost::shared_ptr&lt;Factor&gt; shared_ptr; </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="a04139.html#acb069f38cc81bea20cecfad4070da59e">   77</a></span>    <span class="keyword">typedef</span> KeyVector::iterator <a class="code hl_typedef" href="a04139.html#acb069f38cc81bea20cecfad4070da59e">iterator</a>;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="a04139.html#a71af7ad9e9474ebbcf2fdffc7f31251b">   80</a></span>    <span class="keyword">typedef</span> KeyVector::const_iterator <a class="code hl_typedef" href="a04139.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a>;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">   85</a></span>    <a class="code hl_typedef" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> <a class="code hl_variable" href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">keys_</a>;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="a04139.html#a322a4d391be45b5909a65895fb7b023d">   91</a></span>    <a class="code hl_function" href="a04139.html#a322a4d391be45b5909a65895fb7b023d">Factor</a>() {}</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> CONTAINER&gt;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="a04139.html#aa3d2ef6b21961e708a4cbe10b55be59b">   96</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="a04139.html#aa3d2ef6b21961e708a4cbe10b55be59b">Factor</a>(<span class="keyword">const</span> CONTAINER&amp; <a class="code hl_function" href="a04139.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>) : <a class="code hl_variable" href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">keys_</a>(<a class="code hl_function" href="a04139.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>.<a class="code hl_function" href="a04139.html#a17c02f11c35bf7768347cad4943f0f64">begin</a>(), <a class="code hl_function" href="a04139.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>.<a class="code hl_function" href="a04139.html#aa1f00e05967c0c278beec17af9cb0530">end</a>()) {}</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  StereoCheiralityException(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    : std::runtime_error(<span class="stringliteral">&quot;Stereo Cheirality Exception&quot;</span>),</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      j_(j) {}</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> nearbyVariable()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">return</span> j_;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j_;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="};">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="a04587.html">   47</a></span><span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a04587.html#a0f564c53fc04f67cd6d801f53fd83050">StereoCamera</a> {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="a04587.html#aa24025c20efc2344f046776fd6381e2f">   55</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="a04587.html#aa24025c20efc2344f046776fd6381e2f">Measurement</a> = <a class="code hl_class" href="a04599.html">StereoPoint2</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">using </span>MeasurementVector = StereoPoint2Vector;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <a class="code hl_class" href="a04403.html">Pose3</a> leftCamPose_;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  Cal3_S2Stereo::shared_ptr K_;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keyword">auto</span> dimension = 6;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="a04587.html#a0f564c53fc04f67cd6d801f53fd83050">   70</a></span>  <a class="code hl_function" href="a04587.html#a0f564c53fc04f67cd6d801f53fd83050">StereoCamera</a>() :</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      K_(new <a class="code hl_class" href="a04083.html">Cal3_S2Stereo</a>()) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  }</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <a class="code hl_class" href="a04587.html">StereoCamera</a>(<span class="keyword">const</span> <a class="code hl_class" href="a04403.html">Pose3</a>&amp; leftCamPose, <span class="keyword">const</span> Cal3_S2Stereo::shared_ptr K);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="a04587.html#a3b043ee7ca8db08515800c0aeff8050c">   78</a></span>  <span class="keyword">const</span> <a class="code hl_class" href="a04083.html">Cal3_S2Stereo</a>&amp; <a class="code hl_function" href="a04587.html#a3b043ee7ca8db08515800c0aeff8050c">calibration</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">return</span> *K_;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  }</div>
+</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="foldopen" id="foldopen00087" data-start="{" data-end="}">
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="a04587.html#a1dbb6420724b6649b871b06fbe8c2696">   87</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a04587.html#a1dbb6420724b6649b871b06fbe8c2696">print</a>(<span class="keyword">const</span> std::string&amp; s = <span class="stringliteral">&quot;&quot;</span>)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    leftCamPose_.print(s + <span class="stringliteral">&quot;.camera.&quot;</span>);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    K_-&gt;print(s + <span class="stringliteral">&quot;.calibration.&quot;</span>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  }</div>
+</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="a04587.html#a2cd29824e3bab5b6468aa4d897629b04">   93</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="a04587.html#a2cd29824e3bab5b6468aa4d897629b04">equals</a>(<span class="keyword">const</span> <a class="code hl_function" href="a04587.html#a0f564c53fc04f67cd6d801f53fd83050">StereoCamera</a> &amp;camera, <span class="keywordtype">double</span> tol = 1e-9)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">return</span> leftCamPose_.equals(camera.leftCamPose_, tol)</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        &amp;&amp; K_-&gt;equals(*camera.K_, tol);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  }</div>
+</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> ITERATOR&gt;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="a04139.html#a70ff55886664229a25e29cf2a7bb1bb7">  101</a></span>    <a class="code hl_function" href="a04139.html#a70ff55886664229a25e29cf2a7bb1bb7">Factor</a>(ITERATOR first, ITERATOR last) : <a class="code hl_variable" href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">keys_</a>(first, last) {}</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> CONTAINER&gt;</div>
-<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="a04139.html#a5087976b9e398cd21305d33972feedad">  106</a></span>    <span class="keyword">static</span> <a class="code hl_function" href="a04139.html#a322a4d391be45b5909a65895fb7b023d">Factor</a> <a class="code hl_function" href="a04139.html#a5087976b9e398cd21305d33972feedad">FromKeys</a>(<span class="keyword">const</span> CONTAINER&amp; <a class="code hl_function" href="a04139.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>) {</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="a04139.html#a322a4d391be45b5909a65895fb7b023d">Factor</a>(<a class="code hl_function" href="a04139.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>.begin(), <a class="code hl_function" href="a04139.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>.end()); }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span></div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="a04587.html#a36d3e0cee1635544adfbf7dc0be188ee">  103</a></span>  <span class="keyword">inline</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="a04587.html#a36d3e0cee1635544adfbf7dc0be188ee">dim</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">return</span> 6;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  }</div>
 </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> ITERATOR&gt;</div>
-<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="a04139.html#a4157181261dc47002004d53c8b56f7bf">  112</a></span>    <span class="keyword">static</span> <a class="code hl_function" href="a04139.html#a322a4d391be45b5909a65895fb7b023d">Factor</a> <a class="code hl_function" href="a04139.html#a4157181261dc47002004d53c8b56f7bf">FromIterators</a>(ITERATOR first, ITERATOR last) {</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="a04139.html#a322a4d391be45b5909a65895fb7b023d">Factor</a>(first, last); }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="a04587.html#a158dd137f09cfb8f041de46bd4a47851">  108</a></span>  <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="a04587.html#a158dd137f09cfb8f041de46bd4a47851">Dim</a>() {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">return</span> 6;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  }</div>
 </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>   <span class="comment">// public since it is required for boost serialization and static methods.</span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>   <span class="comment">// virtual since it is public.</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>   <span class="comment">// http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rc-dtor-virtual</span></div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="a04139.html#a6572d1c62aa0f0167fe6ebb0a77af107">  122</a></span>   <span class="keyword">virtual</span> <a class="code hl_function" href="a04139.html#a6572d1c62aa0f0167fe6ebb0a77af107">~Factor</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span></div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span></div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="a04139.html#a39490b49d71351affb6953d730f8ebbc">  128</a></span>   <span class="keywordtype">bool</span> <a class="code hl_function" href="a04139.html#a39490b49d71351affb6953d730f8ebbc">empty</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">keys_</a>.empty(); }</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span></div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="a04139.html#aeb63e9c85c567ee3b06b0d2ad0552a8a">  131</a></span>   <a class="code hl_typedef" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a04139.html#aeb63e9c85c567ee3b06b0d2ad0552a8a">front</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">keys_</a>.front(); }</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span></div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="a04139.html#ae38e5024d5b20aa06a5a6bd289e626c4">  134</a></span>   <a class="code hl_typedef" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a04139.html#ae38e5024d5b20aa06a5a6bd289e626c4">back</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">keys_</a>.back(); }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span></div>
+<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="a04587.html#a37c85bfef85af4eaeeff0a501b2290cb">  113</a></span>  <span class="keyword">inline</span> <a class="code hl_function" href="a04587.html#a0f564c53fc04f67cd6d801f53fd83050">StereoCamera</a> <a class="code hl_function" href="a04587.html#a37c85bfef85af4eaeeff0a501b2290cb">retract</a>(<span class="keyword">const</span> Vector&amp; v)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="a04587.html#a0f564c53fc04f67cd6d801f53fd83050">StereoCamera</a>(<a class="code hl_function" href="a04587.html#ab3804358cf9ac8fd391405b1a0632919">pose</a>().<a class="code hl_function" href="a04587.html#a37c85bfef85af4eaeeff0a501b2290cb">retract</a>(v), K_);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  }</div>
+</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span></div>
+<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="a04587.html#a24b860fb6a80d4773466a744c21530ac">  118</a></span>  <span class="keyword">inline</span> Vector6 <a class="code hl_function" href="a04587.html#a24b860fb6a80d4773466a744c21530ac">localCoordinates</a>(<span class="keyword">const</span> <a class="code hl_function" href="a04587.html#a0f564c53fc04f67cd6d801f53fd83050">StereoCamera</a>&amp; t2)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordflow">return</span> leftCamPose_.localCoordinates(t2.leftCamPose_);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  }</div>
+</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span></div>
+<div class="foldopen" id="foldopen00127" data-start="{" data-end="}">
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="a04587.html#ab3804358cf9ac8fd391405b1a0632919">  127</a></span>  <span class="keyword">const</span> <a class="code hl_class" href="a04403.html">Pose3</a>&amp; <a class="code hl_function" href="a04587.html#ab3804358cf9ac8fd391405b1a0632919">pose</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">return</span> leftCamPose_;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  }</div>
+</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span></div>
+<div class="foldopen" id="foldopen00132" data-start="{" data-end="}">
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="a04587.html#aa3b9da0154ae3757285ce95c92e56b69">  132</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="a04587.html#aa3b9da0154ae3757285ce95c92e56b69">baseline</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordflow">return</span> K_-&gt;baseline();</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  }</div>
+</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span></div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="a04139.html#a179a10d0319e87eda55d6925de0f5102">  137</a></span>   <a class="code hl_typedef" href="a04139.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a> <a class="code hl_function" href="a04139.html#a179a10d0319e87eda55d6925de0f5102">find</a>(<a class="code hl_typedef" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> std::find(<a class="code hl_function" href="a04139.html#a17c02f11c35bf7768347cad4943f0f64">begin</a>(), <a class="code hl_function" href="a04139.html#aa1f00e05967c0c278beec17af9cb0530">end</a>(), key); }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <a class="code hl_class" href="a04599.html">StereoPoint2</a> <a class="code hl_function" href="a02242.html#ad0024081af88e1b3cc0820c65ad6afd4">project</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; point) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span></div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="a04139.html#a03d71985cf81a0175a71d1ecf5279edb">  140</a></span>   <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&amp; <a class="code hl_function" href="a04139.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">keys_</a>; }</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span></div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="a04139.html#a17c02f11c35bf7768347cad4943f0f64">  143</a></span>   <a class="code hl_typedef" href="a04139.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a> <a class="code hl_function" href="a04139.html#a17c02f11c35bf7768347cad4943f0f64">begin</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">keys_</a>.begin(); }</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span></div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="a04139.html#aa1f00e05967c0c278beec17af9cb0530">  146</a></span>   <a class="code hl_typedef" href="a04139.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a> <a class="code hl_function" href="a04139.html#aa1f00e05967c0c278beec17af9cb0530">end</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">keys_</a>.end(); }</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span></div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  <span class="keyword">virtual</span> <span class="keywordtype">double</span> error(<span class="keyword">const</span> <a class="code hl_class" href="a04051.html">HybridValues</a>&amp; c) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="a04139.html#afac01740aefd22f4f90f49767010f811">  157</a></span>   <span class="keywordtype">size_t</span> <a class="code hl_function" href="a04139.html#afac01740aefd22f4f90f49767010f811">size</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">keys_</a>.size(); }</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  <a class="code hl_class" href="a04599.html">StereoPoint2</a> project2(<span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&amp; point, <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;3, 6&gt;</a> H1 =</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>      {}, OptionalJacobian&lt;3, 3&gt; H2 = {}) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> backproject(<span class="keyword">const</span> StereoPoint2&amp; z) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  <a class="code hl_typedef" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> backproject2(<span class="keyword">const</span> StereoPoint2&amp; z,</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                      OptionalJacobian&lt;3, 6&gt; H1 = {},</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                      OptionalJacobian&lt;3, 3&gt; H2 = {}) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span></div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span></div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span></div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>   <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a01968.html#a54fa43c89c5334314c8c75939dd5c2d7">print</a>(</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>       <span class="keyword">const</span> std::string&amp; s = <span class="stringliteral">&quot;Factor&quot;</span>,</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>       <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a>&amp; formatter = DefaultKeyFormatter) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span></div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>   <span class="keyword">virtual</span> <span class="keywordtype">void</span> printKeys(</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>       <span class="keyword">const</span> std::string&amp; s = <span class="stringliteral">&quot;Factor&quot;</span>,</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>       <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a>&amp; formatter = DefaultKeyFormatter) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span></div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keywordtype">bool</span> <a class="code hl_struct" href="a03027.html">equals</a>(<span class="keyword">const</span> This&amp; other, <span class="keywordtype">double</span> tol = 1e-9) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span></div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span></div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="a04139.html#a3fd8a3bd4eb315a0a2186efd103689c6">  182</a></span>    <a class="code hl_typedef" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&amp; <a class="code hl_function" href="a04139.html#a3fd8a3bd4eb315a0a2186efd103689c6">keys</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">keys_</a>; }</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span></div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="a04139.html#a5596dcbc299a2e8eec813b78fbcfe933">  185</a></span>    <a class="code hl_typedef" href="a04139.html#acb069f38cc81bea20cecfad4070da59e">iterator</a> <a class="code hl_function" href="a04139.html#a5596dcbc299a2e8eec813b78fbcfe933">begin</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">keys_</a>.begin(); }</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span></div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="a04139.html#a33597c74ba8db7396722165424fe5ec3">  188</a></span>    <a class="code hl_typedef" href="a04139.html#acb069f38cc81bea20cecfad4070da59e">iterator</a> <a class="code hl_function" href="a04139.html#a33597c74ba8db7396722165424fe5ec3">end</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">keys_</a>.end(); }</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span></div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span></div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span></div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="a04139.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">  198</a></span>    <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Archive&gt;</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="keywordtype">void</span> serialize(Archive &amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>      ar &amp; BOOST_SERIALIZATION_NVP(<a class="code hl_variable" href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">keys_</a>);</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    }</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span></div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  };</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  StereoPoint2 <a class="code hl_function" href="a02242.html#ad0024081af88e1b3cc0820c65ad6afd4">project</a>(<span class="keyword">const</span> Point3&amp; point, OptionalJacobian&lt;3, 6&gt; H1,</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>      OptionalJacobian&lt;3, 3&gt; H2 = {}, OptionalJacobian&lt;3, 0&gt; H3 =</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>          {}) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span></div>
+<div class="foldopen" id="foldopen00172" data-start="{" data-end="}">
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="a04587.html#ae80046243c7a6914331f18084efa24ec">  172</a></span>  Vector <a class="code hl_function" href="a04587.html#ae80046243c7a6914331f18084efa24ec">defaultErrorWhenTriangulatingBehindCamera</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordflow">return</span> Eigen::Matrix&lt;double,traits&lt;Measurement&gt;::dimension,1&gt;::Constant(2.0 * K_-&gt;fx());</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  }</div>
 </div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>} <span class="comment">// \namespace gtsam</span></div>
-<div class="ttc" id="aa00002_html"><div class="ttname"><a href="a00002.html">FastVector.h</a></div><div class="ttdoc">A thin wrapper around std::vector that uses a custom allocator.</div></div>
-<div class="ttc" id="aa00017_html"><div class="ttname"><a href="a00017.html">types.h</a></div><div class="ttdoc">Typedefs for easier changing of types.</div></div>
-<div class="ttc" id="aa00611_html"><div class="ttname"><a href="a00611.html">Key.h</a></div></div>
-<div class="ttc" id="aa01953_html_ga6c6638ff98b128f20258643d9c7ed725"><div class="ttname"><a href="a01953.html#ga6c6638ff98b128f20258643d9c7ed725">gtsam::FastVector</a></div><div class="ttdeci">std::vector&lt; T, typename internal::FastDefaultVectorAllocator&lt; T &gt;::type &gt; FastVector</div><div class="ttdoc">FastVector is a type alias to a std::vector with a custom memory allocator.</div><div class="ttdef"><b>Definition</b> FastVector.h:33</div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa01968_html_a2dea5ef4aee9da07a0e0686940c64667"><div class="ttname"><a href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">gtsam::KeyVector</a></div><div class="ttdeci">FastVector&lt; Key &gt; KeyVector</div><div class="ttdoc">Define collection type once and for all - also used in wrappers.</div><div class="ttdef"><b>Definition</b> Key.h:86</div></div>
-<div class="ttc" id="aa01968_html_a54fa43c89c5334314c8c75939dd5c2d7"><div class="ttname"><a href="a01968.html#a54fa43c89c5334314c8c75939dd5c2d7">gtsam::print</a></div><div class="ttdeci">void print(const Matrix &amp;A, const string &amp;s, ostream &amp;stream)</div><div class="ttdoc">print without optional string, must specify cout yourself</div><div class="ttdef"><b>Definition</b> Matrix.cpp:156</div></div>
-<div class="ttc" id="aa01968_html_a7d4eaa9f6e32da46e8f287499ee650d2"><div class="ttname"><a href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">gtsam::KeyFormatter</a></div><div class="ttdeci">std::function&lt; std::string(Key)&gt; KeyFormatter</div><div class="ttdoc">Typedef for a function to format a key, i.e. to convert it to a string.</div><div class="ttdef"><b>Definition</b> Key.h:35</div></div>
-<div class="ttc" id="aa01968_html_a99e63c90a8ac740d99716e73fe97e054"><div class="ttname"><a href="a01968.html#a99e63c90a8ac740d99716e73fe97e054">gtsam::FactorIndices</a></div><div class="ttdeci">FastVector&lt; FactorIndex &gt; FactorIndices</div><div class="ttdoc">Define collection types:</div><div class="ttdef"><b>Definition</b> Factor.h:34</div></div>
-<div class="ttc" id="aa01968_html_adad029f5f6ffce610428b5fe768b0df2"><div class="ttname"><a href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">gtsam::Key</a></div><div class="ttdeci">std::uint64_t Key</div><div class="ttdoc">Integer nonlinear key type.</div><div class="ttdef"><b>Definition</b> types.h:100</div></div>
-<div class="ttc" id="aa02867_html"><div class="ttname"><a href="a02867.html">gtsam::FastSet</a></div><div class="ttdoc">FastSet is a thin wrapper around std::set that uses the boost fast_pool_allocator instead of the defa...</div><div class="ttdef"><b>Definition</b> FastSet.h:50</div></div>
-<div class="ttc" id="aa03027_html"><div class="ttname"><a href="a03027.html">gtsam::equals</a></div><div class="ttdoc">Template to create a binary predicate.</div><div class="ttdef"><b>Definition</b> Testable.h:111</div></div>
-<div class="ttc" id="aa04051_html"><div class="ttname"><a href="a04051.html">gtsam::HybridValues</a></div><div class="ttdoc">HybridValues represents a collection of DiscreteValues and VectorValues.</div><div class="ttdef"><b>Definition</b> HybridValues.h:38</div></div>
-<div class="ttc" id="aa04139_html_a03d71985cf81a0175a71d1ecf5279edb"><div class="ttname"><a href="a04139.html#a03d71985cf81a0175a71d1ecf5279edb">gtsam::Factor::keys</a></div><div class="ttdeci">const KeyVector &amp; keys() const</div><div class="ttdoc">Access the factor&#39;s involved variable keys.</div><div class="ttdef"><b>Definition</b> Factor.h:140</div></div>
-<div class="ttc" id="aa04139_html_a10e886cc8b8a374e2fe864707e0b6278"><div class="ttname"><a href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">gtsam::Factor::keys_</a></div><div class="ttdeci">KeyVector keys_</div><div class="ttdoc">The keys involved in this factor.</div><div class="ttdef"><b>Definition</b> Factor.h:85</div></div>
-<div class="ttc" id="aa04139_html_a179a10d0319e87eda55d6925de0f5102"><div class="ttname"><a href="a04139.html#a179a10d0319e87eda55d6925de0f5102">gtsam::Factor::find</a></div><div class="ttdeci">const_iterator find(Key key) const</div><div class="ttdoc">find</div><div class="ttdef"><b>Definition</b> Factor.h:137</div></div>
-<div class="ttc" id="aa04139_html_a17c02f11c35bf7768347cad4943f0f64"><div class="ttname"><a href="a04139.html#a17c02f11c35bf7768347cad4943f0f64">gtsam::Factor::begin</a></div><div class="ttdeci">const_iterator begin() const</div><div class="ttdoc">Iterator at beginning of involved variable keys.</div><div class="ttdef"><b>Definition</b> Factor.h:143</div></div>
-<div class="ttc" id="aa04139_html_a322a4d391be45b5909a65895fb7b023d"><div class="ttname"><a href="a04139.html#a322a4d391be45b5909a65895fb7b023d">gtsam::Factor::Factor</a></div><div class="ttdeci">Factor()</div><div class="ttdoc">Default constructor for I/O.</div><div class="ttdef"><b>Definition</b> Factor.h:91</div></div>
-<div class="ttc" id="aa04139_html_a33597c74ba8db7396722165424fe5ec3"><div class="ttname"><a href="a04139.html#a33597c74ba8db7396722165424fe5ec3">gtsam::Factor::end</a></div><div class="ttdeci">iterator end()</div><div class="ttdoc">Iterator at end of involved variable keys.</div><div class="ttdef"><b>Definition</b> Factor.h:188</div></div>
-<div class="ttc" id="aa04139_html_a39490b49d71351affb6953d730f8ebbc"><div class="ttname"><a href="a04139.html#a39490b49d71351affb6953d730f8ebbc">gtsam::Factor::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdoc">Whether the factor is empty (involves zero variables).</div><div class="ttdef"><b>Definition</b> Factor.h:128</div></div>
-<div class="ttc" id="aa04139_html_a3fd8a3bd4eb315a0a2186efd103689c6"><div class="ttname"><a href="a04139.html#a3fd8a3bd4eb315a0a2186efd103689c6">gtsam::Factor::keys</a></div><div class="ttdeci">KeyVector &amp; keys()</div><div class="ttdef"><b>Definition</b> Factor.h:182</div></div>
-<div class="ttc" id="aa04139_html_a4157181261dc47002004d53c8b56f7bf"><div class="ttname"><a href="a04139.html#a4157181261dc47002004d53c8b56f7bf">gtsam::Factor::FromIterators</a></div><div class="ttdeci">static Factor FromIterators(ITERATOR first, ITERATOR last)</div><div class="ttdoc">Construct factor from iterator keys.</div><div class="ttdef"><b>Definition</b> Factor.h:112</div></div>
-<div class="ttc" id="aa04139_html_a5087976b9e398cd21305d33972feedad"><div class="ttname"><a href="a04139.html#a5087976b9e398cd21305d33972feedad">gtsam::Factor::FromKeys</a></div><div class="ttdeci">static Factor FromKeys(const CONTAINER &amp;keys)</div><div class="ttdoc">Construct factor from container of keys.</div><div class="ttdef"><b>Definition</b> Factor.h:106</div></div>
-<div class="ttc" id="aa04139_html_a5596dcbc299a2e8eec813b78fbcfe933"><div class="ttname"><a href="a04139.html#a5596dcbc299a2e8eec813b78fbcfe933">gtsam::Factor::begin</a></div><div class="ttdeci">iterator begin()</div><div class="ttdoc">Iterator at beginning of involved variable keys.</div><div class="ttdef"><b>Definition</b> Factor.h:185</div></div>
-<div class="ttc" id="aa04139_html_a6572d1c62aa0f0167fe6ebb0a77af107"><div class="ttname"><a href="a04139.html#a6572d1c62aa0f0167fe6ebb0a77af107">gtsam::Factor::~Factor</a></div><div class="ttdeci">virtual ~Factor()=default</div><div class="ttdoc">Default destructor.</div></div>
-<div class="ttc" id="aa04139_html_a70ff55886664229a25e29cf2a7bb1bb7"><div class="ttname"><a href="a04139.html#a70ff55886664229a25e29cf2a7bb1bb7">gtsam::Factor::Factor</a></div><div class="ttdeci">Factor(ITERATOR first, ITERATOR last)</div><div class="ttdoc">Construct factor from iterator keys.</div><div class="ttdef"><b>Definition</b> Factor.h:101</div></div>
-<div class="ttc" id="aa04139_html_a71af7ad9e9474ebbcf2fdffc7f31251b"><div class="ttname"><a href="a04139.html#a71af7ad9e9474ebbcf2fdffc7f31251b">gtsam::Factor::const_iterator</a></div><div class="ttdeci">KeyVector::const_iterator const_iterator</div><div class="ttdoc">Const iterator over keys.</div><div class="ttdef"><b>Definition</b> Factor.h:80</div></div>
-<div class="ttc" id="aa04139_html_aa1f00e05967c0c278beec17af9cb0530"><div class="ttname"><a href="a04139.html#aa1f00e05967c0c278beec17af9cb0530">gtsam::Factor::end</a></div><div class="ttdeci">const_iterator end() const</div><div class="ttdoc">Iterator at end of involved variable keys.</div><div class="ttdef"><b>Definition</b> Factor.h:146</div></div>
-<div class="ttc" id="aa04139_html_aa3d2ef6b21961e708a4cbe10b55be59b"><div class="ttname"><a href="a04139.html#aa3d2ef6b21961e708a4cbe10b55be59b">gtsam::Factor::Factor</a></div><div class="ttdeci">Factor(const CONTAINER &amp;keys)</div><div class="ttdoc">Construct factor from container of keys.</div><div class="ttdef"><b>Definition</b> Factor.h:96</div></div>
-<div class="ttc" id="aa04139_html_acb069f38cc81bea20cecfad4070da59e"><div class="ttname"><a href="a04139.html#acb069f38cc81bea20cecfad4070da59e">gtsam::Factor::iterator</a></div><div class="ttdeci">KeyVector::iterator iterator</div><div class="ttdoc">Iterator over keys.</div><div class="ttdef"><b>Definition</b> Factor.h:77</div></div>
-<div class="ttc" id="aa04139_html_ae38e5024d5b20aa06a5a6bd289e626c4"><div class="ttname"><a href="a04139.html#ae38e5024d5b20aa06a5a6bd289e626c4">gtsam::Factor::back</a></div><div class="ttdeci">Key back() const</div><div class="ttdoc">Last key.</div><div class="ttdef"><b>Definition</b> Factor.h:134</div></div>
-<div class="ttc" id="aa04139_html_aeb63e9c85c567ee3b06b0d2ad0552a8a"><div class="ttname"><a href="a04139.html#aeb63e9c85c567ee3b06b0d2ad0552a8a">gtsam::Factor::front</a></div><div class="ttdeci">Key front() const</div><div class="ttdoc">First key.</div><div class="ttdef"><b>Definition</b> Factor.h:131</div></div>
-<div class="ttc" id="aa04139_html_afac01740aefd22f4f90f49767010f811"><div class="ttname"><a href="a04139.html#afac01740aefd22f4f90f49767010f811">gtsam::Factor::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdef"><b>Definition</b> Factor.h:157</div></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="preprocessor">#if GTSAM_ENABLE_BOOST_SERIALIZATION</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>  <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> Archive&gt;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>  <span class="keywordtype">void</span> serialize(Archive &amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    ar &amp; BOOST_SERIALIZATION_NVP(leftCamPose_);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    ar &amp; BOOST_SERIALIZATION_NVP(K_);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>};</div>
+</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="keyword">template</span>&lt;&gt;</div>
+<div class="foldopen" id="foldopen00192" data-start="{" data-end="};">
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="a04591.html">  192</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03203.html">traits</a>&lt;<a class="code hl_class" href="a04587.html">StereoCamera</a>&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="a03315.html">internal::Manifold</a>&lt;StereoCamera&gt; {</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>};</div>
+</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="keyword">template</span>&lt;&gt;</div>
+<div class="foldopen" id="foldopen00196" data-start="{" data-end="};">
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="a04595.html">  196</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03203.html">traits</a>&lt;const <a class="code hl_class" href="a04587.html">StereoCamera</a>&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="a03315.html">internal::Manifold</a>&lt;StereoCamera&gt; {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>};</div>
+</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>}</div>
+<div class="ttc" id="aa00410_html"><div class="ttname"><a href="a00410.html">Cal3_S2Stereo.h</a></div><div class="ttdoc">The most common 5DOF 3D-&gt;2D calibration + Stereo baseline.</div></div>
+<div class="ttc" id="aa00440_html"><div class="ttname"><a href="a00440.html">StereoPoint2.h</a></div><div class="ttdoc">A 2D stereo point (uL,uR,v).</div></div>
+<div class="ttc" id="aa00521_html"><div class="ttname"><a href="a00521.html">Pose3.h</a></div><div class="ttdoc">3D Pose manifold SO(3) x R^3 and group SE(3)</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa02242_html_a4705ef3536019dc2a384e26ef0fde932"><div class="ttname"><a href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">gtsam::Point3</a></div><div class="ttdeci">Vector3 Point3</div><div class="ttdoc">As of GTSAM 4, in order to make GTSAM more lean, it is now possible to just typedef Point3 to Vector3...</div><div class="ttdef"><b>Definition</b> Point3.h:38</div></div>
+<div class="ttc" id="aa02242_html_ad0024081af88e1b3cc0820c65ad6afd4"><div class="ttname"><a href="a02242.html#ad0024081af88e1b3cc0820c65ad6afd4">gtsam::project</a></div><div class="ttdeci">Point2_ project(const Point3_ &amp;p_cam)</div><div class="ttdoc">Expression version of PinholeBase::Project.</div><div class="ttdef"><b>Definition</b> expressions.h:134</div></div>
+<div class="ttc" id="aa02242_html_adad029f5f6ffce610428b5fe768b0df2"><div class="ttname"><a href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">gtsam::Key</a></div><div class="ttdeci">std::uint64_t Key</div><div class="ttdoc">Integer nonlinear key type.</div><div class="ttdef"><b>Definition</b> types.h:43</div></div>
+<div class="ttc" id="aa03203_html"><div class="ttname"><a href="a03203.html">gtsam::traits</a></div><div class="ttdoc">A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...</div><div class="ttdef"><b>Definition</b> Group.h:37</div></div>
+<div class="ttc" id="aa03315_html"><div class="ttname"><a href="a03315.html">gtsam::internal::Manifold</a></div><div class="ttdoc">Both ManifoldTraits and Testable.</div><div class="ttdef"><b>Definition</b> Manifold.h:156</div></div>
+<div class="ttc" id="aa03363_html"><div class="ttname"><a href="a03363.html">gtsam::OptionalJacobian</a></div><div class="ttdoc">OptionalJacobian is an Eigen::Ref like class that can take be constructed using either a fixed size o...</div><div class="ttdef"><b>Definition</b> OptionalJacobian.h:40</div></div>
+<div class="ttc" id="aa04083_html"><div class="ttname"><a href="a04083.html">gtsam::Cal3_S2Stereo</a></div><div class="ttdoc">The most common 5DOF 3D-&gt;2D calibration, stereo version.</div><div class="ttdef"><b>Definition</b> Cal3_S2Stereo.h:30</div></div>
+<div class="ttc" id="aa04403_html"><div class="ttname"><a href="a04403.html">gtsam::Pose3</a></div><div class="ttdoc">A 3D pose (R,t) : (Rot3,Point3).</div><div class="ttdef"><b>Definition</b> Pose3.h:42</div></div>
+<div class="ttc" id="aa04587_html"><div class="ttname"><a href="a04587.html">gtsam::StereoCamera</a></div><div class="ttdoc">A stereo camera class, parameterize by left camera pose and stereo calibration.</div><div class="ttdef"><b>Definition</b> StereoCamera.h:47</div></div>
+<div class="ttc" id="aa04587_html_a0f564c53fc04f67cd6d801f53fd83050"><div class="ttname"><a href="a04587.html#a0f564c53fc04f67cd6d801f53fd83050">gtsam::StereoCamera::StereoCamera</a></div><div class="ttdeci">StereoCamera()</div><div class="ttdoc">Default constructor allocates a calibration!</div><div class="ttdef"><b>Definition</b> StereoCamera.h:70</div></div>
+<div class="ttc" id="aa04587_html_a158dd137f09cfb8f041de46bd4a47851"><div class="ttname"><a href="a04587.html#a158dd137f09cfb8f041de46bd4a47851">gtsam::StereoCamera::Dim</a></div><div class="ttdeci">static size_t Dim()</div><div class="ttdoc">Dimensionality of the tangent space.</div><div class="ttdef"><b>Definition</b> StereoCamera.h:108</div></div>
+<div class="ttc" id="aa04587_html_a1dbb6420724b6649b871b06fbe8c2696"><div class="ttname"><a href="a04587.html#a1dbb6420724b6649b871b06fbe8c2696">gtsam::StereoCamera::print</a></div><div class="ttdeci">void print(const std::string &amp;s=&quot;&quot;) const</div><div class="ttdoc">print</div><div class="ttdef"><b>Definition</b> StereoCamera.h:87</div></div>
+<div class="ttc" id="aa04587_html_a24b860fb6a80d4773466a744c21530ac"><div class="ttname"><a href="a04587.html#a24b860fb6a80d4773466a744c21530ac">gtsam::StereoCamera::localCoordinates</a></div><div class="ttdeci">Vector6 localCoordinates(const StereoCamera &amp;t2) const</div><div class="ttdoc">Local coordinates of manifold neighborhood around current value.</div><div class="ttdef"><b>Definition</b> StereoCamera.h:118</div></div>
+<div class="ttc" id="aa04587_html_a2cd29824e3bab5b6468aa4d897629b04"><div class="ttname"><a href="a04587.html#a2cd29824e3bab5b6468aa4d897629b04">gtsam::StereoCamera::equals</a></div><div class="ttdeci">bool equals(const StereoCamera &amp;camera, double tol=1e-9) const</div><div class="ttdoc">equals</div><div class="ttdef"><b>Definition</b> StereoCamera.h:93</div></div>
+<div class="ttc" id="aa04587_html_a36d3e0cee1635544adfbf7dc0be188ee"><div class="ttname"><a href="a04587.html#a36d3e0cee1635544adfbf7dc0be188ee">gtsam::StereoCamera::dim</a></div><div class="ttdeci">size_t dim() const</div><div class="ttdoc">Dimensionality of the tangent space.</div><div class="ttdef"><b>Definition</b> StereoCamera.h:103</div></div>
+<div class="ttc" id="aa04587_html_a37c85bfef85af4eaeeff0a501b2290cb"><div class="ttname"><a href="a04587.html#a37c85bfef85af4eaeeff0a501b2290cb">gtsam::StereoCamera::retract</a></div><div class="ttdeci">StereoCamera retract(const Vector &amp;v) const</div><div class="ttdoc">Updates a with tangent space delta.</div><div class="ttdef"><b>Definition</b> StereoCamera.h:113</div></div>
+<div class="ttc" id="aa04587_html_a3b043ee7ca8db08515800c0aeff8050c"><div class="ttname"><a href="a04587.html#a3b043ee7ca8db08515800c0aeff8050c">gtsam::StereoCamera::calibration</a></div><div class="ttdeci">const Cal3_S2Stereo &amp; calibration() const</div><div class="ttdoc">Return shared pointer to calibration.</div><div class="ttdef"><b>Definition</b> StereoCamera.h:78</div></div>
+<div class="ttc" id="aa04587_html_aa24025c20efc2344f046776fd6381e2f"><div class="ttname"><a href="a04587.html#aa24025c20efc2344f046776fd6381e2f">gtsam::StereoCamera::Measurement</a></div><div class="ttdeci">StereoPoint2 Measurement</div><div class="ttdoc">Some classes template on either PinholeCamera or StereoCamera, and this typedef informs those classes...</div><div class="ttdef"><b>Definition</b> StereoCamera.h:55</div></div>
+<div class="ttc" id="aa04587_html_aa3b9da0154ae3757285ce95c92e56b69"><div class="ttname"><a href="a04587.html#aa3b9da0154ae3757285ce95c92e56b69">gtsam::StereoCamera::baseline</a></div><div class="ttdeci">double baseline() const</div><div class="ttdoc">baseline</div><div class="ttdef"><b>Definition</b> StereoCamera.h:132</div></div>
+<div class="ttc" id="aa04587_html_ab3804358cf9ac8fd391405b1a0632919"><div class="ttname"><a href="a04587.html#ab3804358cf9ac8fd391405b1a0632919">gtsam::StereoCamera::pose</a></div><div class="ttdeci">const Pose3 &amp; pose() const</div><div class="ttdoc">pose</div><div class="ttdef"><b>Definition</b> StereoCamera.h:127</div></div>
+<div class="ttc" id="aa04587_html_ae80046243c7a6914331f18084efa24ec"><div class="ttname"><a href="a04587.html#ae80046243c7a6914331f18084efa24ec">gtsam::StereoCamera::defaultErrorWhenTriangulatingBehindCamera</a></div><div class="ttdeci">Vector defaultErrorWhenTriangulatingBehindCamera() const</div><div class="ttdoc">for Nonlinear Triangulation</div><div class="ttdef"><b>Definition</b> StereoCamera.h:172</div></div>
+<div class="ttc" id="aa04599_html"><div class="ttname"><a href="a04599.html">gtsam::StereoPoint2</a></div><div class="ttdoc">A 2D stereo point, v will be same for rectified images.</div><div class="ttdef"><b>Definition</b> StereoPoint2.h:34</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>inference</b></li><li class="navelem"><a href="a00635.html">Factor.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>geometry</b></li><li class="navelem"><a href="a00635.html">StereoCamera.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

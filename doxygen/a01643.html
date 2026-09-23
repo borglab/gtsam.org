@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/nonlinear/ConcurrentIncrementalSmoother.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/sfm/ShonanAveraging.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,38 +96,40 @@ $(function(){initNavTree('a01643.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">ConcurrentIncrementalSmoother.h File Reference</div></div>
+  <div class="headertitle"><div class="title">ShonanAveraging.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>An iSAM2-based Smoother that implements the Concurrent Filtering and Smoothing interface.  
+<p>Shonan Averaging algorithm.  
 <a href="#details">More...</a></p>
 
 <p><a href="a01643_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3AConcurrentIncrementalSmoother" id="r_gtsam_3A_3AConcurrentIncrementalSmoother"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a05907.html">gtsam::ConcurrentIncrementalSmoother</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Levenberg-Marquardt Batch Smoother that implements the Concurrent Filtering and Smoother interface.  <a href="a05907.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3AConcurrentIncrementalSmoother_3A_3AResult" id="r_gtsam_3A_3AConcurrentIncrementalSmoother_3A_3AResult"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a05911.html">gtsam::ConcurrentIncrementalSmoother::Result</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Meta information returned about the update.  <a href="a05911.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3Atraits_3C_20ConcurrentIncrementalSmoother_20_3E" id="r_gtsam_3A_3Atraits_3C_20ConcurrentIncrementalSmoother_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a05915.html">gtsam::traits&lt; ConcurrentIncrementalSmoother &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">traits  <a href="a05915.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3AShonanAveragingParameters_3C_20d_20_3E" id="r_gtsam_3A_3AShonanAveragingParameters_3C_20d_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a06791.html">gtsam::ShonanAveragingParameters&lt; d &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameters governing optimization etc.  <a href="a06791.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3AShonanAveraging_3C_20d_20_3E" id="r_gtsam_3A_3AShonanAveraging_3C_20d_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a06795.html">gtsam::ShonanAveraging&lt; d &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that implements Shonan Averaging from our ECCV'20 paper.  <a href="a06795.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3AShonanAveraging2" id="r_gtsam_3A_3AShonanAveraging2"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a06799.html">gtsam::ShonanAveraging2</a></td></tr>
+<tr class="memitem:gtsam_3A_3AShonanAveraging3" id="r_gtsam_3A_3AShonanAveraging3"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a06803.html">gtsam::ShonanAveraging3</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ab1c68e081eba4a337a9e97a11cfb1bdc" id="r_ab1c68e081eba4a337a9e97a11cfb1bdc"><td class="memItemLeft"><a id="ab1c68e081eba4a337a9e97a11cfb1bdc" name="ab1c68e081eba4a337a9e97a11cfb1bdc"></a>
-typedef <a class="el" href="a05911.html">ConcurrentIncrementalSmoother::Result</a>&#160;</td><td class="memItemRight"><b>gtsam::ConcurrentIncrementalSmootherResult</b></td></tr>
-<tr class="memdesc:ab1c68e081eba4a337a9e97a11cfb1bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef for Matlab wrapping. <br /></td></tr>
+<tr class="memitem:ac6ed6c6123688a9ae916cfa2b4e110e1" id="r_ac6ed6c6123688a9ae916cfa2b4e110e1"><td class="memItemLeft"><a id="ac6ed6c6123688a9ae916cfa2b4e110e1" name="ac6ed6c6123688a9ae916cfa2b4e110e1"></a>
+using&#160;</td><td class="memItemRight"><b>gtsam::ShonanAveragingParameters2</b> = <a class="el" href="a06791.html">ShonanAveragingParameters</a>&lt;2&gt;</td></tr>
+<tr class="memitem:acd349609579370264de0a1bd0bcbc3a2" id="r_acd349609579370264de0a1bd0bcbc3a2"><td class="memItemLeft"><a id="acd349609579370264de0a1bd0bcbc3a2" name="acd349609579370264de0a1bd0bcbc3a2"></a>
+using&#160;</td><td class="memItemRight"><b>gtsam::ShonanAveragingParameters3</b> = <a class="el" href="a06791.html">ShonanAveragingParameters</a>&lt;3&gt;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>An iSAM2-based Smoother that implements the Concurrent Filtering and Smoothing interface. </p>
-<dl class="section author"><dt>Author</dt><dd>Stephen Williams </dd></dl>
+<div class="textblock"><p>Shonan Averaging algorithm. </p>
+<dl class="section date"><dt>Date</dt><dd>March 2019 - August 2020 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Frank Dellaert, David Rosen, and Jing Wu </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -141,7 +143,7 @@ typedef <a class="el" href="a05911.html">ConcurrentIncrementalSmoother::Result</
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam_unstable</b></li><li class="navelem"><b>nonlinear</b></li><li class="navelem"><a href="a01643.html">ConcurrentIncrementalSmoother.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>sfm</b></li><li class="navelem"><a href="a01643.html">ShonanAveraging.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

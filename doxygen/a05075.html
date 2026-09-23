@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::detail::NoiseModelFactorAliases&lt; T1, T2, T3, T4 &gt; Struct Template Reference</title>
+<title>gtsam: gtsam::internal::FixedJacobianFactorFactory&lt; M, Ns &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,23 +96,55 @@ $(function(){initNavTree('a05075.html','','a05072'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::detail::NoiseModelFactorAliases&lt; T1, T2, T3, T4 &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::internal::FixedJacobianFactorFactory&lt; M, Ns &gt; Struct Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a06110a3e275d4d201d3f9595c041f995" id="r_a06110a3e275d4d201d3f9595c041f995"><td class="memItemLeft"><a id="a06110a3e275d4d201d3f9595c041f995" name="a06110a3e275d4d201d3f9595c041f995"></a>
-using&#160;</td><td class="memItemRight"><b>X1</b> = T1</td></tr>
-<tr class="memitem:a2f6341e1e9be5e88dcc347963f24a575" id="r_a2f6341e1e9be5e88dcc347963f24a575"><td class="memItemLeft"><a id="a2f6341e1e9be5e88dcc347963f24a575" name="a2f6341e1e9be5e88dcc347963f24a575"></a>
-using&#160;</td><td class="memItemRight"><b>X2</b> = T2</td></tr>
-<tr class="memitem:a0c08811e4b37fbae47a35987e9d3d12c" id="r_a0c08811e4b37fbae47a35987e9d3d12c"><td class="memItemLeft"><a id="a0c08811e4b37fbae47a35987e9d3d12c" name="a0c08811e4b37fbae47a35987e9d3d12c"></a>
-using&#160;</td><td class="memItemRight"><b>X3</b> = T3</td></tr>
-<tr class="memitem:afb2ccbf0d4cd0dc55b6684ed5fd8091e" id="r_afb2ccbf0d4cd0dc55b6684ed5fd8091e"><td class="memItemLeft"><a id="afb2ccbf0d4cd0dc55b6684ed5fd8091e" name="afb2ccbf0d4cd0dc55b6684ed5fd8091e"></a>
-using&#160;</td><td class="memItemRight"><b>X4</b> = T4</td></tr>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;int M, int... Ns&gt;<br />
+struct gtsam::internal::FixedJacobianFactorFactory&lt; M, Ns &gt;</div><p>Construct the fixed-size Jacobian factor for a dimension pack. </p>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ae129d40393d69ff1697fbfa92d4d2e35" id="r_ae129d40393d69ff1697fbfa92d4d2e35"><td class="memItemLeft"><a id="ae129d40393d69ff1697fbfa92d4d2e35" name="ae129d40393d69ff1697fbfa92d4d2e35"></a>
+static std::shared_ptr&lt; GaussianFactor &gt;&#160;</td><td class="memItemRight"><b>create</b> (const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;keys, const std::vector&lt; Matrix &gt; &amp;jacobians, const Vector &amp;b, const SharedDiagonal &amp;model)</td></tr>
+<tr class="memdesc:ae129d40393d69ff1697fbfa92d4d2e35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a fixed-size factor behind the <a class="el" href="a05123.html" title="An abstract virtual base class for JacobianFactor and HessianFactor.">GaussianFactor</a> interface. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a71df9058bd3aa32062e92b2dfded6a5f" id="r_a71df9058bd3aa32062e92b2dfded6a5f"><td class="memItemLeft">static constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a71df9058bd3aa32062e92b2dfded6a5f">available</a></td></tr>
+<tr class="memdesc:a71df9058bd3aa32062e92b2dfded6a5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether every factor dimension is fixed at compile time.  <br /></td></tr>
 </table>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a71df9058bd3aa32062e92b2dfded6a5f" name="a71df9058bd3aa32062e92b2dfded6a5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71df9058bd3aa32062e92b2dfded6a5f">&#9670;&#160;</a></span>available</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int M, int... Ns&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="a05075.html">gtsam::internal::FixedJacobianFactorFactory</a>&lt; M, Ns &gt;::available</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">                                   =</div>
+<div class="line">M != Eigen::Dynamic &amp;&amp; ((Ns != Eigen::Dynamic) &amp;&amp; ...)</div>
+</div><!-- fragment -->
+<p>Whether every factor dimension is fixed at compile time. </p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/<a class="el" href="a01157_source.html">NonlinearFactor.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/<a class="el" href="a00920_source.html">FixedJacobianFactor.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -127,7 +159,7 @@ using&#160;</td><td class="memItemRight"><b>X4</b> = T4</td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><b>detail</b></li><li class="navelem"><a href="a05075.html">NoiseModelFactorAliases&lt; T1, T2, T3, T4 &gt;</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><b>internal</b></li><li class="navelem"><a href="a05075.html">FixedJacobianFactorFactory</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

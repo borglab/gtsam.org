@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/base/timing.cpp File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/GroupAction.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,36 +96,130 @@ $(function(){initNavTree('a00134.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">timing.cpp File Reference</div></div>
+  <div class="headertitle"><div class="title">GroupAction.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Timing utilities.  
+<p>Group action concept and CRTP base class.  
 <a href="#details">More...</a></p>
+
+<p><a href="a00134_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:gtsam_3A_3Agroup_5Faction_3A_3AOrbit_3C_20Action_20_3E" id="r_gtsam_3A_3Agroup_5Faction_3A_3AOrbit_3C_20Action_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03243.html">gtsam::group_action::Orbit&lt; Action &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a03243.html" title="Orbit: The map g -&gt; m, defined by fixing m0.">Orbit</a>: The map g -&gt; m, defined by fixing m0.  <a href="a03243.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Agroup_5Faction_3A_3ADiffeomorphism_3C_20Action_20_3E" id="r_gtsam_3A_3Agroup_5Faction_3A_3ADiffeomorphism_3C_20Action_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03247.html">gtsam::group_action::Diffeomorphism&lt; Action &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a03247.html" title="Diffeomorphism: The map m -&gt; m, defined by fixing g0.">Diffeomorphism</a>: The map m -&gt; m, defined by fixing g0.  <a href="a03247.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Agroup_5Faction_3A_3AInducedVectorField_3C_20Action_2C_20VectorField_20_3E" id="r_gtsam_3A_3Agroup_5Faction_3A_3AInducedVectorField_3C_20Action_2C_20VectorField_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03251.html">gtsam::group_action::InducedVectorField&lt; Action, VectorField &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Induced action on vector fields via push-forward.  <a href="a03251.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3AGroupAction_3C_20Derived_2C_20G_2C_20M_20_3E" id="r_gtsam_3A_3AGroupAction_3C_20Derived_2C_20G_2C_20M_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03255.html">gtsam::GroupAction&lt; Derived, G, M &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a03255.html" title="GroupAction CRTP base class.">GroupAction</a> CRTP base class.  <a href="a03255.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3AGroupAction_3C_20Derived_2C_20G_2C_20M_20_3E_3A_3AInducedVectorField_3C_20VectorField_20_3E" id="r_gtsam_3A_3AGroupAction_3C_20Derived_2C_20G_2C_20M_20_3E_3A_3AInducedVectorField_3C_20VectorField_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03259.html">gtsam::GroupAction&lt; Derived, G, M &gt;::InducedVectorField&lt; VectorField &gt;</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:afd1376a80c6abed5377ec1e2be17afec" id="r_afd1376a80c6abed5377ec1e2be17afec"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#afd1376a80c6abed5377ec1e2be17afec">EXPECT_RIGHT_ACTION</a>(phi,  m,  g1,  g2)</td></tr>
+<tr class="memitem:a8f83f1e364c49e5dc0e3b2ee28b09cb8" id="r_a8f83f1e364c49e5dc0e3b2ee28b09cb8"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a8f83f1e364c49e5dc0e3b2ee28b09cb8">EXPECT_LEFT_ACTION</a>(phi,  g1,  g2,  m)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a62b751c7cac44b7d1742f3c3e3e793e6" id="r_a62b751c7cac44b7d1742f3c3e3e793e6"><td class="memItemLeft"><a id="a62b751c7cac44b7d1742f3c3e3e793e6" name="a62b751c7cac44b7d1742f3c3e3e793e6"></a>enum class &#160;</td><td class="memItemRight"><a class="el" href="a02242.html#a62b751c7cac44b7d1742f3c3e3e793e6">gtsam::ActionType</a> { <b>Left</b>
+, <b>Right</b>
+ }</td></tr>
+<tr class="memdesc:a62b751c7cac44b7d1742f3c3e3e793e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum to specify whether the action is a Left or Right action. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5afe1a0ae8eefb72f2508bda95b57be8" id="r_a5afe1a0ae8eefb72f2508bda95b57be8"><td class="memItemLeft"><a id="a5afe1a0ae8eefb72f2508bda95b57be8" name="a5afe1a0ae8eefb72f2508bda95b57be8"></a>
-GTSAM_EXPORT boost::shared_ptr&lt; <a class="el" href="a03063.html">TimingOutline</a> &gt;&#160;</td><td class="memItemRight"><b>gtsam::internal::gTimingRoot</b> (new <a class="el" href="a03063.html">TimingOutline</a>(&quot;Total&quot;, getTicTocID(&quot;Total&quot;)))</td></tr>
-<tr class="memitem:ae6e0284b29c92524a90bb394f5c0b26c" id="r_ae6e0284b29c92524a90bb394f5c0b26c"><td class="memItemLeft"><a id="ae6e0284b29c92524a90bb394f5c0b26c" name="ae6e0284b29c92524a90bb394f5c0b26c"></a>
-GTSAM_EXPORT boost::weak_ptr&lt; <a class="el" href="a03063.html">TimingOutline</a> &gt;&#160;</td><td class="memItemRight"><b>gtsam::internal::gCurrentTimer</b> (gTimingRoot)</td></tr>
-<tr class="memitem:aa81dbe28169a87fd2acd186af8c97fb3" id="r_aa81dbe28169a87fd2acd186af8c97fb3"><td class="memItemLeft"><a id="aa81dbe28169a87fd2acd186af8c97fb3" name="aa81dbe28169a87fd2acd186af8c97fb3"></a>
-size_t&#160;</td><td class="memItemRight"><b>gtsam::internal::getTicTocID</b> (const char *descriptionC)</td></tr>
-<tr class="memitem:a2b3221d20e3c3de4d785d72854c53f44" id="r_a2b3221d20e3c3de4d785d72854c53f44"><td class="memItemLeft"><a id="a2b3221d20e3c3de4d785d72854c53f44" name="a2b3221d20e3c3de4d785d72854c53f44"></a>
-void&#160;</td><td class="memItemRight"><b>gtsam::internal::tic</b> (size_t id, const char *labelC)</td></tr>
-<tr class="memitem:af3014f0d4aa5ff46c5cd4a516c39c56b" id="r_af3014f0d4aa5ff46c5cd4a516c39c56b"><td class="memItemLeft"><a id="af3014f0d4aa5ff46c5cd4a516c39c56b" name="af3014f0d4aa5ff46c5cd4a516c39c56b"></a>
-void&#160;</td><td class="memItemRight"><b>gtsam::internal::toc</b> (size_t id, const char *label)</td></tr>
+<tr class="memitem:a070852d5bf70833ca2550abea341533f" id="r_a070852d5bf70833ca2550abea341533f"><td class="memTemplParams" colspan="2"><a id="a070852d5bf70833ca2550abea341533f" name="a070852d5bf70833ca2550abea341533f"></a>
+template&lt;class Action, class M_, class G_&gt; </td></tr>
+<tr class="memitem:a070852d5bf70833ca2550abea341533f template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::rightActionEqual</b> (const Action &amp;phi, const M_ &amp;m, const G_ &amp;g1, const G_ &amp;g2)</td></tr>
+<tr class="memdesc:a070852d5bf70833ca2550abea341533f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check right action property: φ(m, g1 g2) = φ(φ(m, g1), g2). <br /></td></tr>
+<tr class="memitem:aacde84a3fe9ea1c72e9ac633d90ffe8e" id="r_aacde84a3fe9ea1c72e9ac633d90ffe8e"><td class="memTemplParams" colspan="2"><a id="aacde84a3fe9ea1c72e9ac633d90ffe8e" name="aacde84a3fe9ea1c72e9ac633d90ffe8e"></a>
+template&lt;class Action, class G_, class M_&gt; </td></tr>
+<tr class="memitem:aacde84a3fe9ea1c72e9ac633d90ffe8e template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><b>gtsam::leftActionEqual</b> (const Action &amp;phi, const G_ &amp;g1, const G_ &amp;g2, const M_ &amp;m)</td></tr>
+<tr class="memdesc:aacde84a3fe9ea1c72e9ac633d90ffe8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check left action property: φ(g1 g2, m) = φ(g1, φ(g2, m)). <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Timing utilities. </p>
-<dl class="section author"><dt>Author</dt><dd>Richard Roberts, Michael Kaess </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>Oct 5, 2010 </dd></dl>
-</div></div><!-- contents -->
+<div class="textblock"><p>Group action concept and CRTP base class. </p>
+<dl class="section author"><dt>Author</dt><dd>Frank Dellaert </dd></dl>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="a8f83f1e364c49e5dc0e3b2ee28b09cb8" name="a8f83f1e364c49e5dc0e3b2ee28b09cb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f83f1e364c49e5dc0e3b2ee28b09cb8">&#9670;&#160;</a></span>EXPECT_LEFT_ACTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EXPECT_LEFT_ACTION</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>phi</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>g1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>g2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>m</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                        \</div>
+<div class="line">  EXPECT(<a class="code hl_function" href="a02242.html#aacde84a3fe9ea1c72e9ac633d90ffe8e">::gtsam::leftActionEqual</a>((phi), (g1), (g2), (m))); \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="aa02242_html_aacde84a3fe9ea1c72e9ac633d90ffe8e"><div class="ttname"><a href="a02242.html#aacde84a3fe9ea1c72e9ac633d90ffe8e">gtsam::leftActionEqual</a></div><div class="ttdeci">bool leftActionEqual(const Action &amp;phi, const G_ &amp;g1, const G_ &amp;g2, const M_ &amp;m)</div><div class="ttdoc">Check left action property: φ(g1 g2, m) = φ(g1, φ(g2, m)).</div><div class="ttdef"><b>Definition</b> GroupAction.h:283</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afd1376a80c6abed5377ec1e2be17afec" name="afd1376a80c6abed5377ec1e2be17afec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd1376a80c6abed5377ec1e2be17afec">&#9670;&#160;</a></span>EXPECT_RIGHT_ACTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EXPECT_RIGHT_ACTION</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>phi</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>m</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>g1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>g2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                         \</div>
+<div class="line">  EXPECT(<a class="code hl_function" href="a02242.html#a070852d5bf70833ca2550abea341533f">::gtsam::rightActionEqual</a>((phi), (m), (g1), (g2))); \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="aa02242_html_a070852d5bf70833ca2550abea341533f"><div class="ttname"><a href="a02242.html#a070852d5bf70833ca2550abea341533f">gtsam::rightActionEqual</a></div><div class="ttdeci">bool rightActionEqual(const Action &amp;phi, const M_ &amp;m, const G_ &amp;g1, const G_ &amp;g2)</div><div class="ttdoc">Check right action property: φ(m, g1 g2) = φ(φ(m, g1), g2).</div><div class="ttdef"><b>Definition</b> GroupAction.h:274</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>
@@ -138,7 +232,7 @@ void&#160;</td><td class="memItemRight"><b>gtsam::internal::toc</b> (size_t id, 
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>base</b></li><li class="navelem"><a href="a00134.html">timing.cpp</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>base</b></li><li class="navelem"><a href="a00134.html">GroupAction.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

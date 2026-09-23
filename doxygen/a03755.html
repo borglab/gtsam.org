@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::traits&lt; QUATERNION_TYPE &gt; Struct Template Reference</title>
+<title>gtsam: gtsam::Chebyshev1Basis Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,59 +96,151 @@ $(function(){initNavTree('a03755.html','','a03752'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; QUATERNION_TYPE &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::Chebyshev1Basis Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="a03687.html" title="CRTP Base class for function bases.">Basis</a> of Chebyshev polynomials of the first kind <a href="https://en.wikipedia.org/wiki/Chebyshev_polynomials#First_kind">https://en.wikipedia.org/wiki/Chebyshev_polynomials#First_kind</a> These are typically denoted with the symbol T_n, where n is the degree. </p>
+<p>The parameter N is the number of coefficients, i.e., N = n+1. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::Chebyshev1Basis:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="a03755.png" usemap="#gtsam_3A_3AChebyshev1Basis_map" alt=""/>
+  <map id="gtsam_3A_3AChebyshev1Basis_map" name="gtsam_3A_3AChebyshev1Basis_map">
+<area href="a03687.html" alt="gtsam::Basis&lt; Chebyshev1Basis &gt;" shape="rect" coords="0,0,205,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr id="pub-static-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Group traits</div></td></tr>
-<tr class="memitem:a0c5791143fbd356fc2ff76ca4d56f03f" id="r_a0c5791143fbd356fc2ff76ca4d56f03f"><td class="memItemLeft"><a id="a0c5791143fbd356fc2ff76ca4d56f03f" name="a0c5791143fbd356fc2ff76ca4d56f03f"></a>
-static Q&#160;</td><td class="memItemRight"><b>Identity</b> ()</td></tr>
-<tr id="pub-static-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Lie group traits</div></td></tr>
-<tr class="memitem:ab5464965afe52467b6e697d2f6e80fb9" id="r_ab5464965afe52467b6e697d2f6e80fb9"><td class="memItemLeft"><a id="ab5464965afe52467b6e697d2f6e80fb9" name="ab5464965afe52467b6e697d2f6e80fb9"></a>
-static Q&#160;</td><td class="memItemRight"><b>Compose</b> (const Q &amp;g, const Q &amp;h, ChartJacobian Hg=boost::none, ChartJacobian Hh=boost::none)</td></tr>
-<tr class="memitem:a25b65d7d501b65ec3dec507270761dd1" id="r_a25b65d7d501b65ec3dec507270761dd1"><td class="memItemLeft"><a id="a25b65d7d501b65ec3dec507270761dd1" name="a25b65d7d501b65ec3dec507270761dd1"></a>
-static Q&#160;</td><td class="memItemRight"><b>Between</b> (const Q &amp;g, const Q &amp;h, ChartJacobian Hg=boost::none, ChartJacobian Hh=boost::none)</td></tr>
-<tr class="memitem:a05c854136c52f2303474365aa77891b1" id="r_a05c854136c52f2303474365aa77891b1"><td class="memItemLeft"><a id="a05c854136c52f2303474365aa77891b1" name="a05c854136c52f2303474365aa77891b1"></a>
-static Q&#160;</td><td class="memItemRight"><b>Inverse</b> (const Q &amp;g, ChartJacobian H=boost::none)</td></tr>
-<tr class="memitem:a12c076407b71b70e1a23523fcbc3047d" id="r_a12c076407b71b70e1a23523fcbc3047d"><td class="memItemLeft"><a id="a12c076407b71b70e1a23523fcbc3047d" name="a12c076407b71b70e1a23523fcbc3047d"></a>
-static Q&#160;</td><td class="memItemRight"><b>Expmap</b> (const Eigen::Ref&lt; const TangentVector &gt; &amp;omega, ChartJacobian H=boost::none)</td></tr>
-<tr class="memdesc:a12c076407b71b70e1a23523fcbc3047d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exponential map, using the inlined code from Eigen's conversion from axis/angle. <br /></td></tr>
-<tr class="memitem:a7a9af0389c59ee4a516b2ce0bbc31d46" id="r_a7a9af0389c59ee4a516b2ce0bbc31d46"><td class="memItemLeft"><a id="a7a9af0389c59ee4a516b2ce0bbc31d46" name="a7a9af0389c59ee4a516b2ce0bbc31d46"></a>
-static TangentVector&#160;</td><td class="memItemRight"><b>Logmap</b> (const Q &amp;q, ChartJacobian H=boost::none)</td></tr>
-<tr class="memdesc:a7a9af0389c59ee4a516b2ce0bbc31d46"><td class="mdescLeft">&#160;</td><td class="mdescRight">We use our own Logmap, as there is a slight bug in Eigen. <br /></td></tr>
-<tr id="pub-static-methods-2" class="groupHeader"><td colspan="2"><div class="groupHeader">Manifold traits</div></td></tr>
-<tr class="memitem:a60fcc9439f66b58f97d2ec4c4778df01" id="r_a60fcc9439f66b58f97d2ec4c4778df01"><td class="memItemLeft"><a id="a60fcc9439f66b58f97d2ec4c4778df01" name="a60fcc9439f66b58f97d2ec4c4778df01"></a>
-static TangentVector&#160;</td><td class="memItemRight"><b>Local</b> (const Q &amp;g, const Q &amp;h, ChartJacobian H1=boost::none, ChartJacobian H2=boost::none)</td></tr>
-<tr class="memitem:ae6a9cce66266ce311f6e194fe5c6abe4" id="r_ae6a9cce66266ce311f6e194fe5c6abe4"><td class="memItemLeft"><a id="ae6a9cce66266ce311f6e194fe5c6abe4" name="ae6a9cce66266ce311f6e194fe5c6abe4"></a>
-static Q&#160;</td><td class="memItemRight"><b>Retract</b> (const Q &amp;g, const TangentVector &amp;v, ChartJacobian H1=boost::none, ChartJacobian H2=boost::none)</td></tr>
-<tr id="pub-static-methods-3" class="groupHeader"><td colspan="2"><div class="groupHeader">Testable</div></td></tr>
-<tr class="memitem:a309b425440400010a38040ab51fc1082" id="r_a309b425440400010a38040ab51fc1082"><td class="memItemLeft"><a id="a309b425440400010a38040ab51fc1082" name="a309b425440400010a38040ab51fc1082"></a>
-static void&#160;</td><td class="memItemRight"><b>Print</b> (const Q &amp;q, const std::string &amp;str=&quot;&quot;)</td></tr>
-<tr class="memitem:a9f869bad6da028e126f4dd9e2527a90d" id="r_a9f869bad6da028e126f4dd9e2527a90d"><td class="memItemLeft"><a id="a9f869bad6da028e126f4dd9e2527a90d" name="a9f869bad6da028e126f4dd9e2527a90d"></a>
-static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const Q &amp;q1, const Q &amp;q2, double tol=1e-8)</td></tr>
+<tr class="memitem:a0491db33b838109613611f2d14ce1faa" id="r_a0491db33b838109613611f2d14ce1faa"><td class="memItemLeft">static Weights&#160;</td><td class="memItemRight"><a class="el" href="#a0491db33b838109613611f2d14ce1faa">CalculateWeights</a> (size_t N, double x, double a=-1, double b=1)</td></tr>
+<tr class="memdesc:a0491db33b838109613611f2d14ce1faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate Chebyshev Weights on [-1,1] at x up to order N-1 (N values).  <br /></td></tr>
+<tr class="memitem:a98f67836c3e77c03417ae3466887f084" id="r_a98f67836c3e77c03417ae3466887f084"><td class="memItemLeft">static Weights&#160;</td><td class="memItemRight"><a class="el" href="#a98f67836c3e77c03417ae3466887f084">DerivativeWeights</a> (size_t N, double x, double a=-1, double b=1)</td></tr>
+<tr class="memdesc:a98f67836c3e77c03417ae3466887f084"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate Chebyshev derivative at x.  <br /></td></tr>
+<tr class="inherit_header pub_static_methods_a03687"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03687')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03687.html">gtsam::Basis&lt; Chebyshev1Basis &gt;</a></td></tr>
+<tr class="memitem:a9da2e7dcdb5466d656a8d03b6444dde4 inherit pub_static_methods_a03687" id="r_a9da2e7dcdb5466d656a8d03b6444dde4"><td class="memItemLeft">static Matrix&#160;</td><td class="memItemRight"><a class="el" href="a03687.html#a9da2e7dcdb5466d656a8d03b6444dde4">WeightMatrix</a> (size_t N, const Vector &amp;X)</td></tr>
+<tr class="memdesc:a9da2e7dcdb5466d656a8d03b6444dde4 inherit pub_static_methods_a03687"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate weights for all x in vector X.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a73f089f7b214938596d5ae4ce144cabc" id="r_a73f089f7b214938596d5ae4ce144cabc"><td class="memItemLeft"><a id="a73f089f7b214938596d5ae4ce144cabc" name="a73f089f7b214938596d5ae4ce144cabc"></a>
+Parameters&#160;</td><td class="memItemRight"><b>parameters_</b></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a2476572b32d18d4f17f06000d54bcc38" id="r_a2476572b32d18d4f17f06000d54bcc38"><td class="memItemLeft"><a id="a2476572b32d18d4f17f06000d54bcc38" name="a2476572b32d18d4f17f06000d54bcc38"></a>
-typedef QUATERNION_TYPE&#160;</td><td class="memItemRight"><b>ManifoldType</b></td></tr>
-<tr class="memitem:a345cb9e3a670a343f5b97560fd365b6d" id="r_a345cb9e3a670a343f5b97560fd365b6d"><td class="memItemLeft"><a id="a345cb9e3a670a343f5b97560fd365b6d" name="a345cb9e3a670a343f5b97560fd365b6d"></a>
-typedef QUATERNION_TYPE&#160;</td><td class="memItemRight"><b>Q</b></td></tr>
-<tr class="memitem:a69185ea5f34cb58cb3c40296dc401548" id="r_a69185ea5f34cb58cb3c40296dc401548"><td class="memItemLeft"><a id="a69185ea5f34cb58cb3c40296dc401548" name="a69185ea5f34cb58cb3c40296dc401548"></a>
-typedef <a class="el" href="a02915.html">lie_group_tag</a>&#160;</td><td class="memItemRight"><b>structure_category</b></td></tr>
-<tr class="memitem:a8cd41be34ca901288c7334edd90781d4" id="r_a8cd41be34ca901288c7334edd90781d4"><td class="memItemLeft"><a id="a8cd41be34ca901288c7334edd90781d4" name="a8cd41be34ca901288c7334edd90781d4"></a>
-typedef <a class="el" href="a02883.html">multiplicative_group_tag</a>&#160;</td><td class="memItemRight"><b>group_flavor</b></td></tr>
-<tr id="pub-types-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Basic manifold traits</div></td></tr>
-<tr class="memitem:af0f00694791278acb6e5a36e09072887" id="r_af0f00694791278acb6e5a36e09072887"><td class="memItemLeft"><a id="af0f00694791278acb6e5a36e09072887" name="af0f00694791278acb6e5a36e09072887"></a>enum &#160;</td><td class="memItemRight">{ <b>dimension</b> = 3
- }</td></tr>
-<tr class="memitem:a5053c2175c8196161d484e86846e0abb" id="r_a5053c2175c8196161d484e86846e0abb"><td class="memItemLeft"><a id="a5053c2175c8196161d484e86846e0abb" name="a5053c2175c8196161d484e86846e0abb"></a>
-typedef <a class="el" href="a02995.html">OptionalJacobian</a>&lt; 3, 3 &gt;&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
-<tr class="memitem:a338daba22f4f0ed5a2806dd1233a4f90" id="r_a338daba22f4f0ed5a2806dd1233a4f90"><td class="memItemLeft"><a id="a338daba22f4f0ed5a2806dd1233a4f90" name="a338daba22f4f0ed5a2806dd1233a4f90"></a>
-typedef Eigen::Matrix&lt; _Scalar, 3, 1, _Options, 3, 1 &gt;&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+<tr class="memitem:ac26618132dbc2a59dd63a143c1ca61d7" id="r_ac26618132dbc2a59dd63a143c1ca61d7"><td class="memItemLeft"><a id="ac26618132dbc2a59dd63a143c1ca61d7" name="ac26618132dbc2a59dd63a143c1ca61d7"></a>
+using&#160;</td><td class="memItemRight"><b>Parameters</b> = Eigen::Matrix&lt;double, -1, 1 &gt;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/geometry/<a class="el" href="a00350_source.html">Quaternion.h</a></li>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a0491db33b838109613611f2d14ce1faa" name="a0491db33b838109613611f2d14ce1faa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0491db33b838109613611f2d14ce1faa">&#9670;&#160;</a></span>CalculateWeights()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Weights gtsam::Chebyshev1Basis::CalculateWeights </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>N</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>a</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>b</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Evaluate Chebyshev Weights on [-1,1] at x up to order N-1 (N values). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">N</td><td>Degree of the polynomial. </td></tr>
+    <tr><td class="paramname">x</td><td>Point to evaluate polynomial at. </td></tr>
+    <tr><td class="paramname">a</td><td>Lower limit of polynomial (default=-1). </td></tr>
+    <tr><td class="paramname">b</td><td>Upper limit of polynomial (default=1). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a98f67836c3e77c03417ae3466887f084" name="a98f67836c3e77c03417ae3466887f084"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98f67836c3e77c03417ae3466887f084">&#9670;&#160;</a></span>DerivativeWeights()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Weights gtsam::Chebyshev1Basis::DerivativeWeights </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>N</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>a</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>b</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Evaluate Chebyshev derivative at x. </p>
+<p>The derivative weights are pre-multiplied to the polynomial Parameters.</p>
+<p>From Wikipedia we have D[T_n(x),x] = n*U_{n-1}(x) I.e. the derivative fo a first kind cheb is just a second kind cheb So, we define a second kind basis here of order N-1 Note that it has one less weight.</p>
+<p>The Parameters pertain to 1st kind chebs up to order N-1 But of course the first one (order 0) is constant, so omit that weight.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">N</td><td>Degree of the polynomial. </td></tr>
+    <tr><td class="paramname">x</td><td>Point to evaluate polynomial at. </td></tr>
+    <tr><td class="paramname">a</td><td>Lower limit of polynomial (default=-1). </td></tr>
+    <tr><td class="paramname">b</td><td>Upper limit of polynomial (default=1). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Weights </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/basis/<a class="el" href="a00242_source.html">Chebyshev.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/basis/<a class="el" href="a00239.html">Chebyshev.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -163,7 +255,7 @@ typedef Eigen::Matrix&lt; _Scalar, 3, 1, _Options, 3, 1 &gt;&#160;</td><td class
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a03755.html">traits&lt; QUATERNION_TYPE &gt;</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a03755.html">Chebyshev1Basis</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,13 +96,54 @@ $(function(){initNavTree('a04167.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::SGraph&lt; KEY &gt; Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::CalibratedCamera Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a04167.html">gtsam::SGraph&lt; KEY &gt;</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a04167.html">gtsam::CalibratedCamera</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Vertex</b> typedef (defined in <a class="el" href="a04167.html">gtsam::SGraph&lt; KEY &gt;</a>)</td><td class="entry"><a class="el" href="a04167.html">gtsam::SGraph&lt; KEY &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04167.html#aa66f09ef3d3765105bf52581271ed315">backproject</a>(const Point2 &amp;pn, double depth, OptionalJacobian&lt; 3, 6 &gt; Dresult_dpose={}, OptionalJacobian&lt; 3, 2 &gt; Dresult_dp={}, OptionalJacobian&lt; 3, 1 &gt; Dresult_ddepth={}) const</td><td class="entry"><a class="el" href="a04167.html">gtsam::CalibratedCamera</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04163.html#af4ab9a93dfe97e2203108bf4778a1f7a">BackprojectFromCamera</a>(const Point2 &amp;p, const double depth, OptionalJacobian&lt; 3, 2 &gt; Dpoint={}, OptionalJacobian&lt; 3, 1 &gt; Ddepth={})</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04167.html#a5b59414e39297638751de5f43b293798">CalibratedCamera</a>()</td><td class="entry"><a class="el" href="a04167.html">gtsam::CalibratedCamera</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04167.html#ae9607d9d9ef98835b38d0fb494eba191">CalibratedCamera</a>(const Pose3 &amp;pose)</td><td class="entry"><a class="el" href="a04167.html">gtsam::CalibratedCamera</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">explicit</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04167.html#a88d317a781597e5243bb7995df07d9cc">CalibratedCamera</a>(const Vector &amp;v)</td><td class="entry"><a class="el" href="a04167.html">gtsam::CalibratedCamera</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">explicit</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Create</b>(const Pose3 &amp;pose, OptionalJacobian&lt; dimension, 6 &gt; H1={}) (defined in <a class="el" href="a04167.html">gtsam::CalibratedCamera</a>)</td><td class="entry"><a class="el" href="a04167.html">gtsam::CalibratedCamera</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Dim</b>() (defined in <a class="el" href="a04167.html">gtsam::CalibratedCamera</a>)</td><td class="entry"><a class="el" href="a04167.html">gtsam::CalibratedCamera</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>dim</b>() const (defined in <a class="el" href="a04167.html">gtsam::CalibratedCamera</a>)</td><td class="entry"><a class="el" href="a04167.html">gtsam::CalibratedCamera</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>dimension</b> (defined in <a class="el" href="a04167.html">gtsam::CalibratedCamera</a>)</td><td class="entry"><a class="el" href="a04167.html">gtsam::CalibratedCamera</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04163.html#ab774b22d9bbb3b58e5a05f8fcadd981a">Dpoint</a>(const Point2 &amp;pn, double d, const Matrix3 &amp;Rt)</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04163.html#a1b8bc2bf7c2d619cebc1a957b0ba9207">Dpose</a>(const Point2 &amp;pn, double d)</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04167.html#a179b0090545acd328e8ca591830e97a2">equals</a>(const CalibratedCamera &amp;camera, double tol=1e-9) const</td><td class="entry"><a class="el" href="a04167.html">gtsam::CalibratedCamera</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04163.html#ab01155d3124c3f50bb1239815029e5a7">gtsam::PinholeBase::equals</a>(const PinholeBase &amp;camera, double tol=1e-9) const</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04163.html#a08f39b2a0a59b1f4b59a74a631349df9">getPose</a>(OptionalJacobian&lt; 6, 6 &gt; H) const</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04167.html#a816481e5b3be92b94f1ba0371806a2d6">Level</a>(const Pose2 &amp;pose2, double height)</td><td class="entry"><a class="el" href="a04167.html">gtsam::CalibratedCamera</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04163.html#a9f4fe91997b7fc6a928cac93c80e80f7">LevelPose</a>(const Pose2 &amp;pose2, double height)</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04167.html#a6bbda25ef776c5e222518d8aeda54140">localCoordinates</a>(const CalibratedCamera &amp;T2) const</td><td class="entry"><a class="el" href="a04167.html">gtsam::CalibratedCamera</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04167.html#a5a6ed3125f756b682faa83338e895cb4">Lookat</a>(const Point3 &amp;eye, const Point3 &amp;target, const Point3 &amp;upVector)</td><td class="entry"><a class="el" href="a04167.html">gtsam::CalibratedCamera</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04163.html#ae4e5ed1b27dceeabcb83c0f1c729adae">LookatPose</a>(const Point3 &amp;eye, const Point3 &amp;target, const Point3 &amp;upVector)</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04163.html#a0a36cfdedbf110be0e1188b3ae6319aa">Measurement</a> typedef</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>MeasurementVector</b> typedef (defined in <a class="el" href="a04163.html">gtsam::PinholeBase</a>)</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04163.html#a0cc83392655c4906ab9840b126d63a0c">PinholeBase</a>()</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04163.html#a68dca334cf708ac9fd3935dc869b8808">PinholeBase</a>(const Pose3 &amp;pose)</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">explicit</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>PinholeBase</b>(const Vector &amp;v) (defined in <a class="el" href="a04163.html">gtsam::PinholeBase</a>)</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">explicit</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04163.html#a8e481999434032fbf1f99baa18ef41a7">pose</a>() const</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04167.html#ae1a86c7e7ea234b26ab7b50ae12bc192">print</a>(const std::string &amp;s=&quot;CalibratedCamera&quot;) const override</td><td class="entry"><a class="el" href="a04167.html">gtsam::CalibratedCamera</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04163.html#aadadc9997c9525f42e8cba9486033dac">Project</a>(const Point3 &amp;pc, OptionalJacobian&lt; 2, 3 &gt; Dpoint={})</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04163.html#ad8fc97bb394a4fd95ffdd2966dfc5ebc">Project</a>(const Unit3 &amp;pc, OptionalJacobian&lt; 2, 2 &gt; Dpoint={})</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04167.html#a68d3c253e96a396a9989ce570457c95e">project</a>(const Point3 &amp;point, OptionalJacobian&lt; 2, 6 &gt; Dcamera={}, OptionalJacobian&lt; 2, 3 &gt; Dpoint={}) const</td><td class="entry"><a class="el" href="a04167.html">gtsam::CalibratedCamera</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04163.html#a6229787ff6acedfd9cb70140fb000b6f">project2</a>(const Point3 &amp;point, OptionalJacobian&lt; 2, 6 &gt; Dpose={}, OptionalJacobian&lt; 2, 3 &gt; Dpoint={}) const</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04163.html#aefd9ef1e53d3b941e7ac32cbb6abceba">project2</a>(const Unit3 &amp;point, OptionalJacobian&lt; 2, 6 &gt; Dpose={}, OptionalJacobian&lt; 2, 2 &gt; Dpoint={}) const</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04163.html#a494b5e93c6f577b2a2ef6a2517370429">projectSafe</a>(const Point3 &amp;pw) const</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04167.html#a9c954dff5f385cb71109f35edffefe9c">range</a>(const Point3 &amp;point, OptionalJacobian&lt; 1, 6 &gt; Dcamera={}, OptionalJacobian&lt; 1, 3 &gt; Dpoint={}) const</td><td class="entry"><a class="el" href="a04167.html">gtsam::CalibratedCamera</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04167.html#ac41eb9676b318e8d2e4a201555533e2c">range</a>(const Pose3 &amp;pose, OptionalJacobian&lt; 1, 6 &gt; Dcamera={}, OptionalJacobian&lt; 1, 6 &gt; Dpose={}) const</td><td class="entry"><a class="el" href="a04167.html">gtsam::CalibratedCamera</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04167.html#af700312f65c4f34ac2ffdd230174162c">range</a>(const CalibratedCamera &amp;camera, OptionalJacobian&lt; 1, 6 &gt; H1={}, OptionalJacobian&lt; 1, 6 &gt; H2={}) const</td><td class="entry"><a class="el" href="a04167.html">gtsam::CalibratedCamera</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04167.html#a4d59d1978cb514784f49ea252f70b52c">retract</a>(const Vector &amp;d) const</td><td class="entry"><a class="el" href="a04167.html">gtsam::CalibratedCamera</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04163.html#a69ba28fef80b4008765fb626745715f8">Rotation</a> typedef</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04163.html#a78a5c2d8a175cbad6f18b242481a49ad">rotation</a>() const</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Translation</b> typedef (defined in <a class="el" href="a04163.html">gtsam::PinholeBase</a>)</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04163.html#a6974500dec40a0c7c0491aaca37f700c">translation</a>() const</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a04163.html#aafecf2e1321b82c54e4c441c8a222370">TranslationInterval</a>()</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a04163.html#ae82cffa320b42dc9f88974ab57ba489c">~PinholeBase</a>()=default</td><td class="entry"><a class="el" href="a04163.html">gtsam::PinholeBase</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

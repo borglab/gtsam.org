@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/basis/Chebyshev2.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/numericalDerivative.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,33 +96,347 @@ $(function(){initNavTree('a00164.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Chebyshev2.h File Reference</div></div>
+  <div class="headertitle"><div class="title">numericalDerivative.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Pseudo-spectral parameterization for Chebyshev polynomials of the second kind.  
+<p>Numerical derivative helpers for manifold-valued functions.  
 <a href="#details">More...</a></p>
 
 <p><a href="a00164_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3AChebyshev2" id="r_gtsam_3A_3AChebyshev2"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a03287.html">gtsam::Chebyshev2</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chebyshev Interpolation on Chebyshev points of the second kind Note that N here, the number of points, is one less than N from 'Approximation Theory and Approximation Practice by L.  <a href="a03287.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Ainternal_3A_3AFixedSizeMatrix_3C_20Y_2C_20X_20_3E" id="r_gtsam_3A_3Ainternal_3A_3AFixedSizeMatrix_3C_20Y_2C_20X_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03351.html">gtsam::internal::FixedSizeMatrix&lt; Y, X &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select the fixed-size Jacobian type associated with two manifold types.  <a href="a03351.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Ainternal_3A_3AMatrixMN_3C_20M_2C_20N_20_3E" id="r_gtsam_3A_3Ainternal_3A_3AMatrixMN_3C_20M_2C_20N_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03355.html">gtsam::internal::MatrixMN&lt; M, N &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select a fixed-size matrix from explicit row and column counts.  <a href="a03355.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Ainternal_3A_3ADeducedOutput" id="r_gtsam_3A_3Ainternal_3A_3ADeducedOutput"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03359.html">gtsam::internal::DeducedOutput</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marker type used when the callable return type should be deduced.  <a href="a03359.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a0408bd84220817101c96a2d3f7f86a31" id="r_a0408bd84220817101c96a2d3f7f86a31"><td class="memTemplParams" colspan="2">template&lt;class RequestedY, class F, class... Args&gt; </td></tr>
+<tr class="memitem:a0408bd84220817101c96a2d3f7f86a31 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a0408bd84220817101c96a2d3f7f86a31">gtsam::internal::OutputType</a></td></tr>
+<tr class="memitem:a48df5d5723db1982a4b15806697f37f3" id="r_a48df5d5723db1982a4b15806697f37f3"><td class="memTemplParams" colspan="2">template&lt;class F, class... Args&gt; </td></tr>
+<tr class="memitem:a48df5d5723db1982a4b15806697f37f3 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a48df5d5723db1982a4b15806697f37f3">gtsam::internal::EnableIfInvocable</a></td></tr>
+<tr class="memitem:aed5204400733b81a38d3046d84cd134b" id="r_aed5204400733b81a38d3046d84cd134b"><td class="memTemplParams" colspan="2">template&lt;class F, class... Args&gt; </td></tr>
+<tr class="memitem:aed5204400733b81a38d3046d84cd134b template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#aed5204400733b81a38d3046d84cd134b">gtsam::internal::EnableIfScalarInvocable</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a552fba0779580e7a8c678dcdd8da7f89" id="r_a552fba0779580e7a8c678dcdd8da7f89"><td class="memTemplParams" colspan="2"><a id="a552fba0779580e7a8c678dcdd8da7f89" name="a552fba0779580e7a8c678dcdd8da7f89"></a>
+template&lt;class X, int N&gt; </td></tr>
+<tr class="memitem:a552fba0779580e7a8c678dcdd8da7f89 template"><td class="memItemLeft">constexpr void&#160;</td><td class="memItemRight"><b>gtsam::internal::ValidateGradientInput</b> ()</td></tr>
+<tr class="memitem:abf8f8f647596fa87918ae991f5cb7f91" id="r_abf8f8f647596fa87918ae991f5cb7f91"><td class="memTemplParams" colspan="2"><a id="abf8f8f647596fa87918ae991f5cb7f91" name="abf8f8f647596fa87918ae991f5cb7f91"></a>
+template&lt;class Y, class X, int N&gt; </td></tr>
+<tr class="memitem:abf8f8f647596fa87918ae991f5cb7f91 template"><td class="memItemLeft">constexpr void&#160;</td><td class="memItemRight"><b>gtsam::internal::ValidateUnaryDerivativeTypes</b> ()</td></tr>
+<tr id="func-members-0" class="groupHeader"><td colspan="2"><div class="groupHeader">First-Order Derivative Helpers</div></td></tr>
+<tr class="memitem:ga3974f71316826e8e029b204271beac18" id="r_ga3974f71316826e8e029b204271beac18"><td class="memTemplParams" colspan="2">template&lt;class X, int N = traits&lt;X&gt;::dimension, class F, internal::EnableIfScalarInvocable&lt; F, X &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga3974f71316826e8e029b204271beac18 template"><td class="memItemLeft">Eigen::Matrix&lt; double, N, 1 &gt;&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#ga3974f71316826e8e029b204271beac18">gtsam::numericalGradient</a> (F &amp;&amp;h, const X &amp;x, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga3974f71316826e8e029b204271beac18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numerically compute gradient of scalar function.  <br /></td></tr>
+<tr class="memitem:ga4f1516bacd9ec60c2782e9aeef72afd5" id="r_ga4f1516bacd9ec60c2782e9aeef72afd5"><td class="memTemplParams" colspan="2">
+template&lt;class X, int N = traits&lt;X&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga4f1516bacd9ec60c2782e9aeef72afd5 template"><td class="memItemLeft">Eigen::Matrix&lt; double, N, 1 &gt;&#160;</td><td class="memItemRight"><b>gtsam::numericalGradient</b> (double(&amp;h)(const X &amp;), const X &amp;x, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga4f1516bacd9ec60c2782e9aeef72afd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga3974f71316826e8e029b204271beac18" title="Numerically compute gradient of scalar function.">numericalGradient</a></span>. <br /></td></tr>
+<tr class="memitem:gacdadc06a7071599b3360cffee76c1b55" id="r_gacdadc06a7071599b3360cffee76c1b55"><td class="memTemplParams" colspan="2">template&lt;class Y = internal::DeducedOutput, class X, int N = traits&lt;X&gt;::dimension, class F, internal::EnableIfInvocable&lt; F, X &gt; = 0&gt; </td></tr>
+<tr class="memitem:gacdadc06a7071599b3360cffee76c1b55 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; internal::OutputType&lt; Y, F, X &gt; &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#gacdadc06a7071599b3360cffee76c1b55">gtsam::numericalDerivative11</a> (F &amp;&amp;h, const X &amp;x, double delta=1e-5)</td></tr>
+<tr class="memdesc:gacdadc06a7071599b3360cffee76c1b55"><td class="mdescLeft">&#160;</td><td class="mdescRight">New-style numerical derivatives using manifold_traits.  <br /></td></tr>
+<tr class="memitem:ga0fd90faca06729e1bd54c07eb8bb8c64" id="r_ga0fd90faca06729e1bd54c07eb8bb8c64"><td class="memTemplParams" colspan="2">
+template&lt;class Y, class X, int N = traits&lt;X&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga0fd90faca06729e1bd54c07eb8bb8c64 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; Y &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalDerivative11</b> (Y(&amp;h)(const X &amp;), const X &amp;x, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga0fd90faca06729e1bd54c07eb8bb8c64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#gacdadc06a7071599b3360cffee76c1b55" title="New-style numerical derivatives using manifold_traits.">numericalDerivative11</a></span>. <br /></td></tr>
+<tr class="memitem:ga313fc8b4e437ba8d39faee5ea3a54dde" id="r_ga313fc8b4e437ba8d39faee5ea3a54dde"><td class="memTemplParams" colspan="2">template&lt;class Y = internal::DeducedOutput, class X1, class X2, int N = traits&lt;X1&gt;::dimension, class F, internal::EnableIfInvocable&lt; F, X1, X2 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga313fc8b4e437ba8d39faee5ea3a54dde template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; internal::OutputType&lt; Y, F, X1, X2 &gt; &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#ga313fc8b4e437ba8d39faee5ea3a54dde">gtsam::numericalDerivative21</a> (F &amp;&amp;h, const X1 &amp;x1, const X2 &amp;x2, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga313fc8b4e437ba8d39faee5ea3a54dde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute numerical derivative in argument 1 of binary function.  <br /></td></tr>
+<tr class="memitem:gafaf709034ef8bd07a81758aa5250a5ac" id="r_gafaf709034ef8bd07a81758aa5250a5ac"><td class="memTemplParams" colspan="2">
+template&lt;class Y, class X1, class X2, int N = traits&lt;X1&gt;::dimension&gt; </td></tr>
+<tr class="memitem:gafaf709034ef8bd07a81758aa5250a5ac template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; Y &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalDerivative21</b> (Y(&amp;h)(const X1 &amp;, const X2 &amp;), const X1 &amp;x1, const X2 &amp;x2, double delta=1e-5)</td></tr>
+<tr class="memdesc:gafaf709034ef8bd07a81758aa5250a5ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga313fc8b4e437ba8d39faee5ea3a54dde" title="Compute numerical derivative in argument 1 of binary function.">numericalDerivative21</a></span>. <br /></td></tr>
+<tr class="memitem:ga664297c4c57bfe54da1a19d4d4774623" id="r_ga664297c4c57bfe54da1a19d4d4774623"><td class="memTemplParams" colspan="2">template&lt;class Y = internal::DeducedOutput, class X1, class X2, int N = traits&lt;X2&gt;::dimension, class F, internal::EnableIfInvocable&lt; F, X1, X2 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga664297c4c57bfe54da1a19d4d4774623 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; internal::OutputType&lt; Y, F, X1, X2 &gt; &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#ga664297c4c57bfe54da1a19d4d4774623">gtsam::numericalDerivative22</a> (F &amp;&amp;h, const X1 &amp;x1, const X2 &amp;x2, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga664297c4c57bfe54da1a19d4d4774623"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute numerical derivative in argument 2 of binary function.  <br /></td></tr>
+<tr class="memitem:ga1c0d365844cf3992028b42284cef19f4" id="r_ga1c0d365844cf3992028b42284cef19f4"><td class="memTemplParams" colspan="2">
+template&lt;class Y, class X1, class X2, int N = traits&lt;X2&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga1c0d365844cf3992028b42284cef19f4 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; Y &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalDerivative22</b> (Y(&amp;h)(const X1 &amp;, const X2 &amp;), const X1 &amp;x1, const X2 &amp;x2, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga1c0d365844cf3992028b42284cef19f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga664297c4c57bfe54da1a19d4d4774623" title="Compute numerical derivative in argument 2 of binary function.">numericalDerivative22</a></span>. <br /></td></tr>
+<tr class="memitem:ga01bbb47ef2555905e4c3cf5cb4a89276" id="r_ga01bbb47ef2555905e4c3cf5cb4a89276"><td class="memTemplParams" colspan="2">template&lt;class Y = internal::DeducedOutput, class X1, class X2, class X3, int N = traits&lt;X1&gt;::dimension, class F, internal::EnableIfInvocable&lt; F, X1, X2, X3 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga01bbb47ef2555905e4c3cf5cb4a89276 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; internal::OutputType&lt; Y, F, X1, X2, X3 &gt; &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#ga01bbb47ef2555905e4c3cf5cb4a89276">gtsam::numericalDerivative31</a> (F &amp;&amp;h, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga01bbb47ef2555905e4c3cf5cb4a89276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute numerical derivative in argument 1 of ternary function.  <br /></td></tr>
+<tr class="memitem:ga7a66c5e91424ab98e08bc481263d6b7e" id="r_ga7a66c5e91424ab98e08bc481263d6b7e"><td class="memTemplParams" colspan="2">
+template&lt;class Y, class X1, class X2, class X3, int N = traits&lt;X1&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga7a66c5e91424ab98e08bc481263d6b7e template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; Y &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalDerivative31</b> (Y(&amp;h)(const X1 &amp;, const X2 &amp;, const X3 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga7a66c5e91424ab98e08bc481263d6b7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga01bbb47ef2555905e4c3cf5cb4a89276" title="Compute numerical derivative in argument 1 of ternary function.">numericalDerivative31</a></span>. <br /></td></tr>
+<tr class="memitem:ga7562982efbbd98c7decbd79586c13db7" id="r_ga7562982efbbd98c7decbd79586c13db7"><td class="memTemplParams" colspan="2">template&lt;class Y = internal::DeducedOutput, class X1, class X2, class X3, int N = traits&lt;X2&gt;::dimension, class F, internal::EnableIfInvocable&lt; F, X1, X2, X3 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga7562982efbbd98c7decbd79586c13db7 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; internal::OutputType&lt; Y, F, X1, X2, X3 &gt; &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#ga7562982efbbd98c7decbd79586c13db7">gtsam::numericalDerivative32</a> (F &amp;&amp;h, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga7562982efbbd98c7decbd79586c13db7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute numerical derivative in argument 2 of ternary function.  <br /></td></tr>
+<tr class="memitem:ga73f1e3fdcd5cfad3a5d6ed3fdfb165dc" id="r_ga73f1e3fdcd5cfad3a5d6ed3fdfb165dc"><td class="memTemplParams" colspan="2">
+template&lt;class Y, class X1, class X2, class X3, int N = traits&lt;X2&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga73f1e3fdcd5cfad3a5d6ed3fdfb165dc template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; Y &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalDerivative32</b> (Y(&amp;h)(const X1 &amp;, const X2 &amp;, const X3 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga73f1e3fdcd5cfad3a5d6ed3fdfb165dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga7562982efbbd98c7decbd79586c13db7" title="Compute numerical derivative in argument 2 of ternary function.">numericalDerivative32</a></span>. <br /></td></tr>
+<tr class="memitem:gaddc6dba45f3a53e9c6ccbaf44ff71746" id="r_gaddc6dba45f3a53e9c6ccbaf44ff71746"><td class="memTemplParams" colspan="2">template&lt;class Y = internal::DeducedOutput, class X1, class X2, class X3, int N = traits&lt;X3&gt;::dimension, class F, internal::EnableIfInvocable&lt; F, X1, X2, X3 &gt; = 0&gt; </td></tr>
+<tr class="memitem:gaddc6dba45f3a53e9c6ccbaf44ff71746 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; internal::OutputType&lt; Y, F, X1, X2, X3 &gt; &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#gaddc6dba45f3a53e9c6ccbaf44ff71746">gtsam::numericalDerivative33</a> (F &amp;&amp;h, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, double delta=1e-5)</td></tr>
+<tr class="memdesc:gaddc6dba45f3a53e9c6ccbaf44ff71746"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute numerical derivative in argument 3 of ternary function.  <br /></td></tr>
+<tr class="memitem:ga7b8280b0e878e2934abd0fe0d8d26260" id="r_ga7b8280b0e878e2934abd0fe0d8d26260"><td class="memTemplParams" colspan="2">
+template&lt;class Y, class X1, class X2, class X3, int N = traits&lt;X3&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga7b8280b0e878e2934abd0fe0d8d26260 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; Y &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalDerivative33</b> (Y(&amp;h)(const X1 &amp;, const X2 &amp;, const X3 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga7b8280b0e878e2934abd0fe0d8d26260"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#gaddc6dba45f3a53e9c6ccbaf44ff71746" title="Compute numerical derivative in argument 3 of ternary function.">numericalDerivative33</a></span>. <br /></td></tr>
+<tr class="memitem:gafcf255bf3f23733551846661c2a010eb" id="r_gafcf255bf3f23733551846661c2a010eb"><td class="memTemplParams" colspan="2">template&lt;class Y = internal::DeducedOutput, class X1, class X2, class X3, class X4, int N = traits&lt;X1&gt;::dimension, class F, internal::EnableIfInvocable&lt; F, X1, X2, X3, X4 &gt; = 0&gt; </td></tr>
+<tr class="memitem:gafcf255bf3f23733551846661c2a010eb template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; internal::OutputType&lt; Y, F, X1, X2, X3, X4 &gt; &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#gafcf255bf3f23733551846661c2a010eb">gtsam::numericalDerivative41</a> (F &amp;&amp;h, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, double delta=1e-5)</td></tr>
+<tr class="memdesc:gafcf255bf3f23733551846661c2a010eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute numerical derivative in argument 1 of 4-argument function.  <br /></td></tr>
+<tr class="memitem:ga09a1cfa0676cd7c8fd54e19bfbb26194" id="r_ga09a1cfa0676cd7c8fd54e19bfbb26194"><td class="memTemplParams" colspan="2">
+template&lt;class Y, class X1, class X2, class X3, class X4, int N = traits&lt;X1&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga09a1cfa0676cd7c8fd54e19bfbb26194 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; Y &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalDerivative41</b> (Y(&amp;h)(const X1 &amp;, const X2 &amp;, const X3 &amp;, const X4 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga09a1cfa0676cd7c8fd54e19bfbb26194"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#gafcf255bf3f23733551846661c2a010eb" title="Compute numerical derivative in argument 1 of 4-argument function.">numericalDerivative41</a></span>. <br /></td></tr>
+<tr class="memitem:ga650efbbe0ecc5db7d98ffec3e4b3a651" id="r_ga650efbbe0ecc5db7d98ffec3e4b3a651"><td class="memTemplParams" colspan="2">template&lt;class Y = internal::DeducedOutput, class X1, class X2, class X3, class X4, int N = traits&lt;X2&gt;::dimension, class F, internal::EnableIfInvocable&lt; F, X1, X2, X3, X4 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga650efbbe0ecc5db7d98ffec3e4b3a651 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; internal::OutputType&lt; Y, F, X1, X2, X3, X4 &gt; &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#ga650efbbe0ecc5db7d98ffec3e4b3a651">gtsam::numericalDerivative42</a> (F &amp;&amp;h, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga650efbbe0ecc5db7d98ffec3e4b3a651"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute numerical derivative in argument 2 of 4-argument function.  <br /></td></tr>
+<tr class="memitem:gadf1955a3bda3ae57117fc5ddd5697ead" id="r_gadf1955a3bda3ae57117fc5ddd5697ead"><td class="memTemplParams" colspan="2">
+template&lt;class Y, class X1, class X2, class X3, class X4, int N = traits&lt;X2&gt;::dimension&gt; </td></tr>
+<tr class="memitem:gadf1955a3bda3ae57117fc5ddd5697ead template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; Y &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalDerivative42</b> (Y(&amp;h)(const X1 &amp;, const X2 &amp;, const X3 &amp;, const X4 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, double delta=1e-5)</td></tr>
+<tr class="memdesc:gadf1955a3bda3ae57117fc5ddd5697ead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga650efbbe0ecc5db7d98ffec3e4b3a651" title="Compute numerical derivative in argument 2 of 4-argument function.">numericalDerivative42</a></span>. <br /></td></tr>
+<tr class="memitem:ga9e933c0de166e279c7e72747709e7667" id="r_ga9e933c0de166e279c7e72747709e7667"><td class="memTemplParams" colspan="2">template&lt;class Y = internal::DeducedOutput, class X1, class X2, class X3, class X4, int N = traits&lt;X3&gt;::dimension, class F, internal::EnableIfInvocable&lt; F, X1, X2, X3, X4 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga9e933c0de166e279c7e72747709e7667 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; internal::OutputType&lt; Y, F, X1, X2, X3, X4 &gt; &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#ga9e933c0de166e279c7e72747709e7667">gtsam::numericalDerivative43</a> (F &amp;&amp;h, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga9e933c0de166e279c7e72747709e7667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute numerical derivative in argument 3 of 4-argument function.  <br /></td></tr>
+<tr class="memitem:gaa13e7014eaf1d495eaf604b74577a438" id="r_gaa13e7014eaf1d495eaf604b74577a438"><td class="memTemplParams" colspan="2">
+template&lt;class Y, class X1, class X2, class X3, class X4, int N = traits&lt;X3&gt;::dimension&gt; </td></tr>
+<tr class="memitem:gaa13e7014eaf1d495eaf604b74577a438 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; Y &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalDerivative43</b> (Y(&amp;h)(const X1 &amp;, const X2 &amp;, const X3 &amp;, const X4 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, double delta=1e-5)</td></tr>
+<tr class="memdesc:gaa13e7014eaf1d495eaf604b74577a438"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga9e933c0de166e279c7e72747709e7667" title="Compute numerical derivative in argument 3 of 4-argument function.">numericalDerivative43</a></span>. <br /></td></tr>
+<tr class="memitem:gabd198885a487eb6921df5e7da9520709" id="r_gabd198885a487eb6921df5e7da9520709"><td class="memTemplParams" colspan="2">template&lt;class Y = internal::DeducedOutput, class X1, class X2, class X3, class X4, int N = traits&lt;X4&gt;::dimension, class F, internal::EnableIfInvocable&lt; F, X1, X2, X3, X4 &gt; = 0&gt; </td></tr>
+<tr class="memitem:gabd198885a487eb6921df5e7da9520709 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; internal::OutputType&lt; Y, F, X1, X2, X3, X4 &gt; &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#gabd198885a487eb6921df5e7da9520709">gtsam::numericalDerivative44</a> (F &amp;&amp;h, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, double delta=1e-5)</td></tr>
+<tr class="memdesc:gabd198885a487eb6921df5e7da9520709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute numerical derivative in argument 4 of 4-argument function.  <br /></td></tr>
+<tr class="memitem:ga0a08cc58bb06d8fc9ced48f0f2352a0e" id="r_ga0a08cc58bb06d8fc9ced48f0f2352a0e"><td class="memTemplParams" colspan="2">
+template&lt;class Y, class X1, class X2, class X3, class X4, int N = traits&lt;X4&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga0a08cc58bb06d8fc9ced48f0f2352a0e template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; Y &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalDerivative44</b> (Y(&amp;h)(const X1 &amp;, const X2 &amp;, const X3 &amp;, const X4 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga0a08cc58bb06d8fc9ced48f0f2352a0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#gabd198885a487eb6921df5e7da9520709" title="Compute numerical derivative in argument 4 of 4-argument function.">numericalDerivative44</a></span>. <br /></td></tr>
+<tr class="memitem:ga0f0dcfad397ca4338af049fd2e13e86f" id="r_ga0f0dcfad397ca4338af049fd2e13e86f"><td class="memTemplParams" colspan="2">template&lt;class Y = internal::DeducedOutput, class X1, class X2, class X3, class X4, class X5, int N = traits&lt;X1&gt;::dimension, class F, internal::EnableIfInvocable&lt; F, X1, X2, X3, X4, X5 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga0f0dcfad397ca4338af049fd2e13e86f template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; internal::OutputType&lt; Y, F, X1, X2, X3, X4, X5 &gt; &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#ga0f0dcfad397ca4338af049fd2e13e86f">gtsam::numericalDerivative51</a> (F &amp;&amp;h, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga0f0dcfad397ca4338af049fd2e13e86f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute numerical derivative in argument 1 of 5-argument function.  <br /></td></tr>
+<tr class="memitem:ga5df2aa40cfb10a62cb6e4d0cdf0f7218" id="r_ga5df2aa40cfb10a62cb6e4d0cdf0f7218"><td class="memTemplParams" colspan="2">
+template&lt;class Y, class X1, class X2, class X3, class X4, class X5, int N = traits&lt;X1&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga5df2aa40cfb10a62cb6e4d0cdf0f7218 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; Y &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalDerivative51</b> (Y(&amp;h)(const X1 &amp;, const X2 &amp;, const X3 &amp;, const X4 &amp;, const X5 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga5df2aa40cfb10a62cb6e4d0cdf0f7218"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga0f0dcfad397ca4338af049fd2e13e86f" title="Compute numerical derivative in argument 1 of 5-argument function.">numericalDerivative51</a></span>. <br /></td></tr>
+<tr class="memitem:ga0fb583402e84fbc25af780f41e8de042" id="r_ga0fb583402e84fbc25af780f41e8de042"><td class="memTemplParams" colspan="2">template&lt;class Y = internal::DeducedOutput, class X1, class X2, class X3, class X4, class X5, int N = traits&lt;X2&gt;::dimension, class F, internal::EnableIfInvocable&lt; F, X1, X2, X3, X4, X5 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga0fb583402e84fbc25af780f41e8de042 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; internal::OutputType&lt; Y, F, X1, X2, X3, X4, X5 &gt; &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#ga0fb583402e84fbc25af780f41e8de042">gtsam::numericalDerivative52</a> (F &amp;&amp;h, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga0fb583402e84fbc25af780f41e8de042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute numerical derivative in argument 2 of 5-argument function.  <br /></td></tr>
+<tr class="memitem:ga097e2fc520f249157ed40345c487946e" id="r_ga097e2fc520f249157ed40345c487946e"><td class="memTemplParams" colspan="2">
+template&lt;class Y, class X1, class X2, class X3, class X4, class X5, int N = traits&lt;X2&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga097e2fc520f249157ed40345c487946e template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; Y &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalDerivative52</b> (Y(&amp;h)(const X1 &amp;, const X2 &amp;, const X3 &amp;, const X4 &amp;, const X5 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga097e2fc520f249157ed40345c487946e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga0fb583402e84fbc25af780f41e8de042" title="Compute numerical derivative in argument 2 of 5-argument function.">numericalDerivative52</a></span>. <br /></td></tr>
+<tr class="memitem:ga1640ee31d5460a3f0bbbfdf86727002e" id="r_ga1640ee31d5460a3f0bbbfdf86727002e"><td class="memTemplParams" colspan="2">template&lt;class Y = internal::DeducedOutput, class X1, class X2, class X3, class X4, class X5, int N = traits&lt;X3&gt;::dimension, class F, internal::EnableIfInvocable&lt; F, X1, X2, X3, X4, X5 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga1640ee31d5460a3f0bbbfdf86727002e template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; internal::OutputType&lt; Y, F, X1, X2, X3, X4, X5 &gt; &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#ga1640ee31d5460a3f0bbbfdf86727002e">gtsam::numericalDerivative53</a> (F &amp;&amp;h, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga1640ee31d5460a3f0bbbfdf86727002e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute numerical derivative in argument 3 of 5-argument function.  <br /></td></tr>
+<tr class="memitem:ga07821fed2914fb105f7cc80d50f73d59" id="r_ga07821fed2914fb105f7cc80d50f73d59"><td class="memTemplParams" colspan="2">
+template&lt;class Y, class X1, class X2, class X3, class X4, class X5, int N = traits&lt;X3&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga07821fed2914fb105f7cc80d50f73d59 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; Y &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalDerivative53</b> (Y(&amp;h)(const X1 &amp;, const X2 &amp;, const X3 &amp;, const X4 &amp;, const X5 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga07821fed2914fb105f7cc80d50f73d59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga1640ee31d5460a3f0bbbfdf86727002e" title="Compute numerical derivative in argument 3 of 5-argument function.">numericalDerivative53</a></span>. <br /></td></tr>
+<tr class="memitem:ga7bfd03d600bbc04abc235316ac69de8e" id="r_ga7bfd03d600bbc04abc235316ac69de8e"><td class="memTemplParams" colspan="2">template&lt;class Y = internal::DeducedOutput, class X1, class X2, class X3, class X4, class X5, int N = traits&lt;X4&gt;::dimension, class F, internal::EnableIfInvocable&lt; F, X1, X2, X3, X4, X5 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga7bfd03d600bbc04abc235316ac69de8e template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; internal::OutputType&lt; Y, F, X1, X2, X3, X4, X5 &gt; &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#ga7bfd03d600bbc04abc235316ac69de8e">gtsam::numericalDerivative54</a> (F &amp;&amp;h, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga7bfd03d600bbc04abc235316ac69de8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute numerical derivative in argument 4 of 5-argument function.  <br /></td></tr>
+<tr class="memitem:ga4e6d0128d24a00aae3df779839722c3a" id="r_ga4e6d0128d24a00aae3df779839722c3a"><td class="memTemplParams" colspan="2">
+template&lt;class Y, class X1, class X2, class X3, class X4, class X5, int N = traits&lt;X4&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga4e6d0128d24a00aae3df779839722c3a template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; Y &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalDerivative54</b> (Y(&amp;h)(const X1 &amp;, const X2 &amp;, const X3 &amp;, const X4 &amp;, const X5 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga4e6d0128d24a00aae3df779839722c3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga7bfd03d600bbc04abc235316ac69de8e" title="Compute numerical derivative in argument 4 of 5-argument function.">numericalDerivative54</a></span>. <br /></td></tr>
+<tr class="memitem:ga6fb1a0f4748d4c70d2a05e4f772b784d" id="r_ga6fb1a0f4748d4c70d2a05e4f772b784d"><td class="memTemplParams" colspan="2">template&lt;class Y = internal::DeducedOutput, class X1, class X2, class X3, class X4, class X5, int N = traits&lt;X5&gt;::dimension, class F, internal::EnableIfInvocable&lt; F, X1, X2, X3, X4, X5 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga6fb1a0f4748d4c70d2a05e4f772b784d template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; internal::OutputType&lt; Y, F, X1, X2, X3, X4, X5 &gt; &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#ga6fb1a0f4748d4c70d2a05e4f772b784d">gtsam::numericalDerivative55</a> (F &amp;&amp;h, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga6fb1a0f4748d4c70d2a05e4f772b784d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute numerical derivative in argument 5 of 5-argument function.  <br /></td></tr>
+<tr class="memitem:ga55c205c6269b8c29169177966d280c35" id="r_ga55c205c6269b8c29169177966d280c35"><td class="memTemplParams" colspan="2">
+template&lt;class Y, class X1, class X2, class X3, class X4, class X5, int N = traits&lt;X5&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga55c205c6269b8c29169177966d280c35 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; Y &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalDerivative55</b> (Y(&amp;h)(const X1 &amp;, const X2 &amp;, const X3 &amp;, const X4 &amp;, const X5 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga55c205c6269b8c29169177966d280c35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga6fb1a0f4748d4c70d2a05e4f772b784d" title="Compute numerical derivative in argument 5 of 5-argument function.">numericalDerivative55</a></span>. <br /></td></tr>
+<tr class="memitem:ga3dd8cab9d03e0d0e8fc4b5775405ce13" id="r_ga3dd8cab9d03e0d0e8fc4b5775405ce13"><td class="memTemplParams" colspan="2">template&lt;class Y = internal::DeducedOutput, class X1, class X2, class X3, class X4, class X5, class X6, int N = traits&lt;X1&gt;::dimension, class F, internal::EnableIfInvocable&lt; F, X1, X2, X3, X4, X5, X6 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga3dd8cab9d03e0d0e8fc4b5775405ce13 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; internal::OutputType&lt; Y, F, X1, X2, X3, X4, X5, X6 &gt; &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#ga3dd8cab9d03e0d0e8fc4b5775405ce13">gtsam::numericalDerivative61</a> (F &amp;&amp;h, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, const X6 &amp;x6, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga3dd8cab9d03e0d0e8fc4b5775405ce13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute numerical derivative in argument 1 of 6-argument function.  <br /></td></tr>
+<tr class="memitem:ga1f0250febe29434b853055973535af20" id="r_ga1f0250febe29434b853055973535af20"><td class="memTemplParams" colspan="2">
+template&lt;class Y, class X1, class X2, class X3, class X4, class X5, class X6, int N = traits&lt;X1&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga1f0250febe29434b853055973535af20 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; Y &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalDerivative61</b> (Y(&amp;h)(const X1 &amp;, const X2 &amp;, const X3 &amp;, const X4 &amp;, const X5 &amp;, const X6 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, const X6 &amp;x6, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga1f0250febe29434b853055973535af20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga3dd8cab9d03e0d0e8fc4b5775405ce13" title="Compute numerical derivative in argument 1 of 6-argument function.">numericalDerivative61</a></span>. <br /></td></tr>
+<tr class="memitem:ga577cc9c337249bcaa5a55ec326425947" id="r_ga577cc9c337249bcaa5a55ec326425947"><td class="memTemplParams" colspan="2">template&lt;class Y = internal::DeducedOutput, class X1, class X2, class X3, class X4, class X5, class X6, int N = traits&lt;X2&gt;::dimension, class F, internal::EnableIfInvocable&lt; F, X1, X2, X3, X4, X5, X6 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga577cc9c337249bcaa5a55ec326425947 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; internal::OutputType&lt; Y, F, X1, X2, X3, X4, X5, X6 &gt; &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#ga577cc9c337249bcaa5a55ec326425947">gtsam::numericalDerivative62</a> (F &amp;&amp;h, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, const X6 &amp;x6, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga577cc9c337249bcaa5a55ec326425947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute numerical derivative in argument 2 of 6-argument function.  <br /></td></tr>
+<tr class="memitem:ga7b6d99ac8a685e6cc6dcf0c14ea5d86a" id="r_ga7b6d99ac8a685e6cc6dcf0c14ea5d86a"><td class="memTemplParams" colspan="2">
+template&lt;class Y, class X1, class X2, class X3, class X4, class X5, class X6, int N = traits&lt;X2&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga7b6d99ac8a685e6cc6dcf0c14ea5d86a template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; Y &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalDerivative62</b> (Y(&amp;h)(const X1 &amp;, const X2 &amp;, const X3 &amp;, const X4 &amp;, const X5 &amp;, const X6 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, const X6 &amp;x6, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga7b6d99ac8a685e6cc6dcf0c14ea5d86a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga577cc9c337249bcaa5a55ec326425947" title="Compute numerical derivative in argument 2 of 6-argument function.">numericalDerivative62</a></span>. <br /></td></tr>
+<tr class="memitem:ga7b13a8d5076a922fa267a8de112e4749" id="r_ga7b13a8d5076a922fa267a8de112e4749"><td class="memTemplParams" colspan="2">template&lt;class Y = internal::DeducedOutput, class X1, class X2, class X3, class X4, class X5, class X6, int N = traits&lt;X3&gt;::dimension, class F, internal::EnableIfInvocable&lt; F, X1, X2, X3, X4, X5, X6 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga7b13a8d5076a922fa267a8de112e4749 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; internal::OutputType&lt; Y, F, X1, X2, X3, X4, X5, X6 &gt; &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#ga7b13a8d5076a922fa267a8de112e4749">gtsam::numericalDerivative63</a> (F &amp;&amp;h, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, const X6 &amp;x6, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga7b13a8d5076a922fa267a8de112e4749"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute numerical derivative in argument 3 of 6-argument function.  <br /></td></tr>
+<tr class="memitem:ga9b5a4c3a95efbd4e0975578eab8266de" id="r_ga9b5a4c3a95efbd4e0975578eab8266de"><td class="memTemplParams" colspan="2">
+template&lt;class Y, class X1, class X2, class X3, class X4, class X5, class X6, int N = traits&lt;X3&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga9b5a4c3a95efbd4e0975578eab8266de template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; Y &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalDerivative63</b> (Y(&amp;h)(const X1 &amp;, const X2 &amp;, const X3 &amp;, const X4 &amp;, const X5 &amp;, const X6 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, const X6 &amp;x6, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga9b5a4c3a95efbd4e0975578eab8266de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga7b13a8d5076a922fa267a8de112e4749" title="Compute numerical derivative in argument 3 of 6-argument function.">numericalDerivative63</a></span>. <br /></td></tr>
+<tr class="memitem:ga06375d3a0c41630f1e68abc5de750684" id="r_ga06375d3a0c41630f1e68abc5de750684"><td class="memTemplParams" colspan="2">template&lt;class Y = internal::DeducedOutput, class X1, class X2, class X3, class X4, class X5, class X6, int N = traits&lt;X4&gt;::dimension, class F, internal::EnableIfInvocable&lt; F, X1, X2, X3, X4, X5, X6 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga06375d3a0c41630f1e68abc5de750684 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; internal::OutputType&lt; Y, F, X1, X2, X3, X4, X5, X6 &gt; &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#ga06375d3a0c41630f1e68abc5de750684">gtsam::numericalDerivative64</a> (F &amp;&amp;h, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, const X6 &amp;x6, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga06375d3a0c41630f1e68abc5de750684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute numerical derivative in argument 4 of 6-argument function.  <br /></td></tr>
+<tr class="memitem:ga0889932ef7c1023222fabb07d3f466f3" id="r_ga0889932ef7c1023222fabb07d3f466f3"><td class="memTemplParams" colspan="2">
+template&lt;class Y, class X1, class X2, class X3, class X4, class X5, class X6, int N = traits&lt;X4&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga0889932ef7c1023222fabb07d3f466f3 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; Y &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalDerivative64</b> (Y(&amp;h)(const X1 &amp;, const X2 &amp;, const X3 &amp;, const X4 &amp;, const X5 &amp;, const X6 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, const X6 &amp;x6, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga0889932ef7c1023222fabb07d3f466f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga06375d3a0c41630f1e68abc5de750684" title="Compute numerical derivative in argument 4 of 6-argument function.">numericalDerivative64</a></span>. <br /></td></tr>
+<tr class="memitem:ga29973063a1b931eeab5d3d8630bc1fc6" id="r_ga29973063a1b931eeab5d3d8630bc1fc6"><td class="memTemplParams" colspan="2">template&lt;class Y = internal::DeducedOutput, class X1, class X2, class X3, class X4, class X5, class X6, int N = traits&lt;X5&gt;::dimension, class F, internal::EnableIfInvocable&lt; F, X1, X2, X3, X4, X5, X6 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga29973063a1b931eeab5d3d8630bc1fc6 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; internal::OutputType&lt; Y, F, X1, X2, X3, X4, X5, X6 &gt; &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#ga29973063a1b931eeab5d3d8630bc1fc6">gtsam::numericalDerivative65</a> (F &amp;&amp;h, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, const X6 &amp;x6, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga29973063a1b931eeab5d3d8630bc1fc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute numerical derivative in argument 5 of 6-argument function.  <br /></td></tr>
+<tr class="memitem:ga50de8e375d1cf4502b97f0900cd0d700" id="r_ga50de8e375d1cf4502b97f0900cd0d700"><td class="memTemplParams" colspan="2">
+template&lt;class Y, class X1, class X2, class X3, class X4, class X5, class X6, int N = traits&lt;X5&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga50de8e375d1cf4502b97f0900cd0d700 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; Y &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalDerivative65</b> (Y(&amp;h)(const X1 &amp;, const X2 &amp;, const X3 &amp;, const X4 &amp;, const X5 &amp;, const X6 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, const X6 &amp;x6, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga50de8e375d1cf4502b97f0900cd0d700"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga29973063a1b931eeab5d3d8630bc1fc6" title="Compute numerical derivative in argument 5 of 6-argument function.">numericalDerivative65</a></span>. <br /></td></tr>
+<tr class="memitem:ga69deeb4465d2053c993be4d54c5ef38e" id="r_ga69deeb4465d2053c993be4d54c5ef38e"><td class="memTemplParams" colspan="2">template&lt;class Y = internal::DeducedOutput, class X1, class X2, class X3, class X4, class X5, class X6, int N = traits&lt;X6&gt;::dimension, class F, internal::EnableIfInvocable&lt; F, X1, X2, X3, X4, X5, X6 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga69deeb4465d2053c993be4d54c5ef38e template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; internal::OutputType&lt; Y, F, X1, X2, X3, X4, X5, X6 &gt; &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#ga69deeb4465d2053c993be4d54c5ef38e">gtsam::numericalDerivative66</a> (F &amp;&amp;h, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, const X6 &amp;x6, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga69deeb4465d2053c993be4d54c5ef38e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute numerical derivative in argument 6 of 6-argument function.  <br /></td></tr>
+<tr class="memitem:ga927b9cb0fa27829046bb47a927949320" id="r_ga927b9cb0fa27829046bb47a927949320"><td class="memTemplParams" colspan="2">
+template&lt;class Y, class X1, class X2, class X3, class X4, class X5, class X6, int N = traits&lt;X6&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga927b9cb0fa27829046bb47a927949320 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; <a class="el" href="a03203.html">traits</a>&lt; Y &gt;::dimension, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalDerivative66</b> (Y(&amp;h)(const X1 &amp;, const X2 &amp;, const X3 &amp;, const X4 &amp;, const X5 &amp;, const X6 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, const X4 &amp;x4, const X5 &amp;x5, const X6 &amp;x6, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga927b9cb0fa27829046bb47a927949320"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga69deeb4465d2053c993be4d54c5ef38e" title="Compute numerical derivative in argument 6 of 6-argument function.">numericalDerivative66</a></span>. <br /></td></tr>
+<tr id="func-members-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Hessian Helpers</div></td></tr>
+<tr class="memitem:ga5691bcce800fbf3c38cd1acd33379526" id="r_ga5691bcce800fbf3c38cd1acd33379526"><td class="memTemplParams" colspan="2">template&lt;class X, int N = traits&lt;X&gt;::dimension, class F, internal::EnableIfScalarInvocable&lt; F, X &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga5691bcce800fbf3c38cd1acd33379526 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; N, N &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#ga5691bcce800fbf3c38cd1acd33379526">gtsam::numericalHessian</a> (F &amp;&amp;f, const X &amp;x, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga5691bcce800fbf3c38cd1acd33379526"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute numerical Hessian matrix.  <br /></td></tr>
+<tr class="memitem:ga256f304733677a480ec4142270171093" id="r_ga256f304733677a480ec4142270171093"><td class="memTemplParams" colspan="2">
+template&lt;class X, int N = traits&lt;X&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga256f304733677a480ec4142270171093 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; N, N &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalHessian</b> (double(&amp;f)(const X &amp;), const X &amp;x, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga256f304733677a480ec4142270171093"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga5691bcce800fbf3c38cd1acd33379526" title="Compute numerical Hessian matrix.">numericalHessian</a></span>. <br /></td></tr>
+<tr class="memitem:gadbb8090e63681b6c77d04d6080827f9e" id="r_gadbb8090e63681b6c77d04d6080827f9e"><td class="memTemplParams" colspan="2">
+template&lt;class X1, class X2, int N1 = traits&lt;X1&gt;::dimension, int N2 = traits&lt;X2&gt;::dimension, class F, internal::EnableIfScalarInvocable&lt; F, X1, X2 &gt; = 0&gt; </td></tr>
+<tr class="memitem:gadbb8090e63681b6c77d04d6080827f9e template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; N1, N2 &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalHessian212</b> (F &amp;&amp;f, const X1 &amp;x1, const X2 &amp;x2, double delta=1e-5)</td></tr>
+<tr class="memdesc:gadbb8090e63681b6c77d04d6080827f9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mixed Hessian with respect to argument 1 then argument 2. <br /></td></tr>
+<tr class="memitem:ga87a979924826be081a909e633913efa7" id="r_ga87a979924826be081a909e633913efa7"><td class="memTemplParams" colspan="2">
+template&lt;class X1, class X2, int N1 = traits&lt;X1&gt;::dimension, int N2 = traits&lt;X2&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga87a979924826be081a909e633913efa7 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; N1, N2 &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalHessian212</b> (double(&amp;f)(const X1 &amp;, const X2 &amp;), const X1 &amp;x1, const X2 &amp;x2, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga87a979924826be081a909e633913efa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#gadbb8090e63681b6c77d04d6080827f9e" title="Mixed Hessian with respect to argument 1 then argument 2.">numericalHessian212</a></span>. <br /></td></tr>
+<tr class="memitem:gad26fc74dcf1b9e128bcefd74bcc6b87d" id="r_gad26fc74dcf1b9e128bcefd74bcc6b87d"><td class="memTemplParams" colspan="2">
+template&lt;class X1, class X2, int N1 = traits&lt;X1&gt;::dimension, class F, internal::EnableIfScalarInvocable&lt; F, X1, X2 &gt; = 0&gt; </td></tr>
+<tr class="memitem:gad26fc74dcf1b9e128bcefd74bcc6b87d template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; N1, N1 &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalHessian211</b> (F &amp;&amp;f, const X1 &amp;x1, const X2 &amp;x2, double delta=1e-5)</td></tr>
+<tr class="memdesc:gad26fc74dcf1b9e128bcefd74bcc6b87d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hessian with respect to argument 1 of a binary scalar function. <br /></td></tr>
+<tr class="memitem:gaceb9ce71c6138977d7c4752b5e180d4f" id="r_gaceb9ce71c6138977d7c4752b5e180d4f"><td class="memTemplParams" colspan="2">
+template&lt;class X1, class X2, int N1 = traits&lt;X1&gt;::dimension&gt; </td></tr>
+<tr class="memitem:gaceb9ce71c6138977d7c4752b5e180d4f template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; N1, N1 &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalHessian211</b> (double(&amp;f)(const X1 &amp;, const X2 &amp;), const X1 &amp;x1, const X2 &amp;x2, double delta=1e-5)</td></tr>
+<tr class="memdesc:gaceb9ce71c6138977d7c4752b5e180d4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#gad26fc74dcf1b9e128bcefd74bcc6b87d" title="Hessian with respect to argument 1 of a binary scalar function.">numericalHessian211</a></span>. <br /></td></tr>
+<tr class="memitem:ga4787211731a3b526b74ca8a9305daf44" id="r_ga4787211731a3b526b74ca8a9305daf44"><td class="memTemplParams" colspan="2">
+template&lt;class X1, class X2, int N2 = traits&lt;X2&gt;::dimension, class F, internal::EnableIfScalarInvocable&lt; F, X1, X2 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga4787211731a3b526b74ca8a9305daf44 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; N2, N2 &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalHessian222</b> (F &amp;&amp;f, const X1 &amp;x1, const X2 &amp;x2, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga4787211731a3b526b74ca8a9305daf44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hessian with respect to argument 2 of a binary scalar function. <br /></td></tr>
+<tr class="memitem:ga400c2055b0039dc70642361abb3156d6" id="r_ga400c2055b0039dc70642361abb3156d6"><td class="memTemplParams" colspan="2">
+template&lt;class X1, class X2, int N2 = traits&lt;X2&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga400c2055b0039dc70642361abb3156d6 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; N2, N2 &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalHessian222</b> (double(&amp;f)(const X1 &amp;, const X2 &amp;), const X1 &amp;x1, const X2 &amp;x2, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga400c2055b0039dc70642361abb3156d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga4787211731a3b526b74ca8a9305daf44" title="Hessian with respect to argument 2 of a binary scalar function.">numericalHessian222</a></span>. <br /></td></tr>
+<tr class="memitem:ga4863afc86d0735ff81dcb8c71d22aa70" id="r_ga4863afc86d0735ff81dcb8c71d22aa70"><td class="memTemplParams" colspan="2">template&lt;class X1, class X2, class X3, int N1 = traits&lt;X1&gt;::dimension, class F, internal::EnableIfScalarInvocable&lt; F, X1, X2, X3 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga4863afc86d0735ff81dcb8c71d22aa70 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; N1, N1 &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a02223.html#ga4863afc86d0735ff81dcb8c71d22aa70">gtsam::numericalHessian311</a> (F &amp;&amp;f, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga4863afc86d0735ff81dcb8c71d22aa70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numerical Hessian for ternary functions.  <br /></td></tr>
+<tr class="memitem:gaf9120933574588604df56c8f5a2ceabd" id="r_gaf9120933574588604df56c8f5a2ceabd"><td class="memTemplParams" colspan="2">
+template&lt;class X1, class X2, class X3, int N1 = traits&lt;X1&gt;::dimension&gt; </td></tr>
+<tr class="memitem:gaf9120933574588604df56c8f5a2ceabd template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; N1, N1 &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalHessian311</b> (double(&amp;f)(const X1 &amp;, const X2 &amp;, const X3 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, double delta=1e-5)</td></tr>
+<tr class="memdesc:gaf9120933574588604df56c8f5a2ceabd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga4863afc86d0735ff81dcb8c71d22aa70" title="Numerical Hessian for ternary functions.">numericalHessian311</a></span>. <br /></td></tr>
+<tr class="memitem:gaee7e11340b8a85103eaad91848a62eb9" id="r_gaee7e11340b8a85103eaad91848a62eb9"><td class="memTemplParams" colspan="2">
+template&lt;class X1, class X2, class X3, int N2 = traits&lt;X2&gt;::dimension, class F, internal::EnableIfScalarInvocable&lt; F, X1, X2, X3 &gt; = 0&gt; </td></tr>
+<tr class="memitem:gaee7e11340b8a85103eaad91848a62eb9 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; N2, N2 &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalHessian322</b> (F &amp;&amp;f, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, double delta=1e-5)</td></tr>
+<tr class="memdesc:gaee7e11340b8a85103eaad91848a62eb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hessian with respect to argument 2 of a ternary scalar function. <br /></td></tr>
+<tr class="memitem:ga4207a6a2c1181dc829f23eeccc5d8172" id="r_ga4207a6a2c1181dc829f23eeccc5d8172"><td class="memTemplParams" colspan="2">
+template&lt;class X1, class X2, class X3, int N2 = traits&lt;X2&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga4207a6a2c1181dc829f23eeccc5d8172 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; N2, N2 &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalHessian322</b> (double(&amp;f)(const X1 &amp;, const X2 &amp;, const X3 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga4207a6a2c1181dc829f23eeccc5d8172"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#gaee7e11340b8a85103eaad91848a62eb9" title="Hessian with respect to argument 2 of a ternary scalar function.">numericalHessian322</a></span>. <br /></td></tr>
+<tr class="memitem:ga42c3475d7feac3719323aa3cfd7e0e89" id="r_ga42c3475d7feac3719323aa3cfd7e0e89"><td class="memTemplParams" colspan="2">
+template&lt;class X1, class X2, class X3, int N3 = traits&lt;X3&gt;::dimension, class F, internal::EnableIfScalarInvocable&lt; F, X1, X2, X3 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga42c3475d7feac3719323aa3cfd7e0e89 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; N3, N3 &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalHessian333</b> (F &amp;&amp;f, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga42c3475d7feac3719323aa3cfd7e0e89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hessian with respect to argument 3 of a ternary scalar function. <br /></td></tr>
+<tr class="memitem:gae4179096c9fa6491a0dc2e7c5b03e07d" id="r_gae4179096c9fa6491a0dc2e7c5b03e07d"><td class="memTemplParams" colspan="2">
+template&lt;class X1, class X2, class X3, int N3 = traits&lt;X3&gt;::dimension&gt; </td></tr>
+<tr class="memitem:gae4179096c9fa6491a0dc2e7c5b03e07d template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; N3, N3 &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalHessian333</b> (double(&amp;f)(const X1 &amp;, const X2 &amp;, const X3 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, double delta=1e-5)</td></tr>
+<tr class="memdesc:gae4179096c9fa6491a0dc2e7c5b03e07d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga42c3475d7feac3719323aa3cfd7e0e89" title="Hessian with respect to argument 3 of a ternary scalar function.">numericalHessian333</a></span>. <br /></td></tr>
+<tr class="memitem:ga04a8c250ae679851dd295f3417365c67" id="r_ga04a8c250ae679851dd295f3417365c67"><td class="memTemplParams" colspan="2">
+template&lt;class X1, class X2, class X3, int N1 = traits&lt;X1&gt;::dimension, int N2 = traits&lt;X2&gt;::dimension, class F, internal::EnableIfScalarInvocable&lt; F, X1, X2, X3 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga04a8c250ae679851dd295f3417365c67 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; N1, N2 &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalHessian312</b> (F &amp;&amp;f, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga04a8c250ae679851dd295f3417365c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mixed Hessian with respect to arguments 1 and 2 of a ternary scalar function. <br /></td></tr>
+<tr class="memitem:ga90a97c4cf52382f1dab173ec5444cea4" id="r_ga90a97c4cf52382f1dab173ec5444cea4"><td class="memTemplParams" colspan="2">
+template&lt;class X1, class X2, class X3, int N1 = traits&lt;X1&gt;::dimension, int N3 = traits&lt;X3&gt;::dimension, class F, internal::EnableIfScalarInvocable&lt; F, X1, X2, X3 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga90a97c4cf52382f1dab173ec5444cea4 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; N1, N3 &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalHessian313</b> (F &amp;&amp;f, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga90a97c4cf52382f1dab173ec5444cea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mixed Hessian with respect to arguments 1 and 3 of a ternary scalar function. <br /></td></tr>
+<tr class="memitem:ga1be674d2ba5f6031d944ee7ea7ab8aa8" id="r_ga1be674d2ba5f6031d944ee7ea7ab8aa8"><td class="memTemplParams" colspan="2">
+template&lt;class X1, class X2, class X3, int N2 = traits&lt;X2&gt;::dimension, int N3 = traits&lt;X3&gt;::dimension, class F, internal::EnableIfScalarInvocable&lt; F, X1, X2, X3 &gt; = 0&gt; </td></tr>
+<tr class="memitem:ga1be674d2ba5f6031d944ee7ea7ab8aa8 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; N2, N3 &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalHessian323</b> (F &amp;&amp;f, const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga1be674d2ba5f6031d944ee7ea7ab8aa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mixed Hessian with respect to arguments 2 and 3 of a ternary scalar function. <br /></td></tr>
+<tr class="memitem:ga92e9f088063713d8908bb3385b823bf1" id="r_ga92e9f088063713d8908bb3385b823bf1"><td class="memTemplParams" colspan="2">
+template&lt;class X1, class X2, class X3, int N1 = traits&lt;X1&gt;::dimension, int N2 = traits&lt;X2&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga92e9f088063713d8908bb3385b823bf1 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; N1, N2 &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalHessian312</b> (double(&amp;f)(const X1 &amp;, const X2 &amp;, const X3 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga92e9f088063713d8908bb3385b823bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga04a8c250ae679851dd295f3417365c67" title="Mixed Hessian with respect to arguments 1 and 2 of a ternary scalar function.">numericalHessian312</a></span>. <br /></td></tr>
+<tr class="memitem:gac7ac9a96e759c7b8bda8e26f87138dc9" id="r_gac7ac9a96e759c7b8bda8e26f87138dc9"><td class="memTemplParams" colspan="2">
+template&lt;class X1, class X2, class X3, int N1 = traits&lt;X1&gt;::dimension, int N3 = traits&lt;X3&gt;::dimension&gt; </td></tr>
+<tr class="memitem:gac7ac9a96e759c7b8bda8e26f87138dc9 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; N1, N3 &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalHessian313</b> (double(&amp;f)(const X1 &amp;, const X2 &amp;, const X3 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, double delta=1e-5)</td></tr>
+<tr class="memdesc:gac7ac9a96e759c7b8bda8e26f87138dc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga90a97c4cf52382f1dab173ec5444cea4" title="Mixed Hessian with respect to arguments 1 and 3 of a ternary scalar function.">numericalHessian313</a></span>. <br /></td></tr>
+<tr class="memitem:ga5d666959ce53686bd5d0b6481bee0bc5" id="r_ga5d666959ce53686bd5d0b6481bee0bc5"><td class="memTemplParams" colspan="2">
+template&lt;class X1, class X2, class X3, int N2 = traits&lt;X2&gt;::dimension, int N3 = traits&lt;X3&gt;::dimension&gt; </td></tr>
+<tr class="memitem:ga5d666959ce53686bd5d0b6481bee0bc5 template"><td class="memItemLeft"><a class="el" href="a03355.html">internal::MatrixMN</a>&lt; N2, N3 &gt;::type&#160;</td><td class="memItemRight"><b>gtsam::numericalHessian323</b> (double(&amp;f)(const X1 &amp;, const X2 &amp;, const X3 &amp;), const X1 &amp;x1, const X2 &amp;x2, const X3 &amp;x3, double delta=1e-5)</td></tr>
+<tr class="memdesc:ga5d666959ce53686bd5d0b6481bee0bc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw-function overload for <span class="tt"><a class="el" href="a02223.html#ga1be674d2ba5f6031d944ee7ea7ab8aa8" title="Mixed Hessian with respect to arguments 2 and 3 of a ternary scalar function.">numericalHessian323</a></span>. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Pseudo-spectral parameterization for Chebyshev polynomials of the second kind. </p>
-<p>In a pseudo-spectral case, rather than the parameters acting as weights for the bases polynomials (as in Chebyshev2Basis), here the parameters are the <em>values</em> at a specific set of points in the interval, the "Chebyshev points". These values uniquely determine the polynomial that interpolates them at the Chebyshev points.</p>
-<p>This is different from <a class="el" href="a00176.html" title="Chebyshev basis decompositions.">Chebyshev.h</a> since it leverage ideas from pseudo-spectral optimization, i.e. we don't decompose into basis functions, rather estimate function values at the Chebyshev points.</p>
-<p>Please refer to Agrawal21icra for more details.</p>
-<dl class="section author"><dt>Author</dt><dd>Varun Agrawal, Jing Dong, Frank Dellaert </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>July 4, 2020 </dd></dl>
-</div></div><!-- contents -->
+<div class="textblock"><p>Numerical derivative helpers for manifold-valued functions. </p>
+<p>This file is organized in three layers:</p><ul>
+<li><span class="tt">internal</span> contains small traits that select Jacobian matrix types and deduce callable output types.</li>
+<li><span class="tt">numericalGradient</span> and <span class="tt">numericalDerivative11</span> provide the scalar-gradient and unary central-difference kernels.</li>
+<li>The higher-arity <span class="tt">numericalDerivativeXY</span> wrappers adapt multi-argument callables onto the unary kernel, while the Hessian helpers at the end build on the gradient and Jacobian routines. <dl class="section author"><dt>Author</dt><dd>Frank Dellaert </dd></dl>
+</li>
+</ul>
+</div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
+<a id="a48df5d5723db1982a4b15806697f37f3" name="a48df5d5723db1982a4b15806697f37f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48df5d5723db1982a4b15806697f37f3">&#9670;&#160;</a></span>EnableIfInvocable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F, class... Args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using gtsam::internal::EnableIfInvocable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line"> </div>
+<div class="line">std::enable_if_t&lt;std::is_invocable_v&lt;F&amp;, <span class="keyword">const</span> Args&amp;...&gt;, <span class="keywordtype">int</span>&gt;</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aed5204400733b81a38d3046d84cd134b" name="aed5204400733b81a38d3046d84cd134b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed5204400733b81a38d3046d84cd134b">&#9670;&#160;</a></span>EnableIfScalarInvocable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F, class... Args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using gtsam::internal::EnableIfScalarInvocable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line"> </div>
+<div class="line">std::enable_if_t&lt;std::is_invocable_r_v&lt;double, F&amp;, <span class="keyword">const</span> Args&amp;...&gt;, <span class="keywordtype">int</span>&gt;</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0408bd84220817101c96a2d3f7f86a31" name="a0408bd84220817101c96a2d3f7f86a31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0408bd84220817101c96a2d3f7f86a31">&#9670;&#160;</a></span>OutputType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class RequestedY, class F, class... Args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using gtsam::internal::OutputType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line"> </div>
+<div class="line">std::conditional_t&lt;std::is_same_v&lt;RequestedY, DeducedOutput&gt;,</div>
+<div class="line">                   std::decay_t&lt;std::invoke_result_t&lt;F&amp;, <span class="keyword">const</span> Args&amp;...&gt;&gt;,</div>
+<div class="line">                   RequestedY&gt;</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>
@@ -135,7 +449,7 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>basis</b></li><li class="navelem"><a href="a00164.html">Chebyshev2.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>base</b></li><li class="navelem"><a href="a00164.html">numericalDerivative.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

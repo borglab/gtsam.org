@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::PreconditionerParameters Struct Reference</title>
+<title>gtsam: gtsam::so3::DexpFunctor Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,73 +96,186 @@ $(function(){initNavTree('a04531.html','','a04528'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::PreconditionerParameters Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::so3::DexpFunctor Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::PreconditionerParameters:</div>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Functor that implements Exponential map <em>and</em> its derivatives Math extends Ethan theme of elegant I + aW + bWW expressions. </p>
+<p>See <a href="https://www.ethaneade.org/lie.pdf">https://www.ethaneade.org/lie.pdf</a> expmap (82) and left Jacobian (83). </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::so3::DexpFunctor:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a04531.png" usemap="#gtsam_3A_3APreconditionerParameters_map" alt=""/>
-  <map id="gtsam_3A_3APreconditionerParameters_map" name="gtsam_3A_3APreconditionerParameters_map">
-<area href="a04547.html" alt="gtsam::BlockJacobiPreconditionerParameters" shape="rect" coords="0,56,266,80"/>
-<area href="a04539.html" alt="gtsam::DummyPreconditionerParameters" shape="rect" coords="276,56,542,80"/>
-<area href="a04595.html" alt="gtsam::SubgraphPreconditionerParameters" shape="rect" coords="552,56,818,80"/>
+  <img src="a04531.png" usemap="#gtsam_3A_3Aso3_3A_3ADexpFunctor_map" alt=""/>
+  <map id="gtsam_3A_3Aso3_3A_3ADexpFunctor_map" name="gtsam_3A_3Aso3_3A_3ADexpFunctor_map">
+<area href="a04527.html" title="Opaque evaluation context at ω: caches Ω, Ω², θ, θ², nearZero/nearPi, Lazily computes C,..." alt="gtsam::so3::ExpmapFunctor" shape="rect" coords="0,0,164,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a690e86e327e940992736c62eeedddc56" id="r_a690e86e327e940992736c62eeedddc56"><td class="memItemLeft"><a id="a690e86e327e940992736c62eeedddc56" name="a690e86e327e940992736c62eeedddc56"></a>
-&#160;</td><td class="memItemRight"><b>PreconditionerParameters</b> (const PreconditionerParameters &amp;p)</td></tr>
-<tr class="memitem:a1ee1cfa8d2caf29b6a39a708a58bd303" id="r_a1ee1cfa8d2caf29b6a39a708a58bd303"><td class="memItemLeft"><a id="a1ee1cfa8d2caf29b6a39a708a58bd303" name="a1ee1cfa8d2caf29b6a39a708a58bd303"></a>
-Kernel&#160;</td><td class="memItemRight"><b>kernel</b> () const</td></tr>
-<tr class="memitem:a65d0ab8c8457add5f94ce25cc69d4930" id="r_a65d0ab8c8457add5f94ce25cc69d4930"><td class="memItemLeft"><a id="a65d0ab8c8457add5f94ce25cc69d4930" name="a65d0ab8c8457add5f94ce25cc69d4930"></a>
-Verbosity&#160;</td><td class="memItemRight"><b>verbosity</b> () const</td></tr>
-<tr class="memitem:a0a6bb002c2063552585267af2dc7c7ea" id="r_a0a6bb002c2063552585267af2dc7c7ea"><td class="memItemLeft"><a id="a0a6bb002c2063552585267af2dc7c7ea" name="a0a6bb002c2063552585267af2dc7c7ea"></a>
-void&#160;</td><td class="memItemRight"><b>print</b> () const</td></tr>
-<tr class="memitem:aad4b2f5efdf469c68deb30faa67a8ebd" id="r_aad4b2f5efdf469c68deb30faa67a8ebd"><td class="memItemLeft"><a id="aad4b2f5efdf469c68deb30faa67a8ebd" name="aad4b2f5efdf469c68deb30faa67a8ebd"></a>
-virtual void&#160;</td><td class="memItemRight"><b>print</b> (std::ostream &amp;os) const</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a4ebb51190b559830abbe6d7971e65e4e" id="r_a4ebb51190b559830abbe6d7971e65e4e"><td class="memItemLeft"><a id="a4ebb51190b559830abbe6d7971e65e4e" name="a4ebb51190b559830abbe6d7971e65e4e"></a>
-static Kernel&#160;</td><td class="memItemRight"><b>kernelTranslator</b> (const std::string &amp;s)</td></tr>
-<tr class="memitem:a26a5516b57a0d31d8b0ae861bee81d56" id="r_a26a5516b57a0d31d8b0ae861bee81d56"><td class="memItemLeft"><a id="a26a5516b57a0d31d8b0ae861bee81d56" name="a26a5516b57a0d31d8b0ae861bee81d56"></a>
-static Verbosity&#160;</td><td class="memItemRight"><b>verbosityTranslator</b> (const std::string &amp;s)</td></tr>
-<tr class="memitem:a7547bd1527fbae408d27d0d3ee8010d8" id="r_a7547bd1527fbae408d27d0d3ee8010d8"><td class="memItemLeft"><a id="a7547bd1527fbae408d27d0d3ee8010d8" name="a7547bd1527fbae408d27d0d3ee8010d8"></a>
-static std::string&#160;</td><td class="memItemRight"><b>kernelTranslator</b> (Kernel k)</td></tr>
-<tr class="memitem:a48c2d4bc83149a3595a0600b29ddcc2f" id="r_a48c2d4bc83149a3595a0600b29ddcc2f"><td class="memItemLeft"><a id="a48c2d4bc83149a3595a0600b29ddcc2f" name="a48c2d4bc83149a3595a0600b29ddcc2f"></a>
-static std::string&#160;</td><td class="memItemRight"><b>verbosityTranslator</b> (Verbosity v)</td></tr>
+<tr class="memitem:abe3a83af584ff2d47e5217d751570c8d" id="r_abe3a83af584ff2d47e5217d751570c8d"><td class="memItemLeft"><a id="abe3a83af584ff2d47e5217d751570c8d" name="abe3a83af584ff2d47e5217d751570c8d"></a>
+&#160;</td><td class="memItemRight"><b>DexpFunctor</b> (const Vector3 &amp;<a class="el" href="#ad84742c33184536457243d80b94c34d4">omega</a>)</td></tr>
+<tr class="memdesc:abe3a83af584ff2d47e5217d751570c8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with element of Lie algebra so(3). <br /></td></tr>
+<tr class="memitem:a49b638477c9d6ce9b89ea791558e2bbb" id="r_a49b638477c9d6ce9b89ea791558e2bbb"><td class="memItemLeft"><a id="a49b638477c9d6ce9b89ea791558e2bbb" name="a49b638477c9d6ce9b89ea791558e2bbb"></a>
+&#160;</td><td class="memItemRight"><b>DexpFunctor</b> (const Vector3 &amp;<a class="el" href="#ad84742c33184536457243d80b94c34d4">omega</a>, double nearZeroThresholdSq, double nearPiThresholdSq)</td></tr>
+<tr class="memdesc:a49b638477c9d6ce9b89ea791558e2bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with custom thresholds (advanced). <br /></td></tr>
+<tr class="memitem:aaca6e63149daa160cb1cdb91b0f76fec" id="r_aaca6e63149daa160cb1cdb91b0f76fec"><td class="memItemLeft"><a id="aaca6e63149daa160cb1cdb91b0f76fec" name="aaca6e63149daa160cb1cdb91b0f76fec"></a>
+<a class="el" href="a04291.html">Kernel</a>&#160;</td><td class="memItemRight"><b>Rodrigues</b> () const &amp;</td></tr>
+<tr class="memitem:ab75c81b054b688a26e6b31d6146506e6" id="r_ab75c81b054b688a26e6b31d6146506e6"><td class="memItemLeft"><a id="ab75c81b054b688a26e6b31d6146506e6" name="ab75c81b054b688a26e6b31d6146506e6"></a>
+<a class="el" href="a04291.html">Kernel</a>&#160;</td><td class="memItemRight"><b>Jacobian</b> () const &amp;</td></tr>
+<tr class="memitem:ad826a66c94df45a3fa35b56941bdb37e" id="r_ad826a66c94df45a3fa35b56941bdb37e"><td class="memItemLeft"><a id="ad826a66c94df45a3fa35b56941bdb37e" name="ad826a66c94df45a3fa35b56941bdb37e"></a>
+<a class="el" href="a04295.html">InvJKernel</a>&#160;</td><td class="memItemRight"><b>InvJacobian</b> () const &amp;</td></tr>
+<tr class="memitem:aed34f7a214353c51f9559cd6a5a4dab0" id="r_aed34f7a214353c51f9559cd6a5a4dab0"><td class="memItemLeft"><a id="aed34f7a214353c51f9559cd6a5a4dab0" name="aed34f7a214353c51f9559cd6a5a4dab0"></a>
+<a class="el" href="a04291.html">Kernel</a>&#160;</td><td class="memItemRight"><b>Gamma</b> () const &amp;</td></tr>
+<tr class="memitem:a1eee69f9e7362f09ad0d67e48bd1ec1b" id="r_a1eee69f9e7362f09ad0d67e48bd1ec1b"><td class="memItemLeft"><a id="a1eee69f9e7362f09ad0d67e48bd1ec1b" name="a1eee69f9e7362f09ad0d67e48bd1ec1b"></a>
+Matrix3&#160;</td><td class="memItemRight"><b>rightJacobian</b> () const</td></tr>
+<tr class="memitem:a0c3a9bf407adbd79687a1794f3f79e2c" id="r_a0c3a9bf407adbd79687a1794f3f79e2c"><td class="memItemLeft"><a id="a0c3a9bf407adbd79687a1794f3f79e2c" name="a0c3a9bf407adbd79687a1794f3f79e2c"></a>
+Matrix3&#160;</td><td class="memItemRight"><b>leftJacobian</b> () const</td></tr>
+<tr class="memitem:aa4c1ecb0a2de850f5f13957bce0d7afd" id="r_aa4c1ecb0a2de850f5f13957bce0d7afd"><td class="memItemLeft">Vector3&#160;</td><td class="memItemRight"><a class="el" href="#aa4c1ecb0a2de850f5f13957bce0d7afd">tangentExpmap</a> (const Vector3 &amp;v, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 6, 6 &gt; H={}) const</td></tr>
+<tr class="memdesc:aa4c1ecb0a2de850f5f13957bce0d7afd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the SO(3) left Jacobian to a tangent vector and optionally compute the complete right-trivialized Jacobian of the lifted [omega; v] exponential.  <br /></td></tr>
+<tr class="memitem:aa59ecaeebc1646c6d60eb52fbfa2aea5" id="r_aa59ecaeebc1646c6d60eb52fbfa2aea5"><td class="memItemLeft">Vector3&#160;</td><td class="memItemRight"><a class="el" href="#aa59ecaeebc1646c6d60eb52fbfa2aea5">tangentExpmap</a> (const Vector3 &amp;v, const Matrix3 &amp;rotation, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 6, 6 &gt; H={}) const</td></tr>
+<tr class="memdesc:aa59ecaeebc1646c6d60eb52fbfa2aea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the lifted exponential using a rotation matrix already evaluated from this functor's omega.  <br /></td></tr>
+<tr class="memitem:ad89a55c5c5abc16131dd98a4b57a4a42" id="r_ad89a55c5c5abc16131dd98a4b57a4a42"><td class="memItemLeft"><a id="ad89a55c5c5abc16131dd98a4b57a4a42" name="ad89a55c5c5abc16131dd98a4b57a4a42"></a>
+double&#160;</td><td class="memItemRight"><b>C</b> () const</td></tr>
+<tr class="memitem:a8a6be09874abb3f87b39ceaeb470bfc8" id="r_a8a6be09874abb3f87b39ceaeb470bfc8"><td class="memItemLeft"><a id="a8a6be09874abb3f87b39ceaeb470bfc8" name="a8a6be09874abb3f87b39ceaeb470bfc8"></a>
+double&#160;</td><td class="memItemRight"><b>D</b> () const</td></tr>
+<tr class="memitem:a8a7ab9739f7ab1e8feb8ef94f8caac82" id="r_a8a7ab9739f7ab1e8feb8ef94f8caac82"><td class="memItemLeft"><a id="a8a7ab9739f7ab1e8feb8ef94f8caac82" name="a8a7ab9739f7ab1e8feb8ef94f8caac82"></a>
+double&#160;</td><td class="memItemRight"><b>E</b> () const</td></tr>
+<tr class="memitem:ad7d18f414b7f52f030859b9e2f40e775" id="r_ad7d18f414b7f52f030859b9e2f40e775"><td class="memItemLeft"><a id="ad7d18f414b7f52f030859b9e2f40e775" name="ad7d18f414b7f52f030859b9e2f40e775"></a>
+double&#160;</td><td class="memItemRight"><b>dA</b> () const</td></tr>
+<tr class="memitem:ae92acc47ce5ff6e012423de424d928dd" id="r_ae92acc47ce5ff6e012423de424d928dd"><td class="memItemLeft"><a id="ae92acc47ce5ff6e012423de424d928dd" name="ae92acc47ce5ff6e012423de424d928dd"></a>
+double&#160;</td><td class="memItemRight"><b>dB</b> () const</td></tr>
+<tr class="memitem:a455d26fda272c66e56a7e0778eb1174d" id="r_a455d26fda272c66e56a7e0778eb1174d"><td class="memItemLeft"><a id="a455d26fda272c66e56a7e0778eb1174d" name="a455d26fda272c66e56a7e0778eb1174d"></a>
+double&#160;</td><td class="memItemRight"><b>dC</b> () const</td></tr>
+<tr class="memitem:a779add24f08dd4fccb2eaf0419d8ac2d" id="r_a779add24f08dd4fccb2eaf0419d8ac2d"><td class="memItemLeft"><a id="a779add24f08dd4fccb2eaf0419d8ac2d" name="a779add24f08dd4fccb2eaf0419d8ac2d"></a>
+double&#160;</td><td class="memItemRight"><b>dE</b> () const</td></tr>
+<tr class="inherit_header pub_methods_a04527"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a04527')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a04527.html">gtsam::so3::ExpmapFunctor</a></td></tr>
+<tr class="memitem:abe4b1345302e9b642c1300bc43540c2c inherit pub_methods_a04527" id="r_abe4b1345302e9b642c1300bc43540c2c"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>ExpmapFunctor</b> (const Vector3 &amp;omega)</td></tr>
+<tr class="memdesc:abe4b1345302e9b642c1300bc43540c2c inherit pub_methods_a04527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with element of Lie algebra so(3). <br /></td></tr>
+<tr class="memitem:a31b381b64b30f016bfb03ad01b50e92d inherit pub_methods_a04527" id="r_a31b381b64b30f016bfb03ad01b50e92d"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>ExpmapFunctor</b> (double nearZeroThresholdSq, const Vector3 &amp;axis)</td></tr>
+<tr class="memdesc:a31b381b64b30f016bfb03ad01b50e92d inherit pub_methods_a04527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with threshold (advanced). <br /></td></tr>
+<tr class="memitem:a38cc80642dbdc3cad308fada480e8545 inherit pub_methods_a04527" id="r_a38cc80642dbdc3cad308fada480e8545"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>ExpmapFunctor</b> (const Vector3 &amp;axis, double angle)</td></tr>
+<tr class="memdesc:a38cc80642dbdc3cad308fada480e8545 inherit pub_methods_a04527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with axis-angle. <br /></td></tr>
+<tr class="memitem:a8371e906e4bb667c5f8debcfc5e82b39 inherit pub_methods_a04527" id="r_a8371e906e4bb667c5f8debcfc5e82b39"><td class="memItemLeft">
+Matrix3&#160;</td><td class="memItemRight"><b>expmap</b> () const</td></tr>
+<tr class="memdesc:a8371e906e4bb667c5f8debcfc5e82b39 inherit pub_methods_a04527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rodrigues formula. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a57968983439a6d36e3eb1885ced3a656" id="r_a57968983439a6d36e3eb1885ced3a656"><td class="memItemLeft"><a id="a57968983439a6d36e3eb1885ced3a656" name="a57968983439a6d36e3eb1885ced3a656"></a>
-enum gtsam::PreconditionerParameters::Kernel&#160;</td><td class="memItemRight"><b>kernel_</b></td></tr>
-<tr class="memitem:afb36bfc3b76406b3dc9e6ad6cfdb4426" id="r_afb36bfc3b76406b3dc9e6ad6cfdb4426"><td class="memItemLeft"><a id="afb36bfc3b76406b3dc9e6ad6cfdb4426" name="afb36bfc3b76406b3dc9e6ad6cfdb4426"></a>
-enum gtsam::PreconditionerParameters::Verbosity&#160;</td><td class="memItemRight"><b>verbosity_</b></td></tr>
+<tr class="memitem:ad84742c33184536457243d80b94c34d4" id="r_ad84742c33184536457243d80b94c34d4"><td class="memItemLeft"><a id="ad84742c33184536457243d80b94c34d4" name="ad84742c33184536457243d80b94c34d4"></a>
+Vector3&#160;</td><td class="memItemRight"><b>omega</b></td></tr>
+<tr class="memdesc:ad84742c33184536457243d80b94c34d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rotation vector. <br /></td></tr>
+<tr class="memitem:a973e4f9dba2e064a48aff1382893b804" id="r_a973e4f9dba2e064a48aff1382893b804"><td class="memItemLeft"><a id="a973e4f9dba2e064a48aff1382893b804" name="a973e4f9dba2e064a48aff1382893b804"></a>
+bool&#160;</td><td class="memItemRight"><b>nearPi</b> {false}</td></tr>
+<tr class="memdesc:a973e4f9dba2e064a48aff1382893b804"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag indicating if theta is near pi. <br /></td></tr>
+<tr class="inherit_header pub_attribs_a04527"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_a04527')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Attributes inherited from <a class="el" href="a04527.html">gtsam::so3::ExpmapFunctor</a></td></tr>
+<tr class="memitem:ae2059187b3825f1257e635f12c71bcb6 inherit pub_attribs_a04527" id="r_ae2059187b3825f1257e635f12c71bcb6"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>theta2</b></td></tr>
+<tr class="memdesc:ae2059187b3825f1257e635f12c71bcb6 inherit pub_attribs_a04527"><td class="mdescLeft">&#160;</td><td class="mdescRight">The squared norm of the rotation vector (θ²). <br /></td></tr>
+<tr class="memitem:a53e73ba4173511da528af439dc527287 inherit pub_attribs_a04527" id="r_a53e73ba4173511da528af439dc527287"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>theta</b></td></tr>
+<tr class="memdesc:a53e73ba4173511da528af439dc527287 inherit pub_attribs_a04527"><td class="mdescLeft">&#160;</td><td class="mdescRight">The norm of the rotation vector (θ). <br /></td></tr>
+<tr class="memitem:ab63e2c6592a4df487c77d23702a615b7 inherit pub_attribs_a04527" id="r_ab63e2c6592a4df487c77d23702a615b7"><td class="memItemLeft">
+Matrix3&#160;</td><td class="memItemRight"><b>W</b></td></tr>
+<tr class="memdesc:ab63e2c6592a4df487c77d23702a615b7 inherit pub_attribs_a04527"><td class="mdescLeft">&#160;</td><td class="mdescRight">The skew-symmetric matrix Ω for the rotation vector. <br /></td></tr>
+<tr class="memitem:aa0892dbfe2ca5cd9ae0d30d85c744396 inherit pub_attribs_a04527" id="r_aa0892dbfe2ca5cd9ae0d30d85c744396"><td class="memItemLeft">
+Matrix3&#160;</td><td class="memItemRight"><b>WW</b></td></tr>
+<tr class="memdesc:aa0892dbfe2ca5cd9ae0d30d85c744396 inherit pub_attribs_a04527"><td class="mdescLeft">&#160;</td><td class="mdescRight">The square of the skew-symmetric matrix (Ω²). <br /></td></tr>
+<tr class="memitem:a5206b495b2e855794ee58f74a2bb9631 inherit pub_attribs_a04527" id="r_a5206b495b2e855794ee58f74a2bb9631"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>nearZero</b> {false}</td></tr>
+<tr class="memdesc:a5206b495b2e855794ee58f74a2bb9631 inherit pub_attribs_a04527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag indicating if theta is near zero. <br /></td></tr>
+<tr class="memitem:a876b8d8e9f52eecf139d8d2644031077 inherit pub_attribs_a04527" id="r_a876b8d8e9f52eecf139d8d2644031077"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>A</b></td></tr>
+<tr class="memitem:aaeb3c21f7bd4788135d7fa1ea8348405 inherit pub_attribs_a04527" id="r_aaeb3c21f7bd4788135d7fa1ea8348405"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>B</b></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a8e6cd64d2de201e92e9714190cade634" id="r_a8e6cd64d2de201e92e9714190cade634"><td class="memItemLeft"><a id="a8e6cd64d2de201e92e9714190cade634" name="a8e6cd64d2de201e92e9714190cade634"></a>enum &#160;</td><td class="memItemRight"><b>Kernel</b> { <b>GTSAM</b> = 0
-, <b>CHOLMOD</b>
- }</td></tr>
-<tr class="memitem:aca0f63af762f4a717417cad3ed886faf" id="r_aca0f63af762f4a717417cad3ed886faf"><td class="memItemLeft"><a id="aca0f63af762f4a717417cad3ed886faf" name="aca0f63af762f4a717417cad3ed886faf"></a>enum &#160;</td><td class="memItemRight"><b>Verbosity</b> { <b>SILENT</b> = 0
-, <b>COMPLEXITY</b> = 1
-, <b>ERROR</b> = 2
- }</td></tr>
-<tr class="memitem:a61a770622c51e47c298ca1d964d28a35" id="r_a61a770622c51e47c298ca1d964d28a35"><td class="memItemLeft"><a id="a61a770622c51e47c298ca1d964d28a35" name="a61a770622c51e47c298ca1d964d28a35"></a>
-typedef boost::shared_ptr&lt; PreconditionerParameters &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a8dda162e705189a09a4ccfc56cfe2dc6" id="r_a8dda162e705189a09a4ccfc56cfe2dc6"><td class="memItemLeft"><a id="a8dda162e705189a09a4ccfc56cfe2dc6" name="a8dda162e705189a09a4ccfc56cfe2dc6"></a>
+std::optional&lt; double &gt;&#160;</td><td class="memItemRight"><b>C_</b></td></tr>
+<tr class="memitem:a48c32fb210833e3eaf26bc88a4a60286" id="r_a48c32fb210833e3eaf26bc88a4a60286"><td class="memItemLeft"><a id="a48c32fb210833e3eaf26bc88a4a60286" name="a48c32fb210833e3eaf26bc88a4a60286"></a>
+std::optional&lt; double &gt;&#160;</td><td class="memItemRight"><b>D_</b></td></tr>
+<tr class="memitem:a4245bd4ba2bf302d8d5b75bfd37f7de4" id="r_a4245bd4ba2bf302d8d5b75bfd37f7de4"><td class="memItemLeft"><a id="a4245bd4ba2bf302d8d5b75bfd37f7de4" name="a4245bd4ba2bf302d8d5b75bfd37f7de4"></a>
+std::optional&lt; double &gt;&#160;</td><td class="memItemRight"><b>E_</b></td></tr>
+<tr class="memdesc:a4245bd4ba2bf302d8d5b75bfd37f7de4"><td class="mdescLeft">&#160;</td><td class="mdescRight">C, D and E lazily computed. <br /></td></tr>
+<tr class="memitem:ad3dd5d2ca0eeab40fd55f69ebb80f1b6" id="r_ad3dd5d2ca0eeab40fd55f69ebb80f1b6"><td class="memItemLeft"><a id="ad3dd5d2ca0eeab40fd55f69ebb80f1b6" name="ad3dd5d2ca0eeab40fd55f69ebb80f1b6"></a>
+std::optional&lt; double &gt;&#160;</td><td class="memItemRight"><b>dA_</b></td></tr>
+<tr class="memitem:abfba924462cf00454977b7ad32cd21ce" id="r_abfba924462cf00454977b7ad32cd21ce"><td class="memItemLeft"><a id="abfba924462cf00454977b7ad32cd21ce" name="abfba924462cf00454977b7ad32cd21ce"></a>
+std::optional&lt; double &gt;&#160;</td><td class="memItemRight"><b>dB_</b></td></tr>
+<tr class="memitem:a295b7ea95ce5919e0d454a1f0be11c4c" id="r_a295b7ea95ce5919e0d454a1f0be11c4c"><td class="memItemLeft"><a id="a295b7ea95ce5919e0d454a1f0be11c4c" name="a295b7ea95ce5919e0d454a1f0be11c4c"></a>
+std::optional&lt; double &gt;&#160;</td><td class="memItemRight"><b>dC_</b></td></tr>
+<tr class="memitem:ab15b4c7c5200083fb633c48b9fc284ae" id="r_ab15b4c7c5200083fb633c48b9fc284ae"><td class="memItemLeft"><a id="ab15b4c7c5200083fb633c48b9fc284ae" name="ab15b4c7c5200083fb633c48b9fc284ae"></a>
+std::optional&lt; double &gt;&#160;</td><td class="memItemRight"><b>dE_</b></td></tr>
+<tr class="memdesc:ab15b4c7c5200083fb633c48b9fc284ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">lazy c(θ)′/θ <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:a16b02c0c12beb5f7175fd3cfc609c27b" id="r_a16b02c0c12beb5f7175fd3cfc609c27b"><td class="memItemLeft"><a id="a16b02c0c12beb5f7175fd3cfc609c27b" name="a16b02c0c12beb5f7175fd3cfc609c27b"></a>
-std::ostream &amp;&#160;</td><td class="memItemRight"><b>operator&lt;&lt;</b> (std::ostream &amp;os, const PreconditionerParameters &amp;p)</td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_a04527"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_a04527')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="a04527.html">gtsam::so3::ExpmapFunctor</a></td></tr>
+<tr class="memitem:a003518ae4966ef7312585221b85e929b inherit pro_methods_a04527" id="r_a003518ae4966ef7312585221b85e929b"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>init</b> (double nearZeroThresholdSq)</td></tr>
 </table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="aa59ecaeebc1646c6d60eb52fbfa2aea5" name="aa59ecaeebc1646c6d60eb52fbfa2aea5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa59ecaeebc1646c6d60eb52fbfa2aea5">&#9670;&#160;</a></span>tangentExpmap() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector3 gtsam::so3::DexpFunctor::tangentExpmap </td>
+          <td>(</td>
+          <td class="paramtype">const Vector3 &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Matrix3 &amp;</td>          <td class="paramname"><span class="paramname"><em>rotation</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 6, 6 &gt;</td>          <td class="paramname"><span class="paramname"><em>H</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Apply the lifted exponential using a rotation matrix already evaluated from this functor's omega. </p>
+<p>This avoids recomputing Expmap when the caller needs both the group value and the complete tangent Jacobian. </p>
+
+</div>
+</div>
+<a id="aa4c1ecb0a2de850f5f13957bce0d7afd" name="aa4c1ecb0a2de850f5f13957bce0d7afd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4c1ecb0a2de850f5f13957bce0d7afd">&#9670;&#160;</a></span>tangentExpmap() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector3 gtsam::so3::DexpFunctor::tangentExpmap </td>
+          <td>(</td>
+          <td class="paramtype">const Vector3 &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 6, 6 &gt;</td>          <td class="paramname"><span class="paramname"><em>H</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Apply the SO(3) left Jacobian to a tangent vector and optionally compute the complete right-trivialized Jacobian of the lifted [omega; v] exponential. </p>
+<p>This is the shared exponential kernel for both SE(3) and TSO(3), whose translational/algebra component is J_l(omega) * v. </p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/<a class="el" href="a00731_source.html">Preconditioner.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/<b>Preconditioner.cpp</b></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00515_source.html">SO3.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00464.html">SO3.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -177,7 +290,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight"><b>operator&lt;&lt;</b> (s
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04531.html">PreconditionerParameters</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><b>so3</b></li><li class="navelem"><a href="a04531.html">DexpFunctor</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

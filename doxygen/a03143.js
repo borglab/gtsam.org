@@ -1,15 +1,10 @@
 var a03143 =
 [
-    [ "~Value", "a03143.html#a616a94e2ce8e99e732d5ceb9af00632c", null ],
-    [ "cast", "a03143.html#a3572aa15e1db4d995796f4354d926d49", null ],
-    [ "clone", "a03143.html#af8ca22b41d251396c03ffb96f914748d", null ],
-    [ "clone_", "a03143.html#ac6245c02ce05c4a87072ebc6bd27a7d5", null ],
-    [ "deallocate_", "a03143.html#a5a0554b9e0758f370073ea3cc5cf1c9f", null ],
-    [ "dim", "a03143.html#a21e0a839ddaabd4c56559684ff887efe", null ],
-    [ "equals_", "a03143.html#a74edb2709fe745b6d09087f6aacf507f", null ],
-    [ "localCoordinates_", "a03143.html#a83429f15b4f68ed92e976649ea52da97", null ],
-    [ "operator=", "a03143.html#abefd5e7e205863119c1f88075070f5df", null ],
-    [ "print", "a03143.html#ac338307bb9f00cd29a70a48058069458", null ],
-    [ "retract_", "a03143.html#a2b95d3ec328cbad775490fa15dae27d5", null ],
-    [ "boost::serialization::access", "a03143.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ]
+    [ "DSFVector", "a03143.html#abd90fd03747876b5fb43df6432ac5ad5", null ],
+    [ "DSFVector", "a03143.html#af88896d4b3454f8fdb10b60b4fa8d5ff", null ],
+    [ "DSFVector", "a03143.html#ac05e49de6a148d9f28b81be456d22780", null ],
+    [ "arrays", "a03143.html#a925f127b4f9b52b75b9f005142bc554f", null ],
+    [ "isSingleton", "a03143.html#a754f1174792f2c903c1d6fff8127e9e4", null ],
+    [ "set", "a03143.html#a066bc96be70ef86666f9e085a5906ce1", null ],
+    [ "sets", "a03143.html#a891e286d24dd7d26473bb9de998a3820", null ]
 ];

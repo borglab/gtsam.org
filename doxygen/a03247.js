@@ -1,8 +1,6 @@
 var a03247 =
 [
-    [ "ComponentDerivativeFunctor", "a03247.html#a45eed4377c708dbabcf7c10c56ac4f96", null ],
-    [ "ComponentDerivativeFunctor", "a03247.html#a04da6190c5893400645f886494919d11", null ],
-    [ "ComponentDerivativeFunctor", "a03247.html#a5315e7a143a157610def3e29c5877e89", null ],
-    [ "apply", "a03247.html#af6470a490a268f4cc6f7157faa97a215", null ],
-    [ "operator()", "a03247.html#a3de9af4586372bbade17d296f16835ee", null ]
+    [ "Diffeomorphism", "a03247.html#a534f84ef771d66028d51672ecb7aedd6", null ],
+    [ "operator()", "a03247.html#a43e08c6892c85f24a86417f611561383", null ],
+    [ "pushforward", "a03247.html#a80d179926db1df3e9115ada0b8ef3ef4", null ]
 ];

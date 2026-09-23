@@ -1,7 +1,8 @@
 var a00992 =
 [
-    [ "gtsam::MagFactor", "a04719.html", "a04719" ],
-    [ "gtsam::MagFactor1", "a04723.html", "a04723" ],
-    [ "gtsam::MagFactor2", "a04727.html", "a04727" ],
-    [ "gtsam::MagFactor3", "a04731.html", "a04731" ]
+    [ "gtsam::PCGSolverParameters", "a05431.html", "a05431" ],
+    [ "gtsam::PCGSolverResult", "a05435.html", "a05435" ],
+    [ "gtsam::PCGSolver", "a05439.html", "a05439" ],
+    [ "gtsam::GaussianFactorGraphSystem", "a05443.html", "a05443" ],
+    [ "gtsam::buildVectorValues", "a02242.html#a0d01fe49b263a89eeb05315ecc957e09", null ]
 ];

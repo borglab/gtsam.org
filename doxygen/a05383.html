@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::FrobeniusFactor&lt; Rot &gt; Class Template Reference</title>
+<title>gtsam: gtsam::noiseModel::Unit Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,233 +96,621 @@ $(function(){initNavTree('a05383.html','','a05380'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::FrobeniusFactor&lt; Rot &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::noiseModel::Unit Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class Rot&gt;<br />
-class gtsam::FrobeniusFactor&lt; Rot &gt;</div><p><a class="el" href="a05383.html" title="FrobeniusFactor calculates the Frobenius norm between rotation matrices.">FrobeniusFactor</a> calculates the Frobenius norm between rotation matrices. </p>
-<p>The template argument can be any fixed-size <a class="el" href="a03851.html" title="Manifold of special orthogonal rotation matrices SO&lt;N&gt;.">SO&lt;N&gt;</a>. </p>
-</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::FrobeniusFactor&lt; Rot &gt;:</div>
+<div class="textblock"><p><a class="el" href="a05383.html" title="Unit: i.i.d.">Unit</a>: i.i.d. </p>
+<p>unit-variance noise on all m dimensions. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::noiseModel::Unit:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a05383.png" usemap="#gtsam_3A_3AFrobeniusFactor_3C_20Rot_20_3E_map" alt=""/>
-  <map id="gtsam_3A_3AFrobeniusFactor_3C_20Rot_20_3E_map" name="gtsam_3A_3AFrobeniusFactor_3C_20Rot_20_3E_map">
-<area href="a05087.html" alt="gtsam::NoiseModelFactorN&lt; Rot, Rot &gt;" shape="rect" coords="172,168,506,192"/>
-<area href="a05055.html" title="A nonlinear sum-of-squares factor with a zero-mean noise model implementing the density  Templated on..." alt="gtsam::NoiseModelFactor" shape="rect" coords="0,112,334,136"/>
-<area href="a05059.html" alt="gtsam::detail::NoiseModelFactorAliases&lt; ValueTypes... &gt;" shape="rect" coords="344,112,678,136"/>
-<area href="a05047.html" title="Nonlinear factor base class." alt="gtsam::NonlinearFactor" shape="rect" coords="0,56,334,80"/>
-<area href="a04139.html" alt="gtsam::Factor" shape="rect" coords="0,0,334,24"/>
+  <img src="a05383.png" usemap="#gtsam_3A_3AnoiseModel_3A_3AUnit_map" alt=""/>
+  <map id="gtsam_3A_3AnoiseModel_3A_3AUnit_map" name="gtsam_3A_3AnoiseModel_3A_3AUnit_map">
+<area href="a05379.html" title="An isotropic noise model corresponds to a scaled diagonal covariance To construct,..." alt="gtsam::noiseModel::Isotropic" shape="rect" coords="0,168,173,192"/>
+<area href="a05371.html" title="A diagonal noise model implements a diagonal covariance matrix, with the elements of the diagonal spe..." alt="gtsam::noiseModel::Diagonal" shape="rect" coords="0,112,173,136"/>
+<area href="a05367.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =..." alt="gtsam::noiseModel::Gaussian" shape="rect" coords="0,56,173,80"/>
+<area href="a05363.html" title="noiseModel::Base is the abstract base class for all noise models." alt="gtsam::noiseModel::Base" shape="rect" coords="0,0,173,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8b47df22e67b45c126cda7fd1bcb99c2" id="r_a8b47df22e67b45c126cda7fd1bcb99c2"><td class="memItemLeft"><a id="a8b47df22e67b45c126cda7fd1bcb99c2" name="a8b47df22e67b45c126cda7fd1bcb99c2"></a>
-&#160;</td><td class="memItemRight"><b>FrobeniusFactor</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j1, <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j2, const <a class="el" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;model=nullptr)</td></tr>
-<tr class="memdesc:a8b47df22e67b45c126cda7fd1bcb99c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
-<tr class="memitem:a1effe4dc271d84ef730a189bc3cd413e" id="r_a1effe4dc271d84ef730a189bc3cd413e"><td class="memItemLeft"><a id="a1effe4dc271d84ef730a189bc3cd413e" name="a1effe4dc271d84ef730a189bc3cd413e"></a>
-Vector&#160;</td><td class="memItemRight"><b>evaluateError</b> (const Rot &amp;R1, const Rot &amp;R2, boost::optional&lt; Matrix &amp; &gt; H1=boost::none, boost::optional&lt; Matrix &amp; &gt; H2=boost::none) const override</td></tr>
-<tr class="memdesc:a1effe4dc271d84ef730a189bc3cd413e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error is just Frobenius norm between rotation matrices. <br /></td></tr>
-<tr class="inherit_header pub_methods_a05087"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a05087')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a05087.html">gtsam::NoiseModelFactorN&lt; Rot, Rot &gt;</a></td></tr>
-<tr class="memitem:ae48358c2377e5cee3dad557c29b374aa inherit pub_methods_a05087" id="r_ae48358c2377e5cee3dad557c29b374aa"><td class="memItemLeft"><a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><a class="el" href="a05087.html#ae48358c2377e5cee3dad557c29b374aa">key</a> () const</td></tr>
-<tr class="memdesc:ae48358c2377e5cee3dad557c29b374aa inherit pub_methods_a05087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a key.  <br /></td></tr>
-<tr class="memitem:a62d44cd3c78ae49bc75eeca7e3b3bf87 inherit pub_methods_a05087" id="r_a62d44cd3c78ae49bc75eeca7e3b3bf87"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>NoiseModelFactorN</b> ()</td></tr>
-<tr class="memdesc:a62d44cd3c78ae49bc75eeca7e3b3bf87 inherit pub_methods_a05087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor for I/O. <br /></td></tr>
-<tr class="memitem:a53989fc09569beaf4b0bf49776b52709 inherit pub_methods_a05087" id="r_a53989fc09569beaf4b0bf49776b52709"><td class="memItemLeft">Vector&#160;</td><td class="memItemRight"><a class="el" href="a05087.html#a53989fc09569beaf4b0bf49776b52709">unwhitenedError</a> (const <a class="el" href="a06243.html">Values</a> &amp;x, boost::optional&lt; std::vector&lt; Matrix &gt; &amp; &gt; H=boost::none) const override</td></tr>
-<tr class="memdesc:a53989fc09569beaf4b0bf49776b52709 inherit pub_methods_a05087"><td class="mdescLeft">&#160;</td><td class="mdescRight">This implements the <span class="tt"><a class="el" href="a05087.html#a53989fc09569beaf4b0bf49776b52709">unwhitenedError</a></span> virtual function by calling the n-key specific version of evaluateError, which is pure virtual so must be implemented in the derived class.  <br /></td></tr>
-<tr class="memitem:a74baa35c1453f6fcdc6982c546c32529 inherit pub_methods_a05087" id="r_a74baa35c1453f6fcdc6982c546c32529"><td class="memItemLeft">virtual Vector&#160;</td><td class="memItemRight"><a class="el" href="a05087.html#a74baa35c1453f6fcdc6982c546c32529">evaluateError</a> (const ValueTypes &amp;... x, OptionalMatrix&lt; ValueTypes &gt;... H) const=0</td></tr>
-<tr class="memdesc:a74baa35c1453f6fcdc6982c546c32529 inherit pub_methods_a05087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override <span class="tt"><a class="el" href="a05087.html#a74baa35c1453f6fcdc6982c546c32529">evaluateError</a></span> to finish implementing an n-way factor.  <br /></td></tr>
-<tr class="memitem:a5e96cc205fa5c6e40a2db0fbce03bcf3 inherit pub_methods_a05087" id="r_a5e96cc205fa5c6e40a2db0fbce03bcf3"><td class="memItemLeft">
-<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>key1</b> () const</td></tr>
-<tr class="memitem:a1155f3dbc35edb04084da3cce664041f inherit pub_methods_a05087" id="r_a1155f3dbc35edb04084da3cce664041f"><td class="memItemLeft">
-<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>key2</b> () const</td></tr>
-<tr class="memitem:af518c1e74e6aac0a5419ad9d28f38ec9 inherit pub_methods_a05087" id="r_af518c1e74e6aac0a5419ad9d28f38ec9"><td class="memItemLeft">
-<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>key3</b> () const</td></tr>
-<tr class="memitem:a3bf54e99ea1a3f082c67cc7a9167b9e0 inherit pub_methods_a05087" id="r_a3bf54e99ea1a3f082c67cc7a9167b9e0"><td class="memItemLeft">
-<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>key4</b> () const</td></tr>
-<tr class="memitem:a9d40168e8a5df8a4743fbd4ffd399d9a inherit pub_methods_a05087" id="r_a9d40168e8a5df8a4743fbd4ffd399d9a"><td class="memItemLeft">
-<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>key5</b> () const</td></tr>
-<tr class="memitem:a8d2514f16cd66cad0309554a378ee363 inherit pub_methods_a05087" id="r_a8d2514f16cd66cad0309554a378ee363"><td class="memItemLeft">
-<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>key6</b> () const</td></tr>
-<tr class="inherit_header pub_methods_a05055"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a05055')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a05055.html">gtsam::NoiseModelFactor</a></td></tr>
-<tr class="memitem:ad6e8ef3348e042d598617d1d55f20300 inherit pub_methods_a05055" id="r_ad6e8ef3348e042d598617d1d55f20300"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>NoiseModelFactor</b> ()</td></tr>
-<tr class="memdesc:ad6e8ef3348e042d598617d1d55f20300 inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for I/O only. <br /></td></tr>
-<tr class="memitem:a276c60c37e44b34eadf59b4b67d4a5c9 inherit pub_methods_a05055" id="r_a276c60c37e44b34eadf59b4b67d4a5c9"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>~NoiseModelFactor</b> () override</td></tr>
-<tr class="memdesc:a276c60c37e44b34eadf59b4b67d4a5c9 inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
-<tr class="memitem:a02cea97db30d27b51feaf1f0444d743c inherit pub_methods_a05055" id="r_a02cea97db30d27b51feaf1f0444d743c"><td class="memTemplParams" colspan="2">
-template&lt;typename CONTAINER&gt; </td></tr>
-<tr class="memitem:a02cea97db30d27b51feaf1f0444d743c inherit pub_methods_a05055 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>NoiseModelFactor</b> (const <a class="el" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;<a class="el" href="a05055.html#ae995e64bbd0660091eb6b40cba60aef7">noiseModel</a>, const CONTAINER &amp;<a class="el" href="a04139.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>)</td></tr>
-<tr class="memdesc:a02cea97db30d27b51feaf1f0444d743c inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
-<tr class="memitem:a135c932f15f3d6701a2f9fabf4105490 inherit pub_methods_a05055" id="r_a135c932f15f3d6701a2f9fabf4105490"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a05055.html#a135c932f15f3d6701a2f9fabf4105490">print</a> (const std::string &amp;s=&quot;&quot;, const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=DefaultKeyFormatter) const override</td></tr>
-<tr class="memdesc:a135c932f15f3d6701a2f9fabf4105490 inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print.  <br /></td></tr>
-<tr class="memitem:ab558b36b1c959bf123f7271e78cd567e inherit pub_methods_a05055" id="r_ab558b36b1c959bf123f7271e78cd567e"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="a05055.html#ab558b36b1c959bf123f7271e78cd567e">equals</a> (const <a class="el" href="a05047.html#a7c719ae67f222f66569ccb3b526cb9cb">NonlinearFactor</a> &amp;f, double tol=1e-9) const override</td></tr>
-<tr class="memdesc:ab558b36b1c959bf123f7271e78cd567e inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if two factors are equal.  <br /></td></tr>
-<tr class="memitem:a7f892150e927e38368fe55971f001a5e inherit pub_methods_a05055" id="r_a7f892150e927e38368fe55971f001a5e"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="a05055.html#a7f892150e927e38368fe55971f001a5e">dim</a> () const override</td></tr>
-<tr class="memdesc:a7f892150e927e38368fe55971f001a5e inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the dimension of the factor (number of rows on linearization)  <br /></td></tr>
-<tr class="memitem:ae995e64bbd0660091eb6b40cba60aef7 inherit pub_methods_a05055" id="r_ae995e64bbd0660091eb6b40cba60aef7"><td class="memItemLeft">
-const <a class="el" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;&#160;</td><td class="memItemRight"><b>noiseModel</b> () const</td></tr>
-<tr class="memdesc:ae995e64bbd0660091eb6b40cba60aef7 inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">access to the noise model <br /></td></tr>
-<tr class="memitem:a484903c979489804e42fe58504de41cc inherit pub_methods_a05055" id="r_a484903c979489804e42fe58504de41cc"><td class="memItemLeft">Vector&#160;</td><td class="memItemRight"><a class="el" href="a05055.html#a484903c979489804e42fe58504de41cc">whitenedError</a> (const <a class="el" href="a06243.html">Values</a> &amp;c) const</td></tr>
-<tr class="memdesc:a484903c979489804e42fe58504de41cc inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of errors, whitened This is the raw error, i.e., i.e.  <br /></td></tr>
-<tr class="memitem:a97e5b06586890e11ee051381f1223578 inherit pub_methods_a05055" id="r_a97e5b06586890e11ee051381f1223578"><td class="memItemLeft">
-Vector&#160;</td><td class="memItemRight"><b>unweightedWhitenedError</b> (const <a class="el" href="a06243.html">Values</a> &amp;c) const</td></tr>
-<tr class="memdesc:a97e5b06586890e11ee051381f1223578 inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of errors, whitened, but unweighted by any loss function. <br /></td></tr>
-<tr class="memitem:ac996decbe6edaf943ff069dbf01fd83a inherit pub_methods_a05055" id="r_ac996decbe6edaf943ff069dbf01fd83a"><td class="memItemLeft">
-double&#160;</td><td class="memItemRight"><b>weight</b> (const <a class="el" href="a06243.html">Values</a> &amp;c) const</td></tr>
-<tr class="memdesc:ac996decbe6edaf943ff069dbf01fd83a inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the effective weight of the factor from the noise model. <br /></td></tr>
-<tr class="memitem:ad141af2ca30963a19b2c8b7bf09021d3 inherit pub_methods_a05055" id="r_ad141af2ca30963a19b2c8b7bf09021d3"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="a05055.html#ad141af2ca30963a19b2c8b7bf09021d3">error</a> (const <a class="el" href="a06243.html">Values</a> &amp;c) const override</td></tr>
-<tr class="memdesc:ad141af2ca30963a19b2c8b7bf09021d3 inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the error of the factor.  <br /></td></tr>
-<tr class="memitem:a74616d7a2ecd84e7b8c015c2902d027a inherit pub_methods_a05055" id="r_a74616d7a2ecd84e7b8c015c2902d027a"><td class="memItemLeft">boost::shared_ptr&lt; GaussianFactor &gt;&#160;</td><td class="memItemRight"><a class="el" href="a05055.html#a74616d7a2ecd84e7b8c015c2902d027a">linearize</a> (const <a class="el" href="a06243.html">Values</a> &amp;x) const override</td></tr>
-<tr class="memdesc:a74616d7a2ecd84e7b8c015c2902d027a inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linearize a non-linearFactorN to get a <a class="el" href="a04327.html" title="An abstract virtual base class for JacobianFactor and HessianFactor.">GaussianFactor</a>, \( Ax-b \approx h(x+\delta x)-z = h(x) + A \delta x - z \) Hence \( b = z - h(x) = - \mathtt{error\_vector}(x) \).  <br /></td></tr>
-<tr class="memitem:ac042b2c6639fd2062ff142d19d642f23 inherit pub_methods_a05055" id="r_ac042b2c6639fd2062ff142d19d642f23"><td class="memItemLeft">
-<a class="el" href="a05055.html#a762f6984cfd67b1e83cc530d71093dcf">shared_ptr</a>&#160;</td><td class="memItemRight"><b>cloneWithNewNoiseModel</b> (const <a class="el" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> newNoise) const</td></tr>
-<tr class="memdesc:ac042b2c6639fd2062ff142d19d642f23 inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="a05055.html#a762f6984cfd67b1e83cc530d71093dcf" title="Noise model.">shared_ptr</a> clone of the factor with a new noise model. <br /></td></tr>
-<tr class="memitem:a7c719ae67f222f66569ccb3b526cb9cb" id="r_a7c719ae67f222f66569ccb3b526cb9cb"><td class="memItemLeft"><a id="a7c719ae67f222f66569ccb3b526cb9cb" name="a7c719ae67f222f66569ccb3b526cb9cb"></a>
-&#160;</td><td class="memItemRight"><b>NonlinearFactor</b> ()</td></tr>
-<tr class="memdesc:a7c719ae67f222f66569ccb3b526cb9cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for I/O only. <br /></td></tr>
-<tr class="memitem:a8a7610dba7e9a6f878268c2769ea0e04" id="r_a8a7610dba7e9a6f878268c2769ea0e04"><td class="memTemplParams" colspan="2"><a id="a8a7610dba7e9a6f878268c2769ea0e04" name="a8a7610dba7e9a6f878268c2769ea0e04"></a>
-template&lt;typename CONTAINER&gt; </td></tr>
-<tr class="memitem:a8a7610dba7e9a6f878268c2769ea0e04 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>NonlinearFactor</b> (const CONTAINER &amp;<a class="el" href="a04139.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>)</td></tr>
-<tr class="memdesc:a8a7610dba7e9a6f878268c2769ea0e04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from a collection of the keys involved in this factor. <br /></td></tr>
-<tr class="memitem:a9723167fd0aee86f22c12bec9b644de3" id="r_a9723167fd0aee86f22c12bec9b644de3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a05047.html#a9723167fd0aee86f22c12bec9b644de3">print</a> (const std::string &amp;s=&quot;&quot;, const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=DefaultKeyFormatter) const override</td></tr>
-<tr class="memdesc:a9723167fd0aee86f22c12bec9b644de3"><td class="mdescLeft">&#160;</td><td class="mdescRight">print  <br /></td></tr>
-<tr class="memitem:ac457810c504de58732d51d61f715c2de" id="r_ac457810c504de58732d51d61f715c2de"><td class="memItemLeft"><a id="ac457810c504de58732d51d61f715c2de" name="ac457810c504de58732d51d61f715c2de"></a>
-virtual&#160;</td><td class="memItemRight"><b>~NonlinearFactor</b> ()</td></tr>
-<tr class="memdesc:ac457810c504de58732d51d61f715c2de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
-<tr class="memitem:a6d39d9bf4715675d44eb817eda8134d0" id="r_a6d39d9bf4715675d44eb817eda8134d0"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="a05047.html#a6d39d9bf4715675d44eb817eda8134d0">error</a> (const <a class="el" href="a06211.html">HybridValues</a> &amp;c) const override</td></tr>
-<tr class="memdesc:a6d39d9bf4715675d44eb817eda8134d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">All factor types need to implement an error function.  <br /></td></tr>
-<tr class="memitem:a84901748b435ae9b39908abf57d5620c" id="r_a84901748b435ae9b39908abf57d5620c"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="a05047.html#a84901748b435ae9b39908abf57d5620c">active</a> (const <a class="el" href="a06243.html">Values</a> &amp;) const</td></tr>
-<tr class="memdesc:a84901748b435ae9b39908abf57d5620c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a factor should be used based on a set of values.  <br /></td></tr>
-<tr class="memitem:a9b1f311731e3344c33c376aa0f5f729c" id="r_a9b1f311731e3344c33c376aa0f5f729c"><td class="memItemLeft">virtual shared_ptr&#160;</td><td class="memItemRight"><a class="el" href="a05047.html#a9b1f311731e3344c33c376aa0f5f729c">clone</a> () const</td></tr>
-<tr class="memdesc:a9b1f311731e3344c33c376aa0f5f729c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shared_ptr clone of the factor - needs to be specialized to allow for subclasses.  <br /></td></tr>
-<tr class="memitem:a659931523972a6bbc9742d89ba09ace2" id="r_a659931523972a6bbc9742d89ba09ace2"><td class="memItemLeft">virtual shared_ptr&#160;</td><td class="memItemRight"><a class="el" href="a05047.html#a659931523972a6bbc9742d89ba09ace2">rekey</a> (const std::map&lt; <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &gt; &amp;rekey_mapping) const</td></tr>
-<tr class="memdesc:a659931523972a6bbc9742d89ba09ace2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shared_ptr clone of the factor with different keys using a map from old-&gt;new keys.  <br /></td></tr>
-<tr class="memitem:af7399735ffc6d044195c67a414865e57" id="r_af7399735ffc6d044195c67a414865e57"><td class="memItemLeft">virtual shared_ptr&#160;</td><td class="memItemRight"><a class="el" href="a05047.html#af7399735ffc6d044195c67a414865e57">rekey</a> (const <a class="el" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;new_keys) const</td></tr>
-<tr class="memdesc:af7399735ffc6d044195c67a414865e57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clones a factor and fully replaces its keys.  <br /></td></tr>
-<tr class="memitem:a9959dc6860b3e2624498ccbd457e290b" id="r_a9959dc6860b3e2624498ccbd457e290b"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="a05047.html#a9959dc6860b3e2624498ccbd457e290b">sendable</a> () const</td></tr>
-<tr class="memdesc:a9959dc6860b3e2624498ccbd457e290b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Should the factor be evaluated in the same thread as the caller This is to enable factors that has shared states (like the Python GIL lock).  <br /></td></tr>
-<tr class="inherit_header pub_methods_a04139"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a04139')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a04139.html">gtsam::Factor</a></td></tr>
-<tr class="memitem:a6572d1c62aa0f0167fe6ebb0a77af107 inherit pub_methods_a04139" id="r_a6572d1c62aa0f0167fe6ebb0a77af107"><td class="memItemLeft">
-virtual&#160;</td><td class="memItemRight"><b>~Factor</b> ()=default</td></tr>
-<tr class="memdesc:a6572d1c62aa0f0167fe6ebb0a77af107 inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor. <br /></td></tr>
-<tr class="memitem:a39490b49d71351affb6953d730f8ebbc inherit pub_methods_a04139" id="r_a39490b49d71351affb6953d730f8ebbc"><td class="memItemLeft">
-bool&#160;</td><td class="memItemRight"><b>empty</b> () const</td></tr>
-<tr class="memdesc:a39490b49d71351affb6953d730f8ebbc inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the factor is empty (involves zero variables). <br /></td></tr>
-<tr class="memitem:aeb63e9c85c567ee3b06b0d2ad0552a8a inherit pub_methods_a04139" id="r_aeb63e9c85c567ee3b06b0d2ad0552a8a"><td class="memItemLeft">
-<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>front</b> () const</td></tr>
-<tr class="memdesc:aeb63e9c85c567ee3b06b0d2ad0552a8a inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">First key. <br /></td></tr>
-<tr class="memitem:ae38e5024d5b20aa06a5a6bd289e626c4 inherit pub_methods_a04139" id="r_ae38e5024d5b20aa06a5a6bd289e626c4"><td class="memItemLeft">
-<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>back</b> () const</td></tr>
-<tr class="memdesc:ae38e5024d5b20aa06a5a6bd289e626c4 inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last key. <br /></td></tr>
-<tr class="memitem:a179a10d0319e87eda55d6925de0f5102 inherit pub_methods_a04139" id="r_a179a10d0319e87eda55d6925de0f5102"><td class="memItemLeft">
-<a class="el" href="a04139.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a>&#160;</td><td class="memItemRight"><b>find</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key) const</td></tr>
-<tr class="memdesc:a179a10d0319e87eda55d6925de0f5102 inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">find <br /></td></tr>
-<tr class="memitem:a03d71985cf81a0175a71d1ecf5279edb inherit pub_methods_a04139" id="r_a03d71985cf81a0175a71d1ecf5279edb"><td class="memItemLeft">
-const <a class="el" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;&#160;</td><td class="memItemRight"><b>keys</b> () const</td></tr>
-<tr class="memdesc:a03d71985cf81a0175a71d1ecf5279edb inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the factor's involved variable keys. <br /></td></tr>
-<tr class="memitem:a17c02f11c35bf7768347cad4943f0f64 inherit pub_methods_a04139" id="r_a17c02f11c35bf7768347cad4943f0f64"><td class="memItemLeft">
-<a class="el" href="a04139.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a>&#160;</td><td class="memItemRight"><b>begin</b> () const</td></tr>
-<tr class="memdesc:a17c02f11c35bf7768347cad4943f0f64 inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator at beginning of involved variable keys. <br /></td></tr>
-<tr class="memitem:aa1f00e05967c0c278beec17af9cb0530 inherit pub_methods_a04139" id="r_aa1f00e05967c0c278beec17af9cb0530"><td class="memItemLeft">
-<a class="el" href="a04139.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a>&#160;</td><td class="memItemRight"><b>end</b> () const</td></tr>
-<tr class="memdesc:aa1f00e05967c0c278beec17af9cb0530 inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator at end of involved variable keys. <br /></td></tr>
-<tr class="memitem:afac01740aefd22f4f90f49767010f811 inherit pub_methods_a04139" id="r_afac01740aefd22f4f90f49767010f811"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="a04139.html#afac01740aefd22f4f90f49767010f811">size</a> () const</td></tr>
-<tr class="memitem:a52cdda1b64d2d584b1012362963b76f3 inherit pub_methods_a04139" id="r_a52cdda1b64d2d584b1012362963b76f3"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="a04139.html#a52cdda1b64d2d584b1012362963b76f3">printKeys</a> (const std::string &amp;s=&quot;Factor&quot;, const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;formatter=DefaultKeyFormatter) const</td></tr>
-<tr class="memdesc:a52cdda1b64d2d584b1012362963b76f3 inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">print only keys  <br /></td></tr>
-<tr class="memitem:a5cc62be07fbcde6678f8b346ab3a3f78 inherit pub_methods_a04139" id="r_a5cc62be07fbcde6678f8b346ab3a3f78"><td class="memItemLeft">
-bool&#160;</td><td class="memItemRight"><b>equals</b> (const This &amp;other, double tol=1e-9) const</td></tr>
-<tr class="memdesc:a5cc62be07fbcde6678f8b346ab3a3f78 inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">check equality <br /></td></tr>
-<tr class="memitem:a3fd8a3bd4eb315a0a2186efd103689c6 inherit pub_methods_a04139" id="r_a3fd8a3bd4eb315a0a2186efd103689c6"><td class="memItemLeft"><a class="el" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="a04139.html#a3fd8a3bd4eb315a0a2186efd103689c6">keys</a> ()</td></tr>
-<tr class="memitem:a5596dcbc299a2e8eec813b78fbcfe933 inherit pub_methods_a04139" id="r_a5596dcbc299a2e8eec813b78fbcfe933"><td class="memItemLeft">
-<a class="el" href="a04139.html#acb069f38cc81bea20cecfad4070da59e">iterator</a>&#160;</td><td class="memItemRight"><b>begin</b> ()</td></tr>
-<tr class="memdesc:a5596dcbc299a2e8eec813b78fbcfe933 inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator at beginning of involved variable keys. <br /></td></tr>
-<tr class="memitem:a33597c74ba8db7396722165424fe5ec3 inherit pub_methods_a04139" id="r_a33597c74ba8db7396722165424fe5ec3"><td class="memItemLeft">
-<a class="el" href="a04139.html#acb069f38cc81bea20cecfad4070da59e">iterator</a>&#160;</td><td class="memItemRight"><b>end</b> ()</td></tr>
-<tr class="memdesc:a33597c74ba8db7396722165424fe5ec3 inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator at end of involved variable keys. <br /></td></tr>
+<tr class="memitem:a33df813274f299f2d6d6e67c7e95c60f" id="r_a33df813274f299f2d6d6e67c7e95c60f"><td class="memItemLeft"><a id="a33df813274f299f2d6d6e67c7e95c60f" name="a33df813274f299f2d6d6e67c7e95c60f"></a>
+&#160;</td><td class="memItemRight"><b>Unit</b> (size_t <a class="el" href="a05363.html#a1227a3b20fdc80cdd73b682230c6e6fc">dim</a>=1)</td></tr>
+<tr class="memdesc:a33df813274f299f2d6d6e67c7e95c60f"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor for serialization <br /></td></tr>
+<tr class="memitem:a1a04f700c2ad336be61c7047af6c2b93" id="r_a1a04f700c2ad336be61c7047af6c2b93"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a1a04f700c2ad336be61c7047af6c2b93">isUnit</a> () const override</td></tr>
+<tr class="memdesc:a1a04f700c2ad336be61c7047af6c2b93"><td class="mdescLeft">&#160;</td><td class="mdescRight">true if a unit noise model, saves slow/clumsy dynamic casting  <br /></td></tr>
+<tr class="memitem:ad0878a9d8a029f3cd1b7f005d538e118" id="r_ad0878a9d8a029f3cd1b7f005d538e118"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad0878a9d8a029f3cd1b7f005d538e118">print</a> (const std::string &amp;name) const override</td></tr>
+<tr class="memitem:a14b6ac02b28d64ab78ae4d61e0866fe8" id="r_a14b6ac02b28d64ab78ae4d61e0866fe8"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a14b6ac02b28d64ab78ae4d61e0866fe8">squaredMahalanobisDistance</a> (const Vector &amp;v) const override</td></tr>
+<tr class="memdesc:a14b6ac02b28d64ab78ae4d61e0866fe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Squared Mahalanobis distance v'*R'*R*v = &lt;R*v,R*v&gt;.  <br /></td></tr>
+<tr class="memitem:a43c9d87437089c661a3a6298ece53287" id="r_a43c9d87437089c661a3a6298ece53287"><td class="memItemLeft">Vector&#160;</td><td class="memItemRight"><a class="el" href="#a43c9d87437089c661a3a6298ece53287">whiten</a> (const Vector &amp;v) const override</td></tr>
+<tr class="memdesc:a43c9d87437089c661a3a6298ece53287"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whiten an error vector.  <br /></td></tr>
+<tr class="memitem:a075b5e743ed96eb7b532e83f5130bcf5" id="r_a075b5e743ed96eb7b532e83f5130bcf5"><td class="memItemLeft">Vector&#160;</td><td class="memItemRight"><a class="el" href="#a075b5e743ed96eb7b532e83f5130bcf5">unwhiten</a> (const Vector &amp;v) const override</td></tr>
+<tr class="memdesc:a075b5e743ed96eb7b532e83f5130bcf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unwhiten an error vector.  <br /></td></tr>
+<tr class="memitem:af9783a7fdc214131ae012073c4650b68" id="r_af9783a7fdc214131ae012073c4650b68"><td class="memItemLeft">Matrix&#160;</td><td class="memItemRight"><a class="el" href="#af9783a7fdc214131ae012073c4650b68">Whiten</a> (const Matrix &amp;H) const override</td></tr>
+<tr class="memdesc:af9783a7fdc214131ae012073c4650b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whiten a matrix.  <br /></td></tr>
+<tr class="memitem:ab1451b36f4796f85c4ee776e67df319d" id="r_ab1451b36f4796f85c4ee776e67df319d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab1451b36f4796f85c4ee776e67df319d">WhitenInPlace</a> (Matrix &amp;) const override</td></tr>
+<tr class="memdesc:ab1451b36f4796f85c4ee776e67df319d"><td class="mdescLeft">&#160;</td><td class="mdescRight">In-place version.  <br /></td></tr>
+<tr class="memitem:a05d775a7840d0c9b4f926b796b2c46fd" id="r_a05d775a7840d0c9b4f926b796b2c46fd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a05d775a7840d0c9b4f926b796b2c46fd">WhitenInPlace</a> (Eigen::Block&lt; Matrix &gt;) const override</td></tr>
+<tr class="memdesc:a05d775a7840d0c9b4f926b796b2c46fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">In-place version.  <br /></td></tr>
+<tr class="memitem:a8da3bd9bc0519a2a0b821f97ee08955f" id="r_a8da3bd9bc0519a2a0b821f97ee08955f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8da3bd9bc0519a2a0b821f97ee08955f">whitenInPlace</a> (Vector &amp;) const override</td></tr>
+<tr class="memdesc:a8da3bd9bc0519a2a0b821f97ee08955f"><td class="mdescLeft">&#160;</td><td class="mdescRight">in-place whiten, override if can be done more efficiently  <br /></td></tr>
+<tr class="memitem:a77033130942900ba4234af1f5b5bd5bc" id="r_a77033130942900ba4234af1f5b5bd5bc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a77033130942900ba4234af1f5b5bd5bc">unwhitenInPlace</a> (Vector &amp;) const override</td></tr>
+<tr class="memdesc:a77033130942900ba4234af1f5b5bd5bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">in-place unwhiten, override if can be done more efficiently  <br /></td></tr>
+<tr class="memitem:a18e4a5bffb47ef392182e9c0a3249123" id="r_a18e4a5bffb47ef392182e9c0a3249123"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a18e4a5bffb47ef392182e9c0a3249123">whitenInPlace</a> (Eigen::Block&lt; Vector &gt; &amp;) const override</td></tr>
+<tr class="memdesc:a18e4a5bffb47ef392182e9c0a3249123"><td class="mdescLeft">&#160;</td><td class="mdescRight">in-place whiten, override if can be done more efficiently  <br /></td></tr>
+<tr class="memitem:a89ecc09002bee060b61cb74531dbee8b" id="r_a89ecc09002bee060b61cb74531dbee8b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a89ecc09002bee060b61cb74531dbee8b">unwhitenInPlace</a> (Eigen::Block&lt; Vector &gt; &amp;) const override</td></tr>
+<tr class="memdesc:a89ecc09002bee060b61cb74531dbee8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">in-place unwhiten, override if can be done more efficiently  <br /></td></tr>
+<tr class="inherit_header pub_methods_a05379"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a05379')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a05379.html">gtsam::noiseModel::Isotropic</a></td></tr>
+<tr class="memitem:a0d9e4784fd131f6f47c9c24e9973f0ab inherit pub_methods_a05379" id="r_a0d9e4784fd131f6f47c9c24e9973f0ab"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>sigma</b> () const</td></tr>
+<tr class="memdesc:a0d9e4784fd131f6f47c9c24e9973f0ab inherit pub_methods_a05379"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return standard deviation. <br /></td></tr>
+<tr class="inherit_header pub_methods_a05371"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a05371')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a05371.html">gtsam::noiseModel::Diagonal</a></td></tr>
+<tr class="memitem:a52cdcdf2e0e6cda03100ba9d25605538 inherit pub_methods_a05371" id="r_a52cdcdf2e0e6cda03100ba9d25605538"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>Diagonal</b> ()</td></tr>
+<tr class="memdesc:a52cdcdf2e0e6cda03100ba9d25605538 inherit pub_methods_a05371"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor - no initializations, for serialization <br /></td></tr>
+<tr class="memitem:a66a17d686b89fec5a1622a77465fe526 inherit pub_methods_a05371" id="r_a66a17d686b89fec5a1622a77465fe526"><td class="memItemLeft">Vector&#160;</td><td class="memItemRight"><a class="el" href="a05371.html#a66a17d686b89fec5a1622a77465fe526">sigmas</a> () const override</td></tr>
+<tr class="memdesc:a66a17d686b89fec5a1622a77465fe526 inherit pub_methods_a05371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate standard deviations.  <br /></td></tr>
+<tr class="memitem:a29a0ef7334dd54a5dcea764c78ac47ba inherit pub_methods_a05371" id="r_a29a0ef7334dd54a5dcea764c78ac47ba"><td class="memItemLeft">
+const Vector &amp;&#160;</td><td class="memItemRight"><b>sigmasRef</b> () const</td></tr>
+<tr class="memdesc:a29a0ef7334dd54a5dcea764c78ac47ba inherit pub_methods_a05371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return standard deviations without copying. <br /></td></tr>
+<tr class="memitem:a443266e681048b5d25eb386efc145664 inherit pub_methods_a05371" id="r_a443266e681048b5d25eb386efc145664"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>sigma</b> (size_t i) const</td></tr>
+<tr class="memdesc:a443266e681048b5d25eb386efc145664 inherit pub_methods_a05371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return standard deviations (sqrt of diagonal). <br /></td></tr>
+<tr class="memitem:a53b4adbacd6134a45b7e9fe86b4b9aa3 inherit pub_methods_a05371" id="r_a53b4adbacd6134a45b7e9fe86b4b9aa3"><td class="memItemLeft">
+const Vector &amp;&#160;</td><td class="memItemRight"><b>invsigmas</b> () const</td></tr>
+<tr class="memdesc:a53b4adbacd6134a45b7e9fe86b4b9aa3 inherit pub_methods_a05371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return sqrt precisions. <br /></td></tr>
+<tr class="memitem:a7a04c1384ee1e433a16100f66e0b81c0 inherit pub_methods_a05371" id="r_a7a04c1384ee1e433a16100f66e0b81c0"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>invsigma</b> (size_t i) const</td></tr>
+<tr class="memitem:a75d121c047ebd94dd652af7364a6867f inherit pub_methods_a05371" id="r_a75d121c047ebd94dd652af7364a6867f"><td class="memItemLeft">
+const Vector &amp;&#160;</td><td class="memItemRight"><b>precisions</b> () const</td></tr>
+<tr class="memdesc:a75d121c047ebd94dd652af7364a6867f inherit pub_methods_a05371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return precisions. <br /></td></tr>
+<tr class="memitem:ab51403815d46f3ff34d8d144c25dd327 inherit pub_methods_a05371" id="r_ab51403815d46f3ff34d8d144c25dd327"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>precision</b> (size_t i) const</td></tr>
+<tr class="memitem:a3e8f4f15a04e7efa68155189c211d188 inherit pub_methods_a05371" id="r_a3e8f4f15a04e7efa68155189c211d188"><td class="memItemLeft">Matrix&#160;</td><td class="memItemRight"><a class="el" href="a05371.html#a3e8f4f15a04e7efa68155189c211d188">R</a> () const override</td></tr>
+<tr class="memdesc:a3e8f4f15a04e7efa68155189c211d188 inherit pub_methods_a05371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return R itself, but note that Whiten(H) is cheaper than R*H.  <br /></td></tr>
+<tr class="inherit_header pub_methods_a05367"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a05367')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a05367.html">gtsam::noiseModel::Gaussian</a></td></tr>
+<tr class="memitem:a7b1ceb024b86f518ec86ea23df07fa9a inherit pub_methods_a05367" id="r_a7b1ceb024b86f518ec86ea23df07fa9a"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>Gaussian</b> (size_t <a class="el" href="a05363.html#a1227a3b20fdc80cdd73b682230c6e6fc">dim</a>=1, const std::optional&lt; Matrix &gt; &amp;sqrt_information={})</td></tr>
+<tr class="memdesc:a7b1ceb024b86f518ec86ea23df07fa9a inherit pub_methods_a05367"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor takes square root information matrix <br /></td></tr>
+<tr class="memitem:a753ed385023d8b79d48ab362fcd14dec inherit pub_methods_a05367" id="r_a753ed385023d8b79d48ab362fcd14dec"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="a05367.html#a753ed385023d8b79d48ab362fcd14dec">equals</a> (const <a class="el" href="a05363.html#af3c6026adff03fe3f98f6fa16564bdfa">Base</a> &amp;expected, double tol=1e-9) const override</td></tr>
+<tr class="memitem:a9603eb90acf7341f008f0a54df984a12 inherit pub_methods_a05367" id="r_a9603eb90acf7341f008f0a54df984a12"><td class="memItemLeft">Vector&#160;</td><td class="memItemRight"><a class="el" href="a05367.html#a9603eb90acf7341f008f0a54df984a12">sigmas</a> () const override</td></tr>
+<tr class="memdesc:a9603eb90acf7341f008f0a54df984a12 inherit pub_methods_a05367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate standard deviations.  <br /></td></tr>
+<tr class="memitem:a4111574a34e80990d155f945140c58e6 inherit pub_methods_a05367" id="r_a4111574a34e80990d155f945140c58e6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a05367.html#a4111574a34e80990d155f945140c58e6">WhitenSystem</a> (std::vector&lt; Matrix &gt; &amp;A, Vector &amp;b) const override</td></tr>
+<tr class="memdesc:a4111574a34e80990d155f945140c58e6 inherit pub_methods_a05367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whiten a system, in place as well.  <br /></td></tr>
+<tr class="memitem:aac59c1e32958b9d927b362687f86d68b inherit pub_methods_a05367" id="r_aac59c1e32958b9d927b362687f86d68b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a05367.html#aac59c1e32958b9d927b362687f86d68b">WhitenSystem</a> (Matrix &amp;A, Vector &amp;b) const override</td></tr>
+<tr class="memitem:a8ec2ed229df0963bd00d9c97647bc56a inherit pub_methods_a05367" id="r_a8ec2ed229df0963bd00d9c97647bc56a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a05367.html#a8ec2ed229df0963bd00d9c97647bc56a">WhitenSystem</a> (Matrix &amp;A1, Matrix &amp;A2, Vector &amp;b) const override</td></tr>
+<tr class="memitem:a7c0c022d2d557538ea348e1cb845382f inherit pub_methods_a05367" id="r_a7c0c022d2d557538ea348e1cb845382f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a05367.html#a7c0c022d2d557538ea348e1cb845382f">WhitenSystem</a> (Matrix &amp;A1, Matrix &amp;A2, Matrix &amp;A3, Vector &amp;b) const override</td></tr>
+<tr class="memitem:a69d56bbe0e3c68743c5e7f42340b6426 inherit pub_methods_a05367" id="r_a69d56bbe0e3c68743c5e7f42340b6426"><td class="memItemLeft">virtual std::shared_ptr&lt; <a class="el" href="a05371.html">Diagonal</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="a05367.html#a69d56bbe0e3c68743c5e7f42340b6426">QR</a> (Matrix &amp;Ab) const</td></tr>
+<tr class="memdesc:a69d56bbe0e3c68743c5e7f42340b6426 inherit pub_methods_a05367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply appropriately weighted QR factorization to the system [A b] Q' * [A b] = [R d] Dimensions: (r*m) * m*(n+1) = r*(n+1), where r = min(m,n).  <br /></td></tr>
+<tr class="memitem:a3741ccbbc6a5a1426ca953bb8d6eab3a inherit pub_methods_a05367" id="r_a3741ccbbc6a5a1426ca953bb8d6eab3a"><td class="memItemLeft">
+virtual Matrix&#160;</td><td class="memItemRight"><b>information</b> () const</td></tr>
+<tr class="memdesc:a3741ccbbc6a5a1426ca953bb8d6eab3a inherit pub_methods_a05367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute information matrix. <br /></td></tr>
+<tr class="memitem:aaf6a9e33fca397915780620bf452d5d3 inherit pub_methods_a05367" id="r_aaf6a9e33fca397915780620bf452d5d3"><td class="memItemLeft">
+virtual Matrix&#160;</td><td class="memItemRight"><b>covariance</b> () const</td></tr>
+<tr class="memdesc:aaf6a9e33fca397915780620bf452d5d3 inherit pub_methods_a05367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute covariance matrix. <br /></td></tr>
+<tr class="memitem:a8b5bed753636ff16c65a5b7753d20989 inherit pub_methods_a05367" id="r_a8b5bed753636ff16c65a5b7753d20989"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>logDeterminant</b> () const</td></tr>
+<tr class="memdesc:a8b5bed753636ff16c65a5b7753d20989 inherit pub_methods_a05367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the log of |Σ|. <br /></td></tr>
+<tr class="memitem:a35b877b3fd22170b6ee80fcdb6299fce inherit pub_methods_a05367" id="r_a35b877b3fd22170b6ee80fcdb6299fce"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="a05367.html#a35b877b3fd22170b6ee80fcdb6299fce">negLogConstant</a> () const</td></tr>
+<tr class="memdesc:a35b877b3fd22170b6ee80fcdb6299fce inherit pub_methods_a05367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the negative log of the normalization constant for a <a class="el" href="a05367.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> noise model k = 1/\sqrt(|2πΣ|).  <br /></td></tr>
+<tr class="inherit_header pub_methods_a05363"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a05363')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a05363.html">gtsam::noiseModel::Base</a></td></tr>
+<tr class="memitem:af3c6026adff03fe3f98f6fa16564bdfa inherit pub_methods_a05363" id="r_af3c6026adff03fe3f98f6fa16564bdfa"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a05363.html#af3c6026adff03fe3f98f6fa16564bdfa">Base</a> (size_t <a class="el" href="a05363.html#a1227a3b20fdc80cdd73b682230c6e6fc">dim</a>=1)</td></tr>
+<tr class="memdesc:af3c6026adff03fe3f98f6fa16564bdfa inherit pub_methods_a05363"><td class="mdescLeft">&#160;</td><td class="mdescRight">primary constructor  <br /></td></tr>
+<tr class="memitem:a10cbb983bdd401c3d20b26adcdef02f2 inherit pub_methods_a05363" id="r_a10cbb983bdd401c3d20b26adcdef02f2"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="a05363.html#a10cbb983bdd401c3d20b26adcdef02f2">isConstrained</a> () const</td></tr>
+<tr class="memdesc:a10cbb983bdd401c3d20b26adcdef02f2 inherit pub_methods_a05363"><td class="mdescLeft">&#160;</td><td class="mdescRight">true if a constrained noise model, saves slow/clumsy dynamic casting  <br /></td></tr>
+<tr class="memitem:a1227a3b20fdc80cdd73b682230c6e6fc inherit pub_methods_a05363" id="r_a1227a3b20fdc80cdd73b682230c6e6fc"><td class="memItemLeft">
+size_t&#160;</td><td class="memItemRight"><b>dim</b> () const</td></tr>
+<tr class="memdesc:a1227a3b20fdc80cdd73b682230c6e6fc inherit pub_methods_a05363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimensionality. <br /></td></tr>
+<tr class="memitem:a381eb3c71bf890c8477115be6567a7df inherit pub_methods_a05363" id="r_a381eb3c71bf890c8477115be6567a7df"><td class="memItemLeft">
+virtual double&#160;</td><td class="memItemRight"><b>mahalanobisDistance</b> (const Vector &amp;v) const</td></tr>
+<tr class="memdesc:a381eb3c71bf890c8477115be6567a7df inherit pub_methods_a05363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mahalanobis distance. <br /></td></tr>
+<tr class="memitem:adb541f4d71b2cc042dc8a4ecd19ba432 inherit pub_methods_a05363" id="r_adb541f4d71b2cc042dc8a4ecd19ba432"><td class="memItemLeft">virtual double&#160;</td><td class="memItemRight"><a class="el" href="a05363.html#adb541f4d71b2cc042dc8a4ecd19ba432">loss</a> (const double squared_distance) const</td></tr>
+<tr class="memdesc:adb541f4d71b2cc042dc8a4ecd19ba432 inherit pub_methods_a05363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loss function, input is squared Mahalanobis distance.  <br /></td></tr>
+<tr class="memitem:a081dc1b923f6dd4e04914a8f26c426d1 inherit pub_methods_a05363" id="r_a081dc1b923f6dd4e04914a8f26c426d1"><td class="memItemLeft">virtual double&#160;</td><td class="memItemRight"><a class="el" href="a05363.html#a081dc1b923f6dd4e04914a8f26c426d1">loss</a> (const Vector &amp;v) const</td></tr>
+<tr class="memdesc:a081dc1b923f6dd4e04914a8f26c426d1 inherit pub_methods_a05363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the loss of an unwhitened residual v.  <br /></td></tr>
+<tr class="memitem:a5bb304fee021a23c0fb64ee881e9ef8a inherit pub_methods_a05363" id="r_a5bb304fee021a23c0fb64ee881e9ef8a"><td class="memItemLeft">virtual Vector&#160;</td><td class="memItemRight"><a class="el" href="a05363.html#a5bb304fee021a23c0fb64ee881e9ef8a">unweightedWhiten</a> (const Vector &amp;v) const</td></tr>
+<tr class="memdesc:a5bb304fee021a23c0fb64ee881e9ef8a inherit pub_methods_a05363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Useful function for robust noise models to get the unweighted but whitened error.  <br /></td></tr>
+<tr class="memitem:a59184475444cc7c437cfe0862f722952 inherit pub_methods_a05363" id="r_a59184475444cc7c437cfe0862f722952"><td class="memItemLeft">virtual double&#160;</td><td class="memItemRight"><a class="el" href="a05363.html#a59184475444cc7c437cfe0862f722952">weight</a> (const Vector &amp;v) const</td></tr>
+<tr class="memdesc:a59184475444cc7c437cfe0862f722952 inherit pub_methods_a05363"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the weight from the effective loss function on residual vector v  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a61fda7a7390d3fc40f5618185e801bfe" id="r_a61fda7a7390d3fc40f5618185e801bfe"><td class="memItemLeft"><a id="a61fda7a7390d3fc40f5618185e801bfe" name="a61fda7a7390d3fc40f5618185e801bfe"></a>
+static shared_ptr&#160;</td><td class="memItemRight"><b>Create</b> (size_t <a class="el" href="a05363.html#a1227a3b20fdc80cdd73b682230c6e6fc">dim</a>)</td></tr>
+<tr class="memdesc:a61fda7a7390d3fc40f5618185e801bfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a unit covariance noise model. <br /></td></tr>
+<tr class="memitem:ab7698e6663fd8625566e2b1f09a0e441" id="r_ab7698e6663fd8625566e2b1f09a0e441"><td class="memTemplParams" colspan="2">template&lt;class T, std::enable_if_t&lt;!std::is_integral_v&lt; T &gt;, int &gt; = 0&gt; </td></tr>
+<tr class="memitem:ab7698e6663fd8625566e2b1f09a0e441 template"><td class="memItemLeft">static shared_ptr&#160;</td><td class="memItemRight"><a class="el" href="#ab7698e6663fd8625566e2b1f09a0e441">Create</a> (const T &amp;measured)</td></tr>
+<tr class="memdesc:ab7698e6663fd8625566e2b1f09a0e441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a unit covariance noise model for a measurement type.  <br /></td></tr>
+<tr class="inherit_header pub_static_methods_a05379"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a05379')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a05379.html">gtsam::noiseModel::Isotropic</a></td></tr>
+<tr class="memitem:a6f34496ff6924bd5552c77810e991015 inherit pub_static_methods_a05379" id="r_a6f34496ff6924bd5552c77810e991015"><td class="memItemLeft">
+static shared_ptr&#160;</td><td class="memItemRight"><b>Sigma</b> (size_t <a class="el" href="a05363.html#a1227a3b20fdc80cdd73b682230c6e6fc">dim</a>, double <a class="el" href="a05379.html#a0d9e4784fd131f6f47c9c24e9973f0ab">sigma</a>, bool smart=true)</td></tr>
+<tr class="memdesc:a6f34496ff6924bd5552c77810e991015 inherit pub_static_methods_a05379"><td class="mdescLeft">&#160;</td><td class="mdescRight">An isotropic noise model created by specifying a standard deviation sigma. <br /></td></tr>
+<tr class="memitem:af176eeec710dc59f5e0125e52a9e8326 inherit pub_static_methods_a05379" id="r_af176eeec710dc59f5e0125e52a9e8326"><td class="memItemLeft">static shared_ptr&#160;</td><td class="memItemRight"><a class="el" href="a05379.html#af176eeec710dc59f5e0125e52a9e8326">Variance</a> (size_t <a class="el" href="a05363.html#a1227a3b20fdc80cdd73b682230c6e6fc">dim</a>, double variance, bool smart=true)</td></tr>
+<tr class="memdesc:af176eeec710dc59f5e0125e52a9e8326 inherit pub_static_methods_a05379"><td class="mdescLeft">&#160;</td><td class="mdescRight">An isotropic noise model created by specifying a variance = sigma^2.  <br /></td></tr>
+<tr class="memitem:a82d8d86deec2e1cc7185c9ccf113b724 inherit pub_static_methods_a05379" id="r_a82d8d86deec2e1cc7185c9ccf113b724"><td class="memItemLeft">
+static shared_ptr&#160;</td><td class="memItemRight"><b>Precision</b> (size_t <a class="el" href="a05363.html#a1227a3b20fdc80cdd73b682230c6e6fc">dim</a>, double precision, bool smart=true)</td></tr>
+<tr class="memdesc:a82d8d86deec2e1cc7185c9ccf113b724 inherit pub_static_methods_a05379"><td class="mdescLeft">&#160;</td><td class="mdescRight">An isotropic noise model created by specifying a precision. <br /></td></tr>
+<tr class="inherit_header pub_static_methods_a05371"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a05371')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a05371.html">gtsam::noiseModel::Diagonal</a></td></tr>
+<tr class="memitem:a8f00b543a69c756b5277f2e89c701cc5 inherit pub_static_methods_a05371" id="r_a8f00b543a69c756b5277f2e89c701cc5"><td class="memItemLeft">static shared_ptr&#160;</td><td class="memItemRight"><a class="el" href="a05371.html#a8f00b543a69c756b5277f2e89c701cc5">Sigmas</a> (const Vector &amp;<a class="el" href="a05371.html#a66a17d686b89fec5a1622a77465fe526">sigmas</a>, bool smart=true)</td></tr>
+<tr class="memdesc:a8f00b543a69c756b5277f2e89c701cc5 inherit pub_static_methods_a05371"><td class="mdescLeft">&#160;</td><td class="mdescRight">A diagonal noise model created by specifying a Vector of sigmas, i.e.  <br /></td></tr>
+<tr class="memitem:a8c23ce6bda772372da8814c0febbb36f inherit pub_static_methods_a05371" id="r_a8c23ce6bda772372da8814c0febbb36f"><td class="memItemLeft">static shared_ptr&#160;</td><td class="memItemRight"><a class="el" href="a05371.html#a8c23ce6bda772372da8814c0febbb36f">Variances</a> (const Vector &amp;variances, bool smart=true)</td></tr>
+<tr class="memdesc:a8c23ce6bda772372da8814c0febbb36f inherit pub_static_methods_a05371"><td class="mdescLeft">&#160;</td><td class="mdescRight">A diagonal noise model created by specifying a Vector of variances, i.e.  <br /></td></tr>
+<tr class="memitem:ad82879bb4b6929df70cfb1d5da1a3591 inherit pub_static_methods_a05371" id="r_ad82879bb4b6929df70cfb1d5da1a3591"><td class="memItemLeft">static shared_ptr&#160;</td><td class="memItemRight"><a class="el" href="a05371.html#ad82879bb4b6929df70cfb1d5da1a3591">Precisions</a> (const Vector &amp;<a class="el" href="a05371.html#a75d121c047ebd94dd652af7364a6867f">precisions</a>, bool smart=true)</td></tr>
+<tr class="memdesc:ad82879bb4b6929df70cfb1d5da1a3591 inherit pub_static_methods_a05371"><td class="mdescLeft">&#160;</td><td class="mdescRight">A diagonal noise model created by specifying a Vector of precisions, i.e.  <br /></td></tr>
+<tr class="inherit_header pub_static_methods_a05367"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a05367')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a05367.html">gtsam::noiseModel::Gaussian</a></td></tr>
+<tr class="memitem:a8c9d3331d5b09f086c44d99553f5e15c inherit pub_static_methods_a05367" id="r_a8c9d3331d5b09f086c44d99553f5e15c"><td class="memItemLeft">static shared_ptr&#160;</td><td class="memItemRight"><a class="el" href="a05367.html#a8c9d3331d5b09f086c44d99553f5e15c">SqrtInformation</a> (const Matrix &amp;<a class="el" href="a05367.html#a1cafaca4432cb1917bbe221bbc418f55">R</a>, bool smart=true)</td></tr>
+<tr class="memdesc:a8c9d3331d5b09f086c44d99553f5e15c inherit pub_static_methods_a05367"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="a05367.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> noise model created by specifying a square root information matrix.  <br /></td></tr>
+<tr class="memitem:af7b24866cf09adbee55dad7854bfef92 inherit pub_static_methods_a05367" id="r_af7b24866cf09adbee55dad7854bfef92"><td class="memItemLeft">static shared_ptr&#160;</td><td class="memItemRight"><a class="el" href="a05367.html#af7b24866cf09adbee55dad7854bfef92">Information</a> (const Matrix &amp;M, bool smart=true)</td></tr>
+<tr class="memdesc:af7b24866cf09adbee55dad7854bfef92 inherit pub_static_methods_a05367"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="a05367.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> noise model created by specifying an information matrix.  <br /></td></tr>
+<tr class="memitem:a3ed257b6e9a8016cc3c76a8962a64ba0 inherit pub_static_methods_a05367" id="r_a3ed257b6e9a8016cc3c76a8962a64ba0"><td class="memItemLeft">static shared_ptr&#160;</td><td class="memItemRight"><a class="el" href="a05367.html#a3ed257b6e9a8016cc3c76a8962a64ba0">Covariance</a> (const Matrix &amp;<a class="el" href="a05367.html#aaf6a9e33fca397915780620bf452d5d3">covariance</a>, bool smart=true)</td></tr>
+<tr class="memdesc:a3ed257b6e9a8016cc3c76a8962a64ba0 inherit pub_static_methods_a05367"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="a05367.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> noise model created by specifying a covariance matrix.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ac61eed3b66d11d5bdab2cc3feb38745e" id="r_ac61eed3b66d11d5bdab2cc3feb38745e"><td class="memItemLeft"><a id="ac61eed3b66d11d5bdab2cc3feb38745e" name="ac61eed3b66d11d5bdab2cc3feb38745e"></a>
+typedef std::shared_ptr&lt; <a class="el" href="#a33df813274f299f2d6d6e67c7e95c60f">Unit</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+<tr class="inherit_header pub_types_a05379"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a05379')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a05379.html">gtsam::noiseModel::Isotropic</a></td></tr>
+<tr class="memitem:a2a644a99e7150b5a10e39035be290bf9 inherit pub_types_a05379" id="r_a2a644a99e7150b5a10e39035be290bf9"><td class="memItemLeft">
+typedef std::shared_ptr&lt; <a class="el" href="a05379.html#ae18e287216417166319c4ea7ba046941">Isotropic</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+<tr class="inherit_header pub_types_a05371"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a05371')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a05371.html">gtsam::noiseModel::Diagonal</a></td></tr>
+<tr class="memitem:a95a69704097c1a0985e1d8823d239da2 inherit pub_types_a05371" id="r_a95a69704097c1a0985e1d8823d239da2"><td class="memItemLeft">
+typedef std::shared_ptr&lt; <a class="el" href="a05371.html#aa97d4530104dd414d2372892eb94859d">Diagonal</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+<tr class="inherit_header pub_types_a05367"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a05367')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a05367.html">gtsam::noiseModel::Gaussian</a></td></tr>
+<tr class="memitem:a6069352729fb1f24d29f00d7bdcb0cdc inherit pub_types_a05367" id="r_a6069352729fb1f24d29f00d7bdcb0cdc"><td class="memItemLeft">
+typedef std::shared_ptr&lt; <a class="el" href="a05367.html#a7b1ceb024b86f518ec86ea23df07fa9a">Gaussian</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+<tr class="inherit_header pub_types_a05363"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a05363')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a05363.html">gtsam::noiseModel::Base</a></td></tr>
+<tr class="memitem:ae35c8f2c7b4255140bd2b4b0e9202671 inherit pub_types_a05363" id="r_ae35c8f2c7b4255140bd2b4b0e9202671"><td class="memItemLeft">
+typedef std::shared_ptr&lt; <a class="el" href="a05363.html#af3c6026adff03fe3f98f6fa16564bdfa">Base</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:acde6126739e072e6a96b0046f7338ff4" id="r_acde6126739e072e6a96b0046f7338ff4"><td class="memItemLeft">virtual double&#160;</td><td class="memItemRight"><a class="el" href="#acde6126739e072e6a96b0046f7338ff4">logDetR</a> () const override</td></tr>
+<tr class="memdesc:acde6126739e072e6a96b0046f7338ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the log of |R|. Used for computing log(|Σ|).  <br /></td></tr>
+<tr class="inherit_header pro_methods_a05379"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_a05379')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="a05379.html">gtsam::noiseModel::Isotropic</a></td></tr>
+<tr class="memitem:ae18e287216417166319c4ea7ba046941 inherit pro_methods_a05379" id="r_ae18e287216417166319c4ea7ba046941"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>Isotropic</b> (size_t <a class="el" href="a05363.html#a1227a3b20fdc80cdd73b682230c6e6fc">dim</a>, double <a class="el" href="a05379.html#a0d9e4784fd131f6f47c9c24e9973f0ab">sigma</a>)</td></tr>
+<tr class="memdesc:ae18e287216417166319c4ea7ba046941 inherit pro_methods_a05379"><td class="mdescLeft">&#160;</td><td class="mdescRight">protected constructor takes sigma <br /></td></tr>
+<tr class="inherit_header pro_methods_a05371"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_a05371')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="a05371.html">gtsam::noiseModel::Diagonal</a></td></tr>
+<tr class="memitem:aa97d4530104dd414d2372892eb94859d inherit pro_methods_a05371" id="r_aa97d4530104dd414d2372892eb94859d"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>Diagonal</b> (const Vector &amp;<a class="el" href="a05371.html#a66a17d686b89fec5a1622a77465fe526">sigmas</a>)</td></tr>
+<tr class="memdesc:aa97d4530104dd414d2372892eb94859d inherit pro_methods_a05371"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor to allow for disabling initialization of invsigmas <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_types_a05087"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a05087')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a05087.html">gtsam::NoiseModelFactorN&lt; Rot, Rot &gt;</a></td></tr>
-<tr class="memitem:ad8b258a642c7005b216f9c1faa3eb982 inherit pub_types_a05087" id="r_ad8b258a642c7005b216f9c1faa3eb982"><td class="memItemLeft"><a id="ad8b258a642c7005b216f9c1faa3eb982" name="ad8b258a642c7005b216f9c1faa3eb982"></a>enum &#160;</td><td class="memItemRight"></td></tr>
-<tr class="memdesc:ad8b258a642c7005b216f9c1faa3eb982"><td class="mdescLeft">&#160;</td><td class="mdescRight">N is the number of variables (N-way factor). <br /></td></tr>
-<tr class="memitem:a1604e5bad477f8d6c5a7eb11a1e41d4b inherit pub_types_a05087" id="r_a1604e5bad477f8d6c5a7eb11a1e41d4b"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="a05087.html#a1604e5bad477f8d6c5a7eb11a1e41d4b">ValueType</a></td></tr>
-<tr class="memdesc:a1604e5bad477f8d6c5a7eb11a1e41d4b inherit pub_types_a05087"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the I'th template param can be obtained as <a class="el" href="a05087.html#a1604e5bad477f8d6c5a7eb11a1e41d4b">ValueType</a><em>. </em> <br /></td></tr>
-<tr class="inherit_header pub_types_a05055"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a05055')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a05055.html">gtsam::NoiseModelFactor</a></td></tr>
-<tr class="memitem:a762f6984cfd67b1e83cc530d71093dcf inherit pub_types_a05055" id="r_a762f6984cfd67b1e83cc530d71093dcf"><td class="memItemLeft">
-typedef boost::shared_ptr&lt; This &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
-<tr class="memdesc:a762f6984cfd67b1e83cc530d71093dcf inherit pub_types_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Noise model. <br /></td></tr>
-<tr class="inherit_header pub_types_a05047"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a05047')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a05047.html">gtsam::NonlinearFactor</a></td></tr>
-<tr class="memitem:afab063cca7f2ac8b9a80795516d54396 inherit pub_types_a05047" id="r_afab063cca7f2ac8b9a80795516d54396"><td class="memItemLeft">
-typedef boost::shared_ptr&lt; This &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
-<tr class="inherit_header pub_types_a04139"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04139')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04139.html">gtsam::Factor</a></td></tr>
-<tr class="memitem:acb069f38cc81bea20cecfad4070da59e inherit pub_types_a04139" id="r_acb069f38cc81bea20cecfad4070da59e"><td class="memItemLeft">
-typedef KeyVector::iterator&#160;</td><td class="memItemRight"><b>iterator</b></td></tr>
-<tr class="memdesc:acb069f38cc81bea20cecfad4070da59e inherit pub_types_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator over keys. <br /></td></tr>
-<tr class="memitem:a71af7ad9e9474ebbcf2fdffc7f31251b inherit pub_types_a04139" id="r_a71af7ad9e9474ebbcf2fdffc7f31251b"><td class="memItemLeft">
-typedef KeyVector::const_iterator&#160;</td><td class="memItemRight"><b>const_iterator</b></td></tr>
-<tr class="memdesc:a71af7ad9e9474ebbcf2fdffc7f31251b inherit pub_types_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Const iterator over keys. <br /></td></tr>
-<tr class="inherit_header pro_types_a05087"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_types_a05087')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Types inherited from <a class="el" href="a05087.html">gtsam::NoiseModelFactorN&lt; Rot, Rot &gt;</a></td></tr>
-<tr class="memitem:a3efce404207d7b4034d35a69eb2e8d96 inherit pro_types_a05087" id="r_a3efce404207d7b4034d35a69eb2e8d96"><td class="memItemLeft">
-using&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
-<tr class="memitem:a0c54337badee6cf6b975f2a42a544a3a inherit pro_types_a05087" id="r_a0c54337badee6cf6b975f2a42a544a3a"><td class="memItemLeft">
-using&#160;</td><td class="memItemRight"><b>This</b></td></tr>
-<tr class="memitem:af4ac6e38879217116aec782ac512d1c1 inherit pro_types_a05087" id="r_af4ac6e38879217116aec782ac512d1c1"><td class="memItemLeft">
-using&#160;</td><td class="memItemRight"><b>OptionalMatrix</b></td></tr>
-<tr class="memitem:af1e4f5e0147da861f000a61e16a3e4d0 inherit pro_types_a05087" id="r_af1e4f5e0147da861f000a61e16a3e4d0"><td class="memItemLeft">
-using&#160;</td><td class="memItemRight"><b>KeyType</b></td></tr>
-<tr class="memitem:a2fb197fec0c0974aa5c0c7ed70a23c25 inherit pro_types_a05087" id="r_a2fb197fec0c0974aa5c0c7ed70a23c25"><td class="memItemLeft">
-using&#160;</td><td class="memItemRight"><b>IsConvertible</b></td></tr>
-<tr class="memitem:af6aeb91783d71ee02160160e8af103df inherit pro_types_a05087" id="r_af6aeb91783d71ee02160160e8af103df"><td class="memItemLeft">
-using&#160;</td><td class="memItemRight"><b>IndexIsValid</b></td></tr>
-<tr class="memitem:aa1713907cfadce04e11f4f75c28006b3 inherit pro_types_a05087" id="r_aa1713907cfadce04e11f4f75c28006b3"><td class="memItemLeft">
-using&#160;</td><td class="memItemRight"><b>ContainerElementType</b></td></tr>
-<tr class="memitem:a026057fc5252ab5b698de7d7e3af9ce9 inherit pro_types_a05087" id="r_a026057fc5252ab5b698de7d7e3af9ce9"><td class="memItemLeft">
-using&#160;</td><td class="memItemRight"><b>IsContainerOfKeys</b></td></tr>
-<tr class="inherit_header pro_types_a05055"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_types_a05055')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Types inherited from <a class="el" href="a05055.html">gtsam::NoiseModelFactor</a></td></tr>
-<tr class="memitem:a9ac7f77c3ae2d5bfd14d25f4bdc3deaa inherit pro_types_a05055" id="r_a9ac7f77c3ae2d5bfd14d25f4bdc3deaa"><td class="memItemLeft">
-typedef <a class="el" href="a05047.html#a7c719ae67f222f66569ccb3b526cb9cb">NonlinearFactor</a>&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
-<tr class="memitem:a44e242fb0945cf6c60d30c36c3f229af inherit pro_types_a05055" id="r_a44e242fb0945cf6c60d30c36c3f229af"><td class="memItemLeft">
-typedef <a class="el" href="a06247.html">NoiseModelFactor</a>&#160;</td><td class="memItemRight"><b>This</b></td></tr>
-<tr class="inherit_header pro_types_a05047"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_types_a05047')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Types inherited from <a class="el" href="a05047.html">gtsam::NonlinearFactor</a></td></tr>
-<tr class="memitem:aa76bae0d7aeb6591a824daa7c5dc2ac6 inherit pro_types_a05047" id="r_aa76bae0d7aeb6591a824daa7c5dc2ac6"><td class="memItemLeft">
-typedef <a class="el" href="a04139.html#a322a4d391be45b5909a65895fb7b023d">Factor</a>&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
-<tr class="memitem:a15c628be5e7433ee4ece0c5fd12d049e inherit pro_types_a05047" id="r_a15c628be5e7433ee4ece0c5fd12d049e"><td class="memItemLeft">
-typedef <a class="el" href="a05047.html#a7c719ae67f222f66569ccb3b526cb9cb">NonlinearFactor</a>&#160;</td><td class="memItemRight"><b>This</b></td></tr>
-<tr class="inherit_header pro_methods_a05055"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_a05055')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="a05055.html">gtsam::NoiseModelFactor</a></td></tr>
-<tr class="memitem:a4605224417029e9dc58c5267efa9a46d inherit pro_methods_a05055" id="r_a4605224417029e9dc58c5267efa9a46d"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>NoiseModelFactor</b> (const <a class="el" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;<a class="el" href="a05055.html#ae995e64bbd0660091eb6b40cba60aef7">noiseModel</a>)</td></tr>
-<tr class="memdesc:a4605224417029e9dc58c5267efa9a46d inherit pro_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor - only for subclasses, as this does not set keys. <br /></td></tr>
-<tr class="memitem:a322a4d391be45b5909a65895fb7b023d" id="r_a322a4d391be45b5909a65895fb7b023d"><td class="memItemLeft"><a id="a322a4d391be45b5909a65895fb7b023d" name="a322a4d391be45b5909a65895fb7b023d"></a>
-&#160;</td><td class="memItemRight"><b>Factor</b> ()</td></tr>
-<tr class="memdesc:a322a4d391be45b5909a65895fb7b023d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for I/O. <br /></td></tr>
-<tr class="memitem:aa3d2ef6b21961e708a4cbe10b55be59b" id="r_aa3d2ef6b21961e708a4cbe10b55be59b"><td class="memTemplParams" colspan="2">template&lt;typename CONTAINER&gt; </td></tr>
-<tr class="memitem:aa3d2ef6b21961e708a4cbe10b55be59b template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04139.html#aa3d2ef6b21961e708a4cbe10b55be59b">Factor</a> (const CONTAINER &amp;<a class="el" href="a04139.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>)</td></tr>
-<tr class="memdesc:aa3d2ef6b21961e708a4cbe10b55be59b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct factor from container of keys.  <br /></td></tr>
-<tr class="memitem:a70ff55886664229a25e29cf2a7bb1bb7" id="r_a70ff55886664229a25e29cf2a7bb1bb7"><td class="memTemplParams" colspan="2">template&lt;typename ITERATOR&gt; </td></tr>
-<tr class="memitem:a70ff55886664229a25e29cf2a7bb1bb7 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04139.html#a70ff55886664229a25e29cf2a7bb1bb7">Factor</a> (ITERATOR first, ITERATOR last)</td></tr>
-<tr class="memdesc:a70ff55886664229a25e29cf2a7bb1bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct factor from iterator keys.  <br /></td></tr>
-<tr class="memitem:a5087976b9e398cd21305d33972feedad" id="r_a5087976b9e398cd21305d33972feedad"><td class="memTemplParams" colspan="2">template&lt;typename CONTAINER&gt; </td></tr>
-<tr class="memitem:a5087976b9e398cd21305d33972feedad template"><td class="memItemLeft">static <a class="el" href="a04139.html#a322a4d391be45b5909a65895fb7b023d">Factor</a>&#160;</td><td class="memItemRight"><a class="el" href="a04139.html#a5087976b9e398cd21305d33972feedad">FromKeys</a> (const CONTAINER &amp;<a class="el" href="a04139.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>)</td></tr>
-<tr class="memdesc:a5087976b9e398cd21305d33972feedad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct factor from container of keys.  <br /></td></tr>
-<tr class="memitem:a4157181261dc47002004d53c8b56f7bf" id="r_a4157181261dc47002004d53c8b56f7bf"><td class="memTemplParams" colspan="2">template&lt;typename ITERATOR&gt; </td></tr>
-<tr class="memitem:a4157181261dc47002004d53c8b56f7bf template"><td class="memItemLeft">static <a class="el" href="a04139.html#a322a4d391be45b5909a65895fb7b023d">Factor</a>&#160;</td><td class="memItemRight"><a class="el" href="a04139.html#a4157181261dc47002004d53c8b56f7bf">FromIterators</a> (ITERATOR first, ITERATOR last)</td></tr>
-<tr class="memdesc:a4157181261dc47002004d53c8b56f7bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct factor from iterator keys.  <br /></td></tr>
-<tr class="inherit_header pro_attribs_a05055"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a05055')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a05055.html">gtsam::NoiseModelFactor</a></td></tr>
-<tr class="memitem:a2263eabbefe0eede8c9d10486f61bb4d inherit pro_attribs_a05055" id="r_a2263eabbefe0eede8c9d10486f61bb4d"><td class="memItemLeft">
-<a class="el" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a>&#160;</td><td class="memItemRight"><b>noiseModel_</b></td></tr>
-<tr class="inherit_header pro_attribs_a04139"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a04139')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a04139.html">gtsam::Factor</a></td></tr>
-<tr class="memitem:a10e886cc8b8a374e2fe864707e0b6278 inherit pro_attribs_a04139" id="r_a10e886cc8b8a374e2fe864707e0b6278"><td class="memItemLeft">
-<a class="el" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&#160;</td><td class="memItemRight"><b>keys_</b></td></tr>
-<tr class="memdesc:a10e886cc8b8a374e2fe864707e0b6278 inherit pro_attribs_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">The keys involved in this factor. <br /></td></tr>
+<tr class="inherit_header pro_attribs_a05379"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a05379')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a05379.html">gtsam::noiseModel::Isotropic</a></td></tr>
+<tr class="memitem:a9194425924a893ece62a19207c05bed7 inherit pro_attribs_a05379" id="r_a9194425924a893ece62a19207c05bed7"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>sigma_</b></td></tr>
+<tr class="memitem:a8e6b28e76f95ffa0c7976bde4fe5c16c inherit pro_attribs_a05379" id="r_a8e6b28e76f95ffa0c7976bde4fe5c16c"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>invsigma_</b></td></tr>
+<tr class="inherit_header pro_attribs_a05371"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a05371')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a05371.html">gtsam::noiseModel::Diagonal</a></td></tr>
+<tr class="memitem:a40cec73d5792d6ff6345de2207e571b1 inherit pro_attribs_a05371" id="r_a40cec73d5792d6ff6345de2207e571b1"><td class="memItemLeft">
+Vector&#160;</td><td class="memItemRight"><b>sigmas_</b></td></tr>
+<tr class="memdesc:a40cec73d5792d6ff6345de2207e571b1 inherit pro_attribs_a05371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard deviations (sigmas), their inverse and inverse square (weights/precisions) These are all computed at construction: the idea is to use one shared model where computation is done only once, the common use case in many problems. <br /></td></tr>
+<tr class="memitem:aca1205cb205c9e9ec405d73b860c461d inherit pro_attribs_a05371" id="r_aca1205cb205c9e9ec405d73b860c461d"><td class="memItemLeft">
+Vector&#160;</td><td class="memItemRight"><b>invsigmas_</b></td></tr>
+<tr class="memitem:a4e57dae93743fc03c50304264e401966 inherit pro_attribs_a05371" id="r_a4e57dae93743fc03c50304264e401966"><td class="memItemLeft">
+Vector&#160;</td><td class="memItemRight"><b>precisions_</b></td></tr>
+<tr class="inherit_header pro_attribs_a05367"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a05367')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a05367.html">gtsam::noiseModel::Gaussian</a></td></tr>
+<tr class="memitem:a918f87a4e22a1ef39c6a94ecc268cad6 inherit pro_attribs_a05367" id="r_a918f87a4e22a1ef39c6a94ecc268cad6"><td class="memItemLeft">
+std::optional&lt; Matrix &gt;&#160;</td><td class="memItemRight"><b>sqrt_information_</b></td></tr>
+<tr class="memdesc:a918f87a4e22a1ef39c6a94ecc268cad6 inherit pro_attribs_a05367"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix square root of information matrix (R). <br /></td></tr>
+<tr class="inherit_header pro_attribs_a05363"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a05363')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a05363.html">gtsam::noiseModel::Base</a></td></tr>
+<tr class="memitem:aba057c19d28e7bd24c077a3e8c657b8f inherit pro_attribs_a05363" id="r_aba057c19d28e7bd24c077a3e8c657b8f"><td class="memItemLeft">
+size_t&#160;</td><td class="memItemRight"><b>dim_</b></td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/slam/<a class="el" href="a01259_source.html">FrobeniusFactor.h</a></li>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ab7698e6663fd8625566e2b1f09a0e441" name="ab7698e6663fd8625566e2b1f09a0e441"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7698e6663fd8625566e2b1f09a0e441">&#9670;&#160;</a></span>Create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, std::enable_if_t&lt;!std::is_integral_v&lt; T &gt;, int &gt; = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shared_ptr gtsam::noiseModel::Unit::Create </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>measured</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a unit covariance noise model for a measurement type. </p>
+<p>Reuse a cached instance for fixed-size types. </p>
+
+</div>
+</div>
+<a id="a1a04f700c2ad336be61c7047af6c2b93" name="a1a04f700c2ad336be61c7047af6c2b93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a04f700c2ad336be61c7047af6c2b93">&#9670;&#160;</a></span>isUnit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool gtsam::noiseModel::Unit::isUnit </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>true if a unit noise model, saves slow/clumsy dynamic casting </p>
+
+<p>Reimplemented from <a class="el" href="a05363.html#a48ee92a4ce6f6e9965dc2a928fc1e849">gtsam::noiseModel::Base</a>.</p>
+
+</div>
+</div>
+<a id="acde6126739e072e6a96b0046f7338ff4" name="acde6126739e072e6a96b0046f7338ff4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acde6126739e072e6a96b0046f7338ff4">&#9670;&#160;</a></span>logDetR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double gtsam::noiseModel::Unit::logDetR </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute the log of |R|. Used for computing log(|Σ|). </p>
+
+<p>Reimplemented from <a class="el" href="a05379.html#add7dc89200425ab8c2130a4af7a5d345">gtsam::noiseModel::Isotropic</a>.</p>
+
+</div>
+</div>
+<a id="ad0878a9d8a029f3cd1b7f005d538e118" name="ad0878a9d8a029f3cd1b7f005d538e118"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0878a9d8a029f3cd1b7f005d538e118">&#9670;&#160;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gtsam::noiseModel::Unit::print </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="a05379.html">gtsam::noiseModel::Isotropic</a>.</p>
+
+</div>
+</div>
+<a id="a14b6ac02b28d64ab78ae4d61e0866fe8" name="a14b6ac02b28d64ab78ae4d61e0866fe8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14b6ac02b28d64ab78ae4d61e0866fe8">&#9670;&#160;</a></span>squaredMahalanobisDistance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double gtsam::noiseModel::Unit::squaredMahalanobisDistance </td>
+          <td>(</td>
+          <td class="paramtype">const Vector &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Squared Mahalanobis distance v'*R'*R*v = &lt;R*v,R*v&gt;. </p>
+
+<p>Reimplemented from <a class="el" href="a05379.html#af7c4601cba5427791b6cb6777fb40fc8">gtsam::noiseModel::Isotropic</a>.</p>
+
+</div>
+</div>
+<a id="a075b5e743ed96eb7b532e83f5130bcf5" name="a075b5e743ed96eb7b532e83f5130bcf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a075b5e743ed96eb7b532e83f5130bcf5">&#9670;&#160;</a></span>unwhiten()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector gtsam::noiseModel::Unit::unwhiten </td>
+          <td>(</td>
+          <td class="paramtype">const Vector &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Unwhiten an error vector. </p>
+
+<p>Reimplemented from <a class="el" href="a05379.html#aa1ac067e6ff2c70540efa795475a3bfa">gtsam::noiseModel::Isotropic</a>.</p>
+
+</div>
+</div>
+<a id="a89ecc09002bee060b61cb74531dbee8b" name="a89ecc09002bee060b61cb74531dbee8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89ecc09002bee060b61cb74531dbee8b">&#9670;&#160;</a></span>unwhitenInPlace() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gtsam::noiseModel::Unit::unwhitenInPlace </td>
+          <td>(</td>
+          <td class="paramtype">Eigen::Block&lt; Vector &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>in-place unwhiten, override if can be done more efficiently </p>
+
+<p>Reimplemented from <a class="el" href="a05379.html#a7bafd4ad816d00161d9c3fb3cec50d57">gtsam::noiseModel::Isotropic</a>.</p>
+
+</div>
+</div>
+<a id="a77033130942900ba4234af1f5b5bd5bc" name="a77033130942900ba4234af1f5b5bd5bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77033130942900ba4234af1f5b5bd5bc">&#9670;&#160;</a></span>unwhitenInPlace() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gtsam::noiseModel::Unit::unwhitenInPlace </td>
+          <td>(</td>
+          <td class="paramtype">Vector &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>in-place unwhiten, override if can be done more efficiently </p>
+
+<p>Reimplemented from <a class="el" href="a05379.html#a3ca49a26a0c62db69f27209b9e02b61d">gtsam::noiseModel::Isotropic</a>.</p>
+
+</div>
+</div>
+<a id="af9783a7fdc214131ae012073c4650b68" name="af9783a7fdc214131ae012073c4650b68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9783a7fdc214131ae012073c4650b68">&#9670;&#160;</a></span>Whiten()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Matrix gtsam::noiseModel::Unit::Whiten </td>
+          <td>(</td>
+          <td class="paramtype">const Matrix &amp;</td>          <td class="paramname"><span class="paramname"><em>H</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whiten a matrix. </p>
+
+<p>Reimplemented from <a class="el" href="a05379.html#ab8e0677ad0e9c6a2c9793a0971af8178">gtsam::noiseModel::Isotropic</a>.</p>
+
+</div>
+</div>
+<a id="a43c9d87437089c661a3a6298ece53287" name="a43c9d87437089c661a3a6298ece53287"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43c9d87437089c661a3a6298ece53287">&#9670;&#160;</a></span>whiten()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector gtsam::noiseModel::Unit::whiten </td>
+          <td>(</td>
+          <td class="paramtype">const Vector &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whiten an error vector. </p>
+
+<p>Reimplemented from <a class="el" href="a05379.html#a90f77b77984d15a4956e7112d4967c8d">gtsam::noiseModel::Isotropic</a>.</p>
+
+</div>
+</div>
+<a id="a05d775a7840d0c9b4f926b796b2c46fd" name="a05d775a7840d0c9b4f926b796b2c46fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05d775a7840d0c9b4f926b796b2c46fd">&#9670;&#160;</a></span>WhitenInPlace() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gtsam::noiseModel::Unit::WhitenInPlace </td>
+          <td>(</td>
+          <td class="paramtype">Eigen::Block&lt; Matrix &gt;</td>          <td class="paramname"><span class="paramname"><em>H</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>In-place version. </p>
+
+<p>Reimplemented from <a class="el" href="a05379.html#ad493fa826ba97bfb8f577d3703cd64c9">gtsam::noiseModel::Isotropic</a>.</p>
+
+</div>
+</div>
+<a id="ab1451b36f4796f85c4ee776e67df319d" name="ab1451b36f4796f85c4ee776e67df319d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1451b36f4796f85c4ee776e67df319d">&#9670;&#160;</a></span>WhitenInPlace() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gtsam::noiseModel::Unit::WhitenInPlace </td>
+          <td>(</td>
+          <td class="paramtype">Matrix &amp;</td>          <td class="paramname"><span class="paramname"><em>H</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>In-place version. </p>
+
+<p>Reimplemented from <a class="el" href="a05379.html#a0a3c7a16da1df4075e2ff45bf64e5762">gtsam::noiseModel::Isotropic</a>.</p>
+
+</div>
+</div>
+<a id="a18e4a5bffb47ef392182e9c0a3249123" name="a18e4a5bffb47ef392182e9c0a3249123"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18e4a5bffb47ef392182e9c0a3249123">&#9670;&#160;</a></span>whitenInPlace() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gtsam::noiseModel::Unit::whitenInPlace </td>
+          <td>(</td>
+          <td class="paramtype">Eigen::Block&lt; Vector &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>in-place whiten, override if can be done more efficiently </p>
+
+<p>Reimplemented from <a class="el" href="a05371.html#a4ef3e9caeb1722f9115fffe8438fb4b3">gtsam::noiseModel::Diagonal</a>.</p>
+
+</div>
+</div>
+<a id="a8da3bd9bc0519a2a0b821f97ee08955f" name="a8da3bd9bc0519a2a0b821f97ee08955f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8da3bd9bc0519a2a0b821f97ee08955f">&#9670;&#160;</a></span>whitenInPlace() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gtsam::noiseModel::Unit::whitenInPlace </td>
+          <td>(</td>
+          <td class="paramtype">Vector &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>in-place whiten, override if can be done more efficiently </p>
+
+<p>Reimplemented from <a class="el" href="a05379.html#af896ee11596ae0642f47d3b8a8792e5a">gtsam::noiseModel::Isotropic</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/<a class="el" href="a00968_source.html">NoiseModel.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/<a class="el" href="a01142.html">NoiseModel.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -337,7 +725,7 @@ typedef <a class="el" href="a05047.html#a7c719ae67f222f66569ccb3b526cb9cb">Nonli
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a05383.html">FrobeniusFactor</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a02274.html">noiseModel</a></li><li class="navelem"><a href="a05383.html">Unit</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

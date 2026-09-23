@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::GaussianFactorGraph Class Reference</title>
+<title>gtsam: gtsam::PinholeBaseK&lt; CALIBRATION &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,392 +96,193 @@ $(function(){initNavTree('a04339.html','','a04336'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::GaussianFactorGraph Class Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::PinholeBaseK&lt; CALIBRATION &gt; Class Template Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span><div class="ingroups"><a class="el" href="a02230.html">Geometry</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A Linear <a class="el" href="a04139.html">Factor</a> Graph is a factor graph where all factors are Gaussian, i.e. </p>
-<p><a class="el" href="a04139.html">Factor</a> == <a class="el" href="a04327.html" title="An abstract virtual base class for JacobianFactor and HessianFactor.">GaussianFactor</a> <a class="el" href="a04611.html" title="VectorValues represents a collection of vector-valued variables associated each with a unique integer...">VectorValues</a> = A values structure of vectors Most of the time, linear factor graphs arise by linearizing a non-linear factor graph. </p>
-</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::GaussianFactorGraph:</div>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename CALIBRATION&gt;<br />
+class gtsam::PinholeBaseK&lt; CALIBRATION &gt;</div><p>A pinhole camera class that has a <a class="el" href="a04403.html" title="A 3D pose (R,t) : (Rot3,Point3).">Pose3</a> and a <em>fixed</em> Calibration. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::PinholeBaseK&lt; CALIBRATION &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a04339.png" usemap="#gtsam_3A_3AGaussianFactorGraph_map" alt=""/>
-  <map id="gtsam_3A_3AGaussianFactorGraph_map" name="gtsam_3A_3AGaussianFactorGraph_map">
-<area href="a04071.html" alt="gtsam::FactorGraph&lt; GaussianFactor &gt;" shape="rect" coords="0,0,344,24"/>
-<area href="a04127.html" alt="gtsam::EliminateableFactorGraph&lt; GaussianFactorGraph &gt;" shape="rect" coords="354,0,698,24"/>
+  <img src="a04339.png" usemap="#gtsam_3A_3APinholeBaseK_3C_20CALIBRATION_20_3E_map" alt=""/>
+  <map id="gtsam_3A_3APinholeBaseK_3C_20CALIBRATION_20_3E_map" name="gtsam_3A_3APinholeBaseK_3C_20CALIBRATION_20_3E_map">
+<area href="a04163.html" title="A pinhole camera class that has a Pose3, functions as base class for all pinhole cameras." alt="gtsam::PinholeBase" shape="rect" coords="0,0,269,24"/>
+<area href="a04323.html" alt="gtsam::PinholeCamera&lt; gtsam::Cal3_S2 &gt;" shape="rect" coords="279,112,548,136"/>
+<area href="a04323.html" alt="gtsam::PinholeCamera&lt; gtsam::Cal3Bundler &gt;" shape="rect" coords="279,168,548,192"/>
+<area href="a04323.html" alt="gtsam::PinholeCamera&lt; gtsam::Cal3DS2 &gt;" shape="rect" coords="279,224,548,248"/>
+<area href="a04323.html" alt="gtsam::PinholeCamera&lt; gtsam::Cal3Unified &gt;" shape="rect" coords="279,280,548,304"/>
+<area href="a04323.html" alt="gtsam::PinholeCamera&lt; gtsam::Cal3Fisheye &gt;" shape="rect" coords="279,336,548,360"/>
+<area href="a04323.html" alt="gtsam::PinholeCamera&lt; Cal3Bundler &gt;" shape="rect" coords="279,392,548,416"/>
+<area href="a04323.html" alt="gtsam::PinholeCamera&lt; CALIBRATION &gt;" shape="rect" coords="279,448,548,472"/>
+<area href="a04323.html" alt="gtsam::PinholeCamera&lt; Cal3_S2 &gt;" shape="rect" coords="279,504,548,528"/>
+<area href="a04343.html" alt="gtsam::PinholePose&lt; gtsam::Cal3_S2 &gt;" shape="rect" coords="279,560,548,584"/>
+<area href="a04343.html" alt="gtsam::PinholePose&lt; gtsam::Cal3Bundler &gt;" shape="rect" coords="279,616,548,640"/>
+<area href="a04343.html" alt="gtsam::PinholePose&lt; gtsam::Cal3DS2 &gt;" shape="rect" coords="279,672,548,696"/>
+<area href="a04343.html" alt="gtsam::PinholePose&lt; gtsam::Cal3Unified &gt;" shape="rect" coords="279,728,548,752"/>
+<area href="a04343.html" alt="gtsam::PinholePose&lt; gtsam::Cal3Fisheye &gt;" shape="rect" coords="279,784,548,808"/>
+<area href="a04343.html" title="A pinhole camera class that has a Pose3 and a fixed Calibration." alt="gtsam::PinholePose&lt; CALIBRATION &gt;" shape="rect" coords="279,840,548,864"/>
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a733aa6a7780bb3d16fb45345a655f717" id="r_a733aa6a7780bb3d16fb45345a655f717"><td class="memItemLeft"><a id="a733aa6a7780bb3d16fb45345a655f717" name="a733aa6a7780bb3d16fb45345a655f717"></a>
-void&#160;</td><td class="memItemRight"><b>add</b> (const GaussianFactor &amp;factor)</td></tr>
-<tr class="memdesc:a733aa6a7780bb3d16fb45345a655f717"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a factor by value - makes a copy. <br /></td></tr>
-<tr class="memitem:a9778ee09d534bc6b8c2a2263e14875da" id="r_a9778ee09d534bc6b8c2a2263e14875da"><td class="memItemLeft"><a id="a9778ee09d534bc6b8c2a2263e14875da" name="a9778ee09d534bc6b8c2a2263e14875da"></a>
-void&#160;</td><td class="memItemRight"><b>add</b> (const <a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a> &amp;factor)</td></tr>
-<tr class="memdesc:a9778ee09d534bc6b8c2a2263e14875da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a factor by pointer - stores pointer without copying the factor. <br /></td></tr>
-<tr class="memitem:acac67c59333e4db66b530ee09d231e3d" id="r_acac67c59333e4db66b530ee09d231e3d"><td class="memItemLeft"><a id="acac67c59333e4db66b530ee09d231e3d" name="acac67c59333e4db66b530ee09d231e3d"></a>
-void&#160;</td><td class="memItemRight"><b>add</b> (const Vector &amp;b)</td></tr>
-<tr class="memdesc:acac67c59333e4db66b530ee09d231e3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a null factor. <br /></td></tr>
-<tr class="memitem:ad20e5b614636e00934414baf2a9b8636" id="r_ad20e5b614636e00934414baf2a9b8636"><td class="memItemLeft"><a id="ad20e5b614636e00934414baf2a9b8636" name="ad20e5b614636e00934414baf2a9b8636"></a>
-void&#160;</td><td class="memItemRight"><b>add</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key1, const Matrix &amp;A1, const Vector &amp;b, const SharedDiagonal &amp;model=SharedDiagonal())</td></tr>
-<tr class="memdesc:ad20e5b614636e00934414baf2a9b8636"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a unary factor. <br /></td></tr>
-<tr class="memitem:ad34fa381109aa8c3e1653dc352b350c9" id="r_ad34fa381109aa8c3e1653dc352b350c9"><td class="memItemLeft"><a id="ad34fa381109aa8c3e1653dc352b350c9" name="ad34fa381109aa8c3e1653dc352b350c9"></a>
-void&#160;</td><td class="memItemRight"><b>add</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key1, const Matrix &amp;A1, <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key2, const Matrix &amp;A2, const Vector &amp;b, const SharedDiagonal &amp;model=SharedDiagonal())</td></tr>
-<tr class="memdesc:ad34fa381109aa8c3e1653dc352b350c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a binary factor. <br /></td></tr>
-<tr class="memitem:a8a98904f917816d66b36a912acb44830" id="r_a8a98904f917816d66b36a912acb44830"><td class="memItemLeft"><a id="a8a98904f917816d66b36a912acb44830" name="a8a98904f917816d66b36a912acb44830"></a>
-void&#160;</td><td class="memItemRight"><b>add</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key1, const Matrix &amp;A1, <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key2, const Matrix &amp;A2, <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key3, const Matrix &amp;A3, const Vector &amp;b, const SharedDiagonal &amp;model=SharedDiagonal())</td></tr>
-<tr class="memdesc:a8a98904f917816d66b36a912acb44830"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a ternary factor. <br /></td></tr>
-<tr class="memitem:a2eaa4c442c6a4424cb8febe3e0f4f66c" id="r_a2eaa4c442c6a4424cb8febe3e0f4f66c"><td class="memTemplParams" colspan="2"><a id="a2eaa4c442c6a4424cb8febe3e0f4f66c" name="a2eaa4c442c6a4424cb8febe3e0f4f66c"></a>
-template&lt;class TERMS&gt; </td></tr>
-<tr class="memitem:a2eaa4c442c6a4424cb8febe3e0f4f66c template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><b>add</b> (const TERMS &amp;terms, const Vector &amp;b, const SharedDiagonal &amp;model=SharedDiagonal())</td></tr>
-<tr class="memdesc:a2eaa4c442c6a4424cb8febe3e0f4f66c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an n-ary factor. <br /></td></tr>
-<tr class="memitem:ab089bf067d3c3a6cd9e68b912cb83acb" id="r_ab089bf067d3c3a6cd9e68b912cb83acb"><td class="memItemLeft"><a id="ab089bf067d3c3a6cd9e68b912cb83acb" name="ab089bf067d3c3a6cd9e68b912cb83acb"></a>
-<a class="el" href="#aacb8e92ffef9b561c3d40338ef8506f5">Keys</a>&#160;</td><td class="memItemRight"><b>keys</b> () const</td></tr>
-<tr class="memitem:ab3b00eef3298ba8d5f95e3d06d934d5e" id="r_ab3b00eef3298ba8d5f95e3d06d934d5e"><td class="memItemLeft"><a id="ab3b00eef3298ba8d5f95e3d06d934d5e" name="ab3b00eef3298ba8d5f95e3d06d934d5e"></a>
-std::map&lt; <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, size_t &gt;&#160;</td><td class="memItemRight"><b>getKeyDimMap</b> () const</td></tr>
-<tr class="memitem:ac0c9b70edb23bac0818ded3d32a6ed13" id="r_ac0c9b70edb23bac0818ded3d32a6ed13"><td class="memItemLeft"><a id="ac0c9b70edb23bac0818ded3d32a6ed13" name="ac0c9b70edb23bac0818ded3d32a6ed13"></a>
-double&#160;</td><td class="memItemRight"><b>error</b> (const <a class="el" href="a06239.html">VectorValues</a> &amp;x) const</td></tr>
-<tr class="memdesc:ac0c9b70edb23bac0818ded3d32a6ed13"><td class="mdescLeft">&#160;</td><td class="mdescRight">unnormalized error <br /></td></tr>
-<tr class="memitem:a74ed62e8ff4efeb6c33f4acd91d08625" id="r_a74ed62e8ff4efeb6c33f4acd91d08625"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a74ed62e8ff4efeb6c33f4acd91d08625">probPrime</a> (const <a class="el" href="a06239.html">VectorValues</a> &amp;c) const</td></tr>
-<tr class="memdesc:a74ed62e8ff4efeb6c33f4acd91d08625"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unnormalized probability.  <br /></td></tr>
-<tr class="memitem:a85e7472485f1cfdd1354ee4161981c0f" id="r_a85e7472485f1cfdd1354ee4161981c0f"><td class="memItemLeft">virtual <a class="el" href="#a6230b36e3daf60b619e20742db3b02b6">GaussianFactorGraph</a>&#160;</td><td class="memItemRight"><a class="el" href="#a85e7472485f1cfdd1354ee4161981c0f">clone</a> () const</td></tr>
-<tr class="memdesc:a85e7472485f1cfdd1354ee4161981c0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clone() performs a deep-copy of the graph, including all of the factors.  <br /></td></tr>
-<tr class="memitem:a5ba73df3e028d51da3ee8add3f93b63e" id="r_a5ba73df3e028d51da3ee8add3f93b63e"><td class="memItemLeft">virtual <a class="el" href="#a1f73f4987b9bdaac5c1414a401c0364c">GaussianFactorGraph::shared_ptr</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5ba73df3e028d51da3ee8add3f93b63e">cloneToPtr</a> () const</td></tr>
-<tr class="memdesc:a5ba73df3e028d51da3ee8add3f93b63e"><td class="mdescLeft">&#160;</td><td class="mdescRight">CloneToPtr() performs a simple assignment to a new graph and returns it.  <br /></td></tr>
-<tr class="memitem:a05bfa41e9ff99f246ea528ba26b82e69" id="r_a05bfa41e9ff99f246ea528ba26b82e69"><td class="memItemLeft"><a class="el" href="#a6230b36e3daf60b619e20742db3b02b6">GaussianFactorGraph</a>&#160;</td><td class="memItemRight"><a class="el" href="#a05bfa41e9ff99f246ea528ba26b82e69">negate</a> () const</td></tr>
-<tr class="memdesc:a05bfa41e9ff99f246ea528ba26b82e69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the negation of all factors in this graph - corresponds to antifactors.  <br /></td></tr>
-<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Constructors</div></td></tr>
-<tr class="memitem:a6230b36e3daf60b619e20742db3b02b6" id="r_a6230b36e3daf60b619e20742db3b02b6"><td class="memItemLeft"><a id="a6230b36e3daf60b619e20742db3b02b6" name="a6230b36e3daf60b619e20742db3b02b6"></a>
-&#160;</td><td class="memItemRight"><b>GaussianFactorGraph</b> ()</td></tr>
-<tr class="memdesc:a6230b36e3daf60b619e20742db3b02b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
-<tr class="memitem:a30793ce545553ceb48be79d10d06be39" id="r_a30793ce545553ceb48be79d10d06be39"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a30793ce545553ceb48be79d10d06be39">GaussianFactorGraph</a> (std::initializer_list&lt; <a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a> &gt; factors)</td></tr>
-<tr class="memdesc:a30793ce545553ceb48be79d10d06be39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from an initializer lists of <a class="el" href="a04327.html" title="An abstract virtual base class for JacobianFactor and HessianFactor.">GaussianFactor</a> shared pointers.  <br /></td></tr>
-<tr class="memitem:ae25329ab2478d0ea2054eebc7bcdde0a" id="r_ae25329ab2478d0ea2054eebc7bcdde0a"><td class="memTemplParams" colspan="2"><a id="ae25329ab2478d0ea2054eebc7bcdde0a" name="ae25329ab2478d0ea2054eebc7bcdde0a"></a>
-template&lt;typename ITERATOR&gt; </td></tr>
-<tr class="memitem:ae25329ab2478d0ea2054eebc7bcdde0a template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>GaussianFactorGraph</b> (ITERATOR firstFactor, ITERATOR lastFactor)</td></tr>
-<tr class="memdesc:ae25329ab2478d0ea2054eebc7bcdde0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from iterator over factors. <br /></td></tr>
-<tr class="memitem:af5974ac5896b74579db7967b05f6a146" id="r_af5974ac5896b74579db7967b05f6a146"><td class="memTemplParams" colspan="2"><a id="af5974ac5896b74579db7967b05f6a146" name="af5974ac5896b74579db7967b05f6a146"></a>
-template&lt;class CONTAINER&gt; </td></tr>
-<tr class="memitem:af5974ac5896b74579db7967b05f6a146 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>GaussianFactorGraph</b> (const CONTAINER &amp;factors)</td></tr>
-<tr class="memdesc:af5974ac5896b74579db7967b05f6a146"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from container of factors (<a class="el" href="#a1f73f4987b9bdaac5c1414a401c0364c" title="shared_ptr to this class">shared_ptr</a> or plain objects). <br /></td></tr>
-<tr class="memitem:aedece6712926154a27d3facc4899b88a" id="r_aedece6712926154a27d3facc4899b88a"><td class="memTemplParams" colspan="2"><a id="aedece6712926154a27d3facc4899b88a" name="aedece6712926154a27d3facc4899b88a"></a>
-template&lt;class DERIVEDFACTOR&gt; </td></tr>
-<tr class="memitem:aedece6712926154a27d3facc4899b88a template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>GaussianFactorGraph</b> (const <a class="el" href="a04071.html#a42db0a1062eb6c223b0a186a9d34cb4b">FactorGraph</a>&lt; DERIVEDFACTOR &gt; &amp;graph)</td></tr>
-<tr class="memdesc:aedece6712926154a27d3facc4899b88a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implicit copy/downcast constructor to override explicit template container constructor. <br /></td></tr>
-<tr class="memitem:ad2cf3894566f0970a9df81f28b8a0dda" id="r_ad2cf3894566f0970a9df81f28b8a0dda"><td class="memItemLeft"><a id="ad2cf3894566f0970a9df81f28b8a0dda" name="ad2cf3894566f0970a9df81f28b8a0dda"></a>
-virtual&#160;</td><td class="memItemRight"><b>~GaussianFactorGraph</b> ()</td></tr>
-<tr class="memdesc:ad2cf3894566f0970a9df81f28b8a0dda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor. <br /></td></tr>
-<tr id="pub-methods-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Testable</div></td></tr>
-<tr class="memitem:af1bc3034c1cbe65318094edf32410603" id="r_af1bc3034c1cbe65318094edf32410603"><td class="memItemLeft"><a id="af1bc3034c1cbe65318094edf32410603" name="af1bc3034c1cbe65318094edf32410603"></a>
-bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="#aa5ff7a930581421abeb3b93c1347fcdb">This</a> &amp;fg, double tol=1e-9) const</td></tr>
-<tr id="pub-methods-2" class="groupHeader"><td colspan="2"><div class="groupHeader">Linear Algebra</div></td></tr>
-<tr class="memitem:a2ec5f64848183b75a6a3470c0750aeaa" id="r_a2ec5f64848183b75a6a3470c0750aeaa"><td class="memItemLeft">std::vector&lt; std::tuple&lt; int, int, double &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a2ec5f64848183b75a6a3470c0750aeaa">sparseJacobian</a> (const <a class="el" href="a04227.html">Ordering</a> &amp;ordering, size_t &amp;nrows, size_t &amp;ncols) const</td></tr>
-<tr class="memdesc:a2ec5f64848183b75a6a3470c0750aeaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a sparse augmented Jacbian matrix as a vector of i, j, and s, where i(k) and j(k) are the base 0 row and column indices, and s(k) is the entry as a double.  <br /></td></tr>
-<tr class="memitem:a0335c868e15088cc174544d55c43ce5c" id="r_a0335c868e15088cc174544d55c43ce5c"><td class="memItemLeft"><a id="a0335c868e15088cc174544d55c43ce5c" name="a0335c868e15088cc174544d55c43ce5c"></a>
-std::vector&lt; std::tuple&lt; int, int, double &gt; &gt;&#160;</td><td class="memItemRight"><b>sparseJacobian</b> () const</td></tr>
-<tr class="memdesc:a0335c868e15088cc174544d55c43ce5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a sparse augmented Jacobian matrix with default ordering. <br /></td></tr>
-<tr class="memitem:a5856b8544f4d9b76be4b2d8f13807e09" id="r_a5856b8544f4d9b76be4b2d8f13807e09"><td class="memItemLeft">Matrix&#160;</td><td class="memItemRight"><a class="el" href="#a5856b8544f4d9b76be4b2d8f13807e09">sparseJacobian_</a> () const</td></tr>
-<tr class="memdesc:a5856b8544f4d9b76be4b2d8f13807e09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix version of sparseJacobian: generates a 3*m matrix with [i,j,s] entries such that S(i(k),j(k)) = s(k), which can be given to MATLAB's sparse.  <br /></td></tr>
-<tr class="memitem:a1cb2c3ca428470255ceda9bee7ab06fe" id="r_a1cb2c3ca428470255ceda9bee7ab06fe"><td class="memItemLeft">Matrix&#160;</td><td class="memItemRight"><a class="el" href="#a1cb2c3ca428470255ceda9bee7ab06fe">augmentedJacobian</a> (const <a class="el" href="a04227.html">Ordering</a> &amp;ordering) const</td></tr>
-<tr class="memdesc:a1cb2c3ca428470255ceda9bee7ab06fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a dense \( [ \;A\;b\; ] \in \mathbb{R}^{m \times n+1} \) Jacobian matrix, augmented with b with the noise models baked into A and b.  <br /></td></tr>
-<tr class="memitem:a6b61b289cddbdb999e798e3c5e0c193f" id="r_a6b61b289cddbdb999e798e3c5e0c193f"><td class="memItemLeft">Matrix&#160;</td><td class="memItemRight"><a class="el" href="#a6b61b289cddbdb999e798e3c5e0c193f">augmentedJacobian</a> () const</td></tr>
-<tr class="memdesc:a6b61b289cddbdb999e798e3c5e0c193f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a dense \( [ \;A\;b\; ] \in \mathbb{R}^{m \times n+1} \) Jacobian matrix, augmented with b with the noise models baked into A and b.  <br /></td></tr>
-<tr class="memitem:a0836a4b7823c2ccb0fb22910b5b1030d" id="r_a0836a4b7823c2ccb0fb22910b5b1030d"><td class="memItemLeft">std::pair&lt; Matrix, Vector &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a0836a4b7823c2ccb0fb22910b5b1030d">jacobian</a> (const <a class="el" href="a04227.html">Ordering</a> &amp;ordering) const</td></tr>
-<tr class="memdesc:a0836a4b7823c2ccb0fb22910b5b1030d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the dense Jacobian \( A \) and right-hand-side \( b \), with the noise models baked into A and b.  <br /></td></tr>
-<tr class="memitem:aa3c74bd13ab3b5c02cae46d78ce9af83" id="r_aa3c74bd13ab3b5c02cae46d78ce9af83"><td class="memItemLeft">std::pair&lt; Matrix, Vector &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aa3c74bd13ab3b5c02cae46d78ce9af83">jacobian</a> () const</td></tr>
-<tr class="memdesc:aa3c74bd13ab3b5c02cae46d78ce9af83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the dense Jacobian \( A \) and right-hand-side \( b \), with the noise models baked into A and b.  <br /></td></tr>
-<tr class="memitem:ad79623fc64110e086baa1980b0f9406a" id="r_ad79623fc64110e086baa1980b0f9406a"><td class="memItemLeft">Matrix&#160;</td><td class="memItemRight"><a class="el" href="#ad79623fc64110e086baa1980b0f9406a">augmentedHessian</a> (const <a class="el" href="a04227.html">Ordering</a> &amp;ordering) const</td></tr>
-<tr class="memdesc:ad79623fc64110e086baa1980b0f9406a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a dense \( \Lambda \in \mathbb{R}^{n+1 \times n+1} \) Hessian matrix, augmented with the information vector \( \eta \).  <br /></td></tr>
-<tr class="memitem:a225dde5026c3f44386c0559ce4320287" id="r_a225dde5026c3f44386c0559ce4320287"><td class="memItemLeft">Matrix&#160;</td><td class="memItemRight"><a class="el" href="#a225dde5026c3f44386c0559ce4320287">augmentedHessian</a> () const</td></tr>
-<tr class="memdesc:a225dde5026c3f44386c0559ce4320287"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a dense \( \Lambda \in \mathbb{R}^{n+1 \times n+1} \) Hessian matrix, augmented with the information vector \( \eta \).  <br /></td></tr>
-<tr class="memitem:a754d3a46e1d45acb96f01c7a223842f3" id="r_a754d3a46e1d45acb96f01c7a223842f3"><td class="memItemLeft">std::pair&lt; Matrix, Vector &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a754d3a46e1d45acb96f01c7a223842f3">hessian</a> (const <a class="el" href="a04227.html">Ordering</a> &amp;ordering) const</td></tr>
-<tr class="memdesc:a754d3a46e1d45acb96f01c7a223842f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the dense Hessian \( \Lambda \) and information vector \( \eta \), with the noise models baked in.  <br /></td></tr>
-<tr class="memitem:a7ed3e7cefeca1b31e17021005e6f7c44" id="r_a7ed3e7cefeca1b31e17021005e6f7c44"><td class="memItemLeft">std::pair&lt; Matrix, Vector &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a7ed3e7cefeca1b31e17021005e6f7c44">hessian</a> () const</td></tr>
-<tr class="memdesc:a7ed3e7cefeca1b31e17021005e6f7c44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the dense Hessian \( \Lambda \) and information vector \( \eta \), with the noise models baked in.  <br /></td></tr>
-<tr class="memitem:ab325c99d695e76a6d1b99285d9ab8dae" id="r_ab325c99d695e76a6d1b99285d9ab8dae"><td class="memItemLeft"><a id="ab325c99d695e76a6d1b99285d9ab8dae" name="ab325c99d695e76a6d1b99285d9ab8dae"></a>
-virtual <a class="el" href="a06239.html">VectorValues</a>&#160;</td><td class="memItemRight"><b>hessianDiagonal</b> () const</td></tr>
-<tr class="memdesc:ab325c99d695e76a6d1b99285d9ab8dae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return only the diagonal of the Hessian A'*A, as a <a class="el" href="a04611.html" title="VectorValues represents a collection of vector-valued variables associated each with a unique integer...">VectorValues</a>. <br /></td></tr>
-<tr class="memitem:a4d1d71b01cfecb78005b82465ebe632d" id="r_a4d1d71b01cfecb78005b82465ebe632d"><td class="memItemLeft"><a id="a4d1d71b01cfecb78005b82465ebe632d" name="a4d1d71b01cfecb78005b82465ebe632d"></a>
-virtual std::map&lt; <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, Matrix &gt;&#160;</td><td class="memItemRight"><b>hessianBlockDiagonal</b> () const</td></tr>
-<tr class="memdesc:a4d1d71b01cfecb78005b82465ebe632d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the block diagonal of the Hessian for this factor. <br /></td></tr>
-<tr class="memitem:a8314e397b9be5c5e58465e319207553f" id="r_a8314e397b9be5c5e58465e319207553f"><td class="memItemLeft"><a class="el" href="a06239.html">VectorValues</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8314e397b9be5c5e58465e319207553f">optimize</a> (const <a class="el" href="a04127.html#a4053522180fd649baf38a49c515e7b53">Eliminate</a> &amp;function=EliminationTraitsType::DefaultEliminate) const</td></tr>
-<tr class="memdesc:a8314e397b9be5c5e58465e319207553f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve the factor graph by performing multifrontal variable elimination in COLAMD order using the dense elimination function specified in <code>function</code> (default EliminatePreferCholesky), followed by back-substitution in the Bayes tree resulting from elimination.  <br /></td></tr>
-<tr class="memitem:a5876c0a7c2b287b57277cbd69bc78aae" id="r_a5876c0a7c2b287b57277cbd69bc78aae"><td class="memItemLeft"><a class="el" href="a06239.html">VectorValues</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5876c0a7c2b287b57277cbd69bc78aae">optimize</a> (const <a class="el" href="a04227.html">Ordering</a> &amp;, const <a class="el" href="a04127.html#a4053522180fd649baf38a49c515e7b53">Eliminate</a> &amp;function=EliminationTraitsType::DefaultEliminate) const</td></tr>
-<tr class="memdesc:a5876c0a7c2b287b57277cbd69bc78aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve the factor graph by performing multifrontal variable elimination in COLAMD order using the dense elimination function specified in <code>function</code> (default EliminatePreferCholesky), followed by back-substitution in the Bayes tree resulting from elimination.  <br /></td></tr>
-<tr class="memitem:ae26bfbcee7625daf234a43fd45796700" id="r_ae26bfbcee7625daf234a43fd45796700"><td class="memItemLeft"><a id="ae26bfbcee7625daf234a43fd45796700" name="ae26bfbcee7625daf234a43fd45796700"></a>
-<a class="el" href="a06239.html">VectorValues</a>&#160;</td><td class="memItemRight"><b>optimizeDensely</b> () const</td></tr>
-<tr class="memdesc:ae26bfbcee7625daf234a43fd45796700"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimize using Eigen's dense Cholesky factorization. <br /></td></tr>
-<tr class="memitem:aa183f87ebad359ef5dee4ef626522bf2" id="r_aa183f87ebad359ef5dee4ef626522bf2"><td class="memItemLeft"><a class="el" href="a06239.html">VectorValues</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa183f87ebad359ef5dee4ef626522bf2">gradient</a> (const <a class="el" href="a06239.html">VectorValues</a> &amp;x0) const</td></tr>
-<tr class="memdesc:aa183f87ebad359ef5dee4ef626522bf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the gradient of the energy function, \( \nabla_{x=x_0} \left\Vert \Sigma^{-1} A x - b \right\Vert^2 \), centered around \( x = x_0 \).  <br /></td></tr>
-<tr class="memitem:a4051ae22110840eeebe855652352ef69" id="r_a4051ae22110840eeebe855652352ef69"><td class="memItemLeft">virtual <a class="el" href="a06239.html">VectorValues</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4051ae22110840eeebe855652352ef69">gradientAtZero</a> () const</td></tr>
-<tr class="memdesc:a4051ae22110840eeebe855652352ef69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the gradient of the energy function,  \( \nabla_{x=0} \left\Vert \Sigma^{-1} A x - b
-\right\Vert^2 \), centered around zero.  <br /></td></tr>
-<tr class="memitem:a31ae5450f0fbcfc7e8edf0cb9deb21c2" id="r_a31ae5450f0fbcfc7e8edf0cb9deb21c2"><td class="memItemLeft"><a class="el" href="a06239.html">VectorValues</a>&#160;</td><td class="memItemRight"><a class="el" href="#a31ae5450f0fbcfc7e8edf0cb9deb21c2">optimizeGradientSearch</a> () const</td></tr>
-<tr class="memdesc:a31ae5450f0fbcfc7e8edf0cb9deb21c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimize along the gradient direction, with a closed-form computation to perform the line search.  <br /></td></tr>
-<tr class="memitem:adb2535546d074ea20f68d1c9a82ea91f" id="r_adb2535546d074ea20f68d1c9a82ea91f"><td class="memItemLeft"><a class="el" href="a06239.html">VectorValues</a>&#160;</td><td class="memItemRight"><a class="el" href="#adb2535546d074ea20f68d1c9a82ea91f">transposeMultiply</a> (const <a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b">Errors</a> &amp;e) const</td></tr>
-<tr class="memdesc:adb2535546d074ea20f68d1c9a82ea91f"><td class="mdescLeft">&#160;</td><td class="mdescRight">x = A'*e  <br /></td></tr>
-<tr class="memitem:ad334bc63d65bb3fd53a28fdce19c9bc1" id="r_ad334bc63d65bb3fd53a28fdce19c9bc1"><td class="memItemLeft"><a id="ad334bc63d65bb3fd53a28fdce19c9bc1" name="ad334bc63d65bb3fd53a28fdce19c9bc1"></a>
-void&#160;</td><td class="memItemRight"><b>transposeMultiplyAdd</b> (double alpha, const <a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b">Errors</a> &amp;e, <a class="el" href="a06239.html">VectorValues</a> &amp;x) const</td></tr>
-<tr class="memdesc:ad334bc63d65bb3fd53a28fdce19c9bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">x += alpha*A'*e <br /></td></tr>
-<tr class="memitem:a908618e417977a645baca9f93b9c4e16" id="r_a908618e417977a645baca9f93b9c4e16"><td class="memItemLeft"><a id="a908618e417977a645baca9f93b9c4e16" name="a908618e417977a645baca9f93b9c4e16"></a>
-<a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b">Errors</a>&#160;</td><td class="memItemRight"><b>gaussianErrors</b> (const <a class="el" href="a06239.html">VectorValues</a> &amp;x) const</td></tr>
-<tr class="memdesc:a908618e417977a645baca9f93b9c4e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">return A*x-b <br /></td></tr>
-<tr class="memitem:a899a8e63e67a30a060879c8478e9d351" id="r_a899a8e63e67a30a060879c8478e9d351"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a899a8e63e67a30a060879c8478e9d351">multiplyInPlace</a> (const <a class="el" href="a06239.html">VectorValues</a> &amp;x, const Errors::iterator &amp;e) const</td></tr>
-<tr class="memdesc:a899a8e63e67a30a060879c8478e9d351"><td class="mdescLeft">&#160;</td><td class="mdescRight">return A*x <em>&zwj;/ <a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b" title="Errors is a vector of errors.">Errors</a> operator</em>(const <a class="el" href="a04611.html" title="VectorValues represents a collection of vector-valued variables associated each with a unique integer...">VectorValues</a>&amp; x) const;  <br /></td></tr>
-<tr class="memitem:a40513ad09a96c84d652d323505f6e6a9" id="r_a40513ad09a96c84d652d323505f6e6a9"><td class="memItemLeft"><a id="a40513ad09a96c84d652d323505f6e6a9" name="a40513ad09a96c84d652d323505f6e6a9"></a>
-void&#160;</td><td class="memItemRight"><b>printErrors</b> (const <a class="el" href="a06239.html">VectorValues</a> &amp;x, const std::string &amp;str=&quot;GaussianFactorGraph: &quot;, const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=DefaultKeyFormatter, const std::function&lt; bool(const <a class="el" href="a04139.html">Factor</a> *, double, size_t)&gt; &amp;printCondition=[](const <a class="el" href="a04139.html">Factor</a> *, double, size_t) { return true;}) const</td></tr>
-<tr class="inherit_header pub_methods_a04071"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a04071')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a04071.html">gtsam::FactorGraph&lt; GaussianFactor &gt;</a></td></tr>
-<tr class="memitem:afb3841eca3ce0a8b574d72e4107a342a inherit pub_methods_a04071" id="r_afb3841eca3ce0a8b574d72e4107a342a"><td class="memItemLeft">
-virtual&#160;</td><td class="memItemRight"><b>~FactorGraph</b> ()=default</td></tr>
-<tr class="memdesc:afb3841eca3ce0a8b574d72e4107a342a inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor Public and virtual so boost serialization can call it. <br /></td></tr>
-<tr class="memitem:ad6bb162e6e7fe7ab393af78bc3ffea4f inherit pub_methods_a04071" id="r_ad6bb162e6e7fe7ab393af78bc3ffea4f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04071.html#ad6bb162e6e7fe7ab393af78bc3ffea4f">FactorGraph</a> (std::initializer_list&lt; boost::shared_ptr&lt; DERIVEDFACTOR &gt; &gt; sharedFactors)</td></tr>
-<tr class="memdesc:ad6bb162e6e7fe7ab393af78bc3ffea4f inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that takes an initializer list of shared pointers.  <br /></td></tr>
-<tr class="memitem:afea8c7bf4fd19ccc1547be3a5d1834f6 inherit pub_methods_a04071" id="r_afea8c7bf4fd19ccc1547be3a5d1834f6"><td class="memItemLeft">
-void&#160;</td><td class="memItemRight"><b>reserve</b> (size_t <a class="el" href="a04071.html#a76fb453800c9ac164bef864782733403">size</a>)</td></tr>
-<tr class="memdesc:afea8c7bf4fd19ccc1547be3a5d1834f6 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserve space for the specified number of factors if you know in advance how many there will be (works like FastVector::reserve). <br /></td></tr>
-<tr class="memitem:a1bd7154e74538b5934fc616bb5ef7281 inherit pub_methods_a04071" id="r_a1bd7154e74538b5934fc616bb5ef7281"><td class="memItemLeft">
-IsDerived&lt; DERIVEDFACTOR &gt;&#160;</td><td class="memItemRight"><b>push_back</b> (boost::shared_ptr&lt; DERIVEDFACTOR &gt; factor)</td></tr>
-<tr class="memdesc:a1bd7154e74538b5934fc616bb5ef7281 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a factor directly using a shared_ptr. <br /></td></tr>
-<tr class="memitem:a47695cc70eddbdfe333190267f322587 inherit pub_methods_a04071" id="r_a47695cc70eddbdfe333190267f322587"><td class="memItemLeft">
-IsDerived&lt; DERIVEDFACTOR &gt;&#160;</td><td class="memItemRight"><b>emplace_shared</b> (Args &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a47695cc70eddbdfe333190267f322587 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emplace a shared pointer to factor of given type. <br /></td></tr>
-<tr class="memitem:ad52d3a49c561af43dfc8964d7b429a3b inherit pub_methods_a04071" id="r_ad52d3a49c561af43dfc8964d7b429a3b"><td class="memItemLeft">
-IsDerived&lt; DERIVEDFACTOR &gt;&#160;</td><td class="memItemRight"><b>push_back</b> (const DERIVEDFACTOR &amp;factor)</td></tr>
-<tr class="memdesc:ad52d3a49c561af43dfc8964d7b429a3b inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a factor by value, will be copy-constructed (use push_back with a shared_ptr to avoid the copy). <br /></td></tr>
-<tr class="memitem:abfdae5dfdd83614797463fe4171b18a5 inherit pub_methods_a04071" id="r_abfdae5dfdd83614797463fe4171b18a5"><td class="memItemLeft">
-IsDerived&lt; DERIVEDFACTOR &gt;&#160;</td><td class="memItemRight"><b>add</b> (boost::shared_ptr&lt; DERIVEDFACTOR &gt; factor)</td></tr>
-<tr class="memdesc:abfdae5dfdd83614797463fe4171b18a5 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt"><a class="el" href="a04071.html#abfdae5dfdd83614797463fe4171b18a5">add</a></span> is a synonym for push_back. <br /></td></tr>
-<tr class="memitem:aafd0f0ba6c282b6dff10ebae9b5608d7 inherit pub_methods_a04071" id="r_aafd0f0ba6c282b6dff10ebae9b5608d7"><td class="memItemLeft">
-std::enable_if&lt; std::is_base_of&lt; <a class="el" href="a04071.html#aa54fb0b66fd8fee9f3c1f2844cf3edef">FactorType</a>, DERIVEDFACTOR &gt;::value, boost::assign::list_inserter&lt; <a class="el" href="a04147.html">RefCallPushBack</a>&lt; This &gt; &gt; &gt;::type&#160;</td><td class="memItemRight"><b>operator+=</b> (boost::shared_ptr&lt; DERIVEDFACTOR &gt; factor)</td></tr>
-<tr class="memdesc:aafd0f0ba6c282b6dff10ebae9b5608d7 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">+=</span> works well with boost::assign list inserter. <br /></td></tr>
-<tr class="memitem:abf82d480691d503a5cf78eb13c2c45f0 inherit pub_methods_a04071" id="r_abf82d480691d503a5cf78eb13c2c45f0"><td class="memItemLeft">
-HasDerivedElementType&lt; ITERATOR &gt;&#160;</td><td class="memItemRight"><b>push_back</b> (ITERATOR firstFactor, ITERATOR lastFactor)</td></tr>
-<tr class="memdesc:abf82d480691d503a5cf78eb13c2c45f0 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push back many factors with an iterator over shared_ptr (factors are not copied). <br /></td></tr>
-<tr class="memitem:a85e70596230585b20b977d65c5bd5402 inherit pub_methods_a04071" id="r_a85e70596230585b20b977d65c5bd5402"><td class="memItemLeft">
-HasDerivedValueType&lt; ITERATOR &gt;&#160;</td><td class="memItemRight"><b>push_back</b> (ITERATOR firstFactor, ITERATOR lastFactor)</td></tr>
-<tr class="memdesc:a85e70596230585b20b977d65c5bd5402 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push back many factors with an iterator (factors are copied). <br /></td></tr>
-<tr class="memitem:a9e0f98593e999e4ea7b9253880fc73b3 inherit pub_methods_a04071" id="r_a9e0f98593e999e4ea7b9253880fc73b3"><td class="memItemLeft">
-HasDerivedElementType&lt; CONTAINER &gt;&#160;</td><td class="memItemRight"><b>push_back</b> (const CONTAINER &amp;container)</td></tr>
-<tr class="memdesc:a9e0f98593e999e4ea7b9253880fc73b3 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push back many factors as shared_ptr's in a container (factors are not copied). <br /></td></tr>
-<tr class="memitem:a3fb5e47c751f8c2a8940546a7cf27957 inherit pub_methods_a04071" id="r_a3fb5e47c751f8c2a8940546a7cf27957"><td class="memItemLeft">
-HasDerivedValueType&lt; CONTAINER &gt;&#160;</td><td class="memItemRight"><b>push_back</b> (const CONTAINER &amp;container)</td></tr>
-<tr class="memdesc:a3fb5e47c751f8c2a8940546a7cf27957 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push back non-pointer objects in a container (factors are copied). <br /></td></tr>
-<tr class="memitem:a243182115ecfb081a1605fea939f86f4 inherit pub_methods_a04071" id="r_a243182115ecfb081a1605fea939f86f4"><td class="memItemLeft">
-void&#160;</td><td class="memItemRight"><b>add</b> (const FACTOR_OR_CONTAINER &amp;factorOrContainer)</td></tr>
-<tr class="memdesc:a243182115ecfb081a1605fea939f86f4 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a factor or container of factors, including STL collections, BayesTrees, etc. <br /></td></tr>
-<tr class="memitem:aaa5dcf7ea01e1c9e2b65cda2e7576726 inherit pub_methods_a04071" id="r_aaa5dcf7ea01e1c9e2b65cda2e7576726"><td class="memItemLeft">
-boost::assign::list_inserter&lt; <a class="el" href="a04143.html">CRefCallPushBack</a>&lt; This &gt; &gt;&#160;</td><td class="memItemRight"><b>operator+=</b> (const FACTOR_OR_CONTAINER &amp;factorOrContainer)</td></tr>
-<tr class="memdesc:aaa5dcf7ea01e1c9e2b65cda2e7576726 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a factor or container of factors, including STL collections, BayesTrees, etc. <br /></td></tr>
-<tr class="memitem:a55f58c8ba0c0765dcc43e16ef03ca19e inherit pub_methods_a04071" id="r_a55f58c8ba0c0765dcc43e16ef03ca19e"><td class="memItemLeft">std::enable_if&lt; std::is_base_of&lt; This, typenameCLIQUE::FactorGraphType &gt;::value &gt;::type&#160;</td><td class="memItemRight"><a class="el" href="a04071.html#a55f58c8ba0c0765dcc43e16ef03ca19e">push_back</a> (const <a class="el" href="a04087.html">BayesTree</a>&lt; CLIQUE &gt; &amp;bayesTree)</td></tr>
-<tr class="memdesc:a55f58c8ba0c0765dcc43e16ef03ca19e inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push back a <a class="el" href="a04087.html" title="Bayes tree.">BayesTree</a> as a collection of factors.  <br /></td></tr>
-<tr class="memitem:a1aa648d53357d7638f78611144cf5b8b inherit pub_methods_a04071" id="r_a1aa648d53357d7638f78611144cf5b8b"><td class="memItemLeft">
-<a class="el" href="a01968.html#a99e63c90a8ac740d99716e73fe97e054">FactorIndices</a>&#160;</td><td class="memItemRight"><b>add_factors</b> (const CONTAINER &amp;factors, bool useEmptySlots=false)</td></tr>
-<tr class="memdesc:a1aa648d53357d7638f78611144cf5b8b inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add new factors to a factor graph and returns a list of new factor indices, optionally finding and reusing empty factor slots. <br /></td></tr>
-<tr class="memitem:a06c9c6d855c390743bd4a4472c730687 inherit pub_methods_a04071" id="r_a06c9c6d855c390743bd4a4472c730687"><td class="memItemLeft">
-virtual void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;FactorGraph&quot;, const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;formatter=DefaultKeyFormatter) const</td></tr>
-<tr class="memdesc:a06c9c6d855c390743bd4a4472c730687 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print out graph to std::cout, with optional key formatter. <br /></td></tr>
-<tr class="memitem:aacdf24691d25e1e93ca6b924465b7a35 inherit pub_methods_a04071" id="r_aacdf24691d25e1e93ca6b924465b7a35"><td class="memItemLeft">
-bool&#160;</td><td class="memItemRight"><b>equals</b> (const This &amp;fg, double tol=1e-9) const</td></tr>
-<tr class="memdesc:aacdf24691d25e1e93ca6b924465b7a35 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check equality up to tolerance. <br /></td></tr>
-<tr class="memitem:a76fb453800c9ac164bef864782733403 inherit pub_methods_a04071" id="r_a76fb453800c9ac164bef864782733403"><td class="memItemLeft">
-size_t&#160;</td><td class="memItemRight"><b>size</b> () const</td></tr>
-<tr class="memdesc:a76fb453800c9ac164bef864782733403 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the number of factors (including any null factors set by <a class="el" href="a04071.html#a38468469269d7b6530cf4d32b4e462d1">remove()</a> ). <br /></td></tr>
-<tr class="memitem:a0ed8834089b31ef96888643af4731a8a inherit pub_methods_a04071" id="r_a0ed8834089b31ef96888643af4731a8a"><td class="memItemLeft">
-bool&#160;</td><td class="memItemRight"><b>empty</b> () const</td></tr>
-<tr class="memdesc:a0ed8834089b31ef96888643af4731a8a inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the graph is empty (null factors set by <a class="el" href="a04071.html#a38468469269d7b6530cf4d32b4e462d1">remove()</a> will cause this to return false). <br /></td></tr>
-<tr class="memitem:aec104a9847783a29065fd4d24f072b7a inherit pub_methods_a04071" id="r_aec104a9847783a29065fd4d24f072b7a"><td class="memItemLeft">
-const <a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a>&#160;</td><td class="memItemRight"><b>at</b> (size_t i) const</td></tr>
-<tr class="memdesc:aec104a9847783a29065fd4d24f072b7a inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a specific factor by index (this checks array bounds and may throw an exception, as opposed to operator[] which does not). <br /></td></tr>
-<tr class="memitem:a52b3ab1ea102ab17c1fa9a74c9f42329 inherit pub_methods_a04071" id="r_a52b3ab1ea102ab17c1fa9a74c9f42329"><td class="memItemLeft">
-<a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a> &amp;&#160;</td><td class="memItemRight"><b>at</b> (size_t i)</td></tr>
-<tr class="memdesc:a52b3ab1ea102ab17c1fa9a74c9f42329 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a specific factor by index (this checks array bounds and may throw an exception, as opposed to operator[] which does not). <br /></td></tr>
-<tr class="memitem:ad00637b3f124aec8b4047faea5b5647b inherit pub_methods_a04071" id="r_ad00637b3f124aec8b4047faea5b5647b"><td class="memItemLeft">
-const <a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a>&#160;</td><td class="memItemRight"><b>operator[]</b> (size_t i) const</td></tr>
-<tr class="memdesc:ad00637b3f124aec8b4047faea5b5647b inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a specific factor by index (this does not check array bounds, as opposed to <a class="el" href="a04071.html#aec104a9847783a29065fd4d24f072b7a">at()</a> which does). <br /></td></tr>
-<tr class="memitem:a4f193587e68cef1335bcfb87b353d0ab inherit pub_methods_a04071" id="r_a4f193587e68cef1335bcfb87b353d0ab"><td class="memItemLeft">
-<a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a> &amp;&#160;</td><td class="memItemRight"><b>operator[]</b> (size_t i)</td></tr>
-<tr class="memdesc:a4f193587e68cef1335bcfb87b353d0ab inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a specific factor by index (this does not check array bounds, as opposed to <a class="el" href="a04071.html#aec104a9847783a29065fd4d24f072b7a">at()</a> which does). <br /></td></tr>
-<tr class="memitem:abcaeffeae20930806f064f8413689c22 inherit pub_methods_a04071" id="r_abcaeffeae20930806f064f8413689c22"><td class="memItemLeft">
-const_iterator&#160;</td><td class="memItemRight"><b>begin</b> () const</td></tr>
-<tr class="memdesc:abcaeffeae20930806f064f8413689c22 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator to beginning of factors. <br /></td></tr>
-<tr class="memitem:a94a257708f3530799e24d21f3125e181 inherit pub_methods_a04071" id="r_a94a257708f3530799e24d21f3125e181"><td class="memItemLeft">
-const_iterator&#160;</td><td class="memItemRight"><b>end</b> () const</td></tr>
-<tr class="memdesc:a94a257708f3530799e24d21f3125e181 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator to end of factors. <br /></td></tr>
-<tr class="memitem:a8aad182ded37c5add184e0113ec9ede9 inherit pub_methods_a04071" id="r_a8aad182ded37c5add184e0113ec9ede9"><td class="memItemLeft">
-<a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a>&#160;</td><td class="memItemRight"><b>front</b> () const</td></tr>
-<tr class="memdesc:a8aad182ded37c5add184e0113ec9ede9 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the first factor. <br /></td></tr>
-<tr class="memitem:a37859ce7d210d593be80f625eceba620 inherit pub_methods_a04071" id="r_a37859ce7d210d593be80f625eceba620"><td class="memItemLeft">
-<a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a>&#160;</td><td class="memItemRight"><b>back</b> () const</td></tr>
-<tr class="memdesc:a37859ce7d210d593be80f625eceba620 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the last factor. <br /></td></tr>
-<tr class="memitem:a576cb442ff4a11dc73e48c60bdc6695b inherit pub_methods_a04071" id="r_a576cb442ff4a11dc73e48c60bdc6695b"><td class="memItemLeft">
-double&#160;</td><td class="memItemRight"><b>error</b> (const <a class="el" href="a06211.html">HybridValues</a> &amp;values) const</td></tr>
-<tr class="memdesc:a576cb442ff4a11dc73e48c60bdc6695b inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add error for all factors. <br /></td></tr>
-<tr class="memitem:abaf0875f55936063d96c507de9e9255a inherit pub_methods_a04071" id="r_abaf0875f55936063d96c507de9e9255a"><td class="memItemLeft">
-iterator&#160;</td><td class="memItemRight"><b>begin</b> ()</td></tr>
-<tr class="memdesc:abaf0875f55936063d96c507de9e9255a inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">non-const STL-style <a class="el" href="a04071.html#abaf0875f55936063d96c507de9e9255a">begin()</a> <br /></td></tr>
-<tr class="memitem:ad6e1c6a2b56c2158afb28a58ab560e44 inherit pub_methods_a04071" id="r_ad6e1c6a2b56c2158afb28a58ab560e44"><td class="memItemLeft">
-iterator&#160;</td><td class="memItemRight"><b>end</b> ()</td></tr>
-<tr class="memdesc:ad6e1c6a2b56c2158afb28a58ab560e44 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">non-const STL-style <a class="el" href="a04071.html#ad6e1c6a2b56c2158afb28a58ab560e44">end()</a> <br /></td></tr>
-<tr class="memitem:a6add303b9c0ff93d11f1107d5194d965 inherit pub_methods_a04071" id="r_a6add303b9c0ff93d11f1107d5194d965"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="a04071.html#a6add303b9c0ff93d11f1107d5194d965">resize</a> (size_t <a class="el" href="a04071.html#a76fb453800c9ac164bef864782733403">size</a>)</td></tr>
-<tr class="memdesc:a6add303b9c0ff93d11f1107d5194d965 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Directly resize the number of factors in the graph.  <br /></td></tr>
-<tr class="memitem:a38468469269d7b6530cf4d32b4e462d1 inherit pub_methods_a04071" id="r_a38468469269d7b6530cf4d32b4e462d1"><td class="memItemLeft">
-void&#160;</td><td class="memItemRight"><b>remove</b> (size_t i)</td></tr>
-<tr class="memdesc:a38468469269d7b6530cf4d32b4e462d1 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">delete factor without re-arranging indexes by inserting a nullptr pointer <br /></td></tr>
-<tr class="memitem:aa706ee0e285f6c1a38e6a4446fe9ea4e inherit pub_methods_a04071" id="r_aa706ee0e285f6c1a38e6a4446fe9ea4e"><td class="memItemLeft">
-void&#160;</td><td class="memItemRight"><b>replace</b> (size_t index, <a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a> factor)</td></tr>
-<tr class="memdesc:aa706ee0e285f6c1a38e6a4446fe9ea4e inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">replace a factor by index <br /></td></tr>
-<tr class="memitem:a22f324974f6e3380c54d1d69c71bc7fb inherit pub_methods_a04071" id="r_a22f324974f6e3380c54d1d69c71bc7fb"><td class="memItemLeft">
-iterator&#160;</td><td class="memItemRight"><b>erase</b> (iterator item)</td></tr>
-<tr class="memdesc:a22f324974f6e3380c54d1d69c71bc7fb inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase factor and rearrange other factors to take up the empty space. <br /></td></tr>
-<tr class="memitem:a2825a68630a0547e1bfd5ba0cdf1de61 inherit pub_methods_a04071" id="r_a2825a68630a0547e1bfd5ba0cdf1de61"><td class="memItemLeft">
-iterator&#160;</td><td class="memItemRight"><b>erase</b> (iterator first, iterator last)</td></tr>
-<tr class="memdesc:a2825a68630a0547e1bfd5ba0cdf1de61 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase factors and rearrange other factors to take up the empty space. <br /></td></tr>
-<tr class="memitem:a1d86f94cb5876d2e42c5c93c318656b4 inherit pub_methods_a04071" id="r_a1d86f94cb5876d2e42c5c93c318656b4"><td class="memItemLeft">
-void&#160;</td><td class="memItemRight"><b>dot</b> (std::ostream &amp;os, const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=DefaultKeyFormatter, const <a class="el" href="a04123.html">DotWriter</a> &amp;writer=<a class="el" href="a04123.html">DotWriter</a>()) const</td></tr>
-<tr class="memdesc:a1d86f94cb5876d2e42c5c93c318656b4 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output to graphviz format, stream version. <br /></td></tr>
-<tr class="memitem:ad4ec1d612f9210c68b8206f18765c142 inherit pub_methods_a04071" id="r_ad4ec1d612f9210c68b8206f18765c142"><td class="memItemLeft">
-std::string&#160;</td><td class="memItemRight"><b>dot</b> (const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=DefaultKeyFormatter, const <a class="el" href="a04123.html">DotWriter</a> &amp;writer=<a class="el" href="a04123.html">DotWriter</a>()) const</td></tr>
-<tr class="memdesc:ad4ec1d612f9210c68b8206f18765c142 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output to graphviz format string. <br /></td></tr>
-<tr class="memitem:af845e20d32a8ba1d1f7b15e443e1b780 inherit pub_methods_a04071" id="r_af845e20d32a8ba1d1f7b15e443e1b780"><td class="memItemLeft">
-void&#160;</td><td class="memItemRight"><b>saveGraph</b> (const std::string &amp;filename, const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=DefaultKeyFormatter, const <a class="el" href="a04123.html">DotWriter</a> &amp;writer=<a class="el" href="a04123.html">DotWriter</a>()) const</td></tr>
-<tr class="memdesc:af845e20d32a8ba1d1f7b15e443e1b780 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">output to file with graphviz format. <br /></td></tr>
-<tr class="memitem:a761f1022dadf60e2cacca304ab0533b4 inherit pub_methods_a04071" id="r_a761f1022dadf60e2cacca304ab0533b4"><td class="memItemLeft">
-size_t&#160;</td><td class="memItemRight"><b>nrFactors</b> () const</td></tr>
-<tr class="memdesc:a761f1022dadf60e2cacca304ab0533b4 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the number of non-null factors <br /></td></tr>
-<tr class="memitem:a0c4667de76265a06cc6f74b1f3b25051 inherit pub_methods_a04071" id="r_a0c4667de76265a06cc6f74b1f3b25051"><td class="memItemLeft">
-KeySet&#160;</td><td class="memItemRight"><b>keys</b> () const</td></tr>
-<tr class="memdesc:a0c4667de76265a06cc6f74b1f3b25051 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Potentially slow function to return all keys involved, sorted, as a set. <br /></td></tr>
-<tr class="memitem:a3b4d9bbaceeb9043ab7c20d4778b69c5 inherit pub_methods_a04071" id="r_a3b4d9bbaceeb9043ab7c20d4778b69c5"><td class="memItemLeft">
-<a class="el" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&#160;</td><td class="memItemRight"><b>keyVector</b> () const</td></tr>
-<tr class="memdesc:a3b4d9bbaceeb9043ab7c20d4778b69c5 inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Potentially slow function to return all keys involved, sorted, as a vector. <br /></td></tr>
-<tr class="memitem:acbf8cdf50816d4a0571f6b9b6254f9ce inherit pub_methods_a04071" id="r_acbf8cdf50816d4a0571f6b9b6254f9ce"><td class="memItemLeft">
-bool&#160;</td><td class="memItemRight"><b>exists</b> (size_t idx) const</td></tr>
-<tr class="memdesc:acbf8cdf50816d4a0571f6b9b6254f9ce inherit pub_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">MATLAB interface utility: Checks whether a factor index idx exists in the graph and is a live pointer. <br /></td></tr>
-<tr class="inherit_header pub_methods_a04127"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a04127')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a04127.html">gtsam::EliminateableFactorGraph&lt; GaussianFactorGraph &gt;</a></td></tr>
-<tr class="memitem:a84279a0dfa8e1131847079ef6329de9d inherit pub_methods_a04127" id="r_a84279a0dfa8e1131847079ef6329de9d"><td class="memItemLeft">boost::shared_ptr&lt; <a class="el" href="a04127.html#a57f45c172e2b94fe94f8a86fac7c97b9">BayesNetType</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04127.html#a84279a0dfa8e1131847079ef6329de9d">eliminateSequential</a> (<a class="el" href="a04127.html#af7b21bfc67a712216a90bbc7a9e6c2c4">OptionalOrderingType</a> orderingType=boost::none, const <a class="el" href="a04127.html#a4053522180fd649baf38a49c515e7b53">Eliminate</a> &amp;function=EliminationTraitsType::DefaultEliminate, <a class="el" href="a04127.html#ad420bb819ec65e1aaa4d81a362a07fcd">OptionalVariableIndex</a> variableIndex=boost::none) const</td></tr>
-<tr class="memdesc:a84279a0dfa8e1131847079ef6329de9d inherit pub_methods_a04127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do sequential elimination of all variables to produce a Bayes net.  <br /></td></tr>
-<tr class="memitem:a9496a5f692f60ecd15846d9b0b689c9c inherit pub_methods_a04127" id="r_a9496a5f692f60ecd15846d9b0b689c9c"><td class="memItemLeft">boost::shared_ptr&lt; <a class="el" href="a04127.html#a447a0aeabd9c013e825f7a1934b67929">BayesTreeType</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04127.html#a9496a5f692f60ecd15846d9b0b689c9c">eliminateMultifrontal</a> (<a class="el" href="a04127.html#af7b21bfc67a712216a90bbc7a9e6c2c4">OptionalOrderingType</a> orderingType=boost::none, const <a class="el" href="a04127.html#a4053522180fd649baf38a49c515e7b53">Eliminate</a> &amp;function=EliminationTraitsType::DefaultEliminate, <a class="el" href="a04127.html#ad420bb819ec65e1aaa4d81a362a07fcd">OptionalVariableIndex</a> variableIndex=boost::none) const</td></tr>
-<tr class="memdesc:a9496a5f692f60ecd15846d9b0b689c9c inherit pub_methods_a04127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do multifrontal elimination of all variables to produce a Bayes tree.  <br /></td></tr>
-<tr class="memitem:aded9c4a2331cab96eadac101c9d59ca9 inherit pub_methods_a04127" id="r_aded9c4a2331cab96eadac101c9d59ca9"><td class="memItemLeft">std::pair&lt; boost::shared_ptr&lt; <a class="el" href="a04127.html#a57f45c172e2b94fe94f8a86fac7c97b9">BayesNetType</a> &gt;, boost::shared_ptr&lt; FactorGraphType &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04127.html#aded9c4a2331cab96eadac101c9d59ca9">eliminatePartialSequential</a> (const <a class="el" href="a04227.html">Ordering</a> &amp;ordering, const <a class="el" href="a04127.html#a4053522180fd649baf38a49c515e7b53">Eliminate</a> &amp;function=EliminationTraitsType::DefaultEliminate, <a class="el" href="a04127.html#ad420bb819ec65e1aaa4d81a362a07fcd">OptionalVariableIndex</a> variableIndex=boost::none) const</td></tr>
-<tr class="memdesc:aded9c4a2331cab96eadac101c9d59ca9 inherit pub_methods_a04127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do sequential elimination of some variables, in <code>ordering</code> provided, to produce a Bayes net and a remaining factor graph.  <br /></td></tr>
-<tr class="memitem:ae53290598abe8dd8b0e0d95dde1efb6b inherit pub_methods_a04127" id="r_ae53290598abe8dd8b0e0d95dde1efb6b"><td class="memItemLeft">std::pair&lt; boost::shared_ptr&lt; <a class="el" href="a04127.html#a447a0aeabd9c013e825f7a1934b67929">BayesTreeType</a> &gt;, boost::shared_ptr&lt; FactorGraphType &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04127.html#ae53290598abe8dd8b0e0d95dde1efb6b">eliminatePartialMultifrontal</a> (const <a class="el" href="a04227.html">Ordering</a> &amp;ordering, const <a class="el" href="a04127.html#a4053522180fd649baf38a49c515e7b53">Eliminate</a> &amp;function=EliminationTraitsType::DefaultEliminate, <a class="el" href="a04127.html#ad420bb819ec65e1aaa4d81a362a07fcd">OptionalVariableIndex</a> variableIndex=boost::none) const</td></tr>
-<tr class="memdesc:ae53290598abe8dd8b0e0d95dde1efb6b inherit pub_methods_a04127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do multifrontal elimination of some variables, in <code>ordering</code> provided, to produce a Bayes tree and a remaining factor graph.  <br /></td></tr>
-<tr class="memitem:ae2270f2d02066f20d50cb64f0fbd6b14 inherit pub_methods_a04127" id="r_ae2270f2d02066f20d50cb64f0fbd6b14"><td class="memItemLeft">boost::shared_ptr&lt; <a class="el" href="a04127.html#a57f45c172e2b94fe94f8a86fac7c97b9">BayesNetType</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04127.html#ae2270f2d02066f20d50cb64f0fbd6b14">marginalMultifrontalBayesNet</a> (boost::variant&lt; const <a class="el" href="a04227.html">Ordering</a> &amp;, const <a class="el" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp; &gt; variables, const <a class="el" href="a04127.html#a4053522180fd649baf38a49c515e7b53">Eliminate</a> &amp;function=EliminationTraitsType::DefaultEliminate, <a class="el" href="a04127.html#ad420bb819ec65e1aaa4d81a362a07fcd">OptionalVariableIndex</a> variableIndex=boost::none) const</td></tr>
-<tr class="memdesc:ae2270f2d02066f20d50cb64f0fbd6b14 inherit pub_methods_a04127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the marginal of the requested variables and return the result as a Bayes net.  <br /></td></tr>
-<tr class="memitem:a11c2b8e671d2fa7c8dbdd71dcaff7c9c inherit pub_methods_a04127" id="r_a11c2b8e671d2fa7c8dbdd71dcaff7c9c"><td class="memItemLeft">boost::shared_ptr&lt; <a class="el" href="a04127.html#a447a0aeabd9c013e825f7a1934b67929">BayesTreeType</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04127.html#a11c2b8e671d2fa7c8dbdd71dcaff7c9c">marginalMultifrontalBayesTree</a> (boost::variant&lt; const <a class="el" href="a04227.html">Ordering</a> &amp;, const <a class="el" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp; &gt; variables, const <a class="el" href="a04127.html#a4053522180fd649baf38a49c515e7b53">Eliminate</a> &amp;function=EliminationTraitsType::DefaultEliminate, <a class="el" href="a04127.html#ad420bb819ec65e1aaa4d81a362a07fcd">OptionalVariableIndex</a> variableIndex=boost::none) const</td></tr>
-<tr class="memdesc:a11c2b8e671d2fa7c8dbdd71dcaff7c9c inherit pub_methods_a04127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the marginal of the requested variables and return the result as a Bayes tree.  <br /></td></tr>
-<tr class="memitem:a2dd60099f55b2bd1a13b88add4d0ebb7 inherit pub_methods_a04127" id="r_a2dd60099f55b2bd1a13b88add4d0ebb7"><td class="memItemLeft">
-boost::shared_ptr&lt; FactorGraphType &gt;&#160;</td><td class="memItemRight"><b>marginal</b> (const <a class="el" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;variables, const <a class="el" href="a04127.html#a4053522180fd649baf38a49c515e7b53">Eliminate</a> &amp;function=EliminationTraitsType::DefaultEliminate, <a class="el" href="a04127.html#ad420bb819ec65e1aaa4d81a362a07fcd">OptionalVariableIndex</a> variableIndex=boost::none) const</td></tr>
-<tr class="memdesc:a2dd60099f55b2bd1a13b88add4d0ebb7 inherit pub_methods_a04127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the marginal factor graph of the requested variables. <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Standard Constructors</h2></td></tr>
+<tr class="memitem:a270bc95972da02d583525d15259c3e92" id="r_a270bc95972da02d583525d15259c3e92"><td class="memItemLeft"><a id="a270bc95972da02d583525d15259c3e92" name="a270bc95972da02d583525d15259c3e92"></a>
+&#160;</td><td class="memItemRight"><b>PinholeBaseK</b> ()</td></tr>
+<tr class="memdesc:a270bc95972da02d583525d15259c3e92"><td class="mdescLeft">&#160;</td><td class="mdescRight">default constructor <br /></td></tr>
+<tr class="memitem:a361c9de1b3397f8e80ee8c63841c0477" id="r_a361c9de1b3397f8e80ee8c63841c0477"><td class="memItemLeft"><a id="a361c9de1b3397f8e80ee8c63841c0477" name="a361c9de1b3397f8e80ee8c63841c0477"></a>
+&#160;</td><td class="memItemRight"><b>PinholeBaseK</b> (const <a class="el" href="a04403.html">Pose3</a> &amp;<a class="el" href="a04163.html#a8e481999434032fbf1f99baa18ef41a7">pose</a>)</td></tr>
+<tr class="memdesc:a361c9de1b3397f8e80ee8c63841c0477"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor with pose <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Advanced Constructors</h2></td></tr>
+<tr class="memitem:a2a234b6fe65af9238d13b3def9209731" id="r_a2a234b6fe65af9238d13b3def9209731"><td class="memItemLeft"><a id="a2a234b6fe65af9238d13b3def9209731" name="a2a234b6fe65af9238d13b3def9209731"></a>
+&#160;</td><td class="memItemRight"><b>PinholeBaseK</b> (const Vector &amp;v)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Standard Interface</h2></td></tr>
+<tr class="memitem:a314022519384075b365248f9ccf152fc" id="r_a314022519384075b365248f9ccf152fc"><td class="memItemLeft">virtual const CALIBRATION &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a314022519384075b365248f9ccf152fc">calibration</a> () const =0</td></tr>
+<tr class="memdesc:a314022519384075b365248f9ccf152fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">return calibration  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Transformations and measurement functions</h2></td></tr>
+<tr class="memitem:a26082170ef43a374f355f10046fcd51a" id="r_a26082170ef43a374f355f10046fcd51a"><td class="memItemLeft"><a id="a26082170ef43a374f355f10046fcd51a" name="a26082170ef43a374f355f10046fcd51a"></a>
+std::pair&lt; <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>, bool &gt;&#160;</td><td class="memItemRight"><b>projectSafe</b> (const <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp;pw) const</td></tr>
+<tr class="memdesc:a26082170ef43a374f355f10046fcd51a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project a point into the image and check depth. <br /></td></tr>
+<tr class="memitem:acac57ed14a4ce11516655cde62a78a6e" id="r_acac57ed14a4ce11516655cde62a78a6e"><td class="memTemplParams" colspan="2">template&lt;class POINT&gt; </td></tr>
+<tr class="memitem:acac57ed14a4ce11516655cde62a78a6e template"><td class="memItemLeft"><a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&#160;</td><td class="memItemRight"><a class="el" href="#acac57ed14a4ce11516655cde62a78a6e">_project</a> (const POINT &amp;pw, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, 6 &gt; <a class="el" href="a04163.html#a1b8bc2bf7c2d619cebc1a957b0ba9207">Dpose</a>, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, <a class="el" href="a03323.html">FixedDimension</a>&lt; POINT &gt;::value &gt; <a class="el" href="a04163.html#ab774b22d9bbb3b58e5a05f8fcadd981a">Dpoint</a>, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, DimK &gt; Dcal) const</td></tr>
+<tr class="memdesc:acac57ed14a4ce11516655cde62a78a6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Templated projection of a point (possibly at infinity) from world coordinate to the image.  <br /></td></tr>
+<tr class="memitem:ae824b40a88120d663d77a8f5d064db3b" id="r_ae824b40a88120d663d77a8f5d064db3b"><td class="memItemLeft"><a id="ae824b40a88120d663d77a8f5d064db3b" name="ae824b40a88120d663d77a8f5d064db3b"></a>
+<a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&#160;</td><td class="memItemRight"><b>project</b> (const <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp;pw, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, 6 &gt; <a class="el" href="a04163.html#a1b8bc2bf7c2d619cebc1a957b0ba9207">Dpose</a>={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, 3 &gt; <a class="el" href="a04163.html#ab774b22d9bbb3b58e5a05f8fcadd981a">Dpoint</a>={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, DimK &gt; Dcal={}) const</td></tr>
+<tr class="memdesc:ae824b40a88120d663d77a8f5d064db3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">project a 3D point from world coordinates into the image <br /></td></tr>
+<tr class="memitem:a7644532ffb76c30a9e095837ceaa86ee" id="r_a7644532ffb76c30a9e095837ceaa86ee"><td class="memItemLeft"><a id="a7644532ffb76c30a9e095837ceaa86ee" name="a7644532ffb76c30a9e095837ceaa86ee"></a>
+<a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&#160;</td><td class="memItemRight"><b>reprojectionError</b> (const <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp;pw, const <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> &amp;measured, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, 6 &gt; <a class="el" href="a04163.html#a1b8bc2bf7c2d619cebc1a957b0ba9207">Dpose</a>={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, 3 &gt; <a class="el" href="a04163.html#ab774b22d9bbb3b58e5a05f8fcadd981a">Dpoint</a>={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, DimK &gt; Dcal={}) const</td></tr>
+<tr class="memdesc:a7644532ffb76c30a9e095837ceaa86ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">project a 3D point from world coordinates into the image <br /></td></tr>
+<tr class="memitem:a7aebe3a40cac9d4cf531c8edc97c2a58" id="r_a7aebe3a40cac9d4cf531c8edc97c2a58"><td class="memItemLeft"><a id="a7aebe3a40cac9d4cf531c8edc97c2a58" name="a7aebe3a40cac9d4cf531c8edc97c2a58"></a>
+<a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&#160;</td><td class="memItemRight"><b>project</b> (const <a class="el" href="a04627.html">Unit3</a> &amp;pw, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, 6 &gt; <a class="el" href="a04163.html#a1b8bc2bf7c2d619cebc1a957b0ba9207">Dpose</a>={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, 2 &gt; <a class="el" href="a04163.html#ab774b22d9bbb3b58e5a05f8fcadd981a">Dpoint</a>={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, DimK &gt; Dcal={}) const</td></tr>
+<tr class="memdesc:a7aebe3a40cac9d4cf531c8edc97c2a58"><td class="mdescLeft">&#160;</td><td class="mdescRight">project a point at infinity from world coordinates into the image <br /></td></tr>
+<tr class="memitem:ad736173d734eee044b28fa6e4b8dc2b9" id="r_ad736173d734eee044b28fa6e4b8dc2b9"><td class="memItemLeft"><a id="ad736173d734eee044b28fa6e4b8dc2b9" name="ad736173d734eee044b28fa6e4b8dc2b9"></a>
+<a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&#160;</td><td class="memItemRight"><b>backproject</b> (const <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> &amp;p, double depth, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 6 &gt; Dresult_dpose={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 2 &gt; Dresult_dp={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 1 &gt; Dresult_ddepth={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, DimK &gt; Dresult_dcal={}) const</td></tr>
+<tr class="memdesc:ad736173d734eee044b28fa6e4b8dc2b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">backproject a 2-dimensional point to a 3-dimensional point at given depth <br /></td></tr>
+<tr class="memitem:ac551b75b228e8716edc1a448e6356c60" id="r_ac551b75b228e8716edc1a448e6356c60"><td class="memItemLeft"><a id="ac551b75b228e8716edc1a448e6356c60" name="ac551b75b228e8716edc1a448e6356c60"></a>
+<a class="el" href="a04627.html">Unit3</a>&#160;</td><td class="memItemRight"><b>backprojectPointAtInfinity</b> (const <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> &amp;p) const</td></tr>
+<tr class="memdesc:ac551b75b228e8716edc1a448e6356c60"><td class="mdescLeft">&#160;</td><td class="mdescRight">backproject a 2-dimensional point to a 3-dimensional point at infinity <br /></td></tr>
+<tr class="memitem:a3d905000b68ad029651a9762e458e7cb" id="r_a3d905000b68ad029651a9762e458e7cb"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a3d905000b68ad029651a9762e458e7cb">range</a> (const <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp;point, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 6 &gt; Dcamera={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 3 &gt; <a class="el" href="a04163.html#ab774b22d9bbb3b58e5a05f8fcadd981a">Dpoint</a>={}) const</td></tr>
+<tr class="memdesc:a3d905000b68ad029651a9762e458e7cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate range to a landmark.  <br /></td></tr>
+<tr class="memitem:a88fa452deab3e8a4572b48b49db3a778" id="r_a88fa452deab3e8a4572b48b49db3a778"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a88fa452deab3e8a4572b48b49db3a778">range</a> (const <a class="el" href="a04403.html">Pose3</a> &amp;<a class="el" href="a04163.html#a8e481999434032fbf1f99baa18ef41a7">pose</a>, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 6 &gt; Dcamera={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 6 &gt; <a class="el" href="a04163.html#a1b8bc2bf7c2d619cebc1a957b0ba9207">Dpose</a>={}) const</td></tr>
+<tr class="memdesc:a88fa452deab3e8a4572b48b49db3a778"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate range to another pose.  <br /></td></tr>
+<tr class="memitem:a36be75c9f710a880686a20fb547d7f30" id="r_a36be75c9f710a880686a20fb547d7f30"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a36be75c9f710a880686a20fb547d7f30">range</a> (const <a class="el" href="a04167.html">CalibratedCamera</a> &amp;camera, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 6 &gt; Dcamera={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 6 &gt; Dother={}) const</td></tr>
+<tr class="memdesc:a36be75c9f710a880686a20fb547d7f30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate range to a <a class="el" href="a04167.html" title="A Calibrated camera class [R|-R&#39;t], calibration K=I.">CalibratedCamera</a>.  <br /></td></tr>
+<tr class="memitem:a49ef7871d8a2fb9f615c56217c838da0" id="r_a49ef7871d8a2fb9f615c56217c838da0"><td class="memTemplParams" colspan="2">template&lt;class CalibrationB&gt; </td></tr>
+<tr class="memitem:a49ef7871d8a2fb9f615c56217c838da0 template"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a49ef7871d8a2fb9f615c56217c838da0">range</a> (const <a class="el" href="#a270bc95972da02d583525d15259c3e92">PinholeBaseK</a>&lt; CalibrationB &gt; &amp;camera, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 6 &gt; Dcamera={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 6 &gt; Dother={}) const</td></tr>
+<tr class="memdesc:a49ef7871d8a2fb9f615c56217c838da0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate range to a PinholePoseK derived class.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:aa5ff7a930581421abeb3b93c1347fcdb" id="r_aa5ff7a930581421abeb3b93c1347fcdb"><td class="memItemLeft"><a id="aa5ff7a930581421abeb3b93c1347fcdb" name="aa5ff7a930581421abeb3b93c1347fcdb"></a>
-typedef <a class="el" href="#a6230b36e3daf60b619e20742db3b02b6">GaussianFactorGraph</a>&#160;</td><td class="memItemRight"><b>This</b></td></tr>
-<tr class="memdesc:aa5ff7a930581421abeb3b93c1347fcdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef to this class. <br /></td></tr>
-<tr class="memitem:ae9e408910e2cb068adea00486d8274e6" id="r_ae9e408910e2cb068adea00486d8274e6"><td class="memItemLeft"><a id="ae9e408910e2cb068adea00486d8274e6" name="ae9e408910e2cb068adea00486d8274e6"></a>
-typedef <a class="el" href="a04071.html#a42db0a1062eb6c223b0a186a9d34cb4b">FactorGraph</a>&lt; GaussianFactor &gt;&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
-<tr class="memdesc:ae9e408910e2cb068adea00486d8274e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef to base factor graph type. <br /></td></tr>
-<tr class="memitem:a1b58d74e4489680e0d4a866bad4b0dcf" id="r_a1b58d74e4489680e0d4a866bad4b0dcf"><td class="memItemLeft"><a id="a1b58d74e4489680e0d4a866bad4b0dcf" name="a1b58d74e4489680e0d4a866bad4b0dcf"></a>
-typedef <a class="el" href="a04127.html">EliminateableFactorGraph</a>&lt; <a class="el" href="#aa5ff7a930581421abeb3b93c1347fcdb">This</a> &gt;&#160;</td><td class="memItemRight"><b>BaseEliminateable</b></td></tr>
-<tr class="memdesc:a1b58d74e4489680e0d4a866bad4b0dcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef to base elimination class. <br /></td></tr>
-<tr class="memitem:a1f73f4987b9bdaac5c1414a401c0364c" id="r_a1f73f4987b9bdaac5c1414a401c0364c"><td class="memItemLeft"><a id="a1f73f4987b9bdaac5c1414a401c0364c" name="a1f73f4987b9bdaac5c1414a401c0364c"></a>
-typedef boost::shared_ptr&lt; <a class="el" href="#aa5ff7a930581421abeb3b93c1347fcdb">This</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
-<tr class="memdesc:a1f73f4987b9bdaac5c1414a401c0364c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a1f73f4987b9bdaac5c1414a401c0364c" title="shared_ptr to this class">shared_ptr</a> to this class <br /></td></tr>
-<tr class="memitem:aacb8e92ffef9b561c3d40338ef8506f5" id="r_aacb8e92ffef9b561c3d40338ef8506f5"><td class="memItemLeft"><a id="aacb8e92ffef9b561c3d40338ef8506f5" name="aacb8e92ffef9b561c3d40338ef8506f5"></a>
-typedef KeySet&#160;</td><td class="memItemRight"><b>Keys</b></td></tr>
-<tr class="memdesc:aacb8e92ffef9b561c3d40338ef8506f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the set of variables involved in the factors (computes a set union). <br /></td></tr>
-<tr class="inherit_header pub_types_a04071"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04071')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04071.html">gtsam::FactorGraph&lt; GaussianFactor &gt;</a></td></tr>
-<tr class="memitem:aa54fb0b66fd8fee9f3c1f2844cf3edef inherit pub_types_a04071" id="r_aa54fb0b66fd8fee9f3c1f2844cf3edef"><td class="memItemLeft">
-typedef GaussianFactor&#160;</td><td class="memItemRight"><b>FactorType</b></td></tr>
-<tr class="memdesc:aa54fb0b66fd8fee9f3c1f2844cf3edef inherit pub_types_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">factor type <br /></td></tr>
-<tr class="memitem:ac9bfc88025d21ff01b7e9dc609ba0b0e inherit pub_types_a04071" id="r_ac9bfc88025d21ff01b7e9dc609ba0b0e"><td class="memItemLeft">
-typedef boost::shared_ptr&lt; GaussianFactor &gt;&#160;</td><td class="memItemRight"><b>sharedFactor</b></td></tr>
-<tr class="memdesc:ac9bfc88025d21ff01b7e9dc609ba0b0e inherit pub_types_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to a factor. <br /></td></tr>
-<tr class="memitem:a9e8705eefb16a49d12dbba659499bc82 inherit pub_types_a04071" id="r_a9e8705eefb16a49d12dbba659499bc82"><td class="memItemLeft">
-typedef <a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a>&#160;</td><td class="memItemRight"><b>value_type</b></td></tr>
-<tr class="memitem:af71ec41fd2c991605eb54954976a6939 inherit pub_types_a04071" id="r_af71ec41fd2c991605eb54954976a6939"><td class="memItemLeft">
-typedef <a class="el" href="a01953.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; <a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a> &gt;::iterator&#160;</td><td class="memItemRight"><b>iterator</b></td></tr>
-<tr class="memitem:aec93913bd747baea0c7316598ac3e8e9 inherit pub_types_a04071" id="r_aec93913bd747baea0c7316598ac3e8e9"><td class="memItemLeft">
-typedef <a class="el" href="a01953.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; <a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a> &gt;::const_iterator&#160;</td><td class="memItemRight"><b>const_iterator</b></td></tr>
-<tr class="inherit_header pub_types_a04127"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04127')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04127.html">gtsam::EliminateableFactorGraph&lt; GaussianFactorGraph &gt;</a></td></tr>
-<tr class="memitem:af0c24ab1ca71a74596ee4a5dc7845dd2 inherit pub_types_a04127" id="r_af0c24ab1ca71a74596ee4a5dc7845dd2"><td class="memItemLeft">
-typedef <a class="el" href="a04095.html">EliminationTraits</a>&lt; FactorGraphType &gt;&#160;</td><td class="memItemRight"><b>EliminationTraitsType</b></td></tr>
-<tr class="memdesc:af0c24ab1ca71a74596ee4a5dc7845dd2 inherit pub_types_a04127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef to the specific <a class="el" href="a04095.html" title="Traits class for eliminateable factor graphs, specifies the types that result from elimination,...">EliminationTraits</a> for this graph. <br /></td></tr>
-<tr class="memitem:abd7caace9039ca5fe1d3dcb7ac99e423 inherit pub_types_a04127" id="r_abd7caace9039ca5fe1d3dcb7ac99e423"><td class="memItemLeft">
-typedef EliminationTraitsType::ConditionalType&#160;</td><td class="memItemRight"><b>ConditionalType</b></td></tr>
-<tr class="memdesc:abd7caace9039ca5fe1d3dcb7ac99e423 inherit pub_types_a04127"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a04119.html">Conditional</a> type stored in the Bayes net produced by elimination. <br /></td></tr>
-<tr class="memitem:a57f45c172e2b94fe94f8a86fac7c97b9 inherit pub_types_a04127" id="r_a57f45c172e2b94fe94f8a86fac7c97b9"><td class="memItemLeft">
-typedef EliminationTraitsType::BayesNetType&#160;</td><td class="memItemRight"><b>BayesNetType</b></td></tr>
-<tr class="memdesc:a57f45c172e2b94fe94f8a86fac7c97b9 inherit pub_types_a04127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bayes net type produced by sequential elimination. <br /></td></tr>
-<tr class="memitem:abe9b40bd96c33b2b8974949b6fc003ef inherit pub_types_a04127" id="r_abe9b40bd96c33b2b8974949b6fc003ef"><td class="memItemLeft">
-typedef EliminationTraitsType::EliminationTreeType&#160;</td><td class="memItemRight"><b>EliminationTreeType</b></td></tr>
-<tr class="memdesc:abe9b40bd96c33b2b8974949b6fc003ef inherit pub_types_a04127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimination tree type that can do sequential elimination of this graph. <br /></td></tr>
-<tr class="memitem:a447a0aeabd9c013e825f7a1934b67929 inherit pub_types_a04127" id="r_a447a0aeabd9c013e825f7a1934b67929"><td class="memItemLeft">
-typedef EliminationTraitsType::BayesTreeType&#160;</td><td class="memItemRight"><b>BayesTreeType</b></td></tr>
-<tr class="memdesc:a447a0aeabd9c013e825f7a1934b67929 inherit pub_types_a04127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bayes tree type produced by multifrontal elimination. <br /></td></tr>
-<tr class="memitem:a1d4fad311e6b108420ee1e37a60a9715 inherit pub_types_a04127" id="r_a1d4fad311e6b108420ee1e37a60a9715"><td class="memItemLeft">
-typedef EliminationTraitsType::JunctionTreeType&#160;</td><td class="memItemRight"><b>JunctionTreeType</b></td></tr>
-<tr class="memdesc:a1d4fad311e6b108420ee1e37a60a9715 inherit pub_types_a04127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Junction tree type that can do multifrontal elimination of this graph. <br /></td></tr>
-<tr class="memitem:a70a7ff1018398a0b4a1189738ac6e0b2 inherit pub_types_a04127" id="r_a70a7ff1018398a0b4a1189738ac6e0b2"><td class="memItemLeft">
-typedef std::pair&lt; boost::shared_ptr&lt; <a class="el" href="a04127.html#abd7caace9039ca5fe1d3dcb7ac99e423">ConditionalType</a> &gt;, boost::shared_ptr&lt; _FactorType &gt; &gt;&#160;</td><td class="memItemRight"><b>EliminationResult</b></td></tr>
-<tr class="memdesc:a70a7ff1018398a0b4a1189738ac6e0b2 inherit pub_types_a04127"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pair of conditional and remaining factor produced by a single dense elimination step on a subgraph. <br /></td></tr>
-<tr class="memitem:a4053522180fd649baf38a49c515e7b53 inherit pub_types_a04127" id="r_a4053522180fd649baf38a49c515e7b53"><td class="memItemLeft">
-typedef std::function&lt; <a class="el" href="a04127.html#a70a7ff1018398a0b4a1189738ac6e0b2">EliminationResult</a>(const FactorGraphType &amp;, const <a class="el" href="a04227.html">Ordering</a> &amp;)&gt;&#160;</td><td class="memItemRight"><b>Eliminate</b></td></tr>
-<tr class="memdesc:a4053522180fd649baf38a49c515e7b53 inherit pub_types_a04127"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function type that does a single dense elimination step on a subgraph. <br /></td></tr>
-<tr class="memitem:ad420bb819ec65e1aaa4d81a362a07fcd inherit pub_types_a04127" id="r_ad420bb819ec65e1aaa4d81a362a07fcd"><td class="memItemLeft">
-typedef boost::optional&lt; const <a class="el" href="a04247.html">VariableIndex</a> &amp; &gt;&#160;</td><td class="memItemRight"><b>OptionalVariableIndex</b></td></tr>
-<tr class="memdesc:ad420bb819ec65e1aaa4d81a362a07fcd inherit pub_types_a04127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef for an optional variable index as an argument to elimination functions. <br /></td></tr>
-<tr class="memitem:af7b21bfc67a712216a90bbc7a9e6c2c4 inherit pub_types_a04127" id="r_af7b21bfc67a712216a90bbc7a9e6c2c4"><td class="memItemLeft">
-typedef boost::optional&lt; <a class="el" href="a04227.html#a41194f31ec42052094cf91d81dcd796d">Ordering::OrderingType</a> &gt;&#160;</td><td class="memItemRight"><b>OptionalOrderingType</b></td></tr>
-<tr class="memdesc:af7b21bfc67a712216a90bbc7a9e6c2c4 inherit pub_types_a04127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef for an optional ordering type. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:ac98d07dd8f7b70e16ccb9a01abf56b9c" id="r_ac98d07dd8f7b70e16ccb9a01abf56b9c"><td class="memItemLeft"><a id="ac98d07dd8f7b70e16ccb9a01abf56b9c" name="ac98d07dd8f7b70e16ccb9a01abf56b9c"></a>
-class&#160;</td><td class="memItemRight"><b>boost::serialization::access</b></td></tr>
-<tr class="memdesc:ac98d07dd8f7b70e16ccb9a01abf56b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialization function. <br /></td></tr>
-<tr class="memitem:aa144b81b124a2af4f54c7ec9d5a24ce5" id="r_aa144b81b124a2af4f54c7ec9d5a24ce5"><td class="memItemLeft"><a id="aa144b81b124a2af4f54c7ec9d5a24ce5" name="aa144b81b124a2af4f54c7ec9d5a24ce5"></a>
-bool&#160;</td><td class="memItemRight"><b>operator==</b> (const <a class="el" href="#a6230b36e3daf60b619e20742db3b02b6">GaussianFactorGraph</a> &amp;lhs, const <a class="el" href="#a6230b36e3daf60b619e20742db3b02b6">GaussianFactorGraph</a> &amp;rhs)</td></tr>
-<tr class="memdesc:aa144b81b124a2af4f54c7ec9d5a24ce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check exact equality. <br /></td></tr>
+<tr class="memitem:a3bd302bbad98d1d0b84d995c52b9e164" id="r_a3bd302bbad98d1d0b84d995c52b9e164"><td class="memItemLeft"><a id="a3bd302bbad98d1d0b84d995c52b9e164" name="a3bd302bbad98d1d0b84d995c52b9e164"></a>
+typedef CALIBRATION&#160;</td><td class="memItemRight"><b>CalibrationType</b></td></tr>
+<tr class="inherit_header pub_types_a04163"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04163')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04163.html">gtsam::PinholeBase</a></td></tr>
+<tr class="memitem:a69ba28fef80b4008765fb626745715f8 inherit pub_types_a04163" id="r_a69ba28fef80b4008765fb626745715f8"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Rotation</b> = <a class="el" href="a04451.html">Rot3</a></td></tr>
+<tr class="memdesc:a69ba28fef80b4008765fb626745715f8 inherit pub_types_a04163"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pose Concept requirements. <br /></td></tr>
+<tr class="memitem:a53116d422994db54cc74136f607694ee inherit pub_types_a04163" id="r_a53116d422994db54cc74136f607694ee"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Translation</b> = <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a></td></tr>
+<tr class="memitem:a0a36cfdedbf110be0e1188b3ae6319aa inherit pub_types_a04163" id="r_a0a36cfdedbf110be0e1188b3ae6319aa"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Measurement</b> = <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a></td></tr>
+<tr class="memdesc:a0a36cfdedbf110be0e1188b3ae6319aa inherit pub_types_a04163"><td class="mdescLeft">&#160;</td><td class="mdescRight">Some classes template on either <a class="el" href="a04323.html" title="A pinhole camera class that has a Pose3 and a Calibration.">PinholeCamera</a> or <a class="el" href="a04587.html" title="A stereo camera class, parameterize by left camera pose and stereo calibration.">StereoCamera</a>, and this typedef informs those classes what "project" returns. <br /></td></tr>
+<tr class="memitem:a6c7e4d82cf51c6b030806af6058d4f15 inherit pub_types_a04163" id="r_a6c7e4d82cf51c6b030806af6058d4f15"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>MeasurementVector</b> = Point2Vector</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_a04071"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_a04071')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="a04071.html">gtsam::FactorGraph&lt; GaussianFactor &gt;</a></td></tr>
-<tr class="memitem:a0c1926b2ccaabd4250710977b550af10 inherit pro_methods_a04071" id="r_a0c1926b2ccaabd4250710977b550af10"><td class="memItemLeft">
-bool&#160;</td><td class="memItemRight"><b>isEqual</b> (const <a class="el" href="a04071.html#a42db0a1062eb6c223b0a186a9d34cb4b">FactorGraph</a> &amp;other) const</td></tr>
-<tr class="memdesc:a0c1926b2ccaabd4250710977b550af10 inherit pro_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check exact equality of the factor pointers. Useful for derived ==. <br /></td></tr>
-<tr class="memitem:a42db0a1062eb6c223b0a186a9d34cb4b inherit pro_methods_a04071" id="r_a42db0a1062eb6c223b0a186a9d34cb4b"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>FactorGraph</b> ()</td></tr>
-<tr class="memdesc:a42db0a1062eb6c223b0a186a9d34cb4b inherit pro_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
-<tr class="memitem:a63a80ba5a22fee5725d0efa75080cdfb inherit pro_methods_a04071" id="r_a63a80ba5a22fee5725d0efa75080cdfb"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>FactorGraph</b> (ITERATOR firstFactor, ITERATOR lastFactor)</td></tr>
-<tr class="memdesc:a63a80ba5a22fee5725d0efa75080cdfb inherit pro_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from iterator over factors (shared_ptr or plain objects). <br /></td></tr>
-<tr class="memitem:a37b5e74d2c3711906f57982b4512351f inherit pro_methods_a04071" id="r_a37b5e74d2c3711906f57982b4512351f"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>FactorGraph</b> (const CONTAINER &amp;factors)</td></tr>
-<tr class="memdesc:a37b5e74d2c3711906f57982b4512351f inherit pro_methods_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from container of factors (shared_ptr or plain objects). <br /></td></tr>
-<tr class="inherit_header pro_attribs_a04071"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a04071')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a04071.html">gtsam::FactorGraph&lt; GaussianFactor &gt;</a></td></tr>
-<tr class="memitem:ae0c75f68e3ebc37cc4511285b12c33fc inherit pro_attribs_a04071" id="r_ae0c75f68e3ebc37cc4511285b12c33fc"><td class="memItemLeft"><a class="el" href="a01953.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; <a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04071.html#ae0c75f68e3ebc37cc4511285b12c33fc">factors_</a></td></tr>
-<tr class="memdesc:ae0c75f68e3ebc37cc4511285b12c33fc inherit pro_attribs_a04071"><td class="mdescLeft">&#160;</td><td class="mdescRight">concept check, makes sure FACTOR defines print and equals  <br /></td></tr>
+<tr class="memitem:a494b5e93c6f577b2a2ef6a2517370429" id="r_a494b5e93c6f577b2a2ef6a2517370429"><td class="memItemLeft"><a id="a494b5e93c6f577b2a2ef6a2517370429" name="a494b5e93c6f577b2a2ef6a2517370429"></a>
+std::pair&lt; <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>, bool &gt;&#160;</td><td class="memItemRight"><b>projectSafe</b> (const <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp;pw) const</td></tr>
+<tr class="memdesc:a494b5e93c6f577b2a2ef6a2517370429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project a point into the image and check depth. <br /></td></tr>
+<tr class="memitem:a6229787ff6acedfd9cb70140fb000b6f" id="r_a6229787ff6acedfd9cb70140fb000b6f"><td class="memItemLeft"><a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&#160;</td><td class="memItemRight"><a class="el" href="a04163.html#a6229787ff6acedfd9cb70140fb000b6f">project2</a> (const <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp;point, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, 6 &gt; <a class="el" href="a04163.html#a1b8bc2bf7c2d619cebc1a957b0ba9207">Dpose</a>={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, 3 &gt; <a class="el" href="a04163.html#ab774b22d9bbb3b58e5a05f8fcadd981a">Dpoint</a>={}) const</td></tr>
+<tr class="memdesc:a6229787ff6acedfd9cb70140fb000b6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project point into the image Throws a <a class="el" href="a04159.html">CheiralityException</a> if point behind image plane iff GTSAM_THROW_CHEIRALITY_EXCEPTION.  <br /></td></tr>
+<tr class="memitem:aefd9ef1e53d3b941e7ac32cbb6abceba" id="r_aefd9ef1e53d3b941e7ac32cbb6abceba"><td class="memItemLeft"><a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&#160;</td><td class="memItemRight"><a class="el" href="a04163.html#aefd9ef1e53d3b941e7ac32cbb6abceba">project2</a> (const <a class="el" href="a04627.html">Unit3</a> &amp;point, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, 6 &gt; <a class="el" href="a04163.html#a1b8bc2bf7c2d619cebc1a957b0ba9207">Dpose</a>={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, 2 &gt; <a class="el" href="a04163.html#ab774b22d9bbb3b58e5a05f8fcadd981a">Dpoint</a>={}) const</td></tr>
+<tr class="memdesc:aefd9ef1e53d3b941e7ac32cbb6abceba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project point at infinity into the image Throws a <a class="el" href="a04159.html">CheiralityException</a> if point behind image plane iff GTSAM_THROW_CHEIRALITY_EXCEPTION.  <br /></td></tr>
+<tr class="memitem:a0cc83392655c4906ab9840b126d63a0c" id="r_a0cc83392655c4906ab9840b126d63a0c"><td class="memItemLeft"><a id="a0cc83392655c4906ab9840b126d63a0c" name="a0cc83392655c4906ab9840b126d63a0c"></a>
+&#160;</td><td class="memItemRight"><b>PinholeBase</b> ()</td></tr>
+<tr class="memdesc:a0cc83392655c4906ab9840b126d63a0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
+<tr class="memitem:a68dca334cf708ac9fd3935dc869b8808" id="r_a68dca334cf708ac9fd3935dc869b8808"><td class="memItemLeft"><a id="a68dca334cf708ac9fd3935dc869b8808" name="a68dca334cf708ac9fd3935dc869b8808"></a>
+&#160;</td><td class="memItemRight"><b>PinholeBase</b> (const <a class="el" href="a04403.html">Pose3</a> &amp;<a class="el" href="a04163.html#a8e481999434032fbf1f99baa18ef41a7">pose</a>)</td></tr>
+<tr class="memdesc:a68dca334cf708ac9fd3935dc869b8808"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with pose. <br /></td></tr>
+<tr class="memitem:acaed5ad7c1936b9f7d3db75812d15181" id="r_acaed5ad7c1936b9f7d3db75812d15181"><td class="memItemLeft"><a id="acaed5ad7c1936b9f7d3db75812d15181" name="acaed5ad7c1936b9f7d3db75812d15181"></a>
+&#160;</td><td class="memItemRight"><b>PinholeBase</b> (const Vector &amp;v)</td></tr>
+<tr class="memitem:ae82cffa320b42dc9f88974ab57ba489c" id="r_ae82cffa320b42dc9f88974ab57ba489c"><td class="memItemLeft"><a id="ae82cffa320b42dc9f88974ab57ba489c" name="ae82cffa320b42dc9f88974ab57ba489c"></a>
+virtual&#160;</td><td class="memItemRight"><b>~PinholeBase</b> ()=default</td></tr>
+<tr class="memdesc:ae82cffa320b42dc9f88974ab57ba489c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor. <br /></td></tr>
+<tr class="memitem:ab01155d3124c3f50bb1239815029e5a7" id="r_ab01155d3124c3f50bb1239815029e5a7"><td class="memItemLeft"><a id="ab01155d3124c3f50bb1239815029e5a7" name="ab01155d3124c3f50bb1239815029e5a7"></a>
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="a04163.html#a0cc83392655c4906ab9840b126d63a0c">PinholeBase</a> &amp;camera, double tol=1e-9) const</td></tr>
+<tr class="memdesc:ab01155d3124c3f50bb1239815029e5a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">assert equality up to a tolerance <br /></td></tr>
+<tr class="memitem:a354034afc01c7db755000c0baed17205" id="r_a354034afc01c7db755000c0baed17205"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="a04163.html#a354034afc01c7db755000c0baed17205">print</a> (const std::string &amp;s=&quot;PinholeBase&quot;) const</td></tr>
+<tr class="memdesc:a354034afc01c7db755000c0baed17205"><td class="mdescLeft">&#160;</td><td class="mdescRight">print  <br /></td></tr>
+<tr class="memitem:a8e481999434032fbf1f99baa18ef41a7" id="r_a8e481999434032fbf1f99baa18ef41a7"><td class="memItemLeft"><a id="a8e481999434032fbf1f99baa18ef41a7" name="a8e481999434032fbf1f99baa18ef41a7"></a>
+const <a class="el" href="a04403.html">Pose3</a> &amp;&#160;</td><td class="memItemRight"><b>pose</b> () const</td></tr>
+<tr class="memdesc:a8e481999434032fbf1f99baa18ef41a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">return pose, constant version <br /></td></tr>
+<tr class="memitem:a78a5c2d8a175cbad6f18b242481a49ad" id="r_a78a5c2d8a175cbad6f18b242481a49ad"><td class="memItemLeft"><a id="a78a5c2d8a175cbad6f18b242481a49ad" name="a78a5c2d8a175cbad6f18b242481a49ad"></a>
+const <a class="el" href="a04451.html">Rot3</a> &amp;&#160;</td><td class="memItemRight"><b>rotation</b> () const</td></tr>
+<tr class="memdesc:a78a5c2d8a175cbad6f18b242481a49ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">get rotation <br /></td></tr>
+<tr class="memitem:a6974500dec40a0c7c0491aaca37f700c" id="r_a6974500dec40a0c7c0491aaca37f700c"><td class="memItemLeft"><a id="a6974500dec40a0c7c0491aaca37f700c" name="a6974500dec40a0c7c0491aaca37f700c"></a>
+const <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp;&#160;</td><td class="memItemRight"><b>translation</b> () const</td></tr>
+<tr class="memdesc:a6974500dec40a0c7c0491aaca37f700c"><td class="mdescLeft">&#160;</td><td class="mdescRight">get translation <br /></td></tr>
+<tr class="memitem:a08f39b2a0a59b1f4b59a74a631349df9" id="r_a08f39b2a0a59b1f4b59a74a631349df9"><td class="memItemLeft"><a id="a08f39b2a0a59b1f4b59a74a631349df9" name="a08f39b2a0a59b1f4b59a74a631349df9"></a>
+const <a class="el" href="a04403.html">Pose3</a> &amp;&#160;</td><td class="memItemRight"><b>getPose</b> (<a class="el" href="a03363.html">OptionalJacobian</a>&lt; 6, 6 &gt; H) const</td></tr>
+<tr class="memdesc:a08f39b2a0a59b1f4b59a74a631349df9"><td class="mdescLeft">&#160;</td><td class="mdescRight">return pose, with derivative <br /></td></tr>
+<tr class="memitem:a9f4fe91997b7fc6a928cac93c80e80f7" id="r_a9f4fe91997b7fc6a928cac93c80e80f7"><td class="memItemLeft">static <a class="el" href="a04403.html">Pose3</a>&#160;</td><td class="memItemRight"><a class="el" href="a04163.html#a9f4fe91997b7fc6a928cac93c80e80f7">LevelPose</a> (const <a class="el" href="a04379.html">Pose2</a> &amp;pose2, double height)</td></tr>
+<tr class="memdesc:a9f4fe91997b7fc6a928cac93c80e80f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a level pose at the given 2D pose and height.  <br /></td></tr>
+<tr class="memitem:ae4e5ed1b27dceeabcb83c0f1c729adae" id="r_ae4e5ed1b27dceeabcb83c0f1c729adae"><td class="memItemLeft">static <a class="el" href="a04403.html">Pose3</a>&#160;</td><td class="memItemRight"><a class="el" href="a04163.html#ae4e5ed1b27dceeabcb83c0f1c729adae">LookatPose</a> (const <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp;eye, const <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp;target, const <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp;upVector)</td></tr>
+<tr class="memdesc:ae4e5ed1b27dceeabcb83c0f1c729adae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a camera pose at the given eye position looking at a target point in the scene with the specified up direction vector.  <br /></td></tr>
+<tr class="memitem:aadadc9997c9525f42e8cba9486033dac" id="r_aadadc9997c9525f42e8cba9486033dac"><td class="memItemLeft">static <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&#160;</td><td class="memItemRight"><a class="el" href="a04163.html#aadadc9997c9525f42e8cba9486033dac">Project</a> (const <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp;pc, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, 3 &gt; <a class="el" href="a04163.html#ab774b22d9bbb3b58e5a05f8fcadd981a">Dpoint</a>={})</td></tr>
+<tr class="memdesc:aadadc9997c9525f42e8cba9486033dac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project from 3D point in camera coordinates into image Does <em>not</em> throw a <a class="el" href="a04159.html">CheiralityException</a>, even if pc behind image plane.  <br /></td></tr>
+<tr class="memitem:ad8fc97bb394a4fd95ffdd2966dfc5ebc" id="r_ad8fc97bb394a4fd95ffdd2966dfc5ebc"><td class="memItemLeft">static <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&#160;</td><td class="memItemRight"><a class="el" href="a04163.html#ad8fc97bb394a4fd95ffdd2966dfc5ebc">Project</a> (const <a class="el" href="a04627.html">Unit3</a> &amp;pc, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, 2 &gt; <a class="el" href="a04163.html#ab774b22d9bbb3b58e5a05f8fcadd981a">Dpoint</a>={})</td></tr>
+<tr class="memdesc:ad8fc97bb394a4fd95ffdd2966dfc5ebc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project from 3D point at infinity in camera coordinates into image Does <em>not</em> throw a <a class="el" href="a04159.html">CheiralityException</a>, even if pc behind image plane.  <br /></td></tr>
+<tr class="memitem:af4ab9a93dfe97e2203108bf4778a1f7a" id="r_af4ab9a93dfe97e2203108bf4778a1f7a"><td class="memItemLeft"><a id="af4ab9a93dfe97e2203108bf4778a1f7a" name="af4ab9a93dfe97e2203108bf4778a1f7a"></a>
+static <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a>&#160;</td><td class="memItemRight"><b>BackprojectFromCamera</b> (const <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> &amp;p, const double depth, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 2 &gt; <a class="el" href="a04163.html#ab774b22d9bbb3b58e5a05f8fcadd981a">Dpoint</a>={}, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 1 &gt; Ddepth={})</td></tr>
+<tr class="memdesc:af4ab9a93dfe97e2203108bf4778a1f7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">backproject a 2-dimensional point to a 3-dimensional point at given depth <br /></td></tr>
+<tr class="memitem:aafecf2e1321b82c54e4c441c8a222370" id="r_aafecf2e1321b82c54e4c441c8a222370"><td class="memItemLeft">static std::pair&lt; size_t, size_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04163.html#aafecf2e1321b82c54e4c441c8a222370">TranslationInterval</a> ()</td></tr>
+<tr class="memdesc:aafecf2e1321b82c54e4c441c8a222370"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the start and end indices (inclusive) of the translation component of the exponential map parameterization.  <br /></td></tr>
+<tr class="memitem:a1b8bc2bf7c2d619cebc1a957b0ba9207" id="r_a1b8bc2bf7c2d619cebc1a957b0ba9207"><td class="memItemLeft">static Matrix26&#160;</td><td class="memItemRight"><a class="el" href="a04163.html#a1b8bc2bf7c2d619cebc1a957b0ba9207">Dpose</a> (const <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> &amp;pn, double d)</td></tr>
+<tr class="memdesc:a1b8bc2bf7c2d619cebc1a957b0ba9207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate Jacobian with respect to pose.  <br /></td></tr>
+<tr class="memitem:ab774b22d9bbb3b58e5a05f8fcadd981a" id="r_ab774b22d9bbb3b58e5a05f8fcadd981a"><td class="memItemLeft">static Matrix23&#160;</td><td class="memItemRight"><a class="el" href="a04163.html#ab774b22d9bbb3b58e5a05f8fcadd981a">Dpoint</a> (const <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> &amp;pn, double d, const Matrix3 &amp;Rt)</td></tr>
+<tr class="memdesc:ab774b22d9bbb3b58e5a05f8fcadd981a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate Jacobian with respect to point.  <br /></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a30793ce545553ceb48be79d10d06be39" name="a30793ce545553ceb48be79d10d06be39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30793ce545553ceb48be79d10d06be39">&#9670;&#160;</a></span>GaussianFactorGraph()</h2>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="acac57ed14a4ce11516655cde62a78a6e" name="acac57ed14a4ce11516655cde62a78a6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acac57ed14a4ce11516655cde62a78a6e">&#9670;&#160;</a></span>_project()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename CALIBRATION&gt; </div>
+<div class="memtemplate">
+template&lt;class POINT&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">gtsam::GaussianFactorGraph::GaussianFactorGraph </td>
+          <td class="memname"><a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> <a class="el" href="a04339.html">gtsam::PinholeBaseK</a>&lt; CALIBRATION &gt;::_project </td>
           <td>(</td>
-          <td class="paramtype">std::initializer_list&lt; <a class="el" href="a04071.html#ac9bfc88025d21ff01b7e9dc609ba0b0e">sharedFactor</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>factors</em></span></td><td>)</td>
+          <td class="paramtype">const POINT &amp;</td>          <td class="paramname"><span class="paramname"><em>pw</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, 6 &gt;</td>          <td class="paramname"><span class="paramname"><em>Dpose</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, <a class="el" href="a03323.html">FixedDimension</a>&lt; POINT &gt;::value &gt;</td>          <td class="paramname"><span class="paramname"><em>Dpoint</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 2, DimK &gt;</td>          <td class="paramname"><span class="paramname"><em>Dcal</em></span>&#160;) const</td>
         </tr>
       </table>
   </td>
@@ -491,536 +292,234 @@ bool&#160;</td><td class="memItemRight"><b>isEqual</b> (const <a class="el" href
 </table>
 </div><div class="memdoc">
 
-<p>Construct from an initializer lists of <a class="el" href="a04327.html" title="An abstract virtual base class for JacobianFactor and HessianFactor.">GaussianFactor</a> shared pointers. </p>
-<p>Example: <a class="el" href="a04339.html" title="A Linear Factor Graph is a factor graph where all factors are Gaussian, i.e.">GaussianFactorGraph</a> graph = { factor1, factor2, factor3 }; </p>
-
-</div>
-</div>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a225dde5026c3f44386c0559ce4320287" name="a225dde5026c3f44386c0559ce4320287"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a225dde5026c3f44386c0559ce4320287">&#9670;&#160;</a></span>augmentedHessian() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Matrix gtsam::GaussianFactorGraph::augmentedHessian </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return a dense \( \Lambda \in \mathbb{R}^{n+1 \times n+1} \) Hessian matrix, augmented with the information vector \( \eta \). </p>
-<p>The augmented Hessian is    </p><p class="formulaDsp">
-\[ \left[ \begin{array}{ccc}
-\Lambda &amp; \eta \\
-\eta^T &amp; c
-\end{array} \right] \]
-</p>
-<p> and the negative log-likelihood is \( \frac{1}{2} x^T \Lambda x + \eta^T x + c \). </p>
-
-</div>
-</div>
-<a id="ad79623fc64110e086baa1980b0f9406a" name="ad79623fc64110e086baa1980b0f9406a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad79623fc64110e086baa1980b0f9406a">&#9670;&#160;</a></span>augmentedHessian() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Matrix gtsam::GaussianFactorGraph::augmentedHessian </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a04227.html">Ordering</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>ordering</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return a dense \( \Lambda \in \mathbb{R}^{n+1 \times n+1} \) Hessian matrix, augmented with the information vector \( \eta \). </p>
-<p>The augmented Hessian is    </p><p class="formulaDsp">
-\[ \left[ \begin{array}{ccc}
-\Lambda &amp; \eta \\
-\eta^T &amp; c
-\end{array} \right] \]
-</p>
-<p> and the negative log-likelihood is \( \frac{1}{2} x^T \Lambda x + \eta^T x + c \). </p>
-
-</div>
-</div>
-<a id="a6b61b289cddbdb999e798e3c5e0c193f" name="a6b61b289cddbdb999e798e3c5e0c193f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b61b289cddbdb999e798e3c5e0c193f">&#9670;&#160;</a></span>augmentedJacobian() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Matrix gtsam::GaussianFactorGraph::augmentedJacobian </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return a dense \( [ \;A\;b\; ] \in \mathbb{R}^{m \times n+1} \) Jacobian matrix, augmented with b with the noise models baked into A and b. </p>
-<p>The negative log-likelihood is \( \frac{1}{2} \Vert Ax-b \Vert^2 \). See also <a class="el" href="#a0836a4b7823c2ccb0fb22910b5b1030d" title="Return the dense Jacobian  and right-hand-side , with the noise models baked into A and b.">GaussianFactorGraph::jacobian</a> and <a class="el" href="#a2ec5f64848183b75a6a3470c0750aeaa" title="Returns a sparse augmented Jacbian matrix as a vector of i, j, and s, where i(k) and j(k) are the bas...">GaussianFactorGraph::sparseJacobian</a>. </p>
-
-</div>
-</div>
-<a id="a1cb2c3ca428470255ceda9bee7ab06fe" name="a1cb2c3ca428470255ceda9bee7ab06fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1cb2c3ca428470255ceda9bee7ab06fe">&#9670;&#160;</a></span>augmentedJacobian() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Matrix gtsam::GaussianFactorGraph::augmentedJacobian </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a04227.html">Ordering</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>ordering</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return a dense \( [ \;A\;b\; ] \in \mathbb{R}^{m \times n+1} \) Jacobian matrix, augmented with b with the noise models baked into A and b. </p>
-<p>The negative log-likelihood is \( \frac{1}{2} \Vert Ax-b \Vert^2 \). See also <a class="el" href="#a0836a4b7823c2ccb0fb22910b5b1030d" title="Return the dense Jacobian  and right-hand-side , with the noise models baked into A and b.">GaussianFactorGraph::jacobian</a> and <a class="el" href="#a2ec5f64848183b75a6a3470c0750aeaa" title="Returns a sparse augmented Jacbian matrix as a vector of i, j, and s, where i(k) and j(k) are the bas...">GaussianFactorGraph::sparseJacobian</a>. </p>
-
-</div>
-</div>
-<a id="a85e7472485f1cfdd1354ee4161981c0f" name="a85e7472485f1cfdd1354ee4161981c0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85e7472485f1cfdd1354ee4161981c0f">&#9670;&#160;</a></span>clone()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a6230b36e3daf60b619e20742db3b02b6">GaussianFactorGraph</a> gtsam::GaussianFactorGraph::clone </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Clone() performs a deep-copy of the graph, including all of the factors. </p>
-<p>Cloning preserves null factors so indices for the original graph are still valid for the cloned graph. </p>
-
-</div>
-</div>
-<a id="a5ba73df3e028d51da3ee8add3f93b63e" name="a5ba73df3e028d51da3ee8add3f93b63e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ba73df3e028d51da3ee8add3f93b63e">&#9670;&#160;</a></span>cloneToPtr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a1f73f4987b9bdaac5c1414a401c0364c">GaussianFactorGraph::shared_ptr</a> gtsam::GaussianFactorGraph::cloneToPtr </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>CloneToPtr() performs a simple assignment to a new graph and returns it. </p>
-<p>There is no preservation of null factors! </p>
-
-</div>
-</div>
-<a id="aa183f87ebad359ef5dee4ef626522bf2" name="aa183f87ebad359ef5dee4ef626522bf2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa183f87ebad359ef5dee4ef626522bf2">&#9670;&#160;</a></span>gradient()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a06239.html">VectorValues</a> gtsam::GaussianFactorGraph::gradient </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a06239.html">VectorValues</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>x0</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Compute the gradient of the energy function, \( \nabla_{x=x_0} \left\Vert \Sigma^{-1} A x - b \right\Vert^2 \), centered around \( x = x_0 \). </p>
-<p>The gradient is \( A^T(Ax-b) \). </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fg</td><td>The Jacobian factor graph $(A,b)$ </td></tr>
-    <tr><td class="paramname">x0</td><td>The center about which to compute the gradient </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The gradient as a <a class="el" href="a04611.html" title="VectorValues represents a collection of vector-valued variables associated each with a unique integer...">VectorValues</a> </dd></dl>
-
-</div>
-</div>
-<a id="a4051ae22110840eeebe855652352ef69" name="a4051ae22110840eeebe855652352ef69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4051ae22110840eeebe855652352ef69">&#9670;&#160;</a></span>gradientAtZero()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a06239.html">VectorValues</a> gtsam::GaussianFactorGraph::gradientAtZero </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Compute the gradient of the energy function,  \( \nabla_{x=0} \left\Vert \Sigma^{-1} A x - b
-\right\Vert^2 \), centered around zero. </p>
-<p>The gradient is \( A^T(Ax-b) \). </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fg</td><td>The Jacobian factor graph $(A,b)$ </td></tr>
-    <tr><td class="paramname">[output]</td><td>g A <a class="el" href="a04611.html" title="VectorValues represents a collection of vector-valued variables associated each with a unique integer...">VectorValues</a> to store the gradient, which must be preallocated, see allocateVectorValues </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The gradient as a <a class="el" href="a04611.html" title="VectorValues represents a collection of vector-valued variables associated each with a unique integer...">VectorValues</a> </dd></dl>
-
-</div>
-</div>
-<a id="a7ed3e7cefeca1b31e17021005e6f7c44" name="a7ed3e7cefeca1b31e17021005e6f7c44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ed3e7cefeca1b31e17021005e6f7c44">&#9670;&#160;</a></span>hessian() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a11685.html">pair</a>&lt; Matrix, Vector &gt; gtsam::GaussianFactorGraph::hessian </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return the dense Hessian \( \Lambda \) and information vector \( \eta \), with the noise models baked in. </p>
-<p>The negative log-likelihood is \frac{1}{2} x^T \Lambda x + \eta^T x + c. See also <a class="el" href="#ad79623fc64110e086baa1980b0f9406a" title="Return a dense  Hessian matrix, augmented with the information vector .">GaussianFactorGraph::augmentedHessian</a>. </p>
-
-</div>
-</div>
-<a id="a754d3a46e1d45acb96f01c7a223842f3" name="a754d3a46e1d45acb96f01c7a223842f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a754d3a46e1d45acb96f01c7a223842f3">&#9670;&#160;</a></span>hessian() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a11685.html">pair</a>&lt; Matrix, Vector &gt; gtsam::GaussianFactorGraph::hessian </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a04227.html">Ordering</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>ordering</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return the dense Hessian \( \Lambda \) and information vector \( \eta \), with the noise models baked in. </p>
-<p>The negative log-likelihood is \frac{1}{2} x^T \Lambda x + \eta^T x + c. See also <a class="el" href="#ad79623fc64110e086baa1980b0f9406a" title="Return a dense  Hessian matrix, augmented with the information vector .">GaussianFactorGraph::augmentedHessian</a>. </p>
-
-</div>
-</div>
-<a id="aa3c74bd13ab3b5c02cae46d78ce9af83" name="aa3c74bd13ab3b5c02cae46d78ce9af83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3c74bd13ab3b5c02cae46d78ce9af83">&#9670;&#160;</a></span>jacobian() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a11685.html">pair</a>&lt; Matrix, Vector &gt; gtsam::GaussianFactorGraph::jacobian </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return the dense Jacobian \( A \) and right-hand-side \( b \), with the noise models baked into A and b. </p>
-<p>The negative log-likelihood is \( \frac{1}{2} \Vert Ax-b \Vert^2 \). See also <a class="el" href="#a1cb2c3ca428470255ceda9bee7ab06fe" title="Return a dense  Jacobian matrix, augmented with b with the noise models baked into A and b.">GaussianFactorGraph::augmentedJacobian</a> and <a class="el" href="#a2ec5f64848183b75a6a3470c0750aeaa" title="Returns a sparse augmented Jacbian matrix as a vector of i, j, and s, where i(k) and j(k) are the bas...">GaussianFactorGraph::sparseJacobian</a>. </p>
-
-</div>
-</div>
-<a id="a0836a4b7823c2ccb0fb22910b5b1030d" name="a0836a4b7823c2ccb0fb22910b5b1030d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0836a4b7823c2ccb0fb22910b5b1030d">&#9670;&#160;</a></span>jacobian() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a11685.html">pair</a>&lt; Matrix, Vector &gt; gtsam::GaussianFactorGraph::jacobian </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a04227.html">Ordering</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>ordering</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return the dense Jacobian \( A \) and right-hand-side \( b \), with the noise models baked into A and b. </p>
-<p>The negative log-likelihood is \( \frac{1}{2} \Vert Ax-b \Vert^2 \). See also <a class="el" href="#a1cb2c3ca428470255ceda9bee7ab06fe" title="Return a dense  Jacobian matrix, augmented with b with the noise models baked into A and b.">GaussianFactorGraph::augmentedJacobian</a> and <a class="el" href="#a2ec5f64848183b75a6a3470c0750aeaa" title="Returns a sparse augmented Jacbian matrix as a vector of i, j, and s, where i(k) and j(k) are the bas...">GaussianFactorGraph::sparseJacobian</a>. </p>
-
-</div>
-</div>
-<a id="a899a8e63e67a30a060879c8478e9d351" name="a899a8e63e67a30a060879c8478e9d351"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a899a8e63e67a30a060879c8478e9d351">&#9670;&#160;</a></span>multiplyInPlace()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gtsam::GaussianFactorGraph::multiplyInPlace </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a06239.html">VectorValues</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Errors::iterator &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span>&#160;) const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>return A*x <em>&zwj;/ <a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b" title="Errors is a vector of errors.">Errors</a> operator</em>(const <a class="el" href="a04611.html" title="VectorValues represents a collection of vector-valued variables associated each with a unique integer...">VectorValues</a>&amp; x) const; </p>
-<p>/** y += alpha*A'A*x *&zwj;/ void multiplyHessianAdd(double alpha, const VectorValues&amp; x,
-        VectorValues&amp; y) const;</p>
-<p>/** In-place version e &lt;- A*x that overwrites e. *&zwj;/ void multiplyInPlace(const VectorValues&amp; x, Errors&amp; e) const;</p>
-<p>/** In-place version e &lt;- A*x that takes an iterator. </p>
-
-</div>
-</div>
-<a id="a05bfa41e9ff99f246ea528ba26b82e69" name="a05bfa41e9ff99f246ea528ba26b82e69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05bfa41e9ff99f246ea528ba26b82e69">&#9670;&#160;</a></span>negate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a6230b36e3daf60b619e20742db3b02b6">GaussianFactorGraph</a> gtsam::GaussianFactorGraph::negate </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the negation of all factors in this graph - corresponds to antifactors. </p>
-<p>Will convert all factors to HessianFactors due to negation of information. Cloning preserves null factors so indices for the original graph are still valid for the cloned graph. </p>
-
-</div>
-</div>
-<a id="a8314e397b9be5c5e58465e319207553f" name="a8314e397b9be5c5e58465e319207553f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8314e397b9be5c5e58465e319207553f">&#9670;&#160;</a></span>optimize() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a06239.html">VectorValues</a> gtsam::GaussianFactorGraph::optimize </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a04127.html#a4053522180fd649baf38a49c515e7b53">Eliminate</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>function</em></span><span class="paramdefsep"> = </span><span class="paramdefval">EliminationTraitsType::DefaultEliminate</span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Solve the factor graph by performing multifrontal variable elimination in COLAMD order using the dense elimination function specified in <code>function</code> (default EliminatePreferCholesky), followed by back-substitution in the Bayes tree resulting from elimination. </p>
-<p>Is equivalent to calling graph.eliminateMultifrontal()-&gt;<a class="el" href="#a8314e397b9be5c5e58465e319207553f" title="Solve the factor graph by performing multifrontal variable elimination in COLAMD order using the dens...">optimize()</a>. </p>
-
-</div>
-</div>
-<a id="a5876c0a7c2b287b57277cbd69bc78aae" name="a5876c0a7c2b287b57277cbd69bc78aae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5876c0a7c2b287b57277cbd69bc78aae">&#9670;&#160;</a></span>optimize() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a06239.html">VectorValues</a> gtsam::GaussianFactorGraph::optimize </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a04227.html">Ordering</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>ordering</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a04127.html#a4053522180fd649baf38a49c515e7b53">Eliminate</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>function</em></span><span class="paramdefsep"> = </span><span class="paramdefval">EliminationTraitsType::DefaultEliminate</span>&#160;) const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Solve the factor graph by performing multifrontal variable elimination in COLAMD order using the dense elimination function specified in <code>function</code> (default EliminatePreferCholesky), followed by back-substitution in the Bayes tree resulting from elimination. </p>
-<p>Is equivalent to calling graph.eliminateMultifrontal()-&gt;<a class="el" href="#a8314e397b9be5c5e58465e319207553f" title="Solve the factor graph by performing multifrontal variable elimination in COLAMD order using the dens...">optimize()</a>. </p>
-
-</div>
-</div>
-<a id="a31ae5450f0fbcfc7e8edf0cb9deb21c2" name="a31ae5450f0fbcfc7e8edf0cb9deb21c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31ae5450f0fbcfc7e8edf0cb9deb21c2">&#9670;&#160;</a></span>optimizeGradientSearch()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a06239.html">VectorValues</a> gtsam::GaussianFactorGraph::optimizeGradientSearch </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Optimize along the gradient direction, with a closed-form computation to perform the line search. </p>
-<p>The gradient is computed about \( \delta x=0 \).</p>
-<p><a class="el" href="#aa5ff7a930581421abeb3b93c1347fcdb" title="Typedef to this class.">This</a> function returns \( \delta x \) that minimizes a reparametrized problem. The error function of a <a class="el" href="a04287.html" title="GaussianBayesNet is a Bayes net made from linear-Gaussian conditionals.">GaussianBayesNet</a> is</p>
-<p class="formulaDsp">
-\[ f(\delta x) = \frac{1}{2} |R \delta x - d|^2 = \frac{1}{2}d^T d - d^T R \delta x +
-\frac{1}{2} \delta x^T R^T R \delta x \]
-</p>
-<p>with gradient and Hessian</p>
-<p class="formulaDsp">
-\[ g(\delta x) = R^T(R\delta x - d), \qquad G(\delta x) = R^T R. \]
-</p>
-<p><a class="el" href="#aa5ff7a930581421abeb3b93c1347fcdb" title="Typedef to this class.">This</a> function performs the line search in the direction of the gradient evaluated at  \( g =
-g(\delta x = 0) \) with step size \( \alpha \) that minimizes  \( f(\delta x = \alpha g)
-\):</p>
-<p class="formulaDsp">
-\[ f(\alpha) = \frac{1}{2} d^T d + g^T \delta x + \frac{1}{2} \alpha^2 g^T G g \]
-</p>
-<p>Optimizing by setting the derivative to zero yields  \( \hat \alpha = (-g^T g) / (g^T G g)
-\). For efficiency, this function evaluates the denominator without computing the Hessian \( G \), returning</p>
-<p class="formulaDsp">
-\[ \delta x = \hat\alpha g = \frac{-g^T g}{(R g)^T(R g)} \]
-</p>
- 
-</div>
-</div>
-<a id="a74ed62e8ff4efeb6c33f4acd91d08625" name="a74ed62e8ff4efeb6c33f4acd91d08625"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74ed62e8ff4efeb6c33f4acd91d08625">&#9670;&#160;</a></span>probPrime()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double gtsam::GaussianFactorGraph::probPrime </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a06239.html">VectorValues</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Unnormalized probability. </p>
-<p>O(n) </p>
-
-</div>
-</div>
-<a id="a2ec5f64848183b75a6a3470c0750aeaa" name="a2ec5f64848183b75a6a3470c0750aeaa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ec5f64848183b75a6a3470c0750aeaa">&#9670;&#160;</a></span>sparseJacobian()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">SparseTriplets gtsam::GaussianFactorGraph::sparseJacobian </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a04227.html">Ordering</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>ordering</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t &amp;</td>          <td class="paramname"><span class="paramname"><em>nrows</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t &amp;</td>          <td class="paramname"><span class="paramname"><em>ncols</em></span>&#160;) const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns a sparse augmented Jacbian matrix as a vector of i, j, and s, where i(k) and j(k) are the base 0 row and column indices, and s(k) is the entry as a double. </p>
-<p>The standard deviations are baked into A and b </p><dl class="section return"><dt>Returns</dt><dd>the sparse matrix as a std::vector of std::tuples </dd></dl>
+<p>Templated projection of a point (possibly at infinity) from world coordinate to the image. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">ordering</td><td>the column ordering </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">nrows</td><td>The number of rows in the augmented Jacobian </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">ncols</td><td>The number of columns in the augmented Jacobian </td></tr>
+    <tr><td class="paramname">pw</td><td>is a 3D point or a <a class="el" href="a04627.html" title="Represents a 3D point on a unit sphere.">Unit3</a> (point at infinity) in world coordinates </td></tr>
+    <tr><td class="paramname"><a class="el" href="a04163.html#a1b8bc2bf7c2d619cebc1a957b0ba9207" title="Calculate Jacobian with respect to pose.">Dpose</a></td><td>is the Jacobian w.r.t. pose3 </td></tr>
+    <tr><td class="paramname"><a class="el" href="a04163.html#ab774b22d9bbb3b58e5a05f8fcadd981a" title="Calculate Jacobian with respect to point.">Dpoint</a></td><td>is the Jacobian w.r.t. point3 </td></tr>
+    <tr><td class="paramname">Dcal</td><td>is the Jacobian w.r.t. calibration </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a5856b8544f4d9b76be4b2d8f13807e09" name="a5856b8544f4d9b76be4b2d8f13807e09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5856b8544f4d9b76be4b2d8f13807e09">&#9670;&#160;</a></span>sparseJacobian_()</h2>
+<a id="a314022519384075b365248f9ccf152fc" name="a314022519384075b365248f9ccf152fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a314022519384075b365248f9ccf152fc">&#9670;&#160;</a></span>calibration()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename CALIBRATION&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Matrix gtsam::GaussianFactorGraph::sparseJacobian_ </td>
+          <td class="memname">virtual const CALIBRATION &amp; <a class="el" href="a04339.html">gtsam::PinholeBaseK</a>&lt; CALIBRATION &gt;::calibration </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Matrix version of sparseJacobian: generates a 3*m matrix with [i,j,s] entries such that S(i(k),j(k)) = s(k), which can be given to MATLAB's sparse. </p>
-<p>Note: i, j are 1-indexed. The standard deviations are baked into A and b </p>
+<p>return calibration </p>
+
+<p>Implemented in <a class="el" href="a04323.html#a355cc4de98c3581c452fa36c930f8baa">gtsam::PinholeCamera&lt; Calibration &gt;</a>, <a class="el" href="a04323.html#a355cc4de98c3581c452fa36c930f8baa">gtsam::PinholeCamera&lt; Cal3_S2 &gt;</a>, <a class="el" href="a04323.html#a355cc4de98c3581c452fa36c930f8baa">gtsam::PinholeCamera&lt; Cal3Bundler &gt;</a>, <a class="el" href="a04323.html#a355cc4de98c3581c452fa36c930f8baa">gtsam::PinholeCamera&lt; CALIBRATION &gt;</a>, <a class="el" href="a04323.html#a355cc4de98c3581c452fa36c930f8baa">gtsam::PinholeCamera&lt; gtsam::Cal3_S2 &gt;</a>, <a class="el" href="a04323.html#a355cc4de98c3581c452fa36c930f8baa">gtsam::PinholeCamera&lt; gtsam::Cal3Bundler &gt;</a>, <a class="el" href="a04323.html#a355cc4de98c3581c452fa36c930f8baa">gtsam::PinholeCamera&lt; gtsam::Cal3DS2 &gt;</a>, <a class="el" href="a04323.html#a355cc4de98c3581c452fa36c930f8baa">gtsam::PinholeCamera&lt; gtsam::Cal3Fisheye &gt;</a>, <a class="el" href="a04323.html#a355cc4de98c3581c452fa36c930f8baa">gtsam::PinholeCamera&lt; gtsam::Cal3Unified &gt;</a>, <a class="el" href="a04343.html#a33a168ebe251f7b2e13ba060373994ac">gtsam::PinholePose&lt; CALIBRATION &gt;</a>, <a class="el" href="a04343.html#a33a168ebe251f7b2e13ba060373994ac">gtsam::PinholePose&lt; gtsam::Cal3_S2 &gt;</a>, <a class="el" href="a04343.html#a33a168ebe251f7b2e13ba060373994ac">gtsam::PinholePose&lt; gtsam::Cal3Bundler &gt;</a>, <a class="el" href="a04343.html#a33a168ebe251f7b2e13ba060373994ac">gtsam::PinholePose&lt; gtsam::Cal3DS2 &gt;</a>, <a class="el" href="a04343.html#a33a168ebe251f7b2e13ba060373994ac">gtsam::PinholePose&lt; gtsam::Cal3Fisheye &gt;</a>, and <a class="el" href="a04343.html#a33a168ebe251f7b2e13ba060373994ac">gtsam::PinholePose&lt; gtsam::Cal3Unified &gt;</a>.</p>
 
 </div>
 </div>
-<a id="adb2535546d074ea20f68d1c9a82ea91f" name="adb2535546d074ea20f68d1c9a82ea91f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb2535546d074ea20f68d1c9a82ea91f">&#9670;&#160;</a></span>transposeMultiply()</h2>
+<a id="a36be75c9f710a880686a20fb547d7f30" name="a36be75c9f710a880686a20fb547d7f30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36be75c9f710a880686a20fb547d7f30">&#9670;&#160;</a></span>range() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename CALIBRATION&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a06239.html">VectorValues</a> gtsam::GaussianFactorGraph::transposeMultiply </td>
+          <td class="memname">double <a class="el" href="a04339.html">gtsam::PinholeBaseK</a>&lt; CALIBRATION &gt;::range </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="a01968.html#a9793011498324af94cfcc3cea206991b">Errors</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const <a class="el" href="a04167.html">CalibratedCamera</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>camera</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 6 &gt;</td>          <td class="paramname"><span class="paramname"><em>Dcamera</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 6 &gt;</td>          <td class="paramname"><span class="paramname"><em>Dother</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>x = A'*e </p>
-<ul>
-<li>************************************************************************* *&zwj;/* ************************************************************************* *&zwj;/ </li>
-</ul>
+<p>Calculate range to a <a class="el" href="a04167.html" title="A Calibrated camera class [R|-R&#39;t], calibration K=I.">CalibratedCamera</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">camera</td><td>Other camera </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>range (double) </dd></dl>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/<a class="el" href="a00800_source.html">GaussianFactorGraph.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/linear/<a class="el" href="a00755.html">GaussianFactorGraph.cpp</a></li>
+<a id="a49ef7871d8a2fb9f615c56217c838da0" name="a49ef7871d8a2fb9f615c56217c838da0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49ef7871d8a2fb9f615c56217c838da0">&#9670;&#160;</a></span>range() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename CALIBRATION&gt; </div>
+<div class="memtemplate">
+template&lt;class CalibrationB&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="a04339.html">gtsam::PinholeBaseK</a>&lt; CALIBRATION &gt;::range </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a270bc95972da02d583525d15259c3e92">PinholeBaseK</a>&lt; CalibrationB &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>camera</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 6 &gt;</td>          <td class="paramname"><span class="paramname"><em>Dcamera</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 6 &gt;</td>          <td class="paramname"><span class="paramname"><em>Dother</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate range to a PinholePoseK derived class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">camera</td><td>Other camera </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>range (double) </dd></dl>
+
+</div>
+</div>
+<a id="a3d905000b68ad029651a9762e458e7cb" name="a3d905000b68ad029651a9762e458e7cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d905000b68ad029651a9762e458e7cb">&#9670;&#160;</a></span>range() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename CALIBRATION&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="a04339.html">gtsam::PinholeBaseK</a>&lt; CALIBRATION &gt;::range </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a02242.html#a4705ef3536019dc2a384e26ef0fde932">Point3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>point</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 6 &gt;</td>          <td class="paramname"><span class="paramname"><em>Dcamera</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 3 &gt;</td>          <td class="paramname"><span class="paramname"><em>Dpoint</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate range to a landmark. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>3D location of landmark </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>range (double) </dd></dl>
+
+</div>
+</div>
+<a id="a88fa452deab3e8a4572b48b49db3a778" name="a88fa452deab3e8a4572b48b49db3a778"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88fa452deab3e8a4572b48b49db3a778">&#9670;&#160;</a></span>range() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename CALIBRATION&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="a04339.html">gtsam::PinholeBaseK</a>&lt; CALIBRATION &gt;::range </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a04403.html">Pose3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>pose</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 6 &gt;</td>          <td class="paramname"><span class="paramname"><em>Dcamera</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a03363.html">OptionalJacobian</a>&lt; 1, 6 &gt;</td>          <td class="paramname"><span class="paramname"><em>Dpose</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate range to another pose. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="a04163.html#a8e481999434032fbf1f99baa18ef41a7" title="return pose, constant version">pose</a></td><td>Other SO(3) pose </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>range (double) </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00491_source.html">PinholePose.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -1035,7 +534,7 @@ g(\delta x = 0) \) with step size \( \alpha \) that minimizes  \( f(\delta x = \
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04339.html">GaussianFactorGraph</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04339.html">PinholeBaseK</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

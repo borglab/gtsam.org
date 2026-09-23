@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,16 +96,40 @@ $(function(){initNavTree('a03335.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::VisitLeaf&lt; L, Y &gt; Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::MatrixLieGroup&lt; Class, D, N &gt; Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a03335.html">gtsam::VisitLeaf&lt; L, Y &gt;</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>F</b> typedef (defined in <a class="el" href="a03335.html">gtsam::VisitLeaf&lt; L, Y &gt;</a>)</td><td class="entry"><a class="el" href="a03335.html">gtsam::VisitLeaf&lt; L, Y &gt;</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a03335.html#ac0b1a6f72344f8cc4608a05dab439a4a">f</a></td><td class="entry"><a class="el" href="a03335.html">gtsam::VisitLeaf&lt; L, Y &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a03335.html#a580d4cbae8dd483883f674b6921a846c">operator()</a>(const typename DecisionTree&lt; L, Y &gt;::NodePtr &amp;node) const</td><td class="entry"><a class="el" href="a03335.html">gtsam::VisitLeaf&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a03335.html#a41d555420231e321c884c2a578e33ee1">VisitLeaf</a>(F f)</td><td class="entry"><a class="el" href="a03335.html">gtsam::VisitLeaf&lt; L, Y &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">explicit</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03335.html#acf7d38ce38e9df02c00f6afc65f6a97c">Adjoint</a>(const TangentVector &amp;xi, ChartJacobian H_this={}, ChartJacobian H_xi={}) const</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03335.html#a83cf162a62639adfb8013f79d6aea754">adjoint</a>(const TangentVector &amp;xi, const TangentVector &amp;y, ChartJacobian Hxi={}, ChartJacobian H_y={})</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03335.html#a4820aeff8aab258df3c7119a290ef73c">AdjointMap</a>() const</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03335.html#a3e46364311f36a12b6dcccabaf7e5207">adjointMap</a>(const TangentVector &amp;xi)</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03335.html#a7229eba7283c6e3334111dedcdc88cea">AdjointTranspose</a>(const TangentVector &amp;x, ChartJacobian H_this={}, ChartJacobian H_x={}) const</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03335.html#a20e1ae24f0e452ad88658f028bc56c2b">adjointTranspose</a>(const TangentVector &amp;xi, const TangentVector &amp;y, ChartJacobian Hxi={}, ChartJacobian H_y={})</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Base</b> typedef (defined in <a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a>)</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>ChartJacobian</b> typedef (defined in <a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a>)</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03335.html#a5454833785925037137a2eef98edf558">Dim</a>()</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03335.html#a2b529a1efa04542a822c0dcd36e26e81">dim</a>() const</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>dimension</b> (defined in <a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a>)</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03267.html#aee395d766c6c8afb27a9bece5c42400e">expmap</a>(const TangentVector &amp;v) const</td><td class="entry"><a class="el" href="a03267.html">gtsam::LieGroup&lt; Class, D &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03267.html#a4d5eaddd8b731ca23dc8bbee130ae41d">expmap</a>(const TangentVector &amp;v, ChartJacobian H1, ChartJacobian H2={}) const</td><td class="entry"><a class="el" href="a03267.html">gtsam::LieGroup&lt; Class, D &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Jacobian</b> typedef (defined in <a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a>)</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03267.html#aaa535efd2e685eeb1f26e828d49d7819">LocalCoordinates</a>(const Class &amp;g)</td><td class="entry"><a class="el" href="a03267.html">gtsam::LieGroup&lt; Class, D &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03267.html#a273e9308a6b72b39af2b471371a3a34e">LocalCoordinates</a>(const Class &amp;g, ChartJacobian H)</td><td class="entry"><a class="el" href="a03267.html">gtsam::LieGroup&lt; Class, D &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03267.html#a5380bfede1eb39fa9473824009a747a7">localCoordinates</a>(const Class &amp;g) const</td><td class="entry"><a class="el" href="a03267.html">gtsam::LieGroup&lt; Class, D &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03267.html#a732e33fb061543b000bd1fddcf09a276">localCoordinates</a>(const Class &amp;g, ChartJacobian H1, ChartJacobian H2={}) const</td><td class="entry"><a class="el" href="a03267.html">gtsam::LieGroup&lt; Class, D &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03267.html#a9a8ba0a0f7442929df460d79292134aa">logmap</a>(const Class &amp;g) const</td><td class="entry"><a class="el" href="a03267.html">gtsam::LieGroup&lt; Class, D &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03267.html#a73b6ef7675a980c3049d8297ab64a45a">logmap</a>(const Class &amp;g, ChartJacobian H1, ChartJacobian H2={}) const</td><td class="entry"><a class="el" href="a03267.html">gtsam::LieGroup&lt; Class, D &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03267.html#af0dab5bebe52a8ccebe8ea8a1dbafd21">Retract</a>(const TangentVector &amp;v)</td><td class="entry"><a class="el" href="a03267.html">gtsam::LieGroup&lt; Class, D &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03267.html#a82d607a5f389ae10c62329221dd5a396">Retract</a>(const TangentVector &amp;v, ChartJacobian H)</td><td class="entry"><a class="el" href="a03267.html">gtsam::LieGroup&lt; Class, D &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a03267.html#adf52076de7615c335b4574f577a22b77">retract</a>(const TangentVector &amp;v) const</td><td class="entry"><a class="el" href="a03267.html">gtsam::LieGroup&lt; Class, D &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03267.html#a833dc799f7c26d66a1d1ee63a7fe8f85">retract</a>(const TangentVector &amp;v, ChartJacobian H1, ChartJacobian H2={}) const</td><td class="entry"><a class="el" href="a03267.html">gtsam::LieGroup&lt; Class, D &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>TangentVector</b> typedef (defined in <a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a>)</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a03335.html#adaedee37b2d50e9a3cda87a7cbc6060b">vec</a>(OptionalJacobian&lt; internal::product(N, N), D &gt; H={}) const</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Vectorized</b> typedef (defined in <a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a>)</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>VectorizedJacobian</b> typedef (defined in <a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a>)</td><td class="entry"><a class="el" href="a03335.html">gtsam::MatrixLieGroup&lt; Class, D, N &gt;</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

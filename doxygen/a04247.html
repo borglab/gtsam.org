@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::VariableIndex Class Reference</title>
+<title>gtsam: gtsam::FundamentalMatrix Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,206 +96,197 @@ $(function(){initNavTree('a04247.html','','a04244'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::VariableIndex Class Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::FundamentalMatrix Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="a04247.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a> class computes and stores the block column structure of a factor graph. </p>
-<p>The factor graph stores a collection of factors, each of which involves a set of variables. In contrast, the <a class="el" href="a04247.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a> is built from a factor graph prior to elimination, and stores the list of factors that involve each variable. This information is stored as a deque of lists of factor indices. </p>
+<div class="textblock"><p>Represents a fundamental matrix in computer vision, which encodes the epipolar geometry between two views. </p>
+<p>The <a class="el" href="a04247.html" title="Represents a fundamental matrix in computer vision, which encodes the epipolar geometry between two v...">FundamentalMatrix</a> class encapsulates the fundamental matrix, which relates corresponding points in stereo images. It is parameterized by two rotation matrices (U and V) and a scalar parameter (s). Using these values, the fundamental matrix is represented as</p>
+<p>F = U * diag(1, s, 0) * V^T </p>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Advanced Interface</h2></td></tr>
-<tr class="memitem:ac98d07dd8f7b70e16ccb9a01abf56b9c" id="r_ac98d07dd8f7b70e16ccb9a01abf56b9c"><td class="memItemLeft"><a id="ac98d07dd8f7b70e16ccb9a01abf56b9c" name="ac98d07dd8f7b70e16ccb9a01abf56b9c"></a>
-class&#160;</td><td class="memItemRight"><b>boost::serialization::access</b></td></tr>
-<tr class="memdesc:ac98d07dd8f7b70e16ccb9a01abf56b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialization function. <br /></td></tr>
-<tr class="memitem:aedf0942d75479fc6ce0ed9166c9a3f82" id="r_aedf0942d75479fc6ce0ed9166c9a3f82"><td class="memTemplParams" colspan="2">template&lt;class FG&gt; </td></tr>
-<tr class="memitem:aedf0942d75479fc6ce0ed9166c9a3f82 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aedf0942d75479fc6ce0ed9166c9a3f82">augment</a> (const FG &amp;factors, boost::optional&lt; const <a class="el" href="a01968.html#a99e63c90a8ac740d99716e73fe97e054">FactorIndices</a> &amp; &gt; newFactorIndices=boost::none)</td></tr>
-<tr class="memdesc:aedf0942d75479fc6ce0ed9166c9a3f82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Augment the variable index with new factors.  <br /></td></tr>
-<tr class="memitem:abc7db49d64ddfd7a946bd4d349cb785f" id="r_abc7db49d64ddfd7a946bd4d349cb785f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abc7db49d64ddfd7a946bd4d349cb785f">augmentExistingFactor</a> (const <a class="el" href="a01968.html#a19c53f2faabb0f4b4b78ce2f7168cc14">FactorIndex</a> factorIndex, const KeySet &amp;newKeys)</td></tr>
-<tr class="memdesc:abc7db49d64ddfd7a946bd4d349cb785f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Augment the variable index after an existing factor now affects to more variable Keys.  <br /></td></tr>
-<tr class="memitem:a4094920c9d0ce534ff3d8a953730f09b" id="r_a4094920c9d0ce534ff3d8a953730f09b"><td class="memTemplParams" colspan="2">template&lt;typename ITERATOR, class FG&gt; </td></tr>
-<tr class="memitem:a4094920c9d0ce534ff3d8a953730f09b template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4094920c9d0ce534ff3d8a953730f09b">remove</a> (ITERATOR firstFactor, ITERATOR lastFactor, const FG &amp;factors)</td></tr>
-<tr class="memdesc:a4094920c9d0ce534ff3d8a953730f09b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove entries corresponding to the specified factors.  <br /></td></tr>
-<tr class="memitem:adba150211d074457621ace80632a0267" id="r_adba150211d074457621ace80632a0267"><td class="memTemplParams" colspan="2"><a id="adba150211d074457621ace80632a0267" name="adba150211d074457621ace80632a0267"></a>
-template&lt;typename ITERATOR&gt; </td></tr>
-<tr class="memitem:adba150211d074457621ace80632a0267 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><b>removeUnusedVariables</b> (ITERATOR firstKey, ITERATOR lastKey)</td></tr>
-<tr class="memdesc:adba150211d074457621ace80632a0267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove unused empty variables (in debug mode verifies they are empty). <br /></td></tr>
-<tr class="memitem:a50a87dee69788ba684075cdee8d09719" id="r_a50a87dee69788ba684075cdee8d09719"><td class="memItemLeft"><a id="a50a87dee69788ba684075cdee8d09719" name="a50a87dee69788ba684075cdee8d09719"></a>
-const_iterator&#160;</td><td class="memItemRight"><b>begin</b> () const</td></tr>
-<tr class="memdesc:a50a87dee69788ba684075cdee8d09719"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator to the first variable entry. <br /></td></tr>
-<tr class="memitem:ad09ff18e34330ec023386a8d46dc6caf" id="r_ad09ff18e34330ec023386a8d46dc6caf"><td class="memItemLeft"><a id="ad09ff18e34330ec023386a8d46dc6caf" name="ad09ff18e34330ec023386a8d46dc6caf"></a>
-const_iterator&#160;</td><td class="memItemRight"><b>end</b> () const</td></tr>
-<tr class="memdesc:ad09ff18e34330ec023386a8d46dc6caf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator to the first variable entry. <br /></td></tr>
-<tr class="memitem:a56ed25e46e57f984ff70554371bc6bf9" id="r_a56ed25e46e57f984ff70554371bc6bf9"><td class="memItemLeft"><a id="a56ed25e46e57f984ff70554371bc6bf9" name="a56ed25e46e57f984ff70554371bc6bf9"></a>
-const_iterator&#160;</td><td class="memItemRight"><b>find</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key) const</td></tr>
-<tr class="memdesc:a56ed25e46e57f984ff70554371bc6bf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the iterator for the requested variable entry. <br /></td></tr>
-<tr class="memitem:ad8a1d8fb2b05abf2823b9f7a42dc7787" id="r_ad8a1d8fb2b05abf2823b9f7a42dc7787"><td class="memItemLeft"><a id="ad8a1d8fb2b05abf2823b9f7a42dc7787" name="ad8a1d8fb2b05abf2823b9f7a42dc7787"></a>
-Factor_iterator&#160;</td><td class="memItemRight"><b>factorsBegin</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> variable)</td></tr>
-<tr class="memitem:acbac680b71fa2dbd2dfdaa15f2d6411a" id="r_acbac680b71fa2dbd2dfdaa15f2d6411a"><td class="memItemLeft"><a id="acbac680b71fa2dbd2dfdaa15f2d6411a" name="acbac680b71fa2dbd2dfdaa15f2d6411a"></a>
-Factor_iterator&#160;</td><td class="memItemRight"><b>factorsEnd</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> variable)</td></tr>
-<tr class="memitem:a835e0146c30f165028ba91868ca10e06" id="r_a835e0146c30f165028ba91868ca10e06"><td class="memItemLeft"><a id="a835e0146c30f165028ba91868ca10e06" name="a835e0146c30f165028ba91868ca10e06"></a>
-Factor_const_iterator&#160;</td><td class="memItemRight"><b>factorsBegin</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> variable) const</td></tr>
-<tr class="memitem:a1c64b8174e00341f2019bd435e121b64" id="r_a1c64b8174e00341f2019bd435e121b64"><td class="memItemLeft"><a id="a1c64b8174e00341f2019bd435e121b64" name="a1c64b8174e00341f2019bd435e121b64"></a>
-Factor_const_iterator&#160;</td><td class="memItemRight"><b>factorsEnd</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> variable) const</td></tr>
-<tr class="memitem:a11479e896e15a83a49e9888c8a9f8ae3" id="r_a11479e896e15a83a49e9888c8a9f8ae3"><td class="memItemLeft"><a id="a11479e896e15a83a49e9888c8a9f8ae3" name="a11479e896e15a83a49e9888c8a9f8ae3"></a>
-const <a class="el" href="a01968.html#a99e63c90a8ac740d99716e73fe97e054">FactorIndices</a> &amp;&#160;</td><td class="memItemRight"><b>internalAt</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> variable) const</td></tr>
-<tr class="memdesc:a11479e896e15a83a49e9888c8a9f8ae3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal version of 'at' that asserts existence. <br /></td></tr>
-<tr class="memitem:a820c6f5b0f83a1303d35dac9fd33a0a9" id="r_a820c6f5b0f83a1303d35dac9fd33a0a9"><td class="memItemLeft"><a id="a820c6f5b0f83a1303d35dac9fd33a0a9" name="a820c6f5b0f83a1303d35dac9fd33a0a9"></a>
-<a class="el" href="a01968.html#a99e63c90a8ac740d99716e73fe97e054">FactorIndices</a> &amp;&#160;</td><td class="memItemRight"><b>internalAt</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> variable)</td></tr>
-<tr class="memdesc:a820c6f5b0f83a1303d35dac9fd33a0a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal version of 'at' that asserts existence. <br /></td></tr>
+Manifold</h2></td></tr>
+<tr class="memitem:adb4e386e2e26957bf5a760f0b5df0b9e" id="r_adb4e386e2e26957bf5a760f0b5df0b9e"><td class="memItemLeft"><a id="adb4e386e2e26957bf5a760f0b5df0b9e" name="adb4e386e2e26957bf5a760f0b5df0b9e"></a>
+static constexpr auto&#160;</td><td class="memItemRight"><b>dimension</b> = 7</td></tr>
+<tr class="memitem:aac8ea06bee44d6849934b8a53bbfd2c7" id="r_aac8ea06bee44d6849934b8a53bbfd2c7"><td class="memItemLeft"><a id="aac8ea06bee44d6849934b8a53bbfd2c7" name="aac8ea06bee44d6849934b8a53bbfd2c7"></a>
+size_t&#160;</td><td class="memItemRight"><b>dim</b> () const</td></tr>
+<tr class="memitem:ac0632fbe2d540da0343f90fe05c0cc10" id="r_ac0632fbe2d540da0343f90fe05c0cc10"><td class="memItemLeft"><a id="ac0632fbe2d540da0343f90fe05c0cc10" name="ac0632fbe2d540da0343f90fe05c0cc10"></a>
+Vector&#160;</td><td class="memItemRight"><b>localCoordinates</b> (const <a class="el" href="#a7c3849fb02e66fc2ab4b35117572af2b">FundamentalMatrix</a> &amp;F) const</td></tr>
+<tr class="memdesc:ac0632fbe2d540da0343f90fe05c0cc10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return local coordinates with respect to another <a class="el" href="a04247.html" title="Represents a fundamental matrix in computer vision, which encodes the epipolar geometry between two v...">FundamentalMatrix</a>. <br /></td></tr>
+<tr class="memitem:a5d2d01790889568f661be4c561c4afc8" id="r_a5d2d01790889568f661be4c561c4afc8"><td class="memItemLeft"><a id="a5d2d01790889568f661be4c561c4afc8" name="a5d2d01790889568f661be4c561c4afc8"></a>
+<a class="el" href="#a7c3849fb02e66fc2ab4b35117572af2b">FundamentalMatrix</a>&#160;</td><td class="memItemRight"><b>retract</b> (const Vector &amp;delta) const</td></tr>
+<tr class="memdesc:a5d2d01790889568f661be4c561c4afc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retract the given vector to get a new <a class="el" href="a04247.html" title="Represents a fundamental matrix in computer vision, which encodes the epipolar geometry between two v...">FundamentalMatrix</a>. <br /></td></tr>
+<tr class="memitem:ac4eaa675747a4bf509e05c0589be2e12" id="r_ac4eaa675747a4bf509e05c0589be2e12"><td class="memItemLeft"><a id="ac4eaa675747a4bf509e05c0589be2e12" name="ac4eaa675747a4bf509e05c0589be2e12"></a>
+static size_t&#160;</td><td class="memItemRight"><b>Dim</b> ()</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Standard Constructors</h2></td></tr>
-<tr class="memitem:af85147163ce24cb4db4505471440402c" id="r_af85147163ce24cb4db4505471440402c"><td class="memItemLeft"><a id="af85147163ce24cb4db4505471440402c" name="af85147163ce24cb4db4505471440402c"></a>
-&#160;</td><td class="memItemRight"><b>VariableIndex</b> ()</td></tr>
-<tr class="memdesc:af85147163ce24cb4db4505471440402c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor, creates an empty <a class="el" href="a04247.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a>. <br /></td></tr>
-<tr class="memitem:a79bebdf9292c00135d5605fe38319142" id="r_a79bebdf9292c00135d5605fe38319142"><td class="memTemplParams" colspan="2"><a id="a79bebdf9292c00135d5605fe38319142" name="a79bebdf9292c00135d5605fe38319142"></a>
-template&lt;class FG&gt; </td></tr>
-<tr class="memitem:a79bebdf9292c00135d5605fe38319142 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>VariableIndex</b> (const FG &amp;factorGraph)</td></tr>
-<tr class="memdesc:a79bebdf9292c00135d5605fe38319142"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="a04247.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a> that computes and stores the block column structure of a factor graph. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Standard Interface</h2></td></tr>
-<tr class="memitem:a7e83a7dee6daaa33da9d69b34e5426f4" id="r_a7e83a7dee6daaa33da9d69b34e5426f4"><td class="memItemLeft"><a id="a7e83a7dee6daaa33da9d69b34e5426f4" name="a7e83a7dee6daaa33da9d69b34e5426f4"></a>
-size_t&#160;</td><td class="memItemRight"><b>size</b> () const</td></tr>
-<tr class="memdesc:a7e83a7dee6daaa33da9d69b34e5426f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of variable entries. This is equal to the number of unique variable Keys. <br /></td></tr>
-<tr class="memitem:aff88eee65d8bcf51062cd99a1ae90977" id="r_aff88eee65d8bcf51062cd99a1ae90977"><td class="memItemLeft"><a id="aff88eee65d8bcf51062cd99a1ae90977" name="aff88eee65d8bcf51062cd99a1ae90977"></a>
-size_t&#160;</td><td class="memItemRight"><b>nFactors</b> () const</td></tr>
-<tr class="memdesc:aff88eee65d8bcf51062cd99a1ae90977"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of factors in the original factor graph. <br /></td></tr>
-<tr class="memitem:a2af38862502064df2169a7d5b623a8c3" id="r_a2af38862502064df2169a7d5b623a8c3"><td class="memItemLeft"><a id="a2af38862502064df2169a7d5b623a8c3" name="a2af38862502064df2169a7d5b623a8c3"></a>
-size_t&#160;</td><td class="memItemRight"><b>nEntries</b> () const</td></tr>
-<tr class="memdesc:a2af38862502064df2169a7d5b623a8c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of nonzero blocks, i.e. the number of variable-factor entries. <br /></td></tr>
-<tr class="memitem:a62c0610e8960b3d7c077a90e2acf8a00" id="r_a62c0610e8960b3d7c077a90e2acf8a00"><td class="memItemLeft"><a id="a62c0610e8960b3d7c077a90e2acf8a00" name="a62c0610e8960b3d7c077a90e2acf8a00"></a>
-const <a class="el" href="a01968.html#a99e63c90a8ac740d99716e73fe97e054">FactorIndices</a> &amp;&#160;</td><td class="memItemRight"><b>operator[]</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> variable) const</td></tr>
-<tr class="memdesc:a62c0610e8960b3d7c077a90e2acf8a00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access a list of factors by variable. <br /></td></tr>
-<tr class="memitem:a7dba7c396a250716ed9ede2b1ac7e384" id="r_a7dba7c396a250716ed9ede2b1ac7e384"><td class="memItemLeft"><a id="a7dba7c396a250716ed9ede2b1ac7e384" name="a7dba7c396a250716ed9ede2b1ac7e384"></a>
-bool&#160;</td><td class="memItemRight"><b>empty</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> variable) const</td></tr>
-<tr class="memdesc:a7dba7c396a250716ed9ede2b1ac7e384"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if no factors associated with a variable. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Testable</h2></td></tr>
-<tr class="memitem:a792ee68c3840fb9cc8019841c7e9e677" id="r_a792ee68c3840fb9cc8019841c7e9e677"><td class="memItemLeft"><a id="a792ee68c3840fb9cc8019841c7e9e677" name="a792ee68c3840fb9cc8019841c7e9e677"></a>
-bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="#af85147163ce24cb4db4505471440402c">VariableIndex</a> &amp;other, double tol=0.0) const</td></tr>
-<tr class="memdesc:a792ee68c3840fb9cc8019841c7e9e677"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test for equality (for unit tests and debug assertions). <br /></td></tr>
-<tr class="memitem:a5a0b5d62298677a730c179c8837f0834" id="r_a5a0b5d62298677a730c179c8837f0834"><td class="memItemLeft"><a id="a5a0b5d62298677a730c179c8837f0834" name="a5a0b5d62298677a730c179c8837f0834"></a>
-void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;str=&quot;VariableIndex: &quot;, const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=DefaultKeyFormatter) const</td></tr>
-<tr class="memdesc:a5a0b5d62298677a730c179c8837f0834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the variable index (for unit tests and debugging). <br /></td></tr>
-<tr class="memitem:a191a7a81a1bb41196315a5889cb7e820" id="r_a191a7a81a1bb41196315a5889cb7e820"><td class="memItemLeft"><a id="a191a7a81a1bb41196315a5889cb7e820" name="a191a7a81a1bb41196315a5889cb7e820"></a>
-void&#160;</td><td class="memItemRight"><b>outputMetisFormat</b> (std::ostream &amp;os) const</td></tr>
-<tr class="memdesc:a191a7a81a1bb41196315a5889cb7e820"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output dual hypergraph to Metis file format for use with hmetis In the dual graph, variables are hyperedges, factors are nodes. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a0fb5004da998630ce603c91adf31bda0" id="r_a0fb5004da998630ce603c91adf31bda0"><td class="memItemLeft"><a id="a0fb5004da998630ce603c91adf31bda0" name="a0fb5004da998630ce603c91adf31bda0"></a>
-typedef boost::shared_ptr&lt; <a class="el" href="#af85147163ce24cb4db4505471440402c">VariableIndex</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
-<tr class="memitem:a4bc6959fc1b3bb908c8ae84fc794b246" id="r_a4bc6959fc1b3bb908c8ae84fc794b246"><td class="memItemLeft"><a id="a4bc6959fc1b3bb908c8ae84fc794b246" name="a4bc6959fc1b3bb908c8ae84fc794b246"></a>
-typedef FactorIndices::iterator&#160;</td><td class="memItemRight"><b>Factor_iterator</b></td></tr>
-<tr class="memitem:a5f469c7f6ee152132418fb5c0fa94057" id="r_a5f469c7f6ee152132418fb5c0fa94057"><td class="memItemLeft"><a id="a5f469c7f6ee152132418fb5c0fa94057" name="a5f469c7f6ee152132418fb5c0fa94057"></a>
-typedef FactorIndices::const_iterator&#160;</td><td class="memItemRight"><b>Factor_const_iterator</b></td></tr>
-<tr class="memitem:a0f2aa2c786cb7a714f44d7373df2afc8" id="r_a0f2aa2c786cb7a714f44d7373df2afc8"><td class="memItemLeft"><a id="a0f2aa2c786cb7a714f44d7373df2afc8" name="a0f2aa2c786cb7a714f44d7373df2afc8"></a>
-typedef KeyMap::const_iterator&#160;</td><td class="memItemRight"><b>const_iterator</b></td></tr>
-<tr class="memitem:a3a72ed3d86bdab589799ae2e90be7e35" id="r_a3a72ed3d86bdab589799ae2e90be7e35"><td class="memItemLeft"><a id="a3a72ed3d86bdab589799ae2e90be7e35" name="a3a72ed3d86bdab589799ae2e90be7e35"></a>
-typedef KeyMap::const_iterator&#160;</td><td class="memItemRight"><b>iterator</b></td></tr>
-<tr class="memitem:ae66de15e56b909f07f3aff513394ee81" id="r_ae66de15e56b909f07f3aff513394ee81"><td class="memItemLeft"><a id="ae66de15e56b909f07f3aff513394ee81" name="ae66de15e56b909f07f3aff513394ee81"></a>
-typedef KeyMap::value_type&#160;</td><td class="memItemRight"><b>value_type</b></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pro-types" class="groupheader"><a id="pro-types" name="pro-types"></a>
-Protected Types</h2></td></tr>
-<tr class="memitem:a85e0c1865fa3d403382c6b45fb2975d9" id="r_a85e0c1865fa3d403382c6b45fb2975d9"><td class="memItemLeft"><a id="a85e0c1865fa3d403382c6b45fb2975d9" name="a85e0c1865fa3d403382c6b45fb2975d9"></a>
-typedef <a class="el" href="a02863.html">FastMap</a>&lt; <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, <a class="el" href="a01968.html#a99e63c90a8ac740d99716e73fe97e054">FactorIndices</a> &gt;&#160;</td><td class="memItemRight"><b>KeyMap</b></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a856b6d3fed45855949682661e79840e8" id="r_a856b6d3fed45855949682661e79840e8"><td class="memItemLeft"><a id="a856b6d3fed45855949682661e79840e8" name="a856b6d3fed45855949682661e79840e8"></a>
-KeyMap&#160;</td><td class="memItemRight"><b>index_</b></td></tr>
-<tr class="memitem:a44185fe08931610d803f70719a5dd67c" id="r_a44185fe08931610d803f70719a5dd67c"><td class="memItemLeft"><a id="a44185fe08931610d803f70719a5dd67c" name="a44185fe08931610d803f70719a5dd67c"></a>
-size_t&#160;</td><td class="memItemRight"><b>nFactors_</b></td></tr>
-<tr class="memitem:a31f7a5df7fa0b474cc1ad0774d978e7f" id="r_a31f7a5df7fa0b474cc1ad0774d978e7f"><td class="memItemLeft"><a id="a31f7a5df7fa0b474cc1ad0774d978e7f" name="a31f7a5df7fa0b474cc1ad0774d978e7f"></a>
-size_t&#160;</td><td class="memItemRight"><b>nEntries_</b></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a7c3849fb02e66fc2ab4b35117572af2b" id="r_a7c3849fb02e66fc2ab4b35117572af2b"><td class="memItemLeft"><a id="a7c3849fb02e66fc2ab4b35117572af2b" name="a7c3849fb02e66fc2ab4b35117572af2b"></a>
+&#160;</td><td class="memItemRight"><b>FundamentalMatrix</b> ()</td></tr>
+<tr class="memdesc:a7c3849fb02e66fc2ab4b35117572af2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
+<tr class="memitem:a10d6f8301566f595ef6622e1cd9e087b" id="r_a10d6f8301566f595ef6622e1cd9e087b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a10d6f8301566f595ef6622e1cd9e087b">FundamentalMatrix</a> (const Matrix3 &amp;U, double s, const Matrix3 &amp;V)</td></tr>
+<tr class="memdesc:a10d6f8301566f595ef6622e1cd9e087b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from U, V, and scalar s.  <br /></td></tr>
+<tr class="memitem:a5c24a491d4f22c17695b6fdf28dcedfa" id="r_a5c24a491d4f22c17695b6fdf28dcedfa"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5c24a491d4f22c17695b6fdf28dcedfa">FundamentalMatrix</a> (const Matrix3 &amp;F)</td></tr>
+<tr class="memdesc:a5c24a491d4f22c17695b6fdf28dcedfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from a 3x3 matrix using SVD.  <br /></td></tr>
+<tr class="memitem:aa9100dd09118540589d0a2d885437d9a" id="r_aa9100dd09118540589d0a2d885437d9a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa9100dd09118540589d0a2d885437d9a">FundamentalMatrix</a> (const Matrix3 &amp;Ka, const <a class="el" href="a04207.html">EssentialMatrix</a> &amp;E, const Matrix3 &amp;Kb)</td></tr>
+<tr class="memdesc:aa9100dd09118540589d0a2d885437d9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from essential matrix and calibration matrices.  <br /></td></tr>
+<tr class="memitem:aadb6fbb4610ca178585022554defe093" id="r_aadb6fbb4610ca178585022554defe093"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aadb6fbb4610ca178585022554defe093">FundamentalMatrix</a> (const Matrix3 &amp;Ka, const <a class="el" href="a04403.html">Pose3</a> &amp;aPb, const Matrix3 &amp;Kb)</td></tr>
+<tr class="memdesc:aadb6fbb4610ca178585022554defe093"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from calibration matrices Ka, Kb, and pose aPb.  <br /></td></tr>
+<tr class="memitem:a7be7d8dfe4c3a507907baa8ad981ef82" id="r_a7be7d8dfe4c3a507907baa8ad981ef82"><td class="memItemLeft"><a id="a7be7d8dfe4c3a507907baa8ad981ef82" name="a7be7d8dfe4c3a507907baa8ad981ef82"></a>
+Matrix3&#160;</td><td class="memItemRight"><b>matrix</b> () const</td></tr>
+<tr class="memdesc:a7be7d8dfe4c3a507907baa8ad981ef82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the fundamental matrix representation. <br /></td></tr>
+<tr class="memitem:a3fbeb0f7becd88e36612e67c12ea7a7d" id="r_a3fbeb0f7becd88e36612e67c12ea7a7d"><td class="memItemLeft"><a id="a3fbeb0f7becd88e36612e67c12ea7a7d" name="a3fbeb0f7becd88e36612e67c12ea7a7d"></a>
+Vector3&#160;</td><td class="memItemRight"><b>epipolarLine</b> (const <a class="el" href="a02242.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> &amp;p, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; 3, 7 &gt; H={})</td></tr>
+<tr class="memdesc:a3fbeb0f7becd88e36612e67c12ea7a7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the epipolar line in a (left) for a given point in b (right). <br /></td></tr>
+<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Testable</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Print the <a class="el" href="a04247.html" title="Represents a fundamental matrix in computer vision, which encodes the epipolar geometry between two v...">FundamentalMatrix</a> </p>
+</div></td></tr>
+<tr class="memitem:a2a847bd155e85f91bf6be9d5b70d6723" id="r_a2a847bd155e85f91bf6be9d5b70d6723"><td class="memItemLeft"><a id="a2a847bd155e85f91bf6be9d5b70d6723" name="a2a847bd155e85f91bf6be9d5b70d6723"></a>
+void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;&quot;) const</td></tr>
+<tr class="memitem:a50940d873ed55ddcb8ea120acae282a4" id="r_a50940d873ed55ddcb8ea120acae282a4"><td class="memItemLeft"><a id="a50940d873ed55ddcb8ea120acae282a4" name="a50940d873ed55ddcb8ea120acae282a4"></a>
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="#a7c3849fb02e66fc2ab4b35117572af2b">FundamentalMatrix</a> &amp;other, double tol=1e-9) const</td></tr>
+<tr class="memdesc:a50940d873ed55ddcb8ea120acae282a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the <a class="el" href="a04247.html" title="Represents a fundamental matrix in computer vision, which encodes the epipolar geometry between two v...">FundamentalMatrix</a> is equal to another within a tolerance. <br /></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="aedf0942d75479fc6ce0ed9166c9a3f82" name="aedf0942d75479fc6ce0ed9166c9a3f82"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aedf0942d75479fc6ce0ed9166c9a3f82">&#9670;&#160;</a></span>augment()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class FG&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void gtsam::VariableIndex::augment </td>
-          <td>(</td>
-          <td class="paramtype">const FG &amp;</td>          <td class="paramname"><span class="paramname"><em>factors</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">boost::optional&lt; const <a class="el" href="a01968.html#a99e63c90a8ac740d99716e73fe97e054">FactorIndices</a> &amp; &gt;</td>          <td class="paramname"><span class="paramname"><em>newFactorIndices</em></span><span class="paramdefsep"> = </span><span class="paramdefval">boost::none</span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Augment the variable index with new factors. </p>
-<p>This can be used when solving problems incrementally. </p>
-
-</div>
-</div>
-<a id="abc7db49d64ddfd7a946bd4d349cb785f" name="abc7db49d64ddfd7a946bd4d349cb785f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc7db49d64ddfd7a946bd4d349cb785f">&#9670;&#160;</a></span>augmentExistingFactor()</h2>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a10d6f8301566f595ef6622e1cd9e087b" name="a10d6f8301566f595ef6622e1cd9e087b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10d6f8301566f595ef6622e1cd9e087b">&#9670;&#160;</a></span>FundamentalMatrix() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void gtsam::VariableIndex::augmentExistingFactor </td>
+          <td class="memname">gtsam::FundamentalMatrix::FundamentalMatrix </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="a01968.html#a19c53f2faabb0f4b4b78ce2f7168cc14">FactorIndex</a></td>          <td class="paramname"><span class="paramname"><em>factorIndex</em></span>, </td>
+          <td class="paramtype">const Matrix3 &amp;</td>          <td class="paramname"><span class="paramname"><em>U</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const KeySet &amp;</td>          <td class="paramname"><span class="paramname"><em>newKeys</em></span>&#160;)</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Matrix3 &amp;</td>          <td class="paramname"><span class="paramname"><em>V</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Augment the variable index after an existing factor now affects to more variable Keys. </p>
-<p>This can be used when solving problems incrementally, with smart factors or in general with factors with a dynamic number of Keys. </p>
+<p>Construct from U, V, and scalar s. </p>
+<p>Initializes the <a class="el" href="a04247.html" title="Represents a fundamental matrix in computer vision, which encodes the epipolar geometry between two v...">FundamentalMatrix</a> From the SVD representation U*diag(1,s,0)*V^T. It will internally convert to using SO(3). </p>
 
 </div>
 </div>
-<a id="a4094920c9d0ce534ff3d8a953730f09b" name="a4094920c9d0ce534ff3d8a953730f09b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4094920c9d0ce534ff3d8a953730f09b">&#9670;&#160;</a></span>remove()</h2>
+<a id="a5c24a491d4f22c17695b6fdf28dcedfa" name="a5c24a491d4f22c17695b6fdf28dcedfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c24a491d4f22c17695b6fdf28dcedfa">&#9670;&#160;</a></span>FundamentalMatrix() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename ITERATOR, class FG&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void gtsam::VariableIndex::remove </td>
+          <td class="memname">gtsam::FundamentalMatrix::FundamentalMatrix </td>
           <td>(</td>
-          <td class="paramtype">ITERATOR</td>          <td class="paramname"><span class="paramname"><em>firstFactor</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">const Matrix3 &amp;</td>          <td class="paramname"><span class="paramname"><em>F</em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype">ITERATOR</td>          <td class="paramname"><span class="paramname"><em>lastFactor</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const FG &amp;</td>          <td class="paramname"><span class="paramname"><em>factors</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Remove entries corresponding to the specified factors. </p>
-<p>NOTE: We intentionally do not decrement nFactors_ because the factor indices need to remain consistent. Removing factors from a factor graph does not shift the indices of other factors. Also, we keep nFactors_ one greater than the highest-numbered factor referenced in a <a class="el" href="a04247.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a>.</p>
+<p>Construct from a 3x3 matrix using SVD. </p>
+<p>Initializes the <a class="el" href="a04247.html" title="Represents a fundamental matrix in computer vision, which encodes the epipolar geometry between two v...">FundamentalMatrix</a> by performing SVD on the given matrix and ensuring U and V are not reflections.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">indices</td><td>The indices of the factors to remove, which must match <code>factors</code> </td></tr>
-    <tr><td class="paramname">factors</td><td>The factors being removed, which must symbolically correspond exactly to the factors with the specified <code>indices</code> that were added. </td></tr>
+    <tr><td class="paramname">F</td><td>A 3x3 matrix representing the fundamental matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa9100dd09118540589d0a2d885437d9a" name="aa9100dd09118540589d0a2d885437d9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9100dd09118540589d0a2d885437d9a">&#9670;&#160;</a></span>FundamentalMatrix() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gtsam::FundamentalMatrix::FundamentalMatrix </td>
+          <td>(</td>
+          <td class="paramtype">const Matrix3 &amp;</td>          <td class="paramname"><span class="paramname"><em>Ka</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a04207.html">EssentialMatrix</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>E</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Matrix3 &amp;</td>          <td class="paramname"><span class="paramname"><em>Kb</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct from essential matrix and calibration matrices. </p>
+<p>Initializes the <a class="el" href="a04247.html" title="Represents a fundamental matrix in computer vision, which encodes the epipolar geometry between two v...">FundamentalMatrix</a> from the given essential matrix E and calibration matrices Ka and Kb, using F = Ka^(-T) * E * Kb^(-1) and then calls constructor that decomposes F via SVD.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">E</td><td>Essential matrix </td></tr>
+    <tr><td class="paramname">Ka</td><td>Calibration matrix for the left camera </td></tr>
+    <tr><td class="paramname">Kb</td><td>Calibration matrix for the right camera </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aadb6fbb4610ca178585022554defe093" name="aadb6fbb4610ca178585022554defe093"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadb6fbb4610ca178585022554defe093">&#9670;&#160;</a></span>FundamentalMatrix() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gtsam::FundamentalMatrix::FundamentalMatrix </td>
+          <td>(</td>
+          <td class="paramtype">const Matrix3 &amp;</td>          <td class="paramname"><span class="paramname"><em>Ka</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a04403.html">Pose3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>aPb</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Matrix3 &amp;</td>          <td class="paramname"><span class="paramname"><em>Kb</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct from calibration matrices Ka, Kb, and pose aPb. </p>
+<p>Initializes the <a class="el" href="a04247.html" title="Represents a fundamental matrix in computer vision, which encodes the epipolar geometry between two v...">FundamentalMatrix</a> from the given calibration matrices Ka and Kb, and the pose aPb.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Ka</td><td>Calibration matrix for the left camera </td></tr>
+    <tr><td class="paramname">aPb</td><td>Pose from the left to the right camera </td></tr>
+    <tr><td class="paramname">Kb</td><td>Calibration matrix for the right camera </td></tr>
   </table>
   </dd>
 </dl>
@@ -303,9 +294,8 @@ template&lt;typename ITERATOR, class FG&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/inference/<a class="el" href="a00602_source.html">VariableIndex.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/inference/<a class="el" href="a00674_source.html">VariableIndex-inl.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/inference/<a class="el" href="a00692.html">VariableIndex.cpp</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<a class="el" href="a00404_source.html">FundamentalMatrix.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/<b>FundamentalMatrix.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -320,7 +310,7 @@ template&lt;typename ITERATOR, class FG&gt; </div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a04247.html">VariableIndex</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a04247.html">FundamentalMatrix</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

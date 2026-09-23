@@ -1,4 +1,4 @@
 var a01463 =
 [
-    [ "gtsam::VelocityConstraint3", "a05711.html", "a05711" ]
+    [ "gtsam::NonlinearOptimizerParams", "a06471.html", "a06471" ]
 ];

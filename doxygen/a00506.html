@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/hybrid/GaussianMixture.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/SimpleCamera.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,38 +96,47 @@ $(function(){initNavTree('a00506.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">GaussianMixture.h File Reference</div></div>
+  <div class="headertitle"><div class="title">SimpleCamera.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>A hybrid conditional in the Conditional Linear Gaussian scheme.  
+<p>A simple camera class with a Cal3_S2 calibration.  
 <a href="#details">More...</a></p>
 
 <p><a href="a00506_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3AGaussianMixture" id="r_gtsam_3A_3AGaussianMixture"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a03939.html">gtsam::GaussianMixture</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A conditional of gaussian mixtures indexed by discrete variables, as part of a Bayes Network.  <a href="a03939.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3Atraits_3C_20GaussianMixture_20_3E" id="r_gtsam_3A_3Atraits_3C_20GaussianMixture_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a03943.html">gtsam::traits&lt; GaussianMixture &gt;</a></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ad92a1966f54e02a7c2ce061c1228c7b3" id="r_ad92a1966f54e02a7c2ce061c1228c7b3"><td class="memItemLeft"><a id="ad92a1966f54e02a7c2ce061c1228c7b3" name="ad92a1966f54e02a7c2ce061c1228c7b3"></a>
-std::set&lt; <a class="el" href="a01955.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> &gt;&#160;</td><td class="memItemRight"><b>gtsam::DiscreteKeysAsSet</b> (const <a class="el" href="a03423.html">DiscreteKeys</a> &amp;discreteKeys)</td></tr>
-<tr class="memdesc:ad92a1966f54e02a7c2ce061c1228c7b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the <a class="el" href="a01955.html#ga5d440f1429574be613728cd7ad50946d" title="Key type for discrete variables.">DiscreteKey</a> vector as a set. <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:aa58c03327ea2912ccb6d1ab846070d83" id="r_aa58c03327ea2912ccb6d1ab846070d83"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="a02242.html#aa58c03327ea2912ccb6d1ab846070d83">gtsam::PinholePoseCal3_S2</a> = <a class="el" href="a04343.html">gtsam::PinholePose</a>&lt;<a class="el" href="a04071.html">gtsam::Cal3_S2</a>&gt;</td></tr>
+<tr class="memdesc:aa58c03327ea2912ccb6d1ab846070d83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient aliases for Pinhole camera classes with different calibrations.  <br /></td></tr>
+<tr class="memitem:a617ef19fba6a952c0601b6ae7f5b3d5a" id="r_a617ef19fba6a952c0601b6ae7f5b3d5a"><td class="memItemLeft"><a id="a617ef19fba6a952c0601b6ae7f5b3d5a" name="a617ef19fba6a952c0601b6ae7f5b3d5a"></a>
+using&#160;</td><td class="memItemRight"><b>gtsam::PinholePoseCal3Bundler</b> = <a class="el" href="a04343.html">gtsam::PinholePose</a>&lt;<a class="el" href="a04095.html">gtsam::Cal3Bundler</a>&gt;</td></tr>
+<tr class="memitem:a495d40082eb6855fc687698d8a397adb" id="r_a495d40082eb6855fc687698d8a397adb"><td class="memItemLeft"><a id="a495d40082eb6855fc687698d8a397adb" name="a495d40082eb6855fc687698d8a397adb"></a>
+using&#160;</td><td class="memItemRight"><b>gtsam::PinholePoseCal3DS2</b> = <a class="el" href="a04343.html">gtsam::PinholePose</a>&lt;<a class="el" href="a04107.html">gtsam::Cal3DS2</a>&gt;</td></tr>
+<tr class="memitem:acbbf48e3e41b8b06b1dbf0c4a2689c18" id="r_acbbf48e3e41b8b06b1dbf0c4a2689c18"><td class="memItemLeft"><a id="acbbf48e3e41b8b06b1dbf0c4a2689c18" name="acbbf48e3e41b8b06b1dbf0c4a2689c18"></a>
+using&#160;</td><td class="memItemRight"><b>gtsam::PinholePoseCal3Unified</b> = <a class="el" href="a04343.html">gtsam::PinholePose</a>&lt;<a class="el" href="a04147.html">gtsam::Cal3Unified</a>&gt;</td></tr>
+<tr class="memitem:a382947b0a2b0b24e561936337f9b8203" id="r_a382947b0a2b0b24e561936337f9b8203"><td class="memItemLeft"><a id="a382947b0a2b0b24e561936337f9b8203" name="a382947b0a2b0b24e561936337f9b8203"></a>
+using&#160;</td><td class="memItemRight"><b>gtsam::PinholePoseCal3Fisheye</b> = <a class="el" href="a04343.html">gtsam::PinholePose</a>&lt;<a class="el" href="a04135.html">gtsam::Cal3Fisheye</a>&gt;</td></tr>
+<tr class="memitem:ab62910629c1004d118cd7fd9e988a3a2" id="r_ab62910629c1004d118cd7fd9e988a3a2"><td class="memItemLeft"><a id="ab62910629c1004d118cd7fd9e988a3a2" name="ab62910629c1004d118cd7fd9e988a3a2"></a>
+using&#160;</td><td class="memItemRight"><b>gtsam::PinholeCameraCal3_S2</b> = <a class="el" href="a04323.html">gtsam::PinholeCamera</a>&lt;<a class="el" href="a04071.html">gtsam::Cal3_S2</a>&gt;</td></tr>
+<tr class="memitem:a98144f9d4469412e491a10b3e4cc6aa3" id="r_a98144f9d4469412e491a10b3e4cc6aa3"><td class="memItemLeft"><a id="a98144f9d4469412e491a10b3e4cc6aa3" name="a98144f9d4469412e491a10b3e4cc6aa3"></a>
+using&#160;</td><td class="memItemRight"><b>gtsam::PinholeCameraCal3Bundler</b> = <a class="el" href="a04323.html">gtsam::PinholeCamera</a>&lt;<a class="el" href="a04095.html">gtsam::Cal3Bundler</a>&gt;</td></tr>
+<tr class="memitem:a5eb30bdfed62a08fdb2c8340518e3548" id="r_a5eb30bdfed62a08fdb2c8340518e3548"><td class="memItemLeft"><a id="a5eb30bdfed62a08fdb2c8340518e3548" name="a5eb30bdfed62a08fdb2c8340518e3548"></a>
+using&#160;</td><td class="memItemRight"><b>gtsam::PinholeCameraCal3DS2</b> = <a class="el" href="a04323.html">gtsam::PinholeCamera</a>&lt;<a class="el" href="a04107.html">gtsam::Cal3DS2</a>&gt;</td></tr>
+<tr class="memitem:a5e0a23e51de5db78d8f09233cd3017d4" id="r_a5e0a23e51de5db78d8f09233cd3017d4"><td class="memItemLeft"><a id="a5e0a23e51de5db78d8f09233cd3017d4" name="a5e0a23e51de5db78d8f09233cd3017d4"></a>
+using&#160;</td><td class="memItemRight"><b>gtsam::PinholeCameraCal3Unified</b> = <a class="el" href="a04323.html">gtsam::PinholeCamera</a>&lt;<a class="el" href="a04147.html">gtsam::Cal3Unified</a>&gt;</td></tr>
+<tr class="memitem:a64db6a9f64f95aed8cb6c99ce548f856" id="r_a64db6a9f64f95aed8cb6c99ce548f856"><td class="memItemLeft"><a id="a64db6a9f64f95aed8cb6c99ce548f856" name="a64db6a9f64f95aed8cb6c99ce548f856"></a>
+using&#160;</td><td class="memItemRight"><b>gtsam::PinholeCameraCal3Fisheye</b> = <a class="el" href="a04323.html">gtsam::PinholeCamera</a>&lt;<a class="el" href="a04135.html">gtsam::Cal3Fisheye</a>&gt;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A hybrid conditional in the Conditional Linear Gaussian scheme. </p>
-<dl class="section author"><dt>Author</dt><dd>Fan Jiang </dd>
-<dd>
-Varun Agrawal </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>Mar 12, 2022 </dd></dl>
+<div class="textblock"><p>A simple camera class with a Cal3_S2 calibration. </p>
+<dl class="section date"><dt>Date</dt><dd>Aug 16, 2009 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Frank Dellaert </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -141,7 +150,7 @@ Varun Agrawal </dd></dl>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>hybrid</b></li><li class="navelem"><a href="a00506.html">GaussianMixture.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>geometry</b></li><li class="navelem"><a href="a00506.html">SimpleCamera.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

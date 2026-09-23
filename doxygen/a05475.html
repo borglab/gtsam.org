@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::RotateDirectionsFactor Class Reference</title>
+<title>gtsam: gtsam::RegularHessianFactor&lt; D &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,254 +96,658 @@ $(function(){initNavTree('a05475.html','','a05472'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::RotateDirectionsFactor Class Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::RegularHessianFactor&lt; D &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="a04139.html">Factor</a> on unknown rotation iRc that relates two directions c Directions provide less constraints than a full rotation. </p>
-</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::RotateDirectionsFactor:</div>
+<div class="textblock"><div class="compoundTemplParams">template&lt;size_t D&gt;<br />
+class gtsam::RegularHessianFactor&lt; D &gt;</div><p>A <a class="el" href="a05155.html" title="A Gaussian factor using the canonical parameters (information form).">HessianFactor</a> where all variables have the same dimension D. </p>
+<p>Represents a quadratic factor \( E(x) = 0.5 x^T G x - g^T x + 0.5 f \), corresponding to a <a class="el" href="a16249.html" title="Gaussian implements the mathematical model |R*x|^2 = |y|^2 with R&#39;*R=inv(Sigma) where y = whiten(x) =...">Gaussian</a> probability density \( P(x) \propto \exp(-E(x)) \). Here, G is the Hessian (or information matrix), g is the gradient vector, and f is a constant term (negative log-likelihood at x=0).</p>
+<p><a class="el" href="a05155.html#a0300131de1073bdca240aa56a41b5e41" title="Typedef to this class.">This</a> class is templated on the dimension <span class="tt">D</span> and enforces that all variables associated with this factor have this dimension during construction. It inherits from <a class="el" href="a05155.html" title="A Gaussian factor using the canonical parameters (information form).">HessianFactor</a> but provides specialized, efficient implementations for operations like <span class="tt"><a class="el" href="#a48b7f1f14c35e2987fc4de581861b718" title="Multiply the Hessian part of the factor times a VectorValues x and add the result to y.">multiplyHessianAdd</a></span> using raw memory access, assuming a regular block structure. <a class="el" href="a05155.html#a0300131de1073bdca240aa56a41b5e41" title="Typedef to this class.">This</a> can significantly improve performance in iterative optimization algorithms when dealing with many variables of the same type and dimension (e.g., <a class="el" href="a04403.html" title="A 3D pose (R,t) : (Rot3,Point3).">Pose3</a> variables in SLAM).</p>
+<p>It can be constructed directly from Hessian blocks, from a <a class="el" href="a05483.html" title="JacobianFactor with constant sized blocks Provides raw memory access versions of linear operator.">RegularJacobianFactor</a>, or by linearizing a <a class="el" href="a06447.html">NonlinearFactorGraph</a>.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">D</td><td>The dimension of each variable block involved in the factor. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::RegularHessianFactor&lt; D &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a05475.png" usemap="#gtsam_3A_3ARotateDirectionsFactor_map" alt=""/>
-  <map id="gtsam_3A_3ARotateDirectionsFactor_map" name="gtsam_3A_3ARotateDirectionsFactor_map">
-<area href="a05087.html" alt="gtsam::NoiseModelFactorN&lt; Rot3 &gt;" shape="rect" coords="172,168,506,192"/>
-<area href="a05055.html" title="A nonlinear sum-of-squares factor with a zero-mean noise model implementing the density  Templated on..." alt="gtsam::NoiseModelFactor" shape="rect" coords="0,112,334,136"/>
-<area href="a05059.html" alt="gtsam::detail::NoiseModelFactorAliases&lt; ValueTypes... &gt;" shape="rect" coords="344,112,678,136"/>
-<area href="a05047.html" title="Nonlinear factor base class." alt="gtsam::NonlinearFactor" shape="rect" coords="0,56,334,80"/>
-<area href="a04139.html" alt="gtsam::Factor" shape="rect" coords="0,0,334,24"/>
+  <img src="a05475.png" usemap="#gtsam_3A_3ARegularHessianFactor_3C_20D_20_3E_map" alt=""/>
+  <map id="gtsam_3A_3ARegularHessianFactor_3C_20D_20_3E_map" name="gtsam_3A_3ARegularHessianFactor_3C_20D_20_3E_map">
+<area href="a05155.html" title="A Gaussian factor using the canonical parameters (information form)." alt="gtsam::HessianFactor" shape="rect" coords="0,112,209,136"/>
+<area href="a05123.html" title="An abstract virtual base class for JacobianFactor and HessianFactor." alt="gtsam::GaussianFactor" shape="rect" coords="0,56,209,80"/>
+<area href="a04899.html" alt="gtsam::Factor" shape="rect" coords="0,0,209,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2b5ada837b7cc3b3c6d0c175535eb330" id="r_a2b5ada837b7cc3b3c6d0c175535eb330"><td class="memItemLeft"><a id="a2b5ada837b7cc3b3c6d0c175535eb330" name="a2b5ada837b7cc3b3c6d0c175535eb330"></a>
-&#160;</td><td class="memItemRight"><b>RotateDirectionsFactor</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="el" href="a05087.html#ae48358c2377e5cee3dad557c29b374aa">key</a>, const <a class="el" href="a03927.html">Unit3</a> &amp;i_p, const <a class="el" href="a03927.html">Unit3</a> &amp;c_z, const <a class="el" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;model)</td></tr>
-<tr class="memdesc:a2b5ada837b7cc3b3c6d0c175535eb330"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
-<tr class="memitem:ac8ea2e754b87da8f290ff06caaf379bd" id="r_ac8ea2e754b87da8f290ff06caaf379bd"><td class="memItemLeft">gtsam::NonlinearFactor::shared_ptr&#160;</td><td class="memItemRight"><a class="el" href="#ac8ea2e754b87da8f290ff06caaf379bd">clone</a> () const override</td></tr>
-<tr class="memitem:a2d89ad40d9d152a28288cb96a2281fc4" id="r_a2d89ad40d9d152a28288cb96a2281fc4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2d89ad40d9d152a28288cb96a2281fc4">print</a> (const std::string &amp;s=&quot;&quot;, const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;keyFormatter=DefaultKeyFormatter) const override</td></tr>
-<tr class="memdesc:a2d89ad40d9d152a28288cb96a2281fc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">print  <br /></td></tr>
-<tr class="memitem:a0fc5bf648ed2f7e84586319553533d91" id="r_a0fc5bf648ed2f7e84586319553533d91"><td class="memItemLeft"><a id="a0fc5bf648ed2f7e84586319553533d91" name="a0fc5bf648ed2f7e84586319553533d91"></a>
-Vector&#160;</td><td class="memItemRight"><b>evaluateError</b> (const <a class="el" href="a03775.html">Rot3</a> &amp;iRc, boost::optional&lt; Matrix &amp; &gt; H=boost::none) const override</td></tr>
-<tr class="memdesc:a0fc5bf648ed2f7e84586319553533d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector of errors returns 2D vector <br /></td></tr>
-<tr class="inherit_header pub_methods_a05087"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a05087')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a05087.html">gtsam::NoiseModelFactorN&lt; Rot3 &gt;</a></td></tr>
-<tr class="memitem:ae48358c2377e5cee3dad557c29b374aa inherit pub_methods_a05087" id="r_ae48358c2377e5cee3dad557c29b374aa"><td class="memItemLeft"><a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><a class="el" href="a05087.html#ae48358c2377e5cee3dad557c29b374aa">key</a> () const</td></tr>
-<tr class="memdesc:ae48358c2377e5cee3dad557c29b374aa inherit pub_methods_a05087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a key.  <br /></td></tr>
-<tr class="memitem:a62d44cd3c78ae49bc75eeca7e3b3bf87 inherit pub_methods_a05087" id="r_a62d44cd3c78ae49bc75eeca7e3b3bf87"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>NoiseModelFactorN</b> ()</td></tr>
-<tr class="memdesc:a62d44cd3c78ae49bc75eeca7e3b3bf87 inherit pub_methods_a05087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor for I/O. <br /></td></tr>
-<tr class="memitem:a445b5ac64520d809ad2aed3e85d4486e inherit pub_methods_a05087" id="r_a445b5ac64520d809ad2aed3e85d4486e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a05087.html#a445b5ac64520d809ad2aed3e85d4486e">NoiseModelFactorN</a> (const <a class="el" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;<a class="el" href="a05055.html#ae995e64bbd0660091eb6b40cba60aef7">noiseModel</a>, KeyType&lt; ValueTypes &gt;... <a class="el" href="a04139.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>)</td></tr>
-<tr class="memdesc:a445b5ac64520d809ad2aed3e85d4486e inherit pub_methods_a05087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
-<tr class="memitem:a44266566c6d4636d2701d390d02d3d80 inherit pub_methods_a05087" id="r_a44266566c6d4636d2701d390d02d3d80"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a05087.html#a44266566c6d4636d2701d390d02d3d80">NoiseModelFactorN</a> (const <a class="el" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;<a class="el" href="a05055.html#ae995e64bbd0660091eb6b40cba60aef7">noiseModel</a>, CONTAINER <a class="el" href="a04139.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>)</td></tr>
-<tr class="memdesc:a44266566c6d4636d2701d390d02d3d80 inherit pub_methods_a05087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
-<tr class="memitem:a53989fc09569beaf4b0bf49776b52709 inherit pub_methods_a05087" id="r_a53989fc09569beaf4b0bf49776b52709"><td class="memItemLeft">Vector&#160;</td><td class="memItemRight"><a class="el" href="a05087.html#a53989fc09569beaf4b0bf49776b52709">unwhitenedError</a> (const <a class="el" href="a06243.html">Values</a> &amp;x, boost::optional&lt; std::vector&lt; Matrix &gt; &amp; &gt; H=boost::none) const override</td></tr>
-<tr class="memdesc:a53989fc09569beaf4b0bf49776b52709 inherit pub_methods_a05087"><td class="mdescLeft">&#160;</td><td class="mdescRight">This implements the <span class="tt"><a class="el" href="a05087.html#a53989fc09569beaf4b0bf49776b52709">unwhitenedError</a></span> virtual function by calling the n-key specific version of evaluateError, which is pure virtual so must be implemented in the derived class.  <br /></td></tr>
-<tr class="memitem:a74baa35c1453f6fcdc6982c546c32529 inherit pub_methods_a05087" id="r_a74baa35c1453f6fcdc6982c546c32529"><td class="memItemLeft">virtual Vector&#160;</td><td class="memItemRight"><a class="el" href="a05087.html#a74baa35c1453f6fcdc6982c546c32529">evaluateError</a> (const ValueTypes &amp;... x, OptionalMatrix&lt; ValueTypes &gt;... H) const=0</td></tr>
-<tr class="memdesc:a74baa35c1453f6fcdc6982c546c32529 inherit pub_methods_a05087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override <span class="tt"><a class="el" href="a05087.html#a74baa35c1453f6fcdc6982c546c32529">evaluateError</a></span> to finish implementing an n-way factor.  <br /></td></tr>
-<tr class="memitem:a19bd2aa1935cc6041c2ebf67b4fa7523 inherit pub_methods_a05087" id="r_a19bd2aa1935cc6041c2ebf67b4fa7523"><td class="memItemLeft">Vector&#160;</td><td class="memItemRight"><a class="el" href="a05087.html#a19bd2aa1935cc6041c2ebf67b4fa7523">evaluateError</a> (const ValueTypes &amp;... x) const</td></tr>
-<tr class="memdesc:a19bd2aa1935cc6041c2ebf67b4fa7523 inherit pub_methods_a05087"><td class="mdescLeft">&#160;</td><td class="mdescRight">No-Jacobians requested function overload.  <br /></td></tr>
-<tr class="memitem:ae9d8dfc941916350ca56c19d883fe43a inherit pub_methods_a05087" id="r_ae9d8dfc941916350ca56c19d883fe43a"><td class="memItemLeft">Vector&#160;</td><td class="memItemRight"><a class="el" href="a05087.html#ae9d8dfc941916350ca56c19d883fe43a">evaluateError</a> (const ValueTypes &amp;... x, OptionalJacArgs &amp;&amp;... H) const</td></tr>
-<tr class="memdesc:ae9d8dfc941916350ca56c19d883fe43a inherit pub_methods_a05087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Some (but not all) optional Jacobians are omitted (function overload).  <br /></td></tr>
-<tr class="memitem:a5e96cc205fa5c6e40a2db0fbce03bcf3 inherit pub_methods_a05087" id="r_a5e96cc205fa5c6e40a2db0fbce03bcf3"><td class="memItemLeft">
-<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>key1</b> () const</td></tr>
-<tr class="memitem:a1155f3dbc35edb04084da3cce664041f inherit pub_methods_a05087" id="r_a1155f3dbc35edb04084da3cce664041f"><td class="memItemLeft">
-<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>key2</b> () const</td></tr>
-<tr class="memitem:af518c1e74e6aac0a5419ad9d28f38ec9 inherit pub_methods_a05087" id="r_af518c1e74e6aac0a5419ad9d28f38ec9"><td class="memItemLeft">
-<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>key3</b> () const</td></tr>
-<tr class="memitem:a3bf54e99ea1a3f082c67cc7a9167b9e0 inherit pub_methods_a05087" id="r_a3bf54e99ea1a3f082c67cc7a9167b9e0"><td class="memItemLeft">
-<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>key4</b> () const</td></tr>
-<tr class="memitem:a9d40168e8a5df8a4743fbd4ffd399d9a inherit pub_methods_a05087" id="r_a9d40168e8a5df8a4743fbd4ffd399d9a"><td class="memItemLeft">
-<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>key5</b> () const</td></tr>
-<tr class="memitem:a8d2514f16cd66cad0309554a378ee363 inherit pub_methods_a05087" id="r_a8d2514f16cd66cad0309554a378ee363"><td class="memItemLeft">
-<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>key6</b> () const</td></tr>
-<tr class="inherit_header pub_methods_a05055"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a05055')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a05055.html">gtsam::NoiseModelFactor</a></td></tr>
-<tr class="memitem:ad6e8ef3348e042d598617d1d55f20300 inherit pub_methods_a05055" id="r_ad6e8ef3348e042d598617d1d55f20300"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>NoiseModelFactor</b> ()</td></tr>
-<tr class="memdesc:ad6e8ef3348e042d598617d1d55f20300 inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for I/O only. <br /></td></tr>
-<tr class="memitem:a276c60c37e44b34eadf59b4b67d4a5c9 inherit pub_methods_a05055" id="r_a276c60c37e44b34eadf59b4b67d4a5c9"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>~NoiseModelFactor</b> () override</td></tr>
-<tr class="memdesc:a276c60c37e44b34eadf59b4b67d4a5c9 inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
-<tr class="memitem:a02cea97db30d27b51feaf1f0444d743c inherit pub_methods_a05055" id="r_a02cea97db30d27b51feaf1f0444d743c"><td class="memTemplParams" colspan="2">
-template&lt;typename CONTAINER&gt; </td></tr>
-<tr class="memitem:a02cea97db30d27b51feaf1f0444d743c inherit pub_methods_a05055 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>NoiseModelFactor</b> (const <a class="el" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;<a class="el" href="a05055.html#ae995e64bbd0660091eb6b40cba60aef7">noiseModel</a>, const CONTAINER &amp;<a class="el" href="a04139.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>)</td></tr>
-<tr class="memdesc:a02cea97db30d27b51feaf1f0444d743c inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
-<tr class="memitem:ab558b36b1c959bf123f7271e78cd567e inherit pub_methods_a05055" id="r_ab558b36b1c959bf123f7271e78cd567e"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="a05055.html#ab558b36b1c959bf123f7271e78cd567e">equals</a> (const <a class="el" href="a05047.html#a7c719ae67f222f66569ccb3b526cb9cb">NonlinearFactor</a> &amp;f, double tol=1e-9) const override</td></tr>
-<tr class="memdesc:ab558b36b1c959bf123f7271e78cd567e inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if two factors are equal.  <br /></td></tr>
-<tr class="memitem:a7f892150e927e38368fe55971f001a5e inherit pub_methods_a05055" id="r_a7f892150e927e38368fe55971f001a5e"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="a05055.html#a7f892150e927e38368fe55971f001a5e">dim</a> () const override</td></tr>
-<tr class="memdesc:a7f892150e927e38368fe55971f001a5e inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the dimension of the factor (number of rows on linearization)  <br /></td></tr>
-<tr class="memitem:ae995e64bbd0660091eb6b40cba60aef7 inherit pub_methods_a05055" id="r_ae995e64bbd0660091eb6b40cba60aef7"><td class="memItemLeft">
-const <a class="el" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;&#160;</td><td class="memItemRight"><b>noiseModel</b> () const</td></tr>
-<tr class="memdesc:ae995e64bbd0660091eb6b40cba60aef7 inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">access to the noise model <br /></td></tr>
-<tr class="memitem:a484903c979489804e42fe58504de41cc inherit pub_methods_a05055" id="r_a484903c979489804e42fe58504de41cc"><td class="memItemLeft">Vector&#160;</td><td class="memItemRight"><a class="el" href="a05055.html#a484903c979489804e42fe58504de41cc">whitenedError</a> (const <a class="el" href="a06243.html">Values</a> &amp;c) const</td></tr>
-<tr class="memdesc:a484903c979489804e42fe58504de41cc inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of errors, whitened This is the raw error, i.e., i.e.  <br /></td></tr>
-<tr class="memitem:a97e5b06586890e11ee051381f1223578 inherit pub_methods_a05055" id="r_a97e5b06586890e11ee051381f1223578"><td class="memItemLeft">
-Vector&#160;</td><td class="memItemRight"><b>unweightedWhitenedError</b> (const <a class="el" href="a06243.html">Values</a> &amp;c) const</td></tr>
-<tr class="memdesc:a97e5b06586890e11ee051381f1223578 inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of errors, whitened, but unweighted by any loss function. <br /></td></tr>
-<tr class="memitem:ac996decbe6edaf943ff069dbf01fd83a inherit pub_methods_a05055" id="r_ac996decbe6edaf943ff069dbf01fd83a"><td class="memItemLeft">
-double&#160;</td><td class="memItemRight"><b>weight</b> (const <a class="el" href="a06243.html">Values</a> &amp;c) const</td></tr>
-<tr class="memdesc:ac996decbe6edaf943ff069dbf01fd83a inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the effective weight of the factor from the noise model. <br /></td></tr>
-<tr class="memitem:ad141af2ca30963a19b2c8b7bf09021d3 inherit pub_methods_a05055" id="r_ad141af2ca30963a19b2c8b7bf09021d3"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="a05055.html#ad141af2ca30963a19b2c8b7bf09021d3">error</a> (const <a class="el" href="a06243.html">Values</a> &amp;c) const override</td></tr>
-<tr class="memdesc:ad141af2ca30963a19b2c8b7bf09021d3 inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the error of the factor.  <br /></td></tr>
-<tr class="memitem:a74616d7a2ecd84e7b8c015c2902d027a inherit pub_methods_a05055" id="r_a74616d7a2ecd84e7b8c015c2902d027a"><td class="memItemLeft">boost::shared_ptr&lt; GaussianFactor &gt;&#160;</td><td class="memItemRight"><a class="el" href="a05055.html#a74616d7a2ecd84e7b8c015c2902d027a">linearize</a> (const <a class="el" href="a06243.html">Values</a> &amp;x) const override</td></tr>
-<tr class="memdesc:a74616d7a2ecd84e7b8c015c2902d027a inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linearize a non-linearFactorN to get a <a class="el" href="a04327.html" title="An abstract virtual base class for JacobianFactor and HessianFactor.">GaussianFactor</a>, \( Ax-b \approx h(x+\delta x)-z = h(x) + A \delta x - z \) Hence \( b = z - h(x) = - \mathtt{error\_vector}(x) \).  <br /></td></tr>
-<tr class="memitem:ac042b2c6639fd2062ff142d19d642f23 inherit pub_methods_a05055" id="r_ac042b2c6639fd2062ff142d19d642f23"><td class="memItemLeft">
-<a class="el" href="a05055.html#a762f6984cfd67b1e83cc530d71093dcf">shared_ptr</a>&#160;</td><td class="memItemRight"><b>cloneWithNewNoiseModel</b> (const <a class="el" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> newNoise) const</td></tr>
-<tr class="memdesc:ac042b2c6639fd2062ff142d19d642f23 inherit pub_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="a05055.html#a762f6984cfd67b1e83cc530d71093dcf" title="Noise model.">shared_ptr</a> clone of the factor with a new noise model. <br /></td></tr>
-<tr class="memitem:a7c719ae67f222f66569ccb3b526cb9cb" id="r_a7c719ae67f222f66569ccb3b526cb9cb"><td class="memItemLeft"><a id="a7c719ae67f222f66569ccb3b526cb9cb" name="a7c719ae67f222f66569ccb3b526cb9cb"></a>
-&#160;</td><td class="memItemRight"><b>NonlinearFactor</b> ()</td></tr>
-<tr class="memdesc:a7c719ae67f222f66569ccb3b526cb9cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for I/O only. <br /></td></tr>
-<tr class="memitem:a8a7610dba7e9a6f878268c2769ea0e04" id="r_a8a7610dba7e9a6f878268c2769ea0e04"><td class="memTemplParams" colspan="2"><a id="a8a7610dba7e9a6f878268c2769ea0e04" name="a8a7610dba7e9a6f878268c2769ea0e04"></a>
-template&lt;typename CONTAINER&gt; </td></tr>
-<tr class="memitem:a8a7610dba7e9a6f878268c2769ea0e04 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>NonlinearFactor</b> (const CONTAINER &amp;<a class="el" href="a04139.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>)</td></tr>
-<tr class="memdesc:a8a7610dba7e9a6f878268c2769ea0e04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from a collection of the keys involved in this factor. <br /></td></tr>
-<tr class="memitem:ac457810c504de58732d51d61f715c2de" id="r_ac457810c504de58732d51d61f715c2de"><td class="memItemLeft"><a id="ac457810c504de58732d51d61f715c2de" name="ac457810c504de58732d51d61f715c2de"></a>
-virtual&#160;</td><td class="memItemRight"><b>~NonlinearFactor</b> ()</td></tr>
-<tr class="memdesc:ac457810c504de58732d51d61f715c2de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
-<tr class="memitem:a6d39d9bf4715675d44eb817eda8134d0" id="r_a6d39d9bf4715675d44eb817eda8134d0"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="a05047.html#a6d39d9bf4715675d44eb817eda8134d0">error</a> (const <a class="el" href="a06211.html">HybridValues</a> &amp;c) const override</td></tr>
-<tr class="memdesc:a6d39d9bf4715675d44eb817eda8134d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">All factor types need to implement an error function.  <br /></td></tr>
-<tr class="memitem:a84901748b435ae9b39908abf57d5620c" id="r_a84901748b435ae9b39908abf57d5620c"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="a05047.html#a84901748b435ae9b39908abf57d5620c">active</a> (const <a class="el" href="a06243.html">Values</a> &amp;) const</td></tr>
-<tr class="memdesc:a84901748b435ae9b39908abf57d5620c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a factor should be used based on a set of values.  <br /></td></tr>
-<tr class="memitem:a659931523972a6bbc9742d89ba09ace2" id="r_a659931523972a6bbc9742d89ba09ace2"><td class="memItemLeft">virtual shared_ptr&#160;</td><td class="memItemRight"><a class="el" href="a05047.html#a659931523972a6bbc9742d89ba09ace2">rekey</a> (const std::map&lt; <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, <a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> &gt; &amp;rekey_mapping) const</td></tr>
-<tr class="memdesc:a659931523972a6bbc9742d89ba09ace2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shared_ptr clone of the factor with different keys using a map from old-&gt;new keys.  <br /></td></tr>
-<tr class="memitem:af7399735ffc6d044195c67a414865e57" id="r_af7399735ffc6d044195c67a414865e57"><td class="memItemLeft">virtual shared_ptr&#160;</td><td class="memItemRight"><a class="el" href="a05047.html#af7399735ffc6d044195c67a414865e57">rekey</a> (const <a class="el" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;new_keys) const</td></tr>
-<tr class="memdesc:af7399735ffc6d044195c67a414865e57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clones a factor and fully replaces its keys.  <br /></td></tr>
-<tr class="memitem:a9959dc6860b3e2624498ccbd457e290b" id="r_a9959dc6860b3e2624498ccbd457e290b"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="a05047.html#a9959dc6860b3e2624498ccbd457e290b">sendable</a> () const</td></tr>
-<tr class="memdesc:a9959dc6860b3e2624498ccbd457e290b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Should the factor be evaluated in the same thread as the caller This is to enable factors that has shared states (like the Python GIL lock).  <br /></td></tr>
-<tr class="inherit_header pub_methods_a04139"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a04139')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a04139.html">gtsam::Factor</a></td></tr>
-<tr class="memitem:a6572d1c62aa0f0167fe6ebb0a77af107 inherit pub_methods_a04139" id="r_a6572d1c62aa0f0167fe6ebb0a77af107"><td class="memItemLeft">
+<tr class="memitem:aceacc209ee0628bae0e7da7d6f03b15f" id="r_aceacc209ee0628bae0e7da7d6f03b15f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aceacc209ee0628bae0e7da7d6f03b15f">RegularHessianFactor</a> (const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;js, const std::vector&lt; Matrix &gt; &amp;Gs, const std::vector&lt; Vector &gt; &amp;gs, double f)</td></tr>
+<tr class="memdesc:aceacc209ee0628bae0e7da7d6f03b15f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an n-way factor from supplied components.  <br /></td></tr>
+<tr class="memitem:ae70fc62e57d66f8b30c082a74356b754" id="r_ae70fc62e57d66f8b30c082a74356b754"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae70fc62e57d66f8b30c082a74356b754">RegularHessianFactor</a> (<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j1, <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j2, const MatrixD &amp;G11, const MatrixD &amp;G12, const VectorD &amp;g1, const MatrixD &amp;G22, const VectorD &amp;g2, double f)</td></tr>
+<tr class="memdesc:ae70fc62e57d66f8b30c082a74356b754"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a binary factor.  <br /></td></tr>
+<tr class="memitem:a6bf59fdc2fcc8ef982a624866997e40d" id="r_a6bf59fdc2fcc8ef982a624866997e40d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6bf59fdc2fcc8ef982a624866997e40d">RegularHessianFactor</a> (<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j1, <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j2, <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j3, const MatrixD &amp;G11, const MatrixD &amp;G12, const MatrixD &amp;G13, const VectorD &amp;g1, const MatrixD &amp;G22, const MatrixD &amp;G23, const VectorD &amp;g2, const MatrixD &amp;G33, const VectorD &amp;g3, double f)</td></tr>
+<tr class="memdesc:a6bf59fdc2fcc8ef982a624866997e40d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a ternary factor.  <br /></td></tr>
+<tr class="memitem:ab50690c5b18b531c590bf02777f48f97" id="r_ab50690c5b18b531c590bf02777f48f97"><td class="memTemplParams" colspan="2">template&lt;typename KEYS&gt; </td></tr>
+<tr class="memitem:ab50690c5b18b531c590bf02777f48f97 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab50690c5b18b531c590bf02777f48f97">RegularHessianFactor</a> (const KEYS &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>, const <a class="el" href="a03487.html">SymmetricBlockMatrix</a> &amp;<a class="el" href="a05155.html#a08697c1955144897f7ece0e610ea6ccb">augmentedInformation</a>)</td></tr>
+<tr class="memdesc:ab50690c5b18b531c590bf02777f48f97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with an arbitrary number of keys and the augmented information matrix specified as a block matrix.  <br /></td></tr>
+<tr class="memitem:aef13b780689c4a3e45dc9ae4e1154a25" id="r_aef13b780689c4a3e45dc9ae4e1154a25"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aef13b780689c4a3e45dc9ae4e1154a25">RegularHessianFactor</a> (const <a class="el" href="a05483.html">RegularJacobianFactor</a>&lt; D &gt; &amp;jf)</td></tr>
+<tr class="memdesc:aef13b780689c4a3e45dc9ae4e1154a25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="a05475.html" title="A HessianFactor where all variables have the same dimension D.">RegularHessianFactor</a> from a <a class="el" href="a05483.html" title="JacobianFactor with constant sized blocks Provides raw memory access versions of linear operator.">RegularJacobianFactor</a>.  <br /></td></tr>
+<tr class="memitem:ac6ff8787eee6162ba77b6abc092a981b" id="r_ac6ff8787eee6162ba77b6abc092a981b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac6ff8787eee6162ba77b6abc092a981b">RegularHessianFactor</a> (const <a class="el" href="a05135.html">GaussianFactorGraph</a> &amp;factors, const <a class="el" href="a05495.html">Scatter</a> &amp;scatter)</td></tr>
+<tr class="memdesc:ac6ff8787eee6162ba77b6abc092a981b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from a <a class="el" href="a05135.html" title="A Linear Factor Graph is a factor graph where all factors are Gaussian, i.e.">GaussianFactorGraph</a> combined using a <a class="el" href="a05495.html" title="Scatter is an intermediate data structure used when building a HessianFactor incrementally,...">Scatter</a>.  <br /></td></tr>
+<tr class="memitem:a147284fc57080b9133b344e7b1846764" id="r_a147284fc57080b9133b344e7b1846764"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a147284fc57080b9133b344e7b1846764">RegularHessianFactor</a> (const <a class="el" href="a05135.html">GaussianFactorGraph</a> &amp;factors)</td></tr>
+<tr class="memdesc:a147284fc57080b9133b344e7b1846764"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from a <a class="el" href="a05135.html" title="A Linear Factor Graph is a factor graph where all factors are Gaussian, i.e.">GaussianFactorGraph</a>.  <br /></td></tr>
+<tr class="memitem:a48b7f1f14c35e2987fc4de581861b718" id="r_a48b7f1f14c35e2987fc4de581861b718"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a48b7f1f14c35e2987fc4de581861b718">multiplyHessianAdd</a> (double alpha, const <a class="el" href="a07591.html">VectorValues</a> &amp;x, <a class="el" href="a07591.html">VectorValues</a> &amp;y) const override</td></tr>
+<tr class="memdesc:a48b7f1f14c35e2987fc4de581861b718"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply the Hessian part of the factor times a <a class="el" href="a05531.html" title="VectorValues represents a collection of vector-valued variables associated each with a unique integer...">VectorValues</a> <span class="tt">x</span> and add the result to <span class="tt">y</span>.  <br /></td></tr>
+<tr class="memitem:a86c8ed56f8dac11c6998d53e7fee7017" id="r_a86c8ed56f8dac11c6998d53e7fee7017"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a86c8ed56f8dac11c6998d53e7fee7017">multiplyHessianAdd</a> (double alpha, const double *x, double *yvalues) const</td></tr>
+<tr class="memdesc:a86c8ed56f8dac11c6998d53e7fee7017"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply the Hessian part of the factor times a raw vector <span class="tt">x</span> and add the result to <span class="tt">y</span>.  <br /></td></tr>
+<tr class="memitem:a756f1686bf77a2cfc2ce897dfd29db0b" id="r_a756f1686bf77a2cfc2ce897dfd29db0b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a756f1686bf77a2cfc2ce897dfd29db0b">multiplyHessianAdd</a> (double alpha, const double *x, double *yvalues, const std::vector&lt; size_t &gt; &amp;offsets) const</td></tr>
+<tr class="memdesc:a756f1686bf77a2cfc2ce897dfd29db0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiply the Hessian part of the factor times a raw vector <span class="tt">x</span> and add the result to <span class="tt">y</span>.  <br /></td></tr>
+<tr class="memitem:a99b34b7df4156edecb6592edbc685991" id="r_a99b34b7df4156edecb6592edbc685991"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a99b34b7df4156edecb6592edbc685991">hessianDiagonal</a> (double *d) const override</td></tr>
+<tr class="memdesc:a99b34b7df4156edecb6592edbc685991"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the diagonal of the Hessian for this factor (Raw memory version).  <br /></td></tr>
+<tr class="memitem:ac4395e2fffa40e7f5208819c99b4e6c2" id="r_ac4395e2fffa40e7f5208819c99b4e6c2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac4395e2fffa40e7f5208819c99b4e6c2">gradientAtZero</a> (double *d) const override</td></tr>
+<tr class="memdesc:ac4395e2fffa40e7f5208819c99b4e6c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the gradient vector \( -g \) (gradient at zero) to a raw memory block <span class="tt">d</span>.  <br /></td></tr>
+<tr class="inherit_header pub_methods_a05155"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a05155')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a05155.html">gtsam::HessianFactor</a></td></tr>
+<tr class="memitem:acdcbc6dc5ead9bfdb6010f74bee3c8df inherit pub_methods_a05155" id="r_acdcbc6dc5ead9bfdb6010f74bee3c8df"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>HessianFactor</b> ()</td></tr>
+<tr class="memdesc:acdcbc6dc5ead9bfdb6010f74bee3c8df inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">default constructor for I/O <br /></td></tr>
+<tr class="memitem:a7f637f93694de5b61c160376f5702cdd inherit pub_methods_a05155" id="r_a7f637f93694de5b61c160376f5702cdd"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#a7f637f93694de5b61c160376f5702cdd">HessianFactor</a> (<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j, const Matrix &amp;G, const Vector &amp;g, double f)</td></tr>
+<tr class="memdesc:a7f637f93694de5b61c160376f5702cdd inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a unary factor.  <br /></td></tr>
+<tr class="memitem:aaebd96bc8dc741f8509a173814df19d2 inherit pub_methods_a05155" id="r_aaebd96bc8dc741f8509a173814df19d2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#aaebd96bc8dc741f8509a173814df19d2">HessianFactor</a> (<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j, const Vector &amp;mu, const Matrix &amp;Sigma)</td></tr>
+<tr class="memdesc:aaebd96bc8dc741f8509a173814df19d2 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a unary factor, given a mean and covariance matrix.  <br /></td></tr>
+<tr class="memitem:abb07c3bd55ff688700f82f6024bdf9f0 inherit pub_methods_a05155" id="r_abb07c3bd55ff688700f82f6024bdf9f0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#abb07c3bd55ff688700f82f6024bdf9f0">HessianFactor</a> (<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j1, <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j2, const Matrix &amp;G11, const Matrix &amp;G12, const Vector &amp;g1, const Matrix &amp;G22, const Vector &amp;g2, double f)</td></tr>
+<tr class="memdesc:abb07c3bd55ff688700f82f6024bdf9f0 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a binary factor.  <br /></td></tr>
+<tr class="memitem:a8dd0c87ce694143e2ad42c48559f9883 inherit pub_methods_a05155" id="r_a8dd0c87ce694143e2ad42c48559f9883"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#a8dd0c87ce694143e2ad42c48559f9883">HessianFactor</a> (<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j1, <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j2, <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> j3, const Matrix &amp;G11, const Matrix &amp;G12, const Matrix &amp;G13, const Vector &amp;g1, const Matrix &amp;G22, const Matrix &amp;G23, const Vector &amp;g2, const Matrix &amp;G33, const Vector &amp;g3, double f)</td></tr>
+<tr class="memdesc:a8dd0c87ce694143e2ad42c48559f9883 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a ternary factor.  <br /></td></tr>
+<tr class="memitem:a3dcc955082863c99391622760e7bdc93 inherit pub_methods_a05155" id="r_a3dcc955082863c99391622760e7bdc93"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#a3dcc955082863c99391622760e7bdc93">HessianFactor</a> (const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;js, const std::vector&lt; Matrix &gt; &amp;Gs, const std::vector&lt; Vector &gt; &amp;gs, double f)</td></tr>
+<tr class="memdesc:a3dcc955082863c99391622760e7bdc93 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an n-way factor.  <br /></td></tr>
+<tr class="memitem:aea53397c9d43a943410ca33a4d8953d4 inherit pub_methods_a05155" id="r_aea53397c9d43a943410ca33a4d8953d4"><td class="memTemplParams" colspan="2">
+template&lt;typename KEYS&gt; </td></tr>
+<tr class="memitem:aea53397c9d43a943410ca33a4d8953d4 inherit pub_methods_a05155 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><b>HessianFactor</b> (const KEYS &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>, const <a class="el" href="a03487.html">SymmetricBlockMatrix</a> &amp;<a class="el" href="a05155.html#a08697c1955144897f7ece0e610ea6ccb">augmentedInformation</a>)</td></tr>
+<tr class="memdesc:aea53397c9d43a943410ca33a4d8953d4 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from keys and a copied augmented information block matrix. <br /></td></tr>
+<tr class="memitem:afccdd4315702ab49bef1af615b57f23b inherit pub_methods_a05155" id="r_afccdd4315702ab49bef1af615b57f23b"><td class="memTemplParams" colspan="2">template&lt;typename KEYS&gt; </td></tr>
+<tr class="memitem:afccdd4315702ab49bef1af615b57f23b inherit pub_methods_a05155 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#afccdd4315702ab49bef1af615b57f23b">HessianFactor</a> (const KEYS &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>, <a class="el" href="a03487.html">SymmetricBlockMatrix</a> &amp;&amp;<a class="el" href="a05155.html#a08697c1955144897f7ece0e610ea6ccb">augmentedInformation</a>)</td></tr>
+<tr class="memdesc:afccdd4315702ab49bef1af615b57f23b inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from keys and take ownership of an augmented information block matrix.  <br /></td></tr>
+<tr class="memitem:ab4d355478837b450288cb1aac6d2d7ba inherit pub_methods_a05155" id="r_ab4d355478837b450288cb1aac6d2d7ba"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>HessianFactor</b> (const <a class="el" href="a07583.html">JacobianFactor</a> &amp;cg)</td></tr>
+<tr class="memdesc:ab4d355478837b450288cb1aac6d2d7ba inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from a <a class="el" href="a05179.html" title="A Gaussian factor in the squared-error form.">JacobianFactor</a> (or from a <a class="el" href="a05107.html" title="A GaussianConditional functions as the node in a Bayes network.">GaussianConditional</a> since it derives from it). <br /></td></tr>
+<tr class="memitem:ae8dd0248da60828ce386aed28b5dbd8e inherit pub_methods_a05155" id="r_ae8dd0248da60828ce386aed28b5dbd8e"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>HessianFactor</b> (const <a class="el" href="a05123.html#ab31173c32b976a81d76af85e1d49e24a">GaussianFactor</a> &amp;factor)</td></tr>
+<tr class="memdesc:ae8dd0248da60828ce386aed28b5dbd8e inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to construct from any <a class="el" href="a05123.html" title="An abstract virtual base class for JacobianFactor and HessianFactor.">GaussianFactor</a> - currently supports <a class="el" href="a05179.html" title="A Gaussian factor in the squared-error form.">JacobianFactor</a>, <a class="el" href="a05155.html" title="A Gaussian factor using the canonical parameters (information form).">HessianFactor</a>, <a class="el" href="a05107.html" title="A GaussianConditional functions as the node in a Bayes network.">GaussianConditional</a>, or any derived classes. <br /></td></tr>
+<tr class="memitem:a2d0d01c6cb988106b0c4ae553f39803b inherit pub_methods_a05155" id="r_a2d0d01c6cb988106b0c4ae553f39803b"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>HessianFactor</b> (const <a class="el" href="a05135.html">GaussianFactorGraph</a> &amp;factors, const <a class="el" href="a05495.html">Scatter</a> &amp;scatter)</td></tr>
+<tr class="memdesc:a2d0d01c6cb988106b0c4ae553f39803b inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combine a set of factors into a single dense <a class="el" href="a05155.html" title="A Gaussian factor using the canonical parameters (information form).">HessianFactor</a>. <br /></td></tr>
+<tr class="memitem:a6c95f71b3d19762166fd37e02871f978 inherit pub_methods_a05155" id="r_a6c95f71b3d19762166fd37e02871f978"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>HessianFactor</b> (const <a class="el" href="a05135.html">GaussianFactorGraph</a> &amp;factors)</td></tr>
+<tr class="memdesc:a6c95f71b3d19762166fd37e02871f978 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combine a set of factors into a single dense <a class="el" href="a05155.html" title="A Gaussian factor using the canonical parameters (information form).">HessianFactor</a>. <br /></td></tr>
+<tr class="memitem:a5ca13764e5e0c9fa435202ccd258b1b8 inherit pub_methods_a05155" id="r_a5ca13764e5e0c9fa435202ccd258b1b8"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>~HessianFactor</b> () override</td></tr>
+<tr class="memdesc:a5ca13764e5e0c9fa435202ccd258b1b8 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="memitem:a2b524c273030776e97488d1c66841b3f inherit pub_methods_a05155" id="r_a2b524c273030776e97488d1c66841b3f"><td class="memItemLeft"><a class="el" href="a05123.html#a07958208ac830cd10cbf5530b2c70f7c">GaussianFactor::shared_ptr</a>&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#a2b524c273030776e97488d1c66841b3f">clone</a> () const override</td></tr>
+<tr class="memdesc:a2b524c273030776e97488d1c66841b3f inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clone this <a class="el" href="a05155.html" title="A Gaussian factor using the canonical parameters (information form).">HessianFactor</a>.  <br /></td></tr>
+<tr class="memitem:ae0d9d31da273dd46de1778a717694bf6 inherit pub_methods_a05155" id="r_ae0d9d31da273dd46de1778a717694bf6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#ae0d9d31da273dd46de1778a717694bf6">print</a> (const std::string &amp;s=&quot;&quot;, const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;formatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) const override</td></tr>
+<tr class="memdesc:ae0d9d31da273dd46de1778a717694bf6 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the factor for debugging and testing (implementing <a class="el" href="a03535.html" title="A helper that implements the traits interface for GTSAM types.">Testable</a>).  <br /></td></tr>
+<tr class="memitem:af35fc14302ac414bc88a697c1658beac inherit pub_methods_a05155" id="r_af35fc14302ac414bc88a697c1658beac"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#af35fc14302ac414bc88a697c1658beac">equals</a> (const <a class="el" href="a05123.html#ab31173c32b976a81d76af85e1d49e24a">GaussianFactor</a> &amp;lf, double tol=1e-9) const override</td></tr>
+<tr class="memdesc:af35fc14302ac414bc88a697c1658beac inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare to another factor for testing (implementing <a class="el" href="a03535.html" title="A helper that implements the traits interface for GTSAM types.">Testable</a>).  <br /></td></tr>
+<tr class="memitem:a3981ad4ee1b4c518288f212fe936a141 inherit pub_methods_a05155" id="r_a3981ad4ee1b4c518288f212fe936a141"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#a3981ad4ee1b4c518288f212fe936a141">error</a> (const <a class="el" href="a07591.html">VectorValues</a> &amp;c) const override</td></tr>
+<tr class="memdesc:a3981ad4ee1b4c518288f212fe936a141 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the factor error f(x).  <br /></td></tr>
+<tr class="memitem:a261539025b22ae26cffb7a3b101a97ea inherit pub_methods_a05155" id="r_a261539025b22ae26cffb7a3b101a97ea"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#a261539025b22ae26cffb7a3b101a97ea">deltaError</a> (const <a class="el" href="a07591.html">VectorValues</a> &amp;c, double *oldError=nullptr, double *newError=nullptr) const override</td></tr>
+<tr class="memdesc:a261539025b22ae26cffb7a3b101a97ea inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the change in error from zero to c, optionally returning the old and new errors.  <br /></td></tr>
+<tr class="memitem:a80ddf11f944f88ac1e695b72cbca4885 inherit pub_methods_a05155" id="r_a80ddf11f944f88ac1e695b72cbca4885"><td class="memItemLeft"><a class="el" href="a02242.html#a21006f326f57cdf7d3f35fec40f43e40">DenseIndex</a>&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#a80ddf11f944f88ac1e695b72cbca4885">getDim</a> (<a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a> variable) const override</td></tr>
+<tr class="memdesc:a80ddf11f944f88ac1e695b72cbca4885 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the dimension of the variable pointed to by the given key iterator todo: Remove this in favor of keeping track of dimensions with variables?  <br /></td></tr>
+<tr class="memitem:aa8ebfa1105fd175d5c1eea3380c94259 inherit pub_methods_a05155" id="r_aa8ebfa1105fd175d5c1eea3380c94259"><td class="memItemLeft">
+size_t&#160;</td><td class="memItemRight"><b>rows</b> () const</td></tr>
+<tr class="memdesc:aa8ebfa1105fd175d5c1eea3380c94259 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of columns and rows of the Hessian matrix, including the information vector. <br /></td></tr>
+<tr class="memitem:aa868c09fc1707b72e61c0a945c4d1177 inherit pub_methods_a05155" id="r_aa868c09fc1707b72e61c0a945c4d1177"><td class="memItemLeft"><a class="el" href="a05123.html#a07958208ac830cd10cbf5530b2c70f7c">GaussianFactor::shared_ptr</a>&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#aa868c09fc1707b72e61c0a945c4d1177">negate</a> () const override</td></tr>
+<tr class="memdesc:aa868c09fc1707b72e61c0a945c4d1177 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the corresponding anti-factor to negate information stored stored in this factor.  <br /></td></tr>
+<tr class="memitem:a51e8f87fdbb60bd0744b624a6bdaa8e4 inherit pub_methods_a05155" id="r_a51e8f87fdbb60bd0744b624a6bdaa8e4"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#a51e8f87fdbb60bd0744b624a6bdaa8e4">constantTerm</a> () const</td></tr>
+<tr class="memdesc:a51e8f87fdbb60bd0744b624a6bdaa8e4 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the constant term \( f \) as described above.  <br /></td></tr>
+<tr class="memitem:afca56ce4b4515feb1b108a80f0dbd152 inherit pub_methods_a05155" id="r_afca56ce4b4515feb1b108a80f0dbd152"><td class="memItemLeft">double &amp;&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#afca56ce4b4515feb1b108a80f0dbd152">constantTerm</a> ()</td></tr>
+<tr class="memdesc:afca56ce4b4515feb1b108a80f0dbd152 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the constant term \( f \) as described above.  <br /></td></tr>
+<tr class="memitem:a8640eb9977d58a1e01be42dc49b7bc76 inherit pub_methods_a05155" id="r_a8640eb9977d58a1e01be42dc49b7bc76"><td class="memItemLeft">SymmetricBlockMatrix::constBlock&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#a8640eb9977d58a1e01be42dc49b7bc76">linearTerm</a> (<a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a> j) const</td></tr>
+<tr class="memdesc:a8640eb9977d58a1e01be42dc49b7bc76 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the part of linear term \( g \) as described above corresponding to the requested variable.  <br /></td></tr>
+<tr class="memitem:a5bd74e517dd02d55684db2fc68114529 inherit pub_methods_a05155" id="r_a5bd74e517dd02d55684db2fc68114529"><td class="memItemLeft">SymmetricBlockMatrix::constBlock&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#a5bd74e517dd02d55684db2fc68114529">linearTerm</a> () const</td></tr>
+<tr class="memdesc:a5bd74e517dd02d55684db2fc68114529 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the complete linear term \( g \) as described above.  <br /></td></tr>
+<tr class="memitem:a475512a6c478d8e02f212d9b851bd8ec inherit pub_methods_a05155" id="r_a475512a6c478d8e02f212d9b851bd8ec"><td class="memItemLeft">SymmetricBlockMatrix::Block&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#a475512a6c478d8e02f212d9b851bd8ec">linearTerm</a> ()</td></tr>
+<tr class="memdesc:a475512a6c478d8e02f212d9b851bd8ec inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the complete linear term \( g \) as described above.  <br /></td></tr>
+<tr class="memitem:a3d10684a9c0a7862120a29c08a380dbf inherit pub_methods_a05155" id="r_a3d10684a9c0a7862120a29c08a380dbf"><td class="memItemLeft">
+const <a class="el" href="a03487.html">SymmetricBlockMatrix</a> &amp;&#160;</td><td class="memItemRight"><b>info</b> () const</td></tr>
+<tr class="memdesc:a3d10684a9c0a7862120a29c08a380dbf inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return underlying information matrix. <br /></td></tr>
+<tr class="memitem:af1d7847f2ddce062419421a8e0033653 inherit pub_methods_a05155" id="r_af1d7847f2ddce062419421a8e0033653"><td class="memItemLeft"><a class="el" href="a03487.html">SymmetricBlockMatrix</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#af1d7847f2ddce062419421a8e0033653">info</a> ()</td></tr>
+<tr class="memdesc:af1d7847f2ddce062419421a8e0033653 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return non-const information matrix.  <br /></td></tr>
+<tr class="memitem:a08697c1955144897f7ece0e610ea6ccb inherit pub_methods_a05155" id="r_a08697c1955144897f7ece0e610ea6ccb"><td class="memItemLeft">Matrix&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#a08697c1955144897f7ece0e610ea6ccb">augmentedInformation</a> () const override</td></tr>
+<tr class="memdesc:a08697c1955144897f7ece0e610ea6ccb inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the augmented information matrix represented by this <a class="el" href="a05123.html" title="An abstract virtual base class for JacobianFactor and HessianFactor.">GaussianFactor</a>.  <br /></td></tr>
+<tr class="memitem:a17f12be473e2564e46c2b80eef3148a5 inherit pub_methods_a05155" id="r_a17f12be473e2564e46c2b80eef3148a5"><td class="memItemLeft">
+Eigen::SelfAdjointView&lt; SymmetricBlockMatrix::constBlock, Eigen::Upper &gt;&#160;</td><td class="memItemRight"><b>informationView</b> () const</td></tr>
+<tr class="memdesc:a17f12be473e2564e46c2b80eef3148a5 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return self-adjoint view onto the information matrix (NOT augmented). <br /></td></tr>
+<tr class="memitem:a8c9bc75c63dfb203d591a7f6c1f673d3 inherit pub_methods_a05155" id="r_a8c9bc75c63dfb203d591a7f6c1f673d3"><td class="memItemLeft">Matrix&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#a8c9bc75c63dfb203d591a7f6c1f673d3">information</a> () const override</td></tr>
+<tr class="memdesc:a8c9bc75c63dfb203d591a7f6c1f673d3 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the non-augmented information matrix represented by this <a class="el" href="a05123.html" title="An abstract virtual base class for JacobianFactor and HessianFactor.">GaussianFactor</a>.  <br /></td></tr>
+<tr class="memitem:a45f984fe30fcc84c9bd08a364ba21274 inherit pub_methods_a05155" id="r_a45f984fe30fcc84c9bd08a364ba21274"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#a45f984fe30fcc84c9bd08a364ba21274">hessianDiagonalAdd</a> (<a class="el" href="a07591.html">VectorValues</a> &amp;d) const override</td></tr>
+<tr class="memdesc:a45f984fe30fcc84c9bd08a364ba21274 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the current diagonal to a <a class="el" href="a05531.html" title="VectorValues represents a collection of vector-valued variables associated each with a unique integer...">VectorValues</a> instance.  <br /></td></tr>
+<tr class="memitem:a7614387b038c94ad4e922bf9abbc5b48 inherit pub_methods_a05155" id="r_a7614387b038c94ad4e922bf9abbc5b48"><td class="memItemLeft">std::map&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, Matrix &gt;&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#a7614387b038c94ad4e922bf9abbc5b48">hessianBlockDiagonal</a> () const override</td></tr>
+<tr class="memdesc:a7614387b038c94ad4e922bf9abbc5b48 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the block diagonal of the Hessian for this factor.  <br /></td></tr>
+<tr class="memitem:ae3d28ed30c20bf84e8323448250421e0 inherit pub_methods_a05155" id="r_ae3d28ed30c20bf84e8323448250421e0"><td class="memItemLeft">std::pair&lt; Matrix, Vector &gt;&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#ae3d28ed30c20bf84e8323448250421e0">jacobian</a> () const override</td></tr>
+<tr class="memdesc:ae3d28ed30c20bf84e8323448250421e0 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return (dense) matrix associated with factor.  <br /></td></tr>
+<tr class="memitem:a00ed68d5f1a4eee245c9b540c3fa8ad4 inherit pub_methods_a05155" id="r_a00ed68d5f1a4eee245c9b540c3fa8ad4"><td class="memItemLeft">Matrix&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#a00ed68d5f1a4eee245c9b540c3fa8ad4">augmentedJacobian</a> () const override</td></tr>
+<tr class="memdesc:a00ed68d5f1a4eee245c9b540c3fa8ad4 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return (dense) matrix associated with factor The returned system is an augmented matrix: [A b].  <br /></td></tr>
+<tr class="memitem:aa89e11ba53507ec7f643fd10cb76eeea inherit pub_methods_a05155" id="r_aa89e11ba53507ec7f643fd10cb76eeea"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#aa89e11ba53507ec7f643fd10cb76eeea">updateHessian</a> (const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>, <a class="el" href="a03487.html">SymmetricBlockMatrix</a> *<a class="el" href="a05155.html#a3d10684a9c0a7862120a29c08a380dbf">info</a>) const override</td></tr>
+<tr class="memdesc:aa89e11ba53507ec7f643fd10cb76eeea inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update an information matrix by adding the information corresponding to this factor (used internally during elimination).  <br /></td></tr>
+<tr class="memitem:adf2474fb84e52513b41f73614902168d inherit pub_methods_a05155" id="r_adf2474fb84e52513b41f73614902168d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#adf2474fb84e52513b41f73614902168d">updateHessian</a> (const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>, <a class="el" href="a03487.html">SymmetricBlockMatrix</a> *<a class="el" href="a05155.html#a3d10684a9c0a7862120a29c08a380dbf">info</a>, <a class="el" href="a02242.html#a21006f326f57cdf7d3f35fec40f43e40">DenseIndex</a> beginCol, <a class="el" href="a02242.html#a21006f326f57cdf7d3f35fec40f43e40">DenseIndex</a> endCol) const override</td></tr>
+<tr class="memdesc:adf2474fb84e52513b41f73614902168d inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update an information matrix by adding the information corresponding to this factor (used internally during elimination), restricted to a range of block columns, useful for parallelization.  <br /></td></tr>
+<tr class="memitem:a09b438b583509deb200750a1c4de317a inherit pub_methods_a05155" id="r_a09b438b583509deb200750a1c4de317a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#a09b438b583509deb200750a1c4de317a">updateHessian</a> (<a class="el" href="a05155.html#acdcbc6dc5ead9bfdb6010f74bee3c8df">HessianFactor</a> *other) const</td></tr>
+<tr class="memdesc:a09b438b583509deb200750a1c4de317a inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update another Hessian factor.  <br /></td></tr>
+<tr class="memitem:a2c5ab9e17a2b8baab78a727d55ac0ecc inherit pub_methods_a05155" id="r_a2c5ab9e17a2b8baab78a727d55ac0ecc"><td class="memItemLeft"><a class="el" href="a07591.html">VectorValues</a>&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#a2c5ab9e17a2b8baab78a727d55ac0ecc">gradientAtZero</a> () const override</td></tr>
+<tr class="memdesc:a2c5ab9e17a2b8baab78a727d55ac0ecc inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">eta for Hessian  <br /></td></tr>
+<tr class="memitem:a12776bd287d1cbf62f1943877c0de161 inherit pub_methods_a05155" id="r_a12776bd287d1cbf62f1943877c0de161"><td class="memItemLeft">Vector&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#a12776bd287d1cbf62f1943877c0de161">gradient</a> (<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key, const <a class="el" href="a07591.html">VectorValues</a> &amp;x) const override</td></tr>
+<tr class="memdesc:a12776bd287d1cbf62f1943877c0de161 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the gradient at a key: \( \grad f(x_i) = \sum_j G_ij*x_j - g_i \).  <br /></td></tr>
+<tr class="memitem:a61c3b9b574b69dbee4ee4a4033826298 inherit pub_methods_a05155" id="r_a61c3b9b574b69dbee4ee4a4033826298"><td class="memItemLeft">std::shared_ptr&lt; <a class="el" href="a07587.html">GaussianConditional</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#a61c3b9b574b69dbee4ee4a4033826298">eliminateCholesky</a> (const <a class="el" href="a04979.html">Ordering</a> &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>)</td></tr>
+<tr class="memdesc:a61c3b9b574b69dbee4ee4a4033826298 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">In-place elimination that returns a conditional on (ordered) keys specified, and leaves this factor to be on the remaining keys (separator) only.  <br /></td></tr>
+<tr class="memitem:a08367080ea54ebc1e299d46fe2300d40 inherit pub_methods_a05155" id="r_a08367080ea54ebc1e299d46fe2300d40"><td class="memItemLeft">
+<a class="el" href="a07591.html">VectorValues</a>&#160;</td><td class="memItemRight"><b>solve</b> ()</td></tr>
+<tr class="memdesc:a08367080ea54ebc1e299d46fe2300d40 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve the system A'*A delta = A'*b in-place, return delta as <a class="el" href="a05531.html" title="VectorValues represents a collection of vector-valued variables associated each with a unique integer...">VectorValues</a>. <br /></td></tr>
+<tr class="memitem:a2d885c9ef44682ba10bffbefec4e70cf inherit pub_methods_a05155" id="r_a2d885c9ef44682ba10bffbefec4e70cf"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="a05155.html#a2d885c9ef44682ba10bffbefec4e70cf">error</a> (const <a class="el" href="a07563.html">HybridValues</a> &amp;c) const override</td></tr>
+<tr class="memdesc:a2d885c9ef44682ba10bffbefec4e70cf inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">All factor types need to implement an error function.  <br /></td></tr>
+<tr class="memitem:abbefd8b159bd1ac129d054abc7643f24 inherit pub_methods_a05155" id="r_abbefd8b159bd1ac129d054abc7643f24"><td class="memItemLeft">
+<a class="el" href="a07591.html">VectorValues</a>&#160;</td><td class="memItemRight"><b>hessianDiagonal</b> () const</td></tr>
+<tr class="memdesc:abbefd8b159bd1ac129d054abc7643f24 inherit pub_methods_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Using the base method. <br /></td></tr>
+<tr class="inherit_header pub_methods_a05123"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a05123')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a05123.html">gtsam::GaussianFactor</a></td></tr>
+<tr class="memitem:ab31173c32b976a81d76af85e1d49e24a inherit pub_methods_a05123" id="r_ab31173c32b976a81d76af85e1d49e24a"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>GaussianFactor</b> ()</td></tr>
+<tr class="memdesc:ab31173c32b976a81d76af85e1d49e24a inherit pub_methods_a05123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor creates empty factor. <br /></td></tr>
+<tr class="memitem:a7fc8684c852571ea09ecea36847ed7a2 inherit pub_methods_a05123" id="r_a7fc8684c852571ea09ecea36847ed7a2"><td class="memTemplParams" colspan="2">template&lt;typename CONTAINER&gt; </td></tr>
+<tr class="memitem:a7fc8684c852571ea09ecea36847ed7a2 inherit pub_methods_a05123 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a05123.html#a7fc8684c852571ea09ecea36847ed7a2">GaussianFactor</a> (const CONTAINER &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>)</td></tr>
+<tr class="memdesc:a7fc8684c852571ea09ecea36847ed7a2 inherit pub_methods_a05123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct from container of keys.  <br /></td></tr>
+<tr class="memitem:abbefd8b159bd1ac129d054abc7643f24 inherit pub_methods_a05123" id="r_abbefd8b159bd1ac129d054abc7643f24"><td class="memItemLeft">
+<a class="el" href="a07591.html">VectorValues</a>&#160;</td><td class="memItemRight"><b>hessianDiagonal</b> () const</td></tr>
+<tr class="memdesc:abbefd8b159bd1ac129d054abc7643f24 inherit pub_methods_a05123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the diagonal of the Hessian for this factor. <br /></td></tr>
+<tr class="memitem:a3cf0ac87a55876b754cfd8df218460b8 inherit pub_methods_a05123" id="r_a3cf0ac87a55876b754cfd8df218460b8"><td class="memItemLeft">virtual bool&#160;</td><td class="memItemRight"><a class="el" href="a05123.html#a3cf0ac87a55876b754cfd8df218460b8">isJacobian</a> () const</td></tr>
+<tr class="memdesc:a3cf0ac87a55876b754cfd8df218460b8 inherit pub_methods_a05123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fast check for JacobianFactor-based types.  <br /></td></tr>
+<tr class="inherit_header pub_methods_a04899"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a04899')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a04899.html">gtsam::Factor</a></td></tr>
+<tr class="memitem:a6572d1c62aa0f0167fe6ebb0a77af107 inherit pub_methods_a04899" id="r_a6572d1c62aa0f0167fe6ebb0a77af107"><td class="memItemLeft">
 virtual&#160;</td><td class="memItemRight"><b>~Factor</b> ()=default</td></tr>
-<tr class="memdesc:a6572d1c62aa0f0167fe6ebb0a77af107 inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor. <br /></td></tr>
-<tr class="memitem:a39490b49d71351affb6953d730f8ebbc inherit pub_methods_a04139" id="r_a39490b49d71351affb6953d730f8ebbc"><td class="memItemLeft">
+<tr class="memdesc:a6572d1c62aa0f0167fe6ebb0a77af107 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor. <br /></td></tr>
+<tr class="memitem:a39490b49d71351affb6953d730f8ebbc inherit pub_methods_a04899" id="r_a39490b49d71351affb6953d730f8ebbc"><td class="memItemLeft">
 bool&#160;</td><td class="memItemRight"><b>empty</b> () const</td></tr>
-<tr class="memdesc:a39490b49d71351affb6953d730f8ebbc inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the factor is empty (involves zero variables). <br /></td></tr>
-<tr class="memitem:aeb63e9c85c567ee3b06b0d2ad0552a8a inherit pub_methods_a04139" id="r_aeb63e9c85c567ee3b06b0d2ad0552a8a"><td class="memItemLeft">
-<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>front</b> () const</td></tr>
-<tr class="memdesc:aeb63e9c85c567ee3b06b0d2ad0552a8a inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">First key. <br /></td></tr>
-<tr class="memitem:ae38e5024d5b20aa06a5a6bd289e626c4 inherit pub_methods_a04139" id="r_ae38e5024d5b20aa06a5a6bd289e626c4"><td class="memItemLeft">
-<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>back</b> () const</td></tr>
-<tr class="memdesc:ae38e5024d5b20aa06a5a6bd289e626c4 inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last key. <br /></td></tr>
-<tr class="memitem:a179a10d0319e87eda55d6925de0f5102 inherit pub_methods_a04139" id="r_a179a10d0319e87eda55d6925de0f5102"><td class="memItemLeft">
-<a class="el" href="a04139.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a>&#160;</td><td class="memItemRight"><b>find</b> (<a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key) const</td></tr>
-<tr class="memdesc:a179a10d0319e87eda55d6925de0f5102 inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">find <br /></td></tr>
-<tr class="memitem:a03d71985cf81a0175a71d1ecf5279edb inherit pub_methods_a04139" id="r_a03d71985cf81a0175a71d1ecf5279edb"><td class="memItemLeft">
-const <a class="el" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;&#160;</td><td class="memItemRight"><b>keys</b> () const</td></tr>
-<tr class="memdesc:a03d71985cf81a0175a71d1ecf5279edb inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the factor's involved variable keys. <br /></td></tr>
-<tr class="memitem:a17c02f11c35bf7768347cad4943f0f64 inherit pub_methods_a04139" id="r_a17c02f11c35bf7768347cad4943f0f64"><td class="memItemLeft">
-<a class="el" href="a04139.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a>&#160;</td><td class="memItemRight"><b>begin</b> () const</td></tr>
-<tr class="memdesc:a17c02f11c35bf7768347cad4943f0f64 inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator at beginning of involved variable keys. <br /></td></tr>
-<tr class="memitem:aa1f00e05967c0c278beec17af9cb0530 inherit pub_methods_a04139" id="r_aa1f00e05967c0c278beec17af9cb0530"><td class="memItemLeft">
-<a class="el" href="a04139.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a>&#160;</td><td class="memItemRight"><b>end</b> () const</td></tr>
-<tr class="memdesc:aa1f00e05967c0c278beec17af9cb0530 inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator at end of involved variable keys. <br /></td></tr>
-<tr class="memitem:afac01740aefd22f4f90f49767010f811 inherit pub_methods_a04139" id="r_afac01740aefd22f4f90f49767010f811"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="a04139.html#afac01740aefd22f4f90f49767010f811">size</a> () const</td></tr>
-<tr class="memitem:a52cdda1b64d2d584b1012362963b76f3 inherit pub_methods_a04139" id="r_a52cdda1b64d2d584b1012362963b76f3"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="a04139.html#a52cdda1b64d2d584b1012362963b76f3">printKeys</a> (const std::string &amp;s=&quot;Factor&quot;, const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;formatter=DefaultKeyFormatter) const</td></tr>
-<tr class="memdesc:a52cdda1b64d2d584b1012362963b76f3 inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">print only keys  <br /></td></tr>
-<tr class="memitem:a5cc62be07fbcde6678f8b346ab3a3f78 inherit pub_methods_a04139" id="r_a5cc62be07fbcde6678f8b346ab3a3f78"><td class="memItemLeft">
+<tr class="memdesc:a39490b49d71351affb6953d730f8ebbc inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the factor is empty (involves zero variables). <br /></td></tr>
+<tr class="memitem:aeb63e9c85c567ee3b06b0d2ad0552a8a inherit pub_methods_a04899" id="r_aeb63e9c85c567ee3b06b0d2ad0552a8a"><td class="memItemLeft">
+<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>front</b> () const</td></tr>
+<tr class="memdesc:aeb63e9c85c567ee3b06b0d2ad0552a8a inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">First key. <br /></td></tr>
+<tr class="memitem:ae38e5024d5b20aa06a5a6bd289e626c4 inherit pub_methods_a04899" id="r_ae38e5024d5b20aa06a5a6bd289e626c4"><td class="memItemLeft">
+<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>back</b> () const</td></tr>
+<tr class="memdesc:ae38e5024d5b20aa06a5a6bd289e626c4 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last key. <br /></td></tr>
+<tr class="memitem:a179a10d0319e87eda55d6925de0f5102 inherit pub_methods_a04899" id="r_a179a10d0319e87eda55d6925de0f5102"><td class="memItemLeft">
+<a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a>&#160;</td><td class="memItemRight"><b>find</b> (<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key) const</td></tr>
+<tr class="memdesc:a179a10d0319e87eda55d6925de0f5102 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">find <br /></td></tr>
+<tr class="memitem:a03d71985cf81a0175a71d1ecf5279edb inherit pub_methods_a04899" id="r_a03d71985cf81a0175a71d1ecf5279edb"><td class="memItemLeft">
+const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;&#160;</td><td class="memItemRight"><b>keys</b> () const</td></tr>
+<tr class="memdesc:a03d71985cf81a0175a71d1ecf5279edb inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the factor's involved variable keys. <br /></td></tr>
+<tr class="memitem:a17c02f11c35bf7768347cad4943f0f64 inherit pub_methods_a04899" id="r_a17c02f11c35bf7768347cad4943f0f64"><td class="memItemLeft">
+<a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a>&#160;</td><td class="memItemRight"><b>begin</b> () const</td></tr>
+<tr class="memdesc:a17c02f11c35bf7768347cad4943f0f64 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator at beginning of involved variable keys. <br /></td></tr>
+<tr class="memitem:aa1f00e05967c0c278beec17af9cb0530 inherit pub_methods_a04899" id="r_aa1f00e05967c0c278beec17af9cb0530"><td class="memItemLeft">
+<a class="el" href="a04899.html#a71af7ad9e9474ebbcf2fdffc7f31251b">const_iterator</a>&#160;</td><td class="memItemRight"><b>end</b> () const</td></tr>
+<tr class="memdesc:aa1f00e05967c0c278beec17af9cb0530 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator at end of involved variable keys. <br /></td></tr>
+<tr class="memitem:afac01740aefd22f4f90f49767010f811 inherit pub_methods_a04899" id="r_afac01740aefd22f4f90f49767010f811"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="a04899.html#afac01740aefd22f4f90f49767010f811">size</a> () const</td></tr>
+<tr class="memitem:a52cdda1b64d2d584b1012362963b76f3 inherit pub_methods_a04899" id="r_a52cdda1b64d2d584b1012362963b76f3"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="a04899.html#a52cdda1b64d2d584b1012362963b76f3">printKeys</a> (const std::string &amp;s=&quot;Factor&quot;, const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;formatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) const</td></tr>
+<tr class="memdesc:a52cdda1b64d2d584b1012362963b76f3 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">print only keys  <br /></td></tr>
+<tr class="memitem:a5cc62be07fbcde6678f8b346ab3a3f78 inherit pub_methods_a04899" id="r_a5cc62be07fbcde6678f8b346ab3a3f78"><td class="memItemLeft">
 bool&#160;</td><td class="memItemRight"><b>equals</b> (const This &amp;other, double tol=1e-9) const</td></tr>
-<tr class="memdesc:a5cc62be07fbcde6678f8b346ab3a3f78 inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">check equality <br /></td></tr>
-<tr class="memitem:a3fd8a3bd4eb315a0a2186efd103689c6 inherit pub_methods_a04139" id="r_a3fd8a3bd4eb315a0a2186efd103689c6"><td class="memItemLeft"><a class="el" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="a04139.html#a3fd8a3bd4eb315a0a2186efd103689c6">keys</a> ()</td></tr>
-<tr class="memitem:a5596dcbc299a2e8eec813b78fbcfe933 inherit pub_methods_a04139" id="r_a5596dcbc299a2e8eec813b78fbcfe933"><td class="memItemLeft">
-<a class="el" href="a04139.html#acb069f38cc81bea20cecfad4070da59e">iterator</a>&#160;</td><td class="memItemRight"><b>begin</b> ()</td></tr>
-<tr class="memdesc:a5596dcbc299a2e8eec813b78fbcfe933 inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator at beginning of involved variable keys. <br /></td></tr>
-<tr class="memitem:a33597c74ba8db7396722165424fe5ec3 inherit pub_methods_a04139" id="r_a33597c74ba8db7396722165424fe5ec3"><td class="memItemLeft">
-<a class="el" href="a04139.html#acb069f38cc81bea20cecfad4070da59e">iterator</a>&#160;</td><td class="memItemRight"><b>end</b> ()</td></tr>
-<tr class="memdesc:a33597c74ba8db7396722165424fe5ec3 inherit pub_methods_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator at end of involved variable keys. <br /></td></tr>
+<tr class="memdesc:a5cc62be07fbcde6678f8b346ab3a3f78 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">check equality <br /></td></tr>
+<tr class="memitem:a3fd8a3bd4eb315a0a2186efd103689c6 inherit pub_methods_a04899" id="r_a3fd8a3bd4eb315a0a2186efd103689c6"><td class="memItemLeft"><a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="a04899.html#a3fd8a3bd4eb315a0a2186efd103689c6">keys</a> ()</td></tr>
+<tr class="memitem:a5596dcbc299a2e8eec813b78fbcfe933 inherit pub_methods_a04899" id="r_a5596dcbc299a2e8eec813b78fbcfe933"><td class="memItemLeft">
+<a class="el" href="a04899.html#acb069f38cc81bea20cecfad4070da59e">iterator</a>&#160;</td><td class="memItemRight"><b>begin</b> ()</td></tr>
+<tr class="memdesc:a5596dcbc299a2e8eec813b78fbcfe933 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator at beginning of involved variable keys. <br /></td></tr>
+<tr class="memitem:a33597c74ba8db7396722165424fe5ec3 inherit pub_methods_a04899" id="r_a33597c74ba8db7396722165424fe5ec3"><td class="memItemLeft">
+<a class="el" href="a04899.html#acb069f38cc81bea20cecfad4070da59e">iterator</a>&#160;</td><td class="memItemRight"><b>end</b> ()</td></tr>
+<tr class="memdesc:a33597c74ba8db7396722165424fe5ec3 inherit pub_methods_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator at end of involved variable keys. <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a85c5981614f80245fbba7ebb05fa2442" id="r_a85c5981614f80245fbba7ebb05fa2442"><td class="memItemLeft"><a id="a85c5981614f80245fbba7ebb05fa2442" name="a85c5981614f80245fbba7ebb05fa2442"></a>
-static <a class="el" href="a03775.html">Rot3</a>&#160;</td><td class="memItemRight"><b>Initialize</b> (const <a class="el" href="a03927.html">Unit3</a> &amp;i_p, const <a class="el" href="a03927.html">Unit3</a> &amp;c_z)</td></tr>
-<tr class="memdesc:a85c5981614f80245fbba7ebb05fa2442"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize rotation iRc such that i_p = iRc * c_z. <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a580ba106302dde80ee88aebb1745c76b" id="r_a580ba106302dde80ee88aebb1745c76b"><td class="memItemLeft"><a id="a580ba106302dde80ee88aebb1745c76b" name="a580ba106302dde80ee88aebb1745c76b"></a>
+typedef Eigen::Matrix&lt; double, D, 1 &gt;&#160;</td><td class="memItemRight"><b>VectorD</b></td></tr>
+<tr class="memitem:a1356cbaa987e47da8fbcc50f6bee3b1a" id="r_a1356cbaa987e47da8fbcc50f6bee3b1a"><td class="memItemLeft"><a id="a1356cbaa987e47da8fbcc50f6bee3b1a" name="a1356cbaa987e47da8fbcc50f6bee3b1a"></a>
+typedef Eigen::Matrix&lt; double, D, D &gt;&#160;</td><td class="memItemRight"><b>MatrixD</b></td></tr>
+<tr class="inherit_header pub_types_a05155"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a05155')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a05155.html">gtsam::HessianFactor</a></td></tr>
+<tr class="memitem:aa789851c9863ba4440fba3f3a0a93fc9 inherit pub_types_a05155" id="r_aa789851c9863ba4440fba3f3a0a93fc9"><td class="memItemLeft">
+typedef <a class="el" href="a05123.html#ab31173c32b976a81d76af85e1d49e24a">GaussianFactor</a>&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
+<tr class="memdesc:aa789851c9863ba4440fba3f3a0a93fc9 inherit pub_types_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef to base class. <br /></td></tr>
+<tr class="memitem:a0300131de1073bdca240aa56a41b5e41 inherit pub_types_a05155" id="r_a0300131de1073bdca240aa56a41b5e41"><td class="memItemLeft">
+typedef <a class="el" href="a05155.html#acdcbc6dc5ead9bfdb6010f74bee3c8df">HessianFactor</a>&#160;</td><td class="memItemRight"><b>This</b></td></tr>
+<tr class="memdesc:a0300131de1073bdca240aa56a41b5e41 inherit pub_types_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef to this class. <br /></td></tr>
+<tr class="memitem:a7d17a4ddbcbb6bb32b99b83c67e448ef inherit pub_types_a05155" id="r_a7d17a4ddbcbb6bb32b99b83c67e448ef"><td class="memItemLeft">
+typedef std::shared_ptr&lt; <a class="el" href="a05155.html#a0300131de1073bdca240aa56a41b5e41">This</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+<tr class="memdesc:a7d17a4ddbcbb6bb32b99b83c67e448ef inherit pub_types_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="a05155.html#a7d17a4ddbcbb6bb32b99b83c67e448ef" title="A shared_ptr to this class.">shared_ptr</a> to this class. <br /></td></tr>
+<tr class="memitem:af327feedf9d9e897e81fd0fb7254f3cc inherit pub_types_a05155" id="r_af327feedf9d9e897e81fd0fb7254f3cc"><td class="memItemLeft">
+typedef SymmetricBlockMatrix::Block&#160;</td><td class="memItemRight"><b>Block</b></td></tr>
+<tr class="memdesc:af327feedf9d9e897e81fd0fb7254f3cc inherit pub_types_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">A block from the Hessian matrix. <br /></td></tr>
+<tr class="memitem:ad46fcd8ecbfad2f75caa390ac491fa88 inherit pub_types_a05155" id="r_ad46fcd8ecbfad2f75caa390ac491fa88"><td class="memItemLeft">
+typedef SymmetricBlockMatrix::constBlock&#160;</td><td class="memItemRight"><b>constBlock</b></td></tr>
+<tr class="memdesc:ad46fcd8ecbfad2f75caa390ac491fa88 inherit pub_types_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">A block from the Hessian matrix (const version). <br /></td></tr>
+<tr class="inherit_header pub_types_a05123"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a05123')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a05123.html">gtsam::GaussianFactor</a></td></tr>
+<tr class="memitem:ac49aaf7a5ac8bbf486762e9321a3d34f inherit pub_types_a05123" id="r_ac49aaf7a5ac8bbf486762e9321a3d34f"><td class="memItemLeft">
+typedef <a class="el" href="a05123.html#ab31173c32b976a81d76af85e1d49e24a">GaussianFactor</a>&#160;</td><td class="memItemRight"><b>This</b></td></tr>
+<tr class="memdesc:ac49aaf7a5ac8bbf486762e9321a3d34f inherit pub_types_a05123"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a05123.html#ac49aaf7a5ac8bbf486762e9321a3d34f" title="This class.">This</a> class. <br /></td></tr>
+<tr class="memitem:a07958208ac830cd10cbf5530b2c70f7c inherit pub_types_a05123" id="r_a07958208ac830cd10cbf5530b2c70f7c"><td class="memItemLeft">
+typedef std::shared_ptr&lt; <a class="el" href="a05123.html#ac49aaf7a5ac8bbf486762e9321a3d34f">This</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+<tr class="memdesc:a07958208ac830cd10cbf5530b2c70f7c inherit pub_types_a05123"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a05123.html#a07958208ac830cd10cbf5530b2c70f7c" title="shared_ptr to this class">shared_ptr</a> to this class <br /></td></tr>
+<tr class="memitem:a3fe9ce76eaef7dac2a434408e960bbd8 inherit pub_types_a05123" id="r_a3fe9ce76eaef7dac2a434408e960bbd8"><td class="memItemLeft">
+typedef <a class="el" href="a04899.html#a322a4d391be45b5909a65895fb7b023d">Factor</a>&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
+<tr class="memdesc:a3fe9ce76eaef7dac2a434408e960bbd8 inherit pub_types_a05123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Our base class. <br /></td></tr>
+<tr class="inherit_header pub_types_a04899"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04899')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04899.html">gtsam::Factor</a></td></tr>
+<tr class="memitem:acb069f38cc81bea20cecfad4070da59e inherit pub_types_a04899" id="r_acb069f38cc81bea20cecfad4070da59e"><td class="memItemLeft">
+typedef KeyVector::iterator&#160;</td><td class="memItemRight"><b>iterator</b></td></tr>
+<tr class="memdesc:acb069f38cc81bea20cecfad4070da59e inherit pub_types_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator over keys. <br /></td></tr>
+<tr class="memitem:a71af7ad9e9474ebbcf2fdffc7f31251b inherit pub_types_a04899" id="r_a71af7ad9e9474ebbcf2fdffc7f31251b"><td class="memItemLeft">
+typedef KeyVector::const_iterator&#160;</td><td class="memItemRight"><b>const_iterator</b></td></tr>
+<tr class="memdesc:a71af7ad9e9474ebbcf2fdffc7f31251b inherit pub_types_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Const iterator over keys. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_types_a05087"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a05087')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a05087.html">gtsam::NoiseModelFactorN&lt; Rot3 &gt;</a></td></tr>
-<tr class="memitem:a1604e5bad477f8d6c5a7eb11a1e41d4b inherit pub_types_a05087" id="r_a1604e5bad477f8d6c5a7eb11a1e41d4b"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="a05087.html#a1604e5bad477f8d6c5a7eb11a1e41d4b">ValueType</a></td></tr>
-<tr class="memdesc:a1604e5bad477f8d6c5a7eb11a1e41d4b inherit pub_types_a05087"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the I'th template param can be obtained as <a class="el" href="a05087.html#a1604e5bad477f8d6c5a7eb11a1e41d4b">ValueType</a><em>. </em> <br /></td></tr>
-<tr class="memitem:ad8b258a642c7005b216f9c1faa3eb982 inherit pub_types_a05087" id="r_ad8b258a642c7005b216f9c1faa3eb982"><td class="memItemLeft"><a id="ad8b258a642c7005b216f9c1faa3eb982" name="ad8b258a642c7005b216f9c1faa3eb982"></a>enum &#160;</td><td class="memItemRight"></td></tr>
-<tr class="memdesc:ad8b258a642c7005b216f9c1faa3eb982"><td class="mdescLeft">&#160;</td><td class="mdescRight">N is the number of variables (N-way factor). <br /></td></tr>
-<tr class="inherit_header pub_types_a05055"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a05055')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a05055.html">gtsam::NoiseModelFactor</a></td></tr>
-<tr class="memitem:a762f6984cfd67b1e83cc530d71093dcf inherit pub_types_a05055" id="r_a762f6984cfd67b1e83cc530d71093dcf"><td class="memItemLeft">
-typedef boost::shared_ptr&lt; This &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
-<tr class="memdesc:a762f6984cfd67b1e83cc530d71093dcf inherit pub_types_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Noise model. <br /></td></tr>
-<tr class="inherit_header pub_types_a05047"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a05047')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a05047.html">gtsam::NonlinearFactor</a></td></tr>
-<tr class="memitem:afab063cca7f2ac8b9a80795516d54396 inherit pub_types_a05047" id="r_afab063cca7f2ac8b9a80795516d54396"><td class="memItemLeft">
-typedef boost::shared_ptr&lt; This &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
-<tr class="inherit_header pub_types_a04139"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04139')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04139.html">gtsam::Factor</a></td></tr>
-<tr class="memitem:acb069f38cc81bea20cecfad4070da59e inherit pub_types_a04139" id="r_acb069f38cc81bea20cecfad4070da59e"><td class="memItemLeft">
-typedef KeyVector::iterator&#160;</td><td class="memItemRight"><b>iterator</b></td></tr>
-<tr class="memdesc:acb069f38cc81bea20cecfad4070da59e inherit pub_types_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator over keys. <br /></td></tr>
-<tr class="memitem:a71af7ad9e9474ebbcf2fdffc7f31251b inherit pub_types_a04139" id="r_a71af7ad9e9474ebbcf2fdffc7f31251b"><td class="memItemLeft">
-typedef KeyVector::const_iterator&#160;</td><td class="memItemRight"><b>const_iterator</b></td></tr>
-<tr class="memdesc:a71af7ad9e9474ebbcf2fdffc7f31251b inherit pub_types_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Const iterator over keys. <br /></td></tr>
-<tr class="inherit_header pro_types_a05087"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_types_a05087')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Types inherited from <a class="el" href="a05087.html">gtsam::NoiseModelFactorN&lt; Rot3 &gt;</a></td></tr>
-<tr class="memitem:a3efce404207d7b4034d35a69eb2e8d96 inherit pro_types_a05087" id="r_a3efce404207d7b4034d35a69eb2e8d96"><td class="memItemLeft">
-using&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
-<tr class="memitem:a0c54337badee6cf6b975f2a42a544a3a inherit pro_types_a05087" id="r_a0c54337badee6cf6b975f2a42a544a3a"><td class="memItemLeft">
-using&#160;</td><td class="memItemRight"><b>This</b></td></tr>
-<tr class="memitem:af4ac6e38879217116aec782ac512d1c1 inherit pro_types_a05087" id="r_af4ac6e38879217116aec782ac512d1c1"><td class="memItemLeft">
-using&#160;</td><td class="memItemRight"><b>OptionalMatrix</b></td></tr>
-<tr class="memitem:af1e4f5e0147da861f000a61e16a3e4d0 inherit pro_types_a05087" id="r_af1e4f5e0147da861f000a61e16a3e4d0"><td class="memItemLeft">
-using&#160;</td><td class="memItemRight"><b>KeyType</b></td></tr>
-<tr class="memitem:a2fb197fec0c0974aa5c0c7ed70a23c25 inherit pro_types_a05087" id="r_a2fb197fec0c0974aa5c0c7ed70a23c25"><td class="memItemLeft">
-using&#160;</td><td class="memItemRight"><b>IsConvertible</b></td></tr>
-<tr class="memitem:af6aeb91783d71ee02160160e8af103df inherit pro_types_a05087" id="r_af6aeb91783d71ee02160160e8af103df"><td class="memItemLeft">
-using&#160;</td><td class="memItemRight"><b>IndexIsValid</b></td></tr>
-<tr class="memitem:aa1713907cfadce04e11f4f75c28006b3 inherit pro_types_a05087" id="r_aa1713907cfadce04e11f4f75c28006b3"><td class="memItemLeft">
-using&#160;</td><td class="memItemRight"><b>ContainerElementType</b></td></tr>
-<tr class="memitem:a026057fc5252ab5b698de7d7e3af9ce9 inherit pro_types_a05087" id="r_a026057fc5252ab5b698de7d7e3af9ce9"><td class="memItemLeft">
-using&#160;</td><td class="memItemRight"><b>IsContainerOfKeys</b></td></tr>
-<tr class="inherit_header pro_types_a05055"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_types_a05055')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Types inherited from <a class="el" href="a05055.html">gtsam::NoiseModelFactor</a></td></tr>
-<tr class="memitem:a9ac7f77c3ae2d5bfd14d25f4bdc3deaa inherit pro_types_a05055" id="r_a9ac7f77c3ae2d5bfd14d25f4bdc3deaa"><td class="memItemLeft">
-typedef <a class="el" href="a05047.html#a7c719ae67f222f66569ccb3b526cb9cb">NonlinearFactor</a>&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
-<tr class="memitem:a44e242fb0945cf6c60d30c36c3f229af inherit pro_types_a05055" id="r_a44e242fb0945cf6c60d30c36c3f229af"><td class="memItemLeft">
-typedef <a class="el" href="a06247.html">NoiseModelFactor</a>&#160;</td><td class="memItemRight"><b>This</b></td></tr>
-<tr class="inherit_header pro_types_a05047"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_types_a05047')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Types inherited from <a class="el" href="a05047.html">gtsam::NonlinearFactor</a></td></tr>
-<tr class="memitem:aa76bae0d7aeb6591a824daa7c5dc2ac6 inherit pro_types_a05047" id="r_aa76bae0d7aeb6591a824daa7c5dc2ac6"><td class="memItemLeft">
-typedef <a class="el" href="a04139.html#a322a4d391be45b5909a65895fb7b023d">Factor</a>&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
-<tr class="memitem:a15c628be5e7433ee4ece0c5fd12d049e inherit pro_types_a05047" id="r_a15c628be5e7433ee4ece0c5fd12d049e"><td class="memItemLeft">
-typedef <a class="el" href="a05047.html#a7c719ae67f222f66569ccb3b526cb9cb">NonlinearFactor</a>&#160;</td><td class="memItemRight"><b>This</b></td></tr>
-<tr class="inherit_header pro_methods_a05055"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_a05055')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="a05055.html">gtsam::NoiseModelFactor</a></td></tr>
-<tr class="memitem:a4605224417029e9dc58c5267efa9a46d inherit pro_methods_a05055" id="r_a4605224417029e9dc58c5267efa9a46d"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>NoiseModelFactor</b> (const <a class="el" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a> &amp;<a class="el" href="a05055.html#ae995e64bbd0660091eb6b40cba60aef7">noiseModel</a>)</td></tr>
-<tr class="memdesc:a4605224417029e9dc58c5267efa9a46d inherit pro_methods_a05055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor - only for subclasses, as this does not set keys. <br /></td></tr>
+<tr class="memitem:ac0c121b5927fc537e55f6e7bfd2ec220" id="r_ac0c121b5927fc537e55f6e7bfd2ec220"><td class="memTemplParams" colspan="2"><a id="ac0c121b5927fc537e55f6e7bfd2ec220" name="ac0c121b5927fc537e55f6e7bfd2ec220"></a>
+template&lt;typename CONTAINER&gt; </td></tr>
+<tr class="memitem:ac0c121b5927fc537e55f6e7bfd2ec220 template"><td class="memItemLeft">static <a class="el" href="a02242.html#a21006f326f57cdf7d3f35fec40f43e40">DenseIndex</a>&#160;</td><td class="memItemRight"><b>Slot</b> (const CONTAINER &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>, <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key)</td></tr>
 <tr class="memitem:a322a4d391be45b5909a65895fb7b023d" id="r_a322a4d391be45b5909a65895fb7b023d"><td class="memItemLeft"><a id="a322a4d391be45b5909a65895fb7b023d" name="a322a4d391be45b5909a65895fb7b023d"></a>
 &#160;</td><td class="memItemRight"><b>Factor</b> ()</td></tr>
 <tr class="memdesc:a322a4d391be45b5909a65895fb7b023d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for I/O. <br /></td></tr>
 <tr class="memitem:aa3d2ef6b21961e708a4cbe10b55be59b" id="r_aa3d2ef6b21961e708a4cbe10b55be59b"><td class="memTemplParams" colspan="2">template&lt;typename CONTAINER&gt; </td></tr>
-<tr class="memitem:aa3d2ef6b21961e708a4cbe10b55be59b template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04139.html#aa3d2ef6b21961e708a4cbe10b55be59b">Factor</a> (const CONTAINER &amp;<a class="el" href="a04139.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>)</td></tr>
+<tr class="memitem:aa3d2ef6b21961e708a4cbe10b55be59b template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04899.html#aa3d2ef6b21961e708a4cbe10b55be59b">Factor</a> (const CONTAINER &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>)</td></tr>
 <tr class="memdesc:aa3d2ef6b21961e708a4cbe10b55be59b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct factor from container of keys.  <br /></td></tr>
 <tr class="memitem:a70ff55886664229a25e29cf2a7bb1bb7" id="r_a70ff55886664229a25e29cf2a7bb1bb7"><td class="memTemplParams" colspan="2">template&lt;typename ITERATOR&gt; </td></tr>
-<tr class="memitem:a70ff55886664229a25e29cf2a7bb1bb7 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04139.html#a70ff55886664229a25e29cf2a7bb1bb7">Factor</a> (ITERATOR first, ITERATOR last)</td></tr>
+<tr class="memitem:a70ff55886664229a25e29cf2a7bb1bb7 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04899.html#a70ff55886664229a25e29cf2a7bb1bb7">Factor</a> (ITERATOR first, ITERATOR last)</td></tr>
 <tr class="memdesc:a70ff55886664229a25e29cf2a7bb1bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct factor from iterator keys.  <br /></td></tr>
 <tr class="memitem:a5087976b9e398cd21305d33972feedad" id="r_a5087976b9e398cd21305d33972feedad"><td class="memTemplParams" colspan="2">template&lt;typename CONTAINER&gt; </td></tr>
-<tr class="memitem:a5087976b9e398cd21305d33972feedad template"><td class="memItemLeft">static <a class="el" href="a04139.html#a322a4d391be45b5909a65895fb7b023d">Factor</a>&#160;</td><td class="memItemRight"><a class="el" href="a04139.html#a5087976b9e398cd21305d33972feedad">FromKeys</a> (const CONTAINER &amp;<a class="el" href="a04139.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>)</td></tr>
+<tr class="memitem:a5087976b9e398cd21305d33972feedad template"><td class="memItemLeft">static <a class="el" href="a04899.html#a322a4d391be45b5909a65895fb7b023d">Factor</a>&#160;</td><td class="memItemRight"><a class="el" href="a04899.html#a5087976b9e398cd21305d33972feedad">FromKeys</a> (const CONTAINER &amp;<a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb">keys</a>)</td></tr>
 <tr class="memdesc:a5087976b9e398cd21305d33972feedad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct factor from container of keys.  <br /></td></tr>
 <tr class="memitem:a4157181261dc47002004d53c8b56f7bf" id="r_a4157181261dc47002004d53c8b56f7bf"><td class="memTemplParams" colspan="2">template&lt;typename ITERATOR&gt; </td></tr>
-<tr class="memitem:a4157181261dc47002004d53c8b56f7bf template"><td class="memItemLeft">static <a class="el" href="a04139.html#a322a4d391be45b5909a65895fb7b023d">Factor</a>&#160;</td><td class="memItemRight"><a class="el" href="a04139.html#a4157181261dc47002004d53c8b56f7bf">FromIterators</a> (ITERATOR first, ITERATOR last)</td></tr>
+<tr class="memitem:a4157181261dc47002004d53c8b56f7bf template"><td class="memItemLeft">static <a class="el" href="a04899.html#a322a4d391be45b5909a65895fb7b023d">Factor</a>&#160;</td><td class="memItemRight"><a class="el" href="a04899.html#a4157181261dc47002004d53c8b56f7bf">FromIterators</a> (ITERATOR first, ITERATOR last)</td></tr>
 <tr class="memdesc:a4157181261dc47002004d53c8b56f7bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct factor from iterator keys.  <br /></td></tr>
-<tr class="inherit_header pro_attribs_a05055"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a05055')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a05055.html">gtsam::NoiseModelFactor</a></td></tr>
-<tr class="memitem:a2263eabbefe0eede8c9d10486f61bb4d inherit pro_attribs_a05055" id="r_a2263eabbefe0eede8c9d10486f61bb4d"><td class="memItemLeft">
-<a class="el" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a>&#160;</td><td class="memItemRight"><b>noiseModel_</b></td></tr>
-<tr class="inherit_header pro_attribs_a04139"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a04139')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a04139.html">gtsam::Factor</a></td></tr>
-<tr class="memitem:a10e886cc8b8a374e2fe864707e0b6278 inherit pro_attribs_a04139" id="r_a10e886cc8b8a374e2fe864707e0b6278"><td class="memItemLeft">
-<a class="el" href="a01968.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&#160;</td><td class="memItemRight"><b>keys_</b></td></tr>
-<tr class="memdesc:a10e886cc8b8a374e2fe864707e0b6278 inherit pro_attribs_a04139"><td class="mdescLeft">&#160;</td><td class="mdescRight">The keys involved in this factor. <br /></td></tr>
+<tr class="inherit_header pro_attribs_a05155"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a05155')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a05155.html">gtsam::HessianFactor</a></td></tr>
+<tr class="memitem:a9de862db7722018e839c909d6ff9236b inherit pro_attribs_a05155" id="r_a9de862db7722018e839c909d6ff9236b"><td class="memItemLeft">
+<a class="el" href="a03487.html">SymmetricBlockMatrix</a>&#160;</td><td class="memItemRight"><b>info_</b></td></tr>
+<tr class="memdesc:a9de862db7722018e839c909d6ff9236b inherit pro_attribs_a05155"><td class="mdescLeft">&#160;</td><td class="mdescRight">The full augmented information matrix, s.t. the quadratic error is 0.5*[x -1]'<em>H</em>[x -1]. <br /></td></tr>
+<tr class="inherit_header pro_attribs_a04899"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a04899')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a04899.html">gtsam::Factor</a></td></tr>
+<tr class="memitem:a10e886cc8b8a374e2fe864707e0b6278 inherit pro_attribs_a04899" id="r_a10e886cc8b8a374e2fe864707e0b6278"><td class="memItemLeft">
+<a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&#160;</td><td class="memItemRight"><b>keys_</b></td></tr>
+<tr class="memdesc:a10e886cc8b8a374e2fe864707e0b6278 inherit pro_attribs_a04899"><td class="mdescLeft">&#160;</td><td class="mdescRight">The keys involved in this factor. <br /></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="ac8ea2e754b87da8f290ff06caaf379bd" name="ac8ea2e754b87da8f290ff06caaf379bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8ea2e754b87da8f290ff06caaf379bd">&#9670;&#160;</a></span>clone()</h2>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aceacc209ee0628bae0e7da7d6f03b15f" name="aceacc209ee0628bae0e7da7d6f03b15f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceacc209ee0628bae0e7da7d6f03b15f">&#9670;&#160;</a></span>RegularHessianFactor() <span class="overload">[1/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t D&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">gtsam::NonlinearFactor::shared_ptr gtsam::RotateDirectionsFactor::clone </td>
+          <td class="memname"><a class="el" href="a05475.html">gtsam::RegularHessianFactor</a>&lt; D &gt;::RegularHessianFactor </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>js</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; Matrix &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>Gs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; Vector &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>gs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>f</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct an n-way factor from supplied components. </p>
+<p>Represents the energy function \( E(x) = 0.5 \sum_{i,j} x_i^T G_{ij} x_j - \sum_i g_i^T x_i + 0.5 f \). Note that the keys in <span class="tt">js</span> must correspond order-wise to the blocks in <span class="tt">Gs</span> and <span class="tt">gs</span>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">js</td><td>Vector of keys involved in the factor. </td></tr>
+    <tr><td class="paramname">Gs</td><td>Vector of upper-triangular Hessian blocks (row-major order, e.g., G11, G12, G13, G22, G23, G33 for a ternary factor). </td></tr>
+    <tr><td class="paramname">gs</td><td>Vector of gradient vector blocks (-J^T b). </td></tr>
+    <tr><td class="paramname">f</td><td>Constant term \( 0.5*f = 0.5*\|b\|^2 \). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae70fc62e57d66f8b30c082a74356b754" name="ae70fc62e57d66f8b30c082a74356b754"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae70fc62e57d66f8b30c082a74356b754">&#9670;&#160;</a></span>RegularHessianFactor() <span class="overload">[2/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t D&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a05475.html">gtsam::RegularHessianFactor</a>&lt; D &gt;::RegularHessianFactor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a></td>          <td class="paramname"><span class="paramname"><em>j1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a></td>          <td class="paramname"><span class="paramname"><em>j2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MatrixD &amp;</td>          <td class="paramname"><span class="paramname"><em>G11</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MatrixD &amp;</td>          <td class="paramname"><span class="paramname"><em>G12</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const VectorD &amp;</td>          <td class="paramname"><span class="paramname"><em>g1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MatrixD &amp;</td>          <td class="paramname"><span class="paramname"><em>G22</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const VectorD &amp;</td>          <td class="paramname"><span class="paramname"><em>g2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>f</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a binary factor. </p>
+<p>Gxx are the upper-triangle blocks of the quadratic term (the Hessian matrix), gx the pieces of the linear vector term, and f the constant term. </p>
+
+</div>
+</div>
+<a id="a6bf59fdc2fcc8ef982a624866997e40d" name="a6bf59fdc2fcc8ef982a624866997e40d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bf59fdc2fcc8ef982a624866997e40d">&#9670;&#160;</a></span>RegularHessianFactor() <span class="overload">[3/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t D&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a05475.html">gtsam::RegularHessianFactor</a>&lt; D &gt;::RegularHessianFactor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a></td>          <td class="paramname"><span class="paramname"><em>j1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a></td>          <td class="paramname"><span class="paramname"><em>j2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a></td>          <td class="paramname"><span class="paramname"><em>j3</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MatrixD &amp;</td>          <td class="paramname"><span class="paramname"><em>G11</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MatrixD &amp;</td>          <td class="paramname"><span class="paramname"><em>G12</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MatrixD &amp;</td>          <td class="paramname"><span class="paramname"><em>G13</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const VectorD &amp;</td>          <td class="paramname"><span class="paramname"><em>g1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MatrixD &amp;</td>          <td class="paramname"><span class="paramname"><em>G22</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MatrixD &amp;</td>          <td class="paramname"><span class="paramname"><em>G23</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const VectorD &amp;</td>          <td class="paramname"><span class="paramname"><em>g2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const MatrixD &amp;</td>          <td class="paramname"><span class="paramname"><em>G33</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const VectorD &amp;</td>          <td class="paramname"><span class="paramname"><em>g3</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>f</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a ternary factor. </p>
+<p>Gxx are the upper-triangle blocks of the quadratic term (the Hessian matrix), gx the pieces of the linear vector term, and f the constant term. </p>
+
+</div>
+</div>
+<a id="ab50690c5b18b531c590bf02777f48f97" name="ab50690c5b18b531c590bf02777f48f97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab50690c5b18b531c590bf02777f48f97">&#9670;&#160;</a></span>RegularHessianFactor() <span class="overload">[4/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t D&gt; </div>
+<div class="memtemplate">
+template&lt;typename KEYS&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a05475.html">gtsam::RegularHessianFactor</a>&lt; D &gt;::RegularHessianFactor </td>
+          <td>(</td>
+          <td class="paramtype">const KEYS &amp;</td>          <td class="paramname"><span class="paramname"><em>keys</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a03487.html">SymmetricBlockMatrix</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>augmentedInformation</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor with an arbitrary number of keys and the augmented information matrix specified as a block matrix. </p>
+<p>The augmented information matrix contains the Hessian blocks G and the gradient blocks g, arranged as \( [ G, -g ; -g^T, f ] \). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="a04899.html#a03d71985cf81a0175a71d1ecf5279edb" title="Access the factor&#39;s involved variable keys.">keys</a></td><td>Container of keys specifying the variables involved and their order. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a05155.html#a08697c1955144897f7ece0e610ea6ccb" title="Return the augmented information matrix represented by this GaussianFactor.">augmentedInformation</a></td><td>The augmented information matrix [H -g; -g' f], laid out as a <a class="el" href="a03487.html" title="This class stores a dense matrix and allows it to be accessed as a collection of blocks.">SymmetricBlockMatrix</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aef13b780689c4a3e45dc9ae4e1154a25" name="aef13b780689c4a3e45dc9ae4e1154a25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef13b780689c4a3e45dc9ae4e1154a25">&#9670;&#160;</a></span>RegularHessianFactor() <span class="overload">[5/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t D&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a05475.html">gtsam::RegularHessianFactor</a>&lt; D &gt;::RegularHessianFactor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a05483.html">RegularJacobianFactor</a>&lt; D &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>jf</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a <a class="el" href="a05475.html" title="A HessianFactor where all variables have the same dimension D.">RegularHessianFactor</a> from a <a class="el" href="a05483.html" title="JacobianFactor with constant sized blocks Provides raw memory access versions of linear operator.">RegularJacobianFactor</a>. </p>
+<p>Computes \( G = J^T J \), \( g = J^T b \), and \( f = b^T b \). Requires that the <a class="el" href="a05179.html" title="A Gaussian factor in the squared-error form.">JacobianFactor</a> also has regular block sizes matching <span class="tt">D</span>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jf</td><td>The <a class="el" href="a05483.html" title="JacobianFactor with constant sized blocks Provides raw memory access versions of linear operator.">RegularJacobianFactor</a> to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac6ff8787eee6162ba77b6abc092a981b" name="ac6ff8787eee6162ba77b6abc092a981b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6ff8787eee6162ba77b6abc092a981b">&#9670;&#160;</a></span>RegularHessianFactor() <span class="overload">[6/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t D&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a05475.html">gtsam::RegularHessianFactor</a>&lt; D &gt;::RegularHessianFactor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a05135.html">GaussianFactorGraph</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>factors</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a05495.html">Scatter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>scatter</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct from a <a class="el" href="a05135.html" title="A Linear Factor Graph is a factor graph where all factors are Gaussian, i.e.">GaussianFactorGraph</a> combined using a <a class="el" href="a05495.html" title="Scatter is an intermediate data structure used when building a HessianFactor incrementally,...">Scatter</a>. </p>
+<p><a class="el" href="a05155.html#a0300131de1073bdca240aa56a41b5e41" title="Typedef to this class.">This</a> is typically used internally by optimizers. It sums the Hessian contributions from multiple factors in the graph. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">factors</td><td>The graph containing factors to combine. </td></tr>
+    <tr><td class="paramname">scatter</td><td>A <a class="el" href="a05495.html" title="Scatter is an intermediate data structure used when building a HessianFactor incrementally,...">Scatter</a> structure indicating the layout of variables. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a147284fc57080b9133b344e7b1846764" name="a147284fc57080b9133b344e7b1846764"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a147284fc57080b9133b344e7b1846764">&#9670;&#160;</a></span>RegularHessianFactor() <span class="overload">[7/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t D&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a05475.html">gtsam::RegularHessianFactor</a>&lt; D &gt;::RegularHessianFactor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a05135.html">GaussianFactorGraph</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>factors</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct from a <a class="el" href="a05135.html" title="A Linear Factor Graph is a factor graph where all factors are Gaussian, i.e.">GaussianFactorGraph</a>. </p>
+<p><a class="el" href="a05155.html#a0300131de1073bdca240aa56a41b5e41" title="Typedef to this class.">This</a> is typically used internally by optimizers. It sums the Hessian contributions from multiple factors in the graph. Assumes keys are ordered 0..n-1. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">factors</td><td>The graph containing factors to combine. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ac4395e2fffa40e7f5208819c99b4e6c2" name="ac4395e2fffa40e7f5208819c99b4e6c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4395e2fffa40e7f5208819c99b4e6c2">&#9670;&#160;</a></span>gradientAtZero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t D&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a05475.html">gtsam::RegularHessianFactor</a>&lt; D &gt;::gradientAtZero </td>
+          <td>(</td>
+          <td class="paramtype">double *</td>          <td class="paramname"><span class="paramname"><em>d</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -353,30 +757,35 @@ typedef <a class="el" href="a05047.html#a7c719ae67f222f66569ccb3b526cb9cb">Nonli
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>a deep copy of this factor </dd></dl>
 
-<p>Reimplemented from <a class="el" href="a05047.html#a9b1f311731e3344c33c376aa0f5f729c">gtsam::NonlinearFactor</a>.</p>
+<p>Add the gradient vector \( -g \) (gradient at zero) to a raw memory block <span class="tt">d</span>. </p>
+<p>Adds the gradient vector \( -g \) (where the factor represents \( 0.5 x^T G x - g^T x + 0.5 f \)) to the pre-allocated raw memory block <span class="tt">d</span>. Assumes <span class="tt">d</span> has the standard contiguous layout <span class="tt">d + <a class="el" href="a04899.html#a10e886cc8b8a374e2fe864707e0b6278" title="The keys involved in this factor.">keys_</a>[i] * D</span>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">d</td><td>Raw pointer to the memory block where the gradient should be added. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="a05155.html#a8c62669b17c6255bd79ca1bf80e5f800">gtsam::HessianFactor</a>.</p>
 
 </div>
 </div>
-<a id="a2d89ad40d9d152a28288cb96a2281fc4" name="a2d89ad40d9d152a28288cb96a2281fc4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d89ad40d9d152a28288cb96a2281fc4">&#9670;&#160;</a></span>print()</h2>
+<a id="a99b34b7df4156edecb6592edbc685991" name="a99b34b7df4156edecb6592edbc685991"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99b34b7df4156edecb6592edbc685991">&#9670;&#160;</a></span>hessianDiagonal()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;size_t D&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void gtsam::RotateDirectionsFactor::print </td>
+          <td class="memname">void <a class="el" href="a05475.html">gtsam::RegularHessianFactor</a>&lt; D &gt;::hessianDiagonal </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a01968.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>keyFormatter</em></span><span class="paramdefsep"> = </span><span class="paramdefval">DefaultKeyFormatter</span>&#160;) const</td>
+          <td class="paramtype">double *</td>          <td class="paramname"><span class="paramname"><em>d</em></span></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -386,14 +795,167 @@ typedef <a class="el" href="a05047.html#a7c719ae67f222f66569ccb3b526cb9cb">Nonli
 </table>
 </div><div class="memdoc">
 
-<p>print </p>
+<p>Return the diagonal of the Hessian for this factor (Raw memory version). </p>
+<p>Adds the diagonal elements of the Hessian matrix \( H = G \) associated with this factor to the pre-allocated raw memory block <span class="tt">d</span>. Assumes <span class="tt">d</span> has the standard contiguous layout <span class="tt">d + <a class="el" href="a04899.html#a10e886cc8b8a374e2fe864707e0b6278" title="The keys involved in this factor.">keys_</a>[i] * D</span>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">d</td><td>Raw pointer to the memory block where Hessian diagonals should be added. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Reimplemented from <a class="el" href="a05055.html#a135c932f15f3d6701a2f9fabf4105490">gtsam::NoiseModelFactor</a>.</p>
+<p>Reimplemented from <a class="el" href="a05155.html#afe3a19169e67ef66ebaf001cd9490e4f">gtsam::HessianFactor</a>.</p>
+
+</div>
+</div>
+<a id="a86c8ed56f8dac11c6998d53e7fee7017" name="a86c8ed56f8dac11c6998d53e7fee7017"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86c8ed56f8dac11c6998d53e7fee7017">&#9670;&#160;</a></span>multiplyHessianAdd() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t D&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a05475.html">gtsam::RegularHessianFactor</a>&lt; D &gt;::multiplyHessianAdd </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>alpha</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *</td>          <td class="paramname"><span class="paramname"><em>yvalues</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Multiply the Hessian part of the factor times a raw vector <span class="tt">x</span> and add the result to <span class="tt">y</span>. </p>
+<p>(Raw memory version)</p>
+<p>Computes <span class="tt">y += alpha * H * x</span>, optimized for regular block structure. Assumes <span class="tt">x</span> and <span class="tt">yvalues</span> are pre-allocated, contiguous memory blocks where variable <span class="tt">j</span> corresponds to memory chunk <span class="tt">x + <a class="el" href="a04899.html#a10e886cc8b8a374e2fe864707e0b6278" title="The keys involved in this factor.">keys_</a>[j] * D</span> and <span class="tt">yvalues + <a class="el" href="a04899.html#a10e886cc8b8a374e2fe864707e0b6278" title="The keys involved in this factor.">keys_</a>[j] * D</span>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">alpha</td><td>Scalar multiplier. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">x</td><td>Raw pointer to the input vector data. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">yvalues</td><td>Raw pointer to the output vector data (accumulates). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a756f1686bf77a2cfc2ce897dfd29db0b" name="a756f1686bf77a2cfc2ce897dfd29db0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a756f1686bf77a2cfc2ce897dfd29db0b">&#9670;&#160;</a></span>multiplyHessianAdd() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t D&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a05475.html">gtsam::RegularHessianFactor</a>&lt; D &gt;::multiplyHessianAdd </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>alpha</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *</td>          <td class="paramname"><span class="paramname"><em>yvalues</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; size_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>offsets</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Multiply the Hessian part of the factor times a raw vector <span class="tt">x</span> and add the result to <span class="tt">y</span>. </p>
+<p>Computes <span class="tt">y += alpha * H * x</span>, optimized for regular block structure, but handles potentially non-contiguous or scattered memory layouts for <span class="tt">x</span> and <span class="tt">yvalues</span> as defined by the <span class="tt">offsets</span> vector. <span class="tt">offsets[k]</span> should give the starting index of variable <span class="tt">k</span> in the raw memory arrays. <span class="tt">offsets[k+1] - offsets[k]</span> should equal <span class="tt">D</span>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">alpha</td><td>Scalar multiplier. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">x</td><td>Raw pointer to the input vector data. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">yvalues</td><td>Raw pointer to the output vector data (accumulates). </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">offsets</td><td>Vector mapping variable keys to their starting index in <span class="tt">x</span> and <span class="tt">yvalues</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a48b7f1f14c35e2987fc4de581861b718" name="a48b7f1f14c35e2987fc4de581861b718"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48b7f1f14c35e2987fc4de581861b718">&#9670;&#160;</a></span>multiplyHessianAdd() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t D&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="a05475.html">gtsam::RegularHessianFactor</a>&lt; D &gt;::multiplyHessianAdd </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>alpha</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a07591.html">VectorValues</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a07591.html">VectorValues</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Multiply the Hessian part of the factor times a <a class="el" href="a05531.html" title="VectorValues represents a collection of vector-valued variables associated each with a unique integer...">VectorValues</a> <span class="tt">x</span> and add the result to <span class="tt">y</span>. </p>
+<p>Computes <span class="tt">y += alpha * H * x</span>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">alpha</td><td>Scalar multiplier. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">x</td><td><a class="el" href="a05531.html" title="VectorValues represents a collection of vector-valued variables associated each with a unique integer...">VectorValues</a> containing the vector to multiply with. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">y</td><td><a class="el" href="a05531.html" title="VectorValues represents a collection of vector-valued variables associated each with a unique integer...">VectorValues</a> to store the result (accumulates). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="a05155.html#aab47423e43d6cadef55f150cb15c7fe2">gtsam::HessianFactor</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/slam/<a class="el" href="a01265_source.html">RotateFactor.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/<a class="el" href="a01103_source.html">RegularHessianFactor.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -408,7 +970,7 @@ typedef <a class="el" href="a05047.html#a7c719ae67f222f66569ccb3b526cb9cb">Nonli
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a05475.html">RotateDirectionsFactor</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a05475.html">RegularHessianFactor</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

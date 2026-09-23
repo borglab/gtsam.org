@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/geometry/SO4.cpp File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/discrete/DiscreteMarginals.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,31 +96,28 @@ $(function(){initNavTree('a00278.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SO4.cpp File Reference</div></div>
+  <div class="headertitle"><div class="title">DiscreteMarginals.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>4*4 matrix representation of SO(4)  
+<p>A class for computing marginals in a DiscreteFactorGraph.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a8d21728e3da4cf1a96e1b6f87a97da47" id="r_a8d21728e3da4cf1a96e1b6f87a97da47"><td class="memItemLeft">GTSAM_EXPORT Matrix3&#160;</td><td class="memItemRight"><a class="el" href="a01968.html#a8d21728e3da4cf1a96e1b6f87a97da47">gtsam::topLeft</a> (const SO4 &amp;Q, <a class="el" href="a02995.html">OptionalJacobian</a>&lt; 9, 6 &gt; H=boost::none)</td></tr>
-<tr class="memdesc:a8d21728e3da4cf1a96e1b6f87a97da47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project to top-left 3*3 matrix.  <br /></td></tr>
-<tr class="memitem:a3e57e4771f13855a495ec2c6454c9121" id="r_a3e57e4771f13855a495ec2c6454c9121"><td class="memItemLeft"><a id="a3e57e4771f13855a495ec2c6454c9121" name="a3e57e4771f13855a495ec2c6454c9121"></a>
-GTSAM_EXPORT Matrix43&#160;</td><td class="memItemRight"><b>gtsam::stiefel</b> (const SO4 &amp;Q, <a class="el" href="a02995.html">OptionalJacobian</a>&lt; 12, 6 &gt; H=boost::none)</td></tr>
-<tr class="memdesc:a3e57e4771f13855a495ec2c6454c9121"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project to Stiefel manifold of 4*3 orthonormal 3-frames in R^4, i.e., pi(Q) -&gt; \( S \in St(3,4) \). <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>4*4 matrix representation of SO(4) </p>
-<dl class="section author"><dt>Author</dt><dd>Frank Dellaert </dd>
+<div class="textblock"><p>A class for computing marginals in a DiscreteFactorGraph. </p>
+<dl class="section author"><dt>Author</dt><dd>Abhijit Kundu </dd>
 <dd>
-Luca Carlone </dd></dl>
+Richard Roberts </dd>
+<dd>
+Varun Agrawal </dd>
+<dd>
+Frank Dellaert </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>June 4, 2012 </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -134,7 +131,7 @@ Luca Carlone </dd></dl>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>geometry</b></li><li class="navelem"><a href="a00278.html">SO4.cpp</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>discrete</b></li><li class="navelem"><a href="a00278.html">DiscreteMarginals.cpp</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

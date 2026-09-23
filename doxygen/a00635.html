@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/inference/Factor.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/geometry/StereoCamera.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,38 +96,32 @@ $(function(){initNavTree('a00635.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Factor.h File Reference</div></div>
+  <div class="headertitle"><div class="title">StereoCamera.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>The base class for all factors.  
+<p>A Stereo Camera based on two Simple Cameras.  
 <a href="#details">More...</a></p>
 
 <p><a href="a00635_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3AFactor" id="r_gtsam_3A_3AFactor"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04139.html">gtsam::Factor</a></td></tr>
+<tr class="memitem:gtsam_3A_3AStereoCheiralityException" id="r_gtsam_3A_3AStereoCheiralityException"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04583.html">gtsam::StereoCheiralityException</a></td></tr>
+<tr class="memitem:gtsam_3A_3AStereoCamera" id="r_gtsam_3A_3AStereoCamera"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a04587.html">gtsam::StereoCamera</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A stereo camera class, parameterize by left camera pose and stereo calibration.  <a href="a04587.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Atraits_3C_20StereoCamera_20_3E" id="r_gtsam_3A_3Atraits_3C_20StereoCamera_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04591.html">gtsam::traits&lt; StereoCamera &gt;</a></td></tr>
+<tr class="memitem:gtsam_3A_3Atraits_3C_20const_20StereoCamera_20_3E" id="r_gtsam_3A_3Atraits_3C_20const_20StereoCamera_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a04595.html">gtsam::traits&lt; const StereoCamera &gt;</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a99e63c90a8ac740d99716e73fe97e054" id="r_a99e63c90a8ac740d99716e73fe97e054"><td class="memItemLeft">typedef <a class="el" href="a01953.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; <a class="el" href="a01968.html#a19c53f2faabb0f4b4b78ce2f7168cc14">FactorIndex</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="a01968.html#a99e63c90a8ac740d99716e73fe97e054">gtsam::FactorIndices</a></td></tr>
-<tr class="memdesc:a99e63c90a8ac740d99716e73fe97e054"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define collection types:  <br /></td></tr>
-<tr class="memitem:a906613fce5832b78c1300f2403cce5c3" id="r_a906613fce5832b78c1300f2403cce5c3"><td class="memItemLeft"><a id="a906613fce5832b78c1300f2403cce5c3" name="a906613fce5832b78c1300f2403cce5c3"></a>
-typedef <a class="el" href="a02867.html">FastSet</a>&lt; <a class="el" href="a01968.html#a19c53f2faabb0f4b4b78ce2f7168cc14">FactorIndex</a> &gt;&#160;</td><td class="memItemRight"><b>gtsam::FactorIndexSet</b></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The base class for all factors. </p>
-<dl class="section author"><dt>Author</dt><dd>Kai Ni </dd>
-<dd>
-Frank Dellaert </dd>
-<dd>
-Richard Roberts </dd></dl>
+<div class="textblock"><p>A Stereo Camera based on two Simple Cameras. </p>
+<p>A Rectified Stereo Camera.</p>
+<dl class="section author"><dt>Author</dt><dd>Chris Beall </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -141,7 +135,7 @@ Richard Roberts </dd></dl>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>inference</b></li><li class="navelem"><a href="a00635.html">Factor.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>geometry</b></li><li class="navelem"><a href="a00635.html">StereoCamera.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

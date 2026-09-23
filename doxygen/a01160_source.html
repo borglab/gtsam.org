@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/ExpressionFactorGraph.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/PreintegratedRotation.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,7 +89,7 @@ $(function(){initNavTree('a01160_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">ExpressionFactorGraph.h</div></div>
+  <div class="headertitle"><div class="title">PreintegratedRotation.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="a01160.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
@@ -103,49 +103,222 @@ $(function(){initNavTree('a01160_source.html','',''); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;gtsam/nonlinear/ExpressionFactor.h&gt;</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="a01097.html">gtsam/nonlinear/NonlinearFactorGraph.h</a>&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
-<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="a04879.html">   29</a></span><span class="keyword">class </span><a class="code hl_class" href="a04879.html">ExpressionFactorGraph</a>: <span class="keyword">public</span> <a class="code hl_function" href="a05091.html#a08a2bceb4013a4ffe20c27f76aae7a96">NonlinearFactorGraph</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;<a class="code" href="a00071.html">gtsam/base/Matrix.h</a>&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;<a class="code" href="a00080.html">gtsam/base/MatrixConstants.h</a>&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;gtsam/base/std_optional_serialization.h&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;<a class="code" href="a00521.html">gtsam/geometry/Pose3.h</a>&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &quot;gtsam/dllexport.h&quot;</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="a04879.html#ac417241d59dbed10d320032a0c502929">   43</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a04879.html#ac417241d59dbed10d320032a0c502929">addExpressionFactor</a>(<span class="keyword">const</span> <a class="code hl_class" href="a04843.html">Expression&lt;T&gt;</a>&amp; h, <span class="keyword">const</span> T&amp; z,</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">SharedNoiseModel</a>&amp; R) {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">using </span>F = <a class="code hl_class" href="a04831.html">ExpressionFactor&lt;T&gt;</a>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_function" href="a04071.html#a1bd7154e74538b5934fc616bb5ef7281">push_back</a>(boost::allocate_shared&lt;F&gt;(Eigen::aligned_allocator&lt;F&gt;(), R, z, h));</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">namespace </span>internal {</div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="};">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="a05967.html">   40</a></span><span class="keyword">struct </span>GTSAM_EXPORT <a class="code hl_struct" href="a05967.html">IncrementalRotation</a> {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keyword">const</span> Vector3&amp; measuredOmega;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> deltaT;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keyword">const</span> std::optional&lt;Pose3&gt;&amp; body_P_sensor;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_class" href="a04451.html">Rot3</a> <a class="code hl_function" href="a05967.html#a5c7c1bd92064378a6bf43edf50ce7ea0">operator()</a>(<span class="keyword">const</span> Vector3&amp; bias,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                  <a class="code hl_class" href="a03363.html">OptionalJacobian&lt;3, 3&gt;</a> H_bias = {}) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
 </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}  <span class="comment">// namespace internal</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>GTSAM_EXPORT <a class="code hl_class" href="a04451.html">Rot3</a> <a class="code hl_function" href="a02242.html#a7d29b09677e37b39ac9ac90ea756c6c3">integrateSequentialRotations</a>(</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keyword">const</span> Vector&amp; times, <a class="code hl_typedef" href="a02242.html#ac1b1bc700e21fbe3ea82eabf09660d6a">ConstMatrixView</a> measuredOmegas,</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keyword">const</span> Vector3&amp; biasHat = Vector3::Zero(),</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">const</span> <a class="code hl_class" href="a04451.html">Rot3</a>&amp; body_R_sensor = <a class="code hl_class" href="a04451.html">Rot3</a>());</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>GTSAM_EXPORT <a class="code hl_class" href="a04451.html">Rot3</a> <a class="code hl_function" href="a02242.html#aea02f009cecfbfcb1f461de813c57194">integrateSingleSpeedConing</a>(</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">const</span> Vector&amp; times, <a class="code hl_typedef" href="a02242.html#ac1b1bc700e21fbe3ea82eabf09660d6a">ConstMatrixView</a> measuredOmegas,</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keyword">const</span> Vector3&amp; biasHat = Vector3::Zero(),</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keyword">const</span> <a class="code hl_class" href="a04451.html">Rot3</a>&amp; body_R_sensor = <a class="code hl_class" href="a04451.html">Rot3</a>());</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
+<div class="foldopen" id="foldopen00101" data-start="{" data-end="};">
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="a05971.html">  101</a></span><span class="keyword">struct </span>GTSAM_EXPORT PreintegratedRotationParams {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="a05971.html#a59e97f78c2725df39d3844e75d950fa8">  104</a></span>  Matrix3 <a class="code hl_variable" href="a05971.html#a59e97f78c2725df39d3844e75d950fa8">gyroscopeCovariance</a>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="a05971.html#a751a0ba3ffc093a38e913a92bc9fd644">  107</a></span>  std::optional&lt;Vector3&gt; <a class="code hl_variable" href="a05971.html#a751a0ba3ffc093a38e913a92bc9fd644">omegaCoriolis</a>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="a05971.html#a79a9c6893153cb61f98f43d06d064a8f">  108</a></span>  std::optional&lt;Pose3&gt; <a class="code hl_variable" href="a05971.html#a79a9c6893153cb61f98f43d06d064a8f">body_P_sensor</a>;    </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  PreintegratedRotationParams() : <a class="code hl_variable" href="a05971.html#a59e97f78c2725df39d3844e75d950fa8">gyroscopeCovariance</a>(I_3x3) {}</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <a class="code hl_struct" href="a05971.html">PreintegratedRotationParams</a>(<span class="keyword">const</span> Matrix3&amp; gyroscope_covariance,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                              std::optional&lt;Vector3&gt; omega_coriolis = {},</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                              std::optional&lt;Pose3&gt; body_P_sensor = {})</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    : gyroscopeCovariance(gyroscope_covariance),</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      omegaCoriolis(omega_coriolis),</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      body_P_sensor(body_P_sensor) {}</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keyword">virtual</span> ~PreintegratedRotationParams() {}</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="a02242.html#a54fa43c89c5334314c8c75939dd5c2d7">print</a>(<span class="keyword">const</span> std::string&amp; s) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> PreintegratedRotationParams&amp; other, <span class="keywordtype">double</span> tol=1e-9) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="keywordtype">void</span> setGyroscopeCovariance(<span class="keyword">const</span> Matrix3&amp; cov)   { gyroscopeCovariance = cov;  }</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="keywordtype">void</span> setOmegaCoriolis(<span class="keyword">const</span> Vector3&amp; omega)       { omegaCoriolis = omega; }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <span class="keywordtype">void</span> setBodyPSensor(<span class="keyword">const</span> Pose3&amp; pose)            { body_P_sensor = pose;  }</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  <span class="keyword">const</span> Matrix3&amp; getGyroscopeCovariance()<span class="keyword">     const </span>{ <span class="keywordflow">return</span> gyroscopeCovariance; }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  std::optional&lt;Vector3&gt; getOmegaCoriolis()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> omegaCoriolis; }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  std::optional&lt;Pose3&gt;   getBodyPSensor()<span class="keyword">   const </span>{ <span class="keywordflow">return</span> body_P_sensor; }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="preprocessor">#if GTSAM_ENABLE_BOOST_SERIALIZATION</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> ARCHIVE&gt;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <span class="keywordtype">void</span> serialize(ARCHIVE &amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    ar &amp; BOOST_SERIALIZATION_NVP(gyroscopeCovariance);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    ar &amp; BOOST_SERIALIZATION_NVP(body_P_sensor);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="comment">// Provide support for Eigen::Matrix in std::optional</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordtype">bool</span> omegaCoriolisFlag = omegaCoriolis.has_value();</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    ar &amp; boost::serialization::make_nvp(<span class="stringliteral">&quot;omegaCoriolisFlag&quot;</span>, omegaCoriolisFlag);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordflow">if</span> (omegaCoriolisFlag) {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>      ar &amp; BOOST_SERIALIZATION_NVP(*omegaCoriolis);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  }</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>};</div>
 </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
-<div class="ttc" id="aa01097_html"><div class="ttname"><a href="a01097.html">NonlinearFactorGraph.h</a></div><div class="ttdoc">Factor Graph consisting of non-linear factors.</div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa01968_html_ab6e5a4884342656e0837ef07008ec03f"><div class="ttname"><a href="a01968.html#ab6e5a4884342656e0837ef07008ec03f">gtsam::SharedNoiseModel</a></div><div class="ttdeci">noiseModel::Base::shared_ptr SharedNoiseModel</div><div class="ttdoc">Aliases.</div><div class="ttdef"><b>Definition</b> NoiseModel.h:724</div></div>
-<div class="ttc" id="aa04071_html_a1bd7154e74538b5934fc616bb5ef7281"><div class="ttname"><a href="a04071.html#a1bd7154e74538b5934fc616bb5ef7281">gtsam::FactorGraph&lt; NonlinearFactor &gt;::push_back</a></div><div class="ttdeci">IsDerived&lt; DERIVEDFACTOR &gt; push_back(boost::shared_ptr&lt; DERIVEDFACTOR &gt; factor)</div><div class="ttdef"><b>Definition</b> FactorGraph.h:186</div></div>
-<div class="ttc" id="aa04831_html"><div class="ttname"><a href="a04831.html">gtsam::ExpressionFactor</a></div><div class="ttdoc">Factor that supports arbitrary expressions via AD.</div><div class="ttdef"><b>Definition</b> ExpressionFactor.h:44</div></div>
-<div class="ttc" id="aa04843_html"><div class="ttname"><a href="a04843.html">gtsam::Expression</a></div><div class="ttdoc">Expression class that supports automatic differentiation.</div><div class="ttdef"><b>Definition</b> Expression.h:48</div></div>
-<div class="ttc" id="aa04879_html"><div class="ttname"><a href="a04879.html">gtsam::ExpressionFactorGraph</a></div><div class="ttdoc">Factor graph that supports adding ExpressionFactors directly.</div><div class="ttdef"><b>Definition</b> ExpressionFactorGraph.h:29</div></div>
-<div class="ttc" id="aa04879_html_ac417241d59dbed10d320032a0c502929"><div class="ttname"><a href="a04879.html#ac417241d59dbed10d320032a0c502929">gtsam::ExpressionFactorGraph::addExpressionFactor</a></div><div class="ttdeci">void addExpressionFactor(const Expression&lt; T &gt; &amp;h, const T &amp;z, const SharedNoiseModel &amp;R)</div><div class="ttdoc">Directly add ExpressionFactor that implements |h(x)-z|^2_R.</div><div class="ttdef"><b>Definition</b> ExpressionFactorGraph.h:43</div></div>
-<div class="ttc" id="aa05091_html_a08a2bceb4013a4ffe20c27f76aae7a96"><div class="ttname"><a href="a05091.html#a08a2bceb4013a4ffe20c27f76aae7a96">gtsam::NonlinearFactorGraph::NonlinearFactorGraph</a></div><div class="ttdeci">NonlinearFactorGraph()</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition</b> NonlinearFactorGraph.h:67</div></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span></div>
+<div class="foldopen" id="foldopen00156" data-start="{" data-end="};">
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="a05975.html">  156</a></span><span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a05975.html#ae744d5c7fcf27da650d08f65467f15e1">PreintegratedRotation</a> {</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  <span class="keyword">typedef</span> <a class="code hl_struct" href="a05971.html">PreintegratedRotationParams</a> Params;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="a05975.html#a5b756d9109834326be74f7cd351772bf">  162</a></span>  std::shared_ptr&lt;Params&gt; <a class="code hl_variable" href="a05975.html#a5b756d9109834326be74f7cd351772bf">p_</a>;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="a05975.html#ac290e4fa241ce8f6a7a1c94e6f2fccb8">  164</a></span>  <span class="keywordtype">double</span> <a class="code hl_variable" href="a05975.html#ac290e4fa241ce8f6a7a1c94e6f2fccb8">deltaTij_</a>;           </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="a05975.html#aead7cee1ef09b022ad4e2836c51c4cc0">  165</a></span>  <a class="code hl_class" href="a04451.html">Rot3</a> <a class="code hl_variable" href="a05975.html#aead7cee1ef09b022ad4e2836c51c4cc0">deltaRij_</a>;             </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="a05975.html#a44e2af0899009e3d0eb935bc411d14a1">  166</a></span>  Matrix3 <a class="code hl_variable" href="a05975.html#a44e2af0899009e3d0eb935bc411d14a1">delRdelBiasOmega_</a>;  </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="a05975.html#ae744d5c7fcf27da650d08f65467f15e1">  173</a></span>  <a class="code hl_function" href="a05975.html#ae744d5c7fcf27da650d08f65467f15e1">PreintegratedRotation</a>() {}</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span></div>
+<div class="foldopen" id="foldopen00176" data-start="{" data-end="}">
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="a05975.html#af2d4ad989ae04d571435398073e5fbfe">  176</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="a05975.html#af2d4ad989ae04d571435398073e5fbfe">PreintegratedRotation</a>(<span class="keyword">const</span> std::shared_ptr&lt;Params&gt;&amp; p) : <a class="code hl_variable" href="a05975.html#a5b756d9109834326be74f7cd351772bf">p_</a>(p) {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <a class="code hl_function" href="a05975.html#afef7a62e383296931b88afe371ec8f3c">resetIntegration</a>();</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  }</div>
+</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span></div>
+<div class="foldopen" id="foldopen00181" data-start="{" data-end="}">
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="a05975.html#a49b447ee52234cc39c305c5ee6fb5e7f">  181</a></span>  <a class="code hl_function" href="a05975.html#a49b447ee52234cc39c305c5ee6fb5e7f">PreintegratedRotation</a>(<span class="keyword">const</span> std::shared_ptr&lt;Params&gt;&amp; p,</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                        <span class="keywordtype">double</span> deltaTij, <span class="keyword">const</span> <a class="code hl_class" href="a04451.html">Rot3</a>&amp; deltaRij,</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                        <span class="keyword">const</span> Matrix3&amp; delRdelBiasOmega)</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>      : <a class="code hl_variable" href="a05975.html#a5b756d9109834326be74f7cd351772bf">p_</a>(p), <a class="code hl_variable" href="a05975.html#ac290e4fa241ce8f6a7a1c94e6f2fccb8">deltaTij_</a>(deltaTij), <a class="code hl_variable" href="a05975.html#aead7cee1ef09b022ad4e2836c51c4cc0">deltaRij_</a>(deltaRij), <a class="code hl_variable" href="a05975.html#a44e2af0899009e3d0eb935bc411d14a1">delRdelBiasOmega_</a>(delRdelBiasOmega) {}</div>
+</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span></div>
+<div class="foldopen" id="foldopen00192" data-start="{" data-end="}">
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="a05975.html#ad4a13c89dc8226456aaeef68736b9ae2">  192</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="a05975.html#ad4a13c89dc8226456aaeef68736b9ae2">matchesParamsWith</a>(<span class="keyword">const</span> <a class="code hl_function" href="a05975.html#ae744d5c7fcf27da650d08f65467f15e1">PreintegratedRotation</a>&amp; other)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="a05975.html#a5b756d9109834326be74f7cd351772bf">p_</a> == other.<a class="code hl_variable" href="a05975.html#a5b756d9109834326be74f7cd351772bf">p_</a>;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  }</div>
+</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  <span class="keyword">const</span> std::shared_ptr&lt;Params&gt;&amp; params()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> p_; }</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; deltaTij()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> deltaTij_; }</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  <span class="keyword">const</span> Rot3&amp; deltaRij()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> deltaRij_; }</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  <span class="keyword">const</span> Matrix3&amp; delRdelBiasOmega()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> delRdelBiasOmega_; }</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a02242.html#a54fa43c89c5334314c8c75939dd5c2d7">print</a>(<span class="keyword">const</span> std::string&amp; s) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> PreintegratedRotation&amp; other, <span class="keywordtype">double</span> tol) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>  <span class="keywordtype">void</span> resetIntegration();</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  <span class="keywordtype">void</span> integrateGyroMeasurement(<span class="keyword">const</span> Vector3&amp; measuredOmega,</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                                <span class="keyword">const</span> Vector3&amp; biasHat, <span class="keywordtype">double</span> deltaT,</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                                OptionalJacobian&lt;3, 3&gt; F = {});</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  Rot3 biascorrectedDeltaRij(<span class="keyword">const</span> Vector3&amp; biasOmegaIncr,</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                             OptionalJacobian&lt;3, 3&gt; H = {}) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span><span class="preprocessor">#ifdef GTSAM_ALLOW_DEPRECATED_SINCE_V43</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  Vector3 integrateCoriolis(<span class="keyword">const</span> Rot3&amp; wRi,</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                            OptionalJacobian&lt;3, 3&gt; H = {}) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  <span class="keyword">inline</span> Rot3 incrementalRotation(</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>      <span class="keyword">const</span> Vector3&amp; measuredOmega, <span class="keyword">const</span> Vector3&amp; bias, <span class="keywordtype">double</span> deltaT,</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>      OptionalJacobian&lt;3, 3&gt; D_incrR_integratedOmega)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    internal::IncrementalRotation f{measuredOmega, deltaT, p_-&gt;body_P_sensor};</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    Rot3 incrR = f(bias, D_incrR_integratedOmega);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="comment">// Backwards compatible &quot;weird&quot; Jacobian, no longer used.</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <span class="keywordflow">if</span> (D_incrR_integratedOmega) *D_incrR_integratedOmega /= -deltaT;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <span class="keywordflow">return</span> incrR;</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>  }</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>  <span class="keywordtype">void</span> integrateMeasurement(<span class="keyword">const</span> Vector3&amp; measuredOmega,</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>                            <span class="keyword">const</span> Vector3&amp; biasHat, <span class="keywordtype">double</span> deltaT,</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>                            OptionalJacobian&lt;3, 3&gt; D_incrR_integratedOmega,</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>                            OptionalJacobian&lt;3, 3&gt; F);</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="preprocessor">#if GTSAM_ENABLE_BOOST_SERIALIZATION</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>  <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> ARCHIVE&gt;</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  <span class="keywordtype">void</span> serialize(ARCHIVE&amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {  <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    ar&amp; BOOST_SERIALIZATION_NVP(p_);</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    ar&amp; BOOST_SERIALIZATION_NVP(deltaTij_);</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    ar&amp; BOOST_SERIALIZATION_NVP(deltaRij_);</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    ar&amp; BOOST_SERIALIZATION_NVP(delRdelBiasOmega_);</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>  }</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>};</div>
+</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span><span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno"><a class="line" href="a05979.html">  288</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03203.html">traits</a>&lt;<a class="code hl_class" href="a05975.html">PreintegratedRotation</a>&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="a03535.html">Testable</a>&lt;PreintegratedRotation&gt; {};</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>}  </div>
+<div class="ttc" id="aa00071_html"><div class="ttname"><a href="a00071.html">Matrix.h</a></div><div class="ttdoc">typedef and functions to augment Eigen&#39;s MatrixXd</div></div>
+<div class="ttc" id="aa00080_html"><div class="ttname"><a href="a00080.html">MatrixConstants.h</a></div><div class="ttdoc">Macros for Matrix constants to avoid excessive template instantiation.</div></div>
+<div class="ttc" id="aa00521_html"><div class="ttname"><a href="a00521.html">Pose3.h</a></div><div class="ttdoc">3D Pose manifold SO(3) x R^3 and group SE(3)</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa02242_html_a54fa43c89c5334314c8c75939dd5c2d7"><div class="ttname"><a href="a02242.html#a54fa43c89c5334314c8c75939dd5c2d7">gtsam::print</a></div><div class="ttdeci">void print(const Matrix &amp;A, const string &amp;s, ostream &amp;stream)</div><div class="ttdoc">print without optional string, must specify cout yourself</div><div class="ttdef"><b>Definition</b> Matrix.cpp:143</div></div>
+<div class="ttc" id="aa02242_html_a7d29b09677e37b39ac9ac90ea756c6c3"><div class="ttname"><a href="a02242.html#a7d29b09677e37b39ac9ac90ea756c6c3">gtsam::integrateSequentialRotations</a></div><div class="ttdeci">Rot3 integrateSequentialRotations(const Vector &amp;times, ConstMatrixView measuredOmegas, const Vector3 &amp;biasHat, const Rot3 &amp;body_R_sensor)</div><div class="ttdoc">Integrate timed gyroscope samples using sequential trapezoidal rotation increments.</div><div class="ttdef"><b>Definition</b> PreintegratedRotation.cpp:145</div></div>
+<div class="ttc" id="aa02242_html_ac1b1bc700e21fbe3ea82eabf09660d6a"><div class="ttname"><a href="a02242.html#ac1b1bc700e21fbe3ea82eabf09660d6a">gtsam::ConstMatrixView</a></div><div class="ttdeci">Eigen::Ref&lt; const Matrix, 0, Eigen::Stride&lt; Eigen::Dynamic, Eigen::Dynamic &gt; &gt; ConstMatrixView</div><div class="ttdoc">Dynamic-stride const Matrix view for accepting NumPy arrays without copies.</div><div class="ttdef"><b>Definition</b> Matrix.h:42</div></div>
+<div class="ttc" id="aa02242_html_aea02f009cecfbfcb1f461de813c57194"><div class="ttname"><a href="a02242.html#aea02f009cecfbfcb1f461de813c57194">gtsam::integrateSingleSpeedConing</a></div><div class="ttdeci">Rot3 integrateSingleSpeedConing(const Vector &amp;times, ConstMatrixView measuredOmegas, const Vector3 &amp;biasHat, const Rot3 &amp;body_R_sensor)</div><div class="ttdoc">Integrate timed gyroscope samples with a single-speed coning correction.</div><div class="ttdef"><b>Definition</b> PreintegratedRotation.cpp:164</div></div>
+<div class="ttc" id="aa03203_html"><div class="ttname"><a href="a03203.html">gtsam::traits</a></div><div class="ttdoc">A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...</div><div class="ttdef"><b>Definition</b> Group.h:37</div></div>
+<div class="ttc" id="aa03363_html"><div class="ttname"><a href="a03363.html">gtsam::OptionalJacobian</a></div><div class="ttdoc">OptionalJacobian is an Eigen::Ref like class that can take be constructed using either a fixed size o...</div><div class="ttdef"><b>Definition</b> OptionalJacobian.h:40</div></div>
+<div class="ttc" id="aa03535_html"><div class="ttname"><a href="a03535.html">gtsam::Testable</a></div><div class="ttdoc">A helper that implements the traits interface for GTSAM types.</div><div class="ttdef"><b>Definition</b> Testable.h:152</div></div>
+<div class="ttc" id="aa04451_html"><div class="ttname"><a href="a04451.html">gtsam::Rot3</a></div><div class="ttdoc">Rot3 is a 3D rotation represented as a rotation matrix if the preprocessor symbol GTSAM_USE_QUATERNIO...</div><div class="ttdef"><b>Definition</b> Rot3.h:65</div></div>
+<div class="ttc" id="aa05967_html"><div class="ttname"><a href="a05967.html">gtsam::internal::IncrementalRotation</a></div><div class="ttdoc">Function object for incremental rotation.</div><div class="ttdef"><b>Definition</b> PreintegratedRotation.h:40</div></div>
+<div class="ttc" id="aa05967_html_a5c7c1bd92064378a6bf43edf50ce7ea0"><div class="ttname"><a href="a05967.html#a5c7c1bd92064378a6bf43edf50ce7ea0">gtsam::internal::IncrementalRotation::operator()</a></div><div class="ttdeci">Rot3 operator()(const Vector3 &amp;bias, OptionalJacobian&lt; 3, 3 &gt; H_bias={}) const</div><div class="ttdoc">Integrate angular velocity, but corrected by bias.</div><div class="ttdef"><b>Definition</b> PreintegratedRotation.cpp:76</div></div>
+<div class="ttc" id="aa05971_html"><div class="ttname"><a href="a05971.html">gtsam::PreintegratedRotationParams</a></div><div class="ttdoc">Parameters for pre-integration: Usage: Create just a single Params and pass a shared pointer to the c...</div><div class="ttdef"><b>Definition</b> PreintegratedRotation.h:101</div></div>
+<div class="ttc" id="aa05971_html_a59e97f78c2725df39d3844e75d950fa8"><div class="ttname"><a href="a05971.html#a59e97f78c2725df39d3844e75d950fa8">gtsam::PreintegratedRotationParams::gyroscopeCovariance</a></div><div class="ttdeci">Matrix3 gyroscopeCovariance</div><div class="ttdoc">Continuous-time &quot;Covariance&quot; of gyroscope measurements The units for stddev are σ = rad/s/√Hz.</div><div class="ttdef"><b>Definition</b> PreintegratedRotation.h:104</div></div>
+<div class="ttc" id="aa05971_html_a751a0ba3ffc093a38e913a92bc9fd644"><div class="ttname"><a href="a05971.html#a751a0ba3ffc093a38e913a92bc9fd644">gtsam::PreintegratedRotationParams::omegaCoriolis</a></div><div class="ttdeci">std::optional&lt; Vector3 &gt; omegaCoriolis</div><div class="ttdoc">Navigation-frame angular velocity in radians per second.</div><div class="ttdef"><b>Definition</b> PreintegratedRotation.h:107</div></div>
+<div class="ttc" id="aa05971_html_a79a9c6893153cb61f98f43d06d064a8f"><div class="ttname"><a href="a05971.html#a79a9c6893153cb61f98f43d06d064a8f">gtsam::PreintegratedRotationParams::body_P_sensor</a></div><div class="ttdeci">std::optional&lt; Pose3 &gt; body_P_sensor</div><div class="ttdoc">The pose of the sensor in the body frame.</div><div class="ttdef"><b>Definition</b> PreintegratedRotation.h:108</div></div>
+<div class="ttc" id="aa05975_html"><div class="ttname"><a href="a05975.html">gtsam::PreintegratedRotation</a></div><div class="ttdoc">PreintegratedRotation is the base class for all PreintegratedMeasurements classes (in AHRSFactor,...</div><div class="ttdef"><b>Definition</b> PreintegratedRotation.h:156</div></div>
+<div class="ttc" id="aa05975_html_a44e2af0899009e3d0eb935bc411d14a1"><div class="ttname"><a href="a05975.html#a44e2af0899009e3d0eb935bc411d14a1">gtsam::PreintegratedRotation::delRdelBiasOmega_</a></div><div class="ttdeci">Matrix3 delRdelBiasOmega_</div><div class="ttdoc">Jacobian of preintegrated rotation w.r.t. angular rate bias.</div><div class="ttdef"><b>Definition</b> PreintegratedRotation.h:166</div></div>
+<div class="ttc" id="aa05975_html_a49b447ee52234cc39c305c5ee6fb5e7f"><div class="ttname"><a href="a05975.html#a49b447ee52234cc39c305c5ee6fb5e7f">gtsam::PreintegratedRotation::PreintegratedRotation</a></div><div class="ttdeci">PreintegratedRotation(const std::shared_ptr&lt; Params &gt; &amp;p, double deltaTij, const Rot3 &amp;deltaRij, const Matrix3 &amp;delRdelBiasOmega)</div><div class="ttdoc">Explicit initialization of all class members.</div><div class="ttdef"><b>Definition</b> PreintegratedRotation.h:181</div></div>
+<div class="ttc" id="aa05975_html_a5b756d9109834326be74f7cd351772bf"><div class="ttname"><a href="a05975.html#a5b756d9109834326be74f7cd351772bf">gtsam::PreintegratedRotation::p_</a></div><div class="ttdeci">std::shared_ptr&lt; Params &gt; p_</div><div class="ttdoc">Parameters.</div><div class="ttdef"><b>Definition</b> PreintegratedRotation.h:162</div></div>
+<div class="ttc" id="aa05975_html_ac290e4fa241ce8f6a7a1c94e6f2fccb8"><div class="ttname"><a href="a05975.html#ac290e4fa241ce8f6a7a1c94e6f2fccb8">gtsam::PreintegratedRotation::deltaTij_</a></div><div class="ttdeci">double deltaTij_</div><div class="ttdoc">Time interval from i to j.</div><div class="ttdef"><b>Definition</b> PreintegratedRotation.h:164</div></div>
+<div class="ttc" id="aa05975_html_ad4a13c89dc8226456aaeef68736b9ae2"><div class="ttname"><a href="a05975.html#ad4a13c89dc8226456aaeef68736b9ae2">gtsam::PreintegratedRotation::matchesParamsWith</a></div><div class="ttdeci">bool matchesParamsWith(const PreintegratedRotation &amp;other) const</div><div class="ttdoc">check parameters equality: checks whether shared pointer points to same Params object.</div><div class="ttdef"><b>Definition</b> PreintegratedRotation.h:192</div></div>
+<div class="ttc" id="aa05975_html_ae744d5c7fcf27da650d08f65467f15e1"><div class="ttname"><a href="a05975.html#ae744d5c7fcf27da650d08f65467f15e1">gtsam::PreintegratedRotation::PreintegratedRotation</a></div><div class="ttdeci">PreintegratedRotation()</div><div class="ttdoc">Default constructor for serialization.</div><div class="ttdef"><b>Definition</b> PreintegratedRotation.h:173</div></div>
+<div class="ttc" id="aa05975_html_aead7cee1ef09b022ad4e2836c51c4cc0"><div class="ttname"><a href="a05975.html#aead7cee1ef09b022ad4e2836c51c4cc0">gtsam::PreintegratedRotation::deltaRij_</a></div><div class="ttdeci">Rot3 deltaRij_</div><div class="ttdoc">Preintegrated relative orientation (in frame i).</div><div class="ttdef"><b>Definition</b> PreintegratedRotation.h:165</div></div>
+<div class="ttc" id="aa05975_html_af2d4ad989ae04d571435398073e5fbfe"><div class="ttname"><a href="a05975.html#af2d4ad989ae04d571435398073e5fbfe">gtsam::PreintegratedRotation::PreintegratedRotation</a></div><div class="ttdeci">PreintegratedRotation(const std::shared_ptr&lt; Params &gt; &amp;p)</div><div class="ttdoc">Default constructor, resets integration to zero.</div><div class="ttdef"><b>Definition</b> PreintegratedRotation.h:176</div></div>
+<div class="ttc" id="aa05975_html_afef7a62e383296931b88afe371ec8f3c"><div class="ttname"><a href="a05975.html#afef7a62e383296931b88afe371ec8f3c">gtsam::PreintegratedRotation::resetIntegration</a></div><div class="ttdeci">void resetIntegration()</div><div class="ttdoc">Re-initialize PreintegratedMeasurements.</div><div class="ttdef"><b>Definition</b> PreintegratedRotation.cpp:55</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>nonlinear</b></li><li class="navelem"><a href="a01160.html">ExpressionFactorGraph.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>navigation</b></li><li class="navelem"><a href="a01160.html">PreintegratedRotation.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

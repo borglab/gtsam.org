@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::StereoPoint2 Class Reference</title>
+<title>gtsam: gtsam::DiscreteEliminationTree Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,112 +96,190 @@ $(function(){initNavTree('a03899.html','','a03896'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::StereoPoint2 Class Reference<div class="ingroups"><a class="el" href="a01956.html">Geometry</a></div></div></div>
+  <div class="headertitle"><div class="title">gtsam::DiscreteEliminationTree Class Reference<div class="ingroups"><a class="el" href="a02229.html">Discrete</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A 2D stereo point, v will be same for rectified images. </p>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Advanced Interface</h2></td></tr>
-<tr class="memitem:ac98d07dd8f7b70e16ccb9a01abf56b9c" id="r_ac98d07dd8f7b70e16ccb9a01abf56b9c"><td class="memItemLeft"><a id="ac98d07dd8f7b70e16ccb9a01abf56b9c" name="ac98d07dd8f7b70e16ccb9a01abf56b9c"></a>
-class&#160;</td><td class="memItemRight"><b>boost::serialization::access</b></td></tr>
-<tr class="memdesc:ac98d07dd8f7b70e16ccb9a01abf56b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialization function. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Standard Constructors</h2></td></tr>
-<tr class="memitem:af91933798181ce1bb4759a7f78900ed8" id="r_af91933798181ce1bb4759a7f78900ed8"><td class="memItemLeft"><a id="af91933798181ce1bb4759a7f78900ed8" name="af91933798181ce1bb4759a7f78900ed8"></a>
-&#160;</td><td class="memItemRight"><b>StereoPoint2</b> ()</td></tr>
-<tr class="memdesc:af91933798181ce1bb4759a7f78900ed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">default constructor <br /></td></tr>
-<tr class="memitem:a6e78d04be7be5824277957b807f29a67" id="r_a6e78d04be7be5824277957b807f29a67"><td class="memItemLeft"><a id="a6e78d04be7be5824277957b807f29a67" name="a6e78d04be7be5824277957b807f29a67"></a>
-&#160;</td><td class="memItemRight"><b>StereoPoint2</b> (double <a class="el" href="#a680b14f2e0bd0621c551d33c9b60f1c2">uL</a>, double <a class="el" href="#a0394939c8b77b2e3b594873ca007dc42">uR</a>, double <a class="el" href="#addb15c987185fd446d94f4495d1ecbae">v</a>)</td></tr>
-<tr class="memdesc:a6e78d04be7be5824277957b807f29a67"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor <br /></td></tr>
-<tr class="memitem:a127f5a9bc07d0f81dc30f67d4eb6e3bd" id="r_a127f5a9bc07d0f81dc30f67d4eb6e3bd"><td class="memItemLeft"><a id="a127f5a9bc07d0f81dc30f67d4eb6e3bd" name="a127f5a9bc07d0f81dc30f67d4eb6e3bd"></a>
-&#160;</td><td class="memItemRight"><b>StereoPoint2</b> (const Vector3 &amp;<a class="el" href="#addb15c987185fd446d94f4495d1ecbae">v</a>)</td></tr>
-<tr class="memdesc:a127f5a9bc07d0f81dc30f67d4eb6e3bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct from 3D vector <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Testable</h2></td></tr>
-<tr class="memitem:a7a0cac6ecc475313cd1d250dde4cfcc3" id="r_a7a0cac6ecc475313cd1d250dde4cfcc3"><td class="memItemLeft"><a id="a7a0cac6ecc475313cd1d250dde4cfcc3" name="a7a0cac6ecc475313cd1d250dde4cfcc3"></a>
-void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;s=&quot;&quot;) const</td></tr>
-<tr class="memdesc:a7a0cac6ecc475313cd1d250dde4cfcc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">print <br /></td></tr>
-<tr class="memitem:a74e0c6868b8d058dc7d49f12da34e483" id="r_a74e0c6868b8d058dc7d49f12da34e483"><td class="memItemLeft"><a id="a74e0c6868b8d058dc7d49f12da34e483" name="a74e0c6868b8d058dc7d49f12da34e483"></a>
-bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="#af91933798181ce1bb4759a7f78900ed8">StereoPoint2</a> &amp;q, double tol=1e-9) const</td></tr>
-<tr class="memdesc:a74e0c6868b8d058dc7d49f12da34e483"><td class="mdescLeft">&#160;</td><td class="mdescRight">equals <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Group</h2></td></tr>
-<tr class="memitem:a8be0cca494701e375ca31db902f66fe1" id="r_a8be0cca494701e375ca31db902f66fe1"><td class="memItemLeft"><a id="a8be0cca494701e375ca31db902f66fe1" name="a8be0cca494701e375ca31db902f66fe1"></a>
-<a class="el" href="#af91933798181ce1bb4759a7f78900ed8">StereoPoint2</a>&#160;</td><td class="memItemRight"><b>operator-</b> () const</td></tr>
-<tr class="memdesc:a8be0cca494701e375ca31db902f66fe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">inverse <br /></td></tr>
-<tr class="memitem:a6720f98d02fa76cfdd7b70e5f0f0dffd" id="r_a6720f98d02fa76cfdd7b70e5f0f0dffd"><td class="memItemLeft"><a id="a6720f98d02fa76cfdd7b70e5f0f0dffd" name="a6720f98d02fa76cfdd7b70e5f0f0dffd"></a>
-<a class="el" href="#af91933798181ce1bb4759a7f78900ed8">StereoPoint2</a>&#160;</td><td class="memItemRight"><b>operator+</b> (const Vector3 &amp;<a class="el" href="#addb15c987185fd446d94f4495d1ecbae">v</a>) const</td></tr>
-<tr class="memdesc:a6720f98d02fa76cfdd7b70e5f0f0dffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">add vector on right <br /></td></tr>
-<tr class="memitem:ab0f193e3fbc9fc811051dfcd4c394891" id="r_ab0f193e3fbc9fc811051dfcd4c394891"><td class="memItemLeft"><a id="ab0f193e3fbc9fc811051dfcd4c394891" name="ab0f193e3fbc9fc811051dfcd4c394891"></a>
-<a class="el" href="#af91933798181ce1bb4759a7f78900ed8">StereoPoint2</a>&#160;</td><td class="memItemRight"><b>operator+</b> (const <a class="el" href="#af91933798181ce1bb4759a7f78900ed8">StereoPoint2</a> &amp;b) const</td></tr>
-<tr class="memdesc:ab0f193e3fbc9fc811051dfcd4c394891"><td class="mdescLeft">&#160;</td><td class="mdescRight">add <br /></td></tr>
-<tr class="memitem:a211d5cb9dd5816de465bc6aeb35f8adc" id="r_a211d5cb9dd5816de465bc6aeb35f8adc"><td class="memItemLeft"><a id="a211d5cb9dd5816de465bc6aeb35f8adc" name="a211d5cb9dd5816de465bc6aeb35f8adc"></a>
-<a class="el" href="#af91933798181ce1bb4759a7f78900ed8">StereoPoint2</a>&#160;</td><td class="memItemRight"><b>operator-</b> (const <a class="el" href="#af91933798181ce1bb4759a7f78900ed8">StereoPoint2</a> &amp;b) const</td></tr>
-<tr class="memdesc:a211d5cb9dd5816de465bc6aeb35f8adc"><td class="mdescLeft">&#160;</td><td class="mdescRight">subtract <br /></td></tr>
-<tr class="memitem:af51044042dadc526d0b364c26c6da97e" id="r_af51044042dadc526d0b364c26c6da97e"><td class="memItemLeft"><a id="af51044042dadc526d0b364c26c6da97e" name="af51044042dadc526d0b364c26c6da97e"></a>
-static <a class="el" href="#af91933798181ce1bb4759a7f78900ed8">StereoPoint2</a>&#160;</td><td class="memItemRight"><b>Identity</b> ()</td></tr>
-<tr class="memdesc:af51044042dadc526d0b364c26c6da97e"><td class="mdescLeft">&#160;</td><td class="mdescRight">identity <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Standard Interface</h2></td></tr>
-<tr class="memitem:af0b47bceeb7d432730ef9627e03b085a" id="r_af0b47bceeb7d432730ef9627e03b085a"><td class="memItemLeft"><a id="af0b47bceeb7d432730ef9627e03b085a" name="af0b47bceeb7d432730ef9627e03b085a"></a>
-bool&#160;</td><td class="memItemRight"><b>operator==</b> (const <a class="el" href="#af91933798181ce1bb4759a7f78900ed8">StereoPoint2</a> &amp;q) const</td></tr>
-<tr class="memdesc:af0b47bceeb7d432730ef9627e03b085a"><td class="mdescLeft">&#160;</td><td class="mdescRight">equality <br /></td></tr>
-<tr class="memitem:a680b14f2e0bd0621c551d33c9b60f1c2" id="r_a680b14f2e0bd0621c551d33c9b60f1c2"><td class="memItemLeft"><a id="a680b14f2e0bd0621c551d33c9b60f1c2" name="a680b14f2e0bd0621c551d33c9b60f1c2"></a>
-double&#160;</td><td class="memItemRight"><b>uL</b> () const</td></tr>
-<tr class="memdesc:a680b14f2e0bd0621c551d33c9b60f1c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">get uL <br /></td></tr>
-<tr class="memitem:a0394939c8b77b2e3b594873ca007dc42" id="r_a0394939c8b77b2e3b594873ca007dc42"><td class="memItemLeft"><a id="a0394939c8b77b2e3b594873ca007dc42" name="a0394939c8b77b2e3b594873ca007dc42"></a>
-double&#160;</td><td class="memItemRight"><b>uR</b> () const</td></tr>
-<tr class="memdesc:a0394939c8b77b2e3b594873ca007dc42"><td class="mdescLeft">&#160;</td><td class="mdescRight">get uR <br /></td></tr>
-<tr class="memitem:addb15c987185fd446d94f4495d1ecbae" id="r_addb15c987185fd446d94f4495d1ecbae"><td class="memItemLeft"><a id="addb15c987185fd446d94f4495d1ecbae" name="addb15c987185fd446d94f4495d1ecbae"></a>
-double&#160;</td><td class="memItemRight"><b>v</b> () const</td></tr>
-<tr class="memdesc:addb15c987185fd446d94f4495d1ecbae"><td class="mdescLeft">&#160;</td><td class="mdescRight">get v <br /></td></tr>
-<tr class="memitem:a576452db11da6ff1c022e7d6ca2f605b" id="r_a576452db11da6ff1c022e7d6ca2f605b"><td class="memItemLeft"><a id="a576452db11da6ff1c022e7d6ca2f605b" name="a576452db11da6ff1c022e7d6ca2f605b"></a>
-Vector3&#160;</td><td class="memItemRight"><b>vector</b> () const</td></tr>
-<tr class="memdesc:a576452db11da6ff1c022e7d6ca2f605b"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert to vector <br /></td></tr>
-<tr class="memitem:aebca28e1dc3f495c873fd01de7ff0778" id="r_aebca28e1dc3f495c873fd01de7ff0778"><td class="memItemLeft"><a id="aebca28e1dc3f495c873fd01de7ff0778" name="aebca28e1dc3f495c873fd01de7ff0778"></a>
-<a class="el" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&#160;</td><td class="memItemRight"><b>point2</b> () const</td></tr>
-<tr class="memdesc:aebca28e1dc3f495c873fd01de7ff0778"><td class="mdescLeft">&#160;</td><td class="mdescRight">convenient function to get a <a class="el" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d" title="As of GTSAM 4, in order to make GTSAM more lean, it is now possible to just typedef Point2 to Vector2...">Point2</a> from the left image <br /></td></tr>
-<tr class="memitem:a1a7990b315e51976dce3ab9b9fb54ad2" id="r_a1a7990b315e51976dce3ab9b9fb54ad2"><td class="memItemLeft"><a id="a1a7990b315e51976dce3ab9b9fb54ad2" name="a1a7990b315e51976dce3ab9b9fb54ad2"></a>
-<a class="el" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&#160;</td><td class="memItemRight"><b>right</b> () const</td></tr>
-<tr class="memdesc:a1a7990b315e51976dce3ab9b9fb54ad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">convenient function to get a <a class="el" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d" title="As of GTSAM 4, in order to make GTSAM more lean, it is now possible to just typedef Point2 to Vector2...">Point2</a> from the right image <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
-Deprecated</h2></td></tr>
-<tr class="memitem:a1b00fbed4cac8dc7d2cfb55d50978ace" id="r_a1b00fbed4cac8dc7d2cfb55d50978ace"><td class="memItemLeft"><a id="a1b00fbed4cac8dc7d2cfb55d50978ace" name="a1b00fbed4cac8dc7d2cfb55d50978ace"></a>
-<a class="el" href="#af91933798181ce1bb4759a7f78900ed8">StereoPoint2</a>&#160;</td><td class="memItemRight"><b>inverse</b> () const</td></tr>
-<tr class="memitem:a17c7682560a1c950c4276826dcdd8ccb" id="r_a17c7682560a1c950c4276826dcdd8ccb"><td class="memItemLeft"><a id="a17c7682560a1c950c4276826dcdd8ccb" name="a17c7682560a1c950c4276826dcdd8ccb"></a>
-<a class="el" href="#af91933798181ce1bb4759a7f78900ed8">StereoPoint2</a>&#160;</td><td class="memItemRight"><b>compose</b> (const <a class="el" href="#af91933798181ce1bb4759a7f78900ed8">StereoPoint2</a> &amp;p1) const</td></tr>
-<tr class="memitem:ab008805d919c856ac4308a685fa47bd6" id="r_ab008805d919c856ac4308a685fa47bd6"><td class="memItemLeft"><a id="ab008805d919c856ac4308a685fa47bd6" name="ab008805d919c856ac4308a685fa47bd6"></a>
-<a class="el" href="#af91933798181ce1bb4759a7f78900ed8">StereoPoint2</a>&#160;</td><td class="memItemRight"><b>between</b> (const <a class="el" href="#af91933798181ce1bb4759a7f78900ed8">StereoPoint2</a> &amp;p2) const</td></tr>
-<tr class="memitem:a47dbfb042c64318602f0921971a579d8" id="r_a47dbfb042c64318602f0921971a579d8"><td class="memItemLeft"><a id="a47dbfb042c64318602f0921971a579d8" name="a47dbfb042c64318602f0921971a579d8"></a>
-Vector&#160;</td><td class="memItemRight"><b>localCoordinates</b> (const <a class="el" href="#af91933798181ce1bb4759a7f78900ed8">StereoPoint2</a> &amp;t2) const</td></tr>
-<tr class="memitem:af3e934fc0a1d29e91397927a286c1d1a" id="r_af3e934fc0a1d29e91397927a286c1d1a"><td class="memItemLeft"><a id="af3e934fc0a1d29e91397927a286c1d1a" name="af3e934fc0a1d29e91397927a286c1d1a"></a>
-<a class="el" href="#af91933798181ce1bb4759a7f78900ed8">StereoPoint2</a>&#160;</td><td class="memItemRight"><b>retract</b> (const Vector &amp;<a class="el" href="#addb15c987185fd446d94f4495d1ecbae">v</a>) const</td></tr>
-<tr class="memitem:a20cc73e8cde0a523bd316ec74f7059b5" id="r_a20cc73e8cde0a523bd316ec74f7059b5"><td class="memItemLeft"><a id="a20cc73e8cde0a523bd316ec74f7059b5" name="a20cc73e8cde0a523bd316ec74f7059b5"></a>
-static Vector&#160;</td><td class="memItemRight"><b>Logmap</b> (const <a class="el" href="#af91933798181ce1bb4759a7f78900ed8">StereoPoint2</a> &amp;p)</td></tr>
-<tr class="memitem:a064a1765ff8e15c64cac362756cd227e" id="r_a064a1765ff8e15c64cac362756cd227e"><td class="memItemLeft"><a id="a064a1765ff8e15c64cac362756cd227e" name="a064a1765ff8e15c64cac362756cd227e"></a>
-static <a class="el" href="#af91933798181ce1bb4759a7f78900ed8">StereoPoint2</a>&#160;</td><td class="memItemRight"><b>Expmap</b> (const Vector &amp;d)</td></tr>
+<div class="textblock"><p>Elimination tree for discrete factors. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::DiscreteEliminationTree:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="a03899.png" usemap="#gtsam_3A_3ADiscreteEliminationTree_map" alt=""/>
+  <map id="gtsam_3A_3ADiscreteEliminationTree_map" name="gtsam_3A_3ADiscreteEliminationTree_map">
+<area href="a04891.html" alt="gtsam::EliminationTree&lt; DiscreteBayesNet, DiscreteFactorGraph &gt;" shape="rect" coords="0,0,389,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a782fad055747d26fb8e876e3cf51bd6f" id="r_a782fad055747d26fb8e876e3cf51bd6f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a782fad055747d26fb8e876e3cf51bd6f">DiscreteEliminationTree</a> (const <a class="el" href="a03915.html">DiscreteFactorGraph</a> &amp;factorGraph, const <a class="el" href="a04999.html">VariableIndex</a> &amp;structure, const <a class="el" href="a04979.html">Ordering</a> &amp;order)</td></tr>
+<tr class="memdesc:a782fad055747d26fb8e876e3cf51bd6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the elimination tree of a factor graph using pre-computed column structure.  <br /></td></tr>
+<tr class="memitem:a615df00f083b043dbc3734f68bad05fc" id="r_a615df00f083b043dbc3734f68bad05fc"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a615df00f083b043dbc3734f68bad05fc">DiscreteEliminationTree</a> (const <a class="el" href="a03915.html">DiscreteFactorGraph</a> &amp;factorGraph, const <a class="el" href="a04979.html">Ordering</a> &amp;order)</td></tr>
+<tr class="memdesc:a615df00f083b043dbc3734f68bad05fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the elimination tree of a factor graph.  <br /></td></tr>
+<tr class="memitem:a708057192d2685853f97fcd30c834cfc" id="r_a708057192d2685853f97fcd30c834cfc"><td class="memItemLeft"><a id="a708057192d2685853f97fcd30c834cfc" name="a708057192d2685853f97fcd30c834cfc"></a>
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="#a2b315837d2af900fce3ee59ef54a426f">This</a> &amp;other, double tol=1e-9) const</td></tr>
+<tr class="memdesc:a708057192d2685853f97fcd30c834cfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test whether the tree is equal to another. <br /></td></tr>
+<tr class="inherit_header pub_methods_a04891"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a04891')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a04891.html">gtsam::EliminationTree&lt; DiscreteBayesNet, DiscreteFactorGraph &gt;</a></td></tr>
+<tr class="memitem:aabd3a958809c4524327d937ece611971 inherit pub_methods_a04891" id="r_aabd3a958809c4524327d937ece611971"><td class="memItemLeft">std::pair&lt; std::shared_ptr&lt; <a class="el" href="a04891.html#a5a58f63ccebf38a91c029af056b8a163">BayesNetType</a> &gt;, std::shared_ptr&lt; <a class="el" href="a04891.html#a8e0f85f2f105b76096963f275e801812">FactorGraphType</a> &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="a04891.html#aabd3a958809c4524327d937ece611971">eliminate</a> (Eliminate function) const</td></tr>
+<tr class="memdesc:aabd3a958809c4524327d937ece611971 inherit pub_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Eliminate the factors to a Bayes net and remaining factor graph.  <br /></td></tr>
+<tr class="memitem:a6a33186ea4ad6a9b0479dc0087ec30db inherit pub_methods_a04891" id="r_a6a33186ea4ad6a9b0479dc0087ec30db"><td class="memItemLeft">
+const <a class="el" href="a02227.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; <a class="el" href="a04891.html#a8cfed22389d7fd062e69a626ee3f876d">sharedNode</a> &gt; &amp;&#160;</td><td class="memItemRight"><b>roots</b> () const</td></tr>
+<tr class="memdesc:a6a33186ea4ad6a9b0479dc0087ec30db inherit pub_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the set of roots (one for a tree, multiple for a forest). <br /></td></tr>
+<tr class="memitem:afe7a2def51316f565425bb711b1a2e65 inherit pub_methods_a04891" id="r_afe7a2def51316f565425bb711b1a2e65"><td class="memItemLeft">
+const <a class="el" href="a02227.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; <a class="el" href="a04891.html#a8250570837e5516e9a2787b41a41d414">sharedFactor</a> &gt; &amp;&#160;</td><td class="memItemRight"><b>remainingFactors</b> () const</td></tr>
+<tr class="memdesc:afe7a2def51316f565425bb711b1a2e65 inherit pub_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the remaining factors that are not pulled into elimination. <br /></td></tr>
+<tr class="memitem:aa803d492b75fb518207fb2b9a6788607 inherit pub_methods_a04891" id="r_aa803d492b75fb518207fb2b9a6788607"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>swap</b> (<a class="el" href="a04891.html#a12e721d9dff82b978888af20a4297ae9">This</a> &amp;other)</td></tr>
+<tr class="memdesc:aa803d492b75fb518207fb2b9a6788607 inherit pub_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swap the data of this tree with another one, this operation is very fast. <br /></td></tr>
+<tr class="memitem:a0d5c769b08d584c53439805f1bdccd38 inherit pub_methods_a04891" id="r_a0d5c769b08d584c53439805f1bdccd38"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>print</b> (const std::string &amp;name=&quot;EliminationTree: &quot;, const <a class="el" href="a02242.html#a7d4eaa9f6e32da46e8f287499ee650d2">KeyFormatter</a> &amp;formatter=<a class="el" href="a02242.html#a04921356f5da6203f1a17e84cc8baafd">DefaultKeyFormatter</a>) const</td></tr>
+<tr class="memdesc:a0d5c769b08d584c53439805f1bdccd38 inherit pub_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the tree to cout. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:aff802fc6abe3591379eb12d3320df6da" id="r_aff802fc6abe3591379eb12d3320df6da"><td class="memItemLeft"><a id="aff802fc6abe3591379eb12d3320df6da" name="aff802fc6abe3591379eb12d3320df6da"></a>enum &#160;</td><td class="memItemRight">{ <b>dimension</b> = 3
- }</td></tr>
+<tr class="memitem:ae4e6afc353582183f3c881a3acad57ca" id="r_ae4e6afc353582183f3c881a3acad57ca"><td class="memItemLeft"><a id="ae4e6afc353582183f3c881a3acad57ca" name="ae4e6afc353582183f3c881a3acad57ca"></a>
+typedef <a class="el" href="a04891.html#af9d86f2a1c1e084c02982d08b3512385">EliminationTree</a>&lt; <a class="el" href="a03859.html">DiscreteBayesNet</a>, <a class="el" href="a03915.html">DiscreteFactorGraph</a> &gt;&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
+<tr class="memdesc:ae4e6afc353582183f3c881a3acad57ca"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#ae4e6afc353582183f3c881a3acad57ca" title="Base class.">Base</a> class. <br /></td></tr>
+<tr class="memitem:a2b315837d2af900fce3ee59ef54a426f" id="r_a2b315837d2af900fce3ee59ef54a426f"><td class="memItemLeft"><a id="a2b315837d2af900fce3ee59ef54a426f" name="a2b315837d2af900fce3ee59ef54a426f"></a>
+typedef <a class="el" href="#a782fad055747d26fb8e876e3cf51bd6f">DiscreteEliminationTree</a>&#160;</td><td class="memItemRight"><b>This</b></td></tr>
+<tr class="memdesc:a2b315837d2af900fce3ee59ef54a426f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a2b315837d2af900fce3ee59ef54a426f" title="This class.">This</a> class. <br /></td></tr>
+<tr class="memitem:a0bd4cd5a3d0485027c9cc756115c7043" id="r_a0bd4cd5a3d0485027c9cc756115c7043"><td class="memItemLeft"><a id="a0bd4cd5a3d0485027c9cc756115c7043" name="a0bd4cd5a3d0485027c9cc756115c7043"></a>
+typedef std::shared_ptr&lt; <a class="el" href="#a2b315837d2af900fce3ee59ef54a426f">This</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+<tr class="memdesc:a0bd4cd5a3d0485027c9cc756115c7043"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to this class. <br /></td></tr>
+<tr class="inherit_header pub_types_a04891"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a04891')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a04891.html">gtsam::EliminationTree&lt; DiscreteBayesNet, DiscreteFactorGraph &gt;</a></td></tr>
+<tr class="memitem:a8e0f85f2f105b76096963f275e801812 inherit pub_types_a04891" id="r_a8e0f85f2f105b76096963f275e801812"><td class="memItemLeft">
+typedef <a class="el" href="a03915.html">DiscreteFactorGraph</a>&#160;</td><td class="memItemRight"><b>FactorGraphType</b></td></tr>
+<tr class="memdesc:a8e0f85f2f105b76096963f275e801812 inherit pub_types_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">The factor graph type. <br /></td></tr>
+<tr class="memitem:ae32081c8e91b81d6833173a86c999a49 inherit pub_types_a04891" id="r_ae32081c8e91b81d6833173a86c999a49"><td class="memItemLeft">
+typedef <a class="el" href="a04819.html#aa54fb0b66fd8fee9f3c1f2844cf3edef">DiscreteFactorGraph::FactorType</a>&#160;</td><td class="memItemRight"><b>FactorType</b></td></tr>
+<tr class="memdesc:ae32081c8e91b81d6833173a86c999a49 inherit pub_types_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of factors. <br /></td></tr>
+<tr class="memitem:a8250570837e5516e9a2787b41a41d414 inherit pub_types_a04891" id="r_a8250570837e5516e9a2787b41a41d414"><td class="memItemLeft">
+typedef std::shared_ptr&lt; <a class="el" href="a04891.html#ae32081c8e91b81d6833173a86c999a49">FactorType</a> &gt;&#160;</td><td class="memItemRight"><b>sharedFactor</b></td></tr>
+<tr class="memdesc:a8250570837e5516e9a2787b41a41d414 inherit pub_types_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to a factor. <br /></td></tr>
+<tr class="memitem:a5a58f63ccebf38a91c029af056b8a163 inherit pub_types_a04891" id="r_a5a58f63ccebf38a91c029af056b8a163"><td class="memItemLeft">
+typedef <a class="el" href="a03859.html">DiscreteBayesNet</a>&#160;</td><td class="memItemRight"><b>BayesNetType</b></td></tr>
+<tr class="memdesc:a5a58f63ccebf38a91c029af056b8a163 inherit pub_types_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="a04811.html" title="A BayesNet is a tree of conditionals, stored in elimination order.">BayesNet</a> corresponding to FACTOR. <br /></td></tr>
+<tr class="memitem:ac710dbf0e617559c174181b8441c1a92 inherit pub_types_a04891" id="r_ac710dbf0e617559c174181b8441c1a92"><td class="memItemLeft">
+typedef BayesNetType::ConditionalType&#160;</td><td class="memItemRight"><b>ConditionalType</b></td></tr>
+<tr class="memdesc:ac710dbf0e617559c174181b8441c1a92 inherit pub_types_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of conditionals. <br /></td></tr>
+<tr class="memitem:ae536eba308ec7d73c97ffaebaa9378de inherit pub_types_a04891" id="r_ae536eba308ec7d73c97ffaebaa9378de"><td class="memItemLeft">
+typedef std::shared_ptr&lt; <a class="el" href="a04891.html#ac710dbf0e617559c174181b8441c1a92">ConditionalType</a> &gt;&#160;</td><td class="memItemRight"><b>sharedConditional</b></td></tr>
+<tr class="memdesc:ae536eba308ec7d73c97ffaebaa9378de inherit pub_types_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to a conditional. <br /></td></tr>
+<tr class="memitem:a0878593a56ec193beaf64f3dd564ea29 inherit pub_types_a04891" id="r_a0878593a56ec193beaf64f3dd564ea29"><td class="memItemLeft">
+typedef <a class="el" href="a04887.html#a4053522180fd649baf38a49c515e7b53">DiscreteFactorGraph::Eliminate</a>&#160;</td><td class="memItemRight"><b>Eliminate</b></td></tr>
+<tr class="memitem:a8cfed22389d7fd062e69a626ee3f876d inherit pub_types_a04891" id="r_a8cfed22389d7fd062e69a626ee3f876d"><td class="memItemLeft">
+typedef std::shared_ptr&lt; Node &gt;&#160;</td><td class="memItemRight"><b>sharedNode</b></td></tr>
+<tr class="memdesc:a8cfed22389d7fd062e69a626ee3f876d inherit pub_types_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to Node. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a0489565f0df0d7bb216651425b56d2ef" id="r_a0489565f0df0d7bb216651425b56d2ef"><td class="memItemLeft"><a id="a0489565f0df0d7bb216651425b56d2ef" name="a0489565f0df0d7bb216651425b56d2ef"></a>
-GTSAM_EXPORT friend std::ostream &amp;&#160;</td><td class="memItemRight"><b>operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="#af91933798181ce1bb4759a7f78900ed8">StereoPoint2</a> &amp;p)</td></tr>
-<tr class="memdesc:a0489565f0df0d7bb216651425b56d2ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Streaming. <br /></td></tr>
+<tr class="memitem:afb1e378ea19d4d4de1a201e467e0699d" id="r_afb1e378ea19d4d4de1a201e467e0699d"><td class="memItemLeft"><a id="afb1e378ea19d4d4de1a201e467e0699d" name="afb1e378ea19d4d4de1a201e467e0699d"></a>
+class&#160;</td><td class="memItemRight"><b>::EliminationTreeTester</b></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_types_a04891"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_types_a04891')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Types inherited from <a class="el" href="a04891.html">gtsam::EliminationTree&lt; DiscreteBayesNet, DiscreteFactorGraph &gt;</a></td></tr>
+<tr class="memitem:a12e721d9dff82b978888af20a4297ae9 inherit pro_types_a04891" id="r_a12e721d9dff82b978888af20a4297ae9"><td class="memItemLeft">
+typedef <a class="el" href="a04891.html#af9d86f2a1c1e084c02982d08b3512385">EliminationTree</a>&lt; <a class="el" href="a03859.html">DiscreteBayesNet</a>, <a class="el" href="a03915.html">DiscreteFactorGraph</a> &gt;&#160;</td><td class="memItemRight"><b>This</b></td></tr>
+<tr class="memdesc:a12e721d9dff82b978888af20a4297ae9 inherit pro_types_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a04891.html#a12e721d9dff82b978888af20a4297ae9">This</a> class. <br /></td></tr>
+<tr class="memitem:a407d15a6079500ea4b4359f47026370b inherit pro_types_a04891" id="r_a407d15a6079500ea4b4359f47026370b"><td class="memItemLeft">
+typedef std::shared_ptr&lt; <a class="el" href="a04891.html#a12e721d9dff82b978888af20a4297ae9">This</a> &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
+<tr class="memdesc:a407d15a6079500ea4b4359f47026370b inherit pro_types_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to this class. <br /></td></tr>
+<tr class="inherit_header pro_methods_a04891"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_a04891')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="a04891.html">gtsam::EliminationTree&lt; DiscreteBayesNet, DiscreteFactorGraph &gt;</a></td></tr>
+<tr class="memitem:af9d86f2a1c1e084c02982d08b3512385 inherit pro_methods_a04891" id="r_af9d86f2a1c1e084c02982d08b3512385"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04891.html#af9d86f2a1c1e084c02982d08b3512385">EliminationTree</a> (const <a class="el" href="a04891.html#a8e0f85f2f105b76096963f275e801812">FactorGraphType</a> &amp;factorGraph, const <a class="el" href="a04999.html">VariableIndex</a> &amp;structure, const <a class="el" href="a04979.html">Ordering</a> &amp;order)</td></tr>
+<tr class="memdesc:af9d86f2a1c1e084c02982d08b3512385 inherit pro_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the elimination tree of a factor graph using pre-computed column structure.  <br /></td></tr>
+<tr class="memitem:a5767cf9b1e41ecdd681fc3c230e4a651 inherit pro_methods_a04891" id="r_a5767cf9b1e41ecdd681fc3c230e4a651"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a04891.html#a5767cf9b1e41ecdd681fc3c230e4a651">EliminationTree</a> (const <a class="el" href="a04891.html#a8e0f85f2f105b76096963f275e801812">FactorGraphType</a> &amp;factorGraph, const <a class="el" href="a04979.html">Ordering</a> &amp;order)</td></tr>
+<tr class="memdesc:a5767cf9b1e41ecdd681fc3c230e4a651 inherit pro_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the elimination tree of a factor graph.  <br /></td></tr>
+<tr class="memitem:a2d9565551bfe73676f82d41d86f158a5 inherit pro_methods_a04891" id="r_a2d9565551bfe73676f82d41d86f158a5"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>EliminationTree</b> (const <a class="el" href="a04891.html#a12e721d9dff82b978888af20a4297ae9">This</a> &amp;other)</td></tr>
+<tr class="memdesc:a2d9565551bfe73676f82d41d86f158a5 inherit pro_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor - makes a deep copy of the tree structure, but only pointers to factors are copied, factors are not cloned. <br /></td></tr>
+<tr class="memitem:a1224c71a07df3951c7d4ca92f2e8c30d inherit pro_methods_a04891" id="r_a1224c71a07df3951c7d4ca92f2e8c30d"><td class="memItemLeft">
+<a class="el" href="a04891.html#a12e721d9dff82b978888af20a4297ae9">This</a> &amp;&#160;</td><td class="memItemRight"><b>operator=</b> (const <a class="el" href="a04891.html#a12e721d9dff82b978888af20a4297ae9">This</a> &amp;other)</td></tr>
+<tr class="memdesc:a1224c71a07df3951c7d4ca92f2e8c30d inherit pro_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a03803.html" title="An assignment from labels to value index (size_t).">Assignment</a> operator - makes a deep copy of the tree structure, but only pointers to factors are copied, factors are not cloned. <br /></td></tr>
+<tr class="memitem:aacb8da2b775867c6bc7bc064ded4f68a inherit pro_methods_a04891" id="r_aacb8da2b775867c6bc7bc064ded4f68a"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>EliminationTree</b> ()</td></tr>
+<tr class="memdesc:aacb8da2b775867c6bc7bc064ded4f68a inherit pro_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protected default constructor. <br /></td></tr>
+<tr class="memitem:a056479065f5685d308ff64ed0cb609a2 inherit pro_methods_a04891" id="r_a056479065f5685d308ff64ed0cb609a2"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const <a class="el" href="a04891.html#a12e721d9dff82b978888af20a4297ae9">This</a> &amp;other, double tol=1e-9) const</td></tr>
+<tr class="memdesc:a056479065f5685d308ff64ed0cb609a2 inherit pro_methods_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test whether the tree is equal to another. <br /></td></tr>
+<tr class="inherit_header pro_attribs_a04891"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a04891')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a04891.html">gtsam::EliminationTree&lt; DiscreteBayesNet, DiscreteFactorGraph &gt;</a></td></tr>
+<tr class="memitem:a335b2e576f841c10c6cf722214c5799e inherit pro_attribs_a04891" id="r_a335b2e576f841c10c6cf722214c5799e"><td class="memItemLeft">
+<a class="el" href="a02227.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; <a class="el" href="a04891.html#a8cfed22389d7fd062e69a626ee3f876d">sharedNode</a> &gt;&#160;</td><td class="memItemRight"><b>roots_</b></td></tr>
+<tr class="memdesc:a335b2e576f841c10c6cf722214c5799e inherit pro_attribs_a04891"><td class="mdescLeft">&#160;</td><td class="mdescRight">concept check <br /></td></tr>
+<tr class="memitem:a6947efa3bd051632caca1b6964ea5448 inherit pro_attribs_a04891" id="r_a6947efa3bd051632caca1b6964ea5448"><td class="memItemLeft">
+<a class="el" href="a02227.html#ga6c6638ff98b128f20258643d9c7ed725">FastVector</a>&lt; <a class="el" href="a04891.html#a8250570837e5516e9a2787b41a41d414">sharedFactor</a> &gt;&#160;</td><td class="memItemRight"><b>remainingFactors_</b></td></tr>
 </table>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a782fad055747d26fb8e876e3cf51bd6f" name="a782fad055747d26fb8e876e3cf51bd6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a782fad055747d26fb8e876e3cf51bd6f">&#9670;&#160;</a></span>DiscreteEliminationTree() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gtsam::DiscreteEliminationTree::DiscreteEliminationTree </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a03915.html">DiscreteFactorGraph</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>factorGraph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a04999.html">VariableIndex</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>structure</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a04979.html">Ordering</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>order</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Build the elimination tree of a factor graph using pre-computed column structure. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">factorGraph</td><td>The factor graph for which to build the elimination tree </td></tr>
+    <tr><td class="paramname">structure</td><td>The set of factors involving each variable. If this is not precomputed, you can call the Create(const FactorGraph&lt;DERIVEDFACTOR&gt;&amp;) named constructor instead. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The elimination tree </dd></dl>
+
+</div>
+</div>
+<a id="a615df00f083b043dbc3734f68bad05fc" name="a615df00f083b043dbc3734f68bad05fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a615df00f083b043dbc3734f68bad05fc">&#9670;&#160;</a></span>DiscreteEliminationTree() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gtsam::DiscreteEliminationTree::DiscreteEliminationTree </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a03915.html">DiscreteFactorGraph</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>factorGraph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a04979.html">Ordering</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>order</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Build the elimination tree of a factor graph. </p>
+<p>Note that this has to compute the column structure as a <a class="el" href="a04999.html" title="The VariableIndex class computes and stores the block column structure of a factor graph.">VariableIndex</a>, so if you already have this precomputed, use the other constructor instead. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">factorGraph</td><td>The factor graph for which to build the elimination tree </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/geometry/<a class="el" href="a00305_source.html">StereoPoint2.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/geometry/<a class="el" href="a00317.html">StereoPoint2.cpp</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/discrete/<a class="el" href="a00323_source.html">DiscreteEliminationTree.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/discrete/<a class="el" href="a00266.html">DiscreteEliminationTree.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -216,7 +294,7 @@ GTSAM_EXPORT friend std::ostream &amp;&#160;</td><td class="memItemRight"><b>ope
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a03899.html">StereoPoint2</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a03899.html">DiscreteEliminationTree</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

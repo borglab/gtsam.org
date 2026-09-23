@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,18 +96,41 @@ $(function(){initNavTree('a05251.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::MFAS Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::noiseModel::mEstimator::Tukey Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a05251.html">gtsam::MFAS</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a05251.html#a8decdf4c77d7835bd322183cb4a6c565">computeOrdering</a>() const</td><td class="entry"><a class="el" href="a05251.html">gtsam::MFAS</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05251.html#a978f4d86b334dbcaedeb1e1646b764da">computeOutlierWeights</a>() const</td><td class="entry"><a class="el" href="a05251.html">gtsam::MFAS</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>KeyPair</b> typedef (defined in <a class="el" href="a05251.html">gtsam::MFAS</a>)</td><td class="entry"><a class="el" href="a05251.html">gtsam::MFAS</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05251.html#a0fbe57d306aa53ff9f9ef6b4dd5f4ca2">MFAS</a>(const std::map&lt; KeyPair, double &gt; &amp;edgeWeights)</td><td class="entry"><a class="el" href="a05251.html">gtsam::MFAS</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a05251.html#ab67e60b4b7da2c9d2dd82a0e6b6e6e15">MFAS</a>(const TranslationEdges &amp;relativeTranslations, const Unit3 &amp;projectionDirection)</td><td class="entry"><a class="el" href="a05251.html">gtsam::MFAS</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>TranslationEdges</b> typedef (defined in <a class="el" href="a05251.html">gtsam::MFAS</a>)</td><td class="entry"><a class="el" href="a05251.html">gtsam::MFAS</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Base</b>(const ReweightScheme reweight=Block) (defined in <a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a>)</td><td class="entry"><a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Block</b> enum value (defined in <a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a>)</td><td class="entry"><a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>c_</b> (defined in <a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a>)</td><td class="entry"><a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Create</b>(double k, const ReweightScheme reweight=Block) (defined in <a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a>)</td><td class="entry"><a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>csquared_</b> (defined in <a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a>)</td><td class="entry"><a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>equals</b>(const Base &amp;expected, double tol=1e-8) const override (defined in <a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a>)</td><td class="entry"><a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05251.html#a384027324a29f2dd957d478478ad3bd2">graduatedLoss</a>(double distance, double mu) const override</td><td class="entry"><a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05251.html#aa44fb6ce0774ac98a39e671e3a0a7d09">graduatedWeight</a>(double distance, double mu) const override</td><td class="entry"><a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05251.html#a4a8286cf7ab7a229aa2933dbf54fe266">Loss</a>(double distance, double c, double csquared)</td><td class="entry"><a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05251.html#a33959b21c0c5d3b06d0e908e65afd071">loss</a>(double distance) const override</td><td class="entry"><a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>modelParameter</b>() const (defined in <a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a>)</td><td class="entry"><a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>print</b>(const std::string &amp;s) const override (defined in <a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a>)</td><td class="entry"><a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05231.html#a7b99210b97477669026faafe4c1c5f86">reweight</a>(Vector &amp;error) const</td><td class="entry"><a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>reweight</b>(std::vector&lt; Matrix &gt; &amp;A, Vector &amp;error) const (defined in <a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a>)</td><td class="entry"><a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>reweight</b>(Matrix &amp;A, Vector &amp;error) const (defined in <a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a>)</td><td class="entry"><a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>reweight</b>(Matrix &amp;A1, Matrix &amp;A2, Vector &amp;error) const (defined in <a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a>)</td><td class="entry"><a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>reweight</b>(Matrix &amp;A1, Matrix &amp;A2, Matrix &amp;A3, Vector &amp;error) const (defined in <a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a>)</td><td class="entry"><a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05231.html#a324ead5e657531310058f768f9daf0e8">reweight_</a></td><td class="entry"><a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05231.html#ac2f379f230a3a8f2624e6f39172cf782">ReweightScheme</a> enum name</td><td class="entry"><a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05231.html#a61b5819c5c9f21d52184f1b3d540047a">reweightScheme</a>() const</td><td class="entry"><a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Scalar</b> enum value (defined in <a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a>)</td><td class="entry"><a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>shared_ptr</b> typedef (defined in <a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a>)</td><td class="entry"><a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>sqrtWeight</b>(double distance) const (defined in <a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a>)</td><td class="entry"><a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05231.html#a3e620f2a766b0a890426a961eedefb72">sqrtWeight</a>(const Vector &amp;error) const</td><td class="entry"><a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Tukey</b>(double c=4.6851, const ReweightScheme reweight=Block) (defined in <a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a>)</td><td class="entry"><a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05251.html#a9cb52accf7afbee759be8daf59972329">Weight</a>(double distance, double c, double csquared)</td><td class="entry"><a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a05251.html#aa7b166f4788a6e620165c740924e4cea">weight</a>(double distance) const override</td><td class="entry"><a class="el" href="a05251.html">gtsam::noiseModel::mEstimator::Tukey</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="a05231.html#a91b748d275ce0c13d9b76c580c6d29a9">gtsam::noiseModel::mEstimator::Base::weight</a>(const Vector &amp;error) const</td><td class="entry"><a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~Base</b>() (defined in <a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a>)</td><td class="entry"><a class="el" href="a05231.html">gtsam::noiseModel::mEstimator::Base</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

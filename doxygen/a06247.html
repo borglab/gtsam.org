@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: NoiseModelFactor Class Reference</title>
+<title>gtsam: gtsam::FixedLagSmoother::Result Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -70,7 +70,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('a06247.html','',''); });
+$(function(){initNavTree('a06247.html','','a06244'); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -96,16 +96,69 @@ $(function(){initNavTree('a06247.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">NoiseModelFactor Class Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::FixedLagSmoother::Result Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>noise model to the factor, and calculates the error by asking the user to implement the method </p>
-<div class="fragment"><div class="line"><span class="keywordtype">double</span> evaluateError(<span class="keyword">const</span> <a class="code hl_class" href="a06243.html">Values</a>&amp; c) <span class="keyword">const</span> </div>
-<div class="ttc" id="aa06243_html"><div class="ttname"><a href="a06243.html">Values</a></div><div class="ttdoc">In nonlinear factors, the error function returns the negative log-likelihood as a non-linear function...</div></div>
-</div><!-- fragment --><p>. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/<a class="el" href="a01157_source.html">NonlinearFactor.h</a></li>
+<div class="textblock"><p>Meta information returned about the update. </p>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a8bc0b69e5e92c84b1ba7ebc656a20d1d" id="r_a8bc0b69e5e92c84b1ba7ebc656a20d1d"><td class="memItemLeft"><a id="a8bc0b69e5e92c84b1ba7ebc656a20d1d" name="a8bc0b69e5e92c84b1ba7ebc656a20d1d"></a>
+size_t&#160;</td><td class="memItemRight"><b>getIterations</b> () const</td></tr>
+<tr class="memdesc:a8bc0b69e5e92c84b1ba7ebc656a20d1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter methods. <br /></td></tr>
+<tr class="memitem:a661d7e087a673ec13f3873648d161b6f" id="r_a661d7e087a673ec13f3873648d161b6f"><td class="memItemLeft"><a id="a661d7e087a673ec13f3873648d161b6f" name="a661d7e087a673ec13f3873648d161b6f"></a>
+size_t&#160;</td><td class="memItemRight"><b>getIntermediateSteps</b> () const</td></tr>
+<tr class="memitem:ab73b39fb78f2ae7c109a09207179891e" id="r_ab73b39fb78f2ae7c109a09207179891e"><td class="memItemLeft"><a id="ab73b39fb78f2ae7c109a09207179891e" name="ab73b39fb78f2ae7c109a09207179891e"></a>
+size_t&#160;</td><td class="memItemRight"><b>getNonlinearVariables</b> () const</td></tr>
+<tr class="memitem:ac938389313760a7fd472e432d626b368" id="r_ac938389313760a7fd472e432d626b368"><td class="memItemLeft"><a id="ac938389313760a7fd472e432d626b368" name="ac938389313760a7fd472e432d626b368"></a>
+size_t&#160;</td><td class="memItemRight"><b>getLinearVariables</b> () const</td></tr>
+<tr class="memitem:a4224fcb53f8231d60c666e1b5d7a1d92" id="r_a4224fcb53f8231d60c666e1b5d7a1d92"><td class="memItemLeft"><a id="a4224fcb53f8231d60c666e1b5d7a1d92" name="a4224fcb53f8231d60c666e1b5d7a1d92"></a>
+double&#160;</td><td class="memItemRight"><b>getError</b> () const</td></tr>
+<tr class="memitem:a692a6550673984b808914a87264d2d50" id="r_a692a6550673984b808914a87264d2d50"><td class="memItemLeft"><a id="a692a6550673984b808914a87264d2d50" name="a692a6550673984b808914a87264d2d50"></a>
+<a class="el" href="a02242.html#a99e63c90a8ac740d99716e73fe97e054">FactorIndices</a>&#160;</td><td class="memItemRight"><b>getMarginalFactorIndices</b> () const</td></tr>
+<tr class="memitem:a828ee3ab138249f3e8f192ab1b58f2b1" id="r_a828ee3ab138249f3e8f192ab1b58f2b1"><td class="memItemLeft"><a id="a828ee3ab138249f3e8f192ab1b58f2b1" name="a828ee3ab138249f3e8f192ab1b58f2b1"></a>
+<a class="el" href="a02242.html#a99e63c90a8ac740d99716e73fe97e054">FactorIndices</a>&#160;</td><td class="memItemRight"><b>getDeletedFactorIndices</b> () const</td></tr>
+<tr class="memitem:a63664a9abc6a350161956fc9b2359b12" id="r_a63664a9abc6a350161956fc9b2359b12"><td class="memItemLeft"><a id="a63664a9abc6a350161956fc9b2359b12" name="a63664a9abc6a350161956fc9b2359b12"></a>
+KeySet&#160;</td><td class="memItemRight"><b>getKeysOfDeletedNodes</b> () const</td></tr>
+<tr class="memitem:a4f2b7d58d611ed91b9dd91ea6c345f89" id="r_a4f2b7d58d611ed91b9dd91ea6c345f89"><td class="memItemLeft"><a id="a4f2b7d58d611ed91b9dd91ea6c345f89" name="a4f2b7d58d611ed91b9dd91ea6c345f89"></a>
+KeySet&#160;</td><td class="memItemRight"><b>getExpiredPendingKeys</b> () const</td></tr>
+<tr class="memitem:a11497fec3cc17a95003e875f9bdb721b" id="r_a11497fec3cc17a95003e875f9bdb721b"><td class="memItemLeft"><a id="a11497fec3cc17a95003e875f9bdb721b" name="a11497fec3cc17a95003e875f9bdb721b"></a>
+GTSAM_EXPORT void&#160;</td><td class="memItemRight"><b>print</b> () const</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a033f08a7ba38504c13dd924a548508fd" id="r_a033f08a7ba38504c13dd924a548508fd"><td class="memItemLeft"><a id="a033f08a7ba38504c13dd924a548508fd" name="a033f08a7ba38504c13dd924a548508fd"></a>
+size_t&#160;</td><td class="memItemRight"><b>iterations</b></td></tr>
+<tr class="memdesc:a033f08a7ba38504c13dd924a548508fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of optimizer iterations performed. <br /></td></tr>
+<tr class="memitem:a68c4d214b1904c6eaa3c1915f1661070" id="r_a68c4d214b1904c6eaa3c1915f1661070"><td class="memItemLeft"><a id="a68c4d214b1904c6eaa3c1915f1661070" name="a68c4d214b1904c6eaa3c1915f1661070"></a>
+size_t&#160;</td><td class="memItemRight"><b>intermediateSteps</b></td></tr>
+<tr class="memdesc:a68c4d214b1904c6eaa3c1915f1661070"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of intermediate steps performed within the optimization. For L-M, this is the number of lambdas tried. <br /></td></tr>
+<tr class="memitem:a71cbb6d1a9bbbbc2fcd84ff24ffb2631" id="r_a71cbb6d1a9bbbbc2fcd84ff24ffb2631"><td class="memItemLeft"><a id="a71cbb6d1a9bbbbc2fcd84ff24ffb2631" name="a71cbb6d1a9bbbbc2fcd84ff24ffb2631"></a>
+size_t&#160;</td><td class="memItemRight"><b>nonlinearVariables</b></td></tr>
+<tr class="memdesc:a71cbb6d1a9bbbbc2fcd84ff24ffb2631"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of variables that can be relinearized. <br /></td></tr>
+<tr class="memitem:afd5396592531dacf86c7a0a480025999" id="r_afd5396592531dacf86c7a0a480025999"><td class="memItemLeft"><a id="afd5396592531dacf86c7a0a480025999" name="afd5396592531dacf86c7a0a480025999"></a>
+size_t&#160;</td><td class="memItemRight"><b>linearVariables</b></td></tr>
+<tr class="memdesc:afd5396592531dacf86c7a0a480025999"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of variables that must keep a constant linearization point. <br /></td></tr>
+<tr class="memitem:a9536f78994092c233308b336f41272f8" id="r_a9536f78994092c233308b336f41272f8"><td class="memItemLeft"><a id="a9536f78994092c233308b336f41272f8" name="a9536f78994092c233308b336f41272f8"></a>
+double&#160;</td><td class="memItemRight"><b>error</b></td></tr>
+<tr class="memdesc:a9536f78994092c233308b336f41272f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The final factor graph error. <br /></td></tr>
+<tr class="memitem:a16b959a3bb77f88d64a67f065cb4150a" id="r_a16b959a3bb77f88d64a67f065cb4150a"><td class="memItemLeft"><a id="a16b959a3bb77f88d64a67f065cb4150a" name="a16b959a3bb77f88d64a67f065cb4150a"></a>
+<a class="el" href="a02242.html#a99e63c90a8ac740d99716e73fe97e054">FactorIndices</a>&#160;</td><td class="memItemRight"><b>marginalFactorIndices</b></td></tr>
+<tr class="memdesc:a16b959a3bb77f88d64a67f065cb4150a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indices added during the marginalizeLeaves step. <br /></td></tr>
+<tr class="memitem:ada23148abce00b3855cf7a6e8f9ef971" id="r_ada23148abce00b3855cf7a6e8f9ef971"><td class="memItemLeft"><a id="ada23148abce00b3855cf7a6e8f9ef971" name="ada23148abce00b3855cf7a6e8f9ef971"></a>
+<a class="el" href="a02242.html#a99e63c90a8ac740d99716e73fe97e054">FactorIndices</a>&#160;</td><td class="memItemRight"><b>deletedFactorIndices</b></td></tr>
+<tr class="memdesc:ada23148abce00b3855cf7a6e8f9ef971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indices removed during the marginalizeLeaves step. <br /></td></tr>
+<tr class="memitem:aea885b50adbf4231e56b6d3ba25626f5" id="r_aea885b50adbf4231e56b6d3ba25626f5"><td class="memItemLeft"><a id="aea885b50adbf4231e56b6d3ba25626f5" name="aea885b50adbf4231e56b6d3ba25626f5"></a>
+KeySet&#160;</td><td class="memItemRight"><b>keysOfDeletedNodes</b></td></tr>
+<tr class="memdesc:aea885b50adbf4231e56b6d3ba25626f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keys of nodes removed during the marginalizeLeaves step. <br /></td></tr>
+<tr class="memitem:ae18d2ece4122ab50d44e4fca60ac8840" id="r_ae18d2ece4122ab50d44e4fca60ac8840"><td class="memItemLeft"><a id="ae18d2ece4122ab50d44e4fca60ac8840" name="ae18d2ece4122ab50d44e4fca60ac8840"></a>
+KeySet&#160;</td><td class="memItemRight"><b>expiredPendingKeys</b></td></tr>
+<tr class="memdesc:ae18d2ece4122ab50d44e4fca60ac8840"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keys of values that left the lag window before any factor referenced them, and were removed without marginalization. <br /></td></tr>
+</table>
+<hr/>The documentation for this struct was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/nonlinear/<a class="el" href="a01448_source.html">FixedLagSmoother.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/nonlinear/<a class="el" href="a01562.html">FixedLagSmoother.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -120,7 +173,7 @@ $(function(){initNavTree('a06247.html','',''); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a06247.html">NoiseModelFactor</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a06243.html">FixedLagSmoother</a></li><li class="navelem"><a href="a06247.html">Result</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

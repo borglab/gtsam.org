@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/slam/BetweenFactorEM.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/sfm/MFAS.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,26 +96,35 @@ $(function(){initNavTree('a01703.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">BetweenFactorEM.h File Reference</div></div>
+  <div class="headertitle"><div class="title">MFAS.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p><a href="a01703_source.html">Go to the source code of this file.</a></p>
+<p>Source file for the <a class="el" href="a06743.html" title="The MFAS class to solve a Minimum feedback arc set (MFAS) problem.">MFAS</a> class.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3ABetweenFactorEM_3C_20VALUE_20_3E" id="r_gtsam_3A_3ABetweenFactorEM_3C_20VALUE_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a05999.html">gtsam::BetweenFactorEM&lt; VALUE &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class for a measurement predicted by "between(config[key1],config[key2])".  <a href="a05999.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3Atraits_3C_20BetweenFactorEM_3C_20VALUE_20_3E_20_3E" id="r_gtsam_3A_3Atraits_3C_20BetweenFactorEM_3C_20VALUE_20_3E_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a06003.html">gtsam::traits&lt; BetweenFactorEM&lt; VALUE &gt; &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">traits  <a href="a06003.html#details">More...</a><br /></td></tr>
+<tr class="memitem:unordered_5Fmap_3C_20K_2C_20T_20_3E" id="r_unordered_5Fmap_3C_20K_2C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a16261.html">unordered_map&lt; K, T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">STL class.  <a href="a16261.html#details">More...</a><br /></td></tr>
+<tr class="memitem:unordered_5Fset_3C_20K_20_3E" id="r_unordered_5Fset_3C_20K_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a16281.html">unordered_set&lt; K &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">STL class.  <a href="a16281.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:abb3efd5cd3e888ac46d52e935c4a3de5" id="r_abb3efd5cd3e888ac46d52e935c4a3de5"><td class="memItemLeft"><a id="abb3efd5cd3e888ac46d52e935c4a3de5" name="abb3efd5cd3e888ac46d52e935c4a3de5"></a>
+<a class="el" href="a16261.html">unordered_map</a>&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, GraphNode &gt;&#160;</td><td class="memItemRight"><b>graphFromEdges</b> (const <a class="el" href="a16201.html">map</a>&lt; MFAS::KeyPair, double &gt; &amp;edgeWeights)</td></tr>
+<tr class="memitem:a26102a4f47cc94335b77dc0fbd1460ff" id="r_a26102a4f47cc94335b77dc0fbd1460ff"><td class="memItemLeft"><a id="a26102a4f47cc94335b77dc0fbd1460ff" name="a26102a4f47cc94335b77dc0fbd1460ff"></a>
+<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><b>selectNextNodeInOrdering</b> (const <a class="el" href="a16261.html">unordered_map</a>&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, GraphNode &gt; &amp;graph)</td></tr>
+<tr class="memitem:ad2adb0b0db06f2cd0b7bfaec6a78e473" id="r_ad2adb0b0db06f2cd0b7bfaec6a78e473"><td class="memItemLeft"><a id="ad2adb0b0db06f2cd0b7bfaec6a78e473" name="ad2adb0b0db06f2cd0b7bfaec6a78e473"></a>
+double&#160;</td><td class="memItemRight"><b>absWeightOfEdge</b> (const <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key1, const <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key2, const <a class="el" href="a16201.html">map</a>&lt; MFAS::KeyPair, double &gt; &amp;edgeWeights)</td></tr>
+<tr class="memitem:a15fece1c2c6b780bda48c8dd464fd799" id="r_a15fece1c2c6b780bda48c8dd464fd799"><td class="memItemLeft"><a id="a15fece1c2c6b780bda48c8dd464fd799" name="a15fece1c2c6b780bda48c8dd464fd799"></a>
+void&#160;</td><td class="memItemRight"><b>removeNodeFromGraph</b> (const <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> node, const <a class="el" href="a16201.html">map</a>&lt; MFAS::KeyPair, double &gt; edgeWeights, <a class="el" href="a16261.html">unordered_map</a>&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, GraphNode &gt; &amp;graph)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Vadim Indelman </dd></dl>
+<div class="textblock"><p>Source file for the <a class="el" href="a06743.html" title="The MFAS class to solve a Minimum feedback arc set (MFAS) problem.">MFAS</a> class. </p>
+<dl class="section author"><dt>Author</dt><dd>Akshay Krishnan </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>July 2020 </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -129,7 +138,7 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam_unstable</b></li><li class="navelem"><b>slam</b></li><li class="navelem"><a href="a01703.html">BetweenFactorEM.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>sfm</b></li><li class="navelem"><a href="a01703.html">MFAS.cpp</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

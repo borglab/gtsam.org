@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::traits&lt; SmartStereoProjectionFactorPP &gt; Struct Reference</title>
+<title>gtsam: gtsam::DoglegParams Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,35 +96,200 @@ $(function(){initNavTree('a06143.html','','a06140'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; SmartStereoProjectionFactorPP &gt; Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::DoglegParams Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>traits </p>
-</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::traits&lt; SmartStereoProjectionFactorPP &gt;:</div>
+<div class="textblock"><p>Parameters for Levenberg-Marquardt optimization. </p>
+<p>Note that this parameters class inherits from <a class="el" href="a06471.html" title="The common parameters for Nonlinear optimizers.">NonlinearOptimizerParams</a>, which specifies the parameters common to all nonlinear optimization algorithms. This class also contains all of those parameters. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::DoglegParams:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a06143.png" usemap="#gtsam_3A_3Atraits_3C_20SmartStereoProjectionFactorPP_20_3E_map" alt=""/>
-  <map id="gtsam_3A_3Atraits_3C_20SmartStereoProjectionFactorPP_20_3E_map" name="gtsam_3A_3Atraits_3C_20SmartStereoProjectionFactorPP_20_3E_map">
-<area href="a03039.html" alt="gtsam::Testable&lt; SmartStereoProjectionFactorPP &gt;" shape="rect" coords="0,0,300,24"/>
+  <img src="a06143.png" usemap="#gtsam_3A_3ADoglegParams_map" alt=""/>
+  <map id="gtsam_3A_3ADoglegParams_map" name="gtsam_3A_3ADoglegParams_map">
+<area href="a06471.html" title="The common parameters for Nonlinear optimizers." alt="gtsam::NonlinearOptimizerParams" shape="rect" coords="0,0,200,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aa2972de8287baabaa1315e20b55d5078" id="r_aa2972de8287baabaa1315e20b55d5078"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa2972de8287baabaa1315e20b55d5078">print</a> (const std::string &amp;str=&quot;&quot;) const override</td></tr>
+<tr class="memitem:ac15deddbc67292e4434fca597604ee98" id="r_ac15deddbc67292e4434fca597604ee98"><td class="memItemLeft"><a id="ac15deddbc67292e4434fca597604ee98" name="ac15deddbc67292e4434fca597604ee98"></a>
+double&#160;</td><td class="memItemRight"><b>getDeltaInitial</b> () const</td></tr>
+<tr class="memitem:acfccc2dbc3ae17baf147beea1c62b30f" id="r_acfccc2dbc3ae17baf147beea1c62b30f"><td class="memItemLeft"><a id="acfccc2dbc3ae17baf147beea1c62b30f" name="acfccc2dbc3ae17baf147beea1c62b30f"></a>
+std::string&#160;</td><td class="memItemRight"><b>getVerbosityDL</b> () const</td></tr>
+<tr class="memitem:ad3ec7611a06ec23e5dad8e25e3520e40" id="r_ad3ec7611a06ec23e5dad8e25e3520e40"><td class="memItemLeft"><a id="ad3ec7611a06ec23e5dad8e25e3520e40" name="ad3ec7611a06ec23e5dad8e25e3520e40"></a>
+void&#160;</td><td class="memItemRight"><b>setDeltaInitial</b> (double <a class="el" href="#afc7c92d489fcbea53a1b645185e43e53">deltaInitial</a>)</td></tr>
+<tr class="memitem:a9cdb0227f0359ee71d565808517bb081" id="r_a9cdb0227f0359ee71d565808517bb081"><td class="memItemLeft"><a id="a9cdb0227f0359ee71d565808517bb081" name="a9cdb0227f0359ee71d565808517bb081"></a>
+void&#160;</td><td class="memItemRight"><b>setVerbosityDL</b> (const std::string &amp;<a class="el" href="#ae6a2936aed619333036329c343281356">verbosityDL</a>)</td></tr>
+<tr class="inherit_header pub_methods_a06471"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a06471')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a06471.html">gtsam::NonlinearOptimizerParams</a></td></tr>
+<tr class="memitem:a07848bf4cd6a3d4dd41739d2f4cb15ad inherit pub_methods_a06471" id="r_a07848bf4cd6a3d4dd41739d2f4cb15ad"><td class="memItemLeft">
+size_t&#160;</td><td class="memItemRight"><b>getMaxIterations</b> () const</td></tr>
+<tr class="memitem:a48b23f596cafc82e4cd15379ea5800cf inherit pub_methods_a06471" id="r_a48b23f596cafc82e4cd15379ea5800cf"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>getRelativeErrorTol</b> () const</td></tr>
+<tr class="memitem:a555d99b61778ef8e2b9105ff964b783f inherit pub_methods_a06471" id="r_a555d99b61778ef8e2b9105ff964b783f"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>getAbsoluteErrorTol</b> () const</td></tr>
+<tr class="memitem:af4ad258c38f2a976356b617341a84dc4 inherit pub_methods_a06471" id="r_af4ad258c38f2a976356b617341a84dc4"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>getErrorTol</b> () const</td></tr>
+<tr class="memitem:ac98a3979417251d1c0e3b401bf2276ea inherit pub_methods_a06471" id="r_ac98a3979417251d1c0e3b401bf2276ea"><td class="memItemLeft">
+std::string&#160;</td><td class="memItemRight"><b>getVerbosity</b> () const</td></tr>
+<tr class="memitem:a88b60a77b27f44e6525fe0963ee913b1 inherit pub_methods_a06471" id="r_a88b60a77b27f44e6525fe0963ee913b1"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>setMaxIterations</b> (int value)</td></tr>
+<tr class="memitem:ab57c95b505c9b6302491749a8568fd05 inherit pub_methods_a06471" id="r_ab57c95b505c9b6302491749a8568fd05"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>setRelativeErrorTol</b> (double value)</td></tr>
+<tr class="memitem:a43925d81eb9dce49846894effcffe1b2 inherit pub_methods_a06471" id="r_a43925d81eb9dce49846894effcffe1b2"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>setAbsoluteErrorTol</b> (double value)</td></tr>
+<tr class="memitem:a412c9bda5c251eeabd52fbd6cb902e51 inherit pub_methods_a06471" id="r_a412c9bda5c251eeabd52fbd6cb902e51"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>setErrorTol</b> (double value)</td></tr>
+<tr class="memitem:ad19284b16c1faf75718e3d54edb5f9e3 inherit pub_methods_a06471" id="r_ad19284b16c1faf75718e3d54edb5f9e3"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>setVerbosity</b> (const std::string &amp;src)</td></tr>
+<tr class="memitem:a663123b37ff99b6a4ed3288f809b5315 inherit pub_methods_a06471" id="r_a663123b37ff99b6a4ed3288f809b5315"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>equals</b> (const NonlinearOptimizerParams &amp;other, double tol=1e-9) const</td></tr>
+<tr class="memitem:a3dd7096867898319937891c0e85e8b2d inherit pub_methods_a06471" id="r_a3dd7096867898319937891c0e85e8b2d"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>isMultifrontal</b> () const</td></tr>
+<tr class="memitem:a00de3990c48229d0959ce208fda0cabb inherit pub_methods_a06471" id="r_a00de3990c48229d0959ce208fda0cabb"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>isSequential</b> () const</td></tr>
+<tr class="memitem:abe612ae4ea6a3f4e955a825a44b67f4b inherit pub_methods_a06471" id="r_abe612ae4ea6a3f4e955a825a44b67f4b"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>isCholmod</b> () const</td></tr>
+<tr class="memitem:ad7601ed30c7ceb2a43cc93020126125d inherit pub_methods_a06471" id="r_ad7601ed30c7ceb2a43cc93020126125d"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>isIterative</b> () const</td></tr>
+<tr class="memitem:a7f752b4470f09d13c9f779afad53a296 inherit pub_methods_a06471" id="r_a7f752b4470f09d13c9f779afad53a296"><td class="memItemLeft">
+bool&#160;</td><td class="memItemRight"><b>requiresOrdering</b> () const</td></tr>
+<tr class="memdesc:a7f752b4470f09d13c9f779afad53a296 inherit pub_methods_a06471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether this solver needs a variable-elimination ordering. <br /></td></tr>
+<tr class="memitem:a233bced095b1371f71346f885d2beb81 inherit pub_methods_a06471" id="r_a233bced095b1371f71346f885d2beb81"><td class="memItemLeft">
+<a class="el" href="a04887.html#a4053522180fd649baf38a49c515e7b53">GaussianFactorGraph::Eliminate</a>&#160;</td><td class="memItemRight"><b>getEliminationFunction</b> () const</td></tr>
+<tr class="memitem:aa3505fedfa4fbc352a108451c60a7492 inherit pub_methods_a06471" id="r_aa3505fedfa4fbc352a108451c60a7492"><td class="memItemLeft">
+std::string&#160;</td><td class="memItemRight"><b>getLinearSolverType</b> () const</td></tr>
+<tr class="memitem:a3e207b0c6d7fd6bc439e450b72acd8ba inherit pub_methods_a06471" id="r_a3e207b0c6d7fd6bc439e450b72acd8ba"><td class="memItemLeft">
+<a class="el" href="a06471.html#a8eaa669b1681529cdc98d1e7b7b6203b">LinearSolverType</a>&#160;</td><td class="memItemRight"><b>getLinearSolver</b> () const</td></tr>
+<tr class="memdesc:a3e207b0c6d7fd6bc439e450b72acd8ba inherit pub_methods_a06471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the selected linear solver as a strongly typed value. <br /></td></tr>
+<tr class="memitem:aab7e57d4beda6b470c7f8309e2404221 inherit pub_methods_a06471" id="r_aab7e57d4beda6b470c7f8309e2404221"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>setLinearSolverType</b> (const std::string &amp;solver)</td></tr>
+<tr class="memitem:af1fe343121a9f32e63e016fb2b28d8ff inherit pub_methods_a06471" id="r_af1fe343121a9f32e63e016fb2b28d8ff"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>setLinearSolver</b> (<a class="el" href="a06471.html#a8eaa669b1681529cdc98d1e7b7b6203b">LinearSolverType</a> solver)</td></tr>
+<tr class="memdesc:af1fe343121a9f32e63e016fb2b28d8ff inherit pub_methods_a06471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select the linear solver using the public enum. <br /></td></tr>
+<tr class="memitem:a14f843fa0b5ff3c6f2f914117bd215a6 inherit pub_methods_a06471" id="r_a14f843fa0b5ff3c6f2f914117bd215a6"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>setIterativeParams</b> (const std::shared_ptr&lt; <a class="el" href="a05171.html">IterativeOptimizationParameters</a> &gt; params)</td></tr>
+<tr class="memitem:a58afa429d14ebb5bf1d7f9bba24feac9 inherit pub_methods_a06471" id="r_a58afa429d14ebb5bf1d7f9bba24feac9"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>setOrdering</b> (const <a class="el" href="a04979.html">Ordering</a> &amp;<a class="el" href="a06471.html#a378c022a26f0715d5b0464346aa33277">ordering</a>)</td></tr>
+<tr class="memitem:a9390a6c8baaffe3627be5472888e2e6c inherit pub_methods_a06471" id="r_a9390a6c8baaffe3627be5472888e2e6c"><td class="memItemLeft">
+std::string&#160;</td><td class="memItemRight"><b>getOrderingType</b> () const</td></tr>
+<tr class="memitem:a918bfcac8f483cbb038c1b4e88483c09 inherit pub_methods_a06471" id="r_a918bfcac8f483cbb038c1b4e88483c09"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>setOrderingType</b> (const std::string &amp;<a class="el" href="a06471.html#a378c022a26f0715d5b0464346aa33277">ordering</a>)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:afc7c92d489fcbea53a1b645185e43e53" id="r_afc7c92d489fcbea53a1b645185e43e53"><td class="memItemLeft"><a id="afc7c92d489fcbea53a1b645185e43e53" name="afc7c92d489fcbea53a1b645185e43e53"></a>
+double&#160;</td><td class="memItemRight"><b>deltaInitial</b></td></tr>
+<tr class="memdesc:afc7c92d489fcbea53a1b645185e43e53"><td class="mdescLeft">&#160;</td><td class="mdescRight">The initial trust region radius (default: 10.0). <br /></td></tr>
+<tr class="memitem:ae6a2936aed619333036329c343281356" id="r_ae6a2936aed619333036329c343281356"><td class="memItemLeft"><a id="ae6a2936aed619333036329c343281356" name="ae6a2936aed619333036329c343281356"></a>
+<a class="el" href="#a857a8ae8ed6eea7960231b3359dfa349">VerbosityDL</a>&#160;</td><td class="memItemRight"><b>verbosityDL</b></td></tr>
+<tr class="memdesc:ae6a2936aed619333036329c343281356"><td class="mdescLeft">&#160;</td><td class="mdescRight">The verbosity level for Dogleg (default: SILENT), see also <a class="el" href="a06471.html#a21971e7b985115acab326deeedcfe220" title="The printing verbosity during optimization (default SILENT).">NonlinearOptimizerParams::verbosity</a>. <br /></td></tr>
+<tr class="inherit_header pub_attribs_a06471"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_a06471')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Attributes inherited from <a class="el" href="a06471.html">gtsam::NonlinearOptimizerParams</a></td></tr>
+<tr class="memitem:a19a9e8d9b25df5abe12c41fc7e8b1075 inherit pub_attribs_a06471" id="r_a19a9e8d9b25df5abe12c41fc7e8b1075"><td class="memItemLeft">
+size_t&#160;</td><td class="memItemRight"><b>maxIterations</b> = 100</td></tr>
+<tr class="memdesc:a19a9e8d9b25df5abe12c41fc7e8b1075 inherit pub_attribs_a06471"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum iterations to stop iterating (default 100). <br /></td></tr>
+<tr class="memitem:a9525e668e93fbb60ea4bffeab963629e inherit pub_attribs_a06471" id="r_a9525e668e93fbb60ea4bffeab963629e"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>relativeErrorTol</b> = 1e-5</td></tr>
+<tr class="memdesc:a9525e668e93fbb60ea4bffeab963629e inherit pub_attribs_a06471"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum relative error decrease to stop iterating (default 1e-5). <br /></td></tr>
+<tr class="memitem:a01f8529b9f7efdd818e0d75134f1ae8b inherit pub_attribs_a06471" id="r_a01f8529b9f7efdd818e0d75134f1ae8b"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>absoluteErrorTol</b> = 1e-5</td></tr>
+<tr class="memdesc:a01f8529b9f7efdd818e0d75134f1ae8b inherit pub_attribs_a06471"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum absolute error decrease to stop iterating (default 1e-5). <br /></td></tr>
+<tr class="memitem:aaf5a44f1a3dfd67a8027a797641cc31c inherit pub_attribs_a06471" id="r_aaf5a44f1a3dfd67a8027a797641cc31c"><td class="memItemLeft">
+double&#160;</td><td class="memItemRight"><b>errorTol</b> = 0.0</td></tr>
+<tr class="memdesc:aaf5a44f1a3dfd67a8027a797641cc31c inherit pub_attribs_a06471"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum total error to stop iterating (default 0.0). <br /></td></tr>
+<tr class="memitem:a21971e7b985115acab326deeedcfe220 inherit pub_attribs_a06471" id="r_a21971e7b985115acab326deeedcfe220"><td class="memItemLeft">
+<a class="el" href="a06471.html#a2b085d375ec6effa42e3deaaeab98694">Verbosity</a>&#160;</td><td class="memItemRight"><b>verbosity</b> = SILENT</td></tr>
+<tr class="memdesc:a21971e7b985115acab326deeedcfe220 inherit pub_attribs_a06471"><td class="mdescLeft">&#160;</td><td class="mdescRight">The printing verbosity during optimization (default SILENT). <br /></td></tr>
+<tr class="memitem:a9d851ffe0289f4dcd861b18bc6a05960 inherit pub_attribs_a06471" id="r_a9d851ffe0289f4dcd861b18bc6a05960"><td class="memItemLeft">
+<a class="el" href="a04979.html#a41194f31ec42052094cf91d81dcd796d">Ordering::OrderingType</a>&#160;</td><td class="memItemRight"><b>orderingType</b> = Ordering::COLAMD</td></tr>
+<tr class="memdesc:a9d851ffe0289f4dcd861b18bc6a05960 inherit pub_attribs_a06471"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method of ordering use during variable elimination (default COLAMD). <br /></td></tr>
+<tr class="memitem:a100c28f729c2b58813428058b57a5085 inherit pub_attribs_a06471" id="r_a100c28f729c2b58813428058b57a5085"><td class="memItemLeft"><a class="el" href="a06471.html#a79640db6495bf61de23c63f02d2a9170">IterationHook</a>&#160;</td><td class="memItemRight"><a class="el" href="a06471.html#a100c28f729c2b58813428058b57a5085">iterationHook</a></td></tr>
+<tr class="memdesc:a100c28f729c2b58813428058b57a5085 inherit pub_attribs_a06471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional user-provided iteration hook to be called after each optimization iteration (Default: none).  <br /></td></tr>
+<tr class="memitem:a378c022a26f0715d5b0464346aa33277 inherit pub_attribs_a06471" id="r_a378c022a26f0715d5b0464346aa33277"><td class="memItemLeft">
+std::optional&lt; <a class="el" href="a04979.html">Ordering</a> &gt;&#160;</td><td class="memItemRight"><b>ordering</b></td></tr>
+<tr class="memdesc:a378c022a26f0715d5b0464346aa33277 inherit pub_attribs_a06471"><td class="mdescLeft">&#160;</td><td class="mdescRight">The optional variable elimination ordering, or empty to use COLAMD (default: empty). <br /></td></tr>
+<tr class="memitem:a22f0350290afc3b8f3731b67a4917ea6 inherit pub_attribs_a06471" id="r_a22f0350290afc3b8f3731b67a4917ea6"><td class="memItemLeft">IterativeOptimizationParameters::shared_ptr&#160;</td><td class="memItemRight"><a class="el" href="a06471.html#a22f0350290afc3b8f3731b67a4917ea6">iterativeParams</a></td></tr>
+<tr class="memdesc:a22f0350290afc3b8f3731b67a4917ea6 inherit pub_attribs_a06471"><td class="mdescLeft">&#160;</td><td class="mdescRight">The container for iterativeOptimization parameters.  <br /></td></tr>
+<tr class="memitem:a4d103fcbdff857b83e748011a69490d2 inherit pub_attribs_a06471" id="r_a4d103fcbdff857b83e748011a69490d2"><td class="memItemLeft"><a class="el" href="a06471.html#a8eaa669b1681529cdc98d1e7b7b6203b">LinearSolverType</a>&#160;</td><td class="memItemRight"><a class="el" href="a06471.html#a4d103fcbdff857b83e748011a69490d2">linearSolverType</a> = MULTIFRONTAL_CHOLESKY</td></tr>
+<tr class="memdesc:a4d103fcbdff857b83e748011a69490d2 inherit pub_attribs_a06471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameters for <span class="tt"><a class="el" href="a05355.html" title="Imperative-style multifrontal solver for Gaussian factor graphs.">gtsam::MultifrontalSolver</a></span> when using <span class="tt">MULTIFRONTAL_SOLVER</span>.  <br /></td></tr>
+<tr class="memitem:ad917769040bd0286489049dcb1022501 inherit pub_attribs_a06471" id="r_ad917769040bd0286489049dcb1022501"><td class="memItemLeft">
+<a class="el" href="a05315.html">MultifrontalParameters</a>&#160;</td><td class="memItemRight"><b>multifrontalParams</b></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a857a8ae8ed6eea7960231b3359dfa349" id="r_a857a8ae8ed6eea7960231b3359dfa349"><td class="memItemLeft"><a id="a857a8ae8ed6eea7960231b3359dfa349" name="a857a8ae8ed6eea7960231b3359dfa349"></a>enum &#160;</td><td class="memItemRight"><a class="el" href="#a857a8ae8ed6eea7960231b3359dfa349">VerbosityDL</a> { <b>SILENT</b>
+, <b>VERBOSE</b>
+ }</td></tr>
+<tr class="memdesc:a857a8ae8ed6eea7960231b3359dfa349"><td class="mdescLeft">&#160;</td><td class="mdescRight">See DoglegParams::dlVerbosity. <br /></td></tr>
+<tr class="inherit_header pub_types_a06471"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a06471')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a06471.html">gtsam::NonlinearOptimizerParams</a></td></tr>
+<tr class="memitem:a2b085d375ec6effa42e3deaaeab98694 inherit pub_types_a06471" id="r_a2b085d375ec6effa42e3deaaeab98694"><td class="memItemLeft"><a id="a2b085d375ec6effa42e3deaaeab98694" name="a2b085d375ec6effa42e3deaaeab98694"></a>enum &#160;</td><td class="memItemRight"><a class="el" href="a06471.html#a2b085d375ec6effa42e3deaaeab98694">Verbosity</a> { <br />
+&#160;&#160;<b>SILENT</b>
+, <b>TERMINATION</b>
+, <b>ERROR</b>
+, <b>VALUES</b>
+, <br />
+&#160;&#160;<b>DELTA</b>
+, <b>LINEAR</b>
+<br />
+ }</td></tr>
+<tr class="memdesc:a2b085d375ec6effa42e3deaaeab98694"><td class="mdescLeft">&#160;</td><td class="mdescRight">See <a class="el" href="a06471.html#a21971e7b985115acab326deeedcfe220" title="The printing verbosity during optimization (default SILENT).">NonlinearOptimizerParams::verbosity</a>. <br /></td></tr>
+<tr class="memitem:a8eaa669b1681529cdc98d1e7b7b6203b inherit pub_types_a06471" id="r_a8eaa669b1681529cdc98d1e7b7b6203b"><td class="memItemLeft"><a id="a8eaa669b1681529cdc98d1e7b7b6203b" name="a8eaa669b1681529cdc98d1e7b7b6203b"></a>enum &#160;</td><td class="memItemRight"><a class="el" href="a06471.html#a8eaa669b1681529cdc98d1e7b7b6203b">LinearSolverType</a> { <br />
+&#160;&#160;<b>MULTIFRONTAL_SOLVER</b>
+, <b>MULTIFRONTAL_CHOLESKY</b>
+, <b>MULTIFRONTAL_QR</b>
+, <b>SEQUENTIAL_CHOLESKY</b>
+, <br />
+&#160;&#160;<b>SEQUENTIAL_QR</b>
+, <b>Iterative</b>
+, <b>CHOLMOD</b>
+<br />
+ }</td></tr>
+<tr class="memdesc:a8eaa669b1681529cdc98d1e7b7b6203b"><td class="mdescLeft">&#160;</td><td class="mdescRight">See <a class="el" href="a06471.html#a4d103fcbdff857b83e748011a69490d2" title="Parameters for gtsam::MultifrontalSolver when using MULTIFRONTAL_SOLVER.">NonlinearOptimizerParams::linearSolverType</a>. <br /></td></tr>
+<tr class="memitem:a79640db6495bf61de23c63f02d2a9170 inherit pub_types_a06471" id="r_a79640db6495bf61de23c63f02d2a9170"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="a06471.html#a79640db6495bf61de23c63f02d2a9170">IterationHook</a></td></tr>
+<tr class="memdesc:a79640db6495bf61de23c63f02d2a9170 inherit pub_types_a06471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for an optional user-provided hook to be called after each internal optimizer iteration.  <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; SmartStereoProjectionFactorPP &gt;</a></td></tr>
-<tr class="memitem:a0b809ea2931c6c4a2ecbd17e8f3fab39 inherit pub_methods_a03039" id="r_a0b809ea2931c6c4a2ecbd17e8f3fab39"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>BOOST_CONCEPT_ASSERT</b> ((<a class="el" href="a03035.html">HasTestablePrereqs</a>&lt; <a class="el" href="a06139.html">SmartStereoProjectionFactorPP</a> &gt;))</td></tr>
-<tr class="inherit_header pub_static_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; SmartStereoProjectionFactorPP &gt;</a></td></tr>
-<tr class="memitem:a27b246d77898916925c676895348fedf inherit pub_static_methods_a03039" id="r_a27b246d77898916925c676895348fedf"><td class="memItemLeft">
-static void&#160;</td><td class="memItemRight"><b>Print</b> (const <a class="el" href="a06139.html">SmartStereoProjectionFactorPP</a> &amp;m, const std::string &amp;str=&quot;&quot;)</td></tr>
-<tr class="memitem:a29a5699453b92070b31ca7fa42609d98 inherit pub_static_methods_a03039" id="r_a29a5699453b92070b31ca7fa42609d98"><td class="memItemLeft">
-static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el" href="a06139.html">SmartStereoProjectionFactorPP</a> &amp;m1, const <a class="el" href="a06139.html">SmartStereoProjectionFactorPP</a> &amp;m2, double tol=1e-8)</td></tr>
+<tr class="inherit_header pub_static_methods_a06471"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a06471')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a06471.html">gtsam::NonlinearOptimizerParams</a></td></tr>
+<tr class="memitem:a1b37f903e450b7e3c00efcfb461087a7 inherit pub_static_methods_a06471" id="r_a1b37f903e450b7e3c00efcfb461087a7"><td class="memItemLeft">
+static <a class="el" href="a06471.html#a2b085d375ec6effa42e3deaaeab98694">Verbosity</a>&#160;</td><td class="memItemRight"><b>verbosityTranslator</b> (const std::string &amp;s)</td></tr>
+<tr class="memitem:a5e0ca09fa45e6b40901aff3a85135367 inherit pub_static_methods_a06471" id="r_a5e0ca09fa45e6b40901aff3a85135367"><td class="memItemLeft">
+static std::string&#160;</td><td class="memItemRight"><b>verbosityTranslator</b> (<a class="el" href="a06471.html#a2b085d375ec6effa42e3deaaeab98694">Verbosity</a> value)</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/slam/<a class="el" href="a01760_source.html">SmartStereoProjectionFactorPP.h</a></li>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="aa2972de8287baabaa1315e20b55d5078" name="aa2972de8287baabaa1315e20b55d5078"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2972de8287baabaa1315e20b55d5078">&#9670;&#160;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gtsam::DoglegParams::print </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="a06471.html">gtsam::NonlinearOptimizerParams</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/nonlinear/<a class="el" href="a01433_source.html">DoglegOptimizer.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/nonlinear/<a class="el" href="a01541.html">DoglegOptimizer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -139,7 +304,7 @@ static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a06143.html">traits&lt; SmartStereoProjectionFactorPP &gt;</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a06143.html">DoglegParams</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::Values::deref_iterator Struct Reference</title>
+<title>gtsam: gtsam::IterativeSolver Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,37 +96,81 @@ $(function(){initNavTree('a05175.html','','a05172'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::Values::deref_iterator Struct Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::IterativeSolver Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base class for Iterative Solvers like <a class="el" href="a05527.html" title="This class implements the linear SPCG solver presented in Dellaert et al in IROS&#39;10.">SubgraphSolver</a>. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::IterativeSolver:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="a05175.png" usemap="#gtsam_3A_3AIterativeSolver_map" alt=""/>
+  <map id="gtsam_3A_3AIterativeSolver_map" name="gtsam_3A_3AIterativeSolver_map">
+<area href="a05439.html" title="A virtual base class for the preconditioned conjugate gradient solver." alt="gtsam::PCGSolver" shape="rect" coords="0,56,142,80"/>
+<area href="a05527.html" title="This class implements the linear SPCG solver presented in Dellaert et al in IROS&#39;10." alt="gtsam::SubgraphSolver" shape="rect" coords="152,56,294,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a28afdaa66c75713899d54d3fa52e7e74" id="r_a28afdaa66c75713899d54d3fa52e7e74"><td class="memItemLeft"><a id="a28afdaa66c75713899d54d3fa52e7e74" name="a28afdaa66c75713899d54d3fa52e7e74"></a>
-&#160;</td><td class="memItemRight"><b>deref_iterator</b> (const_iterator_type it)</td></tr>
-<tr class="memitem:a4441ccb9ec5e711bbd7c1f8afc08d277" id="r_a4441ccb9ec5e711bbd7c1f8afc08d277"><td class="memItemLeft"><a id="a4441ccb9ec5e711bbd7c1f8afc08d277" name="a4441ccb9ec5e711bbd7c1f8afc08d277"></a>
-<a class="el" href="a05171.html">ConstKeyValuePair</a>&#160;</td><td class="memItemRight"><b>operator*</b> () const</td></tr>
-<tr class="memitem:aba23487aa390f1abedccd10ad1e46886" id="r_aba23487aa390f1abedccd10ad1e46886"><td class="memItemLeft"><a id="aba23487aa390f1abedccd10ad1e46886" name="aba23487aa390f1abedccd10ad1e46886"></a>
-boost::shared_ptr&lt; <a class="el" href="a05171.html">ConstKeyValuePair</a> &gt;&#160;</td><td class="memItemRight"><b>operator-&gt;</b> ()</td></tr>
-<tr class="memitem:add06066366cfe6e48bf41698da7ad6b1" id="r_add06066366cfe6e48bf41698da7ad6b1"><td class="memItemLeft"><a id="add06066366cfe6e48bf41698da7ad6b1" name="add06066366cfe6e48bf41698da7ad6b1"></a>
-bool&#160;</td><td class="memItemRight"><b>operator==</b> (const deref_iterator &amp;other) const</td></tr>
-<tr class="memitem:a6a4ce94ab4c48e68e1005e8376d6e6ca" id="r_a6a4ce94ab4c48e68e1005e8376d6e6ca"><td class="memItemLeft"><a id="a6a4ce94ab4c48e68e1005e8376d6e6ca" name="a6a4ce94ab4c48e68e1005e8376d6e6ca"></a>
-bool&#160;</td><td class="memItemRight"><b>operator!=</b> (const deref_iterator &amp;other) const</td></tr>
-<tr class="memitem:a85b04b978a25c39a19a358b9750145fc" id="r_a85b04b978a25c39a19a358b9750145fc"><td class="memItemLeft"><a id="a85b04b978a25c39a19a358b9750145fc" name="a85b04b978a25c39a19a358b9750145fc"></a>
-deref_iterator &amp;&#160;</td><td class="memItemRight"><b>operator++</b> ()</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a2e7f33d3d2728d6e7456c2fb9f231664" id="r_a2e7f33d3d2728d6e7456c2fb9f231664"><td class="memItemLeft"><a id="a2e7f33d3d2728d6e7456c2fb9f231664" name="a2e7f33d3d2728d6e7456c2fb9f231664"></a>
-const_iterator_type&#160;</td><td class="memItemRight"><b>it_</b></td></tr>
+<tr class="memitem:acbf9477b9138c487fd0d7206c51ba1fb" id="r_acbf9477b9138c487fd0d7206c51ba1fb"><td class="memItemLeft"><a id="acbf9477b9138c487fd0d7206c51ba1fb" name="acbf9477b9138c487fd0d7206c51ba1fb"></a>
+GTSAM_EXPORT <a class="el" href="a07591.html">VectorValues</a>&#160;</td><td class="memItemRight"><b>optimize</b> (const <a class="el" href="a05135.html">GaussianFactorGraph</a> &amp;gfg, const <a class="el" href="a05203.html">KeyInfo</a> *=nullptr, const std::map&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, Vector &gt; *lambda=nullptr)</td></tr>
+<tr class="memitem:a8fcdf349082ca630d3d09ae996634df6" id="r_a8fcdf349082ca630d3d09ae996634df6"><td class="memItemLeft"><a id="a8fcdf349082ca630d3d09ae996634df6" name="a8fcdf349082ca630d3d09ae996634df6"></a>
+GTSAM_EXPORT <a class="el" href="a07591.html">VectorValues</a>&#160;</td><td class="memItemRight"><b>optimize</b> (const <a class="el" href="a05135.html">GaussianFactorGraph</a> &amp;gfg, const <a class="el" href="a05203.html">KeyInfo</a> &amp;keyInfo, const std::map&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, Vector &gt; &amp;lambda)</td></tr>
+<tr class="memitem:aaee1d56959059d7474a31081391307ad" id="r_aaee1d56959059d7474a31081391307ad"><td class="memItemLeft">virtual <a class="el" href="a07591.html">VectorValues</a>&#160;</td><td class="memItemRight"><a class="el" href="#aaee1d56959059d7474a31081391307ad">optimize</a> (const <a class="el" href="a05135.html">GaussianFactorGraph</a> &amp;gfg, const <a class="el" href="a05203.html">KeyInfo</a> &amp;keyInfo, const std::map&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, Vector &gt; &amp;lambda, const <a class="el" href="a07591.html">VectorValues</a> &amp;initial)=0</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a738b460603bb07e137b7ed3dbbe98326" id="r_a738b460603bb07e137b7ed3dbbe98326"><td class="memItemLeft"><a id="a738b460603bb07e137b7ed3dbbe98326" name="a738b460603bb07e137b7ed3dbbe98326"></a>
-using&#160;</td><td class="memItemRight"><b>const_iterator_type</b> = typename KeyValueMap::const_iterator</td></tr>
+<tr class="memitem:a233d33826501fe8dcf1ec16db738e481" id="r_a233d33826501fe8dcf1ec16db738e481"><td class="memItemLeft"><a id="a233d33826501fe8dcf1ec16db738e481" name="a233d33826501fe8dcf1ec16db738e481"></a>
+typedef std::shared_ptr&lt; IterativeSolver &gt;&#160;</td><td class="memItemRight"><b>shared_ptr</b></td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/<a class="el" href="a01079_source.html">Values.h</a></li>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="aaee1d56959059d7474a31081391307ad" name="aaee1d56959059d7474a31081391307ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaee1d56959059d7474a31081391307ad">&#9670;&#160;</a></span>optimize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="a07591.html">VectorValues</a> gtsam::IterativeSolver::optimize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a05135.html">GaussianFactorGraph</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>gfg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a05203.html">KeyInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>keyInfo</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::map&lt; <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>, Vector &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>lambda</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a07591.html">VectorValues</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>initial</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="a05439.html#adcac7c0a0f9776cbd2ffb8251dd3b4e0">gtsam::PCGSolver</a>, and <a class="el" href="a05527.html#a3bb3fc4c5063a8bac80cdd6d40df745e">gtsam::SubgraphSolver</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/<a class="el" href="a01082_source.html">IterativeSolver.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/<a class="el" href="a01019.html">IterativeSolver.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -141,7 +185,7 @@ using&#160;</td><td class="memItemRight"><b>const_iterator_type</b> = typename K
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a05163.html">Values</a></li><li class="navelem"><a href="a05175.html">deref_iterator</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a05175.html">IterativeSolver</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

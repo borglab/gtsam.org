@@ -2521,7 +2521,7 @@ details[open]>summary::before {
 
 
 html {
---timestamp: 'Mon Mar 9 2026 20:33:06';
+--timestamp: 'Mon Sep 21 2026 16:42:25';
 }
 span.timestamp { content: ' '; }
 span.timestamp:before { content: var(--timestamp); }
@@ -2545,3 +2545,723 @@ span.timestamp:before { content: var(--timestamp); }
         background-color: var(--scrollbar-background-color);
 }
 
+/* --------------------------------------------------------------------------
+ * gtsam.org visual system
+ *
+ * Keep these overrides at the end of the generated stylesheet. Doxygen's
+ * structure and dense information layout remain intact, while the type,
+ * color, spacing, and component treatments match the main site.
+ * -------------------------------------------------------------------------- */
+
+html,
+html:not(.dark-mode) {
+  --page-background-color: #f5f4ef;
+  --page-foreground-color: #202737;
+  --page-link-color: #c93f1f;
+  --page-visited-link-color: #a83720;
+  --page-external-link-color: #c93f1f;
+
+  --index-odd-item-bg-color: rgba(255, 255, 255, .48);
+  --index-even-item-bg-color: transparent;
+  --index-header-color: #0b1020;
+  --index-separator-color: rgba(11, 16, 32, .14);
+
+  --header-background-color: #f5f4ef;
+  --header-separator-color: rgba(11, 16, 32, .14);
+  --group-header-separator-color: rgba(11, 16, 32, .14);
+  --group-header-color: #0b1020;
+  --title-background-color: #f5f4ef;
+  --title-separator-color: rgba(11, 16, 32, .14);
+  --footer-foreground-color: #667084;
+
+  --blockquote-background-color: #ffffff;
+  --blockquote-border-color: #f0552d;
+  --scrollbar-thumb-color: #b9bdc4;
+  --scrollbar-background-color: #eeede8;
+
+  --memdecl-background-color: rgba(255, 255, 255, .62);
+  --memdecl-foreground-color: #596276;
+  --memdecl-template-color: #68758b;
+  --memdecl-border-color: rgba(11, 16, 32, .13);
+  --memdef-border-color: rgba(11, 16, 32, .16);
+  --memdef-title-background-color: #ffffff;
+  --memdef-proto-background-color: #ffffff;
+  --memdef-proto-text-color: #18243b;
+  --memdef-param-name-color: #c93f1f;
+  --memdef-template-color: #667084;
+
+  --table-cell-border-color: rgba(11, 16, 32, .16);
+  --table-header-background-color: #111827;
+  --table-header-foreground-color: #ffffff;
+
+  --label-background-color: #10192b;
+  --label-left-top-border-color: #10192b;
+  --label-right-bottom-border-color: #10192b;
+  --label-foreground-color: #ffffff;
+
+  --nav-background-color: #ffffff;
+  --nav-foreground-color: #202737;
+  --nav-border-color: rgba(11, 16, 32, .12);
+  --nav-breadcrumb-separator-color: rgba(11, 16, 32, .12);
+  --nav-breadcrumb-active-bg: #ffffff;
+  --nav-breadcrumb-color: #596276;
+  --nav-splitbar-bg-color: #e4e3de;
+  --nav-splitbar-handle-color: #b8bbc2;
+  --nav-text-normal-color: #4e586b;
+  --nav-menu-button-color: #0b1020;
+  --nav-menu-background-color: #ffffff;
+  --nav-menu-foreground-color: #202737;
+  --nav-menu-active-bg: rgba(240, 85, 45, .08);
+  --nav-menu-active-color: #f0552d;
+  --nav-arrow-color: #a7adb8;
+  --nav-arrow-selected-color: #f0552d;
+
+  --toc-background-color: rgba(255, 255, 255, .58);
+  --toc-border-color: rgba(11, 16, 32, .12);
+  --toc-header-color: #0b1020;
+
+  --search-background-color: #f7f7f4;
+  --search-foreground-color: #667084;
+  --search-active-color: #0b1020;
+  --search-filter-highlight-text-color: #ffffff;
+  --search-filter-highlight-bg-color: #f0552d;
+  --search-results-foreground-color: #0b1020;
+  --search-box-border-color: rgba(11, 16, 32, .2);
+
+  --fragment-foreground-color: #e7edf7;
+  --fragment-background-color: #111827;
+  --fragment-border-color: rgba(255, 255, 255, .1);
+  --fragment-lineno-border-color: #374151;
+  --fragment-lineno-background-color: #0b1020;
+  --fragment-lineno-foreground-color: #8792a6;
+  --fragment-lineno-link-fg-color: #55d7e8;
+  --fragment-lineno-link-bg-color: #0b1020;
+  --code-keyword-color: #ff805f;
+  --code-type-keyword-color: #73d7e4;
+  --code-flow-keyword-color: #ffb36b;
+  --code-comment-color: #8290a6;
+  --code-preprocessor-color: #c7a7ff;
+  --code-string-literal-color: #b7e58b;
+  --code-char-literal-color: #b7e58b;
+
+  --font-family-normal: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-family-title: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-family-nav: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-family-search: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-family-monospace: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+body,
+table,
+div,
+p,
+dl {
+  font-size: 14px;
+  line-height: 1.62;
+}
+
+body {
+  letter-spacing: -.005em;
+}
+
+#titlearea {
+  min-height: 72px;
+  padding: 0 22px;
+  border: 0;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 82% 0%, rgba(85, 215, 232, .18), transparent 28%),
+    radial-gradient(circle at 8% 120%, rgba(240, 85, 45, .18), transparent 30%),
+    linear-gradient(137deg, #080c17 0%, #10192b 62%, #111f2c 100%);
+}
+
+#projectrow {
+  height: 72px;
+}
+
+#projectalign {
+  padding-left: 0;
+}
+
+#projectname {
+  color: #ffffff;
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: -.045em;
+  text-transform: uppercase;
+}
+
+#projectnumber {
+  margin-left: .55rem;
+  color: #55d7e8;
+  font-size: .62rem;
+  font-weight: 750;
+  letter-spacing: .08em;
+  vertical-align: middle;
+}
+
+#projectbrief {
+  color: rgba(255, 255, 255, .6);
+  font-size: 0;
+  font-weight: 650;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+#projectbrief::before {
+  content: "C++ API reference";
+  font-size: .63rem;
+}
+
+#main-nav {
+  min-height: 52px;
+  border-bottom: 1px solid var(--nav-border-color);
+  background: rgba(255, 255, 255, .97);
+}
+
+#main-menu > li > a {
+  min-height: 51px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  color: #202737;
+  font-size: .76rem;
+  font-weight: 720;
+  letter-spacing: .065em;
+  text-transform: uppercase;
+}
+
+#main-menu > li > a:hover,
+#main-menu > li > a:focus,
+#main-menu > li > a.highlighted {
+  color: #e34825;
+  background: rgba(240, 85, 45, .06);
+}
+
+#MSearchBox {
+  margin-top: 10px;
+  border-radius: 999px;
+  box-shadow: none;
+}
+
+#MSearchField {
+  font-size: .82rem;
+}
+
+#side-nav {
+  border-right: 1px solid rgba(11, 16, 32, .11);
+  background: #eeede8;
+}
+
+#nav-tree {
+  background: transparent;
+}
+
+#nav-tree .selected {
+  background: #ffffff;
+  box-shadow: inset 3px 0 0 #f0552d;
+}
+
+#nav-tree a {
+  color: #455064;
+  font-size: .79rem;
+}
+
+#nav-tree .selected a {
+  color: #0b1020;
+  font-weight: 700;
+  text-shadow: none;
+}
+
+#nav-tree a:hover {
+  color: #d94421;
+}
+
+#nav-sync {
+  opacity: .58;
+}
+
+#doc-content {
+  background:
+    linear-gradient(rgba(11, 16, 32, .025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 16, 32, .025) 1px, transparent 1px),
+    #f5f4ef;
+  background-size: 64px 64px;
+}
+
+/* Doxygen 1.16 adds a second outline panel on the right. The API already has
+ * module navigation on the left and in-page headings in the content, so the
+ * extra panel duplicates navigation and makes dense reference pages cramped. */
+#container {
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+#page-nav {
+  display: none !important;
+}
+
+.header {
+  padding: 34px 42px 24px;
+  border-bottom: 1px solid rgba(11, 16, 32, .12);
+  background: rgba(245, 244, 239, .9);
+}
+
+.headertitle {
+  padding: 0;
+}
+
+.title {
+  margin: 0;
+  color: #0b1020;
+  font-size: clamp(2rem, 4vw, 3.45rem);
+  font-weight: 720;
+  line-height: 1.02;
+  letter-spacing: -.055em;
+}
+
+div.contents {
+  max-width: 1160px;
+  margin: 0;
+  padding: 34px 42px 76px;
+}
+
+div.contents > :first-child {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h1.groupheader,
+h2.groupheader,
+h3.groupheader {
+  color: #0b1020;
+  font-family: var(--font-family-title);
+  font-weight: 700;
+  letter-spacing: -.025em;
+}
+
+h2.groupheader,
+div.groupHeader {
+  margin-top: 2.5rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(11, 16, 32, .14);
+  box-shadow: none;
+}
+
+a,
+.contents a:visited {
+  text-decoration-color: rgba(217, 68, 33, .28);
+  text-underline-offset: .16em;
+}
+
+a:hover {
+  color: #f0552d;
+  text-decoration-color: currentColor;
+}
+
+table.memberdecls {
+  width: 100%;
+}
+
+.memItemLeft,
+.memItemRight,
+.mdescLeft,
+.mdescRight,
+.memTemplParams,
+td.ititle {
+  border-color: rgba(11, 16, 32, .12);
+}
+
+.memItemLeft,
+.memItemRight,
+.memTemplParams {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.memitem {
+  margin: 1.2rem 0 1.8rem;
+  border-radius: 8px;
+  box-shadow: 0 12px 34px rgba(11, 16, 32, .075);
+}
+
+.memtitle {
+  padding: 9px 12px;
+  border-radius: 8px 8px 0 0;
+  box-shadow: none;
+}
+
+.memproto,
+dl.reflist dt {
+  padding: 9px 5px;
+  border-radius: 0 8px 0 0;
+}
+
+.memdoc,
+dl.reflist dd {
+  padding: 15px 17px 12px;
+  border-radius: 0 0 8px 8px;
+  background: rgba(255, 255, 255, .82);
+}
+
+div.fragment,
+pre.fragment {
+  border-radius: 5px;
+  box-shadow: 0 18px 46px rgba(11, 16, 32, .1);
+}
+
+blockquote {
+  border-left-width: 4px;
+  border-radius: 0;
+}
+
+#nav-path ul {
+  height: 36px;
+  line-height: 36px;
+  background: #ffffff;
+}
+
+.navpath li.footer {
+  color: #667084;
+  font-size: .65rem;
+}
+
+address.footer {
+  padding: 8px 14px;
+  color: #667084;
+  background: #ffffff;
+}
+
+@media (max-width: 767px) {
+  #titlearea {
+    min-height: 62px;
+    padding: 0 15px;
+  }
+
+  #projectrow {
+    height: 62px;
+  }
+
+  #projectname {
+    font-size: 1.25rem;
+  }
+
+  #main-nav {
+    min-height: 46px;
+  }
+
+  .header {
+    padding: 25px 20px 18px;
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+
+  div.contents {
+    padding: 24px 20px 60px;
+  }
+}
+
+/* API landing page -------------------------------------------------------- */
+
+.api-home-header {
+  padding-bottom: 28px;
+}
+
+.api-home {
+  max-width: 1320px;
+  padding-top: 28px;
+}
+
+.api-home-lead {
+  max-width: 820px;
+  margin: 0 0 2.2rem;
+  color: #465064;
+  font-size: 1.12rem;
+  line-height: 1.65;
+}
+
+.api-home-lead code {
+  padding: .12em .34em;
+  border-radius: 3px;
+  background: rgba(11, 16, 32, .07);
+  color: #18243b;
+}
+
+.api-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.api-track {
+  overflow: hidden;
+  border: 1px solid rgba(11, 16, 32, .14);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .68);
+  box-shadow: 0 20px 55px rgba(11, 16, 32, .075);
+  scroll-margin-top: 18px;
+}
+
+.api-track-stable {
+  border-top: 4px solid #55d7e8;
+}
+
+.api-track-unstable {
+  border-top: 4px solid #f0552d;
+}
+
+.api-track-header {
+  min-height: 188px;
+  padding: 26px 28px 24px;
+  position: relative;
+  overflow: hidden;
+  color: rgba(255, 255, 255, .72);
+  background:
+    radial-gradient(circle at 95% 5%, rgba(85, 215, 232, .2), transparent 35%),
+    linear-gradient(145deg, #0b1020, #152235);
+}
+
+.api-track-unstable .api-track-header {
+  background:
+    radial-gradient(circle at 95% 5%, rgba(240, 85, 45, .22), transparent 35%),
+    linear-gradient(145deg, #0b1020, #201722);
+}
+
+.api-track-header::after {
+  content: "";
+  width: 168px;
+  height: 168px;
+  position: absolute;
+  right: -68px;
+  bottom: -80px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 28px rgba(255, 255, 255, .025),
+    0 0 0 58px rgba(255, 255, 255, .018);
+}
+
+.api-track-label {
+  display: block;
+  color: #68758b;
+  font-size: .65rem;
+  font-weight: 780;
+  line-height: 1.2;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.api-track-header .api-track-label {
+  color: #55d7e8;
+}
+
+.api-track-unstable .api-track-header .api-track-label {
+  color: #ff805f;
+}
+
+.api-track-header h2 {
+  margin: 1.15rem 0 .75rem;
+  color: #ffffff;
+  font-size: clamp(1.8rem, 3vw, 2.75rem);
+  font-weight: 720;
+  line-height: .98;
+  letter-spacing: -.055em;
+}
+
+.api-track-header p {
+  max-width: 470px;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  font-size: .9rem;
+  line-height: 1.55;
+}
+
+.api-module-list {
+  display: grid;
+}
+
+.api-module,
+.contents .api-module:visited {
+  min-height: 76px;
+  padding: 14px 18px;
+  display: grid;
+  grid-template-columns: minmax(92px, 28%) minmax(0, 1fr) 18px;
+  gap: 14px;
+  align-items: center;
+  border-top: 1px solid rgba(11, 16, 32, .105);
+  color: #202737;
+  text-decoration: none;
+  transition: background .18s ease, transform .18s ease;
+}
+
+.api-module:hover {
+  position: relative;
+  z-index: 1;
+  color: #202737;
+  background: #ffffff;
+  transform: translateX(3px);
+}
+
+.api-module-name {
+  color: #087c8a;
+  font-family: var(--font-family-monospace);
+  font-size: .86rem;
+  font-weight: 750;
+}
+
+.api-track-unstable .api-module-name {
+  color: #d94421;
+}
+
+.api-module-desc {
+  color: #596276;
+  font-size: .78rem;
+  line-height: 1.48;
+}
+
+.api-module-arrow {
+  color: #a2a8b2;
+  font-size: 1rem;
+  transition: color .18s ease, transform .18s ease;
+}
+
+.api-module:hover .api-module-arrow {
+  color: #f0552d;
+  transform: translateX(2px);
+}
+
+.api-unstable-note {
+  margin: 18px;
+  padding: 18px 20px;
+  border-left: 3px solid #f0552d;
+  background: rgba(240, 85, 45, .07);
+}
+
+.api-unstable-note strong {
+  color: #0b1020;
+  font-size: .88rem;
+}
+
+.api-unstable-note p {
+  margin: .35rem 0 .7rem;
+  color: #596276;
+  font-size: .8rem;
+}
+
+.api-unstable-note a {
+  font-size: .78rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.api-indexes {
+  margin-top: 64px;
+  padding-top: 28px;
+  display: grid;
+  grid-template-columns: minmax(180px, .65fr) minmax(0, 1.35fr);
+  gap: 38px;
+  border-top: 1px solid rgba(11, 16, 32, .15);
+}
+
+.api-indexes h2 {
+  margin: .9rem 0 0;
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  line-height: 1;
+}
+
+.api-index-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid rgba(11, 16, 32, .13);
+  border-left: 1px solid rgba(11, 16, 32, .13);
+}
+
+.api-index-links a,
+.contents .api-index-links a:visited {
+  min-height: 105px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid rgba(11, 16, 32, .13);
+  border-bottom: 1px solid rgba(11, 16, 32, .13);
+  color: #0b1020;
+  background: rgba(255, 255, 255, .38);
+  text-decoration: none;
+  transition: background .18s ease, transform .18s ease;
+}
+
+.api-index-links a:hover {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
+.api-index-links strong {
+  font-size: 1rem;
+}
+
+.api-index-links span {
+  color: #667084;
+  font-size: .74rem;
+}
+
+@media (max-width: 900px) {
+  .api-columns,
+  .api-indexes {
+    grid-template-columns: 1fr;
+  }
+
+  .api-indexes {
+    gap: 22px;
+  }
+}
+
+@media (max-width: 560px) {
+  .api-track-header {
+    min-height: 0;
+    padding: 24px 20px;
+  }
+
+  .api-module {
+    grid-template-columns: 1fr 18px;
+    gap: 5px 12px;
+  }
+
+  .api-module-name {
+    grid-column: 1;
+  }
+
+  .api-module-desc {
+    grid-column: 1;
+  }
+
+  .api-module-arrow {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  .api-index-links {
+    grid-template-columns: 1fr;
+  }
+}
+
+#projectname .project-home,
+#projectname .project-home:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+#projectname .project-home:hover,
+#projectname .project-home:focus-visible {
+  color: #78d7e8;
+}

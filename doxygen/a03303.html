@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::traits&lt; ParameterMatrix&lt; M &gt; &gt; Struct Template Reference</title>
+<title>gtsam: gtsam::internal::ManifoldTraits&lt; Class &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,72 +96,68 @@ $(function(){initNavTree('a03303.html','','a03300'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::traits&lt; ParameterMatrix&lt; M &gt; &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::internal::ManifoldTraits&lt; Class &gt; Struct Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::traits&lt; ParameterMatrix&lt; M &gt; &gt;:</div>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class Class&gt;<br />
+struct gtsam::internal::ManifoldTraits&lt; Class &gt;</div><p>A helper that implements the traits interface for GTSAM manifolds. </p>
+<p>To use this for your class type, define: template&lt;&gt; struct <a class="el" href="a03203.html" title="A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...">traits&lt;Class&gt;</a> : public <a class="el" href="a03303.html" title="A helper that implements the traits interface for GTSAM manifolds.">internal::ManifoldTraits&lt;Class&gt;</a> { }; </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::internal::ManifoldTraits&lt; Class &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
  <div class="center">
-  <img src="a03303.png" usemap="#gtsam_3A_3Atraits_3C_20ParameterMatrix_3C_20M_20_3E_20_3E_map" alt=""/>
-  <map id="gtsam_3A_3Atraits_3C_20ParameterMatrix_3C_20M_20_3E_20_3E_map" name="gtsam_3A_3Atraits_3C_20ParameterMatrix_3C_20M_20_3E_20_3E_map">
-<area href="a03167.html" alt="gtsam::internal::VectorSpace&lt; ParameterMatrix&lt; M &gt; &gt;" shape="rect" coords="277,112,822,136"/>
-<area href="a03039.html" alt="gtsam::Testable&lt; ParameterMatrix&lt; M &gt; &gt;" shape="rect" coords="0,56,545,80"/>
-<area href="a03163.html" alt="gtsam::internal::VectorSpaceTraits&lt; ParameterMatrix&lt; M &gt; &gt;" shape="rect" coords="555,56,1100,80"/>
-<area href="a03151.html" alt="gtsam::internal::VectorSpaceImpl&lt; ParameterMatrix&lt; M &gt;, ParameterMatrix&lt; M &gt;::dimension &gt;" shape="rect" coords="555,0,1100,24"/>
+  <img src="a03303.png" usemap="#gtsam_3A_3Ainternal_3A_3AManifoldTraits_3C_20Class_20_3E_map" alt=""/>
+  <map id="gtsam_3A_3Ainternal_3A_3AManifoldTraits_3C_20Class_20_3E_map" name="gtsam_3A_3Ainternal_3A_3AManifoldTraits_3C_20Class_20_3E_map">
+<area href="a03299.html" alt="gtsam::internal::GetDimensionImpl&lt; Class, Class::dimension &gt;" shape="rect" coords="364,0,718,24"/>
+<area href="a03275.html" title="A helper class that implements the traits interface for GTSAM lie groups." alt="gtsam::internal::LieGroupTraits&lt; Class &gt;" shape="rect" coords="182,112,536,136"/>
+<area href="a03315.html" title="Both ManifoldTraits and Testable." alt="gtsam::internal::Manifold&lt; Class &gt;" shape="rect" coords="546,112,900,136"/>
+<area href="a03279.html" title="Both LieGroupTraits and Testable." alt="gtsam::internal::LieGroup&lt; Class &gt;" shape="rect" coords="0,168,354,192"/>
+<area href="a03339.html" title="Adds MatrixLieGroup methods to LieGroupTraits." alt="gtsam::internal::MatrixLieGroupTraits&lt; Class, N &gt;" shape="rect" coords="364,168,718,192"/>
+<area href="a03343.html" title="Both LieGroupTraits and Testable." alt="gtsam::internal::MatrixLieGroup&lt; Class, N &gt;" shape="rect" coords="364,224,718,248"/>
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; ParameterMatrix&lt; M &gt; &gt;</a></td></tr>
-<tr class="memitem:a0b809ea2931c6c4a2ecbd17e8f3fab39 inherit pub_methods_a03039" id="r_a0b809ea2931c6c4a2ecbd17e8f3fab39"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>BOOST_CONCEPT_ASSERT</b> ((<a class="el" href="a03035.html">HasTestablePrereqs</a>&lt; <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt; &gt;))</td></tr>
-<tr class="inherit_header pub_methods_a03163"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a03163')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a03163.html">gtsam::internal::VectorSpaceTraits&lt; ParameterMatrix&lt; M &gt; &gt;</a></td></tr>
-<tr class="memitem:a77abb09b9e923be440a721771a935f5c inherit pub_methods_a03163" id="r_a77abb09b9e923be440a721771a935f5c"><td class="memItemLeft">
-&#160;</td><td class="memItemRight"><b>BOOST_CONCEPT_ASSERT</b> ((<a class="el" href="a03159.html">HasVectorSpacePrereqs</a>&lt; <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt; &gt;))</td></tr>
-<tr class="inherit_header pub_static_methods_a03039"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03039')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03039.html">gtsam::Testable&lt; ParameterMatrix&lt; M &gt; &gt;</a></td></tr>
-<tr class="memitem:a27b246d77898916925c676895348fedf inherit pub_static_methods_a03039" id="r_a27b246d77898916925c676895348fedf"><td class="memItemLeft">
-static void&#160;</td><td class="memItemRight"><b>Print</b> (const <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt; &amp;m, const std::string &amp;str=&quot;&quot;)</td></tr>
-<tr class="memitem:a29a5699453b92070b31ca7fa42609d98 inherit pub_static_methods_a03039" id="r_a29a5699453b92070b31ca7fa42609d98"><td class="memItemLeft">
-static bool&#160;</td><td class="memItemRight"><b>Equals</b> (const <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt; &amp;m1, const <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt; &amp;m2, double tol=1e-8)</td></tr>
-<tr class="memitem:a0422b54b2c5d03d983f102d49ef42648" id="r_a0422b54b2c5d03d983f102d49ef42648"><td class="memItemLeft"><a id="a0422b54b2c5d03d983f102d49ef42648" name="a0422b54b2c5d03d983f102d49ef42648"></a>
-static <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt;&#160;</td><td class="memItemRight"><b>Identity</b> ()</td></tr>
-<tr class="inherit_header pub_static_methods_a03151"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03151')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03151.html">gtsam::internal::VectorSpaceImpl&lt; ParameterMatrix&lt; M &gt;, ParameterMatrix&lt; M &gt;::dimension &gt;</a></td></tr>
-<tr class="memitem:ab96190290044c64bc101f4a7a384af87 inherit pub_static_methods_a03151" id="r_ab96190290044c64bc101f4a7a384af87"><td class="memItemLeft">
-static TangentVector&#160;</td><td class="memItemRight"><b>Logmap</b> (const <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt; &amp;m, ChartJacobian Hm=boost::none)</td></tr>
-<tr class="memitem:a04d1621fb13640fd81bf235d18660b84 inherit pub_static_methods_a03151" id="r_a04d1621fb13640fd81bf235d18660b84"><td class="memItemLeft">
-static <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt;&#160;</td><td class="memItemRight"><b>Expmap</b> (const TangentVector &amp;v, ChartJacobian Hv=boost::none)</td></tr>
-<tr class="memitem:af593ab82fde05514b666e174a2435964 inherit pub_static_methods_a03151" id="r_af593ab82fde05514b666e174a2435964"><td class="memItemLeft">
-static <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt;&#160;</td><td class="memItemRight"><b>Compose</b> (const <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt; &amp;v1, const <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt; &amp;v2, ChartJacobian H1=boost::none, ChartJacobian H2=boost::none)</td></tr>
-<tr class="memitem:abc406a29d2318d71a4f0e958f821ae8b inherit pub_static_methods_a03151" id="r_abc406a29d2318d71a4f0e958f821ae8b"><td class="memItemLeft">
-static <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt;&#160;</td><td class="memItemRight"><b>Between</b> (const <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt; &amp;v1, const <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt; &amp;v2, ChartJacobian H1=boost::none, ChartJacobian H2=boost::none)</td></tr>
-<tr class="memitem:af83be522c5faac805c95c3c338f747ae inherit pub_static_methods_a03151" id="r_af83be522c5faac805c95c3c338f747ae"><td class="memItemLeft">
-static <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt;&#160;</td><td class="memItemRight"><b>Inverse</b> (const <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt; &amp;v, ChartJacobian H=boost::none)</td></tr>
-<tr class="memitem:a453c30a66ad1b51aa4f9a28c7b030d85 inherit pub_static_methods_a03151" id="r_a453c30a66ad1b51aa4f9a28c7b030d85"><td class="memItemLeft">
-static int&#160;</td><td class="memItemRight"><b>GetDimension</b> (const <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt; &amp;)</td></tr>
-<tr class="memitem:a941df3941c2985e3cc6e353d7d5697c4 inherit pub_static_methods_a03151" id="r_a941df3941c2985e3cc6e353d7d5697c4"><td class="memItemLeft">
-static TangentVector&#160;</td><td class="memItemRight"><b>Local</b> (const <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt; &amp;origin, const <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt; &amp;other, ChartJacobian H1=boost::none, ChartJacobian H2=boost::none)</td></tr>
-<tr class="memitem:a853fc3666d40680ef13810ff29654af6 inherit pub_static_methods_a03151" id="r_a853fc3666d40680ef13810ff29654af6"><td class="memItemLeft">
-static <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt;&#160;</td><td class="memItemRight"><b>Retract</b> (const <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt; &amp;origin, const TangentVector &amp;v, ChartJacobian H1=boost::none, ChartJacobian H2=boost::none)</td></tr>
-<tr class="inherit_header pub_types_a03163"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a03163')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a03163.html">gtsam::internal::VectorSpaceTraits&lt; ParameterMatrix&lt; M &gt; &gt;</a></td></tr>
-<tr class="memitem:aa81faa9ad036cd2fbeb11498753ebbb6 inherit pub_types_a03163" id="r_aa81faa9ad036cd2fbeb11498753ebbb6"><td class="memItemLeft">
-typedef <a class="el" href="a03147.html">vector_space_tag</a>&#160;</td><td class="memItemRight"><b>structure_category</b></td></tr>
-<tr class="memitem:a093e24225ba28550f41867018aa5132f inherit pub_types_a03163" id="r_a093e24225ba28550f41867018aa5132f"><td class="memItemLeft"><a id="a093e24225ba28550f41867018aa5132f" name="a093e24225ba28550f41867018aa5132f"></a>enum &#160;</td><td class="memItemRight"></td></tr>
-<tr class="memitem:a98a79aca4def5818edac55350eb4d5ac inherit pub_types_a03163" id="r_a98a79aca4def5818edac55350eb4d5ac"><td class="memItemLeft">
-typedef <a class="el" href="a03299.html">ParameterMatrix</a>&lt; M &gt;&#160;</td><td class="memItemRight"><b>ManifoldType</b></td></tr>
-<tr class="memitem:a94fc1f2d865652ddd56b9b6272ff63aa inherit pub_types_a03163" id="r_a94fc1f2d865652ddd56b9b6272ff63aa"><td class="memItemLeft">
-typedef <a class="el" href="a02887.html">additive_group_tag</a>&#160;</td><td class="memItemRight"><b>group_flavor</b></td></tr>
-<tr class="memitem:a3af4e05365d0db01453a76cb2479c446" id="r_a3af4e05365d0db01453a76cb2479c446"><td class="memItemLeft"><a id="a3af4e05365d0db01453a76cb2479c446" name="a3af4e05365d0db01453a76cb2479c446"></a>
-typedef Eigen::Matrix&lt; double, N, 1 &gt;&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
-<tr class="memitem:af75812a841edef85cabc4e06b65a1121" id="r_af75812a841edef85cabc4e06b65a1121"><td class="memItemLeft"><a id="af75812a841edef85cabc4e06b65a1121" name="af75812a841edef85cabc4e06b65a1121"></a>
-typedef <a class="el" href="a02995.html">OptionalJacobian</a>&lt; N, N &gt;&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
-<tr class="memitem:ab2461a41d72cb29e2fd6ffd05be40b42" id="r_ab2461a41d72cb29e2fd6ffd05be40b42"><td class="memItemLeft"><a id="ab2461a41d72cb29e2fd6ffd05be40b42" name="ab2461a41d72cb29e2fd6ffd05be40b42"></a>
-typedef Eigen::Matrix&lt; double, N, N &gt;&#160;</td><td class="memItemRight"><b>Jacobian</b></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aeb508be8e109605ae7647ed7bc710715" id="r_aeb508be8e109605ae7647ed7bc710715"><td class="memItemLeft"><a id="aeb508be8e109605ae7647ed7bc710715" name="aeb508be8e109605ae7647ed7bc710715"></a>
+&#160;</td><td class="memItemRight"><b>GTSAM_CONCEPT_ASSERT</b> (<a class="el" href="a03295.html">HasManifoldPrereqs</a>&lt; Class &gt;)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a94e4b4a741e92bf6ed629aa7ef36d0b4" id="r_a94e4b4a741e92bf6ed629aa7ef36d0b4"><td class="memItemLeft"><a id="a94e4b4a741e92bf6ed629aa7ef36d0b4" name="a94e4b4a741e92bf6ed629aa7ef36d0b4"></a>
+static TangentVector&#160;</td><td class="memItemRight"><b>Local</b> (const Class &amp;origin, const Class &amp;other)</td></tr>
+<tr class="memitem:ab43eb32b84a24eb045e4f4d4d25fcb20" id="r_ab43eb32b84a24eb045e4f4d4d25fcb20"><td class="memTemplParams" colspan="2"><a id="ab43eb32b84a24eb045e4f4d4d25fcb20" name="ab43eb32b84a24eb045e4f4d4d25fcb20"></a>
+template&lt;class C = Class, class = LocalCoordinatesWithJacobians&lt;C, ChartJacobian&gt;&gt; </td></tr>
+<tr class="memitem:ab43eb32b84a24eb045e4f4d4d25fcb20 template"><td class="memItemLeft">static TangentVector&#160;</td><td class="memItemRight"><b>Local</b> (const Class &amp;origin, const Class &amp;other, ChartJacobian H1, ChartJacobian H2={})</td></tr>
+<tr class="memitem:adf31f3fd2ec15a2f70a20fd0ffd8d957" id="r_adf31f3fd2ec15a2f70a20fd0ffd8d957"><td class="memItemLeft"><a id="adf31f3fd2ec15a2f70a20fd0ffd8d957" name="adf31f3fd2ec15a2f70a20fd0ffd8d957"></a>
+static Class&#160;</td><td class="memItemRight"><b>Retract</b> (const Class &amp;origin, const TangentVector &amp;v)</td></tr>
+<tr class="memitem:a51f3d420dc383da4874396b78623b4b2" id="r_a51f3d420dc383da4874396b78623b4b2"><td class="memTemplParams" colspan="2"><a id="a51f3d420dc383da4874396b78623b4b2" name="a51f3d420dc383da4874396b78623b4b2"></a>
+template&lt;class C = Class, class = RetractWithJacobians&lt;C, TangentVector, ChartJacobian&gt;&gt; </td></tr>
+<tr class="memitem:a51f3d420dc383da4874396b78623b4b2 template"><td class="memItemLeft">static Class&#160;</td><td class="memItemRight"><b>Retract</b> (const Class &amp;origin, const TangentVector &amp;v, ChartJacobian H1, ChartJacobian H2={})</td></tr>
+<tr class="inherit_header pub_static_methods_a03299"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a03299')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a03299.html">gtsam::internal::GetDimensionImpl&lt; Class, Class::dimension &gt;</a></td></tr>
+<tr class="memitem:a1fc02dfed9e5bb053cc0acb5532f708c inherit pub_static_methods_a03299" id="r_a1fc02dfed9e5bb053cc0acb5532f708c"><td class="memItemLeft">
+static size_t&#160;</td><td class="memItemRight"><b>GetDimension</b> (const Class &amp;m)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a900e659562b6e1deef63481461afdc4c" id="r_a900e659562b6e1deef63481461afdc4c"><td class="memItemLeft"><a id="a900e659562b6e1deef63481461afdc4c" name="a900e659562b6e1deef63481461afdc4c"></a>
+static constexpr auto&#160;</td><td class="memItemRight"><b>dimension</b> = Class::dimension</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:aecd8dd24df157a38744ce7d52893ddef" id="r_aecd8dd24df157a38744ce7d52893ddef"><td class="memItemLeft"><a id="aecd8dd24df157a38744ce7d52893ddef" name="aecd8dd24df157a38744ce7d52893ddef"></a>
+typedef Class&#160;</td><td class="memItemRight"><b>ManifoldType</b></td></tr>
+<tr class="memitem:aeabfd4c402e097eedb55ad543117d4e2" id="r_aeabfd4c402e097eedb55ad543117d4e2"><td class="memItemLeft"><a id="aeabfd4c402e097eedb55ad543117d4e2" name="aeabfd4c402e097eedb55ad543117d4e2"></a>
+typedef <a class="el" href="a03291.html">manifold_tag</a>&#160;</td><td class="memItemRight"><b>structure_category</b></td></tr>
+<tr class="memitem:a7fd4430a3d3639de6e4a4bab2c82214d" id="r_a7fd4430a3d3639de6e4a4bab2c82214d"><td class="memItemLeft"><a id="a7fd4430a3d3639de6e4a4bab2c82214d" name="a7fd4430a3d3639de6e4a4bab2c82214d"></a>
+typedef Eigen::Matrix&lt; double, dimension, 1 &gt;&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+<tr class="memitem:afc21e691a11b4b8bc2ed0abbe3782705" id="r_afc21e691a11b4b8bc2ed0abbe3782705"><td class="memItemLeft"><a id="afc21e691a11b4b8bc2ed0abbe3782705" name="afc21e691a11b4b8bc2ed0abbe3782705"></a>
+typedef <a class="el" href="a03363.html">OptionalJacobian</a>&lt; dimension, dimension &gt;&#160;</td><td class="memItemRight"><b>ChartJacobian</b></td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/basis/<a class="el" href="a00167_source.html">ParameterMatrix.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/base/<a class="el" href="a00143_source.html">Manifold.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -176,7 +172,7 @@ typedef Eigen::Matrix&lt; double, N, N &gt;&#160;</td><td class="memItemRight"><
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a03303.html">traits&lt; ParameterMatrix&lt; M &gt; &gt;</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><b>internal</b></li><li class="navelem"><a href="a03303.html">ManifoldTraits</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

@@ -1,7 +1,7 @@
 var a05251 =
 [
-    [ "MFAS", "a05251.html#a0fbe57d306aa53ff9f9ef6b4dd5f4ca2", null ],
-    [ "MFAS", "a05251.html#ab67e60b4b7da2c9d2dd82a0e6b6e6e15", null ],
-    [ "computeOrdering", "a05251.html#a8decdf4c77d7835bd322183cb4a6c565", null ],
-    [ "computeOutlierWeights", "a05251.html#a978f4d86b334dbcaedeb1e1646b764da", null ]
+    [ "graduatedLoss", "a05251.html#a384027324a29f2dd957d478478ad3bd2", null ],
+    [ "graduatedWeight", "a05251.html#aa44fb6ce0774ac98a39e671e3a0a7d09", null ],
+    [ "loss", "a05251.html#a33959b21c0c5d3b06d0e908e65afd071", null ],
+    [ "weight", "a05251.html#aa7b166f4788a6e620165c740924e4cea", null ]
 ];

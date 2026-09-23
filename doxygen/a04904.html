@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,33 +96,14 @@ $(function(){initNavTree('a04907.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::GaussNewtonOptimizer Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::compose_key_visitor&lt; V, POSE, KEY &gt; Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a04907.html">gtsam::GaussNewtonOptimizer</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a04907.html">gtsam::compose_key_visitor&lt; V, POSE, KEY &gt;</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a04907.html#a6fc51df3b0bf89e7449a5b4c5c82485d">_params</a>() const override</td><td class="entry"><a class="el" href="a04907.html">gtsam::GaussNewtonOptimizer</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05103.html#acd13b9acb0d502edafac78c63815a9f1">defaultOptimize</a>()</td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a04907.html#a844e8aad06fade01e6741f22335932c3">ensureHasOrdering</a>(GaussNewtonParams params, const NonlinearFactorGraph &amp;graph) const</td><td class="entry"><a class="el" href="a04907.html">gtsam::GaussNewtonOptimizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05103.html#aae495c988fe69aec8ff0f4b4eba83bde">error</a>() const</td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a04907.html#ac6a87de7dcab376696ede784ccb5da0e">GaussNewtonOptimizer</a>(const NonlinearFactorGraph &amp;graph, const Values &amp;initialValues, const GaussNewtonParams &amp;params=GaussNewtonParams())</td><td class="entry"><a class="el" href="a04907.html">gtsam::GaussNewtonOptimizer</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a04907.html#add3883c2df337aa134c62dd34460e1e9">GaussNewtonOptimizer</a>(const NonlinearFactorGraph &amp;graph, const Values &amp;initialValues, const Ordering &amp;ordering)</td><td class="entry"><a class="el" href="a04907.html">gtsam::GaussNewtonOptimizer</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a05103.html#a2ffd892baed9b62d31ce39a9243f3c78">graph</a>() const</td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05103.html#a7142764a820ba039a610074f855bce13">graph_</a></td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a04907.html#aac60a78f5eb2157e916514cfa070dc70">iterate</a>() override</td><td class="entry"><a class="el" href="a04907.html">gtsam::GaussNewtonOptimizer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05103.html#ad87eeae75b136c470a59df02ce3414aa">iterations</a>() const</td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a05103.html#ac6b7a069a596fda982cc4aa1ddc79324">NonlinearOptimizer</a>(const NonlinearFactorGraph &amp;graph, std::unique_ptr&lt; internal::NonlinearOptimizerState &gt; state)</td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05103.html#a823730cdeb1c0b0c5c1fef2e1ac546d7">optimize</a>()</td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a05103.html#a3f5f50cd14a0b2862b886f8eb9ffaeeb">optimizeSafely</a>()</td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a04907.html#a1084408cbbd06b40403a494ee99badbe">params</a>() const</td><td class="entry"><a class="el" href="a04907.html">gtsam::GaussNewtonOptimizer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>params_</b> (defined in <a class="el" href="a04907.html">gtsam::GaussNewtonOptimizer</a>)</td><td class="entry"><a class="el" href="a04907.html">gtsam::GaussNewtonOptimizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05103.html#ab0f7caa60ea97aa83c85cc09452f2c2d">shared_ptr</a> typedef</td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a05103.html#a541e8b6b63d4bce95e56cf043416e10f">solve</a>(const GaussianFactorGraph &amp;gfg, const NonlinearOptimizerParams &amp;params) const</td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05103.html#aa51bf89ae24b609a58201f224c36b7b8">state_</a></td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a05103.html#ac7240fdeae0ca240e20e74ae593eb32c">values</a>() const</td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a04907.html#a1a192f29b50d7fc49c4b085cd260266e">~GaussNewtonOptimizer</a>() override</td><td class="entry"><a class="el" href="a04907.html">gtsam::GaussNewtonOptimizer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a05103.html#ab852c8574086cacb316c579bcf19f294">~NonlinearOptimizer</a>()</td><td class="entry"><a class="el" href="a05103.html">gtsam::NonlinearOptimizer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>compose_key_visitor</b>(std::shared_ptr&lt; Values &gt; config_in) (defined in <a class="el" href="a04907.html">gtsam::compose_key_visitor&lt; V, POSE, KEY &gt;</a>)</td><td class="entry"><a class="el" href="a04907.html">gtsam::compose_key_visitor&lt; V, POSE, KEY &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>tree_edge</b>(Edge edge, const Graph &amp;g) const (defined in <a class="el" href="a04907.html">gtsam::compose_key_visitor&lt; V, POSE, KEY &gt;</a>)</td><td class="entry"><a class="el" href="a04907.html">gtsam::compose_key_visitor&lt; V, POSE, KEY &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

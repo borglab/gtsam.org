@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: GTSAM</title>
+<title>GTSAM 4.3 C++ API Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -95,12 +95,74 @@ $(function(){initNavTree('index.html','',''); });
 </div>
 </div>
 
-<div><div class="header">
-  <div class="headertitle"><div class="title">GTSAM </div></div>
+<div><div class="header api-home-header">
+  <div class="headertitle"><div class="title">C++ API Reference</div></div>
 </div><!--header-->
-<div class="contents">
-<div class="textblock"><p><a class="el" href="a11826.html" title="GTSAM">GTSAM</a></p>
-<p><a class="el" href="a11827.html" title="GTSAM_UNSTABLE">GTSAM_UNSTABLE</a> </p>
+<div class="contents api-home">
+<div class="textblock">
+<p class="api-home-lead">Browse GTSAM 4.3 by source module. The structure below matches the <code>gtsam</code> and <code>gtsam_unstable</code> directories used by the MyST documentation.</p>
+
+<div class="api-columns">
+  <div class="api-track api-track-stable" id="gtsam-api">
+    <div class="api-track-header">
+      <span class="api-track-label">Stable library</span>
+      <h2>GTSAM</h2>
+      <p>Supported factor-graph, geometry, inference, optimization, navigation, SLAM, and SFM APIs.</p>
+    </div>
+    <div class="api-module-list">
+      <a class="api-module" href="dir_9d6ace87d395f23a9dde2f62a0ffd09e.html"><span class="api-module-name">base</span><span class="api-module-desc">Core types, traits, containers, numerical derivatives, matrices, and vectors.</span><span class="api-module-arrow">→</span></a>
+      <a class="api-module" href="dir_1fde14e4b68cf8d95050d1f3a2250d8d.html"><span class="api-module-name">basis</span><span class="api-module-desc">Basis functions, continuous-time trajectories, splines, kernels, and fitting.</span><span class="api-module-arrow">→</span></a>
+      <a class="api-module" href="dir_c66f37569552581eba29d2a0357838de.html"><span class="api-module-name">discrete</span><span class="api-module-desc">Discrete factors, distributions, decision trees, elimination, and inference.</span><span class="api-module-arrow">→</span></a>
+      <a class="api-module" href="dir_af18ec100323fe9d95490c599d1eacbf.html"><span class="api-module-name">geometry</span><span class="api-module-desc">Lie groups, poses, rotations, points, cameras, and calibration models.</span><span class="api-module-arrow">→</span></a>
+      <a class="api-module" href="dir_20f32188421351d98da177fc787e50c7.html"><span class="api-module-name">hybrid</span><span class="api-module-desc">Hybrid discrete-continuous factors, values, Bayes nets, and elimination.</span><span class="api-module-arrow">→</span></a>
+      <a class="api-module" href="dir_694779dc1449dab631c1e4f464ff0363.html"><span class="api-module-name">inference</span><span class="api-module-desc">Factor graphs, elimination, orderings, Bayes nets, and Bayes trees.</span><span class="api-module-arrow">→</span></a>
+      <a class="api-module" href="dir_87a6a2825308a0841ed7477f0a5abd70.html"><span class="api-module-name">linear</span><span class="api-module-desc">Gaussian factors, linear factor graphs, noise models, and solvers.</span><span class="api-module-arrow">→</span></a>
+      <a class="api-module" href="dir_30d21101d9b794d3f35c244a4f1c370f.html"><span class="api-module-name">navigation</span><span class="api-module-desc">IMU preintegration, navigation states, GPS/GNSS, and inertial factors.</span><span class="api-module-arrow">→</span></a>
+      <a class="api-module" href="dir_62f46c0f30d22bf205dc559573ec3006.html"><span class="api-module-name">nonlinear</span><span class="api-module-desc">Nonlinear factors, optimizers, expressions, iSAM2, and smoothing.</span><span class="api-module-arrow">→</span></a>
+      <a class="api-module" href="dir_81efbd18c296d1bc4a889b1fd80091fd.html"><span class="api-module-name">sam</span><span class="api-module-desc">Smoothing-and-mapping factors, range models, and robust incremental SAM.</span><span class="api-module-arrow">→</span></a>
+      <a class="api-module" href="dir_0f9907fcfeeb3f30c01cdacd16ff103e.html"><span class="api-module-name">sfm</span><span class="api-module-desc">Structure from motion, tracks, translation recovery, and SFM optimizers.</span><span class="api-module-arrow">→</span></a>
+      <a class="api-module" href="dir_aa90e95642b1dddb0f5ae7f76c56db46.html"><span class="api-module-name">slam</span><span class="api-module-desc">SLAM measurement factors, smart factors, and geometric constraints.</span><span class="api-module-arrow">→</span></a>
+      <a class="api-module" href="dir_09a2dca28516d2c54dfb315716ef7b89.html"><span class="api-module-name">symbolic</span><span class="api-module-desc">Symbolic factors and graph structures for reasoning about sparsity.</span><span class="api-module-arrow">→</span></a>
+    </div>
+  </div>
+
+  <div class="api-track api-track-unstable" id="gtsam-unstable-api">
+    <div class="api-track-header">
+      <span class="api-track-label">Evolving library</span>
+      <h2>GTSAM_UNSTABLE</h2>
+      <p>Research and experimental APIs. These interfaces may change without the compatibility guarantees of the stable library.</p>
+    </div>
+    <div class="api-module-list">
+      <a class="api-module" href="dir_14f9900570935cf790b1d616b45c0905.html"><span class="api-module-name">base</span><span class="api-module-desc">Experimental containers and foundational utilities.</span><span class="api-module-arrow">→</span></a>
+      <a class="api-module" href="dir_424daab0948c26b4aac978bb5910bda7.html"><span class="api-module-name">discrete</span><span class="api-module-desc">Constraint satisfaction, scheduling, domains, and discrete utilities.</span><span class="api-module-arrow">→</span></a>
+      <a class="api-module" href="dir_f6855e6cf1fb39187af4ef30729bdce4.html"><span class="api-module-name">dynamics</span><span class="api-module-desc">Dynamics models, constrained motion, and experimental IMU factors.</span><span class="api-module-arrow">→</span></a>
+      <a class="api-module" href="dir_0538d579fbf0a2194239dc456998f7c7.html"><span class="api-module-name">geometry</span><span class="api-module-desc">Experimental poses, cameras, bearings, and geometric models.</span><span class="api-module-arrow">→</span></a>
+      <a class="api-module" href="dir_9632b15ce3744b3f4003ae41629a96d9.html"><span class="api-module-name">linear</span><span class="api-module-desc">Constrained, quadratic, and linear-programming solver components.</span><span class="api-module-arrow">→</span></a>
+      <a class="api-module" href="dir_23a652b01c7a3709369c4d2b6bb901de.html"><span class="api-module-name">nonlinear</span><span class="api-module-desc">Concurrent filtering, fixed-lag smoothing, and experimental factors.</span><span class="api-module-arrow">→</span></a>
+      <a class="api-module" href="dir_75f52889603d1a3ce7056426b9e50538.html"><span class="api-module-name">partition</span><span class="api-module-desc">Graph partitioning, nested dissection, and separator algorithms.</span><span class="api-module-arrow">→</span></a>
+      <a class="api-module" href="dir_60ac3d6cb8bf12f5929b3c862502580f.html"><span class="api-module-name">slam</span><span class="api-module-desc">Experimental projection, inertial-navigation, and SLAM factors.</span><span class="api-module-arrow">→</span></a>
+    </div>
+
+    <div class="api-unstable-note">
+      <strong>Using unstable APIs?</strong>
+      <p>Review the declarations and release notes before relying on them across versions.</p>
+      <a href="a16299.html">Read the GTSAM_UNSTABLE overview →</a>
+    </div>
+  </div>
+</div>
+
+<div class="api-indexes">
+  <div>
+    <span class="api-track-label">Cross-module lookup</span>
+    <h2>Reference indexes</h2>
+  </div>
+  <div class="api-index-links">
+    <a href="annotated.html"><strong>Classes</strong><span>Browse documented types</span></a>
+    <a href="namespaces.html"><strong>Namespaces</strong><span>Functions and symbols by namespace</span></a>
+    <a href="files.html"><strong>Files</strong><span>Complete generated file listing</span></a>
+    <a href="examples.html"><strong>Examples</strong><span>Doxygen C++ examples</span></a>
+  </div>
+</div>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->

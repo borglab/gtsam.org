@@ -1,4 +1,4 @@
 var a01241 =
 [
-    [ "gtsam::traits&lt; SmartProjectionPoseFactor&lt; CALIBRATION &gt; &gt;", "a05499.html", null ]
+    [ "gtsam::LieGroupEKF&lt; G &gt;", "a05863.html", "a05863" ]
 ];

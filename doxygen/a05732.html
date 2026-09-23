@@ -11,8 +11,8 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,23 +96,12 @@ $(function(){initNavTree('a05735.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::InvDepthCamera3&lt; CALIBRATION &gt; Member List</div></div>
+  <div class="headertitle"><div class="title">gtsam::traits&lt; GPSFactor2ArmCalib &gt; Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a05735.html">gtsam::InvDepthCamera3&lt; CALIBRATION &gt;</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a05735.html#a345cc8b1d57e657ce051b1792f624c22">backproject</a>(const gtsam::Point2 &amp;pi, const double depth) const</td><td class="entry"><a class="el" href="a05735.html">gtsam::InvDepthCamera3&lt; CALIBRATION &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05735.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">boost::serialization::access</a> class</td><td class="entry"><a class="el" href="a05735.html">gtsam::InvDepthCamera3&lt; CALIBRATION &gt;</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a05735.html#a010761291965512bf91ba55f30d752eb">calibration</a>() const</td><td class="entry"><a class="el" href="a05735.html">gtsam::InvDepthCamera3&lt; CALIBRATION &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05735.html#abf667b894abe0a27bebde3190f2a5e23">InvDepthCamera3</a>()</td><td class="entry"><a class="el" href="a05735.html">gtsam::InvDepthCamera3&lt; CALIBRATION &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a05735.html#af7599c344bef850891fe0bdf6f59b449">InvDepthCamera3</a>(const Pose3 &amp;pose, const boost::shared_ptr&lt; CALIBRATION &gt; &amp;k)</td><td class="entry"><a class="el" href="a05735.html">gtsam::InvDepthCamera3&lt; CALIBRATION &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05735.html#a8913c978814e619d5a4f6e73a069c909">invDepthTo3D</a>(const Vector5 &amp;pw, double rho)</td><td class="entry"><a class="el" href="a05735.html">gtsam::InvDepthCamera3&lt; CALIBRATION &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a05735.html#a70447cb74ce5809f311235c1ce16c973">pose</a>()</td><td class="entry"><a class="el" href="a05735.html">gtsam::InvDepthCamera3&lt; CALIBRATION &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="a05735.html#af61448613b841e139147703dc37df467">print</a>(const std::string &amp;s=&quot;&quot;) const</td><td class="entry"><a class="el" href="a05735.html">gtsam::InvDepthCamera3&lt; CALIBRATION &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a05735.html#affe8122628c062f8d6f1bc41e41d00bd">project</a>(const Vector5 &amp;pw, double rho, boost::optional&lt; gtsam::Matrix &amp; &gt; H1=boost::none, boost::optional&lt; gtsam::Matrix &amp; &gt; H2=boost::none, boost::optional&lt; gtsam::Matrix &amp; &gt; H3=boost::none) const</td><td class="entry"><a class="el" href="a05735.html">gtsam::InvDepthCamera3&lt; CALIBRATION &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>~InvDepthCamera3</b>() (defined in <a class="el" href="a05735.html">gtsam::InvDepthCamera3&lt; CALIBRATION &gt;</a>)</td><td class="entry"><a class="el" href="a05735.html">gtsam::InvDepthCamera3&lt; CALIBRATION &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
-</table></div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="a05735.html">gtsam::traits&lt; GPSFactor2ArmCalib &gt;</a>, including all inherited members.</p>
+</div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->

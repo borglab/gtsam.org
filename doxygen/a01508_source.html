@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/geometry/SimPolygon2D.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/nonlinear/ISAM2.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,112 +89,294 @@ $(function(){initNavTree('a01508_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SimPolygon2D.h</div></div>
+  <div class="headertitle"><div class="title">ISAM2.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="a01508.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="a00431.html">gtsam/geometry/Pose2.h</a>&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="a01517.html">gtsam_unstable/geometry/SimWall2D.h</a>&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;random&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
-<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="a05747.html">   20</a></span><span class="keyword">class </span>GTSAM_UNSTABLE_EXPORT <a class="code hl_function" href="a05747.html#a1f96602fdfa96eb6e138f4d43ea536b6">SimPolygon2D</a> {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  Point2Vector landmarks_;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keyword">static</span> std::minstd_rand rng;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="a05747.html#a1f96602fdfa96eb6e138f4d43ea536b6">   28</a></span>  <a class="code hl_function" href="a05747.html#a1f96602fdfa96eb6e138f4d43ea536b6">SimPolygon2D</a>() {}</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> seedGenerator(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> seed);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keyword">static</span> <a class="code hl_class" href="a05747.html">SimPolygon2D</a> createTriangle(<span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&amp; pA, <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&amp; pB, <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&amp; pC);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keyword">static</span> <a class="code hl_class" href="a05747.html">SimPolygon2D</a> createRectangle(<span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&amp; p, <span class="keywordtype">double</span> height, <span class="keywordtype">double</span> width);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">static</span> <a class="code hl_class" href="a05747.html">SimPolygon2D</a> randomTriangle(<span class="keywordtype">double</span> side_len, <span class="keywordtype">double</span> mean_side_len, <span class="keywordtype">double</span> sigma_side_len,</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      <span class="keywordtype">double</span> min_vertex_dist, <span class="keywordtype">double</span> min_side_len, <span class="keyword">const</span> std::vector&lt;SimPolygon2D&gt;&amp; existing_polys);</div>
+<a href="a01508.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"></span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * GTSAM Copyright 2010, Georgia Tech Research Corporation,</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Atlanta, Georgia 30332-0415</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * All Rights Reserved</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * Authors: Frank Dellaert, et al. (see THANKS for the full author list)</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"></span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * See LICENSE for the license information</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// \callgraph</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="a01094.html">gtsam/linear/GaussianBayesTree.h</a>&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;<a class="code" href="a01346.html">gtsam/nonlinear/ISAM2Clique.h</a>&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;<a class="code" href="a01481.html">gtsam/nonlinear/ISAM2Params.h</a>&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;<a class="code" href="a01553.html">gtsam/nonlinear/ISAM2Result.h</a>&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;<a class="code" href="a01592.html">gtsam/nonlinear/ISAM2UpdateParams.h</a>&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;<a class="code" href="a01487.html">gtsam/nonlinear/NonlinearFactorGraph.h</a>&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a02242.html">gtsam</a> {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="a06323.html">   45</a></span><span class="keyword">class </span>GTSAM_EXPORT <a class="code hl_function" href="a06323.html#ab79162caabd11ce503c7115c4e9f9419">ISAM2</a> : <span class="keyword">public</span> <a class="code hl_function" href="a04835.html#a52b84560f2afcae463ac9487e6e91a28">BayesTree</a>&lt;ISAM2Clique&gt; {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="a06323.html#abe3ea23a8d9b61097f28bf2a5c23057e">   48</a></span>  <a class="code hl_class" href="a06527.html">Values</a> <a class="code hl_variable" href="a06323.html#abe3ea23a8d9b61097f28bf2a5c23057e">theta_</a>;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">static</span> <a class="code hl_class" href="a05747.html">SimPolygon2D</a> randomRectangle(<span class="keywordtype">double</span> side_len, <span class="keywordtype">double</span> mean_side_len, <span class="keywordtype">double</span> sigma_side_len,</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      <span class="keywordtype">double</span> min_vertex_dist, <span class="keywordtype">double</span> min_side_len, <span class="keyword">const</span> std::vector&lt;SimPolygon2D&gt;&amp; existing_polys);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="comment">// access to underlying points</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">const</span> <a class="code hl_typedef" href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&amp; landmark(<span class="keywordtype">size_t</span> i)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> landmarks_[i]; }</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keywordtype">size_t</span> size()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> landmarks_.size(); }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keyword">const</span> Point2Vector&amp; vertices()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> landmarks_; }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="a06323.html#ab9bd085bcf745368cb4801d04538ec18">   52</a></span>  <a class="code hl_class" href="a04999.html">VariableIndex</a> <a class="code hl_variable" href="a06323.html#ab9bd085bcf745368cb4801d04538ec18">variableIndex_</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="a06323.html#aa1a5f004e312d381945569e74e801941">   61</a></span>  <span class="keyword">mutable</span> <a class="code hl_class" href="a05531.html">VectorValues</a> <a class="code hl_variable" href="a06323.html#aa1a5f004e312d381945569e74e801941">delta_</a>;</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="comment">// testable requirements</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> SimPolygon2D&amp; p, <span class="keywordtype">double</span> tol=1e-5) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a01968.html#a54fa43c89c5334314c8c75939dd5c2d7">print</a>(<span class="keyword">const</span> std::string&amp; s=<span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  std::vector&lt;SimWall2D&gt; walls() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keywordtype">bool</span> contains(<span class="keyword">const</span> <a class="code hl_typedef" href="a01928.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&amp; p) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keyword">mutable</span> <a class="code hl_class" href="a05531.html">VectorValues</a> deltaNewton_;  <span class="comment">// Only used when using Dogleg - stores</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                                      <span class="comment">// the Gauss-Newton update</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keyword">mutable</span> <a class="code hl_class" href="a05531.html">VectorValues</a> RgProd_;  <span class="comment">// Only used when using Dogleg - stores R*g and</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                                 <span class="comment">// is updated incrementally</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="a06323.html#a0f7ba75bbd10998951d79a62106e0623">   76</a></span>  <span class="keyword">mutable</span> KeySet <a class="code hl_variable" href="a06323.html#a0f7ba75bbd10998951d79a62106e0623">deltaReplacedMask_</a>;  <span class="comment">// TODO(dellaert): Make sure accessed in</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                                      <span class="comment">// the right way</span></div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keywordtype">bool</span> overlaps(<span class="keyword">const</span> SimPolygon2D&amp; p) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span> anyContains(<span class="keyword">const</span> <a class="code hl_typedef" href="a01928.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&amp; p, <span class="keyword">const</span> std::vector&lt;SimPolygon2D&gt;&amp; obstacles);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span> anyOverlaps(<span class="keyword">const</span> SimPolygon2D&amp; p, <span class="keyword">const</span> std::vector&lt;SimPolygon2D&gt;&amp; obstacles);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span> insideBox(<span class="keywordtype">double</span> s, <span class="keyword">const</span> <a class="code hl_typedef" href="a01928.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&amp; p);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keyword">static</span> <span class="keywordtype">bool</span> nearExisting(<span class="keyword">const</span> Point2Vector&amp; S,</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="a01928.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&amp; p, <span class="keywordtype">double</span> threshold);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keyword">static</span> <a class="code hl_typedef" href="a01928.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> randomPoint2(<span class="keywordtype">double</span> s);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keyword">static</span> Rot2 randomAngle();</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keyword">static</span> <span class="keywordtype">double</span> randomDistance(<span class="keywordtype">double</span> mu, <span class="keywordtype">double</span> sigma, <span class="keywordtype">double</span> min_dist = -1.0);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keyword">static</span> <a class="code hl_typedef" href="a01928.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> randomBoundedPoint2(<span class="keywordtype">double</span> boundary_size,</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>      <span class="keyword">const</span> Point2Vector&amp; landmarks, <span class="keywordtype">double</span> min_landmark_dist);</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keyword">static</span> <a class="code hl_typedef" href="a01928.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> randomBoundedPoint2(<span class="keywordtype">double</span> boundary_size,</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      <span class="keyword">const</span> Point2Vector&amp; landmarks,</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      <span class="keyword">const</span> std::vector&lt;SimPolygon2D&gt;&amp; obstacles, <span class="keywordtype">double</span> min_landmark_dist);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="a06323.html#a9307a6fb614f33fb354e4e445467c258">   81</a></span>  <a class="code hl_class" href="a06447.html">NonlinearFactorGraph</a> <a class="code hl_variable" href="a06323.html#a9307a6fb614f33fb354e4e445467c258">nonlinearFactors_</a>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="a06323.html#ada63722602d709e210d4e1ab45dcc6a8">   84</a></span>  <span class="keyword">mutable</span> <a class="code hl_class" href="a05135.html">GaussianFactorGraph</a> <a class="code hl_variable" href="a06323.html#ada63722602d709e210d4e1ab45dcc6a8">linearFactors_</a>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="a06323.html#abec56652222d97d144e75a175ba3e8d0">   87</a></span>  <a class="code hl_struct" href="a06347.html">ISAM2Params</a> <a class="code hl_variable" href="a06323.html#abec56652222d97d144e75a175ba3e8d0">params_</a>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="a06323.html#afce43574c726748b927804fef48520be">   90</a></span>  <span class="keyword">mutable</span> std::optional&lt;double&gt; <a class="code hl_variable" href="a06323.html#afce43574c726748b927804fef48520be">doglegDelta_</a>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="a06323.html#a0d0807258336ff483ad89c80cdb88eea">   94</a></span>  KeySet <a class="code hl_variable" href="a06323.html#a0d0807258336ff483ad89c80cdb88eea">fixedVariables_</a>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="a06323.html#a29b30773e68652011e31ee0a9a0cfa4d">   96</a></span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="a06323.html#a29b30773e68652011e31ee0a9a0cfa4d">update_count_</a>;  </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="a06323.html#ac8f99ea3f5de45f575f59e26b560ea27">   99</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a06323.html#ac8f99ea3f5de45f575f59e26b560ea27">nnzAfterLastReorder_</a>;  </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="a06323.html#af8b9f410dae63f79dfd229506370f31e">  103</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="a06323.html#af8b9f410dae63f79dfd229506370f31e">This</a> = <a class="code hl_function" href="a06323.html#ab79162caabd11ce503c7115c4e9f9419">ISAM2</a>;                       </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="a06323.html#a32db7eb856bee27d1274306284f15a88">  104</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="a06323.html#a32db7eb856bee27d1274306284f15a88">Base</a> = <a class="code hl_function" href="a04835.html#a52b84560f2afcae463ac9487e6e91a28">BayesTree&lt;ISAM2Clique&gt;</a>;      </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="a06323.html#a7aa1a454fa0d3f1e0cf194b10803b882">  105</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="a06323.html#a7aa1a454fa0d3f1e0cf194b10803b882">Clique</a> = <a class="code hl_typedef" href="a04835.html#ab644899031c0c6436e5762832d79f04d">Base::Clique</a>;              </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="a06323.html#a9b7c2355b667269d2cd08fc7b414f3f5">  106</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="a06323.html#a9b7c2355b667269d2cd08fc7b414f3f5">sharedClique</a> = <a class="code hl_typedef" href="a04835.html#a1ddc770fc93a8af866266484df7705c0">Base::sharedClique</a>;  </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="a06323.html#a73115b2f980fb72b2f3087b697f69990">  107</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="a06323.html#a73115b2f980fb72b2f3087b697f69990">Cliques</a> = <a class="code hl_typedef" href="a04835.html#aada1aa3f705630a0f3767156c1d8ed5c">Base::Cliques</a>;            </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keyword">explicit</span> <a class="code hl_function" href="a06323.html#ab79162caabd11ce503c7115c4e9f9419">ISAM2</a>(<span class="keyword">const</span> <a class="code hl_struct" href="a06347.html">ISAM2Params</a>&amp; params);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <a class="code hl_function" href="a06323.html#ab79162caabd11ce503c7115c4e9f9419">ISAM2</a>();</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keyword">static</span> <a class="code hl_typedef" href="a01928.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> randomBoundedPoint2(<span class="keywordtype">double</span> boundary_size,</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      <span class="keyword">const</span> std::vector&lt;SimPolygon2D&gt;&amp; obstacles);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  <span class="keyword">static</span> <a class="code hl_typedef" href="a01928.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a> randomBoundedPoint2(</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="a01928.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&amp; LL_corner, <span class="keyword">const</span> <a class="code hl_typedef" href="a01928.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a>&amp; UR_corner,</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>      <span class="keyword">const</span> Point2Vector&amp; landmarks,</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      <span class="keyword">const</span> std::vector&lt;SimPolygon2D&gt;&amp; obstacles, <span class="keywordtype">double</span> min_landmark_dist);</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span></div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  <span class="keyword">static</span> Pose2 randomFreePose(<span class="keywordtype">double</span> boundary_size, <span class="keyword">const</span> std::vector&lt;SimPolygon2D&gt;&amp; obstacles);</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>};</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="a06323.html#a35e0e8a7a31690c623e594774879ace1">  117</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="a06323.html#a35e0e8a7a31690c623e594774879ace1">~ISAM2</a>() {}</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_struct" href="a03523.html">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="a06323.html">ISAM2</a>&amp; other, <span class="keywordtype">double</span> tol = 1e-9) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  <span class="keyword">virtual</span> <a class="code hl_struct" href="a06351.html">ISAM2Result</a> update(</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>      <span class="keyword">const</span> <a class="code hl_class" href="a06447.html">NonlinearFactorGraph</a>&amp; newFactors = <a class="code hl_class" href="a06447.html">NonlinearFactorGraph</a>(),</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>      <span class="keyword">const</span> <a class="code hl_class" href="a06527.html">Values</a>&amp; newTheta = <a class="code hl_class" href="a06527.html">Values</a>(),</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>      <span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a99e63c90a8ac740d99716e73fe97e054">FactorIndices</a>&amp; removeFactorIndices = <a class="code hl_typedef" href="a02242.html#a99e63c90a8ac740d99716e73fe97e054">FactorIndices</a>(),</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      <span class="keyword">const</span> std::optional&lt;<a class="code hl_class" href="a03159.html">FastMap&lt;Key, int&gt;</a> &gt;&amp; constrainedKeys = {},</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>      <span class="keyword">const</span> std::optional&lt;FastList&lt;Key&gt; &gt;&amp; noRelinKeys = {},</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>      <span class="keyword">const</span> std::optional&lt;FastList&lt;Key&gt; &gt;&amp; extraReelimKeys = {},</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>      <span class="keywordtype">bool</span> force_relinearize = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>  <span class="keyword">virtual</span> ISAM2Result update(<span class="keyword">const</span> NonlinearFactorGraph&amp; newFactors,</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                             <span class="keyword">const</span> Values&amp; newTheta,</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                             <span class="keyword">const</span> ISAM2UpdateParams&amp; updateParams);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  <span class="keywordtype">void</span> marginalizeLeaves(</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>      <span class="keyword">const</span> FastList&lt;Key&gt;&amp; leafKeys,</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>      FactorIndices* marginalFactorsIndices = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>      FactorIndices* deletedFactorsIndices = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span>... OptArgs&gt;</div>
+<div class="foldopen" id="foldopen00212" data-start="{" data-end="}">
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno"><a class="line" href="a06323.html#a9541e46ac5515f7b75e6c7847eefba83">  212</a></span>      <span class="keywordtype">void</span> <a class="code hl_function" href="a06323.html#a9541e46ac5515f7b75e6c7847eefba83">marginalizeLeaves</a>(<span class="keyword">const</span> <a class="code hl_class" href="a03155.html">FastList&lt;Key&gt;</a>&amp; leafKeys,</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                             OptArgs&amp;&amp;... optArgs) {</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>          <span class="comment">// dereference the optional arguments and pass</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>          <span class="comment">// it to the pointer version</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>          <a class="code hl_function" href="a06323.html#a241dc3528b3b61856ef8b728d79a1bfb">marginalizeLeaves</a>(leafKeys, (&amp;optArgs)...);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>      }</div>
 </div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="keyword">typedef</span> std::vector&lt;SimPolygon2D&gt; SimPolygon2DVector;</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>} <span class="comment">//\namespace gtsam</span></div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
-<div class="ttc" id="aa00431_html"><div class="ttname"><a href="a00431.html">Pose2.h</a></div><div class="ttdoc">2D Pose</div></div>
-<div class="ttc" id="aa01517_html"><div class="ttname"><a href="a01517.html">SimWall2D.h</a></div><div class="ttdoc">Implementation of walls for use with simulators.</div></div>
-<div class="ttc" id="aa01928_html_a6ede8384dee0353a0ce5fb54ea50c21d"><div class="ttname"><a href="a01928.html#a6ede8384dee0353a0ce5fb54ea50c21d">Point2</a></div><div class="ttdeci">Vector2 Point2</div><div class="ttdoc">As of GTSAM 4, in order to make GTSAM more lean, it is now possible to just typedef Point2 to Vector2...</div><div class="ttdef"><b>Definition</b> Point2.h:27</div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa01968_html_a54fa43c89c5334314c8c75939dd5c2d7"><div class="ttname"><a href="a01968.html#a54fa43c89c5334314c8c75939dd5c2d7">gtsam::print</a></div><div class="ttdeci">void print(const Matrix &amp;A, const string &amp;s, ostream &amp;stream)</div><div class="ttdoc">print without optional string, must specify cout yourself</div><div class="ttdef"><b>Definition</b> Matrix.cpp:156</div></div>
-<div class="ttc" id="aa01968_html_a6ede8384dee0353a0ce5fb54ea50c21d"><div class="ttname"><a href="a01968.html#a6ede8384dee0353a0ce5fb54ea50c21d">gtsam::Point2</a></div><div class="ttdeci">Vector2 Point2</div><div class="ttdoc">As of GTSAM 4, in order to make GTSAM more lean, it is now possible to just typedef Point2 to Vector2...</div><div class="ttdef"><b>Definition</b> Point2.h:27</div></div>
-<div class="ttc" id="aa05747_html"><div class="ttname"><a href="a05747.html">gtsam::SimPolygon2D</a></div><div class="ttdoc">General polygon class for convex polygons.</div><div class="ttdef"><b>Definition</b> SimPolygon2D.h:20</div></div>
-<div class="ttc" id="aa05747_html_a1f96602fdfa96eb6e138f4d43ea536b6"><div class="ttname"><a href="a05747.html#a1f96602fdfa96eb6e138f4d43ea536b6">gtsam::SimPolygon2D::SimPolygon2D</a></div><div class="ttdeci">SimPolygon2D()</div><div class="ttdoc">Don&#39;t use this constructor, use a named one instead.</div><div class="ttdef"><b>Definition</b> SimPolygon2D.h:28</div></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  std::pair&lt;FactorIndices, FactorIndices&gt; marginalizeLeavesWithIndices(<span class="keyword">const</span> <a class="code hl_class" href="a03155.html">FastList&lt;Key&gt;</a>&amp; leafKeys);</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="a06323.html#ab9fa90025d1a881151e8e203a61a05ed">  226</a></span>  <span class="keyword">const</span> <a class="code hl_class" href="a06527.html">Values</a>&amp; <a class="code hl_function" href="a06323.html#ab9fa90025d1a881151e8e203a61a05ed">getLinearizationPoint</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="a06323.html#abe3ea23a8d9b61097f28bf2a5c23057e">theta_</a>; }</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno"><a class="line" href="a06323.html#affcd8d849cfa6e8dbfc73628d38552b9">  229</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="a06323.html#affcd8d849cfa6e8dbfc73628d38552b9">valueExists</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="a06323.html#abe3ea23a8d9b61097f28bf2a5c23057e">theta_</a>.exists(key); }</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>  <a class="code hl_class" href="a06527.html">Values</a> calculateEstimate() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> VALUE&gt;</div>
+<div class="foldopen" id="foldopen00245" data-start="{" data-end="}">
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno"><a class="line" href="a06323.html#a35b4a27886c7dd9caacb1ff2e04ca8a9">  245</a></span>  VALUE <a class="code hl_function" href="a06323.html#a35b4a27886c7dd9caacb1ff2e04ca8a9">calculateEstimate</a>(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="keyword">const</span> Vector&amp; delta = <a class="code hl_function" href="a06323.html#a54c3a0329b3397df717271cfd530b105">getDelta</a>()[key];</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="a03203.html">traits&lt;VALUE&gt;::Retract</a>(<a class="code hl_variable" href="a06323.html#abe3ea23a8d9b61097f28bf2a5c23057e">theta_</a>.at&lt;VALUE&gt;(key), delta);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  }</div>
+</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="preprocessor">#ifdef GTSAM_ALLOW_DEPRECATED_SINCE_V43</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>  <span class="keyword">const</span> <a class="code hl_class" href="a03615.html">Value</a>&amp; calculateEstimate(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span></div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>  <a class="code hl_class" href="a06527.html">Values</a> calculateEstimate(<span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&amp; keys) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  Matrix marginalInformation(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span></div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  Matrix marginalCovariance(<a class="code hl_typedef" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span></div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>  <a class="code hl_class" href="a05187.html">JointMarginal</a> jointMarginalCovariance(<span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&amp; queryKeys) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span></div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  <a class="code hl_class" href="a05187.html">JointMarginal</a> jointMarginalInformation(<span class="keyword">const</span> <a class="code hl_typedef" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&amp; queryKeys) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>  <a class="code hl_class" href="a06527.html">Values</a> calculateBestEstimate() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span></div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>  <span class="keyword">const</span> <a class="code hl_class" href="a05531.html">VectorValues</a>&amp; getDelta() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span></div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>  <span class="keywordtype">double</span> error(<span class="keyword">const</span> <a class="code hl_class" href="a05531.html">VectorValues</a>&amp; x) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span></div>
+<div class="foldopen" id="foldopen00304" data-start="{" data-end="}">
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno"><a class="line" href="a06323.html#aeb325a51d89054173898efa31be0096e">  304</a></span>  <span class="keyword">const</span> <a class="code hl_class" href="a06447.html">NonlinearFactorGraph</a>&amp; <a class="code hl_function" href="a06323.html#aeb325a51d89054173898efa31be0096e">getFactorsUnsafe</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="a06323.html#a9307a6fb614f33fb354e4e445467c258">nonlinearFactors_</a>;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>  }</div>
+</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span></div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno"><a class="line" href="a06323.html#a9b334c28f63172f3b0ed4e77989e3a93">  309</a></span>  <span class="keyword">const</span> <a class="code hl_class" href="a04999.html">VariableIndex</a>&amp; <a class="code hl_function" href="a06323.html#a9b334c28f63172f3b0ed4e77989e3a93">getVariableIndex</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="a06323.html#ab9bd085bcf745368cb4801d04538ec18">variableIndex_</a>; }</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span></div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno"><a class="line" href="a06323.html#a50cd19a4c757c0128aa658662c2e6273">  312</a></span>  <span class="keyword">const</span> KeySet&amp; <a class="code hl_function" href="a06323.html#a50cd19a4c757c0128aa658662c2e6273">getFixedVariables</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="a06323.html#a0d0807258336ff483ad89c80cdb88eea">fixedVariables_</a>; }</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>  <span class="keyword">const</span> <a class="code hl_struct" href="a06347.html">ISAM2Params</a>&amp; params()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> params_; }</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span></div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>  <span class="keywordtype">size_t</span> treeNnz() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span></div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno"><a class="line" href="a06323.html#a8e147b16c01a4651d7f3a27ac834e39a">  322</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a06323.html#a8e147b16c01a4651d7f3a27ac834e39a">printStats</a>()<span class="keyword"> const </span>{ <a class="code hl_function" href="a04835.html#adac7275a0aea6c2a1ec9c8562149b2c3">getCliqueData</a>().getStats().print(); }</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span></div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>  <a class="code hl_class" href="a05531.html">VectorValues</a> gradientAtZero() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span></div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>  std::pair&lt;KeySet, bool&gt; predictUpdateInfo(</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>      <span class="keyword">const</span> <a class="code hl_class" href="a06447.html">NonlinearFactorGraph</a>&amp; newFactors, <span class="keyword">const</span> <a class="code hl_class" href="a06527.html">Values</a>&amp; newTheta,</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>      <span class="keyword">const</span> <a class="code hl_struct" href="a06363.html">ISAM2UpdateParams</a>&amp; updateParams) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span></div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span> </div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span> <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>  <span class="keywordtype">void</span> recalculate(<span class="keyword">const</span> <a class="code hl_struct" href="a06363.html">ISAM2UpdateParams</a>&amp; updateParams,</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>                   <span class="keyword">const</span> KeySet&amp; relinKeys, <a class="code hl_struct" href="a06351.html">ISAM2Result</a>* result);</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span> </div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>  <span class="comment">// Do a batch step - reorder and relinearize all variables</span></div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>  <span class="keywordtype">void</span> recalculateBatch(<span class="keyword">const</span> <a class="code hl_struct" href="a06363.html">ISAM2UpdateParams</a>&amp; updateParams,</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>                        KeySet* affectedKeysSet, <a class="code hl_struct" href="a06351.html">ISAM2Result</a>* result);</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span> </div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>  <span class="comment">// retrieve all factors that ONLY contain the affected variables</span></div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>  <span class="comment">// (note that the remaining stuff is summarized in the cached factors)</span></div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>  <a class="code hl_class" href="a05135.html">GaussianFactorGraph</a> relinearizeAffectedFactors(</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>      <span class="keyword">const</span> <a class="code hl_struct" href="a06363.html">ISAM2UpdateParams</a>&amp; updateParams, <span class="keyword">const</span> <a class="code hl_class" href="a03155.html">FastList&lt;Key&gt;</a>&amp; affectedKeys,</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>      <span class="keyword">const</span> KeySet&amp; relinKeys);</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span></div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>  <span class="keywordtype">void</span> recalculateIncremental(<span class="keyword">const</span> <a class="code hl_struct" href="a06363.html">ISAM2UpdateParams</a>&amp; updateParams,</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>                              <span class="keyword">const</span> KeySet&amp; relinKeys,</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>                              <span class="keyword">const</span> <a class="code hl_class" href="a03155.html">FastList&lt;Key&gt;</a>&amp; affectedKeys,</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>                              KeySet* affectedKeysSet, Cliques* orphans,</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>                              <a class="code hl_struct" href="a06351.html">ISAM2Result</a>* result);</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span></div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>  <span class="keywordtype">void</span> addVariables(<span class="keyword">const</span> <a class="code hl_class" href="a06527.html">Values</a>&amp; newTheta,</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>                    <a class="code hl_struct" href="a06355.html">ISAM2Result::DetailedResults</a>* detail = 0);</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span></div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>  <span class="keywordtype">void</span> removeVariables(<span class="keyword">const</span> KeySet&amp; unusedKeys);</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span> </div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="a06295.html">IncrementalFixedLagSmoother</a>;</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span> </div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>  <span class="keywordtype">void</span> updateDelta(<span class="keywordtype">bool</span> forceFullSolve = <span class="keyword">false</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span> </div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span><span class="preprocessor">#if GTSAM_ENABLE_BOOST_SERIALIZATION</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>  <span class="keyword">friend</span> <span class="keyword">class </span>boost::serialization::access;</div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> ARCHIVE&gt;</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>  <span class="keywordtype">void</span> serialize(ARCHIVE &amp; ar, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="comment">/*version*/</span>) {</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>      ar &amp; BOOST_SERIALIZATION_BASE_OBJECT_NVP(Base);</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>      ar &amp; BOOST_SERIALIZATION_NVP(theta_);</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>      ar &amp; BOOST_SERIALIZATION_NVP(variableIndex_);</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>      ar &amp; BOOST_SERIALIZATION_NVP(delta_);</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>      ar &amp; BOOST_SERIALIZATION_NVP(deltaNewton_);</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>      ar &amp; BOOST_SERIALIZATION_NVP(RgProd_);</div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>      ar &amp; BOOST_SERIALIZATION_NVP(deltaReplacedMask_);</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>      ar &amp; BOOST_SERIALIZATION_NVP(nonlinearFactors_);</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>      ar &amp; BOOST_SERIALIZATION_NVP(linearFactors_);</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>      ar &amp; BOOST_SERIALIZATION_NVP(doglegDelta_);</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>      ar &amp; BOOST_SERIALIZATION_NVP(fixedVariables_);</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>      ar &amp; BOOST_SERIALIZATION_NVP(update_count_);</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>  }</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span> </div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>};  <span class="comment">// ISAM2</span></div>
+</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span></div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span><span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno"><a class="line" href="a06327.html">  425</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a03203.html">traits</a>&lt;<a class="code hl_class" href="a06323.html">ISAM2</a>&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="a03535.html">Testable</a>&lt;ISAM2&gt; {};</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span> </div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>}  <span class="comment">// namespace gtsam</span></div>
+<div class="ttc" id="aa01094_html"><div class="ttname"><a href="a01094.html">GaussianBayesTree.h</a></div><div class="ttdoc">Gaussian Bayes Tree, the result of eliminating a GaussianJunctionTree.</div></div>
+<div class="ttc" id="aa01346_html"><div class="ttname"><a href="a01346.html">ISAM2Clique.h</a></div><div class="ttdoc">Specialized iSAM2 Clique.</div></div>
+<div class="ttc" id="aa01481_html"><div class="ttname"><a href="a01481.html">ISAM2Params.h</a></div><div class="ttdoc">Parameters for iSAM 2.</div></div>
+<div class="ttc" id="aa01487_html"><div class="ttname"><a href="a01487.html">NonlinearFactorGraph.h</a></div><div class="ttdoc">Factor Graph consisting of non-linear factors.</div></div>
+<div class="ttc" id="aa01553_html"><div class="ttname"><a href="a01553.html">ISAM2Result.h</a></div><div class="ttdoc">Class that stores detailed iSAM2 result.</div></div>
+<div class="ttc" id="aa01592_html"><div class="ttname"><a href="a01592.html">ISAM2UpdateParams.h</a></div><div class="ttdoc">Class that stores extra params for ISAM2::update().</div></div>
+<div class="ttc" id="aa02242_html"><div class="ttname"><a href="a02242.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
+<div class="ttc" id="aa02242_html_a2dea5ef4aee9da07a0e0686940c64667"><div class="ttname"><a href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">gtsam::KeyVector</a></div><div class="ttdeci">FastVector&lt; Key &gt; KeyVector</div><div class="ttdoc">Define collection type once and for all - also used in wrappers.</div><div class="ttdef"><b>Definition</b> Key.h:91</div></div>
+<div class="ttc" id="aa02242_html_a99e63c90a8ac740d99716e73fe97e054"><div class="ttname"><a href="a02242.html#a99e63c90a8ac740d99716e73fe97e054">gtsam::FactorIndices</a></div><div class="ttdeci">FastVector&lt; FactorIndex &gt; FactorIndices</div><div class="ttdoc">Define collection types:</div><div class="ttdef"><b>Definition</b> Factor.h:37</div></div>
+<div class="ttc" id="aa02242_html_adad029f5f6ffce610428b5fe768b0df2"><div class="ttname"><a href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">gtsam::Key</a></div><div class="ttdeci">std::uint64_t Key</div><div class="ttdoc">Integer nonlinear key type.</div><div class="ttdef"><b>Definition</b> types.h:43</div></div>
+<div class="ttc" id="aa03155_html"><div class="ttname"><a href="a03155.html">gtsam::FastList</a></div><div class="ttdoc">FastList is a thin wrapper around std::list that uses the boost fast_pool_allocator instead of the de...</div><div class="ttdef"><b>Definition</b> FastList.h:43</div></div>
+<div class="ttc" id="aa03159_html"><div class="ttname"><a href="a03159.html">gtsam::FastMap</a></div><div class="ttdoc">FastMap is a thin wrapper around std::map that uses the boost fast_pool_allocator instead of the defa...</div><div class="ttdef"><b>Definition</b> FastMap.h:40</div></div>
+<div class="ttc" id="aa03203_html"><div class="ttname"><a href="a03203.html">gtsam::traits</a></div><div class="ttdoc">A manifold defines a space in which there is a notion of a linear tangent space that can be centered ...</div><div class="ttdef"><b>Definition</b> Group.h:37</div></div>
+<div class="ttc" id="aa03523_html"><div class="ttname"><a href="a03523.html">gtsam::equals</a></div><div class="ttdoc">Template to create a binary predicate.</div><div class="ttdef"><b>Definition</b> Testable.h:112</div></div>
+<div class="ttc" id="aa03535_html"><div class="ttname"><a href="a03535.html">gtsam::Testable</a></div><div class="ttdoc">A helper that implements the traits interface for GTSAM types.</div><div class="ttdef"><b>Definition</b> Testable.h:152</div></div>
+<div class="ttc" id="aa03615_html"><div class="ttname"><a href="a03615.html">gtsam::Value</a></div><div class="ttdoc">This is the base class for any type to be stored in Values.</div><div class="ttdef"><b>Definition</b> Value.h:39</div></div>
+<div class="ttc" id="aa04835_html_a1ddc770fc93a8af866266484df7705c0"><div class="ttname"><a href="a04835.html#a1ddc770fc93a8af866266484df7705c0">gtsam::BayesTree&lt; ISAM2Clique &gt;::sharedClique</a></div><div class="ttdeci">std::shared_ptr&lt; Clique &gt; sharedClique</div><div class="ttdef"><b>Definition</b> BayesTree.h:84</div></div>
+<div class="ttc" id="aa04835_html_a52b84560f2afcae463ac9487e6e91a28"><div class="ttname"><a href="a04835.html#a52b84560f2afcae463ac9487e6e91a28">gtsam::BayesTree&lt; ISAM2Clique &gt;::BayesTree</a></div><div class="ttdeci">BayesTree()</div><div class="ttdef"><b>Definition</b> BayesTree.h:119</div></div>
+<div class="ttc" id="aa04835_html_aada1aa3f705630a0f3767156c1d8ed5c"><div class="ttname"><a href="a04835.html#aada1aa3f705630a0f3767156c1d8ed5c">gtsam::BayesTree&lt; ISAM2Clique &gt;::Cliques</a></div><div class="ttdeci">FastList&lt; sharedClique &gt; Cliques</div><div class="ttdef"><b>Definition</b> BayesTree.h:99</div></div>
+<div class="ttc" id="aa04835_html_ab644899031c0c6436e5762832d79f04d"><div class="ttname"><a href="a04835.html#ab644899031c0c6436e5762832d79f04d">gtsam::BayesTree&lt; ISAM2Clique &gt;::Clique</a></div><div class="ttdeci">ISAM2Clique Clique</div><div class="ttdef"><b>Definition</b> BayesTree.h:83</div></div>
+<div class="ttc" id="aa04835_html_adac7275a0aea6c2a1ec9c8562149b2c3"><div class="ttname"><a href="a04835.html#adac7275a0aea6c2a1ec9c8562149b2c3">gtsam::BayesTree&lt; ISAM2Clique &gt;::getCliqueData</a></div><div class="ttdeci">BayesTreeCliqueData getCliqueData() const</div></div>
+<div class="ttc" id="aa04999_html"><div class="ttname"><a href="a04999.html">gtsam::VariableIndex</a></div><div class="ttdoc">The VariableIndex class computes and stores the block column structure of a factor graph.</div><div class="ttdef"><b>Definition</b> VariableIndex.h:41</div></div>
+<div class="ttc" id="aa05135_html"><div class="ttname"><a href="a05135.html">gtsam::GaussianFactorGraph</a></div><div class="ttdoc">A Linear Factor Graph is a factor graph where all factors are Gaussian, i.e.</div><div class="ttdef"><b>Definition</b> GaussianFactorGraph.h:77</div></div>
+<div class="ttc" id="aa05187_html"><div class="ttname"><a href="a05187.html">gtsam::JointMarginal</a></div><div class="ttdoc">A class to store and access a joint marginal, returned from Gaussian and nonlinear covariance query A...</div><div class="ttdef"><b>Definition</b> JointMarginal.h:34</div></div>
+<div class="ttc" id="aa05531_html"><div class="ttname"><a href="a05531.html">gtsam::VectorValues</a></div><div class="ttdoc">VectorValues represents a collection of vector-valued variables associated each with a unique integer...</div><div class="ttdef"><b>Definition</b> VectorValues.h:73</div></div>
+<div class="ttc" id="aa06295_html"><div class="ttname"><a href="a06295.html">gtsam::IncrementalFixedLagSmoother</a></div><div class="ttdoc">This is a base class for the various HMF2 implementations.</div><div class="ttdef"><b>Definition</b> IncrementalFixedLagSmoother.h:36</div></div>
+<div class="ttc" id="aa06323_html"><div class="ttname"><a href="a06323.html">gtsam::ISAM2</a></div><div class="ttdoc">Implementation of the full ISAM2 algorithm for incremental nonlinear optimization.</div><div class="ttdef"><b>Definition</b> ISAM2.h:45</div></div>
+<div class="ttc" id="aa06323_html_a0d0807258336ff483ad89c80cdb88eea"><div class="ttname"><a href="a06323.html#a0d0807258336ff483ad89c80cdb88eea">gtsam::ISAM2::fixedVariables_</a></div><div class="ttdeci">KeySet fixedVariables_</div><div class="ttdoc">Set of variables that are involved with linear factors from marginalized variables and thus cannot ha...</div><div class="ttdef"><b>Definition</b> ISAM2.h:94</div></div>
+<div class="ttc" id="aa06323_html_a0f7ba75bbd10998951d79a62106e0623"><div class="ttname"><a href="a06323.html#a0f7ba75bbd10998951d79a62106e0623">gtsam::ISAM2::deltaReplacedMask_</a></div><div class="ttdeci">KeySet deltaReplacedMask_</div><div class="ttdoc">A cumulative mask for the variables that were replaced and have not yet been updated in the linear so...</div><div class="ttdef"><b>Definition</b> ISAM2.h:76</div></div>
+<div class="ttc" id="aa06323_html_a241dc3528b3b61856ef8b728d79a1bfb"><div class="ttname"><a href="a06323.html#a241dc3528b3b61856ef8b728d79a1bfb">gtsam::ISAM2::marginalizeLeaves</a></div><div class="ttdeci">void marginalizeLeaves(const FastList&lt; Key &gt; &amp;leafKeys, FactorIndices *marginalFactorsIndices=nullptr, FactorIndices *deletedFactorsIndices=nullptr)</div><div class="ttdoc">Marginalize out variables listed in leafKeys.</div><div class="ttdef"><b>Definition</b> ISAM2.cpp:556</div></div>
+<div class="ttc" id="aa06323_html_a29b30773e68652011e31ee0a9a0cfa4d"><div class="ttname"><a href="a06323.html#a29b30773e68652011e31ee0a9a0cfa4d">gtsam::ISAM2::update_count_</a></div><div class="ttdeci">int update_count_</div><div class="ttdoc">Counter incremented every update(), used to determine periodic relinearization.</div><div class="ttdef"><b>Definition</b> ISAM2.h:96</div></div>
+<div class="ttc" id="aa06323_html_a32db7eb856bee27d1274306284f15a88"><div class="ttname"><a href="a06323.html#a32db7eb856bee27d1274306284f15a88">gtsam::ISAM2::Base</a></div><div class="ttdeci">BayesTree&lt; ISAM2Clique &gt; Base</div><div class="ttdoc">The BayesTree base class.</div><div class="ttdef"><b>Definition</b> ISAM2.h:104</div></div>
+<div class="ttc" id="aa06323_html_a35b4a27886c7dd9caacb1ff2e04ca8a9"><div class="ttname"><a href="a06323.html#a35b4a27886c7dd9caacb1ff2e04ca8a9">gtsam::ISAM2::calculateEstimate</a></div><div class="ttdeci">VALUE calculateEstimate(Key key) const</div><div class="ttdoc">Compute an estimate for a single variable using its incomplete linear delta computed during the last ...</div><div class="ttdef"><b>Definition</b> ISAM2.h:245</div></div>
+<div class="ttc" id="aa06323_html_a35e0e8a7a31690c623e594774879ace1"><div class="ttname"><a href="a06323.html#a35e0e8a7a31690c623e594774879ace1">gtsam::ISAM2::~ISAM2</a></div><div class="ttdeci">virtual ~ISAM2()</div><div class="ttdoc">default virtual destructor</div><div class="ttdef"><b>Definition</b> ISAM2.h:117</div></div>
+<div class="ttc" id="aa06323_html_a50cd19a4c757c0128aa658662c2e6273"><div class="ttname"><a href="a06323.html#a50cd19a4c757c0128aa658662c2e6273">gtsam::ISAM2::getFixedVariables</a></div><div class="ttdeci">const KeySet &amp; getFixedVariables() const</div><div class="ttdoc">Access the nonlinear variable index.</div><div class="ttdef"><b>Definition</b> ISAM2.h:312</div></div>
+<div class="ttc" id="aa06323_html_a54c3a0329b3397df717271cfd530b105"><div class="ttname"><a href="a06323.html#a54c3a0329b3397df717271cfd530b105">gtsam::ISAM2::getDelta</a></div><div class="ttdeci">const VectorValues &amp; getDelta() const</div><div class="ttdoc">Access the current delta, computed during the last call to update.</div><div class="ttdef"><b>Definition</b> ISAM2.cpp:959</div></div>
+<div class="ttc" id="aa06323_html_a73115b2f980fb72b2f3087b697f69990"><div class="ttname"><a href="a06323.html#a73115b2f980fb72b2f3087b697f69990">gtsam::ISAM2::Cliques</a></div><div class="ttdeci">Base::Cliques Cliques</div><div class="ttdoc">List of Cliques.</div><div class="ttdef"><b>Definition</b> ISAM2.h:107</div></div>
+<div class="ttc" id="aa06323_html_a7aa1a454fa0d3f1e0cf194b10803b882"><div class="ttname"><a href="a06323.html#a7aa1a454fa0d3f1e0cf194b10803b882">gtsam::ISAM2::Clique</a></div><div class="ttdeci">Base::Clique Clique</div><div class="ttdoc">A clique.</div><div class="ttdef"><b>Definition</b> ISAM2.h:105</div></div>
+<div class="ttc" id="aa06323_html_a8e147b16c01a4651d7f3a27ac834e39a"><div class="ttname"><a href="a06323.html#a8e147b16c01a4651d7f3a27ac834e39a">gtsam::ISAM2::printStats</a></div><div class="ttdeci">void printStats() const</div><div class="ttdoc">prints out clique statistics</div><div class="ttdef"><b>Definition</b> ISAM2.h:322</div></div>
+<div class="ttc" id="aa06323_html_a9307a6fb614f33fb354e4e445467c258"><div class="ttname"><a href="a06323.html#a9307a6fb614f33fb354e4e445467c258">gtsam::ISAM2::nonlinearFactors_</a></div><div class="ttdeci">NonlinearFactorGraph nonlinearFactors_</div><div class="ttdoc">All original nonlinear factors are stored here to use during relinearization.</div><div class="ttdef"><b>Definition</b> ISAM2.h:81</div></div>
+<div class="ttc" id="aa06323_html_a9541e46ac5515f7b75e6c7847eefba83"><div class="ttname"><a href="a06323.html#a9541e46ac5515f7b75e6c7847eefba83">gtsam::ISAM2::marginalizeLeaves</a></div><div class="ttdeci">void marginalizeLeaves(const FastList&lt; Key &gt; &amp;leafKeys, OptArgs &amp;&amp;... optArgs)</div><div class="ttdoc">An overload of marginalizeLeaves that takes references to vectors instead of pointers to vectors and ...</div><div class="ttdef"><b>Definition</b> ISAM2.h:212</div></div>
+<div class="ttc" id="aa06323_html_a9b334c28f63172f3b0ed4e77989e3a93"><div class="ttname"><a href="a06323.html#a9b334c28f63172f3b0ed4e77989e3a93">gtsam::ISAM2::getVariableIndex</a></div><div class="ttdeci">const VariableIndex &amp; getVariableIndex() const</div><div class="ttdoc">Access the nonlinear variable index.</div><div class="ttdef"><b>Definition</b> ISAM2.h:309</div></div>
+<div class="ttc" id="aa06323_html_a9b7c2355b667269d2cd08fc7b414f3f5"><div class="ttname"><a href="a06323.html#a9b7c2355b667269d2cd08fc7b414f3f5">gtsam::ISAM2::sharedClique</a></div><div class="ttdeci">Base::sharedClique sharedClique</div><div class="ttdoc">Shared pointer to a clique.</div><div class="ttdef"><b>Definition</b> ISAM2.h:106</div></div>
+<div class="ttc" id="aa06323_html_aa1a5f004e312d381945569e74e801941"><div class="ttname"><a href="a06323.html#aa1a5f004e312d381945569e74e801941">gtsam::ISAM2::delta_</a></div><div class="ttdeci">VectorValues delta_</div><div class="ttdoc">The linear delta from the last linear solution, an update to the estimate in theta.</div><div class="ttdef"><b>Definition</b> ISAM2.h:61</div></div>
+<div class="ttc" id="aa06323_html_ab79162caabd11ce503c7115c4e9f9419"><div class="ttname"><a href="a06323.html#ab79162caabd11ce503c7115c4e9f9419">gtsam::ISAM2::ISAM2</a></div><div class="ttdeci">ISAM2(const ISAM2Params &amp;params)</div><div class="ttdoc">Create an empty ISAM2 instance.</div><div class="ttdef"><b>Definition</b> ISAM2.cpp:45</div></div>
+<div class="ttc" id="aa06323_html_ab9bd085bcf745368cb4801d04538ec18"><div class="ttname"><a href="a06323.html#ab9bd085bcf745368cb4801d04538ec18">gtsam::ISAM2::variableIndex_</a></div><div class="ttdeci">VariableIndex variableIndex_</div><div class="ttdoc">VariableIndex lets us look up factors by involved variable and keeps track of dimensions.</div><div class="ttdef"><b>Definition</b> ISAM2.h:52</div></div>
+<div class="ttc" id="aa06323_html_ab9fa90025d1a881151e8e203a61a05ed"><div class="ttname"><a href="a06323.html#ab9fa90025d1a881151e8e203a61a05ed">gtsam::ISAM2::getLinearizationPoint</a></div><div class="ttdeci">const Values &amp; getLinearizationPoint() const</div><div class="ttdoc">Access the current linearization point.</div><div class="ttdef"><b>Definition</b> ISAM2.h:226</div></div>
+<div class="ttc" id="aa06323_html_abe3ea23a8d9b61097f28bf2a5c23057e"><div class="ttname"><a href="a06323.html#abe3ea23a8d9b61097f28bf2a5c23057e">gtsam::ISAM2::theta_</a></div><div class="ttdeci">Values theta_</div><div class="ttdoc">The current linearization point.</div><div class="ttdef"><b>Definition</b> ISAM2.h:48</div></div>
+<div class="ttc" id="aa06323_html_abec56652222d97d144e75a175ba3e8d0"><div class="ttname"><a href="a06323.html#abec56652222d97d144e75a175ba3e8d0">gtsam::ISAM2::params_</a></div><div class="ttdeci">ISAM2Params params_</div><div class="ttdoc">The current parameters.</div><div class="ttdef"><b>Definition</b> ISAM2.h:87</div></div>
+<div class="ttc" id="aa06323_html_ac8f99ea3f5de45f575f59e26b560ea27"><div class="ttname"><a href="a06323.html#ac8f99ea3f5de45f575f59e26b560ea27">gtsam::ISAM2::nnzAfterLastReorder_</a></div><div class="ttdeci">size_t nnzAfterLastReorder_</div><div class="ttdoc">Bayes tree nnz recorded after the most recent full batch reorder.</div><div class="ttdef"><b>Definition</b> ISAM2.h:99</div></div>
+<div class="ttc" id="aa06323_html_ada63722602d709e210d4e1ab45dcc6a8"><div class="ttname"><a href="a06323.html#ada63722602d709e210d4e1ab45dcc6a8">gtsam::ISAM2::linearFactors_</a></div><div class="ttdeci">GaussianFactorGraph linearFactors_</div><div class="ttdoc">The current linear factors, which are only updated as needed.</div><div class="ttdef"><b>Definition</b> ISAM2.h:84</div></div>
+<div class="ttc" id="aa06323_html_aeb325a51d89054173898efa31be0096e"><div class="ttname"><a href="a06323.html#aeb325a51d89054173898efa31be0096e">gtsam::ISAM2::getFactorsUnsafe</a></div><div class="ttdeci">const NonlinearFactorGraph &amp; getFactorsUnsafe() const</div><div class="ttdoc">Access the set of nonlinear factors.</div><div class="ttdef"><b>Definition</b> ISAM2.h:304</div></div>
+<div class="ttc" id="aa06323_html_af8b9f410dae63f79dfd229506370f31e"><div class="ttname"><a href="a06323.html#af8b9f410dae63f79dfd229506370f31e">gtsam::ISAM2::This</a></div><div class="ttdeci">ISAM2 This</div><div class="ttdoc">This class.</div><div class="ttdef"><b>Definition</b> ISAM2.h:103</div></div>
+<div class="ttc" id="aa06323_html_afce43574c726748b927804fef48520be"><div class="ttname"><a href="a06323.html#afce43574c726748b927804fef48520be">gtsam::ISAM2::doglegDelta_</a></div><div class="ttdeci">std::optional&lt; double &gt; doglegDelta_</div><div class="ttdoc">The current Dogleg Delta (trust region radius).</div><div class="ttdef"><b>Definition</b> ISAM2.h:90</div></div>
+<div class="ttc" id="aa06323_html_affcd8d849cfa6e8dbfc73628d38552b9"><div class="ttname"><a href="a06323.html#affcd8d849cfa6e8dbfc73628d38552b9">gtsam::ISAM2::valueExists</a></div><div class="ttdeci">bool valueExists(Key key) const</div><div class="ttdoc">Check whether variable with given key exists in linearization point.</div><div class="ttdef"><b>Definition</b> ISAM2.h:229</div></div>
+<div class="ttc" id="aa06347_html"><div class="ttname"><a href="a06347.html">gtsam::ISAM2Params</a></div><div class="ttdef"><b>Definition</b> ISAM2Params.h:199</div></div>
+<div class="ttc" id="aa06351_html"><div class="ttname"><a href="a06351.html">gtsam::ISAM2Result</a></div><div class="ttdoc">This struct is returned from ISAM2::update() and contains information about the update that is useful...</div><div class="ttdef"><b>Definition</b> ISAM2Result.h:39</div></div>
+<div class="ttc" id="aa06355_html"><div class="ttname"><a href="a06355.html">gtsam::ISAM2Result::DetailedResults</a></div><div class="ttdoc">A struct holding detailed results, which must be enabled with ISAM2Params::enableDetailedResults.</div><div class="ttdef"><b>Definition</b> ISAM2Result.h:126</div></div>
+<div class="ttc" id="aa06363_html"><div class="ttname"><a href="a06363.html">gtsam::ISAM2UpdateParams</a></div><div class="ttdoc">This struct is used by ISAM2::update() to pass additional parameters to give the user a fine-grained ...</div><div class="ttdef"><b>Definition</b> ISAM2UpdateParams.h:32</div></div>
+<div class="ttc" id="aa06447_html"><div class="ttname"><a href="a06447.html">gtsam::NonlinearFactorGraph</a></div><div class="ttdef"><b>Definition</b> NonlinearFactorGraph.h:57</div></div>
+<div class="ttc" id="aa06527_html"><div class="ttname"><a href="a06527.html">gtsam::Values</a></div><div class="ttdoc">A non-templated config holding any types of Manifold-group elements.</div><div class="ttdef"><b>Definition</b> Values.h:65</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam_unstable</b></li><li class="navelem"><b>geometry</b></li><li class="navelem"><a href="a01508.html">SimPolygon2D.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>nonlinear</b></li><li class="navelem"><a href="a01508.html">ISAM2.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

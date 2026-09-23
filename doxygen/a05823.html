@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: gtsam::LPInitSolver Class Reference</title>
+<title>gtsam: gtsam::LeggedInvariantEKF Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,49 +96,390 @@ $(function(){initNavTree('a05823.html','','a05820'); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">gtsam::LPInitSolver Class Reference</div></div>
+  <div class="headertitle"><div class="title">gtsam::LeggedInvariantEKF Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This <a class="el" href="a05823.html" title="This LPInitSolver implements the strategy in Matlab: http://www.mathworks.com/help/optim/ug/linear-pr...">LPInitSolver</a> implements the strategy in Matlab: <a href="http://www.mathworks.com/help/optim/ug/linear-programming-algorithms.html#brozyzb-9">http://www.mathworks.com/help/optim/ug/linear-programming-algorithms.html#brozyzb-9</a> Solve for x and y: min y st Ax = b Cx - y &lt;= d where \(y \in R\), \(x \in R^n\), and Ax = b and Cx &lt;= d is the constraints of the original problem. </p>
-<p>If the solution for this problem {x*,y*} has y* &lt;= 0, we'll have x* a feasible initial point of the original problem otherwise, if y* &gt; 0 or the problem has no solution, the original problem is infeasible.</p>
-<p>The initial value of this initial problem can be found by solving min ||x||^2 s.t. Ax = b to have a solution x0 then y = max_j ( Cj*x0 - dj ) &ndash; due to the constraints y &gt;= Cx - d</p>
-<p>WARNING: If some xj in the inequality constraints does not exist in the equality constraints, set them as zero for now. If that is the case, the original problem doesn't have a unique solution (it could be either infeasible or unbounded). So, if the initialization fails because we enforce xj=0 in the problematic inequality constraint, we can't conclude that the problem is infeasible. However, whether it is infeasible or unbounded, we don't have a unique solution anyway. </p>
-</div><table class="memberdecls">
+<div class="textblock"><p>Invariant filter: <a class="el" href="a05791.html" title="EKF on a Lie group with a general left–linear prediction model.">LeftLinearEKF</a> on <a class="el" href="a04231.html" title="Lie group SE_k(3): semidirect product of SO(3) with k copies of R^3.">ExtendedPose3</a>(2+k). </p>
+<p>The state is a single dynamic <span class="tt"><a class="el" href="a04231.html" title="Lie group SE_k(3): semidirect product of SO(3) with k copies of R^3.">ExtendedPose3</a></span> containing <span class="tt">(R, p, v, f_1, ..., f_k)</span> in <span class="tt">R,p,v</span> order. The prediction step is left-linear, and the contact measurement model has Jacobians that are invariant in the state coordinates.</p>
+<p>This is very similar to the Contact-aided invariant filter from</p>
+<p>Hartley, Ross, Maani Ghaffari, Ryan M. Eustice, and Jessy W. Grizzle. "Contact-aided invariant extended Kalman filtering for robot state
+  estimation." The International Journal of Robotics Research 39, no. 4 (2020): 402-430. </p>
+</div><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for gtsam::LeggedInvariantEKF:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="a05823.png" usemap="#gtsam_3A_3ALeggedInvariantEKF_map" alt=""/>
+  <map id="gtsam_3A_3ALeggedInvariantEKF_map" name="gtsam_3A_3ALeggedInvariantEKF_map">
+<area href="a05791.html" alt="gtsam::LeftLinearEKF&lt; ExtendedPose3d &gt;" shape="rect" coords="0,112,249,136"/>
+<area href="a05819.html" title="Common runtime interface shared by all four legged estimator variants." alt="gtsam::LeggedEstimator" shape="rect" coords="259,112,508,136"/>
+<area href="a05863.html" title="Extended Kalman Filter on a Lie group G, derived from ManifoldEKF." alt="gtsam::LieGroupEKF&lt; G &gt;" shape="rect" coords="0,56,249,80"/>
+<area href="a05899.html" alt="gtsam::ManifoldEKF&lt; G &gt;" shape="rect" coords="0,0,249,24"/>
+<area href="a05831.html" title="Invariant filter with local graph fragment." alt="gtsam::LeggedInvariantIEKF" shape="rect" coords="129,224,378,248"/>
+  </map>
+</div></div>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a67b90d48db4e0404c21158e716a6cba3" id="r_a67b90d48db4e0404c21158e716a6cba3"><td class="memItemLeft"><a id="a67b90d48db4e0404c21158e716a6cba3" name="a67b90d48db4e0404c21158e716a6cba3"></a>
-&#160;</td><td class="memItemRight"><b>LPInitSolver</b> (const <a class="el" href="a05815.html">LP</a> &amp;lp)</td></tr>
-<tr class="memdesc:a67b90d48db4e0404c21158e716a6cba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with an <a class="el" href="a05815.html" title="Data structure of a Linear Program.">LP</a> problem. <br /></td></tr>
-<tr class="memitem:afe3f43d8a5c5c82e6d994ecb0b6aacad" id="r_afe3f43d8a5c5c82e6d994ecb0b6aacad"><td class="memItemLeft"><a class="el" href="a06239.html">VectorValues</a>&#160;</td><td class="memItemRight"><a class="el" href="#afe3f43d8a5c5c82e6d994ecb0b6aacad">solve</a> () const</td></tr>
+<tr class="memitem:a9372ff23c183cde2eaa5091a15befee0" id="r_a9372ff23c183cde2eaa5091a15befee0"><td class="memItemLeft"><a id="a9372ff23c183cde2eaa5091a15befee0" name="a9372ff23c183cde2eaa5091a15befee0"></a>
+&#160;</td><td class="memItemRight"><b>LeggedInvariantEKF</b> (const <a class="el" href="a05927.html">NavState</a> &amp;navState0, const Matrix &amp;footholds0, const Matrix &amp;P0, const <a class="el" href="a05815.html">LeggedEstimatorParams</a> &amp;<a class="el" href="#a61375c1d76f0cb2961ea170c1db1af69">params</a>, const std::vector&lt; std::string &gt; &amp;<a class="el" href="#aa321b1172e3ef930c49087069815b26c">footNames</a>={})</td></tr>
+<tr class="memdesc:a9372ff23c183cde2eaa5091a15befee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the ExtendedPose3-based EKF. <br /></td></tr>
+<tr class="memitem:a7fa8a0833ed81100fad36ca93712521e" id="r_a7fa8a0833ed81100fad36ca93712521e"><td class="memItemLeft"><a id="a7fa8a0833ed81100fad36ca93712521e" name="a7fa8a0833ed81100fad36ca93712521e"></a>
+Matrix&#160;</td><td class="memItemRight"><b>covariance</b> () const</td></tr>
+<tr class="memdesc:a7fa8a0833ed81100fad36ca93712521e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current full covariance. <br /></td></tr>
+<tr class="memitem:a8e97e63644f3217a7e294c56b4c6dd13" id="r_a8e97e63644f3217a7e294c56b4c6dd13"><td class="memItemLeft"><a id="a8e97e63644f3217a7e294c56b4c6dd13" name="a8e97e63644f3217a7e294c56b4c6dd13"></a>
+size_t&#160;</td><td class="memItemRight"><b>numFeet</b> () const</td></tr>
+<tr class="memdesc:a8e97e63644f3217a7e294c56b4c6dd13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of feet tracked by the estimator. <br /></td></tr>
+<tr class="memitem:aa321b1172e3ef930c49087069815b26c" id="r_aa321b1172e3ef930c49087069815b26c"><td class="memItemLeft"><a id="aa321b1172e3ef930c49087069815b26c" name="aa321b1172e3ef930c49087069815b26c"></a>
+const std::vector&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight"><b>footNames</b> () const</td></tr>
+<tr class="memdesc:aa321b1172e3ef930c49087069815b26c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Foot names in state order. <br /></td></tr>
+<tr class="memitem:a61375c1d76f0cb2961ea170c1db1af69" id="r_a61375c1d76f0cb2961ea170c1db1af69"><td class="memItemLeft"><a id="a61375c1d76f0cb2961ea170c1db1af69" name="a61375c1d76f0cb2961ea170c1db1af69"></a>
+const <a class="el" href="a05815.html">LeggedEstimatorParams</a> &amp;&#160;</td><td class="memItemRight"><b>params</b> () const</td></tr>
+<tr class="memdesc:a61375c1d76f0cb2961ea170c1db1af69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared estimator parameters. <br /></td></tr>
+<tr class="memitem:a64711b5a342a17cb20d444b52e7906dc" id="r_a64711b5a342a17cb20d444b52e7906dc"><td class="memItemLeft">ExtendedPose3d&#160;</td><td class="memItemRight"><a class="el" href="#a64711b5a342a17cb20d444b52e7906dc">estimate</a> () const override</td></tr>
+<tr class="memdesc:a64711b5a342a17cb20d444b52e7906dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current estimate in the shared <span class="tt">ExtendedPose3d</span> layout.  <br /></td></tr>
+<tr class="memitem:a5088fbc51f8cd113469b58ae7c42fd36" id="r_a5088fbc51f8cd113469b58ae7c42fd36"><td class="memItemLeft"><a class="el" href="a05739.html">imuBias::ConstantBias</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5088fbc51f8cd113469b58ae7c42fd36">estimateBias</a> () const override</td></tr>
+<tr class="memdesc:a5088fbc51f8cd113469b58ae7c42fd36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the fixed IMU bias used by the filter.  <br /></td></tr>
+<tr class="memitem:a4d91aa1bd11cb56a0d9c690c5a1524d8" id="r_a4d91aa1bd11cb56a0d9c690c5a1524d8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4d91aa1bd11cb56a0d9c690c5a1524d8">predict</a> (const Vector3 &amp;omegaBody, const Vector3 &amp;specificForceBody, double dt) override</td></tr>
+<tr class="memdesc:a4d91aa1bd11cb56a0d9c690c5a1524d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predict forward using one IMU sample.  <br /></td></tr>
+<tr class="memitem:a7dae8e702056b9b4913ee807676897fe" id="r_a7dae8e702056b9b4913ee807676897fe"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7dae8e702056b9b4913ee807676897fe">processContacts</a> (const std::vector&lt; <a class="el" href="a05811.html">ContactMeasurement</a> &gt; &amp;activeContacts) override</td></tr>
+<tr class="memdesc:a7dae8e702056b9b4913ee807676897fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process all currently active contacts for the current step.  <br /></td></tr>
+<tr class="inherit_header pub_methods_a05791"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a05791')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a05791.html">gtsam::LeftLinearEKF&lt; ExtendedPose3d &gt;</a></td></tr>
+<tr class="memitem:a9ac49ffcf29da8c51b993d0cd206a15e inherit pub_methods_a05791" id="r_a9ac49ffcf29da8c51b993d0cd206a15e"><td class="memItemLeft">
+&#160;</td><td class="memItemRight"><b>LeftLinearEKF</b> (const ExtendedPose3d &amp;X0, const Covariance &amp;P0)</td></tr>
+<tr class="memitem:a90b511abb3b3f9e830e42463c70f1612 inherit pub_methods_a05791" id="r_a90b511abb3b3f9e830e42463c70f1612"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>predict</b> (const ExtendedPose3d &amp;W, const Phi &amp;phi, const ExtendedPose3d &amp;U, const Covariance &amp;Q)</td></tr>
+<tr class="memdesc:a90b511abb3b3f9e830e42463c70f1612 inherit pub_methods_a05791"><td class="mdescLeft">&#160;</td><td class="mdescRight">General left–linear prediction, updates filter state as follows: X⁺ = W · φ(X) · U P⁺ = A P Aᵀ + Q with A = Ad_{U^{-1}} Φ, Φ := dφ|_e. <br /></td></tr>
+<tr class="memitem:a9809dd2a155906a0ffbd883985f039bf inherit pub_methods_a05791" id="r_a9809dd2a155906a0ffbd883985f039bf"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>predict</b> (const Phi &amp;phi, const ExtendedPose3d &amp;U, const Covariance &amp;Q)</td></tr>
+<tr class="memdesc:a9809dd2a155906a0ffbd883985f039bf inherit pub_methods_a05791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Special case of predict with W=I, updates filter state as follows: Update: X⁺ = φ(X) · U Covariance: P⁺ = A P Aᵀ + Q with A = Ad_{U^{-1}} Φ, Φ := dφ|_e. <br /></td></tr>
+<tr class="inherit_header pub_methods_a05863"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a05863')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a05863.html">gtsam::LieGroupEKF&lt; G &gt;</a></td></tr>
+<tr class="memitem:af9ab9ae224e303d19cff20435f3d347e inherit pub_methods_a05863" id="r_af9ab9ae224e303d19cff20435f3d347e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a05863.html#af9ab9ae224e303d19cff20435f3d347e">LieGroupEKF</a> (const G &amp;X0, const <a class="el" href="a05863.html#aed0381168cf368e6dbe88ca0da72cabd">Covariance</a> &amp;P0)</td></tr>
+<tr class="memdesc:af9ab9ae224e303d19cff20435f3d347e inherit pub_methods_a05863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor: initialize with state and covariance.  <br /></td></tr>
+<tr class="memitem:a882427ffed460a7c465061d6ad4a2bd1 inherit pub_methods_a05863" id="r_a882427ffed460a7c465061d6ad4a2bd1"><td class="memTemplParams" colspan="2">template&lt;size_t K = 1&gt; </td></tr>
+<tr class="memitem:a882427ffed460a7c465061d6ad4a2bd1 inherit pub_methods_a05863 template"><td class="memItemLeft"><a class="el" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470">Jacobian</a>&#160;</td><td class="memItemRight"><a class="el" href="a05863.html#a882427ffed460a7c465061d6ad4a2bd1">transitionMatrix</a> (const <a class="el" href="a05863.html#a6d7716ee89b415b82395d4b8571b6dc3">TangentVector</a> &amp;xi, const <a class="el" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470">Jacobian</a> &amp;Df, double dt, const G &amp;U, const <a class="el" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470">Jacobian</a> &amp;Dexp) const</td></tr>
+<tr class="memdesc:a882427ffed460a7c465061d6ad4a2bd1 inherit pub_methods_a05863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the discrete-time transition matrix Φ corresponding to a continuous-time linearization (Df) over time dt.  <br /></td></tr>
+<tr class="memitem:a235f378302cd6aa3680ab88e90f91ea8 inherit pub_methods_a05863" id="r_a235f378302cd6aa3680ab88e90f91ea8"><td class="memTemplParams" colspan="2">template&lt;size_t K = 1, typename Dynamics, typename = enable_if_dynamics&lt;Dynamics&gt;&gt; </td></tr>
+<tr class="memitem:a235f378302cd6aa3680ab88e90f91ea8 inherit pub_methods_a05863 template"><td class="memItemLeft">G&#160;</td><td class="memItemRight"><a class="el" href="a05863.html#a235f378302cd6aa3680ab88e90f91ea8">predictMean</a> (Dynamics &amp;&amp;f, double dt, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; <a class="el" href="a05863.html#ae77c0acf182b7117dc71c67ead56f6ec">Dim</a>, <a class="el" href="a05863.html#ae77c0acf182b7117dc71c67ead56f6ec">Dim</a> &gt; Phi={}) const</td></tr>
+<tr class="memdesc:a235f378302cd6aa3680ab88e90f91ea8 inherit pub_methods_a05863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predict mean and <a class="el" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470" title="Dim x Dim.">Jacobian</a> Phi with state-dependent dynamics: xi = f(X_k, Df) (tangent vector dynamics and <a class="el" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470" title="Dim x Dim.">Jacobian</a> Df) U = Expmap(xi * dt, Dexp) (motion increment U and Expmap <a class="el" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470" title="Dim x Dim.">Jacobian</a> Dexp) X_{k+1} = X_k * U (Predict next state via compose) Phi = Ad_{U^{-1}} + Dexp * Df * dt (K=1 first-order <a class="el" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470" title="Dim x Dim.">Jacobian</a>) expm((Df - ad(xi))dt) (K&gt;1 matrix exponential discretization).  <br /></td></tr>
+<tr class="memitem:a7d53bd4ab3a280513001a88f63a6fdef inherit pub_methods_a05863" id="r_a7d53bd4ab3a280513001a88f63a6fdef"><td class="memTemplParams" colspan="2">template&lt;size_t K = 1, typename Dynamics, typename = enable_if_dynamics&lt;Dynamics&gt;&gt; </td></tr>
+<tr class="memitem:a7d53bd4ab3a280513001a88f63a6fdef inherit pub_methods_a05863 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a05863.html#a7d53bd4ab3a280513001a88f63a6fdef">predict</a> (Dynamics &amp;&amp;f, double dt, const <a class="el" href="a05863.html#aed0381168cf368e6dbe88ca0da72cabd">Covariance</a> &amp;Q)</td></tr>
+<tr class="memdesc:a7d53bd4ab3a280513001a88f63a6fdef inherit pub_methods_a05863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predict step with state-dependent dynamics: Uses predictMean to compute X_{k+1} and Phi, then updates covariance.  <br /></td></tr>
+<tr class="memitem:a677ff02869ad5796ce117fd67c8267b2 inherit pub_methods_a05863" id="r_a677ff02869ad5796ce117fd67c8267b2"><td class="memTemplParams" colspan="2">template&lt;size_t K = 1, typename Control, typename Dynamics, typename = enable_if_full_dynamics&lt;Control, Dynamics&gt;&gt; </td></tr>
+<tr class="memitem:a677ff02869ad5796ce117fd67c8267b2 inherit pub_methods_a05863 template"><td class="memItemLeft">G&#160;</td><td class="memItemRight"><a class="el" href="a05863.html#a677ff02869ad5796ce117fd67c8267b2">predictMean</a> (Dynamics &amp;&amp;f, const Control &amp;u, double dt, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; <a class="el" href="a05863.html#ae77c0acf182b7117dc71c67ead56f6ec">Dim</a>, <a class="el" href="a05863.html#ae77c0acf182b7117dc71c67ead56f6ec">Dim</a> &gt; Phi={}) const</td></tr>
+<tr class="memdesc:a677ff02869ad5796ce117fd67c8267b2 inherit pub_methods_a05863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predict mean and <a class="el" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470" title="Dim x Dim.">Jacobian</a> A with state and control input dynamics: Wraps the dynamics function and calls the state-only predictMean.  <br /></td></tr>
+<tr class="memitem:a65cb73b11aa7c352c62725f53633fcba inherit pub_methods_a05863" id="r_a65cb73b11aa7c352c62725f53633fcba"><td class="memTemplParams" colspan="2">template&lt;size_t K = 1, typename Control, typename Dynamics, typename = enable_if_full_dynamics&lt;Control, Dynamics&gt;&gt; </td></tr>
+<tr class="memitem:a65cb73b11aa7c352c62725f53633fcba inherit pub_methods_a05863 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a05863.html#a65cb73b11aa7c352c62725f53633fcba">predict</a> (Dynamics &amp;&amp;f, const Control &amp;u, double dt, const <a class="el" href="a05863.html#aed0381168cf368e6dbe88ca0da72cabd">Covariance</a> &amp;Q)</td></tr>
+<tr class="memdesc:a65cb73b11aa7c352c62725f53633fcba inherit pub_methods_a05863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predict step with state and control input dynamics: Wraps the dynamics function and calls the state-only predict.  <br /></td></tr>
+<tr class="memitem:af3a71e0bf1b6405547c2f8c888f0488c inherit pub_methods_a05863" id="r_af3a71e0bf1b6405547c2f8c888f0488c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a05863.html#af3a71e0bf1b6405547c2f8c888f0488c">predictWithCompose</a> (const G &amp;U, const <a class="el" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470">Jacobian</a> &amp;J_UX, const <a class="el" href="a05863.html#aed0381168cf368e6dbe88ca0da72cabd">Covariance</a> &amp;Q)</td></tr>
+<tr class="memdesc:af3a71e0bf1b6405547c2f8c888f0488c inherit pub_methods_a05863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predict using a precomputed group increment U and its <a class="el" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470" title="Dim x Dim.">Jacobian</a> J_UX.  <br /></td></tr>
+<tr class="memitem:af7078783cae8eb6f66bc8509d9f4c707 inherit pub_methods_a05863" id="r_af7078783cae8eb6f66bc8509d9f4c707"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>predict</b> (const G &amp;X_next, const <a class="el" href="a05863.html#ab385a46317c5ccfcbc5f5916f8986470">Jacobian</a> &amp;F, const <a class="el" href="a05863.html#aed0381168cf368e6dbe88ca0da72cabd">Covariance</a> &amp;Q)</td></tr>
+<tr class="memdesc:af7078783cae8eb6f66bc8509d9f4c707 inherit pub_methods_a05863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expose base class predict method, predict(const M&amp; X_next, const Jacobian&amp; F, const Covariance&amp; Q). <br /></td></tr>
+<tr class="memitem:a0ec94138aa85b6423fd3ee56bde4c6ab inherit pub_methods_a05863" id="r_a0ec94138aa85b6423fd3ee56bde4c6ab"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>update</b> (const Measurement &amp;prediction, const Eigen::Matrix&lt; double, <a class="el" href="a03203.html">traits</a>&lt; Measurement &gt;<a class="el" href="a05899.html#aba67f9cb33185359d5bb20099d1f06d5">::dimension</a>, <a class="el" href="a05863.html#ae77c0acf182b7117dc71c67ead56f6ec">Dim</a> &gt; &amp;H, const Measurement &amp;z, const Eigen::Matrix&lt; double, <a class="el" href="a03203.html">traits</a>&lt; Measurement &gt;<a class="el" href="a05899.html#aba67f9cb33185359d5bb20099d1f06d5">::dimension</a>, <a class="el" href="a03203.html">traits</a>&lt; Measurement &gt;<a class="el" href="a05899.html#aba67f9cb33185359d5bb20099d1f06d5">::dimension</a> &gt; &amp;R, bool performReset=true)</td></tr>
+<tr class="memdesc:a0ec94138aa85b6423fd3ee56bde4c6ab inherit pub_methods_a05863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update overloads follow <a class="el" href="a05899.html" title="Extended Kalman Filter on a generic manifold M.">ManifoldEKF</a>. <br /></td></tr>
+<tr class="memitem:a234014d6ba536ef53dbe6aed7f794d73 inherit pub_methods_a05863" id="r_a234014d6ba536ef53dbe6aed7f794d73"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>update</b> (MeasurementFunction &amp;&amp;h, const Measurement &amp;z, const Eigen::Matrix&lt; double, <a class="el" href="a03203.html">traits</a>&lt; Measurement &gt;<a class="el" href="a05899.html#aba67f9cb33185359d5bb20099d1f06d5">::dimension</a>, <a class="el" href="a03203.html">traits</a>&lt; Measurement &gt;<a class="el" href="a05899.html#aba67f9cb33185359d5bb20099d1f06d5">::dimension</a> &gt; &amp;R, bool performReset=true)</td></tr>
+<tr class="memdesc:a234014d6ba536ef53dbe6aed7f794d73 inherit pub_methods_a05863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update overloads follow <a class="el" href="a05899.html" title="Extended Kalman Filter on a generic manifold M.">ManifoldEKF</a>. <br /></td></tr>
+<tr class="inherit_header pub_methods_a05899"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a05899')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a05899.html">gtsam::ManifoldEKF&lt; G &gt;</a></td></tr>
+<tr class="memitem:abb1f5b37d4a0787e0d9a7849d1860aa1 inherit pub_methods_a05899" id="r_abb1f5b37d4a0787e0d9a7849d1860aa1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="a05899.html#abb1f5b37d4a0787e0d9a7849d1860aa1">ManifoldEKF</a> (const G &amp;X0, const <a class="el" href="a05899.html#a2c444a34779013ffa864f9dd93d3c4bd">Covariance</a> &amp;P0)</td></tr>
+<tr class="memdesc:abb1f5b37d4a0787e0d9a7849d1860aa1 inherit pub_methods_a05899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor: initialize with state and covariance.  <br /></td></tr>
+<tr class="memitem:a3ffdf165b5c1ae13de091ee09f7a0f88 inherit pub_methods_a05899" id="r_a3ffdf165b5c1ae13de091ee09f7a0f88"><td class="memItemLeft">const G &amp;&#160;</td><td class="memItemRight"><a class="el" href="a05899.html#a3ffdf165b5c1ae13de091ee09f7a0f88">state</a> () const</td></tr>
+<tr class="memitem:acb0f9c60d1cbdeb7a4fecf8f40a6fb05 inherit pub_methods_a05899" id="r_acb0f9c60d1cbdeb7a4fecf8f40a6fb05"><td class="memItemLeft">const <a class="el" href="a05899.html#a2c444a34779013ffa864f9dd93d3c4bd">Covariance</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="a05899.html#acb0f9c60d1cbdeb7a4fecf8f40a6fb05">covariance</a> () const</td></tr>
+<tr class="memitem:aba67f9cb33185359d5bb20099d1f06d5 inherit pub_methods_a05899" id="r_aba67f9cb33185359d5bb20099d1f06d5"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="a05899.html#aba67f9cb33185359d5bb20099d1f06d5">dimension</a> () const</td></tr>
+<tr class="memitem:af2199dd0989f1c573ff96ffdc63f6b12 inherit pub_methods_a05899" id="r_af2199dd0989f1c573ff96ffdc63f6b12"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a05899.html#af2199dd0989f1c573ff96ffdc63f6b12">predict</a> (const G &amp;X_next, const <a class="el" href="a05899.html#aba0b080f64441371a909380ffcfdc2a7">Jacobian</a> &amp;F, const <a class="el" href="a05899.html#a2c444a34779013ffa864f9dd93d3c4bd">Covariance</a> &amp;Q)</td></tr>
+<tr class="memdesc:af2199dd0989f1c573ff96ffdc63f6b12 inherit pub_methods_a05899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic predict step: Updates state and covariance given the predicted next state and the state transition <a class="el" href="a05899.html#aba0b080f64441371a909380ffcfdc2a7">Jacobian</a> F.  <br /></td></tr>
+<tr class="memitem:a2099eba6ce1acbc98bd1efae16d1d89c inherit pub_methods_a05899" id="r_a2099eba6ce1acbc98bd1efae16d1d89c"><td class="memItemLeft">
+auto&#160;</td><td class="memItemRight"><b>KalmanGain</b> (const HMatrix &amp;H, const RMatrix &amp;R) const</td></tr>
+<tr class="memdesc:a2099eba6ce1acbc98bd1efae16d1d89c inherit pub_methods_a05899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kalman gain K = P H^T S^-1. <br /></td></tr>
+<tr class="memitem:ac8b0901cc7e6cc17a62373a7cc43d2f0 inherit pub_methods_a05899" id="r_ac8b0901cc7e6cc17a62373a7cc43d2f0"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>JosephUpdate</b> (const GainMatrix &amp;K, const HMatrix &amp;H, const RMatrix &amp;R)</td></tr>
+<tr class="memdesc:ac8b0901cc7e6cc17a62373a7cc43d2f0 inherit pub_methods_a05899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joseph-form covariance update in the current tangent space using a precomputed gain. <br /></td></tr>
+<tr class="memitem:a1b6f29e10e588b114074ff54fc78c6c2 inherit pub_methods_a05899" id="r_a1b6f29e10e588b114074ff54fc78c6c2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a05899.html#a1b6f29e10e588b114074ff54fc78c6c2">update</a> (const Measurement &amp;prediction, const Eigen::Matrix&lt; double, <a class="el" href="a03203.html">traits</a>&lt; Measurement &gt;<a class="el" href="a05899.html#aba67f9cb33185359d5bb20099d1f06d5">::dimension</a>, <a class="el" href="a05899.html#a83ea27f4336af4529ffb658241f13622">Dim</a> &gt; &amp;H, const Measurement &amp;z, const Eigen::Matrix&lt; double, <a class="el" href="a03203.html">traits</a>&lt; Measurement &gt;<a class="el" href="a05899.html#aba67f9cb33185359d5bb20099d1f06d5">::dimension</a>, <a class="el" href="a03203.html">traits</a>&lt; Measurement &gt;<a class="el" href="a05899.html#aba67f9cb33185359d5bb20099d1f06d5">::dimension</a> &gt; &amp;R, bool performReset=true)</td></tr>
+<tr class="memdesc:a1b6f29e10e588b114074ff54fc78c6c2 inherit pub_methods_a05899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measurement update: Corrects the state and covariance using a pre-calculated predicted measurement and its <a class="el" href="a05899.html#aba0b080f64441371a909380ffcfdc2a7">Jacobian</a>.  <br /></td></tr>
+<tr class="memitem:a64d300c8f9c1dba5ff1d5094c10dad5f inherit pub_methods_a05899" id="r_a64d300c8f9c1dba5ff1d5094c10dad5f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a05899.html#a64d300c8f9c1dba5ff1d5094c10dad5f">update</a> (MeasurementFunction &amp;&amp;h, const Measurement &amp;z, const Eigen::Matrix&lt; double, <a class="el" href="a03203.html">traits</a>&lt; Measurement &gt;<a class="el" href="a05899.html#aba67f9cb33185359d5bb20099d1f06d5">::dimension</a>, <a class="el" href="a03203.html">traits</a>&lt; Measurement &gt;<a class="el" href="a05899.html#aba67f9cb33185359d5bb20099d1f06d5">::dimension</a> &gt; &amp;R, bool performReset=true)</td></tr>
+<tr class="memdesc:a64d300c8f9c1dba5ff1d5094c10dad5f inherit pub_methods_a05899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measurement update: Corrects the state and covariance using a measurement model function.  <br /></td></tr>
+<tr class="memitem:aff9ffb5da1d2748394d8dc4ead680c1d inherit pub_methods_a05899" id="r_aff9ffb5da1d2748394d8dc4ead680c1d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a05899.html#aff9ffb5da1d2748394d8dc4ead680c1d">updateWithVector</a> (const gtsam::Vector &amp;prediction, const Matrix &amp;H, const gtsam::Vector &amp;z, const Matrix &amp;R, bool performReset=true)</td></tr>
+<tr class="memdesc:aff9ffb5da1d2748394d8dc4ead680c1d inherit pub_methods_a05899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience bridge for wrappers: vector measurement update calling update&lt;Vector&gt;.  <br /></td></tr>
+<tr class="memitem:a57ff8f348fe4e3288087d0833cb6255b inherit pub_methods_a05899" id="r_a57ff8f348fe4e3288087d0833cb6255b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="a05899.html#a57ff8f348fe4e3288087d0833cb6255b">reset</a> (const <a class="el" href="a05899.html#ad6c04d78b407b75040a7b39ec2d80e97">TangentVector</a> &amp;eta)</td></tr>
+<tr class="memdesc:a57ff8f348fe4e3288087d0833cb6255b inherit pub_methods_a05899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset step: retract the state by a tangent perturbation and, if available, transport the covariance from the old tangent space to the new tangent space.  <br /></td></tr>
+<tr class="inherit_header pub_methods_a05819"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_a05819')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="a05819.html">gtsam::LeggedEstimator</a></td></tr>
+<tr class="memitem:a36dd2b0aaa632bd24f3883d20d0166eb inherit pub_methods_a05819" id="r_a36dd2b0aaa632bd24f3883d20d0166eb"><td class="memItemLeft">
+virtual&#160;</td><td class="memItemRight"><b>~LeggedEstimator</b> ()=default</td></tr>
+<tr class="memdesc:a36dd2b0aaa632bd24f3883d20d0166eb inherit pub_methods_a05819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the estimator interface. <br /></td></tr>
+<tr class="memitem:a91ffe1982aff4d5b57a0c89f4673b0fd inherit pub_methods_a05819" id="r_a91ffe1982aff4d5b57a0c89f4673b0fd"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>turnHeightPriorOn</b> (double <a class="el" href="a05819.html#a655456c9e808f838f8168460c171c9f3">terrainHeight</a>)</td></tr>
+<tr class="memdesc:a91ffe1982aff4d5b57a0c89f4673b0fd inherit pub_methods_a05819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable contact height priors at the supplied terrain height. <br /></td></tr>
+<tr class="memitem:aeeb56588039ced2c3d2332cae73677bf inherit pub_methods_a05819" id="r_aeeb56588039ced2c3d2332cae73677bf"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>turnHeightPriorOff</b> ()</td></tr>
+<tr class="memdesc:aeeb56588039ced2c3d2332cae73677bf inherit pub_methods_a05819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable contact height priors. <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:a743a2e53d76b3fbfd3b6bb052c2de7af" id="r_a743a2e53d76b3fbfd3b6bb052c2de7af"><td class="memItemLeft"><a id="a743a2e53d76b3fbfd3b6bb052c2de7af" name="a743a2e53d76b3fbfd3b6bb052c2de7af"></a>
-class&#160;</td><td class="memItemRight"><b>LPInitSolverInitializationTest</b></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ab1089334a1ff098364e10bb0fe357c34" id="r_ab1089334a1ff098364e10bb0fe357c34"><td class="memItemLeft"><a id="ab1089334a1ff098364e10bb0fe357c34" name="ab1089334a1ff098364e10bb0fe357c34"></a>
+static ExtendedPose3d&#160;</td><td class="memItemRight"><b>MakeState</b> (const <a class="el" href="a05927.html">NavState</a> &amp;navState, const Matrix &amp;footholds)</td></tr>
+<tr class="memdesc:ab1089334a1ff098364e10bb0fe357c34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an <span class="tt"><a class="el" href="a04231.html" title="Lie group SE_k(3): semidirect product of SO(3) with k copies of R^3.">ExtendedPose3</a>(2+k)</span> state from base state and world footholds. <br /></td></tr>
+<tr class="memitem:a44eb1291bb22d423e4261003074def91" id="r_a44eb1291bb22d423e4261003074def91"><td class="memItemLeft"><a id="a44eb1291bb22d423e4261003074def91" name="a44eb1291bb22d423e4261003074def91"></a>
+static ExtendedPose3d&#160;</td><td class="memItemRight"><b>GravityIncrement</b> (size_t <a class="el" href="#a8e97e63644f3217a7e294c56b4c6dd13">numFeet</a>, const Vector3 &amp;gravity, double dt)</td></tr>
+<tr class="memdesc:a44eb1291bb22d423e4261003074def91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the gravity-only left increment for one prediction step. <br /></td></tr>
+<tr class="memitem:a74de89fda6c7f866dabdbd77b8fb7d90" id="r_a74de89fda6c7f866dabdbd77b8fb7d90"><td class="memItemLeft"><a id="a74de89fda6c7f866dabdbd77b8fb7d90" name="a74de89fda6c7f866dabdbd77b8fb7d90"></a>
+static ExtendedPose3d&#160;</td><td class="memItemRight"><b>ImuIncrement</b> (size_t <a class="el" href="#a8e97e63644f3217a7e294c56b4c6dd13">numFeet</a>, const Vector3 &amp;omegaBody, const Vector3 &amp;specificForceBody, double dt)</td></tr>
+<tr class="memdesc:a74de89fda6c7f866dabdbd77b8fb7d90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the IMU-only right increment for one prediction step. <br /></td></tr>
+<tr class="memitem:a73c4ed96487609ce43650aaf56be935a" id="r_a73c4ed96487609ce43650aaf56be935a"><td class="memItemLeft"><a id="a73c4ed96487609ce43650aaf56be935a" name="a73c4ed96487609ce43650aaf56be935a"></a>
+static size_t&#160;</td><td class="memItemRight"><b>FootColumn</b> (size_t foot)</td></tr>
+<tr class="memdesc:a73c4ed96487609ce43650aaf56be935a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the <span class="tt"><a class="el" href="a04231.html" title="Lie group SE_k(3): semidirect product of SO(3) with k copies of R^3.">ExtendedPose3</a></span> block index corresponding to a foot number. <br /></td></tr>
+<tr class="inherit_header pub_static_methods_a05791"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_a05791')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="a05791.html">gtsam::LeftLinearEKF&lt; ExtendedPose3d &gt;</a></td></tr>
+<tr class="memitem:aa557c207b97fd31f097f48c0d191ea0a inherit pub_static_methods_a05791" id="r_aa557c207b97fd31f097f48c0d191ea0a"><td class="memItemLeft">static ExtendedPose3d&#160;</td><td class="memItemRight"><a class="el" href="a05791.html#aa557c207b97fd31f097f48c0d191ea0a">Dynamics</a> (const ExtendedPose3d &amp;W, const Phi &amp;phi, const ExtendedPose3d &amp;X, const ExtendedPose3d &amp;U, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; <a class="el" href="a05791.html#aa8868e24e81cb24d371366c9bc0417b7">Dim</a>, <a class="el" href="a05791.html#aa8868e24e81cb24d371366c9bc0417b7">Dim</a> &gt; A={})</td></tr>
+<tr class="memdesc:aa557c207b97fd31f097f48c0d191ea0a inherit pub_static_methods_a05791"><td class="mdescLeft">&#160;</td><td class="mdescRight">General left–linear dynamics.  <br /></td></tr>
+<tr class="memitem:aca074e1f791fcb37107046277f21180f inherit pub_static_methods_a05791" id="r_aca074e1f791fcb37107046277f21180f"><td class="memItemLeft">static ExtendedPose3d&#160;</td><td class="memItemRight"><a class="el" href="a05791.html#aca074e1f791fcb37107046277f21180f">Dynamics</a> (const Phi &amp;phi, const ExtendedPose3d &amp;X, const ExtendedPose3d &amp;U, <a class="el" href="a03363.html">OptionalJacobian</a>&lt; <a class="el" href="a05791.html#aa8868e24e81cb24d371366c9bc0417b7">Dim</a>, <a class="el" href="a05791.html#aa8868e24e81cb24d371366c9bc0417b7">Dim</a> &gt; A={})</td></tr>
+<tr class="memdesc:aca074e1f791fcb37107046277f21180f inherit pub_static_methods_a05791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left–linear dynamics with W=I.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ad93a6272d9c98882bc83f619912c4352" id="r_ad93a6272d9c98882bc83f619912c4352"><td class="memItemLeft"><a id="ad93a6272d9c98882bc83f619912c4352" name="ad93a6272d9c98882bc83f619912c4352"></a>
+using&#160;</td><td class="memItemRight"><b>EkfBase</b> = LeftLinearEKF&lt;ExtendedPose3d&gt;</td></tr>
+<tr class="memitem:a875072a878abef2838277f67ccb456b5" id="r_a875072a878abef2838277f67ccb456b5"><td class="memItemLeft"><a id="a875072a878abef2838277f67ccb456b5" name="a875072a878abef2838277f67ccb456b5"></a>
+using&#160;</td><td class="memItemRight"><b>TangentVector</b> = typename EkfBase::TangentVector</td></tr>
+<tr class="memitem:aba6c52b031c67813fcced021d5bba9f8" id="r_aba6c52b031c67813fcced021d5bba9f8"><td class="memItemLeft"><a id="aba6c52b031c67813fcced021d5bba9f8" name="aba6c52b031c67813fcced021d5bba9f8"></a>
+using&#160;</td><td class="memItemRight"><b>Jacobian</b> = typename EkfBase::Jacobian</td></tr>
+<tr class="memitem:a6d39bc1f4e94d7d914a097950523cf59" id="r_a6d39bc1f4e94d7d914a097950523cf59"><td class="memItemLeft"><a id="a6d39bc1f4e94d7d914a097950523cf59" name="a6d39bc1f4e94d7d914a097950523cf59"></a>
+using&#160;</td><td class="memItemRight"><b>Covariance</b> = typename EkfBase::Covariance</td></tr>
+<tr class="inherit_header pub_types_a05791"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a05791')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a05791.html">gtsam::LeftLinearEKF&lt; ExtendedPose3d &gt;</a></td></tr>
+<tr class="memitem:a53084d2d0e1b0e097c5cea803a558627 inherit pub_types_a05791" id="r_a53084d2d0e1b0e097c5cea803a558627"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Base</b></td></tr>
+<tr class="memitem:a64444e8b7f9c2e119ae18d05212fc6d5 inherit pub_types_a05791" id="r_a64444e8b7f9c2e119ae18d05212fc6d5"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+<tr class="memitem:a818d0919431976f9f55409f27ce2fb99 inherit pub_types_a05791" id="r_a818d0919431976f9f55409f27ce2fb99"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Jacobian</b></td></tr>
+<tr class="memitem:ab9850309fd8b1f104bc90edc43213631 inherit pub_types_a05791" id="r_ab9850309fd8b1f104bc90edc43213631"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Covariance</b></td></tr>
+<tr class="inherit_header pub_types_a05863"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a05863')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a05863.html">gtsam::LieGroupEKF&lt; G &gt;</a></td></tr>
+<tr class="memitem:ae5d190910498ead8e63182d0772617cd inherit pub_types_a05863" id="r_ae5d190910498ead8e63182d0772617cd"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>This</b> = <a class="el" href="a05863.html#af9ab9ae224e303d19cff20435f3d347e">LieGroupEKF</a>&lt;G&gt;</td></tr>
+<tr class="memitem:a28a9d3f0baa393b02c4368fd4a099053 inherit pub_types_a05863" id="r_a28a9d3f0baa393b02c4368fd4a099053"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Base</b> = <a class="el" href="a05899.html#abb1f5b37d4a0787e0d9a7849d1860aa1">ManifoldEKF</a>&lt;G&gt;</td></tr>
+<tr class="memdesc:a28a9d3f0baa393b02c4368fd4a099053 inherit pub_types_a05863"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a05863.html#a28a9d3f0baa393b02c4368fd4a099053" title="Base class type.">Base</a> class type. <br /></td></tr>
+<tr class="memitem:ab385a46317c5ccfcbc5f5916f8986470 inherit pub_types_a05863" id="r_ab385a46317c5ccfcbc5f5916f8986470"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Jacobian</b> = typename <a class="el" href="a05899.html#aba0b080f64441371a909380ffcfdc2a7">Base::Jacobian</a></td></tr>
+<tr class="memdesc:ab385a46317c5ccfcbc5f5916f8986470 inherit pub_types_a05863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dim x Dim. <br /></td></tr>
+<tr class="memitem:aed0381168cf368e6dbe88ca0da72cabd inherit pub_types_a05863" id="r_aed0381168cf368e6dbe88ca0da72cabd"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Covariance</b> = typename <a class="el" href="a05899.html#a2c444a34779013ffa864f9dd93d3c4bd">Base::Covariance</a></td></tr>
+<tr class="memdesc:aed0381168cf368e6dbe88ca0da72cabd inherit pub_types_a05863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dim x Dim. <br /></td></tr>
+<tr class="memitem:a6d7716ee89b415b82395d4b8571b6dc3 inherit pub_types_a05863" id="r_a6d7716ee89b415b82395d4b8571b6dc3"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>TangentVector</b> = typename <a class="el" href="a05899.html#ad6c04d78b407b75040a7b39ec2d80e97">Base::TangentVector</a></td></tr>
+<tr class="memdesc:a6d7716ee89b415b82395d4b8571b6dc3 inherit pub_types_a05863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tangent vector type. <br /></td></tr>
+<tr class="inherit_header pub_types_a05899"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_a05899')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="a05899.html">gtsam::ManifoldEKF&lt; G &gt;</a></td></tr>
+<tr class="memitem:ad6c04d78b407b75040a7b39ec2d80e97 inherit pub_types_a05899" id="r_ad6c04d78b407b75040a7b39ec2d80e97"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>TangentVector</b></td></tr>
+<tr class="memdesc:ad6c04d78b407b75040a7b39ec2d80e97 inherit pub_types_a05899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tangent vector type for the manifold M. <br /></td></tr>
+<tr class="memitem:a2c444a34779013ffa864f9dd93d3c4bd inherit pub_types_a05899" id="r_a2c444a34779013ffa864f9dd93d3c4bd"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Covariance</b></td></tr>
+<tr class="memdesc:a2c444a34779013ffa864f9dd93d3c4bd inherit pub_types_a05899"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a05899.html#a2c444a34779013ffa864f9dd93d3c4bd">Covariance</a> matrix type (P, Q). <br /></td></tr>
+<tr class="memitem:aba0b080f64441371a909380ffcfdc2a7 inherit pub_types_a05899" id="r_aba0b080f64441371a909380ffcfdc2a7"><td class="memItemLeft">
+using&#160;</td><td class="memItemRight"><b>Jacobian</b></td></tr>
+<tr class="memdesc:aba0b080f64441371a909380ffcfdc2a7 inherit pub_types_a05899"><td class="mdescLeft">&#160;</td><td class="mdescRight">State transition <a class="el" href="a05899.html#aba0b080f64441371a909380ffcfdc2a7">Jacobian</a> type (F). <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:AutonomousFlow" id="r_AutonomousFlow"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a05827.html">AutonomousFlow</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Autonomous flow used by the left-linear prediction step.  <a href="a05827.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a8d9715efcb84d357501e3b03395c62af" id="r_a8d9715efcb84d357501e3b03395c62af"><td class="memItemLeft"><a id="a8d9715efcb84d357501e3b03395c62af" name="a8d9715efcb84d357501e3b03395c62af"></a>
+<a class="el" href="a05927.html">NavState</a>&#160;</td><td class="memItemRight"><b>baseState</b> () const</td></tr>
+<tr class="memitem:a2708a3cb990819ad6b92cf5ef2a7883b" id="r_a2708a3cb990819ad6b92cf5ef2a7883b"><td class="memItemLeft"><a id="a2708a3cb990819ad6b92cf5ef2a7883b" name="a2708a3cb990819ad6b92cf5ef2a7883b"></a>
+Matrix&#160;</td><td class="memItemRight"><b>footholdMatrix</b> () const</td></tr>
+<tr class="memitem:a4c603cf28ba469e63db74f8deef89cac" id="r_a4c603cf28ba469e63db74f8deef89cac"><td class="memItemLeft"><a id="a4c603cf28ba469e63db74f8deef89cac" name="a4c603cf28ba469e63db74f8deef89cac"></a>
+void&#160;</td><td class="memItemRight"><b>resetFootToMeasurement</b> (size_t foot, const Vector3 &amp;bodyPoint)</td></tr>
+<tr class="memitem:aefa241ed0201224c11b90fe05c258fa6" id="r_aefa241ed0201224c11b90fe05c258fa6"><td class="memItemLeft"><a id="aefa241ed0201224c11b90fe05c258fa6" name="aefa241ed0201224c11b90fe05c258fa6"></a>
+void&#160;</td><td class="memItemRight"><b>marginalizeFoot</b> (size_t foot)</td></tr>
+<tr class="memitem:ae8d24b3d4f323d98b59dcb005198a25b" id="r_ae8d24b3d4f323d98b59dcb005198a25b"><td class="memItemLeft"><a id="ae8d24b3d4f323d98b59dcb005198a25b" name="ae8d24b3d4f323d98b59dcb005198a25b"></a>
+virtual void&#160;</td><td class="memItemRight"><b>applyContactUpdate</b> (const std::vector&lt; <a class="el" href="a05811.html">ContactMeasurement</a> &gt; &amp;activeContacts)</td></tr>
+<tr class="memitem:a0d68cca814b821c0ec9cd344759b2995" id="r_a0d68cca814b821c0ec9cd344759b2995"><td class="memItemLeft"><a id="a0d68cca814b821c0ec9cd344759b2995" name="a0d68cca814b821c0ec9cd344759b2995"></a>
+bool&#160;</td><td class="memItemRight"><b>awaitingFullContactInitialization</b> () const</td></tr>
+<tr class="inherit_header pro_methods_a05899"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_a05899')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="a05899.html">gtsam::ManifoldEKF&lt; G &gt;</a></td></tr>
+<tr class="memitem:a3ace7edf20ae3a4bc4c59ebb6dabe073 inherit pro_methods_a05899" id="r_a3ace7edf20ae3a4bc4c59ebb6dabe073"><td class="memItemLeft">
+void&#160;</td><td class="memItemRight"><b>validateInputs</b> (const gtsam::Vector &amp;prediction, const Matrix &amp;H, const gtsam::Vector &amp;z, const Matrix &amp;R)</td></tr>
+<tr class="memdesc:a3ace7edf20ae3a4bc4c59ebb6dabe073 inherit pro_methods_a05899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate inputs to update. <br /></td></tr>
+<tr class="inherit_header pro_methods_a05819"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_a05819')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="a05819.html">gtsam::LeggedEstimator</a></td></tr>
+<tr class="memitem:a655456c9e808f838f8168460c171c9f3 inherit pro_methods_a05819" id="r_a655456c9e808f838f8168460c171c9f3"><td class="memItemLeft">
+const std::optional&lt; double &gt; &amp;&#160;</td><td class="memItemRight"><b>terrainHeight</b> () const</td></tr>
+<tr class="memdesc:a655456c9e808f838f8168460c171c9f3 inherit pro_methods_a05819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional terrain height used internally for contact height priors. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_static_attribs_a05791"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_attribs_a05791')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Attributes inherited from <a class="el" href="a05791.html">gtsam::LeftLinearEKF&lt; ExtendedPose3d &gt;</a></td></tr>
+<tr class="memitem:aa8868e24e81cb24d371366c9bc0417b7 inherit pub_static_attribs_a05791" id="r_aa8868e24e81cb24d371366c9bc0417b7"><td class="memItemLeft">
+static constexpr int&#160;</td><td class="memItemRight"><b>Dim</b></td></tr>
+<tr class="memdesc:aa8868e24e81cb24d371366c9bc0417b7 inherit pub_static_attribs_a05791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile-time dimension of G. <br /></td></tr>
+<tr class="inherit_header pub_static_attribs_a05863"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_attribs_a05863')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Attributes inherited from <a class="el" href="a05863.html">gtsam::LieGroupEKF&lt; G &gt;</a></td></tr>
+<tr class="memitem:ae77c0acf182b7117dc71c67ead56f6ec inherit pub_static_attribs_a05863" id="r_ae77c0acf182b7117dc71c67ead56f6ec"><td class="memItemLeft">
+static constexpr int&#160;</td><td class="memItemRight"><b>Dim</b> = <a class="el" href="a05899.html#a83ea27f4336af4529ffb658241f13622">Base::Dim</a></td></tr>
+<tr class="memdesc:ae77c0acf182b7117dc71c67ead56f6ec inherit pub_static_attribs_a05863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile-time dimension of G. <br /></td></tr>
+<tr class="inherit_header pub_static_attribs_a05899"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_attribs_a05899')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Attributes inherited from <a class="el" href="a05899.html">gtsam::ManifoldEKF&lt; G &gt;</a></td></tr>
+<tr class="memitem:a83ea27f4336af4529ffb658241f13622 inherit pub_static_attribs_a05899" id="r_a83ea27f4336af4529ffb658241f13622"><td class="memItemLeft">
+static constexpr int&#160;</td><td class="memItemRight"><b>Dim</b></td></tr>
+<tr class="memdesc:a83ea27f4336af4529ffb658241f13622 inherit pub_static_attribs_a05899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile-time dimension of the manifold M. <br /></td></tr>
+<tr class="inherit_header pro_static_methods_a05899"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_static_methods_a05899')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Protected Member Functions inherited from <a class="el" href="a05899.html">gtsam::ManifoldEKF&lt; G &gt;</a></td></tr>
+<tr class="memitem:ac2be0b57fd34a284fe248b7a75e8702b inherit pro_static_methods_a05899" id="r_ac2be0b57fd34a284fe248b7a75e8702b"><td class="memItemLeft">
+static bool&#160;</td><td class="memItemRight"><b>isMatrixOfSize</b> (const MatrixType &amp;matrix, size_t rows, size_t cols)</td></tr>
+<tr class="memdesc:ac2be0b57fd34a284fe248b7a75e8702b inherit pro_static_methods_a05899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a matrix has the expected runtime dimensions. <br /></td></tr>
+<tr class="inherit_header pro_static_methods_a05819"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_static_methods_a05819')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Protected Member Functions inherited from <a class="el" href="a05819.html">gtsam::LeggedEstimator</a></td></tr>
+<tr class="memitem:ae5fdd6edc211f197ad64a91f1ded9e25 inherit pro_static_methods_a05819" id="r_ae5fdd6edc211f197ad64a91f1ded9e25"><td class="memItemLeft">
+static ExtendedPose3d&#160;</td><td class="memItemRight"><b>MakeEstimate</b> (const <a class="el" href="a05927.html">NavState</a> &amp;navState, const Matrix &amp;footholds)</td></tr>
+<tr class="memdesc:ae5fdd6edc211f197ad64a91f1ded9e25 inherit pro_static_methods_a05819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the shared <span class="tt">ExtendedPose3d</span> state layout used by all estimators. <br /></td></tr>
+<tr class="memitem:adcadae641838957c5310ca4fc3fbec45 inherit pro_static_methods_a05819" id="r_adcadae641838957c5310ca4fc3fbec45"><td class="memItemLeft">
+static <a class="el" href="a05927.html">NavState</a>&#160;</td><td class="memItemRight"><b>EstimateNavState</b> (const ExtendedPose3d &amp;<a class="el" href="a05819.html#a2cb215b3ee96cb74d2e8859b171da2f5">estimate</a>)</td></tr>
+<tr class="memdesc:adcadae641838957c5310ca4fc3fbec45 inherit pro_static_methods_a05819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recover the base <span class="tt"><a class="el" href="a05927.html" title="Navigation state: Pose (rotation, translation) + velocity Following Barrau20icra, this class belongs ...">NavState</a></span> from an <span class="tt">ExtendedPose3d</span> estimate. <br /></td></tr>
+<tr class="memitem:af5a7b99a07de9e9fca3edef9e65a1964 inherit pro_static_methods_a05819" id="r_af5a7b99a07de9e9fca3edef9e65a1964"><td class="memItemLeft">
+static Matrix&#160;</td><td class="memItemRight"><b>EstimateFootholds</b> (const ExtendedPose3d &amp;<a class="el" href="a05819.html#a2cb215b3ee96cb74d2e8859b171da2f5">estimate</a>)</td></tr>
+<tr class="memdesc:af5a7b99a07de9e9fca3edef9e65a1964 inherit pro_static_methods_a05819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recover the foothold matrix from an <span class="tt">ExtendedPose3d</span> estimate. <br /></td></tr>
+<tr class="inherit_header pro_attribs_a05899"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_a05899')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="a05899.html">gtsam::ManifoldEKF&lt; G &gt;</a></td></tr>
+<tr class="memitem:aa86516b3f8c951690adeb9c64965ebed inherit pro_attribs_a05899" id="r_aa86516b3f8c951690adeb9c64965ebed"><td class="memItemLeft">
+G&#160;</td><td class="memItemRight"><b>X_</b></td></tr>
+<tr class="memdesc:aa86516b3f8c951690adeb9c64965ebed inherit pro_attribs_a05899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manifold state estimate. <br /></td></tr>
+<tr class="memitem:aca671898b062ed32a1d23bda95ebc8ff inherit pro_attribs_a05899" id="r_aca671898b062ed32a1d23bda95ebc8ff"><td class="memItemLeft">
+<a class="el" href="a05899.html#a2c444a34779013ffa864f9dd93d3c4bd">Covariance</a>&#160;</td><td class="memItemRight"><b>P_</b></td></tr>
+<tr class="memdesc:aca671898b062ed32a1d23bda95ebc8ff inherit pro_attribs_a05899"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="a05899.html#a2c444a34779013ffa864f9dd93d3c4bd">Covariance</a> (Eigen::Matrix&lt;double, Dim, Dim&gt;). <br /></td></tr>
+<tr class="memitem:a49c735a4d113438242b495343cea91a3 inherit pro_attribs_a05899" id="r_a49c735a4d113438242b495343cea91a3"><td class="memItemLeft">
+<a class="el" href="a05899.html#aba0b080f64441371a909380ffcfdc2a7">Jacobian</a>&#160;</td><td class="memItemRight"><b>I_</b></td></tr>
+<tr class="memdesc:a49c735a4d113438242b495343cea91a3 inherit pro_attribs_a05899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identity matrix sized to the state dimension. <br /></td></tr>
+<tr class="memitem:aed62e118a5f1d94198beb7a62ed2bdd5 inherit pro_attribs_a05899" id="r_aed62e118a5f1d94198beb7a62ed2bdd5"><td class="memItemLeft">
+size_t&#160;</td><td class="memItemRight"><b>n_</b></td></tr>
+<tr class="memdesc:aed62e118a5f1d94198beb7a62ed2bdd5 inherit pro_attribs_a05899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runtime tangent space dimension of M. <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="afe3f43d8a5c5c82e6d994ecb0b6aacad" name="afe3f43d8a5c5c82e6d994ecb0b6aacad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe3f43d8a5c5c82e6d994ecb0b6aacad">&#9670;&#160;</a></span>solve()</h2>
+<a id="a64711b5a342a17cb20d444b52e7906dc" name="a64711b5a342a17cb20d444b52e7906dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64711b5a342a17cb20d444b52e7906dc">&#9670;&#160;</a></span>estimate()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a06239.html">VectorValues</a> gtsam::LPInitSolver::solve </td>
+          <td class="memname">ExtendedPose3d gtsam::LeggedInvariantEKF::estimate </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>a feasible initialization point </dd></dl>
+
+<p>Current estimate in the shared <span class="tt">ExtendedPose3d</span> layout. </p>
+
+<p>Implements <a class="el" href="a05819.html#a2cb215b3ee96cb74d2e8859b171da2f5">gtsam::LeggedEstimator</a>.</p>
+
+</div>
+</div>
+<a id="a5088fbc51f8cd113469b58ae7c42fd36" name="a5088fbc51f8cd113469b58ae7c42fd36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5088fbc51f8cd113469b58ae7c42fd36">&#9670;&#160;</a></span>estimateBias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a05739.html">imuBias::ConstantBias</a> gtsam::LeggedInvariantEKF::estimateBias </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the fixed IMU bias used by the filter. </p>
+
+<p>Implements <a class="el" href="a05819.html#ae20f3c192f0113b3a5eacbe4a286529c">gtsam::LeggedEstimator</a>.</p>
+
+</div>
+</div>
+<a id="a4d91aa1bd11cb56a0d9c690c5a1524d8" name="a4d91aa1bd11cb56a0d9c690c5a1524d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d91aa1bd11cb56a0d9c690c5a1524d8">&#9670;&#160;</a></span>predict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gtsam::LeggedInvariantEKF::predict </td>
+          <td>(</td>
+          <td class="paramtype">const Vector3 &amp;</td>          <td class="paramname"><span class="paramname"><em>omegaBody</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector3 &amp;</td>          <td class="paramname"><span class="paramname"><em>specificForceBody</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>dt</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Predict forward using one IMU sample. </p>
+
+<p>Implements <a class="el" href="a05819.html#a0f2f9de652f9aeeffc3dcc20c4f6b8b1">gtsam::LeggedEstimator</a>.</p>
+
+</div>
+</div>
+<a id="a7dae8e702056b9b4913ee807676897fe" name="a7dae8e702056b9b4913ee807676897fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dae8e702056b9b4913ee807676897fe">&#9670;&#160;</a></span>processContacts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gtsam::LeggedInvariantEKF::processContacts </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="a05811.html">ContactMeasurement</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>activeContacts</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Process all currently active contacts for the current step. </p>
+
+<p>Implements <a class="el" href="a05819.html#a786e776d7ba5e665b50abc566a2e4403">gtsam::LeggedEstimator</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/linear/<a class="el" href="a01559_source.html">LPInitSolver.h</a></li>
-<li>/tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/linear/<b>LPInitSolver.cpp</b></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/<a class="el" href="a01238_source.html">LeggedEstimator.h</a></li>
+<li>/tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/navigation/<a class="el" href="a01277.html">LeggedEstimator.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -153,7 +494,7 @@ class&#160;</td><td class="memItemRight"><b>LPInitSolverInitializationTest</b></
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="a01968.html">gtsam</a></li><li class="navelem"><a href="a05823.html">LPInitSolver</a></li>
+    <li class="navelem"><a href="a02242.html">gtsam</a></li><li class="navelem"><a href="a05823.html">LeggedInvariantEKF</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

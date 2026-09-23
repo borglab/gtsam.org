@@ -1,5 +1,4 @@
 var a00434 =
 [
-    [ "gtsam::traits&lt; Cal3DS2 &gt;", "a03531.html", null ],
-    [ "gtsam::traits&lt; const Cal3DS2 &gt;", "a03535.html", null ]
+    [ "gtsam::so3::axpy", "a00434.html#ad836d9f08da7243169b6755e06e923e1", null ]
 ];

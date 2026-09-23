@@ -96,7 +96,7 @@ function initNavTree(toroot,relpath,allMembersFile) {
     script.id = scriptName;
     script.type = 'text/javascript';
     script.onload = function() { func(); adjustSyncIconPosition(); }
-    script.src = scriptName+'.js';
+    script.src = scriptName+'.js?v=20260921-module-nav4';
     head.appendChild(script);
   }
 
@@ -279,6 +279,13 @@ function initNavTree(toroot,relpath,allMembersFile) {
         if (!node.childrenVisited) {
           getNode(o, node);
         }
+        // The API is organized by source module. Keep both library sections
+        // open so that organization is visible on every page, not just on the
+        // currently selected module.
+        if (node.depth==1 && node.children.length>=2) {
+          expandNode(o, node.children[0], true, false);
+          expandNode(o, node.children[1], true, false);
+        }
         $(node.getChildrenUL()).slideDown("fast",adjustSyncIconPosition);
         $(node.plus_img.childNodes[0]).addClass('opened').removeClass('closed');
         node.expanded = true;
@@ -334,6 +341,10 @@ function initNavTree(toroot,relpath,allMembersFile) {
         if (!node.childrenVisited) {
           getNode(o, node);
         }
+        if (node.depth==1 && node.children.length>=2) {
+          expandNode(o, node.children[0], true, false);
+          expandNode(o, node.children[1], true, false);
+        }
         $(node.getChildrenUL()).css({'display':'block'});
         $(node.plus_img.childNodes[0]).removeClass('closed').addClass('opened');
         node.expanded = true;
@@ -369,16 +380,42 @@ function initNavTree(toroot,relpath,allMembersFile) {
     }
   }
 
+  // Doxygen omits some nested classes from its generated navigation index.
+  // Keep those pages in the module-oriented tree by deriving their location
+  // from the documented source header shown in the page footer.
+  const sourceModuleBreadcrumbs = function() {
+    const source = $('#doc-content').text().match(
+      /\/source\/(gtsam|gtsam_unstable)\/([^\/\s]+)\//
+    );
+    if (!source) return null;
+
+    const modules = {
+      gtsam: [
+        'base', 'basis', 'discrete', 'geometry', 'hybrid', 'inference',
+        'linear', 'navigation', 'nonlinear', 'sam', 'sfm', 'slam', 'symbolic'
+      ],
+      gtsam_unstable: [
+        'base', 'discrete', 'dynamics', 'geometry', 'linear', 'nonlinear',
+        'partition', 'slam'
+      ]
+    };
+    const moduleIndex = modules[source[1]].indexOf(source[2]);
+    return moduleIndex < 0 ? null : [source[1]=='gtsam' ? 0 : 1, moduleIndex];
+  }
+
   const gotoNode = function(o,subIndex,root,hash,relpath) {
     const nti = navTreeSubIndices[subIndex][root+hash];
     if (nti==undefined && hash.length>0) { // try root page without hash as fallback
       gotoUrl(o,root,'',relpath);
     } else {
-      o.breadcrumbs = $.extend(true, [], nti);
-      if (!o.breadcrumbs && root!=NAVTREE[0][1]) { // fallback: show index
-        navTo(o,NAVTREE[0][1],"",relpath);
-        $('.item').removeClass('selected');
-        $('.item').removeAttr('id');
+      o.breadcrumbs = nti==undefined ? null : $.extend(true, [], nti);
+      if (!o.breadcrumbs && root!=NAVTREE[0][1]) {
+        o.breadcrumbs = sourceModuleBreadcrumbs();
+        if (!o.breadcrumbs) { // fallback: show index
+          navTo(o,NAVTREE[0][1],"",relpath);
+          $('.item').removeClass('selected');
+          $('.item').removeAttr('id');
+        }
       }
       if (o.breadcrumbs) {
         o.breadcrumbs.unshift(0); // add 0 for root node

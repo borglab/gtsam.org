@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/LevenbergMarquardtOptimizer.cpp File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/GaussianBayesTreeQueries.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,26 +96,66 @@ $(function(){initNavTree('a01136.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">LevenbergMarquardtOptimizer.cpp File Reference</div></div>
+  <div class="headertitle"><div class="title">GaussianBayesTreeQueries.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>A nonlinear optimizer that uses the Levenberg-Marquardt trust-region scheme.  
+<p>Internal helpers for Gaussian Bayes-tree covariance queries.  
 <a href="#details">More...</a></p>
+
+<p><a href="a01136_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a0b8006c45ab332392deb212585725524" id="r_a0b8006c45ab332392deb212585725524"><td class="memItemLeft"><a id="a0b8006c45ab332392deb212585725524" name="a0b8006c45ab332392deb212585725524"></a>
+<a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a>&#160;</td><td class="memItemRight"><b>gtsam::internal::uniqueKeys</b> (const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;keys)</td></tr>
+<tr class="memdesc:a0b8006c45ab332392deb212585725524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return unique keys in their first-occurrence order. <br /></td></tr>
+<tr class="memitem:a9271ebc3beca6b5999da4f565c8d6407" id="r_a9271ebc3beca6b5999da4f565c8d6407"><td class="memItemLeft"><a id="a9271ebc3beca6b5999da4f565c8d6407" name="a9271ebc3beca6b5999da4f565c8d6407"></a>
+std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight"><b>gtsam::internal::blockOffsets</b> (const std::vector&lt; size_t &gt; &amp;dims)</td></tr>
+<tr class="memdesc:a9271ebc3beca6b5999da4f565c8d6407"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the scalar offsets corresponding to a sequence of block dimensions. <br /></td></tr>
+<tr class="memitem:a83205345d262238790c5dff76c5f145f" id="r_a83205345d262238790c5dff76c5f145f"><td class="memItemLeft"><a id="a83205345d262238790c5dff76c5f145f" name="a83205345d262238790c5dff76c5f145f"></a>
+Matrix&#160;</td><td class="memItemRight"><b>gtsam::internal::informationToCovariance</b> (const Matrix &amp;information)</td></tr>
+<tr class="memdesc:a83205345d262238790c5dff76c5f145f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert information to covariance using Cholesky solves, returning zeros when the information contains non-finite entries. <br /></td></tr>
+<tr class="memitem:a4e81c11b80e1bf3d578012120176ef9e" id="r_a4e81c11b80e1bf3d578012120176ef9e"><td class="memItemLeft"><a id="a4e81c11b80e1bf3d578012120176ef9e" name="a4e81c11b80e1bf3d578012120176ef9e"></a>
+std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight"><b>gtsam::internal::dimsFromBayesNet</b> (const <a class="el" href="a05083.html">GaussianBayesNet</a> &amp;bayesNet, const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;orderedKeys)</td></tr>
+<tr class="memdesc:a4e81c11b80e1bf3d578012120176ef9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return variable dimensions from a Bayes net in the requested key order. <br /></td></tr>
+<tr class="memitem:a7851ddb223cc675193065f3764e87d80" id="r_a7851ddb223cc675193065f3764e87d80"><td class="memItemLeft"><a id="a7851ddb223cc675193065f3764e87d80" name="a7851ddb223cc675193065f3764e87d80"></a>
+<a class="el" href="a05495.html">Scatter</a>&#160;</td><td class="memItemRight"><b>gtsam::internal::scatterFromKeysAndDims</b> (const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;orderedKeys, const std::vector&lt; size_t &gt; &amp;dims)</td></tr>
+<tr class="memdesc:a7851ddb223cc675193065f3764e87d80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a scatter with entries in the supplied key and dimension order. <br /></td></tr>
+<tr class="memitem:abaab0a10f884049443346b1313b78b60" id="r_abaab0a10f884049443346b1313b78b60"><td class="memItemLeft"><a id="abaab0a10f884049443346b1313b78b60" name="abaab0a10f884049443346b1313b78b60"></a>
+Matrix&#160;</td><td class="memItemRight"><b>gtsam::internal::covarianceColumns</b> (const <a class="el" href="a05083.html">GaussianBayesNet</a> &amp;bayesNet, const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;orderedKeys, const std::vector&lt; size_t &gt; &amp;dims)</td></tr>
+<tr class="memdesc:abaab0a10f884049443346b1313b78b60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute covariance blocks in the requested key order using triangular solves in the Bayes net's elimination order. <br /></td></tr>
+<tr class="memitem:a8b124a29136201f50217841ac17a6fae" id="r_a8b124a29136201f50217841ac17a6fae"><td class="memItemLeft"><a id="a8b124a29136201f50217841ac17a6fae" name="a8b124a29136201f50217841ac17a6fae"></a>
+<a class="el" href="a05187.html">JointMarginal</a>&#160;</td><td class="memItemRight"><b>gtsam::internal::jointMarginalFromMatrix</b> (const Matrix &amp;matrix, const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;orderedKeys, const std::vector&lt; size_t &gt; &amp;dims)</td></tr>
+<tr class="memdesc:a8b124a29136201f50217841ac17a6fae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a joint marginal from a dense matrix and ordered block metadata. <br /></td></tr>
+<tr class="memitem:a01462b39f53620b501b82867a108df0a" id="r_a01462b39f53620b501b82867a108df0a"><td class="memItemLeft"><a id="a01462b39f53620b501b82867a108df0a" name="a01462b39f53620b501b82867a108df0a"></a>
+<a class="el" href="a05187.html">JointMarginal</a>&#160;</td><td class="memItemRight"><b>gtsam::internal::emptyJointMarginal</b> ()</td></tr>
+<tr class="memdesc:a01462b39f53620b501b82867a108df0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty joint marginal. <br /></td></tr>
+<tr class="memitem:a557e32857781a52b3f3d958ce7c2c847" id="r_a557e32857781a52b3f3d958ce7c2c847"><td class="memTemplParams" colspan="2"><a id="a557e32857781a52b3f3d958ce7c2c847" name="a557e32857781a52b3f3d958ce7c2c847"></a>
+template&lt;class BAYESTREE, class SINGLE_BUILDER, class MULTI_BUILDER&gt; </td></tr>
+<tr class="memitem:a557e32857781a52b3f3d958ce7c2c847 template"><td class="memItemLeft"><a class="el" href="a05187.html">JointMarginal</a>&#160;</td><td class="memItemRight"><b>gtsam::internal::buildJointMarginal</b> (const BAYESTREE &amp;bayesTree, const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;queryKeys, const typename BAYESTREE::FactorGraphType::Eliminate &amp;eliminate, const SINGLE_BUILDER &amp;singleBuilder, const MULTI_BUILDER &amp;multiBuilder)</td></tr>
+<tr class="memdesc:a557e32857781a52b3f3d958ce7c2c847"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a joint marginal while sharing empty, single-key, and multi-key query handling between information and covariance calculations. <br /></td></tr>
+<tr class="memitem:a3912a1b478bbb6c398242092621d598d" id="r_a3912a1b478bbb6c398242092621d598d"><td class="memTemplParams" colspan="2"><a id="a3912a1b478bbb6c398242092621d598d" name="a3912a1b478bbb6c398242092621d598d"></a>
+template&lt;class BAYESTREE&gt; </td></tr>
+<tr class="memitem:a3912a1b478bbb6c398242092621d598d template"><td class="memItemLeft">Matrix&#160;</td><td class="memItemRight"><b>gtsam::internal::marginalInformation</b> (const BAYESTREE &amp;bayesTree, <a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> key, const typename BAYESTREE::FactorGraphType::Eliminate &amp;eliminate)</td></tr>
+<tr class="memdesc:a3912a1b478bbb6c398242092621d598d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return marginal information for one key using the requested elimination. <br /></td></tr>
+<tr class="memitem:a042e44d101eac02584d10a02cfe0e08c" id="r_a042e44d101eac02584d10a02cfe0e08c"><td class="memTemplParams" colspan="2"><a id="a042e44d101eac02584d10a02cfe0e08c" name="a042e44d101eac02584d10a02cfe0e08c"></a>
+template&lt;class BAYESTREE&gt; </td></tr>
+<tr class="memitem:a042e44d101eac02584d10a02cfe0e08c template"><td class="memItemLeft"><a class="el" href="a05187.html">JointMarginal</a>&#160;</td><td class="memItemRight"><b>gtsam::internal::jointMarginalInformation</b> (const BAYESTREE &amp;bayesTree, const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;queryKeys, const typename BAYESTREE::FactorGraphType::Eliminate &amp;eliminate)</td></tr>
+<tr class="memdesc:a042e44d101eac02584d10a02cfe0e08c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return joint marginal information with blocks in query-key order. <br /></td></tr>
+<tr class="memitem:a863dc6be0493caa971894d273f6bf271" id="r_a863dc6be0493caa971894d273f6bf271"><td class="memTemplParams" colspan="2"><a id="a863dc6be0493caa971894d273f6bf271" name="a863dc6be0493caa971894d273f6bf271"></a>
+template&lt;class BAYESTREE&gt; </td></tr>
+<tr class="memitem:a863dc6be0493caa971894d273f6bf271 template"><td class="memItemLeft"><a class="el" href="a05187.html">JointMarginal</a>&#160;</td><td class="memItemRight"><b>gtsam::internal::jointMarginalCovariance</b> (const BAYESTREE &amp;bayesTree, const <a class="el" href="a02242.html#a2dea5ef4aee9da07a0e0686940c64667">KeyVector</a> &amp;queryKeys, const typename BAYESTREE::FactorGraphType::Eliminate &amp;eliminate)</td></tr>
+<tr class="memdesc:a863dc6be0493caa971894d273f6bf271"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return joint marginal covariance with blocks in query-key order. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A nonlinear optimizer that uses the Levenberg-Marquardt trust-region scheme. </p>
-<dl class="section author"><dt>Author</dt><dd>Richard Roberts </dd>
-<dd>
-Frank Dellaert </dd>
-<dd>
-Luca Carlone </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>Feb 26, 2012 </dd></dl>
+<div class="textblock"><p>Internal helpers for Gaussian Bayes-tree covariance queries. </p>
+<dl class="section author"><dt>Author</dt><dd>Frank Dellaert </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -129,7 +169,7 @@ Luca Carlone </dd></dl>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>nonlinear</b></li><li class="navelem"><a href="a01136.html">LevenbergMarquardtOptimizer.cpp</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>linear</b></li><li class="navelem"><a href="a01136.html">GaussianBayesTreeQueries.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

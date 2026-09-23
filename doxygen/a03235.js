@@ -1,4 +1,4 @@
 var a03235 =
 [
-    [ "DerivativeFunctorBase", "a03235.html#a266e4f6a20307b0001f8adbf047cb9c0", null ]
+    [ "DirectSum", "a03235.html#a920a249b3e2bf675eb9ae96ac25887b5", null ]
 ];

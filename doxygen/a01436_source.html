@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/discrete/Domain.h Source File</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/nonlinear/NonlinearEquality.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -89,130 +89,25 @@ $(function(){initNavTree('a01436_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Domain.h</div></div>
+  <div class="headertitle"><div class="title">NonlinearEquality.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Domain.h</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @brief Domain restriction constraint</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * @date Feb 13, 2012</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * @author Frank Dellaert</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="a00185.html">gtsam/discrete/DiscreteKey.h</a>&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="a01448.html">gtsam_unstable/discrete/Constraint.h</a>&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="a01968.html">gtsam</a> {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="a05631.html">   19</a></span><span class="keyword">class </span>GTSAM_UNSTABLE_EXPORT Domain : <span class="keyword">public</span> <a class="code hl_function" href="a05623.html#ac65b64bd3106f19619766800423d72de">Constraint</a> {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordtype">size_t</span> cardinality_;       </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  std::set&lt;size_t&gt; values_;  </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="a05631.html#a9bc36f50dc751e9d0e1a237e058cfb0b">   24</a></span>  <span class="keyword">typedef</span> boost::shared_ptr&lt;Domain&gt; <a class="code hl_typedef" href="a05631.html#a9bc36f50dc751e9d0e1a237e058cfb0b">shared_ptr</a>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="comment">// Constructor on Discrete Key initializes an &quot;all-allowed&quot; domain</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  Domain(<span class="keyword">const</span> <a class="code hl_typedef" href="a01955.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a>&amp; dkey)</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      : <a class="code hl_function" href="a05623.html#ac65b64bd3106f19619766800423d72de">Constraint</a>(dkey.first), cardinality_(dkey.second) {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> v = 0; v &lt; cardinality_; v++) values_.insert(v);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  }</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="comment">// Constructor on Discrete Key with single allowed value</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="comment">// Consider SingleValue constraint</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <a class="code hl_class" href="a05631.html">Domain</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="a01955.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a>&amp; dkey, <span class="keywordtype">size_t</span> v)</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      : <a class="code hl_class" href="a05623.html">Constraint</a>(dkey.first), cardinality_(dkey.second) {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    values_.insert(v);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  }</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="a05631.html#aaaf05dcf9334ebc93e2da1ee447cfc16">   40</a></span>  <a class="code hl_typedef" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a> <a class="code hl_function" href="a05631.html#aaaf05dcf9334ebc93e2da1ee447cfc16">key</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">keys_</a>[0]; }</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="comment">// The associated discrete key</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <a class="code hl_typedef" href="a01955.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a> discreteKey()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_typedef" href="a01955.html#ga5d440f1429574be613728cd7ad50946d">DiscreteKey</a>(key(), cardinality_); }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="a05631.html#ad24dc04a3a52863f6f1a6a4ca610b6f9">   46</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a05631.html#ad24dc04a3a52863f6f1a6a4ca610b6f9">insert</a>(<span class="keywordtype">size_t</span> value) { values_.insert(value); }</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="a05631.html#a2d5beda5676a34c8634d95413f365e14">   49</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a05631.html#a2d5beda5676a34c8634d95413f365e14">erase</a>(<span class="keywordtype">size_t</span> value) { values_.erase(value); }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">size_t</span> nrValues()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> values_.size(); }</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordtype">bool</span> isSingleton()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> nrValues() == 1; }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordtype">size_t</span> firstValue()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> *values_.begin(); }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="comment">// print</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="a01968.html#a54fa43c89c5334314c8c75939dd5c2d7">print</a>(<span class="keyword">const</span> std::string&amp; s = <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">const</span> KeyFormatter&amp; formatter =</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                                            DefaultKeyFormatter) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
-<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="a05631.html#a36d1366f60db9bab94e62ed3d03ca3c9">   62</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="a05631.html#a36d1366f60db9bab94e62ed3d03ca3c9">equals</a>(<span class="keyword">const</span> <a class="code hl_class" href="a03399.html">DiscreteFactor</a>&amp; other, <span class="keywordtype">double</span> tol)<span class="keyword"> const override </span>{</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">if</span> (!<span class="keyword">dynamic_cast&lt;</span><span class="keyword">const </span>Domain*<span class="keyword">&gt;</span>(&amp;other))</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      <span class="keyword">const</span> Domain&amp; f(<span class="keyword">static_cast&lt;</span><span class="keyword">const </span>Domain&amp;<span class="keyword">&gt;</span>(other));</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      <span class="keywordflow">return</span> (cardinality_ == f.cardinality_) &amp;&amp; (values_ == f.values_);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  }</div>
-</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="comment">// Return concise string representation, mostly to debug arc consistency.</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="comment">// Converts from base 0 to base1.</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  std::string base1Str() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="comment">// Check whether domain cotains a specific value.</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordtype">bool</span> contains(<span class="keywordtype">size_t</span> value)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> values_.count(value) &gt; 0; }</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keywordtype">double</span> operator()(<span class="keyword">const</span> <a class="code hl_class" href="a06207.html">DiscreteValues</a>&amp; values) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  DecisionTreeFactor toDecisionTreeFactor() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  DecisionTreeFactor operator*(<span class="keyword">const</span> DecisionTreeFactor&amp; f) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="comment">/*</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">   * Ensure Arc-consistency by checking every possible value of domain j.</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">   * @param j domain to be checked</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">   * @param (in/out) domains all domains, but only domains-&gt;at(j) will be</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">   * checked.</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">   * @return true if domains-&gt;at(j) was changed, false otherwise.</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">   */</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordtype">bool</span> ensureArcConsistency(Key j, Domains* domains) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  boost::optional&lt;Domain&gt; checkAllDiff(<span class="keyword">const</span> KeyVector keys,</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                                       <span class="keyword">const</span> Domains&amp; domains) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  Constraint::shared_ptr partiallyApply(<span class="keyword">const</span> <a class="code hl_class" href="a06207.html">DiscreteValues</a>&amp; values) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  Constraint::shared_ptr partiallyApply(<span class="keyword">const</span> Domains&amp; domains) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>};</div>
-</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}  <span class="comment">// namespace gtsam</span></div>
-<div class="ttc" id="aa00185_html"><div class="ttname"><a href="a00185.html">DiscreteKey.h</a></div><div class="ttdoc">specialized key for discrete variables</div></div>
-<div class="ttc" id="aa01448_html"><div class="ttname"><a href="a01448.html">Constraint.h</a></div></div>
-<div class="ttc" id="aa01955_html_ga5d440f1429574be613728cd7ad50946d"><div class="ttname"><a href="a01955.html#ga5d440f1429574be613728cd7ad50946d">gtsam::DiscreteKey</a></div><div class="ttdeci">std::pair&lt; Key, size_t &gt; DiscreteKey</div><div class="ttdoc">Key type for discrete variables.</div><div class="ttdef"><b>Definition</b> DiscreteKey.h:36</div></div>
-<div class="ttc" id="aa01968_html"><div class="ttname"><a href="a01968.html">gtsam</a></div><div class="ttdoc">Global functions in a separate testing namespace.</div><div class="ttdef"><b>Definition</b> chartTesting.h:28</div></div>
-<div class="ttc" id="aa01968_html_a54fa43c89c5334314c8c75939dd5c2d7"><div class="ttname"><a href="a01968.html#a54fa43c89c5334314c8c75939dd5c2d7">gtsam::print</a></div><div class="ttdeci">void print(const Matrix &amp;A, const string &amp;s, ostream &amp;stream)</div><div class="ttdoc">print without optional string, must specify cout yourself</div><div class="ttdef"><b>Definition</b> Matrix.cpp:156</div></div>
-<div class="ttc" id="aa01968_html_adad029f5f6ffce610428b5fe768b0df2"><div class="ttname"><a href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">gtsam::Key</a></div><div class="ttdeci">std::uint64_t Key</div><div class="ttdoc">Integer nonlinear key type.</div><div class="ttdef"><b>Definition</b> types.h:100</div></div>
-<div class="ttc" id="aa03399_html"><div class="ttname"><a href="a03399.html">gtsam::DiscreteFactor</a></div><div class="ttdoc">Base class for discrete probabilistic factors The most general one is the derived DecisionTreeFactor.</div><div class="ttdef"><b>Definition</b> DiscreteFactor.h:38</div></div>
-<div class="ttc" id="aa04139_html_a10e886cc8b8a374e2fe864707e0b6278"><div class="ttname"><a href="a04139.html#a10e886cc8b8a374e2fe864707e0b6278">gtsam::Factor::keys_</a></div><div class="ttdeci">KeyVector keys_</div><div class="ttdoc">The keys involved in this factor.</div><div class="ttdef"><b>Definition</b> Factor.h:85</div></div>
-<div class="ttc" id="aa05623_html"><div class="ttname"><a href="a05623.html">gtsam::Constraint</a></div><div class="ttdoc">Base class for constraint factors Derived classes include SingleValue, BinaryAllDiff,...</div><div class="ttdef"><b>Definition</b> Constraint.h:36</div></div>
-<div class="ttc" id="aa05623_html_ac65b64bd3106f19619766800423d72de"><div class="ttname"><a href="a05623.html#ac65b64bd3106f19619766800423d72de">gtsam::Constraint::Constraint</a></div><div class="ttdeci">Constraint(Key j)</div><div class="ttdoc">Construct unary constraint factor.</div><div class="ttdef"><b>Definition</b> Constraint.h:42</div></div>
-<div class="ttc" id="aa05631_html"><div class="ttname"><a href="a05631.html">gtsam::Domain</a></div><div class="ttdoc">The Domain class represents a constraint that restricts the possible values a particular variable,...</div><div class="ttdef"><b>Definition</b> Domain.h:19</div></div>
-<div class="ttc" id="aa05631_html_a2d5beda5676a34c8634d95413f365e14"><div class="ttname"><a href="a05631.html#a2d5beda5676a34c8634d95413f365e14">gtsam::Domain::erase</a></div><div class="ttdeci">void erase(size_t value)</div><div class="ttdoc">Erase a value, non const :-(.</div><div class="ttdef"><b>Definition</b> Domain.h:49</div></div>
-<div class="ttc" id="aa05631_html_a36d1366f60db9bab94e62ed3d03ca3c9"><div class="ttname"><a href="a05631.html#a36d1366f60db9bab94e62ed3d03ca3c9">gtsam::Domain::equals</a></div><div class="ttdeci">bool equals(const DiscreteFactor &amp;other, double tol) const override</div><div class="ttdoc">equals</div><div class="ttdef"><b>Definition</b> Domain.h:62</div></div>
-<div class="ttc" id="aa05631_html_a9bc36f50dc751e9d0e1a237e058cfb0b"><div class="ttname"><a href="a05631.html#a9bc36f50dc751e9d0e1a237e058cfb0b">gtsam::Domain::shared_ptr</a></div><div class="ttdeci">boost::shared_ptr&lt; Domain &gt; shared_ptr</div><div class="ttdoc">allowed values</div><div class="ttdef"><b>Definition</b> Domain.h:24</div></div>
-<div class="ttc" id="aa05631_html_aaaf05dcf9334ebc93e2da1ee447cfc16"><div class="ttname"><a href="a05631.html#aaaf05dcf9334ebc93e2da1ee447cfc16">gtsam::Domain::key</a></div><div class="ttdeci">Key key() const</div><div class="ttdoc">The one key.</div><div class="ttdef"><b>Definition</b> Domain.h:40</div></div>
-<div class="ttc" id="aa05631_html_ad24dc04a3a52863f6f1a6a4ca610b6f9"><div class="ttname"><a href="a05631.html#ad24dc04a3a52863f6f1a6a4ca610b6f9">gtsam::Domain::insert</a></div><div class="ttdeci">void insert(size_t value)</div><div class="ttdoc">Insert a value, non const :-(.</div><div class="ttdef"><b>Definition</b> Domain.h:46</div></div>
-<div class="ttc" id="aa06207_html"><div class="ttname"><a href="a06207.html">DiscreteValues</a></div><div class="ttdoc">The Factor::error simply extracts the.</div></div>
+<a href="a01436.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;gtsam/config.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifdef GTSAM_ALLOW_DEPRECATED_SINCE_V43</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;gtsam/constrained/NonlinearEquality.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam_unstable</b></li><li class="navelem"><b>discrete</b></li><li class="navelem"><b>Domain.h</b></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>nonlinear</b></li><li class="navelem"><a href="a01436.html">NonlinearEquality.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

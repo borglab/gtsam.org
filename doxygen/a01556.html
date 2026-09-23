@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam_unstable/linear/ActiveSetSolver.h File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/nonlinear/NonlinearFactor.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,40 +96,67 @@ $(function(){initNavTree('a01556.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">ActiveSetSolver.h File Reference</div></div>
+  <div class="headertitle"><div class="title">NonlinearFactor.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Active set method for solving LP, QP problems.  
+<p>Non-linear factor base classes.  
 <a href="#details">More...</a></p>
 
 <p><a href="a01556_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:gtsam_3A_3AActiveSetSolver_3C_20PROBLEM_2C_20POLICY_2C_20INITSOLVER_20_3E" id="r_gtsam_3A_3AActiveSetSolver_3C_20PROBLEM_2C_20POLICY_2C_20INITSOLVER_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a05759.html">gtsam::ActiveSetSolver&lt; PROBLEM, POLICY, INITSOLVER &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class implements the active set algorithm for solving convex Programming problems.  <a href="a05759.html#details">More...</a><br /></td></tr>
-<tr class="memitem:gtsam_3A_3AActiveSetSolver_3C_20PROBLEM_2C_20POLICY_2C_20INITSOLVER_20_3E_3A_3AState" id="r_gtsam_3A_3AActiveSetSolver_3C_20PROBLEM_2C_20POLICY_2C_20INITSOLVER_20_3E_3A_3AState"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a05763.html">gtsam::ActiveSetSolver&lt; PROBLEM, POLICY, INITSOLVER &gt;::State</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This struct contains the state information for a single iteration.  <a href="a05763.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3ANonlinearFactor" id="r_gtsam_3A_3ANonlinearFactor"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a06435.html">gtsam::NonlinearFactor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nonlinear factor base class.  <a href="a06435.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3Atraits_3C_20NonlinearFactor_20_3E" id="r_gtsam_3A_3Atraits_3C_20NonlinearFactor_20_3E"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="a06439.html">gtsam::traits&lt; NonlinearFactor &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">traits  <a href="a06439.html#details">More...</a><br /></td></tr>
+<tr class="memitem:gtsam_3A_3ANoiseModelFactor" id="r_gtsam_3A_3ANoiseModelFactor"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="a06443.html">gtsam::NoiseModelFactor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A nonlinear sum-of-squares factor with a zero-mean noise model implementing the density \( P(z|x) \propto exp -0.5*|z-h(x)|^2_C \) Templated on the parameter type X and the values structure <a class="el" href="a06527.html" title="A non-templated config holding any types of Manifold-group elements.">Values</a> There is no return type specified for h(x).  <a href="a06443.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a9be309f741b77e5406429e41f666aa5a" id="r_a9be309f741b77e5406429e41f666aa5a"><td class="memTemplParams" colspan="2">template&lt;class PROBLEM&gt; </td></tr>
-<tr class="memitem:a9be309f741b77e5406429e41f666aa5a template"><td class="memItemLeft"><a class="el" href="a01968.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&#160;</td><td class="memItemRight"><a class="el" href="a01968.html#a9be309f741b77e5406429e41f666aa5a">gtsam::maxKey</a> (const PROBLEM &amp;problem)</td></tr>
-<tr class="memdesc:a9be309f741b77e5406429e41f666aa5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the max key in a problem.  <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a60dbbc16637d770e100d6ab35358e1c8" id="r_a60dbbc16637d770e100d6ab35358e1c8"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a60dbbc16637d770e100d6ab35358e1c8">OptionalNone</a>&#160;&#160;&#160;static_cast&lt;gtsam::Matrix*&gt;(nullptr)</td></tr>
+<tr class="memdesc:a60dbbc16637d770e100d6ab35358e1c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">These typedefs and aliases will help with making the evaluateError interface independent of boost TODO(kartikarcot): Change this to OptionalMatrixNone This typedef is used to indicate that the Jacobian is not required and the default value used for optional matrix pointer arguments in evaluateError.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a39c52c49d5301ff2f020e66bf69bbf69" id="r_a39c52c49d5301ff2f020e66bf69bbf69"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="a02242.html#a39c52c49d5301ff2f020e66bf69bbf69">gtsam::OptionalMatrixType</a> = Matrix*</td></tr>
+<tr class="memdesc:a39c52c49d5301ff2f020e66bf69bbf69"><td class="mdescLeft">&#160;</td><td class="mdescRight">This typedef will be used everywhere boost::optional&lt;Matrix&amp;&gt; reference was used previously.  <br /></td></tr>
+<tr class="memitem:a943ae34c4e906cbae9766253bf95f7c7" id="r_a943ae34c4e906cbae9766253bf95f7c7"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="a02242.html#a943ae34c4e906cbae9766253bf95f7c7">gtsam::OptionalMatrixVecType</a> = std::vector&lt;Matrix&gt;*</td></tr>
+<tr class="memdesc:a943ae34c4e906cbae9766253bf95f7c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="a02242.html#a943ae34c4e906cbae9766253bf95f7c7" title="The OptionalMatrixVecType is a pointer to a vector of matrices.">OptionalMatrixVecType</a> is a pointer to a vector of matrices.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Active set method for solving LP, QP problems. </p>
-<dl class="section author"><dt>Author</dt><dd>Ivan Dario Jimenez </dd>
+<div class="textblock"><p>Non-linear factor base classes. </p>
+<dl class="section author"><dt>Author</dt><dd>Frank Dellaert </dd>
 <dd>
-Duy Nguyen Ta </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>1/25/16 </dd></dl>
-</div></div><!-- contents -->
+Richard Roberts </dd>
+<dd>
+Gerry Chen </dd></dl>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="a60dbbc16637d770e100d6ab35358e1c8" name="a60dbbc16637d770e100d6ab35358e1c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60dbbc16637d770e100d6ab35358e1c8">&#9670;&#160;</a></span>OptionalNone</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OptionalNone&#160;&#160;&#160;static_cast&lt;gtsam::Matrix*&gt;(nullptr)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>These typedefs and aliases will help with making the evaluateError interface independent of boost TODO(kartikarcot): Change this to OptionalMatrixNone This typedef is used to indicate that the Jacobian is not required and the default value used for optional matrix pointer arguments in evaluateError. </p>
+<p>Had to use the static_cast of a nullptr, because the compiler is not able to deduce the type of the nullptr when expanding the evaluateError templates. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>
@@ -142,7 +169,7 @@ Duy Nguyen Ta </dd></dl>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam_unstable</b></li><li class="navelem"><b>linear</b></li><li class="navelem"><a href="a01556.html">ActiveSetSolver.h</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>nonlinear</b></li><li class="navelem"><a href="a01556.html">NonlinearFactor.h</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

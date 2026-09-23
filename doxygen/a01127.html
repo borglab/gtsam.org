@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gtsam: /tmp/gtsam-4.2-docs.H5EUbA/src/gtsam/nonlinear/Marginals.cpp File Reference</title>
+<title>gtsam: /tmp/gtsam-4.3.0-doxygen.rsXPUS/source/gtsam/linear/HessianFactor.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="navtreedata.js?v=20260921-module-nav4"></script>
+<script type="text/javascript" src="navtree.js?v=20260921-module-nav4"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -24,7 +24,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css?v=20260921-theme3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -33,7 +33,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">gtsam<span id="projectnumber">&#160;4.2</span>
+   <div id="projectname"><a class="project-home" href="/" aria-label="GTSAM 4.3.0 home">gtsam<span id="projectnumber">&#160;4.3.0</span></a>
    </div>
    <div id="projectbrief">gtsam</div>
   </td>
@@ -96,18 +96,30 @@ $(function(){initNavTree('a01127.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Marginals.cpp File Reference</div></div>
+  <div class="headertitle"><div class="title">HessianFactor.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a01968.html">gtsam</a></td></tr>
-<tr class="memdesc:a01968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+<tr class="memitem:gtsam" id="r_gtsam"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="a02242.html">gtsam</a></td></tr>
+<tr class="memdesc:a02242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global functions in a separate testing namespace. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a10e23dd54700e0210091093e173cc837" id="r_a10e23dd54700e0210091093e173cc837"><td class="memItemLeft"><a id="a10e23dd54700e0210091093e173cc837" name="a10e23dd54700e0210091093e173cc837"></a>
+using&#160;</td><td class="memItemRight"><b>gtsam::Dims</b> = std::vector&lt;<a class="el" href="a02242.html#adad029f5f6ffce610428b5fe768b0df2">Key</a>&gt;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gae81f07e6df33f3adb5477b74327bcc37" id="r_gae81f07e6df33f3adb5477b74327bcc37"><td class="memItemLeft">std::pair&lt; std::shared_ptr&lt; <a class="el" href="a07587.html">GaussianConditional</a> &gt;, std::shared_ptr&lt; <a class="el" href="a05155.html">HessianFactor</a> &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="a02224.html#gae81f07e6df33f3adb5477b74327bcc37">gtsam::EliminateCholesky</a> (const <a class="el" href="a05135.html">GaussianFactorGraph</a> &amp;factors, const <a class="el" href="a04979.html">Ordering</a> &amp;keys)</td></tr>
+<tr class="memdesc:gae81f07e6df33f3adb5477b74327bcc37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Densely partially eliminate with Cholesky factorization.  <br /></td></tr>
+<tr class="memitem:gaabfbe5a4b647626687cd13a0bba9f05f" id="r_gaabfbe5a4b647626687cd13a0bba9f05f"><td class="memItemLeft">std::pair&lt; std::shared_ptr&lt; <a class="el" href="a07587.html">GaussianConditional</a> &gt;, std::shared_ptr&lt; GaussianFactor &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="a02224.html#gaabfbe5a4b647626687cd13a0bba9f05f">gtsam::EliminatePreferCholesky</a> (const <a class="el" href="a05135.html">GaussianFactorGraph</a> &amp;factors, const <a class="el" href="a04979.html">Ordering</a> &amp;keys)</td></tr>
+<tr class="memdesc:gaabfbe5a4b647626687cd13a0bba9f05f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Densely partially eliminate with Cholesky factorization.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Richard Roberts </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>May 14, 2012 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>Dec 8, 2010 </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -121,7 +133,7 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.2-docs.H5EUbA</b></li><li class="navelem"><b>src</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>nonlinear</b></li><li class="navelem"><a href="a01127.html">Marginals.cpp</a></li>
+    <li class="navelem"><b>tmp</b></li><li class="navelem"><b>gtsam-4.3.0-doxygen.rsXPUS</b></li><li class="navelem"><b>source</b></li><li class="navelem"><b>gtsam</b></li><li class="navelem"><b>linear</b></li><li class="navelem"><a href="a01127.html">HessianFactor.cpp</a></li>
     <li class="footer">Generated on <span class="timestamp"></span> for gtsam by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

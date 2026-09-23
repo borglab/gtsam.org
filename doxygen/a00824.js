@@ -1,5 +1,4 @@
 var a00824 =
 [
-    [ "gtsam::SubgraphPreconditionerParameters", "a04595.html", null ],
-    [ "gtsam::SubgraphPreconditioner", "a04599.html", "a04599" ]
+    [ "gtsam::ISAM&lt; BAYESTREE &gt;", "a04935.html", "a04935" ]
 ];
