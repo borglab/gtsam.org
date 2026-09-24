@@ -43,7 +43,7 @@ permalink: /
     <a href="#constraints">Constraints</a>
     <a href="#certifiable">Certifiable</a>
     <a href="#gnss">GNSS</a>
-    <a href="#pose-graphs">Pose graphs</a>
+    <a href="#pose-graphs">Incremental inference</a>
     <a href="#linear-solvers">Solvers</a>
     <a href="#hybrid">Hybrid</a>
     <a href="#python">Python notebooks</a>
@@ -154,16 +154,21 @@ permalink: /
 </section>
 
 <section class="release-section" id="pose-graphs" aria-labelledby="pgo-title">
-  <h2 id="pgo-title">Pose-graph initialization and refinement</h2>
+  <h2 id="pgo-title">Incremental inference and pose-graph refinement</h2>
   <div class="research-columns">
     <div>
       <p>FAST-Sync initializes group-synchronization problems on matrix Lie groups from relative measurements. It provides initial estimates for subsequent nonlinear refinement, including pose-graph optimization.</p>
       <p class="attribution">FAST-Sync is joint work by Shane Holmes, Yiran Luo, Firat Taxpulat, David M. Rosen, and Frank Dellaert.</p>
       <p class="paper-reference">Holmes et al. <a href="https://doi.org/10.1109/LRA.2026.3710327"><cite>FAST-Sync: Fast Group Synchronization for Any Matrix Lie Group</cite></a>. IEEE Robotics and Automation Letters, 11(9):10377–10384, 2026.</p>
       <p>A separate refinement improvement supplies exact <code>Local</code> Jacobians in <code>BetweenFactor</code> and <code>PriorFactor</code> when supported by the Lie-group traits. The <a href="https://github.com/borglab/gtsam/pull/2661">w10000 benchmark</a> compares refinement from identical initial values.</p>
+      <p><code>riSAM</code> adds robust incremental smoothing and mapping to GTSAM as a robust variant of iSAM2 for incremental factor-graph optimization.</p>
+      <p class="attribution">riSAM was introduced by Daniel McGann, John G. Rogers III, and Michael Kaess.</p>
+      <p class="paper-reference">McGann, Rogers III, and Kaess. <a href="https://arxiv.org/abs/2209.14359"><cite>Robust Incremental Smoothing and Mapping (riSAM)</cite></a>, ICRA 2023.</p>
+      <blockquote cite="https://arxiv.org/abs/2209.14359">“We present the robust incremental Smoothing and Mapping (riSAM) algorithm, a robust back-end optimizer for incremental SLAM based on Graduated Non-Convexity.”</blockquote>
       <ul class="resource-links">
         <li><a href="https://borglab.github.io/gtsam/fastsyncexample/">FAST-Sync example notebook</a> · <a href="https://borglab.github.io/gtsam/fastsync/">Derivation</a></li>
         <li><a href="https://github.com/borglab/gtsam/blob/4.3.0/gtsam/slam/FastSync.h">FastSync source</a> · <a href="/2026/08/12/fast-sync.html">Research article</a></li>
+        <li><a href="https://github.com/borglab/gtsam/blob/4.3.0/gtsam/sam/RISAM.h">riSAM source</a> · <a href="https://github.com/rpl-cmu/risam">Original implementation</a></li>
       </ul>
     </div>
     <figure class="research-figure research-figure-portrait">
