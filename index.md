@@ -159,7 +159,7 @@ permalink: /
     <div>
       <p>FAST-Sync initializes group-synchronization problems on matrix Lie groups from relative measurements. It provides initial estimates for subsequent nonlinear refinement, including pose-graph optimization.</p>
       <p class="attribution">FAST-Sync is joint work by Shane Holmes, Yiran Luo, Firat Taxpulat, David M. Rosen, and Frank Dellaert.</p>
-      <p class="paper-reference">Holmes et al. <a href="https://doi.org/10.1109/LRA.2026.3710327"><cite>FAST-Sync: Fast Group Synchronization for Any Matrix Lie Group</cite></a>. IEEE Robotics and Automation Letters, 11(9):10377–10384, 2026.</p>
+      <p class="paper-reference">Holmes et al. <a href="https://arxiv.org/pdf/2609.38594"><cite>FAST-Sync: Fast Group Synchronization for Any Matrix Lie Group</cite></a>. IEEE Robotics and Automation Letters, 11(9):10377–10384, 2026.</p>
       <p>A separate refinement improvement supplies exact <code>Local</code> Jacobians in <code>BetweenFactor</code> and <code>PriorFactor</code> when supported by the Lie-group traits. The <a href="https://github.com/borglab/gtsam/pull/2661">w10000 benchmark</a> compares refinement from identical initial values.</p>
       <p><code>riSAM</code> adds robust incremental smoothing and mapping to GTSAM as a robust variant of iSAM2 for incremental factor-graph optimization.</p>
       <p class="attribution">riSAM was introduced by Daniel McGann, John G. Rogers III, and Michael Kaess.</p>
